@@ -1,78 +1,185 @@
 <!DOCTYPE frameset SYSTEM "frameset.dtd">
 <frameset>
-    <note>
-        Frames file for 'price' based on survey of sentences from big corpus
-        and comparison with 'cost'
-    </note>
-    
-    <predicate lemma="price">
-        <roleset id="price.01" name="cf cost" vncls="54.4">
-            <roles>
-                <role descr="seller" n="0">
-                    
-                    <vnrole vncls="54.4" vntheta="Agent"/>
-                </role>
-                
-                <role descr="commodity" n="1">
-                    
-                    <vnrole vncls="54.4" vntheta="Theme"/>
-                </role>
-                
-                <role descr="price" n="2">
-                    
-                    <vnrole vncls="54.4" vntheta="Attribute"/>
-                </role>
-                
-            </roles>
-            
-            <example name="straight">
-                <text>
-                    Continental Cablevision priced $350 million of junk bonds at par.
-                </text>
-                <arg n="0">Continental Cablevision</arg>
-                <rel>priced</rel>
-                <arg n="1">$350 million of junk bonds</arg>
-                <arg n="2">at par</arg>
-            </example>
-             
-            
-            <example name="price as range">
-                <text>
-                    ...supercomputers priced between $15 million and $30 million
-                </text>
-                <arg n="1">supercomputers</arg>
-                <rel>priced</rel>
-                <arg n="2">between $15 million and $30 million</arg>
-            </example>
-            
-            <example name="passive">
-                <text>
-                    The 30-year issue was priced at a spread of 57 basis points
-                </text>
-                <arg n="1">The 30-year issue</arg>
-                <rel>was priced</rel>
-                <arg n="2">at a spread of 57 basis points</arg>
-            </example>
-            
-            <example name="with purpose clause">
-                <text>
-                    Serial bonds are priced   at par to yield 6.40% in 1991
-                </text>
-                <arg n="1">Serial bonds</arg>
-                <rel>are priced</rel>
-                <arg n="2">at par</arg>
-                <arg n="M" f="PNC">to yield 6.40% in 1991</arg>
-            </example>
-            
-            <example name="passive with purpose">
-                <text>
-                    These cars are priced to sell!
-                </text>
-                <arg n="1">These cars</arg>
-                <rel>priced</rel>
-                <arg f="PNC" n="M">to sell</arg>
-            </example>
-            
-        </roleset>
-    </predicate>
+	<predicate lemma="price">
+		<roleset framnet="-" id="price.01" name="assign/identify the price of" source="-" vncls="54.4">
+			<roles>
+				<role descr="seller, pricer" f="PAG" n="0">
+					<vnrole vncls="54.4" vntheta="Agent"/>
+				</role>
+				<role descr="commodity" f="ppt" n="1">
+					<vnrole vncls="54.4" vntheta="Theme"/>
+				</role>
+				<role descr="price" f="vsp" n="2">
+					<vnrole vncls="54.4" vntheta="Attribute"/>
+				</role>
+				<note/>
+				<role descr="potential buyer" f="gol" n="3"/>
+			</roles>
+			<example name="straight" src="" type="">
+				<text>
+					Continental Cablevision priced $350 million of junk bonds at par.
+				</text>
+				<arg f="" n="0">
+					Continental Cablevision
+				</arg>
+				<rel f="">
+					priced
+				</rel>
+				<arg f="" n="1">
+					$350 million of junk bonds
+				</arg>
+				<arg f="" n="2">
+					at par
+				</arg>
+				<note/>
+			</example>
+			<example name="price as range" src="" type="">
+				<text>
+					...supercomputers priced between $15 million and $30 million
+				</text>
+				<arg f="" n="1">
+					supercomputers
+				</arg>
+				<rel f="">
+					priced
+				</rel>
+				<arg f="" n="2">
+					between $15 million and $30 million
+				</arg>
+				<note/>
+			</example>
+			<example name="passive" src="" type="">
+				<text>
+					The 30-year issue was priced at a spread of 57 basis points
+				</text>
+				<arg f="" n="1">
+					The 30-year issue
+				</arg>
+				<rel f="">
+					was priced
+				</rel>
+				<arg f="" n="2">
+					at a spread of 57 basis points
+				</arg>
+				<note/>
+			</example>
+			<example name="with purpose clause" src="" type="">
+				<text>
+					Serial bonds are priced   at par to yield 6.40% in 1991
+				</text>
+				<arg f="" n="1">
+					Serial bonds
+				</arg>
+				<rel f="">
+					are priced
+				</rel>
+				<arg f="" n="2">
+					at par
+				</arg>
+				<arg f="pnc" n="m">
+					to yield 6.40% in 1991
+				</arg>
+				<note/>
+			</example>
+			<example name="passive with purpose" src="" type="">
+				<text>
+					These cars are priced to sell!
+				</text>
+				<arg f="" n="1">
+					These cars
+				</arg>
+				<rel f="">
+					priced
+				</rel>
+				<arg f="prp" n="m">
+					to sell
+				</arg>
+				<note/>
+			</example>
+			<note>
+				Member of VNcls price-54.4.
+			</note>
+			<example name="with PRD, arg3" src="BOLT" type="">
+				<inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+				<text>
+					[Some nations *ICH*-2]-3 will be priced [*-3] out , most likely the relatively undeveloped countries in which automotive transportation is not really essential]-2 .
+				</text>
+				<note/>
+				<arg f="mod" n="m">
+					will
+				</arg>
+				<rel f="">
+					priced
+				</rel>
+				<arg f="" n="3">
+					[*-3]
+				</arg>
+				<arg f="prd" n="m">
+					out
+				</arg>
+			</example>
+		</roleset>
+		<note/>
+	</predicate>
+	<note>
+		Frames file for 'price' based on survey of sentences from big corpusand comparison with 'cost'. arg3 added by Julia based on instance in BOLT.
+	</note>
+	<predicate lemma="price_out">
+		<note/>
+		<roleset framnet="-" id="price.02" name="price_out: assign/identify prices for" source="price.01" vncls="54.4">
+			<roles>
+				<role descr="agent, pricer" f="PAG" n="0">
+					<vnrole vncls="54.4" vntheta="Agent"/>
+				</role>
+				<note/>
+				<role descr="commodity" f="ppt" n="1">
+					<vnrole vncls="54.4" vntheta="Theme"/>
+				</role>
+				<role descr="price" f="vsp" n="2">
+					<vnrole vncls="54.4" vntheta="Value"/>
+				</role>
+			</roles>
+			<note>
+				See VNcls price-54.4.
+			</note>
+			<example name="with LOC" src="" type="">
+				<inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+				<text>
+					I simply wrote down the ingredients that they used and priced it out at Costco (non organic) and the market (organic) and couldn't beat the price.
+				</text>
+				<note/>
+				<arg f="" n="0">
+					I
+				</arg>
+				<rel f="">
+					[priced] [out]
+				</rel>
+				<arg f="" n="1">
+					it
+				</arg>
+				<arg f="loc" n="m">
+					at Costco (non organic) and the market (organic)
+				</arg>
+			</example>
+			<example name="All args" src="" type="">
+				<inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+				<text>
+					I was all set to make a fancy white picket fence with a gate and a trellis...which sounded nice until I priced it out at $350 .
+				</text>
+				<note/>
+				<arg f="" n="0">
+					I
+				</arg>
+				<rel f="">
+					[priced] [out]
+				</rel>
+				<arg f="" n="1">
+					it
+				</arg>
+				<arg f="" n="2">
+					at $350
+				</arg>
+			</example>
+		</roleset>
+	</predicate>
 </frameset>
