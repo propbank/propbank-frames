@@ -36,15 +36,18 @@
   and something like 47.2 means 47.2 is a levine class of this
   roleset.  The list of levine classes is space delimited
 -->
-<!ELEMENT roleset (note*, roles, ( example | note )*)>
+<!ELEMENT roleset (aliases?, note*, roles, ( example | note )*)>
 <!ATTLIST roleset
-  id   ID #REQUIRED
-  name CDATA #IMPLIED
-  vncls CDATA #IMPLIED
-  framnet CDATA #IMPLIED
-  source CDATA #IMPLIED>
+  id   CDATA #REQUIRED
+  name CDATA #IMPLIED>
+<!ELEMENT aliases (alias*)>
+<!ELEMENT alias (#PCDATA)>
+<!ATTLIST alias
+pos CDATA #REQUIRED
+verbnet CDATA #IMPLIED
+framenet CDATA #IMPLIED>
 <!ELEMENT roles   (note | role)*>
-<!ELEMENT role (vnrole*) >
+<!ELEMENT role (vnrole | fnrole)* >
 <!--
   roles have a number (or actually a number or an "M" or an "A" associated
   with them.  The "M" stands for modifier and the "A" stands for agent.
@@ -68,6 +71,7 @@
     PRP  purpose
     PNC  purpose no cause (no longer used)
     CAU  cause
+    CXN  constructional pattern (adjectival comparative marker)
     ADJ  adjectival (nouns only)
     COM  comitative
     DIS  discourse
@@ -100,7 +104,6 @@
 <!ELEMENT vnrole EMPTY>
 <!ATTLIST vnrole
   vncls CDATA #REQUIRED
-
   vntheta (actor| Actor| actor1| Actor1 |actor2|  Actor2| agent| Agent|
   asset| Asset| attribute| Attribute| beneficiary| Beneficiary| cause| Cause|
   co-agent | Co-Agent | co-patient | Co-Patient | co-theme | Co-Theme | 
@@ -111,6 +114,10 @@
   predicate| Predicate| product| Product| recipient| Recipient| reflexive | Reflexive | result | Result |
   source| Source| stimulus| Stimulus| theme| Theme|theme1| Theme1| theme2| Theme2| time| Time| topic|
   Topic| Trajectory | trajectory | proposition| Proposition| value| Value | unspecified) #REQUIRED>
+<!ELEMENT fnrole EMPTY>
+<!ATTLIST fnrole
+frame CDATA #REQUIRED
+fe CDATA #REQUIRED>
 <!--
   examples may contain inflectional information and notes notes
   After that, they contain the text of an example followed by
