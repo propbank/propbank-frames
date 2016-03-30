@@ -25,8 +25,9 @@
 -->
 <!ELEMENT frameset (note | predicate)*>
 <!ELEMENT note (#PCDATA)>
+<!ATTLIST note usage CDATA #IMPLIED>
 <!ELEMENT predicate (note | roleset)*>
-<!ATTLIST predicate lemma CDATA #REQUIRED>
+<!ATTLIST predicate lemma CDATA #REQUIRED usage CDATA #IMPLIED>
 <!--
   The roleset's levine class attribute takes the following form:
 
@@ -39,13 +40,17 @@
 <!ELEMENT roleset (aliases?, note*, roles, ( example | note )*)>
 <!ATTLIST roleset
   id   CDATA #REQUIRED
-  name CDATA #IMPLIED>
+  name CDATA #IMPLIED
+  usage CDATA #IMPLIED
+  framenet CDATA #IMPLIED
+  index CDATA #IMPLIED>
 <!ELEMENT aliases (alias*)>
 <!ELEMENT alias (#PCDATA)>
 <!ATTLIST alias
 pos CDATA #REQUIRED
 verbnet CDATA #IMPLIED
-framenet CDATA #IMPLIED>
+framenet CDATA #IMPLIED
+usage CDATA #IMPLIED>
 <!ELEMENT roles   (note | role)*>
 <!ELEMENT role (vnrole | fnrole)* >
 <!--
@@ -74,6 +79,7 @@ framenet CDATA #IMPLIED>
     CXN  constructional pattern (adjectival comparative marker)
     ADJ  adjectival (nouns only)
     COM  comitative
+    CXN  constructional (for "compared to what" constructions for adjectivals)
     DIS  discourse
     DSP  direct speech
     GOL  goal
@@ -100,7 +106,8 @@ framenet CDATA #IMPLIED>
   n CDATA #REQUIRED
   f CDATA #IMPLIED
   descr CDATA #REQUIRED
-  source CDATA #IMPLIED>
+  source CDATA #IMPLIED
+  usage CDATA #IMPLIED>
 <!ELEMENT vnrole EMPTY>
 <!ATTLIST vnrole
   vncls CDATA #REQUIRED
@@ -130,7 +137,8 @@ fe CDATA #REQUIRED>
 <!ATTLIST example
   name CDATA #IMPLIED
   type CDATA #IMPLIED
-  src  CDATA #IMPLIED>
+  src  CDATA #IMPLIED
+  usage  CDATA #IMPLIED>
 <!ELEMENT text (#PCDATA)>
 <!ELEMENT inflection EMPTY>
 <!ATTLIST inflection
@@ -144,7 +152,8 @@ fe CDATA #REQUIRED>
 <!ELEMENT arg (#PCDATA)>
 <!ATTLIST arg
   n CDATA #REQUIRED
-  f CDATA #IMPLIED>
+  f CDATA #IMPLIED
+  usage CDATA #IMPLIED>
 <!-- a rel can have an "f" attribute for a single reason, so that
      auxilliary uses of the verb "have" can be marked as such.
      There should be no other "f" attributes -->
