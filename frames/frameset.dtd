@@ -43,20 +43,15 @@
 <!ELEMENT aliases (alias*)>
 <!ELEMENT alias (#PCDATA)>
 <!ATTLIST alias
-pos CDATA #REQUIRED
+pos (v | n | j | l) #REQUIRED
 verbnet CDATA #IMPLIED
 framenet CDATA #IMPLIED>
 <!ELEMENT roles   (note | role)*>
 <!ELEMENT role (vnrole | fnrole)* >
 <!--
-  roles have a number (or actually a number or an "M" or an "A" associated
-  with them.  The "M" stands for modifier and the "A" stands for agent.
-  The "A" is the agent only in the case where arg 0 is not agentive
-  (eg verbs that can take causative constructions). This number is encoded in
-  the attribute 'n'
-
-  'f' is an attribute which may contain function tags.  The current list of
-  available function tags are
+  roles have a number (or an "M" associated
+  with them, for common adjuncts that don't qualify for number argument status). 
+  Both numbered arguments and adjuncts are labeled with the function tags from the list below:
 
     EXT  extent
     LOC  location
@@ -74,7 +69,6 @@ framenet CDATA #IMPLIED>
     CXN  constructional pattern (adjectival comparative marker)
     ADJ  adjectival (nouns only)
     COM  comitative
-    CXN  constructional (for "compared to what" constructions for adjectivals)
     DIS  discourse
     DSP  direct speech
     GOL  goal
@@ -85,23 +79,11 @@ framenet CDATA #IMPLIED>
     VSP  verb specific (function tag for numbered arguments)
     LVB  light verb (for nouns only)
 
-
-  additionally, function tags may be prepositions, indicating that the
-  preposition in question can be associated with the argument/role
-  presented.  For this reason, we can't restrict the values to an
-  enumeration :(.
-
-  The roles also have a 'vnr' attribute, which refers
-  to verbnet v0.2 thematic roles.  Verbnet thematic roles are
-
-  Note That verbnet
-
 -->
 <!ATTLIST role
-  n CDATA #REQUIRED
-  f CDATA #IMPLIED
-  descr CDATA #REQUIRED
-  source CDATA #IMPLIED>
+  n ( 0 | 1 | 2 | 3 | 4 | 5 | 6 | m | M ) #REQUIRED
+  f ( PAG | PPT | GOL | CXN | VSP | COM | ADJ | CAU | PRP | MNR | EXT | LOC | DIR | ADV | TMP | adv | tmp | pag | ppt | gol | vsp | com | adj | cau | prp | rec | mnr | ext | loc | dir | prd | PRD ) #REQUIRED
+  descr CDATA #REQUIRED>
 <!ELEMENT vnrole EMPTY>
 <!ATTLIST vnrole
   vncls CDATA #REQUIRED
@@ -144,7 +126,7 @@ fe CDATA #REQUIRED>
      described above -->
 <!ELEMENT arg (#PCDATA)>
 <!ATTLIST arg
-  n CDATA #REQUIRED
+  n ( 0 | 1 | 2 | 3 | 4 | 5 | 6 | m | M | a | A) #REQUIRED
   f CDATA #IMPLIED>
 <!-- a rel can have an "f" attribute for a single reason, so that
      auxilliary uses of the verb "have" can be marked as such.
