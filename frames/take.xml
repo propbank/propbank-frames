@@ -1014,8 +1014,8 @@
         <arg f="" n="0">Police officers</arg>
         <rel f="">[took][up]</rel>
         <arg f="" n="1">their positions</arg>
-        <arg f="" n="">across the Gaza Strip</arg>
-        <arg f="" n="">enjoying a freedom of movement they have not known since the intifada exploded in September 2000</arg>
+        <arg f="loc" n="m">across the Gaza Strip</arg>
+        <arg f="adv" n="m">enjoying a freedom of movement they have not known since the intifada exploded in September 2000</arg>
       </example>
     </roleset>
   </predicate>
@@ -1103,6 +1103,14 @@
         <alias framenet="" pos="v" verbnet="">take_place</alias>
         <alias framenet="" pos="n" verbnet="">taking_place</alias>
       </aliases>
+      <mappings alias="take_place">
+        <map form="target">
+            (o / occur-01 
+                 :ARG1 (n / NARG1))
+        </map>
+        <token id="A" token="take" arg="" pos="VB" dep=""/>
+        <token id="B" token="place" arg="" pos="NN" dep="dobj/A"/>
+      </mappings>
       <note>TAKE_PLACE-V, TAKING_PLACE-N NOTES: Upgraded to an MWE format by Julia/Tim. Formerly annotated under take.14, with a fixed "place" arg2.</note>
       <roles>
         <role descr="thing occuring" f="ppt" n="1"/>
@@ -1126,6 +1134,30 @@
       <aliases>
         <alias framenet="" pos="m" verbnet="">take_with_a_grain_of_salt</alias>
       </aliases>
+      <mappings alias="come_to_terms">
+        <map form="source">
+            (A / take-01
+                :arg0 (n / NARG0)
+                :arg1 (n1 / NARG1)
+                :accompanier (F / salt 
+                    :quant (v / volume-quantity :quant 1
+                        :unit (D / grain))))
+        </map>
+        <map form="target">
+            (A / consider-02 
+                :arg0 (n / NARG0)
+                :arg1 (n1 / NARG1)
+                    :arg1-of (F / doubt-01 
+                        :quant (n2 / NARG2)))
+        </map>
+        <token id="A" token="take" arg="" pos="VB" dep=""/>
+        <token id="B" token="with" arg="" pos="IN" dep="prep/A"/>
+        <token id="C" token="a" arg="" pos="DT" dep="det/D"/>
+        <token id="D" token="grain" arg="2" pos="NN" dep="pobj/B"/>
+        <token id="E" token="of" arg="" pos="IN" dep="prep/D"/>
+        <token id="F" token="salt" arg="" pos="NN" dep="pobj/E"/>
+      </mappings>
+      <note>TAKE_WITH_A_GRAIN_OF_SALT-M NOTES: Added by Tim and Julia, in early MWE framing days.</note>
       <roles>
         <role descr="disbeliever" f="pag" n="0"/>
         <role descr="disbelief, thing to be taken with grain of salt" f="ppt" n="1"/>
@@ -1135,7 +1167,7 @@
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>I take every single word uttered by Israel with a grain of salt the size of Jupiter, </text>
         <arg f="" n="0">I</arg>
-        <rel f="">[take],[with a grain of salt]</rel>
+        <rel f="">[take][with][a][grain][of][salt]</rel>
         <arg f="" n="1">every single word uttered by Israel</arg>
         <arg f="" n="2">the size of Jupiter</arg>
       </example>

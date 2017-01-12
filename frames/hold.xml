@@ -415,40 +415,58 @@
     </roleset>
   </predicate>
 
-  <predicate lemma="get_hold_of">
-    <roleset id="get_hold_of.18" name="achieve grasping, acquisition">
+  <predicate lemma="get_hold">
+    <roleset id="get_hold.18" name="achieve grasping, acquisition">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">get_hold_of</alias>
-        <alias framenet="" pos="m" verbnet="">get_hold_on</alias>
+        <alias framenet="" pos="m" verbnet="">get_hold</alias>
+        <alias framenet="" pos="m" verbnet="">get_a_hold</alias>
         <alias framenet="Becoming_attached" pos="l" verbnet="">take_hold</alias>
       </aliases>
-      <note>GET_HOLD_OF-M NOTES: Added by Julia during initial MWE framing.</note>
-      <note>TAKE_HOLD-V NOTES: Added by Julia based on instance in Brown. No Vncls. (from take.24-v)</note>
-      <note>TAKING_HOLD-N NOTES: Added by Julia based on take.24. No VNcls. (from taking.24-n)</note>
+      <mappings alias="get_hold">
+        <map form="source">
+            (A / get-01
+                :arg0 (n / NARG0)
+                :arg1 (B / hold-01
+                    :arg0 n
+                    :arg1 (n1 / NARG1)))
+        </map>
+        <map form="target">
+            (A / achieve-01
+                :arg0 (n / NARG0)
+                :arg1 (C / grasp-01
+                    :arg0 n
+                    :arg1 (n1 / NARG1)))
+        </map>
+        <token id="A" token="get" arg="" pos="VB" dep=""/>
+        <token id="B" token="a" arg="" pos="DT" dep="det/C"/>
+        <token id="C" token="hold" arg="" pos="NN" dep="dobj/A"/>
+        <token id="C" token="ahold" arg="" pos="NN" dep="dobj/A"/>
+      </mappings>
+      <note>GET_HOLD-M, TAKE_HOLD-L NOTES: Reworked by Julia/Tim into an MWE frame format.</note>
       <roles>
         <role descr="grasper" f="pag" n="0"/>
         <role descr="grasped, thing gotten" f="ppt" n="1"/>
       </roles>
-      <example name="get_hold_of-m" src="" type="">
+      <example name="get_hold-m" src="" type="">
         <text>We've now got hold of tickets for our gig on the 12th of May</text>
         <arg f="" n="0">We</arg>
         <arg f="tmp" n="m">now</arg>
-        <rel f="">[got][hold][of]</rel>
-        <arg f="" n="">tickets for our gig on the 12th of May</arg>
+        <rel f="">[got][hold]</rel>
+        <arg f="" n="1">of tickets for our gig on the 12th of May</arg>
       </example>
-      <example name="get_a_hold_of-m" src="" type="">
+      <example name="get_a_hold-m" src="" type="">
         <text>The internet got a hold of my hacked photos</text>
         <arg f="" n="0">The internet</arg>
-        <rel f="">[got][a][hold][of]</rel>
-        <arg f="" n="1">my hacked photos</arg>
+        <rel f="">[got][a][hold]</rel>
+        <arg f="" n="1">of my hacked photos</arg>
       </example>
-      <example name="get_a_hold_on-m" src="" type="">
+      <example name="get_a_hold-m" src="" type="">
         <text>A character can't get a hold on any creature more than two size categories larger than the character.</text>
         <arg f="" n="0">A character</arg>
         <arg f="mod" n="m">ca</arg>
         <arg f="neg" n="m">n't</arg>
-        <rel f="">[get][a][hold][on]</rel>
-        <arg f="" n="1">any creature more than two size categories larger than the character</arg>
+        <rel f="">[get][a][hold]</rel>
+        <arg f="" n="1">on any creature more than two size categories larger than the character</arg>
       </example>
       <example name="take_hold-v: Russian folk tale with lots of grabbing." src="internet, former take roleset" type="-">
         <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
@@ -457,26 +475,47 @@
         <arg f="lvb" n="m">took</arg>
         <rel f="">hold</rel>
         <arg f="" n="1">of the cat</arg>
-        <arg f="" n="">(and on and on ad nauseum-- you get the point)</arg>
+        <arg f="adv" n="m">(and on and on ad nauseum-- you get the point)</arg>
       </example>
     </roleset>
 
-    <roleset id="get_hold_of.17" name="achieve communication contact">
+    <roleset id="get_hold.17" name="achieve communication contact">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">get_hold_of</alias>
-        <alias framenet="" pos="m" verbnet="">get_ahold_of</alias>
+        <alias framenet="" pos="m" verbnet="">get_hold</alias>
+        <alias framenet="" pos="m" verbnet="">get_a_hold</alias>
+        <alias framenet="" pos="m" verbnet="">get_ahold</alias>
       </aliases>
-      <note>GET_A_HOLD_OF-M NOTES: Added by Julia during initial MWE framing.</note>
+      <mappings alias="get_hold">
+        <map form="source">
+            (A / get-01
+                :arg0 (n / NARG0)
+                :arg1 (B / hold-01
+                    :arg0 n
+                    :arg1 (n1 / NARG1)))
+        </map>
+        <map form="target">
+            (A / achieve-01
+                :arg0 (n / NARG0)
+                :arg1 (B / contact-01
+                    :arg0 n
+                    :arg1 (n1 / NARG1)))
+        </map>
+        <token id="A" token="get" arg="" pos="VB" dep=""/>
+        <token id="B" token="a" arg="" pos="DT" dep="det/C"/>
+        <token id="C" token="hold" arg="" pos="NN" dep="dobj/A"/>
+        <token id="C" token="ahold" arg="" pos="NN" dep="dobj/A"/>
+      </mappings>
+      <note>GET_HOLD-M NOTES: Added by Julia during initial MWE framing.</note>
       <roles>
         <role descr="entity making contact" f="pag" n="0"/>
         <role descr="entity contacted" f="ppt" n="1"/>
       </roles>
-      <example name="get_a_hold_of-m" src="" type="">
+      <example name="get_hold-m" src="" type="">
         <text>She finally got a hold of an administrator and found out that he passed away and no one had called her.</text>
         <arg f="" n="0">She</arg>
-        <arg f="" n="">finally</arg>
-        <rel f="">[got][a][hold][of]</rel>
-        <arg f="" n="1">an administrator</arg>
+        <arg f="tmp" n="m">finally</arg>
+        <rel f="">[got][a][hold]</rel>
+        <arg f="" n="1">of an administrator</arg>
       </example>
     </roleset>
   </predicate>
@@ -486,7 +525,6 @@
       <aliases>
         <alias framenet="" pos="l" verbnet="">take_hold</alias>
       </aliases>
-      <lex-link type="synonymy" to="acquire.01" match="approximate" arg-alignment="0-0 1-1" resource="pb3"/>
       <note>HOLD-V NOTES: Frame for hold based on instances in webtext 2.5 (800-899). No relevant framenet or verbnet entry. Comparison to adhere. Framed by Katie. (from hold.14-v)</note>
       <note>HOLDING-N NOTES: (from holding.14-n)</note>
       <roles>

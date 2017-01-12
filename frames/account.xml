@@ -110,8 +110,9 @@
     <roleset id="accounting.03" name="managing finance">
       <aliases>
         <alias framenet="" pos="n" verbnet="">accounting</alias>
+        <alias framenet="" pos="l" verbnet="">do_accounting</alias>
       </aliases>
-      <note>NAME-V NOTES: </note>
+      <note>ACCOUNTING-N NOTES: </note>
       <roles>
         <role descr="accountant (entity acting as)" f="pag" n="0"/>
         <role descr="money, accounts, etc. accounted for" f="ppt" n="1"/>
@@ -143,6 +144,24 @@
       <aliases>
         <alias framenet="" pos="m" verbnet="">take_into_account</alias>
       </aliases>
+      <mappings alias="take_into_account">
+        <map form="source">
+            (A / take-01
+                :arg0 (n / NARG0)
+                :arg1 (n1 / NARG1)
+                :arg3 (C / account
+                    :arg0 n
+                    :arg1 n1))
+        </map>
+        <map form="target">
+            (c / consider-02
+                :arg0 (n / NARG0)
+                :arg1 (n1 / NARG1))
+        </map>
+        <token id="A" token="take" arg="" pos="VB" dep=""/>
+        <token id="B" token="into" arg="" pos="IN" dep="prep/A"/>
+        <token id="C" token="account" arg="" pos="NN" dep="pobj/B"/>
+      </mappings>
       <note>TAKE_INTO_ACCOUNT-M NOTES: Added by Julia in conjuction with Tim in early MWE framing.</note>
       <roles>
         <role descr="considerer" f="pag" n="0"/>
