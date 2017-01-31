@@ -153,12 +153,15 @@
       <mwe alias="come_into_effect">
         <map form="source">
           (A /come-04
-            :arg1 (n / NARG1)
-            :arg2 (C / effect-03 ))
+            :arg1 (n1 / NARG1)
+            :arg2 (C / effect-03 
+                :arg0 (n / NARG0)
+                :arg1 (n1)))
         </map>
         <map form="target">
-          (A / start-01
-            :arg1 (C / effect-03 ))
+          (a / activate-01
+              :arg0 (n / NARG0)
+              :arg1 (n1 / NARG1))
         </map>
         <token id="A" token="come" arg="" pos="VB" dep=""/>
         <token id="A" token="go" arg="" pos="VB" dep=""/>
@@ -201,9 +204,21 @@
       <aliases>
         <alias framenet="" pos="p" verbnet="">in_effect</alias>
       </aliases>
+      <mwe alias="in_effect">
+        <map form="source">
+            (B / effect-03
+                :arg1 (n1 / NARG1))
+        </map>
+        <map form="target">
+            (A / active-02
+                :arg0 (n1 / NARG1) )
+        </map>
+        <token id="A" token="in" arg="" pos="IN" dep=""/>
+        <token id="B" token="effect" arg="" pos="NN" dep="pobj/A"/>
+      </mwe>
       <roles>
         <role descr="cause" f="pag" n="0"/>
-        <role descr="effect, usually a change" f="ppt" n="1"/>
+        <role descr="active thing" f="ppt" n="1"/>
       </roles>
       <note>Reframed by Julia and Tim in early stages of MWE framing.</note>
       <example name="in_effect-m" src="" type="">

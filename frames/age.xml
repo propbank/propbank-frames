@@ -1,14 +1,12 @@
 <!DOCTYPE frameset SYSTEM "frameset.dtd">
 <frameset>
   <predicate lemma="age">
-    <roleset id="age.01" name="to make or become old or older, having grown older">
+    <roleset id="age.01" name="(cause to) become older">
       <aliases>
         <alias framenet="Aging" pos="v" verbnet="">age</alias>
         <alias framenet="" pos="n" verbnet="">aging</alias>
-        <alias framenet="" pos="j" verbnet="">aged</alias>
       </aliases>
       <note>AGE-V NOTES: Member of Vncls other_cos-45.4. (from age.01-v)</note>
-      <note>AGED-J NOTES: Added by Julia based on SHARP. (from aged.01-j)</note>
       <note>AGING-N NOTES: Corresponds with age.01. Framed by anwen april 2011 (from aging.01-n)</note>
       <roles>
         <role descr="causer of aging, agent" f="pag" n="0">
@@ -17,22 +15,14 @@
         <role descr="entity getting old" f="ppt" n="1">
           <vnrole vncls="45.4" vntheta="patient"/>
         </role>
-        <role descr="attribute (how old)" f="ext" n="2"/>
+        <role descr="amount aged" f="ext" n="2"/>
       </roles>
       <example name="age-v: intransitive" src="" type="">
         <inflection aspect="perfect" form="participle" person="third" tense="past" voice="active"/>
         <text>`` Oil of Olay brought with it the baggage of [*] being used [*-1]basically by older women who [*T*-2] had already aged , '' says [*T*-3] David Williams , a consultant with New England Consulting Group .</text>
-        <arg f="" n="1">[*T*-2] (= who)</arg>
-        <arg f="slc" n="m">who -&gt; older women</arg>
+        <arg f="" n="1">[*T*-2]</arg>
         <arg f="tmp" n="m">already</arg>
         <rel f="">aged</rel>
-      </example>
-      <example name="aged-j: with Arg2" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="ns"/>
-        <text>In 1980 , the study says, prosecutors surveyed filed charges against 25 defendants for each 100,000 people-1 aged *trace*-1 18 years and older .</text>
-        <rel f="">aged</rel>
-        <arg f="" n="1">*trace*-1 (= people)</arg>
-        <arg f="" n="2">18 years and older</arg>
       </example>
       <example name="age-v: all args" src="internet" type="-">
         <inflection aspect="perfect" form="participle" person="third" tense="present" voice="active"/>
@@ -52,9 +42,37 @@
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>Cheesmaker Helena's careful aging of the cheddar allowed it to develop rich flavor.</text>
         <arg f="" n="0">Cheesemaker Helena's</arg>
-        <arg f="adj" n="m">careful</arg>
+        <arg f="mnr" n="m">careful</arg>
         <rel f="">aging</rel>
         <arg f="" n="1">of the cheddar</arg>
+      </example>
+    </roleset>
+    <roleset id="age.03" name="(determine to) be a certain age">
+      <aliases>
+        <alias framenet="" pos="v" verbnet="">age</alias>
+        <alias framenet="" pos="n" verbnet="">aging</alias>
+        <alias framenet="" pos="j" verbnet="">aged</alias>
+      </aliases>
+      <note>AGE-V, AGING-N NOTES: Added by Julia during MWE framing, as aged-j was included erroneously in age.01 post-unification.</note>
+      <note>AGED-J NOTES: Added by Julia based on SHARP. (from aged.01-j)</note>
+      <roles>
+        <role descr="entity assessing age" f="pag" n="0"/>
+        <role descr="entity being assessed for age" f="ppt" n="1"/>
+        <role descr="age" f="prd" n="2"/>
+      </roles>
+      <example name="age-v" src="" type="">
+        <text>He weighed 173 pounds dressed and I aged him at 2 1/2 but I am an amature at ageing teeth.</text>
+        <arg f="" n="0">I</arg>
+        <rel f="">aged</rel>
+        <arg f="" n="1">him</arg>
+        <arg f="" n="2">at 2 1/2</arg>
+      </example>
+      <example name="aged-j: with Arg2" src="" type="">
+        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="ns"/>
+        <text>In 1980 , the study says, prosecutors surveyed filed charges against 25 defendants for each 100,000 people-1 aged *trace*-1 18 years and older .</text>
+        <rel f="">aged</rel>
+        <arg f="" n="1">*trace*-1</arg>
+        <arg f="" n="2">18 years and older</arg>
       </example>
     </roleset>
   </predicate>
@@ -62,6 +80,7 @@
     <roleset id="age_out.02" name="become too old for">
       <aliases>
         <alias framenet="" pos="v" verbnet="">age_out</alias>
+        <alias framenet="" pos="n" verbnet="">aging_out</alias>
       </aliases>
       <note>Added by Julia for SMS02.</note>
       <roles>
@@ -78,4 +97,87 @@
       </example>
     </roleset>
   </predicate>
+  
+  <predicate lemma="of_age">
+    <roleset id="of_age.04" name="be at level of full maturity, or maturity sufficient for an activity">
+      <aliases>
+        <alias framenet="" pos="p" verbnet="">of_age</alias>
+      </aliases>
+      <mwe alias="of_age">
+        <map form="source">
+            (B / age-03
+                :arg1 (n1 / NARG1)
+                :arg2 (n2 / NARG2))
+        </map>
+        <map form="target">
+            (x / mature-02
+                :arg1 (n1 / NARG1)
+                :arg2-of (h / have-degree-91
+                    :arg1 (n1)
+                    :arg6 (n3 / NARG3)))
+        </map>
+        <token id="A" token="of" arg="" pos="IN" dep="prep"/>
+        <token id="B" token="age" arg="2" pos="NN" dep="pobj/A"/>
+      </mwe>
+      <roles>
+         <role descr="entity aging" f="PPT" n="1"/>
+         <role descr="level of maturity reached, age" f="VSP" n="2"/>
+         <role descr="action enabled by age level" f="GOL" n="3"/>
+      </roles>
+      <example name="of_age-p" src="" type="">
+        <inflection aspect="" form="" person="" tense="" voice=""/>
+        <text>the approximately 54 million children of age to attend primary or secondary level schools</text>
+        <arg f="" n="1">the approximately 54 million children</arg>
+        <rel f="">[of][age]</rel>
+        <arg f="" n="3">to attend primary or secondary level schools</arg>
+      </example>
+    </roleset>
+  </predicate>
+  
+  <predicate lemma="come_of_age">
+    <roleset id="come_of_age.05" name="arrive at level of full maturity, or maturity sufficient for an activity">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">come_of_age</alias>
+      </aliases>
+      <mwe alias="of_age">
+        <map form="source">
+            (A / come-04
+                :arg1 (n1 / NARG1)
+                :arg2 (a / age-03
+                    :arg1 (n1)
+                    :arg2 (n2 / NARG2))))
+        </map>
+        <map form="target">
+            (x / mature-01
+                :arg1 (n1 / NARG1)
+                :arg2-of (h / have-degree-91
+                    :arg1 (n1)
+                    :arg6 (n3 / NARG3)))
+        </map>
+        <token id="A" token="come" arg="" pos="VB" dep=""/>
+        <token id="B" token="of" arg="" pos="IN" dep="prep/A"/>
+        <token id="C" token="age" arg="2" pos="NN" dep="pobj/B"/>
+      </mwe>
+      <roles>
+         <role descr="entity aging" f="PPT" n="1"/>
+         <role descr="level of maturity reached, age" f="VSP" n="2"/>
+         <role descr="action enabled by age level" f="GOL" n="3"/>
+      </roles>
+      <example name="come_of_age-m" src="" type="">
+        <inflection aspect="" form="" person="" tense="" voice=""/>
+        <text>After years of sophisticated mimicry, Japanese design has come of age.</text>
+        <arg f="" n="1">Japanese design</arg>
+        <rel f="">[come][of][age]</rel>
+      </example>
+      <example name="come_of_age-m" src="" type="">
+        <inflection aspect="" form="" person="" tense="" voice=""/>
+        <text>For someone who came of age in the clean-shaven 1980s, a beard felt like generational treason.</text>
+        <arg f="" n="1">who</arg>
+        <rel f="">[came][of][age]</rel>
+        <arg f="tmp" n="m">in the clean-shaven 1980s</arg>
+      </example>
+    </roleset>
+  </predicate>
 </frameset>
+		
+
