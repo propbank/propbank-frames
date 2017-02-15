@@ -1,7 +1,7 @@
 <!DOCTYPE frameset SYSTEM "frameset.dtd">
 <frameset>
   <predicate lemma="blood">
-    <roleset id="blood.01" name="bleed">
+    <roleset id="blood.01" name="to bloody">
       <aliases>
         <alias framenet="" pos="v" verbnet="">blood</alias>
       </aliases>
@@ -10,29 +10,130 @@
         <role descr="agent" f="PAG" n="0"/>
         <role descr="theme, one bled" f="PPT" n="1"/>
       </roles>
-      <example name="passive, arg1 only" src="" type="">
-        <text>The night after [*] reading her letter about her surgeon uncle -- it musthave been late in September -- I had a vision of myself returned in raggeduniform from The Front , nearly dying , my head bandaged and blooded , andJessica bending over me , the power of her love bringing me back to life .</text>
+      <example name="blood-v: passive, arg1 only" src="" type="">
+        <text>The night after [*] reading her letter about her surgeon uncle -- it musthave been late in September -- I had a vision of myself returned in ragged uniform from The Front , nearly dying , my head bandaged and blooded , and Jessica bending over me , the power of her love bringing me back to life .</text>
         <rel f="">blooded</rel>
         <arg f="" n="1">my head</arg>
       </example>
     </roleset>
-    <roleset id="blood.02" name="possess/contain blood">
+  </predicate>
+    
+  <predicate lemma="blooded">
+    <roleset id="blooded.02" name="possess/contain blood, heritage sense">
       <aliases>
         <alias framenet="" pos="j" verbnet="">blooded</alias>
-        <alias framenet="" pos="v" verbnet="">blood</alias>
       </aliases>
       <note>BLOOD-V NOTES: Added by Julia based on adjectival usage in BOLT. No VNcls. (from blood.02-v)</note>
       <roles>
         <role descr="entity possessing blood" f="pag" n="1"/>
         <role descr="characteristic of the blood" f="prd" n="2"/>
       </roles>
-      <example name="" src="BOLT" type="">
+      <example name="blooded-j" src="BOLT" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>basically with all this fuss about Scottish Independence in the news I 'm wondering how this bears for people who are n't 100 % ' pure blooded Scot ' for 7 generations or something .</text>
+        <text>basically with all this fuss about Scottish Independence in the news I 'm wondering how this bears for people who are n't 100 % ' pure blooded Scot ' for 7 generations or something.</text>
         <arg f="ext" n="m">100 %</arg>
         <arg f="" n="2">pure</arg>
         <rel f="">blooded</rel>
         <arg f="" n="1">Scot</arg>
+      </example>
+    </roleset>
+  </predicate>
+  
+  <predicate lemma="bloody">
+    <roleset id="bloody.03" name="to stain with or as if with a blood">
+      <aliases>
+        <alias framenet="" pos="v" verbnet="">bloody</alias>
+      </aliases>
+      <note>BLOODY-V NOTES: Frames file for 'bloody' based on survey of sentences in the WSJ corpus. (from bloody.01-v predicate notes)</note>
+      <roles>
+        <role descr="causer" f="PAG" n="0">
+          <vnrole vncls="45.4" vntheta="Agent"/>
+        </role>
+        <role descr="entity bloodied" f="PPT" n="1">
+          <vnrole vncls="45.4" vntheta="Patient"/>
+        </role>
+      </roles>
+      <example name="bloody-v: passive" src="" type="">
+        <inflection aspect="perfect" form="participle" person="third" tense="present" voice="passive"/>
+        <text>`` [The reinsurance market]*-2 has been bloodied [*-2]by disasters '' in the U.S. as well as in Great Britain and Europe , says [0] [*T*-1] Thomas Rosencrants , director of research at Interstate\/Johnson Lane Inc. in Atlanta .</text>
+        <rel f="">bloodied</rel>
+        <arg f="" n="1">[*-2]</arg>
+        <arg f="" n="0">by disasters '' in the U.S. as well as in Great Britain and Europe</arg>
+      </example>
+    </roleset>
+    <roleset id="bloody.04" name="stained with blood">
+      <aliases>
+        <alias framenet="" pos="j" verbnet="">bloody</alias>
+      </aliases>
+      <note>BLOODY-J NOTES: Added by Julia.</note>
+      <roles>
+        <role descr="causer" f="PAG" n="0"/>
+        <role descr="entity covered in blood" f="PPT" n="1"/>
+      </roles>
+      <example name="bloody-j: passive" src="" type="">
+        <text>His hands were bloody from where he had pressed them upon his wound.</text>
+        <arg f="" n="1">His hands</arg>
+        <rel f="">bloody</rel>
+        <arg f="" n="0">from where he had pressed them upon his wound</arg>
+      </example>
+    </roleset>
+  </predicate>
+  
+  <predicate lemma="shed_blood">
+    <roleset id="shed_blood.04" name="killing, violence">
+      <aliases>
+        <alias framenet="" pos="n" verbnet="">bloodshed</alias>
+        <alias framenet="" pos="m" verbnet="">shed_blood</alias>
+      </aliases>
+      <mwe alias="shed_blood">
+        <map form="source">
+            (A / shed-03
+                :arg0 (n / NARG0)
+                :arg1 (B / blood
+                    :poss (n1 / NARG1)))
+        </map>
+        <map form="target">
+            (A / injure-01
+                :arg0 (n / NARG0)
+                :arg1 (n1 / NARG1)
+                :manner (g / grave)
+                :arg0-of (c / cause-01)
+                    :arg1-of (p / possible-01)
+                    :arg1 (die-01
+                        :arg1 (n1)))
+        </map>
+        <token id="A" token="shed" arg="" pos="VB*" dep=""/>
+        <token id="B" token="blood" arg="" pos="NN" dep="dobj/A"/>
+      </mwe>
+      <note>SHED_BLOOD-M NOTES: Added and merged by Julia during initial MWE framing</note>
+      <note>BLOODSHED-N NOTES: Added automatically by Julia. Related to shed.xml (from bloodshed.04-n)</note>
+      <roles>
+        <role descr="violent entity or event" f="pag" n="0"/>
+        <role descr="entity or group wounded" f="ppt" n="1"/>
+         <role descr="reason or cause of bloodshed" f="CAU" n="2"/>
+      </roles>
+      <example name="bloodshed-n" src="" type="">
+        <text>Nonetheless, it is the right hour to stop the bloodshed in Burma.</text>
+        <rel f="">bloodshed</rel>
+        <arg f="loc" n="m">Burma</arg>
+      </example>
+      <example name="shed_blood-m" src="" type="">
+        <text>Our sons shed blood for democracy overseas</text>
+        <arg f="" n="1">Our sons</arg>
+        <rel f="">[shed], [blood]</rel>
+        <arg f="" n="2">for democracy overseas</arg>
+      </example>
+      <example name="shed-blood-m" src="" type="">
+        <text>I would shed blood to keep this job</text>
+        <arg f="" n="1">I</arg>
+        <arg f="mod" n="m">would</arg>
+        <rel f="">[shed], [blood]</rel>
+        <arg f="" n="2">to keep this job</arg>
+      </example>
+      <example name="shed-blood-m" src="" type="">
+        <text> Next to the bloodshed of Vietnam, Iraq's is on electronic steroids. </text>
+        <rel f="">bloodshed</rel>
+        <arg f="" n="0">of Vietnam</arg>
       </example>
     </roleset>
   </predicate>

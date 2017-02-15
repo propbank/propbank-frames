@@ -1,9 +1,10 @@
 <!DOCTYPE frameset SYSTEM "frameset.dtd">
 <frameset>
   <predicate lemma="bark">
-    <roleset id="bark.01" name="like a dog">
+    <roleset id="bark.01" name="vocalize like a dog">
       <aliases>
         <alias framenet="" pos="v" verbnet="">bark</alias>
+        <alias framenet="" pos="n" verbnet="">barking</alias>
       </aliases>
       <note>BARK-V NOTES: Since when did John have a dog? (from bark.01-v)</note>
       <roles>
@@ -17,14 +18,14 @@
           <vnrole vncls="37.3" vntheta="Recipient"/>
         </role>
       </roles>
-      <example name="woof!" src="" type="">
+      <example name="bark-v: woof!" src="" type="">
         <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
         <text>John's dog barked all night.</text>
         <arg f="" n="0">John's dog</arg>
         <rel f="">barked</rel>
         <arg f="tmp" n="m">all night</arg>
       </example>
-      <example name="all args" src="" type="">
+      <example name="bark-v: all args" src="" type="">
         <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
         <text>Mary barked orders to John, which he dutifully ignored.</text>
         <arg f="" n="0">Mary</arg>
@@ -35,21 +36,50 @@
       </example>
     </roleset>
   </predicate>
+  
   <predicate lemma="bark_up_the_wrong_tree">
     <roleset id="bark_up_the_wrong_tree.02" name="follow the wrong lead">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">bark_up_the_wrong_tree</alias>
+        <alias framenet="" pos="m" verbnet="">bark_up_the_wrong_tree</alias>
       </aliases>
-      <note>BARK_UP_THE_WRONG_TREE-V NOTES: (from bark.02-v)</note>
+      <mwe alias="bark_up_the_wrong_tree">
+        <map form="source">
+            (A / bark-01
+                :arg0 (n / NARG0)
+                :direction (B / up
+                      :op1 (E / tree
+                         :arg2-of (D / wrong-04))))
+        </map>
+        <map form="target">
+            (A / pursue-01
+                :arg0 (n / NARG0)
+                :arg1 (E / goal
+                    :arg2-of (D / wrong-04)))
+        </map>
+        <token id="A" token="bark" arg="" pos="VB*" dep=""/>
+        <token id="B" token="up" arg="" pos="IN" dep="prep/A"/>
+        <token id="C" token="the" arg="" pos="DT" dep="det/E"/>
+        <token id="D" token="wrong" arg="" pos="JJ" dep="amod/E"/>
+        <token id="E" token="tree" arg="1" pos="NN" dep="pobj/B"/>
+      </mwe>
+      <note>BARK_UP_THE_WRONG_TREE-V NOTES: Added during initial MWE frame creation.</note>
       <roles>
-        <role descr="barker" f="PAG" n="0"/>
+        <role descr="barker, person following bad lead" f="PAG" n="0"/>
+        <role descr="incorrect proposition or assumption" f="PPT" n="1"/>
       </roles>
-      <example name="stupid idioms" src="" type="">
+      <example name="bark_up_the_wrong_tree-v: stupid idioms" src="" type="">
         <inflection aspect="progressive" form="participle" person="ns" tense="present" voice="active"/>
         <text>They are barking up the wrong tree, because it is basically their fault they can't attract new employees.</text>
         <arg f="" n="0">They</arg>
         <rel f="">[ barking] [ up the wrong tree]</rel>
         <arg f="cau" n="m">because it is basically their fault they can't attract new employees</arg>
+      </example>
+      <example name="bark_up_the_wrong_tree-v: with arg1" src="" type="">
+        <inflection aspect="progressive" form="participle" person="ns" tense="present" voice="active"/>
+        <text>You're barking up the wrong tree, by looking for good nutrition in a hot dog.</text>
+        <arg f="" n="0">You</arg>
+        <rel f="">[ barking][ up][the][wrong][tree]</rel>
+        <arg f="" n="1">by looking for good nutrition in a hot dog</arg>
       </example>
     </roleset>
   </predicate>
