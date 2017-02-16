@@ -103,24 +103,28 @@
   <predicate lemma="of_age">
     <roleset id="of_age.04" name="be at level of full maturity, or maturity sufficient for an activity">
       <aliases>
-        <alias framenet="" pos="p" verbnet="">of_age</alias>
+        <alias framenet="" pos="m" verbnet="">of_age</alias>
+        <mwe id="of_age">
+           <token slot="A" arg="" pos="IN" head="B" dep="case">of</token>
+           <token slot="B" arg="2" pos="NN" head="" dep="">age</token>
+        </mwe>
+
       </aliases>
-      <mwe alias="of_age">
-        <map form="source">
+      <mappings alias="of_age">
+        <source>
             (B / age-03
                 :arg1 (n1 / NARG1)
                 :arg2 (n2 / NARG2))
-        </map>
-        <map form="target">
+        </source>
+        <target>
             (x / mature-02
                 :arg1 (n1 / NARG1)
                 :arg2-of (h / have-degree-91
                     :arg1 (n1)
                     :arg6 (n3 / NARG3)))
-        </map>
-        <token id="A" token="of" arg="" pos="IN" dep="prep"/>
-        <token id="B" token="age" arg="2" pos="NN" dep="pobj/A"/>
-      </mwe>
+        </target>
+ 
+      </mappings>
       <roles>
          <role descr="entity aging" f="PPT" n="1"/>
          <role descr="level of maturity reached, age" f="VSP" n="2"/>
@@ -139,26 +143,30 @@
     <roleset id="come_of_age.05" name="arrive at level of full maturity, or maturity sufficient for an activity">
       <aliases>
         <alias framenet="" pos="m" verbnet="">come_of_age</alias>
+        <mwe id="come_of_age">
+		<token slot="A" arg="" pos="VB" head="" dep="">come</token>
+		<token slot="B" arg="" pos="IN" head="C" dep="case">of</token>
+		<token slot="C" arg="2" pos="NN" head="A" dep="nmod">age</token>
+        </mwe>
+            
       </aliases>
-      <mwe alias="of_age">
-        <map form="source">
+      <mappings alias="come_of_age">
+       <source>
             (A / come-04
                 :arg1 (n1 / NARG1)
                 :arg2 (a / age-03
                     :arg1 (n1)
                     :arg2 (n2 / NARG2))))
-        </map>
-        <map form="target">
+        </source>
+        <target>
             (x / mature-01
                 :arg1 (n1 / NARG1)
                 :arg2-of (h / have-degree-91
                     :arg1 (n1)
                     :arg6 (n3 / NARG3)))
-        </map>
-        <token id="A" token="come" arg="" pos="VB" dep=""/>
-        <token id="B" token="of" arg="" pos="IN" dep="prep/A"/>
-        <token id="C" token="age" arg="2" pos="NN" dep="pobj/B"/>
-      </mwe>
+        </target>
+        
+      </mappings>
       <roles>
          <role descr="entity aging" f="PPT" n="1"/>
          <role descr="level of maturity reached, age" f="VSP" n="2"/>

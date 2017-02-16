@@ -480,9 +480,14 @@
     <roleset id="come_to_blows.15" name="fight">
       <aliases>
         <alias framenet="" pos="m" verbnet="">come_to_blows</alias>
+        <mwe id="come_to_blows">
+           <token slot="A" pos='VB*' head='' dep=''>come</token>
+           <token slot="B" pos='IN' head="C" dep="case">to</token>
+           <token slot="C" pos='NNS' head="A" dep='nmod'>blows</token>
+        </mwe>
       </aliases>
-      <mwe alias="come_to_blows">
-        <map form="source">
+      <mappings alias="come_to_blows">
+        <source>
             (A / come-04
                 :arg2 (a / and
                     :op1 (C / blow-14
@@ -490,21 +495,18 @@
                         :arg1 (n1 / NARG1)
                         :topic (n2 / NARG2))
                     :op2 (C2 / blow-14
-                        :arg0 (n1)
-                        :arg1 (n)
-                        :topic (n2))))
-        </map>
-        <map form="target">
+                        :arg0 n1
+                        :arg1 n
+                        :topic n2)))
+        </source>
+        <target>
             (A / start-01
                :arg1 (C / fight-01
                    :arg0 (n / NARG0)
                    :arg1 (n1 / NARG1)
                    :arg2 (n2 / NARG2)))
-        </map>
-        <token id="A" token="come" arg="" pos="VB*" dep=""/>
-        <token id="B" token="to" arg="" pos="IN" dep="prep/A"/>
-        <token id="C" token="blows" arg="" pos="NNS" dep="pobj/B"/>
-      </mwe>
+        </target>
+      </mappings>
       
       <roles>
         <role descr="first fighter" f="pag" n="0">

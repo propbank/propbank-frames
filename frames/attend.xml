@@ -83,23 +83,25 @@
     <roleset id="draw_attention.03" name="act in a manner that causes others to pay attention">
       <aliases>
         <alias framenet="" pos="m" verbnet="">draw_attention</alias>
+        <mwe id="draw_attention">
+		<token slot="A" arg="2" pos="VB*" head="" dep="">draw</token>
+		<token slot="B" arg="" pos="NN" head="A" dep="dobj">attention</token>
+        </mwe>
       </aliases>
-      <mwe alias="draw_attention">
-        <map form="source">
+      <mappings alias="draw_attention">
+        <source>
             (A / draw-02
                 :arg0 (n / NARG0)
                 :arg1 (B / attend-02
                     :arg0 (n1 / NARG1)
                     :arg1 (n2 / NARG2)))
-        </map>
-        <map form="target">
+        </source>
+        <target>
             (A / highlight-01
                 :arg0 (n / NARG0)
                 :arg1 (n2 / NARG2))
-        </map>
-        <token id="A" token="draw" arg="2" pos="VB*" dep=""/>
-        <token id="B" token="attention" arg="" pos="NN" dep="dobj/A"/>
-      </mwe>
+        </target> 
+      </mappings>
       <roles>
         <role descr="attention-getter, entity or stimulus directing the attention of the crowd" f="PAG" n="0"/>
         <role descr="entity who’s attention is draw" f="PPT" n="1"/>

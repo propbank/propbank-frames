@@ -36,16 +36,32 @@
   and something like 47.2 means 47.2 is a levine class of this
   roleset.  The list of levine classes is space delimited
 -->
-<!ELEMENT roleset (aliases?, note*, roles, ( example | note )*)>
+<!ELEMENT roleset (aliases?, note*, mappings*, note*, roles, ( example | note )*)>
 <!ATTLIST roleset
   id   CDATA #REQUIRED
   name CDATA #IMPLIED>
-<!ELEMENT aliases (alias*)>
+<!ELEMENT aliases (alias*, mwe*)>
 <!ELEMENT alias (#PCDATA)>
 <!ATTLIST alias
 pos (v | n | j | l | m | p) #REQUIRED
 verbnet CDATA #IMPLIED
 framenet CDATA #IMPLIED>
+<!ELEMENT mwe (token*)>
+<!ATTLIST mwe id CDATA #REQUIRED>
+<!ELEMENT token (#PCDATA)>
+<!ATTLIST token
+slot (A | B | C | D | E | F | G | H | I | J | K | L | M) #REQUIRED
+head CDATA #IMPLIED
+dep CDATA #IMPLIED
+pos CDATA #IMPLIED
+arg CDATA #IMPLIED>
+
+
+<!ELEMENT mappings (source, target)>
+<!ATTLIST mappings alias CDATA #REQUIRED>
+<!ELEMENT source (#PCDATA)>
+<!ELEMENT target (#PCDATA)>
+
 <!ELEMENT roles   (note | role)*>
 <!ELEMENT role (vnrole | fnrole)* >
 <!--

@@ -143,25 +143,27 @@
     <roleset id="take_into_account.04" name="consider">
       <aliases>
         <alias framenet="" pos="m" verbnet="">take_into_account</alias>
+        <mwe id="take_into_account">
+           <token slot="A" arg="" pos="VB" head="" dep="">take</token>
+           <token slot="B" arg="" pos="IN" head="C" dep="case">into</token>
+           <token slot="C" arg="" pos="NN" head="A" dep="nmod">account</token>
+        </mwe>
       </aliases>
-      <mappings alias="take_into_account">
-        <map form="source">
+      <mappings alias='take_into_account'>
+        <source>
             (A / take-01
                 :arg0 (n / NARG0)
-                :arg1 (n1 / NARG1)
-                :arg3 (C / account
-                    :arg0 n
-                    :arg1 n1))
-        </map>
-        <map form="target">
+                :arg1 (n2 / NARG1)
+                :arg3 (X / thing :ARG1-of (C / accounting-03 :arg0 n)))
+        </source>
+        <target>
             (c / consider-02
                 :arg0 (n / NARG0)
                 :arg1 (n1 / NARG1))
-        </map>
-        <token id="A" token="take" arg="" pos="VB" dep=""/>
-        <token id="B" token="into" arg="" pos="IN" dep="prep/A"/>
-        <token id="C" token="account" arg="" pos="NN" dep="pobj/B"/>
+        </target>
+
       </mappings>
+
       <note>TAKE_INTO_ACCOUNT-M NOTES: Added by Julia in conjuction with Tim in early MWE framing.</note>
       <roles>
         <role descr="considerer" f="pag" n="0"/>

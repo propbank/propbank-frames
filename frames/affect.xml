@@ -149,25 +149,27 @@
         <alias framenet="" pos="l" verbnet="">take_effect</alias>
         <alias framenet="" pos="m" verbnet="">come_into_effect</alias>
         <alias framenet="" pos="m" verbnet="">go_into_effect</alias>
+        <mwe id="come_into_effect">
+		<token slot="A" arg="" pos="VB" head="" dep="">come</token>
+		<token slot="A" arg="" pos="VB" head="" dep="">go</token>
+		<token slot="B" arg="" pos="IN" head="C" dep="case">into</token>
+		<token slot="C" arg="" pos="NN" head="A" dep="nmod">effect</token>
+        </mwe>
       </aliases>
-      <mwe alias="come_into_effect">
-        <map form="source">
+      <mappings alias="come_into_effect">
+        <source>
           (A /come-04
             :arg1 (n1 / NARG1)
             :arg2 (C / effect-03 
                 :arg0 (n / NARG0)
                 :arg1 (n1)))
-        </map>
-        <map form="target">
+        </source>
+        <target>
           (a / activate-01
               :arg0 (n / NARG0)
               :arg1 (n1 / NARG1))
-        </map>
-        <token id="A" token="come" arg="" pos="VB" dep=""/>
-        <token id="A" token="go" arg="" pos="VB" dep=""/>
-        <token id="B" token="into" arg="" pos="IN" dep="prep/A"/>
-        <token id="C" token="effect" arg="" pos="NN" dep="pobj/B"/>
-      </mwe>
+        </target>
+      </mappings>
       <note>EFFECT-N, TAKE_EFFECT-L, GO_INTO_EFFECT-L, COME_INTO_EFFECT-L NOTES: The vast majority of 'effect-n' instances are going to go under affect.01. The instances here will be part of LVCs.</note>
       <roles>
         <role descr="cause" f="pag" n="0"/>
@@ -202,20 +204,23 @@
   <predicate lemma="in_effect">
     <roleset id="in_effect.06" name="in an active state, a state where a certain effect holds">
       <aliases>
-        <alias framenet="" pos="p" verbnet="">in_effect</alias>
+        <alias framenet="" pos="m" verbnet="">in_effect</alias>
+        <mwe id="in_effect">
+        <token slot="A" arg="" pos="IN" head="B" dep="case">in</token>
+        <token slot="B" arg="" pos="NN" head="" dep="">effect</token>
+
+        </mwe>
       </aliases>
-      <mwe alias="in_effect">
-        <map form="source">
+      <mappings alias="in_effect">
+        <source>
             (B / effect-03
                 :arg1 (n1 / NARG1))
-        </map>
-        <map form="target">
+        </source>
+        <target>
             (A / active-02
                 :arg0 (n1 / NARG1) )
-        </map>
-        <token id="A" token="in" arg="" pos="IN" dep=""/>
-        <token id="B" token="effect" arg="" pos="NN" dep="pobj/A"/>
-      </mwe>
+        </target>
+      </mappings>
       <roles>
         <role descr="cause" f="pag" n="0"/>
         <role descr="active thing" f="ppt" n="1"/>
