@@ -1100,17 +1100,8 @@
   <predicate lemma="take_place">
     <roleset id="take_place.36" name="occur">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">take_place</alias>
-        <alias framenet="" pos="n" verbnet="">taking_place</alias>
+        <alias framenet="" pos="l" verbnet="">take_place</alias>
       </aliases>
-      <mappings alias="take_place">
-        <map form="target">
-            (o / occur-01 
-                 :ARG1 (n / NARG1))
-        </map>
-        <token id="A" token="take" arg="" pos="VB" dep=""/>
-        <token id="B" token="place" arg="" pos="NN" dep="dobj/A"/>
-      </mappings>
       <note>TAKE_PLACE-V, TAKING_PLACE-N NOTES: Upgraded to an MWE format by Julia/Tim. Formerly annotated under take.14, with a fixed "place" arg2.</note>
       <roles>
         <role descr="thing occuring" f="ppt" n="1"/>
@@ -1133,7 +1124,7 @@
     <roleset id="take_with_a_grain_of_salt.37" name="doubt, attribute very little weight to a claim">
       <aliases>
         <alias framenet="" pos="m" verbnet="">take_with_a_grain_of_salt</alias>
-        <mwe alias="take_with_a_grain_of_salt">
+        <mwe id="take_with_a_grain_of_salt">
 		<token slot="A" arg="" pos="VB" head="" dep="">take</token>
 		<token slot="B" arg="" pos="IN" head='D' dep="case">with</token>
 		<token slot="C" arg="" pos="DT" head='D' dep="det">a</token>
@@ -1143,21 +1134,21 @@
         </mwe>
       </aliases>
       <mappings alias="take_with_a_grain_of_salt">
-        <map form="source">
+        <source>
             (A / take-01
                 :arg0 (n / NARG0)
                 :arg1 (n1 / NARG1)
                 :accompanier (F / salt 
                     :quant (v / volume-quantity :quant 1
                         :unit (D / grain))))
-        </map>
-        <map form="target">
+        </source>
+        <target>
             (A / consider-02 
                 :arg0 (n / NARG0)
                 :arg1 (n1 / NARG1)
                     :arg1-of (F / doubt-01 
                         :quant (D / NARG2)))
-        </map>
+        </target>
       </mappings>
       <note>TAKE_WITH_A_GRAIN_OF_SALT-M NOTES: Added by Tim and Julia, in early MWE framing days.</note>
       <roles>
