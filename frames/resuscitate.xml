@@ -1,4 +1,4 @@
-us<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<!DOCTYPE frameset SYSTEM "frameset.dtd">
 <frameset>
   <predicate lemma="resuscitate">
     <roleset id="resuscitate.01" name="bring back to life">
@@ -34,33 +34,38 @@ us<!DOCTYPE frameset SYSTEM "frameset.dtd">
       </example>
     </roleset>
   </predicate>
+
   <predicate lemma="mouth_to_mouth_resuscitate">
     <roleset id="mouth_to_mouth_resuscitate.02" name="emergency technique that involves breathing air into another person's lungs">
       <aliases>
         <alias framenet="" pos="m" verbnet="">mouth_to_mouth</alias>
-        <alias framenet="" pos="m" verbnet="">mouth-to-mouth</alias>
         <alias framenet="" pos="m" verbnet="">mouth_to_mouth_resuscitation</alias>
-        <alias framenet="" pos="m" verbnet="">mouth-to-mouth_resuscitation</alias>
-        <alias framenet="" pos="m" verbnet="">resuscitate_mouth_to_mouth</alias>
-        <alias framenet="" pos="l" verbnet="">give_mouth_to_mouth_resuscitation</alias>
-        <alias framenet="" pos="l" verbnet="">give_mouth-to-mouth_resuscitation</alias>
-        <alias framenet="" pos="l" verbnet="">give_mouth_to_mouth</alias>
-        <alias framenet="" pos="l" verbnet="">give_mouth-to-mouth</alias>
-        <alias framenet="" pos="l" verbnet="">do_mouth_to_mouth_resuscitation</alias>
-        <alias framenet="" pos="l" verbnet="">do_mouth-to-mouth_resuscitation</alias>
-        <alias framenet="" pos="l" verbnet="">do_mouth_to_mouth</alias>
-        <alias framenet="" pos="l" verbnet="">do_mouth-to-mouth</alias>
+        <alias framenet="" pos="m" verbnet="">mouth_to_mouth_resuscitate</alias>
+        <alias framenet="" pos="m" verbnet="">give_mouth_to_mouth_resuscitation</alias>
+        <alias framenet="" pos="m" verbnet="">do_mouth_to_mouth</alias>
+        <mwe id="give_mouth_to_mouth_resuscitation">
+		<token slot="A" arg="" pos="VB*" dep="">give</token>
+		<token slot="A" arg="" pos="VB*" dep="">do</token>
+                <token slot="A" arg="" pos="" dep=""></token>
+		<token slot="B" arg="" pos="NN" head="A" dep="dobj">mouth</token>
+		<token slot="B" arg="" pos="NN" head="E" dep="nmod">mouth</token>
+		<token slot="C" arg="" pos="IN" head="D" dep="case">to</token>
+		<token slot="D" arg="" pos="NN" head="B" dep="nmod">mouth</token>
+		<token slot="E" arg="" pos="NN" head="A" dep="dobj">resuscitation</token>
+		<token slot="E" arg="" pos="VB*" head="" dep="">resuscitate</token>				
+		<token slot="E" arg="" pos="" dep=""></token>
+        </mwe>
       </aliases>
-      <mwe alias="mouth_to_mouth_resuscitation">
-        <map form="source">
+      <mappings alias="give_mouth_to_mouth_resuscitation">
+        <source>
             (E / resuscitate-01
                 :arg0 (n / NARG0)
                 :arg1 (n1 / NARG1)
                 :manner (b2 / be-located-at-91
                     :arg1 (B / mouth :part-of (n))
                     :arg2 (D / mouth :part-of (n1))))
-        </map>
-        <map form="target">
+        </source>
+        <target>
             (E / revive-01
                 :arg0 (n / NARG0)
                 :arg1 (n1 / NARG1)
@@ -68,14 +73,9 @@ us<!DOCTYPE frameset SYSTEM "frameset.dtd">
                     :arg0 (n)
                     :arg1 (a / air)
                     :destination (n1)))
-        </map>
-        <token id="*A" token="give" arg="" pos="VB*" dep=""/>
-        <token id="*A" token="do" arg="" pos="VB*" dep=""/>
-        <token id="B" token="mouth" arg="" pos="NN" dep=""/>
-        <token id="C" token="to" arg="" pos="INS" dep="prep/B"/>
-        <token id="D" token="mouth" arg="" pos="NN" dep="pobj/C"/>
-        <token id="*E" token="resuscitation" arg="" pos="NN" dep="dobj/A"/>
-      </mwe>
+        </target>
+
+      </mappings>
       <note>MOUTH_TO_MOUTH_RESUSCITATE-M NOTES: Added by Julia in conjunction with Katie and Tim for Lorelei, during initial MWE framing. This roleset is a bit of an outlier because of the size of the phrase and the various light verb forms, including those in which 'resuscitate' is dropped. WordNet 3.0 includes a sense for 'mouth-to-mouth resuscitation'.</note>
       <roles>
         <role descr="CPR performer" f="pag" n="0"/>
@@ -108,6 +108,9 @@ us<!DOCTYPE frameset SYSTEM "frameset.dtd">
       </example>
     </roleset>
   </predicate>
+
+
+
   <predicate lemma="cardiopulmonary_resuscitation">
     <roleset id="cardiopulmonary_resuscitation.03" name="emergency procedure that involves breathing into another person's lungs, while performing chest compressions">
       <aliases>

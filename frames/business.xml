@@ -35,27 +35,33 @@
     <roleset id="mind_ones_business.02" name="avoid meddling in another's affairs">
       <aliases>
         <alias framenet="" pos="m" verbnet="">mind_own_business</alias>
+        <alias framenet="" pos="m" verbnet="">mind_ones_business</alias>
         <alias framenet="" pos="m" verbnet="">mind_business</alias>
+        <mwe id="mind_ones_business">
+           <token slot="A" arg="" pos="VB*" head="" dep="">mind</token>
+           <token slot="B" arg="0" pos="PRP$" head="D" dep="det">ones</token>
+           <token slot="B" arg="" pos="" head="" dep=""></token>
+           <token slot="C" arg="0" pos="JJ" head="D" dep="amod">own</token>
+           <token slot="C" arg="" pos="" head="" dep=""></token>
+           <token slot="D" arg="1" pos="NN" head="A" dep="dobj">business</token>
+           <token slot="D" arg="1" pos="NN" head="A" dep="dobj">beeswax</token>
+        </mwe>
       </aliases>
-      <mwe alias="mind_ones_business">
-        <map form="source">
+      <mappings alias="mind_ones_business">
+        <source>
             (A / mind-02
                 :arg0 (n / NARG0)
                 :arg1 (C / business 
                     :poss (n)
                     :mod (B / own)
                     :topic (n1 / NARG1)))
-        </map>
-        <map form="target">
+        </source>
+        <target>
             (A / meddle-01 :polarity -
                 :arg0 (n / NARG0)
                 :arg1 (n / NARG1))
-        </map>
-        <token id="A" token="mind" arg="" pos="VB*" dep=""/>
-        <token id="B*" token="own" arg="0" pos="JJ" dep="amod/D"/>
-        <token id="C" token="business" arg="1" pos="NN" dep="dobj/A"/>
-        <token id="C" token="beeswax" arg="1" pos="NN" dep="dobj/A"/>
-      </mwe>
+        </target>
+      </mappings>
       <roles>
         <role descr="person trying to not meddle" f="PPT" n="0"/>
         <role descr="ones actual business; thing done in order to ignore other situation" f="PPT" n="1"/>
