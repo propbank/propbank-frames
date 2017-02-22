@@ -234,4 +234,207 @@
       </example>
     </roleset>
   </predicate>
+
+  <predicate lemma="jump_on_bandwagon">
+    <roleset id="jump_on_bandwagon.09" name="join an activity or group because of its popularity">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">jump_on_bandwagon</alias>
+        <mwe id="jump_on_bandwagon">
+          <token slot="A" arg="2" pos="VB*" head="" dep="">jump</token>
+          <token slot="B" arg="" pos="IN" head="C" dep="case">on</token>
+          <token slot="C" arg="1" pos="NN" head="A" dep="nmod">bankwagon</token>
+          <token slot="C" arg="1" pos="NN" head="A" dep="nmod">wagon</token>
+        </mwe>
+      </aliases>
+      <mappings alias="jump_on_bandwagon">
+        <source>
+            (A / jump-03
+               :destination (C / bandwagon ))
+        </source>
+        <target>
+            (A / join-04
+               :arg1 (C / thing 
+                    :arg1-of (x / popular-02)))
+        </target>
+      </mappings>
+      <note>JUMP_ON_BANDWAGON-M NOTES: </note>
+      <roles>
+        <role descr="person jumping on the bandwagon" f="PAG" n="0"/>
+        <role descr="popular thing joined" f="PPT" n="1"/>
+        <role descr="action done which gets one on the bandwagon" f="MNR" n="2"/>
+      </roles>
+      <example name="jump_on_bandwagon-m: normal" src="" type="">
+        <text>I predicted that the new right would jump on the bandwagon of sexual harassment</text>
+        <arg f="" n="0">the new right</arg>
+        <arg f="mod" n="m">would</arg>
+        <rel f="">[jump][on][bandwagon]</rel>
+        <arg f="" n="1">of sexual harassment</arg>
+      </example>
+      <example name="jump_on_bandwagon-m: complex with metaphor" src="" type="">
+        <text>This was America's most trusted baby guru encouraging everyone to jump on the vegetarian bandwagon bound for good health.</text>
+        <arg f="" n="0">everyone</arg>
+        <rel f="">[jump][on][the][bandwagon]</rel>
+        <arg f="" n="1">vegetarian</arg>
+        <arg f="gol" n="m">bound for good health</arg>
+      </example>
+    </roleset>
+  </predicate>
+
+    <predicate lemma="jump_gun">
+    <roleset id="jump_gun.10" name="act before the proper time">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">jump_gun</alias>
+        <mwe id="jump_gun">
+           <token slot="A" arg="" pos="VB*" head="" dep="">jump</token>
+           <token slot="B" arg="2" pos="NN" head="A" dep="dobj">gun</token>
+        </mwe>
+      </aliases>
+      <mappings alias="jump_gun">
+        <source>
+            (A / jump-01
+                :time (x / before
+                        :op1 (x2 / fire-01
+                            :arg1 (B / gun))))
+        </source>
+        <target>
+            (A / start-01
+                :arg1 (x3 / act-02)
+                :time (x / before
+                     :op1 (B / time
+                         :arg1-of (x4 / appropriate-02))))
+        </target>
+      </mappings>
+      <note>JUMP_GUN-M NOTES: predicate added by Arrick (from jump.07-v)</note>
+      <roles>
+        <role descr="jumper, one acting before the right time" f="pag" n="0"/>
+        <role descr="action done before the signal" f="ppt" n="1"/>
+        <role descr="appropriate time that was acted before" f="ppt" n="2"/>
+      </roles>
+      <example name="jump_gun-m" src="" type="">
+        <text>Now all of these statements by the President and others are jumping the gun.</text>
+        <arg f="dis" n="m">Now</arg>
+        <arg f="" n="1">all of these statments by the President and others</arg>
+        <rel f="">[jumping][gun]</rel>
+      </example>
+      <example name="jump_gun-m" src="" type="">
+        <text>All right, so Jack had jumped the gun a little, buying this thing.</text>
+        <arg f="dis" n="m">All right</arg>
+        <arg f="dis" n="m">so</arg>
+        <arg f="" n="0">Jack</arg>
+        <rel f="">[jumped][gun]</rel>
+        <arg f="ext" n="m">a little</arg>
+        <arg f="" n="1">buying this thing</arg>
+      </example>
+    </roleset>
+  </predicate>
+
+  
+  <predicate lemma="jump_shark">
+    <roleset id="jump_shark.11" name="do an absurd act that signals the decline in quality or sanity of a system or show">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">jump_shark</alias>
+        <mwe id="jump_shark">
+           <token slot="A" arg="" pos="VB*" head='' dep="">jump</token>
+           <token slot="B" arg="" pos="DT" head='C' dep="det">the</token>
+           <token slot="C" arg="1" pos="NN" head='A' dep="dobj">shark</token>
+        </mwe>
+      </aliases>
+      <mappings alias="jump_shark">
+        <source>
+            (A / jump-01
+                :path (x / over
+                    :op1 (B / shark)))
+        </source>
+        <target>
+            (A / reveal-01
+                :arg1 (x2 / appropriate-02 :polarity -
+                     :arg1 (B / thing)))
+        </target>
+      </mappings>
+      <note>JUMP_SHARK-M NOTES: predicate added by Arrick (from jump.07-v)</note>
+      <roles>
+        <role descr="show or system doing the absurd act" f="pag" n="0"/>
+        <role descr="action revealing that arg0 has jumped the shark" f="ppt" n="1"/>
+      </roles>
+      
+      <example name="jump_shark-m" src="-" type="-">
+        <inflection aspect="perfect" form="participle" person="third" tense="present" voice="active"/>
+        <text>This TV show has jumped the shark so many times that I don't even notice it any more.</text>
+        <arg f="" n="0">This TV show</arg>
+        <rel f="">[jumped][the][shark]</rel>
+        <arg f="tmp" n="m">so many times that I don't even notice it any more</arg>
+      </example>      
+    </roleset>
+  </predicate>  
+  
+  <predicate lemma="jump_to_conclusion">
+    <roleset id="jump_to_conclusion.12" name="be too hasty in coming to conclusions">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">jump_to_conclusion</alias>
+        
+        <mwe id="jump_to_conclusion">
+          <token slot="A" arg="" pos="VB*" head="" dep="">jump</token>
+          <token slot="B" arg="" pos="IN" head="C" dep="case">to</token>
+          <token slot="C" arg="1" pos="NN*" head="A" dep="nmod">conclusion</token>
+       </mwe>
+      </aliases>
+      <mappings alias="jump_to_conclusions">
+        <source>
+            (A / jump-03
+                :destination (C / conclude-01))
+        </source>
+        <target>
+            (C / conclude-01
+                :manner (A / rush-01)
+        </target>
+      </mappings>
+      <note>JUMP_TO_CONCLUSIONS-M NOTES: separated out from jump.03 during MWE framing.</note>
+      <roles>
+        <role descr="hasty concluder" f="pag" n="0"/>
+        <role descr="decision made" f="ppt" n="1"/>
+        <role descr="question answered; about what subject matter" f="ppt" n="2"/>
+        <role descr="evidence" f="cau" n="3"/>
+      </roles>
+      <example name="jump_to_conclusions-m" src="" type="">
+        <text>And what we want *PRO* to do *T* is we-3 do n't want *PRO*-3 to just look at the meterial evidence that we have *T* and immediately make a -- um jumpt to a conclusion that this is a certain individual.</text>
+        <arg f="" n="0">*PRO*</arg>
+        <arg f="adv" n="m">just</arg>
+        <arg f="tmp" n="m">immediately</arg>
+        <arg f="dis" n="m">um</arg>
+        <rel f="">[jump][to][conclusion]</rel>
+      </example>      
+    </roleset>
+  </predicate>
+  
+  <predicate lemma="long_jump">
+    <roleset id="long_jump.13" name="sport in which one jumps as far as possible across a sand pit">
+      <aliases>
+        <alias framenet="" pos="n" verbnet="">long_jump</alias>
+        <alias framenet="" pos="v" verbnet="">longjump</alias>
+        <alias framenet="" pos="l" verbnet="">do_longjump</alias>
+        <alias framenet="" pos="l" verbnet="">do_long_jump</alias>
+      </aliases>
+      <note>LONG_JUMP-N NOTES: separated out from jump.03 during MWE framing.</note>
+      <roles>
+        <role descr="long-jumper" f="pag" n="0"/>
+        <role descr="measurement/score achieved" f="vsp" n="1"/>
+      </roles>
+      <example name="long_jump-n: both args" src="" type="">
+        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+        <text>Jesse Owens set a record with his long jump of 8.13m (26 feet, 8 inches).</text>
+        <arg f="" n="0">his</arg>
+        <arg f="mnr" n="m">long</arg>
+        <rel f="">jump</rel>
+        <arg f="" n="1">of 8.13m (26 feet, 8 inches)</arg>
+      </example>
+      <example name="do_long_jump-l" src="" type="">
+        <text>I ran the 100, the 4x100, and did the long jump.</text>
+        <arg f="" n="0">I</arg>
+        <arg f="lvb" n="m">did</arg>
+        <rel f="">[long][jump]</rel>
+      </example>   
+    </roleset>
+  </predicate>
+
+
 </frameset>

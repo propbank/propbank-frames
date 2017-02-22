@@ -199,4 +199,51 @@
       </example>
     </roleset>
   </predicate>
+
+  
+  <predicate lemma="fall_asleep">
+    <roleset id="fall_asleep.07" name="transition into sleep">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">fall_asleep</alias>
+        <alias framenet="" pos="m" verbnet="">go_to_sleep</alias>
+        <mwe id="go_to_sleep">
+           <token slot="A" arg="" pos="VB" head="" dep="">fall</token>
+           <token slot="A" arg="" pos="VB" head="" dep="">go</token>
+           <token slot="A" arg="" pos="VB" head="" dep="">drift</token>
+           <token slot="B" arg="" pos="RP" head="A" dep="part">off</token>
+           <token slot="B" arg="" pos="" head="" dep=""></token>
+           <token slot="C" arg="" pos="IN" head="D" dep="prep">to</token>
+           <token slot="C" arg="" pos="" head="" dep=""></token>
+           <token slot="D" arg="" pos="NN" head="A" dep="nmod">sleep</token>
+           <token slot="D" arg="" pos="JJ" head="A" dep="acomp">asleep</token>
+        </mwe>
+      </aliases>
+      <mappings alias="go_to_sleep">
+        <source>
+            (A / fall-07
+                :arg1 (C / asleep-01) )
+        </source>
+        <target>
+            (A / start-01 
+                :arg1 (C / sleep-01) )
+        </target>
+      </mappings>
+      <roles>
+        <role descr="sleeper" f="PAG" n="0"/>
+      </roles>
+      <example name="fall_asleep-m" src="" type="">
+        <text>So the State apparently thinks that your actions went well beyond mere negligence and became criminal conduct when you drank a few beers and then fell asleep at the wheel of your car.</text>
+        <arg f="" n="0">you</arg>
+        <arg f="tmp" n="m">then</arg>
+        <rel f="">[fell][asleep]</rel>
+        <arg f="loc" n="m">at the wheel of your car</arg>
+      </example>
+      <example name="go_to_sleep-m" src="" type="">
+        <text>[My son]-1 is 6 and has trouble *PRO*-1 going to sleep.</text>
+        <arg f="" n="0">*PRO*-1</arg>
+        <rel f="">[going][to][sleep]</rel>
+      </example>
+    </roleset>
+  </predicate>
+
 </frameset>
