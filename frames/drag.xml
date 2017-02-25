@@ -22,27 +22,34 @@
           <vnrole vncls="35.2" vntheta="Location"/>
         </role>
       </roles>
-      <example name="typical usage" src="typical usage" type="typical usage">
+      <example name="drag-v: typical usage" src="typical usage" type="typical usage">
         <text>But, he observes, while makers suffer losses when program trading drags the market down, they also make money when program trading pushes the prices higher.</text>
         <arg f="" n="0">program trading</arg>
         <rel f="">drags</rel>
         <arg f="" n="1">the market</arg>
         <arg f="" n="2">down</arg>
       </example>
-      <example name="DIR for source and direction" src="web" type="">
+      <example name="drag-n: DIR for source and direction" src="web" type="">
         <text>A drag of one the OBNOXIANS by mouse from one corner to the other will allow you to win the game.</text>
         <rel f="">drag</rel>
         <arg f="" n="1">of one of the OBNOXIANS</arg>
         <arg f="dir" n="m">from one corner</arg>
         <arg f="" n="2">to the other</arg>
       </example>
-      <example name="Arg 1 in &quot;of&quot; PP" src="web" type="">
+      <example name="drag-n: Arg 1 in 'of' PP" src="web" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>Note that the job of the engine is just to overcome the drag of the airplane, not to lift the airplane.</text>
         <rel f="">drag</rel>
         <arg f="" n="1">of the airplane</arg>
       </example>
-      <example name="With arg0...yuck, sorry, arg0s are hard to find in this context..." src="web" type="">
+      <example name="drag-n: arg 0, 1" src="internet" type="">
+        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+        <text>...the propeller could be fixed in a vertical position to reduce its drag on the water.</text>
+        <arg f="" n="0">its</arg>
+        <rel f="">drag</rel>
+        <arg f="" n="1">on the water</arg>
+      </example>
+      <example name="dragging-n: With arg0...yuck, sorry, arg0s are hard to find in this context..." src="web" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>If you have been giving her wormer it could be that her dragging of her butt across the floor could be from the worms coming out.</text>
         <arg f="" n="0">her</arg>
@@ -50,15 +57,9 @@
         <arg f="" n="1">of her butt</arg>
         <arg f="dir" n="m">across the floor</arg>
       </example>
-      <example name="arg 0, 1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>...the propeller could be fixed in a vertical position to reduce its drag on the water.</text>
-        <arg f="" n="0">its</arg>
-        <rel f="">drag</rel>
-        <arg f="" n="1">on the water</arg>
-      </example>
     </roleset>
   </predicate>
+  
   <predicate lemma="drag_on">
     <roleset id="drag_on.02" name="drag continuously over a span of time">
       <aliases>
@@ -70,13 +71,51 @@
         <role descr="thing dragged" f="PPT" n="1"/>
         <role descr="direction or path" f="dir" n="2"/>
       </roles>
-      <example name="Metaphorical" src="Metaphorical" type="Metaphorical">
+      <example name="drag_on-v: Metaphorical" src="" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>If it drags on again without solution...</text>
         <arg f="" n="1">it</arg>
         <rel f="">[drag][on]</rel>
         <arg f="tmp" n="m">again</arg>
         <arg f="mnr" n="m">without solution</arg>
+      </example>
+    </roleset>
+  </predicate>
+  
+  <predicate lemma="drag_feet">
+    <roleset id="drag_feet.03" name="procrastinate, be very slow in doing">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">drag_feet</alias>
+        <mwe id="drag_feet">
+          <token slot="A" arg="" pos="VB" head="" dep="">drag</token>
+          <token slot="B" arg="" pos="NNS" head="A" dep="dobj">feet</token>
+          <token slot="B" arg="" pos="NN" head="A" dep="dobj">foot</token>
+        </mwe>
+      </aliases>
+      <mappings alias="drag_feet">
+        <source>
+            (A / drag-01
+                :arg0 (n / NARG0)
+                :arg1 (B / feet
+                    :part-of (n))
+                :topic (n1 / NARG1))
+        </source>
+        <target>
+            (A / procrastinate-01
+                :arg0 (n / NARG0)
+                :arg1 (n1 / NARG1))
+        </target>
+      </mappings>
+      <note>DRAG_FEET-M NOTES: Added by Tim/Julia during initial MWE framing.</note>
+      <roles>
+        <role descr="procrastinator" f="pag" n="0"/>
+        <role descr="task/event put off" f="ppt" n="1"/>
+      </roles>
+      <example name="drag_feet-m" src="" type="">
+        <text>Jonathan was assigned summer reading for school, and was dragging his feet about reading the book.</text>
+        <arg f="" n="0">Jonathan</arg>
+        <rel f="">[dragging][feet]</rel>
+        <arg f="" n="1">about reading the book</arg>
       </example>
     </roleset>
   </predicate>

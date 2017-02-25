@@ -14,12 +14,135 @@
           <vnrole vncls="30.2" vntheta="Stimulus"/>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
+      <example name="eye-v: transitive" src="" type="">
         <inflection aspect="progressive" form="participle" person="ns" tense="present" voice="active"/>
         <text>Colleges , she says [0] [*T*-1], are eyeing registration through 900 service .</text>
         <arg f="" n="0">Colleges</arg>
         <rel f="">eyeing</rel>
         <arg f="" n="1">registration through 900 service</arg>
+      </example>
+    </roleset>
+  </predicate>
+  
+  <predicate lemma="keep_eye_out">      
+    <roleset id="keep_eye_out.02" name="be alert for a yet-unseen thing">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">keep_eye_out</alias>
+        <mwe id="keep_eye_out">
+          <token slot="A" arg="" pos="VB*" head="" dep="">keep</token>
+          <token slot="B" arg="" pos="NN" head="A" dep="dobj">eye</token>
+          <token slot="C" arg="" pos="RB" head="A" dep="ccomp">out</token>
+          <token slot="C" arg="" pos="JJ" head="A" dep="ccomp">open</token>
+          <token slot="C" arg="" pos="JJ" head="A" dep="ccomp">peeled</token>
+          <token slot="C" arg="" pos="VBN" head="A" dep="ccomp">peeled</token>
+        </mwe>
+      </aliases>
+      <mappings alias="keep_eye_out">
+        <source>
+            (A / keep-02
+                :arg0 (n / NARG0)
+                :arg1 (B / eye-01
+                     :part-of (n)
+                     :direction (C / out)))
+        </source>
+        <target>
+            (A / keep-02
+                :arg0 (n / NARG0)
+                :arg1 (w / watch_out-02
+                    :arg0 (n)
+                    :arg1 (n1 / NARG1))
+        </target>
+      </mappings>
+      <roles>
+        <role descr="watcher out" f="PAG" n="0"/>
+        <role descr="thing watched out for" f="PPT" n="1"/>
+      </roles>
+      <example name="keep_eye_out-m: transitive" src="" type="">
+        <text>Keep an eye out for snakes this summer</text>
+        <rel f="">[Keep][eye][out]</rel>
+        <arg f="" n="1">for snakes</arg>
+        <arg f="tmp" n="m">this summer</arg>
+      </example>
+    </roleset>
+  </predicate>
+  
+  <predicate lemma="open_eyes">      
+    <roleset id="open_eyes.03" name="cause to know">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">open_eyes</alias>
+        <mwe id="open_eyes">
+           <token slot="A" arg="" pos="VB*" head="" dep="">open</token>
+           <token slot="B" arg="1" pos="NNS" head="A" dep="dobj">eyes</token>
+        </mwe>
+      </aliases>
+      <mappings alias="open_eyes">
+        <source>
+            (A / open-01
+                :arg0 (n / NARG0)
+                :arg1 (B / eye
+                    :part-of (n1 / NARG1)))
+        </source>
+        <target>
+            (A / cause-01
+                :arg0 (n / NARG0)
+                :arg1 (B / know-01
+                    :arg0 (n1 / NARG1)
+                    :arg1 (n2 / NARG2)))
+        </target>
+      </mappings>
+      <note>OPEN_EYES-M NOTES: Added by Tim/Julia during initial MWE framing.</note>
+      <roles>
+       <role descr="informer; causer of understanding" f="PAG" n="0"/>
+        <role descr="informed; person whose eyes are now open" f="GOL" n="1"/>
+        <role descr="information; revelation" f="PPT" n="2"/>
+      </roles>
+      <example name="open_eyes-m: transitive" src="" type="">
+        <inflection aspect="" form="" person="ns" tense="present" voice="active"/>
+        <text>And the experience opened my eyes to the magic of music.</text>
+        <arg f="" n="0">the experience</arg>
+        <rel f="">[opened][eyes]</rel>
+        <arg f="" n="1">my</arg>
+        <arg f="" n="2">to the magic of music</arg>
+      </example>
+    </roleset>
+  </predicate>
+  
+  <predicate lemma="eye_on_ball">      
+    <roleset id="eye_on_ball.04" name="be ready and attentive; keeping track of an issue">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">eye_on_ball</alias>
+        <alias framenet="" pos="m" verbnet="">have_eyes_on_ball</alias>
+        <mwe id="eye_on_ball">
+           <token slot="A" arg="" pos="NN*" head="" dep="">eye</token>
+           <token slot="B" arg="" pos="IN" head="C" dep="case">on</token>
+           <token slot="C" arg="" pos="NN" head="A" dep="nmod">ball</token>
+        </mwe>
+      </aliases>
+      <mappings alias="eye_on_ball">
+        <source>
+            (A / eye-01
+                :arg0 (n / NARG0)
+                :arg1 (C / ball
+                    :mod (n1 / NARG1)))
+        </source>
+        <target>
+            (A / attend-01
+                :arg0 (n / NARG0)
+                :arg1 (n1 / NARG1))
+        </target>
+      </mappings>
+      <roles>
+        <role descr="attentive entity" f="PAG" n="0"/>
+        <role descr="issue arg0 is attentive to" f="VSP" n="1"/>
+      </roles>
+      <example name="have_eye_on_ball-m: LVC tagging" src="" type="">
+        <text>Next, how could I forget...our wonderful Alderman Tunney...who-1 *-1 constantly has his eye on the ball regarding how big the signs will be in Wrigley Field while his constituents get robbed and beaten outside of their homes.</text>
+        <arg f="" n="0">*-1</arg>
+        <arg f="tmp" n="m">constantly</arg>
+        <arg f="lvb" n="m">has</arg>
+        <rel f="">[eye][on][ball]</rel>
+        <arg f="" n="1">regarding how big the signs will be in Wrigley Field </arg>
+        <arg f="tmp" n="m">while his constituents get robbed and beaten outside of their homes</arg>
       </example>
     </roleset>
   </predicate>
