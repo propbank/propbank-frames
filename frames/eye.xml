@@ -28,9 +28,13 @@
     <roleset id="keep_eye_out.02" name="be alert for a yet-unseen thing">
       <aliases>
         <alias framenet="" pos="m" verbnet="">keep_eye_out</alias>
+        <alias framenet="" pos="m" verbnet="">keep_eye_open</alias>
+        <alias framenet="" pos="m" verbnet="">keep_eye_on</alias>
+        <alias framenet="" pos="m" verbnet="">keep_eyes_peeled</alias>
         <mwe id="keep_eye_out">
           <token slot="A" arg="" pos="VB*" head="" dep="">keep</token>
           <token slot="B" arg="" pos="NN" head="A" dep="dobj">eye</token>
+          <token slot="B" arg="" pos="NNS" head="A" dep="dobj">eyes</token>
           <token slot="C" arg="" pos="RB" head="A" dep="ccomp">out</token>
           <token slot="C" arg="" pos="JJ" head="A" dep="ccomp">open</token>
           <token slot="C" arg="" pos="JJ" head="A" dep="ccomp">peeled</token>
@@ -53,6 +57,7 @@
                     :arg1 (n1 / NARG1))
         </target>
       </mappings>
+      <note>KEEP_EYE_OUT-M NOTES: Added by Julia/Tim during intial MWE framing.</note>
       <roles>
         <role descr="watcher out" f="PAG" n="0"/>
         <role descr="thing watched out for" f="PPT" n="1"/>
@@ -113,16 +118,18 @@
         <alias framenet="" pos="m" verbnet="">eye_on_ball</alias>
         <alias framenet="" pos="m" verbnet="">have_eyes_on_ball</alias>
         <mwe id="eye_on_ball">
-           <token slot="A" arg="" pos="NN*" head="" dep="">eye</token>
-           <token slot="B" arg="" pos="IN" head="C" dep="case">on</token>
-           <token slot="C" arg="" pos="NN" head="A" dep="nmod">ball</token>
+           <token slot="A" arg="" pos="NN*" head="" dep="">keep</token>
+           <token slot="A" arg="" pos="" head="" dep=""></token>
+           <token slot="B" arg="" pos="NN*" head="" dep="">eye</token>
+           <token slot="C" arg="" pos="IN" head="C" dep="case">on</token>
+           <token slot="D" arg="" pos="NN" head="A" dep="nmod">ball</token>
         </mwe>
       </aliases>
       <mappings alias="eye_on_ball">
         <source>
-            (A / eye-01
+            (B / eye-01
                 :arg0 (n / NARG0)
-                :arg1 (C / ball
+                :arg1 (D / ball
                     :mod (n1 / NARG1)))
         </source>
         <target>
@@ -131,16 +138,16 @@
                 :arg1 (n1 / NARG1))
         </target>
       </mappings>
+      <note>KEEP_EYE_ON_BALL-M NOTES: Added by Julia/Tim during inital MWE framing.</note>
       <roles>
         <role descr="attentive entity" f="PAG" n="0"/>
         <role descr="issue arg0 is attentive to" f="VSP" n="1"/>
       </roles>
-      <example name="have_eye_on_ball-m: LVC tagging" src="" type="">
+      <example name="have_eye_on_ball-m" src="" type="">
         <text>Next, how could I forget...our wonderful Alderman Tunney...who-1 *-1 constantly has his eye on the ball regarding how big the signs will be in Wrigley Field while his constituents get robbed and beaten outside of their homes.</text>
         <arg f="" n="0">*-1</arg>
         <arg f="tmp" n="m">constantly</arg>
-        <arg f="lvb" n="m">has</arg>
-        <rel f="">[eye][on][ball]</rel>
+        <rel f="">[has][eye][on][ball]</rel>
         <arg f="" n="1">regarding how big the signs will be in Wrigley Field </arg>
         <arg f="tmp" n="m">while his constituents get robbed and beaten outside of their homes</arg>
       </example>

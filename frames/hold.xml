@@ -6,8 +6,6 @@
         <alias framenet="" pos="v" verbnet="15.1 49.2 15.2 100.1 15.3">hold</alias>
         <alias framenet="" pos="n" verbnet="">hold</alias>
         <alias framenet="" pos="n" verbnet="">holding</alias>
-        <alias framenet="" pos="l" verbnet="">get_hold</alias>
-        <alias framenet="" pos="l" verbnet="">get_ahold</alias>
       </aliases>
       <note>HOLD-V NOTES: hold against: (two meanings) (from hold.01-v)</note>
       <note>HOLDING-N NOTES: (from holding.01-n)</note>
@@ -416,6 +414,46 @@
   </predicate>
 
   <predicate lemma="get_hold">
+    <roleset id="get_hold.17" name="achieve communication contact">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">get_hold</alias>
+        <alias framenet="" pos="m" verbnet="">get_ahold</alias>
+        <mwe id="get_ahold">
+        <token slot="A" arg="" pos="VB" head="" dep="">get</token>
+        <token slot="B" arg="" pos="NN" head="A" dep="dobj">hold</token>
+        <token slot="B" arg="" pos="JJ" head="A" dep="ccomp">ahold</token>
+        </mwe>
+      </aliases>
+      <mappings alias="get_ahold">
+        <source>
+            (A / get-01
+                :arg0 (n / NARG0)
+                :arg1 (B / hold-01
+                    :arg0 n
+                    :arg1 (n1 / NARG1)))
+        </source>
+        <target>
+            (A / achieve-01
+                :arg0 (n / NARG0)
+                :arg1 (B / contact-01
+                    :arg0 n
+                    :arg1 (n1 / NARG1)))
+        </target>
+      </mappings>
+      <note>GET_HOLD-M NOTES: Added by Julia during initial MWE framing.</note>
+      <roles>
+        <role descr="entity making contact" f="pag" n="0"/>
+        <role descr="entity contacted" f="ppt" n="1"/>
+      </roles>
+      <example name="get_hold-m" src="" type="">
+        <text>She finally got a hold of an administrator and found out that he passed away and no one had called her.</text>
+        <arg f="" n="0">She</arg>
+        <arg f="tmp" n="m">finally</arg>
+        <rel f="">[got][hold]</rel>
+        <arg f="" n="1">of an administrator</arg>
+      </example>
+    </roleset>
+    
     <roleset id="get_hold.18" name="achieve grasping, acquisition">
       <aliases>
         <alias framenet="" pos="m" verbnet="">get_hold</alias>
@@ -429,7 +467,7 @@
         <token slot="C" arg="" pos="JJ" head="A" dep="ccomp">ahold</token>
         </mwe>
       </aliases>
-      <mappings alias="get_a_hold">
+      <mappings alias="get_hold">
         <source>
             (A / get-01
                 :arg0 (n / NARG0)
@@ -481,49 +519,7 @@
         <arg f="adv" n="m">(and on and on ad nauseum-- you get the point)</arg>
       </example>
     </roleset>
-
-    <roleset id="get_hold.17" name="achieve communication contact">
-      <aliases>
-        <alias framenet="" pos="m" verbnet="">get_hold</alias>
-        <alias framenet="" pos="m" verbnet="">get_a_hold</alias>
-        <alias framenet="" pos="m" verbnet="">get_ahold</alias>
-        <mwe id="get_ahold">
-        <token slot="A" arg="" pos="VB" head="" dep="">get</token>
-        <token slot="B" arg="" pos="DT" head="C" dep="det">a</token>
-        <token slot="B" arg="" pos="" head="" dep=""></token>
-        <token slot="C" arg="" pos="NN" head="A" dep="dobj">hold</token>
-        <token slot="C" arg="" pos="JJ" head="A" dep="ccomp">ahold</token>
-        </mwe>
-      </aliases>
-      <mappings alias="get_ahold">
-        <source>
-            (A / get-01
-                :arg0 (n / NARG0)
-                :arg1 (C / hold-01
-                    :arg0 n
-                    :arg1 (n1 / NARG1)))
-        </source>
-        <target>
-            (A / achieve-01
-                :arg0 (n / NARG0)
-                :arg1 (C / contact-01
-                    :arg0 n
-                    :arg1 (n1 / NARG1)))
-        </target>
-      </mappings>
-      <note>GET_HOLD-M NOTES: Added by Julia during initial MWE framing.</note>
-      <roles>
-        <role descr="entity making contact" f="pag" n="0"/>
-        <role descr="entity contacted" f="ppt" n="1"/>
-      </roles>
-      <example name="get_hold-m" src="" type="">
-        <text>She finally got a hold of an administrator and found out that he passed away and no one had called her.</text>
-        <arg f="" n="0">She</arg>
-        <arg f="tmp" n="m">finally</arg>
-        <rel f="">[got][a][hold]</rel>
-        <arg f="" n="1">of an administrator</arg>
-      </example>
-    </roleset>
+    
   </predicate>
 
   <predicate lemma="take_hold">
