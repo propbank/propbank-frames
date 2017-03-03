@@ -143,6 +143,12 @@
     <roleset id="step_aside.05" name="resign">
       <aliases>
         <alias framenet="" pos="v" verbnet="">step_aside</alias>
+        <alias framenet="" pos="m" verbnet="">step_aside</alias>
+        <mwe id="step_aside">
+          <token slot="A" arg="" pos="VB*" head="" dep="">step</token>
+          <token slot="B" arg="" pos="JJ" head="A" dep="acomp">aside</token>
+        </mwe>
+
       </aliases>
       <note>STEP_ASIDE-V NOTES: No Vncls. Added by Julia based on WSJ. (from step.05-v)</note>
       <roles>
@@ -158,4 +164,76 @@
       </example>
     </roleset>
   </predicate>
+
+
+  <predicate lemma="in_step">
+    <roleset id="in_step.06" name="be in sync with">
+      <aliases>
+        <alias framenet="" pos="x" verbnet="">in_step</alias>
+      </aliases>
+      <roles>
+         <role descr="cause, agent" f="PAG" n="0"/>
+         <role descr="first synchronized entity" f="PPT" n="1"/>
+         <role descr="in synch with" f="COM" n="2"/>
+      </roles>
+      <example name="args 1 and 2 " src="" type="">
+        <text> God-1 wanted to *-1 put me in step with the people of Malawi.</text>
+        <arg f="" n="1">Me</arg>
+        <rel f="">in_step</rel>
+        <arg f="" n="2">with the people of Malawi</arg>
+      </example>
+      <example name="keep up with" src="" type="">
+        <text> Gasoline prices-1 rose in step with oil prices. </text>
+        <arg f="" n="1">Gasoline prices</arg>
+        <rel f="">[in],[step]</rel>
+        <arg f="" n="2">with oil prices</arg>
+      </example>
+    </roleset>
+  </predicate>
+  <predicate lemma="step_back">
+    <roleset id="step_back.07" name="pause an activity, perhaps to look at the big picture">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">take_step_back</alias>
+        <alias framenet="" pos="v" verbnet="">step_back</alias>
+        <mwe id="take_step_back">
+          <token slot="A" arg="" pos="VB*" head="" dep="">take</token>
+          <token slot="B" arg="" pos="NN" head="A" dep="dobj">step</token> 
+          <token slot="C" arg="" pos="RB" head="A" dep="advmod">back</token>
+          <token slot="C" arg="" pos="RP" head="A" dep="compound:prt">back</token>
+          <token slot="C" arg="" pos="JJ" head="A" dep="acomp">back</token>
+        </mwe>
+
+      </aliases>
+      <mappings alias="take_step_back">
+        <source>
+            (B / step-01
+               :arg1 (n / NARG0)
+               :direction (C / back)
+               :arg3 (n2 / NARG1)) 
+        </source>
+        <target>
+            (B / pause-01
+               :arg0 (n / NARG0)
+               :arg1 (n2 / NARG1))
+        </target>
+      </mappings>
+      <roles>
+         <role descr="viewer" f="PAG" n="0"/>
+         <role descr="thing stepped back from; activity one is halting" f="PPT" n="1"/>
+         <role descr="new activity, bigger picture viewed" f="GOL" n="2"/>
+      </roles>
+      <example name="args 1 and 2 " src="" type="">
+        <text>It's amazing to take a step back and actually see the impact I can make.</text>
+        <rel f="">[take][step][back]</rel>
+      </example>
+      <example name="keep up with" src="" type="">
+        <text>  If we take a step back from EPL-related tourism, to examine tourism itself, we see that the tourism industry as a whole works on a model that downplays the monetary exchange that sits at its heart. </text>
+        <arg f="" n="0">we</arg>
+        <rel f="">[take][step][back]</rel>
+        <arg f="" n="1">from EPL-related tourism</arg>
+        <arg f="" n="2">to examine tourism itself</arg>
+      </example>
+    </roleset>
+  </predicate>
+
 </frameset>

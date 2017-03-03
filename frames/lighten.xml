@@ -104,7 +104,7 @@
     </roleset>
   </predicate>
   <predicate lemma="light">
-    <roleset id="light.04" name="to set on fire or make lighter">
+    <roleset id="light.04" name="to set on fire">
       <aliases>
         <alias framenet="" pos="v" verbnet="">light</alias>
       </aliases>
@@ -220,4 +220,98 @@
       </example>
     </roleset>
   </predicate>
+
+  <predicate lemma="shed_light">
+    <roleset id="shed_light.10" name="inform, provide information regarding">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">shed_light</alias>
+        <alias framenet="" pos="m" verbnet="">cast_light</alias>
+        <mwe id="shed_light">
+          <token slot="A" arg="" pos="VB*" head="" dep="">shed</token>
+          <token slot="A" arg="" pos="VB*" head="" dep="">cast</token> 
+          <token slot="B" arg="" pos="NN*" head="A" dep="dobj">light</token>
+        </mwe>
+      </aliases>
+
+      <mappings alias="shed_light">
+        <source>
+            (A / shed-03
+               :arg1 (B / light))
+        </source>
+        <target>
+            (A / provide-01
+               :arg1 (B / information))
+        </target>
+      </mappings>
+
+      <roles>
+         <role descr="causer of knowledge, source of information" f="PAG" n="0"/>
+         <role descr="thing studied, domain of research" f="PPT" n="1"/>
+      </roles>
+
+      <example name="shed_light_on-m: typical usage" src="" type="">
+        <text>Other historians and social scientists who shed light on children's literature</text>
+        <arg f="" n="0">who</arg>
+        <rel f="">[shed][light]</rel>
+        <arg f="" n="1">on children's literature</arg>
+      </example>
+      <example name="shed_light_on-m: with a non-human arg0" src="" type="">
+        <text> Data still to come may shed light on how all biology came to be</text>
+        <arg f="" n="0">Data still to come</arg>
+        <arg f="mod" n="m">may</arg>
+        <rel f="">[shed][light]</rel>
+        <arg f="" n="1">on how all biology came to be</arg>
+      </example>
+      <example name="shed_light_on-m: with inner some" src="" type="">
+        <text>Perhaps [the following figures]-1 can help *-1 shed some light on this matter.</text>
+        <arg f="" n="0">*-1</arg>
+        <rel f="">[shed][light]</rel>
+        <arg f="" n="1">on this matter</arg>
+      </example>
+    </roleset>
+  </predicate>
+  
+  <predicate lemma="make_light">
+    <roleset id="make_light.11" name="minimize, not handle with appropriate seriousness">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">make_light</alias>
+
+        <mwe id="make_light">
+          <token slot="A" arg="" pos="VB*" head="" dep="">make</token>
+          <token slot="B" arg="" pos="NN" head="A" dep="dobj">light</token> 
+          <token slot="B" arg="" pos="JJ" head="A" dep="acomp">light</token> 
+        </mwe>
+      </aliases>
+      <mappings alias="make_light">
+        <source>
+            (A / make-02
+                :arg1 (n2 / NARG2)
+                :arg2 (l / light-05
+                    :arg1 n2))
+        </source>
+        <target>
+            (A / portray-01 
+                :arg0 (n / NARG0)
+                :arg1 (n2 / NARG1)
+                :arg2 (C / important :polarity - 
+                       :domain n2))
+        </target>
+      </mappings>
+      <note>MAKE_LIGHT_OF-M NOTES: Added by Julia.</note>
+      <roles>
+        <role descr="entity making light" f="pag" n="0"/>
+        <role descr="of what" f="ppt" n="1"/>
+      </roles>
+      <example name="make_light_of-m" src="" type="">
+        <text>Again he made light of his wound</text>
+        <arg f="tmp" n="m">again</arg>
+        <arg f="" n="0">he</arg>
+        <rel f="">[made][light][of]</rel>
+        <arg f="" n="1">his wound</arg>
+      </example>
+    </roleset>
+  </predicate>
+
+  
+
 </frameset>
