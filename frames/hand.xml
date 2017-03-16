@@ -91,43 +91,94 @@
     </roleset>
   </predicate>
   
-  <predicate lemma="in_hands_of">
-    <roleset id="in_hands_of.04" name="be in possession of">
+  <predicate lemma="have_in_hand">
+    <roleset id="have_in_hand.04" name="be in possession of">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">in_hands_of</alias>
-        <alias framenet="" pos="m" verbnet="">have_hands_on</alias>
-        <mwe id="in_hands_of">
-          <token slot="A" arg="" pos="IN" head="B" dep="case">in</token>
-          <token slot="A" arg="" pos="IN" head="B" dep="case">into</token> 
-          <token slot="B" arg="" pos="NN*" head="" dep="">hands</token>
-          <token slot="C" arg="" pos="IN" head="" dep="case">of</token>
-        </mwe>
-        <mwe id="have_hands_on">
+        <alias framenet="" pos="m" verbnet="">in_hand</alias>
+        <alias framenet="" pos="m" verbnet="">have_in_hand</alias>
+        <alias framenet="" pos="m" verbnet="">have_hands</alias>
+        <mwe id="have_in_hand">
           <token slot="A" arg="" pos="VB*" head="" dep="">have</token>
-          <token slot="A" arg="" pos="" head="" dep=""></token>           
-          <token slot="B" arg="" pos="NNS" head="A" dep="dobj">hands</token>
-          <token slot="C" arg="" pos="IN" head="" dep="case">on</token>
+          <token slot="A" arg="" pos="" head="" dep=""></token>
+          <token slot="B" arg="" pos="IN" head="" dep="case">in</token>
+          <token slot="B" arg="" pos="" head="" dep=""></token>
+          <token slot="C" arg="" pos="NN*" head="" dep="dobj">hand</token>
         </mwe>
       </aliases>
-      <note>IN_HANDS_OF-M NOTES: Added by Tim/Julia during initial MWE framing.</note>
+      <note>HAVE_IN_HAND-M NOTES: Added by Tim/Julia during initial MWE framing.</note>
       <roles>
-        <role descr="acquirer" f="pag" n="0"/>
-        <role descr="thing acquired, entity grabbed" f="ppt" n="1"/>
+        <role descr="possessor" f="pag" n="0"/>
+        <role descr="thing possessed" f="ppt" n="1"/>
         <role descr="attribute of hands of arg0" f="adj" n="2"/>
       </roles>
-      <example name="hands_on-m" src="" type="">
+      <example name="have_hands-m: have hands on" src="" type="">
+        <text>How excited am I-1 *PRO*-1 to have my hands on THIS potential #foodwaste solution!</text>
+        <arg f="" n="0">*PRO*-1</arg>
+        <rel f="">[have][hands]</rel>
+        <arg f="" n="1">on THIS potential #foodwaste solution</arg>
+      </example>
+      <example name="have_in_hand-m" src="" type="">
+        <text>...it would not be reasonable that a society having a right to borrow to the extent of two thirds of the amount of their mortgages should be called upon suddenly to repay sums of money which-1 they might not have *trace*-1 in hand, or under their immediate control.</text>
+        <arg f="" n="0">they</arg>
+        <arg f="mod" n="m">might</arg>
+        <arg f="neg" n="m">not</arg>
+        <rel f="">[have][in][hand]</rel>
+        <arg f="" n="1">*trace*-1</arg>
+      </example>
+      <example name="have_in_hand-m" src="" type="">
+        <text>The efforts of volunteers do not obviate the need *PRO* to have in hand a large amount of money for the translating and printing of each translation.</text>
+        <arg f="" n="0">*PRO*</arg>
+        <rel f="">[have][in][hand]</rel>
+        <arg f="" n="1">a large amount of money</arg>
+        <arg f="prp" n="m">for the translating and printing of each translation</arg>
+      </example>
+      <example name="in_hand-m: in the hands of" src="" type="">
+        <text>A large percentage of the nation's wealth is in the hands of a very, very few people.</text>
+        <arg f="" n="1">A large percentage of the nation's wealth</arg>
+        <rel f="">[in][hands]</rel>
+        <arg f="" n="0">of a very, very few people</arg>
+      </example>
+    </roleset>
+  </predicate>
+
+  <predicate lemma="get_hands_on">
+    <roleset id="get_hands_on.04" name="become in possession of">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">get_hands</alias>
+        <alias framenet="" pos="m" verbnet="">into_hands</alias>
+        <mwe id="have_in_hand">
+          <token slot="A" arg="" pos="VB*" head="" dep="">get</token>
+          <token slot="A" arg="" pos="" head="" dep=""></token>
+          <token slot="B" arg="" pos="IN" head="" dep="case">into</token>
+          <token slot="B" arg="" pos="" head="" dep=""></token>
+          <token slot="C" arg="" pos="NN*" head="" dep="dobj">hands</token>
+        </mwe>
+      </aliases>
+      <note>IN_HAND-M NOTES: Added by Tim/Julia during initial MWE framing.</note>
+      <roles>
+        <role descr="possessor" f="pag" n="0"/>
+        <role descr="thing attained" f="ppt" n="1"/>
+        <role descr="attribute of hands" f="adj" n="2"/>
+      </roles>
+      <example name="get_hands-m" src="" type="">
         <text>All I-1 had to do was *-1 get my hot little hands on the police report.</text>
         <arg f="" n="2">[hot][little]</arg>
         <rel f="">[hands][on]</rel>
         <arg f="" n="1">the police report</arg>
       </example>
+      <example name="get_hands-m: get_hands on" src="" type="">
+        <text>“I just wish I could have got my hands on the big CDOT snow plow,” he said with a grin.</text>
+        <arg f="" n="0">I</arg>
+        <arg f="mod" n="m">could</arg>
+        <rel f="">[got][hands]</rel>
+        <arg f="" n="1">on the big CDOT snow plow</arg>
+      </example>
       <example name="into_hands_of-m: with fall" src="" type="">
-        <text>Nuclear technology could fall into the hands of Islamic extremist</text>
-        <arg f="" n="1">nuclear technology</arg>
-        <rel f="">[into][hands][of]</rel>
-        <arg f="" n="0">Islamic extremists</arg>
+        <text>Power fell into the wrong hands. </text>
+        <arg f="" n="1">power</arg>
+        <rel f="">[into][hands]</rel>
+        <arg f="" n="2">wrong</arg>
       </example>
     </roleset>
   </predicate>
-
 </frameset>

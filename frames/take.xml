@@ -1097,24 +1097,40 @@
       </example>
     </roleset>
   </predicate>
+  
   <predicate lemma="take_place">
     <roleset id="take_place.36" name="occur">
       <aliases>
-        <alias framenet="" pos="l" verbnet="">take_place</alias>
+        <alias framenet="" pos="m" verbnet="">take_place</alias>
+        <mwe id="take_place">
+        <token slot="A" arg="" pos="VB" head="" dep="">take</token>
+        <token slot="B" arg="" pos="NN" head='' dep="">place</token>
+        </mwe>
       </aliases>
-      <note>TAKE_PLACE-V, TAKING_PLACE-N NOTES: Upgraded to an MWE format by Julia/Tim. Formerly annotated under take.14, with a fixed "place" arg2.</note>
+      <mappings alias="take_place">
+        <source>
+            (A / take-01
+                :arg0 (n1 / NARG1)
+                :arg1 (B / place))
+        </source>
+        <target>
+            (A / occur-01
+                :arg1 (n1 / NARG1))
+        </target>
+      </mappings>
+      <note>TAKE_PLACE-M NOTES: Upgraded to an MWE format by Julia/Tim. Formerly annotated under take.14, with a fixed "place" arg2.</note>
       <roles>
         <role descr="thing occuring" f="ppt" n="1"/>
       </roles>
-      <example name="take_place-l" src="" type="">
+      <example name="take_place-m" src="" type="">
         <text>These events took place 35 years ago.</text>
         <arg f="" n="1">These events</arg>
-        <arg f="lvb" n="m">took</arg>
-        <rel f="">place</rel>
+        <rel f="">[take][place]</rel>
         <arg f="tmp" n="m">35 years ago</arg>
       </example>
     </roleset>
   </predicate>
+  
   <predicate lemma="take_with_grain_of_salt">
     <roleset id="take_with_grain_of_salt.37" name="doubt, attribute very little weight to a claim">
       <aliases>
