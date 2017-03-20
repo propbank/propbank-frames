@@ -142,7 +142,7 @@
   </predicate>
 
   <predicate lemma="get_hands_on">
-    <roleset id="get_hands_on.04" name="become in possession of">
+    <roleset id="get_hands_on.05" name="become in possession of">
       <aliases>
         <alias framenet="" pos="m" verbnet="">get_hands</alias>
         <alias framenet="" pos="m" verbnet="">into_hands</alias>
@@ -178,6 +178,63 @@
         <arg f="" n="1">power</arg>
         <rel f="">[into][hands]</rel>
         <arg f="" n="2">wrong</arg>
+      </example>
+    </roleset>
+  </predicate>
+  
+  <predicate lemma="change_hands">
+    <roleset id="change_hands.06" name="transfer possession">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">change_hands</alias>
+        <mwe id='change_hands'>
+          <token slot="A" arg="" pos="VB*" head='' dep="">change</token>
+          <token slot="A" arg="" pos="NN" head='' dep="">changing</token>
+          <token slot="B" arg="" pos="IN" head='' dep="">of</token>
+          <token slot="B" arg="" pos="" head='' dep=""></token>
+          <token slot="B" arg="" pos="NN" head='' dep="">hands</token>
+        </mwe>
+      </aliases>
+      <mappings alias="change_hands">
+        <source>
+            (A / change-01
+                :arg1 (n1 / NARG1)
+                :arg2 (b2 / be-located-at-91
+                    :arg1 (n1)
+                    :arg2 (B / hand
+                        :part-of (n2 / NARG2)))
+                :arg3 (b3 / be-located-at-91
+                    :arg1 (n1)
+                    :arg2 (B / hand
+                        :part-of (n3 / NARG3))))
+        </source>
+        <target>
+            (A / transfer-01
+                :arg1 (n1 / NARG1
+                    :arg1-of own-01)
+                :arg2 (n3 / NARG3)
+                :arg3 (n2 / NARG2))
+        </target>
+      </mappings>
+      <roles>
+        <role descr="thing changing hands" f="pag" n="1"/>
+        <role descr="giver" f="DIR" n="2"/>
+        <role descr="getter" f="GOL" n="3"/>
+      </roles>
+      <example name="change_hands-m" src="" type="">
+        <text>4.4 million shares changed hands.</text>
+        <arg f="" n="1">4.4 million shares</arg>
+        <rel f="">[changed][hands]</rel>
+      </example>
+      <example name="change_hands-m" src="" type="">
+        <text>The food got a lot worse after the restaurant changed hands</text>
+        <arg f="" n="1">the restaurant</arg>
+        <rel f="">[changed][hands]</rel>
+      </example>
+      <example name="changing_of_hands-m" src="" type="">
+        <text>The border’s changing of hands between England and Scotland caused confusion</text>
+        <arg f="" n="1">The border’s</arg>
+        <rel f="">[changing][of][hands]</rel>
+        <arg f="" n="2">between England and Scotland</arg>
       </example>
     </roleset>
   </predicate>
