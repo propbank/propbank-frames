@@ -24,30 +24,30 @@
           <vnrole vncls="13.3" vntheta="goal"/>
         </role>
       </roles>
-      <example name="no benefactive" src="" type="">
+      <example name="grant-v: no benefactive" src="" type="">
         <text>The White House said [Mr. Bush]-1 decided *trace*-1 to grant duty-free status for 18 categories, but turned down such treatment for other types of watches ``because of the potential for material injury to watch producers located in the U.S. and the Virgin Islands.''</text>
         <arg f="" n="0">*trace*</arg>
         <rel f="">grant</rel>
         <arg f="" n="1">duty-free status for 18 categories</arg>
       </example>
-      <example name="passivized, with benefactive, benefactive fronted" src="" type="">
+      <example name="grant-v: passivized, with benefactive, benefactive fronted" src="" type="">
         <text>That settlement represented the first time shareholders-1 were granted *trace*-1 a major payment in a greenmail case.</text>
         <rel f="">granted</rel>
         <arg f="" n="2">*trace*</arg>
         <arg f="" n="1">a major payment</arg>
         <arg f="loc" n="m">in a greenmail case</arg>
       </example>
-      <example name="passivized, with benefactive, thing-granted fronted" src="" type="">
+      <example name="grant-v: passivized, with benefactive, thing-granted fronted" src="" type="">
         <text>[A special favor]-1 was granted *trace*-1 to John.</text>
         <arg f="" n="1">*trace*</arg>
         <rel f="">granted</rel>
         <arg f="" n="2">to John</arg>
       </example>
-      <example name="Not eventive. Call it .YY!" src="BOLT" type="">
+      <example name="grant-n: Not eventive. Call it .YY!" src="BOLT" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>This coming from someone that footed their own college tuition , No mommy and daddy allowences , no grants or anything else .</text>
       </example>
-      <example name="All args" src="internet" type="">
+      <example name="grant-n: All args" src="internet" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>Mr. Weeding suggested whether it would not save time and trouble, to limit the motion to the production of such papers as came to hand aftert their grant of ?60,000 to the Noble Marquess.</text>
         <arg f="" n="0">their</arg>
@@ -57,16 +57,16 @@
       </example>
     </roleset>
   </predicate>
-
-
   
   <predicate lemma="take_for_granted">
     <roleset id="take_for_granted.02" name="assume something as given, fail to appreciate something">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">take_for_granted</alias>        
+        <alias framenet="" pos="m" verbnet="">take_for_granted</alias> 
+        <alias framenet="" pos="m" verbnet="">take_as_granted</alias>      
         <mwe id="take_for_granted">
           <token slot="A" arg="" pos="IN" head="B" dep="case">take</token>
           <token slot="B" arg="" pos="IN" head="C" dep="case">for</token> 
+          <token slot="B" arg="" pos="IN" head="C" dep="case">as</token> 
           <token slot="C" arg="" pos="VBN" head="A" dep="acomp">granted</token>
           <token slot="C" arg="" pos="JJ" head="A" dep="acomp">granted</token>
         </mwe>
@@ -74,11 +74,19 @@
       <mappings alias="take_for_granted">
         <source>
             (A / take-04
-                :arg2 (C / grant-01))
+                :arg0 (n / NARG0)
+                :arg1 (n1 / NARG1)
+                :arg2 (C / grant-01
+                    :arg1 (n1)))
         </source>
         <target>
             (A / assume-02 
-                :arg2 (C / true-01))
+                :arg0 (n / NARG0)
+                :arg1 (o / or
+                    :op1 (t / true-01
+                        :arg1 (n1 / NARG1)
+                    :op2 (g / give-01
+                        :arg1 (n1)))))
         </target>
       </mappings>
       <note>TAKE_FOR_GRANTED NOTES: </note>

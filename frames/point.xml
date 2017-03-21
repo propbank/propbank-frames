@@ -4,39 +4,40 @@
     <roleset id="point.01" name="point">
       <aliases>
         <alias framenet="" pos="v" verbnet="">point</alias>
+        <alias framenet="" pos="n" verbnet="">pointing</alias>
       </aliases>
       <note>POINT-V NOTES: Frames file for 'point' based on sentences in financial subcorpus. No access to verbnet. No comparison. (from point.01-v predicate notes)</note>
       <roles>
         <role descr="pointer" f="PAG" n="0">
           <vnrole vncls="40.3.1-1" vntheta="Agent"/>
         </role>
-        <role descr="thing pointed (defaults to finger)" f="PPT" n="1">
+        <role descr="thing pointed" f="PPT" n="1">
           <vnrole vncls="40.3.1-1" vntheta="Patient"/>
         </role>
         <role descr="pointed at (a variety of prepositions)" f="GOL" n="2">
           <vnrole vncls="40.3.1-1" vntheta="Recipient"/>
         </role>
       </roles>
-      <example name="toward" src="" type="">
+      <example name="point-v: toward" src="" type="">
         <text>Trading is expected to remain subdued as the market awaits tomorrow's release of the jobs data with the hope that it will point toward a decline in interest rates.</text>
         <arg f="" n="0">it</arg>
         <arg f="mod" n="m">will</arg>
         <rel f="">point</rel>
         <arg f="" n="2">toward a decline in interest rates</arg>
       </example>
-      <example name="to" src="" type="">
+      <example name="point-v: to" src="" type="">
         <text>``I believe everyday pricing in the current environment doesn't work,'' says [Walter Loeb of Morgan Stanley&amp; Co.]-1, *trace*-1 pointing to soft durable-goods sales.</text>
         <arg f="" n="0">*trace*</arg>
         <rel f="">pointing</rel>
         <arg f="" n="2">to soft durable-goods sales</arg>
       </example>
-      <example name="at" src="" type="">
+      <example name="point-v: at" src="" type="">
         <text>They point at the numerous developing-country governments that have inflated, taxed and regulated themselves into despair under successive IMF programs.</text>
         <arg f="" n="0">They</arg>
         <rel f="">point</rel>
         <arg f="at" n="2">the numerous developing-country governments that have inflated, taxed and regulated themselves into despair under successive IMF programs</arg>
       </example>
-      <example name="with arg1" src="" type="">
+      <example name="point-v: with arg1" src="" type="">
         <text>John pointed the toy gun at the giant menacing alien and said, "Hasta la vista, bay-bee."</text>
         <arg f="" n="0">John</arg>
         <rel f="">pointed</rel>
@@ -45,31 +46,29 @@
       </example>
     </roleset>
 
-
     <roleset id="point.03" name="have a particular goal or destiny; be intended for something">
-      
       <aliases>
-        <alias framenet="" pos="l" verbnet="">have_point</alias>
         <alias framenet="" pos="n" verbnet="">point</alias>
+        <alias framenet="" pos="l" verbnet="">have_point</alias>
       </aliases>
       <roles>
         <role descr="person with intensions" f="PAG" n="0"/>
         <role descr="smaller actions that are intended for that goal" f="PPT" n="1"/>
         <role descr="larger goal; the point itself" f="gol" n="2"/>
       </roles>
-      <example name="" src="" type="">
+      <example name="point-n" src="" type="">
         <text>Is there any point to continuing this?</text>
         <rel f="">point</rel>
         <arg f="" n="1">to continuing this</arg>
       </example>
-      <example name="typical usage" src="" type="">
+      <example name="have_point-l: typical usage" src="" type="">
         <text>What point does this have?</text>
         <arg f="" n="2">what</arg>
         <rel f="">point</rel>
         <arg f="" n="1">this</arg>
         <arg f="lvb" n="m">have</arg>
       </example>
-      <example name="typical usage" src="" type="">
+      <example name="point-n: typical usage" src="" type="">
         <text>I see no point in doing this</text>
         <arg f="neg" n="m">no</arg>
         <rel f="">point</rel>
@@ -82,7 +81,7 @@
         <alias framenet="" pos="n" verbnet="">point</alias>
         <alias framenet="" pos="l" verbnet="">make_point</alias>
       </aliases>
-      <note>POINT_OUT-V NOTES: (from point.02-v)</note>
+      <note>POINT-N NOTES: </note>
       <roles>
         <role descr="claimer, asserter" f="PAG" n="0"/>
         <role descr="thing claimed, asserted" f="PPT" n="1"/>
@@ -103,7 +102,7 @@
         <alias framenet="" pos="n" verbnet="">point</alias>
         <alias framenet="" pos="l" verbnet="">make_point</alias>
       </aliases>
-      <note>POINT_OUT-V NOTES: framed by Tim during MWE annotation </note>
+      <note>POINT-N NOTES: framed by Tim during MWE annotation </note>
       <roles>
         <role descr="doer" f="PAG" n="0"/>
         <role descr="thing done/accomplished" f="PPT" n="1"/>
@@ -116,12 +115,13 @@
         <arg f="" n="1">of being a jerkass</arg>
       </example>
     </roleset>
-
   </predicate>
+  
   <predicate lemma="point_out">
     <roleset id="point_out.02" name="point at, define, make an example of">
       <aliases>
         <alias framenet="" pos="v" verbnet="">point_out</alias>
+        <alias framenet="" pos="n" verbnet="">pointing_out</alias>
       </aliases>
       <note>POINT_OUT-V NOTES: (from point.02-v)</note>
       <roles>
@@ -137,7 +137,6 @@
     </roleset>
   </predicate>
 
-
   <predicate lemma="point_finger">
     <roleset id="point_finger.06" name="assign blame">
       <aliases>
@@ -147,24 +146,37 @@
            <token slot="B" arg="" pos="NN" head="A" dep="dobj">finger</token>
         </mwe>
       </aliases>
-      <note>Prepped by Tim during MWE framing</note>
+      <mappings alias="point_finger">
+        <source>
+            (A / point-01
+                :arg0 (n / NARG0)
+                :arg1 (B / finger)
+                :arg2 (n1 / NARG1)
+                :cause (n2 / NARG2))
+        </source>
+        <target>
+            (A / blame-01
+                :arg0 (n / NARG0)
+                :arg1 (n1 / NARG1)
+                :arg2 (n2 / NARG2)
+                :cause (n3 / NARG3)))
+        </target>
+      </mappings>
+      <note>POINT_FINGER-M NOTES: Prepped by Tim during MWE framing</note>
       <roles>
         <role descr="blamer" f="PAG" n="0"/>
         <role descr="entity blamed" f="PPT" n="1"/>
         <role descr="blame for what" f="PRD" n="2"/>
         <role descr="event providing evidence for the finger-pointing" f="CAU" n="3"/>
       </roles>
-
-      <example name="normal" src="ABC via COCA" type="">
+      <example name="point_finger-m: normal" src="ABC via COCA" type="">
         <text> It's hard, though, to really point the finger at somebody when they're not here to defend themselves. </text>
         <arg f="adv" n="m">really</arg>
         <rel f="">[point][finger]</rel>
         <arg f="" n="1">at somebody</arg>
         <arg f="tmp" n="m">when they're not here to defend themselves</arg>
       </example>
-
-
-      <example name="arg2" src="" type="">
+      <example name="point_finger-m: arg2" src="" type="">
         <text>She  stated that she was not here to point the finger at anyone for her always-healthy little girl Stacey's being so sick with leukemia.</text>
         <arg f="" n="0">*trace*</arg>
         <rel f="">[point][finger]</rel>
