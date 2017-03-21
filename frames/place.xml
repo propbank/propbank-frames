@@ -51,4 +51,55 @@
       </example>
     </roleset>
   </predicate>
+  
+  <predicate lemma="in_place">
+    <roleset id="in_place.02" name="set, enacted, established; ready">
+      <aliases>
+        <alias framenet="" pos="x" verbnet="">in_place</alias>
+      </aliases>
+      <note>IN_PLACE NOTES: </note>
+      <roles>
+        <role descr="established, set, enacted thing" f="ppt" n="1"/>
+        <role descr="attribute on arg1" f="ppt" n="2"/>
+      </roles>
+      <example name="in_place-m" src="" type="">
+        <text>The roster is in place and the stage is set for the CONCACAF Olympic Qualifying Championship</text>
+        <arg f="" n="1">The roster</arg>
+        <rel f="">[in][place]</rel>
+      </example>
+    </roleset>
+  </predicate>
+  
+  <predicate lemma="take_place">
+    <roleset id="take_place.03" name="occur">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">take_place</alias>
+        <mwe id="take_place">
+        <token slot="A" arg="" pos="VB" head="" dep="">take</token>
+        <token slot="B" arg="" pos="NN" head='' dep="">place</token>
+        </mwe>
+      </aliases>
+      <mappings alias="take_place">
+        <source>
+            (A / take-01
+                :arg0 (n1 / NARG1)
+                :arg1 (B / place))
+        </source>
+        <target>
+            (A / occur-01
+                :arg1 (n1 / NARG1))
+        </target>
+      </mappings>
+      <note>TAKE_PLACE-M NOTES: Upgraded to an MWE format by Julia/Tim. Formerly annotated under take.14, with a fixed "place" arg2.</note>
+      <roles>
+        <role descr="thing occuring" f="ppt" n="1"/>
+      </roles>
+      <example name="take_place-m" src="" type="">
+        <text>These events took place 35 years ago.</text>
+        <arg f="" n="1">These events</arg>
+        <rel f="">[take][place]</rel>
+        <arg f="tmp" n="m">35 years ago</arg>
+      </example>
+    </roleset>
+  </predicate>
 </frameset>
