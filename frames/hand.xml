@@ -97,20 +97,13 @@
         <alias framenet="" pos="m" verbnet="">in_hand</alias>
         <alias framenet="" pos="m" verbnet="">have_in_hand</alias>
         <alias framenet="" pos="m" verbnet="">have_hands</alias>
-        <alias framenet="" pos="m" verbnet="">into_hands</alias>
         <mwe id="have_in_hand">
           <token slot="A" arg="" pos="VB*" head="" dep="">have</token>
           <token slot="A" arg="" pos="" head="" dep=""></token>
-          <token slot="B" arg="" pos="IN" head="C" dep="case">in</token>
-          <token slot="B" arg="" pos="IN" head="C" dep="case">into</token>
+          <token slot="B" arg="" pos="IN" head="" dep="case">in</token>
           <token slot="B" arg="" pos="" head="" dep=""></token>
           <token slot="C" arg="" pos="NN*" head="" dep="dobj">hand</token>
         </mwe>
-        <mwe id="have_hands_on">
-          <token slot="A" arg="" pos="VB*" head="" dep="">have</token>
-          <token slot="B" arg="" pos="NN*" head="" dep="dobj">hand</token>
-        </mwe>
-
       </aliases>
       <note>HAVE_IN_HAND-M NOTES: Added by Tim/Julia during initial MWE framing.</note>
       <roles>
@@ -147,5 +140,102 @@
       </example>
     </roleset>
   </predicate>
-	
+
+  <predicate lemma="get_hands_on">
+    <roleset id="get_hands_on.05" name="become in possession of">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">get_hands</alias>
+        <alias framenet="" pos="m" verbnet="">into_hands</alias>
+        <mwe id="have_in_hand">
+          <token slot="A" arg="" pos="VB*" head="" dep="">get</token>
+          <token slot="A" arg="" pos="" head="" dep=""></token>
+          <token slot="B" arg="" pos="IN" head="" dep="case">into</token>
+          <token slot="B" arg="" pos="" head="" dep=""></token>
+          <token slot="C" arg="" pos="NN*" head="" dep="dobj">hands</token>
+        </mwe>
+      </aliases>
+      <note>IN_HAND-M NOTES: Added by Tim/Julia during initial MWE framing.</note>
+      <roles>
+        <role descr="possessor" f="pag" n="0"/>
+        <role descr="thing attained" f="ppt" n="1"/>
+        <role descr="attribute of hands" f="adj" n="2"/>
+      </roles>
+      <example name="get_hands-m" src="" type="">
+        <text>All I-1 had to do was *-1 get my hot little hands on the police report.</text>
+        <arg f="" n="2">[hot][little]</arg>
+        <rel f="">[hands][on]</rel>
+        <arg f="" n="1">the police report</arg>
+      </example>
+      <example name="get_hands-m: get_hands on" src="" type="">
+        <text>“I just wish I could have got my hands on the big CDOT snow plow,” he said with a grin.</text>
+        <arg f="" n="0">I</arg>
+        <arg f="mod" n="m">could</arg>
+        <rel f="">[got][hands]</rel>
+        <arg f="" n="1">on the big CDOT snow plow</arg>
+      </example>
+      <example name="into_hands_of-m: with fall" src="" type="">
+        <text>Power fell into the wrong hands. </text>
+        <arg f="" n="1">power</arg>
+        <rel f="">[into][hands]</rel>
+        <arg f="" n="2">wrong</arg>
+      </example>
+    </roleset>
+  </predicate>
+  
+  <predicate lemma="change_hands">
+    <roleset id="change_hands.06" name="transfer possession">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">change_hands</alias>
+        <mwe id='change_hands'>
+          <token slot="A" arg="" pos="VB*" head='' dep="">change</token>
+          <token slot="A" arg="" pos="NN" head='' dep="">changing</token>
+          <token slot="B" arg="" pos="IN" head='' dep="">of</token>
+          <token slot="B" arg="" pos="" head='' dep=""></token>
+          <token slot="B" arg="" pos="NN" head='' dep="">hands</token>
+        </mwe>
+      </aliases>
+      <mappings alias="change_hands">
+        <source>
+            (A / change-01
+                :arg1 (n1 / NARG1)
+                :arg2 (b2 / be-located-at-91
+                    :arg1 (n1)
+                    :arg2 (B / hand
+                        :part-of (n2 / NARG2)))
+                :arg3 (b3 / be-located-at-91
+                    :arg1 (n1)
+                    :arg2 (B / hand
+                        :part-of (n3 / NARG3))))
+        </source>
+        <target>
+            (A / transfer-01
+                :arg1 (n1 / NARG1
+                    :arg1-of own-01)
+                :arg2 (n3 / NARG3)
+                :arg3 (n2 / NARG2))
+        </target>
+      </mappings>
+      <roles>
+        <role descr="thing changing hands" f="pag" n="1"/>
+        <role descr="giver" f="DIR" n="2"/>
+        <role descr="getter" f="GOL" n="3"/>
+      </roles>
+      <example name="change_hands-m" src="" type="">
+        <text>4.4 million shares changed hands.</text>
+        <arg f="" n="1">4.4 million shares</arg>
+        <rel f="">[changed][hands]</rel>
+      </example>
+      <example name="change_hands-m" src="" type="">
+        <text>The food got a lot worse after the restaurant changed hands</text>
+        <arg f="" n="1">the restaurant</arg>
+        <rel f="">[changed][hands]</rel>
+      </example>
+      <example name="changing_of_hands-m" src="" type="">
+        <text>The border’s changing of hands between England and Scotland caused confusion</text>
+        <arg f="" n="1">The border’s</arg>
+        <rel f="">[changing][of][hands]</rel>
+        <arg f="" n="2">between England and Scotland</arg>
+      </example>
+    </roleset>
+  </predicate>
 </frameset>
