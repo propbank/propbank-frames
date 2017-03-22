@@ -146,8 +146,9 @@
       <aliases>
         <alias framenet="" pos="m" verbnet="">get_hands</alias>
         <alias framenet="" pos="m" verbnet="">into_hands</alias>
-        <mwe id="have_in_hand">
+        <mwe id="get_hand">
           <token slot="A" arg="" pos="VB*" head="" dep="">get</token>
+          <token slot="A" arg="" pos="VB*" head="" dep="">fall</token>
           <token slot="A" arg="" pos="" head="" dep=""></token>
           <token slot="B" arg="" pos="IN" head="" dep="case">into</token>
           <token slot="B" arg="" pos="" head="" dep=""></token>
@@ -181,7 +182,43 @@
       </example>
     </roleset>
   </predicate>
-  
+
+  <predicate lemma="blood_on_hands">
+    <roleset id="blood_on_hands.07" name="be culpable for the death or injuries of another">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">blood_on_hands</alias>
+        <mwe id="get_hand">
+          <token slot="A" arg="" pos="VB*" head="" dep="">have</token>
+          <token slot="A" arg="" pos="" head="" dep=""></token>
+          <token slot="B" arg="" pos="NN" head="A" dep="dobj">blood</token>
+          <token slot="C" arg="" pos="IN" head="D" dep="case">on</token>
+          <token slot="D" arg="" pos="NNS" head="A" dep="obl">hands</token>
+          <token slot="D" arg="" pos="NNS" head="B" dep="nmod">hands</token>
+        </mwe>
+      </aliases>
+      <note>Added by Tim during initial MWE framing.</note>
+      <roles>
+        <role descr="culpable entity, criminal" f="ppt" n="1"/>
+        <role descr="those injured, source of blod" f="gol" n="2"/>
+        <role descr="crime" f="cau" n="3"/>
+      </roles>
+      <example name="amr data" src="" type="">
+        <text>Voting for a man with so much muslim blood on his hands, sad.</text>
+        <arg f="ext" n="m">[so][much]</arg>
+        <arg f="" n="2">muslim</arg>
+        <arg f="" n="1">his</arg>
+        <rel f="">[blood][on][hands]</rel>
+      </example>
+      <example name="amr data" src="" type="">
+        <text>The leaders of this war have the blood of many thousands of people on their hands.</text>
+        <arg f="ext" n="m">[so][much]</arg>
+        <arg f="" n="2">many thousands of people</arg>
+        <arg f="" n="1">The leaders of this war, [their]</arg>
+        <rel f="">[blood],[on],[hands]</rel>
+      </example>
+    </roleset>
+
+  </predicate>
   <predicate lemma="change_hands">
     <roleset id="change_hands.06" name="transfer possession">
       <aliases>
@@ -189,9 +226,10 @@
         <mwe id='change_hands'>
           <token slot="A" arg="" pos="VB*" head='' dep="">change</token>
           <token slot="A" arg="" pos="NN" head='' dep="">changing</token>
-          <token slot="B" arg="" pos="IN" head='' dep="">of</token>
+          <token slot="B" arg="" pos="IN" head='C' dep="case">of</token>
           <token slot="B" arg="" pos="" head='' dep=""></token>
-          <token slot="B" arg="" pos="NN" head='' dep="">hands</token>
+          <token slot="C" arg="" pos="NN" head='A' dep="dobj">hands</token>
+          <token slot="C" arg="" pos="NN" head='A' dep="nmod">hands</token>
         </mwe>
       </aliases>
       <mappings alias="change_hands">
@@ -199,18 +237,19 @@
             (A / change-01
                 :arg1 (n1 / NARG1)
                 :arg2 (b2 / be-located-at-91
-                    :arg1 (n1)
+                    :arg1 n1
                     :arg2 (B / hand
                         :part-of (n2 / NARG2)))
                 :arg3 (b3 / be-located-at-91
-                    :arg1 (n1)
+                    :arg1 n1
                     :arg2 (B / hand
                         :part-of (n3 / NARG3))))
         </source>
         <target>
             (A / transfer-01
                 :arg1 (n1 / NARG1
-                    :arg1-of own-01)
+                    :arg1-of (o / own-01
+                           :arg0 n2))
                 :arg2 (n3 / NARG3)
                 :arg3 (n2 / NARG2))
         </target>
