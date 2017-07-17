@@ -395,13 +395,13 @@
         <role descr="thing eliminated" f="ppt" n="1"/>
         <role descr="source" f="dir" n="2"/>
       </roles>
-      <example name="cut_out-v: now cut that out!" src="" type="">
+      <example name="cut_out-v" src="" type="">
         <inflection aspect="ns" form="full" person="ns" tense="future" voice="active"/>
         <text>The move will cut out the cost of a middleman and give Specialized more control over marketing and sales.</text>
         <arg f="" n="0">The move</arg>
         <arg f="mod" n="m">will</arg>
         <rel f="">cut out</rel>
-        <arg f="" n="1">the cos of a middleman</arg>
+        <arg f="" n="1">the cost of a middleman</arg>
       </example>
     </roleset>
     
@@ -927,6 +927,90 @@
         <arg f="" n="0">*PRO*</arg>
         <rel f="">[fish][or][cut][bait]</rel>
         <arg f="" n="1">on tax reform</arg>
+      </example>
+    </roleset>
+  </predicate>
+
+  <predicate lemma="cut_above">
+    <roleset id="cut_above.26" name="superior to">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">cut_above</alias>
+        <mwe id='cut_above'>
+          <token slot="A" arg="" pos="NN*" head='' dep="">cut</token>
+          <token slot="B" arg="" pos="IN" head='' dep="case">above</token>
+        </mwe>
+      </aliases>
+      <mappings alias="cut_above">
+        <source>
+            (A / cut-01
+                :arg1 (n1 / NARG1)
+                    :mod (a2 / above
+                        :op1 (n2 / NARG2)))
+        </source>
+        <target>
+            (s / superior-01
+                :arg1 (n1 / NARG1)
+                :arg2 (n2 / NARG2))
+        </target>
+      </mappings>
+      <note>CUT_ABOVE-M NOTES: Added by Julia during MWE framing.</note>
+      <roles>
+        <role descr="superior entity" f="pag" n="1"/>
+        <role descr="inferior entity" f="ppt" n="2"/>
+      </roles>
+      <example name="cut_above-m" src="" type="">
+        <text>North Carolina might be a cut above the other teams because it has the experience of getting to the championship game last season where they lost on a game-winning three-pointer to Villanova.</text>
+        <arg f="" n="1">North Carolina</arg>
+        <arg f="mod" n="m">might</arg>
+        <rel f="">[cut][above]</rel>
+        <arg f="" n="2">the other teams</arg>
+        <arg f="cau" n="m">because it has the experience of getting to the championship game last season where they lost on a game-winning three-pointer to Villanova</arg>
+      </example>
+    </roleset>
+  </predicate>
+  
+  <predicate lemma="cut_off_nose_to_spite_face">
+    <roleset id="cut_off_nose_to_spite_face.27" name="do something self-detrimental to spite someone else">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">cut_off_nose_to_spite_face</alias>
+        <mwe id='cut_off_nose_to_spite_face'>
+          <token slot="A" arg="" pos="NN*" head='' dep="">cut</token>
+          <token slot="B" arg="" pos="IN" head='' dep="case">off</token>
+          <token slot="C" arg="" pos="NN" head='' dep="">nose</token>
+          <token slot="D" arg="" pos="TO" head='' dep="case">to</token>
+          <token slot="E" arg="" pos="VB*" head='' dep="case">spite</token>
+          <token slot="F" arg="" pos="NN" head='' dep="case">face</token>
+        </mwe>
+      </aliases>
+      <mappings alias="cut_off_nose_to_spite_face">
+        <source>
+            (A / cut-01
+                :arg0 (n / NARG0)
+                :arg1 (C / nose)
+                :direction (B / off)
+                :purpose (E / spite-01
+                    :arg0 (n)
+                    :arg1 (F / face
+                        :part-of (n)
+                    :arg2 (n1 / NARG1))))
+        </source>
+        <target>
+            (s / sabotage-01
+                :arg0 (n / NARG0)
+                :arg1 (n)
+                :cause (n1 / NARG1))
+        </target>
+      </mappings>
+      <note>CUT_ABOVE-M NOTES: Added by Julia during MWE framing.</note>
+      <roles>
+        <role descr="self-sabotaging entity" f="pag" n="0"/>
+        <role descr="reason for self-sabotage" f="vsp" n="1"/>
+      </roles>
+      <example name="cut_off_nose_to_spite_face-m" src="" type="">
+        <text>[]An employer]-1 is not likely *PRO*-1 to cut off his nose to spite his face on the question of a closed shop.</text>
+        <arg f="" n="0">*PRO*-1</arg>
+        <rel f="">[cut][off][nose][to][spite][face]</rel>
+        <arg f="" n="1">on the question of a closed shop</arg>
       </example>
     </roleset>
   </predicate>
