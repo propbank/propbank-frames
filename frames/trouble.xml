@@ -36,6 +36,7 @@
     </roleset>
     <roleset id="trouble.05" name="exertion of effort">
       <aliases>
+        <alias framenet="" pos="v" verbnet="">trouble</alias>
         <alias framenet="" pos="n" verbnet="">trouble</alias>
         <alias framenet="" pos="l" verbnet="">take_the_trouble</alias>
         <alias framenet="" pos="m" verbnet="">go_to_trouble</alias>
@@ -46,61 +47,86 @@
         </mwe>
       </aliases>
       <roles>
-        <role descr="agent/entity trying" f="pag" n="0">
-        </role>
-        <role descr="thing tried" f="ppt" n="1">
-        </role>
+        <role descr="external agent" f="pag" n="0"/>
+        <role descr="entity exerting effort" f="ppt" n="1"/>
+        <role descr="thing tried" f="prd" n="2"/>
       </roles>
-      <example name="saving the trouble" src="" type="">
+      <example name="trouble-v" src="" type="">
+        <text>Beg your pardon, but could I trouble you to turn over your weapons? </text>
+        <arg f="dis" n="m">Beg your pardon</arg>
+        <arg f="dis" n="m">but</arg>
+        <arg f="mod" n="m">could</arg>
+        <arg f="" n="0">I</arg>
+        <rel f="">trouble</rel>
+        <arg f="" n="1">you</arg>
+        <arg f="" n="2">to turn over your weapons</arg>
+      </example>
+      <example name="trouble-n: compositional with 'save'" src="" type="">
         <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
         <text>Save yourself the trouble of cooking tomorrow night!</text>
-        <arg f="" n="0">yourself</arg>
+        <arg f="" n="1">yourself</arg>
         <rel f="">trouble</rel>
-        <arg f="" n="1">of cooking</arg>
+        <arg f="" n="2">of cooking</arg>
         <arg f="tmp" n="m">tomorrow night</arg>
       </example>
-      <example name="mwe form" src="COCA" type="">
+      <example name="go_to_trouble-m" src="COCA" type="">
         <text>You must have had a pretty big reason to go to the trouble of tracking me down</text>
-        <arg f="" n="0">You</arg>
+        <arg f="" n="1">You</arg>
         <rel f="">[go],[to],[trouble]</rel>
-        <arg f="" n="1">of tracking me down</arg>
+        <arg f="" n="2">of tracking me down</arg>
       </example>
-
-      <example name="mwe form" src="COCA" type="">
+      <example name="take_trouble-l" src="COCA" type="">
         <text>like all the other laws the police do not take the trouble to enforce, it is a dead letter.</text>
-        <arg f="" n="0">the police</arg>
+        <arg f="" n="1">the police</arg>
         <arg f="neg" n="m">not</arg>
         <arg f="lvb" n="m">take</arg>
         <rel f="">trouble</rel>
-        <arg f="" n="1">to enforce</arg>
+        <arg f="" n="2">to enforce</arg>
       </example>
-
     </roleset>
     <roleset id="trouble.06" name="fight; engage in (generally violent) conflict">
       <aliases>
         <alias framenet="" pos="n" verbnet="">trouble</alias>
+        <alias framenet="" pos="m" verbnet="">make_trouble</alias>
+        <alias framenet="" pos="m" verbnet="">cause_trouble</alias>
+        <alias framenet="" pos="m" verbnet="">stir_up_trouble</alias>
+        <mwe id='make_scene'>
+          <token slot="A" arg="" pos="VB*" head='' dep="">make</token>
+          <token slot="A" arg="" pos="VB*" head='' dep="">create</token>
+          <token slot="A" arg="" pos="VB*" head='' dep="">stir</token>
+          <token slot="B" arg="" pos="" head='' dep="">up</token>
+          <token slot="B" arg="" pos="" head='' dep=""></token>
+          <token slot="C" arg="" pos="NN" head='A' dep="">trouble</token>
+        </mwe>
       </aliases>
-      <note>Treat compositionally in contexts with "make trouble", "cause trouble", and (in AMR), "trouble makers"</note>
+      <note>TROUBLE-N: Added by Tim, Julia. Modeled after make_scene MWE distribution.</note>
       <roles>
-        <role descr="instigator, first fighter" f="pag" n="0">
-        </role>
-        <role descr="second fighter, if separate" f="com" n="1">
-        </role>
-        <role descr="spoils, over what" f="cau" n="2">
-        </role>
+        <role descr="trouble-maker" f="pag" n="0"/>
+        <role descr="opponent" f="com" n="1"/>
+        <role descr="over what" f="cau" n="2"/>
       </roles>
-      <example name="AMR: trouble-v: just transitive" src="" type="">
+      <example name="make_trouble-m" src="" type="">
         <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
         <text>Those who make trouble after getting drunk should be punished without leniency. Detestable</text>
         <arg f="" n="0">Those</arg>
-        <rel f="">trouble</rel>
+        <rel f="">[make][trouble]</rel>
         <arg f="tmp" n="m">after getting drunk</arg>
       </example>
-      <example name="AMR:trouble-v: just transitive" src="" type="">
+      <example name="make_trouble-m" src="" type="">
         <text> A couple of guys who were up to no good started making trouble in my neighborhood</text>
         <arg f="" n="0">A couple of guys who were up to no good</arg>
-        <rel f="">trouble</rel>
+        <rel f="">[making][trouble]</rel>
         <arg f="loc" n="m">in my neighborhood</arg>
+      </example>
+      <example name="stir_up_trouble-m" src="" type="">
+        <text>A new anonymous app is stirring up trouble in high schools.</text>
+        <arg f="" n="0">A new anonymous app</arg>
+        <rel f="">[stirring][up][trouble]</rel>
+        <arg f="loc" n="m">in high schools</arg>
+      </example>
+      <example name="trouble-n: compositional with 'look'" src="" type="">
+        <text>The people who went to Charlottesville were looking for trouble, pure and simple. And they found trouble.</text>
+        <rel f="">trouble</rel>
       </example>
    </roleset>
   </predicate>
@@ -129,7 +155,6 @@
       <aliases>
         <alias framenet="" pos="x" verbnet="">in_trouble</alias>
       </aliases>
-
       <note>IN_TROUBLE-M NOTES: Added by Julia.</note>
       <roles>
         <role descr="source of danger" f="pag" n="0"/>
@@ -154,7 +179,7 @@
         <role descr="person attempting act" f="pag" n="0"/>
         <role descr="activity that is difficult" f="ppt" n="1"/>
       </roles>
-      <example name="basic example" src="" type="">
+      <example name="have_trouble-l" src="" type="">
         <text>The Pakistani government may have trouble explaining their reasoning.</text>
         <arg f="" n="0">The Pakistani government</arg>
         <arg f="mod" n="m">may</arg>        
