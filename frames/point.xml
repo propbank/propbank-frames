@@ -4,40 +4,39 @@
     <roleset id="point.01" name="point">
       <aliases>
         <alias framenet="" pos="v" verbnet="">point</alias>
-        <alias framenet="" pos="n" verbnet="">pointing</alias>
       </aliases>
       <note>POINT-V NOTES: Frames file for 'point' based on sentences in financial subcorpus. No access to verbnet. No comparison. (from point.01-v predicate notes)</note>
       <roles>
         <role descr="pointer" f="PAG" n="0">
           <vnrole vncls="40.3.1-1" vntheta="Agent"/>
         </role>
-        <role descr="thing pointed" f="PPT" n="1">
+        <role descr="thing pointed (defaults to finger)" f="PPT" n="1">
           <vnrole vncls="40.3.1-1" vntheta="Patient"/>
         </role>
         <role descr="pointed at (a variety of prepositions)" f="GOL" n="2">
           <vnrole vncls="40.3.1-1" vntheta="Recipient"/>
         </role>
       </roles>
-      <example name="point-v: toward" src="" type="">
+      <example name="toward" src="" type="">
         <text>Trading is expected to remain subdued as the market awaits tomorrow's release of the jobs data with the hope that it will point toward a decline in interest rates.</text>
         <arg f="" n="0">it</arg>
         <arg f="mod" n="m">will</arg>
         <rel f="">point</rel>
         <arg f="" n="2">toward a decline in interest rates</arg>
       </example>
-      <example name="point-v: to" src="" type="">
+      <example name="to" src="" type="">
         <text>``I believe everyday pricing in the current environment doesn't work,'' says [Walter Loeb of Morgan Stanley&amp; Co.]-1, *trace*-1 pointing to soft durable-goods sales.</text>
         <arg f="" n="0">*trace*</arg>
         <rel f="">pointing</rel>
         <arg f="" n="2">to soft durable-goods sales</arg>
       </example>
-      <example name="point-v: at" src="" type="">
+      <example name="at" src="" type="">
         <text>They point at the numerous developing-country governments that have inflated, taxed and regulated themselves into despair under successive IMF programs.</text>
         <arg f="" n="0">They</arg>
         <rel f="">point</rel>
         <arg f="at" n="2">the numerous developing-country governments that have inflated, taxed and regulated themselves into despair under successive IMF programs</arg>
       </example>
-      <example name="point-v: with arg1" src="" type="">
+      <example name="with arg1" src="" type="">
         <text>John pointed the toy gun at the giant menacing alien and said, "Hasta la vista, bay-bee."</text>
         <arg f="" n="0">John</arg>
         <rel f="">pointed</rel>
@@ -45,11 +44,10 @@
         <arg f="" n="2">at the alien</arg>
       </example>
     </roleset>
-
     <roleset id="point.03" name="have a particular goal or destiny; be intended for something">
       <aliases>
         <alias framenet="" pos="n" verbnet="">point</alias>
-        <alias framenet="" pos="l" verbnet="">have_point</alias>
+        <alias framenet="" pos="v" verbnet="">have_point</alias>
       </aliases>
       <roles>
         <role descr="person with intensions" f="PAG" n="0"/>
@@ -79,7 +77,7 @@
     <roleset id="point.04" name="make an argument or claim">
       <aliases>
         <alias framenet="" pos="n" verbnet="">point</alias>
-        <alias framenet="" pos="l" verbnet="">make_point</alias>
+        <alias framenet="" pos="v" verbnet="">make_point</alias>
       </aliases>
       <note>POINT-N NOTES: </note>
       <roles>
@@ -96,11 +94,11 @@
         <arg f="" n="1">that pizza is a vegetable</arg>
       </example>
     </roleset>
-    
+
     <roleset id="point.05" name="be certain to do/accomplish">
       <aliases>
         <alias framenet="" pos="n" verbnet="">point</alias>
-        <alias framenet="" pos="l" verbnet="">make_point</alias>
+        <alias framenet="" pos="v" verbnet="">make_point</alias>
       </aliases>
       <note>POINT-N NOTES: framed by Tim during MWE annotation </note>
       <roles>
@@ -115,13 +113,20 @@
         <arg f="" n="1">of being a jerkass</arg>
       </example>
     </roleset>
+    <roleset id="point.yy" name="non-predicative use of point; score in a game or sharp bit of an object">
+      <aliases>
+        <alias framenet="" pos="n" verbnet="">point</alias>
+      </aliases>
+      <note>POINT-N NOTES: framed by Tim during MWE annotation </note>
+      <roles/>
+    </roleset>
+
+
   </predicate>
-  
   <predicate lemma="point_out">
     <roleset id="point_out.02" name="point at, define, make an example of">
       <aliases>
         <alias framenet="" pos="v" verbnet="">point_out</alias>
-        <alias framenet="" pos="n" verbnet="">pointing_out</alias>
       </aliases>
       <note>POINT_OUT-V NOTES: (from point.02-v)</note>
       <roles>
@@ -136,11 +141,11 @@
       </example>
     </roleset>
   </predicate>
-
   <predicate lemma="point_finger">
     <roleset id="point_finger.06" name="assign blame">
       <aliases>
         <alias framenet="" pos="m" verbnet="">point_finger</alias>
+        <alias framenet="" pos="n" verbnet="" usage="AMR">finger</alias>
         <mwe id="point_finger">
            <token slot="A" arg="" pos="VB*" head="" dep="">point</token>
            <token slot="B" arg="" pos="NN" head="A" dep="dobj">finger</token>
@@ -150,7 +155,7 @@
         <source>
             (A / point-01
                 :arg0 (n / NARG0)
-                :arg1 (B / finger 
+                :arg1 (B / finger
                          :poss n)
                 :arg2 (n2 / NARG1)
                 :subevent-of (a / accuse-01
@@ -185,6 +190,136 @@
         <rel f="">[point][finger]</rel>
         <arg f="" n="1">at anyone</arg>
         <arg f="" n="2">for her always-healthy little girl Stacey's being so sick with leukemia.</arg>
+      </example>
+    </roleset>
+  </predicate>
+  <predicate lemma="have_talking_point">
+    <roleset id="have_talking_point.07" name="speak based upon pre-existing arguments (potentially provided by others)">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">talking_point</alias>
+        <alias framenet="" pos="n" verbnet="" usage="AMR">point</alias>
+        <mwe id="talking_point">
+           <token slot="A" arg="" pos="NN" head="B" dep="nmod">talking</token>
+           <token slot="A" arg="" pos="VBG" head="B" dep="nmod">talking</token>
+           <token slot="B" arg="" pos="NN" head="" dep="">point</token>
+        </mwe>
+      </aliases>
+      <note>TALKING_POINT-M NOTES: Added during AMR retrofits for MWE framing</note>
+      <roles>
+        <role descr="talker, one spouting talking points" f="PAG" n="0"/>
+        <role descr="topic of talking points" f="PPT" n="1"/>
+        <role descr="target audience, recipient" f="PRD" n="2"/>
+        <role descr="actual talking points" f="PPT" n="3"/>
+        <role descr="original source of talking points" f="DIR" n="4"/>
+      </roles>
+      <example name="with arg4" src="Fox news via COCA" type="">
+        <text> And he used the Planned Parenthood talking points, saying that abortions, several hundred thousand a year, are a very small portion of what they actually do.  </text>
+        <arg f="" n="0">he</arg>
+        <arg f="" n="4">Planned Parenthood</arg>
+        <rel f="">talking points</rel>
+        <arg f="" n="3">saying that abortions, several hundred thousand a year, are a very small portion of what they actually do.</arg>
+      </example>
+      <example name="point_finger-m: arg2" src="" type="">
+        <text>I, I'm sure you saw Liz Cheney said, Rand Paul seems to get his foreign policy talking points from Rachel Maddow.</text>
+        <arg f="" n="0">his</arg>
+        <arg f="" n="1">foreign policy</arg>
+        <rel f="">talking points</rel>
+        <arg f="" n="4">from Rachel Maddow</arg>
+      </example>
+    </roleset>
+  </predicate>
+  <predicate lemma="have_point_of_view">
+    <roleset id="have_point_of_view.08" name="have a particular perspective upon an issue">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">point_of_view</alias>
+        <alias framenet="" pos="n" verbnet="">POV</alias>
+        <alias framenet="" pos="n" verbnet="" usage="AMR">point</alias>
+        <alias framenet="" pos="n" verbnet="" usage="AMR">view</alias>
+        <mwe id="point_of_view">
+           <token slot="A" arg="" pos="NN" head="" dep="">point</token>
+           <token slot="B" arg="" pos="IN" head="C" dep="case">of</token>
+           <token slot="C" arg="" pos="NN" head="A" dep="nmod">view</token>
+        </mwe>
+      </aliases>
+      <note>POV-M NOTES: Added during AMR retrofits for MWE framing</note>
+      <roles>
+        <role descr="Person who has a view point" f="PAG" n="0"/>
+        <role descr="topic of point of view" f="PPT" n="1"/>
+        <role descr="actual point of view or stance" f="PRD" n="2"/>
+        <role descr="kind of point of view; characterization of viewer" f="PRD" n="3"/>
+      </roles>
+      <example name="with arg4" src="Fox news via COCA" type="">
+        <text> I realize your take on this is strictly from a patriotic point of view </text>
+        <arg f="" n="0">your</arg>
+        <arg f="" n="1">this</arg>
+        <arg f="" n="3">patriotic</arg>
+        <rel f="">point of view</rel>
+      </example>
+      <example name="point_finger-m: arg2" src="" type="">
+        <text>Look at it from the lender's point of view</text>
+        <arg f="" n="1">it</arg>
+        <arg f="" n="0">the lender</arg>
+        <rel f="">point of view</rel>
+      </example>
+    </roleset>
+  </predicate>
+
+  <predicate lemma="have_point">
+    <roleset id="have_point.09" name="be correct">
+      <aliases>
+        <alias framenet="" pos="l" verbnet="">have_point</alias>
+        <alias framenet="" pos="n" verbnet="" usage="AMR">point</alias>
+      </aliases>
+      <note>Have-Point-M NOTES: Added during AMR retrofits for MWE framing</note>
+      <note>If it just means "is making a claim", use point.04</note>
+      <roles>
+        <role descr="Person who is correct" f="PAG" n="0"/>
+        <role descr="topic; right about what" f="PPT" n="1"/>
+      </roles>
+      <example name="with arg1" src="" type="">
+        <text>Romney has a point that young Americans are hurting in today's job market.</text>
+        <arg f="" n="0">Romney</arg>
+        <arg f="lvb" n="m">has</arg>
+        <rel f="">point</rel>
+        <arg f="" n="1">that young Americans are hurting in today's job market</arg>
+      </example>
+      <example name="with arg0" src="" type="">
+        <text>but the president has a point there. </text>
+        <arg f="" n="0">the president</arg>
+        <arg f="lvb" n="m">has</arg>
+        <rel f="">point</rel>
+        <arg f="adv" n="m">there</arg>
+      </example>
+
+    </roleset>
+  </predicate>
+  <predicate lemma="case_in_point">
+    <roleset id="case_in_point.10" name="exemplify, be a good example of a generalization">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">case_in_point</alias>
+        <alias framenet="" pos="n" verbnet="" usage="AMR">point</alias>
+        <mwe id="case_in_point">
+           <token slot="A" arg="" pos="NN" head="" dep="">case</token>
+           <token slot="B" arg="" pos="IN" head="C" dep="case">in</token>
+           <token slot="C" arg="" pos="NN" head="A" dep="nmod">point</token>
+        </mwe>
+      </aliases>
+      <note>CASE-IN-Point-M NOTES: Added during AMR retrofits for MWE framing</note>
+      <roles>
+        <role descr="example, individual case" f="PPT" n="0"/>
+        <role descr="of what; larger generalization" f="PRD" n="1"/>
+      </roles>
+      <example name="with arg1" src="" type="">
+        <text> But, more and more, it's becoming digital, case in point, this week's efforts by the White House to promote the president's State of the Union agenda on social media sites like Facebook, Twitter and YouTube.</text>
+        <arg f="dis" n="m">But</arg>
+        <arg f="" n="1">more and more, it's becoming digital</arg>
+        <rel f="">case in point</rel>
+        <arg f="" n="0">this week's efforts by the White House to promote the president's State of the Union agenda on social media sites like Facebook, Twitter and YouTube.</arg>
+      </example>
+      <example name="just arg0" src="" type="">
+        <text>Case in point: Male squash bees hide away inside bright orange squash flowers late in the day, and then the blossom closes up around the sleeping bees as night falls, protecting them from predators. </text>
+        <rel f="">case in point</rel>
+        <arg f="" n="0">Male squash bees hide away inside bright orange squash flowers late in the day, and then the blossom closes up around the sleeping bees as night falls, protecting them from predators.</arg>
       </example>
     </roleset>
   </predicate>
