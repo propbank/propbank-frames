@@ -1,47 +1,63 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="abstract">
     <roleset id="abstract.01" name="to draw or take away">
       <aliases>
-        <alias framenet="Theft" pos="v" verbnet="10.1">abstract</alias>
-        <alias framenet="Theft" pos="n" verbnet="">abstraction</alias>
+        <alias pos="v">abstract</alias>
+        <alias pos="n">abstraction</alias>
       </aliases>
-      <note>ABSTRACT-V NOTES: Verbnet entry 10.1. No FNcls. (from abstract.01-v)</note>
-      <note>ABSTRACTION-N NOTES: (from abstraction.01-n)</note>
       <roles>
         <role descr="entity abstracting" f="PAG" n="0">
-          <vnrole vncls="10.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="remove-10.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Theft" version="1.7">perpetrator</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing being abstracted" f="PPT" n="1">
-          <vnrole vncls="10.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="remove-10.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Theft" version="1.7">victim</rolelink>
+            <rolelink resource="FrameNet" class="Theft" version="1.7">goods</rolelink>
+          </rolelinks>
         </role>
         <role descr="abstracted from" f="DIR" n="2">
-          <vnrole vncls="10.1" vntheta="Source"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="remove-10.1" version="verbnet3.3">source</rolelink>
+            <rolelink resource="FrameNet" class="Theft" version="1.7">source</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG0" src="probably COCA (2018 example fix)" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Theft" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="remove-10.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="probably COCA (2018 example fix)" name="ARG0">
         <text>In working up this study, he abstracted numerous pages from the original typed Narrative-Commentary and considerably altered their chronological order to fit the new central theme.</text>
-        <arg f="adv" n="m">In working up this study,</arg>
-        <arg f="" n="0">he</arg>
-        <rel f="">abstracted</rel>
-        <arg f="" n="1">numerous pages</arg>
-        <arg f="" n="2">from the original typed Narrative-Commentary</arg>
+        <rel relloc="6">abstracted</rel>
+        <arg f="ADV" n="m" start="0" end="4">In working up this study,</arg>
+        <arg f="" n="0" start="5" end="5">he</arg>
+        <arg f="" n="1" start="7" end="8">numerous pages</arg>
+        <arg f="" n="2" start="9" end="13">from the original typed Narrative-Commentary</arg>
       </example>
-
-      <example name="abstract-v: passive" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="present" voice="active"/>
+      <example src="internet" name="abstract-v: passive">
         <text>Anti-transcendent skepticism holds that thought-1 can not be abstracted *trace*-1 away from some natural or material preconditions</text>
-        <arg f="mod" n="m">can</arg>
-        <arg f="neg" n="m">not</arg>
-        <rel f="">abstracted</rel>
-        <arg f="" n="1">*trace*-1 (= thought)</arg>
-        <arg f="" n="2">away from some natural or material preconditions</arg>
+        <rel relloc="8">abstracted</rel>
+        <arg f="MOD" n="m" start="5" end="5">can</arg>
+        <arg f="NEG" n="m" start="6" end="6">not</arg>
+        <arg f="" n="1" start="4" end="4">thought-1</arg>
+        <arg f="" n="2" start="10" end="16">away from some natural or material preconditions</arg>
       </example>
-      <example name="abstraction-n" src="" type="">
+      <example src="" name="abstraction-n">
         <text>One Cuil = One level of abstraction away from the reality of a situation.</text>
-        <rel f="">abstraction</rel>
-        <arg f="" n="2">away from the reality of a situation</arg>
+        <rel relloc="6">abstraction</rel>
+        <arg f="" n="2" start="7" end="13">away from the reality of a situation.</arg>
       </example>
+      <note>ABSTRACT-V NOTES: Verbnet entry 10.1. No FNcls. (from abstract.01-v)</note>
+      <note>ABSTRACTION-N NOTES: (from abstraction.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

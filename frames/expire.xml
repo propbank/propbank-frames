@@ -1,75 +1,92 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="expire">
     <roleset id="expire.01" name="get to end of valid time period">
       <aliases>
-        <alias framenet="Death" pos="v" verbnet="">expire</alias>
-        <alias framenet="" pos="j" verbnet="">expired</alias>
-        <alias framenet="" pos="n" verbnet="">expiration</alias>
+        <alias pos="v">expire</alias>
+        <alias pos="j">expired</alias>
+        <alias pos="n">expiration</alias>
       </aliases>
-      
-      
-      
       <roles>
-        <role descr="commodity, thing expiring" f="ppt" n="1">
-          <vnrole vncls="48.2" vntheta="patient"/>
+        <role descr="commodity, thing expiring" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="disappearance-48.2" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Death" version="1.7">protagonist</rolelink>
+          </rolelinks>
         </role>
-        <role descr="expiration date" f="tmp" n="m"/>
+        <role descr="expiration date" f="TMP" n="m"/>
       </roles>
-      <example name="relatively simple example" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Death" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="disappearance-48.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="expire-v.1" src="annot-overlap" confidence="0.1">46</lexlink>
+      </lexlinks>
+      <example src="" name="relatively simple example">
         <text>The accord expired yesterday.</text>
-        <arg f="" n="1">The accord</arg>
-        <rel f="">expired</rel>
-        <arg f="tmp" n="m">yesterday</arg>
+        <rel relloc="2">expired</rel>
+        <arg f="" n="1" start="0" end="1">The accord</arg>
+        <arg f="TMP" n="m" start="3" end="3">yesterday.</arg>
       </example>
-      <example name="Adjectival rel: expired" src="BOLT-6" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="BOLT-6" name="Adjectival rel: expired">
         <text>The relevant county government departments passed the buck to each other , disputed over trifles , and delayed it over and over again , which caused Deka Company 's " Construction - Use Land Planning Permit " and the " Approval for the Pre-Examination on the Use of Land " issued by the Provincial Land Resources Bureau to be expired , thus causing great losses to the enterprise .</text>
-        <arg f="" n="1">Deka Company 's " Construction - Use Land Planning Permit " and the " Approval for the Pre-Examination on the Use of Land " issued by the Provincial Land Resources Bureau</arg>
-        <rel f="">expired</rel>
+        <rel relloc="59">expired</rel>
+        <arg f="" n="1" start="26" end="56">Deka Company 's " Construction - Use Land Planning Permit " and the " Approval for the Pre-Examination on the Use of Land " issued by the Provincial Land Resources Bureau</arg>
       </example>
-      <example name="Arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="Arg1">
         <text>The cheese's expiration was evident by its fuzziness and funky smell.</text>
-        <arg f="" n="1">The cheese's</arg>
-        <rel f="">expiration</rel>
+        <rel relloc="2">expiration</rel>
+        <arg f="" n="1" start="0" end="1">The cheese's</arg>
       </example>
-    <note>EXPIRE-V NOTES: Frames file for 'expire' based on sentences in financial subcorpus; adjectival 'expired' added by Julia based on BOLT-6. Member of VNcls disappearance-48.2. Comparison with 'run_out'. (from expire.01-v)
+      <note>EXPIRE-V NOTES: Frames file for 'expire' based on sentences in financial subcorpus; adjectival 'expired' added by Julia based on BOLT-6. Member of VNcls disappearance-48.2. Comparison with 'run_out'. (from expire.01-v)
 
 EXPIRATION-N NOTES: (from expiration.01-n)
 
 EXPIRED-J NOTES: Automatically created by Julia as an alias file for unification. (from expired.01-j)</note>
-</roleset>
-  <roleset id="expire.02" name="exhalation">
-<aliases>
-<alias framenet="" pos="n" verbnet="">expiration</alias>
-<alias framenet="" pos="v" verbnet="">expire</alias>
-</aliases>
-
-<roles>
-<role descr="Exhaler" f="pag" n="0">
-<vnrole vncls="40.1.3" vntheta="pivot"/>
-</role>
-<role descr="Air exhaled" f="ppt" n="1">
-<vnrole vncls="40.1.3" vntheta="theme"/>
-</role>
-</roles>
-<example name="Arg1, DIR" src="" type="">
-<inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-<text>A sneeze is a powerful expiration of air through the nasal passages.</text>
-<rel f="">expiration</rel>
-<arg f="" n="1">of air</arg>
-<arg f="dir" n="m">through the nasal passages</arg>
-</example>
-<example name="verbal" src="" type="">
-<inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-<text>Respiration is the exchange of gases, during which we inspire air rich in oxygen and expire air rich in carbon-dioxide.</text>
-<arg f="" n="0">we</arg>
-<rel f="">expire</rel>
-<arg f="" n="1">air rich in carbon-dioxide.</arg>
-</example>
-<note>EXPIRATION-N NOTES: Based on verb-exhale.01. (from expiration.02-n)</note>
-</roleset>
-</predicate>
-  
+    </roleset>
+    <roleset id="expire.02" name="exhalation">
+      <aliases>
+        <alias pos="n">expiration</alias>
+        <alias pos="v">expire</alias>
+      </aliases>
+      <roles>
+        <role descr="Exhaler" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="exhale-40.1.3" version="verbnet3.3">pivot</rolelink>
+            <rolelink resource="FrameNet" class="Breathing" version="1.7">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="Air exhaled" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="exhale-40.1.3" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Breathing" version="1.7">air</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Breathing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="exhale-40.1.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="Arg1, DIR">
+        <text>A sneeze is a powerful expiration of air through the nasal passages.</text>
+        <rel relloc="5">expiration</rel>
+        <arg f="" n="1" start="6" end="7">of air</arg>
+        <arg f="DIR" n="m" start="8" end="11">through the nasal passages.</arg>
+      </example>
+      <example src="" name="verbal">
+        <text>Respiration is the exchange of gases, during which we inspire air rich in oxygen and expire air rich in carbon-dioxide.</text>
+        <rel relloc="15">expire</rel>
+        <arg f="" n="0" start="8" end="8">we</arg>
+        <arg f="" n="1" start="16" end="19">air rich in carbon-dioxide.</arg>
+      </example>
+      <note>EXPIRATION-N NOTES: Based on verb-exhale.01. (from expiration.02-n)</note>
+    </roleset>
+  </predicate>
 </frameset>

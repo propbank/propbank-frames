@@ -1,69 +1,77 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="enroll">
     <roleset id="enroll.01" name="register membership in">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">enroll</alias>
-        <alias framenet="" pos="v" verbnet="">enrol</alias>
-        <alias framenet="" pos="n" verbnet="">enrollment</alias>
-        <alias framenet="" pos="n" verbnet="">enrolment</alias>
+        <alias pos="v">enroll</alias>
+        <alias pos="v">enrol</alias>
+        <alias pos="n">enrollment</alias>
+        <alias pos="n">enrolment</alias>
       </aliases>
-      <note>ENROLL-V NOTES: Agent and entity enrolled are often the same; use arg0 for these cases. (from enroll.01-v)</note>
-      <note>ENROLLMENT-N NOTES: Added by Julia based on BOLT, enroll.01. Corresponds to VNcls involve-107. (from enrollment.01-n)</note>
       <roles>
         <role descr="causer of enrollment, agent" f="PAG" n="0">
-          <vnrole vncls="107" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="involve-107.1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity enrolled" f="PPT" n="1">
-          <vnrole vncls="107" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="involve-107.1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="enrolled in what" f="GOL" n="2">
-          <vnrole vncls="107" vntheta="Goal"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="involve-107.1" version="verbnet3.3">goal</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="enroll-v: intransitive?" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>The plan is talking about applicants admitted, not students who [*T*-1] enroll.</text>
-        <arg f="" n="0">[*T*-1]</arg>
-        <arg f="rcl" n="m">who -&gt; students</arg>
-        <rel f="">enroll</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Becoming_a_member" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="107" version="UNK" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="enroll-v: intransitive?">
+        <text>The plan is talking about applicants admitted, not students who [*T*] enroll.</text>
+        <rel relloc="11">enroll.</rel>
+        <arg f="" n="0" start="10" end="10">[*T*]</arg>
+        <arg f="RCL" n="m" start="8" end="8">students</arg>
       </example>
-      <example name="enroll-v: sorta transitive" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="active"/>
-        <text>At the Baltimore firm of Weinberg&amp; Green, [new corporate and banking associates]-1 are required [*-1] to enroll in a 20-class course.</text>
-        <arg f="" n="0">[*-1]</arg>
-        <rel f="">enroll</rel>
-        <arg f="" n="2">in a 20-class course</arg>
+      <example src="" name="enroll-v: sorta transitive">
+        <text>At the Baltimore firm of Weinberg&amp; Green, new corporate and banking associates are required [*] to enroll in a 20-class course.</text>
+        <rel relloc="16">enroll</rel>
+        <arg f="" n="0" start="7" end="11">new corporate and banking associates</arg>
+        <arg f="" n="2" start="17" end="20">in a 20-class course.</arg>
       </example>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes nw/wsj/15/wsj_1567" type="">
+      <example src="ontonotes nw/wsj/15/wsj_1567" name="ARG0 and ARG1 and ARG2">
         <text>That may be because Mr. Gargan , smarting at what he considered slurs on his membership standards made by the rival group , enrolled his dog , Beauregard , as a member of the IAFP .</text>
-        <arg f="" n="0">Mr. Gargan</arg>
-        <arg f="adv" n="m">smarting at what he considered slurs on his membership standards made by the rival group</arg>
-        <rel f="">enrolled</rel>
-        <arg f="" n="1">his dog , Beauregard</arg>
-        <arg f="" n="2">as a member of the IAFP</arg>
+        <rel relloc="23">enrolled</rel>
+        <arg f="" n="0" start="4" end="5">Mr. Gargan</arg>
+        <arg f="ADV" n="m" start="7" end="21">smarting at what he considered slurs on his membership standards made by the rival group</arg>
+        <arg f="" n="1" start="24" end="27">his dog , Beauregard</arg>
+        <arg f="" n="2" start="29" end="34">as a member of the IAFP</arg>
       </example>
-
-      <example name="enrollment-n: args 0, 1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="internet" name="enrollment-n: args 0, 1">
         <text>In the three years since the Post-9/11 GI Bill took effect, colleges have nearly doubled their enrollment of student veterans...</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">enrollment</rel>
-        <arg f="" n="1">of student veterans</arg>
+        <rel relloc="16">enrollment</rel>
+        <arg f="" n="0" start="15" end="15">their</arg>
+        <arg f="" n="1" start="17" end="19">of student veterans...</arg>
       </example>
-      <example name="enrollment-n: args 1, 2" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="internet" name="enrollment-n: args 1, 2">
         <text>Hannaford asked Forte to escort the former Marine, who served two tours in Iraq, to a nearby office to help facilitate his enrollment in the university.</text>
-        <arg f="" n="1">his</arg>
-        <rel f="">enrollment</rel>
-        <arg f="" n="2">in the university</arg>
+        <rel relloc="22">enrollment</rel>
+        <arg f="" n="1" start="21" end="21">his</arg>
+        <arg f="" n="2" start="23" end="25">in the university.</arg>
       </example>
-      <example name="enrollment-n: with EXT" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="BOLT" name="enrollment-n: with EXT">
         <text>The problem is not rising and falling enrollment , that 's just normal demographics . In fact , lately in my country they 've been building schools modularly so they can be turned into house when the families with young kids in the neighbourhood grow older and do n't need them anymore .</text>
-        <arg f="ext" n="m">rising and falling</arg>
-        <rel f="">enrollment</rel>
+        <rel relloc="7">enrollment</rel>
+        <arg f="EXT" n="m" start="4" end="6">rising and falling</arg>
       </example>
+      <note>ENROLL-V NOTES: Agent and entity enrolled are often the same; use arg0 for these cases. (from enroll.01-v)</note>
+      <note>ENROLLMENT-N NOTES: Added by Julia based on BOLT, enroll.01. Corresponds to VNcls involve-107. (from enrollment.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

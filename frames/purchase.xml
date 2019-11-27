@@ -1,92 +1,118 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="purchase">
     <roleset id="purchase.01" name="buy">
       <aliases>
-        <alias framenet="Commerce_buy" pos="v" verbnet="">purchase</alias>
-        <alias framenet="" pos="n" verbnet="">purchase</alias>
+        <alias pos="v">purchase</alias>
+        <alias pos="n">purchase</alias>
       </aliases>
+      <roles>
+        <role descr="purchaser" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="obtain-13.5.2-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Commerce_buy" version="1.7">buyer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing purchased" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="obtain-13.5.2-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Commerce_buy" version="1.7">goods</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="seller" f="DIR" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="obtain-13.5.2-1" version="verbnet3.3">source</rolelink>
+            <rolelink resource="FrameNet" class="Commerce_buy" version="1.7">seller</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="price paid" f="VSP" n="3">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="obtain-13.5.2-1" version="verbnet3.3">asset</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="benefactive" f="GOL" n="4">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Commerce_buy" version="1.7">recipient</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Commerce_buy" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="obtain-13.5.2-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Transaction.TransferMoney.Purchase" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Transaction.TransferOwnership.Purchase" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Transfermoney" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Transferownership" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="purchase-v.1" src="annot-overlap" confidence="0.1">145</lexlink>
+        <lexlink resource="onsense" version="on5" class="purchase-n.1" src="annot-overlap" confidence="0.1">123</lexlink>
+      </lexlinks>
+      <example src="" name="Basic transitive">
+        <text>They purchased $2.4 billion in Fannie Mae bonds</text>
+        <rel relloc="1">purchased</rel>
+        <arg f="" n="0" start="0" end="0">They</arg>
+        <arg f="" n="1" start="2" end="7">$2.4 billion in Fannie Mae bonds</arg>
+      </example>
+      <example src="" name="With price (often subtle):">
+        <text>...most purchased at nominal prices...</text>
+        <rel relloc="1">purchased</rel>
+        <arg f="" n="1" start="0" end="0">...most</arg>
+        <arg f="" n="3" start="2" end="4">at nominal prices...</arg>
+      </example>
+      <example src="" name="With seller:">
+        <text>The company purchased a wheel-loader from Dresser.</text>
+        <rel relloc="2">purchased</rel>
+        <arg f="" n="0" start="0" end="1">The company</arg>
+        <arg f="" n="1" start="3" end="4">a wheel-loader</arg>
+        <arg f="" n="2" start="5" end="6">from Dresser.</arg>
+      </example>
+      <example src="ontonotes nw/wsj/16/wsj_1635" name="ARG0 and ARG1 and ARG4">
+        <text>But Mr. Powers has purchased asset - backed issues for individuals with tax - deferred accounts , such as retirement plans .</text>
+        <rel relloc="4">purchased</rel>
+        <arg f="DIS" n="m" start="0" end="0">But</arg>
+        <arg f="" n="0" start="1" end="2">Mr. Powers</arg>
+        <arg f="" n="1" start="5" end="8">asset - backed issues</arg>
+        <arg f="" n="4" start="9" end="20">for individuals with tax - deferred accounts , such as retirement plans</arg>
+      </example>
+      <example src="" name="With purpose clause:">
+        <text>The company purchased sugar on the world market to meet export commitments</text>
+        <rel relloc="2">purchased</rel>
+        <arg f="" n="0" start="0" end="1">The company</arg>
+        <arg f="" n="1" start="3" end="3">sugar</arg>
+        <arg f="LOC" n="m" start="4" end="7">on the world market</arg>
+        <arg f="PRP" n="m" start="8" end="11">to meet export commitments</arg>
+      </example>
+      <example src="Lots of arguments" name="Lots of arguments">
+        <text>General Electric Co. 's rail-car leasing unit completed the $178.5 million purchase of similar businesses from LeucadiaNational Corp. and Brae Corp. , 74%-owned by Leucadia</text>
+        <rel relloc="11">purchase</rel>
+        <arg f="" n="3" start="8" end="10">the $178.5 million</arg>
+        <arg f="" n="1" start="12" end="14">of similar businesses</arg>
+        <arg f="" n="2" start="15" end="24">from LeucadiaNational Corp. and Brae Corp. , 74%-owned by Leucadia</arg>
+      </example>
+      <example src="NP only, with purchaser" name="NP only, with purchaser">
+        <text>its $ 750 million purchase of a 15 % stake in UAL</text>
+        <rel relloc="4">purchase</rel>
+        <arg f="" n="0" start="0" end="0">its</arg>
+        <arg f="" n="3" start="1" end="3">$ 750 million</arg>
+        <arg f="" n="1" start="5" end="11">of a 15 % stake in UAL</arg>
+      </example>
+      <example src="With &quot;by&quot; preposition for arg0" name="With &quot;by&quot; preposition for arg0">
+        <text>The courts may rule that purchase of the smaller company by the larger is monopolistic.</text>
+        <rel relloc="5">purchase</rel>
+        <arg f="" n="1" start="6" end="9">of the smaller company</arg>
+        <arg f="" n="0" start="10" end="12">by the larger</arg>
+      </example>
+      <example src="With beneficiary argument" name="With beneficiary argument">
+        <text>Chloe was forced to ask her husband to make the $700 purchase for her.</text>
+        <rel relloc="11">purchase</rel>
+        <arg f="" n="3" start="10" end="10">$700</arg>
+        <arg f="" n="4" start="12" end="13">for her.</arg>
+      </example>
       <note>PURCHASE-V NOTES: Based on large corpus. Member of Vncls obtain-13.5.2-1. comparison with buy. Checked by Julia, 10/2010. (from purchase.01-v)</note>
       <note>PURCHASE-N NOTES: Roleset based on verb entry purchase.01, and OntoNotes sense grouping purchase.01; maps to VN class obtain-13.5.2-1. Framed by Claire. (from purchase.01-n)</note>
-      <roles>
-        <role descr="purchaser" f="pag" n="0">
-          <vnrole vncls="13.5.2-1" vntheta="agent"/>
-        </role>
-        <role descr="thing purchased" f="ppt" n="1">
-          <vnrole vncls="13.5.2-1" vntheta="theme"/>
-        </role>
-        <role descr="seller" f="dir" n="2">
-          <vnrole vncls="13.5.2-1" vntheta="source"/>
-        </role>
-        <role descr="price paid" f="vsp" n="3">
-          <vnrole vncls="13.5.2-1" vntheta="asset"/>
-        </role>
-        <role descr="benefactive" f="gol" n="4"/>
-      </roles>
-      <example name="Basic transitive" src="" type="">
-        <text>They purchased $2.4 billion in Fannie Mae bonds</text>
-        <arg f="" n="0">They</arg>
-        <rel f="">purchased</rel>
-        <arg f="" n="1">$2.4 billion in Fannie Mae bonds</arg>
-      </example>
-      <example name="With price (often subtle):" src="" type="">
-        <text>...most-1 purchased *trace*-1 at nominal prices...</text>
-        <rel f="">purchased</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="3">at nominal prices</arg>
-      </example>
-      <example name="With seller:" src="" type="">
-        <text>The company purchased a wheel-loader from Dresser.</text>
-        <arg f="" n="0">The company</arg>
-        <rel f="">purchased</rel>
-        <arg f="" n="1">a wheel-loader</arg>
-        <arg f="" n="2">from Dresser</arg>
-      </example>
-      <example name="ARG0 and ARG1 and ARG4" src="ontonotes nw/wsj/16/wsj_1635" type="">
-        <text>But Mr. Powers has purchased asset - backed issues for individuals with tax - deferred accounts , such as retirement plans .</text>
-        <arg f="dis" n="m">But</arg>
-        <arg f="" n="0">Mr. Powers</arg>
-        <rel f="">purchased</rel>
-        <arg f="" n="1">asset - backed issues</arg>
-        <arg f="" n="4">for individuals with tax - deferred accounts , such as retirement plans</arg>
-      </example>
-
-      <example name="With purpose clause:" src="" type="">
-        <text>The company purchased sugar on the world market to meet export commitments</text>
-        <arg f="" n="0">The company</arg>
-        <rel f="">purchased</rel>
-        <arg f="" n="1">sugar</arg>
-        <arg f="loc" n="m">on the world market</arg>
-        <arg f="prp" n="m">to meet export commitments</arg>
-      </example>
-      <example name="Lots of arguments" src="Lots of arguments" type="Lots of arguments">
-        <text>General Electric Co. 's rail-car leasing unit completed the $178.5 million purchase of similar businesses from LeucadiaNational Corp. and Brae Corp. , 74%-owned by Leucadia</text>
-        <arg f="" n="3">$ 178.5 million</arg>
-        <rel f="">purchase</rel>
-        <arg f="" n="1">of similar businesses</arg>
-        <arg f="" n="2">from Leucadia National Corp. and Brae Corp. , 74%-owned by Leucadia</arg>
-      </example>
-      <example name="NP only, with purchaser" src="NP only, with purchaser" type="NP only, with purchaser">
-        <text>its $ 750 million purchase of a 15 % stake in UAL</text>
-        <arg f="" n="0">its</arg>
-        <arg f="" n="3">$ 750 million</arg>
-        <rel f="">purchase</rel>
-        <arg f="" n="1">of a 15 % stake in UAL</arg>
-      </example>
-      <example name="With &quot;by&quot; preposition for arg0" src="With &quot;by&quot; preposition for arg0" type="With &quot;by&quot; preposition for arg0">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The courts may rule that purchase of the smaller company by the larger is monopolistic.</text>
-        <rel f="">purchase</rel>
-        <arg f="" n="1">of the smaller company</arg>
-        <arg f="" n="0">by the larger</arg>
-      </example>
-      <example name="With beneficiary argument" src="With beneficiary argument" type="With beneficiary argument">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Chloe was forced to ask her husband to make the $700 purchase for her.</text>
-        <arg f="" n="3">$700</arg>
-        <rel f="">purchase</rel>
-        <arg f="" n="4">for her.</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

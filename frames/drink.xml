@@ -1,118 +1,149 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="drink">
     <roleset id="drink.01" name="ingest liquids">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">drink</alias>
-        <alias framenet="" pos="n" verbnet="">drinking</alias>
-        <alias framenet="" pos="v" verbnet="">drink</alias>
-        <alias framenet="" pos="l" verbnet="">have_drink</alias>
+        <alias pos="n">drink</alias>
+        <alias pos="n">drinking</alias>
+        <alias pos="v">drink</alias>
+        <alias pos="l">have_drink</alias>
+        <argalias pos="n" arg="0">drinker</argalias>
       </aliases>
+      <roles>
+        <role descr="drinker" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="eat-39.1-2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Ingestion" version="1.7">ingestor</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="liquid" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="eat-39.1-2" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Ingestion" version="1.7">ingestibles</rolelink>
+            <rolelink resource="FrameNet" class="Ingestion" version="1.7">means</rolelink>
+            <rolelink resource="FrameNet" class="Ingestion" version="1.7">instrument</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="source of liquid" f="DIR" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="eat-39.1-2" version="verbnet3.3">source</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Ingestion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="eat-39.1-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="drink-v.1" src="annot-overlap" confidence="0.1">33</lexlink>
+        <lexlink resource="onsense" version="on5" class="drink-v.2" src="annot-overlap" confidence="0.1">26</lexlink>
+        <lexlink resource="onsense" version="on5" class="drink-n.2" src="annot-overlap" confidence="0.1">5</lexlink>
+      </lexlinks>
+      <example src="" name="basic transitive">
+        <text>And another thing -- real Texans drink Lipton iced tea.''</text>
+        <rel relloc="6">drink</rel>
+        <arg f="" n="0" start="4" end="5">real Texans</arg>
+        <arg f="" n="1" start="7" end="8">Lipton iced</arg>
+      </example>
+      <example src="" name="intransitive">
+        <text>He says bowling helps him shed pounds, though that effort is sometimes thwarted by the fact that ``when I'm drinking, I bowl better.''</text>
+        <rel relloc="19">drinking,</rel>
+        <arg f="" n="0" start="20" end="20">I</arg>
+      </example>
+      <example src="" name="adverbial arg1">
+        <text>They worry about their careers, drink too much and suffer through broken marriages and desultory affairs.</text>
+        <rel relloc="5">drink</rel>
+        <arg f="" n="0" start="0" end="0">They</arg>
+        <arg f="" n="1" start="6" end="7">too much</arg>
+      </example>
+      <example src="" name="with source">
+        <text>Jackals roam the streets at night, and [gemsbok, hardy antelope with long straight horns,]-1 wander in from the desert *trace*-1 to drink from water sprinklers.</text>
+        <rel relloc="21">drink</rel>
+        <arg f="" n="0" start="19" end="19">*trace*-1</arg>
+        <arg f="" n="2" start="22" end="24">from water sprinklers.</arg>
+      </example>
+      <example src="With source of liquid" name="With source of liquid">
+        <text>The baby wanted another drink of juice from his bottle.</text>
+        <rel relloc="4">drink</rel>
+        <arg f="" n="1" start="5" end="6">of juice</arg>
+        <arg f="" n="2" start="7" end="9">from his bottle.</arg>
+      </example>
+      <example src="With location, comparison with source" name="With location, comparison with source">
+        <text>The horse took a long drink of water at the trough.</text>
+        <rel relloc="5">drink</rel>
+        <arg f="TMP" n="m" start="4" end="4">long</arg>
+        <arg f="" n="1" start="6" end="7">of water</arg>
+        <arg f="LOC" n="m" start="8" end="10">at the trough.</arg>
+      </example>
+      <example src="Source only" name="Source only.">
+        <text>He took a drink from the whiskey bottle and passed it around.</text>
+        <rel relloc="3">drink</rel>
+        <arg f="" n="2" start="4" end="7">from the whiskey bottle</arg>
+      </example>
+      <example src="BOLT" name="NOT EVENTIVE. .YY!">
+        <text>OH YEH , AND , if you call me a coward again , I ll come up there to Jonesport , hunt you down , and buy you a drink first .</text>
+        <rel relloc="29">drink</rel>
+      </example>
       <note>DRINK-V NOTES: Frames file for 'drink' based on sentences in wsj. Verbnet entry 39.1. (from drink.01-v predicate notes)</note>
       <note>DRINKING-N NOTES: (from drinking.01-n)</note>
       <note>DRINK-N NOTES: Roleset based on verb entry drink.01, OntoNotes sense grouping drink.03; maps to VN entry eat-39.1-2. Framed by Claire. (from drink.01-n)</note>
-      <roles>
-        <role descr="drinker" f="PAG" n="0">
-          <vnrole vncls="39.1-2" vntheta="Agent"/>
-        </role>
-        <role descr="liquid" f="PPT" n="1">
-          <vnrole vncls="39.1-2" vntheta="Patient"/>
-        </role>
-        <role descr="source of liquid" f="DIR" n="2">
-          <vnrole vncls="39.1-2" vntheta="Source"/>
-        </role>
-      </roles>
-      <example name="basic transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>And another thing -- real Texans drink Lipton iced tea.''</text>
-        <arg f="" n="0">real Texans</arg>
-        <rel f="">drink</rel>
-        <arg f="" n="1">Lipton iced tea</arg>
-      </example>
-      <example name="intransitive" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="present" voice="active"/>
-        <text>He says bowling helps him shed pounds, though that effort is sometimes thwarted by the fact that ``when I'm drinking, I bowl better.''</text>
-        <arg f="" n="0">I</arg>
-        <rel f="">drinking</rel>
-      </example>
-      <example name="adverbial arg1" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>They worry about their careers, drink too much and suffer through broken marriages and desultory affairs.</text>
-        <arg f="" n="0">They</arg>
-        <rel f="">drink</rel>
-        <arg f="" n="1">too much</arg>
-      </example>
-      <example name="with source" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>Jackals roam the streets at night, and [gemsbok, hardy antelope with long straight horns,]-1 wander in from the desert *trace*-1 to drink from water sprinklers.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">drink</rel>
-        <arg f="" n="2">from water sprinklers</arg>
-      </example>
-      <example name="With source of liquid" src="With source of liquid" type="With source of liquid">
-        <text>The baby wanted another drink of juice from his bottle.</text>
-        <rel f="">drink</rel>
-        <arg f="" n="1">of juice</arg>
-        <arg f="" n="2">from his bottle</arg>
-      </example>
-      <example name="With location, comparison with source" src="With location, comparison with source" type="With location, comparison with source">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The horse took a long drink of water at the trough.</text>
-        <arg f="tmp" n="m">long</arg>
-        <rel f="">drink</rel>
-        <arg f="" n="1">of water</arg>
-        <arg f="loc" n="m">at the trough</arg>
-      </example>
-      <example name="Source only." src="Source only" type="Source only">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>He took a drink from the whiskey bottle and passed it around.</text>
-        <rel f="">drink</rel>
-        <arg f="" n="2">from the whiskey bottle</arg>
-      </example>
-      <example name="NOT EVENTIVE. .YY!" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>OH YEH , AND , if you call me a coward again , I ll come up there to Jonesport , hunt you down , and buy you a drink first .</text>
-      </example>
     </roleset>
     <roleset id="drink.02" name="salute">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">drink</alias>
+        <alias pos="v">drink</alias>
       </aliases>
-      <note>DRINK-V NOTES: Doggerel verse in the Wall Street Journal. I love it. (from drink.02-v)</note>
       <roles>
         <role descr="drinker" f="PAG" n="0"/>
         <role descr="thing saluted" f="PPT" n="1"/>
       </roles>
-      <example name="prost, prost, here's a toast" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="prost, prost, here's a toast">
         <text>I've learned the hard way that too much booze / Takes revenge the next day about nine; / No wonder I say, ``I drink to your health'' / -- It certainly isn't to mine!</text>
-        <arg f="" n="0">I</arg>
-        <rel f="">drink</rel>
-        <arg f="" n="1">to your health</arg>
+        <rel relloc="23">drink</rel>
+        <arg f="" n="0" start="20" end="20">I</arg>
+        <arg f="" n="1" start="24" end="26">to your health''</arg>
       </example>
+      <note>DRINK-V NOTES: Doggerel verse in the Wall Street Journal. I love it. (from drink.02-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="drink_up">
     <roleset id="drink_up.03" name="drink up: drink completely">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">drink_up</alias>
+        <alias pos="v">drink_up</alias>
       </aliases>
-      <note>DRINK_UP-V NOTES: (from drink.03-v)</note>
       <roles>
         <role descr="drinker" f="PAG" n="0">
-          <vnrole vncls="39.1-2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="eat-39.1-2" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="drink" f="PPT" n="1">
-          <vnrole vncls="39.1-2" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="eat-39.1-2" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="bottoms up" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Ingestion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="eat-39.1-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="bottoms up">
         <text>Sometimes he did n't seem to [*?*] because he hid them so well [0]he could n't find them himself or because he looked and did n't find anything and figured [0] he had n't hid one after all or had drunk it up .</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">[ drunk] [ up]</rel>
-        <arg f="" n="1">it</arg>
+        <rel relloc="40 42">drunk up</rel>
+        <arg f="" n="0" start="1" end="1">he</arg>
+        <arg f="" n="1" start="41" end="41">it</arg>
       </example>
+      <note>DRINK_UP-V NOTES: (from drink.03-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,31 +1,45 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="invoice">
     <roleset id="invoice.01" name="invoice">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">invoice</alias>
+        <alias pos="v">invoice</alias>
       </aliases>
-      <note>INVOICE-V NOTES: Edited by hwangd (from invoice.01-v)</note>
       <roles>
         <role descr="invoicer, one who bills" f="PAG" n="0">
-          <vnrole vncls="54.5" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="bill-54.5" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="money, amount" f="VSP" n="1">
-          <vnrole vncls="54.5" vntheta="Asset"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="bill-54.5" version="verbnet3.3">asset</rolelink>
+          </rolelinks>
         </role>
         <role descr="invoiced, one who gets billed" f="GOL" n="2">
-          <vnrole vncls="54.5" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="bill-54.5" version="verbnet3.3">recipient</rolelink>
+          </rolelinks>
         </role>
         <role descr="cause" f="CAU" n="3"/>
       </roles>
-      <example name="All args" src="web usage" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Billing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="bill-54.5" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web usage" name="All args">
         <text>He invoiced them 495 pounds for the use of his work.</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">invoiced</rel>
-        <arg f="" n="2">them</arg>
-        <arg f="" n="1">495 pounds</arg>
-        <arg f="" n="3">for the use of his work</arg>
+        <rel relloc="1">invoiced</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
+        <arg f="" n="2" start="2" end="2">them</arg>
+        <arg f="" n="1" start="3" end="4">495 pounds</arg>
+        <arg f="" n="3" start="5" end="10">for the use of his work.</arg>
       </example>
+      <note>INVOICE-V NOTES: Edited by hwangd (from invoice.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

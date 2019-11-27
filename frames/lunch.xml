@@ -1,27 +1,40 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="lunch">
     <roleset id="lunch.01" name="eat lunch">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">lunch</alias>
-        <alias framenet="" pos="l" verbnet="">have_lunch</alias>
+        <alias pos="v">lunch</alias>
+        <alias pos="l">have_lunch</alias>
       </aliases>
-      
       <roles>
-        <role descr="eater" f="pag" n="0">
-          <vnrole vncls="39.5" vntheta="agent"/>
+        <role descr="eater" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="dine-39.5" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Ingestion" version="1.7">ingestor</rolelink>
+          </rolelinks>
         </role>
-        <role descr="eaten" f="ppt" n="1">
-          <vnrole vncls="39.5" vntheta="patient"/>
+        <role descr="eaten" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="dine-39.5" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Ingestion" version="1.7">ingestibles</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="All args" src="web usage" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Ingestion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="dine-39.5" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web usage" name="All args">
         <text>We lunched on chips, llama steaks, and coke!</text>
-        <arg f="" n="0">We</arg>
-        <rel f="">lunched</rel>
-        <arg f="" n="1">on chips, llama steaks, and coke</arg>
+        <rel relloc="1">lunched</rel>
+        <arg f="" n="0" start="0" end="0">We</arg>
+        <arg f="" n="1" start="2" end="7">on chips, llama steaks, and coke!</arg>
       </example>
-    <note>LUNCH-V NOTES: Edited by hwangd (from lunch.01-v)</note>
-</roleset>
+      <note>LUNCH-V NOTES: Edited by hwangd (from lunch.01-v)</note>
+    </roleset>
   </predicate>
 </frameset>

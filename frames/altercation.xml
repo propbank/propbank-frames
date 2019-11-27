@@ -1,23 +1,43 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="altercation">
     <roleset id="altercation.01" name="hostile encounter, quarrel">
       <aliases>
-        <alias framenet="Hostile_encounter Quarreling" pos="n" verbnet="">altercation</alias>
+        <alias pos="n">altercation</alias>
       </aliases>
-      <note>ALTERCATION-N NOTES: Added by Julia based on BOLT-6, comparison with 'battle'. (from altercation.01-n)</note>
       <roles>
-        <role descr="first participant" f="pag" n="0"/>
-        <role descr="second participant" f="com" n="1"/>
-        <role descr="spoils, over what?" f="ppt" n="2"/>
+        <role descr="first participant" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Quarreling" version="1.7">arguer1</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="second participant" f="COM" n="1">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Quarreling" version="1.7">arguer2</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="spoils, over what?" f="PPT" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Quarreling" version="1.7">issue</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="args 0, 1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Hostile_encounter" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Quarreling" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+      </lexlinks>
+      <example src="internet" name="args 0, 1">
         <text>Ramos claims that his altercation with Yeezy left him on crutches for two weeks.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">altercation</rel>
-        <arg f="" n="1">with Yeezy</arg>
+        <rel relloc="4">altercation</rel>
+        <arg f="" n="0" start="3" end="3">his</arg>
+        <arg f="" n="1" start="5" end="6">with Yeezy</arg>
       </example>
+      <note>ALTERCATION-N NOTES: Added by Julia based on BOLT-6, comparison with 'battle'. (from altercation.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

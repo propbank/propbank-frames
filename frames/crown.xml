@@ -1,141 +1,180 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="crown">
     <roleset id="crown.01" name="put a crown on somebody/thing">
       <aliases>
-        <alias framenet="Change_of_leadership" pos="v" verbnet="">crown</alias>
+        <alias pos="v">crown</alias>
       </aliases>
-      <note>CROWN-V NOTES: Based on WSJ. Member of VNcls appoint-29.1, dub-29.3-1, butter-9.9. (from crown.01-v)</note>
       <roles>
-        <note>The crown itself (physical artifact) is symbolic of the role or attribute, hence the ability to merge the two into one arg. (from crown.01-v)</note>
         <role descr="putter of crown" f="PAG" n="0">
-          <vnrole vncls="29.3" vntheta="agent"/>
-          <vnrole vncls="29.1" vntheta="agent"/>
-          <vnrole vncls="9.9" vntheta="agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="dub-29.3" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="appoint-29.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="butter-9.9" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Change_of_leadership" version="1.7">selector</rolelink>
+          </rolelinks>
         </role>
-        <role descr="receiver of crown" f="ppt" n="1">
-          <vnrole vncls="29.3" vntheta="theme"/>
-          <vnrole vncls="29.1" vntheta="theme"/>
-          <vnrole vncls="9.9" vntheta="destination"/>
+        <role descr="receiver of crown" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="dub-29.3" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="appoint-29.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="butter-9.9" version="verbnet3.3">destination</rolelink>
+            <rolelink resource="FrameNet" class="Change_of_leadership" version="1.7">new_leader</rolelink>
+          </rolelinks>
         </role>
-        <role descr="crown, or attribute of arg1" f="prd" n="2">
-          <vnrole vncls="29.3" vntheta="result"/>
-          <vnrole vncls="29.1" vntheta="result"/>
-          <vnrole vncls="9.9" vntheta="theme"/>
+        <role descr="crown, or attribute of arg1" f="PRD" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="dub-29.3" version="verbnet3.3">result</rolelink>
+            <rolelink resource="VerbNet" class="appoint-29.1" version="verbnet3.3">result</rolelink>
+            <rolelink resource="VerbNet" class="butter-9.9" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Change_of_leadership" version="1.7">role</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="passive" src="unhelpful example" type="unhelpful example">
-        <inflection aspect="ns" form="participle" person="ns" tense="past" voice="passive"/>
-        <text>In a sign of growing official tolerance for religion, Russian Orthodox priests were allowed to celebrate the 400th anniversary of the Moscow patriarchate in the Kremlin's 15th-century Uspensky Cathedral, where czars-1 were crowned [*-1] [*T*-3]... .</text>
-        <rel f="">crowned</rel>
-        <arg f="" n="1">[*-1]</arg>
-        <arg f="loc" n="m">[*T*-3] (= where)</arg>
-        <arg f="slc" n="m">where -&gt; the Kremlin's 15th-century Uspensky Cathedral</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Change_of_leadership" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="dub-29.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="appoint-29.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="butter-9.9" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="unhelpful example" name="passive">
+        <text>In a sign of growing official tolerance for religion, Russian Orthodox priests were allowed to celebrate the 400th anniversary of the Moscow patriarchate in the Kremlin's 15th-century Uspensky Cathedral, where czars were crowned [*] [*T*-3]... .</text>
+        <rel relloc="32">crowned</rel>
+        <arg f="" n="1" start="30" end="30">czars</arg>
+        <arg f="LOC" n="m" start="19" end="20">of the</arg>
+        <arg f="SLC" n="m" start="24" end="28">the Kremlin's 15th-century Uspensky Cathedral,</arg>
       </example>
-      <example name="with crown" src="with crown" type="with crown">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <example src="with crown" name="with crown">
         <text>Mary crowned John with a pot lid.</text>
-        <arg f="" n="0">Mary</arg>
-        <rel f="">crowned</rel>
-        <arg f="" n="1">John</arg>
-        <arg f="" n="2">with a pot lid</arg>
+        <rel relloc="1">crowned</rel>
+        <arg f="" n="0" start="0" end="0">Mary</arg>
+        <arg f="" n="1" start="2" end="2">John</arg>
+        <arg f="" n="2" start="3" end="6">with a pot lid.</arg>
       </example>
-      <example name="with attribute" src="with attribute" type="with attribute">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="passive"/>
-        <text>John-1 was crowned *trace*-1 Emperor of Lower Slobovia.</text>
-        <rel f="">crowned</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="2">Emperor of Lower Slobovia</arg>
+      <example src="with attribute" name="with attribute">
+        <text>John was crowned Emperor of Lower Slobovia.</text>
+        <rel relloc="2">crowned</rel>
+        <arg f="" n="1" start="0" end="0">John</arg>
+        <arg f="" n="2" start="3" end="6">Emperor of Lower Slobovia.</arg>
       </example>
+      <note>CROWN-V NOTES: Based on WSJ. Member of VNcls appoint-29.1, dub-29.3-1, butter-9.9. (from crown.01-v)</note>
+      <note>The crown itself (physical artifact) is symbolic of the role or attribute, hence the ability to merge the two into one arg. (from crown.01-v)</note>
     </roleset>
     <roleset id="crown.02" name="culminating event">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">crown</alias>
+        <alias pos="v">crown</alias>
       </aliases>
-      <note>CROWN-V NOTES: Roleset by Katie based on internet search, parallel expansion of verbnet, propbank, and sense groupings. Updated by Julia 2/2012. No VNcls. (from crown.02-v)</note>
       <roles>
         <role descr="agent/ owner of culmination/achievment" f="PAG" n="0"/>
-        <role descr="crowned event" f="gol" n="1"/>
-        <role descr="crowning event/achievment" f="ppt" n="2"/>
+        <role descr="crowned event" f="GOL" n="1"/>
+        <role descr="crowning event/achievment" f="PPT" n="2"/>
       </roles>
-      <example name="Conventional use" src="Conventional use" type="Conventional use">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="Conventional use" name="Conventional use">
         <text>Her speech crowned the conference.</text>
-        <arg f="" n="2">Her speech</arg>
-        <rel f="">crowned</rel>
-        <arg f="" n="1">[t-1] the conference</arg>
+        <rel relloc="2">crowned</rel>
+        <arg f="" n="2" start="0" end="1">Her speech</arg>
+        <arg f="" n="1" start="3" end="4">the conference.</arg>
       </example>
-      <example name="Crowning an endevor" src="Crowning an endevor" type="Crowning an endevor">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="Crowning an endevor" name="Crowning an endevor">
         <text>On May 10, 1869, he was crowning a venture that had taken eight years when disaster struck.</text>
-        <arg f="tmp" n="m">On May 10, 1869</arg>
-        <arg f="" n="0">he</arg>
-        <rel f="">crowning</rel>
-        <arg f="" n="1">a venture that had taken eight years</arg>
-        <arg f="tmp" n="m">when disaster struck.</arg>
+        <rel relloc="6">crowning</rel>
+        <arg f="TMP" n="m" start="0" end="3">On May 10, 1869,</arg>
+        <arg f="" n="0" start="4" end="4">he</arg>
+        <arg f="" n="1" start="7" end="13">a venture that had taken eight years</arg>
+        <arg f="TMP" n="m" start="14" end="16">when disaster struck.</arg>
       </example>
-      <example name="Another conventional use of crowning" src="Another conventional use of crowning" type="Another conventional use of crowning">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The crisis has shattered [Samaranch's]-1 hopes of [*-1]crowning his 18-year-tenure with this victory. .</text>
-        <arg f="" n="0">[*-1]</arg>
-        <rel f="">crowning</rel>
-        <arg f="" n="1">his 18-year-tenure</arg>
-        <arg f="" n="2">with this victory</arg>
+      <example src="Another conventional use of crowning" name="Another conventional use of crowning">
+        <text>The crisis has shattered Samaranch's hopes of [*]crowning his 18-year-tenure with this victory. .</text>
+        <rel relloc="7">[*]crowning</rel>
+        <arg f="" n="0" start="4" end="4">Samaranch's</arg>
+        <arg f="" n="1" start="8" end="9">his 18-year-tenure</arg>
+        <arg f="" n="2" start="10" end="12">with this victory.</arg>
       </example>
+      <note>CROWN-V NOTES: Roleset by Katie based on internet search, parallel expansion of verbnet, propbank, and sense groupings. Updated by Julia 2/2012. No VNcls. (from crown.02-v)</note>
     </roleset>
     <roleset id="crown.03" name="highest point of">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">crown</alias>
+        <alias pos="v">crown</alias>
       </aliases>
-      <note>CROWN-V NOTES: Roleset by Katie based on internet search, parallel expansion of verbnet, propbank, and sense groupings. VNcls butter-9.9. (from crown.03-v)</note>
       <roles>
-        <role descr="Highest point" f="ppt" n="1">
-          <vnrole vncls="9.9" vntheta="theme"/>
+        <role descr="Highest point" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="butter-9.9" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="Foundation/support" f="gol" n="2">
-          <vnrole vncls="9.9" vntheta="destination"/>
+        <role descr="Foundation/support" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="butter-9.9" version="verbnet3.3">destination</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="Example both arguements" src="Example both arguements" type="Example both arguements">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="butter-9.9" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="Example both arguements" name="Example both arguements">
         <text>Crenellated spires crown the Norman towers of St. Peters Cathedral.</text>
-        <arg f="" n="1">Crenellated spires</arg>
-        <rel f="">crown</rel>
-        <arg f="" n="2">the Norman towers of St. Peters Cathedral.</arg>
+        <rel relloc="2">crown</rel>
+        <arg f="" n="1" start="0" end="1">Crenellated spires</arg>
+        <arg f="" n="2" start="3" end="9">the Norman towers of St. Peters Cathedral.</arg>
       </example>
-      <example name="Example with arguements in a different order" src="Example with arguements in a different order" type="Example with arguements in a different order">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>[*-1} Crowning the eastern slope is [Mount Monah Cemetery-1].</text>
-        <arg f="" n="1">[*-1]</arg>
-        <rel f="">Crowning</rel>
-        <arg f="" n="2">the eastern slope</arg>
+      <example src="Example with arguements in a different order" name="Example with arguements in a different order">
+        <text>[*} Crowning the eastern slope is [Mount Monah Cemetery].</text>
+        <rel relloc="1">Crowning</rel>
+        <arg f="" n="1" start="0" end="0">[*}</arg>
+        <arg f="" n="2" start="2" end="4">the eastern slope</arg>
       </example>
+      <note>CROWN-V NOTES: Roleset by Katie based on internet search, parallel expansion of verbnet, propbank, and sense groupings. VNcls butter-9.9. (from crown.03-v)</note>
     </roleset>
     <roleset id="crown.04" name="put an enamel cover over a tooth">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">crown</alias>
+        <alias pos="v">crown</alias>
       </aliases>
-      <note>CROWN-V NOTES: Roleset by Katie based on internet search, parallel expansion of verbnet, propbank, and sense groupings. VNcls butter-9.9. (from crown.04-v)</note>
       <roles>
-        <role descr="Dentist" f="pag" n="0">
-          <vnrole vncls="9.9" vntheta="agent"/>
+        <role descr="Dentist" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="butter-9.9" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="Tooth" f="gol" n="1">
-          <vnrole vncls="9.9" vntheta="destination"/>
+        <role descr="Tooth" f="GOL" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="butter-9.9" version="verbnet3.3">destination</rolelink>
+          </rolelinks>
         </role>
-        <role descr="Cover" f="ppt" n="2">
-          <vnrole vncls="9.9" vntheta="theme"/>
+        <role descr="Cover" f="PPT" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="butter-9.9" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="Example with potentially rare arg 2" src="Example with potentially rare arg 2" type="Example with potentially rare arg 2">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="butter-9.9" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="Example with potentially rare arg 2" name="Example with potentially rare arg 2">
         <text>A cosmetic dentist may crown the teeth with porcelain veneers.</text>
-        <arg f="" n="0">A cosmetic dentist</arg>
-        <arg f="mod" n="m">may</arg>
-        <rel f="">crown</rel>
-        <arg f="" n="1">the teeth</arg>
-        <arg f="" n="2">with porcelain veneers.</arg>
+        <rel relloc="4">crown</rel>
+        <arg f="" n="0" start="0" end="2">A cosmetic dentist</arg>
+        <arg f="MOD" n="m" start="3" end="3">may</arg>
+        <arg f="" n="1" start="5" end="6">the teeth</arg>
+        <arg f="" n="2" start="7" end="9">with porcelain veneers.</arg>
       </example>
+      <note>CROWN-V NOTES: Roleset by Katie based on internet search, parallel expansion of verbnet, propbank, and sense groupings. VNcls butter-9.9. (from crown.04-v)</note>
     </roleset>
   </predicate>
 </frameset>

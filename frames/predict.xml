@@ -1,126 +1,150 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="predict">
     <roleset id="predict.01" name="tell the future">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">predict</alias>
-        <alias framenet="" pos="n" verbnet="">prediction</alias>
-        <alias framenet="" pos="l" verbnet="">make_prediction</alias>
+        <alias pos="v">predict</alias>
+        <alias pos="n">prediction</alias>
+        <alias pos="l">make_prediction</alias>
       </aliases>
-      <note>PREDICT-V NOTES: Corresponds to VN class indicate-78. (from predict.01-v)</note>
-      <note>PREDICTION-N NOTES: Roleset based on verb predict.01; VN class indicate-78. Framed by Claire (from prediction.01-n)</note>
       <roles>
         <role descr="fortune teller" f="CAU" n="0">
-          <vnrole vncls="78" vntheta="Cause"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="indicate-78" version="verbnet3.3">cause</rolelink>
+            <rolelink resource="FrameNet" class="Predicting" version="1.7">evidence</rolelink>
+            <rolelink resource="FrameNet" class="Predicting" version="1.7">speaker</rolelink>
+          </rolelinks>
         </role>
         <role descr="prediction" f="PPT" n="1">
-          <vnrole vncls="78" vntheta="Topic"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="indicate-78" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="FrameNet" class="Predicting" version="1.7">eventuality</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="predict-v: prediction as utterance" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Predicting" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="indicate-78" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="predict-v.1" src="annot-overlap" confidence="0.1">151</lexlink>
+        <lexlink resource="onsense" version="on5" class="prediction-n.1" src="annot-overlap" confidence="0.1">21</lexlink>
+      </lexlinks>
+      <example src="" name="predict-v: prediction as utterance">
         <text>He predicted that the board would give the current duo until early next year before naming a new chief executive.</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">predicted</rel>
-        <arg f="" n="1">that the board would give the current duo until early next year before naming a new chief executive</arg>
+        <rel relloc="1">predicted</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
+        <arg f="" n="1" start="2" end="19">that the board would give the current duo until early next year before naming a new chief executive.</arg>
       </example>
-      <example name="prediction-n: prediction as noun phrase" src="" type="">
+      <example src="" name="prediction-n: prediction as noun phrase">
         <text>Analysts were predicting 1990 BellSouth earnings in the range of $3.90 a share, or $1.9 billion, but now those estimates are being scaled back.</text>
-        <arg f="" n="0">Analysts</arg>
-        <rel f="">predicting</rel>
-        <arg f="" n="1">1990 BellSouth earnings in the range of $3.90 a share, or $1.9 billion</arg>
+        <rel relloc="2">predicting</rel>
+        <arg f="" n="0" start="0" end="0">Analysts</arg>
+        <arg f="" n="1" start="3" end="15">1990 BellSouth earnings in the range of $3.90 a share, or $1.9 billion,</arg>
       </example>
-      <example name="prediction-n: ragment, All arguments" src="NomBank frames" type="">
+      <example src="NomBank frames" name="prediction-n: ragment, All arguments">
         <text>Analysts ' predictions of about $ 1.4 a share for the quarter...</text>
-        <arg f="" n="0">analysts '</arg>
-        <rel f="">predictions</rel>
-        <arg f="" n="1">of about $ 1.4 a share</arg>
-        <arg f="tmp" n="m">for the quarter</arg>
+        <rel relloc="2">predictions</rel>
+        <arg f="" n="0" start="0" end="1">Analysts '</arg>
+        <arg f="" n="1" start="3" end="8">of about $ 1.4 a share</arg>
+        <arg f="TMP" n="m" start="9" end="11">for the quarter...</arg>
       </example>
-      <example name="prediction-n: Fragment, Arg 1 only" src="NomBank example" type="">
+      <example src="NomBank example" name="prediction-n: Fragment, Arg 1 only">
         <text>The predictions of doom</text>
-        <rel f="">predictions</rel>
-        <arg f="" n="1">of doom</arg>
+        <rel relloc="1">predictions</rel>
+        <arg f="" n="1" start="2" end="3">of doom</arg>
       </example>
-      <example name="prediction-n: Arg1 in preverbal position, sbar modification" src="nouns 0080" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="nouns 0080" name="prediction-n: Arg1 in preverbal position, sbar modification">
         <text>At the meeting , Huang Xiangning read the earthquake prediction that they had previously issued .</text>
-        <arg f="" n="1">earthquake</arg>
-        <rel f="">prediction</rel>
-        <arg f="adj" n="m">that they had previously issued</arg>
+        <rel relloc="9">prediction</rel>
+        <arg f="" n="1" start="8" end="8">earthquake</arg>
+        <arg f="ADJ" n="m" start="10" end="14">that they had previously issued</arg>
       </example>
-      <example name="prediction-n: arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="prediction-n: arg1">
         <text>I think that the problem here that we 've had right from the beginning is overly optimistic predictions on the part of what would happen if we attacked Iraq /.</text>
-        <arg f="mnr" n="m">overly optimistic</arg>
-        <rel f="">predictions</rel>
-        <arg f="" n="1">on the part of what would happen if we attacked Iraq</arg>
+        <rel relloc="17">predictions</rel>
+        <arg f="MNR" n="m" start="15" end="16">overly optimistic</arg>
+        <arg f="" n="1" start="18" end="28">on the part of what would happen if we attacked Iraq</arg>
       </example>
+      <note>PREDICT-V NOTES: Corresponds to VN class indicate-78. (from predict.01-v)</note>
+      <note>PREDICTION-N NOTES: Roleset based on verb predict.01; VN class indicate-78. Framed by Claire (from prediction.01-n)</note>
     </roleset>
   </predicate>
   <predicate lemma="predictable">
     <roleset id="predictable.02" name="able to be forecast">
       <aliases>
-        <alias framenet="Expectation" pos="j" verbnet="">predictable</alias>
+        <alias pos="j">predictable</alias>
       </aliases>
-      <note>PREDICTABLE-J NOTES: Added by Julia based on BOLT-7. (from predictable.01-j)</note>
       <roles>
-        <role descr="forecaster" f="pag" n="0"/>
-        <role descr="forecast" f="ppt" n="1"/>
+        <role descr="forecaster" f="PAG" n="0"/>
+        <role descr="forecast" f="PPT" n="1"/>
       </roles>
-      <example name="predictable-j: arg1" src="BOLT-7" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Expectation" version="1.7" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="BOLT-7" name="predictable-j: arg1">
         <text>Meanwhile , the difficulty to pass this by referendum in Taiwan is also predictable . After all , Taiwanese people are accustomed to status quo and are highly dubious about any changes .</text>
-        <arg f="tmp" n="m">Meanwhile</arg>
-        <arg f="" n="1">the difficulty to pass this by referendum in Taiwan</arg>
-        <arg f="dis" n="m">also</arg>
-        <rel f="">predictable</rel>
+        <rel relloc="13">predictable</rel>
+        <arg f="TMP" n="m" start="0" end="0">Meanwhile</arg>
+        <arg f="" n="1" start="2" end="10">the difficulty to pass this by referendum in Taiwan</arg>
+        <arg f="DIS" n="m" start="12" end="12">also</arg>
       </example>
+      <note>PREDICTABLE-J NOTES: Added by Julia based on BOLT-7. (from predictable.01-j)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="underpredict">
     <roleset id="underpredict.03" name="predict to be less than is true">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">underpredict</alias>
-        <alias framenet="" pos="v" verbnet="">under-predict</alias>
-        <alias framenet="" pos="v" verbnet="">under_predict</alias>
-        <alias framenet="" pos="n" verbnet="">underprediction</alias>
-        <alias framenet="" pos="n" verbnet="">under-prediction</alias>
-        <alias framenet="" pos="n" verbnet="">under_prediction</alias>
+        <alias pos="v">underpredict</alias>
+        <alias pos="v">under-predict</alias>
+        <alias pos="v">under_predict</alias>
+        <alias pos="n">underprediction</alias>
+        <alias pos="n">under-prediction</alias>
+        <alias pos="n">under_prediction</alias>
       </aliases>
-      <note>UNDERPREDICT-V NOTES: Added by Julia</note>
       <roles>
-        <role descr="predictor" f="pag" n="0"/>
-        <role descr="prediction" f="ppt" n="1"/>
-        <role descr="measure of difference between prediction and reality" f="ext" n="2"/>
+        <role descr="predictor" f="PAG" n="0"/>
+        <role descr="prediction" f="PPT" n="1"/>
+        <role descr="measure of difference between prediction and reality" f="EXT" n="2"/>
       </roles>
-      <example name="underpredict-v: all args" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <example src="" name="underpredict-v: all args">
         <text>Equation 12.18 underpredicted the data by 3%-7%.</text>
-        <arg f="" n="0">Equation 12.18</arg>
-        <rel f="">underpredicted</rel>
-        <arg f="" n="1">the data</arg>
-        <arg f="" n="2">by 3%-7%</arg>
+        <rel relloc="2">underpredicted</rel>
+        <arg f="" n="0" start="0" end="1">Equation 12.18</arg>
+        <arg f="" n="1" start="3" end="4">the data</arg>
+        <arg f="" n="2" start="5" end="6">by 3%-7%.</arg>
       </example>
-      <example name="underprediction-n" src="" type="">
+      <example src="" name="underprediction-n">
         <text>... underprediction of women's course grades was the exception rather than the rule.</text>
-        <rel f="">underprediction</rel>
-        <arg f="" n="1">of women's course grades</arg>
+        <rel relloc="1">underprediction</rel>
+        <arg f="" n="1" start="2" end="5">of women's course grades</arg>
       </example>
-      <example name="under-predict-v" src="" type="">
-        <text> Over the period from 1970, the climate models have under-predicted the warming by 15%.</text>
-        <arg f="tmp" n="m">Over the period from 1970</arg>
-        <arg f="" n="0">the climate models</arg>
-        <rel f="">under-predicted</rel>
-        <arg f="" n="1">the warming</arg>
-        <arg f="" n="2">by 15%</arg>
+      <example src="" name="under-predict-v">
+        <text>Over the period from 1970, the climate models have under-predicted the warming by 15%.</text>
+        <rel relloc="9">under-predicted</rel>
+        <arg f="TMP" n="m" start="0" end="4">Over the period from 1970,</arg>
+        <arg f="" n="0" start="5" end="7">the climate models</arg>
+        <arg f="" n="1" start="10" end="11">the warming</arg>
+        <arg f="" n="2" start="12" end="13">by 15%.</arg>
       </example>
-      <example name="under_predict-m" src="" type="">
+      <example src="" name="under_predict-m">
         <text>For the doors off case, URANS predicted a 'W' shaped curve for the SPL across the cavity floor and under predicted the magnitude.</text>
-        <arg f="adv" n="m">For the doors off case</arg>
-        <arg f="" n="0">URANS</arg>
-        <rel f="">[under][predicted]</rel>
-        <arg f="" n="1">the magnitude</arg>
+        <rel relloc="6 19">predicted under</rel>
+        <arg f="ADV" n="m" start="0" end="4">For the doors off case,</arg>
+        <arg f="" n="0" start="5" end="5">URANS</arg>
+        <arg f="" n="1" start="21" end="22">the magnitude.</arg>
       </example>
+      <note>UNDERPREDICT-V NOTES: Added by Julia</note>
     </roleset>
   </predicate>
 </frameset>

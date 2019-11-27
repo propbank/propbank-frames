@@ -1,99 +1,123 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="term">
     <roleset id="term.01" name="assign a label">
       <aliases>
-        <alias framenet="Labeling Simple_naming" pos="v" verbnet="">term</alias>
+        <alias pos="v">term</alias>
       </aliases>
-      <note>TERM-V NOTES: VN, FN updated by Julia. Member of Vncls dub-29.3. (from term.01-v)</note>
       <roles>
         <role descr="caller" f="PAG" n="0">
-          <vnrole vncls="29.3" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="dub-29.3" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="item being labelled" f="PPT" n="1">
-          <vnrole vncls="29.3" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="dub-29.3" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="attribute" f="PRD" n="3">
-          <vnrole vncls="29.3" vntheta="Result"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="dub-29.3" version="verbnet3.3">result</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="passivized" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Labeling" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Simple_naming" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="dub-29.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="term-v.1" src="annot-overlap" confidence="0.1">13</lexlink>
+      </lexlinks>
+      <example src="" name="passivized">
         <text>Reuters Holdings PLC said Michael Reupke resigned as general manager to pursue unspecified interests, a move [0]-1 the news organization termed *trace*-1 an ``amicable separation.''</text>
-        <arg f="" n="0">the news organization</arg>
-        <rel f="">termed</rel>
-        <arg f="" n="1">*trace*-1 (= [0])</arg>
-        <arg f="slc" n="m">[0] -&gt; a move</arg>
-        <arg f="" n="3">an `` amicable separation</arg>
+        <rel relloc="20">termed</rel>
+        <arg f="" n="0" start="17" end="19">the news organization</arg>
+        <arg f="" n="1" start="16" end="16">[0]-1</arg>
+        <arg f="SLC" n="m" start="14" end="15">a move</arg>
+        <arg f="" n="3" start="22" end="24">an ``amicable separation.''</arg>
       </example>
-      <example name="all args" src="WSJ" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
-        <text>They immediately termed the proposal-1 *trace*-1 inadequate .</text>
-        <arg f="" n="0">They</arg>
-        <arg f="tmp" n="m">immediately</arg>
-        <rel f="">termed</rel>
-        <arg f="" n="1">the proposal-1</arg>
-        <arg f="" n="3">*trace*-1 inadequate</arg>
+      <example src="WSJ" name="all args">
+        <text>They immediately termed the inadequate .</text>
+        <rel relloc="2">termed</rel>
+        <arg f="" n="0" start="0" end="0">They</arg>
+        <arg f="TMP" n="m" start="1" end="1">immediately</arg>
+        <arg f="" n="1" start="2" end="2">termed</arg>
+        <arg f="" n="3" start="4" end="4">inadequate</arg>
       </example>
+      <note>TERM-V NOTES: VN, FN updated by Julia. Member of Vncls dub-29.3. (from term.01-v)</note>
     </roleset>
   </predicate>
-
   <predicate lemma="come_to_terms">
     <roleset id="come_to_terms.02" name="arrive at an agreement">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">come_to_terms</alias>
-        <mwe id="come_to_terms">
+        <alias pos="m">come_to_terms</alias>
+        <mwp-descriptions id="come_to_terms">
+          <syntaxdesc slots="B C A">
             <token slot="A" arg="" pos="VB*" head="" dep="">come</token>
             <token slot="B" arg="" pos="IN" head="C" dep="case">to</token>
             <token slot="C" arg="" pos="NNS" head="A" dep="obl">terms</token>
-        </mwe>
+          </syntaxdesc>
+        </mwp-descriptions>
       </aliases>
-      
-      
-      <note>COME_TO_TERMS-M NOTES: Added by Julia during initial MWE framing.</note>
       <roles>
-        <role descr="first party (or all parties)" f="pag" n="0"/>
-        <role descr="subject matter of the dispute" f="ppt" n="1"/>
-        <role descr="second party" f="com" n="2"/>
+        <role descr="first party (or all parties)" f="PAG" n="0"/>
+        <role descr="subject matter of the dispute" f="PPT" n="1"/>
+        <role descr="second party" f="COM" n="2"/>
       </roles>
-      <example name="come_to_terms-m" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="come_to_terms-m">
         <text>Thus, the brig Elisa was wrecked off the Fiji group about the year 1808, and the ex-convict passengers, managing to reach the mainland, soon came to amicable terms with the cannibals they found there.</text>
-        <arg f="" n="0">the ex-convict passengers</arg>
-        <arg f="prd" n="m">managing to reach the mainland</arg>
-        <arg f="tmp" n="m">soon</arg>
-        <rel f="">[came][to][terms]</rel>
-        <arg f="mnr" n="m">amicable</arg>
-        <arg f="" n="2">with the cannibals they found there</arg>
+        <rel relloc="19 24 27">to came terms</rel>
+        <arg f="" n="0" start="15" end="17">the ex-convict passengers,</arg>
+        <arg f="PRD" n="m" start="18" end="22">managing to reach the mainland,</arg>
+        <arg f="TMP" n="m" start="23" end="23">soon</arg>
+        <arg f="MNR" n="m" start="26" end="26">amicable</arg>
+        <arg f="" n="2" start="28" end="33">with the cannibals they found there.</arg>
       </example>
-      <example name="come_to_terms-m" src="" type="">
+      <example src="" name="come_to_terms-m">
         <text>They came to terms over paint color and they are VERY excited to share a room and have bunk beds. Little freaks.</text>
-        <arg f="" n="0">They</arg>
-        <rel f="">[came]pto][terms]</rel>
-        <arg f="" n="1">over paint color</arg>
+        <rel relloc="1 2 3 9 12">came to terms are to</rel>
+        <arg f="" n="0" start="0" end="0">They</arg>
+        <arg f="" n="1" start="4" end="6">over paint color</arg>
       </example>
+      <note>COME_TO_TERMS-M NOTES: Added by Julia during initial MWE framing.</note>
     </roleset>
-    
     <roleset id="come_to_terms.03" name="arrive at a sense of okay-ness regarding a problem">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">come_to_terms</alias>
-        <mwe id="come_to_terms">
-          <token slot="A" arg="" pos="VB*" head="" dep="">come</token>
-          <token slot="B" arg="" pos="IN" head="C" dep="case">to</token>
-          <token slot="C" arg="" pos="NNS" head="A" dep="obl">terms</token>
-        </mwe>
+        <alias pos="m">come_to_terms</alias>
+        <mwp-descriptions id="come_to_terms">
+          <syntaxdesc slots="B C A">
+            <token slot="A" arg="" pos="VB*" head="" dep="">come</token>
+            <token slot="B" arg="" pos="IN" head="C" dep="case">to</token>
+            <token slot="C" arg="" pos="NNS" head="A" dep="obl">terms</token>
+          </syntaxdesc>
+        </mwp-descriptions>
       </aliases>
-            
-      <note>COME_TO_TERMS-M NOTES: Added by Julia during initial MWE framing.</note>
       <roles>
-        <role descr="entity coming to terms with a problem" f="pag" n="0"/>
-        <role descr="the problem" f="ppt" n="1"/>
+        <role descr="entity coming to terms with a problem" f="PAG" n="0"/>
+        <role descr="the problem" f="PPT" n="1"/>
       </roles>
-      <example name="come_to_terms-m" src="" type="">
-        <text> Last summer, we came to terms with the fact that burgers basically contain hamster bedding.</text>
-        <arg f="tmp" n="m">last summer</arg>
-        <arg f="" n="0">we</arg>
-        <rel f="">[came][to][terms]</rel>
-        <arg f="" n="1">with the fact that burgers basically contain hamster bedding</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="come_to_terms-m">
+        <text>Last summer, we came to terms with the fact that burgers basically contain hamster bedding.</text>
+        <rel relloc="3 4 5">came to terms</rel>
+        <arg f="TMP" n="m" start="0" end="1">Last summer,</arg>
+        <arg f="" n="0" start="2" end="2">we</arg>
+        <arg f="" n="1" start="6" end="14">with the fact that burgers basically contain hamster bedding.</arg>
       </example>
+      <note>COME_TO_TERMS-M NOTES: Added by Julia during initial MWE framing.</note>
     </roleset>
   </predicate>
 </frameset>

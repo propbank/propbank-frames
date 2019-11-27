@@ -1,66 +1,85 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="supply">
     <roleset id="supply.01" name="provide">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">supply</alias>
-        <alias framenet="Supply" pos="n" verbnet="">supply</alias>
+        <alias pos="v">supply</alias>
+        <alias pos="n">supply</alias>
+        <argalias pos="n" arg="0">supplier</argalias>
       </aliases>
-      <note>SUPPLY-V NOTES: Frames file for 'supply' based on sentences in financial subcorpus andautomatic expansion via verbnet. (from supply.01-v predicate notes)</note>
-      <note>SUPPLY-N NOTES: Added by Julia based on supply-v.01. Corresponds to VNcls fulfilling-13.4.1. (from supply.01-n)</note>
       <roles>
         <role descr="provider" f="PAG" n="0">
-          <vnrole vncls="13.4.1-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="fulfilling-13.4.1-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Supply" version="1.7">supplier</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing provided" f="PPT" n="1">
-          <vnrole vncls="13.4.1-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="fulfilling-13.4.1-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Supply" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity provided for (benefactive)" f="GOL" n="2">
-          <vnrole vncls="13.4.1-1" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="fulfilling-13.4.1-1" version="verbnet3.3">recipient</rolelink>
+            <rolelink resource="FrameNet" class="Supply" version="1.7">recipient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive, thing as NP" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Supply" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="fulfilling-13.4.1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Movement.TransportArtifact.SendSupplyExport" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Transportartifact" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="supply-v.1" src="annot-overlap" confidence="0.1">67</lexlink>
+        <lexlink resource="onsense" version="on5" class="supply-n.2" src="annot-overlap" confidence="0.1">23</lexlink>
+      </lexlinks>
+      <example src="" name="transitive, thing as NP">
         <text>For all that, the piece landed unperformed in a dusty archive after [Bologna]-1 refused *trace*-1 to supply a chorus and orchestra.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">supply</rel>
-        <arg f="" n="1">a chorus and orchestra</arg>
+        <rel relloc="16">supply</rel>
+        <arg f="" n="0" start="14" end="14">*trace*-1</arg>
+        <arg f="" n="1" start="17" end="20">a chorus and orchestra.</arg>
       </example>
-      <example name="transitive, benefactive as NP" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
+      <example src="" name="transitive, benefactive as NP">
         <text>It is widely known within industry circles that [Hess]-3 had *trace-3*-2 to buy oil products in the high-priced spot markets *trace-2*-1 to continue *trace*-1 supplying its customers.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">supplying</rel>
-        <arg f="" n="2">its customers</arg>
+        <rel relloc="24">supplying</rel>
+        <arg f="" n="0" start="23" end="23">*trace*-1</arg>
+        <arg f="" n="2" start="25" end="26">its customers.</arg>
       </example>
-      <example name="all args, benefactive as PP" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
+      <example src="" name="all args, benefactive as PP">
         <text>The company, which *trace* supplies transmissions and other drive-train parts to auto makers, ...</text>
-        <arg f="" n="0">*trace*</arg>
-        <arg f="RCL" n="M">which -&gt; The company</arg>
-        <rel f="">supplies</rel>
-        <arg f="" n="1">transmissions and other drive-train parts</arg>
-        <arg f="" n="2">to auto makers</arg>
+        <rel relloc="4">supplies</rel>
+        <arg f="" n="0" start="3" end="3">*trace*</arg>
+        <arg f="RCL" n="M" start="0" end="1">The company,</arg>
+        <arg f="" n="1" start="5" end="9">transmissions and other drive-train parts</arg>
+        <arg f="" n="2" start="10" end="12">to auto makers,</arg>
       </example>
-      <example name="all args, benefactive as NP" src="present.01" type="">
+      <example src="present.01" name="all args, benefactive as NP">
         <text>John supplied Mary with a bouquet of wilted dandelions.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">supplied</rel>
-        <arg f="" n="2">Mary</arg>
-        <arg f="" n="1">with a bouquet of wilted dandelions</arg>
+        <rel relloc="1">supplied</rel>
+        <arg f="" n="0" start="0" end="0">John</arg>
+        <arg f="" n="2" start="2" end="2">Mary</arg>
+        <arg f="" n="1" start="3" end="8">with a bouquet of wilted dandelions.</arg>
       </example>
-      <example name="all args" src="ontonotes" type="">
+      <example src="ontonotes" name="all args">
         <text>The U.N. has criticized that nation for its supply of arms to terrorist organizations.</text>
-        <arg f="" n="0">its</arg>
-        <rel f="">supply</rel>
-        <arg f="" n="1">of arms</arg>
-        <arg f="" n="2">to terrorist organizations</arg>
+        <rel relloc="8">supply</rel>
+        <arg f="" n="0" start="7" end="7">its</arg>
+        <arg f="" n="1" start="9" end="10">of arms</arg>
+        <arg f="" n="2" start="11" end="13">to terrorist organizations.</arg>
       </example>
-      <example name="just arg1" src="" type="">
-        <text>Economists study the supply of *ICH*-1, and demand for, [goods and services in a society]-1.</text>
-        <rel f="">supply</rel>
-        <arg f="" n="1">of *ICH*-1</arg>
+      <example src="" name="just arg1">
+        <text>Economists study the supply of *ICH*, and demand for, goods and services in a society.</text>
+        <rel relloc="3">supply</rel>
+        <arg f="" n="1" start="9" end="14">goods and services in a society.</arg>
       </example>
+      <note>SUPPLY-V NOTES: Frames file for 'supply' based on sentences in financial subcorpus andautomatic expansion via verbnet. (from supply.01-v predicate notes)</note>
+      <note>SUPPLY-N NOTES: Added by Julia based on supply-v.01. Corresponds to VNcls fulfilling-13.4.1. (from supply.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

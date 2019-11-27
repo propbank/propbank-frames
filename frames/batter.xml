@@ -1,64 +1,83 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="batter">
     <roleset id="batter.01" name="hit repeatedly">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">battering</alias>
-        <alias framenet="" pos="v" verbnet="">batter</alias>
+        <alias pos="n">battering</alias>
+        <alias pos="v">batter</alias>
       </aliases>
+      <roles>
+        <role descr="agent, hitter - animate only!" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="hit-18.1-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">cause</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing hit" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="hit-18.1-1" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">victim</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">body_part</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="instrument, thing hit by or with" f="MNR" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="hit-18.1-1" version="verbnet3.3">instrument</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">means</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">instrument</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="intensifier of action" f="EXT" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_harm" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Abusing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="hit-18.1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="batter-v.1" src="annot-overlap" confidence="0.1">9</lexlink>
+      </lexlinks>
+      <example src="" name="passive--most frequent">
+        <text>But its 17 big junk holdings at year end showed only a few bonds that [*T*] have been really battered *trace*.</text>
+        <rel relloc="19">battered</rel>
+        <arg f="MNR" n="m" start="18" end="18">really</arg>
+        <arg f="RCL" n="m" start="10" end="13">only a few bonds</arg>
+        <arg f="" n="1" start="1" end="2">its 17</arg>
+      </example>
+      <example src="" name="passive, with instrument">
+        <text> Microsoft, battered *trace* by profit taking in recent sessions, sank as much as 4; but it finished at 80 7/8, down 2 1/4 on volume of one million shares.</text>
+        <rel relloc="2">battered</rel>
+        <arg f="" n="1" start="1" end="1">Microsoft,</arg>
+        <arg f="" n="2" start="4" end="9">by profit taking in recent sessions,</arg>
+      </example>
+      <example src="" name="instrumental subject">
+        <text>The early move essentially established the day's trading range, and traders said they saw little of the program activity that [*T*] has battered the market recently.</text>
+        <rel relloc="22">battered</rel>
+        <arg f="RCL" n="m" start="16" end="18">the program activity</arg>
+        <arg f="" n="2" start="20" end="20">[*T*]</arg>
+        <arg f="" n="1" start="23" end="24">the market</arg>
+        <arg f="TMP" n="m" start="25" end="25">recently.</arg>
+      </example>
+      <example src="" name="with intensifier">
+        <text>For fifty years his guns and ham-like fists shot holes through [*RNR*-1] and battered the daylights out of [*RNR*-1]the enemies of law and order in the frontier towns of the West .</text>
+        <rel relloc="13">battered</rel>
+        <arg f="TMP" n="m" start="0" end="2">For fifty years</arg>
+        <arg f="" n="2" start="3" end="7">his guns and ham-like fists</arg>
+        <arg f="" n="3" start="14" end="15">the daylights</arg>
+        <arg f="" n="1" start="16" end="23">out of [*RNR*-1]the enemies of law and order</arg>
+        <arg f="LOC" n="m" start="24" end="30">in the frontier towns of the West</arg>
+      </example>
+      <example src="internet" name="args 0, 1">
+        <text>Bruises flowered on his chest and shoulders from his battering the bars.</text>
+        <rel relloc="9">battering</rel>
+        <arg f="" n="0" start="3" end="3">his</arg>
+        <arg f="" n="1" start="10" end="11">the bars.</arg>
+      </example>
       <note>BATTER-V NOTES: I'm really not sure if we'll see animate subjects: Mary battered John?John battered on the door? Maybe. (from batter.01-v)</note>
       <note>BATTERING-N NOTES: Added by Julia based on BOLT, batter-v.01. Corresponds to VNcls hit-18.1-1. (from battering.01-n)</note>
-      <roles>
-        <role descr="agent, hitter - animate only!" f="pag" n="0">
-          <vnrole vncls="18.1-1" vntheta="agent"/>
-        </role>
-        <role descr="thing hit" f="ppt" n="1">
-          <vnrole vncls="18.1-1" vntheta="patient"/>
-        </role>
-        <role descr="instrument, thing hit by or with" f="mnr" n="2">
-          <vnrole vncls="18.1-1" vntheta="instrument"/>
-        </role>
-        <role descr="intensifier of action" f="ext" n="3"/>
-      </roles>
-      <example name="passive--most frequent" src="" type="">
-        <text>But its 17 big junk holdings at year end showed only a few bonds that [*T-1*] have been really battered *trace*.</text>
-        <arg f="mnr" n="m">really</arg>
-        <rel f="">battered</rel>
-        <arg f="rcl" n="m">that -&gt; only a few bonds</arg>
-        <arg f="" n="1">[*T-1*]</arg>
-      </example>
-      <example name="passive, with instrument" src="" type="">
-        <text>[Microsoft]-1, *trace*-1 battered *trace* by profit taking in recent sessions, sank as much as 4; but it finished at 80 7/8, down 2 1/4 on volume of one million shares.</text>
-        <rel f="">battered</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="2">by profit taking in recent sessions</arg>
-      </example>
-      <example name="instrumental subject" src="" type="">
-        <text>The early move essentially established the day's trading range, and traders said they saw little of the program activity that [*T*] has battered the market recently.</text>
-        <arg f="rcl" n="m">that -&gt; the program activity</arg>
-        <arg f="" n="2">[*T*]</arg>
-        <rel f="">battered</rel>
-        <arg f="" n="1">the market</arg>
-        <arg f="tmp" n="m">recently</arg>
-      </example>
-      <example name="with intensifier" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>For fifty years his guns and ham-like fists shot holes through [*RNR*-1] and battered the daylights out of [*RNR*-1]the enemies of law and order in the frontier towns of the West .</text>
-        <arg f="tmp" n="m">For fifty years</arg>
-        <arg f="" n="2">his guns and ham-like fists</arg>
-        <rel f="">battered</rel>
-        <arg f="" n="3">the daylights</arg>
-        <arg f="" n="1">out of [*RNR*-1] the enemies of law and order</arg>
-        <arg f="loc" n="m">in the frontier towns of the West</arg>
-      </example>
-      <example name="args 0, 1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Bruises flowered on his chest and shoulders from his battering the bars.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">battering</rel>
-        <arg f="" n="1">the bars</arg>
-      </example>
-      
     </roleset>
   </predicate>
 </frameset>

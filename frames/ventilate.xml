@@ -1,46 +1,54 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="ventilate">
     <roleset id="ventilate.01" name="allow air circulation, circulate air">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">ventilate</alias>
-        <alias framenet="" pos="n" verbnet="">ventilation</alias>
-        <alias framenet="" pos="j" verbnet="">ventilated</alias>
+        <alias pos="v">ventilate</alias>
+        <alias pos="n">ventilation</alias>
+        <alias pos="j">ventilated</alias>
       </aliases>
+      <roles>
+        <role descr="allower, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="stuffy room" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="ontonotes nw/wsj/00/wsj_0003" name="ARG0 and ARG1">
+        <text>Workers described `` clouds of blue dust '' that hung over parts of the factory , even though exhaust fans ventilated the area .</text>
+        <rel relloc="20">ventilated</rel>
+        <arg f="" n="0" start="18" end="19">exhaust fans</arg>
+        <arg f="" n="1" start="21" end="22">the area</arg>
+      </example>
+      <example src="" name="Arg 1 maybe an organ">
+        <text>adequate pulmonary ventilation</text>
+        <rel relloc="2">ventilation</rel>
+        <arg f="ADJ" n="m" start="0" end="0">adequate</arg>
+        <arg f="" n="1" start="1" end="1">pulmonary</arg>
+      </example>
+      <example src="" name="Or a room/area">
+        <text>Their inadequate ventilation of the lead paint in the room</text>
+        <rel relloc="2">ventilation</rel>
+        <arg f="" n="0" start="0" end="0">Their</arg>
+        <arg f="ADJ" n="m" start="1" end="1">inadequate</arg>
+        <arg f="" n="1" start="3" end="6">of the lead paint</arg>
+        <arg f="LOC" n="m" start="7" end="9">in the room</arg>
+      </example>
       <note>VENTILATE-V NOTES: Member of Vncls other_cos-45.4. (from ventilate.01-v)</note>
       <note>VENTILATION-N NOTES: Based on sentences in medpedia-part1-nouns. Comparison to 'ventilate.01'. See VN class other_cos-45.4. No FN classes. Framed by Katie. (from ventilation.01-n)</note>
       <note>VENTILATED-J NOTES: Automatically created by Julia as an alias file for unification. (from ventilated.01-j)</note>
-      <roles>
-        <role descr="allower, agent" f="PAG" n="0">
-          <vnrole vncls="45.4" vntheta="Agent"/>
-        </role>
-        <role descr="stuffy room" f="PPT" n="1">
-          <vnrole vncls="45.4" vntheta="Patient"/>
-        </role>
-      </roles>
-      <example name="ARG0 and ARG1" src="ontonotes nw/wsj/00/wsj_0003" type="">
-        <text>Workers described `` clouds of blue dust '' that hung over parts of the factory , even though exhaust fans ventilated the area .</text>
-        <arg f="" n="0">exhaust fans</arg>
-        <rel f="">ventilated</rel>
-        <arg f="" n="1">the area</arg>
-      </example>
-
-      <example name="Arg 1 maybe an organ" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>adequate pulmonary ventilation</text>
-        <arg f="adj" n="m">adequate</arg>
-        <arg f="" n="1">pulmonary</arg>
-        <rel f="">ventilation</rel>
-      </example>
-      <example name="Or a room/area" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Their inadequate ventilation of the lead paint in the room</text>
-        <arg f="" n="0">Their</arg>
-        <arg f="adj" n="m">inadequate</arg>
-        <rel f="">ventilation</rel>
-        <arg f="" n="1">of the lead pain</arg>
-        <arg f="loc" n="m">in the room</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

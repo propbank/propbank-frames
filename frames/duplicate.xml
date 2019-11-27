@@ -1,43 +1,55 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="duplicate">
     <roleset id="duplicate.01" name="make a copy">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">duplication</alias>
-        <alias framenet="" pos="v" verbnet="">duplicate</alias>
+        <alias pos="n">duplication</alias>
+        <alias pos="v">duplicate</alias>
       </aliases>
-      <note>DUPLICATE-V NOTES: Unlike 'copy', the copy/duplicate doesn't seem to be mentioned. (from duplicate.01-v)</note>
-      <note>DUPLICATION-N NOTES: duplicate.01 (from duplication.01-n)</note>
       <roles>
         <role descr="copyist, agent" f="PAG" n="0">
-          <vnrole vncls="25.4" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="transcribe-25.4" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Duplication" version="1.7">creator</rolelink>
+          </rolelinks>
         </role>
         <role descr="original" f="PPT" n="1">
-          <vnrole vncls="25.4" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="transcribe-25.4" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Duplication" version="1.7">copy</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="just transitive" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Duplication" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="transcribe-25.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="duplicate-v.1" src="annot-overlap" confidence="0.1">5</lexlink>
+      </lexlinks>
+      <example src="" name="just transitive">
         <text>*trace* Duplicating research is both costly and time-consuming for a start-up, Ms. Emyanitoff says.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">Duplicating</rel>
-        <arg f="" n="1">research</arg>
+        <rel relloc="1">Duplicating</rel>
+        <arg f="" n="0" start="0" end="0">*trace*</arg>
+        <arg f="" n="1" start="2" end="2">research</arg>
       </example>
-      <example name="passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
+      <example src="" name="passive">
         <text>It's an inherited human disorder that *trace*-1's been duplicated *trace*-1 in mice.</text>
-        <rel f="">duplicated</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="RCL" n="M">that -&gt; an inherited human disorder</arg>
-        <arg f="LOC" n="M">in mice</arg>
+        <rel relloc="8">duplicated</rel>
+        <arg f="" n="1" start="9" end="9">*trace*-1</arg>
+        <arg f="RCL" n="M" start="1" end="4">an inherited human disorder</arg>
+        <arg f="LOC" n="M" start="10" end="11">in mice.</arg>
       </example>
-      <example name="Arg0, 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="Arg0, 1">
         <text>His duplication of the key was done in secret.</text>
-        <arg f="" n="0">His</arg>
-        <rel f="">duplication</rel>
-        <arg f="" n="1">of the key</arg>
+        <rel relloc="1">duplication</rel>
+        <arg f="" n="0" start="0" end="0">His</arg>
+        <arg f="" n="1" start="2" end="4">of the key</arg>
       </example>
+      <note>DUPLICATE-V NOTES: Unlike 'copy', the copy/duplicate doesn't seem to be mentioned. (from duplicate.01-v)</note>
+      <note>DUPLICATION-N NOTES: duplicate.01 (from duplication.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

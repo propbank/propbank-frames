@@ -1,41 +1,62 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="pelt">
     <roleset id="pelt.01" name="hit,throw">
       <aliases>
-        <alias framenet="Cause_harm Mass_motion" pos="v" verbnet="">pelt</alias>
+        <alias pos="v">pelt</alias>
       </aliases>
-      <note>PELT-V NOTES: Automatically created based on framefiles: buffet (17.2), fog (57), hand-checked by Kevin. Member of VNcls pelt-17.2, weather-57. (from pelt.01-v)</note>
       <roles>
         <role descr="pelter, thrower, agent" f="PAG" n="0">
-          <vnrole vncls="17.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pelt-17.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">cause</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing(s) thrown, theme" f="ppt" n="1">
-          <vnrole vncls="17.2" vntheta="Theme"/>
-          <vnrole vncls="57" vntheta="Theme"/>
+        <role descr="thing(s) thrown, theme" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pelt-17.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="weather-57" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">victim</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">body_part</rolelink>
+          </rolelinks>
         </role>
         <role descr="pelted, victim, destination" f="GOL" n="2">
-          <vnrole vncls="17.2" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pelt-17.2" version="verbnet3.3">destination</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">place</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="regular usage" src="web usage" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_harm" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Mass_motion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="pelt-17.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="weather-57" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web usage" name="regular usage">
         <text>She pelted him with a snowball.</text>
-        <arg f="" n="0">She</arg>
-        <rel f="">pelted</rel>
-        <arg f="" n="2">him</arg>
-        <arg f="" n="1">with a snowball</arg>
+        <rel relloc="1">pelted</rel>
+        <arg f="" n="0" start="0" end="0">She</arg>
+        <arg f="" n="2" start="2" end="2">him</arg>
+        <arg f="" n="1" start="3" end="5">with a snowball.</arg>
       </example>
-      <example name="No Arg2" src="web usage" type="">
+      <example src="web usage" name="No Arg2">
         <text>Snow and hail pelted the riders.</text>
-        <arg f="" n="0">Snow and hail</arg>
-        <rel f="">pelted</rel>
-        <arg f="" n="2">the riders</arg>
+        <rel relloc="3">pelted</rel>
+        <arg f="" n="0" start="0" end="2">Snow and hail</arg>
+        <arg f="" n="2" start="4" end="5">the riders.</arg>
       </example>
-      <example name="Expletive" src="web usage" type="">
+      <example src="web usage" name="Expletive">
         <text>It's pelting with rain.</text>
-        <rel f="">pelting</rel>
-        <arg f="" n="1">with rain</arg>
+        <rel relloc="1">pelting</rel>
+        <arg f="" n="1" start="2" end="3">with rain.</arg>
       </example>
+      <note>PELT-V NOTES: Automatically created based on framefiles: buffet (17.2), fog (57), hand-checked by Kevin. Member of VNcls pelt-17.2, weather-57. (from pelt.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

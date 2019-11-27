@@ -1,42 +1,44 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="reconnect">
     <roleset id="reconnect.01" name="connect again">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">reconnect</alias>
-        <alias framenet="" pos="n" verbnet="">reconnection</alias>
+        <alias pos="v">reconnect</alias>
+        <alias pos="n">reconnection</alias>
       </aliases>
+      <roles>
+        <role descr="agent, connector" f="PAG" n="0"/>
+        <role descr="first thing being connected, focused argument" f="PPT" n="1"/>
+        <role descr="second thing arg1 is connected to" f="PPT" n="2"/>
+        <role descr="instrument, string" f="MNR" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <example src="wsj-nw" name="reconnect-v: Args 0 &amp; 1 only">
+        <text>Pacific Gas&amp; Electric cannot reconnect electricity until it is certain there are no gas leaks.</text>
+        <rel relloc="4">reconnect</rel>
+        <arg f="" n="0" start="0" end="2">Pacific Gas&amp; Electric</arg>
+        <arg f="MOD" n="m" start="13" end="13">gas</arg>
+        <arg f="NEG" n="m" start="12" end="12">no</arg>
+        <arg f="" n="1" start="5" end="5">electricity</arg>
+        <arg f="TMP" n="m" start="6" end="14">until it is certain there are no gas leaks.</arg>
+      </example>
+      <example src="web" name="reconnect-v: Connected things in separate constituents">
+        <text>He reconnected the boiler to the gas supply.</text>
+        <rel relloc="1">reconnected</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
+        <arg f="" n="1" start="2" end="3">the boiler</arg>
+        <arg f="" n="2" start="4" end="7">to the gas supply.</arg>
+      </example>
+      <example src="cleareath-biotexts" name="reconnection-n">
+        <text>* SPR -LRB- subtree pruning and regrafting -RRB- , TBR -LRB- tree bisection and reconnection -RRB- , Swofford and Olsen</text>
+        <rel relloc="14">reconnection</rel>
+        <arg f="" n="1" start="11" end="11">tree</arg>
+      </example>
       <note>RECONNECT-V NOTES: Roleset based on instances in wsj-nw. Framed by Claire; comparison to connect.01. (from reconnect.01-v)</note>
       <note>RECONNECTION-N NOTES: Added by Julia for clearearth-biotexts.</note>
-      <roles>
-        <role descr="agent, connector" f="pag" n="0"/>
-        <role descr="first thing being connected, focused argument" f="ppt" n="1"/>
-        <role descr="second thing arg1 is connected to" f="ppt" n="2"/>
-        <role descr="instrument, string" f="mnr" n="3"/>
-      </roles>
-      <example name="reconnect-v: Args 0 &amp; 1 only" src="wsj-nw" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Pacific Gas&amp; Electric cannot reconnect electricity until it is certain there are no gas leaks.</text>
-        <arg f="" n="0">Pacific Gas&amp; Electric</arg>
-        <arg f="mod" n="m">can</arg>
-        <arg f="neg" n="m">not</arg>
-        <rel f="">reconnect</rel>
-        <arg f="" n="1">electricity</arg>
-        <arg f="tmp" n="m">until it is certain there are no gas leaks.</arg>
-      </example>
-      <example name="reconnect-v: Connected things in separate constituents" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>He reconnected the boiler to the gas supply.</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">reconnected</rel>
-        <arg f="" n="1">the boiler</arg>
-        <arg f="" n="2">to the gas supply.</arg>
-      </example>
-      <example name="reconnection-n" src="cleareath-biotexts" type="">
-        <text>* SPR -LRB- subtree pruning and regrafting -RRB- , TBR -LRB- tree bisection and reconnection -RRB- , Swofford and Olsen </text>
-        <arg f="" n="1">tree</arg>
-        <rel f="">reconnection</rel>
-      </example>
     </roleset>
   </predicate>
 </frameset>

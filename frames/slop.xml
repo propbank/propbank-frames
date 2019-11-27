@@ -1,63 +1,93 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="slop">
     <roleset id="slop.01" name="pour untidily">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">slop</alias>
+        <alias pos="v">slop</alias>
       </aliases>
-      <note>SLOP-V NOTES: Member of VNcls pour-9.5, substance_emission-43.4. Updated by Julia, 11/2010. (from slop.01-v)</note>
       <roles>
         <role descr="pourer" f="PAG" n="0">
-          <vnrole vncls="9.5" vntheta="Agent"/>
-          <vnrole vncls="43.4" vntheta="Source"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pour-9.5" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="substance_emission-43.4" version="verbnet3.3">source</rolelink>
+          </rolelinks>
         </role>
         <role descr="liquid" f="PPT" n="1">
-          <vnrole vncls="9.5" vntheta="Theme"/>
-          <vnrole vncls="43.4" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pour-9.5" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="substance_emission-43.4" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="source container" f="dir" n="2">
-          <vnrole vncls="9.5" vntheta="Initial_Location"/>
-          <vnrole vncls="43.4" vntheta="Source"/>
+        <role descr="source container" f="DIR" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pour-9.5" version="verbnet3.3">initial_location</rolelink>
+            <rolelink resource="VerbNet" class="substance_emission-43.4" version="verbnet3.3">source</rolelink>
+          </rolelinks>
         </role>
-        <role descr="destination container" f="gol" n="3">
-          <vnrole vncls="9.5" vntheta="Destination"/>
-          <vnrole vncls="43.4" vntheta="Location"/>
+        <role descr="destination container" f="GOL" n="3">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pour-9.5" version="verbnet3.3">destination</rolelink>
+            <rolelink resource="VerbNet" class="substance_emission-43.4" version="verbnet3.3">location</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="with destination" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="pour-9.5" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="substance_emission-43.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="with destination">
         <text>Rourke hastily slopped whiskey into his glass on top of half-melted ice-cubes.</text>
-        <arg f="" n="0">Rourke</arg>
-        <arg f="mnr" n="m">hastily</arg>
-        <rel f="">slopped</rel>
-        <arg f="" n="1">whiskey</arg>
-        <arg f="" n="3">into his glass</arg>
-        <arg f="loc" n="m">on top of half-melted ice-cubes</arg>
+        <rel relloc="2">slopped</rel>
+        <arg f="" n="0" start="0" end="0">Rourke</arg>
+        <arg f="MNR" n="m" start="1" end="1">hastily</arg>
+        <arg f="" n="1" start="3" end="3">whiskey</arg>
+        <arg f="" n="3" start="4" end="6">into his glass</arg>
+        <arg f="LOC" n="m" start="7" end="11">on top of half-melted ice-cubes.</arg>
       </example>
-      <example name="with source" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
+      <example src="" name="with source">
         <text>And then came the water -- not rain, but solid sheets that sluiced down like water slopping from a bucket.</text>
-        <arg f="" n="1">water</arg>
-        <rel f="">slopping</rel>
-        <arg f="" n="2">from a bucket</arg>
+        <rel relloc="16">slopping</rel>
+        <arg f="" n="1" start="4" end="4">water</arg>
+        <arg f="" n="2" start="17" end="19">from a bucket.</arg>
       </example>
+      <note>SLOP-V NOTES: Member of VNcls pour-9.5, substance_emission-43.4. Updated by Julia, 11/2010. (from slop.01-v)</note>
     </roleset>
     <roleset id="slop.02" name="make noises like a liquid in a  container">
       <aliases>
-        <alias framenet="Self_motion" pos="v" verbnet="">slop</alias>
+        <alias pos="v">slop</alias>
       </aliases>
-      <note>SLOP-V NOTES: No VNcls. (from slop.02-v)</note>
       <roles>
-        <role descr="liquid" f="PAG" n="0"/>
-        <role descr="container or surface" f="loc" n="1"/>
+        <role descr="liquid" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">self_mover</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">means</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="container or surface" f="LOC" n="1">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">goal</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">path</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="I wonder if this should be 'slap'" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Self_motion" version="1.7" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="I wonder if this should be 'slap'">
         <text>They cringed under sodden covers, listening to the waves slop against the bottom.</text>
-        <arg f="" n="0">the waves</arg>
-        <rel f="">slop</rel>
-        <arg f="" n="1">against the bottom</arg>
+        <rel relloc="9">slop</rel>
+        <arg f="" n="0" start="7" end="8">the waves</arg>
+        <arg f="" n="1" start="10" end="12">against the bottom.</arg>
       </example>
+      <note>SLOP-V NOTES: No VNcls. (from slop.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

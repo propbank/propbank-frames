@@ -1,79 +1,93 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="adjust">
     <roleset id="adjust.01" name="change (slightly)">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">adjustment</alias>
-        <alias framenet="" pos="l" verbnet="">make_adjustment</alias>
-        <alias framenet="Adjusting" pos="v" verbnet="">adjust</alias>
+        <alias pos="n">adjustment</alias>
+        <alias pos="l">make_adjustment</alias>
+        <alias pos="v">adjust</alias>
       </aliases>
+      <roles>
+        <role descr="causer of transformation" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="adjust-26.9" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing changing" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="adjust-26.9" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="adjusted to; goal state; outside situation that arg1 is wanted to match" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="adjust-26.9" version="verbnet3.3">goal</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="start state" f="DIR" n="3"/>
+        <role descr="purpose, reason for adjustment" f="PRP" n="4"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Adjusting" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="adjust-26.9" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="adjust-v.1" src="annot-overlap" confidence="0.1">43</lexlink>
+        <lexlink resource="onsense" version="on5" class="adjust-v.2" src="annot-overlap" confidence="0.1">12</lexlink>
+        <lexlink resource="onsense" version="on5" class="adjustment-n.1" src="annot-overlap" confidence="0.1">24</lexlink>
+      </lexlinks>
+      <example src="" name="simple transitive">
+        <text>Banks adjusted payouts on CD's in the most recent week.</text>
+        <rel relloc="1">adjusted</rel>
+        <arg f="" n="0" start="0" end="0">Banks</arg>
+        <arg f="" n="1" start="2" end="4">payouts on CD's</arg>
+        <arg f="TMP" n="m" start="5" end="9">in the most recent week.</arg>
+      </example>
+      <example src="" name="with purpose">
+        <text>[All the figures]-1 are adjusted *trace*-1 to remove usual seasonal patterns.</text>
+        <rel relloc="4">adjusted</rel>
+        <arg f="" n="1" start="0" end="2">[All the figures]-1</arg>
+        <arg f="" n="4" start="6" end="10">to remove usual seasonal patterns.</arg>
+      </example>
+      <example src="" name="purpose transformed">
+        <text>[All the figures]-1 are adjusted *trace*-1 for inflation.</text>
+        <rel relloc="4">adjusted</rel>
+        <arg f="" n="1" start="0" end="2">[All the figures]-1</arg>
+        <arg f="" n="4" start="6" end="7">for inflation.</arg>
+      </example>
+      <example src="NomBank frames" name="Arg 1, beneficiary">
+        <text>Crawford evaluates health care plans , manages medical anddisability aspects of worker 's compensation injuries and isinvolved in claims adjustments for insurance companies .</text>
+        <rel relloc="19">adjustments</rel>
+        <arg f="" n="1" start="18" end="18">claims</arg>
+        <arg f="GOL" n="m" start="20" end="22">for insurance companies</arg>
+      </example>
+      <example src="NomBank Frames" name="NP only, args 1 &amp; 4">
+        <text>adjustments to reserves for workers ' compensation claims</text>
+        <rel relloc="0">adjustments</rel>
+        <arg f="" n="1" start="1" end="2">to reserves</arg>
+        <arg f="" n="4" start="3" end="7">for workers ' compensation claims</arg>
+      </example>
+      <example src="ON sense 1" name="Arg 1 only">
+        <text>This girl needs an attitude adjustment!</text>
+        <rel relloc="5">adjustment!</rel>
+        <arg f="" n="1" start="4" end="4">attitude</arg>
+      </example>
+      <example src="ontonotes mz/sinorama/10/ectb_1068" name="ARG0 and ARG1">
+        <text>Once she stopped having to get up early to go to work , her anxiety about insomnia decreased greatly , and when she was able to adjust her living habits according to her own needs , her depression cleared up by itself .</text>
+        <rel relloc="26">adjust</rel>
+        <arg f="" n="0" start="1" end="1">she</arg>
+        <arg f="" n="1" start="27" end="29">her living habits</arg>
+        <arg f="MNR" n="m" start="30" end="34">according to her own needs</arg>
+      </example>
+      <example src="web" name="With arg 2">
+        <text>She describes her adjustment to the culture of the United States after moving to Baltimore from England</text>
+        <rel relloc="3">adjustment</rel>
+        <arg f="" n="0" start="2" end="2">her</arg>
+        <arg f="" n="2" start="4" end="10">to the culture of the United States</arg>
+      </example>
       <note>ADJUST-V NOTES: Member of Vncls adjust-26.9. Comparison with 'set' and 'change'. (from adjust.01-v)</note>
       <note>ADJUSTMENT-N NOTES: Roleset based on verb entry adjust.01, OntoNotes grouping adjustment-n senses 1,2,3; maps to VN entry adjust-26.9. Framed by Claire. (from adjustment.01-n)</note>
-      <roles>
-        <role descr="causer of transformation" f="pag" n="0">
-          <vnrole vncls="26.9" vntheta="agent"/>
-        </role>
-        <role descr="thing changing" f="ppt" n="1">
-          <vnrole vncls="26.9" vntheta="patient"/>
-        </role>
-        <role descr="adjusted to; goal state; outside situation that arg1 is wanted to match" f="gol" n="2">
-          <vnrole vncls="26.9" vntheta="goal"/>
-        </role>
-        <role descr="start state" f="dir" n="3"/>
-        <role descr="purpose, reason for adjustment" f="prp" n="4"/>
-      </roles>
-      <example name="simple transitive" src="" type="">
-        <text>Banks adjusted payouts on CD's in the most recent week.</text>
-        <arg f="" n="0">Banks</arg>
-        <rel f="">adjusted</rel>
-        <arg f="" n="1">payouts on CD's</arg>
-        <arg f="tmp" n="m">in the most recent week</arg>
-      </example>
-      <example name="with purpose" src="" type="">
-        <text>[All the figures]-1 are adjusted *trace*-1 to remove usual seasonal patterns.</text>
-        <rel f="">adjusted</rel>
-        <arg f="" n="1">*trace*-1 (= All the figures)</arg>
-        <arg f="" n="4">to remove usual seasonal patterns</arg>
-      </example>
-      <example name="purpose transformed" src="" type="">
-        <text>[All the figures]-1 are adjusted *trace*-1 for inflation.</text>
-        <rel f="">adjusted</rel>
-        <arg f="" n="1">*trace*-1 (= All the figures)</arg>
-        <arg f="" n="4">for inflation</arg>
-      </example>
-      <example name="Arg 1, beneficiary" src="NomBank frames" type="">
-        <text>Crawford evaluates health care plans , manages medical anddisability aspects of worker 's compensation injuries and isinvolved in claims adjustments for insurance companies .</text>
-        <arg f="" n="1">claims</arg>
-        <rel f="">adjustments</rel>
-        <arg f="gol" n="m">for insurance companies</arg>
-      </example>
-      <example name="NP only, args 1 &amp; 4" src="NomBank Frames" type="">
-        <text>adjustments to reserves for workers ' compensation claims</text>
-        <rel f="">adjustments</rel>
-        <arg f="" n="1">to reserves</arg>
-        <arg f="" n="4">for workers ' compensation claims</arg>
-      </example>
-      <example name="Arg 1 only" src="ON sense 1" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>This girl needs an attitude adjustment!</text>
-        <arg f="" n="1">attitude</arg>
-        <rel f="">adjustment</rel>
-      </example>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1068" type="">
-        <text>Once she stopped having to get up early to go to work , her anxiety about insomnia decreased greatly , and when she was able to adjust her living habits according to her own needs , her depression cleared up by itself .</text>
-        <arg f="" n="0">she</arg>
-        <rel f="">adjust</rel>
-        <arg f="" n="1">her living habits</arg>
-        <arg f="mnr" n="m">according to her own needs</arg>
-      </example>
-
-      <example name="With arg 2" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>She describes her adjustment to the culture of the United States after moving to Baltimore from England</text>
-        <arg f="" n="0">her</arg>
-        <rel f="">adjustment</rel>
-        <arg f="" n="2">to the culture of the United States</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

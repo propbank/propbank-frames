@@ -1,99 +1,139 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="sneak">
     <roleset id="sneak.01" name="move stealthily">
       <aliases>
-        <alias framenet="Self_motion" pos="v" verbnet="">sneak</alias>
+        <alias pos="v">sneak</alias>
       </aliases>
-      <note>SNEAK-V NOTES: Based on financial subcorpus. Member of VNcls run-51.3.2, send-11.1-1. Updated by Julia, 11/2010. (from sneak.01-v)</note>
       <roles>
-        <role descr="entity sneaking" f="pag" n="0">
-          <vnrole vncls="51.3.2-2" vntheta="Theme"/>
-          <vnrole vncls="51.3.2-2" vntheta="Agent"/>
-          <vnrole vncls="11.1-1" vntheta="Agent"/>
+        <role descr="entity sneaking" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="run-51.3.2-2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="send-11.1-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="destination" f="GOL" n="1">
-          <vnrole vncls="11.1-1" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="send-11.1-1" version="verbnet3.3">destination</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">goal</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">path</rolelink>
+          </rolelinks>
         </role>
         <role descr="source" f="DIR" n="2">
-          <vnrole vncls="11.1-1" vntheta="Initial_Location"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="send-11.1-1" version="verbnet3.3">initial_location</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">source</rolelink>
+          </rolelinks>
         </role>
-        <role descr="surreptitious cargo" f="ppt" n="3">
-          <vnrole vncls="51.3.2-2" vntheta="Theme"/>
-          <vnrole vncls="11.1-1" vntheta="Theme"/>
+        <role descr="surreptitious cargo" f="PPT" n="3">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="run-51.3.2-2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="send-11.1-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">self_mover</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="no source" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Self_motion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="run-51.3.2-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="send-11.1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Transportperson" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="sneak-v.2" src="annot-overlap" confidence="0.1">4</lexlink>
+        <lexlink resource="onsense" version="on5" class="sneak-v.1" src="annot-overlap" confidence="0.1">5</lexlink>
+      </lexlinks>
+      <example src="" name="no source">
         <text>...they waited a few months and then sneaked back into it.</text>
-        <arg f="" n="0">they</arg>
-        <arg f="tmp" n="m">then</arg>
-        <rel f="">sneaked</rel>
-        <arg f="dir" n="m">back</arg>
-        <arg f="" n="1">into it</arg>
+        <rel relloc="7">sneaked</rel>
+        <arg f="" n="0" start="6" end="6">then</arg>
+        <arg f="TMP" n="m" start="6" end="6">then</arg>
+        <arg f="DIR" n="m" start="8" end="8">back</arg>
+        <arg f="" n="1" start="9" end="10">into it.</arg>
       </example>
-      <example name="with source" src="" type="">
+      <example src="" name="with source">
         <text>John sneaked from school to work.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">sneaked</rel>
-        <arg f="" n="2">from school</arg>
-        <arg f="" n="1">to work</arg>
+        <rel relloc="1">sneaked</rel>
+        <arg f="" n="0" start="0" end="0">John</arg>
+        <arg f="" n="2" start="2" end="3">from school</arg>
+        <arg f="" n="1" start="4" end="5">to work.</arg>
       </example>
-      <example name="with cargo" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
+      <example src="" name="with cargo">
         <text>British customs officers said they'd arrested eight men sneaking 111 rare snakes into Britain -- including one man who strapped a pair of boa constrictors under his armpits.</text>
-        <arg f="" n="0">eight men</arg>
-        <rel f="">sneaking</rel>
-        <arg f="" n="3">111 rare snakes</arg>
-        <arg f="" n="1">into Britain</arg>
-        <arg f="adv" n="m">including one man who strapped a pair of boa constrictors under his armpits</arg>
+        <rel relloc="8">sneaking</rel>
+        <arg f="" n="0" start="6" end="7">eight men</arg>
+        <arg f="" n="3" start="9" end="11">111 rare snakes</arg>
+        <arg f="" n="1" start="12" end="13">into Britain</arg>
+        <arg f="ADV" n="m" start="15" end="27">including one man who strapped a pair of boa constrictors under his armpits.</arg>
       </example>
+      <note>SNEAK-V NOTES: Based on financial subcorpus. Member of VNcls run-51.3.2, send-11.1-1. Updated by Julia, 11/2010. (from sneak.01-v)</note>
     </roleset>
     <roleset id="sneak.02" name="steal">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">sneak</alias>
+        <alias pos="v">sneak</alias>
       </aliases>
-      <note>SNEAK-V NOTES: Based on financial subcorpus. Member of VNcls steal-10.5, send-11.1-1. (from sneak.02-v)</note>
       <roles>
         <role descr="thief" f="PAG" n="0">
-          <vnrole vncls="10.5-1" vntheta="Agent"/>
-          <vnrole vncls="11.1-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="steal-10.5-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="send-11.1-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="stolen object" f="ppt" n="1">
-          <vnrole vncls="10.5-1" vntheta="Theme"/>
-          <vnrole vncls="11.1-1" vntheta="Theme"/>
+        <role descr="stolen object" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="steal-10.5-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="send-11.1-1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="stolen-from" f="dir" n="2">
-          <vnrole vncls="10.5-1" vntheta="Source"/>
-          <vnrole vncls="11.1-1" vntheta="Initial_Location"/>
+        <role descr="stolen-from" f="DIR" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="steal-10.5-1" version="verbnet3.3">source</rolelink>
+            <rolelink resource="VerbNet" class="send-11.1-1" version="verbnet3.3">initial_location</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all args" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="steal-10.5-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="send-11.1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="all args">
         <text>John sneaked (snuck?) a dozen hard-boiled eggs out of the dining hall in his underwear.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">sneaked (snuck?)</rel>
-        <arg f="" n="1">a dozen hard-boiled eggs</arg>
-        <arg f="" n="2">out of the dining hall</arg>
-        <arg f="mnr" n="m">in his underwear</arg>
+        <rel relloc="1 2">sneaked (snuck?)</rel>
+        <arg f="" n="0" start="0" end="0">John</arg>
+        <arg f="" n="1" start="3" end="6">a dozen hard-boiled eggs</arg>
+        <arg f="" n="2" start="7" end="11">out of the dining hall</arg>
+        <arg f="MNR" n="m" start="12" end="14">in his underwear.</arg>
       </example>
+      <note>SNEAK-V NOTES: Based on financial subcorpus. Member of VNcls steal-10.5, send-11.1-1. (from sneak.02-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="sneaky">
     <roleset id="sneaky.03" name="deceiving, surrepticious">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">sneaky</alias>
+        <alias pos="j">sneaky</alias>
       </aliases>
-      <note>SNEAKY-J NOTES: Added by Julia based on BOLT-2,3. (from sneaky.01-j)</note>
       <roles>
-        <role descr="the sneak" f="pag" n="0"/>
-        <role descr="sneaky action" f="prd" n="1"/>
+        <role descr="the sneak" f="PAG" n="0"/>
+        <role descr="sneaky action" f="PRD" n="1"/>
       </roles>
-      <example name="arg0" src="BOLT-2,3" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="BOLT-2,3" name="arg0">
         <text>What makes this wave of IEDs worse is that the devices are getting more effective . Frankly I 've been shocked at how good the Iraqis are with these things right from the start . I mean , after that shameful performance in GW I , did you expect these bastards to be so sneaky , patient , and smart ? I knew this war was a bad idea , but even I never realized what we 'd be up against .</text>
-        <arg f="" n="0">these bastards</arg>
-        <arg f="ext" n="m">so</arg>
-        <rel f="">sneaky</rel>
+        <rel relloc="54">sneaky</rel>
+        <arg f="" n="0" start="49" end="50">these bastards</arg>
+        <arg f="EXT" n="m" start="53" end="53">so</arg>
       </example>
+      <note>SNEAKY-J NOTES: Added by Julia based on BOLT-2,3. (from sneaky.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

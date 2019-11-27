@@ -1,52 +1,60 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="attach">
     <roleset id="attach.01" name="stick, cause to stick, stuck to something">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">attachment</alias>
-        <alias framenet="Attaching" pos="v" verbnet="">attach</alias>
-        <alias framenet="Being_attached" pos="j" verbnet="">attached</alias>
+        <alias pos="n">attachment</alias>
+        <alias pos="v">attach</alias>
+        <alias pos="j">attached</alias>
       </aliases>
+      <roles>
+        <role descr="agent, entity causing two objects to be attached" f="PAG" n="0"/>
+        <role descr="patient, first thing being tied" f="PPT" n="1"/>
+        <role descr="tied to; second item tied" f="PPT" n="2"/>
+        <role descr="instrument" f="MNR" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Attaching" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Being_attached" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="attach-v.1" src="annot-overlap" confidence="0.1">27</lexlink>
+        <lexlink resource="onsense" version="on5" class="attachment-n.1" src="annot-overlap" confidence="0.1">3</lexlink>
+      </lexlinks>
+      <example src="" name="tied to">
+        <text>The equity kicker is not attached to the offering, ...</text>
+        <rel relloc="5">attached</rel>
+        <arg f="" n="1" start="0" end="2">The equity kicker</arg>
+        <arg f="NEG" n="m" start="4" end="4">not</arg>
+        <arg f="" n="2" start="6" end="8">to the offering,</arg>
+      </example>
+      <example src="ontonotes mz/sinorama/10/ectb_1053" name="ARG1 and ARG0 and ARG2">
+        <text>The importance that parents attach to education is of course a strong point for Taiwan , but one drawback of this is that parents often set their expectations too high .</text>
+        <rel relloc="4">attach</rel>
+        <arg f="" n="1" start="2" end="2">that</arg>
+        <arg f="" n="1" start="0" end="1">The importance</arg>
+        <arg f="" n="0" start="3" end="3">parents</arg>
+        <arg f="" n="2" start="5" end="6">to education</arg>
+      </example>
+      <example src="" name="arg 1 when only 1 attached item is mentioned">
+        <text>small-bowl attachment</text>
+        <rel relloc="1">attachment</rel>
+        <arg f="" n="1" start="0" end="0">small-bowl</arg>
+      </example>
+      <example src="web" name="All args">
+        <text>It looks like it was attached to the wall by two dry wall anchors which were not attached to the stud.</text>
+        <rel relloc="5">attached</rel>
+        <arg f="" n="1" start="0" end="0">It</arg>
+        <arg f="" n="2" start="6" end="8">to the wall</arg>
+        <arg f="" n="3" start="9" end="20">by two dry wall anchors which were not attached to the stud.</arg>
+      </example>
       <note>ATTACH-V NOTES: Gag. (from attach.01-v)</note>
       <note>ATTACHMENT-N NOTES: Based on Thyme and Sharp data. Slight comparison to attach.01. Attach.01 is a member of VN class shake-22.3-2-1. No FN class.Framed by Katie (from attachment.01-n)</note>
       <note>ATTACHED-J NOTES: Roleset based on BOLT P01. (from attached.01-j)</note>
-      <roles>
-        <note>Note that multiple arg-1 tags are possible in a single instance. (from attach.01-v)
+      <note>Note that multiple arg-1 tags are possible in a single instance. (from attach.01-v)
 I've added an arg 2 so we no longer have multiple arg 1s appearing (from attachment.01-n)Roles differ from verb roles for attach.01 because verb conflated two objects into one arg. (from attached.01-j)</note>
-        <role descr="agent, entity causing two objects to be attached" f="pag" n="0"/>
-        <role descr="patient, first thing being tied" f="ppt" n="1"/>
-        <role descr="tied to; second item tied" f="ppt" n="2"/>
-        <role descr="instrument" f="mnr" n="3"/>
-      </roles>
-      <example name="tied to" src="" type="">
-        <text>The equity kicker is not attached to the offering, ...</text>
-        <arg f="" n="1">The equity kicker</arg>
-        <arg f="neg" n="m">not</arg>
-        <rel f="">attached</rel>
-        <arg f="" n="2">to the offering</arg>
-      </example>
-      <example name="ARG1 and ARG0 and ARG2" src="ontonotes mz/sinorama/10/ectb_1053" type="">
-        <text>The importance that parents attach to education is of course a strong point for Taiwan , but one drawback of this is that parents often set their expectations too high .</text>
-        <arg f="" n="1">[that][The importance]</arg>
-        <arg f="" n="0">parents</arg>
-        <rel f="">attach</rel>
-        <arg f="" n="2">to education</arg>
-      </example>
-
-      
-      <example name="arg 1 when only 1 attached item is mentioned" src="" type="">
-        <text>small-bowl attachment</text>
-        <arg f="" n="1">small-bowl</arg>
-        <rel f="">attachment</rel>
-      </example>
-      <example name="All args" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>It looks like it was attached to the wall by two dry wall anchors which were not attached to the stud.</text>
-        <arg f="" n="1">it</arg>
-        <rel f="">attached</rel>
-        <arg f="" n="2">to the wall</arg>
-        <arg f="" n="3">by two dry wall anchors which were not attached to the stud.</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

@@ -1,26 +1,41 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="reheat">
     <roleset id="reheat.01" name="fry">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">reheat</alias>
+        <alias pos="v">reheat</alias>
       </aliases>
-      <note>REHEAT-V NOTES: Edited by hwangd (from reheat.01-v)</note>
       <roles>
         <role descr="cook" f="PAG" n="0">
-          <vnrole vncls="45.3" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="cooking-45.3" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_temperature_change" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_temperature_change" version="1.7">cause</rolelink>
+          </rolelinks>
         </role>
         <role descr="food" f="PPT" n="1">
-          <vnrole vncls="45.3" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="cooking-45.3" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Cause_temperature_change" version="1.7">item</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="Active" src="web usage" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_temperature_change" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="cooking-45.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web usage" name="Active">
         <text>I reheat my coffee all day.</text>
-        <arg f="" n="0">I</arg>
-        <rel f="">reheat</rel>
-        <arg f="" n="1">my coffee</arg>
-        <arg f="tmp" n="m">all day</arg>
+        <rel relloc="1">reheat</rel>
+        <arg f="" n="0" start="0" end="0">I</arg>
+        <arg f="" n="1" start="2" end="3">my coffee</arg>
+        <arg f="TMP" n="m" start="4" end="5">all day.</arg>
       </example>
+      <note>REHEAT-V NOTES: Edited by hwangd (from reheat.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

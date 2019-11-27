@@ -1,69 +1,104 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="ablate">
     <roleset id="ablate.01" name="surgical removal of a body part; controlled surgical removal">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">ablate</alias>
-        <alias framenet="" pos="n" verbnet="">ablation</alias>
-        <alias framenet="" pos="n" verbnet="">coblation</alias>
+        <alias pos="v">ablate</alias>
+        <alias pos="n">ablation</alias>
+        <alias pos="n">coblation</alias>
       </aliases>
+      <roles>
+        <role descr="Agent, surgeon" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Removing" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Removing" version="1.7">cause</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="Part of body ablated" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Removing" version="1.7">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="Patient undergoing ablation, removed from" f="DIR" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Removing" version="1.7">source</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Removing" version="1.7" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="ablate-v: with arg 1 and instrument">
+        <text>A 1.5 cm, flat, villous-appearing lesion was ablated with gold probe ablation</text>
+        <rel relloc="7">ablated</rel>
+        <arg f="" n="1" start="0" end="5">A 1.5 cm, flat, villous-appearing lesion</arg>
+        <arg f="MNR" n="m" start="8" end="11">with gold probe ablation</arg>
+      </example>
+      <example src="" name="ablation-n: All args">
+        <text>The parents were grateful to the surgeons for their ablation of the cardiac neural crest from the embryos.</text>
+        <rel relloc="9">ablation</rel>
+        <arg f="" n="0" start="8" end="8">their</arg>
+        <arg f="" n="1" start="10" end="14">of the cardiac neural crest</arg>
+        <arg f="" n="2" start="15" end="17">from the embryos.</arg>
+      </example>
+      <example src="" name="coblation-n: You have three turbinates in each side of your nose">
+        <text>Bilateral inferior turbinate coblation</text>
+        <rel relloc="3">coblation</rel>
+        <arg f="LOC" n="m" start="0" end="0">Bilateral</arg>
+        <arg f="LOC" n="m" start="1" end="1">inferior</arg>
+        <arg f="" n="1" start="2" end="2">turbinate</arg>
+      </example>
       <note>ABLATE-V NOTES: Based o Sharp and Thyme data. Comparison to ablation.01-n. Framed by Katie. (from ablate.01-v)</note>
       <note>ABLATION-N NOTES: (from ablation.01-n)</note>
       <note>COBLATION-N NOTES: Based on Thyme and Sharp data. Comparison to ablation.01. No VN or FN classes. Framed by Katie. (from coblation.01-n)</note>
-      <roles>
-        <role descr="Agent, surgeon" f="pag" n="0"/>
-        <role descr="Part of body ablated" f="ppt" n="1"/>
-        <role descr="Patient undergoing ablation, removed from" f="dir" n="2"/>
-      </roles>
-      <example name="ablate-v: with arg 1 and instrument" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>A 1.5 cm, flat, villous-appearing lesion was ablated with gold probe ablation</text>
-        <arg f="" n="1">A 1.5 cm, flat, villous-appearing lesion</arg>
-        <rel f="">ablated</rel>
-        <arg f="mnr" n="m">with gold probe ablation</arg>
-      </example>
-      <example name="ablation-n: All args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The parents were grateful to the surgeons for their ablation of the cardiac neural crest from the embryos.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">ablation</rel>
-        <arg f="" n="1">of the cardiac neural crest</arg>
-        <arg f="" n="2">from the embryos</arg>
-      </example>
-      <example name="coblation-n: You have three turbinates in each side of your nose" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Bilateral inferior turbinate coblation</text>
-        <arg f="loc" n="m">Bilateral</arg>
-        <arg f="loc" n="m">inferior</arg>
-        <arg f="" n="1">turbinate</arg>
-        <rel f="">coblation</rel>
-      </example>
     </roleset>
     <roleset id="ablate.02" name="erode">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">ablate</alias>
-        <alias framenet="" pos="n" verbnet="">ablation</alias>
+        <alias pos="v">ablate</alias>
+        <alias pos="n">ablation</alias>
       </aliases>
-      <note>ABLATE-V, ABLATION-N: Based on geological data. Similar to ablate.01 but non-volitional. No VN or FN class.</note>
       <roles>
-        <role descr="cause of erosion" f="pag" n="0"/>
-        <role descr="entity removed, eroded away" f="ppt" n="1"/>
-        <role descr="eroded from, source a piece is removed from" f="dir" n="2"/>
+        <role descr="cause of erosion" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Removing" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Removing" version="1.7">cause</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity removed, eroded away" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Removing" version="1.7">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="eroded from, source a piece is removed from" f="DIR" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Removing" version="1.7">source</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="ablate-v: Args 1 and 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Removing" version="1.7" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="ablate-v: Args 1 and 2">
         <text>When the ice ablates from the glacier</text>
-        <arg f="" n="1">ice</arg>
-        <rel f="">ablates</rel>
-        <arg f="" n="2">from the glacier</arg>
+        <rel relloc="3">ablates</rel>
+        <arg f="" n="1" start="2" end="2">ice</arg>
+        <arg f="" n="2" start="4" end="6">from the glacier</arg>
       </example>
-      <example name="ablation-n: arg 0 and 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="ablation-n: arg 0 and 2">
         <text>Heat ablation of the glacier</text>
-        <arg f="" n="0">heat</arg>
-        <rel f="">ablation</rel>
-        <arg f="" n="2">of the glacier</arg>
+        <rel relloc="1">ablation</rel>
+        <arg f="" n="0" start="0" end="0">Heat</arg>
+        <arg f="" n="2" start="2" end="4">of the glacier</arg>
       </example>
+      <note>ABLATE-V, ABLATION-N: Based on geological data. Similar to ablate.01 but non-volitional. No VN or FN class.</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,66 +1,81 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="convene">
     <roleset id="convene.01" name="call a meeting, meeting, coming together">
       <aliases>
-        <alias framenet="Gathering_up Assemble" pos="v" verbnet="">convene</alias>
-        <alias framenet="" pos="n" verbnet="">convening</alias>
-        <alias framenet="" pos="n" verbnet="">convention</alias>
+        <alias pos="v">convene</alias>
+        <alias pos="n">convening</alias>
+        <alias pos="n">convention</alias>
       </aliases>
+      <roles>
+        <role descr="agent, entity calling the meeting" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="herd-47.5.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Gathering_up" version="1.7">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="theme, the meeting itself" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="herd-47.5.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Gathering_up" version="1.7">individuals</rolelink>
+            <rolelink resource="FrameNet" class="Assemble" version="1.7">individuals</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Gathering_up" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Assemble" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="herd-47.5.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Contact.Discussion.Correspondence" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Contact.Discussion.Meet" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Meet" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="convention-n.1" src="annot-overlap" confidence="0.1">11</lexlink>
+        <lexlink resource="onsense" version="on5" class="convene-v.1" src="annot-overlap" confidence="0.1">31</lexlink>
+      </lexlinks>
+      <example src="" name="convene-v: agentive">
+        <text>As Jaguar's biggest holder and Britain's biggest car maker, Ford-1 could turn up the heat by *trace*-1 convening a special shareholders' meeting and urging holders to drop the limits early.</text>
+        <rel relloc="17">convening</rel>
+        <arg f="" n="0" start="16" end="16">*trace*-1</arg>
+        <arg f="" n="1" start="18" end="21">a special shareholders' meeting</arg>
+      </example>
+      <example src="" name="convene-v: meeting as subject">
+        <text>The group's resilience gets its first test today when 30 top pilot union leaders convene outside Chicago in a previously scheduled meeting.</text>
+        <rel relloc="14">convene</rel>
+        <arg f="" n="1" start="9" end="13">30 top pilot union leaders</arg>
+        <arg f="LOC" n="m" start="15" end="16">outside Chicago</arg>
+        <arg f="LOC" n="m" start="17" end="21">in a previously scheduled meeting.</arg>
+        <arg f="TMP" n="m" start="0" end="0">The</arg>
+        <arg f="RCL" n="m" start="7" end="7">today</arg>
+      </example>
+      <example src="BOLT-7" name="convening-n">
+        <text>[ Original ] Welcome to the 18th convening of the Party Congress , steadfastly believing in the triumph of Marxism and Leninism</text>
+        <rel relloc="7">convening</rel>
+        <arg f="TMP" n="m" start="6" end="6">18th</arg>
+        <arg f="" n="1" start="8" end="11">of the Party Congress</arg>
+      </example>
+      <example src="internet" name="convention-n: arg1">
+        <text>These conclusions provided the impetus for the Office?s development of a background report, and for the convention of a meeting of experts that took place in February 2013.</text>
+        <rel relloc="16">convention</rel>
+        <arg f="" n="1" start="17" end="27">of a meeting of experts that took place in February 2013.</arg>
+      </example>
+      <example src="BOLT" name="convention-n: arg1">
+        <text>It looks like there is a significant possibility that no candidate will come to the GOP convention with enough delegates to win a first vote .</text>
+        <rel relloc="16">convention</rel>
+        <arg f="" n="1" start="15" end="15">GOP</arg>
+      </example>
+      <example src="internet" name="convention-n: both args">
+        <text>The King's greatest contribution to Buddhism was his convention of the Fourth Council.</text>
+        <rel relloc="8">convention</rel>
+        <arg f="" n="0" start="7" end="7">his</arg>
+        <arg f="" n="1" start="9" end="12">of the Fourth Council.</arg>
+      </example>
       <note>CONVENE-V NOTES: Frames file for 'convene' based on financial subcorpus and automatic expansion via verbnet; nominal 'convening' based on BOLT-7. (from convene.01-v)</note>
       <note>CONVENTION-N NOTES: Added by Julia based on BOLT-6, convene.01. Corresponds to VNcls herd-47.5.2. (from convention.01-n)</note>
       <note>CONVENING-N NOTES: Automatically created by Julia as an alias file for unification. (from convening.01-n)</note>
-      <roles>
-        <role descr="agent, entity calling the meeting" f="pag" n="0">
-          <vnrole vncls="47.5.2" vntheta="agent"/>
-        </role>
-        <role descr="theme, the meeting itself" f="ppt" n="1">
-          <vnrole vncls="47.5.2" vntheta="theme"/>
-        </role>
-      </roles>
-      <example name="convene-v: agentive" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
-        <text>As Jaguar's biggest holder and Britain's biggest car maker, Ford-1 could turn up the heat by *trace*-1 convening a special shareholders' meeting and urging holders to drop the limits early.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">convening</rel>
-        <arg f="" n="1">a special shareholders' meeting</arg>
-      </example>
-      <example name="convene-v: meeting as subject" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>The group's resilience gets its first test today when 30 top pilot union leaders convene outside Chicago in a previously scheduled meeting.</text>
-        <arg f="" n="1">30 top pilot union leaders</arg>
-        <rel f="">convene</rel>
-        <arg f="loc" n="m">outside Chicago</arg>
-        <arg f="loc" n="m">in a previously scheduled meeting</arg>
-        <arg f="tmp" n="m">*trace*</arg>
-        <arg f="rcl" n="m">when -&gt; today</arg>
-      </example>
-      <example name="convening-n" src="BOLT-7" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>[ Original ] Welcome to the 18th convening of the Party Congress , steadfastly believing in the triumph of Marxism and Leninism</text>
-        <arg f="tmp" n="m">18th</arg>
-        <rel f="">convening</rel>
-        <arg f="" n="1">of the Party Congress</arg>
-      </example>
-      <example name="convention-n: arg1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>These conclusions provided the impetus for the Office?s development of a background report, and for the convention of a meeting of experts that took place in February 2013.</text>
-        <rel f="">convention</rel>
-        <arg f="" n="1">of a meeting of experts that took place in February 2013</arg>
-      </example>
-      <example name="convention-n: arg1" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>It looks like there is a significant possibility that no candidate will come to the GOP convention with enough delegates to win a first vote .</text>
-        <arg f="" n="1">GOP</arg>
-        <rel f="">convention</rel>
-      </example>
-      <example name="convention-n: both args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The King's greatest contribution to Buddhism was his convention of the Fourth Council.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">convention</rel>
-        <arg f="" n="1">of the Fourth Council</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

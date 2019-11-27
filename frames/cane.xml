@@ -1,34 +1,55 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="cane">
     <roleset id="cane.01" name="strike with cane">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">cane</alias>
+        <alias pos="v">cane</alias>
       </aliases>
-      <note>CANE-V NOTES: Hand-corrected by Claire. (from cane.01-v)</note>
       <roles>
         <role descr="hitter" f="PAG" n="0">
-          <vnrole vncls="18.3" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="spank-18.3" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">cause</rolelink>
+            <rolelink resource="FrameNet" class="Corporal_punishment" version="1.7">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="victim" f="PPT" n="1">
-          <vnrole vncls="18.3" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="spank-18.3" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">victim</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">body_part</rolelink>
+            <rolelink resource="FrameNet" class="Corporal_punishment" version="1.7">evaluee</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="All arguments" src="web usage" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_harm" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Corporal_punishment" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="spank-18.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Life.Injure.InjuryCausedByViolentEvents" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Injure" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+      </lexlinks>
+      <example src="web usage" name="All arguments">
         <text>In that case this man has some serious questions to answer as to [why]-1 he caned a six year old child when it was illegal to do so *-1.</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">caned</rel>
-        <arg f="" n="1">a six year old child</arg>
-        <arg f="tmp" n="m">when it was illegal to do so</arg>
-        <arg f="cau" n="m">*-1</arg>
+        <rel relloc="15">caned</rel>
+        <arg f="" n="0" start="14" end="14">he</arg>
+        <arg f="" n="1" start="16" end="20">a six year old child</arg>
+        <arg f="TMP" n="m" start="21" end="27">when it was illegal to do so</arg>
+        <arg f="CAU" n="m" start="28" end="28">*-1.</arg>
       </example>
-      <example name="With cause, passive" src="web usage" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>[They]-1 were caned *-1 for whispering, for talking, for singing.</text>
-        <rel f="">caned</rel>
-        <arg f="" n="1">*-1</arg>
-        <arg f="cau" n="m">for whispering, for talking, for singing.</arg>
+      <example src="web usage" name="With cause, passive">
+        <text> They were caned for whispering, for talking, for singing.</text>
+        <rel relloc="3">caned</rel>
+        <arg f="" n="1" start="1" end="1">They</arg>
+        <arg f="CAU" n="m" start="4" end="9">for whispering, for talking, for singing.</arg>
       </example>
+      <note>CANE-V NOTES: Hand-corrected by Claire. (from cane.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

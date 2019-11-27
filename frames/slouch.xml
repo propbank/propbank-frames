@@ -1,34 +1,49 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="slouch">
     <roleset id="slouch.01" name="slouch">
       <aliases>
-        <alias framenet="Posture Change_posture" pos="v" verbnet="">slouch</alias>
+        <alias pos="v">slouch</alias>
       </aliases>
-      <note>SLOUCH-V NOTES: hand-checked by Kevin. Member of VNcls assuming_position-50, spatial_configuration-47.6, run-51.3.2. (from slouch.01-v)</note>
       <roles>
-        <note>Use argA for causal agent if it occurs outside of the slouching entity.</note>
         <role descr="sloucher" f="PAG" n="0">
-          <vnrole vncls="50" vntheta="Agent"/>
-          <vnrole vncls="47.6" vntheta="Theme"/>
-          <vnrole vncls="51.3.2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="assuming_position-50" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="spatial_configuration-47.6" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="run-51.3.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Change_posture" version="1.7">protagonist</rolelink>
+            <rolelink resource="FrameNet" class="Posture" version="1.7">agent</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="Intransitive" src="web usage" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Posture" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Change_posture" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="assuming_position-50" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="spatial_configuration-47.6" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="run-51.3.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web usage" name="Intransitive">
         <text>I slouched in the chair with a hand on my forehead, looking at my lap.</text>
-        <arg f="" n="0">I</arg>
-        <rel f="">slouched</rel>
-        <arg f="loc" n="m">in the chair</arg>
-        <arg f="mnr" n="m">with a hand on my forehead</arg>
-        <arg f="prd" n="m">looking at my lap</arg>
+        <rel relloc="1">slouched</rel>
+        <arg f="" n="0" start="0" end="0">I</arg>
+        <arg f="LOC" n="m" start="2" end="4">in the chair</arg>
+        <arg f="MNR" n="m" start="5" end="10">with a hand on my forehead,</arg>
+        <arg f="PRD" n="m" start="11" end="14">looking at my lap.</arg>
       </example>
-      <example name="Causative Agent, Transitive" src="web usage" type="">
+      <example src="web usage" name="Causative Agent, Transitive">
         <text>I slouched my tote bag on my shoulder.</text>
-        <arg f="" n="a">I</arg>
-        <rel f="">slouched</rel>
-        <arg f="" n="0">my tote bag</arg>
-        <arg f="loc" n="m">on my shoulder</arg>
+        <rel relloc="1">slouched</rel>
+        <arg f="" n="a" start="0" end="0">I</arg>
+        <arg f="" n="0" start="2" end="4">my tote bag</arg>
+        <arg f="LOC" n="m" start="5" end="7">on my shoulder.</arg>
       </example>
+      <note>SLOUCH-V NOTES: hand-checked by Kevin. Member of VNcls assuming_position-50, spatial_configuration-47.6, run-51.3.2. (from slouch.01-v)</note>
+      <note>Use argA for causal agent if it occurs outside of the slouching entity.</note>
     </roleset>
   </predicate>
 </frameset>

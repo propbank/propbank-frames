@@ -1,30 +1,43 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="pirate">
     <roleset id="pirate.01" name="be a pirate, steal">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">pirate</alias>
+        <alias pos="v">pirate</alias>
       </aliases>
-      <note>PIRATE-V NOTES: The arg structure is predicted by class membership, but because of thelimited meaning of the verb, I doubt arg0 or arg2 would ever appear. (from pirate.01-v)</note>
       <roles>
         <role descr="pirate, thief, agent" f="PAG" n="0">
-          <vnrole vncls="10.5-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="steal-10.5-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing stolen" f="PPT" n="1">
-          <vnrole vncls="10.5-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="steal-10.5-1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="stolen from" f="DIR" n="2">
-          <vnrole vncls="10.5-1" vntheta="Source"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="steal-10.5-1" version="verbnet3.3">source</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="the one example" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>[Any secret]-1 can be pirated [*-1], the experts said, if it is transmitted over the air.</text>
-        <arg f="MOD" n="M">can</arg>
-        <rel f="">pirated</rel>
-        <arg f="" n="1">[*-1]</arg>
-        <arg f="ADV" n="M">if it is transmitted over the air</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Piracy" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="steal-10.5-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="the one example">
+        <text> Any secret can be pirated [*], the experts said, if it is transmitted over the air.</text>
+        <rel relloc="5">pirated</rel>
+        <arg f="MOD" n="M" start="3" end="3">can</arg>
+        <arg f="" n="1" start="1" end="2">Any secret</arg>
+        <arg f="ADV" n="M" start="10" end="16">if it is transmitted over the air.</arg>
       </example>
+      <note>PIRATE-V NOTES: The arg structure is predicted by class membership, but because of thelimited meaning of the verb, I doubt arg0 or arg2 would ever appear. (from pirate.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

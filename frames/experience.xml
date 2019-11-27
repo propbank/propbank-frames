@@ -1,102 +1,122 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="experience">
     <roleset id="experience.01" name="have a sensation or experience">
       <aliases>
-        <alias framenet="Feeling" pos="n" verbnet="">experience</alias>
-        <alias framenet="Feeling Perception_experience Feeling Expertise" pos="v" verbnet="">experience</alias>
-        <alias framenet="" pos="j" verbnet="">experienced</alias>
-        <alias framenet="" pos="l" verbnet="">have_experience</alias>
+        <alias pos="n">experience</alias>
+        <alias pos="v">experience</alias>
+        <alias pos="j">experienced</alias>
+        <alias pos="l">have_experience</alias>
       </aliases>
+      <roles>
+        <role descr="experiencer" f="PPT" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="sight-30.2" version="verbnet3.3">experiencer</rolelink>
+            <rolelink resource="FrameNet" class="Perception_experience" version="1.7">perceiver_passive</rolelink>
+            <rolelink resource="FrameNet" class="Feeling" version="1.7">experiencer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="experienced" f="CAU" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="sight-30.2" version="verbnet3.3">stimulus</rolelink>
+            <rolelink resource="FrameNet" class="Perception_experience" version="1.7">phenomenon</rolelink>
+            <rolelink resource="FrameNet" class="Feeling" version="1.7">emotion</rolelink>
+            <rolelink resource="FrameNet" class="Feeling" version="1.7">emotional_state</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Perception_experience" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Expertise" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Feeling" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="sight-30.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="experience-v.1" src="annot-overlap" confidence="0.1">70</lexlink>
+        <lexlink resource="onsense" version="on5" class="experience-n.2" src="annot-overlap" confidence="0.1">66</lexlink>
+      </lexlinks>
+      <example src="" name="typical">
+        <text>Suppliers and subcontractors are experiencing heightened pressure to support delivery schedules.</text>
+        <rel relloc="4">experiencing</rel>
+        <arg f="" n="0" start="0" end="2">Suppliers and subcontractors</arg>
+        <arg f="" n="1" start="5" end="10">heightened pressure to support delivery schedules.</arg>
+      </example>
+      <example src="" name="passivized">
+        <text>``I believe that the perception that legislation in this area may be hastily approved contributed to the collapse of the UAL transaction, and [the resulting disruption]-1 in the financial markets experienced *trace*-1 this past Friday,'' Mr. Trump wrote members of Congress.</text>
+        <rel relloc="30">experienced</rel>
+        <arg f="" n="1" start="23" end="25">[the resulting disruption]-1</arg>
+        <arg f="TMP" n="m" start="32" end="34">this past Friday,''</arg>
+      </example>
+      <example src="BOLT 2,3" name="Adjective example">
+        <text>You are two years more experienced , travelled , and adventurous .</text>
+        <rel relloc="5">experienced</rel>
+        <arg f="" n="0" start="0" end="0">You</arg>
+        <arg f="TMP" n="m" start="2" end="3">two years</arg>
+        <arg f="EXT" n="m" start="4" end="4">more</arg>
+      </example>
+      <example src="" name="autogen1">
+        <text>the bank 's experience with LDC debt</text>
+        <rel relloc="3">experience</rel>
+        <arg f="" n="0" start="0" end="2">the bank 's</arg>
+        <arg f="" n="1" start="4" end="6">with LDC debt</arg>
+      </example>
+      <example src="" name="autogen2">
+        <text>military experience</text>
+        <rel relloc="1">experience</rel>
+        <arg f="" n="1" start="0" end="0">military</arg>
+      </example>
+      <example src="" name="with modifiers">
+        <text>a kind of harrowing experience</text>
+        <rel relloc="4">experience</rel>
+        <arg f="ADJ" n="m" start="1" end="2">kind of</arg>
+        <arg f="ADJ" n="m" start="3" end="3">harrowing</arg>
+      </example>
+      <example src="" name="both args">
+        <text>your personal experience of having been on the cruise</text>
+        <rel relloc="2">experience</rel>
+        <arg f="" n="0" start="0" end="0">your</arg>
+        <arg f="MNR" n="m" start="1" end="1">personal</arg>
+        <arg f="" n="1" start="3" end="8">of having been on the cruise</arg>
+      </example>
+      <example src="" name="with LOC">
+        <text>her experience on the Simpson case</text>
+        <rel relloc="1">experience</rel>
+        <arg f="" n="0" start="0" end="0">her</arg>
+        <arg f="LOC" n="m" start="2" end="5">on the Simpson case</arg>
+      </example>
       <note>EXPERIENCE-V NOTES: Frames file for 'experience' based on sentences in financial subcorpus. Comparison with detect and undergo. (from experience.01-v predicate notes)</note>
       <note>EXPERIENCE-N NOTES: Updated by Julia. Member of Vncls sight-30.2. (from experience.01-n)</note>
       <note>EXPERIENCED-J NOTES: Automatically created by Julia as an alias file for unification. (from experienced.01-j)</note>
-      <roles>
-        <role descr="experiencer" f="ppt" n="0">
-          <vnrole vncls="30.2" vntheta="experiencer"/>
-        </role>
-        <role descr="experienced" f="cau" n="1">
-          <vnrole vncls="30.2" vntheta="stimulus"/>
-        </role>
-      </roles>
-      <example name="typical" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="present" voice="active"/>
-        <text>Suppliers and subcontractors are experiencing heightened pressure to support delivery schedules.</text>
-        <arg f="" n="0">Suppliers and subcontractors</arg>
-        <rel f="">experiencing</rel>
-        <arg f="" n="1">heightened pressure to support delivery schedules</arg>
-      </example>
-      <example name="passivized" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>``I believe that the perception that legislation in this area may be hastily approved contributed to the collapse of the UAL transaction, and [the resulting disruption]-1 in the financial markets experienced *trace*-1 this past Friday,'' Mr. Trump wrote members of Congress.</text>
-        <rel f="">experienced</rel>
-        <arg f="" n="1">*trace*-1 (= the resulting disruption)</arg>
-        <arg f="tmp" n="m">this past Friday</arg>
-      </example>
-      <example name="Adjective example" src="BOLT 2,3" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>You are two years more experienced , travelled , and adventurous .</text>
-        <arg f="" n="0">You</arg>
-        <arg f="tmp" n="m">two years</arg>
-        <arg f="ext" n="m">more</arg>
-        <rel f="">experienced</rel>
-      </example>
-      <example name="autogen1" src="" type="">
-        <text>the bank 's experience with LDC debt</text>
-        <arg f="" n="0">the bank 's</arg>
-        <rel f="">experience</rel>
-        <arg f="" n="1">with LDC debt</arg>
-      </example>
-      <example name="autogen2" src="" type="">
-        <text>military experience</text>
-        <arg f="" n="1">military</arg>
-        <rel f="">experience</rel>
-      </example>
-      <example name="with modifiers" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>a kind of harrowing experience</text>
-        <arg f="adj" n="m">kind of</arg>
-        <arg f="adj" n="m">harrowing</arg>
-        <rel f="">experience</rel>
-      </example>
-      <example name="both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>your personal experience of having been on the cruise</text>
-        <arg f="" n="0">your</arg>
-        <arg f="mnr" n="m">personal</arg>
-        <rel f="">experience</rel>
-        <arg f="" n="1">of having been on the cruise</arg>
-      </example>
-      <example name="with LOC" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>her experience on the Simpson case</text>
-        <arg f="" n="0">her</arg>
-        <rel f="">experience</rel>
-        <arg f="loc" n="m">on the Simpson case</arg>
-      </example>
     </roleset>
     <roleset id="experience.02" name="accumulated instances of participation, and the knowledge derived">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">experience</alias>
-        <alias framenet="" pos="j" verbnet="">experienced</alias>
+        <alias pos="n">experience</alias>
+        <alias pos="j">experienced</alias>
       </aliases>
-      <note>EXPERIENCE-N, EXPERIENCED-J NOTES: Added by Julia for Lorelei.</note>
       <roles>
-        <role descr="entity with a history of participation" f="pag" n="0"/>
-        <role descr="skill" f="ppt" n="1"/>
+        <role descr="entity with a history of participation" f="PAG" n="0"/>
+        <role descr="skill" f="PPT" n="1"/>
       </roles>
-      <example name="experience-n" src="" type="">
-        <text>One of the most interesting aspects of the new likely team under the Bush administration is first of all , extensive experience in defense and military affairs . </text>
-        <arg f="ext" n="m">extensive</arg>
-        <rel f="">experience</rel>
-        <arg f="" n="1">in defense and military affairs</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="experience-n">
+        <text>One of the most interesting aspects of the new likely team under the Bush administration is first of all , extensive experience in defense and military affairs .</text>
+        <rel relloc="21">experience</rel>
+        <arg f="EXT" n="m" start="20" end="20">extensive</arg>
+        <arg f="" n="1" start="22" end="26">in defense and military affairs</arg>
       </example>
-      <example name="experienced-j" src="" type="">
-        <text> He is experienced at managing large teams of engineers across all of KJWW's disciplines.</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">experienced</rel>
-        <arg f="" n="1">at managing large teams of engineers across all of KJWW's disciplines</arg>
+      <example src="" name="experienced-j">
+        <text>He is experienced at managing large teams of engineers across all of KJWW's disciplines.</text>
+        <rel relloc="2">experienced</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
+        <arg f="" n="1" start="3" end="13">at managing large teams of engineers across all of KJWW's disciplines.</arg>
       </example>
+      <note>EXPERIENCE-N, EXPERIENCED-J NOTES: Added by Julia for Lorelei.</note>
     </roleset>
   </predicate>
 </frameset>

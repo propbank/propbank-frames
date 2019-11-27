@@ -1,36 +1,50 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="deduct">
     <roleset id="deduct.01" name="subtract, take away">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">deduct</alias>
-        <alias framenet="" pos="n" verbnet="">deduction</alias>
+        <alias pos="v">deduct</alias>
+        <alias pos="n">deduction</alias>
       </aliases>
-      <note>DEDUCT-V NOTES: Frames file for 'deduct' based on sentences in financial subcorpus. No Verbnet entry, no Framenet entry. Comparison with 'subtract'. (from deduct.01-v predicate notes)</note>
-      <note>DEDUCTION-N NOTES: Automatically created by Julia as an alias file for unification. (from deduction.01-n)</note>
       <roles>
         <role descr="subtracter" f="PAG" n="0">
-          <vnrole vncls="10.1" vntheta="Agent"/>
-          <vnrole vncls="108-2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="remove-10.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="multiply-108-2" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing being subtracted" f="PPT" n="1">
-          <vnrole vncls="10.1" vntheta="Theme"/>
-          <vnrole vncls="108-2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="remove-10.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="multiply-108-2" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing being subtracted from" f="DIR" n="2">
-          <vnrole vncls="10.1" vntheta="Source"/>
-          <vnrole vncls="108-2" vntheta="co-theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="remove-10.1" version="verbnet3.3">source</rolelink>
+            <rolelink resource="VerbNet" class="multiply-108-2" version="verbnet3.3">co-theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="canonical" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="remove-10.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="multiply-108-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="deduct-v.1" src="annot-overlap" confidence="0.1">9</lexlink>
+      </lexlinks>
+      <example src="" name="canonical">
         <text>Tax-loss sellers, those investors who sell loss-making stocks so they can deduct their losses from this year's income, are also getting out, Mr. Mills said.</text>
-        <arg f="" n="0">they</arg>
-        <arg f="mod" n="m">can</arg>
-        <rel f="">deduct</rel>
-        <arg f="" n="1">their losses</arg>
-        <arg f="" n="2">from this year's income</arg>
+        <rel relloc="11">deduct</rel>
+        <arg f="" n="0" start="9" end="9">they</arg>
+        <arg f="MOD" n="m" start="10" end="10">can</arg>
+        <arg f="" n="1" start="12" end="13">their losses</arg>
+        <arg f="" n="2" start="14" end="17">from this year's income,</arg>
       </example>
+      <note>DEDUCT-V NOTES: Frames file for 'deduct' based on sentences in financial subcorpus. No Verbnet entry, no Framenet entry. Comparison with 'subtract'. (from deduct.01-v predicate notes)</note>
+      <note>DEDUCTION-N NOTES: Automatically created by Julia as an alias file for unification. (from deduction.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

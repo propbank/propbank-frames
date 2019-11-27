@@ -1,39 +1,59 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="pummel">
     <roleset id="pummel.01" name="strike repeatedly">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">pummel</alias>
+        <alias pos="v">pummel</alias>
       </aliases>
-      <note>PUMMEL-V NOTES: Please try very hard to make the agent/instrument distinction. (from pummel.01-v)</note>
       <roles>
         <role descr="agent, hitter - animate only!" f="PAG" n="0">
-          <vnrole vncls="18.3" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="spank-18.3" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">cause</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing hit" f="PPT" n="1">
-          <vnrole vncls="18.3" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="spank-18.3" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">victim</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">body_part</rolelink>
+          </rolelinks>
         </role>
         <role descr="instrument, thing hit by or with" f="MNR" n="2">
-          <vnrole vncls="18.3" vntheta="Instrument"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="spank-18.3" version="verbnet3.3">instrument</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">means</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">instrument</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="instrumental subject" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_harm" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="spank-18.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+      </lexlinks>
+      <example src="" name="instrumental subject">
         <text>Moreover, some investors think a recession or renewed airfare wars will pummel airline stocks in coming months.</text>
-        <arg f="" n="2">a recession or renewed airfare wars</arg>
-        <arg f="MOD" n="M">will</arg>
-        <rel f="">pummel</rel>
-        <arg f="" n="1">airline stocks</arg>
-        <arg f="TMP" n="M">in coming months</arg>
+        <rel relloc="11">pummel</rel>
+        <arg f="" n="2" start="4" end="9">a recession or renewed airfare wars</arg>
+        <arg f="MOD" n="M" start="10" end="10">will</arg>
+        <arg f="" n="1" start="12" end="13">airline stocks</arg>
+        <arg f="TMP" n="M" start="14" end="16">in coming months.</arg>
       </example>
-      <example name="ARG0" src="probably COCA (2018 example fix)" type="">
+      <example src="probably COCA (2018 example fix)" name="ARG0">
         <text>Then he clubbed him with the other paw, rolled him around, pummelled him with his back feet and finally threw him to the ground with full force.</text>
-        <arg f="dis" n="m">Then</arg>
-        <arg f="" n="0">he</arg>
-        <rel f="">pummelled</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="" n="2">with his back feet</arg>
+        <rel relloc="11">pummelled</rel>
+        <arg f="DIS" n="m" start="0" end="0">Then</arg>
+        <arg f="" n="0" start="1" end="1">he</arg>
+        <arg f="" n="1" start="3" end="3">him</arg>
+        <arg f="" n="2" start="13" end="16">with his back feet</arg>
       </example>
-
+      <note>PUMMEL-V NOTES: Please try very hard to make the agent/instrument distinction. (from pummel.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

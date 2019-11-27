@@ -1,85 +1,113 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="answer">
     <roleset id="answer.01" name="give an answer, reply">
       <aliases>
-        <alias framenet="Communication_response" pos="v" verbnet="">answer</alias>
-        <alias framenet="" pos="n" verbnet="">answer</alias>
-        <alias framenet="" pos="n" verbnet="">answering</alias>
+        <alias pos="v">answer</alias>
+        <alias pos="n">answer</alias>
+        <alias pos="n">answering</alias>
       </aliases>
+      <roles>
+        <role descr="replier" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Communication_response" version="1.7">speaker</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="in response to" f="GOL" n="1">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Communication_response" version="1.7">addressee</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="answer" f="PPT" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Communication_response" version="1.7">topic</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Communication_response" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Contact.PublicStatementInPerson.Broadcast" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Correspondence" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="answer-n.1" src="annot-overlap" confidence="0.1">61</lexlink>
+        <lexlink resource="onsense" version="on5" class="answer-v.1" src="annot-overlap" confidence="0.1">65</lexlink>
+        <lexlink resource="onsense" version="on5" class="answer-v.2" src="annot-overlap" confidence="0.1">5</lexlink>
+        <lexlink resource="onsense" version="on5" class="answer-n.2" src="annot-overlap" confidence="0.1">16</lexlink>
+        <lexlink resource="onsense" version="on5" class="answer-v.4" src="annot-overlap" confidence="0.1">3</lexlink>
+      </lexlinks>
+      <example src="" name="straight transitive">
+        <text>In a letter to [Georgia Gulf]-3 President Jerry R. Satrum, Mr. Martin asked Georgia Gulf *trace*-3 to answer its offer by Tuesday.</text>
+        <rel relloc="17">answer</rel>
+        <arg f="" n="0" start="15" end="15">*trace*-3</arg>
+        <arg f="" n="1" start="18" end="19">its offer</arg>
+        <arg f="TMP" n="m" start="20" end="21">by Tuesday.</arg>
+      </example>
+      <example src="" name="answer to">
+        <text>Another proposed reform is to have program traders answer to an ``uptick rule'' a reform instituted after the Great Crash of 1929 that protects against stocks being relentlessly beaten downward by those seeking to profit from lower prices, namely short sellers.</text>
+        <rel relloc="8">answer</rel>
+        <arg f="" n="0" start="6" end="7">program traders</arg>
+        <arg f="" n="1" start="9" end="40">to an ``uptick rule'' a reform instituted after the Great Crash of 1929 that protects against stocks being relentlessly beaten downward by those seeking to profit from lower prices, namely short sellers.</arg>
+      </example>
+      <example src="" name="with explicit answer">
+        <text>`` I've read Balzac,'' he answers critics *trace*.</text>
+        <rel relloc="5">answers</rel>
+        <arg f="" n="0" start="4" end="4">he</arg>
+        <arg f="" n="1" start="6" end="6">critics</arg>
+        <arg f="" n="2" start="1" end="3">I've read Balzac,''</arg>
+      </example>
+      <example src="NomBank Frames" name="Arg 1 only">
+        <text>After the company reported red ink for the fiscal third quarter ,Wang 's marketing department provided the sales force answers toquestions such as `` How could you not have known you were goingto lose $ 55 million ? '' and `` Is Wang still a viable company ?''</text>
+        <rel relloc="19">answers</rel>
+        <arg f="" n="1" start="20" end="46">toquestions such as `` How could you not have known you were goingto lose $ 55 million ? '' and `` Is Wang still a viable company</arg>
+      </example>
+      <example src="NomBank Frames" name="NP only, Arg 0">
+        <text>His answer</text>
+        <rel relloc="1">answer</rel>
+        <arg f="" n="0" start="0" end="0">His</arg>
+      </example>
+      <example src="ON sense 1" name="Args 0 &amp; 1">
+        <text>They liked the candidate's answers to most of the debate questions.</text>
+        <rel relloc="4">answers</rel>
+        <arg f="" n="0" start="2" end="3">the candidate's</arg>
+        <arg f="" n="1" start="5" end="10">to most of the debate questions.</arg>
+      </example>
+      <example src="web" name="All arguments">
+        <text>Mill worked hard to defend his answer of equality to the Woman Question.</text>
+        <rel relloc="6">answer</rel>
+        <arg f="" n="0" start="5" end="5">his</arg>
+        <arg f="" n="2" start="7" end="8">of equality</arg>
+        <arg f="" n="1" start="9" end="12">to the Woman Question.</arg>
+      </example>
       <note>ANSWER-V NOTES: No Vncls. (from answer.01-v)</note>
       <note>ANSWER-N NOTES: Roleset based on verb answer.01, OntoNotes grouping answer-n senses 1, 2, 3, 4,&amp; 5; no mapping to VN. Framed by Claire. (from answer.01-n)</note>
-      <roles>
-        <note>Arg1 actually conflates the roles "questioner" and "question"; thesemight have to be split at some point. (from answer.01-v)</note>
-        <role descr="replier" f="pag" n="0"/>
-        <role descr="in response to" f="gol" n="1"/>
-        <role descr="answer" f="ppt" n="2"/>
-      </roles>
-      <example name="straight transitive" src="" type="">
-        <text>In a letter to [Georgia Gulf]-3 President Jerry R. Satrum, Mr. Martin asked Georgia Gulf *trace*-3 to answer its offer by Tuesday.</text>
-        <arg f="" n="0">*trace*-3</arg>
-        <rel f="">answer</rel>
-        <arg f="" n="1">its offer</arg>
-        <arg f="tmp" n="m">by Tuesday</arg>
-      </example>
-      <example name="answer to" src="" type="">
-        <text>Another proposed reform is to have program traders answer to an ``uptick rule'' a reform instituted after the Great Crash of 1929 that protects against stocks being relentlessly beaten downward by those seeking to profit from lower prices, namely short sellers.</text>
-        <arg f="" n="0">program traders</arg>
-        <rel f="">answer</rel>
-        <arg f="" n="1">to an ``uptick rule'' a reform instituted after the Great Crash of 1929 that protects against stocks being relentlessly beaten downward by those seeking to profit from lower prices, namely short sellers</arg>
-      </example>
-      <example name="with explicit answer" src="" type="">
-        <text>``[I've read Balzac]-1,'' he answers critics *trace*-1.</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">answers</rel>
-        <arg f="" n="1">critics</arg>
-        <arg f="" n="2">*trace*-1</arg>
-      </example>
-      <example name="Arg 1 only" src="NomBank Frames" type="">
-        <text>After the company reported red ink for the fiscal third quarter ,Wang 's marketing department provided the sales force answers toquestions such as `` How could you not have known you were goingto lose $ 55 million ? '' and `` Is Wang still a viable company ?''</text>
-        <rel f="">answers</rel>
-        <arg f="" n="1">to questions such as `` How could you not have known you were going to lose $ 55 million ? '' and `` Is Wang still a viable company ?</arg>
-      </example>
-      <example name="NP only, Arg 0" src="NomBank Frames" type="">
-        <text>His answer</text>
-        <arg f="" n="0">His</arg>
-        <rel f="">answer</rel>
-      </example>
-      <example name="Args 0 &amp; 1" src="ON sense 1" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>They liked the candidate's answers to most of the debate questions.</text>
-        <arg f="" n="0">the candidate's</arg>
-        <rel f="">answers</rel>
-        <arg f="" n="1">to most of the debate questions.</arg>
-      </example>
-      <example name="All arguments" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Mill worked hard to defend his answer of equality to the Woman Question.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">answer</rel>
-        <arg f="" n="2">of equality</arg>
-        <arg f="" n="1">to the Woman Question.</arg>
-      </example>
+      <note>Arg1 actually conflates the roles "questioner" and "question"; thesemight have to be split at some point. (from answer.01-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="answerable">
     <roleset id="answerable.02" name="answerable">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">answerable</alias>
+        <alias pos="j">answerable</alias>
       </aliases>
-      <note>ANSWERABLE-J NOTES: (from answerable.01-j)</note>
       <roles>
         <role descr="perpetrator, answerable one" f="PPT" n="1"/>
         <role descr="role or crime, answerable for what?" f="PPT" n="2"/>
         <role descr="judge, answerable to whom?" f="GOL" n="3"/>
       </roles>
-      <example name="Geneva conventions, all arguments" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="" name="Geneva conventions, all arguments">
         <text>She is answerable to the committee for her crimes against humanity.</text>
-        <rel f="">answerable</rel>
-        <arg f="" n="1">She</arg>
-        <arg f="" n="2">for her crimes against humanity</arg>
-        <arg f="" n="3">to the committee</arg>
+        <rel relloc="2">answerable</rel>
+        <arg f="" n="1" start="0" end="0">She</arg>
+        <arg f="" n="2" start="6" end="10">for her crimes against humanity.</arg>
+        <arg f="" n="3" start="3" end="5">to the committee</arg>
       </example>
+      <note>ANSWERABLE-J NOTES: (from answerable.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

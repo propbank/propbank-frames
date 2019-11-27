@@ -1,155 +1,195 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="elect">
     <roleset id="elect.01" name="elect someone to an office or position, elect">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">election</alias>
-        <alias framenet="" pos="v" verbnet="">elect</alias>
+        <alias pos="n">election</alias>
+        <alias pos="v">elect</alias>
       </aliases>
-      <note>ELECT-V NOTES: I so want to make an "electile dysfunction" joke here. (from elect.01-v)</note>
-      <note>ELECTION-N NOTES: Roleset based on verb entry elect.01, OntoNotes sense groupings election.01, election.02, election.03; maps to VN entry appoint-29.1. Framed by Claire (from election.01-n)</note>
       <roles>
-        <note>Be careful to distinguish candidate from office. (from election.01-n)</note>
-        <role descr="voters" f="pag" n="0">
-          <vnrole vncls="29.1" vntheta="agent"/>
+        <role descr="voters" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="appoint-29.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Change_of_leadership" version="1.7">selector</rolelink>
+          </rolelinks>
         </role>
-        <role descr="candidate" f="ppt" n="1">
-          <vnrole vncls="29.1" vntheta="theme"/>
+        <role descr="candidate" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="appoint-29.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Change_of_leadership" version="1.7">new_leader</rolelink>
+          </rolelinks>
         </role>
-        <role descr="office or position" f="prd" n="2">
-          <vnrole vncls="29.1" vntheta="result"/>
+        <role descr="office or position" f="PRD" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="appoint-29.1" version="verbnet3.3">result</rolelink>
+            <rolelink resource="FrameNet" class="Change_of_leadership" version="1.7">role</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="absentee voters" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Change_of_leadership" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="appoint-29.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="elect-v.1" src="annot-overlap" confidence="0.1">62</lexlink>
+        <lexlink resource="onsense" version="on5" class="elect-v.2" src="annot-overlap" confidence="0.1">4</lexlink>
+        <lexlink resource="onsense" version="on5" class="election-n.3" src="annot-overlap" confidence="0.1">20</lexlink>
+      </lexlinks>
+      <example src="" name="absentee voters">
         <text>[JP Bolduc]-1 was elected *trace*-1 a director.</text>
-        <arg f="" n="1">*trace*</arg>
-        <rel f="">elected</rel>
-        <arg f="" n="2">a director</arg>
+        <rel relloc="3">elected</rel>
+        <arg f="" n="1" start="4" end="4">*trace*-1</arg>
+        <arg f="" n="2" start="5" end="6">a director.</arg>
       </example>
-      <example name="hey, whaddya know, it does occur in the active voice" src="" type="">
+      <example src="" name="hey, whaddya know, it does occur in the active voice">
         <text>Holders at the meeting elected a full slate of Canadian Express nominees to Enfield's 11-member board.</text>
-        <arg f="" n="0">Holders at the meeting</arg>
-        <rel f="">elected</rel>
-        <arg f="" n="1">a full slate of Canadian Express nominees</arg>
-        <arg f="" n="2">to Enfield's 11-member board</arg>
+        <rel relloc="4">elected</rel>
+        <arg f="" n="0" start="0" end="3">Holders at the meeting</arg>
+        <arg f="" n="1" start="5" end="11">a full slate of Canadian Express nominees</arg>
+        <arg f="" n="2" start="12" end="15">to Enfield's 11-member board.</arg>
       </example>
-      <example name="ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1028" type="">
+      <example src="ontonotes mz/sinorama/10/ectb_1028" name="ARG1 and ARG2">
         <text>After the election of Chen Shui - bian as president , he mistakenly assumed that the market would go down , and sold everything without even looking at the share prices .</text>
-        <rel f="">election</rel>
-        <arg f="" n="1">of Chen Shui - bian</arg>
-        <arg f="" n="2">as president</arg>
+        <rel relloc="2">election</rel>
+        <arg f="" n="1" start="3" end="7">of Chen Shui - bian</arg>
+        <arg f="" n="2" start="8" end="9">as president</arg>
       </example>
-
-      <example name="'To' preposition" src="'To' preposition" type="'To' preposition">
+      <example src="'To' preposition" name="'To' preposition">
         <text>We celebrated Bob's election to the state senate.</text>
-        <arg f="" n="1">Bob's</arg>
-        <rel f="">election</rel>
-        <arg f="" n="2">to the state senate</arg>
+        <rel relloc="3">election</rel>
+        <arg f="" n="1" start="2" end="2">Bob's</arg>
+        <arg f="" n="2" start="4" end="7">to the state senate.</arg>
       </example>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes bn/p2" type="">
+      <example src="ontonotes bn/p2" name="ARG0 and ARG1 and ARG2">
         <text>In the year 1990 , the leader of the Sandinistas , Daniel Ortega , was asking the people of Nicaragua to elect him president .</text>
-        <arg f="" n="0">the people of Nicaragua</arg>
-        <rel f="">elect</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="" n="2">president</arg>
+        <rel relloc="21">elect</rel>
+        <arg f="" n="0" start="16" end="19">the people of Nicaragua</arg>
+        <arg f="" n="1" start="22" end="22">him</arg>
+        <arg f="" n="2" start="23" end="23">president</arg>
       </example>
-
-      <example name="Choice, immediate gratification" src="Choice, immediate gratification" type="Choice, immediate gratification">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="Choice, immediate gratification" name="Choice, immediate gratification">
         <text>The children's election to eat their chocolate now means they won't get dessert later.</text>
-        <arg f="" n="0">The children's</arg>
-        <rel f="">election</rel>
-        <arg f="" n="1">to eat their chocolate now</arg>
+        <rel relloc="2">election</rel>
+        <arg f="" n="0" start="0" end="1">The children's</arg>
+        <arg f="" n="1" start="3" end="7">to eat their chocolate now</arg>
       </example>
-      <example name="True election, no numbered args" src="True election, no numbered args" type="True election, no numbered args">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="True election, no numbered args" name="True election, no numbered args">
         <text>People believe the election in Italy will be very close.</text>
-        <rel f="">election</rel>
-        <arg f="loc" n="m">in Italy</arg>
+        <rel relloc="3">election</rel>
+        <arg f="LOC" n="m" start="4" end="5">in Italy</arg>
       </example>
-      <example name="Second term as office" src="Second term as office" type="Second term as office">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="Second term as office" name="Second term as office">
         <text>His election to a second term was quite frustrating for some.</text>
-        <arg f="" n="1">His</arg>
-        <rel f="">election</rel>
-        <arg f="" n="2">to a second term</arg>
+        <rel relloc="1">election</rel>
+        <arg f="" n="1" start="0" end="0">His</arg>
+        <arg f="" n="2" start="2" end="5">to a second term</arg>
       </example>
+      <note>ELECT-V NOTES: I so want to make an "electile dysfunction" joke here. (from elect.01-v)</note>
+      <note>ELECTION-N NOTES: Roleset based on verb entry elect.01, OntoNotes sense groupings election.01, election.02, election.03; maps to VN entry appoint-29.1. Framed by Claire (from election.01-n)</note>
+      <note>Be careful to distinguish candidate from office. (from election.01-n)</note>
     </roleset>
     <roleset id="elect.02" name="choose an action or thing">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">elect</alias>
-        <alias framenet="" pos="v" verbnet="">elect</alias>
+        <alias pos="n">elect</alias>
+        <alias pos="v">elect</alias>
       </aliases>
+      <roles>
+        <role descr="Chooser" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Choosing" version="1.7">cognizer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="Thing chosen" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Choosing" version="1.7">chosen</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="Group or source chosen from" f="DIR" n="2"/>
+        <role descr="Benefactive" f="GOL" n="3"/>
+        <role descr="Secondary attribute of Arg1" f="PRD" n="4"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Choosing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Startposition" version="rich" confidence="0.1" src="reo-expansion"/>
+      </lexlinks>
+      <example src="" name="Arg0,1">
+        <text>Rather than turn back from such a vital mission, he elected to proceed to the target.</text>
+        <rel relloc="10">elected</rel>
+        <arg f="ADV" n="m" start="0" end="8">Rather than turn back from such a vital mission,</arg>
+        <arg f="" n="0" start="9" end="9">he</arg>
+        <arg f="" n="1" start="11" end="15">to proceed to the target.</arg>
+      </example>
       <note>ELECT-V NOTES: comparable to choose.01 (from elect.02-v)</note>
       <note>ELECT-N NOTES: Automatically created by Julia as an alias file for unification. (from elect.02-n)</note>
-      <roles>
-        <role descr="Chooser" f="pag" n="0"/>
-        <role descr="Thing chosen" f="ppt" n="1"/>
-        <role descr="Group or source chosen from" f="dir" n="2"/>
-        <role descr="Benefactive" f="gol" n="3"/>
-        <role descr="Secondary attribute of Arg1" f="prd" n="4"/>
-      </roles>
-      <example name="Arg0,1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Rather than turn back from such a vital mission, he elected to proceed to the target.</text>
-        <arg f="adv" n="m">Rather than turn back from such a vital mission</arg>
-        <arg f="" n="0">he</arg>
-        <rel f="">elected</rel>
-        <arg f="" n="1">to proceed to the target</arg>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="electoral">
     <roleset id="electoral.03" name="of or relating to elctions">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">electoral</alias>
+        <alias pos="j">electoral</alias>
       </aliases>
-      <note>ELECTORAL-J NOTES: Based on ontonotes data. (from electoral.01-j)</note>
       <roles>
-        <role descr="thing that is related" f="ppt" n="1"/>
+        <role descr="thing that is related" f="PPT" n="1"/>
       </roles>
-      <example name="onyl arg" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="onyl arg">
         <text>electoral process</text>
-        <rel f="">electoral</rel>
-        <arg f="" n="1">process</arg>
+        <rel relloc="0">electoral</rel>
+        <arg f="" n="1" start="1" end="1">process</arg>
       </example>
+      <note>ELECTORAL-J NOTES: Based on ontonotes data. (from electoral.01-j)</note>
     </roleset>
     <roleset id="electoral.04" name="relating to or composed of electors">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">electoral</alias>
+        <alias pos="j">electoral</alias>
       </aliases>
-      <note>ELECTORAL-J NOTES: (from electoral.02-j)</note>
       <roles>
-        <role descr="elector, voter" f="pag" n="0"/>
+        <role descr="elector, voter" f="PAG" n="0"/>
       </roles>
-      <example name="only arg" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <example src="" name="only arg">
         <text>Electoral college</text>
-        <rel f="">electoral</rel>
-        <arg f="" n="0">college</arg>
+        <rel relloc="0">Electoral</rel>
+        <arg f="" n="0" start="1" end="1">college</arg>
       </example>
+      <note>ELECTORAL-J NOTES: (from electoral.02-j)</note>
     </roleset>
   </predicate>
   <predicate lemma="electable">
     <roleset id="electable.05" name="capable of being elected by voters">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">electable</alias>
+        <alias pos="j">electable</alias>
       </aliases>
-      <note>ELECTABLE-J NOTES: Added by Julia based on BOLT-4,5, elect.01. (from electable.01-j)</note>
       <roles>
-        <role descr="voters" f="pag" n="0"/>
-        <role descr="entity elected" f="ppt" n="1"/>
-        <role descr="position elected to" f="prd" n="2"/>
+        <role descr="voters" f="PAG" n="0"/>
+        <role descr="entity elected" f="PPT" n="1"/>
+        <role descr="position elected to" f="PRD" n="2"/>
       </roles>
-      <example name="arg1" src="BOLT-4,5" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <example src="BOLT-4,5" name="arg1">
         <text>I checked Cullen because he is most electable -LRB- that is , most likely to attract independent voters -RRB- .</text>
-        <arg f="" n="1">he</arg>
-        <arg f="ext" n="m">most</arg>
-        <rel f="">electable</rel>
-        <arg f="adv" n="m">that is, most likely to attract independent voters</arg>
+        <rel relloc="7">electable</rel>
+        <arg f="" n="1" start="4" end="4">he</arg>
+        <arg f="EXT" n="m" start="6" end="6">most</arg>
+        <arg f="ADV" n="m" start="10" end="17">is , most likely to attract independent voters</arg>
       </example>
+      <note>ELECTABLE-J NOTES: Added by Julia based on BOLT-4,5, elect.01. (from electable.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

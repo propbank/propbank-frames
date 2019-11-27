@@ -1,27 +1,40 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="slurp">
     <roleset id="slurp.01" name="drink noisily with sucking sound">
       <aliases>
-        <alias framenet="Ingestion" pos="v" verbnet="">slurp</alias>
+        <alias pos="v">slurp</alias>
       </aliases>
-      <note>SLURP-V NOTES: Framed by Neville based on brown. Member of VNcls chew-39.2-2. (from slurp.01-v)</note>
       <roles>
         <role descr="agent" f="PAG" n="0">
-          <vnrole vncls="39.2-2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="chew-39.2-2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Ingestion" version="1.7">ingestor</rolelink>
+          </rolelinks>
         </role>
         <role descr="theme, entity slurped" f="PPT" n="1">
-          <vnrole vncls="39.2-2" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="chew-39.2-2" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Ingestion" version="1.7">ingestibles</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Ingestion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="chew-39.2-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="internet" name="transitive">
         <text>He slurped his wine throughout dinner and literally licked his plate at the end.</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">slurped</rel>
-        <arg f="" n="1">his wine</arg>
-        <arg f="tmp" n="m">throughout dinner</arg>
+        <rel relloc="1">slurped</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
+        <arg f="" n="1" start="2" end="3">his wine</arg>
+        <arg f="TMP" n="m" start="4" end="5">throughout dinner</arg>
       </example>
+      <note>SLURP-V NOTES: Framed by Neville based on brown. Member of VNcls chew-39.2-2. (from slurp.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

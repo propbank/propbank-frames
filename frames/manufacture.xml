@@ -1,62 +1,84 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="manufacture">
     <roleset id="manufacture.01" name="create">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">manufacture</alias>
-        <alias framenet="" pos="n" verbnet="">manufacturing</alias>
+        <alias pos="v">manufacture</alias>
+        <alias pos="n">manufacturing</alias>
+        <argalias pos="n" arg="0">manufacturer</argalias>
       </aliases>
-      <note>MANUFACTURE-V NOTES: Source might not occur. Do not tag nominal usages: "Manufacturing causes pollution." (from manufacture.01-v)</note>
-      <note>MANUFACTURING-N NOTES: Source might not occur. Do not tag nominal usages: "Manufacturing causes pollution." (from manufacturing.01-n)</note>
       <roles>
         <role descr="creator" f="PAG" n="0">
-          <vnrole vncls="26.4" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="create-26.4" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Manufacturing" version="1.7">manufacturer</rolelink>
+          </rolelinks>
         </role>
         <role descr="creation" f="PRD" n="1">
-          <vnrole vncls="26.4" vntheta="Result"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="create-26.4" version="verbnet3.3">result</rolelink>
+            <rolelink resource="FrameNet" class="Manufacturing" version="1.7">product</rolelink>
+          </rolelinks>
         </role>
         <role descr="created-from, thing changed" f="VSP" n="2">
-          <vnrole vncls="26.4" vntheta="Material"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="create-26.4" version="verbnet3.3">material</rolelink>
+            <rolelink resource="FrameNet" class="Manufacturing" version="1.7">resource</rolelink>
+          </rolelinks>
         </role>
         <role descr="benefactive" f="GOL" n="3">
-          <vnrole vncls="26.4" vntheta="Beneficiary"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="create-26.4" version="verbnet3.3">beneficiary</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Manufacturing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="create-26.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Manufacture.Artifact.CreateManufacture" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="manufacture-v.1" src="annot-overlap" confidence="0.1">38</lexlink>
+      </lexlinks>
+      <example src="" name="transitive">
         <text>The company has been manufacturing carpet since 1967.</text>
-        <arg f="" n="0">The company</arg>
-        <rel f="">manufacturing</rel>
-        <arg f="" n="1">carpet</arg>
-        <arg f="tmp" n="m">since 1967</arg>
+        <rel relloc="4">manufacturing</rel>
+        <arg f="" n="0" start="0" end="1">The company</arg>
+        <arg f="" n="1" start="5" end="5">carpet</arg>
+        <arg f="TMP" n="m" start="6" end="7">since 1967.</arg>
       </example>
-      <example name="passive" src="" type="">
+      <example src="" name="passive">
         <text>That means goods-1 could be manufactured *trace*-1 closer to customers, saving shipping costs, he said.</text>
-        <arg f="mod" n="m">could</arg>
-        <rel f="">manufactured</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="loc" n="m">closer to customers</arg>
-        <arg f="adv" n="m">saving shipping costs</arg>
+        <rel relloc="5">manufactured</rel>
+        <arg f="MOD" n="m" start="3" end="3">could</arg>
+        <arg f="" n="1" start="6" end="6">*trace*-1</arg>
+        <arg f="LOC" n="m" start="7" end="9">closer to customers,</arg>
+        <arg f="ADV" n="m" start="10" end="12">saving shipping costs,</arg>
       </example>
-      <example name="with benefactive" src="" type="">
+      <example src="" name="with benefactive">
         <text>He said Tandy-1 ``has done a decent job'' *trace*-1 increasing sales by *trace*-1 manufacturing computers for others...</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">manufacturing</rel>
-        <arg f="" n="1">computers</arg>
-        <arg f="" n="3">for others</arg>
+        <rel relloc="13">manufacturing</rel>
+        <arg f="" n="0" start="8" end="8">*trace*-1</arg>
+        <arg f="" n="1" start="14" end="14">computers</arg>
+        <arg f="" n="3" start="15" end="16">for others...</arg>
       </example>
-      <example name="Within LVC" src="CallHome" type="">
-        <text>because [they]-1 're above a furniture store right now like PRO-1 doing manufacturing.</text>
-        <arg f="" n="0">PRO-1</arg>
-        <arg f="lvb" n="m">doing</arg>
-        <rel f="">manufacturing</rel>
+      <example src="CallHome" name="Within LVC">
+        <text>because they 're above a furniture store right now like doing manufacturing.</text>
+        <rel relloc="11">manufacturing.</rel>
+        <arg f="" n="0" start="1" end="1">they</arg>
+        <arg f="LVB" n="m" start="10" end="10">doing</arg>
       </example>
-      <example name="passive" src="web" type="">
+      <example src="web" name="passive">
         <text>Their manufacturing of artefacts from natural materials is part of the custom of the country.</text>
-        <arg f="" n="0">Their</arg>
-        <rel f="">manufacturing</rel>
-        <arg f="" n="1">of artefacts</arg>
-        <arg f="" n="2">from natural materials</arg>
+        <rel relloc="1">manufacturing</rel>
+        <arg f="" n="0" start="0" end="0">Their</arg>
+        <arg f="" n="1" start="2" end="3">of artefacts</arg>
+        <arg f="" n="2" start="4" end="6">from natural materials</arg>
       </example>
+      <note>MANUFACTURE-V NOTES: Source might not occur. Do not tag nominal usages: "Manufacturing causes pollution." (from manufacture.01-v)</note>
+      <note>MANUFACTURING-N NOTES: Source might not occur. Do not tag nominal usages: "Manufacturing causes pollution." (from manufacturing.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

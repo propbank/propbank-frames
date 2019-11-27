@@ -1,49 +1,69 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="package">
     <roleset id="package.01" name="to place into a package">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">packaging</alias>
-        <alias framenet="Placing" pos="v" verbnet="">package</alias>
+        <alias pos="n">packaging</alias>
+        <alias pos="v">package</alias>
       </aliases>
-      <note>PACKAGE-V NOTES: Based on WSJ. Member of VNcls 22.3-2-1. (from package.01-v)</note>
-      <note>PACKAGING-N NOTES: package.01. Corresponds to VNcls shake-22.3-2-1 (from packaging.01-n)</note>
       <roles>
         <role descr="packager, agent" f="PAG" n="0">
-          <vnrole vncls="22.3-2-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="shake-22.3-2-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">cause</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity packaged" f="PPT" n="1">
-          <vnrole vncls="22.3-2-1" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="shake-22.3-2-1" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">goal</rolelink>
+          </rolelinks>
         </role>
         <role descr="packing material/ package" f="PPT" n="2">
-          <vnrole vncls="22.3-2-1" vntheta="co-patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="shake-22.3-2-1" version="verbnet3.3">co-patient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="instrument" f="mnr" n="3"/>
+        <role descr="instrument" f="MNR" n="3">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">means</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">theme</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="with Arg3" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="active"/>
-        <text>Under the agreement , Westinghouse-1 will be able [*-1] to purchase smaller combustion turbines from its Japanese partner , and package and sell them with its own generators and other equipment .</text>
-        <arg f="" n="0">[*-1]</arg>
-        <rel f="">package</rel>
-        <arg f="" n="1">them</arg>
-        <arg f="" n="3">with its own generators and other equipment</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Placing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="shake-22.3-2-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="package-v.1" src="annot-overlap" confidence="0.1">12</lexlink>
+      </lexlinks>
+      <example src="" name="with Arg3">
+        <text>Under the agreement , Westinghouse will be able [*] to purchase smaller combustion turbines from its Japanese partner , and package and sell them with its own generators and other equipment .</text>
+        <rel relloc="20">package</rel>
+        <arg f="" n="0" start="4" end="4">Westinghouse</arg>
+        <arg f="" n="1" start="23" end="23">them</arg>
+        <arg f="" n="3" start="24" end="30">with its own generators and other equipment</arg>
       </example>
-      <example name="with Arg2" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="future" voice="active"/>
+      <example src="" name="with Arg2">
         <text>The company said [0] it will sell the water [*-1]plain and with lemon-lime and cherry flavors and will package it in 28-ounce bottles and 6.5 ounce bottles as part of six-packs .</text>
-        <arg f="" n="0">it</arg>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">package</rel>
-        <arg f="" n="1">it</arg>
-        <arg f="" n="2">in 28-ounce bottles and 6.5 ounce bottles as part of six-packs</arg>
+        <rel relloc="18">package</rel>
+        <arg f="" n="0" start="4" end="4">it</arg>
+        <arg f="MOD" n="m" start="5" end="5">will</arg>
+        <arg f="" n="1" start="4" end="4">it</arg>
+        <arg f="" n="2" start="20" end="30">in 28-ounce bottles and 6.5 ounce bottles as part of six-packs</arg>
       </example>
-      <example name="Arg0,1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="Arg0,1">
         <text>His packaging of the right mix of mechanics, supplies, and equipment allowed the supported units to receive needed logistical support under adverse conditions.</text>
-        <arg f="" n="0">His</arg>
-        <rel f="">packaging</rel>
-        <arg f="" n="1">of the right mix of mechanics, supplies, and equipment</arg>
+        <rel relloc="1">packaging</rel>
+        <arg f="" n="0" start="0" end="0">His</arg>
+        <arg f="" n="1" start="2" end="10">of the right mix of mechanics, supplies, and equipment</arg>
       </example>
+      <note>PACKAGE-V NOTES: Based on WSJ. Member of VNcls 22.3-2-1. (from package.01-v)</note>
+      <note>PACKAGING-N NOTES: package.01. Corresponds to VNcls shake-22.3-2-1 (from packaging.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

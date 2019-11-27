@@ -1,43 +1,61 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="narrate">
     <roleset id="narrate.01" name="spoken commentary for pictures/film/etc">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">narrate</alias>
-        <alias framenet="" pos="n" verbnet="">narration</alias>
+        <alias pos="v">narrate</alias>
+        <alias pos="n">narration</alias>
       </aliases>
-      <note>NARRATE-V NOTES: Frame by Perryn (from narrate.01-v)</note>
-      <note>NARRATION-N NOTES: Added by Julia for Lorelei.</note>
       <roles>
         <role descr="narrater" f="PAG" n="0">
-          <vnrole vncls="37.1.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="transfer_mesg-37.1.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">speaker</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing narrated" f="PPT" n="1">
-          <vnrole vncls="37.1.1" vntheta="Topic"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="transfer_mesg-37.1.1" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">message</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
         <role descr="benefactive" f="GOL" n="2">
-          <vnrole vncls="37.1.1" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="transfer_mesg-37.1.1" version="verbnet3.3">recipient</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">addressee</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="narrate-v: movie" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Statement" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="transfer_mesg-37.1.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="narrate-v: movie">
         <text>Anthony Hopkins narrates the Dr. Seuss's verse.</text>
-        <arg f="" n="0">Anthony Hopkins</arg>
-        <rel f="">narrates</rel>
-        <arg f="" n="1">the Dr. Seuss's verse</arg>
+        <rel relloc="2">narrates</rel>
+        <arg f="" n="0" start="0" end="1">Anthony Hopkins</arg>
+        <arg f="" n="1" start="3" end="6">the Dr. Seuss's verse.</arg>
       </example>
-      <example name="narrate-v: with benefactive" src="" type="">
+      <example src="" name="narrate-v: with benefactive">
         <text>John narrated the animated picture for Disney.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">narrated</rel>
-        <arg f="" n="1">the animated picture</arg>
-        <arg f="" n="2">for Disney</arg>
+        <rel relloc="1">narrated</rel>
+        <arg f="" n="0" start="0" end="0">John</arg>
+        <arg f="" n="1" start="2" end="4">the animated picture</arg>
+        <arg f="" n="2" start="5" end="6">for Disney.</arg>
       </example>
-      <example name="alias-n" src="" type="">
+      <example src="" name="alias-n">
         <text>It appears that Ibn Taymiyyah's purpose is to prove that Ibn 'Abbhs did not think that his narration of the åadjth was abrogated.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">narration</rel>
-        <arg f="" n="1">of the åadjth</arg>
+        <rel relloc="17">narration</rel>
+        <arg f="" n="0" start="16" end="16">his</arg>
+        <arg f="" n="1" start="18" end="20">of the åadjth</arg>
       </example>
+      <note>NARRATE-V NOTES: Frame by Perryn (from narrate.01-v)</note>
+      <note>NARRATION-N NOTES: Added by Julia for Lorelei.</note>
     </roleset>
   </predicate>
 </frameset>

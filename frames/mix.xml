@@ -1,105 +1,126 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="mix">
     <roleset id="mix.01" name="mix, combine">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">mixing</alias>
-        <alias framenet="" pos="v" verbnet="">mix</alias>
+        <alias pos="n">mixing</alias>
+        <alias pos="v">mix</alias>
       </aliases>
-      <note>MIX-V NOTES: Watch out for many many adjectival usages: "Stock prices were mixed"which don't follow this argument structure at all. Leave these alonefor the time being. (from mix.01-v)</note>
-      <note>MIXING-N NOTES: Added by Julia based on BOLT. (from mixing.01-n)</note>
       <roles>
         <role descr="agent, mixer" f="PAG" n="0">
-          <vnrole vncls="22.1-1-1" vntheta="Agent"/>
-          <vnrole vncls="26.3-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="mix-22.1-1-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="preparing-26.3-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="ingredient one" f="PPT" n="1">
-          <vnrole vncls="22.1-1-1" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="mix-22.1-1-1" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="ingredient two" f="PPT" n="2">
-          <vnrole vncls="22.1-1-1" vntheta="co-patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="mix-22.1-1-1" version="verbnet3.3">co-patient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="end product" f="prd" n="3"/>
+        <role descr="end product" f="PRD" n="3"/>
       </roles>
-      <example name="mix-v: merged ingredients" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Amalgamation" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Cause_to_amalgamate" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="mix-22.1-1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="preparing-26.3-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="mix-v.1" src="annot-overlap" confidence="0.1">20</lexlink>
+      </lexlinks>
+      <example src="" name="mix-v: merged ingredients">
         <text>Workers dumped large burlap sacks of the imported material into a huge bin, poured in cotton and acetate fibers and mechanically mixed the dry fibers in a process used to make filters.</text>
-        <arg f="" n="0">Workers</arg>
-        <arg f="mnr" n="m">mechanically</arg>
-        <rel f="">mixed</rel>
-        <arg f="" n="1">the dry fibers</arg>
-        <arg f="loc" n="m">in a process used to make filters</arg>
+        <rel relloc="21">mixed</rel>
+        <arg f="" n="0" start="0" end="0">Workers</arg>
+        <arg f="MNR" n="m" start="20" end="20">mechanically</arg>
+        <arg f="" n="1" start="22" end="24">the dry fibers</arg>
+        <arg f="LOC" n="m" start="25" end="31">in a process used to make filters.</arg>
       </example>
-      <example name="mix-v: split ingredients, end product" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
+      <example src="" name="mix-v: split ingredients, end product">
         <text>Ammonium perchlorate is an oxidizer that *trace*-1 is mixed *trace*-1 with a propellant to make rocket fuel used in the space shuttle and military rockets.</text>
-        <rel f="">mixed</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="rcl" n="m">that -&gt; an oxidizer</arg>
-        <arg f="" n="2">with a propellant</arg>
-        <arg f="" n="3">to make rocket fuel used in the space shuttle and military rockets</arg>
+        <rel relloc="8">mixed</rel>
+        <arg f="" n="1" start="6" end="6">*trace*-1</arg>
+        <arg f="RCL" n="m" start="3" end="4">an oxidizer</arg>
+        <arg f="" n="2" start="10" end="12">with a propellant</arg>
+        <arg f="" n="3" start="13" end="24">to make rocket fuel used in the space shuttle and military rockets.</arg>
       </example>
-      <example name="mix-v: ergative!" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
+      <example src="" name="mix-v: ergative!">
         <text>Because despite all the media prattle about comedy and politics not mixing, they are similar in one respect: Both can serve as mechanisms for easing tensions and facilitating the co-existence of groups in conflict.</text>
-        <arg f="" n="1">comedy and politics</arg>
-        <arg f="neg" n="m">not</arg>
-        <rel f="">mixing</rel>
+        <rel relloc="11">mixing,</rel>
+        <arg f="" n="1" start="7" end="9">comedy and politics</arg>
+        <arg f="NEG" n="m" start="10" end="10">not</arg>
       </example>
-      <example name="ARG0 and ARG1 and ARG2 and ARG3" src="ontonotes mz/sinorama/10/ectb_1048" type="">
+      <example src="ontonotes mz/sinorama/10/ectb_1048" name="ARG0 and ARG1 and ARG2 and ARG3">
         <text>Sometimes they mixed the ink with glue to produce an oil - paint texture .</text>
-        <arg f="tmp" n="m">Sometimes</arg>
-        <arg f="" n="0">they</arg>
-        <rel f="">mixed</rel>
-        <arg f="" n="1">the ink</arg>
-        <arg f="" n="2">with glue</arg>
-        <arg f="" n="3">to produce an oil - paint texture</arg>
+        <rel relloc="2">mixed</rel>
+        <arg f="TMP" n="m" start="0" end="0">Sometimes</arg>
+        <arg f="" n="0" start="1" end="1">they</arg>
+        <arg f="" n="1" start="3" end="4">the ink</arg>
+        <arg f="" n="2" start="5" end="6">with glue</arg>
+        <arg f="" n="3" start="7" end="13">to produce an oil - paint texture</arg>
       </example>
-
-      <example name="mixing-n" src="" type="">
+      <example src="" name="mixing-n">
         <text>the effect of his mixing the two beers was to lower the strength of Barclay's beer by about 2 per cent, of proof spirit.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">mixing</rel>
-        <arg f="" n="1">the two beers</arg>
+        <rel relloc="4">mixing</rel>
+        <arg f="" n="0" start="3" end="3">his</arg>
+        <arg f="" n="1" start="5" end="7">the two beers</arg>
       </example>
+      <note>MIX-V NOTES: Watch out for many many adjectival usages: "Stock prices were mixed"which don't follow this argument structure at all. Leave these alonefor the time being. (from mix.01-v)</note>
+      <note>MIXING-N NOTES: Added by Julia based on BOLT. (from mixing.01-n)</note>
     </roleset>
   </predicate>
   <predicate lemma="mix_up">
     <roleset id="mix_up.02" name="phrasal mix, combine">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">mix_up</alias>
+        <alias pos="v">mix_up</alias>
       </aliases>
-      <note>MIX_UP-V NOTES: The same as mix.01, except args 2 and 3 probably will not appear. Verb particle construction is not included in mix VN class. (from mix.02-v)</note>
       <roles>
         <role descr="agent, mixer" f="PAG" n="0"/>
-        <role descr="ingredient one" f="ppt" n="1"/>
-        <role descr="ingredient two" f="ppt" n="2"/>
-        <role descr="end product" f="prd" n="3"/>
+        <role descr="ingredient one" f="PPT" n="1"/>
+        <role descr="ingredient two" f="PPT" n="2"/>
+        <role descr="end product" f="PRD" n="3"/>
       </roles>
-      <example name="mix_up-v" src="" type="">
-        <text>He mixed up some flour, eggs, oil and spices, added a big dollop of plain yogurt </text>
-        <arg f="" n="0">He</arg>
-        <rel f="">[mixed][up]</rel>
-        <arg f="" n="1">some flour, eggs, oil and spices</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="" name="mix_up-v">
+        <text>He mixed up some flour, eggs, oil and spices, added a big dollop of plain yogurt</text>
+        <rel relloc="1 2">mixed up</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
+        <arg f="" n="1" start="3" end="8">some flour, eggs, oil and spices,</arg>
       </example>
+      <note>MIX_UP-V NOTES: The same as mix.01, except args 2 and 3 probably will not appear. Verb particle construction is not included in mix VN class. (from mix.02-v)</note>
     </roleset>
     <roleset id="mix_up.03" name="confuse">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">mix_up</alias>
+        <alias pos="v">mix_up</alias>
       </aliases>
-      <note>MIX_UP-V NOTES: The same as mix.01, except args 2 and 3 probably will not appear. Verb particle construction is not included in mix VN class. (from mix.02-v)</note>
       <roles>
         <role descr="agent, mixer" f="PAG" n="0"/>
-        <role descr="first thing confused" f="ppt" n="1"/>
-        <role descr="confused with what" f="ppt" n="2"/>
+        <role descr="first thing confused" f="PPT" n="1"/>
+        <role descr="confused with what" f="PPT" n="2"/>
       </roles>
-      <example name="mix_up-v" src="" type="">
-        <text> I found that he allowed the monthly payment of his salary to go to the credit of his account, and in drawing upon that he mixed up the accounts</text>
-        <arg f="adv" n="m">in drawing upon that</arg>
-        <arg f="" n="0">he</arg>
-        <rel f="">[mixed][up]</rel>
-        <arg f="" n="1">the accounts</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="" name="mix_up-v">
+        <text>I found that he allowed the monthly payment of his salary to go to the credit of his account, and in drawing upon that he mixed up the accounts</text>
+        <rel relloc="25 26">mixed up</rel>
+        <arg f="ADV" n="m" start="20" end="23">in drawing upon that</arg>
+        <arg f="" n="0" start="3" end="3">he</arg>
+        <arg f="" n="1" start="27" end="28">the accounts</arg>
       </example>
+      <note>MIX_UP-V NOTES: The same as mix.01, except args 2 and 3 probably will not appear. Verb particle construction is not included in mix VN class. (from mix.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

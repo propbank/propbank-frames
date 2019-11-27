@@ -1,192 +1,228 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="ring">
     <roleset id="ring.01" name="to (cause) to make a sound of a bell, ring a bell, emitting a high clear noise (like a bell)">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">ringing</alias>
-        <alias framenet="" pos="n" verbnet="">ring</alias>
-        <alias framenet="Cause_to_make_noise Make_noise" pos="v" verbnet="">ring</alias>
+        <alias pos="n">ringing</alias>
+        <alias pos="n">ring</alias>
+        <alias pos="v">ring</alias>
       </aliases>
+      <roles>
+        <role descr="causer of ringing" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="sound_emission-43.2" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="bell" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="sound_emission-43.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Make_noise" version="1.7">noisy_event</rolelink>
+            <rolelink resource="FrameNet" class="Make_noise" version="1.7">sound</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="what the ringing signals/summons" f="GOL" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Make_noise" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Cause_to_make_noise" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="sound_emission-43.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="ring-v.1" src="annot-overlap" confidence="0.1">13</lexlink>
+      </lexlinks>
+      <example src="" name="passive">
+        <text>According to a nationwide survey taken [*] a year ago , [nearly a third of England 's church bells]-1 are no longer rung [*-1] on Sundays because there is no one [0] [*T*-2] to ring them .</text>
+        <rel relloc="22">rung</rel>
+        <arg f="NEG" n="m" start="20" end="21">no longer</arg>
+        <arg f="" n="1" start="10" end="18">, [nearly a third of England 's church bells]-1</arg>
+        <arg f="TMP" n="m" start="24" end="25">on Sundays</arg>
+        <arg f="CAU" n="m" start="26" end="30">because there is no one</arg>
+        <arg f="CAU" n="m" start="33" end="35">to ring them</arg>
+      </example>
+      <example src="" name="with Arg2">
+        <text>`` [*-1] To ring for even one service at this tower , we-1 have [*-1]to scrape , '' says [*T*-2] Mr. Hammond , a retired water-authority worker .</text>
+        <rel relloc="3">ring</rel>
+        <arg f="" n="0" start="1" end="1">[*-1]</arg>
+        <arg f="" n="2" start="4" end="7">for even one service</arg>
+        <arg f="LOC" n="m" start="8" end="10">at this tower</arg>
+      </example>
+      <example src="" name="intransitive with Arg0">
+        <text>One survey says that of the 100,000 trained bellringers in England today , only 40,000 of them still ring .</text>
+        <rel relloc="18">ring</rel>
+        <arg f="ADV" n="m" start="4" end="11">of the 100,000 trained bellringers in England today</arg>
+        <arg f="" n="0" start="13" end="14">only 40,000</arg>
+        <arg f="TMP" n="m" start="17" end="17">still</arg>
+      </example>
+      <example src="" name="intransitive with Arg1">
+        <text>There were too many phones ringing and too many things happening [*] to expect market makers to be as efficient as robots .</text>
+        <rel relloc="5">ringing</rel>
+        <arg f="" n="1" start="2" end="4">too many phones</arg>
+      </example>
+      <example src="" name="args 0 and 1">
+        <text>He said the house was illuminated, but that he received no answer to his ring of the bell</text>
+        <rel relloc="14">ring</rel>
+        <arg f="" n="0" start="13" end="13">his</arg>
+        <arg f="" n="1" start="15" end="17">of the bell</arg>
+      </example>
+      <example src="" name="args 1 and 2">
+        <text>At the ring of the bell for Camp's night activity of junior kickball, we said our goodbyes...</text>
+        <rel relloc="2">ring</rel>
+        <arg f="" n="1" start="3" end="5">of the bell</arg>
+        <arg f="" n="2" start="6" end="12">for Camp's night activity of junior kickball,</arg>
+      </example>
+      <example src="BOLT" name="argMs">
+        <text>My wife has Constant ringing in her ears ::: noise , a " whooshing " as she describes .</text>
+        <rel relloc="4">ringing</rel>
+        <arg f="TMP" n="m" start="3" end="3">Constant</arg>
+        <arg f="LOC" n="m" start="5" end="7">in her ears</arg>
+        <arg f="ADJ" n="m" start="12" end="17">" whooshing " as she describes</arg>
+      </example>
+      <example src="internet" name="all args">
+        <text>They manifested themselves on one occasion in his ringing the bell for a messenger to forcibly eject his colleague, Mr. Ballance, from tho Cabinet room.</text>
+        <rel relloc="8">ringing</rel>
+        <arg f="" n="0" start="7" end="7">his</arg>
+        <arg f="" n="1" start="9" end="10">the bell</arg>
+        <arg f="" n="2" start="11" end="24">for a messenger to forcibly eject his colleague, Mr. Ballance, from tho Cabinet room.</arg>
+      </example>
       <note>RING-V NOTES: Frames file for 'ring' based on survey of sentences in the WSJ corpus. (from ring.01-v predicate notes)</note>
       <note>RING-N NOTES: Added by Julia based on ring-v.01. Corresponds to VNcls sound_emission-43.2. (from ring.01-n)</note>
       <note>RINGING-N NOTES: Added by Julia based on BOLT, ring-v.01. Corresponds to VNcls sound_emission-43.2. (from ringing.01-n)</note>
-      <roles>
-        <role descr="causer of ringing" f="pag" n="0">
-          <vnrole vncls="43.2" vntheta="agent"/>
-        </role>
-        <role descr="bell" f="ppt" n="1">
-          <vnrole vncls="43.2" vntheta="theme"/>
-        </role>
-        <role descr="what the ringing signals/summons" f="gol" n="2"/>
-      </roles>
-      <example name="passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>According to a nationwide survey taken [*] a year ago , [nearly a third of England 's church bells]-1 are no longer rung [*-1] on Sundays because there is no one [0] [*T*-2] to ring them .</text>
-        <arg f="neg" n="m">no longer</arg>
-        <rel f="">rung</rel>
-        <arg f="" n="1">[*-1] (nearly of a third of England's church bells)</arg>
-        <arg f="tmp" n="m">on Sundays</arg>
-        <arg f="cau" n="m">because there is no one [0] [*T*-2]to ring them</arg>
-      </example>
-      <example name="with Arg2" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="active"/>
-        <text>`` [*-1] To ring for even one service at this tower , we-1 have [*-1]to scrape , '' says [*T*-2] Mr. Hammond , a retired water-authority worker .</text>
-        <arg f="" n="0">[*-1] (we)</arg>
-        <rel f="">ring</rel>
-        <arg f="" n="2">for even one service</arg>
-        <arg f="loc" n="m">at this tower</arg>
-      </example>
-      <example name="intransitive with Arg0" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>One survey says that of the 100,000 trained bellringers in England today , only 40,000 of them still ring .</text>
-        <arg f="adv" n="m">of the 100,000 trained bellringers in England today</arg>
-        <arg f="" n="0">only 40,000</arg>
-        <arg f="tmp" n="m">still</arg>
-        <rel f="">ring</rel>
-      </example>
-      <example name="intransitive with Arg1" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="active"/>
-        <text>There were too many phones ringing and too many things happening [*] to expect market makers to be as efficient as robots .</text>
-        <arg f="" n="1">too many phones</arg>
-        <rel f="">ringing</rel>
-      </example>
-      <example name="args 0 and 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>He said the house was illuminated, but that he received no answer to his ring of the bell</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">ring</rel>
-        <arg f="" n="1">of the bell</arg>
-      </example>
-      <example name="args 1 and 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>At the ring of the bell for Camp's night activity of junior kickball, we said our goodbyes...</text>
-        <rel f="">ring</rel>
-        <arg f="" n="1">of the bell</arg>
-        <arg f="" n="2">for Camp's night activity of junior kickball</arg>
-      </example>
-      <example name="argMs" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>My wife has Constant ringing in her ears ::: noise , a " whooshing " as she describes .</text>
-        <arg f="tmp" n="m">constant</arg>
-        <rel f="">ringing</rel>
-        <arg f="loc" n="m">in her ears</arg>
-        <arg f="adj" n="m">noise, a "whooshing" as she describes</arg>
-      </example>
-      <example name="all args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>They manifested themselves on one occasion in his ringing the bell for a messenger to forcibly eject his colleague, Mr. Ballance, from tho Cabinet room.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">ringing</rel>
-        <arg f="" n="1">the bell</arg>
-        <arg f="" n="2">for a messenger to forcibly eject his colleague, Mr. Ballance, from tho Cabinet room</arg>
-      </example>
     </roleset>
     <roleset id="ring.02" name="to surround">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">ring</alias>
+        <alias pos="v">ring</alias>
       </aliases>
-      <note>RING-V NOTES: VN updated by Julia. Member of Vncls fill-9.8, contiguous_location-47.8. (from ring.02-v)</note>
       <roles>
-        <role descr="causal agent" f="pag" n="0">
-          <vnrole vncls="9.8" vntheta="agent"/>
+        <role descr="causal agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="fill-9.8" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="surrounding entity" f="ppt" n="1">
-          <vnrole vncls="47.8" vntheta="theme"/>
-          <vnrole vncls="9.8" vntheta="theme"/>
+        <role descr="surrounding entity" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="contiguous_location-47.8" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="fill-9.8" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="surrounded entity" f="gol" n="2">
-          <vnrole vncls="47.8" vntheta="co-theme"/>
-          <vnrole vncls="9.8" vntheta="destination"/>
+        <role descr="surrounded entity" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="contiguous_location-47.8" version="verbnet3.3">co-theme</rolelink>
+            <rolelink resource="VerbNet" class="fill-9.8" version="verbnet3.3">destination</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="both arguments" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>Meanwhile , in the squat office buildings that [*T*-1] ring Fashion Island , the odds [*ICH*-3]are good that someone is getting fleeced [*-2] .</text>
-        <arg f="" n="1">[*T*-1]</arg>
-        <arg f="rcl" n="m">that -&gt; the squat office buildings</arg>
-        <rel f="">ring</rel>
-        <arg f="" n="2">Fashion Island</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Surrounding" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="fill-9.8" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="contiguous_location-47.8" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="both arguments">
+        <text>Meanwhile , in the squat office buildings that [*T*] ring Fashion Island , the odds [*ICH*-3]are good that someone is getting fleeced [*-2] .</text>
+        <rel relloc="9">ring</rel>
+        <arg f="" n="1" start="8" end="8">[*T*]</arg>
+        <arg f="RCL" n="m" start="3" end="6">the squat office buildings</arg>
+        <arg f="" n="2" start="10" end="11">Fashion Island</arg>
       </example>
+      <note>RING-V NOTES: VN updated by Julia. Member of Vncls fill-9.8, contiguous_location-47.8. (from ring.02-v)</note>
     </roleset>
     <roleset id="ring.04" name="telephone">
       <aliases>
-        <alias framenet="Contacting" pos="v" verbnet="">ring</alias>
+        <alias pos="v">ring</alias>
       </aliases>
-      <note>RING-V NOTES: Typically British. (from ring.04-v)</note>
       <roles>
-        <role descr="caller" f="pag" n="0"/>
-        <role descr="called" f="ppt" n="1"/>
+        <role descr="caller" f="PAG" n="0"/>
+        <role descr="called" f="PPT" n="1"/>
       </roles>
-      <example name="London calling..." src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Contacting" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Correspondence" version="rich" confidence="0.1" src="reo-expansion"/>
+      </lexlinks>
+      <example src="" name="London calling...">
         <text>With sudden energy , she went to the phone and rang Holden 's office and asked for him .</text>
-        <arg f="mnr" n="m">With sudden energy</arg>
-        <arg f="" n="0">she</arg>
-        <rel f="">rang</rel>
-        <arg f="" n="1">Holden 's office</arg>
+        <rel relloc="10">rang</rel>
+        <arg f="MNR" n="m" start="0" end="2">With sudden energy</arg>
+        <arg f="" n="0" start="4" end="4">she</arg>
+        <arg f="" n="1" start="11" end="13">Holden 's office</arg>
       </example>
+      <note>RING-V NOTES: Typically British. (from ring.04-v)</note>
     </roleset>
     <roleset id="ring.05" name="ring true (or ring of some other attribute), sounds like">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">ring</alias>
-        <alias framenet="" pos="v" verbnet="">ring</alias>
+        <alias pos="n">ring</alias>
+        <alias pos="v">ring</alias>
       </aliases>
+      <roles>
+        <role descr="thing with truth" f="PPT" n="1"/>
+        <role descr="'true' or other attribute" f="PRD" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="ring true">
+        <text>Medical doctor Chang Chau-hsiung, [whose advice]-9 [*T*]-9 rings [*]-9 true to his profession, has formally taken off his physician 's coat * to vie for office as James Soong 'sr unning mate.</text>
+        <rel relloc="7">rings</rel>
+        <arg f="" n="1" start="6" end="6">[*T*]-9</arg>
+        <arg f="" n="2" start="8" end="12">[*]-9 true to his profession,</arg>
+      </example>
+      <example src="BOLT" name="other attribute">
+        <text>I may not be fully understanding the point here , but to me this kind of rings of greed itself .</text>
+        <rel relloc="16">rings</rel>
+        <arg f="GOL" n="m" start="11" end="12">to me</arg>
+        <arg f="" n="1" start="13" end="13">this</arg>
+        <arg f="EXT" n="m" start="14" end="15">kind of</arg>
+        <arg f="" n="2" start="17" end="18">of greed</arg>
+        <arg f="RCL" n="m" start="19" end="19">itself</arg>
+      </example>
+      <example src="" name="both args">
+        <text>For some terrorism experts today 's attack , which occurred against the backdrop of intense clashes between Palestinians and Israelis in the Middle East , has an eerily familiar ring to it .</text>
+        <rel relloc="29">ring</rel>
+        <arg f="" n="2" start="27" end="28">eerily familiar</arg>
+        <arg f="" n="1" start="30" end="31">to it</arg>
+      </example>
+      <example src="" name="both args, different syntax">
+        <text>your vision of the near future makes me shudder because of its ring of truth.</text>
+        <rel relloc="12">ring</rel>
+        <arg f="" n="1" start="11" end="11">its</arg>
+        <arg f="" n="2" start="13" end="14">of truth.</arg>
+      </example>
       <note>RING-V NOTES: Frame added by Arrick (from ring.05-v)</note>
       <note>RING-N NOTES: Added by Julia corresponding to ring-v.05, although this frame is open to other arg2s than just 'true'. No corresponding VNcls. (from ring.02-n)</note>
-      <roles>
-        <role descr="thing with truth" f="ppt" n="1"/>
-        <role descr="'true' or other attribute" f="prd" n="2"/>
-      </roles>
-      <example name="ring true" src="" type="">
-        <text>Medical doctor Chang Chau-hsiung, [whose advice]-9 [*T*]-9 rings [*]-9 true to his profession, has formally taken off his physician 's coat * to vie for office as James Soong 'sr unning mate.</text>
-        <arg f="" n="1">[*T*]-9</arg>
-        <rel f="">rings</rel>
-        <arg f="" n="2">[*]-9 true to his profession</arg>
-      </example>
-      <example name="other attribute" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I may not be fully understanding the point here , but to me this kind of rings of greed itself .</text>
-        <arg f="gol" n="m">to me</arg>
-        <arg f="" n="1">this</arg>
-        <arg f="ext" n="m">kind of</arg>
-        <rel f="">rings</rel>
-        <arg f="" n="2">of greed</arg>
-        <arg f="rcl" n="m">itself</arg>
-      </example>
-      <example name="both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>For some terrorism experts today 's attack , which occurred against the backdrop of intense clashes between Palestinians and Israelis in the Middle East , has an eerily familiar ring to it .</text>
-        <arg f="" n="2">eerily familiar</arg>
-        <rel f="">ring</rel>
-        <arg f="" n="1">to it</arg>
-      </example>
-      <example name="both args, different syntax" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>your vision of the near future makes me shudder because of its ring of truth.</text>
-        <arg f="" n="1">its</arg>
-        <rel f="">ring</rel>
-        <arg f="" n="2">of truth</arg>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="ring_up">
     <roleset id="ring_up.03" name="to record">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">ring_up</alias>
+        <alias pos="v">ring_up</alias>
       </aliases>
-      <note>RING_UP-V NOTES: (from ring.03-v)</note>
       <roles>
-        <role descr="recorder" f="pag" n="0"/>
-        <role descr="entity rung up" f="ppt" n="1"/>
+        <role descr="recorder" f="PAG" n="0"/>
+        <role descr="entity rung up" f="PPT" n="1"/>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Younkers rang up sales [*ICH*-1] in 1988 [of $ 313 million [*U*]]-1 .</text>
-        <arg f="" n="0">Younkers</arg>
-        <rel f="">[ rang] [ up]</rel>
-        <arg f="" n="1">[ sales [*ICH*-1]]</arg>
-        <arg f="tmp" n="m">in 1988</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="transitive">
+        <text>Younkers rang up sales [*ICH*] in 1988 [of $ 313 million *U*] .</text>
+        <rel relloc="1 2">rang up</rel>
+        <arg f="" n="0" start="0" end="0">Younkers</arg>
+        <arg f="" n="1" start="11" end="11">*U*]</arg>
+        <arg f="TMP" n="m" start="5" end="6">in 1988</arg>
       </example>
+      <note>RING_UP-V NOTES: (from ring.03-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,192 +1,231 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="trouble">
     <roleset id="trouble.01" name="upset slightly">
       <aliases>
-        <alias framenet="Experiencer_obj" pos="v" verbnet="">trouble</alias>
-        <alias framenet="" pos="j" verbnet="">troubled</alias>
+        <alias pos="v">trouble</alias>
+        <alias pos="j">troubled</alias>
       </aliases>
+      <roles>
+        <role descr="cause of trouble" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="amuse-31.1" version="verbnet3.3">stimulus</rolelink>
+            <rolelink resource="FrameNet" class="Experiencer_obj" version="1.7">stimulus</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="experiencer, one upset" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="amuse-31.1" version="verbnet3.3">experiencer</rolelink>
+            <rolelink resource="FrameNet" class="Experiencer_obj" version="1.7">experiencer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="instrument or manner (if arg0 also present)" f="MNR" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Experiencer_obj" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="amuse-31.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="trouble-v.1" src="annot-overlap" confidence="0.1">9</lexlink>
+      </lexlinks>
+      <example src="" name="trouble-v: just transitive">
+        <text>The volatility inherent in program trading troubled other traders, too.</text>
+        <rel relloc="6">troubled</rel>
+        <arg f="" n="0" start="0" end="5">The volatility inherent in program trading</arg>
+        <arg f="" n="1" start="7" end="8">other traders,</arg>
+        <arg f="DIS" n="m" start="9" end="9">too.</arg>
+      </example>
+      <example src="BOLT-1" name="troubled-j: with CXN">
+        <text>I 'm not sure she is as troubled by U.S. actions around the world as I am , but I think so .</text>
+        <rel relloc="7">troubled</rel>
+        <arg f="" n="1" start="4" end="4">she</arg>
+        <arg f="CXN" n="m" start="6" end="6">as</arg>
+        <arg f="CXN" n="m" start="14" end="16">as I am</arg>
+        <arg f="" n="0" start="8" end="13">by U.S. actions around the world</arg>
+      </example>
       <note>TROUBLE-V NOTES: 'trouble' based on financial subcorpus; 'troubled' based on BOLT-1. Member of Vncls amuse-31.1. (from trouble.01-v)</note>
       <note>TROUBLED-J NOTES: Automatically created by Julia as an alias file for unification. (from troubled.01-j)</note>
-      <roles>
-        <role descr="cause of trouble" f="pag" n="0">
-          <vnrole vncls="31.1" vntheta="stimulus"/>
-        </role>
-        <role descr="experiencer, one upset" f="ppt" n="1">
-          <vnrole vncls="31.1" vntheta="experiencer"/>
-        </role>
-        <role descr="instrument or manner (if arg0 also present)" f="mnr" n="2"/>
-      </roles>
-      <example name="trouble-v: just transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>The volatility inherent in program trading troubled other traders, too.</text>
-        <arg f="" n="0">The volatility inherent in program trading</arg>
-        <rel f="">troubled</rel>
-        <arg f="" n="1">other traders</arg>
-        <arg f="dis" n="m">too</arg>
-      </example>
-      <example name="troubled-j: with CXN" src="BOLT-1" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I 'm not sure she is as troubled by U.S. actions around the world as I am , but I think so .</text>
-        <arg f="" n="1">she</arg>
-        <arg f="cxn" n="m">[as] [as I am]</arg>
-        <rel f="">troubled</rel>
-        <arg f="" n="0">by U.S. actions around the world</arg>
-      </example>
     </roleset>
     <roleset id="trouble.05" name="exertion of effort">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">trouble</alias>
-        <alias framenet="" pos="n" verbnet="">trouble</alias>
-        <alias framenet="" pos="l" verbnet="">take_the_trouble</alias>
-        <alias framenet="" pos="m" verbnet="">go_to_trouble</alias>
-        <mwe id="go_to_trouble">
-          <token slot="A" arg="" pos="VB" head="" dep="">go</token>
-          <token slot="B" arg="" pos="IN" head="C" dep="case">to</token>
-          <token slot="C" arg="" pos="NN" head="A" dep="oblique">trouble</token>
-        </mwe>
+        <alias pos="v">trouble</alias>
+        <alias pos="n">trouble</alias>
+        <alias pos="l">take_the_trouble</alias>
+        <alias pos="m">go_to_trouble</alias>
+        <mwp-descriptions id="go_to_trouble">
+          <syntaxdesc slots="B C A">
+            <token slot="A" arg="" pos="VB" head="" dep="">go</token>
+            <token slot="B" arg="" pos="IN" head="C" dep="case">to</token>
+            <token slot="C" arg="" pos="NN" head="A" dep="oblique">trouble</token>
+          </syntaxdesc>
+        </mwp-descriptions>
       </aliases>
       <roles>
-        <role descr="external agent" f="pag" n="0"/>
-        <role descr="entity exerting effort" f="ppt" n="1"/>
-        <role descr="thing tried" f="prd" n="2"/>
+        <role descr="external agent" f="PAG" n="0"/>
+        <role descr="entity exerting effort" f="PPT" n="1"/>
+        <role descr="thing tried" f="PRD" n="2"/>
       </roles>
-      <example name="trouble-v" src="" type="">
-        <text>Beg your pardon, but could I trouble you to turn over your weapons? </text>
-        <arg f="dis" n="m">Beg your pardon</arg>
-        <arg f="dis" n="m">but</arg>
-        <arg f="mod" n="m">could</arg>
-        <arg f="" n="0">I</arg>
-        <rel f="">trouble</rel>
-        <arg f="" n="1">you</arg>
-        <arg f="" n="2">to turn over your weapons</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="trouble-v">
+        <text>Beg your pardon, but could I trouble you to turn over your weapons?</text>
+        <rel relloc="6">trouble</rel>
+        <arg f="DIS" n="m" start="0" end="2">Beg your pardon,</arg>
+        <arg f="DIS" n="m" start="3" end="3">but</arg>
+        <arg f="MOD" n="m" start="4" end="4">could</arg>
+        <arg f="" n="0" start="5" end="5">I</arg>
+        <arg f="" n="1" start="7" end="7">you</arg>
+        <arg f="" n="2" start="8" end="12">to turn over your weapons?</arg>
       </example>
-      <example name="trouble-n: compositional with 'save'" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <example src="" name="trouble-n: compositional with 'save'">
         <text>Save yourself the trouble of cooking tomorrow night!</text>
-        <arg f="" n="1">yourself</arg>
-        <rel f="">trouble</rel>
-        <arg f="" n="2">of cooking</arg>
-        <arg f="tmp" n="m">tomorrow night</arg>
+        <rel relloc="3">trouble</rel>
+        <arg f="" n="1" start="1" end="1">yourself</arg>
+        <arg f="" n="2" start="4" end="5">of cooking</arg>
+        <arg f="TMP" n="m" start="6" end="7">tomorrow night!</arg>
       </example>
-      <example name="go_to_trouble-m" src="COCA" type="">
+      <example src="COCA" name="go_to_trouble-m">
         <text>You must have had a pretty big reason to go to the trouble of tracking me down</text>
-        <arg f="" n="1">You</arg>
-        <rel f="">[go],[to],[trouble]</rel>
-        <arg f="" n="2">of tracking me down</arg>
+        <rel relloc="8 9 12">to go trouble</rel>
+        <arg f="" n="1" start="0" end="0">You</arg>
+        <arg f="" n="2" start="13" end="16">of tracking me down</arg>
       </example>
-      <example name="take_trouble-l" src="COCA" type="">
+      <example src="COCA" name="take_trouble-l">
         <text>like all the other laws the police do not take the trouble to enforce, it is a dead letter.</text>
-        <arg f="" n="1">the police</arg>
-        <arg f="neg" n="m">not</arg>
-        <arg f="lvb" n="m">take</arg>
-        <rel f="">trouble</rel>
-        <arg f="" n="2">to enforce</arg>
+        <rel relloc="11">trouble</rel>
+        <arg f="" n="1" start="5" end="6">the police</arg>
+        <arg f="NEG" n="m" start="8" end="8">not</arg>
+        <arg f="LVB" n="m" start="9" end="9">take</arg>
+        <arg f="" n="2" start="12" end="13">to enforce,</arg>
       </example>
     </roleset>
     <roleset id="trouble.06" name="fight; engage in (generally violent) conflict">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">trouble</alias>
-        <alias framenet="" pos="m" verbnet="">make_trouble</alias>
-        <alias framenet="" pos="m" verbnet="">cause_trouble</alias>
-        <alias framenet="" pos="m" verbnet="">stir_up_trouble</alias>
-        <mwe id='make_scene'>
-          <token slot="A" arg="" pos="VB*" head='' dep="">make</token>
-          <token slot="A" arg="" pos="VB*" head='' dep="">create</token>
-          <token slot="A" arg="" pos="VB*" head='' dep="">stir</token>
-          <token slot="B" arg="" pos="" head='' dep="">up</token>
-          <token slot="B" arg="" pos="" head='' dep=""></token>
-          <token slot="C" arg="" pos="NN" head='A' dep="">trouble</token>
-        </mwe>
+        <alias pos="n">trouble</alias>
+        <alias pos="m">make_trouble</alias>
+        <alias pos="m">cause_trouble</alias>
+        <alias pos="m">stir_up_trouble</alias>
+        <alias pos="m">make_scene</alias>
+        <mwp-descriptions id="make_scene">
+          <syntaxdesc slots="B C A">
+            <token slot="A" arg="" pos="VB*" head="" dep="">make</token>
+            <token slot="A" arg="" pos="VB*" head="" dep="">create</token>
+            <token slot="A" arg="" pos="VB*" head="" dep="">stir</token>
+            <token slot="B" arg="" pos="" head="" dep="">up</token>
+            <token slot="B" arg="" pos="" head="" dep=""></token>
+            <token slot="C" arg="" pos="NN" head="A" dep="">trouble</token>
+          </syntaxdesc>
+        </mwp-descriptions>
       </aliases>
-      <note>TROUBLE-N: Added by Tim, Julia. Modeled after make_scene MWE distribution.</note>
       <roles>
-        <role descr="trouble-maker" f="pag" n="0"/>
-        <role descr="opponent" f="com" n="1"/>
-        <role descr="over what" f="cau" n="2"/>
+        <role descr="trouble-maker" f="PAG" n="0"/>
+        <role descr="opponent" f="COM" n="1"/>
+        <role descr="over what" f="CAU" n="2"/>
       </roles>
-      <example name="make_trouble-m" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="make_trouble-m">
         <text>Those who make trouble after getting drunk should be punished without leniency. Detestable</text>
-        <arg f="" n="0">Those</arg>
-        <rel f="">[make][trouble]</rel>
-        <arg f="tmp" n="m">after getting drunk</arg>
+        <rel relloc="2 3">make trouble</rel>
+        <arg f="" n="0" start="0" end="0">Those</arg>
+        <arg f="TMP" n="m" start="4" end="6">after getting drunk</arg>
       </example>
-      <example name="make_trouble-m" src="" type="">
-        <text> A couple of guys who were up to no good started making trouble in my neighborhood</text>
-        <arg f="" n="0">A couple of guys who were up to no good</arg>
-        <rel f="">[making][trouble]</rel>
-        <arg f="loc" n="m">in my neighborhood</arg>
+      <example src="" name="make_trouble-m">
+        <text>A couple of guys who were up to no good started making trouble in my neighborhood</text>
+        <rel relloc="11 12">making trouble</rel>
+        <arg f="" n="0" start="0" end="9">A couple of guys who were up to no good</arg>
+        <arg f="LOC" n="m" start="13" end="15">in my neighborhood</arg>
       </example>
-      <example name="stir_up_trouble-m" src="" type="">
+      <example src="" name="stir_up_trouble-m">
         <text>A new anonymous app is stirring up trouble in high schools.</text>
-        <arg f="" n="0">A new anonymous app</arg>
-        <rel f="">[stirring][up][trouble]</rel>
-        <arg f="loc" n="m">in high schools</arg>
+        <rel relloc="5 6 7">stirring up trouble</rel>
+        <arg f="" n="0" start="0" end="3">A new anonymous app</arg>
+        <arg f="LOC" n="m" start="8" end="10">in high schools.</arg>
       </example>
-      <example name="trouble-n: compositional with 'look'" src="" type="">
+      <example src="" name="trouble-n: compositional with 'look'">
         <text>The people who went to Charlottesville were looking for trouble, pure and simple. And they found trouble.</text>
-        <rel f="">trouble</rel>
+        <rel relloc="9">trouble,</rel>
       </example>
-   </roleset>
+      <note>TROUBLE-N: Added by Tim, Julia. Modeled after make_scene MWE distribution.</note>
+    </roleset>
   </predicate>
   <predicate lemma="in_trouble">
     <roleset id="in_trouble.02" name="suffering repercussions of misbehavior">
       <aliases>
-        <alias framenet="" pos="x" verbnet="">in_trouble</alias>
+        <alias pos="x">in_trouble</alias>
       </aliases>
-      <note>IN_TROUBLE-M NOTES: Added by Julia.</note>
       <roles>
-        <role descr="agent/cause" f="pag" n="0"/>
-        <role descr="entity in trouble" f="ppt" n="1"/>
-        <role descr="for what misbehavior" f="cau" n="2"/>
-        <role descr="the authorities" f="vsp" n="3"/>
+        <role descr="agent/cause" f="PAG" n="0"/>
+        <role descr="entity in trouble" f="PPT" n="1"/>
+        <role descr="for what misbehavior" f="CAU" n="2"/>
+        <role descr="the authorities" f="VSP" n="3"/>
       </roles>
-      <example name="in_trouble-m" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="" name="in_trouble-m">
         <text>But Rae Alice Gratic said her son's drug addiction got him in trouble with the law for shoplifting and prostitution.</text>
-        <arg f="" n="1">her son's drug addiction</arg>
-        <rel f="">[in][trouble]</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="" n="3">with the law</arg>
-        <arg f="" n="2">for shoplifting and prostitution</arg>
+        <rel relloc="11 12">in trouble</rel>
+        <arg f="" n="1" start="5" end="8">her son's drug addiction</arg>
+        <arg f="" n="1" start="10" end="10">him</arg>
+        <arg f="" n="3" start="13" end="15">with the law</arg>
+        <arg f="" n="2" start="16" end="19">for shoplifting and prostitution.</arg>
       </example>
+      <note>IN_TROUBLE-M NOTES: Added by Julia.</note>
     </roleset>
     <roleset id="in_trouble.03" name="in a dire, worrisome, potentially dangerous situation">
       <aliases>
-        <alias framenet="" pos="x" verbnet="">in_trouble</alias>
+        <alias pos="x">in_trouble</alias>
       </aliases>
-      <note>IN_TROUBLE-M NOTES: Added by Julia.</note>
       <roles>
-        <role descr="source of danger" f="pag" n="0"/>
-        <role descr="entity in dire straights" f="ppt" n="1"/>
+        <role descr="source of danger" f="PAG" n="0"/>
+        <role descr="entity in dire straights" f="PPT" n="1"/>
       </roles>
-      <example name="in_trouble-m" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="" name="in_trouble-m">
         <text>Upstream, the Three Gorges Dam, the world's largest and designed to open up the interior to shipping, is in trouble from upstream silting and pollution.</text>
-        <arg f="loc" n="m">Upstream</arg>
-        <arg f="" n="1">the Three Gorges Dam, the world's largest and designed to open up the interior to shipping,</arg>
-        <rel f="">[in][trouble]</rel>
-        <arg f="" n="0">from upstream silting and pollution</arg>
+        <rel relloc="18 19">in trouble</rel>
+        <arg f="LOC" n="m" start="21" end="21">upstream</arg>
+        <arg f="" n="1" start="1" end="16">the Three Gorges Dam, the world's largest and designed to open up the interior to shipping,</arg>
+        <arg f="" n="0" start="20" end="24">from upstream silting and pollution.</arg>
       </example>
+      <note>IN_TROUBLE-M NOTES: Added by Julia.</note>
     </roleset>
   </predicate>
   <predicate lemma="have_trouble">
     <roleset id="have_trouble.04" name="find something difficult">
       <aliases>
-        <alias framenet="" pos="l" verbnet="">have_trouble</alias>
+        <alias pos="l">have_trouble</alias>
       </aliases>
-      <note>IN_TROUBLE-M NOTES: Added by Julia.</note>
       <roles>
-        <role descr="person attempting act" f="pag" n="0"/>
-        <role descr="activity that is difficult" f="ppt" n="1"/>
+        <role descr="person attempting act" f="PAG" n="0"/>
+        <role descr="activity that is difficult" f="PPT" n="1"/>
       </roles>
-      <example name="have_trouble-l" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="" name="have_trouble-l">
         <text>The Pakistani government may have trouble explaining their reasoning.</text>
-        <arg f="" n="0">The Pakistani government</arg>
-        <arg f="mod" n="m">may</arg>        
-        <arg f="lvb" n="m">have</arg>        
-        <rel f="">trouble</rel>
-        <arg f="" n="1">explaining their reasoning</arg>
+        <rel relloc="5">trouble</rel>
+        <arg f="" n="0" start="0" end="2">The Pakistani government</arg>
+        <arg f="MOD" n="m" start="3" end="3">may</arg>
+        <arg f="LVB" n="m" start="4" end="4">have</arg>
+        <arg f="" n="1" start="6" end="8">explaining their reasoning.</arg>
       </example>
+      <note>IN_TROUBLE-M NOTES: Added by Julia.</note>
     </roleset>
   </predicate>
 </frameset>

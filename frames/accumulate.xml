@@ -1,45 +1,62 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="accumulate">
     <roleset id="accumulate.01" name="amass">
       <aliases>
-        <alias framenet="Amassing" pos="v" verbnet="47.5.2 13.5.2">accumulate</alias>
-        <alias framenet="" pos="n" verbnet="">accumulation</alias>
+        <alias pos="v">accumulate</alias>
+        <alias pos="n">accumulation</alias>
       </aliases>
-      <note>ACCUMULATE-V NOTES: Member of Vncls herd-47.5.2, obtain-13.5.2. (from accumulate.01-v)</note>
-      <note>ACCUMULATION-N NOTES: From accumulate.01 (from accumulation.01-n)</note>
       <roles>
         <role descr="entity accumulating something" f="PAG" n="0">
-          <vnrole vncls="13.5.2" vntheta="Agent"/>
-          <vnrole vncls="47.5.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="obtain-13.5.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="herd-47.5.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Amassing" version="1.7">recipient</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing/stuff accumulated" f="PPT" n="1">
-          <vnrole vncls="13.5.2" vntheta="Theme"/>
-          <vnrole vncls="47.5.2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="obtain-13.5.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="herd-47.5.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Amassing" version="1.7">mass_theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="price" f="vsp" n="3"/>
+        <role descr="price" f="VSP" n="3"/>
       </roles>
-      <example name="accumulate-v: just transitive" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Amassing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="obtain-13.5.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="herd-47.5.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="accumulation-n.1" src="annot-overlap" confidence="0.1">4</lexlink>
+        <lexlink resource="onsense" version="on5" class="accumulate-v.2" src="annot-overlap" confidence="0.1">5</lexlink>
+        <lexlink resource="onsense" version="on5" class="accumulate-v.1" src="annot-overlap" confidence="0.1">9</lexlink>
+      </lexlinks>
+      <example src="" name="accumulate-v: just transitive">
         <text>[Pennzoil]-1 is rumored *trace*-1 to be accumulating a stake in Chevron in order to push for a revamping of the company.</text>
-        <arg f="" n="0">*trace*-l (= Pennzoil)</arg>
-        <rel f="">accumulating</rel>
-        <arg f="" n="1">a stake in Chevron</arg>
-        <arg f="prp" n="m">in order to push for a revamping of the company</arg>
+        <rel relloc="6">accumulating</rel>
+        <arg f="" n="0" start="0" end="0">[Pennzoil]-1</arg>
+        <arg f="" n="1" start="7" end="10">a stake in Chevron</arg>
+        <arg f="PRP" n="m" start="11" end="20">in order to push for a revamping of the company.</arg>
       </example>
-      <example name="accumulate-v: perhaps with price" src="" type="">
+      <example src="" name="accumulate-v: perhaps with price">
         <text>John accumulated a gigantic pile of old tires for a dollar each.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">accumulated</rel>
-        <arg f="" n="1">a gigantic pile of old tires</arg>
-        <arg f="" n="3">for a dollar each</arg>
+        <rel relloc="1">accumulated</rel>
+        <arg f="" n="0" start="0" end="0">John</arg>
+        <arg f="" n="1" start="2" end="7">a gigantic pile of old tires</arg>
+        <arg f="" n="3" start="8" end="11">for a dollar each.</arg>
       </example>
-      <example name="accumulation-n: Both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="accumulation-n: Both args">
         <text>Growth in the amount of his private capital permits him to live more and more luxuriously and at the same time increase his accumulation of capital by increasing the proportion of surplus value used for accumulation.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">accumulation</rel>
-        <arg f="" n="1">of capital</arg>
+        <rel relloc="23">accumulation</rel>
+        <arg f="" n="0" start="5" end="5">his</arg>
+        <arg f="" n="1" start="24" end="25">of capital</arg>
       </example>
+      <note>ACCUMULATE-V NOTES: Member of Vncls herd-47.5.2, obtain-13.5.2. (from accumulate.01-v)</note>
+      <note>ACCUMULATION-N NOTES: From accumulate.01 (from accumulation.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

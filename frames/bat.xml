@@ -1,134 +1,143 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="bat">
     <roleset id="bat.01" name="move in a swinging or fluttering motion">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">bat</alias>
-        <alias framenet="" pos="n" verbnet="">batting</alias>
+        <alias pos="v">bat</alias>
+        <alias pos="n">batting</alias>
       </aliases>
-      <note>BAT-V NOTES: Frames file for 'bat' based on sentences in wsj. Verbnet entries 17.1 and 40.3.2, Framenet entry Body movement. (from bat.01-v predicate notes)</note>
-      <note>BATTING-N NOTES: Added by Julia based on bat-v.01. Corresponds to VNcls crane-40.3.2. (from batting.01-n)</note>
       <roles>
         <role descr="batter, agent" f="PAG" n="0">
-          <vnrole vncls="40.3.2" vntheta="agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="crane-40.3.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Body_movement" version="1.7">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="eye(s)" f="PPT" n="1">
-          <vnrole vncls="40.3.2" vntheta="patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="crane-40.3.2" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Body_movement" version="1.7">body_part</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="not nervous" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Body_movement" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="crane-40.3.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="not nervous">
         <text>John didn't bat an eyelash.</text>
-        <arg f="" n="0">John</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">bat</rel>
-        <arg f="" n="1">an eyelash</arg>
+        <rel relloc="2">bat</rel>
+        <arg f="" n="0" start="0" end="0">John</arg>
+        <arg f="NEG" n="m" start="2" end="2">bat</arg>
+        <arg f="" n="1" start="3" end="4">an eyelash.</arg>
       </example>
-      <example name="with predication" src="" type="">
-        <text>Mike-1, *PRO*-1 off balance, managed *PRO*-1 to bat the muzzle away amoment before it exploded.</text>
-        <arg f="" n="0">*PRO*-1</arg>
-        <rel f="">bat</rel>
-        <arg f="" n="1">the muzzle</arg>
-        <arg f="prd" n="m">away</arg>
-        <arg f="tmp" n="m">a moment before it exploded</arg>
+      <example src="" name="with predication">
+        <text>Mike, off balance, managed to bat the muzzle away amoment before it exploded.</text>
+        <rel relloc="5">bat</rel>
+        <arg f="" n="0" start="1" end="1">off</arg>
+        <arg f="" n="1" start="6" end="7">the muzzle</arg>
+        <arg f="PRD" n="m" start="8" end="8">away</arg>
+        <arg f="TMP" n="m" start="9" end="12">amoment before it exploded.</arg>
       </example>
-      <example name="Both args, with GOL" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="internet" name="Both args, with GOL">
         <text>Glad to hear you didn't completely fall for his batting his eyelashes at you.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">batting</rel>
-        <arg f="" n="1">his eyelashes</arg>
-        <arg f="gol" n="m">at you</arg>
+        <rel relloc="9">batting</rel>
+        <arg f="" n="0" start="8" end="8">his</arg>
+        <arg f="" n="1" start="10" end="11">his eyelashes</arg>
+        <arg f="GOL" n="m" start="12" end="13">at you.</arg>
       </example>
-      <example name="semi-idiomatic" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="internet" name="semi-idiomatic">
         <text>Your goal here is for your lights to be inconspicuous, so that you can slide right past Johnny Law's cold gaze without his batting an eye.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">batting</rel>
-        <arg f="" n="1">an eye</arg>
+        <rel relloc="23">batting</rel>
+        <arg f="" n="0" start="22" end="22">his</arg>
+        <arg f="" n="1" start="24" end="25">an eye.</arg>
       </example>
+      <note>BAT-V NOTES: Frames file for 'bat' based on sentences in wsj. Verbnet entries 17.1 and 40.3.2, Framenet entry Body movement. (from bat.01-v predicate notes)</note>
+      <note>BATTING-N NOTES: Added by Julia based on bat-v.01. Corresponds to VNcls crane-40.3.2. (from batting.01-n)</note>
     </roleset>
     <roleset id="bat.02" name="play baseball, earn stat in baseball">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">batting</alias>
-        <alias framenet="" pos="v" verbnet="">bat</alias>
+        <alias pos="n">batting</alias>
+        <alias pos="v">bat</alias>
       </aliases>
-      
-      <note></note>
       <roles>
-        <role descr="batter" f="pag" n="0"/>
-        <role descr="ball or pitch hit" f="ppt" n="1"/>
-        <role descr="position of batter in order, role of batter" f="vsp" n="2"/>
-	<role descr="result, stats over many batting attempts" f="vsp" n="3"/>
-        <role descr="team or employer" f="vsp" n="4"/>
+        <role descr="batter" f="PAG" n="0"/>
+        <role descr="ball or pitch hit" f="PPT" n="1"/>
+        <role descr="position of batter in order, role of batter" f="VSP" n="2"/>
+        <role descr="result, stats over many batting attempts" f="VSP" n="3"/>
+        <role descr="team or employer" f="VSP" n="4"/>
       </roles>
-      <example name="team sense" src="COCA" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
-        <text>The Indians are batting Omar Vizquel leadoff and platooning Brian Giles and Chad Curtis in center field 
-</text>
-        <arg f="" n="4">The Indians</arg>
-        <rel f="">batting</rel>
-        <arg f="" n="0">Omar Vizquel</arg>
-        <arg f="" n="2">leadoff</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="COCA" name="team sense">
+        <text>The Indians are batting Omar Vizquel leadoff and platooning Brian Giles and Chad Curtis in center field</text>
+        <rel relloc="3">batting</rel>
+        <arg f="" n="4" start="0" end="1">The Indians</arg>
+        <arg f="" n="0" start="4" end="5">Omar Vizquel</arg>
+        <arg f="" n="2" start="6" end="6">leadoff</arg>
       </example>
-      <example name="mutliple args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="mutliple args">
         <text>their batting the ball for a total of 20 hits...</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">batting</rel>
-        <arg f="" n="1">the ball</arg>
-        <arg f="" n="3">for a total of 20 hits ...</arg>
+        <rel relloc="1">batting</rel>
+        <arg f="" n="0" start="0" end="0">their</arg>
+        <arg f="" n="1" start="2" end="3">the ball</arg>
+        <arg f="" n="3" start="4" end="9">for a total of 20 hits...</arg>
       </example>
-
-      <example name="arg3 as statistic" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text> he batted.286 the year before</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">batted</rel>
-        <arg f="" n="3">.286</arg>
-        <arg f="tmp" n="m">the year before</arg>
+      <example src="internet" name="arg3 as statistic">
+        <text>he batted.286 the year before</text>
+        <rel relloc="1">batted.286</rel>
+        <arg f="" n="0" start="0" end="0">he</arg>
+        <arg f="" n="3" start="0" end="0">he</arg>
+        <arg f="TMP" n="m" start="2" end="4">the year before</arg>
       </example>
-      <example name="arg2 as lineup position" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="internet" name="arg2 as lineup position">
         <text>His batting 6th just puts a tremendous suckhole in the middle of the lineup and only assures us that he will get more opportunities to suck with the bases loaded.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">batting</rel>
-        <arg f="" n="2">6th</arg>
+        <rel relloc="1">batting</rel>
+        <arg f="" n="0" start="0" end="0">His</arg>
+        <arg f="" n="2" start="2" end="2">6th</arg>
       </example>
-      <example name="arg0 and arg2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="arg0 and arg2">
         <text>Piazza imagines what the response would be like if he batted once as a pinch hitter and homered.</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">batted</rel>
-        <arg f="" n="2">as a pinch hitter</arg>
+        <rel relloc="10">batted</rel>
+        <arg f="" n="0" start="9" end="9">he</arg>
+        <arg f="" n="2" start="12" end="15">as a pinch hitter</arg>
       </example>
-      <example name="team sense" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
+      <example src="" name="team sense">
         <text>The A-men batting Nos. 6 through 9, a.k.a. the ``bottom of the order,'' got seven of their team's 11 hits and scored four of its runs in a 5-0 decision.</text>
-        <arg f="" n="4">The A-men</arg>
-        <rel f="">batting</rel>
-        <arg f="" n="2">Nos. 6 through 9, a.k.a. the ``bottom of the order,''</arg>
+        <rel relloc="2">batting</rel>
+        <arg f="" n="4" start="0" end="1">The A-men</arg>
+        <arg f="" n="2" start="3" end="12">Nos. 6 through 9, a.k.a. the ``bottom of the order,''</arg>
       </example>
-
+      <note></note>
     </roleset>
   </predicate>
   <predicate lemma="bat_in">
     <roleset id="bat_in.03" name="bring in runs by hitting a baseball">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">bat_in</alias>
+        <alias pos="v">bat_in</alias>
       </aliases>
-      <note>BAT_IN-V NOTES: (from bat.03-v)</note>
       <roles>
         <role descr="batter" f="PAG" n="0"/>
         <role descr="runs" f="PPT" n="1"/>
       </roles>
-      <example name="more baseball" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>They combined for 25 hits, six home runs and [24 runs]*-1 batted in [*-1]in the five games against the Cubs.</text>
-        <rel f="">[ batted] [ in]</rel>
-        <arg f="" n="1">[*-1]</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="more baseball">
+        <text>They combined for 25 hits, six home runs and [24 batted in [*]in the five games against the Cubs.</text>
+        <rel relloc="10 11">batted in</rel>
+        <arg f="" n="1" start="12" end="12">[*]in</arg>
       </example>
+      <note>BAT_IN-V NOTES: (from bat.03-v)</note>
     </roleset>
   </predicate>
-
 </frameset>

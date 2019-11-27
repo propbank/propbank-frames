@@ -1,25 +1,39 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="banquet">
     <roleset id="banquet.01" name="feast">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">banquet</alias>
+        <alias pos="v">banquet</alias>
       </aliases>
-      <note>BANQUET-V NOTES: Hand-corrected by Claire (from banquet.01-v)</note>
       <roles>
         <role descr="eater" f="PAG" n="0">
-          <vnrole vncls="39.5" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="dine-39.5" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Ingestion" version="1.7">ingestor</rolelink>
+          </rolelinks>
         </role>
         <role descr="eaten" f="PPT" n="1">
-          <vnrole vncls="39.5" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="dine-39.5" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Ingestion" version="1.7">ingestibles</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="All arguments" src="web usage" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Ingestion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="dine-39.5" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web usage" name="All arguments">
         <text>They banqueted on pheasant, wild boar, and three kinds of fish.</text>
-        <arg f="" n="0">They</arg>
-        <rel f="">banqueted</rel>
-        <arg f="" n="1">on pheasant, wild boar, and three kinds of fish</arg>
+        <rel relloc="1">banqueted</rel>
+        <arg f="" n="0" start="0" end="0">They</arg>
+        <arg f="" n="1" start="2" end="10">on pheasant, wild boar, and three kinds of fish.</arg>
       </example>
+      <note>BANQUET-V NOTES: Hand-corrected by Claire (from banquet.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,50 +1,62 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="discontinue">
     <roleset id="discontinue.01" name="to stop doing or manufacturing">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">discontinuation</alias>
-        <alias framenet="" pos="v" verbnet="">discontinue</alias>
+        <alias pos="n">discontinuation</alias>
+        <alias pos="v">discontinue</alias>
       </aliases>
-      <note>DISCONTINUE-V NOTES: Frames file for 'discontinue' based on survey of sentences in the WSJ corpus. (from discontinue.01-v predicate notes)</note>
-      <note>DISCONTINUATION-N NOTES: Corresponds with discontinue.01. Framed by anwen april 2011 (from discontinuation.01-n)</note>
       <roles>
         <role descr="entity ending something, agent" f="PAG" n="0">
-          <vnrole vncls="55.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="complete-55.2" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing discontinued" f="PPT" n="1">
-          <vnrole vncls="55.2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="complete-55.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Process_stop" version="1.7">process</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Activity_stop" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Process_stop" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="complete-55.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="discontinue-v.1" src="annot-overlap" confidence="0.1">5</lexlink>
+        <lexlink resource="onsense" version="on5" class="discontinue-v.2" src="annot-overlap" confidence="0.1">3</lexlink>
+      </lexlinks>
+      <example src="" name="transitive">
         <text>Troubled NBI Inc. said [0] it fired more than half its work force and is discontinuing its hardware business [*-1]to focus on its software and service operations .</text>
-        <arg f="" n="0">it</arg>
-        <rel f="">discontinuing</rel>
-        <arg f="" n="1">its hardware business</arg>
-        <arg f="PNC" n="M">[*-1] to focus on its software and service operations</arg>
+        <rel relloc="15">discontinuing</rel>
+        <arg f="" n="0" start="5" end="5">it</arg>
+        <arg f="" n="1" start="16" end="18">its hardware business</arg>
+        <arg f="PNC" n="M" start="19" end="26">[*-1]to focus on its software and service operations</arg>
       </example>
-      <example name="passive" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>While [the discussions between Delmed and National Medical Care]-1 have been discontinued [*-1], Delmed will continue [*-2] to supply dialysis products through National Medical after their exclusive agreement ends in March 1990 , Delmed said [0] [*T*-3] .</text>
-        <rel f="">discontinued</rel>
-        <arg f="" n="1">[*-1]</arg>
+      <example src="" name="passive">
+        <text>While the discussions between Delmed and National Medical Care have been discontinued [*], Delmed will continue [*-2] to supply dialysis products through National Medical after their exclusive agreement ends in March 1990 , Delmed said [0] [*T*-3] .</text>
+        <rel relloc="11">discontinued</rel>
+        <arg f="" n="1" start="1" end="8">the discussions between Delmed and National Medical Care</arg>
       </example>
-      <example name="transitive with ArgM-LOC" src="" type="">
-        <inflection aspect="perfect" form="participle" person="third" tense="present" voice="passive"/>
-        <text>A Kentucky Fried Chicken spokesman , however , disputed the notion that the delivery service experienced problems in some markets where testing-1 has been discontinued [*-1] [*T*-2].</text>
-        <rel f="">discontinued</rel>
-        <arg f="" n="1">[*-1]</arg>
-        <arg f="LOC" n="M">[*T*-2]</arg>
-        <arg f="RCL" n="M">where -&gt; some markets</arg>
+      <example src="" name="transitive with ArgM-LOC">
+        <text>A Kentucky Fried Chicken spokesman , however , disputed the notion that the delivery service experienced problems in some markets where testing has been discontinued [*] [*T*-2].</text>
+        <rel relloc="24">discontinued</rel>
+        <arg f="" n="1" start="21" end="21">testing</arg>
+        <arg f="LOC" n="M" start="26" end="26">[*T*-2].</arg>
+        <arg f="RCL" n="M" start="18" end="19">some markets</arg>
       </example>
-      <example name="Both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="Both args">
         <text>Bayer's discontinuation of hamster aspirin outraged the rodent-loving community.</text>
-        <arg f="" n="0">Bayer's</arg>
-        <rel f="">discontinuation</rel>
-        <arg f="" n="1">of hamster aspirin</arg>
+        <rel relloc="1">discontinuation</rel>
+        <arg f="" n="0" start="0" end="0">Bayer's</arg>
+        <arg f="" n="1" start="2" end="4">of hamster aspirin</arg>
       </example>
+      <note>DISCONTINUE-V NOTES: Frames file for 'discontinue' based on survey of sentences in the WSJ corpus. (from discontinue.01-v predicate notes)</note>
+      <note>DISCONTINUATION-N NOTES: Corresponds with discontinue.01. Framed by anwen april 2011 (from discontinuation.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

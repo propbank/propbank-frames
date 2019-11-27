@@ -1,60 +1,77 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="derive">
     <roleset id="derive.01" name="create">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">derive</alias>
-        <alias framenet="" pos="n" verbnet="">derivation</alias>
+        <alias pos="v">derive</alias>
+        <alias pos="n">derivation</alias>
       </aliases>
-      <note>DERIVE-V NOTES: Comparison to 'develop'. Member of VNcls create-26.4, appear-48.1.1, deduce-97.2. (from derive.01-v)</note>
       <roles>
-        <role descr="creator" f="pag" n="0">
-          <vnrole vncls="26.4" vntheta="agent"/>
-          <vnrole vncls="97.2" vntheta="agent"/>
+        <role descr="creator" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="create-26.4" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="deduce-97.2" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing created" f="ppt" n="1">
-          <vnrole vncls="48.1.1" vntheta="theme"/>
-          <vnrole vncls="26.4" vntheta="result"/>
-          <vnrole vncls="97.2" vntheta="theme"/>
+        <role descr="thing created" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="appear-48.1.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="create-26.4" version="verbnet3.3">result</rolelink>
+            <rolelink resource="VerbNet" class="deduce-97.2" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="source" f="vsp" n="2">
-          <vnrole vncls="26.4" vntheta="material"/>
-          <vnrole vncls="97.2" vntheta="source"/>
+        <role descr="source" f="VSP" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="create-26.4" version="verbnet3.3">material</rolelink>
+            <rolelink resource="VerbNet" class="deduce-97.2" version="verbnet3.3">source</rolelink>
+          </rolelinks>
         </role>
-        <role descr="benefactive" f="gol" n="3">
-          <vnrole vncls="26.4" vntheta="beneficiary"/>
+        <role descr="benefactive" f="GOL" n="3">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="create-26.4" version="verbnet3.3">beneficiary</rolelink>
+          </rolelinks>
         </role>
-        <role descr="attribute, secondary predication" f="prd" n="4"/>
+        <role descr="attribute, secondary predication" f="PRD" n="4"/>
       </roles>
-      <example name="derive-v: passive, with source" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="create-26.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="deduce-97.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="appear-48.1.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="derive-v.1" src="annot-overlap" confidence="0.1">12</lexlink>
+      </lexlinks>
+      <example src="" name="derive-v: passive, with source">
         <text>[About 30% of Ratners's profit]-1 already is derived *trace*-1 from the U.S.</text>
-        <arg f="tmp" n="m">already</arg>
-        <rel f="">derived</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="2">from the U.S.</arg>
+        <rel relloc="7">derived</rel>
+        <arg f="TMP" n="m" start="5" end="5">already</arg>
+        <arg f="" n="1" start="8" end="8">*trace*-1</arg>
+        <arg f="" n="2" start="9" end="11">from the U.S.</arg>
       </example>
-      <example name="derive-v: ergative, with source" src="" type="">
+      <example src="" name="derive-v: ergative, with source">
         <text>Prosecutors have told Mr. Antar's attorneys that they believe Mr. Antar's allegedly ill-gotten gains are so great that any money he has used to pay attorneys derives from illegal activities.</text>
-        <arg f="" n="1">any money he has used to pay attorneys</arg>
-        <rel f="">derives</rel>
-        <arg f="" n="2">from illegal activities</arg>
+        <rel relloc="26">derives</rel>
+        <arg f="" n="1" start="18" end="25">any money he has used to pay attorneys</arg>
+        <arg f="" n="2" start="27" end="29">from illegal activities.</arg>
       </example>
-      <example name="ARG2 and ARG0 and ARG1" src="ontonotes bn/cnn/04/cnn_0429" type="">
+      <example src="ontonotes bn/cnn/04/cnn_0429" name="ARG2 and ARG0 and ARG1">
         <text>We have a vibrant and exciting relationship from which we both derive mass benefit .</text>
-        <arg f="" n="2">[from which][a vibrant and exciting relationship]</arg>
-        <arg f="" n="0">we both</arg>
-        <rel f="">derive</rel>
-        <arg f="" n="1">mass benefit</arg>
+        <rel relloc="11">derive</rel>
+        <arg f="" n="2" start="7" end="8">from which</arg>
+        <arg f="" n="2" start="2" end="6">a vibrant and exciting relationship</arg>
+        <arg f="" n="0" start="9" end="10">we both</arg>
+        <arg f="" n="1" start="12" end="13">mass benefit</arg>
       </example>
-
-      <example name="derive-v: Math/science attribute usage" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="present" voice="passive"/>
-        <text>[An expression for the four-potential of an em field]-1 is derived *trace*-1 as a path integral involving the fields, the formula being analogous to one given in elementary vector analysis.</text>
-        <rel f="">derived</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="4">as a path integral involving the fields</arg>
-        <arg f="adv" n="m">the formula being analogous to one given in elementary vector analysis</arg>
+      <example src="internet" name="derive-v: Math/science attribute usage">
+        <text> An expression for the four-potential of an em field is derived as a path integral involving the fields, the formula being analogous to one given in elementary vector analysis.</text>
+        <rel relloc="11">derived</rel>
+        <arg f="" n="1" start="1" end="9">An expression for the four-potential of an em field</arg>
+        <arg f="" n="4" start="12" end="18">as a path integral involving the fields,</arg>
+        <arg f="ADV" n="m" start="19" end="29">the formula being analogous to one given in elementary vector analysis.</arg>
       </example>
+      <note>DERIVE-V NOTES: Comparison to 'develop'. Member of VNcls create-26.4, appear-48.1.1, deduce-97.2. (from derive.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

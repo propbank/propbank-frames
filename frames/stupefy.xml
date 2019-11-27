@@ -1,37 +1,51 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="stupefy">
     <roleset id="stupefy.01" name="astound, cause stupor in">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">stupefied</alias>
-        <alias framenet="Experiencer_obj Stimulus_focus Emotion_directed" pos="v" verbnet="">stupefy</alias>
+        <alias pos="j">stupefied</alias>
+        <alias pos="v">stupefy</alias>
       </aliases>
+      <roles>
+        <role descr="causer of stupor" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="amuse-31.1" version="verbnet3.3">stimulus</rolelink>
+            <rolelink resource="FrameNet" class="Experiencer_obj" version="1.7">stimulus</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="stupefied entity" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="amuse-31.1" version="verbnet3.3">experiencer</rolelink>
+            <rolelink resource="FrameNet" class="Experiencer_obj" version="1.7">experiencer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="instrument, if separate from cause" f="MNR" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Experiencer_obj" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Stimulus_focus" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Emotion_directed" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="amuse-31.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="all args">
+        <text>Then, he stupefied the audience by eating fire.</text>
+        <rel relloc="2">stupefied</rel>
+        <arg f="TMP" n="m" start="0" end="0">Then,</arg>
+        <arg f="" n="0" start="1" end="1">he</arg>
+        <arg f="" n="1" start="3" end="4">the audience</arg>
+        <arg f="" n="2" start="5" end="7">by eating fire.</arg>
+      </example>
+      <example src="BOLT-2,3" name="adjectival rel: stupefied">
+        <text>We were stupefied .</text>
+        <rel relloc="2">stupefied</rel>
+        <arg f="" n="1" start="0" end="0">We</arg>
+      </example>
       <note>STUPEFY-V NOTES: Frames file for 'stupefy' based on internet usage examples, membership in VN; adjectival 'stupefied' based on BOLT-2,3. VerbNet entry 31.1. (from stupefy.01-v)</note>
       <note>STUPEFIED-J NOTES: Automatically created by Julia as an alias file for unification. (from stupefied.01-j)</note>
-      <roles>
-        <role descr="causer of stupor" f="pag" n="0">
-          <vnrole vncls="31.1" vntheta="stimulus"/>
-        </role>
-        <role descr="stupefied entity" f="ppt" n="1">
-          <vnrole vncls="31.1" vntheta="experiencer"/>
-        </role>
-        <role descr="instrument, if separate from cause" f="mnr" n="2"/>
-      </roles>
-      <example name="all args" src="" type="">
-        <text>Then, he stupefied the audience by eating fire.</text>
-        <arg f="tmp" n="m">Then</arg>
-        <arg f="" n="0">he</arg>
-        <rel f="">stupefied</rel>
-        <arg f="" n="1">the audience</arg>
-        <arg f="" n="2">by eating fire</arg>
-      </example>
-      
-      <example name="adjectival rel: stupefied" src="BOLT-2,3" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>We were stupefied .</text>
-        <arg f="" n="1">We</arg>
-        <rel f="">stupefied</rel>
-      </example>
     </roleset>
   </predicate>
 </frameset>

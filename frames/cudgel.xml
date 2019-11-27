@@ -1,34 +1,53 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="cudgel">
     <roleset id="cudgel.01" name="strike">
       <aliases>
-        <alias framenet="Cause_harm" pos="v" verbnet="">cudgel</alias>
+        <alias pos="v">cudgel</alias>
       </aliases>
-      <note>CUDGEL-V NOTES: Edited by hwangd.Member of VNcls spank-18.3. (from cudgel.01-v)</note>
       <roles>
         <role descr="hitter" f="PAG" n="0">
-          <vnrole vncls="18.3" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="spank-18.3" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">cause</rolelink>
+          </rolelinks>
         </role>
         <role descr="victim" f="PPT" n="1">
-          <vnrole vncls="18.3" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="spank-18.3" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">victim</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">body_part</rolelink>
+          </rolelinks>
         </role>
-        <role descr="resulting state" f="prd" n="2"/>
+        <role descr="resulting state" f="PRD" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">result</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="All args" src="web usage" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_harm" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="spank-18.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web usage" name="All args">
         <text>Mercedes-Benz and Cerberus have cudgeled a once-proud automotive company into coma.</text>
-        <arg f="" n="0">Mercedes-Benz and Ceberus</arg>
-        <rel f="">cudgeled</rel>
-        <arg f="" n="1">a once proud automotive company</arg>
-        <arg f="" n="2">into coma</arg>
+        <rel relloc="4">cudgeled</rel>
+        <arg f="" n="0" start="0" end="2">Mercedes-Benz and Cerberus</arg>
+        <arg f="" n="1" start="5" end="8">a once-proud automotive company</arg>
+        <arg f="" n="2" start="9" end="10">into coma.</arg>
       </example>
-      <example name="cudgel, not cuddle" src="ULA" type="-">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
+      <example src="ULA" name="cudgel, not cuddle">
         <text>In Scott 's The Bride of Lammermoor -LRB- Chapter VII -RRB- , one reads about a boy ? cudgelling an ass , ? and one goes back over the passage to reassure himself that it does not contain a typographical error for ? cuddling . ?</text>
-        <arg f="" n="0">a boy</arg>
-        <rel f="">cudgelling</rel>
-        <arg f="" n="1">an ass</arg>
+        <rel relloc="18">cudgelling</rel>
+        <arg f="" n="0" start="15" end="16">a boy</arg>
+        <arg f="" n="1" start="19" end="20">an ass</arg>
       </example>
+      <note>CUDGEL-V NOTES: Edited by hwangd.Member of VNcls spank-18.3. (from cudgel.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

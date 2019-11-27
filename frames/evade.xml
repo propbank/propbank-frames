@@ -1,40 +1,56 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="evade">
     <roleset id="evade.01" name="stay away from, avoiding, dodging">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">evade</alias>
-        <alias framenet="Avoiding Evading" pos="n" verbnet="">evasion</alias>
+        <alias pos="v">evade</alias>
+        <alias pos="n">evasion</alias>
       </aliases>
-      <note>EVADE-V NOTES: Etymologically, 'evade' and 'avoid' are not related at all. 'Avoid'comes from"to make empty"while 'evade' is 'to go out'. Interestingconvergence, though. (from evade.01-v)</note>
-      <note>EVASION-N NOTES: Added by Julia based on BOLT-5, evade.01. Corresponds to VNcls avoid-52. (from evasion.01-n)</note>
       <roles>
         <role descr="avoider" f="PAG" n="0">
-          <vnrole vncls="52" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="avoid-52" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Avoiding" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Evading" version="1.7">evader</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing avoided" f="PPT" n="1">
-          <vnrole vncls="52" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="avoid-52" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Avoiding" version="1.7">undesirable_situation</rolelink>
+            <rolelink resource="FrameNet" class="Evading" version="1.7">pursuer</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Avoiding" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Evading" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="avoid-52" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="transitive">
         <text>The company is the subject of a federal grand jury investigation into whether [its officials and its utility subsidiaries]-1 conspired *trace*-1 to cover up their accounting for spare parts *trace*-1 to evade federal income taxes.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">evade</rel>
-        <arg f="" n="1">federal income taxes</arg>
+        <rel relloc="31">evade</rel>
+        <arg f="" n="0" start="20" end="20">*trace*-1</arg>
+        <arg f="" n="1" start="32" end="34">federal income taxes.</arg>
       </example>
-      <example name="oddly intransitive" src="" type="">
+      <example src="" name="oddly intransitive">
         <text>He evades and ducks .</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">evades</rel>
+        <rel relloc="1">evades</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
       </example>
-      <example name="both args" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="BOLT" name="both args">
         <text>I 'd like to know how much it costs to keep every single library open for a year , compared to how much is claimed unnecessarily by MP's , tax evasion by FSTE 100 companies amd QUANGO's to name a few .</text>
-        <arg f="adj" n="m">MP's</arg>
-        <arg f="" n="1">tax</arg>
-        <rel f="">evasion</rel>
-        <arg f="" n="0">by FSTE 100 companies amd QUANGO's</arg>
+        <rel relloc="30">evasion</rel>
+        <arg f="ADJ" n="m" start="27" end="27">MP's</arg>
+        <arg f="" n="1" start="29" end="29">tax</arg>
+        <arg f="" n="0" start="31" end="36">by FSTE 100 companies amd QUANGO's</arg>
       </example>
+      <note>EVADE-V NOTES: Etymologically, 'evade' and 'avoid' are not related at all. 'Avoid'comes from"to make empty"while 'evade' is 'to go out'. Interestingconvergence, though. (from evade.01-v)</note>
+      <note>EVASION-N NOTES: Added by Julia based on BOLT-5, evade.01. Corresponds to VNcls avoid-52. (from evasion.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

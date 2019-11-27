@@ -1,35 +1,48 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="quarantine">
     <roleset id="quarantine.01" name="quarantine">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">quarantine</alias>
+        <alias pos="v">quarantine</alias>
       </aliases>
-      <note>QUARANTINE-V NOTES: hand-checked by Kevin (from quarantine.01-v)</note>
       <roles>
         <role descr="quarantiner, agent" f="PAG" n="0">
-          <vnrole vncls="16" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="concealment-16" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing(s) quarrantined, patient" f="PPT" n="1">
-          <vnrole vncls="16" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="concealment-16" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="quarrantined from whom" f="GOL" n="2">
-          <vnrole vncls="16" vntheta="Beneficiary"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="concealment-16" version="verbnet3.3">beneficiary</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="regular usage" src="web usage" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="concealment-16" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web usage" name="regular usage">
         <text>They quarantined the residents of Honolulu's Chinatown and cordoned off the area with volunteer guardsmen.</text>
-        <arg f="" n="0">They</arg>
-        <rel f="">quarantined</rel>
-        <arg f="" n="1">the residents of Honolulu's Chinatown</arg>
+        <rel relloc="1">quarantined</rel>
+        <arg f="" n="0" start="0" end="0">They</arg>
+        <arg f="" n="1" start="2" end="6">the residents of Honolulu's Chinatown</arg>
       </example>
-      <example name="All args" src="web usage" type="">
+      <example src="web usage" name="All args">
         <text>The NYC public health department quarantined her from handing out germy stuff to the public.</text>
-        <arg f="" n="0">The NYC public health department</arg>
-        <rel f="">quarantined</rel>
-        <arg f="" n="1">her</arg>
-        <arg f="" n="2">from handing out germy stuff to the public</arg>
+        <rel relloc="5">quarantined</rel>
+        <arg f="" n="0" start="0" end="4">The NYC public health department</arg>
+        <arg f="" n="1" start="6" end="6">her</arg>
+        <arg f="" n="2" start="7" end="14">from handing out germy stuff to the public.</arg>
       </example>
+      <note>QUARANTINE-V NOTES: hand-checked by Kevin (from quarantine.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

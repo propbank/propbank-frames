@@ -1,30 +1,47 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="kidnap">
     <roleset id="kidnap.01" name="to seize and detain unlawfully">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">kidnap</alias>
-        <alias framenet="" pos="n" verbnet="">kidnapping</alias>
+        <alias pos="v">kidnap</alias>
+        <alias pos="n">kidnapping</alias>
+        <argalias pos="n" arg="0">kidnapper</argalias>
       </aliases>
-      <note>KIDNAP-V NOTES: Frames file for 'kidnap' based on survey of sentences in the WSJ corpus. (from kidnap.01-v predicate notes)</note>
       <roles>
         <role descr="kidnapper, agent" f="PAG" n="0">
-          <vnrole vncls="10.5" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="steal-10.5" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Kidnapping" version="1.7">perpetrator</rolelink>
+          </rolelinks>
         </role>
         <role descr="person kidnapped" f="PPT" n="1">
-          <vnrole vncls="10.5" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="steal-10.5" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Kidnapping" version="1.7">victim</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Kidnapping" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="steal-10.5" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Transportperson" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="kidnap-v.1" src="annot-overlap" confidence="0.1">16</lexlink>
+      </lexlinks>
+      <example src="" name="transitive">
         <text>Again , you have [*-1] to ask the obvious question : Why would intelligent beings kidnap seven Soviet mailmen [*T*-2]?</text>
-        <arg f="MOD" n="M">would</arg>
-        <arg f="" n="0">intelligent beings</arg>
-        <rel f="">kidnap</rel>
-        <arg f="" n="1">seven Soviet mailmen</arg>
-        <arg f="PNC" n="M">[*T*-2]</arg>
-        <arg f="RCL" n="M">Why</arg>
+        <rel relloc="15">kidnap</rel>
+        <arg f="MOD" n="M" start="12" end="12">would</arg>
+        <arg f="" n="0" start="13" end="14">intelligent beings</arg>
+        <arg f="" n="1" start="16" end="18">seven Soviet mailmen</arg>
+        <arg f="PNC" n="M" start="19" end="19">[*T*-2]?</arg>
+        <arg f="RCL" n="M" start="11" end="11">Why</arg>
       </example>
+      <note>KIDNAP-V NOTES: Frames file for 'kidnap' based on survey of sentences in the WSJ corpus. (from kidnap.01-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

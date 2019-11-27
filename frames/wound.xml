@@ -1,38 +1,55 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="wound">
     <roleset id="wound.01" name="cause injury">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">wounded</alias>
-        <alias framenet="" pos="v" verbnet="">wound</alias>
+        <alias pos="j">wounded</alias>
+        <alias pos="v">wound</alias>
       </aliases>
+      <roles>
+        <role descr="Stimulus of injury" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="amuse-31.1" version="verbnet3.3">stimulus</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">cause</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="injured party" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="amuse-31.1" version="verbnet3.3">experiencer</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">victim</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="instrument, if separate from arg0" f="MNR" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_harm" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="amuse-31.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Life.Injure.IllnessDegradationPhysical" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Life.Injure.InjuryCausedByViolentEvents" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Injure" version="rich" confidence="0.1" src="reo-expansion"/>
+      </lexlinks>
+      <example src="" name="just transitive">
+        <text>Recently, in Wollo province in the center of Ethiopia, Tigrean forces have killed, wounded and captured an additional 20,000 government troops.</text>
+        <rel relloc="13">wounded</rel>
+        <arg f="TMP" n="m" start="0" end="0">Recently,</arg>
+        <arg f="LOC" n="m" start="1" end="8">in Wollo province in the center of Ethiopia,</arg>
+        <arg f="" n="0" start="9" end="10">Tigrean forces</arg>
+        <arg f="" n="1" start="16" end="20">an additional 20,000 government troops.</arg>
+      </example>
+      <example src="ontonotes pt/nt/66/nt_6613" name="ARG1 and ARG2">
+        <text>He ordered people to make an idol to honor the first beast , the one that was wounded by the sword but did not die .</text>
+        <rel relloc="17">wounded</rel>
+        <arg f="" n="1" start="13" end="14">the one</arg>
+        <arg f="" n="1" start="15" end="15">that</arg>
+        <arg f="" n="2" start="18" end="20">by the sword</arg>
+      </example>
       <note>WOUND-V NOTES: As usual, use arg2 only when arg0 is also present. (from wound.01-v)</note>
       <note>WOUNDED-J NOTES: Automatically created by Julia as an alias file for unification. (from wounded.01-j)</note>
-      <roles>
-        <role descr="Stimulus of injury" f="pag" n="0">
-          <vnrole vncls="31.1" vntheta="stimulus"/>
-        </role>
-        <role descr="injured party" f="ppt" n="1">
-          <vnrole vncls="31.1" vntheta="experiencer"/>
-        </role>
-        <role descr="instrument, if separate from arg0" f="mnr" n="2"/>
-      </roles>
-      <example name="just transitive" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="present" voice="active"/>
-        <text>Recently, in Wollo province in the center of Ethiopia, Tigrean forces have killed, wounded and captured an additional 20,000 government troops.</text>
-        <arg f="tmp" n="m">Recently</arg>
-        <arg f="loc" n="m">in Wollo province in the center of Ethiopia</arg>
-        <arg f="" n="0">Tigrean forces</arg>
-        <rel f="">wounded</rel>
-        <arg f="" n="1">an additional 20,000 government troops</arg>
-      </example>
-      <example name="ARG1 and ARG2" src="ontonotes pt/nt/66/nt_6613" type="">
-        <text>He ordered people to make an idol to honor the first beast , the one that was wounded by the sword but did not die .</text>
-        <arg f="" n="1">[the one][that]</arg>
-        <rel f="">wounded</rel>
-        <arg f="" n="2">by the sword</arg>
-      </example>
-
     </roleset>
   </predicate>
 </frameset>

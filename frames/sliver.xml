@@ -1,44 +1,60 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="sliver">
     <roleset id="sliver.01" name="produce slivers">
       <aliases>
-        <alias framenet="" pos="v" verbnet="break-45.1 split-23.2">sliver</alias>
+        <alias pos="v">sliver</alias>
       </aliases>
-      <note>SLIVER-V NOTES: cf. produce, etc. (from sliver.01-v)</note>
       <roles>
         <role descr="agent, slicer" f="PAG" n="0">
-          <vnrole vncls="45.1" vntheta="agent"/>
-          <vnrole vncls="23.2" vntheta="agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="break-45.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="split-23.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_to_fragment" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_to_fragment" version="1.7">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="patient, thing sliced up" f="PPT" n="1">
-          <vnrole vncls="45.1" vntheta="patient"/>
-          <vnrole vncls="23.2" vntheta="patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="break-45.1" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="VerbNet" class="split-23.2" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Cause_to_fragment" version="1.7">whole_patient</rolelink>
+            <rolelink resource="FrameNet" class="Cause_to_fragment" version="1.7">whole_patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="source material, what arg1 is sliced off of" f="DIR" n="2">
-          <vnrole vncls="23.2" vntheta="co-patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="split-23.2" version="verbnet3.3">co-patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="awkward adjectival" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_to_fragment" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="break-45.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="split-23.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="awkward adjectival">
         <text>A major difference is that a snapped wooden pencil will have a slivered break while a plastic model will break cleanly.</text>
-        <rel f="">slivered</rel>
-        <arg f="" n="1">break</arg>
+        <rel relloc="12">slivered</rel>
+        <arg f="" n="1" start="13" end="13">break</arg>
       </example>
-      <example name="ARG0" src="ontonotes nw/wsj/17/wsj_1772" type="">
+      <example src="ontonotes nw/wsj/17/wsj_1772" name="ARG0">
         <text>A major difference is that a snapped wooden pencil will have a slivered break while a plastic model will break cleanly .</text>
-        <rel f="">slivered</rel>
-        <arg f="" n="0">break</arg>
+        <rel relloc="12">slivered</rel>
+        <arg f="" n="0" start="13" end="13">break</arg>
       </example>
-
-      <example name="all arguments" src="web" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <example src="web" name="all arguments">
         <text>She slivered the white citrus pith off the fruit.</text>
-        <arg f="" n="0">She</arg>
-        <rel f="">slivered</rel>
-        <arg f="" n="1">the white citrus pith</arg>
-        <arg f="" n="2">off the fruit</arg>
+        <rel relloc="1">slivered</rel>
+        <arg f="" n="0" start="0" end="0">She</arg>
+        <arg f="" n="1" start="2" end="5">the white citrus pith</arg>
+        <arg f="" n="2" start="6" end="8">off the fruit.</arg>
       </example>
+      <note>SLIVER-V NOTES: cf. produce, etc. (from sliver.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

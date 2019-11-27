@@ -1,103 +1,129 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="shower">
     <roleset id="shower.01" name="fall, sprinkle, rain">
       <aliases>
-        <alias framenet="Precipitation Placing Filling Grooming Mass_motion" pos="n" verbnet="">shower</alias>
-        <alias framenet="Precipitation Placing Filling Grooming Mass_motion" pos="v" verbnet="">shower</alias>
-        <alias framenet="" pos="l" verbnet="">take_shower</alias>
+        <alias pos="n">shower</alias>
+        <alias pos="v">shower</alias>
+        <alias pos="l">take_shower</alias>
       </aliases>
-      <note>SHOWER-V NOTES: Member of Vncls spray-9.7-1, pelt-17.2, dress-41.1.1, weather-57. Updated by Julia, 11/2010. (from shower.01-v)</note>
-      <note>SHOWER-N NOTES: Roleset based on verb entry shower.01; corresponds to Vncls spray-9.7-1, pelt-17.2, dress-41.1.1, weather-57. Updated by Julia, 11/2010. (from shower.01-n)</note>
       <roles>
-        <role descr="causer of things falling" f="cau" n="0">
-          <vnrole vncls="17.2" vntheta="Agent"/>
-          <vnrole vncls="9.7-1" vntheta="Agent"/>
-          <vnrole vncls="41.1.1" vntheta="Agent"/>
+        <role descr="causer of things falling" f="CAU" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pelt-17.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="spray-9.7-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="dress-41.1.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Grooming" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="things falling" f="PPT" n="1">
-          <vnrole vncls="17.2" vntheta="Theme"/>
-          <vnrole vncls="9.7-1" vntheta="Theme"/>
-          <vnrole vncls="41.1.1" vntheta="Patient"/>
-          <vnrole vncls="57" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pelt-17.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="spray-9.7-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="dress-41.1.1" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="VerbNet" class="weather-57" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Grooming" version="1.7">body_part</rolelink>
+            <rolelink resource="FrameNet" class="Grooming" version="1.7">patient</rolelink>
+            <rolelink resource="FrameNet" class="Precipitation" version="1.7">precipitation</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="falling on what" f="gol" n="2">
-          <vnrole vncls="17.2" vntheta="Destination"/>
-          <vnrole vncls="9.7-1" vntheta="Destination"/>
+        <role descr="falling on what" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pelt-17.2" version="verbnet3.3">destination</rolelink>
+            <rolelink resource="VerbNet" class="spray-9.7-1" version="verbnet3.3">destination</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">goal</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all args" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Filling" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Placing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Grooming" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Mass_motion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Precipitation" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="pelt-17.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="spray-9.7-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="dress-41.1.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="weather-57" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="all args">
         <text>Endless seconds wondering if those huge windows would buckle and shower us with glass.</text>
-        <arg f="" n="0">those huge windows</arg>
-        <arg f="mod" n="m">would</arg>
-        <rel f="">shower</rel>
-        <arg f="" n="1">us</arg>
-        <arg f="" n="2">with glass</arg>
+        <rel relloc="10">shower</rel>
+        <arg f="" n="0" start="4" end="6">those huge windows</arg>
+        <arg f="MOD" n="m" start="7" end="7">would</arg>
+        <arg f="" n="1" start="11" end="11">us</arg>
+        <arg f="" n="2" start="12" end="13">with glass.</arg>
       </example>
-      <example name="ARG0" src="ontonotes tc/ch/00/ch_0002" type="">
+      <example src="ontonotes tc/ch/00/ch_0002" name="ARG0">
         <text>why ca n't you take quick shower ?</text>
-        <arg f="cau" n="m">why</arg>
-        <arg f="mod" n="m">ca</arg>
-        <arg f="neg" n="m">n't</arg>
-        <arg f="" n="0">you</arg>
-        <arg f="lvb" n="m">take</arg>
-        <arg f="tmp" n="m">quick</arg>
-        <rel f="">shower</rel>
+        <rel relloc="6">shower</rel>
+        <arg f="CAU" n="m" start="0" end="0">why</arg>
+        <arg f="MOD" n="m" start="1" end="1">ca</arg>
+        <arg f="NEG" n="m" start="2" end="2">n't</arg>
+        <arg f="" n="0" start="3" end="3">you</arg>
+        <arg f="LVB" n="m" start="4" end="4">take</arg>
+        <arg f="TMP" n="m" start="5" end="5">quick</arg>
       </example>
-
-      <example name="weather with arg0" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
+      <example src="internet" name="weather with arg0">
         <text>After years of drought, the clouds showered heavy rain</text>
-        <arg f="tmp" n="m">After years of drought</arg>
-        <arg f="" n="0">the clouds</arg>
-        <rel f="">showered</rel>
-        <arg f="" n="1">heavy rain</arg>
+        <rel relloc="6">showered</rel>
+        <arg f="TMP" n="m" start="0" end="3">After years of drought,</arg>
+        <arg f="" n="0" start="4" end="5">the clouds</arg>
+        <arg f="" n="1" start="7" end="8">heavy rain</arg>
       </example>
-      <example name="weather with empty 'it'" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
+      <example src="internet" name="weather with empty 'it'">
         <text>Well, it "showered" on us all the way from Knoxville to Elizabethton.</text>
-        <arg f="dis" n="m">Well</arg>
-        <rel f="">showered</rel>
-        <arg f="" n="2">on us</arg>
-        <arg f="loc" n="m">all the way from Knoxville to Elizabethton</arg>
+        <rel relloc="2">"showered"</rel>
+        <arg f="DIS" n="m" start="0" end="0">Well,</arg>
+        <arg f="" n="2" start="3" end="4">on us</arg>
+        <arg f="LOC" n="m" start="5" end="11">all the way from Knoxville to Elizabethton.</arg>
       </example>
-      <example name="Within LVC" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>why-1 ca n't you take quick shower *T*-1?</text>
-        <arg f="mod" n="m">ca</arg>
-        <arg f="neg" n="m">n't</arg>
-        <arg f="" n="0">you</arg>
-        <arg f="lvb" n="m">take</arg>
-        <arg f="tmp" n="m">quick</arg>
-        <rel f="">shower</rel>
-        <arg f="cau" n="m">*T*-1</arg>
+      <example src="" name="Within LVC">
+        <text>why-1 ca n't you take quick shower ?</text>
+        <rel relloc="6">shower</rel>
+        <arg f="MOD" n="m" start="1" end="1">ca</arg>
+        <arg f="NEG" n="m" start="2" end="2">n't</arg>
+        <arg f="" n="0" start="3" end="3">you</arg>
+        <arg f="LVB" n="m" start="4" end="4">take</arg>
+        <arg f="TMP" n="m" start="5" end="5">quick</arg>
+        <arg f="CAU" n="m" start="0" end="0">why-1</arg>
       </example>
-      <example name="All arguments" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="All arguments">
         <text>He continually amazes me with His showering of love on my life.</text>
-        <arg f="" n="0">His</arg>
-        <rel f="">showering</rel>
-        <arg f="" n="1">of love</arg>
-        <arg f="" n="2">on my life.</arg>
+        <rel relloc="6">showering</rel>
+        <arg f="" n="0" start="5" end="5">His</arg>
+        <arg f="" n="1" start="7" end="8">of love</arg>
+        <arg f="" n="2" start="9" end="11">on my life.</arg>
       </example>
+      <note>SHOWER-V NOTES: Member of Vncls spray-9.7-1, pelt-17.2, dress-41.1.1, weather-57. Updated by Julia, 11/2010. (from shower.01-v)</note>
+      <note>SHOWER-N NOTES: Roleset based on verb entry shower.01; corresponds to Vncls spray-9.7-1, pelt-17.2, dress-41.1.1, weather-57. Updated by Julia, 11/2010. (from shower.01-n)</note>
     </roleset>
     <roleset id="shower.02" name="party for a new mother or bride, etc">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">shower</alias>
+        <alias pos="n">shower</alias>
       </aliases>
-      <note>SHOWER-N NOTES: (from shower.02-n)</note>
       <roles>
-        <role descr="host" f="pag" n="0"/>
-        <role descr="guest of honor" f="ppt" n="1"/>
-        <role descr="occasion celebrated" f="prp" n="2"/>
+        <role descr="host" f="PAG" n="0"/>
+        <role descr="guest of honor" f="PPT" n="1"/>
+        <role descr="occasion celebrated" f="PRP" n="2"/>
       </roles>
-      <example name="arg2" src="sms" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="sms" name="arg2">
         <text>So Russell is getting married in a month . Went to the wedding shower today . Also Adam seems to think Man got married . For real .</text>
-        <arg f="" n="2">wedding</arg>
-        <rel f="">shower</rel>
+        <rel relloc="13">shower</rel>
+        <arg f="" n="2" start="12" end="12">wedding</arg>
       </example>
+      <note>SHOWER-N NOTES: (from shower.02-n)</note>
     </roleset>
   </predicate>
 </frameset>

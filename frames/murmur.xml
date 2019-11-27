@@ -1,29 +1,46 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="murmur">
     <roleset id="murmur.01" name="speak in soft low tones">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">murmur</alias>
+        <alias pos="v">murmur</alias>
       </aliases>
-      <note>MURMUR-V NOTES: Frames file for 'murmur' based on sentences in brown. Verbnet entry (from murmur.01-v predicate notes)</note>
       <roles>
         <role descr="speaker" f="PAG" n="0">
-          <vnrole vncls="37.3" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Communication_noise" version="1.7">speaker</rolelink>
+          </rolelinks>
         </role>
         <role descr="utterance" f="PPT" n="1">
-          <vnrole vncls="37.3" vntheta="Topic"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="FrameNet" class="Communication_noise" version="1.7">message</rolelink>
+            <rolelink resource="FrameNet" class="Communication_noise" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
         <role descr="listener" f="GOL" n="2">
-          <vnrole vncls="37.3" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3">recipient</rolelink>
+            <rolelink resource="FrameNet" class="Communication_noise" version="1.7">addressee</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="no listener" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Communication_noise" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="no listener">
         <text>The sheik smiled and murmured: ``That is precisely correct''.</text>
-        <arg f="" n="0">The sheik</arg>
-        <rel f="">murmured</rel>
-        <arg f="" n="1">That is precisely correct</arg>
+        <rel relloc="4">murmured:</rel>
+        <arg f="" n="0" start="0" end="1">The sheik</arg>
+        <arg f="" n="1" start="5" end="8">``That is precisely correct''.</arg>
       </example>
+      <note>MURMUR-V NOTES: Frames file for 'murmur' based on sentences in brown. Verbnet entry (from murmur.01-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

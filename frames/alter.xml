@@ -1,51 +1,67 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="alter">
     <roleset id="alter.01" name="transform">
       <aliases>
-        <alias framenet="Cause_change" pos="v" verbnet="">alter</alias>
-        <alias framenet="" pos="n" verbnet="">alteration</alias>
+        <alias pos="v">alter</alias>
+        <alias pos="n">alteration</alias>
       </aliases>
-      <note>ALTER-V NOTES: Verbnet entries other_cos-45.4 turn-26.6.1, other framed members include decrease, halt, narrow, shut, slow, sweeten, weaken; convert. Comparison to 'change'. (from alter.01-v)</note>
-      <note>ALTERATION-N NOTES: (from alteration.01-n)</note>
       <roles>
-        <note>I actually doubt start and end points will occur, but there they are anyway. (from alter.01-v)</note>
         <role descr="causer of transformation" f="PAG" n="0">
-          <vnrole vncls="26.6.1" vntheta="Agent"/>
-          <vnrole vncls="45.4" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="turn-26.6.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing changing" f="PPT" n="1">
-          <vnrole vncls="26.6.1" vntheta="Patient"/>
-          <vnrole vncls="45.4" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="turn-26.6.1" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="end state" f="PRD" n="2">
-          <vnrole vncls="26.6.1" vntheta="Result"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="turn-26.6.1" version="verbnet3.3">result</rolelink>
+          </rolelinks>
         </role>
         <role descr="start state" f="VSP" n="3">
-          <vnrole vncls="26.6.1" vntheta="Material"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="turn-26.6.1" version="verbnet3.3">material</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="just transitive" src="" type="">
-        <text>But although the golden share has been waived, [a hostile bidder for Jaguar]-1 would still have *trace*-1 to alter the British concern's articles of association which ban shareholdings of more than 15%.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">alter</rel>
-        <arg f="" n="1">the British concern's articles of association which ban shareholdings of more than 15%</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_change" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="turn-26.6.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="alter-v.1" src="annot-overlap" confidence="0.1">33</lexlink>
+      </lexlinks>
+      <example src="" name="just transitive">
+        <text>But although the golden share has been waived, a hostile bidder for Jaguar would still have to alter the British concern's articles of association which ban shareholdings of more than 15%.</text>
+        <rel relloc="17">alter</rel>
+        <arg f="" n="0" start="8" end="12">a hostile bidder for Jaguar</arg>
+        <arg f="" n="1" start="18" end="30">the British concern's articles of association which ban shareholdings of more than 15%.</arg>
       </example>
-      <example name="ARG3 and ARG2" src="probably COCA (2018 example fix)" type="">
-        <text>In one instance you state that [a bill]-1 was altered *trace*-1 from $600 to $1,256, and that $600 was the proper amount A.</text>
-        <rel f="">altered</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="3">from $600</arg>
-        <arg f="" n="2">to $1,256,</arg>
+      <example src="probably COCA (2018 example fix)" name="ARG3 and ARG2">
+        <text>In one instance you state that a bill was altered from $600 to $1,256, and that $600 was the proper amount A.</text>
+        <rel relloc="9">altered</rel>
+        <arg f="" n="1" start="6" end="7">a bill</arg>
+        <arg f="" n="3" start="10" end="11">from $600</arg>
+        <arg f="" n="2" start="12" end="13">to $1,256,</arg>
       </example>
-
-      <example name="Arg0,1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="Arg0,1">
         <text>His alteration of the will is invalid but what effect does it have?</text>
-        <arg f="" n="0">His</arg>
-        <rel f="">alteration</rel>
-        <arg f="" n="1">of the will</arg>
+        <rel relloc="1">alteration</rel>
+        <arg f="" n="0" start="0" end="0">His</arg>
+        <arg f="" n="1" start="2" end="4">of the will</arg>
       </example>
+      <note>ALTER-V NOTES: Verbnet entries other_cos-45.4 turn-26.6.1, other framed members include decrease, halt, narrow, shut, slow, sweeten, weaken; convert. Comparison to 'change'. (from alter.01-v)</note>
+      <note>ALTERATION-N NOTES: (from alteration.01-n)</note>
+      <note>I actually doubt start and end points will occur, but there they are anyway. (from alter.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,54 +1,62 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="regulate">
     <roleset id="regulate.01" name="supervise, watch over, controlling">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">regulate</alias>
-        <alias framenet="" pos="n" verbnet="">regulation</alias>
-        <alias framenet="" pos="j" verbnet="">regulated</alias>
+        <alias pos="v">regulate</alias>
+        <alias pos="n">regulation</alias>
+        <alias pos="j">regulated</alias>
+        <argalias pos="n" arg="0">regulator</argalias>
       </aliases>
+      <roles>
+        <role descr="regulator" f="PAG" n="0"/>
+        <role descr="thing regulated" f="PPT" n="1"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Control" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="regulate-v.2" src="annot-overlap" confidence="0.1">35</lexlink>
+        <lexlink resource="onsense" version="on5" class="regulate-v.1" src="annot-overlap" confidence="0.1">5</lexlink>
+        <lexlink resource="onsense" version="on5" class="regulation-n.3" src="annot-overlap" confidence="0.1">6</lexlink>
+      </lexlinks>
+      <example src="" name="regulate-v: stated regulator">
+        <text>The finding probably will support those who argue that the U.S. should regulate the class of asbestos including crocidolite more stringently than the common kind of asbestos, chrysotile, found in most schools and other buildings, Dr. Talcott said.</text>
+        <rel relloc="12">regulate</rel>
+        <arg f="" n="0" start="9" end="10">the U.S.</arg>
+        <arg f="MOD" n="m" start="11" end="11">should</arg>
+        <arg f="" n="1" start="13" end="18">the class of asbestos including crocidolite</arg>
+        <arg f="MNR" n="m" start="19" end="34">more stringently than the common kind of asbestos, chrysotile, found in most schools and other buildings,</arg>
+      </example>
+      <example src="" name="regulate-v: unstated agent">
+        <text>``Such research may ultimately result in the ability [*] to regenerate damaged tissues or to turn off genes that cause cancer'' or *trace* to regulate genes that cause Down's syndrome, the leading cause of mental retardation, according to an NIH summary.</text>
+        <rel relloc="24">regulate</rel>
+        <arg f="" n="0" start="8" end="8">[*]</arg>
+        <arg f="" n="1" start="25" end="40">genes that cause Down's syndrome, the leading cause of mental retardation, according to an NIH summary.</arg>
+      </example>
+      <example src="BOLT-4,5" name="regulated-j">
+        <text>I 'm not against immigration but i think it should be more regulated .</text>
+        <rel relloc="12">regulated</rel>
+        <arg f="" n="1" start="8" end="8">it</arg>
+        <arg f="MOD" n="m" start="9" end="9">should</arg>
+        <arg f="EXT" n="m" start="11" end="11">more</arg>
+      </example>
+      <example src="" name="regulation-n: both args">
+        <text>British takeover regulations</text>
+        <rel relloc="2">regulations</rel>
+        <arg f="" n="0" start="0" end="0">British</arg>
+        <arg f="" n="1" start="1" end="1">takeover</arg>
+      </example>
+      <example src="" name="regulation-n: with arg 1">
+        <text>securities regulations</text>
+        <rel relloc="1">regulations</rel>
+        <arg f="" n="1" start="0" end="0">securities</arg>
+      </example>
       <note>REGULATE-V NOTES: Frames file for 'regulate' based on wsj; adjectival 'regulated' based on BOLT-4,5. No Vncls. (from regulate.01-v)</note>
       <note>REGULATION-N NOTES: Based on sentences in nouns-00040. Comparison to regulate.01. No Fn class. Framed by Katie. (from regulation.01-n)</note>
       <note>REGULATED-J NOTES: Automatically created by Julia as an alias file for unification. (from regulated.01-j)</note>
-      <roles>
-        <role descr="regulator" f="pag" n="0"/>
-        <role descr="thing regulated" f="ppt" n="1"/>
-      </roles>
-      <example name="regulate-v: stated regulator" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>The finding probably will support those who argue that the U.S. should regulate the class of asbestos including crocidolite more stringently than the common kind of asbestos, chrysotile, found in most schools and other buildings, Dr. Talcott said.</text>
-        <arg f="" n="0">the U.S.</arg>
-        <arg f="mod" n="m">should</arg>
-        <rel f="">regulate</rel>
-        <arg f="" n="1">the class of asbestos including crocidolite</arg>
-        <arg f="mnr" n="m">more stringently than the common kind of asbestos, chrysotile, found in most schools and other buildings</arg>
-      </example>
-      <example name="regulate-v: unstated agent" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>``Such research may ultimately result in the ability [*] to regenerate damaged tissues or to turn off genes that cause cancer'' or *trace* to regulate genes that cause Down's syndrome, the leading cause of mental retardation, according to an NIH summary.</text>
-        <arg f="" n="0">[*]</arg>
-        <rel f="">regulate</rel>
-        <arg f="" n="1">genes that cause Down's syndrome, the leading cause of mental retardation, according to an NIH summary</arg>
-      </example>
-      <example name="regulated-j" src="BOLT-4,5" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I 'm not against immigration but i think it should be more regulated .</text>
-        <arg f="" n="1">it</arg>
-        <arg f="mod" n="m">should</arg>
-        <arg f="ext" n="m">more</arg>
-        <rel f="">regulated</rel>
-      </example>
-      <example name="regulation-n: both args" src="" type="">
-        <text>British takeover regulations</text>
-        <arg f="" n="0">British</arg>
-        <arg f="" n="1">takeover</arg>
-        <rel f="">regulations</rel>
-      </example>
-      <example name="regulation-n: with arg 1" src="" type="">
-        <text>securities regulations</text>
-        <arg f="" n="1">securities</arg>
-        <rel f="">regulations</rel>
-      </example>
     </roleset>
   </predicate>
 </frameset>

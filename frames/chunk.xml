@@ -1,37 +1,49 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="chunk">
     <roleset id="chunk.01" name="put together in a chunk">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">chunk</alias>
+        <alias pos="v">chunk</alias>
       </aliases>
-      <note>CHUNK-V NOTES: Hand-corrected by Claire. (from chunk.01-v)</note>
       <roles>
         <role descr="agent chunking" f="PAG" n="0">
-          <vnrole vncls="29.10" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="classify-29.10" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity put into chunk" f="PPT" n="1">
-          <vnrole vncls="29.10" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="classify-29.10" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="chunk itself, group arg1 is chunked into" f="GOL" n="2">
-          <vnrole vncls="29.10" vntheta="Goal"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="classify-29.10" version="verbnet3.3">goal</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="Rags made dress" src="web usage" type="">
-        <text>She then touched Cinderella's rags and [they]-1 were chunked *-1 into a beautiful dress.</text>
-        <arg f="" n="1">*-1</arg>
-        <rel f="">chunked</rel>
-        <arg f="" n="2">into a beautiful dress</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="classify-29.10" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web usage" name="Rags made dress">
+        <text>She then touched Cinderella's rags and they were chunked into a beautiful dress.</text>
+        <rel relloc="8">chunked</rel>
+        <arg f="" n="1" start="6" end="6">they</arg>
+        <arg f="" n="2" start="9" end="12">into a beautiful dress.</arg>
       </example>
-      <example name="All arguments" src="web usage" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web usage" name="All arguments">
         <text>In order to import all of the contacts, they chunked them into 26 files containing 5000 records each.</text>
-        <arg f="prp" n="m">In order to import all of the contacts</arg>
-        <arg f="" n="0">they</arg>
-        <rel f="">chunked</rel>
-        <arg f="" n="1">them</arg>
-        <arg f="" n="2">into 26 files containing 5000 records each.</arg>
+        <rel relloc="9">chunked</rel>
+        <arg f="PRP" n="m" start="0" end="7">In order to import all of the contacts,</arg>
+        <arg f="" n="0" start="8" end="8">they</arg>
+        <arg f="" n="1" start="10" end="10">them</arg>
+        <arg f="" n="2" start="11" end="17">into 26 files containing 5000 records each.</arg>
       </example>
+      <note>CHUNK-V NOTES: Hand-corrected by Claire. (from chunk.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

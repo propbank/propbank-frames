@@ -1,131 +1,151 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="announce">
     <roleset id="announce.01" name="say for all to hear">
       <aliases>
-        <alias framenet="Omen Statement" pos="v" verbnet="">announce</alias>
-        <alias framenet="" pos="n" verbnet="">announcement</alias>
-        <alias framenet="" pos="n" verbnet="">annnunciation</alias>
-        <alias framenet="" pos="n" verbnet="">announcing</alias>
-        <alias framenet="" pos="l" verbnet="">make_announcement</alias>
-        <alias framenet="" pos="l" verbnet="">do_announcing</alias>
+        <alias pos="v">announce</alias>
+        <alias pos="n">announcement</alias>
+        <alias pos="n">annnunciation</alias>
+        <alias pos="n">announcing</alias>
+        <alias pos="l">make_announcement</alias>
+        <alias pos="l">do_announcing</alias>
+        <argalias pos="n" arg="0">announcer</argalias>
       </aliases>
-      <note>ANNOUNCE-V NOTES: Based on Big Corpus, comparison to 'say'. Member of Vncls reflexive_appearance-48.1.2, say-37.7-1 (from announce.01-v)</note>
-      <note>ANNOUNCEMENT-N NOTES: Roleset based on verb announce.01, OntoNotes grouping announcement-n senses 1&amp; 2; Maps to VN classes reflexive_appearance-48.1.2 and say-37.7-1. (from announcement.01-n)</note>
       <roles>
         <role descr="announcer" f="PAG" n="0">
-          <vnrole vncls="37.7-1" vntheta="Agent"/>
-          <vnrole vncls="48.1.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="say-37.7-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="reflexive_appearance-48.1.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">speaker</rolelink>
+          </rolelinks>
         </role>
-        <role descr="utterance" f="ppt" n="1">
-          <vnrole vncls="37.7-1" vntheta="Topic"/>
-          <vnrole vncls="48.1.2" vntheta="Theme"/>
+        <role descr="utterance" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="say-37.7-1" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="VerbNet" class="reflexive_appearance-48.1.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">message</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
-        <role descr="hearer" f="gol" n="2">
-          <vnrole vncls="37.7-1" vntheta="Recipient"/>
-          <vnrole vncls="48.1.2" vntheta="Recipient"/>
+        <role descr="hearer" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="say-37.7-1" version="verbnet3.3">recipient</rolelink>
+            <rolelink resource="VerbNet" class="reflexive_appearance-48.1.2" version="verbnet3.3">recipient</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">addressee</rolelink>
+          </rolelinks>
         </role>
-        <role descr="attribute of arg1" f="vsp" n="3"/>
+        <role descr="attribute of arg1" f="VSP" n="3"/>
       </roles>
-      <example name="announce-v: transitive" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Omen" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Statement" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="say-37.7-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="reflexive_appearance-48.1.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Contact.PublicStatementInPerson.Broadcast" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Broadcast" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="announce-v.1" src="annot-overlap" confidence="0.1">205</lexlink>
+        <lexlink resource="onsense" version="on5" class="announcement-n.1" src="annot-overlap" confidence="0.1">27</lexlink>
+        <lexlink resource="onsense" version="on5" class="announce-v.2" src="annot-overlap" confidence="0.1">6</lexlink>
+      </lexlinks>
+      <example src="" name="announce-v: transitive">
         <text>A Lorillard spokeswoman announced "This is an old story."</text>
-        <arg f="" n="0">A Lorillard spokeswoman</arg>
-        <rel f="">announced</rel>
-        <arg f="" n="1">"This is an old story."</arg>
+        <rel relloc="3">announced</rel>
+        <arg f="" n="0" start="0" end="2">A Lorillard spokeswoman</arg>
+        <arg f="" n="1" start="4" end="8">"This is an old story."</arg>
       </example>
-      <example name="announce-v: fronted" src="" type="">
+      <example src="" name="announce-v: fronted">
         <text>[Kent cigarettes were sold]-1, the company announced *Trace*-1</text>
-        <arg f="" n="0">the company</arg>
-        <rel f="">announced</rel>
-        <arg f="" n="1">*Trace*</arg>
+        <rel relloc="6">announced</rel>
+        <arg f="" n="0" start="4" end="5">the company</arg>
+        <arg f="" n="1" start="7" end="7">*Trace*-1</arg>
       </example>
-      <example name="announce-v: Inverted" src="" type="">
+      <example src="" name="announce-v: Inverted">
         <text>What matters is what advertisers will pay, announced *T* Newsweek's chairman</text>
-        <rel f="">announced</rel>
-        <arg f="" n="1">*T*</arg>
-        <arg f="" n="0">Newsweek's chairman</arg>
+        <rel relloc="7">announced</rel>
+        <arg f="" n="1" start="8" end="8">*T*</arg>
+        <arg f="" n="0" start="9" end="10">Newsweek's chairman</arg>
       </example>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1031" type="">
+      <example src="ontonotes mz/sinorama/10/ectb_1031" name="ARG0 and ARG1">
         <text>In early September the MOFA announced that , based on efficiency evaluations , the government would close its representative offices in the African countries of the Congo , Angola , and Madagascar .</text>
-        <arg f="tmp" n="m">In early September</arg>
-        <arg f="" n="0">the MOFA</arg>
-        <rel f="">announced</rel>
-        <arg f="" n="1">that , based on efficiency evaluations , the government would close its representative offices in the African countries of the Congo , Angola , and Madagascar</arg>
+        <rel relloc="5">announced</rel>
+        <arg f="TMP" n="m" start="0" end="2">In early September</arg>
+        <arg f="" n="0" start="3" end="4">the MOFA</arg>
+        <arg f="" n="1" start="6" end="31">that , based on efficiency evaluations , the government would close its representative offices in the African countries of the Congo , Angola , and Madagascar</arg>
       </example>
-
-      <example name="ARG0 and ARG2 and ARG1" src="ontonotes mz/sinorama/10/ectb_1030" type="">
+      <example src="ontonotes mz/sinorama/10/ectb_1030" name="ARG0 and ARG2 and ARG1">
         <text>In the case of the Dominican Republic , for example , supporters of President Mejia announced to the media on the eve of President Chen 's arrival that mainland China was planning to build a large thermal power plant in their country .</text>
-        <arg f="prd" n="m">In the case of the Dominican Republic</arg>
-        <arg f="dis" n="m">for example</arg>
-        <arg f="" n="0">supporters of President Mejia</arg>
-        <rel f="">announced</rel>
-        <arg f="" n="2">to the media</arg>
-        <arg f="tmp" n="m">on the eve of President Chen 's arrival</arg>
-        <arg f="" n="1">that mainland China was planning to build a large thermal power plant in their country</arg>
+        <rel relloc="15">announced</rel>
+        <arg f="PRD" n="m" start="0" end="6">In the case of the Dominican Republic</arg>
+        <arg f="DIS" n="m" start="8" end="9">for example</arg>
+        <arg f="" n="0" start="11" end="14">supporters of President Mejia</arg>
+        <arg f="" n="2" start="16" end="18">to the media</arg>
+        <arg f="TMP" n="m" start="19" end="26">on the eve of President Chen 's arrival</arg>
+        <arg f="" n="1" start="27" end="41">that mainland China was planning to build a large thermal power plant in their country</arg>
       </example>
-
-      <example name="ARG0 and ARG1 and ARG3" src="ontonotes wb/a2e/00/a2e_0013" type="">
+      <example src="ontonotes wb/a2e/00/a2e_0013" name="ARG0 and ARG1 and ARG3">
         <text>Even the one we thought was foolish announced mourning on Sadam 's death .</text>
-        <arg f="" n="0">Even the one we thought was foolish</arg>
-        <rel f="">announced</rel>
-        <arg f="" n="1">mourning</arg>
-        <arg f="" n="3">on Sadam 's death</arg>
+        <rel relloc="7">announced</rel>
+        <arg f="" n="0" start="0" end="6">Even the one we thought was foolish</arg>
+        <arg f="" n="1" start="8" end="8">mourning</arg>
+        <arg f="" n="3" start="9" end="12">on Sadam 's death</arg>
       </example>
-
-      <example name="ARG1" src="ontonotes mz/sinorama/10/ectb_1061" type="">
+      <example src="ontonotes mz/sinorama/10/ectb_1061" name="ARG1">
         <text>After the ruling was announced , the ruling and opposition camps both declared victory and eventually negotiated an agreement on the question of whether Lien Chan would be allowed to serve as premier .</text>
-        <arg f="" n="1">the ruling</arg>
-        <rel f="">announced</rel>
+        <rel relloc="4">announced</rel>
+        <arg f="" n="1" start="1" end="2">the ruling</arg>
       </example>
-
-      <example name="announcement-n: Fragment, args 0 &amp; 1" src="NomBank Frames" type="">
+      <example src="NomBank Frames" name="announcement-n: Fragment, args 0 &amp; 1">
         <text>a vitriolic U.S. response to Sony Corp. 's announcement of itspurchase of Columbia Pictures Entertainment Inc.</text>
-        <arg f="" n="0">Sony Corp. 's</arg>
-        <rel f="">announcement</rel>
-        <arg f="" n="1">of its purchase of Columbia Pictures Entertainment Inc.</arg>
+        <rel relloc="8">announcement</rel>
+        <arg f="" n="0" start="5" end="7">Sony Corp. 's</arg>
+        <arg f="" n="1" start="9" end="15">of itspurchase of Columbia Pictures Entertainment Inc.</arg>
       </example>
-      <example name="announcement-n: NP only, Args 0 &amp; 1" src="NomBank Frames" type="">
+      <example src="NomBank Frames" name="announcement-n: NP only, Args 0 &amp; 1">
         <text>his withdrawal announcement</text>
-        <arg f="" n="0">his</arg>
-        <arg f="" n="1">withdrawal</arg>
-        <rel f="">announcement</rel>
+        <rel relloc="2">announcement</rel>
+        <arg f="" n="0" start="0" end="0">his</arg>
+        <arg f="" n="1" start="1" end="1">withdrawal</arg>
       </example>
-      <example name="announcement-n: Arg 1 only" src="ON sense 1" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="ON sense 1" name="announcement-n: Arg 1 only">
         <text>Announcements of local births, deaths and weddings can be found in the daily newspaper.</text>
-        <rel f="">Announcements</rel>
-        <arg f="" n="1">of births, deats, and weddings</arg>
+        <rel relloc="0">Announcements</rel>
+        <arg f="" n="1" start="2" end="6">local births, deaths and weddings</arg>
       </example>
-      <example name="announcement-n: All arguments, referring to babies" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="announcement-n: All arguments, referring to babies">
         <text>Doing your best to keep him or her occupied and busy in your lap is the most effective way to minimize his or her announcement of discomfort to everyone.</text>
-        <arg f="" n="0">his or her</arg>
-        <rel f="">announcement</rel>
-        <arg f="" n="1">of discomfort</arg>
-        <arg f="" n="2">to everyone</arg>
+        <rel relloc="24">announcement</rel>
+        <arg f="" n="0" start="21" end="23">his or her</arg>
+        <arg f="" n="1" start="25" end="26">of discomfort</arg>
+        <arg f="" n="2" start="27" end="28">to everyone.</arg>
       </example>
-      <example name="do_announcing-l" src="" type="">
+      <example src="" name="do_announcing-l">
         <text>I 'm still doing my TV announcing and my weekend radio stuff , so that money will help .</text>
-        <arg f="" n="0">I</arg>
-        <arg f="tmp" n="m">still</arg>
-        <arg f="lvb" n="m">doing</arg>
-        <arg f="gol" n="m">TV</arg>
-        <rel f="">announcing</rel>
+        <rel relloc="6">announcing</rel>
+        <arg f="" n="0" start="0" end="0">I</arg>
+        <arg f="TMP" n="m" start="2" end="2">still</arg>
+        <arg f="LVB" n="m" start="3" end="3">doing</arg>
+        <arg f="GOL" n="m" start="5" end="5">TV</arg>
       </example>
-      <example name="annunciation-n" src="" type="">
+      <example src="" name="annunciation-n">
         <text>And what makes this feature in his character still more remarkable is a difference which we trace between his annunciation of the truths which he brought from heaven and his allusions to his own experiences.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">annunciation</rel>
-        <arg f="" n="1">of the truths which he brought from heaven</arg>
+        <rel relloc="19">annunciation</rel>
+        <arg f="" n="0" start="6" end="6">his</arg>
+        <arg f="" n="1" start="20" end="27">of the truths which he brought from heaven</arg>
       </example>
-      <example name="make_announcement-l" src="Pig Boy The Genesis (Google books)" type="">
+      <example src="Pig Boy The Genesis (Google books)" name="make_announcement-l">
         <text>It was just before the sun set one day when everyone was sitting around talking at Susie Mae's house when-1 Clyde T. made the announcement that he was going to get married *-1</text>
-        <arg f="" n="0">Clyde T.</arg>
-        <arg f="lvb" n="m">made</arg>
-        <rel f="">announcement</rel>
-        <arg f="" n="1">that he was going to get married</arg>
-        <arg f="tmp" n="m">*-1</arg>
+        <rel relloc="24">announcement</rel>
+        <arg f="" n="0" start="20" end="21">Clyde T.</arg>
+        <arg f="LVB" n="m" start="22" end="22">made</arg>
+        <arg f="" n="1" start="25" end="31">that he was going to get married</arg>
+        <arg f="TMP" n="m" start="32" end="32">*-1</arg>
       </example>
+      <note>ANNOUNCE-V NOTES: Based on Big Corpus, comparison to 'say'. Member of Vncls reflexive_appearance-48.1.2, say-37.7-1 (from announce.01-v)</note>
+      <note>ANNOUNCEMENT-N NOTES: Roleset based on verb announce.01, OntoNotes grouping announcement-n senses 1&amp; 2; Maps to VN classes reflexive_appearance-48.1.2 and say-37.7-1. (from announcement.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

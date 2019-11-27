@@ -1,83 +1,97 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="unify">
     <roleset id="unify.01" name="join together, joining into a unified whole">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">unification</alias>
-        <alias framenet="Cause_to_amalgamate Amalgamation" pos="v" verbnet="">unify</alias>
+        <alias pos="n">unification</alias>
+        <alias pos="v">unify</alias>
       </aliases>
+      <roles>
+        <role descr="joiner, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="amalgamate-22.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_to_amalgamate" version="1.7">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="first (or all) thing(s) unified" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="amalgamate-22.2" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Amalgamation" version="1.7">part_1</rolelink>
+            <rolelink resource="FrameNet" class="Cause_to_amalgamate" version="1.7">part_1</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="second thing unified, if separate from arg1" f="PPT" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="amalgamate-22.2" version="verbnet3.3">co-patient</rolelink>
+            <rolelink resource="FrameNet" class="Amalgamation" version="1.7">part_2</rolelink>
+            <rolelink resource="FrameNet" class="Cause_to_amalgamate" version="1.7">part_2</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="unification in what domain" f="VSP" n="3"/>
+        <role descr="unified whole" f="PRD" n="4"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Amalgamation" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Cause_to_amalgamate" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="amalgamate-22.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="unification-n.1" src="annot-overlap" confidence="0.1">14</lexlink>
+        <lexlink resource="onsense" version="on5" class="unify-v.1" src="annot-overlap" confidence="0.1">14</lexlink>
+      </lexlinks>
+      <example src="" name="simple transitive">
+        <text>Arguing that the separate financial marketplaces acted as one, and concluding that the crash had ``raised the possibility of a full-scale financial system breakdown,'' the presidential task force called for establishing [a super-regulator]-1 to oversee the markets, to make margins consistent across markets, *trace*-1 to unify clearing systems and to install circuit breakers.</text>
+        <rel relloc="45">unify</rel>
+        <arg f="" n="0" start="43" end="43">*trace*-1</arg>
+        <arg f="" n="1" start="46" end="47">clearing systems</arg>
+      </example>
+      <example src="probably COCA (2018 example fix)" name="ARG2">
+        <text>It effectively attempted to unified church with state.</text>
+        <rel relloc="4">unified</rel>
+        <arg f="" n="0" start="0" end="0">It</arg>
+        <arg f="" n="1" start="5" end="5">church</arg>
+        <arg f="" n="2" start="6" end="7">with state.</arg>
+      </example>
+      <example src="ontonotes mz/sinorama/10/ectb_1026" name="unk">
+        <text>Therefore , as long as the CCP regime has no intention to use military force against Taiwan , I pledge that during my term in office , I will not declare independence , I will not change the national title , I will not push forth the inclusion of the so - called " state - to - state " description in the Constitution , and I will not promote a referendum to change the status quo in regard to the question of independence or unification .</text>
+        <rel relloc="85">unification</rel>
+      </example>
+      <example src="" name="adjectival">
+        <text>That's why ``we have been working hard to develop a single, more unified presence in Europe,'' said A.J.C. Smith, Marsh&amp; McLennan's president, at a London news conference yesterday.</text>
+        <rel relloc="12">unified</rel>
+        <arg f="EXT" n="m" start="11" end="11">more</arg>
+        <arg f="" n="1" start="13" end="13">presence</arg>
+      </example>
+      <example src="" name="just arg3 and LOC">
+        <text>the chances for economic unification in the area and economic recovery in Serbia are slim at best .</text>
+        <rel relloc="4">unification</rel>
+        <arg f="" n="3" start="3" end="3">economic</arg>
+        <arg f="LOC" n="m" start="5" end="7">in the area</arg>
+      </example>
+      <example src="internet" name="args 1 and 3">
+        <text>Yugoslavs Again Push for Economic Unification of Albania and Yugoslavia.</text>
+        <rel relloc="5">Unification</rel>
+        <arg f="" n="3" start="4" end="4">Economic</arg>
+        <arg f="" n="1" start="6" end="9">of Albania and Yugoslavia.</arg>
+      </example>
+      <example src="" name="with args 1 and 4">
+        <text>... to encourage the island's formal unification into the People's Republic</text>
+        <rel relloc="6">unification</rel>
+        <arg f="" n="1" start="3" end="4">the island's</arg>
+        <arg f="MNR" n="m" start="5" end="5">formal</arg>
+        <arg f="" n="4" start="7" end="10">into the People's Republic</arg>
+      </example>
+      <example src="" name="with args 1 and 4">
+        <text>The unification of PropBank's frame files into semantically-based files took far longer than anyone expected!</text>
+        <rel relloc="1">unification</rel>
+        <arg f="" n="1" start="2" end="5">of PropBank's frame files</arg>
+        <arg f="" n="4" start="6" end="8">into semantically-based files</arg>
+      </example>
       <note>UNIFY-V NOTES: Verbnet entry amalgamate-22.2-2-1. Framenet entry Amalgamate. (from unify.01-v)</note>
       <note>UNIFICATION-N NOTES: Added by Julia based on unify-v.01. Corresponds to VNcls amalgamate-22.2-2-1. (from unification.01-n)</note>
-      <roles>
-        <note>arg3-domain of unification added based on corpus examples, as it may occur in addition to args 1&amp;  2. (from unification.01-n)</note>
-        <role descr="joiner, agent" f="pag" n="0">
-          <vnrole vncls="22.2" vntheta="agent"/>
-        </role>
-        <role descr="first (or all) thing(s) unified" f="ppt" n="1">
-          <vnrole vncls="22.2" vntheta="patient"/>
-        </role>
-        <role descr="second thing unified, if separate from arg1" f="ppt" n="2">
-          <vnrole vncls="22.2" vntheta="co-patient"/>
-        </role>
-        <role descr="unification in what domain" f="vsp" n="3"/>
-        <role descr="unified whole" f="prd" n="4"/>
-      </roles>
-      <example name="simple transitive" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>Arguing that the separate financial marketplaces acted as one, and concluding that the crash had ``raised the possibility of a full-scale financial system breakdown,'' the presidential task force called for establishing [a super-regulator]-1 to oversee the markets, to make margins consistent across markets, *trace*-1 to unify clearing systems and to install circuit breakers.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">unify</rel>
-        <arg f="" n="1">clearing systems</arg>
-      </example>
-      <example name="ARG2" src="probably COCA (2018 example fix)" type="">
-        <text>It effectively attempted to unified church with state.</text>
-        <rel f="">unified</rel>
-        <arg f="" n="0">It</arg>
-        <arg f="" n="1">church</arg>
-        <arg f="" n="2">with state.</arg>
-      </example>
-
-      <example name="unk" src="ontonotes mz/sinorama/10/ectb_1026" type="">
-        <text>Therefore , as long as the CCP regime has no intention to use military force against Taiwan , I pledge that during my term in office , I will not declare independence , I will not change the national title , I will not push forth the inclusion of the so - called " state - to - state " description in the Constitution , and I will not promote a referendum to change the status quo in regard to the question of independence or unification .</text>
-        <rel f="">unification</rel>
-      </example>
-
-      <example name="adjectival" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>That's why ``we have been working hard to develop a single, more unified presence in Europe,'' said A.J.C. Smith, Marsh&amp; McLennan's president, at a London news conference yesterday.</text>
-        <arg f="ext" n="m">more</arg>
-        <rel f="">unified</rel>
-        <arg f="" n="1">presence</arg>
-      </example>
-      <example name="just arg3 and LOC" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>the chances for economic unification in the area and economic recovery in Serbia are slim at best .</text>
-        <arg f="" n="3">economic</arg>
-        <rel f="">unification</rel>
-        <arg f="loc" n="m">in the area</arg>
-      </example>
-      <example name="args 1 and 3" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Yugoslavs Again Push for Economic Unification of Albania and Yugoslavia.</text>
-        <arg f="" n="3">Economic</arg>
-        <rel f="">Unification</rel>
-        <arg f="" n="1">of Albania and Yugoslavia</arg>
-      </example>
-      <example name="with args 1 and 4" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>... to encourage the island's formal unification into the People's Republic</text>
-        <arg f="" n="1">the island's</arg>
-        <arg f="mnr" n="m">formal</arg>
-        <rel f="">unification</rel>
-        <arg f="" n="4">into the People's Republic</arg>
-      </example>
-      <example name="with args 1 and 4" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The unification of PropBank's frame files into semantically-based files took far longer than anyone expected!</text>
-        <rel f="">unification</rel>
-        <arg f="" n="1">of PropBank's frame files</arg>
-        <arg f="" n="4">into semantically based files</arg>
-      </example>
+      <note>arg3-domain of unification added based on corpus examples, as it may occur in addition to args 1&amp;  2. (from unification.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

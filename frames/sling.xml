@@ -1,41 +1,54 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="sling">
     <roleset id="sling.01" name="sling">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">sling</alias>
+        <alias pos="v">sling</alias>
       </aliases>
-      <note>SLING-V NOTES: Member of VNcls throw-17.1-1, put-9.1. Updated by Julia, 11/2010. (from sling.01-v)</note>
       <roles>
-        <note>Arg2 only used for the target, not the location of the slinging. (from sling.01-v)</note>
         <role descr="slinger" f="PAG" n="0">
-          <vnrole vncls="17.1-1" vntheta="Agent"/>
-          <vnrole vncls="9.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="throw-17.1-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="put-9.1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing slung" f="PPT" n="1">
-          <vnrole vncls="17.1-1" vntheta="Theme"/>
-          <vnrole vncls="9.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="throw-17.1-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="put-9.1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="target" f="gol" n="2">
-          <vnrole vncls="17.1-1" vntheta="Destination"/>
-          <vnrole vncls="9.1" vntheta="Destination"/>
+        <role descr="target" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="throw-17.1-1" version="verbnet3.3">destination</rolelink>
+            <rolelink resource="VerbNet" class="put-9.1" version="verbnet3.3">destination</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="mud slinging" src="" type="">
-        <text>A lot of mud was slung [*-1] on both sides of this race.</text>
-        <rel f="">slung</rel>
-        <arg f="" n="1">[*-1]</arg>
-        <arg f="loc" n="m">on both sides of this race</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="throw-17.1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="put-9.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="mud slinging">
+        <text>A lot of mud was slung [*] on both sides of this race.</text>
+        <rel relloc="5">slung</rel>
+        <arg f="" n="1" start="6" end="6">[*]</arg>
+        <arg f="LOC" n="m" start="7" end="12">on both sides of this race.</arg>
       </example>
-      <example name="with target" src="internet" type="-">
-        <inflection aspect="ns" form="infinitive" person="third" tense="past" voice="active"/>
-        <text>I walked out when-1 [the monkeys]-2 started *pro*-2 to sling their poop at each other *trace*-1.</text>
-        <arg f="" n="0">*pro*-2</arg>
-        <rel f="">sling</rel>
-        <arg f="" n="1">their poop</arg>
-        <arg f="" n="2">at each other</arg>
-        <arg f="tmp" n="m">*trace*-1</arg>
+      <example src="internet" name="with target">
+        <text>I walked out when-1 the monkeys started to sling their poop at each other *trace*-1.</text>
+        <rel relloc="8">sling</rel>
+        <arg f="" n="0" start="4" end="5">the monkeys</arg>
+        <arg f="" n="1" start="9" end="10">their poop</arg>
+        <arg f="" n="2" start="11" end="13">at each other</arg>
+        <arg f="TMP" n="m" start="14" end="14">*trace*-1.</arg>
       </example>
+      <note>SLING-V NOTES: Member of VNcls throw-17.1-1, put-9.1. Updated by Julia, 11/2010. (from sling.01-v)</note>
+      <note>Arg2 only used for the target, not the location of the slinging. (from sling.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,89 +1,103 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="vary">
     <roleset id="vary.01" name="experience changes in scale, variety, changing">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">variable</alias>
-        <alias framenet="" pos="n" verbnet="">variation</alias>
-        <alias framenet="Similarity Cause_change Diversity" pos="v" verbnet="">vary</alias>
-        <alias framenet="" pos="j" verbnet="">varied</alias>
-        <alias framenet="" pos="j" verbnet="">variant</alias>
-    <alias framenet="" pos="n" verbnet="">variance</alias>
+        <alias pos="j">variable</alias>
+        <alias pos="n">variation</alias>
+        <alias pos="v">vary</alias>
+        <alias pos="j">varied</alias>
+        <alias pos="j">variant</alias>
+        <alias pos="n">variance</alias>
       </aliases>
-      
       <roles>
-        <role descr="causer of motion" f="pag" n="0">
-          <vnrole vncls="45.4" vntheta="agent"/>
+        <role descr="causer of motion" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing moving" f="ppt" n="1">
-          <vnrole vncls="45.4" vntheta="patient"/>
-          <vnrole vncls="45.6-1" vntheta="patient"/>
-          <vnrole vncls="23.4" vntheta="theme"/>
+        <role descr="thing moving" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="VerbNet" class="45.6-1" version="UNK">patient</rolelink>
+            <rolelink resource="VerbNet" class="differ-23.4" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="EXT or MNR" f="ext" n="2">
-          <vnrole vncls="45.6-1" vntheta="extent"/>
-          <vnrole vncls="45.4" vntheta="instrument"/>
+        <role descr="EXT or MNR" f="EXT" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="45.6-1" version="UNK">extent</rolelink>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">instrument</rolelink>
+          </rolelinks>
         </role>
-        <role descr="start point" f="dir" n="3"/>
-        <role descr="end point" f="gol" n="4"/>
-        <role descr="medium" f="prd" n="5">
-          <vnrole vncls="45.6-1" vntheta="attribute"/>
+        <role descr="start point" f="DIR" n="3"/>
+        <role descr="end point" f="GOL" n="4"/>
+        <role descr="medium" f="PRD" n="5">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="45.6-1" version="UNK">attribute</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="unaccusative" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_change" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Similarity" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Diversity" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="45.6-1" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="differ-23.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="vary-v.1" src="annot-overlap" confidence="0.1">38</lexlink>
+        <lexlink resource="onsense" version="on5" class="vary-v.2" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="" name="unaccusative">
         <text>Statistics on acquisitions by foreigners vary in detail, because unlike Sansui, which is listed on the Tokyo and Osaka stock exchanges, most of the Japanese companies acquired by foreigners are privately held .</text>
-        <arg f="" n="1">Statistics on acquisitions by foreigners</arg>
-        <rel f="">vary</rel>
-        <arg f="mnr" n="5">in detail</arg>
-        <arg f="cau" n="m">because unlike Sansui , which is listed on the Tokyo and Osaka stock exchanges , most of the Japanese companies acquired by foreigners are privately held</arg>
+        <rel relloc="5">vary</rel>
+        <arg f="" n="1" start="0" end="4">Statistics on acquisitions by foreigners</arg>
+        <arg f="MNR" n="5" start="6" end="7">in detail,</arg>
+        <arg f="CAU" n="m" start="8" end="31">because unlike Sansui, which is listed on the Tokyo and Osaka stock exchanges, most of the Japanese companies acquired by foreigners are privately held</arg>
       </example>
-      <example name="pseudopassive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>But they said [the C$30-a-share bid, which was due to expire Monday]-1, may still be extended or varied *trace*-1.</text>
-        <arg f="mod" n="m">may</arg>
-        <arg f="tmp" n="m">still</arg>
-        <rel f="">varied</rel>
-        <arg f="" n="1">*trace*-1</arg>
+      <example src="" name="pseudopassive">
+        <text>But they said the C$30-a-share bid, which was due to expire Monday, may still be extended or varied *trace*.</text>
+        <rel relloc="17">varied</rel>
+        <arg f="MOD" n="m" start="12" end="12">may</arg>
+        <arg f="TMP" n="m" start="13" end="13">still</arg>
+        <arg f="" n="1" start="3" end="11">the C$30-a-share bid, which was due to expire Monday,</arg>
       </example>
-      <example name="agentive" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="present" voice="active"/>
+      <example src="" name="agentive">
         <text>Typically, momey-fund yields beat comparable short-term investments because portfolio managers can vary maturities and go after the highest rates.</text>
-        <arg f="" n="0">portfolio managers</arg>
-        <arg f="mod" n="m">can</arg>
-        <rel f="">vary</rel>
-        <arg f="" n="1">maturities</arg>
+        <rel relloc="11">vary</rel>
+        <arg f="" n="0" start="8" end="9">portfolio managers</arg>
+        <arg f="MOD" n="m" start="10" end="10">can</arg>
+        <arg f="" n="1" start="12" end="12">maturities</arg>
       </example>
-      <example name="ARG1" src="ontonotes mz/sinorama/10/ectb_1057" type="">
+      <example src="ontonotes mz/sinorama/10/ectb_1057" name="ARG1">
         <text>Then there are the assorted golden animals or other objects that are variations on the theme of the golden hen , the Chinese equivalent of the goose that lays the golden egg .</text>
-        <rel f="">variations</rel>
-        <arg f="" n="1">on the theme of the golden hen , the Chinese equivalent of the goose that lays the golden egg</arg>
+        <rel relloc="12">variations</rel>
+        <arg f="" n="1" start="13" end="31">on the theme of the golden hen , the Chinese equivalent of the goose that lays the golden egg</arg>
       </example>
-
-      <example name="adjectival rel: varied" src="BOLT-1" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="BOLT-1" name="adjectival rel: varied">
         <text>The problem is that funding of schools is so small and varied .</text>
-        <arg f="" n="1">funding of schools</arg>
-        <arg f="" n="2">so</arg>
-        <rel f="">varied</rel>
+        <rel relloc="11">varied</rel>
+        <arg f="" n="1" start="4" end="6">funding of schools</arg>
+        <arg f="" n="2" start="8" end="8">so</arg>
       </example>
-      <example name="adjectival rel: variant" src="medi-seedcorpus" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="medi-seedcorpus" name="adjectival rel: variant">
         <text>The common femoral artery has a high bifurcation at the mid femoral head level and the configuration of the bifurcation is variant so that the profunda arises anterolateral related to the SFA .</text>
-        <arg f="" n="1">the configuration of the bifurcation</arg>
-        <rel f="">variant</rel>
-        <arg f="adv" n="m">so that the profunda arises anterolateral related tot he SFA</arg>
+        <rel relloc="21">variant</rel>
+        <arg f="" n="1" start="15" end="19">the configuration of the bifurcation</arg>
+        <arg f="ADV" n="m" start="22" end="31">so that the profunda arises anterolateral related to the SFA</arg>
       </example>
-      <example name="" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="">
         <text>Variegated rubber plants sport attractive, waxy leaves that are noted for their variation of color from pale cream to deep evergreen.</text>
-        <arg f="" n="1">their</arg>
-        <rel f="">variation</rel>
-        <arg f="" n="5">of color</arg>
-        <arg f="" n="3">from pale cream</arg>
-        <arg f="" n="4">to deep evergreen</arg>
+        <rel relloc="12">variation</rel>
+        <arg f="" n="1" start="11" end="11">their</arg>
+        <arg f="" n="5" start="13" end="14">of color</arg>
+        <arg f="" n="3" start="15" end="17">from pale cream</arg>
+        <arg f="" n="4" start="18" end="20">to deep evergreen.</arg>
       </example>
-    <note>VARY-V NOTES: Frames file for 'vary' based on sentences in financial subcorpus, adjectival usage 'varied' based on BOLT-1; adjectival 'variant' based on medi-seedcorpus. Member of VNcls calibratable_cos-45.6-1, other_cos-45.4, differ-23.4. Comparison with fluctuate. (from vary.01-v)
+      <note>VARY-V NOTES: Frames file for 'vary' based on sentences in financial subcorpus, adjectival usage 'varied' based on BOLT-1; adjectival 'variant' based on medi-seedcorpus. Member of VNcls calibratable_cos-45.6-1, other_cos-45.4, differ-23.4. Comparison with fluctuate. (from vary.01-v)
 
 VARIATION-N NOTES: (from variation.01-n)
 
@@ -92,33 +106,35 @@ VARIED-J NOTES: Automatically created by Julia as an alias file for unification.
 VARIABLE-J NOTES: Automatically created by Julia as an alias file for unification. (from variable.01-j)
 
 VARIANT-J NOTES: Automatically created by Julia as an alias file for unification. (from variant.01-j)</note>
-</roleset>
+    </roleset>
   </predicate>
-<predicate lemma="variance">
-<roleset id="variance.02" name="allow to act contrary to a rule or regulation,">
-<aliases>
-<alias framenet="" pos="n" verbnet="">variance</alias>
-</aliases>
-
-<roles>
-<role descr="allower" f="pag" n="0"/>
-<role descr="entity allowed to break the rule" f="ppt" n="1"/>
-<role descr="rule allowed to be broken" f="ppt" n="2"/>
-</roles>
-<example name="Common for building" src="" type="">
-<inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-<text>A zoning variance may only be granted if it meets all the requirements found in the state law.</text>
-<arg f="" n="2">zoning</arg>
-<rel f="">variance</rel>
-</example>
-<example name="Be careful with arg 1 and arg 2" src="" type="">
-<inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-<text>Donald Trump's zoning variance didn't come through.</text>
-<arg f="" n="1">Donald Trump's</arg>
-<arg f="" n="2">zoning</arg>
-<rel f="">variance</rel>
-</example>
-<note>variance.01: VARIANCE-N NOTES: Based on Bolt data. No comparison. No VN or FN classes. Framed by Katie. (from variance.01-n)</note>
-</roleset>
-</predicate>
+  <predicate lemma="variance">
+    <roleset id="variance.02" name="allow to act contrary to a rule or regulation,">
+      <aliases>
+        <alias pos="n">variance</alias>
+      </aliases>
+      <roles>
+        <role descr="allower" f="PAG" n="0"/>
+        <role descr="entity allowed to break the rule" f="PPT" n="1"/>
+        <role descr="rule allowed to be broken" f="PPT" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="Common for building">
+        <text>A zoning variance may only be granted if it meets all the requirements found in the state law.</text>
+        <rel relloc="2">variance</rel>
+        <arg f="" n="2" start="1" end="1">zoning</arg>
+      </example>
+      <example src="" name="Be careful with arg 1 and arg 2">
+        <text>Donald Trump's zoning variance didn't come through.</text>
+        <rel relloc="3">variance</rel>
+        <arg f="" n="1" start="0" end="1">Donald Trump's</arg>
+        <arg f="" n="2" start="2" end="2">zoning</arg>
+      </example>
+      <note>variance.01: VARIANCE-N NOTES: Based on Bolt data. No comparison. No VN or FN classes. Framed by Katie. (from variance.01-n)</note>
+    </roleset>
+  </predicate>
 </frameset>

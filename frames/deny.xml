@@ -1,68 +1,95 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="deny">
     <roleset id="deny.01" name="turn down, reject">
       <aliases>
-        <alias framenet="Statement Affirm_or_deny" pos="v" verbnet="">deny</alias>
-        <alias framenet="" pos="n" verbnet="">denial</alias>
+        <alias pos="v">deny</alias>
+        <alias pos="n">denial</alias>
       </aliases>
-      <note>DENY-V NOTES: Member of VNcls conjecture-29.5-1. Comparison with 'approve'. (from deny.01-v)</note>
       <roles>
-        <role descr="denier" f="pag" n="0">
-          <vnrole vncls="29.5-1" vntheta="agent"/>
+        <role descr="denier" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="conjecture-29.5-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">speaker</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing denied" f="ppt" n="1">
-          <vnrole vncls="29.5-1" vntheta="predicate"/>
-          <vnrole vncls="29.5-1" vntheta="theme"/>
+        <role descr="thing denied" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="conjecture-29.5-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">message</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
-        <role descr="anti-benefactive: entity being denied arg1" f="gol" n="2"/>
+        <role descr="anti-benefactive: entity being denied arg1" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">addressee</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="transitive, no benefactive" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Affirm_or_deny" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Statement" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="conjecture-29.5-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Correspondence" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Broadcast" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="deny-v.1" src="annot-overlap" confidence="0.1">85</lexlink>
+        <lexlink resource="onsense" version="on5" class="deny-v.2" src="annot-overlap" confidence="0.1">16</lexlink>
+        <lexlink resource="onsense" version="on5" class="deny-v.3" src="annot-overlap" confidence="0.1">3</lexlink>
+      </lexlinks>
+      <example src="" name="transitive, no benefactive">
         <text>Earlier this year, the Fed denied an application by Continental Bank Corp. to purchase Grand Canyon State Bank in Scottsdale, Ariz., on grounds that Continental hadn't fully complied with the Community Reinvestment Act.</text>
-        <arg f="tmp" n="m">Earlier this year</arg>
-        <arg f="" n="0">the Fed</arg>
-        <rel f="">denied</rel>
-        <arg f="" n="1">an application by Continental Bank Corp. to purchase Grand Canyon State Bank in Scottsdale, Ariz.</arg>
-        <arg f="cau" n="m">on grounds that Continental hadn't fully complied with the Community Reinvestment Act</arg>
+        <rel relloc="5">denied</rel>
+        <arg f="TMP" n="m" start="0" end="2">Earlier this year,</arg>
+        <arg f="" n="0" start="3" end="4">the Fed</arg>
+        <arg f="" n="1" start="6" end="20">an application by Continental Bank Corp. to purchase Grand Canyon State Bank in Scottsdale, Ariz.,</arg>
+        <arg f="CAU" n="m" start="21" end="32">on grounds that Continental hadn't fully complied with the Community Reinvestment Act.</arg>
       </example>
-      <example name="deny an S" src="" type="">
+      <example src="" name="deny an S">
         <text>In affidavits filed yesterday in the Los Angeles court, Mr. Ross, Warner Bros. Chairman Robert Daly and President Semel deny that such an oral agreement was ever made.</text>
-        <arg f="loc" n="m">in affidavits filed yesterday in the Los Angeles court</arg>
-        <arg f="" n="0">Mr. Ross , Warner Bros. Chairman Robert Daly and President Semel</arg>
-        <rel f="">deny</rel>
-        <arg f="" n="1">that such an oral agreement was ever made</arg>
+        <rel relloc="19">deny</rel>
+        <arg f="LOC" n="m" start="0" end="8">In affidavits filed yesterday in the Los Angeles court,</arg>
+        <arg f="" n="0" start="9" end="18">Mr. Ross, Warner Bros. Chairman Robert Daly and President Semel</arg>
+        <arg f="" n="1" start="20" end="27">that such an oral agreement was ever made.</arg>
       </example>
-      <example name="ARG0 and ARG2 and ARG1" src="ontonotes nw/wsj/12/wsj_1216" type="">
+      <example src="ontonotes nw/wsj/12/wsj_1216" name="ARG0 and ARG2 and ARG1">
         <text>Lawmakers in Moscow voted to deny the Communist Party its 100 guaranteed seats in the Soviet Congress , meaning Gorbachev and other aides might have to face voters .</text>
-        <arg f="" n="0">Lawmakers in Moscow</arg>
-        <rel f="">deny</rel>
-        <arg f="" n="2">the Communist Party</arg>
-        <arg f="" n="1">its 100 guaranteed seats in the Soviet Congress</arg>
+        <rel relloc="5">deny</rel>
+        <arg f="" n="0" start="0" end="2">Lawmakers in Moscow</arg>
+        <arg f="" n="2" start="6" end="8">the Communist Party</arg>
+        <arg f="" n="1" start="9" end="16">its 100 guaranteed seats in the Soviet Congress</arg>
       </example>
-
+      <note>DENY-V NOTES: Member of VNcls conjecture-29.5-1. Comparison with 'approve'. (from deny.01-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="deniable">
     <roleset id="deniable.02" name="able to be denied">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">deniable</alias>
-        <alias framenet="" pos="n" verbnet="">deniability</alias>
+        <alias pos="j">deniable</alias>
+        <alias pos="n">deniability</alias>
       </aliases>
-      <note>DENIABLE-J NOTES: Added by Julia based on BOLT-6, relation to deny.01. (from deniable.01-j)</note>
       <roles>
-        <role descr="denier" f="pag" n="0"/>
-        <role descr="thing denied" f="ppt" n="1"/>
-        <role descr="hearer" f="gol" n="2"/>
+        <role descr="denier" f="PAG" n="0"/>
+        <role descr="thing denied" f="PPT" n="1"/>
+        <role descr="hearer" f="GOL" n="2"/>
       </roles>
-      <example name="arg1" src="BOLT-6" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="BOLT-6" name="arg1">
         <text>Nagoya 's Mayor Shintaro Ishihara uttered total nonsense : " when the ' Nanjing Incident ' happened in 1937 , normal acts of war are not deniable , which is a pity , but the so - called ' Nanjing Incident ' could not have happened . "</text>
-        <arg f="tmp" n="m">when the ' Nanjing Incident ' happened in 1937</arg>
-        <arg f="" n="1">normal acts of war</arg>
-        <arg f="neg" n="m">not</arg>
-        <rel f="">deniable</rel>
-        <arg f="adv" n="m">which is a pity</arg>
+        <rel relloc="26">deniable</rel>
+        <arg f="TMP" n="m" start="10" end="18">when the ' Nanjing Incident ' happened in 1937</arg>
+        <arg f="" n="1" start="20" end="23">normal acts of war</arg>
+        <arg f="NEG" n="m" start="25" end="25">not</arg>
+        <arg f="ADV" n="m" start="28" end="31">which is a pity</arg>
       </example>
+      <note>DENIABLE-J NOTES: Added by Julia based on BOLT-6, relation to deny.01. (from deniable.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

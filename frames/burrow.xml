@@ -1,38 +1,55 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="burrow">
     <roleset id="burrow.01" name="make, dig a burrow">
       <aliases>
-        <alias framenet="Self_motion" pos="v" verbnet="">burrow</alias>
-        <alias framenet="" pos="n" verbnet="">burrowing</alias>
+        <alias pos="v">burrow</alias>
+        <alias pos="n">burrowing</alias>
       </aliases>
-      <note>BURROW-V NOTES: Hand-corrected by Claire (from burrow.01-v)</note>
       <roles>
         <role descr="agent, burrower" f="PAG" n="0">
-          <vnrole vncls="35.5" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="rummage-35.5" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">source</rolelink>
+          </rolelinks>
         </role>
         <role descr="ground burrowed into, hole" f="LOC" n="1">
-          <vnrole vncls="35.5" vntheta="Location"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="rummage-35.5" version="verbnet3.3">location</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">goal</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">path</rolelink>
+          </rolelinks>
         </role>
         <role descr="Goal of burrowing, thing burrrowed for" f="PPT" n="2">
-          <vnrole vncls="35.5" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="rummage-35.5" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">self_mover</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="burrow-v: All arguments" src="web usage" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Self_motion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="rummage-35.5" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web usage" name="burrow-v: All arguments">
         <text>Some burrowed in the ground for insects, grubs and worms.</text>
-        <arg f="" n="0">Some</arg>
-        <rel f="">burrowed</rel>
-        <arg f="" n="1">in the ground</arg>
-        <arg f="" n="2">for insects, grubs, and worms.</arg>
+        <rel relloc="1">burrowed</rel>
+        <arg f="" n="0" start="0" end="0">Some</arg>
+        <arg f="" n="1" start="2" end="4">in the ground</arg>
+        <arg f="" n="2" start="5" end="9">for insects, grubs and worms.</arg>
       </example>
-      <example name="burrow-v: 'For' phrase as PRP instead of arg2" src="web usage" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web usage" name="burrow-v: 'For' phrase as PRP instead of arg2">
         <text>They burrowed in the ground for shelter.</text>
-        <arg f="" n="0">They</arg>
-        <rel f="">burrowed</rel>
-        <arg f="" n="1">in the ground</arg>
-        <arg f="prp" n="m">for shelter</arg>
+        <rel relloc="1">burrowed</rel>
+        <arg f="" n="0" start="0" end="0">They</arg>
+        <arg f="" n="1" start="2" end="4">in the ground</arg>
+        <arg f="PRP" n="m" start="5" end="6">for shelter.</arg>
       </example>
+      <note>BURROW-V NOTES: Hand-corrected by Claire (from burrow.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

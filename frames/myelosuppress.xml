@@ -1,51 +1,63 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="myelosuppress">
     <roleset id="myelosuppress.01" name="decreasing bone marrow activity, resulting in fewer red blood cells">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">myelosuppress</alias>
-        <alias framenet="" pos="n" verbnet="">myelosuppression</alias>
-        <alias framenet="" pos="j" verbnet="">myelosuppressive</alias>
-        <alias framenet="" pos="j" verbnet="">myelosuppressed</alias>
+        <alias pos="v">myelosuppress</alias>
+        <alias pos="n">myelosuppression</alias>
+        <alias pos="j">myelosuppressive</alias>
+        <alias pos="j">myelosuppressed</alias>
       </aliases>
+      <roles>
+        <role descr="cause of myelosuppression" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="concealment-16" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="subjugate-42.3" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity experiencing myelosuppression" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="concealment-16" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="VerbNet" class="subjugate-42.3" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="concealment-16" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="subjugate-42.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="myelosuppress-v">
+        <text>Busulfan (BU) is a clinically employed, well-established chemotherapeutic agent used *PRO* to myelosuppress patients prior to receiving BM transplants.</text>
+        <rel relloc="12">myelosuppress</rel>
+        <arg f="" n="0" start="10" end="10">*PRO*</arg>
+        <arg f="" n="1" start="13" end="13">patients</arg>
+        <arg f="TMP" n="m" start="14" end="18">prior to receiving BM transplants.</arg>
+      </example>
+      <example src="" name="myelosuppression-n">
+        <text>Myelosuppression of thrombocytes and monocytes is associated with a lack of synergy between chemotherapy and anti-VEGF treatment.</text>
+        <rel relloc="0">Myelosuppression</rel>
+        <arg f="" n="1" start="1" end="4">of thrombocytes and monocytes</arg>
+      </example>
+      <example src="" name="myelosuppressive-j">
+        <text>In contrast, VLB is myelosuppressive.</text>
+        <rel relloc="4">myelosuppressive.</rel>
+        <arg f="DIS" n="m" start="0" end="1">In contrast,</arg>
+        <arg f="" n="0" start="2" end="2">VLB</arg>
+      </example>
+      <example src="" name="myelosuppressed-j">
+        <text>To prevent infection when-1 patient is myelosuppressed *-1.</text>
+        <rel relloc="6">myelosuppressed</rel>
+        <arg f="" n="1" start="4" end="4">patient</arg>
+        <arg f="TMP" n="m" start="7" end="7">*-1.</arg>
+      </example>
       <note>MYELOSUPPRESSION-N NOTES: Relation to verb-suppress.01. (from myelosuppression.01-n)</note>
       <note>MYELOSUPPRESS-V NOTES: Automatically added alias.</note>
       <note>MYELOSUPPRESSED-J NOTES: Automatically added alias.</note>
       <note>MYELOSUPPRESSIVE-J NOTES: Automatically added alias.</note>
-      <roles>
-        <role descr="cause of myelosuppression" f="pag" n="0">
-          <vnrole vncls="16" vntheta="agent"/>
-          <vnrole vncls="42.3" vntheta="agent"/>
-        </role>
-        <role descr="entity experiencing myelosuppression" f="ppt" n="1">
-          <vnrole vncls="16" vntheta="patient"/>
-          <vnrole vncls="42.3" vntheta="patient"/>
-        </role>
-      </roles>
-      <example name="myelosuppress-v" src="" type="">
-        <text>Busulfan (BU) is a clinically employed, well-established chemotherapeutic agent used *PRO* to myelosuppress patients prior to receiving BM transplants.</text>
-        <arg f="" n="0">*PRO*</arg>
-        <rel f="">myelosuppress</rel>
-        <arg f="" n="1">patients</arg>
-        <arg f="tmp" n="m">prior to receiving BM transplants</arg>
-      </example>
-      <example name="myelosuppression-n" src="" type="">
-        <text>Myelosuppression of thrombocytes and monocytes is associated with a lack of synergy between chemotherapy and anti-VEGF treatment. </text>
-        <rel f="">Myelosuppression</rel>
-        <arg f="" n="1">of thrombocytes and monocytes</arg>
-      </example>
-      <example name="myelosuppressive-j" src="" type="">
-        <text>In contrast, VLB is myelosuppressive. </text>
-        <arg f="dis" n="m">In contrast</arg>
-        <arg f="" n="0">VLB</arg>
-        <rel f="">myelosuppressive</rel>
-      </example>
-      <example name="myelosuppressed-j" src="" type="">
-        <text>To prevent infection when-1 patient is myelosuppressed *-1. </text>
-        <arg f="" n="1">patient</arg>
-        <rel f="">myelosuppressed</rel>
-        <arg f="tmp" n="m">*-1</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

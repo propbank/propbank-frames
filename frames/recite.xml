@@ -1,60 +1,72 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="recite">
     <roleset id="recite.01" name="utter memorized passage">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">recital</alias>
-        <alias framenet="" pos="v" verbnet="">recite</alias>
+        <alias pos="n">recital</alias>
+        <alias pos="v">recite</alias>
       </aliases>
-      <note>RECITE-V NOTES: Based on WSJ. Member of Vncls performance-26.7-1-1, transfer_mesg-37.1.1. (from recite.01-v)</note>
-      <note>RECITAL-N NOTES: Based on ontonotes nouns. Comparison to recite.01-v. Recite.01 is a member of VN classes performance-26.7-1-1 andtransfer_mesg-37.1.1. Framed by Katie. (from recital.01-n)</note>
       <roles>
-        <note>This is not limited to voicing of memorized passages, but includes any memorized performance, such as insturmental recitals (from recital.01-n)</note>
         <role descr="speaker" f="PAG" n="0">
-          <vnrole vncls="26.7-1-1" vntheta="agent"/>
-          <vnrole vncls="37.1.1" vntheta="agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="26.7-1-1" version="UNK">agent</rolelink>
+            <rolelink resource="VerbNet" class="transfer_mesg-37.1.1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="utterance" f="ppt" n="1">
-          <vnrole vncls="26.7-1-1" vntheta="theme"/>
-          <vnrole vncls="37.1.1" vntheta="topic"/>
+        <role descr="utterance" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="26.7-1-1" version="UNK">theme</rolelink>
+            <rolelink resource="VerbNet" class="transfer_mesg-37.1.1" version="verbnet3.3">topic</rolelink>
+          </rolelinks>
         </role>
-        <role descr="audience or listener" f="gol" n="2">
-          <vnrole vncls="26.7-1-1" vntheta="beneficiary"/>
-          <vnrole vncls="37.1.1" vntheta="recipient"/>
+        <role descr="audience or listener" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="26.7-1-1" version="UNK">beneficiary</rolelink>
+            <rolelink resource="VerbNet" class="transfer_mesg-37.1.1" version="verbnet3.3">recipient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="pretty basic" src="pretty basic" type="pretty basic">
-        <inflection aspect="ns" form="gerund" person="ns" tense="ns" voice="ns"/>
-        <text>Besides *trace*-1 reciting the pardon for program trading contained in the Brady Commission report, they-1 said stock-index arbitrage was actually needed Monday to restore the markets' equilibrium.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">reciting</rel>
-        <arg f="" n="1">the pardon for program trading contained in the Brady Commission report</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="26.7-1-1" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="transfer_mesg-37.1.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="recite-v.1" src="annot-overlap" confidence="0.1">3</lexlink>
+      </lexlinks>
+      <example src="pretty basic" name="pretty basic">
+        <text>Besides reciting the pardon for program trading contained in the Brady Commission report, they said stock-index arbitrage was actually needed Monday to restore the markets' equilibrium.</text>
+        <rel relloc="1">reciting</rel>
+        <arg f="" n="0" start="13" end="13">they</arg>
+        <arg f="" n="1" start="2" end="12">the pardon for program trading contained in the Brady Commission report,</arg>
       </example>
-      <example name="With audience" src="With audience" type="With audience">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Then, he-1 refused *PRO*-1 to show us the decision of the committee and recited its results to us.</text>
-        <arg f="tmp" n="m">Then</arg>
-        <arg f="" n="0">he</arg>
-        <rel f="">recited</rel>
-        <arg f="" n="1">its results</arg>
-        <arg f="" n="2">to us</arg>
+      <example src="With audience" name="With audience">
+        <text>Then, he-1 refused  to show us the decision of the committee and recited its results to us.</text>
+        <rel relloc="13">recited</rel>
+        <arg f="TMP" n="m" start="0" end="0">Then,</arg>
+        <arg f="" n="0" start="7" end="7">the</arg>
+        <arg f="" n="1" start="14" end="15">its results</arg>
+        <arg f="" n="2" start="16" end="17">to us.</arg>
       </example>
-      <example name="utterance type of recital" src="" type="">
+      <example src="" name="utterance type of recital">
         <text>dramatic voice recitals</text>
-        <arg f="mnr" n="m">dramatic</arg>
-        <arg f="mnr" n="m">voice</arg>
-        <rel f="">recitals</rel>
+        <rel relloc="2">recitals</rel>
+        <arg f="MNR" n="m" start="0" end="0">dramatic</arg>
+        <arg f="MNR" n="m" start="1" end="1">voice</arg>
       </example>
-      <example name="LBV" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="LBV">
         <text>Later this season, he gives a Bach recital at Washington's Kennedy Center.</text>
-        <arg f="tmp" n="m">Later this season,</arg>
-        <arg f="" n="0">he</arg>
-        <arg f="lvb" n="m">gives</arg>
-        <arg f="" n="1">Bach</arg>
-        <rel f="">recital</rel>
-        <arg f="loc" n="m">at Washington's Kennedy Center.</arg>
+        <rel relloc="7">recital</rel>
+        <arg f="TMP" n="m" start="0" end="2">Later this season,</arg>
+        <arg f="" n="0" start="3" end="3">he</arg>
+        <arg f="LVB" n="m" start="4" end="4">gives</arg>
+        <arg f="" n="1" start="6" end="6">Bach</arg>
+        <arg f="LOC" n="m" start="8" end="11">at Washington's Kennedy Center.</arg>
       </example>
+      <note>RECITE-V NOTES: Based on WSJ. Member of Vncls performance-26.7-1-1, transfer_mesg-37.1.1. (from recite.01-v)</note>
+      <note>RECITAL-N NOTES: Based on ontonotes nouns. Comparison to recite.01-v. Recite.01 is a member of VN classes performance-26.7-1-1 andtransfer_mesg-37.1.1. Framed by Katie. (from recital.01-n)</note>
+      <note>This is not limited to voicing of memorized passages, but includes any memorized performance, such as insturmental recitals (from recital.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

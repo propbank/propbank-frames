@@ -1,85 +1,113 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="remark">
     <roleset id="remark.01" name="to express briefly">
       <aliases>
-        <alias framenet="Statement" pos="n" verbnet="">remark</alias>
-        <alias framenet="Statement" pos="v" verbnet="">remark</alias>
-        <alias framenet="" pos="l" verbnet="">make_remark</alias>
+        <alias pos="n">remark</alias>
+        <alias pos="v">remark</alias>
+        <alias pos="l">make_remark</alias>
       </aliases>
-      <note>REMARK-V NOTES: Based on WSJ. Member of Vncls say-37.7-1, lecture-37.11-1. (from remark.01-v)</note>
-      <note>REMARK-N NOTES: Based on verb entry remark.01. Corresponds to Vncls say-37.7-1, lecture-37.11-1. Framed by Claire. (from remark.01-n)</note>
       <roles>
         <role descr="speaker" f="PAG" n="0">
-          <vnrole vncls="37.7-1" vntheta="Agent"/>
-          <vnrole vncls="37.11-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="say-37.7-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="lecture-37.11-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">speaker</rolelink>
+          </rolelinks>
         </role>
-        <role descr="utterance" f="ppt" n="1">
-          <vnrole vncls="37.7-1" vntheta="Topic"/>
-          <vnrole vncls="37.11-1" vntheta="Topic"/>
+        <role descr="utterance" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="say-37.7-1" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="VerbNet" class="lecture-37.11-1" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">message</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
-        <role descr="hearer" f="gol" n="2">
-          <vnrole vncls="37.7-1" vntheta="Recipient"/>
-          <vnrole vncls="37.11-1" vntheta="Recipient"/>
+        <role descr="hearer" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="say-37.7-1" version="verbnet3.3">recipient</rolelink>
+            <rolelink resource="VerbNet" class="lecture-37.11-1" version="verbnet3.3">recipient</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">addressee</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Statement" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="say-37.7-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="lecture-37.11-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Contact.PublicStatementInPerson.Broadcast" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Correspondence" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="remark-v.1" src="annot-overlap" confidence="0.1">14</lexlink>
+        <lexlink resource="onsense" version="on5" class="remark-n.1" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="" name="transitive">
         <text>Mr. Pratt remarked that he thinks [0] steeper prices have come about because producers do n't like [*-1]to see a hit wine dramatically increase in price later on .</text>
-        <arg f="" n="0">Mr. Pratt</arg>
-        <rel f="">remarked</rel>
-        <arg f="" n="1">that he thinks [0] steeper prices have come about because producers do n't like [*-1]to see a hit wine dramatically increase in price later on</arg>
+        <rel relloc="2">remarked</rel>
+        <arg f="" n="0" start="0" end="1">Mr. Pratt</arg>
+        <arg f="" n="1" start="3" end="27">that he thinks [0] steeper prices have come about because producers do n't like [*-1]to see a hit wine dramatically increase in price later on</arg>
       </example>
-      <example name="prepositional Arg1" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <example src="" name="prepositional Arg1">
         <text>One writer , signing his letter as `` Red-blooded , balanced male , '' remarked on the `` frequency of women fainting in peals , '' and suggested that they `` settle back into their traditional role of [*] making tea at meetings . ''</text>
-        <arg f="" n="0">One writer , signing his letter as `` Red-blooded , balanced male , ''</arg>
-        <rel f="">remarked</rel>
-        <arg f="" n="1">on the `` frequency of women fainting in peals</arg>
+        <rel relloc="14">remarked</rel>
+        <arg f="" n="0" start="0" end="13">One writer , signing his letter as `` Red-blooded , balanced male , ''</arg>
+        <arg f="" n="1" start="15" end="23">on the `` frequency of women fainting in peals</arg>
       </example>
-      <example name="All arguments" src="web" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <example src="web" name="All arguments">
         <text>Her remark to Cersei that she wanted to be 'just like her' had over-tones of being a double-edged remark.</text>
-        <arg f="" n="0">Her</arg>
-        <rel f="">remark</rel>
-        <arg f="" n="2">to Cersei</arg>
-        <arg f="" n="1">tat she wanted to be 'just like her'</arg>
+        <rel relloc="1">remark</rel>
+        <arg f="" n="0" start="0" end="0">Her</arg>
+        <arg f="" n="2" start="2" end="3">to Cersei</arg>
+        <arg f="" n="1" start="4" end="11">that she wanted to be 'just like her'</arg>
       </example>
+      <note>REMARK-V NOTES: Based on WSJ. Member of Vncls say-37.7-1, lecture-37.11-1. (from remark.01-v)</note>
+      <note>REMARK-N NOTES: Based on verb entry remark.01. Corresponds to Vncls say-37.7-1, lecture-37.11-1. Framed by Claire. (from remark.01-n)</note>
     </roleset>
   </predicate>
   <predicate lemma="remarkable">
     <roleset id="remarkable.02" name="notable, worthy of remarking on">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">remarkable</alias>
+        <alias pos="j">remarkable</alias>
       </aliases>
-      <note>REMARKABLE-J NOTES: Added by Julia based on BOLT-4,5, notable.01. (from remarkable.01-j)</note>
       <roles>
-        <role descr="entity taking note" f="pag" n="0"/>
-        <role descr="remarkable thing" f="ppt" n="1"/>
+        <role descr="entity taking note" f="PAG" n="0"/>
+        <role descr="remarkable thing" f="PPT" n="1"/>
       </roles>
-      <example name="empty it, arg1" src="BOLT-4,5" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="BOLT-4,5" name="empty it, arg1">
         <text>It 's remarkable how little discussion there is about this .</text>
-        <rel f="">remarkable</rel>
-        <arg f="" n="1">how little discussion there is about this</arg>
+        <rel relloc="2">remarkable</rel>
+        <arg f="" n="1" start="3" end="9">how little discussion there is about this</arg>
       </example>
+      <note>REMARKABLE-J NOTES: Added by Julia based on BOLT-4,5, notable.01. (from remarkable.01-j)</note>
     </roleset>
     <roleset id="remarkable.03" name="indicating a particular condition or outcome">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">remarkable</alias>
+        <alias pos="j">remarkable</alias>
       </aliases>
-      <note>REMARKABLE-J NOTES: relation to 'unremarkable.02'. (from remarkable.02-j)</note>
       <roles>
-        <role descr="indicator" f="pag" n="1"/>
-        <role descr="condition or outcome indicated" f="ppt" n="2"/>
+        <role descr="indicator" f="PAG" n="1"/>
+        <role descr="condition or outcome indicated" f="PPT" n="2"/>
       </roles>
-      <example name="both args" src="medi-tmprl" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="medi-tmprl" name="both args">
         <text>Lower extremities are remarkable for 2 to 3 + edema .</text>
-        <arg f="" n="1">Lower extremities</arg>
-        <rel f="">unremarkable</rel>
-        <arg f="" n="2">for 2 to 3 + edema</arg>
+        <rel relloc="3">remarkable</rel>
+        <arg f="" n="1" start="0" end="1">Lower extremities</arg>
+        <arg f="" n="2" start="4" end="9">for 2 to 3 + edema</arg>
       </example>
+      <note>REMARKABLE-J NOTES: relation to 'unremarkable.02'. (from remarkable.02-j)</note>
     </roleset>
   </predicate>
 </frameset>

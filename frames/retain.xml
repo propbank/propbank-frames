@@ -1,73 +1,99 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="retain">
     <roleset id="retain.01" name="keep">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">retention</alias>
-        <alias framenet="Memory Hiring" pos="v" verbnet="">retain</alias>
+        <alias pos="n">retention</alias>
+        <alias pos="v">retain</alias>
       </aliases>
+      <roles>
+        <role descr="Keeper" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Hiring" version="1.7">employer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing kept" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Hiring" version="1.7">employee</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="attributive" f="PRD" n="3">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Hiring" version="1.7">task</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Hiring" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Memory" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="retain-v.2" src="annot-overlap" confidence="0.1">61</lexlink>
+        <lexlink resource="onsense" version="on5" class="retain-v.1" src="annot-overlap" confidence="0.1">5</lexlink>
+        <lexlink resource="onsense" version="on5" class="retain-v.3" src="annot-overlap" confidence="0.1">18</lexlink>
+      </lexlinks>
+      <example src="" name="retain-v: basic transitive">
+        <text>The British government retained the single golden share after selling its stake in Jaguar in...</text>
+        <rel relloc="3">retained</rel>
+        <arg f="" n="0" start="0" end="2">The British government</arg>
+        <arg f="" n="1" start="4" end="7">the single golden share</arg>
+        <arg f="TMP" n="m" start="8" end="13">after selling its stake in Jaguar</arg>
+      </example>
+      <example src="" name="retain-v: with attributive">
+        <text>The company also retained attorney Martin P. Levin, a director of the company and former head of the Times-Mirror Publishing Group, as an adviser.</text>
+        <rel relloc="3">retained</rel>
+        <arg f="" n="0" start="0" end="1">The company</arg>
+        <arg f="DIS" n="m" start="2" end="2">also</arg>
+        <arg f="" n="1" start="4" end="20">attorney Martin P. Levin, a director of the company and former head of the Times-Mirror Publishing Group,</arg>
+        <arg f="" n="3" start="21" end="23">as an adviser.</arg>
+      </example>
+      <example src="" name="retain-v: purpose clause">
+        <text>The action followed by one day an Intelogic announcement that it will retain an investment banker to explore alternatives ``to maximize shareholder value,'' including the possible sale of the company.</text>
+        <rel relloc="12">retain</rel>
+        <arg f="" n="0" start="10" end="10">it</arg>
+        <arg f="MOD" n="m" start="11" end="11">will</arg>
+        <arg f="" n="1" start="13" end="15">an investment banker</arg>
+        <arg f="PNC" n="m" start="16" end="29">to explore alternatives ``to maximize shareholder value,'' including the possible sale of the company.</arg>
+      </example>
+      <example src="" name="retention-n: Arg0, 1">
+        <text>Stimulated platelets use serotonin to enhance their retention of procoagulant proteins on the cell surface.</text>
+        <rel relloc="7">retention</rel>
+        <arg f="" n="0" start="6" end="6">their</arg>
+        <arg f="" n="1" start="8" end="14">of procoagulant proteins on the cell surface.</arg>
+      </example>
       <note>RETAIN-V NOTES: Frames file for 'retain' based on sentences in financial subcorpus; 'retentive' based on BOLT-1. Comparison with 'keep'. No Vncls. (from retain.01-v)</note>
       <note>RETENTION-N NOTES: ~retain.01 (from retention.01-n)</note>
-      <roles>
-        <note>Purpose clauses show up in every concievable syntax; sometimes the purpose is part of the Arg1 NP, sometimes not.  Sometimes they'reconnected in an S, sometimes as NP-PP, sometimes the NP is extractedfrom an S.  Follow treebank's syntax and do the best you can.  Sorry. (from retain.01-v)</note>
-        <role descr="Keeper" f="pag" n="0"/>
-        <role descr="thing kept" f="ppt" n="1"/>
-        <role descr="attributive" f="prd" n="3"/>
-      </roles>
-      <example name="retain-v: basic transitive" src="" type="">
-        <text>The British government retained the single golden share after selling its stake in Jaguar in...</text>
-        <arg f="" n="0">The British government</arg>
-        <rel f="">retained</rel>
-        <arg f="" n="1">the single golden share</arg>
-        <arg f="tmp" n="m">after selling its stake in Jaguar in</arg>
-      </example>
-      <example name="retain-v: with attributive" src="" type="">
-        <text>The company also retained attorney Martin P. Levin, a director of the company and former head of the Times-Mirror Publishing Group, as an adviser.</text>
-        <arg f="" n="0">The company</arg>
-        <arg f="dis" n="m">also</arg>
-        <rel f="">retained</rel>
-        <arg f="" n="1">attorney Martin P. Levin, a director of the company and former head of the Times-Mirror Publishing Group,</arg>
-        <arg f="" n="3">as an adviser</arg>
-      </example>
-      <example name="retain-v: purpose clause" src="" type="">
-        <text>The action followed by one day an Intelogic announcement that it will retain an investment banker to explore alternatives ``to maximize shareholder value,'' including the possible sale of the company.</text>
-        <arg f="" n="0">it</arg>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">retain</rel>
-        <arg f="" n="1">an investment banker</arg>
-        <arg f="pnc" n="m">to explore alternatives ``to maximize shareholder value,'' including the possible sale of the company</arg>
-      </example>
-      <example name="retention-n: Arg0, 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Stimulated platelets use serotonin to enhance their retention of procoagulant proteins on the cell surface.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">retention</rel>
-        <arg f="" n="1">of procoagulant proteins on the cell curface</arg>
-      </example>
+      <note>Purpose clauses show up in every concievable syntax; sometimes the purpose is part of the Arg1 NP, sometimes not.  Sometimes they'reconnected in an S, sometimes as NP-PP, sometimes the NP is extractedfrom an S.  Follow treebank's syntax and do the best you can.  Sorry. (from retain.01-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="retentive">
     <roleset id="retentive.02" name="keep">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">retentive</alias>
+        <alias pos="j">retentive</alias>
       </aliases>
-      <note>RETENTIVE-J NOTES: Automatically created by Julia as an alias file for unification. (from retentive.01-j)</note>
       <roles>
-        <role descr="Keeper" f="pag" n="0"/>
-        <role descr="thing kept" f="ppt" n="1"/>
-        <role descr="attributive" f="prd" n="3"/>
+        <role descr="Keeper" f="PAG" n="0"/>
+        <role descr="thing kept" f="PPT" n="1"/>
+        <role descr="attributive" f="PRD" n="3"/>
       </roles>
-      <example name="retentive-j" src="BOLT-1" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="BOLT-1" name="retentive-j">
         <text>if they would nt be so anally retentive in what they wished to do .</text>
-        <arg f="" n="0">they</arg>
-        <arg f="mod" n="m">would</arg>
-        <arg f="neg" n="m">n't</arg>
-        <arg f="ext" n="m">so</arg>
-        <arg f="loc" n="m">anally</arg>
-        <rel f="">retentive</rel>
-        <arg f="adv" n="m">in what they wished to do</arg>
+        <rel relloc="7">retentive</rel>
+        <arg f="" n="0" start="1" end="1">they</arg>
+        <arg f="MOD" n="m" start="2" end="2">would</arg>
+        <arg f="NEG" n="m" start="3" end="3">nt</arg>
+        <arg f="EXT" n="m" start="5" end="5">so</arg>
+        <arg f="LOC" n="m" start="6" end="6">anally</arg>
+        <arg f="ADV" n="m" start="8" end="13">in what they wished to do</arg>
       </example>
+      <note>RETENTIVE-J NOTES: Automatically created by Julia as an alias file for unification. (from retentive.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

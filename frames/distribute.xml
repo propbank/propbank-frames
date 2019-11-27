@@ -1,58 +1,78 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="distribute">
     <roleset id="distribute.01" name="distribute">
       <aliases>
-        <alias framenet="dispersal" pos="n" verbnet="">distribution</alias>
-        <alias framenet="" pos="v" verbnet="">distribute</alias>
+        <alias pos="n">distribution</alias>
+        <alias pos="v">distribute</alias>
+        <argalias pos="n" arg="0">distributor</argalias>
       </aliases>
-      <note>DISTRIBUTE-V NOTES: Frames file for 'distribute' based on sentences in financial subcorpus. No access to verbnet. Comparison to 'pass out'. (from distribute.01-v predicate notes)</note>
-      <note>DISTRIBUTION-N NOTES: Based on sentences in nouns-00040. Comparison to 'distribute.01'. Vn class contribute-13.2-1. FN class dispersal. Framed by Katie. (from distribution.01-n)</note>
       <roles>
         <role descr="distributor" f="PAG" n="0">
-          <vnrole vncls="13.2-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="contribute-13.2-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Dispersal" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Dispersal" version="1.7">cause</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing distributed" f="PPT" n="1">
-          <vnrole vncls="13.2-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="contribute-13.2-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Dispersal" version="1.7">individuals</rolelink>
+          </rolelinks>
         </role>
         <role descr="distributed to" f="GOL" n="2">
-          <vnrole vncls="13.2-1" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="contribute-13.2-1" version="verbnet3.3">recipient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="active, no benefactive" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Dispersal" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="contribute-13.2-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="distribute-v.1" src="annot-overlap" confidence="0.1">29</lexlink>
+        <lexlink resource="onsense" version="on5" class="distribution-n.1" src="annot-overlap" confidence="0.1">17</lexlink>
+        <lexlink resource="onsense" version="on5" class="distribute-v.3" src="annot-overlap" confidence="0.1">15</lexlink>
+      </lexlinks>
+      <example src="" name="active, no benefactive">
         <text>RMS distributes electronic devices and produces power supplies and plastic literature displays.</text>
-        <arg f="" n="0">RMS</arg>
-        <rel f="">distributes</rel>
-        <arg f="" n="1">electronic devices</arg>
+        <rel relloc="1">distributes</rel>
+        <arg f="" n="0" start="0" end="0">RMS</arg>
+        <arg f="" n="1" start="2" end="3">electronic devices</arg>
       </example>
-      <example name="passive, with benefactive" src="" type="">
+      <example src="" name="passive, with benefactive">
         <text>The candy businesses had sales of about $154 million last year, which was roughly 12% of total revenue for RJR's Planters LifeSavers unit, according to [a memorandum]-1 distributed *trace*-1 by RJR's owner, Kohlberg Kravis Roberts&amp; Co., to bankers last December.</text>
-        <rel f="">distributed</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="0">by RJR's owner, Kohlberg Kravis Roberts&amp; Co.</arg>
-        <arg f="" n="2">to bankers</arg>
-        <arg f="TMP" n="M">last December</arg>
+        <rel relloc="27">distributed</rel>
+        <arg f="" n="1" start="28" end="28">*trace*-1</arg>
+        <arg f="" n="0" start="29" end="35">by RJR's owner, Kohlberg Kravis Roberts&amp; Co.,</arg>
+        <arg f="" n="2" start="36" end="37">to bankers</arg>
+        <arg f="TMP" n="M" start="38" end="39">last December.</arg>
       </example>
-      <example name="Args 0 and 1" src="" type="">
+      <example src="" name="Args 0 and 1">
         <text>my asset distribution</text>
-        <arg f="" n="0">my</arg>
-        <arg f="" n="1">asset</arg>
-        <rel f="">distribution</rel>
+        <rel relloc="2">distribution</rel>
+        <arg f="" n="0" start="0" end="0">my</arg>
+        <arg f="" n="1" start="1" end="1">asset</arg>
       </example>
-      <example name="Args 1 and 2" src="" type="">
+      <example src="" name="Args 1 and 2">
         <text>the pro rata distribution of increases to all members</text>
-        <arg f="mnr" n="m">pro rata</arg>
-        <rel f="">distribution</rel>
-        <arg f="" n="1">of increases</arg>
-        <arg f="" n="2">to all members</arg>
+        <rel relloc="3">distribution</rel>
+        <arg f="MNR" n="m" start="1" end="2">pro rata</arg>
+        <arg f="" n="1" start="4" end="5">of increases</arg>
+        <arg f="" n="2" start="6" end="8">to all members</arg>
       </example>
-      <example name="Arg 1 and 2 again" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="Arg 1 and 2 again">
         <text>The distribution of expense account money to local elected representatives and village and neighborhood chiefs</text>
-        <rel f="">distribution</rel>
-        <arg f="" n="1">of expense account money</arg>
-        <arg f="" n="2">to local elected representatives and village and neighbothood chiefs</arg>
+        <rel relloc="1">distribution</rel>
+        <arg f="" n="1" start="2" end="5">of expense account money</arg>
+        <arg f="" n="2" start="6" end="14">to local elected representatives and village and neighborhood chiefs</arg>
       </example>
+      <note>DISTRIBUTE-V NOTES: Frames file for 'distribute' based on sentences in financial subcorpus. No access to verbnet. Comparison to 'pass out'. (from distribute.01-v predicate notes)</note>
+      <note>DISTRIBUTION-N NOTES: Based on sentences in nouns-00040. Comparison to 'distribute.01'. Vn class contribute-13.2-1. FN class dispersal. Framed by Katie. (from distribution.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

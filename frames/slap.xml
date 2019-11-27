@@ -1,41 +1,65 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="slap">
     <roleset id="slap.01" name="hit with a flat object">
       <aliases>
-        <alias framenet="Cause_harm Impact Cause_impact" pos="v" verbnet="">slap</alias>
+        <alias pos="v">slap</alias>
       </aliases>
-      <note>SLAP-V NOTES: Comparison with hit. Member of Vncls throw-17.1-1, bump-18.4-1, hit-18.1-1. Updated by Julia, 11/2010. (from slap.01-v)</note>
       <roles>
         <role descr="agent, hitter - animate only!" f="PAG" n="0">
-          <vnrole vncls="17.1-1" vntheta="Agent"/>
-          <vnrole vncls="18.1-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="throw-17.1-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="hit-18.1-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">cause</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing hit" f="PPT" n="1">
-          <vnrole vncls="17.1-1" vntheta="Theme"/>
-          <vnrole vncls="18.4-1" vntheta="Theme"/>
-          <vnrole vncls="18.1-1" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="throw-17.1-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="bump-18.4-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="hit-18.1-1" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">victim</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">body_part</rolelink>
+          </rolelinks>
         </role>
         <role descr="instrument, thing hit by or with" f="MNR" n="2">
-          <vnrole vncls="18.1-1" vntheta="Instrument"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="hit-18.1-1" version="verbnet3.3">instrument</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">means</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">instrument</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="instrumental subject" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_impact" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Impact" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Cause_harm" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="throw-17.1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="hit-18.1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="bump-18.4-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="slap-v.1" src="annot-overlap" confidence="0.1">8</lexlink>
+      </lexlinks>
+      <example src="" name="instrumental subject">
         <text>London share prices closed sharply lower Friday in active trading after Chancellor of the Exchequer Nigel Lawson's resignation slapped the market and Wall Street's rapid initial sell-off knocked it down.</text>
-        <arg f="" n="2">Chancellor of the Exchequer Nigel Lawson's resignation</arg>
-        <rel f="">slapped</rel>
-        <arg f="" n="1">the market</arg>
+        <rel relloc="18">slapped</rel>
+        <arg f="" n="2" start="11" end="17">Chancellor of the Exchequer Nigel Lawson's resignation</arg>
+        <arg f="" n="1" start="19" end="20">the market</arg>
       </example>
-      <example name="ARG0 and ARG2 and ARG1" src="ontonotes mz/sinorama/10/ectb_1021" type="">
+      <example src="ontonotes mz/sinorama/10/ectb_1021" name="ARG0 and ARG2 and ARG1">
         <text>Once he came very close to cutting a finger clean off with a sickle , but he just slapped some cement mix -LRB- commonly regarded as a good disinfectant -RRB- on the wound and worked on through the pain .</text>
-        <arg f="" n="0">he</arg>
-        <arg f="adv" n="m">just</arg>
-        <rel f="">slapped</rel>
-        <arg f="" n="2">some cement mix -LRB- commonly regarded as a good disinfectant -RRB-</arg>
-        <arg f="" n="1">on the wound</arg>
+        <rel relloc="18">slapped</rel>
+        <arg f="" n="0" start="1" end="1">he</arg>
+        <arg f="ADV" n="m" start="17" end="17">just</arg>
+        <arg f="" n="2" start="19" end="29">some cement mix -LRB- commonly regarded as a good disinfectant -RRB-</arg>
+        <arg f="" n="1" start="30" end="32">on the wound</arg>
       </example>
-
+      <note>SLAP-V NOTES: Comparison with hit. Member of Vncls throw-17.1-1, bump-18.4-1, hit-18.1-1. Updated by Julia, 11/2010. (from slap.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

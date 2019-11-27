@@ -1,39 +1,65 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="fax">
     <roleset id="fax.01" name="to send by fax">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">fax</alias>
-        <alias framenet="" pos="v" verbnet="">fax</alias>
+        <alias pos="n">fax</alias>
+        <alias pos="v">fax</alias>
       </aliases>
-      <note>FAX-V NOTES: Frames file for 'fax' based on survey of sentences in the WSJ corpus. (from fax.01-v predicate notes)</note>
-      <note>FAX-N NOTES: Automatically created by Julia as an alias file for unification. (from fax.01-n)</note>
       <roles>
         <role descr="sender, agent" f="PAG" n="0">
-          <vnrole vncls="37.4" vntheta="agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="instr_communication-37.4.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Communication_means" version="1.7">communicator</rolelink>
+            <rolelink resource="FrameNet" class="Contacting" version="1.7">communicator</rolelink>
+            <rolelink resource="FrameNet" class="Sending" version="1.7">theme</rolelink>
+            <rolelink resource="FrameNet" class="Sending" version="1.7">recipient</rolelink>
+            <rolelink resource="FrameNet" class="Sending" version="1.7">sender</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity sent, faxed" f="PPT" n="1">
-          <vnrole vncls="37.4" vntheta="topic"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="instr_communication-37.4.1" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="FrameNet" class="Communication_means" version="1.7">message</rolelink>
+            <rolelink resource="FrameNet" class="Communication_means" version="1.7">topic</rolelink>
+            <rolelink resource="FrameNet" class="Contacting" version="1.7">communication</rolelink>
+            <rolelink resource="FrameNet" class="Contacting" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
         <role descr="sent to, recipient" f="GOL" n="2">
-          <vnrole vncls="37.4" vntheta="recipient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="instr_communication-37.4.1" version="verbnet3.3">recipient</rolelink>
+            <rolelink resource="FrameNet" class="Communication_means" version="1.7">addressee</rolelink>
+            <rolelink resource="FrameNet" class="Contacting" version="1.7">addressee</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Communication_means" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Contacting" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Sending" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="37.4" version="UNK" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="transitive">
         <text>In a few instances , Aetna knew [0] it would probably be shelling out big bucks , even before a client called or faxed in a claim .</text>
-        <arg f="" n="0">a client</arg>
-        <rel f="">[ faxed] [ in]</rel>
-        <arg f="" n="1">a claim</arg>
+        <rel relloc="0 23">In faxed</rel>
+        <arg f="" n="0" start="19" end="20">a client</arg>
+        <arg f="" n="1" start="25" end="26">a claim</arg>
       </example>
-      <example name="with recipient" src="" type="">
+      <example src="" name="with recipient">
         <text>You can fax us at 241-2760.</text>
-        <arg f="" n="0">You</arg>
-        <arg f="mod" n="m">can</arg>
-        <rel f="">fax</rel>
-        <arg f="" n="2">us</arg>
-        <arg f="loc" n="m">at 241-2760</arg>
+        <rel relloc="2">fax</rel>
+        <arg f="" n="0" start="0" end="0">You</arg>
+        <arg f="MOD" n="m" start="1" end="1">can</arg>
+        <arg f="" n="2" start="3" end="3">us</arg>
+        <arg f="LOC" n="m" start="4" end="5">at 241-2760.</arg>
       </example>
+      <note>FAX-V NOTES: Frames file for 'fax' based on survey of sentences in the WSJ corpus. (from fax.01-v predicate notes)</note>
+      <note>FAX-N NOTES: Automatically created by Julia as an alias file for unification. (from fax.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

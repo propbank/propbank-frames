@@ -1,29 +1,53 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="telephone">
     <roleset id="telephone.01" name="call">
       <aliases>
-        <alias framenet="Contacting Communication_means" pos="v" verbnet="">telephone</alias>
+        <alias pos="v">telephone</alias>
       </aliases>
-      <note>TELEPHONE-V NOTES: Member of Vncls instr_communication-37.4. Comparison to 'call'. (from telephone.01-v)</note>
       <roles>
         <role descr="caller" f="PAG" n="0">
-          <vnrole vncls="37.4" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="initiate_communication-37.4.2-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Communication_means" version="1.7">communicator</rolelink>
+            <rolelink resource="FrameNet" class="Contacting" version="1.7">communicator</rolelink>
+          </rolelinks>
         </role>
         <role descr="called" f="GOL" n="1">
-          <vnrole vncls="37.4" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="initiate_communication-37.4.2-1" version="verbnet3.3">recipient</rolelink>
+            <rolelink resource="FrameNet" class="Communication_means" version="1.7">addressee</rolelink>
+            <rolelink resource="FrameNet" class="Contacting" version="1.7">addressee</rolelink>
+          </rolelinks>
         </role>
         <role descr="message" f="PPT" n="2">
-          <vnrole vncls="37.4" vntheta="Topic"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="initiate_communication-37.4.2-1" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="FrameNet" class="Communication_means" version="1.7">message</rolelink>
+            <rolelink resource="FrameNet" class="Communication_means" version="1.7">topic</rolelink>
+            <rolelink resource="FrameNet" class="Contacting" version="1.7">communication</rolelink>
+            <rolelink resource="FrameNet" class="Contacting" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <text>[Big Board stock specialists]-1, in a bold palace revolt, began shortly after Oct. 13 *trace*-1 to telephone the corporate executives of the companies whose stock is listed on the Big Board to have them pressure the exchange to ban program trading.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">telephone</rel>
-        <arg f="" n="1">the corporate executives of the companies whose stock is listed on the Big Board</arg>
-        <arg f="prp" n="m">to have them pressure the exchange to ban program trading</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Communication_means" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Contacting" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="37.4" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Correspondence" version="rich" confidence="0.1" src="reo-expansion"/>
+      </lexlinks>
+      <example src="" name="transitive">
+        <text> Big Board stock specialists, in a bold palace revolt, began shortly after Oct. 13 to telephone the corporate executives of the companies whose stock is listed on the Big Board to have them pressure the exchange to ban program trading.</text>
+        <rel relloc="16">telephone</rel>
+        <arg f="" n="0" start="1" end="4">Big Board stock specialists,</arg>
+        <arg f="" n="1" start="17" end="30">the corporate executives of the companies whose stock is listed on the Big Board</arg>
+        <arg f="PRP" n="m" start="31" end="40">to have them pressure the exchange to ban program trading.</arg>
       </example>
+      <note>TELEPHONE-V NOTES: Member of Vncls instr_communication-37.4. Comparison to 'call'. (from telephone.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

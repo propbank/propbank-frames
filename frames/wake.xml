@@ -1,62 +1,70 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="wake">
     <roleset id="wake.01" name="(cause to) become awake">
       <aliases>
-        <alias framenet="Cause_to_wake Waking_up" pos="v" verbnet="">wake</alias>
-        <alias framenet="" pos="v" verbnet="">waken</alias>
-        <alias framenet="Waking_up" pos="v" verbnet="">awake</alias>
-        <alias framenet="Cause_to_wake" pos="v" verbnet="">awaken</alias>
-        <alias framenet="" pos="n" verbnet="">awakening</alias>
+        <alias pos="v">wake</alias>
+        <alias pos="v">waken</alias>
+        <alias pos="v">awake</alias>
+        <alias pos="v">awaken</alias>
+        <alias pos="n">awakening</alias>
       </aliases>
-      
-      
-      
-      
-      
       <roles>
-        <role descr="alarm clock, cause of waking" f="pag" n="0">
-          <vnrole vncls="45.4" vntheta="agent"/>
-          <vnrole vncls="45.4" vntheta="instrument"/>
+        <role descr="alarm clock, cause of waking" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">instrument</rolelink>
+            <rolelink resource="FrameNet" class="Cause_to_wake" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_to_wake" version="1.7">cause</rolelink>
+            <rolelink resource="FrameNet" class="Cause_to_wake" version="1.7">instrument</rolelink>
+          </rolelinks>
         </role>
-        <role descr="(former) sleeper" f="ppt" n="1">
-          <vnrole vncls="45.4" vntheta="patient"/>
+        <role descr="(former) sleeper" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Waking_up" version="1.7">sleeper</rolelink>
+            <rolelink resource="FrameNet" class="Cause_to_wake" version="1.7">sleeper</rolelink>
+          </rolelinks>
         </role>
-        <role descr="sleep (oft metaphorical)" f="dir" n="2"/>
-        <role descr="thing awoken to, outside reality" f="gol" n="3"/>
+        <role descr="sleep (oft metaphorical)" f="DIR" n="2"/>
+        <role descr="thing awoken to, outside reality" f="GOL" n="3"/>
       </roles>
-      <example name="ARG1 and ARG3 and ARG0" src="ontonotes mz/sinorama/10/ectb_1018" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_to_wake" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Waking_up" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="ontonotes mz/sinorama/10/ectb_1018" name="ARG1 and ARG3 and ARG0">
         <text>Whether awakened to a new sense of their own bodies by popular culture , or driven to stay at the forefront of commercial fashion , contemporary men have certainly made a firm decision to make themselves more beautiful .</text>
-        <arg f="" n="1">[]</arg>
-        <rel f="">awakened</rel>
-        <arg f="" n="3">to a new sense of their own bodies</arg>
-        <arg f="" n="0">by popular culture</arg>
+        <rel relloc="1">awakened</rel>
+        <arg f="" n="3" start="2" end="9">to a new sense of their own bodies</arg>
+        <arg f="" n="0" start="10" end="12">by popular culture</arg>
       </example>
-
-      <example name="args 1 and 3" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="args 1 and 3">
         <text>Edward Carlson awoke one morning last month [*-1] to find eight holes in his front yard where his prized miniature palms, called cycads, once stood.</text>
-        <arg f="" n="1">Edward Carlson</arg>
-        <rel f="">awoke</rel>
-        <arg f="tmp" n="m">one morning last month</arg>
-        <arg f="" n="3">[*-1] to find eight holes in his front yard where his prized miniature palms, called cycads, once stood</arg>
+        <rel relloc="2">awoke</rel>
+        <arg f="" n="1" start="0" end="1">Edward Carlson</arg>
+        <arg f="TMP" n="m" start="3" end="6">one morning last month</arg>
+        <arg f="" n="3" start="8" end="24">to find eight holes in his front yard where his prized miniature palms, called cycads, once stood.</arg>
       </example>
-      <example name="Passive, arguments 0-2" src="" type="">
-        <text>Some hours later I-1 was wakened *-1 from a sound sleep by a commotion in the next room.</text>
-        <arg f="tmp" n="m">Some hours later</arg>
-        <arg f="" n="1">*-1</arg>
-        <rel f="">wakened</rel>
-        <arg f="" n="2">from a sound sleep</arg>
-        <arg f="" n="0">by a commotion in the next room</arg>
+      <example src="" name="Passive, arguments 0-2">
+        <text>Some hours later I was wakened from a sound sleep by a commotion in the next room.</text>
+        <rel relloc="5">wakened</rel>
+        <arg f="TMP" n="m" start="0" end="2">Some hours later</arg>
+        <arg f="" n="1" start="3" end="3">I</arg>
+        <arg f="" n="2" start="6" end="9">from a sound sleep</arg>
+        <arg f="" n="0" start="10" end="16">by a commotion in the next room.</arg>
       </example>
-      <example name="with Arg3, awoken-to" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="present" voice="active"/>
+      <example src="" name="with Arg3, awoken-to">
         <text>Appropriations committees have used an assortment of devices [*-1] to disguise as much as $ 1 billion [*U*]in spending , and as critics have awakened to these devices , the bill can seem like a wounded caribou trying [*] to make it past ice and wolves [*-3] to reach safer winter grazing .</text>
-        <arg f="" n="1">critics</arg>
-        <rel f="">awakened</rel>
-        <arg f="" n="3">to these devices</arg>
+        <rel relloc="24">awakened</rel>
+        <arg f="" n="1" start="22" end="22">critics</arg>
+        <arg f="" n="3" start="25" end="27">to these devices</arg>
       </example>
-    <note>WAKE-V NOTES: Frames file for 'wake' based on sentences in financial subcorpus. (from wake.01-v)
+      <note>WAKE-V NOTES: Frames file for 'wake' based on sentences in financial subcorpus. (from wake.01-v)
 
 AWAKE-V NOTES: Member of Vncls appear-48.1.1, other_cos-45.4. Basically the same as awaken but cannot take an agent. (from awake.01-v)
 
@@ -65,99 +73,112 @@ WAKEN-V NOTES: Frames file for 'waken' based on internet usage examples, expansi
 AWAKEN-V NOTES: Frames file for 'awaken' based on survey of sentences in the WSJ corpus. Member of Vncls appear-48.1.1, other_cos-45.4. (from awaken.01-v)
 
 AWAKENING-N NOTES: Added by Julia.</note>
-</roleset>
-  <roleset id="wake.04" name="have a viewing for the dead">
-<aliases>
-<alias framenet="" pos="v" verbnet="">wake</alias>
-<alias framenet="" pos="n" verbnet="">wake</alias>
-</aliases>
-<roles>
-<role descr="mourners" f="pag" n="0"/>
-<role descr="entity mourned, dead one" f="ppt" n="1"/>
-</roles>
-
-<example name="verbal" src="" type="">
-<inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-<text>Their remains are waked in their homes for roughly 2-3 days.</text>
-<arg f="" n="1">Their remains</arg>
-<rel f="">waked</rel>
-<arg f="loc" n="m">in their homes</arg>
-<arg f="tmp" n="m">for roughtly 2-3 days</arg>
-</example>
-<note>Based on google data. No VN or FN classes. Framed by Katie.</note>
-</roleset>
-</predicate>
+    </roleset>
+    <roleset id="wake.04" name="have a viewing for the dead">
+      <aliases>
+        <alias pos="v">wake</alias>
+        <alias pos="n">wake</alias>
+      </aliases>
+      <roles>
+        <role descr="mourners" f="PAG" n="0"/>
+        <role descr="entity mourned, dead one" f="PPT" n="1"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="verbal">
+        <text>Their remains are waked in their homes for roughly 2-3 days.</text>
+        <rel relloc="3">waked</rel>
+        <arg f="" n="1" start="0" end="1">Their remains</arg>
+        <arg f="LOC" n="m" start="4" end="6">in their homes</arg>
+        <arg f="TMP" n="m" start="7" end="10">for roughly 2-3 days.</arg>
+      </example>
+      <note>Based on google data. No VN or FN classes. Framed by Katie.</note>
+    </roleset>
+  </predicate>
   <predicate lemma="wake_up">
     <roleset id="wake_up.02" name="(cause to) become awake, with particle">
       <aliases>
-        <alias framenet="Cause_to_wake Waking_up" pos="v" verbnet="">wake_up</alias>
-        <alias framenet="" pos="n" verbnet="">waking_up</alias>
+        <alias pos="v">wake_up</alias>
+        <alias pos="n">waking_up</alias>
       </aliases>
-      
-      
       <roles>
-        <role descr="alarm clock, eg" f="pag" n="0"/>
-        <role descr="sleeper" f="ppt" n="1"/>
-        <role descr="sleep (oft metaphorical)" f="dir" n="2"/>
-        <role descr="thing awoken to, outside reality" f="gol" n="3"/>
+        <role descr="alarm clock, eg" f="PAG" n="0"/>
+        <role descr="sleeper" f="PPT" n="1"/>
+        <role descr="sleep (oft metaphorical)" f="DIR" n="2"/>
+        <role descr="thing awoken to, outside reality" f="GOL" n="3"/>
       </roles>
-      <example name="inchoative" src="inchoative" type="inchoative">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_to_wake" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Waking_up" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="wake-v.2" src="annot-overlap" confidence="0.1">8</lexlink>
+        <lexlink resource="onsense" version="on5" class="wake-v.1" src="annot-overlap" confidence="0.1">19</lexlink>
+      </lexlinks>
+      <example src="inchoative" name="inchoative">
         <text>Technology stocks woke up, helping the over-the-counter market rise from its recent doldrums.</text>
-        <arg f="" n="1">Technology stocks</arg>
-        <rel f="">[woke] [up]</rel>
-        <arg f="adv" n="m">helping the over-the-counter market rise from its recent doldrums</arg>
+        <rel relloc="2 3">woke up,</rel>
+        <arg f="" n="1" start="0" end="1">Technology stocks</arg>
+        <arg f="ADV" n="m" start="4" end="12">helping the over-the-counter market rise from its recent doldrums.</arg>
       </example>
-      <example name="non-contiguous phrasal verb" src="non-contiguous phrasal verb" type="non-contiguous phrasal verb">
+      <example src="non-contiguous phrasal verb" name="non-contiguous phrasal verb">
         <text>Mary woke John up from a deep sleep.</text>
-        <arg f="" n="0">Mary</arg>
-        <rel f="">[woke] [up]</rel>
-        <arg f="" n="1">John</arg>
-        <arg f="" n="2">from a deep sleep</arg>
+        <rel relloc="1 3">woke up</rel>
+        <arg f="" n="0" start="0" end="0">Mary</arg>
+        <arg f="" n="1" start="2" end="2">John</arg>
+        <arg f="" n="2" start="4" end="7">from a deep sleep.</arg>
       </example>
-      <example name="With arg 3" src="With arg 3" type="With arg 3">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="With arg 3" name="With arg 3">
         <text>A lot of them are waking up to that idea.</text>
-        <arg f="" n="1">A lot of them</arg>
-        <rel f="">[waking][up]</rel>
-        <arg f="" n="3">to that idea</arg>
+        <rel relloc="5 6">waking up</rel>
+        <arg f="" n="1" start="0" end="3">A lot of them</arg>
+        <arg f="" n="3" start="7" end="9">to that idea.</arg>
       </example>
-    <note>WAKE_UP-V NOTES: "Awaken" and "awake" do not occur in the financial subcorpus, but ifthey do they'll take the exact same framing. (from wake.02-v)
+      <note>WAKE_UP-V NOTES: "Awaken" and "awake" do not occur in the financial subcorpus, but ifthey do they'll take the exact same framing. (from wake.02-v)
 
 WAKING_UP-V NOTES: Added by Julia</note>
-</roleset>
+    </roleset>
   </predicate>
   <predicate lemma="awake">
     <roleset id="awake.03" name="be awake">
       <aliases>
-        <alias framenet="Being_awake" pos="j" verbnet="">awake</alias>
+        <alias pos="j">awake</alias>
       </aliases>
-      
       <roles>
-        <role descr="(former) sleeper" f="ppt" n="1"/>
-        <role descr="sleep (oft metaphorical)" f="dir" n="2"/>
-        <role descr="thing awoken to, outside reality" f="gol" n="3"/>
+        <role descr="(former) sleeper" f="PPT" n="1"/>
+        <role descr="sleep (oft metaphorical)" f="DIR" n="2"/>
+        <role descr="thing awoken to, outside reality" f="GOL" n="3"/>
       </roles>
-      <example name="Arg 1 only, most typical usage." src="BOLT P01, parts 2,3" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Being_awake" version="1.7" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="BOLT P01, parts 2,3" name="Arg 1 only, most typical usage.">
         <text>Many people feel hungry every minute they are awake and fight the fact they know they are literally killing themselves with every bite they take .</text>
-        <arg f="" n="1">they</arg>
-        <rel f="">awake</rel>
+        <rel relloc="8">awake</rel>
+        <arg f="" n="1" start="6" end="6">they</arg>
       </example>
-      <example name="arg3" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="arg3">
         <text>He was awake to the real things of life!</text>
-        <arg f="" n="1">He</arg>
-        <rel f="">awake</rel>
-        <arg f="" n="3">to the real things of life!</arg>
+        <rel relloc="2">awake</rel>
+        <arg f="" n="1" start="0" end="0">He</arg>
+        <arg f="" n="3" start="3" end="8">to the real things of life!</arg>
       </example>
-      <example name="arg2" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="arg2">
         <text>Little Davey was awake from his nap.</text>
-        <arg f="" n="1">Little Davey</arg>
-        <rel f="">awake</rel>
-        <arg f="" n="2">from his nap</arg>
+        <rel relloc="3">awake</rel>
+        <arg f="" n="1" start="0" end="1">Little Davey</arg>
+        <arg f="" n="2" start="4" end="6">from his nap.</arg>
       </example>
-    <note>AWAKE-J NOTES: Roleset based on instances in BOLT P01, parts 2,3. Framed by Claire. (from awake.01-j)</note>
-</roleset>
+      <note>AWAKE-J NOTES: Roleset based on instances in BOLT P01, parts 2,3. Framed by Claire. (from awake.01-j)</note>
+    </roleset>
   </predicate>
 </frameset>

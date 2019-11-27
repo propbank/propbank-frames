@@ -1,71 +1,97 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="bill">
     <roleset id="bill.01" name="charge a fee">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">billing</alias>
-        <alias framenet="" pos="v" verbnet="">bill</alias>
+        <alias pos="n">billing</alias>
+        <alias pos="v">bill</alias>
       </aliases>
+      <roles>
+        <role descr="seller, biller" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="bill-54.5" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="asking price, amount of bill" f="VSP" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="bill-54.5" version="verbnet3.3">asset</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="buyer, billed" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="bill-54.5" version="verbnet3.3">recipient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="commodity" f="PRP" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Billing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Commerce_collect" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="bill-54.5" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="bill-v.1" src="annot-overlap" confidence="0.1">9</lexlink>
+      </lexlinks>
+      <example src="" name="no asking price">
+        <text>According to one person familiar with the airline, the buy-out group -- led by United's pilots union and UAL Chairman Stephen Wolf -- has begun billing UAL for fees and expenses it owes to investment bankers, law firms and banks.</text>
+        <rel relloc="25">billing</rel>
+        <arg f="" n="0" start="8" end="22">the buy-out group -- led by United's pilots union and UAL Chairman Stephen Wolf --</arg>
+        <arg f="" n="2" start="18" end="18">UAL</arg>
+        <arg f="" n="3" start="27" end="39">for fees and expenses it owes to investment bankers, law firms and banks.</arg>
+      </example>
+      <example src="ontonotes nw/wsj/13/wsj_1317" name="unk">
+        <text>Billings were n't disclosed ... .</text>
+        <rel relloc="0">Billings</rel>
+      </example>
+      <example src="" name="All args">
+        <text>Ralphie's billing the Andersons $5000 dollars for one hour of his expertise appalled his new clients.9</text>
+        <rel relloc="1">billing</rel>
+        <arg f="" n="0" start="0" end="0">Ralphie's</arg>
+        <arg f="" n="2" start="2" end="3">the Andersons</arg>
+        <arg f="" n="1" start="4" end="4">$5000</arg>
+        <arg f="" n="3" start="6" end="11">for one hour of his expertise</arg>
+      </example>
       <note>BILL-V NOTES: Frames file for 'bill' based on sentences in financial subcorpus. Verbnet entries 29.2 and 54.5, other framed members include classify, count, define, describe, emply, establish, intend, portray, rank, recommend, regard, treat, view (but those don't seem right to me); and concern (and that doesn't seem right at all.) No Framenet entry. Comparison with 'charge'. (from bill.01-v predicate notes)</note>
       <note>BILLING-N NOTES: bill.01 (from billing.01-n)</note>
-      <roles>
-        <role descr="seller, biller" f="pag" n="0">
-          <vnrole vncls="54.5" vntheta="agent"/>
-        </role>
-        <role descr="asking price, amount of bill" f="vsp" n="1">
-          <vnrole vncls="54.5" vntheta="asset"/>
-        </role>
-        <role descr="buyer, billed" f="gol" n="2">
-          <vnrole vncls="54.5" vntheta="recipient"/>
-        </role>
-        <role descr="commodity" f="prp" n="3"/>
-      </roles>
-      <example name="no asking price" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="ns" voice="ns"/>
-        <text>According to one person familiar with the airline, [the buy-out group -- led by United's pilots union and UAL Chairman Stephen Wolf --]-2 has begun *trace*-2 billing UAL for fees and expenses it owes to investment bankers, law firms and banks.</text>
-        <arg f="" n="0">*trace*-2</arg>
-        <rel f="">billing</rel>
-        <arg f="" n="2">UAL</arg>
-        <arg f="" n="3">for fees and expenses it owes to investment bankers, law firms and banks</arg>
-      </example>
-      <example name="unk" src="ontonotes nw/wsj/13/wsj_1317" type="">
-        <text>Billings were n't disclosed ... .</text>
-        <rel f="">Billings</rel>
-      </example>
-
-      <example name="All args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Ralphie's billing the Andersons $5000 dollars for one hour of his expertise appalled his new clients.9</text>
-        <arg f="" n="0">Ralphie's</arg>
-        <rel f="">billing</rel>
-        <arg f="" n="2">the Andersons</arg>
-        <arg f="" n="1">$5000</arg>
-        <arg f="" n="3">for one hour of his expertise</arg>
-      </example>
     </roleset>
     <roleset id="bill.02" name="describe">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">bill</alias>
+        <alias pos="v">bill</alias>
       </aliases>
-      <note>BILL-V NOTES: I'm betting this sense always occurs in the passive. (from bill.02-v)</note>
       <roles>
-        <role descr="describer" f="pag" n="0">
-          <vnrole vncls="29.2" vntheta="agent"/>
+        <role descr="describer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="characterize-29.2" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing described" f="ppt" n="1">
-          <vnrole vncls="29.2" vntheta="theme"/>
+        <role descr="thing described" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="characterize-29.2" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="secondary attribute, described-as" f="prd" n="2">
-          <vnrole vncls="29.2" vntheta="attribute"/>
+        <role descr="secondary attribute, described-as" f="PRD" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="characterize-29.2" version="verbnet3.3">attribute</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="passivized" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="past" voice="passive"/>
-        <text>[That complex bid]-1 was billed *trace*-1 as France's largest takeover ever (this one is slightly smaller).</text>
-        <rel f="">billed</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="2">as France 's largest takeover ever</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="characterize-29.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="bill-v.2" src="annot-overlap" confidence="0.1">6</lexlink>
+      </lexlinks>
+      <example src="" name="passivized">
+        <text> That complex bid was billed as France's largest takeover ever (this one is slightly smaller).</text>
+        <rel relloc="5">billed</rel>
+        <arg f="" n="1" start="1" end="3">That complex bid</arg>
+        <arg f="" n="2" start="6" end="10">as France's largest takeover ever</arg>
       </example>
+      <note>BILL-V NOTES: I'm betting this sense always occurs in the passive. (from bill.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

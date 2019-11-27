@@ -1,40 +1,53 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="blockade">
     <roleset id="blockade.01" name="impede">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">blockade</alias>
-        <alias framenet="Change_accessibility" pos="n" verbnet="">blockade</alias>
+        <alias pos="v">blockade</alias>
+        <alias pos="n">blockade</alias>
       </aliases>
+      <roles>
+        <role descr="impeder, Agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="fill-9.8" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="impeded, Theme" f="GOL" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="fill-9.8" version="verbnet3.3">destination</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="Instrument" f="MNR" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Change_accessibility" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="fill-9.8" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="blockade-v.1" src="annot-overlap" confidence="0.1">3</lexlink>
+      </lexlinks>
+      <example src="" name="war tactics">
+        <text>Israeli troops killed four Palestinians Tuesday as Israeli forces blockaded Palestinian towns and villages in reprisal for the killing of four Israelis.</text>
+        <rel relloc="9">blockaded</rel>
+        <arg f="" n="0" start="7" end="8">Israeli forces</arg>
+        <arg f="" n="1" start="10" end="13">Palestinian towns and villages</arg>
+        <arg f="PRP" n="m" start="14" end="21">in reprisal for the killing of four Israelis.</arg>
+      </example>
+      <example src="" name="war">
+        <text>Today Israeli security forces closed the Palestinian airport and the Gaza Strip and blockaded a West Bank town.</text>
+        <rel relloc="13">blockaded</rel>
+        <arg f="" n="0" start="1" end="3">Israeli security forces</arg>
+        <arg f="" n="1" start="14" end="17">a West Bank town.</arg>
+      </example>
+      <example src="" name="arg 1">
+        <text>Beta blockers are a class of drugs.</text>
+        <rel relloc="1">blockers</rel>
+        <arg f="" n="1" start="0" end="0">Beta</arg>
+      </example>
       <note>BLOCKADE-V NOTES: frame by Perryn (from blockade.01-v)</note>
       <note>BLOCKADE-N NOTES: Based on Thyme and Sharp data. Comparison to blockade.01-v. Blockade.01 is a member of VN class fill-9.8. Framed by Katie. (from blockade.01-n)</note>
-      <roles>
-        <role descr="impeder, Agent" f="pag" n="0">
-          <vnrole vncls="9.8" vntheta="agent"/>
-        </role>
-        <role descr="impeded, Theme" f="gol" n="1">
-          <vnrole vncls="9.8" vntheta="destination"/>
-        </role>
-        <role descr="Instrument" f="mnr" n="2"/>
-      </roles>
-      <example name="war tactics" src="" type="">
-        <text>Israeli troops killed four Palestinians Tuesday as Israeli forces blockaded Palestinian towns and villages in reprisal for the killing of four Israelis.</text>
-        <arg f="" n="0">Israeli forces</arg>
-        <rel f="">blockaded</rel>
-        <arg f="" n="1">Palestinian towns and villages</arg>
-        <arg f="prp" n="m">in reprisal for the killing of four Israelis</arg>
-      </example>
-      <example name="war" src="" type="">
-        <text>Today Israeli security forces closed the Palestinian airport and the Gaza Strip and blockaded a West Bank town.</text>
-        <arg f="" n="0">Israeli security forces</arg>
-        <rel f="">blockaded</rel>
-        <arg f="" n="1">a West Bank town</arg>
-      </example>
-      <example name="arg 1" src="" type="">
-        <text>Beta blockers are a class of drugs.</text>
-        <arg f="" n="1">beta</arg>
-        <rel f="">blockade</rel>
-      </example>
     </roleset>
   </predicate>
 </frameset>

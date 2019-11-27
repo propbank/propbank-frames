@@ -1,84 +1,97 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="train">
     <roleset id="train.01" name="teach a skill">
       <aliases>
-        <alias framenet="education_teaching" pos="n" verbnet="">training</alias>
-        <alias framenet="" pos="v" verbnet="">train</alias>
+        <alias pos="n">training</alias>
+        <alias pos="v">train</alias>
       </aliases>
-      <note>TRAIN-V NOTES: Argument order suggested by comparison with 'teach' (and assumptionsof automatic tagger). VN class hire-13.5.3. (from train.01-v)</note>
-      <note>TRAINING-N NOTES: Added due to expansion of Nombank. Comparison to 'train.01'. Vn class hire-13.5.3. Fn class education_teaching. Framed by Katie. (from training.01-n)</note>
       <roles>
-        <role descr="trainer" f="pag" n="0">
-          <vnrole vncls="13.5.3" vntheta="agent"/>
+        <role descr="trainer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="hire-13.5.3" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="skill" f="prd" n="1">
-          <vnrole vncls="13.5.3" vntheta="attribute"/>
+        <role descr="skill" f="PRD" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="hire-13.5.3" version="verbnet3.3">attribute</rolelink>
+          </rolelinks>
         </role>
-        <role descr="trainee" f="ppt" n="2">
-          <vnrole vncls="13.5.3" vntheta="theme"/>
+        <role descr="trainee" f="PPT" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="hire-13.5.3" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all args" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Education_teaching" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="hire-13.5.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="train-v.1" src="annot-overlap" confidence="0.1">43</lexlink>
+        <lexlink resource="onsense" version="on5" class="training-n.1" src="annot-overlap" confidence="0.1">48</lexlink>
+      </lexlinks>
+      <example src="" name="all args">
         <text>Trifari now trains sales help to advise customers on the best earring styles.</text>
-        <arg f="" n="0">Trifari</arg>
-        <arg f="tmp" n="m">now</arg>
-        <rel f="">trains</rel>
-        <arg f="" n="2">sales help</arg>
-        <arg f="" n="1">to advise customers on the best earring styles</arg>
+        <rel relloc="2">trains</rel>
+        <arg f="" n="0" start="0" end="0">Trifari</arg>
+        <arg f="TMP" n="m" start="1" end="1">now</arg>
+        <arg f="" n="2" start="3" end="4">sales help</arg>
+        <arg f="" n="1" start="5" end="12">to advise customers on the best earring styles.</arg>
       </example>
-      <example name="non-predicative skill" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="passive"/>
+      <example src="" name="non-predicative skill">
         <text>Democrats argued that the training wage was a way of allowing employers to pay less than the minimum wage, while [new workers]-2 need far less than six months [*trace*-2]-1 to be trained *trace*-1 for their jobs.</text>
-        <rel f="">trained</rel>
-        <arg f="" n="2">*trace*</arg>
-        <arg f="" n="1">for their jobs</arg>
+        <rel relloc="31">trained</rel>
+        <arg f="" n="2" start="32" end="32">*trace*-1</arg>
+        <arg f="" n="1" start="33" end="35">for their jobs.</arg>
       </example>
-      <example name="unmentioned skill" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="unmentioned skill">
         <text>They also support a tax credit for [employers]-1 to offset the cost of *trace*-1 hiring and training workers who temporarily replace employees on parental leave.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">training</rel>
-        <arg f="" n="2">workers who temporarily replace employees on parental leave</arg>
+        <rel relloc="16">training</rel>
+        <arg f="" n="0" start="13" end="13">*trace*-1</arg>
+        <arg f="" n="2" start="17" end="24">workers who temporarily replace employees on parental leave.</arg>
       </example>
-      <example name="arg2-ergative" src="" type="">
-        <inflection aspect="both" form="participle" person="ns" tense="present" voice="active"/>
+      <example src="" name="arg2-ergative">
         <text>Some have been training for months; others only recently left active status.</text>
-        <arg f="" n="2">Some</arg>
-        <rel f="">training</rel>
-        <arg f="tmp" n="m">for months</arg>
+        <rel relloc="3">training</rel>
+        <arg f="" n="2" start="0" end="0">Some</arg>
+        <arg f="TMP" n="m" start="4" end="5">for months;</arg>
       </example>
-      <example name="Skill only" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="Skill only">
         <text>I had training in mental health and also worked in drugs and alcohol in a women's prison</text>
-        <rel f="">training</rel>
-        <arg f="" n="1">in mental health</arg>
+        <rel relloc="2">training</rel>
+        <arg f="" n="1" start="3" end="5">in mental health</arg>
       </example>
-      <example name="Trainee only" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="Trainee only">
         <text>The training of our Iraqi security forces</text>
-        <rel f="">training</rel>
-        <arg f="" n="2">of our Iraqi security forces</arg>
+        <rel relloc="1">training</rel>
+        <arg f="" n="2" start="2" end="6">of our Iraqi security forces</arg>
       </example>
+      <note>TRAIN-V NOTES: Argument order suggested by comparison with 'teach' (and assumptionsof automatic tagger). VN class hire-13.5.3. (from train.01-v)</note>
+      <note>TRAINING-N NOTES: Added due to expansion of Nombank. Comparison to 'train.01'. Vn class hire-13.5.3. Fn class education_teaching. Framed by Katie. (from training.01-n)</note>
     </roleset>
     <roleset id="train.02" name="aim, focus">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">train</alias>
+        <alias pos="v">train</alias>
       </aliases>
-      <note>TRAIN-V NOTES: Frames file for 'train' based on sentences in wsj. (from train.02-v predicate notes)</note>
       <roles>
-        <role descr="agent, focusser" f="pag" n="0"/>
-        <role descr="thing focussed" f="ppt" n="1"/>
-        <role descr="focussed-on" f="gol" n="2"/>
+        <role descr="agent, focusser" f="PAG" n="0"/>
+        <role descr="thing focussed" f="PPT" n="1"/>
+        <role descr="focussed-on" f="GOL" n="2"/>
       </roles>
-      <example name="ready, aim, fire!" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="" name="ready, aim, fire!">
         <text>From the air, ribbons of yellow fire hose carry water from the bay to [high-pressure nozzles]-1 trained *trace*-1 on the site.</text>
-        <rel f="">trained</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="2">on the site</arg>
+        <rel relloc="16">trained</rel>
+        <arg f="" n="1" start="17" end="17">*trace*-1</arg>
+        <arg f="" n="2" start="18" end="20">on the site.</arg>
       </example>
+      <note>TRAIN-V NOTES: Frames file for 'train' based on sentences in wsj. (from train.02-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

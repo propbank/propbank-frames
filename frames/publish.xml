@@ -1,56 +1,70 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="publish">
     <roleset id="publish.01" name="publish">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">publish</alias>
-        <alias framenet="" pos="n" verbnet="">publication</alias>
-        <alias framenet="" pos="n" verbnet="">publishing</alias>
+        <alias pos="v">publish</alias>
+        <alias pos="n">publication</alias>
+        <alias pos="n">publishing</alias>
+        <argalias pos="n" arg="0">publisher</argalias>
       </aliases>
+      <roles>
+        <role descr="publisher" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="create-26.4-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="book, report" f="PRD" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="create-26.4-1" version="verbnet3.3">result</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Publishing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="create-26.4-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Broadcast" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="publish-v.1" src="annot-overlap" confidence="0.1">126</lexlink>
+      </lexlinks>
+      <example src="" name="transitive">
+        <text>Dow Jones publishes The Wall Street Journal, Barron's magazine, and community newspapers and operates financial news services and computer data bases.</text>
+        <rel relloc="2">publishes</rel>
+        <arg f="" n="0" start="0" end="1">Dow Jones</arg>
+        <arg f="" n="1" start="3" end="11">The Wall Street Journal, Barron's magazine, and community newspapers</arg>
+      </example>
+      <example src="" name="published in">
+        <text>Mr. Bond indicated [the consolidated debt figures, which include debt of units such as Bell Group Ltd.]-1, will be published *trace*-1 soon in Bond Corp.'s 1989 annual accounts.</text>
+        <rel relloc="19">published</rel>
+        <arg f="MOD" n="m" start="17" end="17">will</arg>
+        <arg f="" n="1" start="20" end="20">*trace*-1</arg>
+        <arg f="TMP" n="m" start="21" end="21">soon</arg>
+        <arg f="LOC" n="m" start="22" end="27">in Bond Corp.'s 1989 annual accounts.</arg>
+      </example>
+      <example src="" name="Both args">
+        <text>Julian Assange defended his publication of the leaked U.S. embassy cables.</text>
+        <rel relloc="4">publication</rel>
+        <arg f="" n="0" start="3" end="3">his</arg>
+        <arg f="" n="1" start="5" end="10">of the leaked U.S. embassy cables.</arg>
+      </example>
+      <example src="CallHome" name="transitive">
+        <text>They did do their publishing.</text>
+        <rel relloc="4">publishing.</rel>
+        <arg f="" n="0" start="0" end="0">They</arg>
+        <arg f="LVB" n="m" start="2" end="2">do</arg>
+      </example>
+      <example src="web" name="All Arguments">
+        <text>Avatar Press is most notable for their publishing of "Bad Girl" comics such as Pandora, who is considered by many to be their flagship character.</text>
+        <rel relloc="7">publishing</rel>
+        <arg f="" n="0" start="6" end="6">their</arg>
+        <arg f="" n="1" start="8" end="24">of "Bad Girl" comics such as Pandora, who is considered by many to be their flagship character.</arg>
+      </example>
       <note>PUBLISH-V NOTES: Based on financial subcorpus. Member of Vncls create-26.4-1. (from publish.01-v)</note>
       <note>PUBLICATION-N NOTES: ~publish.01 (from publication.01-n)</note>
       <note>PUBLISHING-N NOTES: Member of Vncls create-26.4-1. All checked by Julia, 10/2010. (from publishing.01-n)</note>
-      <roles>
-        <role descr="publisher" f="PAG" n="0">
-          <vnrole vncls="26.4-1" vntheta="Agent"/>
-        </role>
-        <role descr="book, report" f="PRD" n="1">
-          <vnrole vncls="26.4-1" vntheta="Result"/>
-        </role>
-      </roles>
-      <example name="transitive" src="" type="">
-        <text>Dow Jones publishes The Wall Street Journal, Barron's magazine, and community newspapers and operates financial news services and computer data bases.</text>
-        <arg f="" n="0">Dow Jones</arg>
-        <rel f="">publishes</rel>
-        <arg f="" n="1">The Wall Street Journal, Barron's magazine, and community newspapers</arg>
-      </example>
-      <example name="published in" src="" type="">
-        <text>Mr. Bond indicated [the consolidated debt figures, which include debt of units such as Bell Group Ltd.]-1, will be published *trace*-1 soon in Bond Corp.'s 1989 annual accounts.</text>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">published</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="tmp" n="m">soon</arg>
-        <arg f="loc" n="m">in Bond Corp.'s 1989 annual accounts</arg>
-      </example>
-      <example name="Both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Julian Assange defended his publication of the leaked U.S. embassy cables.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">publication</rel>
-        <arg f="" n="1">of the leaked U.S. embassy cables</arg>
-      </example>
-      <example name="transitive" src="CallHome" type="">
-        <text>They did do their publishing.</text>
-        <arg f="" n="0">They</arg>
-        <arg f="lvb" n="m">do</arg>
-        <rel f="">pubishing</rel>
-      </example>
-      <example name="All Arguments" src="web" type="">
-        <text>Avatar Press is most notable for their publishing of "Bad Girl" comics such as Pandora, who is considered by many to be their flagship character.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">publishing</rel>
-        <arg f="" n="1">of "Bad Girl" comics such as Pandora, who is considered by many to be their flagship character.</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

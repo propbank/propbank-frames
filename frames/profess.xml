@@ -1,60 +1,86 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="profess">
     <roleset id="profess.01" name="announce">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">profess</alias>
-        <alias framenet="" pos="n" verbnet="">profession</alias>
+        <alias pos="v">profess</alias>
+        <alias pos="n">profession</alias>
       </aliases>
-      <note>PROFESS-V NOTES: Frames file for 'profess' based on sentences in financial subcorpus. Verbnet class profess 29.4, no mention of other members. Comparison to 'declare'. (from profess.01-v predicate notes)</note>
-      <note>PROFESSION-N NOTES: (from profession.01-n)</note>
       <roles>
-        <role descr="professor" f="pag" n="0">
-          <vnrole vncls="29.4-1-1-3" vntheta="agent"/>
+        <role descr="professor" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="declare-29.4-1-1-3" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">speaker</rolelink>
+          </rolelinks>
         </role>
-        <role descr="utterance" f="ppt" n="1">
-          <vnrole vncls="29.4-1-1-3" vntheta="theme"/>
+        <role descr="utterance" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="declare-29.4-1-1-3" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">message</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
-        <role descr="hearer" f="gol" n="2"/>
-        <role descr="attributive" f="prd" n="3">
-          <vnrole vncls="" vntheta="result"/>
+        <role descr="hearer" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">addressee</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="attributive" f="PRD" n="3">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="declare-29.4-1-1-3" version="verbnet3.3">result</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="profess-v: basic transitive" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Statement" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="declare-29.4-1-1-3" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Contact.PublicStatementInPerson.Broadcast" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Broadcast" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="profess-v.1" src="annot-overlap" confidence="0.1">5</lexlink>
+      </lexlinks>
+      <example src="" name="profess-v: basic transitive">
         <text>He also professes an ``evangelical'' fervor to develop a corporate culture that rewards managers who produce and where decision-making is shared.</text>
-        <arg f="" n="0">He</arg>
-        <arg f="dis" n="m">also</arg>
-        <rel f="">professes</rel>
-        <arg f="" n="1">an ``evangelical'' fervor to develop a corporate culture that rewards managers who produce and where decision-making is shared</arg>
+        <rel relloc="2">professes</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
+        <arg f="DIS" n="m" start="1" end="1">also</arg>
+        <arg f="" n="1" start="3" end="20">an ``evangelical'' fervor to develop a corporate culture that rewards managers who produce and where decision-making is shared.</arg>
       </example>
-      <example name="profess-v: with arg2" src="" type="">
+      <example src="" name="profess-v: with arg2">
         <text>Two months after Daren moved in and professed his love to Sugar, he started dipping into her savings account to repay his past due college loans</text>
-        <arg f="" n="0">Daren</arg>
-        <rel f="">professed</rel>
-        <arg f="" n="1">his love</arg>
-        <arg f="" n="2">to sugar</arg>
+        <rel relloc="7">professed</rel>
+        <arg f="" n="0" start="3" end="3">Daren</arg>
+        <arg f="" n="1" start="8" end="9">his love</arg>
+        <arg f="" n="2" start="10" end="11">to Sugar,</arg>
       </example>
-      <example name="profess-v: with arg3" src="" type="">
+      <example src="" name="profess-v: with arg3">
         <text>Although it was realist in style, I felt it was strongly allegorical (Oats herself has professed this of her own story).</text>
-        <arg f="" n="0">Oats</arg>
-        <arg f="rec" n="m">herself</arg>
-        <rel f="">professed</rel>
-        <arg f="" n="1">this</arg>
-        <arg f="" n="3">of her own story</arg>
+        <rel relloc="15">professed</rel>
+        <arg f="" n="0" start="12" end="12">(Oats</arg>
+        <arg f="REC" n="m" start="13" end="13">herself</arg>
+        <arg f="" n="1" start="16" end="16">this</arg>
+        <arg f="" n="3" start="17" end="20">of her own story).</arg>
       </example>
-      <example name="profession-n: LVC" src="" type="">
-        <text>Thus, before receiving Baptism, the catechumen must make his profession of faith. </text>
-        <arg f="dis" n="m">thus</arg>
-        <arg f="tmp" n="m">before receiving Baptism</arg>
-        <arg f="" n="0">the catechumen</arg>
-        <arg f="mod" n="m">must</arg>
-        <arg f="lvb" n="m">make</arg>
-        <rel f="">profession</rel>
-        <arg f="" n="1">of faith</arg>
+      <example src="" name="profession-n: LVC">
+        <text>Thus, before receiving Baptism, the catechumen must make his profession of faith.</text>
+        <rel relloc="9">profession</rel>
+        <arg f="DIS" n="m" start="0" end="0">Thus,</arg>
+        <arg f="TMP" n="m" start="1" end="3">before receiving Baptism,</arg>
+        <arg f="" n="0" start="4" end="5">the catechumen</arg>
+        <arg f="MOD" n="m" start="6" end="6">must</arg>
+        <arg f="LVB" n="m" start="7" end="7">make</arg>
+        <arg f="" n="1" start="10" end="11">of faith.</arg>
       </example>
-      <example name="profession-n: NOT EVENTIVE! DO NOT ANNOTATE! MARK AS .YY!" src="" type="">
-        <text>Could it be argued that Churchill had ceased at that point to pursue his profession as an author? </text>
-        </example>
+      <example src="" name="profession-n: NOT EVENTIVE! DO NOT ANNOTATE! MARK AS .YY!">
+        <text>Could it be argued that Churchill had ceased at that point to pursue his profession as an author?</text>
+        <rel relloc="14">profession</rel>
+      </example>
+      <note>PROFESS-V NOTES: Frames file for 'profess' based on sentences in financial subcorpus. Verbnet class profess 29.4, no mention of other members. Comparison to 'declare'. (from profess.01-v predicate notes)</note>
+      <note>PROFESSION-N NOTES: (from profession.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

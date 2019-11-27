@@ -1,64 +1,85 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="launch">
     <roleset id="launch.01" name="set off, introduce, bring up, start, take off">
       <aliases>
-        <alias framenet="Activity_start Cause_begin_motion Launch_process Shoot_projectiles" pos="v" verbnet="">launch</alias>
-        <alias framenet="" pos="n" verbnet="">launch</alias>
+        <alias pos="v">launch</alias>
+        <alias pos="n">launch</alias>
+        <argalias pos="n" arg="0">launcher </argalias>
       </aliases>
-      <note>LAUNCH-V NOTES: Based on financial subcorpus. Member of VNcls establish-55.5-1, throw-17.1-1-1. Comparison with 'introduce' (from launch.01-v)</note>
-      <note>LAUNCH-N NOTES: Based on sentences in nouns-00040. Comparison to launch.01-v. VN class establish-55.5-1. Framed by Katie. (from launch.01-n)</note>
       <roles>
         <role descr="starter, agent" f="PAG" n="0">
-          <vnrole vncls="55.5-1" vntheta="Agent"/>
-          <vnrole vncls="17.1-1-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="establish-55.5-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="throw-17.1-1-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing being launched" f="ppt" n="1">
-          <vnrole vncls="55.5-1" vntheta="Theme"/>
-          <vnrole vncls="17.1-1-1" vntheta="Theme"/>
+        <role descr="thing being launched" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="establish-55.5-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="throw-17.1-1-1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Activity_start" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Shoot_projectiles" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Cause_begin_motion" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Launch_process" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="establish-55.5-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="throw-17.1-1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Conflict.Attack.AirstrikeMissileStrike" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="launch-v.2" src="annot-overlap" confidence="0.1">92</lexlink>
+        <lexlink resource="onsense" version="on5" class="launch-v.1" src="annot-overlap" confidence="0.1">16</lexlink>
+        <lexlink resource="onsense" version="on5" class="launch-n.2" src="annot-overlap" confidence="0.1">12</lexlink>
+        <lexlink resource="onsense" version="on5" class="launch-n.3" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="" name="transitive">
         <text>DD Acquisition has launched a suit in a Delaware court seeking the withdrawal of Dunkin's poison pill rights and employee stock ownership plans.</text>
-        <arg f="" n="0">DD Acquisition</arg>
-        <rel f="">launched</rel>
-        <arg f="" n="1">a suit</arg>
-        <arg f="loc" n="m">in a Delaware court</arg>
-        <arg f="adv" n="m">seeking the withdrawal of Dunkin's poison pill rights and employee stock ownership plans</arg>
+        <rel relloc="3">launched</rel>
+        <arg f="" n="0" start="0" end="1">DD Acquisition</arg>
+        <arg f="" n="1" start="4" end="5">a suit</arg>
+        <arg f="LOC" n="m" start="6" end="9">in a Delaware court</arg>
+        <arg f="ADV" n="m" start="10" end="22">seeking the withdrawal of Dunkin's poison pill rights and employee stock ownership plans.</arg>
       </example>
-      <example name="frequently passivized" src="" type="">
+      <example src="" name="frequently passivized">
         <text>For example, stock-index futures began trading in Chicago in 1982, and within two years they were [the fastest-growing futures contract]-1 ever launched *trace*-1.</text>
-        <arg f="tmp" n="m">ever</arg>
-        <rel f="">launched</rel>
-        <arg f="" n="1">*trace*</arg>
+        <rel relloc="21">launched</rel>
+        <arg f="TMP" n="m" start="20" end="20">ever</arg>
+        <arg f="" n="1" start="22" end="22">*trace*-1.</arg>
       </example>
-      <example name="might split up a constituent" src="" type="">
+      <example src="" name="might split up a constituent">
         <text>Separately, the Ontario Supreme Court said it will postpone indefinitely a ruling on [the lawsuit]-1 launched *trace*-1 by the University of Toronto against Connaught in connection with the Merieux bid.</text>
-        <rel f="">launched</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="0">by the University of Toronto</arg>
-        <arg f="gol" n="m">against Connaught</arg>
-        <arg f="mnr" n="m">in connection with the Merieux bid</arg>
+        <rel relloc="15">launched</rel>
+        <arg f="" n="1" start="16" end="16">*trace*-1</arg>
+        <arg f="" n="0" start="17" end="21">by the University of Toronto</arg>
+        <arg f="GOL" n="m" start="22" end="23">against Connaught</arg>
+        <arg f="MNR" n="m" start="24" end="29">in connection with the Merieux bid.</arg>
       </example>
-      <example name="Begin" src="" type="">
+      <example src="" name="Begin">
         <text>the launch of 1-2-3 Release 3, the upgraded spreadsheet software</text>
-        <rel f="">launch</rel>
-        <arg f="" n="1">of 1-2-3 Release 3 , the upgraded spreadsheet software</arg>
+        <rel relloc="1">launch</rel>
+        <arg f="" n="1" start="2" end="9">of 1-2-3 Release 3, the upgraded spreadsheet software</arg>
       </example>
-      <example name="take off" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="take off">
         <text>the ballistics launches of the other day</text>
-        <arg f="" n="1">ballistics</arg>
-        <rel f="">launches</rel>
-        <arg f="tmp" n="m">of the other day</arg>
+        <rel relloc="2">launches</rel>
+        <arg f="" n="1" start="1" end="1">ballistics</arg>
+        <arg f="TMP" n="m" start="3" end="6">of the other day</arg>
       </example>
-      <example name="Start a venture" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="Start a venture">
         <text>the recent launch of the St. Louis Sun</text>
-        <arg f="tmp" n="m">recent</arg>
-        <rel f="">launch</rel>
-        <arg f="" n="1">of the St. Louis Sun</arg>
+        <rel relloc="2">launch</rel>
+        <arg f="TMP" n="m" start="1" end="1">recent</arg>
+        <arg f="" n="1" start="3" end="7">of the St. Louis Sun</arg>
       </example>
+      <note>LAUNCH-V NOTES: Based on financial subcorpus. Member of VNcls establish-55.5-1, throw-17.1-1-1. Comparison with 'introduce' (from launch.01-v)</note>
+      <note>LAUNCH-N NOTES: Based on sentences in nouns-00040. Comparison to launch.01-v. VN class establish-55.5-1. Framed by Katie. (from launch.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

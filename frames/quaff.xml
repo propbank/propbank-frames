@@ -1,25 +1,40 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="quaff">
     <roleset id="quaff.01" name="quaff">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">quaff</alias>
+        <alias pos="v">quaff</alias>
       </aliases>
-      <note>QUAFF-V NOTES: hand-checked by Kevin (from quaff.01-v)</note>
       <roles>
         <role descr="quaffer/drinker, agent" f="PAG" n="0">
-          <vnrole vncls="39.3-2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="gobble-39.3-2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Ingestion" version="1.7">ingestor</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing quaffed, patient" f="PPT" n="1">
-          <vnrole vncls="39.3-2" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="gobble-39.3-2" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Ingestion" version="1.7">ingestibles</rolelink>
+            <rolelink resource="FrameNet" class="Ingestion" version="1.7">source</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="regular usage" src="web usage" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Ingestion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="gobble-39.3-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web usage" name="regular usage">
         <text>He quaffed the pint of ale.</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">quaffed</rel>
-        <arg f="" n="1">the pint of ale</arg>
+        <rel relloc="1">quaffed</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
+        <arg f="" n="1" start="2" end="5">the pint of ale.</arg>
       </example>
+      <note>QUAFF-V NOTES: hand-checked by Kevin (from quaff.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

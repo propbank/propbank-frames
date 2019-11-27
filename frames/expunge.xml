@@ -1,32 +1,49 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="expunge">
     <roleset id="expunge.01" name="remove">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">expunge</alias>
+        <alias pos="v">expunge</alias>
       </aliases>
-      <note>EXPUNGE-V NOTES: I also know of a usage which uses just the agent and"source", as in"John expunged his criminal record (of false charges)", which issimilar to 'empty' (which actually hasn't been framed yet). (from expunge.01-v)</note>
       <roles>
         <role descr="entity removing" f="PAG" n="0">
-          <vnrole vncls="10.4.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="wipe_manner-10.4.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Removing" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Removing" version="1.7">cause</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing being removed" f="PPT" n="1">
-          <vnrole vncls="10.4.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="wipe_manner-10.4.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Removing" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="removed from" f="DIR" n="2">
-          <vnrole vncls="10.4.1" vntheta="Source"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="wipe_manner-10.4.1" version="verbnet3.3">source</rolelink>
+            <rolelink resource="FrameNet" class="Removing" version="1.7">source</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all args" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Removing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="wipe_manner-10.4.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="all args">
         <text>Partly because of the show, Mr. Watson says, the district decided not to recommend Mrs. Yeargin for a first-time offenders program that *trace* could have expunged the charges and the conviction from her record.</text>
-        <arg f="" n="0">*trace*</arg>
-        <arg f="RCL" n="M">that -&gt; a first-time offenders program</arg>
-        <arg f="MOD" n="M">could</arg>
-        <rel f="">expunged</rel>
-        <arg f="" n="1">the charges and the conviction</arg>
-        <arg f="" n="2">from her record</arg>
+        <rel relloc="25">expunged</rel>
+        <arg f="" n="0" start="22" end="22">*trace*</arg>
+        <arg f="RCL" n="M" start="17" end="20">a first-time offenders program</arg>
+        <arg f="MOD" n="M" start="23" end="23">could</arg>
+        <arg f="" n="1" start="26" end="30">the charges and the conviction</arg>
+        <arg f="" n="2" start="31" end="33">from her record.</arg>
       </example>
+      <note>EXPUNGE-V NOTES: I also know of a usage which uses just the agent and"source", as in"John expunged his criminal record (of false charges)", which issimilar to 'empty' (which actually hasn't been framed yet). (from expunge.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

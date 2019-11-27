@@ -1,32 +1,47 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="subcontract">
     <roleset id="subcontract.01" name="send out part of a job">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">subcontract</alias>
+        <alias pos="v">subcontract</alias>
       </aliases>
-      <note>SUBCONTRACT-V NOTES: Frames file for 'subcontract' based on sentences in wsj. No Verbnet entry. (from subcontract.01-v predicate notes)</note>
       <roles>
-        <role descr="employer, entity with big job" f="pag" n="0"/>
-        <role descr="(part of) job" f="ppt" n="1"/>
-        <role descr="subcontractor" f="gol" n="2"/>
+        <role descr="employer, entity with big job" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Being_employed" version="1.7">employer</rolelink>
+            <rolelink resource="FrameNet" class="Hiring" version="1.7">employer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="(part of) job" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Hiring" version="1.7">employee</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="subcontractor" f="GOL" n="2"/>
       </roles>
-      <example name="unstated subcontractors" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Being_employed" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Hiring" version="1.7" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="unstated subcontractors">
         <text>The company has no immediate plans to close any operations, she said, but Quotron may subcontract some work that it has been doing in-house, including refurbishment and production of Quotron 1000 equipment used in delivering financial data.</text>
-        <arg f="" n="0">Quotron</arg>
-        <arg f="mod" n="m">may</arg>
-        <rel f="">subcontract</rel>
-        <arg f="" n="1">some work that it has been doing in-house, including refurbishment and production of Quotron 1000 equipment used in delivering financial data</arg>
+        <rel relloc="15">subcontract</rel>
+        <arg f="" n="0" start="13" end="13">Quotron</arg>
+        <arg f="MOD" n="m" start="14" end="14">may</arg>
+        <arg f="" n="1" start="16" end="36">some work that it has been doing in-house, including refurbishment and production of Quotron 1000 equipment used in delivering financial data.</arg>
       </example>
-      <example name="with subcontractor" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <example src="" name="with subcontractor">
         <text>John subcontracted his yardwork to the neighborhood kids.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">subcontracted</rel>
-        <arg f="" n="1">his yardwork</arg>
-        <arg f="" n="2">to the neighborhood kids</arg>
+        <rel relloc="1">subcontracted</rel>
+        <arg f="" n="0" start="0" end="0">John</arg>
+        <arg f="" n="1" start="2" end="3">his yardwork</arg>
+        <arg f="" n="2" start="4" end="7">to the neighborhood kids.</arg>
       </example>
+      <note>SUBCONTRACT-V NOTES: Frames file for 'subcontract' based on sentences in wsj. No Verbnet entry. (from subcontract.01-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

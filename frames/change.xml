@@ -1,87 +1,108 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="change">
     <roleset id="change.01" name="transform">
       <aliases>
-        <alias framenet="Cause_change" pos="v" verbnet="">change</alias>
-        <alias framenet="" pos="n" verbnet="">change</alias>
-        <alias framenet="" pos="n" verbnet="">changing</alias>
-        <alias framenet="" pos="l" verbnet="">make_change</alias>
+        <alias pos="v">change</alias>
+        <alias pos="n">change</alias>
+        <alias pos="n">changing</alias>
+        <alias pos="l">make_change</alias>
       </aliases>
-      <note>CHANGE-V NOTES: "Start state" and "thing changing" are usually the same, but there canbe cases where they are separate. Reserve use of Arg3 for these cases. (from change.01-v)</note>
-      <note>CHANGE-N NOTES: Roleset based on verb entry change.01. VerbNet classes 26.6.1 45.4. (from change.01-n)</note>
       <roles>
-        <note>"Start state" and "thing changing" are usually the same, but there canbe cases where they are separate.  Reserve use of Arg3 for these cases. (from change.01-n)</note>
         <role descr="causer of transformation" f="PAG" n="0">
-          <vnrole vncls="26.6.1-1" vntheta="Agent"/>
-          <vnrole vncls="45.4" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="turn-26.6.1-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing changing" f="PPT" n="1">
-          <vnrole vncls="26.6.1-1" vntheta="Patient"/>
-          <vnrole vncls="45.4" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="turn-26.6.1-1" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="end state" f="PRD" n="2">
-          <vnrole vncls="26.6.1-1" vntheta="Result"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="turn-26.6.1-1" version="verbnet3.3">result</rolelink>
+          </rolelinks>
         </role>
         <role descr="start state" f="VSP" n="3">
-          <vnrole vncls="26.6.1-1" vntheta="Material"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="turn-26.6.1-1" version="verbnet3.3">material</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="change-v: agentive" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_change" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Exchange" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="turn-26.6.1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="change-v.1" src="annot-overlap" confidence="0.1">330</lexlink>
+        <lexlink resource="onsense" version="on5" class="change-v.2" src="annot-overlap" confidence="0.1">41</lexlink>
+        <lexlink resource="onsense" version="on5" class="change-n.1" src="annot-overlap" confidence="0.1">10</lexlink>
+      </lexlinks>
+      <example src="" name="change-v: agentive">
         <text>The commercial changed the dynamics of the campaign.</text>
-        <arg f="" n="0">The commercial</arg>
-        <rel f="">changed</rel>
-        <arg f="" n="1">the dynamics of the campaign</arg>
+        <rel relloc="2">changed</rel>
+        <arg f="" n="0" start="0" end="1">The commercial</arg>
+        <arg f="" n="1" start="3" end="7">the dynamics of the campaign.</arg>
       </example>
-      <example name="change-v: ergative" src="" type="">
+      <example src="" name="change-v: ergative">
         <text>...customers whose addresses have changed during the past 3 1/2 years.</text>
-        <arg f="" n="1">whose addresses</arg>
-        <rel f="">changed</rel>
-        <arg f="tmp" n="m">during the past 3 1/2 years</arg>
+        <rel relloc="4">changed</rel>
+        <arg f="" n="1" start="1" end="2">whose addresses</arg>
+        <arg f="TMP" n="m" start="5" end="10">during the past 3 1/2 years.</arg>
       </example>
-      <example name="change-v: passive" src="" type="">
-        <text>...[the areas]-1 that can be most easily changed *trace*-1</text>
-        <arg f="mod" n="m">can</arg>
-        <arg f="mnr" n="m">most easily</arg>
-        <rel f="">changed</rel>
-        <arg f="" n="1">*trace*-1</arg>
+      <example src="" name="change-v: passive">
+        <text>... the areas that can be most easily changed</text>
+        <rel relloc="8">changed</rel>
+        <arg f="MOD" n="m" start="4" end="4">can</arg>
+        <arg f="MNR" n="m" start="6" end="7">most easily</arg>
+        <arg f="" n="1" start="1" end="2">the areas</arg>
       </example>
-      <example name="change-v: with end state" src="" type="">
+      <example src="" name="change-v: with end state">
         <text>...erasures changed wrong answers to right ones on a statewide test.</text>
-        <arg f="" n="0">erasures</arg>
-        <rel f="">changed</rel>
-        <arg f="" n="1">wrong answers</arg>
-        <arg f="" n="2">to right ones</arg>
-        <arg f="loc" n="m">on a statewide test</arg>
+        <rel relloc="1">changed</rel>
+        <arg f="" n="0" start="0" end="0">...erasures</arg>
+        <arg f="" n="1" start="2" end="3">wrong answers</arg>
+        <arg f="" n="2" start="4" end="6">to right ones</arg>
+        <arg f="LOC" n="m" start="7" end="10">on a statewide test.</arg>
       </example>
-      <example name="change-v: explicit start state" src="" type="">
+      <example src="" name="change-v: explicit start state">
         <text>Customers change from borrowers to savers/investors.</text>
-        <arg f="" n="1">Customers</arg>
-        <rel f="">change</rel>
-        <arg f="" n="3">from borrowers</arg>
-        <arg f="" n="2">to savers/investors</arg>
+        <rel relloc="1">change</rel>
+        <arg f="" n="1" start="0" end="0">Customers</arg>
+        <arg f="" n="3" start="2" end="3">from borrowers</arg>
+        <arg f="" n="2" start="4" end="5">to savers/investors.</arg>
       </example>
-      <example name="make_change-l" src="ula-masc1-rest" type="">
+      <example src="ula-masc1-rest" name="make_change-l">
         <text>Now , did there come a time when you learned that the board had made a change to the biology curriculum ?</text>
-        <arg f="" n="0">the board</arg>
-        <arg f="lvb" n="m">made</arg>
-        <rel f="">change</rel>
-        <arg f="" n="1">to the biology curriculum</arg>
+        <rel relloc="16">change</rel>
+        <arg f="" n="0" start="11" end="12">the board</arg>
+        <arg f="LVB" n="m" start="14" end="14">made</arg>
+        <arg f="" n="1" start="17" end="20">to the biology curriculum</arg>
       </example>
-      <example name="change-n: Question: with args 2 &amp; 3" src="web" type="">
+      <example src="web" name="change-n: Question: with args 2 &amp; 3">
         <text>What is the change from liquid to solid called?</text>
-        <rel f="">change</rel>
-        <arg f="" n="3">from liquid</arg>
-        <arg f="" n="2">to solid</arg>
+        <rel relloc="3">change</rel>
+        <arg f="" n="3" start="4" end="5">from liquid</arg>
+        <arg f="" n="2" start="6" end="7">to solid</arg>
       </example>
-      <example name="change-n: All arguments...depressing" src="web" type="">
+      <example src="web" name="change-n: All arguments...depressing">
         <text>Standard&amp; Poor's (S &amp; P) announced their change to the debt outlook of United States from 'stable' to 'negative.'</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">change</rel>
-        <arg f="" n="1">to the debt outlook of United States</arg>
-        <arg f="" n="3">from 'stable'</arg>
-        <arg f="" n="2">to 'negative.'</arg>
+        <rel relloc="7">change</rel>
+        <arg f="" n="0" start="6" end="6">their</arg>
+        <arg f="" n="1" start="8" end="14">to the debt outlook of United States</arg>
+        <arg f="" n="3" start="15" end="16">from 'stable'</arg>
+        <arg f="" n="2" start="17" end="18">to 'negative.'</arg>
       </example>
+      <note>CHANGE-V NOTES: "Start state" and "thing changing" are usually the same, but there canbe cases where they are separate. Reserve use of Arg3 for these cases. (from change.01-v)</note>
+      <note>CHANGE-N NOTES: Roleset based on verb entry change.01. VerbNet classes 26.6.1 45.4. (from change.01-n)</note>
+      <note>"Start state" and "thing changing" are usually the same, but there canbe cases where they are separate.  Reserve use of Arg3 for these cases. (from change.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,71 +1,84 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="shove">
     <roleset id="shove.01" name="push harshly">
       <aliases>
-        <alias framenet="Cause_motion" pos="v" verbnet="">shove</alias>
+        <alias pos="v">shove</alias>
       </aliases>
-      <note>SHOVE-V NOTES: Member of Vncls split-23.2, throw-17.1-1, carry-11.4-1-1, push-12-1-1. (from shove.01-v)</note>
       <roles>
         <role descr="pusher" f="PAG" n="0">
-          <vnrole vncls="23.2" vntheta="Agent"/>
-          <vnrole vncls="17.1-1" vntheta="Agent"/>
-          <vnrole vncls="11.4-1-1" vntheta="Agent"/>
-          <vnrole vncls="12-1-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="split-23.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="throw-17.1-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="carry-11.4-1-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="push-12-1-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing pushed" f="PPT" n="1">
-          <vnrole vncls="23.2" vntheta="Patient"/>
-          <vnrole vncls="17.1-1" vntheta="Theme"/>
-          <vnrole vncls="11.4-1-1" vntheta="Theme"/>
-          <vnrole vncls="12-1-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="split-23.2" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="VerbNet" class="throw-17.1-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="carry-11.4-1-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="push-12-1-1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="destination, direction, end state" f="dir" n="2">
-          <vnrole vncls="17.1-1" vntheta="Destination"/>
-          <vnrole vncls="11.4-1-1" vntheta="Destination"/>
+        <role descr="destination, direction, end state" f="DIR" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="throw-17.1-1" version="verbnet3.3">destination</rolelink>
+            <rolelink resource="VerbNet" class="carry-11.4-1-1" version="verbnet3.3">destination</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="arg2 as direction" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_motion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="split-23.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="throw-17.1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="carry-11.4-1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="push-12-1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="shove-v.2" src="annot-overlap" confidence="0.1">6</lexlink>
+      </lexlinks>
+      <example src="" name="arg2 as direction">
         <text>And [the majority of Members]-1 cynically view the current discrediting of HUD as mainly a chance *trace*-1 to shove through their own slate of projects.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">shove</rel>
-        <arg f="" n="2">through</arg>
-        <arg f="" n="1">their own slate of projects</arg>
+        <rel relloc="18">shove</rel>
+        <arg f="" n="0" start="16" end="16">*trace*-1</arg>
+        <arg f="" n="2" start="19" end="19">through</arg>
+        <arg f="" n="1" start="20" end="24">their own slate of projects.</arg>
       </example>
-      <example name="prepositional direction" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
+      <example src="" name="prepositional direction">
         <text>Alfred Harrison, the manager, shoves Mr. Straszheim's handout back at him: ``Do we want to go through this?</text>
-        <arg f="" n="0">Alfred Harrison, the manager,</arg>
-        <rel f="">shoves</rel>
-        <arg f="" n="1">Mr. Straszheim's handout</arg>
-        <arg f="dir" n="m">back</arg>
-        <arg f="" n="2">at him</arg>
+        <rel relloc="4">shoves</rel>
+        <arg f="" n="0" start="0" end="3">Alfred Harrison, the manager,</arg>
+        <arg f="" n="1" start="5" end="7">Mr. Straszheim's handout</arg>
+        <arg f="DIR" n="m" start="8" end="8">back</arg>
+        <arg f="" n="2" start="9" end="10">at him:</arg>
       </example>
-      <example name="another prep direction" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
+      <example src="" name="another prep direction">
         <text>That could shove a weak economy into recession.</text>
-        <arg f="" n="0">That</arg>
-        <arg f="mod" n="m">could</arg>
-        <rel f="">shove</rel>
-        <arg f="" n="1">a weak economy</arg>
-        <arg f="" n="2">into recession</arg>
+        <rel relloc="2">shove</rel>
+        <arg f="" n="0" start="0" end="0">That</arg>
+        <arg f="MOD" n="m" start="1" end="1">could</arg>
+        <arg f="" n="1" start="3" end="5">a weak economy</arg>
+        <arg f="" n="2" start="6" end="7">into recession.</arg>
       </example>
-      <example name="and another" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
+      <example src="" name="and another">
         <text>[The state]-1 quit *trace*-1 shoving peasants onto its subsidized farms over 30 years ago.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">shoving</rel>
-        <arg f="" n="1">peasants</arg>
-        <arg f="" n="2">onto its subsidized farms</arg>
+        <rel relloc="4">shoving</rel>
+        <arg f="" n="0" start="3" end="3">*trace*-1</arg>
+        <arg f="" n="1" start="5" end="5">peasants</arg>
+        <arg f="" n="2" start="6" end="9">onto its subsidized farms</arg>
       </example>
-      <example name="ARG0 and ARG2 and ARG1" src="ontonotes nw/wsj/03/wsj_0309" type="">
+      <example src="ontonotes nw/wsj/03/wsj_0309" name="ARG0 and ARG2 and ARG1">
         <text>And the majority of Members cynically view the current discrediting of HUD as mainly a chance to shove through their own slate of projects .</text>
-        <arg f="" n="0">the majority of Members</arg>
-        <rel f="">shove</rel>
-        <arg f="" n="2">through</arg>
-        <arg f="" n="1">their own slate of projects</arg>
+        <rel relloc="17">shove</rel>
+        <arg f="" n="0" start="1" end="4">the majority of Members</arg>
+        <arg f="" n="2" start="18" end="18">through</arg>
+        <arg f="" n="1" start="19" end="23">their own slate of projects</arg>
       </example>
-
+      <note>SHOVE-V NOTES: Member of Vncls split-23.2, throw-17.1-1, carry-11.4-1-1, push-12-1-1. (from shove.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

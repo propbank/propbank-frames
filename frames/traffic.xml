@@ -1,26 +1,36 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="traffic">
     <roleset id="traffic.01" name="buy or sell">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">traffic</alias>
-        <alias framenet="" pos="n" verbnet="">traffic</alias>
-        <alias framenet="" pos="n" verbnet="">trafficking</alias>
+        <alias pos="v">traffic</alias>
+        <alias pos="n">traffic</alias>
+        <alias pos="n">trafficking</alias>
+        <argalias pos="n" arg="0">trafficker</argalias>
       </aliases>
+      <roles>
+        <role descr="seller" f="PAG" n="0"/>
+        <role descr="item sold" f="PPT" n="1"/>
+        <role descr="buyer" f="GOL" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Smuggling" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Movement.TransportArtifact.SmuggleExtract" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Movement.TransportPerson.SmuggleExtract" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Transportartifact" version="rich" confidence="0.1" src="reo-expansion"/>
+      </lexlinks>
+      <example src="internet" name="args 0, 1">
+        <text>A mighty drama their traffic of human souls!</text>
+        <rel relloc="4">traffic</rel>
+        <arg f="" n="0" start="3" end="3">their</arg>
+        <arg f="" n="1" start="5" end="7">of human souls!</arg>
+      </example>
       <note>TRAFFIC-N NOTES: Based on Bolt data. No VN or FN classes. Framed by Katie. (from traffic.01-n)</note>
       <note>TRAFFIC-V NOTES: Automatically added alias.</note>
-      <roles>
-        <role descr="seller" f="pag" n="0"/>
-        <role descr="item sold" f="ppt" n="1"/>
-        <role descr="buyer" f="gol" n="2"/>
-      </roles>
-      <example name="args 0, 1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>A mighty drama their traffic of human souls!</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">traffic</rel>
-        <arg f="" n="1">of human souls</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

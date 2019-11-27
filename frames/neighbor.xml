@@ -1,33 +1,43 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="neighbor">
     <roleset id="neighbor.01" name="be next to">
       <aliases>
-        <alias framenet="Locative_relation" pos="v" verbnet="">neighbor</alias>
-        <alias framenet="" pos="n" verbnet="">neighboring</alias>
+        <alias pos="v">neighbor</alias>
+        <alias pos="n">neighboring</alias>
       </aliases>
-      <note>NEIGHBOR-V NOTES: Based on WSJ. Member of VNcls contiguous_location-47.8. (from neighbor.01-v)</note>
       <roles>
         <role descr="first neighboring entity" f="PPT" n="1">
-          <vnrole vncls="47.8" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="contiguous_location-47.8" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="second neighbor, neighbors what/whom" f="LOC" n="2">
-          <vnrole vncls="47.8" vntheta="co-theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="contiguous_location-47.8" version="verbnet3.3">co-theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="neighbor-v: only one neighbor mentioned" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Locative_relation" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="contiguous_location-47.8" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="neighbor-v.1" src="annot-overlap" confidence="0.1">8</lexlink>
+      </lexlinks>
+      <example src="" name="neighbor-v: only one neighbor mentioned">
         <text>As long as the rival Soviet-backed regime of Mengistu Haile Mariam held a total gridlock over neighboring Ethiopia, the U.S. was forced to accept that lonely Berbera runway as a distant No. 2 to the Soviets' array of airfields next door.</text>
-        <rel f="">neighboring</rel>
-        <arg f="" n="1">Ethiopia</arg>
+        <rel relloc="16">neighboring</rel>
+        <arg f="" n="1" start="17" end="17">Ethiopia,</arg>
       </example>
-      <example name="ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1001" type="">
+      <example src="ontonotes mz/sinorama/10/ectb_1001" name="ARG1 and ARG2">
         <text>Moreover , the contribution made by Taiwanese businesses to Macau is even less than the spillover from Hong Kong firms investing in neighboring Zhuhai .</text>
-        <arg f="" n="1">[]</arg>
-        <rel f="">neighboring</rel>
-        <arg f="" n="2">Zhuhai</arg>
+        <rel relloc="22">neighboring</rel>
+        <arg f="" n="2" start="23" end="23">Zhuhai</arg>
       </example>
-
+      <note>NEIGHBOR-V NOTES: Based on WSJ. Member of VNcls contiguous_location-47.8. (from neighbor.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,67 +1,81 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="collide">
     <roleset id="collide.01" name="make contact with, collide literally or metaphorically">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">collision</alias>
-        <alias framenet="" pos="v" verbnet="">collide</alias>
+        <alias pos="n">collision</alias>
+        <alias pos="v">collide</alias>
       </aliases>
-      <note>COLLIDE-V NOTES: Framed by Neville. (from collide.01-v)</note>
-      <note>COLLISION-N NOTES: Roleset based on verb entry collide.01, OntoNotes grouping collision-n senses 1&amp; 2; maps to VN classes bump-18.4-1 and correspond-36.1, the latter of which is a metaphorical extension of the first. Framed by Claire. (from collision.01-n)</note>
       <roles>
-        <note>Verb entry does not have arg2, and it seems fairly rare, but it is predicted by VN.  Hopefully an outside causer with two colliders doesn't come up...I could've just jinxed it. (from collision.01-n)</note>
-        <role descr="theme, thing in motion, 1st colliders or all colliders in one constituent" f="ppt" n="0">
-          <vnrole vncls="18.4-1" vntheta="Theme"/>
-          <vnrole vncls="36.1" vntheta="Agent"/>
+        <role descr="theme, thing in motion, 1st colliders or all colliders in one constituent" f="PPT" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="bump-18.4-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="correspond-36.1.1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing hit, 2nd collider where separate mention" f="ppt" n="1">
-          <vnrole vncls="18.4" vntheta="Location"/>
-          <vnrole vncls="36.1" vntheta="co-agent"/>
+        <role descr="thing hit, 2nd collider where separate mention" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="bump-18.4" version="verbnet3.3">location</rolelink>
+            <rolelink resource="VerbNet" class="correspond-36.1.1" version="verbnet3.3">co-agent</rolelink>
+            <rolelink resource="FrameNet" class="Impact" version="1.7">impactee</rolelink>
+          </rolelinks>
         </role>
         <role descr="Topic collided over in metaphorical case, cause of disagreement" f="PPT" n="2">
-          <vnrole vncls="36.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="correspond-36.1.1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_impact" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Impact" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="bump-18.4-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="36.1" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="bump-18.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="collide-v.1" src="annot-overlap" confidence="0.1">12</lexlink>
+        <lexlink resource="onsense" version="on5" class="collision-n.1" src="annot-overlap" confidence="0.1">19</lexlink>
+      </lexlinks>
+      <example src="" name="transitive">
         <text>According to astronomy experts , the observation and study of this cometcolliding with Jupiter will help both the in - depth revelation of Jupiter 'smysteries of the rosy clouds , the great red spot , and corona and also help in[*] developing research on the odds , forecast accuracy and explosive effects , etc. of comets and asteroids ' collision with Earth .</text>
-        <rel f="">colliding</rel>
-        <arg f="" n="1">with Jupiter</arg>
-        <arg f="" n="0">this comet</arg>
+        <rel relloc="11">cometcolliding</rel>
+        <arg f="" n="1" start="12" end="13">with Jupiter</arg>
+        <arg f="" n="0" start="54" end="55">of comets</arg>
       </example>
-      <example name="Arg 0, all colliders in one constituent." src="ON sense 1" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="ON sense 1" name="Arg 0, all colliders in one constituent.">
         <text>The collision of the two ships resulted in a serious oil spill.</text>
-        <rel f="">collision</rel>
-        <arg f="" n="0">of the two ships</arg>
+        <rel relloc="1">collision</rel>
+        <arg f="" n="0" start="2" end="5">of the two ships</arg>
       </example>
-      <example name="Metaphorical collision, same syntax" src="ON sense 2" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="ON sense 2" name="Metaphorical collision, same syntax">
         <text>The collision of interests became clear during the meeting.</text>
-        <rel f="">collision</rel>
-        <arg f="" n="1">of interests</arg>
+        <rel relloc="1">collision</rel>
+        <arg f="" n="1" start="2" end="3">of interests</arg>
       </example>
-      <example name="All arguments" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="All arguments">
         <text>My collision with Jessie over Operation Smile is an example; I really wanted to help, even to the point of writing a letter to people in my school.</text>
-        <arg f="" n="0">my</arg>
-        <rel f="">collision</rel>
-        <arg f="" n="1">with Jessie</arg>
-        <arg f="" n="2">over Operation Smile</arg>
+        <rel relloc="1">collision</rel>
+        <arg f="" n="0" start="0" end="0">My</arg>
+        <arg f="" n="1" start="2" end="3">with Jessie</arg>
+        <arg f="" n="2" start="4" end="6">over Operation Smile</arg>
       </example>
-      <example name="&quot;Over&quot; as LOC, literal collision" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="&quot;Over&quot; as LOC, literal collision">
         <text>An important question regarding the collision over the Hudson is whether the pilot of the private plane had tuned in to the corridor frequency.</text>
-        <rel f="">collision</rel>
-        <arg f="loc" n="m">over the Hudson</arg>
+        <rel relloc="5">collision</rel>
+        <arg f="LOC" n="m" start="6" end="8">over the Hudson</arg>
       </example>
-      <example name="Args 0 &amp; 1" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="Args 0 &amp; 1">
         <text>Rolling Stone remarked that Size and his Reprazent collective "engineer the collision of style with stealth."</text>
-        <rel f="">collision</rel>
-        <arg f="" n="1">of style</arg>
-        <arg f="" n="2">with stealth</arg>
+        <rel relloc="11">collision</rel>
+        <arg f="" n="1" start="12" end="13">of style</arg>
+        <arg f="" n="2" start="14" end="15">with stealth."</arg>
       </example>
+      <note>COLLIDE-V NOTES: Framed by Neville. (from collide.01-v)</note>
+      <note>COLLISION-N NOTES: Roleset based on verb entry collide.01, OntoNotes grouping collision-n senses 1&amp; 2; maps to VN classes bump-18.4-1 and correspond-36.1, the latter of which is a metaphorical extension of the first. Framed by Claire. (from collision.01-n)</note>
+      <note>Verb entry does not have arg2, and it seems fairly rare, but it is predicted by VN.  Hopefully an outside causer with two colliders doesn't come up...I could've just jinxed it. (from collision.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

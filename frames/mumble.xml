@@ -1,36 +1,52 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="mumble">
     <roleset id="mumble.01" name="speak unclearly">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">mumble</alias>
+        <alias pos="v">mumble</alias>
       </aliases>
-      <note>MUMBLE-V NOTES: Frames file for 'mumble' based on sentences in wsj. Verbnet entry 37.3. (from mumble.01-v predicate notes)</note>
       <roles>
         <role descr="speaker" f="PAG" n="0">
-          <vnrole vncls="37.3" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Communication_manner" version="1.7">speaker</rolelink>
+          </rolelinks>
         </role>
         <role descr="utterance" f="PPT" n="1">
-          <vnrole vncls="37.3" vntheta="Topic"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="FrameNet" class="Communication_manner" version="1.7">message</rolelink>
+            <rolelink resource="FrameNet" class="Communication_manner" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
         <role descr="listener" f="GOL" n="2">
-          <vnrole vncls="37.3" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3">recipient</rolelink>
+            <rolelink resource="FrameNet" class="Communication_manner" version="1.7">addressee</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="adjectival" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Communication_manner" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="adjectival">
         <text>My questions on this subject ... were greeted with derision and some mumbled comments about that report being discredited.</text>
-        <rel f="">mumbled</rel>
-        <arg f="" n="1">comments</arg>
+        <rel relloc="12">mumbled</rel>
+        <arg f="" n="1" start="13" end="13">comments</arg>
       </example>
-      <example name="ARG0 and ARG2" src="probably COCA (2018 example fix)" type="">
+      <example src="probably COCA (2018 example fix)" name="ARG0 and ARG2">
         <text>He mumbled to her as he picked her up and carried her to his horse.</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">mumbled</rel>
-        <arg f="" n="2">to her</arg>
-        <arg f="tmp" n="m">as he picked her up and carried her to his horse.</arg>
+        <rel relloc="1">mumbled</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
+        <arg f="" n="2" start="2" end="3">to her</arg>
+        <arg f="TMP" n="m" start="4" end="14">as he picked her up and carried her to his horse.</arg>
       </example>
-
+      <note>MUMBLE-V NOTES: Frames file for 'mumble' based on sentences in wsj. Verbnet entry 37.3. (from mumble.01-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

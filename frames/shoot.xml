@@ -1,409 +1,478 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="shoot">
     <roleset id="shoot.01" name="propel projectile">
       <aliases>
-        <alias framenet="Shoot_projectiles Hit_target" pos="n" verbnet="">shot</alias>
-        <alias framenet="" pos="l" verbnet="">take_shot</alias>
-        <alias framenet="Shoot_projectiles Hit_target" pos="v" verbnet="17.1-1">shoot</alias>
+        <alias pos="n">shot</alias>
+        <alias pos="l">take_shot</alias>
+        <alias pos="v">shoot</alias>
       </aliases>
-      <note>SHOOT-V NOTES: Frames file for 'shoot' based on sentences in wsj. Updated by Julia, 11/2010.Member of Vncls throw-17.1-1. (from shoot-v.01)</note>
-      <note>SHOT-N NOTES: Rolest based on verb entry shoot.01, although this verb seemed to be mostly a literal usage, whereas the noun seems to be primarily metaphorical. Corresponds to Vncls throw-17.1-1. (from shot-n.01)</note>
       <roles>
-        <note>SHOT-N NOTES: Seems doubtful mention of projectile will appear
-					unless the rel is "shooting". Thing shot tends to be understood
-					when it exists.</note>
-        <role descr="shooter" f="pag" n="0">
-          <vnrole vncls="17.1-1" vntheta="agent"/>
+        <role descr="shooter" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="throw-17.1-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="projectile" f="ppt" n="1">
-          <vnrole vncls="17.1-1" vntheta="theme"/>
+        <role descr="projectile" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="throw-17.1-1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="target" f="gol" n="2">
-          <vnrole vncls="17.1-1" vntheta="destination"/>
+        <role descr="target" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="throw-17.1-1" version="verbnet3.3">destination</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all args" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Use_firearm" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Shoot_projectiles" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Hit_target" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="throw-17.1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Conflict.Attack.AirstrikeMissileStrike" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Conflict.Attack.FirearmAttack" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Injure" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="shoot-v.1" src="annot-overlap" confidence="0.1">21</lexlink>
+      </lexlinks>
+      <example src="" name="all args">
         <text>WHEN HURRICANE Hugo careened through the Caribbean and the Atlantic coast states, it downed electric and telephone lines, shot coconuts through cottage rooftops, shattered windows and uprooted thousands of lives.</text>
-        <arg f="tmp" n="m">WHEN HURRICANE Hugo careened through the Caribbean and the Atlantic coast states</arg>
-        <arg f="" n="0">it</arg>
-        <rel f="">shot</rel>
-        <arg f="" n="1">coconuts</arg>
-        <arg f="" n="2">through cottage rooftops</arg>
+        <rel relloc="18">shot</rel>
+        <arg f="TMP" n="m" start="0" end="11">WHEN HURRICANE Hugo careened through the Caribbean and the Atlantic coast states,</arg>
+        <arg f="" n="0" start="12" end="12">it</arg>
+        <arg f="" n="1" start="19" end="19">coconuts</arg>
+        <arg f="" n="2" start="20" end="22">through cottage rooftops,</arg>
       </example>
-      <example name="unmentioned projectiles" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="past" voice="active"/>
+      <example src="" name="unmentioned projectiles">
         <text>When the smoke cleared, six people were dead (three from heart attacks), and everyone wondered what in the world they were shooting at *trace*.</text>
-        <arg f="" n="0">they</arg>
-        <rel f="">shooting</rel>
-        <arg f="" n="2">at *trace*</arg>
+        <rel relloc="21">shooting</rel>
+        <arg f="" n="0" start="19" end="19">they</arg>
+        <arg f="" n="2" start="22" end="23">at *trace*.</arg>
       </example>
-      <example name="weird kind of target" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="present" voice="active"/>
+      <example src="" name="weird kind of target">
         <text>People are shooting for a dream.</text>
-        <arg f="" n="0">People</arg>
-        <rel f="">shooting</rel>
-        <arg f="" n="2">for a dream</arg>
+        <rel relloc="2">shooting</rel>
+        <arg f="" n="0" start="0" end="0">People</arg>
+        <arg f="" n="2" start="3" end="5">for a dream.</arg>
       </example>
-      <example name="nominal rel: shot; metaphorical goal, within LVC" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I believe we-1 have *-1 to take a shot at getting as much done as we can through the court.</text>
-        <arg f="" n="0">*-1</arg>
-        <arg f="lvb" n="m">take</arg>
-        <rel f="">shot</rel>
-        <arg f="" n="2">at getting as much done as we can through the court</arg>
+      <example src="" name="nominal rel: shot; metaphorical goal, within LVC">
+        <text>I believe we have to take a shot at getting as much done as we can through the court.</text>
+        <rel relloc="7">shot</rel>
+        <arg f="" n="0" start="2" end="2">we</arg>
+        <arg f="LVB" n="m" start="5" end="5">take</arg>
+        <arg f="" n="2" start="8" end="18">at getting as much done as we can through the court.</arg>
       </example>
-      <example name="nominal rel: shot; unmentioned projectiles, literal/concrete" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="nominal rel: shot; unmentioned projectiles, literal/concrete">
         <text>Adam Scott, of Australia, left, celebrates his shot to the 13th green.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">shot</rel>
-        <arg f="" n="2">to the 13th green</arg>
+        <rel relloc="7">shot</rel>
+        <arg f="" n="0" start="6" end="6">his</arg>
+        <arg f="" n="2" start="8" end="11">to the 13th green.</arg>
       </example>
+      <note>SHOOT-V NOTES: Frames file for 'shoot' based on sentences in wsj. Updated by Julia, 11/2010.Member of Vncls throw-17.1-1. (from shoot-v.01)</note>
+      <note>SHOT-N NOTES: Rolest based on verb entry shoot.01, although this verb seemed to be mostly a literal usage, whereas the noun seems to be primarily metaphorical. Corresponds to Vncls throw-17.1-1. (from shot-n.01)</note>
+      <note>SHOT-N NOTES: Seems doubtful mention of projectile will appear
+					unless the rel is "shooting". Thing shot tends to be understood
+					when it exists.</note>
     </roleset>
-    
     <roleset id="shoot.02" name="kill with gun;  Event where weapons are fired; firing a gun">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">shoot</alias>
-        <alias framenet="Killing" pos="n" verbnet="">shooting</alias>
-        <alias framenet="Hit_target , Use_firearm" pos="v" verbnet="42.2">shoot</alias>
+        <alias pos="n">shoot</alias>
+        <alias pos="n">shooting</alias>
+        <alias pos="v">shoot</alias>
       </aliases>
+      <roles>
+        <role descr="shooter" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="poison-42.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Killing" version="1.7">cause</rolelink>
+            <rolelink resource="FrameNet" class="Killing" version="1.7">killer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="corpse" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="poison-42.2" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Killing" version="1.7">victim</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="gun" f="MNR" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="poison-42.2" version="verbnet3.3">instrument</rolelink>
+            <rolelink resource="FrameNet" class="Killing" version="1.7">instrument</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="specific location of wound" f="LOC" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Killing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Use_firearm" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Hit_target" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="," version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="poison-42.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Conflict.Attack.FirearmAttack" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Life.Die.DeathCausedByViolentEvents" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Life.Injure.InjuryCausedByViolentEvents" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Die" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Injure" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="shoot-v.1" src="annot-overlap" confidence="0.1">66</lexlink>
+        <lexlink resource="onsense" version="on5" class="shoot-n.2" src="annot-overlap" confidence="0.1">21</lexlink>
+      </lexlinks>
+      <example src="" name="just corpse">
+        <text>Most of the cases have been in California, where one agent was stabbed and another was shot and killed *trace*.</text>
+        <rel relloc="16">shot</rel>
+        <arg f="" n="1" start="14" end="14">another</arg>
+      </example>
+      <example src="" name="friendly fire">
+        <text>``Conservatives shoot their own,'' he says.</text>
+        <rel relloc="1">shoot</rel>
+        <arg f="" n="0" start="0" end="0">``Conservatives</arg>
+        <arg f="" n="1" start="2" end="2">their</arg>
+      </example>
+      <example src="" name="with explicit wound">
+        <text>The first time, he was shot in the hand as he chased the robbers outside.</text>
+        <rel relloc="5">shot</rel>
+        <arg f="TMP" n="m" start="0" end="2">The first time,</arg>
+        <arg f="" n="1" start="3" end="3">he</arg>
+        <arg f="" n="3" start="6" end="8">in the hand</arg>
+        <arg f="TMP" n="m" start="9" end="14">as he chased the robbers outside.</arg>
+      </example>
+      <example src="ontonotes nw/wsj/13/wsj_1307" name="ARG0 and ARG2">
+        <text>It can send a fighter squadron to strafe terrorist hideouts in the Bekaa Valley , but ca n't shoot Abu Nidal .</text>
+        <rel relloc="18">shoot</rel>
+        <arg f="" n="0" start="0" end="0">It</arg>
+        <arg f="MOD" n="m" start="16" end="16">ca</arg>
+        <arg f="NEG" n="m" start="17" end="17">n't</arg>
+        <arg f="" n="2" start="19" end="20">Abu Nidal</arg>
+      </example>
+      <example src="" name="Who doesn't love a good turkey shoot?">
+        <text>The county is not holding its annual turkey shoot this year.</text>
+        <rel relloc="8">shoot</rel>
+        <arg f="TMP" n="m" start="6" end="6">annual</arg>
+        <arg f="" n="1" start="7" end="7">turkey</arg>
+      </example>
+      <example src="" name="nominal rel: shooting">
+        <text>Seattle shooting of Jews</text>
+        <rel relloc="1">shooting</rel>
+        <arg f="LOC" n="m" start="0" end="0">Seattle</arg>
+        <arg f="" n="1" start="2" end="3">of Jews</arg>
+      </example>
+      <example src="" name="Nominal rel: shooting">
+        <text>The only thing that is indicative of his shooting her in the head, is the scene previous to her dying, in which she spins the p90 around.</text>
+        <rel relloc="8">shooting</rel>
+        <arg f="" n="0" start="7" end="7">his</arg>
+        <arg f="" n="1" start="9" end="9">her</arg>
+        <arg f="" n="3" start="10" end="12">in the head,</arg>
+      </example>
       <note>SHOOT-V NOTES: Member of Vncls poison-42.2. (from shoot-v.02)</note>
       <note>SHOOT-N NOTES: Roleset based on verb entry shoot.02 (kill with gun), OntoNotes sense grouping shoot.02; maps to VN class poison-42.2. Framed by Claire. (from shoot-n.01)</note>
       <note>SHOOTING-N NOTES: Added by Julia based on BOLT, shoot-v.02. Corresponds to VNcls poison-42.2. (from shooting.01-n)</note>
-      <roles>
-        <note>SHOOT-N NOTES: The shooter may never appear, be careful to
+      <note>SHOOT-N NOTES: The shooter may never appear, be careful to
 					distinguish sponsors/possessors of the event from actual shooters.</note>
-        <role descr="shooter" f="pag" n="0">
-          <vnrole vncls="42.2" vntheta="agent"/>
-        </role>
-        <role descr="corpse" f="ppt" n="1">
-          <vnrole vncls="42.2" vntheta="patient"/>
-        </role>
-        <role descr="gun" f="mnr" n="2">
-          <vnrole vncls="42.2" vntheta="instrument"/>
-        </role>
-        <role descr="specific location of wound" f="loc" n="3"/>
-      </roles>
-      <example name="just corpse" src="" type="">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="passive"/>
-        <text>Most of the cases have been in California, where one agent was stabbed and another-1 was shot and killed *trace*-1.</text>
-        <rel f="">shot</rel>
-        <arg f="" n="1">*trace*-1</arg>
-      </example>
-      <example name="friendly fire" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>``Conservatives shoot their own,'' he says.</text>
-        <arg f="" n="0">Conservatives</arg>
-        <rel f="">shoot</rel>
-        <arg f="" n="1">their own</arg>
-      </example>
-      <example name="with explicit wound" src="" type="">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="passive"/>
-        <text>The first time, he-1 was shot *trace*-1 in the hand as he chased the robbers outside.</text>
-        <arg f="tmp" n="m">The first time</arg>
-        <rel f="">shot</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="3">in the hand</arg>
-        <arg f="tmp" n="m">as he chased the robbers outside</arg>
-      </example>
-      <example name="ARG0 and ARG2" src="ontonotes nw/wsj/13/wsj_1307" type="">
-        <text>It can send a fighter squadron to strafe terrorist hideouts in the Bekaa Valley , but ca n't shoot Abu Nidal .</text>
-        <arg f="" n="0">It</arg>
-        <arg f="mod" n="m">ca</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">shoot</rel>
-        <arg f="" n="2">Abu Nidal</arg>
-      </example>
-
-      <example name="Who doesn't love a good turkey shoot?" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The county is not holding its annual turkey shoot this year.</text>
-        <arg f="tmp" n="m">annual</arg>
-        <arg f="" n="1">turkey</arg>
-        <rel f="">shoot</rel>
-      </example>
-      
-      <example name="nominal rel: shooting" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Seattle shooting of Jews</text>
-        <arg f="loc" n="m">Seattle</arg>
-        <rel f="">shooting</rel>
-        <arg f="" n="1">of Jews</arg>
-      </example>
-      <example name="Nominal rel: shooting" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The only thing that is indicative of his shooting her in the head, is the scene previous to her dying, in which she spins the p90 around.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">shooting</rel>
-        <arg f="" n="1">her</arg>
-        <arg f="" n="3">in the head</arg>
-      </example>
     </roleset>
-    
     <roleset id="shoot.03" name="record on film; Event where photographers shoot pictures">
       <aliases>
-        <alias framenet="Behind_the_scenes" pos="v" verbnet="-">shoot</alias>
-        <alias framenet="" pos="n" verbnet="">shoot</alias>
-        <alias framenet="" pos="n" verbnet="">shot</alias>
-        <alias framenet="" pos="l" verbnet="">do_shoot</alias>
+        <alias pos="v">shoot</alias>
+        <alias pos="n">shoot</alias>
+        <alias pos="n">shot</alias>
+        <alias pos="l">do_shoot</alias>
       </aliases>
+      <roles>
+        <role descr="videographer" f="PAG" n="0"/>
+        <role descr="subject filmed/photographed" f="PPT" n="1"/>
+        <role descr="medium: photo, video, hi-def, color, etc" f="MNR" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Behind_the_scenes" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="shoot-v.3" src="annot-overlap" confidence="0.1">18</lexlink>
+      </lexlinks>
+      <example src="" name="shoot film">
+        <text>In 1976, as a film student at the Purchase campus of the State University of New York, Mr. Lane shot ``A Place in Time,'' a 36-minute black-and-white film about a sketch artist, a man of the streets.</text>
+        <rel relloc="19">shot</rel>
+        <arg f="TMP" n="m" start="0" end="1">In 1976,</arg>
+        <arg f="PRD" n="m" start="2" end="16">as a film student at the Purchase campus of the State University of New York,</arg>
+        <arg f="" n="0" start="17" end="18">Mr. Lane</arg>
+        <arg f="" n="1" start="20" end="36">``A Place in Time,'' a 36-minute black-and-white film about a sketch artist, a man of the streets.</arg>
+      </example>
+      <example src="" name="Fashion as subject, modifier of shoot">
+        <text>They are flying the models to Barbados for a fashion shoot.</text>
+        <rel relloc="10">shoot.</rel>
+        <arg f="" n="1" start="9" end="9">fashion</arg>
+      </example>
+      <example src="" name="Medium as modifier of shoot">
+        <text>The photographer is away this weekend on a photo shoot.</text>
+        <rel relloc="9">shoot.</rel>
+        <arg f="" n="2" start="8" end="8">photo</arg>
+      </example>
+      <example src="" name="nominal rel: shot; LVC">
+        <text>Yea I 'm in the Philly area ... Basically the song would be nothing major just get a couple shots of different scenes with me and my friend rapping</text>
+        <rel relloc="19">shots</rel>
+        <arg f="" n="0" start="6" end="6">area</arg>
+        <arg f="ADV" n="m" start="15" end="15">just</arg>
+        <arg f="LVB" n="m" start="16" end="16">get</arg>
+        <arg f="ADJ" n="m" start="17" end="18">a couple</arg>
+        <arg f="" n="1" start="20" end="28">of different scenes with me and my friend rapping</arg>
+      </example>
       <note>SHOOT-V NOTES: No Vncls. (from shoot-v.03)</note>
       <note>SHOOT-N NOTES: Roleset based on verb entry shoot.03, OntoNotes sense grouping shoot.03. Framed by Claire (from shoot-n.02)</note>
       <note>SHOT-N NOTES: (from shot-n.02)</note>
-      <roles>
-        <note>Watch for arg2-manner adverbials: shoot in black-and-white, for example.</note>
-        <role descr="videographer" f="pag" n="0"/>
-        <role descr="subject filmed/photographed" f="ppt" n="1"/>
-        <role descr="medium: photo, video, hi-def, color, etc" f="mnr" n="2"/>
-      </roles>
-      <example name="shoot film" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>In 1976, as a film student at the Purchase campus of the State University of New York, Mr. Lane shot ``A Place in Time,'' a 36-minute black-and-white film about a sketch artist, a man of the streets.</text>
-        <arg f="tmp" n="m">In 1976</arg>
-        <arg f="prd" n="m">as a film student at the Purchase campus of the State University of New York</arg>
-        <arg f="" n="0">Mr. Lane</arg>
-        <rel f="">shot</rel>
-        <arg f="" n="1">``A Place in Time,'' a 36-minute black-and-white film about a sketch artist, a man of the streets</arg>
-      </example>
-      <example name="Fashion as subject, modifier of shoot" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>They are flying the models to Barbados for a fashion shoot.</text>
-        <arg f="" n="1">fashion</arg>
-        <rel f="">shoot</rel>
-      </example>
-      <example name="Medium as modifier of shoot" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The photographer is away this weekend on a photo shoot.</text>
-        <arg f="" n="2">photo</arg>
-        <rel f="">shoot</rel>
-      </example>
-      <example name="nominal rel: shot; LVC" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Yea I 'm in the Philly area ... Basically the song would be nothing major just get a couple shots of different scenes with me and my friend rapping</text>
-        <arg f="" n="0">*PRO*</arg>
-        <arg f="adv" n="m">just</arg>
-        <arg f="lvb" n="m">get</arg>
-        <arg f="adj" n="m">a couple</arg>
-        <rel f="">shots</rel>
-        <arg f="" n="1">of different scenes with me and my friend rapping</arg>
-      </example>
+      <note>Watch for arg2-manner adverbials: shoot in black-and-white, for example.</note>
     </roleset>
-    
     <roleset id="shoot.06" name="move very rapidly">
       <aliases>
-        <alias framenet="Ingest_substance" pos="v" verbnet="-">shoot</alias>
+        <alias pos="v">shoot</alias>
       </aliases>
-      <note>SHOOT-V NOTES: No Vncls. (from shoot-v.06)</note>
       <roles>
-        <role descr="causer of motion" f="pag" n="0"/>
-        <role descr="entity in motion" f="ppt" n="1"/>
-        <role descr="EXT" f="ext" n="2"/>
-        <role descr="start point" f="dir" n="3"/>
-        <role descr="end point" f="gol" n="4"/>
-        <role descr="direction" f="dir" n="5"/>
+        <role descr="causer of motion" f="PAG" n="0"/>
+        <role descr="entity in motion" f="PPT" n="1"/>
+        <role descr="EXT" f="EXT" n="2"/>
+        <role descr="start point" f="DIR" n="3"/>
+        <role descr="end point" f="GOL" n="4"/>
+        <role descr="direction" f="DIR" n="5"/>
       </roles>
-      <example name="usually shoot up" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Ingest_substance" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="shoot-v.2" src="annot-overlap" confidence="0.1">7</lexlink>
+      </lexlinks>
+      <example src="" name="usually shoot up">
         <text>The Dow industrials shot up 23 points in the opening hour, at least in part because of buy programs generated by stock-index arbitrage, a form of program trading involving futures contracts.</text>
-        <arg f="" n="1">The Dow industrials</arg>
-        <rel f="">shot</rel>
-        <arg f="" n="5">up</arg>
-        <arg f="" n="2">23 points</arg>
-        <arg f="tmp" n="m">in the opening hour</arg>
-        <arg f="cau" n="m">at least in part because of buy programs generated by stock-index arbitrage, a form of program trading involving futures contracts</arg>
+        <rel relloc="3">shot</rel>
+        <arg f="" n="1" start="0" end="2">The Dow industrials</arg>
+        <arg f="" n="5" start="4" end="4">up</arg>
+        <arg f="" n="2" start="5" end="6">23 points</arg>
+        <arg f="TMP" n="m" start="7" end="10">in the opening hour,</arg>
+        <arg f="CAU" n="m" start="11" end="30">at least in part because of buy programs generated by stock-index arbitrage, a form of program trading involving futures contracts.</arg>
       </example>
-      <example name="sometimes down" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
+      <example src="" name="sometimes down">
         <text>In particular, the prices of gold and other precious-metals stocks shoot up and down, but the stocks tend to have low betas because their moves are not market-inspired.</text>
-        <arg f="" n="1">the prices of gold and other precious-metals stocks</arg>
-        <rel f="">shoot</rel>
-        <arg f="" n="5">up and down</arg>
+        <rel relloc="10">shoot</rel>
+        <arg f="" n="1" start="2" end="9">the prices of gold and other precious-metals stocks</arg>
+        <arg f="" n="5" start="11" end="13">up and down,</arg>
       </example>
+      <note>SHOOT-V NOTES: No Vncls. (from shoot-v.06)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="shoot_off">
     <roleset id="shoot_off.04" name="loose wildly">
       <aliases>
-        <alias framenet="" pos="v" verbnet="-">shoot_off</alias>
+        <alias pos="v">shoot_off</alias>
       </aliases>
-      <note>SHOOT-V NOTES: I really thought this would occur in wsj. (from shoot-v.04)</note>
       <roles>
-        <role descr="shooter" f="pag" n="0"/>
-        <role descr="cannon, mouth, whatever" f="mnr" n="1"/>
+        <role descr="shooter" f="PAG" n="0"/>
+        <role descr="cannon, mouth, whatever" f="MNR" n="1"/>
       </roles>
-      <example name="ARG1 and ARG0" src="ontonotes wb/a2e/00/a2e_0000" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="ontonotes wb/a2e/00/a2e_0000" name="ARG1 and ARG0">
         <text>The city of Khan Younes had witnessed on the third of last July a similar incident , when the girl , Amani Al Raqab , died by a bullet that hit her by mistake from a revolver her brother was shooting off on his wedding day .</text>
-        <arg f="" n="1">a revolver</arg>
-        <arg f="" n="0">her brother</arg>
-        <rel f="">[shooting][off]</rel>
-        <arg f="tmp" n="m">on his wedding day</arg>
+        <rel relloc="40 41">shooting off</rel>
+        <arg f="" n="1" start="35" end="36">a revolver</arg>
+        <arg f="" n="0" start="37" end="38">her brother</arg>
+        <arg f="TMP" n="m" start="42" end="45">on his wedding day</arg>
       </example>
-
+      <note>SHOOT-V NOTES: I really thought this would occur in wsj. (from shoot-v.04)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="shoot_down">
     <roleset id="shoot_down.05" name="cause to not fly">
       <aliases>
-        <alias framenet="" pos="v" verbnet="-">shoot_down</alias>
+        <alias pos="v">shoot_down</alias>
       </aliases>
-      <note>SHOOT-V NOTES: (from shoot-v.05)</note>
       <roles>
-        <role descr="shooter" f="pag" n="0"/>
-        <role descr="planes, birds, ideas" f="ppt" n="1"/>
-        <role descr="instrument" f="mnr" n="2"/>
+        <role descr="shooter" f="PAG" n="0"/>
+        <role descr="planes, birds, ideas" f="PPT" n="1"/>
+        <role descr="instrument" f="MNR" n="2"/>
       </roles>
-      <example name="instrumental subject" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="onsense" version="on5" class="shoot-v.1" src="annot-overlap" confidence="0.1">8</lexlink>
+      </lexlinks>
+      <example src="" name="instrumental subject">
         <text>``Ideas are going over borders, and there's no SDI ideological weapon that *trace*-1 can shoot them down,'' he told a group of Americans at the U.S. Embassy on Wednesday.</text>
-        <arg f="" n="2">*trace*-1 (= that)</arg>
-        <arg f="slc" n="m">that -&gt; no SDI ideological weapon</arg>
-        <arg f="mod" n="m">can</arg>
-        <rel f="">[ shoot] [ down]</rel>
-        <arg f="" n="1">them</arg>
+        <rel relloc="14 16">shoot down,''</rel>
+        <arg f="" n="2" start="17" end="17">he</arg>
+        <arg f="SLC" n="m" start="7" end="10">no SDI ideological weapon</arg>
+        <arg f="MOD" n="m" start="13" end="13">can</arg>
+        <arg f="" n="1" start="15" end="15">them</arg>
       </example>
-      <example name="agentive subject" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <example src="" name="agentive subject">
         <text>As a result, Ireland didn't spurn the Soviets after they shot down a Korean Air Lines jetliner over the Sea of Japan in 1983, though it suspended direct Moscow-Shannon flights for two months.</text>
-        <arg f="" n="0">they</arg>
-        <rel f="">[ shot] [ down]</rel>
-        <arg f="" n="1">a Korean Air Lines jetliner</arg>
-        <arg f="loc" n="m">over the Sea of Japan</arg>
-        <arg f="tmp" n="m">in 1983</arg>
+        <rel relloc="10 11">shot down</rel>
+        <arg f="" n="0" start="9" end="9">they</arg>
+        <arg f="" n="1" start="12" end="16">a Korean Air Lines jetliner</arg>
+        <arg f="LOC" n="m" start="17" end="21">over the Sea of Japan</arg>
+        <arg f="TMP" n="m" start="22" end="23">in 1983,</arg>
       </example>
+      <note>SHOOT-V NOTES: (from shoot-v.05)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="shoot_back">
     <roleset id="shoot_back.07" name="answer">
       <aliases>
-        <alias framenet="" pos="v" verbnet="-">shoot_back</alias>
+        <alias pos="v">shoot_back</alias>
       </aliases>
-      <note>SHOOT-V NOTES: (from shoot-v.07)</note>
       <roles>
-        <role descr="speaker" f="pag" n="0"/>
-        <role descr="utterance" f="ppt" n="1"/>
-        <role descr="hearer" f="gol" n="2"/>
+        <role descr="speaker" f="PAG" n="0"/>
+        <role descr="utterance" f="PPT" n="1"/>
+        <role descr="hearer" f="GOL" n="2"/>
       </roles>
-      <example name="maybe hearer can't occur" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="maybe hearer can't occur">
         <text>And when he's told ``Try a little tenderness,'' he shoots back ``I'm going home to try a little linguine.''</text>
-        <arg f="dis" n="m">And</arg>
-        <arg f="tmp" n="m">when he's told ``Try a little tenderness</arg>
-        <arg f="" n="0">he</arg>
-        <rel f="">[ shoots] [ back]</rel>
-        <arg f="" n="1">I'm going home to try a little linguine</arg>
+        <rel relloc="9 10">shoots back</rel>
+        <arg f="DIS" n="m" start="0" end="0">And</arg>
+        <arg f="TMP" n="m" start="1" end="7">when he's told ``Try a little tenderness,''</arg>
+        <arg f="" n="0" start="8" end="8">he</arg>
+        <arg f="" n="1" start="11" end="18">``I'm going home to try a little linguine.''</arg>
       </example>
+      <note>SHOOT-V NOTES: (from shoot-v.07)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="shoot_up">
     <roleset id="shoot_up.08" name="inject a drug into a vein">
       <aliases>
-        <alias framenet="" pos="v" verbnet="-">shoot_up</alias>
+        <alias pos="v">shoot_up</alias>
       </aliases>
-      <note>SHOOT-V NOTES: Added by Julia based on BOLT. No VNcls. (from shoot-v.08)</note>
       <roles>
-        <role descr="Entity injecting the drug (usually the drug user)" f="pag" n="0"/>
-        <role descr="the drug" f="ppt" n="1"/>
-        <role descr="entity being given the drug, if separate from arg0" f="gol" n="2"/>
+        <role descr="Entity injecting the drug (usually the drug user)" f="PAG" n="0"/>
+        <role descr="the drug" f="PPT" n="1"/>
+        <role descr="entity being given the drug, if separate from arg0" f="GOL" n="2"/>
       </roles>
-      <example name="all args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="internet" name="all args">
         <text>He said that Rodriguez shot him up with heroin and that he next remembers waking up at the hospital.</text>
-        <arg f="" n="0">Rodriguez</arg>
-        <rel f="">[shot] [up]</rel>
-        <arg f="" n="2">him</arg>
-        <arg f="" n="1">with heroin</arg>
+        <rel relloc="4 6">shot up</rel>
+        <arg f="" n="0" start="3" end="3">Rodriguez</arg>
+        <arg f="" n="2" start="5" end="5">him</arg>
+        <arg f="" n="1" start="7" end="8">with heroin</arg>
       </example>
-      <example name="args 0, 1 (the most common arrangment)" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>What is with this rash of folks who-1 *trace*-1 shoot up heroin , in their cars , and then try to drive ?</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">[shoot] [up]</rel>
-        <arg f="" n="1">heroin</arg>
-        <arg f="loc" n="m">in their cars</arg>
+      <example src="BOLT" name="args 0, 1 (the most common arrangment)">
+        <text>What is with this rash of folks who shoot up heroin , in their cars , and then try to drive ?</text>
+        <rel relloc="8 9">shoot up</rel>
+        <arg f="" n="0" start="7" end="7">who</arg>
+        <arg f="" n="1" start="10" end="10">heroin</arg>
+        <arg f="LOC" n="m" start="12" end="14">in their cars</arg>
       </example>
+      <note>SHOOT-V NOTES: Added by Julia based on BOLT. No VNcls. (from shoot-v.08)</note>
     </roleset>
-    
     <roleset id="shoot_up.09" name="shoot 'em up, with guns">
       <aliases>
-        <alias framenet="" pos="v" verbnet="-">shoot_up</alias>
+        <alias pos="v">shoot_up</alias>
       </aliases>
-      <note>SHOOT-V NOTES: Added by Julia based on BOLT. No VNcls. (from shoot-v.09)</note>
       <roles>
-        <role descr="shooter" f="pag" n="0"/>
-        <role descr="target" f="ppt" n="1"/>
-        <role descr="gun" f="mnr" n="2"/>
+        <role descr="shooter" f="PAG" n="0"/>
+        <role descr="target" f="PPT" n="1"/>
+        <role descr="gun" f="MNR" n="2"/>
       </roles>
-      <example name="args 0, 1" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="BOLT" name="args 0, 1">
         <text>All your pro-war and *PRO* shoot 'em up buddies would have loved it .</text>
-        <arg f="" n="0">*PRO*</arg>
-        <rel f="">[shoot] [up]</rel>
-        <arg f="" n="1">'em</arg>
+        <rel relloc="5 7">shoot up</rel>
+        <arg f="" n="0" start="4" end="4">*PRO*</arg>
+        <arg f="" n="1" start="6" end="6">'em</arg>
       </example>
+      <note>SHOOT-V NOTES: Added by Julia based on BOLT. No VNcls. (from shoot-v.09)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="shootout">
     <roleset id="shootout.10" name="gunfight">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">shootout</alias>
+        <alias pos="n">shootout</alias>
       </aliases>
-      <note>SHOOTOUT-N NOTES: Added automatically by Julia. Related to shoot.xml (from shootout.10-n)</note>
       <roles>
-        <role descr="first shooter" f="pag" n="0"/>
-        <role descr="opponent" f="ppt" n="1"/>
+        <role descr="first shooter" f="PAG" n="0"/>
+        <role descr="opponent" f="PPT" n="1"/>
       </roles>
-      <example name="" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Hostile_encounter" version="1.7" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="">
         <text>The city was the location of the wounding and capture of murderer Richard Wayne Snell in 1984, following his shootout with local police.</text>
+        <rel relloc="19">shootout</rel>
       </example>
+      <note>SHOOTOUT-N NOTES: Added automatically by Julia. Related to shoot.xml (from shootout.10-n)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="shot">
     <roleset id="shot.11" name="exhausted, worn out">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">shot</alias>
+        <alias pos="j">shot</alias>
       </aliases>
-      <note>SHOT-J NOTES: Added by JUlia based on SMS. (from shot.01-j)</note>
       <roles>
-        <role descr="causer of exhaustion, being worn out" f="pag" n="0"/>
-        <role descr="worn out entity" f="ppt" n="1"/>
+        <role descr="causer of exhaustion, being worn out" f="PAG" n="0"/>
+        <role descr="worn out entity" f="PPT" n="1"/>
       </roles>
-      <example name="arg1" src="SMS" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="SMS" name="arg1">
         <text>Not earlier haha , just for 10 , I 'm shot I thought we opened at 10 but we open at 11</text>
-        <arg f="" n="1">I</arg>
-        <rel f="">shot</rel>
+        <rel relloc="10">shot</rel>
+        <arg f="" n="1" start="8" end="8">I</arg>
       </example>
+      <note>SHOT-J NOTES: Added by JUlia based on SMS. (from shot.01-j)</note>
     </roleset>
     <roleset id="shot.12" name="drink a small glass of liquid in a single backwards motion">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">shot</alias>
-        <alias framenet="" pos="v" verbnet="">shoot</alias>
-        <alias framenet="" pos="l" verbnet="">do_shot</alias>
+        <alias pos="n">shot</alias>
+        <alias pos="v">shoot</alias>
+        <alias pos="l">do_shot</alias>
       </aliases>
-      <note>SHOT-J NOTES: Added by JUlia based on SMS. (from shot.01-j)</note>
       <roles>
-        <role descr="drinker" f="pag" n="0"/>
-        <role descr="drink being shot" f="ppt" n="1"/>
-        <role descr="event, cause of celebration" f="cau" n="2"/>
+        <role descr="drinker" f="PAG" n="0"/>
+        <role descr="drink being shot" f="PPT" n="1"/>
+        <role descr="event, cause of celebration" f="CAU" n="2"/>
       </roles>
-      <example name="arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="arg1">
         <text>He did a shot of wheatgrass</text>
-        <arg f="" n="0">He</arg>
-        <arg f="lvb" n="m">did</arg>
-        <rel f="">shot</rel>
-        <arg f="" n="1">of wheatgrass</arg>
+        <rel relloc="3">shot</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
+        <arg f="LVB" n="m" start="1" end="1">did</arg>
+        <arg f="" n="1" start="4" end="5">of wheatgrass</arg>
       </example>
+      <note>SHOT-J NOTES: Added by JUlia based on SMS. (from shot.01-j)</note>
     </roleset>
-
   </predicate>
-  
 </frameset>

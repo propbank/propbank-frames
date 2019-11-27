@@ -1,325 +1,425 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="charge">
     <roleset id="charge.01" name="asking price">
       <aliases>
-        <alias framenet="Commerce_collect" pos="v" verbnet="">charge</alias>
-        <alias framenet="" pos="n" verbnet="">charge</alias>
+        <alias pos="v">charge</alias>
+        <alias pos="n">charge</alias>
       </aliases>
-      <note>CHARGE-V NOTES: Based on financial subcorpus. Member of VNcls bill-54.5. (from charge.01-v)</note>
-      <note>CHARGE-N NOTES: Roleset based on verb entry charge.01, OntoNotes grouping charge-n sense 3; maps to VN class bill-54.5. Framed by Claire. (from charge.01-n)</note>
       <roles>
-        <note>Commodity and buyer can be hard to distinguish, especially if thepreposition is "for".  Try substituting in "to"; it will work forbuyer but not for commodity. (from charge.01-v)</note>
-        <role descr="seller" f="pag" n="0">
-          <vnrole vncls="54.5" vntheta="agent"/>
+        <role descr="seller" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="bill-54.5" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Commerce_collect" version="1.7">buyer</rolelink>
+          </rolelinks>
         </role>
-        <role descr="asking price" f="vsp" n="1">
-          <vnrole vncls="54.5" vntheta="asset"/>
+        <role descr="asking price" f="VSP" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="bill-54.5" version="verbnet3.3">asset</rolelink>
+            <rolelink resource="FrameNet" class="Commerce_collect" version="1.7">goods</rolelink>
+          </rolelinks>
         </role>
-        <role descr="buyer" f="gol" n="2">
-          <vnrole vncls="54.5" vntheta="recipient"/>
+        <role descr="buyer" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="bill-54.5" version="verbnet3.3">recipient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="commodity" f="cau" n="3">
-          <vnrole vncls="54.5" vntheta="asset"/>
+        <role descr="commodity" f="CAU" n="3">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="bill-54.5" version="verbnet3.3">asset</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="charge-v: price and buyer" src="" type="">
-        <text>[Traditional stock managers]-1 like *trace*-1 to charge higher fees for smaller investors.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">charge</rel>
-        <arg f="" n="1">higher fees</arg>
-        <arg f="" n="2">for smaller investors</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Commerce_collect" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="bill-54.5" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="charge-n.1" src="annot-overlap" confidence="0.1">22</lexlink>
+        <lexlink resource="onsense" version="on5" class="charge-n.2" src="annot-overlap" confidence="0.1">20</lexlink>
+        <lexlink resource="onsense" version="on5" class="charge-v.1" src="annot-overlap" confidence="0.1">21</lexlink>
+      </lexlinks>
+      <example src="" name="charge-v: price and buyer">
+        <text> Traditional stock managers like to charge higher fees for smaller investors.</text>
+        <rel relloc="6">charge</rel>
+        <arg f="" n="0" start="1" end="3">Traditional stock managers</arg>
+        <arg f="" n="1" start="7" end="8">higher fees</arg>
+        <arg f="" n="2" start="9" end="11">for smaller investors.</arg>
       </example>
-      <example name="ARG1 and ARG0 and ARG2 and ARG3" src="ontonotes nw/wsj/16/wsj_1624" type="">
+      <example src="ontonotes nw/wsj/16/wsj_1624" name="ARG1 and ARG0 and ARG2 and ARG3">
         <text>The closely watched funds rate is what banks charge each other on overnight loans .</text>
-        <arg f="" n="1">what</arg>
-        <arg f="" n="0">banks</arg>
-        <rel f="">charge</rel>
-        <arg f="" n="2">each other</arg>
-        <arg f="" n="3">on overnight loans</arg>
+        <rel relloc="8">charge</rel>
+        <arg f="" n="1" start="6" end="6">what</arg>
+        <arg f="" n="0" start="7" end="7">banks</arg>
+        <arg f="" n="2" start="9" end="10">each other</arg>
+        <arg f="" n="3" start="11" end="13">on overnight loans</arg>
       </example>
-
-      <example name="charge-n: NP only, Args 0, 2 &amp; 3" src="NomBank Frames" type="">
+      <example src="NomBank Frames" name="charge-n: NP only, Args 0, 2 &amp; 3">
         <text>The charge on loans to depository institutions by the New YorkFederal Reserve Bank</text>
-        <rel f="">charge</rel>
-        <arg f="" n="3">on loans</arg>
-        <arg f="" n="2">to depository institutions</arg>
-        <arg f="" n="0">by the New York Federal Reserve Bank</arg>
+        <rel relloc="1">charge</rel>
+        <arg f="" n="3" start="2" end="3">on loans</arg>
+        <arg f="" n="2" start="4" end="6">to depository institutions</arg>
+        <arg f="" n="0" start="7" end="12">by the New YorkFederal Reserve Bank</arg>
       </example>
-      <example name="charge-n: Args 0 &amp; 2" src="ON sense 2" type="">
+      <example src="ON sense 2" name="charge-n: Args 0 &amp; 2">
         <text>They submitted their charges to customers at the end of each month.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">charges</rel>
-        <arg f="" n="2">to customers</arg>
+        <rel relloc="3">charges</rel>
+        <arg f="" n="0" start="2" end="2">their</arg>
+        <arg f="" n="2" start="4" end="5">to customers</arg>
       </example>
-      <example name="charge-n: Arg 3 only" src="ON sense 1" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="ON sense 1" name="charge-n: Arg 3 only">
         <text>Admission charges at movie theaters have been going up recently.</text>
-        <arg f="" n="3">Admission</arg>
-        <rel f="">charges</rel>
+        <rel relloc="1">charges</rel>
+        <arg f="" n="3" start="0" end="0">Admission</arg>
       </example>
-      <example name="charge-n: Args 0, 1, 3" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="charge-n: Args 0, 1, 3">
         <text>Their charge of ?14 (?13,95) for breakfast is extortionate.</text>
-        <arg f="" n="0">Their</arg>
-        <rel f="">charge</rel>
-        <arg f="" n="1">of ?14 (?13,95)</arg>
-        <arg f="" n="3">for breakfast</arg>
+        <rel relloc="1">charge</rel>
+        <arg f="" n="0" start="0" end="0">Their</arg>
+        <arg f="" n="1" start="2" end="4">of ?14 (?13,95)</arg>
+        <arg f="" n="3" start="5" end="6">for breakfast</arg>
       </example>
+      <note>CHARGE-V NOTES: Based on financial subcorpus. Member of VNcls bill-54.5. (from charge.01-v)</note>
+      <note>CHARGE-N NOTES: Roleset based on verb entry charge.01, OntoNotes grouping charge-n sense 3; maps to VN class bill-54.5. Framed by Claire. (from charge.01-n)</note>
+      <note>Commodity and buyer can be hard to distinguish, especially if thepreposition is "for".  Try substituting in "to"; it will work forbuyer but not for commodity. (from charge.01-v)</note>
     </roleset>
     <roleset id="charge.02" name="walk quickly">
       <aliases>
-        <alias framenet="Attack" pos="v" verbnet="">charge</alias>
-        <alias framenet="" pos="n" verbnet="">charge</alias>
+        <alias pos="v">charge</alias>
+        <alias pos="n">charge</alias>
       </aliases>
-      <note>CHARGE-V NOTES: Member of VNcls run-51.3.2. (from charge.02-v)</note>
-      <note>CHARGE-N NOTES: Roleset based on verb entry charge.02, OntoNotes grouping charge-n sense 5; maps to VN class run-51.3.2. Framed by Claire. (from charge.02-n)</note>
       <roles>
-        <role descr="entity in motion" f="ppt" n="0">
-          <vnrole vncls="51.3.2" vntheta="theme"/>
+        <role descr="entity in motion" f="PPT" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="run-51.3.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Attack" version="1.7">assailant</rolelink>
+          </rolelinks>
         </role>
-        <role descr="path" f="ppt" n="1">
-          <vnrole vncls="51.3.2" vntheta="theme"/>
+        <role descr="path" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="run-51.3.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Attack" version="1.7">place</rolelink>
+            <rolelink resource="FrameNet" class="Attack" version="1.7">victim</rolelink>
+            <rolelink resource="FrameNet" class="Attack" version="1.7">path</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG0 and ARG1" src="ontonotes nw/wsj/16/wsj_1603" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Attack" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="run-51.3.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="charge-v.5" src="annot-overlap" confidence="0.1">5</lexlink>
+      </lexlinks>
+      <example src="ontonotes nw/wsj/16/wsj_1603" name="ARG0 and ARG1">
         <text>She charged ahead of the government and the law to establish Hochiminh City Food Co. as the biggest rice dealer in the country .</text>
-        <arg f="" n="0">She</arg>
-        <rel f="">charged</rel>
-        <arg f="" n="1">ahead of the government and the law</arg>
-        <arg f="prp" n="m">to establish Hochiminh City Food Co. as the biggest rice dealer in the country</arg>
+        <rel relloc="1">charged</rel>
+        <arg f="" n="0" start="0" end="0">She</arg>
+        <arg f="" n="1" start="2" end="8">ahead of the government and the law</arg>
+        <arg f="PRP" n="m" start="9" end="22">to establish Hochiminh City Food Co. as the biggest rice dealer in the country</arg>
       </example>
-
-      <example name="charge-v: with arg0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="charge-v: with arg0">
         <text>Rupert charged his horse across and into Ireton.</text>
-        <arg f="" n="a">Rupert</arg>
-        <rel f="">charged</rel>
-        <arg f="" n="0">his horse</arg>
-        <arg f="" n="1">across and into Ireton</arg>
+        <rel relloc="1">charged</rel>
+        <arg f="" n="a" start="0" end="0">Rupert</arg>
+        <arg f="" n="0" start="2" end="3">his horse</arg>
+        <arg f="" n="1" start="4" end="7">across and into Ireton.</arg>
       </example>
-      <example name="charge-v: transitive, with argM-GOL" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="charge-v: transitive, with argM-GOL">
         <text>The soldiers charged the enemy (line).</text>
-        <arg f="" n="0">The soldiers</arg>
-        <rel f="">charged</rel>
-        <arg f="gol" n="m">the enemy (line)</arg>
+        <rel relloc="2">charged</rel>
+        <arg f="" n="0" start="0" end="1">The soldiers</arg>
+        <arg f="GOL" n="m" start="3" end="5">the enemy (line).</arg>
       </example>
-      <example name="charge-n: Arg 0 only" src="ON sense 5" type="">
+      <example src="ON sense 5" name="charge-n: Arg 0 only">
         <text>The wrestler's charge carried him past his adversary.</text>
-        <arg f="" n="0">The wrestler's</arg>
-        <rel f="">charge</rel>
+        <rel relloc="2">charge</rel>
+        <arg f="" n="0" start="0" end="1">The wrestler's</arg>
       </example>
-      <example name="charge-n: All arguments" src="ON sense 5" type="">
+      <example src="ON sense 5" name="charge-n: All arguments">
         <text>The offensive charge of the field gained their football team 22 yards in the last play.</text>
-        <arg f="" n="0">offensive</arg>
-        <rel f="">charge</rel>
-        <arg f="" n="1">of the field</arg>
+        <rel relloc="2">charge</rel>
+        <arg f="" n="0" start="1" end="1">offensive</arg>
+        <arg f="" n="1" start="3" end="5">of the field</arg>
       </example>
+      <note>CHARGE-V NOTES: Member of VNcls run-51.3.2. (from charge.02-v)</note>
+      <note>CHARGE-N NOTES: Roleset based on verb entry charge.02, OntoNotes grouping charge-n sense 5; maps to VN class run-51.3.2. Framed by Claire. (from charge.02-n)</note>
     </roleset>
     <roleset id="charge.03" name="supply, as with electricity">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">charge</alias>
+        <alias pos="v">charge</alias>
       </aliases>
-      <note>CHARGE-V NOTES: Member of VNcls equip-13.4.2. (from charge.03-v)</note>
       <roles>
-        <role descr="supplier" f="pag" n="0">
-          <vnrole vncls="13.4.2" vntheta="agent"/>
+        <role descr="supplier" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="equip-13.4.2" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="battery, usually" f="gol" n="1">
-          <vnrole vncls="13.4.2" vntheta="recipient"/>
+        <role descr="battery, usually" f="GOL" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="equip-13.4.2" version="verbnet3.3">recipient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="instrument (defaults to electricity)" f="ppt" n="2">
-          <vnrole vncls="13.4.2" vntheta="theme"/>
+        <role descr="instrument (defaults to electricity)" f="PPT" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="equip-13.4.2" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG0 and ARG1" src="ontonotes bc/msnbc/00/msnbc_0002" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="equip-13.4.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="ontonotes bc/msnbc/00/msnbc_0002" name="ARG0 and ARG1">
         <text>and they 've charged it three different ways /.</text>
-        <arg f="dis" n="m">and</arg>
-        <arg f="" n="0">they</arg>
-        <rel f="">charged</rel>
-        <arg f="" n="1">it</arg>
-        <arg f="mnr" n="m">three different ways</arg>
+        <rel relloc="3">charged</rel>
+        <arg f="DIS" n="m" start="0" end="0">and</arg>
+        <arg f="" n="0" start="1" end="1">they</arg>
+        <arg f="" n="1" start="4" end="4">it</arg>
+        <arg f="MNR" n="m" start="5" end="7">three different ways</arg>
       </example>
-
-      <example name="charge-v: metaphorical batteries" src="" type="">
+      <example src="" name="charge-v: metaphorical batteries">
         <text>John charged his batteries with a quadruple shot of espresso.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">charged</rel>
-        <arg f="" n="1">his batteries</arg>
-        <arg f="" n="2">with a quadruple shot of espresso</arg>
+        <rel relloc="1">charged</rel>
+        <arg f="" n="0" start="0" end="0">John</arg>
+        <arg f="" n="1" start="2" end="3">his batteries</arg>
+        <arg f="" n="2" start="4" end="9">with a quadruple shot of espresso.</arg>
       </example>
+      <note>CHARGE-V NOTES: Member of VNcls equip-13.4.2. (from charge.03-v)</note>
     </roleset>
     <roleset id="charge.04" name="buy on credit">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">charge</alias>
-        <alias framenet="" pos="n" verbnet="">charge</alias>
+        <alias pos="v">charge</alias>
+        <alias pos="n">charge</alias>
       </aliases>
+      <roles>
+        <role descr="buyer" f="PAG" n="0"/>
+        <role descr="thing charged (amount, item)" f="PPT" n="1"/>
+        <role descr="credit" f="MNR" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="" name="charge-v: all args">
+        <text>During the third quarter, the company charged about $46 million against earnings in reducing goodwill.</text>
+        <rel relloc="6">charged</rel>
+        <arg f="TMP" n="m" start="0" end="3">During the third quarter,</arg>
+        <arg f="" n="0" start="4" end="5">the company</arg>
+        <arg f="" n="1" start="6" end="9">charged about $46 million</arg>
+        <arg f="" n="2" start="10" end="11">against earnings</arg>
+        <arg f="ADV" n="m" start="12" end="14">in reducing goodwill.</arg>
+      </example>
+      <example src="ontonotes nw/wsj/24/wsj_2417" name="ARG1 and ARG0 and ARG2">
+        <text>Labor gets 25 pence -LRB- 39 cents -RRB- for every 100 -LRB- about $ 155 -RRB- that a user charges to the card .</text>
+        <rel relloc="19">charges</rel>
+        <arg f="" n="1" start="9" end="15">every 100 -LRB- about $ 155 -RRB-</arg>
+        <arg f="" n="1" start="16" end="16">that</arg>
+        <arg f="" n="0" start="17" end="18">a user</arg>
+        <arg f="" n="2" start="20" end="22">to the card</arg>
+      </example>
       <note>CHARGE-V NOTES: No VNcls. (from charge.04-v)</note>
       <note>CHARGE-N NOTES: Roleset based on verb entry charge.04, OntoNotes grouping charge-n sense 14; no relevantmapping to VN. Framed by Claire. (from charge.05-n)</note>
-      <roles>
-        <role descr="buyer" f="pag" n="0"/>
-        <role descr="thing charged (amount, item)" f="ppt" n="1"/>
-        <role descr="credit" f="mnr" n="2"/>
-      </roles>
-      <example name="charge-v: all args" src="" type="">
-        <text>During the third quarter, the company charged about $46 million against earnings in reducing goodwill.</text>
-        <arg f="tmp" n="m">During the third quarter</arg>
-        <arg f="" n="0">the company</arg>
-        <rel f="">charged</rel>
-        <arg f="" n="1">about $ 46 million</arg>
-        <arg f="" n="2">against earnings</arg>
-        <arg f="adv" n="m">in reducing goodwill</arg>
-      </example>
-      <example name="ARG1 and ARG0 and ARG2" src="ontonotes nw/wsj/24/wsj_2417" type="">
-        <text>Labor gets 25 pence -LRB- 39 cents -RRB- for every 100 -LRB- about $ 155 -RRB- that a user charges to the card .</text>
-        <arg f="" n="1">[every 100 -LRB- about $ 155 -RRB-][that]</arg>
-        <arg f="" n="0">a user</arg>
-        <rel f="">charges</rel>
-        <arg f="" n="2">to the card</arg>
-      </example>
-
-      
     </roleset>
     <roleset id="charge.05" name="make an allegation or criminal charge against someone">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">charge</alias>
-        <alias framenet="" pos="l" verbnet="">make_charge</alias>
-        <alias framenet="Notification_of_charges Imposing_obligation" pos="v" verbnet="">charge</alias>
+        <alias pos="n">charge</alias>
+        <alias pos="l">make_charge</alias>
+        <alias pos="v">charge</alias>
       </aliases>
+      <roles>
+        <role descr="assigner" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Notification_of_charges" version="1.7">arraign_authority</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="assigned" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Notification_of_charges" version="1.7">accused</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="role or crime" f="PRD" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Notification_of_charges" version="1.7">charges</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Imposing_obligation" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Notification_of_charges" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Justice.InitiateJudicialProcess.ChargeIndict" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Chargeindict" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="charge-v.3" src="annot-overlap" confidence="0.1">76</lexlink>
+        <lexlink resource="onsense" version="on5" class="charge-n.3" src="annot-overlap" confidence="0.1">151</lexlink>
+        <lexlink resource="onsense" version="on5" class="charge-v.2" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="" name="charge-v: usually as crime">
+        <text>Royal Business Group Inc. said it filed suit in federal court here charging Realist Inc. and its directors with violating federal securities laws ``by engaging in a scheme to prevent'' Royal from acquiring Realist.</text>
+        <rel relloc="12">charging</rel>
+        <arg f="" n="0" start="5" end="5">it</arg>
+        <arg f="" n="1" start="13" end="17">Realist Inc. and its directors</arg>
+        <arg f="" n="2" start="18" end="33">with violating federal securities laws ``by engaging in a scheme to prevent'' Royal from acquiring Realist.</arg>
+      </example>
+      <example src="" name="charge-v: passivized crime">
+        <text> Mr. Antar was charged last month in a civil suit filed in federal court in Newark by the Securities and Exchange Commission.</text>
+        <rel relloc="4">charged</rel>
+        <arg f="" n="1" start="1" end="2">Mr. Antar</arg>
+        <arg f="TMP" n="m" start="5" end="6">last month</arg>
+        <arg f="LOC" n="m" start="7" end="22">in a civil suit filed in federal court in Newark by the Securities and Exchange Commission.</arg>
+      </example>
+      <example src="NomBank Frames" name="charge-n: Fragment, Args 0 &amp; 1">
+        <text>its largely successful defense of antitrust charges by the UnitedStates Football League</text>
+        <rel relloc="6">charges</rel>
+        <arg f="" n="2" start="5" end="5">antitrust</arg>
+        <arg f="" n="0" start="7" end="11">by the UnitedStates Football League</arg>
+      </example>
+      <example src="nouns-00040" name="charge-n: Charged with a crime">
+        <text>Prosecuters around Taiwan dealt with more than 2,000 cases concerning black - gold offenses, and brought charges against 30 elected officials and representatives.</text>
+        <rel relloc="16">charges</rel>
+        <arg f="" n="1" start="17" end="22">against 30 elected officials and representatives.</arg>
+      </example>
+      <example src="web" name="charge-n: Arg 2 only">
+        <text>The newspaper published charges that the attorney had tried to bribe members of the jury.</text>
+        <rel relloc="3">charges</rel>
+        <arg f="" n="2" start="4" end="14">that the attorney had tried to bribe members of the jury.</arg>
+      </example>
+      <example src="web" name="charge-n: Args 0 and 1">
+        <text>House Speaker Nancy Pelosi said Friday she won't talk any more about her charge that the CIA lied in 2002 about using waterboarding.</text>
+        <rel relloc="13">charge</rel>
+        <arg f="" n="0" start="12" end="12">her</arg>
+        <arg f="" n="2" start="14" end="22">that the CIA lied in 2002 about using waterboarding.</arg>
+      </example>
       <note>CHARGE-V NOTES: No VNcls. (from charge.05-v)</note>
       <note>CHARGE-N NOTES: Roleset based on verb entries charge.05 and charge.06, OntoNotes grouping charge-n senses 3&amp; 4; maps to VN class equip-13.4.2. Framed by Claire. (from charge.03-n)</note>
-      <roles>
-        <note>These roles differ from charge.05 verb roles because of annotation issues described in predicate note. (from charge.03-n)</note>
-        <role descr="assigner" f="pag" n="0"/>
-        <role descr="assigned" f="ppt" n="1"/>
-        <role descr="role or crime" f="prd" n="2"/>
-      </roles>
-      <example name="charge-v: usually as crime" src="" type="">
-        <text>Royal Business Group Inc. said [it]-1 filed suit in federal court here *trace*-1 charging Realist Inc. and its directors with violating federal securities laws ``by engaging in a scheme to prevent'' Royal from acquiring Realist.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">charging</rel>
-        <arg f="" n="1">Realist Inc. and its directors</arg>
-        <arg f="" n="2">with violating federal securities laws ``by engaging in a scheme to prevent'' Royal from acquiring Realist</arg>
-      </example>
-      <example name="charge-v: passivized crime" src="" type="">
-        <text>[Mr. Antar]-2 was charged *trace*-2 last month in a civil suit filed in federal court in Newark by the Securities and Exchange Commission.</text>
-        <rel f="">charged</rel>
-        <arg f="" n="1">*trace*-2</arg>
-        <arg f="tmp" n="m">last month</arg>
-        <arg f="loc" n="m">in a civil suit filed in federal court in Newark by the Securities and Exchange Commission</arg>
-      </example>
-      <example name="charge-n: Fragment, Args 0 &amp; 1" src="NomBank Frames" type="">
-        <text>its largely successful defense of antitrust charges by the UnitedStates Football League</text>
-        <arg f="" n="2">antitrust</arg>
-        <rel f="">charges</rel>
-        <arg f="" n="0">by the United States Football League</arg>
-      </example>
-      <example name="charge-n: Charged with a crime" src="nouns-00040" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Prosecuters around Taiwan dealt with more than 2,000 cases concerning black - gold offenses, and brought charges against 30 elected officials and representatives.</text>
-        <rel f="">charges</rel>
-        <arg f="" n="1">against 30 elected officials and representatives</arg>
-      </example>
-      <example name="charge-n: Arg 2 only" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The newspaper published charges that the attorney had tried to bribe members of the jury.</text>
-        <rel f="">charges</rel>
-        <arg f="" n="2">that the attorney had tried to bribe members of the jury.</arg>
-      </example>
-      <example name="charge-n: Args 0 and 1" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>House Speaker Nancy Pelosi said Friday she won't talk any more about her charge that the CIA lied in 2002 about using waterboarding.</text>
-        <arg f="" n="0">her</arg>
-        <rel f="">charge</rel>
-        <arg f="" n="2">that the CIA lied in 2002 about using waterboarding.</arg>
-      </example>
+      <note>These roles differ from charge.05 verb roles because of annotation issues described in predicate note. (from charge.03-n)</note>
     </roleset>
     <roleset id="charge.06" name="allege (an utterance or complement clause)">
       <aliases>
-        <alias framenet="Notification_of_charges Judgment_communication" pos="v" verbnet="">charge</alias>
+        <alias pos="v">charge</alias>
       </aliases>
-      <note>CHARGE-V NOTES: No VNcls. This is clearly closely related to the "charge with a crime" sense, but the syntax is completely different. (from charge.06-v)</note>
       <roles>
-        <role descr="speaker" f="pag" n="0"/>
-        <role descr="utterance" f="ppt" n="1"/>
+        <role descr="speaker" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Judgment_communication" version="1.7">communicator</rolelink>
+            <rolelink resource="FrameNet" class="Notification_of_charges" version="1.7">arraign_authority</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="utterance" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Judgment_communication" version="1.7">addressee</rolelink>
+            <rolelink resource="FrameNet" class="Judgment_communication" version="1.7">evaluee</rolelink>
+            <rolelink resource="FrameNet" class="Judgment_communication" version="1.7">topic</rolelink>
+            <rolelink resource="FrameNet" class="Notification_of_charges" version="1.7">accused</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="charge-v: transitive" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Judgment_communication" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Notification_of_charges" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Justice.InitiateJudicialProcess.ChargeIndict" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Chargeindict" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="charge-v.3" src="annot-overlap" confidence="0.1">22</lexlink>
+      </lexlinks>
+      <example src="" name="charge-v: transitive">
         <text>Pharmacia, based in Upsala, Sweden, had charged in a lawsuit against MedChem that MedChem's AMVISC product line infringes on the Pharmacia patent.</text>
-        <arg f="" n="0">Pharmacia, based in Upsala, Sweden,</arg>
-        <rel f="">charged</rel>
-        <arg f="loc" n="m">in a lawsuit against MedChem</arg>
-        <arg f="" n="1">that MedChem's AMVISC product line infringes on the Pharmacia patent</arg>
+        <rel relloc="6">charged</rel>
+        <arg f="" n="0" start="0" end="4">Pharmacia, based in Upsala, Sweden,</arg>
+        <arg f="LOC" n="m" start="7" end="11">in a lawsuit against MedChem</arg>
+        <arg f="" n="1" start="12" end="21">that MedChem's AMVISC product line infringes on the Pharmacia patent.</arg>
       </example>
+      <note>CHARGE-V NOTES: No VNcls. This is clearly closely related to the "charge with a crime" sense, but the syntax is completely different. (from charge.06-v)</note>
     </roleset>
     <roleset id="charge.08" name="to be in charge of something, have a responsibility or role">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">charge</alias>
-        <alias framenet="" pos="v" verbnet="">charge</alias>
-        <alias framenet="" pos="l" verbnet="">take_charge</alias>
+        <alias pos="n">charge</alias>
+        <alias pos="v">charge</alias>
+        <alias pos="l">take_charge</alias>
       </aliases>
-      <note>CHARGE-N NOTES: Roleset based loosely on verb entry charge.05 (but not unified) OntoNotes grouping charge-n sense 6; no relevant mapping to VN. Framed by Claire. (from charge.04-n)</note>
       <roles>
-        <role descr="Person assigning responsibility (rare)" f="pag" n="0"/>
-        <role descr="Person that the responsibility is assigned to" f="ppt" n="1"/>
-        <role descr="responsibility itself, role" f="prd" n="2"/>
+        <role descr="Person assigning responsibility (rare)" f="PAG" n="0"/>
+        <role descr="Person that the responsibility is assigned to" f="PPT" n="1"/>
+        <role descr="responsibility itself, role" f="PRD" n="2"/>
       </roles>
-      <example name="charge-n: Args 0 &amp; 1" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Leadership" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="charge-n.4" src="annot-overlap" confidence="0.1">9</lexlink>
+      </lexlinks>
+      <example src="web" name="charge-n: Args 0 &amp; 1">
         <text>The judge's charge to the jury was to ignore the preceding statement of the witness.</text>
-        <arg f="" n="0">The judge's</arg>
-        <rel f="">charge</rel>
-        <arg f="" n="1">to the jury</arg>
+        <rel relloc="2">charge</rel>
+        <arg f="" n="0" start="0" end="1">The judge's</arg>
+        <arg f="" n="1" start="3" end="5">to the jury</arg>
       </example>
-      <example name="charge-v: not a crime" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="ns" voice="active"/>
+      <example src="" name="charge-v: not a crime">
         <text>Instead, [an appropriate institution]*-4 should be charged [*-4]with the job of preventing chaos in the market: the Federal Reserve.</text>
-        <arg f="mod" n="m">should</arg>
-        <rel f="">charged</rel>
-        <arg f="" n="1">[*-4]</arg>
-        <arg f="" n="2">with the job of preventing chaos in the market</arg>
+        <rel relloc="6">charged</rel>
+        <arg f="MOD" n="m" start="4" end="4">should</arg>
+        <arg f="" n="1" start="1" end="1">[an</arg>
+        <arg f="" n="2" start="7" end="15">[*-4]with the job of preventing chaos in the market:</arg>
       </example>
-      <example name="take_charge-l" src="" type="">
+      <example src="" name="take_charge-l">
         <text>In September 1942, Groves took charge of the Manhattan Project.</text>
-        <arg f="tmp" n="m">In September 1942</arg>
-        <arg f="" n="1">Groves</arg>
-        <arg f="lvb" n="m">took</arg>
-        <rel f="">charge</rel>
-        <arg f="" n="1">of the Manhattan Project</arg>
+        <rel relloc="5">charge</rel>
+        <arg f="TMP" n="m" start="0" end="2">In September 1942,</arg>
+        <arg f="" n="1" start="3" end="3">Groves</arg>
+        <arg f="LVB" n="m" start="4" end="4">took</arg>
+        <arg f="" n="1" start="6" end="9">of the Manhattan Project.</arg>
       </example>
-
-      <example name="charge-n: Args 1 &amp; 2" src="ON sense 6" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="ON sense 6" name="charge-n: Args 1 &amp; 2">
         <text>The spy fulfilled his charge of smuggling fissile materials into the country.</text>
-        <arg f="" n="1">his</arg>
-        <rel f="">charge</rel>
-        <arg f="" n="2">of smuggling fissile materials into the country</arg>
+        <rel relloc="4">charge</rel>
+        <arg f="" n="1" start="3" end="3">his</arg>
+        <arg f="" n="2" start="5" end="11">of smuggling fissile materials into the country.</arg>
       </example>
-      <example name="charge-n: Arg 2 only (very common)" src="nouns-00040" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="nouns-00040" name="charge-n: Arg 2 only (very common)">
         <text>Malcolm S. Todt was named vice president and senior officer in charge of equipment leasing to municipalities , a new effort of this bond insurer .</text>
-        <rel f="">charge</rel>
-        <arg f="" n="2">of equipment leasing to municipalities, a new effort of this bond insurer.</arg>
+        <rel relloc="11">charge</rel>
+        <arg f="" n="2" start="13" end="25">equipment leasing to municipalities , a new effort of this bond insurer .</arg>
       </example>
+      <note>CHARGE-N NOTES: Roleset based loosely on verb entry charge.05 (but not unified) OntoNotes grouping charge-n sense 6; no relevant mapping to VN. Framed by Claire. (from charge.04-n)</note>
     </roleset>
   </predicate>
   <predicate lemma="charge_off">
     <roleset id="charge_off.07" name="charge off: emit hastily(?)">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">charge_off</alias>
+        <alias pos="v">charge_off</alias>
       </aliases>
-      <note>CHARGE_OFF-V NOTES: Seems to be equivalent to 'discharge'. No VNcls. (from charge.07-v)</note>
       <roles>
-        <role descr="sender" f="pag" n="0"/>
-        <role descr="thing sent" f="ppt" n="1"/>
+        <role descr="sender" f="PAG" n="0"/>
+        <role descr="thing sent" f="PPT" n="1"/>
       </roles>
-      <example name="charge-v: transitive" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="" name="charge-v: transitive">
         <text>The bank charged off $53 million in loans during the quarter.</text>
-        <arg f="" n="0">The bank</arg>
-        <rel f="">[ charged] [ off]</rel>
-        <arg f="" n="1">$ 53 million in loans</arg>
-        <arg f="tmp" n="m">during the quarter</arg>
+        <rel relloc="2 3">charged off</rel>
+        <arg f="" n="0" start="0" end="1">The bank</arg>
+        <arg f="" n="1" start="3" end="7">off $53 million in loans</arg>
+        <arg f="TMP" n="m" start="8" end="10">during the quarter.</arg>
       </example>
+      <note>CHARGE_OFF-V NOTES: Seems to be equivalent to 'discharge'. No VNcls. (from charge.07-v)</note>
     </roleset>
   </predicate>
 </frameset>

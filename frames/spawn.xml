@@ -1,29 +1,46 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="spawn">
     <roleset id="spawn.01" name="to produce in large numbers, to give rise to">
       <aliases>
-        <alias framenet="Birth" pos="v" verbnet="">spawn</alias>
+        <alias pos="v">spawn</alias>
       </aliases>
-      <note>SPAWN-V NOTES: Based on sentences in WSJ. Member of VNcls engender-27, calve-28. (from spawn.01-v)</note>
       <roles>
-        <role descr="causer" f="cau" n="0">
-          <vnrole vncls="27" vntheta="Cause"/>
-          <vnrole vncls="28" vntheta="Agent"/>
+        <role descr="causer" f="CAU" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="engender-27.1" version="verbnet3.3">cause</rolelink>
+            <rolelink resource="VerbNet" class="birth-28.2-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Birth" version="UNK">mother</rolelink>
+            <rolelink resource="FrameNet" class="Birth" version="UNK">parents</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing spawned" f="PPT" n="1">
-          <vnrole vncls="27" vntheta="Theme"/>
-          <vnrole vncls="28" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="engender-27.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="birth-28.2-1" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Birth" version="UNK">child</rolelink>
+            <rolelink resource="FrameNet" class="Birth" version="UNK">child</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Birth" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="27" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="28" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="spawn-v.1" src="annot-overlap" confidence="0.1">13</lexlink>
+      </lexlinks>
+      <example src="" name="transitive">
         <text>Last year 's appeals court decision , for instance , spawned several suits , reportedly including a recent action by the heirs of singer Bobby Darin against McDonald 's Corp. over its `` Mac Tonight '' TV commercials , a rough parody of Mr. Darin 's `` Mack the Knife '' trademark .</text>
-        <arg f="" n="0">Last year 's appeals court decision</arg>
-        <arg f="dis" n="m">for instance</arg>
-        <rel f="">spawned</rel>
-        <arg f="" n="1">several suits , reportedly including a recent action by the heirs of singer Bobby Darin against McDonald 's Corp. over its `` Mac Tonight '' TV commercials , a rough parody of Mr. Darin 's `` Mack the Knife '' trademark</arg>
+        <rel relloc="10">spawned</rel>
+        <arg f="" n="0" start="0" end="5">Last year 's appeals court decision</arg>
+        <arg f="DIS" n="m" start="7" end="8">for instance</arg>
+        <arg f="" n="1" start="11" end="51">several suits , reportedly including a recent action by the heirs of singer Bobby Darin against McDonald 's Corp. over its `` Mac Tonight '' TV commercials , a rough parody of Mr. Darin 's `` Mack the Knife '' trademark</arg>
       </example>
+      <note>SPAWN-V NOTES: Based on sentences in WSJ. Member of VNcls engender-27, calve-28. (from spawn.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

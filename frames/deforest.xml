@@ -1,34 +1,52 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="deforest">
     <roleset id="deforest.01" name="remove trees">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">deforest</alias>
-        <alias framenet="" pos="n" verbnet="">deforestation</alias>
+        <alias pos="v">deforest</alias>
+        <alias pos="n">deforestation</alias>
       </aliases>
-      <note>DEFOREST-V NOTES: Edited by hwangd (from deforest.01-v)</note>
       <roles>
         <role descr="remover" f="PAG" n="0">
-          <vnrole vncls="10.8" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="debone-10.8" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Emptying" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Emptying" version="1.7">cause</rolelink>
+          </rolelinks>
         </role>
         <role descr="victim, source trees removed from" f="DIR" n="1">
-          <vnrole vncls="10.8" vntheta="Source"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="debone-10.8" version="verbnet3.3">source</rolelink>
+            <rolelink resource="FrameNet" class="Emptying" version="1.7">source</rolelink>
+          </rolelinks>
         </role>
         <role descr="trees, forest, thing removed" f="PPT" n="2">
-          <vnrole vncls="10.8" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="debone-10.8" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Emptying" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="deforest-v: Transitive" src="web usage" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Emptying" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="debone-10.8" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web usage" name="deforest-v: Transitive">
         <text>Europe has deforested the majority of its historical forests</text>
-        <arg f="" n="0">Europe</arg>
-        <rel f="">deforested</rel>
-        <arg f="" n="1">the majority of its historical forests</arg>
+        <rel relloc="2">deforested</rel>
+        <arg f="" n="0" start="0" end="0">Europe</arg>
+        <arg f="" n="1" start="3" end="8">the majority of its historical forests</arg>
       </example>
-      <example name="deforestation-n" src="" type="">
+      <example src="" name="deforestation-n">
         <text>Deforestation of the Amazon rainforest accelerated significantly between 1991 and 2004,</text>
-        <rel f="">deforestation</rel>
-        <arg f="" n="1">of the Amazon rainforest</arg>
+        <rel relloc="0">Deforestation</rel>
+        <arg f="" n="1" start="1" end="4">of the Amazon rainforest</arg>
       </example>
+      <note>DEFOREST-V NOTES: Edited by hwangd (from deforest.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

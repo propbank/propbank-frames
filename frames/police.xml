@@ -1,36 +1,46 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="police">
     <roleset id="police.01" name="monitor, watch, serve as   police for, enforcing the law">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">policing</alias>
-        <alias framenet="" pos="v" verbnet="">police</alias>
+        <alias pos="n">policing</alias>
+        <alias pos="v">police</alias>
       </aliases>
-      <note>POLICE-V NOTES: Frames file for 'police' based on sentences in wsj and automaticexpansion via verbnet. (from police.01-v predicate notes)</note>
-      <note>POLICING-N NOTES: Added by Julia based on BOLT, police-v.01. Corresponds to VNcls captain-29.8-1. (from policing.01-n)</note>
       <roles>
         <role descr="police" f="PAG" n="0">
-          <vnrole vncls="29.8-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="captain-29.8-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing or place being monitored" f="GOL" n="1">
-          <vnrole vncls="29.8-1" vntheta="Beneficiary"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="captain-29.8-1" version="verbnet3.3">beneficiary</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="pretty simple, really" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Patrolling" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="captain-29.8-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="pretty simple, really">
         <text>``We can't police the many organizations that have sprung up in the last few years using part of our name.</text>
-        <arg f="" n="0">We</arg>
-        <arg f="NEG" n="M">n't</arg>
-        <rel f="">police</rel>
-        <arg f="" n="1">the many organizations that have sprung up in the last few years using part of our name</arg>
+        <rel relloc="2">police</rel>
+        <arg f="" n="0" start="0" end="0">``We</arg>
+        <arg f="NEG" n="M" start="1" end="1">can't</arg>
+        <arg f="" n="1" start="3" end="19">the many organizations that have sprung up in the last few years using part of our name.</arg>
       </example>
-      <example name="intransitive" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="internet" name="intransitive">
         <text>Governments must compel private companies to aid them in their policing, the cost of which is unknown...</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">policing</rel>
-        <arg f="adj" n="m">the cost of which is unknown</arg>
+        <rel relloc="10">policing,</rel>
+        <arg f="" n="0" start="9" end="9">their</arg>
+        <arg f="ADJ" n="m" start="11" end="16">the cost of which is unknown...</arg>
       </example>
+      <note>POLICE-V NOTES: Frames file for 'police' based on sentences in wsj and automaticexpansion via verbnet. (from police.01-v predicate notes)</note>
+      <note>POLICING-N NOTES: Added by Julia based on BOLT, police-v.01. Corresponds to VNcls captain-29.8-1. (from policing.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

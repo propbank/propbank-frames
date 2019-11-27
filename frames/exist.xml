@@ -1,67 +1,75 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="exist">
     <roleset id="exist.01" name="be, exists ('non-existent' has its own frame, fyi)">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">existing</alias>
-        <alias framenet="Existence" pos="v" verbnet="">exist</alias>
-        <alias framenet="" pos="j" verbnet="">existent</alias>
+        <alias pos="n">existing</alias>
+        <alias pos="v">exist</alias>
+        <alias pos="j">existent</alias>
       </aliases>
+      <roles>
+        <role descr="thing existing" f="PAG" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="gorge-39.6" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="exist-47.1-1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="secondary attribute of arg1" f="PRD" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Existence" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="gorge-39.6" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="exist-47.1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="exist-v.1" src="annot-overlap" confidence="0.1">83</lexlink>
+      </lexlinks>
+      <example src="" name="existential angst">
+        <text>...a case of political corruption that-1 *trace*-1 simply doesn't exist.</text>
+        <rel relloc="9">exist.</rel>
+        <arg f="" n="1" start="9" end="9">exist.</arg>
+        <arg f="SLC" n="m" start="3" end="4">political corruption</arg>
+        <arg f="ADV" n="m" start="7" end="7">simply</arg>
+        <arg f="NEG" n="m" start="2" end="2">of</arg>
+      </example>
+      <example src="ontonotes mz/sinorama/10/ectb_1048" name="ARG1 and ARG2">
+        <text>Hsia Yang 's fuzzy people exist very much within this Eastern philosophical context . "</text>
+        <rel relloc="5">exist</rel>
+        <arg f="" n="1" start="0" end="4">Hsia Yang 's fuzzy people</arg>
+        <arg f="" n="2" start="6" end="12">very much within this Eastern philosophical context</arg>
+      </example>
+      <example src="" name="stupid WSJ style guide">
+        <text>No mechanism exists for finding a middle ground .</text>
+        <rel relloc="2">exists</rel>
+        <arg f="" n="1" start="3" end="7">for finding a middle ground</arg>
+      </example>
+      <example src="internet" name="nominal rel: existing">
+        <text>there must be in the mind at the same instant ideas of its existing in a considerable number of other points of time and place;</text>
+        <rel relloc="13">existing</rel>
+        <arg f="" n="1" start="12" end="12">its</arg>
+        <arg f="LOC" n="m" start="14" end="24">in a considerable number of other points of time and place;</arg>
+      </example>
+      <example src="internet" name="the arg">
+        <text>Which rights are ?fundamental? or even existent is entirely subjective.</text>
+        <rel relloc="6">existent</rel>
+        <arg f="" n="1" start="0" end="1">Which rights</arg>
+        <arg f="ADV" n="m" start="5" end="5">even</arg>
+      </example>
+      <example src="internet" name="non-existent. Relemmatize!">
+        <text>Even if the human factors involved in global warming are minimal or non-existent, is it such a terrible thing to ask people to pollute a little less?</text>
+        <rel relloc="12">non-existent,</rel>
+      </example>
+      <example src="internet" name="both args">
+        <text>Socrates is existent as a man</text>
+        <rel relloc="2">existent</rel>
+        <arg f="" n="1" start="0" end="0">Socrates</arg>
+        <arg f="" n="2" start="3" end="5">as a man</arg>
+      </example>
       <note>EXIST-V NOTES: Based on big corpus; nominal 'existing' based on BOLT-7. Member of VNcls gorge-39.6, exist-47.1-1. (from exist.01-v)</note>
       <note>EXISTENT-J NOTES: Added by Julia based on BOLT-1, exist-v.01. exist-47.1-1 (from existent.01-j)</note>
       <note>EXISTING-N NOTES: Automatically created by Julia as an alias file for unification. (from existing.01-n)</note>
-      <roles>
-        <role descr="thing existing" f="pag" n="1">
-          <vnrole vncls="39.6" vntheta="agent"/>
-          <vnrole vncls="47.1-1" vntheta="theme"/>
-        </role>
-        <role descr="secondary attribute of arg1" f="prd" n="2"/>
-      </roles>
-      <example name="existential angst" src="" type="">
-        <text>...a case of political corruption that-1 *trace*-1 simply doesn't exist.</text>
-        <arg f="" n="1">*trace*-1 (= that)</arg>
-        <arg f="slc" n="m">that -&gt; political corruption</arg>
-        <arg f="adv" n="m">simply</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">exist</rel>
-      </example>
-      <example name="ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1048" type="">
-        <text>Hsia Yang 's fuzzy people exist very much within this Eastern philosophical context . "</text>
-        <arg f="" n="1">Hsia Yang 's fuzzy people</arg>
-        <rel f="">exist</rel>
-        <arg f="" n="2">very much within this Eastern philosophical context</arg>
-      </example>
-
-      <example name="stupid WSJ style guide" src="" type="">
-        <text>No mechanism *trace*-1 exists [for finding a middle ground]-1 .</text>
-        <arg f="" n="1">No mechanism *trace*-1</arg>
-        <rel f="">exists</rel>
-      </example>
-      <example name="nominal rel: existing" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>there must be in the mind at the same instant ideas of its existing in a considerable number of other points of time and place;</text>
-        <arg f="" n="1">its</arg>
-        <rel f="">existing</rel>
-        <arg f="loc" n="m">in a considerable number of other points of time and place</arg>
-      </example>
-      <example name="the arg" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Which rights are ?fundamental? or even existent is entirely subjective.</text>
-        <arg f="" n="1">which rights</arg>
-        <arg f="adv" n="m">even</arg>
-        <rel f="">existent</rel>
-      </example>
-      <example name="non-existent. Relemmatize!" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Even if the human factors involved in global warming are minimal or non-existent, is it such a terrible thing to ask people to pollute a little less?</text>
-      </example>
-      <example name="both args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Socrates is existent as a man</text>
-        <arg f="" n="1">Socrates</arg>
-        <rel f="">existent</rel>
-        <arg f="" n="2">as a man</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

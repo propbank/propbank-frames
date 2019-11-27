@@ -1,36 +1,53 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="exude">
     <roleset id="exude.01" name="ooze">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">exudative</alias>
-        <alias framenet="Emitting Emanating" pos="v" verbnet="">exude</alias>
+        <alias pos="j">exudative</alias>
+        <alias pos="v">exude</alias>
       </aliases>
-      <note>EXUDE-V NOTES: Member of VNcls substance_emission-43.4, appear-48.1.1. (from exude.01-v)</note>
-      <note>EXUDATIVE-J NOTES: Added by Julia based on medi-tmprl1to8. (from exudative.01-j)</note>
       <roles>
         <role descr="oozer" f="DIR" n="0">
-          <vnrole vncls="43.4" vntheta="Source"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="substance_emission-43.4" version="verbnet3.3">source</rolelink>
+            <rolelink resource="FrameNet" class="Emanating" version="1.7">source</rolelink>
+            <rolelink resource="FrameNet" class="Emitting" version="1.7">source_emitter</rolelink>
+          </rolelinks>
         </role>
         <role descr="ooze" f="PPT" n="1">
-          <vnrole vncls="43.4" vntheta="Theme"/>
-          <vnrole vncls="48.1.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="substance_emission-43.4" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="appear-48.1.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Emanating" version="1.7">emission</rolelink>
+            <rolelink resource="FrameNet" class="Emitting" version="1.7">emission</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="at least this is a nice ooze" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Emitting" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Emanating" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="substance_emission-43.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="appear-48.1.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="at least this is a nice ooze">
         <text>In the interview at headquarters yesterday afternoon, both men exuded confidence and seemed to work well together.</text>
-        <arg f="loc" n="m">In the interview at headquarters yesterday afternoon</arg>
-        <arg f="" n="0">both men</arg>
-        <rel f="">exuded</rel>
-        <arg f="" n="1">confidence</arg>
+        <rel relloc="9">exuded</rel>
+        <arg f="LOC" n="m" start="0" end="6">In the interview at headquarters yesterday afternoon,</arg>
+        <arg f="" n="0" start="7" end="8">both men</arg>
+        <arg f="" n="1" start="10" end="10">confidence</arg>
       </example>
-      <example name="arg1" src="medi-tmprl" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="medi-tmprl" name="arg1">
         <text>Fluid has always been exudative and lymphocytic .</text>
-        <arg f="" n="1">Fluid</arg>
-        <arg f="tmp" n="m">always</arg>
-        <rel f="">exudative</rel>
+        <rel relloc="4">exudative</rel>
+        <arg f="" n="1" start="0" end="0">Fluid</arg>
+        <arg f="TMP" n="m" start="2" end="2">always</arg>
       </example>
+      <note>EXUDE-V NOTES: Member of VNcls substance_emission-43.4, appear-48.1.1. (from exude.01-v)</note>
+      <note>EXUDATIVE-J NOTES: Added by Julia based on medi-tmprl1to8. (from exudative.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

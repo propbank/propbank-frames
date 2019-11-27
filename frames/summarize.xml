@@ -1,31 +1,46 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="summarize">
     <roleset id="summarize.01" name="to make a summary">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">summarize</alias>
+        <alias pos="v">summarize</alias>
+        <argalias pos="n" arg="2">summary</argalias>
       </aliases>
-      <note>SUMMARIZE-V NOTES: Frames file for 'summarize' based on survey of sentences in the WSJ corpus. (from summarize.01-v predicate notes)</note>
       <roles>
-        <role descr="editor, summarizer, agent" f="pag" n="0"/>
-        <role descr="thing summarized" f="ppt" n="1"/>
-        <role descr="summary" f="prd" n="2"/>
+        <role descr="editor, summarizer, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Summarizing" version="1.7">communicator</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing summarized" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Summarizing" version="1.7">state_of_affairs</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="summary" f="PRD" n="2"/>
       </roles>
-      <example name="non-agentive subject" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Summarizing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="summarize-v.1" src="annot-overlap" confidence="0.1">10</lexlink>
+      </lexlinks>
+      <example src="" name="non-agentive subject">
         <text>In a strongly worded response summarizing a filing made [*] in the same court yesterday , GE asserted that `` prosecutors have misstated the testimony of witnesses , distorted documents and ignored important facts . ''</text>
-        <arg f="" n="2">a strongly worded response</arg>
-        <rel f="">summarizing</rel>
-        <arg f="" n="1">a filing made [*] in the same court yesterday</arg>
+        <rel relloc="5">summarizing</rel>
+        <arg f="" n="2" start="1" end="4">a strongly worded response</arg>
+        <arg f="" n="1" start="7" end="14">filing made [*] in the same court yesterday</arg>
       </example>
-      <example name="agentive subject" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="active"/>
-        <text>The statement added , `` [Someone]-1 has regrettably chosen [*-1]to selectively summarize portions of highly classified correspondence between the two branches of government .</text>
-        <arg f="" n="0">[*-1]</arg>
-        <arg f="mnr" n="m">selectively</arg>
-        <rel f="">summarize</rel>
-        <arg f="" n="1">portions of highly classified correspondence between the two branches of government</arg>
+      <example src="" name="agentive subject">
+        <text>The statement added , `` Someone has regrettably chosen [*]to selectively summarize portions of highly classified correspondence between the two branches of government .</text>
+        <rel relloc="11">summarize</rel>
+        <arg f="" n="0" start="5" end="5">Someone</arg>
+        <arg f="MNR" n="m" start="10" end="10">selectively</arg>
+        <arg f="" n="1" start="12" end="22">portions of highly classified correspondence between the two branches of government</arg>
       </example>
+      <note>SUMMARIZE-V NOTES: Frames file for 'summarize' based on survey of sentences in the WSJ corpus. (from summarize.01-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

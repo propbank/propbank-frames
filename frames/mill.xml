@@ -1,47 +1,62 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="mill">
     <roleset id="mill.01" name="grind, like coffee">
       <aliases>
-        <alias framenet="Grinding" pos="v" verbnet="">mill</alias>
-        <alias framenet="" pos="n" verbnet="">milling</alias>
+        <alias pos="v">mill</alias>
+        <alias pos="n">milling</alias>
       </aliases>
-      <note>MILL-V NOTES: Based on WSJ. Member of VNcls carve-21.2-2. (from mill.01-v)</note>
       <roles>
         <role descr="grinder" f="PAG" n="0">
-          <vnrole vncls="21.2-2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="carve-21.2-2" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="whole" f="PPT" n="1">
-          <vnrole vncls="21.2-2" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="carve-21.2-2" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="powder, pieces" f="prd" n="2"/>
+        <role descr="powder, pieces" f="PRD" n="2"/>
       </roles>
-      <example name="old-timey usage" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Grinding" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="carve-21.2-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="old-timey usage">
         <text>John milled the wheat into flour.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">milled</rel>
-        <arg f="" n="1">the wheat</arg>
-        <arg f="" n="2">into flour</arg>
+        <rel relloc="1">milled</rel>
+        <arg f="" n="0" start="0" end="0">John</arg>
+        <arg f="" n="1" start="2" end="3">the wheat</arg>
+        <arg f="" n="2" start="4" end="5">into flour.</arg>
       </example>
+      <note>MILL-V NOTES: Based on WSJ. Member of VNcls carve-21.2-2. (from mill.01-v)</note>
     </roleset>
     <roleset id="mill.02" name="move randomly">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">mill</alias>
+        <alias pos="v">mill</alias>
       </aliases>
-      <note>MILL-V NOTES: No VNcls. (from mill.02-v)</note>
       <roles>
         <role descr="entity in motion" f="PAG" n="0"/>
-        <role descr="path or range" f="loc" n="1"/>
+        <role descr="path or range" f="LOC" n="1"/>
       </roles>
-      <example name="the one example" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="the one example">
         <text>The doctor was among dozens of people milling through East Berlin's Gethsemane Church Saturday morning.</text>
-        <arg f="" n="0">dozens of people</arg>
-        <rel f="">milling</rel>
-        <arg f="" n="1">through East Berlin's Gethsemane Church</arg>
-        <arg f="tmp" n="m">Saturday morning</arg>
+        <rel relloc="7">milling</rel>
+        <arg f="" n="0" start="4" end="6">dozens of people</arg>
+        <arg f="" n="1" start="8" end="12">through East Berlin's Gethsemane Church</arg>
+        <arg f="TMP" n="m" start="13" end="14">Saturday morning.</arg>
       </example>
+      <note>MILL-V NOTES: No VNcls. (from mill.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

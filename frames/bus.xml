@@ -1,33 +1,55 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="bus">
     <roleset id="bus.01" name="bus">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">bus</alias>
+        <alias pos="v">bus</alias>
       </aliases>
-      <note>BUS-V NOTES: Hand-checked by Kevin (from bus.01-v)</note>
       <roles>
         <role descr="agent, driver (transitive subject)" f="PAG" n="0">
-          <vnrole vncls="11.5-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="drive-11.5-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Bringing" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Bringing" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing moved (intransitive subject, transitive object)" f="PPT" n="1">
-          <vnrole vncls="11.5-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="drive-11.5-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Bringing" version="1.7">purpose</rolelink>
+          </rolelinks>
         </role>
         <role descr="locations, or start point" f="LOC" n="2">
-          <vnrole vncls="11.5-1" vntheta="Initial_Location"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="drive-11.5-1" version="verbnet3.3">initial_location</rolelink>
+            <rolelink resource="FrameNet" class="Bringing" version="1.7">place</rolelink>
+          </rolelinks>
         </role>
         <role descr="destination" f="LOC" n="3">
-          <vnrole vncls="11.5-1" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="drive-11.5-1" version="verbnet3.3">destination</rolelink>
+            <rolelink resource="FrameNet" class="Bringing" version="1.7">goal</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="Costa Rica, from Google" src="web usage" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Bringing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Ride_vehicle" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="drive-11.5-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web usage" name="Costa Rica, from Google">
         <text>Yesterday, we bussed from Tamarindo to Manuel Antonio.</text>
-        <arg f="tmp" n="m">Yesterday</arg>
-        <arg f="" n="1">we</arg>
-        <rel f="">bussed</rel>
-        <arg f="" n="2">from Tamarindo</arg>
-        <arg f="" n="3">to Manuel Antonio</arg>
+        <rel relloc="2">bussed</rel>
+        <arg f="TMP" n="m" start="0" end="0">Yesterday,</arg>
+        <arg f="" n="1" start="1" end="1">we</arg>
+        <arg f="" n="2" start="3" end="4">from Tamarindo</arg>
+        <arg f="" n="3" start="5" end="7">to Manuel Antonio.</arg>
       </example>
+      <note>BUS-V NOTES: Hand-checked by Kevin (from bus.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

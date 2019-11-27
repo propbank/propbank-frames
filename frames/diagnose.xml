@@ -1,71 +1,77 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="diagnose">
     <roleset id="diagnose.01" name="discover a sickness, discovery of illness">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">diagnose</alias>
-        <alias framenet="" pos="n" verbnet="">diagnosis</alias>
-        <alias framenet="" pos="j" verbnet="">diagnostic</alias>
+        <alias pos="v">diagnose</alias>
+        <alias pos="n">diagnosis</alias>
+        <alias pos="j">diagnostic</alias>
       </aliases>
+      <roles>
+        <role descr="doctor" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="characterize-29.2" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="patient" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="characterize-29.2" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="illness" f="PRD" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="characterize-29.2" version="verbnet3.3">attribute</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="characterize-29.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="diagnose-v.2" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="" name="single arg usually illness">
+        <text>RESEARCHERS diagnosed a genetic defect in a three-day-old mouse embryo in an experiment directly applicable to humans.</text>
+        <rel relloc="1">diagnosed</rel>
+        <arg f="" n="0" start="0" end="0">RESEARCHERS</arg>
+        <arg f="" n="2" start="2" end="9">a genetic defect in a three-day-old mouse embryo</arg>
+        <arg f="LOC" n="m" start="10" end="16">in an experiment directly applicable to humans.</arg>
+      </example>
+      <example src="" name="semi-predicative illness">
+        <text>[Four workers at GTE Corp.'s headquarters]-1 have been diagnosed *trace*-1 as having hepatitis, and city health officials are investigating whether a cafeteria worker may have exposed hundreds of other GTE employees to the viral infection, company and city officials said.</text>
+        <rel relloc="8">diagnosed</rel>
+        <arg f="" n="1" start="9" end="9">*trace*-1</arg>
+        <arg f="" n="2" start="10" end="12">as having hepatitis,</arg>
+      </example>
+      <example src="ontonotes mz/sinorama/10/ectb_1029" name="ARG2 and ARG0">
+        <text>Pan explains that in clinical practice , the causes of fever are difficult to quickly diagnose .</text>
+        <rel relloc="15">diagnose</rel>
+        <arg f="MNR" n="m" start="14" end="14">quickly</arg>
+      </example>
+      <example src="" name="Arg0 and Arg1">
+        <text>Dr. Jean's diagnosis of Mr.Bob allowed them to properly treat him for rabies.</text>
+        <rel relloc="2">diagnosis</rel>
+        <arg f="" n="0" start="0" end="1">Dr. Jean's</arg>
+        <arg f="" n="1" start="3" end="4">of Mr.Bob</arg>
+      </example>
+      <example src="" name="Arg0 and Arg2">
+        <text>Dr. Jean's diagnosis of Mr. Bob's melanoma saved his life.</text>
+        <rel relloc="2">diagnosis</rel>
+        <arg f="" n="0" start="0" end="1">Dr. Jean's</arg>
+        <arg f="" n="2" start="3" end="6">of Mr. Bob's melanoma</arg>
+      </example>
+      <example src="" name="What may seem like a tool can be the arg 0, as it tells you what the disease is">
+        <text>However, the cytology of the cells in the epidermis is nonetheless diagnostic.099</text>
+        <rel relloc="11">diagnostic.099</rel>
+        <arg f="DIS" n="m" start="0" end="0">However,</arg>
+        <arg f="" n="0" start="1" end="8">the cytology of the cells in the epidermis</arg>
+        <arg f="ADV" n="m" start="10" end="10">nonetheless</arg>
+      </example>
       <note>DIAGNOSE-V NOTES: Frames file for 'diagnose' based on sentences in wsj. No Verbnet entry. (from diagnose.01-v predicate notes)</note>
       <note>DIAGNOSIS-N NOTES: Frame based on diagnose-v.01. Framed by Anwen March 2011 (from diagnosis.01-n)</note>
       <note>DIAGNOSTIC-J NOTES: Based on Thyme and Sharp data. Comparison to diagnose.01. Diagnose.01 is member of vncls characterize-29.2. Framed by Katie. (from diagnostic.01-j)</note>
-      <roles>
-        <role descr="doctor" f="PAG" n="0">
-          <vnrole vncls="29.2" vntheta="Agent"/>
-        </role>
-        <role descr="patient" f="PPT" n="1">
-          <vnrole vncls="29.2" vntheta="Theme"/>
-        </role>
-        <role descr="illness" f="PRD" n="2">
-          <vnrole vncls="29.2" vntheta="Attribute"/>
-        </role>
-      </roles>
-      <example name="single arg usually illness" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>RESEARCHERS diagnosed a genetic defect in a three-day-old mouse embryo in an experiment directly applicable to humans.</text>
-        <arg f="" n="0">RESEARCHERS</arg>
-        <rel f="">diagnosed</rel>
-        <arg f="" n="2">a genetic defect in a three-day-old mouse embryo</arg>
-        <arg f="loc" n="m">in an experiment directly applicable to humans</arg>
-      </example>
-      <example name="semi-predicative illness" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>[Four workers at GTE Corp.'s headquarters]-1 have been diagnosed *trace*-1 as having hepatitis, and city health officials are investigating whether a cafeteria worker may have exposed hundreds of other GTE employees to the viral infection, company and city officials said.</text>
-        <rel f="">diagnosed</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="2">as having hepatitis</arg>
-      </example>
-      <example name="ARG2 and ARG0" src="ontonotes mz/sinorama/10/ectb_1029" type="">
-        <text>Pan explains that in clinical practice , the causes of fever are difficult to quickly diagnose .</text>
-        <arg f="" n="2">[]</arg>
-        <arg f="" n="0">[]</arg>
-        <arg f="mnr" n="m">quickly</arg>
-        <rel f="">diagnose</rel>
-      </example>
-
-      <example name="Arg0 and Arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Dr. Jean's diagnosis of Mr.Bob allowed them to properly treat him for rabies.</text>
-        <arg f="" n="0">Dr. Jean's</arg>
-        <rel f="">diagnosis</rel>
-        <arg f="" n="1">of Mr. Bob</arg>
-      </example>
-      <example name="Arg0 and Arg2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Dr. Jean's diagnosis of Mr. Bob's melanoma saved his life.</text>
-        <arg f="" n="0">Dr. Jean's</arg>
-        <rel f="">diagnosis</rel>
-        <arg f="" n="2">of Mr. Bob's melanoma</arg>
-      </example>
-      <example name="What may seem like a tool can be the arg 0, as it tells you what the disease is" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>However, the cytology of the cells in the epidermis is nonetheless diagnostic.099</text>
-        <arg f="dis" n="m">However,</arg>
-        <arg f="" n="0">the cytology of the cells in the epidermis</arg>
-        <arg f="adv" n="m">nonetheless</arg>
-        <rel f="">diagnostic</rel>
-      </example>
     </roleset>
   </predicate>
 </frameset>

@@ -1,39 +1,59 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="whisper">
     <roleset id="whisper.01" name="speak quietly">
       <aliases>
-        <alias framenet="Make_noise Communication_manner" pos="v" verbnet="">whisper</alias>
+        <alias pos="v">whisper</alias>
       </aliases>
-      <note>WHISPER-V NOTES: VN updated by Julia, 10/2010. Member of Vncls manner_speaking-37.3, sound_emission-43.2. (from whisper.01-v)</note>
       <roles>
         <role descr="speaker" f="PAG" n="0">
-          <vnrole vncls="37.3" vntheta="Agent"/>
-          <vnrole vncls="43.2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="sound_emission-43.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Communication_manner" version="1.7">speaker</rolelink>
+            <rolelink resource="FrameNet" class="Make_noise" version="1.7">noisy_event</rolelink>
+            <rolelink resource="FrameNet" class="Make_noise" version="1.7">sound</rolelink>
+          </rolelinks>
         </role>
         <role descr="utterance" f="PPT" n="1">
-          <vnrole vncls="37.3" vntheta="Topic"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="FrameNet" class="Communication_manner" version="1.7">message</rolelink>
+            <rolelink resource="FrameNet" class="Communication_manner" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
         <role descr="hearer" f="GOL" n="2">
-          <vnrole vncls="37.3" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3">recipient</rolelink>
+            <rolelink resource="FrameNet" class="Communication_manner" version="1.7">addressee</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all args" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Communication_manner" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Make_noise" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="sound_emission-43.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="all args">
         <text>The executive recalls Mr. Corry whispering to him and others, ``Remember, this was Dave's deal.''</text>
-        <arg f="" n="0">Mr. Corry</arg>
-        <rel f="">whispering</rel>
-        <arg f="" n="2">to him and others</arg>
-        <arg f="" n="1">Remember, this was Dave's deal</arg>
+        <rel relloc="5">whispering</rel>
+        <arg f="" n="0" start="3" end="4">Mr. Corry</arg>
+        <arg f="" n="2" start="6" end="9">to him and others,</arg>
+        <arg f="" n="1" start="10" end="14">``Remember, this was Dave's deal.''</arg>
       </example>
-      <example name="ARG0 and ARG2 and ARG1" src="ontonotes nw/wsj/05/wsj_0526" type="">
+      <example src="ontonotes nw/wsj/05/wsj_0526" name="ARG0 and ARG2 and ARG1">
         <text>Take the scene in which Kate stands naked by a lighted window , whispering to her hidden assailant , `` Look all you want .</text>
-        <arg f="" n="0">Kate</arg>
-        <rel f="">whispering</rel>
-        <arg f="" n="2">to her hidden assailant</arg>
-        <arg f="" n="1">Look all you want</arg>
+        <rel relloc="13">whispering</rel>
+        <arg f="" n="0" start="5" end="5">Kate</arg>
+        <arg f="" n="2" start="14" end="17">to her hidden assailant</arg>
+        <arg f="" n="1" start="20" end="23">Look all you want</arg>
       </example>
-
+      <note>WHISPER-V NOTES: VN updated by Julia, 10/2010. Member of Vncls manner_speaking-37.3, sound_emission-43.2. (from whisper.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

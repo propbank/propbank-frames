@@ -1,46 +1,61 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="row">
     <roleset id="row.01" name="make a boat go">
       <aliases>
-        <alias framenet="Operate_vehicle Bringing" pos="v" verbnet="">row</alias>
-        <alias framenet="" pos="n" verbnet="">rowing</alias>
+        <alias pos="v">row</alias>
+        <alias pos="n">rowing</alias>
       </aliases>
-      <note>ROW-V NOTES: Frames file for 'row' based on sentences in wsj. Verbnet entries 51.4.2 and 11.5, Framenet entries Transportation and Conversation. The latter is incorrect; it applies only to the nominal 'row' (pron "RAU"). (from row.01-v predicate notes)</note>
-      <note>ROWING-N NOTES: row.01 (from rowing.01-n)</note>
       <roles>
         <role descr="rower" f="PAG" n="0">
-          <vnrole vncls="11.5" vntheta="Agent"/>
-          <vnrole vncls="51.4.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="drive-11.5" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="nonvehicle-51.4.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Operate_vehicle" version="1.7">driver</rolelink>
+            <rolelink resource="FrameNet" class="Bringing" version="1.7">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="boat" f="PPT" n="1">
-          <vnrole vncls="11.5" vntheta="Theme"/>
-          <vnrole vncls="51.4.2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="drive-11.5" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="nonvehicle-51.4.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Operate_vehicle" version="1.7">vehicle</rolelink>
+            <rolelink resource="FrameNet" class="Bringing" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="intransitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Bringing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Operate_vehicle" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="drive-11.5" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="nonvehicle-51.4.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="intransitive">
         <text>*trace*-1 A San Francisco lawyer, Mr. Panelli-1 rowed religiously when he first got the machine, but, he complains, it left grease marks on his carpet, ``and it was boring.</text>
-        <arg f="prd" n="m">*trace* A San Francisco lawyer</arg>
-        <arg f="" n="0">Mr. Panelli</arg>
-        <rel f="">rowed</rel>
-        <arg f="mnr" n="m">religiously</arg>
-        <arg f="tmp" n="m">when he first got the machine</arg>
+        <rel relloc="7">rowed</rel>
+        <arg f="PRD" n="m" start="0" end="4">*trace*-1 A San Francisco lawyer,</arg>
+        <arg f="" n="0" start="5" end="6">Mr. Panelli-1</arg>
+        <arg f="MNR" n="m" start="8" end="8">religiously</arg>
+        <arg f="TMP" n="m" start="9" end="14">when he first got the machine,</arg>
       </example>
-      <example name="ARG0 and ARG1" src="ontonotes pt/nt/41/nt_4106" type="">
+      <example src="ontonotes pt/nt/41/nt_4106" name="ARG0 and ARG1">
         <text>And he saw the followers working hard to row the boat .</text>
-        <arg f="" n="0">the followers</arg>
-        <rel f="">row</rel>
-        <arg f="" n="1">the boat</arg>
+        <rel relloc="8">row</rel>
+        <arg f="" n="0" start="3" end="4">the followers</arg>
+        <arg f="" n="1" start="9" end="10">the boat</arg>
       </example>
-
-      <example name="Arg0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="Arg0">
         <text>They say boldness favours the brave and this proved true for Oliver of his rowing the Atlantic Ocean.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">rowing</rel>
-        <arg f="dir" n="m">the Atlantic Ocean</arg>
+        <rel relloc="14">rowing</rel>
+        <arg f="" n="0" start="13" end="13">his</arg>
+        <arg f="DIR" n="m" start="15" end="17">the Atlantic Ocean.</arg>
       </example>
+      <note>ROW-V NOTES: Frames file for 'row' based on sentences in wsj. Verbnet entries 51.4.2 and 11.5, Framenet entries Transportation and Conversation. The latter is incorrect; it applies only to the nominal 'row' (pron "RAU"). (from row.01-v predicate notes)</note>
+      <note>ROWING-N NOTES: row.01 (from rowing.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

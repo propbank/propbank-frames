@@ -1,115 +1,141 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="pour">
     <roleset id="pour.01" name="move liquids">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">pouring</alias>
-        <alias framenet="" pos="v" verbnet="">pour</alias>
+        <alias pos="n">pouring</alias>
+        <alias pos="v">pour</alias>
       </aliases>
-      <note>POUR-V NOTES: (from pour.01-v)</note>
       <roles>
-        <role descr="agent, pourer" f="pag" n="0">
-          <vnrole vncls="43.4" vntheta="Source"/>
-          <vnrole vncls="9.5" vntheta="Agent"/>
+        <role descr="agent, pourer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="substance_emission-43.4" version="verbnet3.3">source</rolelink>
+            <rolelink resource="VerbNet" class="pour-9.5" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Mass_motion" version="1.7">source</rolelink>
+          </rolelinks>
         </role>
         <role descr="liquid" f="PPT" n="1">
-          <vnrole vncls="43.4" vntheta="Theme"/>
-          <vnrole vncls="9.5" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="substance_emission-43.4" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="pour-9.5" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Mass_motion" version="1.7">mass_theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="source" f="DIR" n="2">
-          <vnrole vncls="43.4" vntheta="Source"/>
-          <vnrole vncls="9.5" vntheta="Initial_Location"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="substance_emission-43.4" version="verbnet3.3">source</rolelink>
+            <rolelink resource="VerbNet" class="pour-9.5" version="verbnet3.3">initial_location</rolelink>
+            <rolelink resource="FrameNet" class="Mass_motion" version="1.7">source</rolelink>
+          </rolelinks>
         </role>
         <role descr="destination" f="GOL" n="3">
-          <vnrole vncls="9.5" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pour-9.5" version="verbnet3.3">destination</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all args" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Mass_motion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="substance_emission-43.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="pour-9.5" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="pour-v.3" src="annot-overlap" confidence="0.1">20</lexlink>
+        <lexlink resource="onsense" version="on5" class="pour-v.2" src="annot-overlap" confidence="0.1">10</lexlink>
+        <lexlink resource="onsense" version="on5" class="pour-v.1" src="annot-overlap" confidence="0.1">9</lexlink>
+      </lexlinks>
+      <example src="" name="all args">
         <text>But at just that moment, he is interrupted in his office by a servant in tuxedo who *trace* pours coffee from silver into a cup of china and dabs the brim with linen.</text>
-        <arg f="" n="0">*trace*</arg>
-        <arg f="rcl" n="m">who -&gt; a servant in tuxedo</arg>
-        <rel f="">pours</rel>
-        <arg f="" n="1">coffee</arg>
-        <arg f="" n="2">from silver</arg>
-        <arg f="" n="3">into a cup of china</arg>
+        <rel relloc="18">pours</rel>
+        <arg f="" n="0" start="17" end="17">*trace*</arg>
+        <arg f="RCL" n="m" start="12" end="15">a servant in tuxedo</arg>
+        <arg f="" n="1" start="19" end="19">coffee</arg>
+        <arg f="" n="2" start="20" end="21">from silver</arg>
+        <arg f="" n="3" start="22" end="26">into a cup of china</arg>
       </example>
-      <example name="ergative, with source" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="present" voice="active"/>
+      <example src="" name="ergative, with source">
         <text>Billions of investors' dollars are pouring out of the nation's junk-bond mutual funds, undermining a pillar of support in the already reeling junk market.</text>
-        <arg f="" n="1">Billions of investors' dollars</arg>
-        <rel f="">pouring</rel>
-        <arg f="" n="2">out of the nation's junk-bond mutual funds</arg>
-        <arg f="adv" n="m">undermining a pillar of support in the already reeling junk market</arg>
+        <rel relloc="5">pouring</rel>
+        <arg f="" n="1" start="0" end="3">Billions of investors' dollars</arg>
+        <arg f="" n="2" start="6" end="12">out of the nation's junk-bond mutual funds,</arg>
+        <arg f="ADV" n="m" start="13" end="23">undermining a pillar of support in the already reeling junk market.</arg>
       </example>
-      <example name="pouring beer" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
+      <example src="" name="pouring beer">
         <text>Although imports account for less than 1% of beer sales in Japan, [Asahi Breweries Ltd., which has been gaining share with its popular dry beer,]-1 plans *trace*-1 to fend off Japanese competitors by *trace*-1 pouring $1.06 billion into facilities to brew 50% more beer.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">pouring</rel>
-        <arg f="" n="1">$1.06 billion</arg>
-        <arg f="" n="3">into facilities to brew 50% more beer</arg>
+        <rel relloc="34">pouring</rel>
+        <arg f="" n="0" start="26" end="26">*trace*-1</arg>
+        <arg f="" n="1" start="35" end="36">$1.06 billion</arg>
+        <arg f="" n="3" start="37" end="43">into facilities to brew 50% more beer.</arg>
       </example>
+      <note>POUR-V NOTES: (from pour.01-v)</note>
     </roleset>
     <roleset id="pour.02" name="rain very hard">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">pour</alias>
-        <alias framenet="" pos="j" verbnet="">pouring</alias>
+        <alias pos="v">pour</alias>
+        <alias pos="j">pouring</alias>
       </aliases>
-      <note>POUR-V NOTES: (from pour.02-v)</note>
       <roles>
-        <note>Don't tag weather "it"; this verb rarely takes any arguments. (from pour.02-v)</note>
         <role descr="rain" f="PPT" n="1"/>
       </roles>
-      <example name="unk" src="ontonotes mz/sinorama/10/ectb_1062" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="ontonotes mz/sinorama/10/ectb_1062" name="unk">
         <text>It truly does seem that " when it rains , it pours , " for India was then visited on January 26 by its biggest earthquake in 50 years , and according to official estimates the death toll may rise to over 20,000 .</text>
-        <arg f="tmp" n="m">when it rains</arg>
-        <rel f="">pours</rel>
+        <rel relloc="11">pours</rel>
+        <arg f="TMP" n="m" start="6" end="8">when it rains</arg>
       </example>
-
-      <example name="pouring-j" src="CallHome" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="CallHome" name="pouring-j">
         <text>Just the howling wind and the pouring rain otherwise.</text>
-        <rel f="">pouring</rel>
-        <arg f="" n="1">rain</arg>
+        <rel relloc="6">pouring</rel>
+        <arg f="" n="1" start="7" end="7">rain</arg>
       </example>
+      <note>POUR-V NOTES: (from pour.02-v)</note>
+      <note>Don't tag weather "it"; this verb rarely takes any arguments. (from pour.02-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="pour_out">
     <roleset id="pour_out.03" name="gush, as liquid, emotion, etc.">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">pour_out</alias>
-        <alias framenet="" pos="n" verbnet="">outpouring</alias>
+        <alias pos="v">pour_out</alias>
+        <alias pos="n">outpouring</alias>
       </aliases>
-      <note>OUTPOURING-N NOTES: Added by Julia based on BOLT, relation to pour.01. No VNcls. (from outpouring.01-n)</note>
       <roles>
-        <role descr="agent, pourer" f="pag" n="0"/>
-        <role descr="thing flowing out" f="ppt" n="1"/>
-        <role descr="source" f="dir" n="2"/>
-        <role descr="destination, recipient" f="gol" n="3"/>
+        <role descr="agent, pourer" f="PAG" n="0"/>
+        <role descr="thing flowing out" f="PPT" n="1"/>
+        <role descr="source" f="DIR" n="2"/>
+        <role descr="destination, recipient" f="GOL" n="3"/>
       </roles>
-      <example name="outpouring-n: args 1, 2" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="internet" name="outpouring-n: args 1, 2">
         <text>This park in northeastern India, set along the Brahmaputra River near its outpouring from the Himalaya, sports floodplain grasslands and forests rich in large mammals.</text>
-        <rel f="">outpouring</rel>
-        <arg f="" n="1">its</arg>
-        <arg f="" n="2">from the Himalaya</arg>
+        <rel relloc="12">outpouring</rel>
+        <arg f="" n="1" start="11" end="11">its</arg>
+        <arg f="" n="2" start="13" end="15">from the Himalaya,</arg>
       </example>
-      <example name="outpouring-n: args0, 1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="internet" name="outpouring-n: args0, 1">
         <text>Amid his outpouring of dour facts, Jared Diamond pauses to wonder. "What did the Easter Islander who cut down the last palm tree say while he was doing it?"</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">outpouring</rel>
-        <arg f="" n="1">of dour facts</arg>
+        <rel relloc="2">outpouring</rel>
+        <arg f="" n="0" start="1" end="1">his</arg>
+        <arg f="" n="1" start="3" end="5">of dour facts,</arg>
       </example>
-      <example name="pour_out-v" src="" type="">
-        <text>The sudden passing of a high school student shocked the tight-knit community, which-1 *-1 poured out support to the Donnelly family online and in person.</text>
-        <arg f="" n="0">*-1</arg>
-        <rel f="">[poured][out]</rel>
-        <arg f="" n="1">support</arg>
-        <arg f="" n="3">to the Donnelly family</arg>
-        <arg f="mnr" n="m">online and in person</arg>
+      <example src="" name="pour_out-v">
+        <text>The sudden passing of a high school student shocked the tight-knit community, which poured out support to the Donnelly family online and in person.</text>
+        <rel relloc="13 14">poured out</rel>
+        <arg f="" n="0" start="12" end="12">which</arg>
+        <arg f="" n="1" start="15" end="15">support</arg>
+        <arg f="" n="3" start="16" end="19">to the Donnelly family</arg>
+        <arg f="MNR" n="m" start="20" end="23">online and in person.</arg>
       </example>
+      <note>OUTPOURING-N NOTES: Added by Julia based on BOLT, relation to pour.01. No VNcls. (from outpouring.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

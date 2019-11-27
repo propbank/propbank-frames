@@ -1,62 +1,89 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="transfer">
     <roleset id="transfer.01" name="send">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">transfer</alias>
-        <alias framenet="Change_tool Transfer" pos="v" verbnet="">transfer</alias>
+        <alias pos="n">transfer</alias>
+        <alias pos="v">transfer</alias>
+        <argalias pos="n" arg="0">transferor</argalias>
+        <argalias pos="n" arg="1">transferee</argalias>
       </aliases>
-      <note>TRANSFER-V NOTES: Member of Vncls contribute-13.2-2 and send-11.1-1. (from transfer.01-v)</note>
-      <note>TRANSFER-N NOTES: Roleset based on transfer.01. Verbnet class send 11.1. Framed by Katie. (from transfer.01-n)</note>
       <roles>
-        <note>Arg3 sent-from/"source" seems to be fairly uncommon. (from transfer.01-v)</note>
         <role descr="sender" f="PAG" n="0">
-          <vnrole vncls="11.1" vntheta="Agent"/>
-          <vnrole vncls="13.2-2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="send-11.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="contribute-13.2-2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Transfer" version="1.7">donor</rolelink>
+          </rolelinks>
         </role>
         <role descr="sent" f="PPT" n="1">
-          <vnrole vncls="11.1" vntheta="Theme"/>
-          <vnrole vncls="13.2-2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="send-11.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="contribute-13.2-2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Transfer" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="sent-to" f="GOL" n="2">
-          <vnrole vncls="11.1" vntheta="Destination"/>
-          <vnrole vncls="13.2-2" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="send-11.1" version="verbnet3.3">destination</rolelink>
+            <rolelink resource="VerbNet" class="contribute-13.2-2" version="verbnet3.3">recipient</rolelink>
+            <rolelink resource="FrameNet" class="Transfer" version="1.7">recipient</rolelink>
+          </rolelinks>
         </role>
         <role descr="sent-from" f="DIR" n="3">
-          <vnrole vncls="11.1" vntheta="Initial_Location"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="send-11.1" version="verbnet3.3">initial_location</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all args" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Change_tool" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Transfer" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="send-11.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="contribute-13.2-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Transportperson" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="transfer-n.6" src="annot-overlap" confidence="0.1">21</lexlink>
+        <lexlink resource="onsense" version="on5" class="transfer-v.1" src="annot-overlap" confidence="0.1">46</lexlink>
+        <lexlink resource="onsense" version="on5" class="transfer-n.1" src="annot-overlap" confidence="0.1">12</lexlink>
+        <lexlink resource="onsense" version="on5" class="transfer-v.2" src="annot-overlap" confidence="0.1">17</lexlink>
+      </lexlinks>
+      <example src="" name="all args">
         <text>Arbitrage simply transfers his selling pressure from Chicago to New York, while functioning as a buyer in Chicago.</text>
-        <arg f="" n="0">Arbitrage</arg>
-        <arg f="adv" n="m">simply</arg>
-        <rel f="">transfers</rel>
-        <arg f="" n="1">his selling pressure</arg>
-        <arg f="" n="3">from Chicago</arg>
-        <arg f="" n="2">to New York</arg>
-        <arg f="tmp" n="m">while functioning as a buyer in Chicago</arg>
+        <rel relloc="2">transfers</rel>
+        <arg f="" n="0" start="0" end="0">Arbitrage</arg>
+        <arg f="ADV" n="m" start="1" end="1">simply</arg>
+        <arg f="" n="1" start="3" end="5">his selling pressure</arg>
+        <arg f="" n="3" start="6" end="7">from Chicago</arg>
+        <arg f="" n="2" start="8" end="10">to New York,</arg>
+        <arg f="TMP" n="m" start="11" end="17">while functioning as a buyer in Chicago.</arg>
       </example>
-      <example name="All but arg 0" src="" type="">
+      <example src="" name="All but arg 0">
         <text>technology transfer from the research laboratory to commercial use.</text>
-        <arg f="" n="1">technology</arg>
-        <rel f="">transfer</rel>
-        <arg f="" n="2">from the research laboratory</arg>
-        <arg f="" n="3">to commercial use</arg>
+        <rel relloc="1">transfer</rel>
+        <arg f="" n="1" start="0" end="0">technology</arg>
+        <arg f="" n="2" start="2" end="5">from the research laboratory</arg>
+        <arg f="" n="3" start="6" end="8">to commercial use.</arg>
       </example>
-      <example name="Example with arg 0" src="" type="">
+      <example src="" name="Example with arg 0">
         <text>its global-funds transfer system</text>
-        <arg f="" n="0">its</arg>
-        <arg f="" n="1">global-funds</arg>
-        <rel f="">transfer</rel>
+        <rel relloc="2">transfer</rel>
+        <arg f="" n="0" start="0" end="0">its</arg>
+        <arg f="" n="1" start="1" end="1">global-funds</arg>
       </example>
-      <example name="When to use arg 2 rather than arg 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="When to use arg 2 rather than arg 1">
         <text>His international bank transfers</text>
-        <arg f="" n="0">His</arg>
-        <arg f="adj" n="m">international</arg>
-        <arg f="" n="2">bank</arg>
-        <rel f="">transfers</rel>
+        <rel relloc="3">transfers</rel>
+        <arg f="" n="0" start="0" end="0">His</arg>
+        <arg f="ADJ" n="m" start="1" end="1">international</arg>
+        <arg f="" n="2" start="2" end="2">bank</arg>
       </example>
+      <note>TRANSFER-V NOTES: Member of Vncls contribute-13.2-2 and send-11.1-1. (from transfer.01-v)</note>
+      <note>TRANSFER-N NOTES: Roleset based on transfer.01. Verbnet class send 11.1. Framed by Katie. (from transfer.01-n)</note>
+      <note>Arg3 sent-from/"source" seems to be fairly uncommon. (from transfer.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

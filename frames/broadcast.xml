@@ -1,78 +1,90 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="broadcast">
     <roleset id="broadcast.01" name="to transmit or announce">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">broadcast</alias>
-        <alias framenet="" pos="n" verbnet="">broadcast</alias>
+        <alias pos="v">broadcast</alias>
+        <alias pos="n">broadcast</alias>
+        <argalias pos="n" arg="0">broadcaster</argalias>
       </aliases>
+      <roles>
+        <role descr="transmitter, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="instr_communication-37.4.1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="message" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="instr_communication-37.4.1" version="verbnet3.3">topic</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="audience" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="instr_communication-37.4.1" version="verbnet3.3">recipient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="source" f="DIR" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="37.4" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="broadcast-v.1" src="annot-overlap" confidence="0.1">44</lexlink>
+        <lexlink resource="onsense" version="on5" class="broadcast-n.2" src="annot-overlap" confidence="0.1">33</lexlink>
+        <lexlink resource="onsense" version="on5" class="broadcast-n.1" src="annot-overlap" confidence="0.1">7</lexlink>
+      </lexlinks>
+      <example src="" name="with Arg2">
+        <text>The Voice of America is a government agency that [*T*] broadcasts news and views -- some might say propaganda -- in 43 languages to 130 million listeners around the world .</text>
+        <rel relloc="10">broadcasts</rel>
+        <arg f="RCL" n="m" start="5" end="7">a government agency</arg>
+        <arg f="" n="0" start="9" end="9">[*T*]</arg>
+        <arg f="" n="1" start="11" end="19">news and views -- some might say propaganda --</arg>
+        <arg f="MNR" n="m" start="20" end="22">in 43 languages</arg>
+        <arg f="" n="2" start="23" end="29">to 130 million listeners around the world</arg>
+      </example>
+      <example src="" name="passive">
+        <text>[Last year 's series]*, broadcast [*]by General Electric Co. 's NBC , was the lowest-rated Series in four years ; instead of [*] featuring a major East Coast team against a West Coast team , it pitted the Los Angeles Dodgers against the losing Oakland A's .</text>
+        <rel relloc="4">broadcast</rel>
+        <arg f="" n="1" start="22" end="22">[*]</arg>
+        <arg f="" n="0" start="5" end="10">[*]by General Electric Co. 's NBC</arg>
+      </example>
+      <example src="" name="with Arg3">
+        <text>While rival ABC News outstripped the competition in live coverage of the event by sheer luck -- the network was broadcasting the World Series from Candlestick Park when the quake struck [] -- NBC News was unable [*-2]to get its signal out of San Francisco for the first hour after the quake .</text>
+        <rel relloc="20">broadcasting</rel>
+        <arg f="" n="0" start="17" end="18">the network</arg>
+        <arg f="" n="1" start="21" end="23">the World Series</arg>
+        <arg f="" n="3" start="24" end="26">from Candlestick Park</arg>
+        <arg f="TMP" n="m" start="27" end="30">when the quake struck</arg>
+      </example>
+      <example src="NP only" name="NP only">
+        <text>a network news broadcast</text>
+        <rel relloc="3">broadcast</rel>
+        <arg f="" n="0" start="1" end="1">network</arg>
+        <arg f="" n="1" start="2" end="2">news</arg>
+      </example>
+      <example src="More arguments" name="More arguments">
+        <text>Few people heard his news broadcast last night.</text>
+        <rel relloc="5">broadcast</rel>
+        <arg f="" n="0" start="3" end="3">his</arg>
+        <arg f="" n="1" start="4" end="4">news</arg>
+        <arg f="TMP" n="m" start="6" end="7">last night.</arg>
+      </example>
+      <example src="With source" name="With source">
+        <text>This communication technology relies on polling from client nodes, rather than a broadcast from a central hub.</text>
+        <rel relloc="12">broadcast</rel>
+        <arg f="" n="3" start="13" end="16">from a central hub.</arg>
+      </example>
+      <example src="ontonotes mz/sinorama/10/ectb_1006" name="ARG0 and ARG1">
+        <text>The success of serials means that TV stations in Taiwan just keep on cranking them out , broadcasting episodes as quickly as they are shot .</text>
+        <rel relloc="17">broadcasting</rel>
+        <arg f="" n="0" start="6" end="9">TV stations in Taiwan</arg>
+        <arg f="" n="1" start="18" end="18">episodes</arg>
+        <arg f="MNR" n="m" start="19" end="24">as quickly as they are shot</arg>
+      </example>
       <note>BROADCAST-V NOTES: Frames file for 'broadcast' based on survey of sentences in the WSJ corpus. (from broadcast.01-v predicate notes)</note>
       <note>BROADCAST-N NOTES: Roleset based on verb entry broadcast.01, OntoNotes sense groupings broadcast.01, broadcast.02, maps to VN entry instr_communication-37.4. Framed by Claire. (from broadcast.01-n)</note>
-      <roles>
-        <role descr="transmitter, agent" f="pag" n="0">
-          <vnrole vncls="37.4" vntheta="agent"/>
-        </role>
-        <role descr="message" f="ppt" n="1">
-          <vnrole vncls="37.4" vntheta="topic"/>
-        </role>
-        <role descr="audience" f="gol" n="2">
-          <vnrole vncls="37.4" vntheta="recipient"/>
-        </role>
-        <role descr="source" f="dir" n="3"/>
-      </roles>
-      <example name="with Arg2" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>The Voice of America is a government agency that [*T*-1] broadcasts news and views -- some might say propaganda -- in 43 languages to 130 million listeners around the world .</text>
-        <arg f="rcl" n="m">that -&gt; a government agency</arg>
-        <arg f="" n="0">[*T*-1]</arg>
-        <rel f="">broadcasts</rel>
-        <arg f="" n="1">news and views -- some might say propaganda --</arg>
-        <arg f="mnr" n="m">in 43 languages</arg>
-        <arg f="" n="2">to 130 million listeners around the world</arg>
-      </example>
-      <example name="passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>[Last year 's series]*-1, broadcast [*-1]by General Electric Co. 's NBC , was the lowest-rated Series in four years ; instead of [*] featuring a major East Coast team against a West Coast team , it pitted the Los Angeles Dodgers against the losing Oakland A's .</text>
-        <rel f="">broadcast</rel>
-        <arg f="" n="1">[*-1]</arg>
-        <arg f="" n="0">by General Electric Co. 's NBC</arg>
-      </example>
-      <example name="with Arg3" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="past" voice="active"/>
-        <text>While rival ABC News outstripped the competition in live coverage of the event by sheer luck -- the network was broadcasting the World Series from Candlestick Park when the quake struck [*T*-1] -- NBC News was unable [*-2]to get its signal out of San Francisco for the first hour after the quake .</text>
-        <arg f="" n="0">the network</arg>
-        <rel f="">broadcasting</rel>
-        <arg f="" n="1">the World Series</arg>
-        <arg f="" n="3">from Candlestick Park</arg>
-        <arg f="tmp" n="m">when the quake struck [*T*-1]</arg>
-      </example>
-      <example name="NP only" src="NP only" type="NP only">
-        <text>a network news broadcast</text>
-        <arg f="" n="0">network</arg>
-        <arg f="" n="1">news</arg>
-        <rel f="">broadcast</rel>
-      </example>
-      <example name="More arguments" src="More arguments" type="More arguments">
-        <text>Few people heard his news broadcast last night.</text>
-        <arg f="" n="0">his</arg>
-        <arg f="" n="1">news</arg>
-        <rel f="">broadcast</rel>
-        <arg f="tmp" n="m">last night</arg>
-      </example>
-      <example name="With source" src="With source" type="With source">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>This communication technology relies on polling from client nodes, rather than a broadcast from a central hub.</text>
-        <rel f="">broadcast</rel>
-        <arg f="" n="3">from a central hub</arg>
-      </example>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1006" type="">
-        <text>The success of serials means that TV stations in Taiwan just keep on cranking them out , broadcasting episodes as quickly as they are shot .</text>
-        <arg f="" n="0">TV stations in Taiwan</arg>
-        <rel f="">broadcasting</rel>
-        <arg f="" n="1">episodes</arg>
-        <arg f="mnr" n="m">as quickly as they are shot</arg>
-      </example>
-
     </roleset>
   </predicate>
 </frameset>

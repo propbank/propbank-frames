@@ -1,44 +1,59 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="liquefy">
     <roleset id="liquefy.01" name="transform, by means of some mechanical process, into a liquid">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">liquefy</alias>
-        <alias framenet="" pos="v" verbnet="">liquify</alias>
-        <alias framenet="" pos="n" verbnet="">liquefaction</alias>
+        <alias pos="v">liquefy</alias>
+        <alias pos="v">liquify</alias>
+        <alias pos="n">liquefaction</alias>
       </aliases>
+      <roles>
+        <role descr="liquefier" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_change_of_phase" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_change_of_phase" version="1.7">cause</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing being transformed" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Change_of_phase" version="1.7">undergoer</rolelink>
+            <rolelink resource="FrameNet" class="Cause_change_of_phase" version="1.7">undergoer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="end state" f="PRD" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_change_of_phase" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Change_of_phase" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="liquify-v.1" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="" name="liquefy-v: all args">
+        <text>"Beth liquefied some carrots into a remarkable concotion."</text>
+        <rel relloc="1">liquefied</rel>
+        <arg f="" n="0" start="0" end="0">"Beth</arg>
+        <arg f="" n="1" start="2" end="3">some carrots</arg>
+        <arg f="" n="2" start="4" end="7">into a remarkable concotion."</arg>
+      </example>
+      <example src="" name="liquify-v: financial liquidity">
+        <text>The trust isn't commenting on when it might need [*] toliquify its Manville stock.</text>
+        <rel relloc="10">toliquify</rel>
+        <arg f="" n="0" start="6" end="6">it</arg>
+        <arg f="" n="1" start="11" end="13">its Manville stock.</arg>
+      </example>
+      <example src="" name="liquify-v: literal liquidity">
+        <text>Areas that are made of `fill' liquify.</text>
+        <rel relloc="6">liquify.</rel>
+        <arg f="" n="1" start="0" end="5">Areas that are made of `fill'</arg>
+      </example>
       <note>LIQUEFY-V NOTES: Framed by Neville. (from liquefy.01-v)</note>
       <note>LIQUIFY-V NOTES: Frames file for 'liquify' based on sentencesin wsj. Verbnetentry 45.4. (from liquify.01-v predicate notes)</note>
-      <roles>
-        <role descr="liquefier" f="pag" n="0">
-          <vnrole vncls="45.4" vntheta="agent"/>
-        </role>
-        <role descr="thing being transformed" f="ppt" n="1">
-          <vnrole vncls="45.4" vntheta="patient"/>
-        </role>
-        <role descr="end state" f="prd" n="2"/>
-      </roles>
-      <example name="liquefy-v: all args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>"Beth liquefied some carrots into a remarkable concotion."</text>
-        <rel f="">liquefied</rel>
-        <arg f="" n="0">Beth</arg>
-        <arg f="" n="1">some carrots</arg>
-        <arg f="" n="2">into a remarkable concotion</arg>
-      </example>
-      <example name="liquify-v: financial liquidity" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="active"/>
-        <text>The trust isn't commenting on when it-2 might need [*-2] toliquify its Manville stock.</text>
-        <arg f="" n="0">[*-2]</arg>
-        <rel f="">liquify</rel>
-        <arg f="" n="1">its Manville stock</arg>
-      </example>
-      <example name="liquify-v: literal liquidity" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>Areas that are made of `fill' liquify.</text>
-        <arg f="" n="1">Areas that are made of `fill'</arg>
-        <rel f="">liquify</rel>
-      </example>
     </roleset>
   </predicate>
 </frameset>

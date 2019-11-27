@@ -1,35 +1,53 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="bisect">
     <roleset id="bisect.01" name="divide into two">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">bisect</alias>
-        <alias framenet="" pos="n" verbnet="">bisection</alias>
+        <alias pos="v">bisect</alias>
+        <alias pos="n">bisection</alias>
       </aliases>
-      <note>BISECT-V NOTES: Edited by hwangd (from bisect.01-v)</note>
       <roles>
         <role descr="agent, cause of division" f="PAG" n="0">
-          <vnrole vncls="45.4" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Separating" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Separating" version="1.7">cause</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing divided" f="PPT" n="1">
-          <vnrole vncls="45.4" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Separating" version="1.7">whole</rolelink>
+          </rolelinks>
         </role>
         <role descr="divider,instrument" f="MNR" n="2">
-          <vnrole vncls="45.4" vntheta="Instrument"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">instrument</rolelink>
+            <rolelink resource="FrameNet" class="Separating" version="1.7">instrument</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="bisect-v: Transitive" src="web usage" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Separating" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web usage" name="bisect-v: Transitive">
         <text>I bisected the kernel and found that reverting this commit fixes my problem.</text>
-        <arg f="" n="0">I</arg>
-        <rel f="">bisected</rel>
-        <arg f="" n="1">the kernel</arg>
+        <rel relloc="1">bisected</rel>
+        <arg f="" n="0" start="0" end="0">I</arg>
+        <arg f="" n="1" start="2" end="3">the kernel</arg>
       </example>
-      <example name="bisect-v: Passive" src="web usage" type="">
-        <text>[The embroyos]-1 were bisected *-1 with a metal microscalpel.</text>
-        <rel f="">calcifies</rel>
-        <arg f="" n="1">*-1</arg>
-        <arg f="" n="2">with a metal microscalpel</arg>
+      <example src="web usage" name="bisect-v: Passive">
+        <text>The embroyos were bisected *-1 with a metal microscalpel.</text>
+        <rel relloc="3">bisected</rel>
+        <arg f="" n="1" start="0" end="1">The embroyos</arg>
+        <arg f="" n="2" start="5" end="8">with a metal microscalpel.</arg>
       </example>
+      <note>BISECT-V NOTES: Edited by hwangd (from bisect.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

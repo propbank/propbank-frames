@@ -1,39 +1,53 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="knead">
     <roleset id="knead.01" name="form dough into a loaf, mixing/massaging by repetative folding motion">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">knead</alias>
-        <alias framenet="" pos="n" verbnet="">kneading</alias>
+        <alias pos="v">knead</alias>
+        <alias pos="n">kneading</alias>
       </aliases>
-      <note>KNEAD-V NOTES: That last example sounds weird even to me. (from knead.01-v)</note>
-      <note>KNEADING-N NOTES: Added by Julia based on BOLT. (from kneading.01-n)</note>
       <roles>
         <role descr="kneader" f="PAG" n="0">
-          <vnrole vncls="26.5" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="knead-26.5" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Manipulation" version="1.7">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="dough" f="VSP" n="1">
-          <vnrole vncls="26.5" vntheta="Material"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="knead-26.5" version="verbnet3.3">material</rolelink>
+          </rolelinks>
         </role>
         <role descr="loaf" f="PRD" n="2">
-          <vnrole vncls="26.5" vntheta="Product"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="knead-26.5" version="verbnet3.3">product</rolelink>
+            <rolelink resource="FrameNet" class="Manipulation" version="1.7">entity</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="not bread, but still yummy" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Manipulation" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="knead-26.5" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="not bread, but still yummy">
         <text>Nearby, five temporary residents of the school shelter sit on stools, having their necks and backs kneaded by volunteer masseuses.</text>
-        <arg f="" n="1">their necks and backs</arg>
-        <rel f="">kneaded</rel>
-        <arg f="" n="0">by volunteer masseuses</arg>
+        <rel relloc="16">kneaded</rel>
+        <arg f="" n="1" start="12" end="15">their necks and backs</arg>
+        <arg f="" n="0" start="17" end="19">by volunteer masseuses.</arg>
       </example>
-      <example name="only bread takes arg2" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <example src="" name="only bread takes arg2">
         <text>John kneaded the dough into a loaf.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">kneaded</rel>
-        <arg f="" n="1">the dough</arg>
-        <arg f="" n="2">into a loaf</arg>
+        <rel relloc="1">kneaded</rel>
+        <arg f="" n="0" start="0" end="0">John</arg>
+        <arg f="" n="1" start="2" end="3">the dough</arg>
+        <arg f="" n="2" start="4" end="6">into a loaf.</arg>
       </example>
+      <note>KNEAD-V NOTES: That last example sounds weird even to me. (from knead.01-v)</note>
+      <note>KNEADING-N NOTES: Added by Julia based on BOLT. (from kneading.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

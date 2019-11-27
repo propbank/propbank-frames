@@ -1,65 +1,83 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="belch">
     <roleset id="belch.01" name="burp">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">belch</alias>
-        <alias framenet="" pos="n" verbnet="">belching</alias>
+        <alias pos="v">belch</alias>
+        <alias pos="n">belching</alias>
       </aliases>
-      <note>BELCH-V NOTES: Frames file for 'belch' based on sentences in brown. (from belch.01-v predicate notes)</note>
-      <note>BELCHING-N NOTES: (from belching.01-n)</note>
       <roles>
         <role descr="belcher" f="PAG" n="0">
-          <vnrole vncls="40.1.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="hiccup-40.1.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Excreting" version="1.7">excreter</rolelink>
+          </rolelinks>
         </role>
         <role descr="cognate object or utterance" f="PPT" n="1"/>
       </roles>
-      <example name="intransitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Excreting" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="hiccup-40.1.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="intransitive">
         <text>The figure in the corner belched loudly, a deep, liquid eruption.</text>
-        <arg f="" n="0">The figure in the corner</arg>
-        <rel f="">belched</rel>
-        <arg f="MNR" n="m">loudly</arg>
-        <arg f="ADV" n="m">a deep, liquid eruption</arg>
+        <rel relloc="5">belched</rel>
+        <arg f="" n="0" start="0" end="4">The figure in the corner</arg>
+        <arg f="MNR" n="m" start="6" end="6">loudly,</arg>
+        <arg f="ADV" n="m" start="7" end="10">a deep, liquid eruption.</arg>
       </example>
-      <example name="as verb of speaking" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="ns" voice="active"/>
+      <example src="" name="as verb of speaking">
         <text>John can belch the entire alphabet.</text>
-        <arg f="" n="0">John</arg>
-        <arg f="MOD" n="m">can</arg>
-        <rel f="">belch</rel>
-        <arg f="" n="1">the entire alphabet</arg>
+        <rel relloc="2">belch</rel>
+        <arg f="" n="0" start="0" end="0">John</arg>
+        <arg f="MOD" n="m" start="1" end="1">can</arg>
+        <arg f="" n="1" start="3" end="5">the entire alphabet.</arg>
       </example>
-      <example name="Arg0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="Arg0">
         <text>It was a difficult matter convincing him that his belching was absolutely under his control.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">belching</rel>
+        <rel relloc="9">belching</rel>
+        <arg f="" n="0" start="8" end="8">his</arg>
       </example>
+      <note>BELCH-V NOTES: Frames file for 'belch' based on sentences in brown. (from belch.01-v predicate notes)</note>
+      <note>BELCHING-N NOTES: (from belching.01-n)</note>
     </roleset>
   </predicate>
   <predicate lemma="belch_out">
     <roleset id="belch_out.02" name="emit">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">belch_out</alias>
+        <alias pos="v">belch_out</alias>
       </aliases>
-      <note>BELCH_OUT-V NOTES: (from belch.02-v)</note>
       <roles>
         <role descr="emitter" f="DIR" n="0">
-          <vnrole vncls="43.4" vntheta="Source"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="substance_emission-43.4" version="verbnet3.3">source</rolelink>
+          </rolelinks>
         </role>
         <role descr="emitted" f="PPT" n="1">
-          <vnrole vncls="43.4" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="substance_emission-43.4" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="smoke screen" src="" type="">
-        <inflection aspect="progressive" form="participle" person="third" tense="past" voice="active"/>
-        <text>The only evidence of occupation came from the chimney, which [*T*-1] was belching out thick smoke.</text>
-        <arg f="RCL" n="M">which - the chimney</arg>
-        <arg f="" n="0">[*T*-1]</arg>
-        <rel f="">belching out</rel>
-        <arg f="" n="1">thick smoke</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="substance_emission-43.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="smoke screen">
+        <text>The only evidence of occupation came from the chimney, which [*T*] was belching out thick smoke.</text>
+        <rel relloc="12 13">belching out</rel>
+        <arg f="RCL" n="M" start="5" end="8">came from the chimney,</arg>
+        <arg f="" n="0" start="10" end="10">[*T*]</arg>
+        <arg f="" n="1" start="14" end="15">thick smoke.</arg>
       </example>
+      <note>BELCH_OUT-V NOTES: (from belch.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,36 +1,51 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="flap">
     <roleset id="flap.01" name="move back and forth randomly">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">flap</alias>
+        <alias pos="v">flap</alias>
       </aliases>
-      <note>FLAP-V NOTES: Frames file for 'flap' based on sentences in wsj. Verbnet entries 47.3 and 40.3.2, Framenet entry Body movement. (from flap.01-v predicate notes)</note>
       <roles>
         <role descr="causer of motion" f="PAG" n="0">
-          <vnrole vncls="47.3" vntheta="Agent"/>
-          <vnrole vncls="40.3.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="modes_of_being_with_motion-47.3" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="crane-40.3.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Body_movement" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Body_movement" version="1.7">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing flapping" f="PPT" n="1">
-          <vnrole vncls="47.3" vntheta="Theme"/>
-          <vnrole vncls="40.3.2" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="modes_of_being_with_motion-47.3" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="crane-40.3.2" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Body_movement" version="1.7">body_part</rolelink>
+            <rolelink resource="FrameNet" class="Body_movement" version="1.7">body_part</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ergative" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Body_movement" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="modes_of_being_with_motion-47.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="crane-40.3.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="ergative">
         <text>But what about all those non-duck ducks flapping over Washington?</text>
-        <arg f="" n="1">all those non-duck ducks</arg>
-        <rel f="">flapping</rel>
-        <arg f="loc" n="m">over Washington</arg>
+        <rel relloc="7">flapping</rel>
+        <arg f="" n="1" start="3" end="6">all those non-duck ducks</arg>
+        <arg f="LOC" n="m" start="8" end="9">over Washington?</arg>
       </example>
-      <example name="agentive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <example src="" name="agentive">
         <text>John flapped his arms, trying to fly.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">flapped</rel>
-        <arg f="" n="1">his arms</arg>
-        <arg f="adv" n="m">trying to fly</arg>
+        <rel relloc="1">flapped</rel>
+        <arg f="" n="0" start="0" end="0">John</arg>
+        <arg f="" n="1" start="2" end="3">his arms,</arg>
+        <arg f="ADV" n="m" start="4" end="6">trying to fly.</arg>
       </example>
+      <note>FLAP-V NOTES: Frames file for 'flap' based on sentences in wsj. Verbnet entries 47.3 and 40.3.2, Framenet entry Body movement. (from flap.01-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

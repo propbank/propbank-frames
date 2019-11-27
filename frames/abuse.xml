@@ -1,119 +1,146 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="abuse">
     <roleset id="abuse.01" name="mistreat a person or animal, often repeatedly, with violence or with cruelty">
       <aliases>
-        <alias framenet="Abusing" pos="v" verbnet="33">abuse</alias>
-        <alias framenet="Abusing" pos="n" verbnet="">abuse</alias>
-        <alias framenet="" pos="j" verbnet="">abusive</alias>
+        <alias pos="v">abuse</alias>
+        <alias pos="n">abuse</alias>
+        <alias pos="j">abusive</alias>
+        <argalias pos="n" arg="0">abuser</argalias>
       </aliases>
+      <roles>
+        <role descr="abuser, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="judgment-33.1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity abused" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="judgment-33.1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Abusing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="33" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="abuse-n.1" src="annot-overlap" confidence="0.1">17</lexlink>
+        <lexlink resource="onsense" version="on5" class="abuse-v.1" src="annot-overlap" confidence="0.1">20</lexlink>
+      </lexlinks>
+      <example src="" name="abuse-v: transitive">
+        <text>These are the families who [] used [*RNR*-3]-- and sometime abused [*RNR*-3] -- their sharecroppers , people who [*T*-2] had no encouragement and little access to an education or training for a better life .</text>
+        <rel relloc="10">abused</rel>
+        <arg f="" n="0" start="4" end="4">who</arg>
+        <arg f="SLC" n="m" start="2" end="3">the families</arg>
+        <arg f="TMP" n="m" start="9" end="9">sometime</arg>
+        <arg f="" n="1" start="13" end="33">their sharecroppers , people who [*T*-2] had no encouragement and little access to an education or training for a better life</arg>
+      </example>
+      <example src="NomBank" name="abuse-n: With Manner">
+        <text>The teens withstood `` mental abuse '' from coaches.</text>
+        <rel relloc="5">abuse</rel>
+        <arg f="MNR" n="m" start="4" end="4">mental</arg>
+        <arg f="" n="0" start="7" end="8">from coaches.</arg>
+      </example>
+      <example src="ON sense n 1" name="abuse-n: Abused only">
+        <text>The court determined it was a clear case of child abuse.</text>
+        <rel relloc="10">abuse.</rel>
+        <arg f="" n="1" start="9" end="9">child</arg>
+      </example>
+      <example src="ontonotes mz/sinorama/10/ectb_1033" name="ARG0 and ARG1">
+        <text>Taipei mayor Ma Ying - jeou was angered to learn that intelligence organs would abuse their power by carrying out political surveillance against the Taipei City Government .</text>
+        <rel relloc="14">abuse</rel>
+        <arg f="" n="0" start="11" end="12">intelligence organs</arg>
+        <arg f="MOD" n="m" start="13" end="13">would</arg>
+        <arg f="" n="1" start="15" end="16">their power</arg>
+        <arg f="MNR" n="m" start="17" end="26">by carrying out political surveillance against the Taipei City Government</arg>
+      </example>
       <note>ABUSE-V NOTES: Member of Vncls judgement-33. FNcls Abusing. (from abuse.01-v)</note>
       <note>ABUSE-N NOTES: Roleset based on verb entry abuse.01, ON sense 1 of abuse-n; maps to VN class judgement-33. Framed by Claire (from abuse.01-n)</note>
       <note>ABUSIVE-J NOTES: Added by Julia based on medi-tmprl1to8. (from abusive.01-j)</note>
-      <roles>
-        <role descr="abuser, agent" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
-        </role>
-        <role descr="entity abused" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
-        </role>
-      </roles>
-      <example name="abuse-v: transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>These are the families who [*T*-1] used [*RNR*-3]-- and sometime abused [*RNR*-3] -- their sharecroppers , people who [*T*-2] had no encouragement and little access to an education or training for a better life .</text>
-        <arg f="" n="0">[*T*-1] (= who)</arg>
-        <arg f="slc" n="m">who -&gt; the families</arg>
-        <arg f="tmp" n="m">sometime</arg>
-        <rel f="">abused</rel>
-        <arg f="" n="1">[*RNR*-3] (= their sharecroppers , people who [*T*-2]had no encouragement and little access to an education or training for a better life)</arg>
-      </example>
-      <example name="abuse-n: With Manner" src="NomBank" type="">
-        <text>The teens withstood `` mental abuse '' from coaches.</text>
-        <arg f="mnr" n="m">mental</arg>
-        <rel f="">abuse</rel>
-        <arg f="" n="0">from coaches</arg>
-      </example>
-      <example name="abuse-n: Abused only" src="ON sense n 1" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The court determined it was a clear case of child abuse.</text>
-        <arg f="" n="1">child</arg>
-        <rel f="">abuse</rel>
-      </example>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1033" type="">
-        <text>Taipei mayor Ma Ying - jeou was angered to learn that intelligence organs would abuse their power by carrying out political surveillance against the Taipei City Government .</text>
-        <arg f="" n="0">intelligence organs</arg>
-        <arg f="mod" n="m">would</arg>
-        <rel f="">abuse</rel>
-        <arg f="" n="1">their power</arg>
-        <arg f="mnr" n="m">by carrying out political surveillance against the Taipei City Government</arg>
-      </example>
-
     </roleset>
     <roleset id="abuse.02" name="use (something) to bad effect or for a bad purpose; misuse">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">abuse</alias>
-        <alias framenet="" pos="v" verbnet="">abuse</alias>
-        <alias framenet="" pos="j" verbnet="">abusive</alias>
+        <alias pos="n">abuse</alias>
+        <alias pos="v">abuse</alias>
+        <alias pos="j">abusive</alias>
       </aliases>
-      <note>ABUSE-N NOTES: Roleset based on OntoNotes sense 2 of abuse-n, no relevant PB verb entry; no relevant mapping to VN. Comparison to verb-misuse.01. Framed by Claire. (from abuse.02-n)</note>
       <roles>
-        <role descr="user" f="pag" n="0"/>
-        <role descr="thing misused" f="ppt" n="1"/>
+        <role descr="user" f="PAG" n="0"/>
+        <role descr="thing misused" f="PPT" n="1"/>
       </roles>
-      <example name="abuse-n: NP only, all arguments" src="NomBank frames" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="onsense" version="on5" class="abuse-n.2" src="annot-overlap" confidence="0.1">18</lexlink>
+      </lexlinks>
+      <example src="NomBank frames" name="abuse-n: NP only, all arguments">
         <text>abuse of copyrighted material by home tapers</text>
-        <rel f="">abuse</rel>
-        <arg f="" n="1">of copyrighted material</arg>
-        <arg f="" n="0">by home tapers</arg>
+        <rel relloc="0">abuse</rel>
+        <arg f="" n="1" start="1" end="3">of copyrighted material</arg>
+        <arg f="" n="0" start="4" end="6">by home tapers</arg>
       </example>
-      <example name="abuse-n: Abused only" src="ON sense 2" type="">
+      <example src="ON sense 2" name="abuse-n: Abused only">
         <text>The actor spoke of his years of drug and alcohol abuse.</text>
-        <arg f="" n="1">drug and alcohol</arg>
-        <rel f="">abuse</rel>
+        <rel relloc="10">abuse.</rel>
+        <arg f="" n="1" start="7" end="9">drug and alcohol</arg>
       </example>
-      <example name="abuse-n: NP only" src="NomBank" type="">
+      <example src="NomBank" name="abuse-n: NP only">
         <text>abuse of the public trust</text>
-        <rel f="">abuse</rel>
-        <arg f="" n="1">of the public trust</arg>
+        <rel relloc="0">abuse</rel>
+        <arg f="" n="1" start="1" end="4">of the public trust</arg>
       </example>
-      <example name="abuse-n" src="ON sense n 2" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="ON sense n 2" name="abuse-n">
         <text>The mayor was indicted for the abuse of public funds.</text>
-        <rel f="">abuse</rel>
-        <arg f="" n="1">of public funds</arg>
+        <rel relloc="6">abuse</rel>
+        <arg f="" n="1" start="7" end="9">of public funds.</arg>
       </example>
+      <note>ABUSE-N NOTES: Roleset based on OntoNotes sense 2 of abuse-n, no relevant PB verb entry; no relevant mapping to VN. Comparison to verb-misuse.01. Framed by Claire. (from abuse.02-n)</note>
     </roleset>
     <roleset id="abuse.03" name="use offending language">
       <aliases>
-        <alias framenet="Abusing" pos="v" verbnet="33">abuse</alias>
-        <alias framenet="" pos="n" verbnet="">abuse</alias>
-        <alias framenet="" pos="j" verbnet="">abusive</alias>
-        <alias framenet="" pos="l" verbnet="">hurl_abuse</alias>
+        <alias pos="v">abuse</alias>
+        <alias pos="n">abuse</alias>
+        <alias pos="j">abusive</alias>
+        <alias pos="l">hurl_abuse</alias>
       </aliases>
-      <note>ABUSE-V, ABUSE-N, ABUSIVE-J, HURL_ABUSE-L: VN Class judgement-33.</note>
       <roles>
-        <role descr="abuser, agent" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+        <role descr="abuser, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="judgment-33.1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="entity insulted" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+        <role descr="entity insulted" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="judgment-33.1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="explicit mention of utterance or insult" f="mnr" n="2">
-        </role>
+        <role descr="explicit mention of utterance or insult" f="MNR" n="2"/>
       </roles>
-      <example name="abuse-v: All arguments" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Abusing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="33" version="UNK" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web" name="abuse-v: All arguments">
         <text>The referee was abused by players from both teams.</text>
-        <arg f="" n="1">The referee</arg>
-        <rel f="">abused</rel>
-        <arg f="" n="0">players from both teams</arg>
+        <rel relloc="3">abused</rel>
+        <arg f="" n="1" start="0" end="1">The referee</arg>
+        <arg f="" n="0" start="5" end="8">players from both teams.</arg>
       </example>
-      <example name="abusive-j: All arguments" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="abusive-j: All arguments">
         <text>He used abusive language.</text>
-        <rel f="">abusive</rel>
-        <arg f="" n="2">language</arg>
+        <rel relloc="2">abusive</rel>
+        <arg f="" n="2" start="3" end="3">language.</arg>
       </example>
+      <note>ABUSE-V, ABUSE-N, ABUSIVE-J, HURL_ABUSE-L: VN Class judgement-33.</note>
     </roleset>
   </predicate>
 </frameset>

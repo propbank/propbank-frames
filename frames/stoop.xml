@@ -1,35 +1,49 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="stoop">
     <roleset id="stoop.01" name="bend at waist while standing">
       <aliases>
-        <alias framenet="Posture Change_posture" pos="v" verbnet="">stoop</alias>
+        <alias pos="v">stoop</alias>
       </aliases>
-      <note>STOOP-V NOTES: Based on Brown. Member of VNcls assuming_position-50, spatial_configuration-47.6. (from stoop.01-v)</note>
       <roles>
         <role descr="stooper" f="PAG" n="0">
-          <vnrole vncls="50" vntheta="Agent"/>
-          <vnrole vncls="47.6" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="assuming_position-50" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="spatial_configuration-47.6" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Change_posture" version="1.7">protagonist</rolelink>
+          </rolelinks>
         </role>
         <role descr="body part/thing stooped" f="PPT" n="1">
-          <vnrole vncls="47.6" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="spatial_configuration-47.6" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Posture" version="1.7">agent</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="with purpose clause" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Posture" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Change_posture" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="assuming_position-50" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="spatial_configuration-47.6" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="with purpose clause">
         <text>To demonstrate the soil of his vegetable gardens as it is today, Mr. Clark stooped [*-1] to scoop up a handful of rich dark earth.</text>
-        <arg f="prp" n="m">To demonstrate the soil of his vegetable garden as it is today</arg>
-        <arg f="" n="0">Mr. Clark</arg>
-        <rel f="">stooped</rel>
-        <arg f="prp" n="m">[*-1] to scoop up a handful of rich dark earth</arg>
+        <rel relloc="14">stooped</rel>
+        <arg f="PRP" n="m" start="0" end="11">To demonstrate the soil of his vegetable gardens as it is today,</arg>
+        <arg f="" n="0" start="12" end="13">Mr. Clark</arg>
+        <arg f="PRP" n="m" start="16" end="24">to scoop up a handful of rich dark earth.</arg>
       </example>
-      <example name="both args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="internet" name="both args">
         <text>The ducks swam up as he stooped his head, And, " Quack, quack, quack," is what they said</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">stooped</rel>
-        <arg f="" n="1">his head</arg>
+        <rel relloc="6">stooped</rel>
+        <arg f="" n="0" start="5" end="5">he</arg>
+        <arg f="" n="1" start="7" end="8">his head,</arg>
       </example>
+      <note>STOOP-V NOTES: Based on Brown. Member of VNcls assuming_position-50, spatial_configuration-47.6. (from stoop.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

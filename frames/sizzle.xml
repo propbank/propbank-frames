@@ -1,29 +1,40 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="sizzle">
     <roleset id="sizzle.01" name="emit sizzling sound">
       <aliases>
-        <alias framenet="Make_noise Absorb_heat" pos="v" verbnet="">sizzle</alias>
+        <alias pos="v">sizzle</alias>
       </aliases>
-      <note>SIZZLE-V NOTES: Based on WSJ. Member of VNcls sound_emission-43.2. (from sizzle.01-v)</note>
       <roles>
         <role descr="sizzling thing" f="PPT" n="0">
-          <vnrole vncls="43.2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="sound_emission-43.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Make_noise" version="1.7">noisy_event</rolelink>
+            <rolelink resource="FrameNet" class="Make_noise" version="1.7">sound</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="adjectival" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Make_noise" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Absorb_heat" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="sound_emission-43.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="adjectival">
         <text>Yesterday's volume of 117.2 million shares was far below last week's sizzling average of nearly 177 million.</text>
-        <rel f="">sizzling</rel>
-        <arg f="" n="0">average</arg>
+        <rel relloc="11">sizzling</rel>
+        <arg f="" n="0" start="12" end="12">average</arg>
       </example>
-      <example name="verbal" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <example src="" name="verbal">
         <text>John's dinner sizzled on the sidewalk.</text>
-        <arg f="" n="0">John's dinner</arg>
-        <rel f="">sizzled</rel>
-        <arg f="loc" n="m">on the sidewalk</arg>
+        <rel relloc="2">sizzled</rel>
+        <arg f="" n="0" start="0" end="1">John's dinner</arg>
+        <arg f="LOC" n="m" start="3" end="5">on the sidewalk.</arg>
       </example>
+      <note>SIZZLE-V NOTES: Based on WSJ. Member of VNcls sound_emission-43.2. (from sizzle.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

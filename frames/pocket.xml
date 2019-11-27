@@ -1,170 +1,221 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="pocket">
     <roleset id="pocket.01" name="take">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">pocket</alias>
-        <alias framenet="" pos="n" verbnet="">pocketing</alias>
+        <alias pos="v">pocket</alias>
+        <alias pos="n">pocketing</alias>
       </aliases>
-      <note>POCKET-V NOTES: Frames file for 'pocket' based on sentences in wsj and automaticexpansion via verbnet. (from pocket.01-v predicate notes)</note>
       <roles>
         <role descr="taker, agent" f="PAG" n="0">
-          <vnrole vncls="9.10" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pocket-9.10" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">cause</rolelink>
+            <rolelink resource="FrameNet" class="Theft" version="1.7">perpetrator</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing taken" f="PPT" n="1">
-          <vnrole vncls="9.10" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pocket-9.10" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">theme</rolelink>
+            <rolelink resource="FrameNet" class="Theft" version="1.7">victim</rolelink>
+            <rolelink resource="FrameNet" class="Theft" version="1.7">goods</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="pocket-v: corrupt judge" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Placing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Theft" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="pocket-9.10" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="pocket-v: corrupt judge">
         <text>One former bailiff charged that [the judge]-1 double-crossed him by *trace*-1 reneging on a promise of a better paying job after *trace*-1 pocketing a $500 bribe.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">pocketing</rel>
-        <arg f="" n="1">a $500 bribe</arg>
+        <rel relloc="22">pocketing</rel>
+        <arg f="" n="0" start="10" end="10">*trace*-1</arg>
+        <arg f="" n="1" start="23" end="25">a $500 bribe.</arg>
       </example>
+      <note>POCKET-V NOTES: Frames file for 'pocket' based on sentences in wsj and automaticexpansion via verbnet. (from pocket.01-v predicate notes)</note>
     </roleset>
   </predicate>
-
   <predicate lemma="line_pocket">
     <roleset id="line_pocket.02" name="acquire money, often while doing a seemingly charitable act">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">line_pocket</alias>
-        <mwe id="line_pocket">
-          <token slot="A" arg="" pos="VB*" head="" dep="">line</token>
-          <token slot="B" arg="" pos="NNS" head="A" dep="dobj">pockets</token>
-          <token slot="B" arg="" pos="NN" head="A" dep="dobj">pocket</token>
-        </mwe>
+        <alias pos="m">line_pocket</alias>
+        <mwp-descriptions id="line_pocket">
+          <syntaxdesc slots="B A">
+            <token slot="A" arg="" pos="VB*" head="" dep="">line</token>
+            <token slot="B" arg="" pos="NNS" head="A" dep="dobj">pockets</token>
+            <token slot="B" arg="" pos="NN" head="A" dep="dobj">pocket</token>
+          </syntaxdesc>
+        </mwp-descriptions>
       </aliases>
-      <note>POCKET-V NOTES: Frames file for 'pocket' based on sentences in wsj and automaticexpansion via verbnet. (from pocket.01-v predicate notes)</note>
       <roles>
-        <role descr="thief, taker of money" f="PAG" n="0"/>
-        <role descr="money stolen or selfishly acquired" f="PPT" n="1"/>
+        <role descr="thief, taker of money" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Theft" version="1.7">perpetrator</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="money stolen or selfishly acquired" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Theft" version="1.7">victim</rolelink>
+            <rolelink resource="FrameNet" class="Theft" version="1.7">goods</rolelink>
+          </rolelinks>
+        </role>
         <role descr="activity during which money is taken" f="MNR" n="2"/>
       </roles>
-      <example name="line_pocket-m: arg1" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Theft" version="1.7" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="line_pocket-m: arg1">
         <text>He was lining his pockets with compaign contributions</text>
-        <arg f="" n="0">[He][his]</arg>
-        <rel f="">[lining][pockets]</rel>
-        <arg f="" n="1">with campaign contributions</arg>
+        <rel relloc="2 4">lining pockets</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
+        <arg f="" n="0" start="3" end="3">his</arg>
+        <arg f="" n="1" start="5" end="7">with compaign contributions</arg>
       </example>
-      <example name="line_pocket-m: arg2" src="" type="">
+      <example src="" name="line_pocket-m: arg2">
         <text>He was lining his pockets with the presidency</text>
-        <arg f="" n="0">[He][his]</arg>
-        <rel f="">[lining][pockets]</rel>
-        <arg f="" n="1">with the presidency</arg>
+        <rel relloc="2 4">lining pockets</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
+        <arg f="" n="0" start="3" end="3">his</arg>
+        <arg f="" n="1" start="5" end="7">with the presidency</arg>
       </example>
+      <note>POCKET-V NOTES: Frames file for 'pocket' based on sentences in wsj and automaticexpansion via verbnet. (from pocket.01-v predicate notes)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="in_pocket">
     <roleset id="in_pocket.03" name="possess">
       <aliases>
-        <alias framenet="" pos="x" verbnet="">in_pocket</alias>
+        <alias pos="x">in_pocket</alias>
       </aliases>
-      <note>IN_POCKET-X NOTES: Added by Julia/Tim during MWE framing.</note>
       <roles>
         <role descr="possessor" f="PAG" n="0"/>
         <role descr="person in pocket, bribed person" f="PPT" n="1"/>
       </roles>
-      <example name="in-pocket-x" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="" name="in-pocket-x">
         <text>If you dont have $10 in pocket to invest then INTERNET MARKETING is not for you.</text>
-        <arg f="" n="1">$10</arg>
-        <rel f="">[in][pocket]</rel>
+        <rel relloc="5 6">in pocket</rel>
+        <arg f="" n="1" start="4" end="4">$10</arg>
       </example>
+      <note>IN_POCKET-X NOTES: Added by Julia/Tim during MWE framing.</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="out_of_pocket">
     <roleset id="out_of_pocket.04" name="to occur without reimbursement">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">out_of_pocket</alias>
-        <mwe id="out_of_pocket">
-          <token slot="A" arg="" pos="IN" head="C" dep="case">out</token>
-          <token slot="B" arg="" pos="IN" head="C" dep="case">of</token> 
-          <token slot="C" arg="" pos="NN" head="" dep="">pocket</token>
-        </mwe>
+        <alias pos="m">out_of_pocket</alias>
+        <mwp-descriptions id="out_of_pocket">
+          <syntaxdesc slots="B C A">
+            <token slot="A" arg="" pos="IN" head="C" dep="case">out</token>
+            <token slot="B" arg="" pos="IN" head="C" dep="case">of</token>
+            <token slot="C" arg="" pos="NN" head="" dep="">pocket</token>
+          </syntaxdesc>
+        </mwp-descriptions>
       </aliases>
-      <note>POCKET-V NOTES: Frames file for 'pocket' based on sentences in wsj and automaticexpansion via verbnet. (from pocket.01-v predicate notes)</note>
       <roles>
         <role descr="person paying" f="PAG" n="0"/>
         <role descr="expenses, thing not being re-imbursed" f="PPT" n="1"/>
-        <role descr="acitvities costing money" f="PPT" n="2"/>      
+        <role descr="acitvities costing money" f="PPT" n="2"/>
       </roles>
-      <example name="out_of_pocket-m" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="" name="out_of_pocket-m">
         <text>Expenses this week will be out of pocket</text>
-        <arg f="" n="1">Expenses this week</arg>
-        <arg f="MOD" n="m">will</arg>
-        <rel f="">[out][of][pocket]</rel>
+        <rel relloc="5 6 7">out of pocket</rel>
+        <arg f="" n="1" start="0" end="2">Expenses this week</arg>
+        <arg f="MOD" n="m" start="3" end="3">will</arg>
       </example>
+      <note>POCKET-V NOTES: Frames file for 'pocket' based on sentences in wsj and automaticexpansion via verbnet. (from pocket.01-v predicate notes)</note>
     </roleset>
-    
     <roleset id="out_of_pocket.05" name="unavailable, out of office">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">out_of_pocket</alias>
-        <mwe id="out_of_pocket">
-          <token slot="A" arg="" pos="IN" head="C" dep="case">out</token>
-          <token slot="B" arg="" pos="IN" head="C" dep="case">of</token> 
-          <token slot="C" arg="" pos="NN" head="" dep="">pocket</token>
-        </mwe>
+        <alias pos="m">out_of_pocket</alias>
+        <mwp-descriptions id="out_of_pocket">
+          <syntaxdesc slots="B C A">
+            <token slot="A" arg="" pos="IN" head="C" dep="case">out</token>
+            <token slot="B" arg="" pos="IN" head="C" dep="case">of</token>
+            <token slot="C" arg="" pos="NN" head="" dep="">pocket</token>
+          </syntaxdesc>
+        </mwp-descriptions>
       </aliases>
-      <note>POCKET-V NOTES: Frames file for 'pocket' based on sentences in wsj and automaticexpansion via verbnet. (from pocket.01-v predicate notes)</note>
       <roles>
         <role descr="person unavailable" f="PAG" n="1"/>
-        <role descr="location or medium in which one is temporarily unavailable" f="PPT" n="2"/>      
-        <role descr="activity causing out of pocket status" f="CAU" n="3"/>  
+        <role descr="location or medium in which one is temporarily unavailable" f="PPT" n="2"/>
+        <role descr="activity causing out of pocket status" f="CAU" n="3"/>
       </roles>
-      <example name="corrupt judge" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="" name="corrupt judge">
         <text>I'll be out of pocket all week at the conference</text>
-        <arg f="" n="1">I</arg>
-        <arg f="MOD" n="m">'ll</arg>
-        <rel f="">[out][of][pocket]</rel>
-        <arg f="tmp" n="m">all week</arg>
-        <arg f="" n="3">at the conference</arg>
+        <rel relloc="2 3 4">out of pocket</rel>
+        <arg f="" n="1" start="10" end="10"></arg>
+        <arg f="MOD" n="m" start="0" end="0">I'll</arg>
+        <arg f="TMP" n="m" start="5" end="6">all week</arg>
+        <arg f="" n="3" start="7" end="9">at the conference</arg>
       </example>
-      <example name="corrupt judge" src="" type="">
+      <example src="" name="corrupt judge">
         <text>I'm out of pocket for a bit, but I'll get back at ya.</text>
-        <arg f="" n="1">I</arg>
-        <rel f="">[out][of][pocket]</rel>
-        <arg f="tmp" n="m">for a bit</arg>
+        <rel relloc="1 2 3">out of pocket</rel>
+        <arg f="" n="1" start="5" end="5">a</arg>
+        <arg f="TMP" n="m" start="4" end="6">for a bit,</arg>
       </example>
-
-
+      <note>POCKET-V NOTES: Frames file for 'pocket' based on sentences in wsj and automaticexpansion via verbnet. (from pocket.01-v predicate notes)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="in_ones_pocket">
     <roleset id="in_ones_pocket.06" name="under influence of due to financial control">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">in_pocket</alias>
-        <alias framenet="" pos="m" verbnet="">have_in_pocket</alias>
-        <mwe id="have_in_pocket">
-          <token slot="A" arg="" pos="VB*" head="" dep="">have</token>
-          <token slot="A" arg="" pos="NN" head="" dep="">having</token>
-          <token slot="A" arg="" pos="" head="" dep=""></token>
-          <token slot="B" arg="" pos="IN" head="C" dep="case">in</token> 
-          <token slot="C" arg="" pos="NN" head="" dep="">pocket</token>
-          <token slot="C" arg="" pos="NN" head="A" dep="dobj">pocket</token>
-        </mwe>
+        <alias pos="m">in_pocket</alias>
+        <alias pos="m">have_in_pocket</alias>
+        <mwp-descriptions id="have_in_pocket">
+          <syntaxdesc slots="B C A">
+            <token slot="A" arg="" pos="VB*" head="" dep="">have</token>
+            <token slot="A" arg="" pos="NN" head="" dep="">having</token>
+            <token slot="A" arg="" pos="" head="" dep=""></token>
+            <token slot="B" arg="" pos="IN" head="C" dep="case">in</token>
+            <token slot="C" arg="" pos="NN" head="" dep="">pocket</token>
+            <token slot="C" arg="" pos="NN" head="A" dep="dobj">pocket</token>
+          </syntaxdesc>
+        </mwp-descriptions>
       </aliases>
-      <note>IN_ONES_POCKET-M NOTES: Added by Julia.</note>
       <roles>
         <role descr="influencer" f="PAG" n="0"/>
         <role descr="entity influenced" f="PPT" n="1"/>
       </roles>
-      <example name="in-pocket-m" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="" name="in-pocket-m">
         <text>Trump said Clinton was in the pocket of Goldman Sachs.</text>
-        <arg f="" n="1">Clinton</arg>
-        <rel f="">[in][pocket]</rel>
-        <arg f="" n="0">of Goldman Sachs</arg>
+        <rel relloc="4 6">in pocket</rel>
+        <arg f="" n="1" start="2" end="2">Clinton</arg>
+        <arg f="" n="0" start="7" end="9">of Goldman Sachs.</arg>
       </example>
-      <example name="have_in-pocket-m" src="" type="">
+      <example src="" name="have_in-pocket-m">
         <text>If Johnson thought he had her in his pocket, he was mistaken.</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">[had][in][pocket]</rel>
-        <arg f="" n="1">her</arg>
+        <rel relloc="4 6 8">had in pocket,</rel>
+        <arg f="" n="0" start="3" end="3">he</arg>
+        <arg f="" n="1" start="5" end="5">her</arg>
       </example>
+      <note>IN_ONES_POCKET-M NOTES: Added by Julia.</note>
     </roleset>
   </predicate>
 </frameset>

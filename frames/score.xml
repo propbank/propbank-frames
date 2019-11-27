@@ -1,104 +1,118 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="score">
     <roleset id="score.01" name="earn points (in athletic competition), awarding/earning points">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">score</alias>
-        <alias framenet="" pos="n" verbnet="">scoring</alias>
-        <alias framenet="Getting" pos="v" verbnet="">score</alias>
+        <alias pos="n">score</alias>
+        <alias pos="n">scoring</alias>
+        <alias pos="v">score</alias>
       </aliases>
+      <roles>
+        <role descr="grader, judge, entity awarding the points" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Getting" version="1.7">recipient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity earning points" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Getting" version="1.7">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="the points/score" f="PRD" n="2"/>
+        <role descr="domain" f="VSP" n="3"/>
+        <role descr="opponent" f="VSP" n="4"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Getting" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="score-v.8" src="annot-overlap" confidence="0.1">6</lexlink>
+        <lexlink resource="onsense" version="on5" class="score-v.1" src="annot-overlap" confidence="0.1">18</lexlink>
+        <lexlink resource="onsense" version="on5" class="score-n.1" src="annot-overlap" confidence="0.1">28</lexlink>
+      </lexlinks>
+      <example src="" name="score-v: tor!">
+        <text>John's soccer team scored 115 points against the neighborhood kids.</text>
+        <rel relloc="3">scored</rel>
+        <arg f="" n="1" start="0" end="2">John's soccer team</arg>
+        <arg f="" n="2" start="4" end="5">115 points</arg>
+        <arg f="" n="4" start="6" end="9">against the neighborhood kids.</arg>
+      </example>
+      <example src="BOLT" name="score-v: with Arg0, may be rare with the verb">
+        <text>no , so how-1 they score you *-1 is largely irrelevant , you are probably getting a " low " score simply because you do not have much credit , and so can not prove that you are a good risk .</text>
+        <rel relloc="5">score</rel>
+        <arg f="" n="0" start="4" end="4">they</arg>
+        <arg f="" n="1" start="6" end="6">you</arg>
+        <arg f="MNR" n="m" start="7" end="7">*-1</arg>
+      </example>
+      <example src="internet" name="scoring-n: Args 0, 1, 2">
+        <text>We don't believe he pitched his questions next day in an easier key, nor that his memory of the "concord of sweet sounds" was any bar to his pedagogical puncturing; and as for his scoring them any the less on account of their performance, we don't believe a word of it.</text>
+        <rel relloc="34">scoring</rel>
+        <arg f="" n="0" start="5" end="5">his</arg>
+        <arg f="" n="1" start="35" end="35">them</arg>
+        <arg f="" n="2" start="36" end="38">any the less</arg>
+        <arg f="CAU" n="m" start="39" end="43">on account of their performance,</arg>
+      </example>
+      <example src="internet" name="scoring-n: args 1, 2, 3">
+        <text>All that practice resulted in his scoring a perfect game in his league competition which?combined with two other strong games of 225 and 216?gave him a 741 series.</text>
+        <rel relloc="6">scoring</rel>
+        <arg f="" n="1" start="5" end="5">his</arg>
+        <arg f="" n="2" start="7" end="9">a perfect game</arg>
+        <arg f="" n="3" start="10" end="13">in his league competition</arg>
+        <arg f="ADJ" n="m" start="14" end="27">which?combined with two other strong games of 225 and 216?gave him a 741 series.</arg>
+      </example>
+      <example src="" name="score-n: most args">
+        <text>His score of 4 on Question 7a indicated a total loss of interest in...</text>
+        <rel relloc="1">score</rel>
+        <arg f="" n="1" start="0" end="0">His</arg>
+        <arg f="" n="2" start="2" end="3">of 4</arg>
+        <arg f="" n="3" start="4" end="6">on Question 7a</arg>
+      </example>
+      <example src="" name="score-n: just arg1">
+        <text>the Chinese team defeated the relatively stronger Korean team with a score of 4 : 3 .</text>
+        <rel relloc="11">score</rel>
+        <arg f="" n="2" start="12" end="15">of 4 : 3</arg>
+      </example>
+      <example src="" name="score-n: arg2">
+        <text>students in charter schools have lower performance scores than students in traditional public schools .</text>
+        <rel relloc="7">scores</rel>
+        <arg f="ADJ" n="m" start="5" end="5">lower</arg>
+        <arg f="" n="3" start="6" end="6">performance</arg>
+      </example>
       <note>SCORE-V NOTES: Member of Vncls get-13.5.1. (from score.01-v)</note>
       <note>SCORING-N NOTES: Added by Julia based on BOLT, partially on score-n.01. Corresponds to VNcls get-13.5.1. (from scoring.01-n)</note>
       <note>SCORE-N NOTES: Added by Julia based on score-v.01. Corresponds to Vncls get-13.5.1. (from score.01-n)</note>
-      <roles>
-        <role descr="grader, judge, entity awarding the points" f="pag" n="0"/>
-        <role descr="entity earning points" f="ppt" n="1"/>
-        <role descr="the points/score" f="prd" n="2"/>
-        <role descr="domain" f="vsp" n="3"/>
-        <role descr="opponent" f="vsp" n="4"/>
-      </roles>
-      <example name="score-v: tor!" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>John's soccer team scored 115 points against the neighborhood kids.</text>
-        <arg f="" n="1">John's soccer team</arg>
-        <rel f="">scored</rel>
-        <arg f="" n="2">115 points</arg>
-        <arg f="" n="4">against the neighborhood kids</arg>
-      </example>
-      <example name="score-v: with Arg0, may be rare with the verb" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>no , so how-1 they score you *-1 is largely irrelevant , you are probably getting a " low " score simply because you do not have much credit , and so can not prove that you are a good risk .</text>
-        <arg f="" n="0">they</arg>
-        <rel f="">score</rel>
-        <arg f="" n="1">you</arg>
-        <arg f="mnr" n="m">*-1</arg>
-      </example>
-      <example name="scoring-n: Args 0, 1, 2" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>We don't believe he pitched his questions next day in an easier key, nor that his memory of the "concord of sweet sounds" was any bar to his pedagogical puncturing; and as for his scoring them any the less on account of their performance, we don't believe a word of it.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">scoring</rel>
-        <arg f="" n="1">them</arg>
-        <arg f="" n="2">any the less</arg>
-        <arg f="cau" n="m">on account of their performance</arg>
-      </example>
-      <example name="scoring-n: args 1, 2, 3" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>All that practice resulted in his scoring a perfect game in his league competition which?combined with two other strong games of 225 and 216?gave him a 741 series.</text>
-        <arg f="" n="1">his</arg>
-        <rel f="">scoring</rel>
-        <arg f="" n="2">a perfect game</arg>
-        <arg f="" n="3">in his league competition</arg>
-        <arg f="adj" n="m">which?combined with two other strong games of 225 and 216?gave him a 741 series</arg>
-      </example>
-      <example name="score-n: most args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>His score of 4 on Question 7a indicated a total loss of interest in...</text>
-        <arg f="" n="1">his</arg>
-        <rel f="">score</rel>
-        <arg f="" n="2">of 4</arg>
-        <arg f="" n="3">on Question 7a</arg>
-      </example>
-      <example name="score-n: just arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>the Chinese team defeated the relatively stronger Korean team with a score of 4 : 3 .</text>
-        <rel f="">score</rel>
-        <arg f="" n="2">of 4 : 3</arg>
-      </example>
-      <example name="score-n: arg2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>students in charter schools have lower performance scores than students in traditional public schools .</text>
-        <arg f="adj" n="m">lower</arg>
-        <arg f="" n="3">performance</arg>
-        <rel f="">scores</rel>
-      </example>
     </roleset>
     <roleset id="score.02" name="set music, orchestrate">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">score</alias>
+        <alias pos="v">score</alias>
       </aliases>
-      <note>SCORE-V NOTES: No appropriate Vncls. (from score.02-v)</note>
       <roles>
-        <role descr="musical composer" f="pag" n="0"/>
-        <role descr="piece of music" f="ppt" n="1"/>
-        <role descr="for what, ensemble" f="prp" n="2"/>
+        <role descr="musical composer" f="PAG" n="0"/>
+        <role descr="piece of music" f="PPT" n="1"/>
+        <role descr="for what, ensemble" f="PRP" n="2"/>
       </roles>
-      <example name="score-v: unhelpful passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="score-v: unhelpful passive">
         <text>Also, [Teodulo Mabellini's ``Lux aeterna'']-1 was intriguingly scored *trace*-1 and splendidly put across by Mr. Rilling.</text>
-        <arg f="dis" n="m">Also</arg>
-        <arg f="mnr" n="m">intriguingly</arg>
-        <rel f="">scored</rel>
-        <arg f="" n="1">*trace*</arg>
+        <rel relloc="7">scored</rel>
+        <arg f="DIS" n="m" start="0" end="0">Also,</arg>
+        <arg f="MNR" n="m" start="6" end="6">intriguingly</arg>
+        <arg f="" n="1" start="8" end="8">*trace*-1</arg>
       </example>
-      <example name="score-v: all args" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <example src="" name="score-v: all args">
         <text>John scored his magnum opus for slide whistle and kazoo choir.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">scored</rel>
-        <arg f="" n="1">his magnum opus</arg>
-        <arg f="" n="2">for slide whistle and kazoo choir</arg>
+        <rel relloc="1">scored</rel>
+        <arg f="" n="0" start="0" end="0">John</arg>
+        <arg f="" n="1" start="2" end="4">his magnum opus</arg>
+        <arg f="" n="2" start="5" end="10">for slide whistle and kazoo choir.</arg>
       </example>
+      <note>SCORE-V NOTES: No appropriate Vncls. (from score.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

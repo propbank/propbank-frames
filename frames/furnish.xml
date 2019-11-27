@@ -1,29 +1,44 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="furnish">
     <roleset id="furnish.01" name="to equip with what is needed, supply, or give">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">furnish</alias>
+        <alias pos="v">furnish</alias>
       </aliases>
-      <note>FURNISH-V NOTES: Frames file for 'furnish' based on survey of sentences in the WSJ corpus. (from furnish.01-v predicate notes)</note>
       <roles>
         <role descr="supplier, agent" f="PAG" n="0">
-          <vnrole vncls="13.4.1-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="fulfilling-13.4.1-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Supply" version="1.7">recipient</rolelink>
+            <rolelink resource="FrameNet" class="Supply" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity furnished" f="PPT" n="1">
-          <vnrole vncls="13.4.1-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="fulfilling-13.4.1-1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="recipient" f="GOL" n="2">
-          <vnrole vncls="13.4.1-1" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="fulfilling-13.4.1-1" version="verbnet3.3">recipient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Supply" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="fulfilling-13.4.1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="passive">
         <text>Both groups believed that tens of billions of dollars of service exports -- such as inbound tourism ; [legal , accounting and other professional services]-1 furnished [*]-1 to foreigners ; financial , engineering and construction services ; and the like -- were not being counted [*-1] as exports .</text>
-        <rel f="">furnished</rel>
-        <arg f="" n="1">[*]</arg>
-        <arg f="" n="2">to foreigners</arg>
+        <rel relloc="25">furnished</rel>
+        <arg f="" n="1" start="26" end="26">[*]-1</arg>
+        <arg f="" n="2" start="27" end="28">to foreigners</arg>
       </example>
+      <note>FURNISH-V NOTES: Frames file for 'furnish' based on survey of sentences in the WSJ corpus. (from furnish.01-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

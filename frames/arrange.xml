@@ -1,70 +1,99 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="arrange">
     <roleset id="arrange.01" name="build">
       <aliases>
-        <alias framenet="Placing Arranging" pos="v" verbnet="">arrange</alias>
-        <alias framenet="Placing Arranging" pos="n" verbnet="">arrangement</alias>
-        <alias framenet="" pos="l" verbnet="">make_arrangement</alias>
+        <alias pos="v">arrange</alias>
+        <alias pos="n">arrangement</alias>
+        <alias pos="l">make_arrangement</alias>
       </aliases>
-      <note>ARRANGE-V NOTES: Based on financial subcorpus. Comparison with 'assemble' and 'put'. Member of VNcls build-26.1, put-9.1, establish-55.5-1. (from arrange.01-v)</note>
-      <note>ARRANGEMENT-N NOTES: Based on verb entry arrange.01; corresponds to Verbnet entries build-26.1, put-9.1, establish-55.5-1. (from arrangement.01-n)</note>
       <roles>
         <role descr="builder" f="PAG" n="0">
-          <vnrole vncls="26.1" vntheta="Agent"/>
-          <vnrole vncls="55.5-1" vntheta="Agent"/>
-          <vnrole vncls="9.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="build-26.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="establish-55.5-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="put-9.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">cause</rolelink>
+          </rolelinks>
         </role>
-        <role descr="construction, item/material being arranged" f="ppt" n="1">
-          <vnrole vncls="26.1" vntheta="Product"/>
-          <vnrole vncls="55.5-1" vntheta="Theme"/>
-          <vnrole vncls="9.1" vntheta="Theme"/>
+        <role descr="construction, item/material being arranged" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="build-26.1" version="verbnet3.3">product</rolelink>
+            <rolelink resource="VerbNet" class="establish-55.5-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="put-9.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="start state" f="VSP" n="2">
-          <vnrole vncls="26.1" vntheta="Material"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="build-26.1" version="verbnet3.3">material</rolelink>
+          </rolelinks>
         </role>
         <role descr="benefactive" f="GOL" n="3">
-          <vnrole vncls="26.1" vntheta="Beneficiary"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="build-26.1" version="verbnet3.3">beneficiary</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">goal</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">beneficiary</rolelink>
+          </rolelinks>
         </role>
         <role descr="end state" f="PRD" n="4">
-          <vnrole vncls="26.1" vntheta="Product"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="build-26.1" version="verbnet3.3">product</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">result</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="straight transitive" src="" type="">
-        <text>Mr. Panet-Raymond said he doesn't think [Messrs. Drabinsky and Gottlieb]-1 are ``anywhere close'' to *trace*-1 arranging financing. offer before the stock begins to rise again .</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">arranging</rel>
-        <arg f="" n="1">financing</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Placing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Arranging" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="build-26.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="establish-55.5-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="put-9.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="arrange-v.1" src="annot-overlap" confidence="0.1">10</lexlink>
+        <lexlink resource="onsense" version="on5" class="arrange-v.2" src="annot-overlap" confidence="0.1">34</lexlink>
+      </lexlinks>
+      <example src="" name="straight transitive">
+        <text>Mr. Panet-Raymond said he doesn't think Messrs. Drabinsky and Gottlieb are ``anywhere close'' to arranging financing. offer before the stock begins to rise again .</text>
+        <rel relloc="14">arranging</rel>
+        <arg f="" n="0" start="6" end="9">Messrs. Drabinsky and Gottlieb</arg>
+        <arg f="" n="1" start="15" end="15">financing.</arg>
       </example>
-      <example name="with benefactive" src="" type="">
-        <text>Security Pacific, meanwhile, said [it]-2 expects *trace*-2 to arrange $430 million in bank loans for Vitro.</text>
-        <arg f="" n="0">*trace*-2</arg>
-        <rel f="">arrange</rel>
-        <arg f="" n="1">$430 million in bank loans</arg>
-        <arg f="" n="3">for Vitro</arg>
+      <example src="" name="with benefactive">
+        <text>Security Pacific, meanwhile, said it expects to arrange $430 million in bank loans for Vitro.</text>
+        <rel relloc="7">arrange</rel>
+        <arg f="" n="0" start="4" end="4">it</arg>
+        <arg f="" n="1" start="8" end="12">$430 million in bank loans</arg>
+        <arg f="" n="3" start="13" end="14">for Vitro.</arg>
       </example>
-      <example name="with other args" src="" type="">
+      <example src="" name="with other args">
         <text>John arranged his clean laundry from a neat stack into an untidy pile.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">arranged</rel>
-        <arg f="" n="1">his clean laundry</arg>
-        <arg f="" n="2">from a neat stack</arg>
-        <arg f="" n="4">into an untidy pile</arg>
+        <rel relloc="1">arranged</rel>
+        <arg f="" n="0" start="0" end="0">John</arg>
+        <arg f="" n="1" start="2" end="4">his clean laundry</arg>
+        <arg f="" n="2" start="5" end="8">from a neat stack</arg>
+        <arg f="" n="4" start="9" end="12">into an untidy pile.</arg>
       </example>
-      <example name="straight transitive" src="" type="">
+      <example src="" name="straight transitive">
         <text>Her arrangement of repeated parts into patterns creates symmetries and contrasts that are alluring and elegant.</text>
-        <arg f="" n="0">Her</arg>
-        <rel f="">arrangement</rel>
-        <arg f="" n="2">of repeated parts</arg>
-        <arg f="" n="4">into patterns</arg>
+        <rel relloc="1">arrangement</rel>
+        <arg f="" n="0" start="0" end="0">Her</arg>
+        <arg f="" n="2" start="2" end="4">of repeated parts</arg>
+        <arg f="" n="4" start="5" end="6">into patterns</arg>
       </example>
-      <example name="Within LVC" src="" type="">
+      <example src="" name="Within LVC">
         <text>And one White House official reported that Mr. Agnos had been `` very helpful '' in *PRO* making arrangements for Mr. Bush 's hastily scheduled trip to California .</text>
-        <arg f="" n="0">*PRO*</arg>
-        <arg f="lvb" n="m">making</arg>
-        <rel f="">arrangements</rel>
-        <arg f="" n="1">for Mr. Bush's hastily scheduled trip to California.</arg>
+        <rel relloc="18">arrangements</rel>
+        <arg f="" n="0" start="16" end="16">*PRO*</arg>
+        <arg f="LVB" n="m" start="17" end="17">making</arg>
+        <arg f="" n="1" start="20" end="28">Mr. Bush 's hastily scheduled trip to California .</arg>
       </example>
+      <note>ARRANGE-V NOTES: Based on financial subcorpus. Comparison with 'assemble' and 'put'. Member of VNcls build-26.1, put-9.1, establish-55.5-1. (from arrange.01-v)</note>
+      <note>ARRANGEMENT-N NOTES: Based on verb entry arrange.01; corresponds to Verbnet entries build-26.1, put-9.1, establish-55.5-1. (from arrangement.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

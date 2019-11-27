@@ -1,41 +1,62 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="telegraph">
     <roleset id="telegraph.01" name="send a message via telegraph">
       <aliases>
-        <alias framenet="Communication_means Contacting" pos="v" verbnet="">telegraph</alias>
+        <alias pos="v">telegraph</alias>
       </aliases>
-      <note>TELEGRAPH-V NOTES: Member of Vncls instr_communication-37.4. (from telegraph.01-v)</note>
       <roles>
         <role descr="sender" f="PAG" n="0">
-          <vnrole vncls="37.4" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="instr_communication-37.4.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Communication_means" version="1.7">communicator</rolelink>
+            <rolelink resource="FrameNet" class="Contacting" version="1.7">communicator</rolelink>
+          </rolelinks>
         </role>
         <role descr="receiver" f="PPT" n="1">
-          <vnrole vncls="37.4" vntheta="Topic"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="instr_communication-37.4.1" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="FrameNet" class="Communication_means" version="1.7">message</rolelink>
+            <rolelink resource="FrameNet" class="Communication_means" version="1.7">topic</rolelink>
+            <rolelink resource="FrameNet" class="Contacting" version="1.7">communication</rolelink>
+            <rolelink resource="FrameNet" class="Contacting" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
         <role descr="message" f="GOL" n="2">
-          <vnrole vncls="37.4" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="instr_communication-37.4.1" version="verbnet3.3">recipient</rolelink>
+            <rolelink resource="FrameNet" class="Communication_means" version="1.7">addressee</rolelink>
+            <rolelink resource="FrameNet" class="Contacting" version="1.7">addressee</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="just message" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Communication_means" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Contacting" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="37.4" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Correspondence" version="rich" confidence="0.1" src="reo-expansion"/>
+      </lexlinks>
+      <example src="" name="just message">
         <text>But they said Friday's focus on the top-tier stocks telegraphed active overseas selling and showed the broad-based fears over the status of the U.K. economy and Britain's currency in the wake of the upheaval in Prime Minister Margaret Thatcher's cabinet.</text>
-        <arg f="" n="0">Friday's focus on the top-tier stocks</arg>
-        <rel f="">telegraphed</rel>
-        <arg f="" n="2">active overseas selling</arg>
+        <rel relloc="9">telegraphed</rel>
+        <arg f="" n="0" start="3" end="8">Friday's focus on the top-tier stocks</arg>
+        <arg f="" n="2" start="10" end="12">active overseas selling</arg>
       </example>
-      
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes nw/wsj/00/wsj_0044" type="">
+      <example src="ontonotes nw/wsj/00/wsj_0044" name="ARG0 and ARG1 and ARG2">
         <text>By using them , teachers -- with administrative blessing -- telegraph to students beforehand the precise areas on which a test will concentrate , and sometimes give away a few exact questions and answers .</text>
-        <arg f="mnr" n="m">By using them</arg>
-        <arg f="" n="0">teachers</arg>
-        <arg f="mnr" n="m">with administrative blessing</arg>
-        <rel f="">telegraph</rel>
-        <arg f="" n="1">to students</arg>
-        <arg f="tmp" n="m">beforehand</arg>
-        <arg f="" n="2">the precise areas on which a test will concentrate</arg>
+        <rel relloc="10">telegraph</rel>
+        <arg f="MNR" n="m" start="0" end="2">By using them</arg>
+        <arg f="" n="0" start="4" end="4">teachers</arg>
+        <arg f="MNR" n="m" start="6" end="8">with administrative blessing</arg>
+        <arg f="" n="1" start="11" end="12">to students</arg>
+        <arg f="TMP" n="m" start="13" end="13">beforehand</arg>
+        <arg f="" n="2" start="14" end="22">the precise areas on which a test will concentrate</arg>
       </example>
-
+      <note>TELEGRAPH-V NOTES: Member of Vncls instr_communication-37.4. (from telegraph.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

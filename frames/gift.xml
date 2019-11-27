@@ -1,34 +1,55 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="gift">
     <roleset id="gift.01" name="give">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">gift</alias>
+        <alias pos="v">gift</alias>
       </aliases>
-      <note>GIFT-V NOTES: Frame was created by Jena. (from gift.01-v)</note>
       <roles>
         <role descr="giver" f="PAG" n="0">
-          <vnrole vncls="13.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="contribute-13.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Giving" version="1.7">donor</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing given" f="PPT" n="1">
-          <vnrole vncls="13.2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="contribute-13.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Giving" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity given to" f="GOL" n="2">
-          <vnrole vncls="13.2" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="contribute-13.2" version="verbnet3.3">recipient</rolelink>
+            <rolelink resource="FrameNet" class="Giving" version="1.7">recipient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="" src="" type="">
-        <text>[*]-1 Gifted [*]-1 with a lovely setting between the mountains and the sea, Pali begin * to dream of a tourism boom.</text>
-        <rel f="">Gifted</rel>
-        <arg f="" n="1">[*]-1</arg>
-        <arg f="" n="2">with a lovely setting between the mountains and the sea</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Giving" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="contribute-13.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Transaction.Transaction.GiftGrantProvideAid" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Transaction.TransferMoney.GiftGrantProvideAid" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Transaction.TransferOwnership.GiftGrantProvideAid" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Transferownership" version="rich" confidence="0.1" src="reo-expansion"/>
+      </lexlinks>
+      <example src="" name="">
+        <text> * Gifted [* with a lovely setting between the mountains and the sea, Pali begin * to dream of a tourism boom.</text>
+        <rel relloc="2">Gifted</rel>
+        <arg f="" n="1" start="1" end="1">*</arg>
+        <arg f="" n="2" start="4" end="13">with a lovely setting between the mountains and the sea,</arg>
       </example>
-      <example name="adjectival" src="" type="">
+      <example src="" name="adjectival">
         <text>... lavishly gifted film-makers.</text>
-        <arg f="MNR" n="m">lavishly</arg>
-        <rel f="">gifted</rel>
-        <arg f="" n="2">[film][makers]</arg>
+        <rel relloc="2">gifted</rel>
+        <arg f="MNR" n="m" start="1" end="1">lavishly</arg>
+        <arg f="" n="2" start="3" end="3">film-makers.</arg>
       </example>
+      <note>GIFT-V NOTES: Frame was created by Jena. (from gift.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

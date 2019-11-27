@@ -1,62 +1,78 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="publicize">
     <roleset id="publicize.01" name="make widely-known">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">publicize</alias>
-        <alias framenet="" pos="j" verbnet="">publicized</alias>
+        <alias pos="v">publicize</alias>
+        <alias pos="j">publicized</alias>
       </aliases>
+      <roles>
+        <role descr="publicist" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="topic" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="secondary predication" f="PRD" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Publishing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="publicize-v.1" src="annot-overlap" confidence="0.1">16</lexlink>
+      </lexlinks>
+      <example src="" name="publicize-v: active">
+        <text>Dealers say the firm apparently has wanted to publicize its recent buying and subsequent selling of 30-year bonds by using Cantor Fitzgerald Securities Corp. as a broker.</text>
+        <rel relloc="8">publicize</rel>
+        <arg f="" n="0" start="2" end="3">the firm</arg>
+        <arg f="" n="1" start="9" end="17">its recent buying and subsequent selling of 30-year bonds</arg>
+        <arg f="MNR" n="m" start="18" end="26">by using Cantor Fitzgerald Securities Corp. as a broker.</arg>
+      </example>
+      <example src="" name="publicize-v: passive with attribute">
+        <text>Still, scientists breathed a collective sigh of relief about the finding, because it demonstrates how to overcome the ``flux pinning'' problem that-1 [*trace*-1]-2 earlier this year was widely publicized *trace*-2 as undercutting new superconductors' potential.</text>
+        <rel relloc="28">publicized</rel>
+        <arg f="TMP" n="m" start="23" end="25">earlier this year</arg>
+        <arg f="MNR" n="m" start="27" end="27">widely</arg>
+        <arg f="" n="1" start="22" end="22">[*trace*-1]-2</arg>
+        <arg f="SLC" n="m" start="17" end="20">the ``flux pinning'' problem</arg>
+        <arg f="" n="2" start="30" end="34">as undercutting new superconductors' potential.</arg>
+      </example>
+      <example src="BOLT-4,5" name="publicized-j">
+        <text>I do n't think it 's fair that cases are so publicized , and should only be so open if the defendant does n't mind .</text>
+        <rel relloc="11">publicized</rel>
+        <arg f="" n="1" start="8" end="8">cases</arg>
+        <arg f="EXT" n="m" start="10" end="10">so</arg>
+      </example>
       <note>PUBLICIZE-V NOTES: 'Publicize' based on wsj; adjectival 'publicized' based on BOLT-4,5. Member of Vncls other_cos-45.4. (from publicize.01-v)</note>
       <note>PUBLICIZED-J NOTES: Automatically created by Julia as an alias file for unification. (from publicized.01-j)</note>
-      <roles>
-        <role descr="publicist" f="pag" n="0">
-          <vnrole vncls="45.4" vntheta="agent"/>
-        </role>
-        <role descr="topic" f="ppt" n="1">
-          <vnrole vncls="45.4" vntheta="patient"/>
-        </role>
-        <role descr="secondary predication" f="prd" n="2"/>
-      </roles>
-      <example name="publicize-v: active" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>Dealers say [the firm]-1 apparently has wanted *trace*-1 to publicize its recent buying and subsequent selling of 30-year bonds by using Cantor Fitzgerald Securities Corp. as a broker.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">publicize</rel>
-        <arg f="" n="1">its recent buying and subsequent selling of 30-year bonds</arg>
-        <arg f="mnr" n="m">by using Cantor Fitzgerald Securities Corp. as a broker</arg>
-      </example>
-      <example name="publicize-v: passive with attribute" src="" type="">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="passive"/>
-        <text>Still, scientists breathed a collective sigh of relief about the finding, because it demonstrates how to overcome the ``flux pinning'' problem that-1 [*trace*-1]-2 earlier this year was widely publicized *trace*-2 as undercutting new superconductors' potential.</text>
-        <arg f="tmp" n="m">earlier this year</arg>
-        <arg f="mnr" n="m">widely</arg>
-        <rel f="">publicized</rel>
-        <arg f="" n="1">*trace*-2 (= *trace*-1 = that)</arg>
-        <arg f="slc" n="m">that -&gt; the ``flux pinning'' problem</arg>
-        <arg f="" n="2">as undercutting new superconductors' potential</arg>
-      </example>
-      <example name="publicized-j" src="BOLT-4,5" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I do n't think it 's fair that cases are so publicized , and should only be so open if the defendant does n't mind .</text>
-        <arg f="" n="1">cases</arg>
-        <arg f="ext" n="m">so</arg>
-        <rel f="">publicized</rel>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="public">
     <roleset id="public.02" name="open/visible to general people">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">public</alias>
+        <alias pos="j">public</alias>
       </aliases>
-      <note>PUBLIC-J NOTES: Added automatically by Julia. (from public.01-j)</note>
       <roles>
-        <role descr="public entity" f="ppt" n="1"/>
-        <role descr="audience arg1 is available to" f="gol" n="2"/>
+        <role descr="public entity" f="PPT" n="1"/>
+        <role descr="audience arg1 is available to" f="GOL" n="2"/>
       </roles>
-      <example name="public-j" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="public-j">
         <text>It was explained that when the first letter was capitalized, the identifier was public to any piece of code that wanted to use it.</text>
+        <rel relloc="13">public</rel>
       </example>
+      <note>PUBLIC-J NOTES: Added automatically by Julia. (from public.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

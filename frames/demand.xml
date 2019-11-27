@@ -1,67 +1,88 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="demand">
     <roleset id="demand.01" name="ask a favor, ask a request">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">demand</alias>
-        <alias framenet="request" pos="n" verbnet="">demand</alias>
+        <alias pos="v">demand</alias>
+        <alias pos="n">demand</alias>
       </aliases>
-      <note>DEMAND-V NOTES: Frames file for 'demand' based on sentences in financial subcorpus. No verbnet entry. Comparison with 'ask'. (from demand.01-v predicate notes)</note>
-      <note>DEMAND-N NOTES: Roleset based on demand.01. Verbnet class beg 58.2. Framenet class request. Framed by Katie. (from demand.01-n)</note>
       <roles>
-        <role descr="asker" f="pag" n="0">
-          <vnrole vncls="60-1" vntheta="agent"/>
-          <vnrole vncls="103" vntheta="pivot"/>
+        <role descr="asker" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="60-1" version="UNK">agent</rolelink>
+            <rolelink resource="VerbNet" class="require-103" version="verbnet3.3">pivot</rolelink>
+          </rolelinks>
         </role>
-        <role descr="favor" f="ppt" n="1">
-          <vnrole vncls="60-1" vntheta="topic"/>
-          <vnrole vncls="103" vntheta="theme"/>
+        <role descr="favor" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="60-1" version="UNK">topic</rolelink>
+            <rolelink resource="VerbNet" class="require-103" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="hearer" f="gol" n="2">
-          <vnrole vncls="60-1" vntheta="recipient"/>
-          <vnrole vncls="103" vntheta="source"/>
+        <role descr="hearer" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="60-1" version="UNK">recipient</rolelink>
+            <rolelink resource="VerbNet" class="require-103" version="verbnet3.3">source</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="nominal thing demanded" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Request" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="60-1" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="require-103" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Contact.CommandOrder.Broadcast" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Contact.CommandOrder.Correspondence" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Contact.CommandOrder.Meet" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Broadcast" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="demand-v.1" src="annot-overlap" confidence="0.1">84</lexlink>
+        <lexlink resource="onsense" version="on5" class="demand-v.2" src="annot-overlap" confidence="0.1">10</lexlink>
+        <lexlink resource="onsense" version="on5" class="demand-n.2" src="annot-overlap" confidence="0.1">26</lexlink>
+        <lexlink resource="onsense" version="on5" class="demand-n.4" src="annot-overlap" confidence="0.1">12</lexlink>
+      </lexlinks>
+      <example src="" name="nominal thing demanded">
         <text>Belgium decided that investors who *trace* demand the delivery of their securities when they buy shares or domestic bonds will have to pay an additional 100 Belgian francs (about $2.60) for each transaction, bringing the total fee to 200 francs.</text>
-        <arg f="" n="0">*trace*</arg>
-        <arg f="rcl" n="m">who -&gt; investors</arg>
-        <rel f="">demand</rel>
-        <arg f="" n="1">the delivery of their securities</arg>
-        <arg f="tmp" n="m">when they buy shares or domestic bonds</arg>
+        <rel relloc="6">demand</rel>
+        <arg f="" n="0" start="5" end="5">*trace*</arg>
+        <arg f="RCL" n="m" start="3" end="3">investors</arg>
+        <arg f="" n="1" start="7" end="11">the delivery of their securities</arg>
+        <arg f="TMP" n="m" start="12" end="18">when they buy shares or domestic bonds</arg>
       </example>
-      <example name="sentential thing demanded" src="" type="">
+      <example src="" name="sentential thing demanded">
         <text>When Disney offered to pay Mr. Steinberg a premium for his shares, the New York investor didn't demand the company also pay a premium to other shareholders.</text>
-        <arg f="" n="0">the New York investor</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">demand</rel>
-        <arg f="" n="1">the company also pay a premium to other shareholders</arg>
+        <rel relloc="17">demand</rel>
+        <arg f="" n="0" start="12" end="15">the New York investor</arg>
+        <arg f="NEG" n="m" start="13" end="13">New</arg>
+        <arg f="" n="1" start="18" end="26">the company also pay a premium to other shareholders.</arg>
       </example>
-      <example name="Example with all args" src="" type="">
+      <example src="" name="Example with all args">
         <text>the ANC 's demands on the government to create a climate fornegotiations</text>
-        <arg f="" n="0">the ANC 's</arg>
-        <rel f="">demands</rel>
-        <arg f="" n="2">on the government</arg>
-        <arg f="" n="1">to create a climate for negotiations</arg>
+        <rel relloc="3">demands</rel>
+        <arg f="" n="0" start="0" end="2">the ANC 's</arg>
+        <arg f="" n="2" start="4" end="6">on the government</arg>
+        <arg f="" n="1" start="7" end="11">to create a climate fornegotiations</arg>
       </example>
-      <example name="arg1" src="" type="">
+      <example src="" name="arg1">
         <text>Sun to meet demand for its newest computers</text>
-        <rel f="">demand</rel>
-        <arg f="" n="1">for its newest computers</arg>
+        <rel relloc="3">demand</rel>
+        <arg f="" n="1" start="4" end="7">for its newest computers</arg>
       </example>
-      <example name="Arg 0 only" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="Arg 0 only">
         <text>Saddam's demands were not met</text>
-        <arg f="" n="0">Saddam's</arg>
-        <rel f="">demands</rel>
+        <rel relloc="1">demands</rel>
+        <arg f="" n="0" start="0" end="0">Saddam's</arg>
       </example>
-      <example name="One more with args 0 and 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="One more with args 0 and 1">
         <text>Its demands for an Islamic state</text>
-        <arg f="" n="0">Its</arg>
-        <rel f="">demands</rel>
-        <arg f="" n="1">for and Islamic state</arg>
+        <rel relloc="1">demands</rel>
+        <arg f="" n="0" start="0" end="0">Its</arg>
+        <arg f="" n="1" start="2" end="5">for an Islamic state</arg>
       </example>
+      <note>DEMAND-V NOTES: Frames file for 'demand' based on sentences in financial subcorpus. No verbnet entry. Comparison with 'ask'. (from demand.01-v predicate notes)</note>
+      <note>DEMAND-N NOTES: Roleset based on demand.01. Verbnet class beg 58.2. Framenet class request. Framed by Katie. (from demand.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

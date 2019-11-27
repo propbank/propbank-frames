@@ -1,76 +1,92 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="relay">
     <roleset id="relay.01" name="send along, transmit">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">relay</alias>
-        <alias framenet="" pos="v" verbnet="">relay</alias>
+        <alias pos="n">relay</alias>
+        <alias pos="v">relay</alias>
       </aliases>
-      <note>RELAY-V NOTES: VN class instr_communication-37.4, transfer_mesg-37.1.1. (from relay.01-v)</note>
-      <note>RELAY-N NOTES: Based on ontonotes nouns. Comparison to relay.01-v. VN classes instr_communication-37.4 and transer_mesg-37.1.1. No FN class. Framed by Katie. (from relay.02-n)</note>
       <roles>
         <role descr="sender, agent" f="PAG" n="0">
-          <vnrole vncls="37.4" vntheta="Agent"/>
-          <vnrole vncls="37.1.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="instr_communication-37.4.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="transfer_mesg-37.1.1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing sent" f="PPT" n="1">
-          <vnrole vncls="37.4" vntheta="Topic"/>
-          <vnrole vncls="37.1.1" vntheta="Topic"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="instr_communication-37.4.1" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="VerbNet" class="transfer_mesg-37.1.1" version="verbnet3.3">topic</rolelink>
+          </rolelinks>
         </role>
         <role descr="sent to" f="GOL" n="2">
-          <vnrole vncls="37.4" vntheta="Recipient"/>
-          <vnrole vncls="37.1.1" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="instr_communication-37.4.1" version="verbnet3.3">recipient</rolelink>
+            <rolelink resource="VerbNet" class="transfer_mesg-37.1.1" version="verbnet3.3">recipient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all args" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Col. North conveyed the request to his superiors and to Assistant Secretary of State Elliot Abrams, who [*T*-1] relayed it to Secretary of State George Shultz.</text>
-        <arg f="" n="0">[*T*-1]</arg>
-        <arg f="rcl" n="m">who -&gt; Assistant Secretary of State Elliot Abrams</arg>
-        <rel f="">relayed</rel>
-        <arg f="" n="1">it</arg>
-        <arg f="" n="2">to Secretary of State George Shultz</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="37.4" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="transfer_mesg-37.1.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="relay-v.1" src="annot-overlap" confidence="0.1">9</lexlink>
+      </lexlinks>
+      <example src="" name="all args">
+        <text>Col. North conveyed the request to his superiors and to Assistant Secretary of State Elliot Abrams, who [*T*] relayed it to Secretary of State George Shultz.</text>
+        <rel relloc="18">relayed</rel>
+        <arg f="" n="0" start="17" end="17">[*T*]</arg>
+        <arg f="RCL" n="m" start="10" end="15">Assistant Secretary of State Elliot Abrams,</arg>
+        <arg f="" n="1" start="19" end="19">it</arg>
+        <arg f="" n="2" start="20" end="25">to Secretary of State George Shultz.</arg>
       </example>
-      <example name="no destination" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <example src="" name="no destination">
         <text>Luis Carlos, knowing that helping the Americans could advance the career of any Panamanian officer, relayed Tony's reports on the leftist tendencies he observed among his fellow students and, more important, among his officers and instructors.</text>
-        <arg f="" n="0">Luis Carlos</arg>
-        <arg f="adv" n="m">knowing that helping the Americans could advance the career of any Panamanian officer</arg>
-        <rel f="">relayed</rel>
-        <arg f="" n="1">Tony's reports on the leftist tendencies he observed among his fellow students and, more important, among his officers and instructors</arg>
+        <rel relloc="15">relayed</rel>
+        <arg f="" n="0" start="0" end="1">Luis Carlos,</arg>
+        <arg f="ADV" n="m" start="2" end="14">knowing that helping the Americans could advance the career of any Panamanian officer,</arg>
+        <arg f="" n="1" start="16" end="35">Tony's reports on the leftist tendencies he observed among his fellow students and, more important, among his officers and instructors.</arg>
       </example>
-      <example name="relay an unspecified message" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="relay an unspecified message">
         <text>The relay of information via the internet</text>
-        <rel f="">relay</rel>
-        <arg f="" n="1">of information</arg>
-        <arg f="mnr" n="m">via the internet</arg>
+        <rel relloc="1">relay</rel>
+        <arg f="" n="1" start="2" end="3">of information</arg>
+        <arg f="MNR" n="m" start="4" end="6">via the internet</arg>
       </example>
+      <note>RELAY-V NOTES: VN class instr_communication-37.4, transfer_mesg-37.1.1. (from relay.01-v)</note>
+      <note>RELAY-N NOTES: Based on ontonotes nouns. Comparison to relay.01-v. VN classes instr_communication-37.4 and transer_mesg-37.1.1. No FN class. Framed by Katie. (from relay.02-n)</note>
     </roleset>
     <roleset id="relay.02" name="relay race">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">relay</alias>
+        <alias pos="n">relay</alias>
       </aliases>
-      <note>RELAY-N NOTES: Based on ontonotes nouns. Framed by Katie. (from relay.01-n)</note>
       <roles>
-        <role descr="baton carrier, current racer" f="pag" n="0"/>
-        <role descr="opponent" f="ppt" n="1"/>
-        <role descr="baton; item passed off" f="mnr" n="2"/>
-        <role descr="domain, type of race" f="vsp" n="3"/>
+        <role descr="baton carrier, current racer" f="PAG" n="0"/>
+        <role descr="opponent" f="PPT" n="1"/>
+        <role descr="baton; item passed off" f="MNR" n="2"/>
+        <role descr="domain, type of race" f="VSP" n="3"/>
       </roles>
-      <example name="Arg 3 as the domain rather than type" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="Arg 3 as the domain rather than type">
         <text>The Beijing Olympics torch relay</text>
-        <arg f="" n="3">Beijing Olympics</arg>
-        <arg f="" n="2">torch</arg>
-        <rel f="">relay</rel>
+        <rel relloc="4">relay</rel>
+        <arg f="" n="3" start="1" end="2">Beijing Olympics</arg>
+        <arg f="" n="2" start="3" end="3">torch</arg>
       </example>
-      <example name="arg 3 as type, with only one racer mentioned" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="arg 3 as type, with only one racer mentioned">
         <text>The 4 by 400 relay anchored by Usain Bolt</text>
-        <arg f="" n="3">The 4 by 400</arg>
-        <rel f="">relay</rel>
-        <arg f="" n="0">anchored by Usain Bolt</arg>
+        <rel relloc="4">relay</rel>
+        <arg f="" n="3" start="0" end="3">The 4 by 400</arg>
+        <arg f="" n="0" start="5" end="8">anchored by Usain Bolt</arg>
       </example>
+      <note>RELAY-N NOTES: Based on ontonotes nouns. Framed by Katie. (from relay.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

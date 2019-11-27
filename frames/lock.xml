@@ -1,191 +1,248 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="lock">
     <roleset id="lock.01" name="attach, fastening, secured with a lock">
       <aliases>
-        <alias framenet="Cause_confinement" pos="v" verbnet="">lock</alias>
-        <alias framenet="" pos="n" verbnet="">locking</alias>
-        <alias framenet="" pos="j" verbnet="">locked</alias>
+        <alias pos="v">lock</alias>
+        <alias pos="n">locking</alias>
+        <alias pos="j">locked</alias>
       </aliases>
+      <roles>
+        <role descr="agent, entity doing the locking" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="tape-22.4" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="first thing being locked" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="tape-22.4" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="second thing, locked to what" f="PPT" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="tape-22.4" version="verbnet3.3">co-patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="instrument, string, lock" f="MNR" n="3">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="tape-22.4" version="verbnet3.3">instrument</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_confinement" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="tape-22.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="lock-v.2" src="annot-overlap" confidence="0.1">4</lexlink>
+        <lexlink resource="onsense" version="on5" class="lock-v.3" src="annot-overlap" confidence="0.1">9</lexlink>
+      </lexlinks>
+      <example src="" name="lock-v: passive">
+        <text>``Then they said, `By the way, two of the doors are locked *trace*.'''</text>
+        <rel relloc="11">locked</rel>
+        <arg f="" n="1" start="6" end="9">two of the doors</arg>
+      </example>
+      <example src="" name="lock-v: two things connected">
+        <text>He said the move toward standard operating systems means customers aren't locked into buying from their traditional computer supplier and can force prices down.</text>
+        <rel relloc="11">locked</rel>
+        <arg f="NEG" n="m" start="0" end="0">He</arg>
+        <arg f="" n="1" start="9" end="9">customers</arg>
+        <arg f="" n="2" start="12" end="18">into buying from their traditional computer supplier</arg>
+      </example>
+      <example src="" name="lock-v: with instrument">
+        <text>John locked his expensive bike with 50 yards of dental floss.</text>
+        <rel relloc="1">locked</rel>
+        <arg f="" n="0" start="0" end="0">John</arg>
+        <arg f="" n="1" start="2" end="4">his expensive bike</arg>
+        <arg f="" n="3" start="5" end="10">with 50 yards of dental floss.</arg>
+      </example>
+      <example src="" name="locking-n: Arg0,1">
+        <text>His locking the doors has forced me to stay with the neighbors because I can't get in the house.</text>
+        <rel relloc="1">locking</rel>
+        <arg f="" n="0" start="0" end="0">His</arg>
+        <arg f="" n="1" start="2" end="3">the doors</arg>
+      </example>
       <note>LOCK-V NOTES: Based on financial subcorpus. Member of VNcls tape-22.4. (from lock.01-v)</note>
       <note>LOCKING-N NOTES: lock.01 (from locking.01-n)</note>
       <note>LOCKED-J NOTES: Added by julia based on BOLT. (from locked.01-j)</note>
-      <roles>
-        <role descr="agent, entity doing the locking" f="pag" n="0">
-          <vnrole vncls="22.4" vntheta="agent"/>
-        </role>
-        <role descr="first thing being locked" f="ppt" n="1">
-          <vnrole vncls="22.4" vntheta="patient"/>
-        </role>
-        <role descr="second thing, locked to what" f="ppt" n="2">
-          <vnrole vncls="22.4" vntheta="co-patient"/>
-        </role>
-        <role descr="instrument, string, lock" f="mnr" n="3">
-          <vnrole vncls="22.4" vntheta="instrument"/>
-        </role>
-      </roles>
-      <example name="lock-v: passive" src="" type="">
-        <text>``Then they said, `By the way, [two of the doors]-1 are locked *trace*-1.'''</text>
-        <rel f="">locked</rel>
-        <arg f="" n="1">*trace*-1</arg>
-      </example>
-      <example name="lock-v: two things connected" src="" type="">
-        <text>He said the move toward standard operating systems means customers-1 aren't locked *trace*-1 into buying from their traditional computer supplier and can force prices down.</text>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">locked</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="2">into buying from their traditional computer supplier</arg>
-      </example>
-      <example name="lock-v: with instrument" src="" type="">
-        <text>John locked his expensive bike with 50 yards of dental floss.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">locked</rel>
-        <arg f="" n="1">his expensive bike</arg>
-        <arg f="" n="3">with 50 yards of dental floss</arg>
-      </example>
-      <example name="locking-n: Arg0,1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>His locking the doors has forced me to stay with the neighbors because I can't get in the house.</text>
-        <arg f="" n="0">His</arg>
-        <rel f="">locking</rel>
-        <arg f="" n="1">the doors</arg>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="lock_in">
     <roleset id="lock_in.02" name="establish surely">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">lock_in</alias>
+        <alias pos="v">lock_in</alias>
       </aliases>
-      <note>LOCK_IN-V NOTES: (from lock.02-v)</note>
       <roles>
         <role descr="agent, fixer" f="PAG" n="0"/>
-        <role descr="thing made" f="ppt" n="1"/>
-        <role descr="benefactive" f="gol" n="2"/>
+        <role descr="thing made" f="PPT" n="1"/>
+        <role descr="benefactive" f="GOL" n="2"/>
       </roles>
-      <example name="lock_in-v: transitive" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="onsense" version="on5" class="lock-v.3" src="annot-overlap" confidence="0.1">6</lexlink>
+        <lexlink resource="onsense" version="on5" class="lock-v.4" src="annot-overlap" confidence="0.1">3</lexlink>
+      </lexlinks>
+      <example src="" name="lock_in-v: transitive">
         <text>Most other supercomputer manufacturers have yet to adopt the Posix standard, Mr. Paluck said, adding that they prefer to maintain proprietary systems that *trace* lock in customers.</text>
-        <arg f="" n="0">*trace*</arg>
-        <arg f="rcl" n="m">that -&gt; proprietary systems</arg>
-        <rel f="">[ lock] [ in]</rel>
-        <arg f="" n="1">customers</arg>
+        <rel relloc="24 25">lock in</rel>
+        <arg f="" n="0" start="23" end="23">*trace*</arg>
+        <arg f="RCL" n="m" start="20" end="21">proprietary systems</arg>
+        <arg f="" n="1" start="26" end="26">customers.</arg>
       </example>
-      <example name="lock_in-v: with attribute" src="" type="">
+      <example src="" name="lock_in-v: with attribute">
         <text>When it occurs, the traders place orders via computers to buy the basket of stocks in whichever market is cheaper and sell them in the more expensive market; they lock in the difference in price as profit.</text>
-        <arg f="" n="0">they</arg>
-        <rel f="">[ lock] [ in]</rel>
-        <arg f="" n="1">the difference in price</arg>
-        <arg f="" n="2">as profit</arg>
+        <rel relloc="15 29">in lock</rel>
+        <arg f="" n="0" start="28" end="28">they</arg>
+        <arg f="" n="1" start="31" end="34">the difference in price</arg>
+        <arg f="" n="2" start="35" end="36">as profit.</arg>
       </example>
+      <note>LOCK_IN-V NOTES: (from lock.02-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="lock_up">
     <roleset id="lock_up.03" name="throw in jail">
       <aliases>
-        <alias framenet="Immobilization" pos="v" verbnet="">lock_up</alias>
+        <alias pos="v">lock_up</alias>
       </aliases>
-      <note>LOCK_UP-V NOTES: (from lock.03-v)</note>
       <roles>
         <role descr="officer of the court" f="PAG" n="0"/>
-        <role descr="criminal" f="ppt" n="1"/>
-        <role descr="secondary predication" f="prd" n="2"/>
+        <role descr="criminal" f="PPT" n="1"/>
+        <role descr="secondary predication" f="PRD" n="2"/>
       </roles>
-      <example name="lock_up-v: criminal intent" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Immobilization" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Imprisonment" version="1.7" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="lock_up-v: criminal intent">
         <text>John-1 was locked up *trace*-1 as a menace to society.</text>
-        <arg f="" n="1">*trace*</arg>
-        <rel f="">locked up</rel>
-        <arg f="" n="2">as a menace to society</arg>
+        <rel relloc="2 3">locked up</rel>
+        <arg f="" n="1" start="4" end="4">*trace*-1</arg>
+        <arg f="" n="2" start="5" end="9">as a menace to society.</arg>
       </example>
-
+      <note>LOCK_UP-V NOTES: (from lock.03-v)</note>
     </roleset>
     <roleset id="lock_up.04" name="(cause to) become immovable, secure">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">lock_up</alias>
+        <alias pos="v">lock_up</alias>
       </aliases>
-      <note>LOCK_UP-V NOTES: (from lock.04-v)</note>
       <roles>
-        <role descr="agent" f="pag" n="0">
-          <vnrole vncls="22.4" vntheta="agent"/>
+        <role descr="agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="tape-22.4" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing becoming immovable, secure" f="ppt" n="1">
-          <vnrole vncls="22.4" vntheta="patient"/>
+        <role descr="thing becoming immovable, secure" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="tape-22.4" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="lock_up-v: got it" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="tape-22.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="lock_up-v: got it">
         <text>In any settlement, Warner is almost certain to demand rights to most of the 50 or so projects *trace* Mr. Guber and Mr. Peters have locked up *trace* for the next few years, notably sequels to ``Batman.''</text>
-        <arg f="" n="0">Mr. Guber and Mr. Peters</arg>
-        <rel f="">[ locked] [ up]</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="rcl" n="m">*trace* -&gt; the 50 or so projects</arg>
-        <arg f="tmp" n="m">for the next few years</arg>
+        <rel relloc="25 26">locked up</rel>
+        <arg f="" n="0" start="19" end="23">Mr. Guber and Mr. Peters</arg>
+        <arg f="" n="1" start="18" end="18">*trace*</arg>
+        <arg f="RCL" n="m" start="13" end="17">the 50 or so projects</arg>
+        <arg f="TMP" n="m" start="28" end="32">for the next few years,</arg>
       </example>
-      <example name="lock_up-v: sieze up; ergative with GOL" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="BOLT" name="lock_up-v: sieze up; ergative with GOL">
         <text>I 'm using VISTA and no pro but I 've noticed no functional improvements and VISTA has had the disconcerting habit of *PRO* locking up on me .</text>
-        <arg f="" n="1">*PRO*, *link -&gt; [VISTA]</arg>
-        <rel f="">[locking] [up]</rel>
-        <arg f="gol" n="m">on me</arg>
+        <rel relloc="23 24">locking up</rel>
+        <arg f="" n="1" start="3" end="3">VISTA</arg>
+        <arg f="GOL" n="m" start="25" end="26">on me</arg>
       </example>
+      <note>LOCK_UP-V NOTES: (from lock.04-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="lock_out">
     <roleset id="lock_out.05" name="exclude, locked _out">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">locked_out</alias>
-        <alias framenet="" pos="v" verbnet="">lock_out</alias>
+        <alias pos="j">locked_out</alias>
+        <alias pos="v">lock_out</alias>
       </aliases>
-      <note>LOCK_OUT-V NOTES: (from lock.05-v)</note>
-      <note>LOCKED_OUT-J NOTES: Added by Julia based on BOLT. (from locked.05-j)</note>
       <roles>
         <role descr="agent, entity being excluding" f="PAG" n="0"/>
-        <role descr="thing excluded" f="ppt" n="1"/>
-        <role descr="excluded from" f="dir" n="2"/>
+        <role descr="thing excluded" f="PPT" n="1"/>
+        <role descr="excluded from" f="DIR" n="2"/>
       </roles>
-      <example name="lock_out-v: transitive" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="lock_out-v: transitive">
         <text>The risk is that Jaguar's share price could slump if GM's agreement with Jaguar effectively locks out its U.S. rival.</text>
-        <arg f="" n="0">GM 's agreement with Jaguar</arg>
-        <arg f="mnr" n="m">effectively</arg>
-        <rel f="">[ locks] [ out]</rel>
-        <arg f="" n="1">its U.S. rival</arg>
+        <rel relloc="15 16">locks out</rel>
+        <arg f="" n="0" start="9" end="13">if GM's agreement with Jaguar</arg>
+        <arg f="MNR" n="m" start="14" end="14">effectively</arg>
+        <arg f="" n="1" start="17" end="19">its U.S. rival.</arg>
       </example>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes nw/wsj/21/wsj_2153" type="">
+      <example src="ontonotes nw/wsj/21/wsj_2153" name="ARG0 and ARG1 and ARG2">
         <text>Those massive structures , while posing cost and environmental headaches , effectively locked out all but deep - pocketed giants from steelmaking .</text>
-        <arg f="" n="0">Those massive structures</arg>
-        <arg f="adv" n="m">while posing cost and environmental headaches</arg>
-        <arg f="mnr" n="m">effectively</arg>
-        <rel f="">[locked][out]</rel>
-        <arg f="" n="1">all but deep - pocketed giants</arg>
-        <arg f="" n="2">from steelmaking</arg>
+        <rel relloc="12 13">locked out</rel>
+        <arg f="" n="0" start="0" end="2">Those massive structures</arg>
+        <arg f="ADV" n="m" start="4" end="9">while posing cost and environmental headaches</arg>
+        <arg f="MNR" n="m" start="11" end="11">effectively</arg>
+        <arg f="" n="1" start="14" end="19">all but deep - pocketed giants</arg>
+        <arg f="" n="2" start="20" end="21">from steelmaking</arg>
       </example>
-      <example name="locked_out-j" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="BOLT" name="locked_out-j">
         <text>Cool i ll see you at two . Wan na come by my place before two ? I 'm currently locked out but I 'm hoping to remedy that</text>
-        <arg f="" n="1">I</arg>
-        <arg f="tmp" n="m">currently</arg>
-        <rel f="">[locked][out]</rel>
+        <rel relloc="20 21">locked out</rel>
+        <arg f="" n="1" start="1" end="1">i</arg>
+        <arg f="TMP" n="m" start="19" end="19">currently</arg>
       </example>
+      <note>LOCK_OUT-V NOTES: (from lock.05-v)</note>
+      <note>LOCKED_OUT-J NOTES: Added by Julia based on BOLT. (from locked.05-j)</note>
     </roleset>
   </predicate>
   <predicate lemma="lock_down">
     <roleset id="lock_down.06" name="secure">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">lock_down</alias>
+        <alias pos="v">lock_down</alias>
       </aliases>
-      <note>LOCK_DOWN-V NOTES: Frame edited by Arrick (from lock.06-v)</note>
       <roles>
-        <role descr="agent, one who locks" f="pag" n="0">
-          <vnrole vncls="22.4" vntheta="agent"/>
+        <role descr="agent, one who locks" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="tape-22.4" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing secured" f="ppt" n="1">
-          <vnrole vncls="22.4" vntheta="patient"/>
+        <role descr="thing secured" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="tape-22.4" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="lock_down-v: secure" src="" type="">
-        <text>...we-1 want *PRO*-1 to lock down a security situation...</text>
-        <arg f="" n="0">*PRO*-1</arg>
-        <rel f="">[ lock] [ down]</rel>
-        <arg f="" n="1">a security situation</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="tape-22.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="lock_down-v: secure">
+        <text>...we want to lock down a security situation...</text>
+        <rel relloc="3 4">lock down</rel>
+        <arg f="" n="0" start="0" end="0">...we</arg>
+        <arg f="" n="1" start="5" end="7">a security situation...</arg>
       </example>
+      <note>LOCK_DOWN-V NOTES: Frame edited by Arrick (from lock.06-v)</note>
     </roleset>
   </predicate>
 </frameset>

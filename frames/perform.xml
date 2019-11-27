@@ -1,168 +1,181 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="perform">
     <roleset id="perform.01" name="entertain, put on a show">
       <aliases>
-        <alias framenet="Intentionally_act" pos="v" verbnet="">perform</alias>
-        <alias framenet="Intentionally_act" pos="n" verbnet="">performance</alias>
-        <alias framenet="" pos="l" verbnet="">have_performance</alias>
+        <alias pos="v">perform</alias>
+        <alias pos="n">performance</alias>
+        <alias pos="l">have_performance</alias>
+        <argalias pos="n" arg="0">performer</argalias>
       </aliases>
+      <roles>
+        <role descr="performer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="performance-26.7-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Intentionally_act" version="1.7">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="performance, thing performed" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="performance-26.7-1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="instrument" f="MNR" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Intentionally_act" version="1.7">means</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Intentionally_act" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="performance-26.7-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="perform-v.2" src="annot-overlap" confidence="0.1">17</lexlink>
+        <lexlink resource="onsense" version="on5" class="perform-v.1" src="annot-overlap" confidence="0.1">48</lexlink>
+        <lexlink resource="onsense" version="on5" class="performance-n.4" src="annot-overlap" confidence="0.1">32</lexlink>
+      </lexlinks>
+      <example src="ontonotes bn/cnn/00/cnn_0098" name="ARG0 and ARG1 and ARG2">
+        <text>The FBI is reportedly performing DNA test on human remains from last month 's bombing of the `` USS Cole . ''</text>
+        <rel relloc="4">performing</rel>
+        <arg f="" n="0" start="0" end="1">The FBI</arg>
+        <arg f="ADV" n="m" start="3" end="3">reportedly</arg>
+        <arg f="" n="1" start="5" end="6">DNA test</arg>
+        <arg f="" n="2" start="7" end="19">on human remains from last month 's bombing of the `` USS Cole</arg>
+      </example>
+      <example src="" name="autogen1">
+        <text>Robert Loggia 's riveting performance as the unlovable -- evencrotchety -- veteran agent</text>
+        <rel relloc="4">performance</rel>
+        <arg f="" n="0" start="0" end="2">Robert Loggia 's</arg>
+        <arg f="MNR" n="m" start="3" end="3">riveting</arg>
+        <arg f="" n="1" start="5" end="12">as the unlovable -- evencrotchety -- veteran agent</arg>
+      </example>
+      <example src="" name="autogen2">
+        <text>his usual straight-from-the-shoulder performance of MacBeth</text>
+        <rel relloc="3">performance</rel>
+        <arg f="" n="0" start="0" end="0">his</arg>
+        <arg f="ADJ" n="m" start="1" end="1">usual</arg>
+        <arg f="MNR" n="m" start="2" end="2">straight-from-the-shoulder</arg>
+        <arg f="" n="1" start="4" end="5">of MacBeth</arg>
+      </example>
+      <example src="" name="just arg1, adjectival">
+        <text>When a musical performance is scheduled , someone will always take it upon themselves to set out seats for the audience .</text>
+        <rel relloc="3">performance</rel>
+        <arg f="" n="1" start="2" end="2">musical</arg>
+      </example>
+      <example src="" name="with TMP">
+        <text>After the 10 - minute performance ended , the hall was rocked by thunderous applause .</text>
+        <rel relloc="5">performance</rel>
+        <arg f="TMP" n="m" start="2" end="4">10 - minute</arg>
+      </example>
+      <example src="" name="PP arg1   (I don't know if this is a typo or a title, but either way)">
+        <text>And Gao himself will direct a performance of his August Snow at the end of the year .</text>
+        <rel relloc="6">performance</rel>
+        <arg f="" n="1" start="7" end="10">of his August Snow</arg>
+      </example>
+      <example src="" name="just arg0">
+        <text>For her performance , Byrne won the best actress award at last year 's Venice Film Festival .</text>
+        <rel relloc="2">performance</rel>
+        <arg f="" n="0" start="1" end="1">her</arg>
+      </example>
+      <example src="" name="If only she could keep a beat. All args.">
+        <text>The White Stripes documentary ends with their piano performance of "White Moon", which made Meg cry.</text>
+        <rel relloc="8">performance</rel>
+        <arg f="" n="0" start="6" end="6">their</arg>
+        <arg f="" n="2" start="7" end="7">piano</arg>
+        <arg f="" n="1" start="9" end="11">of "White Moon",</arg>
+      </example>
       <note>PERFORM-V NOTES: Based on financial subcorpus. Comparison with play. Member of VNcls performance-26.7-1. (from perform.01-v)</note>
       <note>PERFORMANCE-N NOTES: Updated by Julia. Member of Vncls performance-26.7. (from performance.01-n)</note>
-      <roles>
-        <role descr="performer" f="pag" n="0">
-          <vnrole vncls="26.7-1" vntheta="agent"/>
-        </role>
-        <role descr="performance, thing performed" f="ppt" n="1">
-          <vnrole vncls="26.7-1" vntheta="theme"/>
-        </role>
-        <role descr="instrument" f="mnr" n="2"/>
-      </roles>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes bn/cnn/00/cnn_0098" type="">
-        <text>The FBI is reportedly performing DNA test on human remains from last month 's bombing of the `` USS Cole . ''</text>
-        <arg f="" n="0">The FBI</arg>
-        <arg f="adv" n="m">reportedly</arg>
-        <rel f="">performing</rel>
-        <arg f="" n="1">DNA test</arg>
-        <arg f="" n="2">on human remains from last month 's bombing of the `` USS Cole</arg>
-      </example>
-
-      <example name="autogen1" src="" type="">
-        <text>Robert Loggia 's riveting performance as the unlovable -- evencrotchety -- veteran agent</text>
-        <arg f="" n="0">Robert Loggia 's</arg>
-        <arg f="mnr" n="m">riveting</arg>
-        <rel f="">performance</rel>
-        <arg f="" n="1">as the unlovable -- even crotchety -- veteran agent</arg>
-      </example>
-      <example name="autogen2" src="" type="">
-        <text>his usual straight-from-the-shoulder performance of MacBeth</text>
-        <arg f="" n="0">his</arg>
-        <arg f="adj" n="m">usual</arg>
-        <arg f="mnr" n="m">straight-from-the-shoulder</arg>
-        <rel f="">performance</rel>
-        <arg f="" n="1">of MacBeth</arg>
-      </example>
-      <example name="just arg1, adjectival" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>When a musical performance is scheduled , someone will always take it upon themselves to set out seats for the audience .</text>
-        <arg f="" n="1">musical</arg>
-        <rel f="">performance</rel>
-      </example>
-      <example name="with TMP" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>After the 10 - minute performance ended , the hall was rocked by thunderous applause .</text>
-        <arg f="tmp" n="m">10 - minute</arg>
-        <rel f="">performance</rel>
-      </example>
-      <example name="PP arg1   (I don't know if this is a typo or a title, but either way)" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>And Gao himself will direct a performance of his August Snow at the end of the year .</text>
-        <rel f="">performance</rel>
-        <arg f="" n="1">of his August Snow</arg>
-      </example>
-      <example name="just arg0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>For her performance , Byrne won the best actress award at last year 's Venice Film Festival .</text>
-        <arg f="" n="0">her</arg>
-        <rel f="">performance</rel>
-      </example>
-      <example name="If only she could keep a beat. All args." src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The White Stripes documentary ends with their piano performance of "White Moon", which made Meg cry.</text>
-        <arg f="" n="0">their</arg>
-        <arg f="" n="2">piano</arg>
-        <rel f="">performance</rel>
-        <arg f="" n="1">of "White Moon"</arg>
-      </example>
     </roleset>
     <roleset id="perform.02" name="carry out a task or action">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">perform</alias>
-        <alias framenet="" pos="n" verbnet="">performance</alias>
-        <alias framenet="" pos="l" verbnet="">have_performance</alias>
+        <alias pos="v">perform</alias>
+        <alias pos="n">performance</alias>
+        <alias pos="l">have_performance</alias>
       </aliases>
-      <note>PERFORMANCE-N NOTES: Reframed by Julia. No Vncls. (from performance.02-n)</note>
       <roles>
-        <note>These two rolesets (.01 and .02) share verbal counterpart frame, but their syntax is different enough here in the nominalized forms that it became necessary to separate them. (from performance.02-n)</note>
         <role descr="agent, entity doing task" f="PAG" n="0"/>
-        <role descr="action/tasks performed, kind of tasks done" f="ppt" n="1"/>
-        <role descr="assessment of performance" f="mnr" n="2"/>
+        <role descr="action/tasks performed, kind of tasks done" f="PPT" n="1"/>
+        <role descr="assessment of performance" f="MNR" n="2"/>
       </roles>
-      <example name="all args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Performing_arts" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="performance-n.4" src="annot-overlap" confidence="0.1">53</lexlink>
+      </lexlinks>
+      <example src="" name="all args">
         <text>Merk's strong sales performance in the human and animal health-productssegment .</text>
-        <arg f="" n="0">Merk's</arg>
-        <arg f="" n="2">strong</arg>
-        <arg f="" n="1">sales</arg>
-        <rel f="">performance</rel>
-        <arg f="loc" n="m">in the human and animal health-products segment</arg>
+        <rel relloc="3">performance</rel>
+        <arg f="" n="0" start="0" end="0">Merk's</arg>
+        <arg f="" n="2" start="1" end="1">strong</arg>
+        <arg f="" n="1" start="2" end="2">sales</arg>
+        <arg f="LOC" n="m" start="4" end="9">in the human and animal health-productssegment</arg>
       </example>
-      <example name="just arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="just arg1">
         <text>Academic performance ranged from excellent to failure</text>
-        <arg f="" n="1">Academic</arg>
-        <rel f="">performance</rel>
+        <rel relloc="1">performance</rel>
+        <arg f="" n="1" start="0" end="0">Academic</arg>
       </example>
-      <example name="ARG0 and ARG2 and ARG1" src="ontonotes nw/xinhua/01/chtb_0103" type="">
+      <example src="ontonotes nw/xinhua/01/chtb_0103" name="ARG0 and ARG2 and ARG1">
         <text>The Bank of China , the largest foreign exchange bank in China , had good business performance in 1997 , and realized a profit of 6.033 billion yuan for the whole year , of which domestic banks realized a profit of 2.428 billion yuan .</text>
-        <arg f="" n="0">The Bank of China , the largest foreign exchange bank in China ,</arg>
-        <arg f="lvb" n="m">had</arg>
-        <arg f="" n="2">good</arg>
-        <arg f="" n="1">business</arg>
-        <rel f="">performance</rel>
-        <arg f="tmp" n="m">in 1997</arg>
+        <rel relloc="16">performance</rel>
+        <arg f="" n="0" start="0" end="12">The Bank of China , the largest foreign exchange bank in China ,</arg>
+        <arg f="LVB" n="m" start="13" end="13">had</arg>
+        <arg f="" n="2" start="14" end="14">good</arg>
+        <arg f="" n="1" start="15" end="15">business</arg>
+        <arg f="TMP" n="m" start="17" end="18">in 1997</arg>
       </example>
-
-      <example name="potentially unintuitive args 1 and 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="potentially unintuitive args 1 and 2">
         <text>United posted the best on - time performance .</text>
-        <arg f="" n="2">best</arg>
-        <arg f="" n="1">on - time</arg>
-        <rel f="">performance</rel>
+        <rel relloc="7">performance</rel>
+        <arg f="" n="2" start="3" end="3">best</arg>
+        <arg f="" n="1" start="4" end="6">on - time</arg>
       </example>
-      <example name="" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="">
         <text>I think by any standard , his debate performance was very , very good.</text>
-        <arg f="" n="0">his</arg>
-        <arg f="" n="1">debate</arg>
-        <rel f="">performance</rel>
-        <arg f="" n="2">very, very good</arg>
+        <rel relloc="8">performance</rel>
+        <arg f="" n="0" start="6" end="6">his</arg>
+        <arg f="" n="1" start="7" end="7">debate</arg>
+        <arg f="" n="2" start="10" end="13">very , very good.</arg>
       </example>
-      <example name="args 0 and 1 again" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="args 0 and 1 again">
         <text>the unit 's financial performance this year</text>
-        <arg f="" n="0">the Unit's</arg>
-        <arg f="" n="1">financial</arg>
-        <rel f="">performance</rel>
-        <arg f="tmp" n="m">this year</arg>
+        <rel relloc="4">performance</rel>
+        <arg f="" n="0" start="0" end="2">the unit 's</arg>
+        <arg f="" n="1" start="3" end="3">financial</arg>
+        <arg f="TMP" n="m" start="5" end="6">this year</arg>
       </example>
-      <example name="just arg2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="just arg2">
         <text>Mr. Curcio was succeeded by Ralph E. Reins as chief executive officer following several quarters of lackluster or declining performance .</text>
-        <arg f="" n="2">lackluster or declining</arg>
-        <rel f="">performance</rel>
+        <rel relloc="19">performance</rel>
+        <arg f="" n="2" start="16" end="18">lackluster or declining</arg>
       </example>
-      <example name="" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="">
         <text>Mr. Jefferies 's performance as a witness was expected to affect his sentencing .</text>
-        <arg f="" n="0">Mr. Jefferies's</arg>
-        <rel f="">performance</rel>
-        <arg f="" n="1">as a witness</arg>
+        <rel relloc="3">performance</rel>
+        <arg f="" n="0" start="0" end="2">Mr. Jefferies 's</arg>
+        <arg f="" n="1" start="4" end="6">as a witness</arg>
       </example>
-      <example name="transitive" src="" type="">
+      <example src="" name="transitive">
         <text>If the money manager performing this service is being paid by his clients to match or beat the return of the S&amp; P 500 index, he is likely to remain fully invested at all times.</text>
-        <arg f="" n="0">the money manager</arg>
-        <rel f="">performing</rel>
-        <arg f="" n="1">this service</arg>
+        <rel relloc="4">performing</rel>
+        <arg f="" n="0" start="1" end="3">the money manager</arg>
+        <arg f="" n="1" start="5" end="6">this service</arg>
       </example>
-      <example name="with manner" src="" type="">
+      <example src="" name="with manner">
         <text>Analysts said the fall in pretax profit was due to the group's recent restructuring and sale of peripheral units, and that its remaining businesses are performing well.</text>
-        <arg f="" n="0">its remaining businesses</arg>
-        <rel f="">performing</rel>
-        <arg f="" n="2">well</arg>
+        <rel relloc="25">performing</rel>
+        <arg f="" n="0" start="21" end="23">its remaining businesses</arg>
+        <arg f="" n="2" start="26" end="26">well.</arg>
       </example>
-
+      <note>PERFORMANCE-N NOTES: Reframed by Julia. No Vncls. (from performance.02-n)</note>
+      <note>These two rolesets (.01 and .02) share verbal counterpart frame, but their syntax is different enough here in the nominalized forms that it became necessary to separate them. (from performance.02-n)</note>
     </roleset>
-
   </predicate>
 </frameset>

@@ -1,57 +1,69 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="decorate">
     <roleset id="decorate.01" name="put on decorations, putting decorations on something">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">decorate</alias>
-        <alias framenet="" pos="n" verbnet="">decoration</alias>
+        <alias pos="v">decorate</alias>
+        <alias pos="n">decoration</alias>
       </aliases>
-      <note>DECORATE-V NOTES: Frames file for 'decorate' based on sentences in wsj. Verbnet entries 9.8, 25.3, Framenet entry Adorning. (from decorate.01-v predicate notes)</note>
-      <note>DECORATION-N NOTES: Roleset based on BOLT DF-07. Framed by Claire. (from decoration.01-n)</note>
       <roles>
         <role descr="decorator" f="PAG" n="0">
-          <vnrole vncls="9.8" vntheta="Agent"/>
-          <vnrole vncls="25.3" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="fill-9.8" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="illustrate-25.3" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing decorated" f="GOL" n="1">
-          <vnrole vncls="9.8" vntheta="Destination"/>
-          <vnrole vncls="25.3" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="fill-9.8" version="verbnet3.3">destination</rolelink>
+            <rolelink resource="VerbNet" class="illustrate-25.3" version="verbnet3.3">destination</rolelink>
+          </rolelinks>
         </role>
         <role descr="decorations" f="PPT" n="2">
-          <vnrole vncls="9.8" vntheta="Theme"/>
-          <vnrole vncls="25.3" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="fill-9.8" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="illustrate-25.3" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="passive as verb" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="fill-9.8" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="illustrate-25.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="decorate-v.1" src="annot-overlap" confidence="0.1">3</lexlink>
+      </lexlinks>
+      <example src="" name="passive as verb">
         <text>The spaghetti is made by the Al Ghazel Macaroni Co. in Bethlehem and is marketed in [a package]-1 decorated *trace*-1 with green, black, red and white stripes.</text>
-        <rel f="">decorated</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="2">with green, black, red and white stripes</arg>
+        <rel relloc="18">decorated</rel>
+        <arg f="" n="1" start="19" end="19">*trace*-1</arg>
+        <arg f="" n="2" start="20" end="26">with green, black, red and white stripes.</arg>
       </example>
-      <example name="passive as adjective" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
+      <example src="" name="passive as adjective">
         <text>Linda and Michael (Ms. Close and Mr. Woods), who seem to be pushing 40, live in a large and tastefully decorated home in suburban Seattle.</text>
-        <arg f="MNR" n="M">tastefully</arg>
-        <rel f="">decorated</rel>
-        <arg f="" n="1">home</arg>
+        <rel relloc="20">decorated</rel>
+        <arg f="MNR" n="M" start="19" end="19">tastefully</arg>
+        <arg f="" n="1" start="21" end="21">home</arg>
       </example>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1018" type="">
+      <example src="ontonotes mz/sinorama/10/ectb_1018" name="ARG0 and ARG1">
         <text>They are encouraging modern men to take practical steps to " decorate " themselves .</text>
-        <arg f="" n="0">modern men</arg>
-        <rel f="">decorate</rel>
-        <arg f="" n="1">themselves</arg>
+        <rel relloc="11">decorate</rel>
+        <arg f="" n="0" start="3" end="4">modern men</arg>
+        <arg f="" n="1" start="13" end="13">themselves</arg>
       </example>
-
-      <example name="All arguments" src="" type="">
+      <example src="" name="All arguments">
         <text>... how intrigued and impressed Kathryn and I were at her unique, attractive decoration of the dining table with ordinary, simple breadfruit leaves.</text>
-        <arg f="" n="0">her</arg>
-        <arg f="adj" n="m">unique</arg>
-        <arg f="adj" n="m">attractive</arg>
-        <rel f="">decoration</rel>
-        <arg f="" n="1">of the dining table</arg>
-        <arg f="" n="2">with ordinary, simple breadfruit leaves.</arg>
+        <rel relloc="13">decoration</rel>
+        <arg f="" n="0" start="10" end="10">her</arg>
+        <arg f="ADJ" n="m" start="11" end="11">unique,</arg>
+        <arg f="ADJ" n="m" start="12" end="12">attractive</arg>
+        <arg f="" n="1" start="14" end="17">of the dining table</arg>
+        <arg f="" n="2" start="18" end="22">with ordinary, simple breadfruit leaves.</arg>
       </example>
+      <note>DECORATE-V NOTES: Frames file for 'decorate' based on sentences in wsj. Verbnet entries 9.8, 25.3, Framenet entry Adorning. (from decorate.01-v predicate notes)</note>
+      <note>DECORATION-N NOTES: Roleset based on BOLT DF-07. Framed by Claire. (from decoration.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

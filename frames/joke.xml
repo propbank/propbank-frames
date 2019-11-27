@@ -1,66 +1,89 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="joke">
     <roleset id="joke.01" name="to tell jokes, to tell funnies (jokes!)">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">joke</alias>
-        <alias framenet="" pos="v" verbnet="">joke</alias>
-        <alias framenet="" pos="l" verbnet="">make_joke</alias>
+        <alias pos="n">joke</alias>
+        <alias pos="v">joke</alias>
+        <alias pos="l">make_joke</alias>
       </aliases>
-      <note>JOKE-V NOTES: Frames file for 'joke' based on survey of sentences in the WSJ corpus. Comparison with 'negotiate'. (from joke.01-v predicate notes)</note>
-      <note>JOKE-N NOTES: Roleset based on instances in BOLT P01. Comparison to verb entry joke.01, which maps to VN class 37.6. No FN for the noun. (from joke.01-n)</note>
       <roles>
-        <role descr="joker" f="pag" n="0">
-          <vnrole vncls="37.6" vntheta="agent"/>
+        <role descr="joker" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="chit_chat-37.6" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Chatting" version="1.7">interlocutor_1</rolelink>
+          </rolelinks>
         </role>
-        <role descr="other party joking, joke with" f="ppt" n="1">
-          <vnrole vncls="37.6" vntheta="co-agent"/>
+        <role descr="other party joking, joke with" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="chit_chat-37.6" version="verbnet3.3">co-agent</rolelink>
+            <rolelink resource="FrameNet" class="Chatting" version="1.7">interlocutor_2</rolelink>
+          </rolelinks>
         </role>
-        <role descr="joke" f="com" n="2">
-          <vnrole vncls="37.6" vntheta="topic"/>
+        <role descr="joke" f="COM" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="chit_chat-37.6" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="FrameNet" class="Chatting" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all arguments" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Chatting" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Prevarication" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="chit_chat-37.6" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Contact.Prevarication.Broadcast" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Contact.Prevarication.Correspondence" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Contact.Prevarication.Meet" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Broadcast" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="joke-v.1" src="annot-overlap" confidence="0.1">7</lexlink>
+      </lexlinks>
+      <example src="" name="all arguments">
         <text>It was only earlier this year that the jovial , easygoing executive -- he-3 likes [*-3] to joke with Americans about how his name is synonymous with twelve [*T*-4]-- was appointed [*-1] deputy president [*T*-2] .</text>
-        <arg f="" n="0">[*-3]</arg>
-        <rel f="">joke</rel>
-        <arg f="" n="1">with Americans</arg>
-        <arg f="" n="2">about how his name is synonymous with twelve [*T*-4]</arg>
+        <rel relloc="17">joke</rel>
+        <arg f="" n="0" start="12" end="12">--</arg>
+        <arg f="" n="1" start="18" end="19">with Americans</arg>
+        <arg f="" n="2" start="20" end="28">about how his name is synonymous with twelve [*T*-4]--</arg>
       </example>
-      <example name="extracted Arg2" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>[`` He taught me how [*] to play like a gypsy [*T*-1], '']-2 jokes [*T*-2] the musician .</text>
-        <rel f="">jokes</rel>
-        <arg f="" n="2">[*T*-2]</arg>
-        <arg f="" n="0">the musician</arg>
+      <example src="" name="extracted Arg2">
+        <text>[`` He taught me how [*] to play like a gypsy ], '' jokes [*T*] the musician .</text>
+        <rel relloc="13">jokes</rel>
+        <arg f="" n="2" start="11" end="12">], ''</arg>
+        <arg f="" n="0" start="15" end="16">the musician</arg>
       </example>
-      <example name="All args" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="All args">
         <text>I also listened to his jokes with Kissinger about exporting 10 million female Chinese to the U.S., which stunned the U.S. Secretary of State.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">jokes</rel>
-        <arg f="" n="1">with Kissinger</arg>
-        <arg f="" n="2">about exporting 10 million female Chinese to the U.S.</arg>
+        <rel relloc="5">jokes</rel>
+        <arg f="" n="0" start="4" end="4">his</arg>
+        <arg f="" n="1" start="6" end="7">with Kissinger</arg>
+        <arg f="" n="2" start="8" end="16">about exporting 10 million female Chinese to the U.S.,</arg>
       </example>
+      <note>JOKE-V NOTES: Frames file for 'joke' based on survey of sentences in the WSJ corpus. Comparison with 'negotiate'. (from joke.01-v predicate notes)</note>
+      <note>JOKE-N NOTES: Roleset based on instances in BOLT P01. Comparison to verb entry joke.01, which maps to VN class 37.6. No FN for the noun. (from joke.01-n)</note>
     </roleset>
   </predicate>
   <predicate lemma="joke_around">
     <roleset id="joke_around.02" name="having a laugh together">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">joke_around</alias>
+        <alias pos="v">joke_around</alias>
       </aliases>
-      <note>JOKE_AROUND-V NOTES: Roles identical to "joke".Frames created by Olga. Edited by Miriam. (from joke.02-v predicate notes)</note>
       <roles>
-        <role descr="joker" f="pag" n="0"/>
-        <role descr="other party joking, joke with" f="ppt" n="1"/>
-        <role descr="joke" f="com" n="2"/>
+        <role descr="joker" f="PAG" n="0"/>
+        <role descr="other party joking, joke with" f="PPT" n="1"/>
+        <role descr="joke" f="COM" n="2"/>
       </roles>
-      <example name="joke around" src="" type="">
-        <inflection aspect="progressive" form="full" person="ns" tense="present" voice="active"/>
-        <text>As long as we go out and have fun and laugh and , you know , I think [0] it takes a lot of pressure off of everyone , but the key is going out and having fun , laughing and joking around , you know , doing the little things that we 've been doing [*T*-1]all year .</text>
-        <rel f="">[joking][around]</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="" name="joke around">
+        <text>As long as we go out and have fun and laugh and , you know , I think [0] it takes a lot of pressure off of everyone , but the key is going out and having fun , laughing and joking around , you know , doing the little things that we 've been doing []all year .</text>
+        <rel relloc="41 42">joking around</rel>
       </example>
+      <note>JOKE_AROUND-V NOTES: Roles identical to "joke".Frames created by Olga. Edited by Miriam. (from joke.02-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

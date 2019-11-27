@@ -1,40 +1,65 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="jail">
     <roleset id="jail.01" name="put in jail">
       <aliases>
-        <alias framenet="imprisonment" pos="v" verbnet="">jail</alias>
+        <alias pos="v">jail</alias>
       </aliases>
-      <note>JAIL-V NOTES: Based on sentences in wsj. VN class pocket-9.10. FN class imprisonment. Updated by Katie 12/10 (from jail.01-v)</note>
       <roles>
         <role descr="court, judge, jury" f="PAG" n="0">
-          <vnrole vncls="9.10" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pocket-9.10" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Imprisonment" version="1.7">authorities</rolelink>
+          </rolelinks>
         </role>
         <role descr="criminal" f="PPT" n="1">
-          <vnrole vncls="9.10" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pocket-9.10" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Imprisonment" version="1.7">prisoner</rolelink>
+          </rolelinks>
         </role>
-        <role descr="term" f="tmp" n="2"/>
-        <role descr="cause, misdeed" f="cau" n="3"/>
+        <role descr="term" f="TMP" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Imprisonment" version="1.7">duration</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="cause, misdeed" f="CAU" n="3">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Imprisonment" version="1.7">offense</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="with term" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Imprisonment" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="pocket-9.10" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Justice.ArrestJailDetain.ArrestJailDetain" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Movement.TransportArtifact.PreventExit" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Movement.TransportPerson.PreventExit" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Arrestjail" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="jail-v.1" src="annot-overlap" confidence="0.1">9</lexlink>
+      </lexlinks>
+      <example src="" name="with term">
         <text>Four years ago, he jailed all nine members of the Cambria County School Board for several hours after they defied his order to extend the school year by several weeks to make up for time lost during a teachers' strike.</text>
-        <arg f="tmp" n="m">Four years ago</arg>
-        <arg f="" n="0">he</arg>
-        <rel f="">jailed</rel>
-        <arg f="" n="1">all nine members of the Cambria County School Board</arg>
-        <arg f="" n="2">for several hours</arg>
-        <arg f="tmp" n="m">after they defied his order to extend the school year by several weeks</arg>
-        <arg f="prp" n="m">to make up for time lost during a teachers' strike</arg>
+        <rel relloc="4">jailed</rel>
+        <arg f="TMP" n="m" start="0" end="2">Four years ago,</arg>
+        <arg f="" n="0" start="3" end="3">he</arg>
+        <arg f="" n="1" start="5" end="13">all nine members of the Cambria County School Board</arg>
+        <arg f="" n="2" start="14" end="16">for several hours</arg>
+        <arg f="TMP" n="m" start="17" end="29">after they defied his order to extend the school year by several weeks</arg>
+        <arg f="PRP" n="m" start="30" end="39">to make up for time lost during a teachers' strike.</arg>
       </example>
-      <example name="with crime" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
+      <example src="" name="with crime">
         <text>And so it seems to be with the case of Elizabeth Morgan, [the Washington, D.C., plastic surgeon]-1 jailed *trace*-1 in a child custody case for refusing to reveal the whereabouts of her daughter.</text>
-        <rel f="">jailed</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="loc" n="m">in a child custody case</arg>
-        <arg f="" n="3">for refusing to reveal the whereabouts of her daughter</arg>
+        <rel relloc="17">jailed</rel>
+        <arg f="" n="1" start="18" end="18">*trace*-1</arg>
+        <arg f="LOC" n="m" start="19" end="23">in a child custody case</arg>
+        <arg f="" n="3" start="24" end="32">for refusing to reveal the whereabouts of her daughter.</arg>
       </example>
+      <note>JAIL-V NOTES: Based on sentences in wsj. VN class pocket-9.10. FN class imprisonment. Updated by Katie 12/10 (from jail.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

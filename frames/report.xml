@@ -1,116 +1,141 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="report">
     <roleset id="report.01" name="report, tell, writing/work-of-art, relating info, formally">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">report</alias>
-        <alias framenet="Statement Reporting" pos="v" verbnet="">report</alias>
-        <alias framenet="" pos="n" verbnet="">reporting</alias>
+        <alias pos="n">report</alias>
+        <alias pos="v">report</alias>
+        <alias pos="n">reporting</alias>
+        <argalias pos="n" arg="0">reporter</argalias>
       </aliases>
+      <roles>
+        <role descr="Reporter" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="say-37.7-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="consider-29.9-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="characterize-29.2-1-2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">speaker</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing reported" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="say-37.7-1" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="VerbNet" class="consider-29.9-1" version="verbnet3.3">attribute</rolelink>
+            <rolelink resource="VerbNet" class="characterize-29.2-1-2" version="verbnet3.3">attribute</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">message</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">topic</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity reported to" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="say-37.7-1" version="verbnet3.3">recipient</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">addressee</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Statement" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Reporting" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="say-37.7-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="consider-29.9-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="characterize-29.2-1-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Contact.PublicStatementInPerson.Broadcast" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Correspondence" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Broadcast" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="report-v.1" src="annot-overlap" confidence="0.1">489</lexlink>
+        <lexlink resource="onsense" version="on5" class="report-v.2" src="annot-overlap" confidence="0.1">5</lexlink>
+        <lexlink resource="onsense" version="on5" class="report-n.2" src="annot-overlap" confidence="0.1">114</lexlink>
+        <lexlink resource="onsense" version="on5" class="report-v.3" src="annot-overlap" confidence="0.1">15</lexlink>
+        <lexlink resource="onsense" version="on5" class="report-v.5" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="" name="just the news">
+        <text>Commonwealth Edison reported earnings of $737 million.</text>
+        <rel relloc="2">reported</rel>
+        <arg f="" n="0" start="0" end="1">Commonwealth Edison</arg>
+        <arg f="" n="1" start="3" end="6">earnings of $737 million.</arg>
+      </example>
+      <example src="" name="just hearer">
+        <text>He will report to Donald Pardus.</text>
+        <rel relloc="2">report</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
+        <arg f="" n="2" start="3" end="5">to Donald Pardus.</arg>
+      </example>
+      <example src="" name="passivized">
+        <text> Preliminary findings were reported more than a year ago by the AMA</text>
+        <rel relloc="4">reported</rel>
+        <arg f="" n="1" start="1" end="2">Preliminary findings</arg>
+        <arg f="TMP" n="m" start="5" end="9">more than a year ago</arg>
+        <arg f="" n="0" start="10" end="12">by the AMA</arg>
+      </example>
+      <example src="" name="passive extraction">
+        <text>[Retail sales]-1 were reported *trace*-1 slow in most districts.</text>
+        <rel relloc="3">reported</rel>
+        <arg f="" n="1" start="5" end="5">slow</arg>
+        <arg f="LOC" n="m" start="6" end="8">in most districts.</arg>
+      </example>
+      <example src="" name="another passive extraction">
+        <text>[Hammersmith]-1 is reported *trace*-1 to have been sold.</text>
+        <rel relloc="2">reported</rel>
+        <arg f="" n="1" start="4" end="7">to have been sold.</arg>
+      </example>
+      <example src="" name="untargeted passive">
+        <text>This goes past what had been reported before.</text>
+        <rel relloc="6">reported</rel>
+        <arg f="" n="0" start="3" end="3">what</arg>
+        <arg f="TMP" n="m" start="7" end="7">before.</arg>
+      </example>
+      <example src="" name="fronted">
+        <text> The FBI found evidence for an alien invasion, Agt Mulder reported</text>
+        <rel relloc="11">reported</rel>
+        <arg f="" n="0" start="9" end="10">Agt Mulder</arg>
+        <arg f="" n="1" start="1" end="8">The FBI found evidence for an alien invasion,</arg>
+      </example>
+      <example src="" name="inverted">
+        <text> Japanese corporations bought South Dakota, reported Newsweek.</text>
+        <rel relloc="6">reported</rel>
+        <arg f="" n="1" start="1" end="5">Japanese corporations bought South Dakota,</arg>
+        <arg f="" n="0" start="7" end="7">Newsweek.</arg>
+      </example>
+      <example src="ontonotes mz/sinorama/10/ectb_1031" name="ARG0 and ARG1">
+        <text>Also , when Chen Shui - bian visited the Dominican Republic in August , the ROC ambassador there reported that in 1997 , the PRC managed to get the Dominican Republic 's agreement to the establishment of a PRC office in the DR capital by playing on the DR 's desire to extend its consular rights in Hong Kong .</text>
+        <rel relloc="18">reported</rel>
+        <arg f="DIS" n="m" start="0" end="0">Also</arg>
+        <arg f="TMP" n="m" start="2" end="12">when Chen Shui - bian visited the Dominican Republic in August</arg>
+        <arg f="" n="0" start="14" end="17">the ROC ambassador there</arg>
+        <arg f="" n="1" start="19" end="58">that in 1997 , the PRC managed to get the Dominican Republic 's agreement to the establishment of a PRC office in the DR capital by playing on the DR 's desire to extend its consular rights in Hong Kong</arg>
+      </example>
+      <example src="" name="Example with all args">
+        <text>its report to Congress on international economic policies</text>
+        <rel relloc="1">report</rel>
+        <arg f="" n="0" start="0" end="0">its</arg>
+        <arg f="" n="2" start="2" end="3">to Congress</arg>
+        <arg f="" n="1" start="4" end="7">on international economic policies</arg>
+      </example>
+      <example src="" name="Example with only arg 1">
+        <text>the trade report</text>
+        <rel relloc="2">report</rel>
+        <arg f="" n="1" start="1" end="1">trade</arg>
+      </example>
+      <example src="" name="Example with arg 0 and arg 1">
+        <text>Their report on a struggle that affects more than ten million americans</text>
+        <rel relloc="1">report</rel>
+        <arg f="" n="0" start="0" end="0">Their</arg>
+        <arg f="" n="1" start="2" end="11">on a struggle that affects more than ten million americans</arg>
+      </example>
+      <example src="internet" name="all args">
+        <text>The inconsistencies in Dorner's various explanations as to why there was a delay in his reporting the alleged kicks to a supervisor</text>
+        <rel relloc="15">reporting</rel>
+        <arg f="" n="0" start="14" end="14">his</arg>
+        <arg f="" n="1" start="16" end="18">the alleged kicks</arg>
+        <arg f="" n="2" start="19" end="21">to a supervisor</arg>
+      </example>
       <note>REPORT-V NOTES: Member of Vncls say-37.7-1, consider-29.9-1, characterize-29.2-1-2. Updated by Julia, 10/2010. (from report.01-v)</note>
       <note>REPORT-N NOTES: Roleset based on report.01. Verbnet class say 37.7 and charactorize-29.2. Framed by Katie (from report.01-n)</note>
       <note>REPORTING-N NOTES: Added by Julia based on BOLT-5, report-v.01. Corresponds to VNcls say-37.7-1, consider-29.9-1, characterize-29.2-1-2. (from reporting.01-n)</note>
-      <roles>
-        <role descr="Reporter" f="PAG" n="0">
-          <vnrole vncls="37.7-1" vntheta="Agent"/>
-          <vnrole vncls="29.9-1" vntheta="Agent"/>
-          <vnrole vncls="29.2-1-2" vntheta="Agent"/>
-        </role>
-        <role descr="thing reported" f="PPT" n="1">
-          <vnrole vncls="37.7-1" vntheta="Topic"/>
-          <vnrole vncls="29.9-1" vntheta="Theme"/>
-          <vnrole vncls="29.9-1" vntheta="Attribute"/>
-          <vnrole vncls="29.2-1-2" vntheta="Theme"/>
-          <vnrole vncls="29.2-1-2" vntheta="Attribute"/>
-        </role>
-        <role descr="entity reported to" f="GOL" n="2">
-          <vnrole vncls="37.7-1" vntheta="Recipient"/>
-        </role>
-      </roles>
-      <example name="just the news" src="" type="">
-        <text>Commonwealth Edison reported earnings of $737 million.</text>
-        <arg f="" n="0">Commonwealth Edison</arg>
-        <rel f="">reported</rel>
-        <arg f="" n="1">earnings of $737 million</arg>
-      </example>
-      <example name="just hearer" src="" type="">
-        <text>He will report to Donald Pardus.</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">report</rel>
-        <arg f="" n="2">to Donald Pardus</arg>
-      </example>
-      <example name="passivized" src="" type="">
-        <text>[Preliminary findings]-1 were reported *trace*-1 more than a year ago by the AMA</text>
-        <rel f="">reported</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="tmp" n="m">more than a year ago</arg>
-        <arg f="" n="0">(by the AMA)</arg>
-      </example>
-      <example name="passive extraction" src="" type="">
-        <text>[Retail sales]-1 were reported *trace*-1 slow in most districts.</text>
-        <rel f="">reported</rel>
-        <arg f="" n="1">*trace*-1 slow</arg>
-        <arg f="loc" n="m">in most districts</arg>
-      </example>
-      <example name="another passive extraction" src="" type="">
-        <text>[Hammersmith]-1 is reported *trace*-1 to have been sold.</text>
-        <rel f="">reported</rel>
-        <arg f="" n="1">*trace*-1 to have been sold</arg>
-      </example>
-      <example name="untargeted passive" src="" type="">
-        <text>This goes past what-1 had been reported *trace*-1 before.</text>
-        <rel f="">reported</rel>
-        <arg f="" n="0">*trace*-1</arg>
-        <arg f="tmp" n="m">before</arg>
-      </example>
-      <example name="fronted" src="" type="">
-        <text>[The FBI found evidence for an alien invasion]-1, Agt Mulder reported *trace*-1</text>
-        <arg f="" n="0">Agt Mulder</arg>
-        <rel f="">reported</rel>
-        <arg f="" n="1">*trace*-1</arg>
-      </example>
-      <example name="inverted" src="" type="">
-        <text>[Japanese corporations bought South Dakota]-1, reported *trace*-1 Newsweek.</text>
-        <rel f="">reported</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="0">Newsweek</arg>
-      </example>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1031" type="">
-        <text>Also , when Chen Shui - bian visited the Dominican Republic in August , the ROC ambassador there reported that in 1997 , the PRC managed to get the Dominican Republic 's agreement to the establishment of a PRC office in the DR capital by playing on the DR 's desire to extend its consular rights in Hong Kong .</text>
-        <arg f="dis" n="m">Also</arg>
-        <arg f="tmp" n="m">when Chen Shui - bian visited the Dominican Republic in August</arg>
-        <arg f="" n="0">the ROC ambassador there</arg>
-        <rel f="">reported</rel>
-        <arg f="" n="1">that in 1997 , the PRC managed to get the Dominican Republic 's agreement to the establishment of a PRC office in the DR capital by playing on the DR 's desire to extend its consular rights in Hong Kong</arg>
-      </example>
-
-      <example name="Example with all args" src="" type="">
-        <text>its report to Congress on international economic policies</text>
-        <arg f="" n="0">its</arg>
-        <rel f="">report</rel>
-        <arg f="" n="2">to Congress</arg>
-        <arg f="" n="1">on international economic policies</arg>
-      </example>
-      <example name="Example with only arg 1" src="" type="">
-        <text>the trade report</text>
-        <arg f="" n="1">trade</arg>
-        <rel f="">report</rel>
-      </example>
-      <example name="Example with arg 0 and arg 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Their report on a struggle that affects more than ten million americans</text>
-        <arg f="" n="0">Their</arg>
-        <rel f="">report</rel>
-        <arg f="" n="1">on a struggle that affects more than ten million americans</arg>
-      </example>
-      <example name="all args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The inconsistencies in Dorner's various explanations as to why there was a delay in his reporting the alleged kicks to a supervisor</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">reporting</rel>
-        <arg f="" n="1">the alleged kicks</arg>
-        <arg f="" n="2">to a supervisor</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

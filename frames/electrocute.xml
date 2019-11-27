@@ -1,36 +1,56 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="electrocute">
     <roleset id="electrocute.01" name="cause an electric shock in an object">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">electrocute</alias>
+        <alias pos="v">electrocute</alias>
       </aliases>
-      <note>ELECTROCUTE-V NOTES: Frames file for 'electrocute' based on sentences in ectb2. Verbnet entry 42.2. (from electrocute.01-v predicate notes)</note>
       <roles>
         <role descr="Causer of electrocution" f="PAG" n="0">
-          <vnrole vncls="42.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="poison-42.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">cause</rolelink>
+          </rolelinks>
         </role>
         <role descr="electrocuted entity" f="PPT" n="1">
-          <vnrole vncls="42.2" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="poison-42.2" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">victim</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">body_part</rolelink>
+          </rolelinks>
         </role>
         <role descr="instrument, electrocuted with what device?" f="MNR" n="2">
-          <vnrole vncls="42.2" vntheta="Instrument"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="poison-42.2" version="verbnet3.3">instrument</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">means</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">instrument</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="Typical: without instrument" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_harm" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="poison-42.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+      </lexlinks>
+      <example src="" name="Typical: without instrument">
         <text>... The River Preservation Team also posted notices *ICH* on the riverbank in May asking [locals and out-of-town visitors]-1 *-1 not to poison or electrocute fish or catch them in nets.</text>
-        <arg f="" n="0">*-1 -- locals and out-of-town visitors</arg>
-        <arg f="NEG" n="M">not</arg>
-        <rel f="">electrocute</rel>
-        <arg f="" n="1">fish</arg>
+        <rel relloc="24">electrocute</rel>
+        <arg f="" n="0" start="14" end="18">asking [locals and out-of-town visitors]-1</arg>
+        <arg f="NEG" n="M" start="20" end="20">not</arg>
+        <arg f="" n="1" start="25" end="25">fish</arg>
       </example>
-      <example name="ARG2" src="probably COCA (2018 example fix)" type="">
-        <text>On July 4, 2003, [a 36-year-old male lead electrician]-1 died after being electrocuted *trace*-1 with 480 volts of electricity.</text>
-        <rel f="">electrocuted</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="2">with 480 volts of electricity.</arg>
+      <example src="probably COCA (2018 example fix)" name="ARG2">
+        <text>On July 4, 2003, a 36-year-old male lead electrician died after being electrocuted with 480 volts of electricity.</text>
+        <rel relloc="12">electrocuted</rel>
+        <arg f="" n="1" start="4" end="8">a 36-year-old male lead electrician</arg>
+        <arg f="" n="2" start="13" end="17">with 480 volts of electricity.</arg>
       </example>
-
+      <note>ELECTROCUTE-V NOTES: Frames file for 'electrocute' based on sentences in ectb2. Verbnet entry 42.2. (from electrocute.01-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

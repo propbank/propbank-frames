@@ -1,44 +1,56 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="result">
     <roleset id="result.01" name="come about, become, come about from a prior condition">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">result</alias>
-        <alias framenet="" pos="n" verbnet="">result</alias>
-        <alias framenet="Causation" pos="j" verbnet="">resultant</alias>
+        <alias pos="v">result</alias>
+        <alias pos="n">result</alias>
+        <alias pos="j">resultant</alias>
       </aliases>
-      <note>RESULT-V NOTES: (from result.01-v)</note>
-      <note>RESULTANT-J NOTES: Roleset based on instances in Thyme, framed by Claire. Comparison to result-v.01. (from resultant.01-j)</note>
       <roles>
         <role descr="Theme, prior condition" f="PPT" n="1">
-          <vnrole vncls="48.1.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="appear-48.1.1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="Goal, end condition" f="LOC" n="2">
-          <vnrole vncls="48.1.1" vntheta="Location"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="appear-48.1.1" version="verbnet3.3">location</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="result-v: Ergative" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Causation" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="appear-48.1.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="result-v.1" src="annot-overlap" confidence="0.1">138</lexlink>
+      </lexlinks>
+      <example src="" name="result-v: Ergative">
         <text>The compromise plan will result in the elimination of American jobs.</text>
-        <arg f="" n="1">The compromise plan</arg>
-        <rel f="">result</rel>
-        <arg f="" n="2">in the elimination of American jobs</arg>
+        <rel relloc="4">result</rel>
+        <arg f="" n="1" start="0" end="2">The compromise plan</arg>
+        <arg f="" n="2" start="5" end="10">in the elimination of American jobs.</arg>
       </example>
-      <example name="result-v: goal subject" src="" type="">
+      <example src="" name="result-v: goal subject">
         <text>The hazards to workers resulted from corporate indifference to worker safety. Arg2 rel Arg1-from</text>
-        <arg f="" n="2">The hazards to workers</arg>
-        <rel f="">resulted</rel>
-        <arg f="" n="1">from corporate indifference to worker safety</arg>
+        <rel relloc="4">resulted</rel>
+        <arg f="" n="2" start="0" end="3">The hazards to workers</arg>
+        <arg f="" n="1" start="5" end="10">from corporate indifference to worker safety.</arg>
       </example>
-      <example name="resultant-j: Both args" src="Thyme" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="Thyme" name="resultant-j: Both args">
         <text>Similarly , the breast cancer could potentially be resultant from radiation exposure , but that still leaves the colon cancer .</text>
-        <arg f="adv" n="m">Similarly</arg>
-        <arg f="" n="2">the breast cancer</arg>
-        <arg f="mod" n="m">could</arg>
-        <arg f="adv" n="m">potentially</arg>
-        <rel f="">resultant</rel>
-        <arg f="" n="1">from radiation exposure</arg>
+        <rel relloc="8">resultant</rel>
+        <arg f="ADV" n="m" start="0" end="0">Similarly</arg>
+        <arg f="" n="2" start="2" end="4">the breast cancer</arg>
+        <arg f="MOD" n="m" start="5" end="5">could</arg>
+        <arg f="ADV" n="m" start="6" end="6">potentially</arg>
+        <arg f="" n="1" start="9" end="11">from radiation exposure</arg>
       </example>
+      <note>RESULT-V NOTES: (from result.01-v)</note>
+      <note>RESULTANT-J NOTES: Roleset based on instances in Thyme, framed by Claire. Comparison to result-v.01. (from resultant.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

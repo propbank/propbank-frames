@@ -1,122 +1,161 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="plunge">
     <roleset id="plunge.01" name="fall precipitously">
       <aliases>
-        <alias framenet="Placing" pos="v" verbnet="">plunge</alias>
-        <alias framenet="" pos="n" verbnet="">plunge</alias>
-        <alias framenet="" pos="l" verbnet="">take_plunge</alias>
+        <alias pos="v">plunge</alias>
+        <alias pos="n">plunge</alias>
+        <alias pos="l">take_plunge</alias>
       </aliases>
-      <note>PLUNGE-V NOTES: For examples of usage of the higher-numbered Args refer to 'fall' (from plunge.01-v)</note>
-      <note>PLUNGE-N NOTES: Roleset based on verb entry plunge.01. Corresponds to VN class calibratable_cos-45.6-1. (from plunge.01-n)</note>
       <roles>
-        <role descr="Logical subject, patient, thing falling" f="ppt" n="1">
-          <vnrole vncls="45.6-1" vntheta="patient"/>
-          <vnrole vncls="47.7" vntheta="theme"/>
+        <role descr="Logical subject, patient, thing falling" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="45.6-1" version="UNK">patient</rolelink>
+            <rolelink resource="VerbNet" class="meander-47.7" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">source</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="EXT, amount fallen" f="ext" n="2">
-          <vnrole vncls="45.6-1" vntheta="extent"/>
+        <role descr="EXT, amount fallen" f="EXT" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="45.6-1" version="UNK">extent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="start point" f="dir" n="3"/>
-        <role descr="end point, end state of arg1" f="gol" n="4"/>
-        <role descr="medium" f="prd" n="5">
-          <vnrole vncls="45.6-1" vntheta="attribute"/>
+        <role descr="start point" f="DIR" n="3"/>
+        <role descr="end point, end state of arg1" f="GOL" n="4">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">goal</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">path</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="medium" f="PRD" n="5">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="45.6-1" version="UNK">attribute</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">result</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="EXT" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Placing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="45.6-1" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="meander-47.7" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="plunge-v.2" src="annot-overlap" confidence="0.1">38</lexlink>
+        <lexlink resource="onsense" version="on5" class="plunge-v.3" src="annot-overlap" confidence="0.1">3</lexlink>
+      </lexlinks>
+      <example src="" name="EXT">
         <text>The Mexico Fund plunged about 18%</text>
-        <arg f="" n="1">The Mexico Fund</arg>
-        <rel f="">plunged</rel>
-        <arg f="" n="2">about 18%</arg>
+        <rel relloc="3">plunged</rel>
+        <arg f="" n="1" start="0" end="2">The Mexico Fund</arg>
+        <arg f="" n="2" start="4" end="5">about 18%</arg>
       </example>
-      <example name="variant" src="" type="">
+      <example src="" name="variant">
         <text>Japanese intervention has kept [the US currency]-1 from *trace*-1 plunging below key levels against the mark.</text>
-        <arg f="" n="1">*trace*</arg>
-        <rel f="">plunging</rel>
-        <arg f="" n="4">below key levels</arg>
-        <arg f="loc" n="m">against the mark</arg>
+        <rel relloc="9">plunging</rel>
+        <arg f="" n="1" start="8" end="8">*trace*-1</arg>
+        <arg f="" n="4" start="10" end="12">below key levels</arg>
+        <arg f="LOC" n="m" start="13" end="15">against the mark.</arg>
       </example>
-      <example name="Within LVC - Arg 1 only" src="nouns-lv" type="">
+      <example src="nouns-lv" name="Within LVC - Arg 1 only">
         <text>`` You may have to sell your stocks at a time when-2 the market takes a plunge *T*-2 , '' says Mr. Blankenship , a Del Mar , Calif. financial planner .</text>
-        <arg f="" n="1">the market</arg>
-        <arg f="lvb" n="m">takes</arg>
-        <rel f="">plunge</rel>
-        <arg f="tmp" n="m">*T*-2</arg>
+        <rel relloc="16">plunge</rel>
+        <arg f="" n="1" start="12" end="13">the market</arg>
+        <arg f="LVB" n="m" start="14" end="14">takes</arg>
+        <arg f="TMP" n="m" start="17" end="17">*T*-2</arg>
       </example>
-      <example name="With attribute" src="web" type="">
+      <example src="web" name="With attribute">
         <text>Lindsay Williams correctly foretold oil's plunge in price.</text>
-        <arg f="" n="1">Oil's</arg>
-        <rel f="">plunge</rel>
-        <arg f="" n="5">in price</arg>
+        <rel relloc="5">plunge</rel>
+        <arg f="" n="1" start="4" end="4">oil's</arg>
+        <arg f="" n="5" start="6" end="7">in price.</arg>
       </example>
-      <example name="Args 1, 3, 4" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="Args 1, 3, 4">
         <text>What company -- and what stock -- it's the big winner from the plunge in oil prices from $148 a barrel in July to less than $43 a barrel on Dec. 19.</text>
-        <rel f="">plunge</rel>
-        <arg f="" n="1">in oil prices</arg>
-        <arg f="" n="3">from $148 a barrel in July</arg>
-        <arg f="" n="4">to less than $43 a barrel on Dec. 19.</arg>
+        <rel relloc="13">plunge</rel>
+        <arg f="" n="1" start="14" end="16">in oil prices</arg>
+        <arg f="" n="3" start="17" end="22">from $148 a barrel in July</arg>
+        <arg f="" n="4" start="23" end="31">to less than $43 a barrel on Dec. 19.</arg>
       </example>
+      <note>PLUNGE-V NOTES: For examples of usage of the higher-numbered Args refer to 'fall' (from plunge.01-v)</note>
+      <note>PLUNGE-N NOTES: Roleset based on verb entry plunge.01. Corresponds to VN class calibratable_cos-45.6-1. (from plunge.01-n)</note>
     </roleset>
     <roleset id="plunge.02" name="immerse forcefully, dive into water or metaphorically dive into sth">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">plunge</alias>
-        <alias framenet="" pos="n" verbnet="">plunge</alias>
+        <alias pos="v">plunge</alias>
+        <alias pos="n">plunge</alias>
       </aliases>
-      <note>PLUNGE-V NOTES: Frames file for 'plunge' based on survey of initial sentences of big corpus and comparison with 'fall' (from plunge.02-v predicate notes)</note>
-      <note>PLUNGE-N NOTES: Roleset based on verb entry plunge.02; corresponds to VN class escape-51.1-2. and meander-47.7 (from plunge.02-n)</note>
       <roles>
-        <role descr="placer, causer of immersion" f="pag" n="0"/>
-        <role descr="thing being immersed" f="ppt" n="1">
-          <vnrole vncls="51.1" vntheta="theme"/>
+        <role descr="placer, causer of immersion" f="PAG" n="0"/>
+        <role descr="thing being immersed" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="escape-51.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Motion_directional" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="in what" f="loc" n="2">
-          <vnrole vncls="51.1" vntheta="destination"/>
+        <role descr="in what" f="LOC" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="escape-51.1" version="verbnet3.3">destination</rolelink>
+            <rolelink resource="FrameNet" class="Motion_directional" version="1.7">goal</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ergative" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Motion_directional" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="escape-51.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="plunge-v.1" src="annot-overlap" confidence="0.1">6</lexlink>
+        <lexlink resource="onsense" version="on5" class="plunge-v.3" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="" name="ergative">
         <text>"Attention" yelled our pilot as our basket plunged into the canal.</text>
-        <arg f="" n="1">our basket</arg>
-        <rel f="">plunged</rel>
-        <arg f="" n="2">into the canal</arg>
+        <rel relloc="7">plunged</rel>
+        <arg f="" n="1" start="5" end="6">our basket</arg>
+        <arg f="" n="2" start="8" end="10">into the canal.</arg>
       </example>
-      <example name="agentive" src="" type="">
+      <example src="" name="agentive">
         <text>We scuttled along for a few feet before he plunged us into the drink again.</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">plunged</rel>
-        <arg f="" n="1">us</arg>
-        <arg f="" n="2">into the drink</arg>
-        <arg f="tmp" n="m">again</arg>
+        <rel relloc="9">plunged</rel>
+        <arg f="" n="0" start="8" end="8">he</arg>
+        <arg f="" n="1" start="10" end="10">us</arg>
+        <arg f="" n="2" start="11" end="13">into the drink</arg>
+        <arg f="TMP" n="m" start="14" end="14">again.</arg>
       </example>
-      <example name="non-liquid arg2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I-1 once found myself holding a steak knife - ready *PRO*-1 to plunge it into my chest .</text>
-        <arg f="" n="0">*PRO*-1</arg>
-        <rel f="">plunge</rel>
-        <arg f="" n="1">it</arg>
-        <arg f="" n="2">into my chest</arg>
+      <example src="" name="non-liquid arg2">
+        <text>I once found myself holding a steak knife - ready to plunge it into my chest .</text>
+        <rel relloc="11">plunge</rel>
+        <arg f="" n="0" start="0" end="0">I</arg>
+        <arg f="" n="1" start="12" end="12">it</arg>
+        <arg f="" n="2" start="13" end="15">into my chest</arg>
       </example>
-      <example name="Agent and plunger conflated in arg0" src="web" type="">
+      <example src="web" name="Agent and plunger conflated in arg0">
         <text>His plunge into the pool made a great splash.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">plunge</rel>
-        <arg f="" n="2">into the pool</arg>
+        <rel relloc="1">plunge</rel>
+        <arg f="" n="0" start="0" end="0">His</arg>
+        <arg f="" n="2" start="2" end="4">into the pool</arg>
       </example>
-      <example name="Non-agentive plunger: arg1" src="web" type="">
+      <example src="web" name="Non-agentive plunger: arg1">
         <text>He recalls the majesty of the river's plunge into the abyss.</text>
-        <arg f="" n="1">the river's</arg>
-        <rel f="">plunge</rel>
-        <arg f="" n="2">into the abyss</arg>
+        <rel relloc="7">plunge</rel>
+        <arg f="" n="1" start="5" end="6">the river's</arg>
+        <arg f="" n="2" start="8" end="10">into the abyss.</arg>
       </example>
-      <example name="All arguments" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="All arguments">
         <text>He began his final plunge of the knife into Jimac's heart.</text>
-        <arg f="" n="0">his</arg>
-        <arg f="tmp" n="m">final</arg>
-        <rel f="">plunge</rel>
-        <arg f="" n="1">of the knife</arg>
-        <arg f="" n="2">into Jimac's heart</arg>
+        <rel relloc="4">plunge</rel>
+        <arg f="" n="0" start="2" end="2">his</arg>
+        <arg f="TMP" n="m" start="3" end="3">final</arg>
+        <arg f="" n="1" start="5" end="7">of the knife</arg>
+        <arg f="" n="2" start="8" end="10">into Jimac's heart.</arg>
       </example>
+      <note>PLUNGE-V NOTES: Frames file for 'plunge' based on survey of initial sentences of big corpus and comparison with 'fall' (from plunge.02-v predicate notes)</note>
+      <note>PLUNGE-N NOTES: Roleset based on verb entry plunge.02; corresponds to VN class escape-51.1-2. and meander-47.7 (from plunge.02-n)</note>
     </roleset>
   </predicate>
 </frameset>

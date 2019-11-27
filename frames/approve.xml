@@ -1,74 +1,91 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="approve">
     <roleset id="approve.01" name="assent to">
       <aliases>
-        <alias framenet="Grant_permission Deny_or_grant_permission" pos="v" verbnet="">approve</alias>
-        <alias framenet="Grant_permission" pos="n" verbnet="">approval</alias>
+        <alias pos="v">approve</alias>
+        <alias pos="n">approval</alias>
       </aliases>
+      <roles>
+        <role descr="approver" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="31.3-6" version="UNK">experiencer</rolelink>
+            <rolelink resource="VerbNet" class="allow-64.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="judgment-33.1-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Grant_permission" version="UNK">grantor</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing approved" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="31.3-6" version="UNK">stimulus</rolelink>
+            <rolelink resource="VerbNet" class="allow-64.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="judgment-33.1-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Grant_permission" version="UNK">grantee</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="secondary attribute" f="PRD" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Deny_or_grant_permission" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Grant_permission" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="31.3-6" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="64" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="33" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="approve-v.1" src="annot-overlap" confidence="0.1">134</lexlink>
+        <lexlink resource="onsense" version="on5" class="approve-v.2" src="annot-overlap" confidence="0.1">6</lexlink>
+        <lexlink resource="onsense" version="on5" class="approval-n.1" src="annot-overlap" confidence="0.1">75</lexlink>
+      </lexlinks>
+      <example src="" name="NP approval">
+        <text>Shareholders approved Pacific First Financial's acquisition by Royal Trustco Ltd of Toronto for $27 a share, or $212 million.</text>
+        <rel relloc="1">approved</rel>
+        <arg f="" n="0" start="0" end="0">Shareholders</arg>
+        <arg f="" n="1" start="2" end="18">Pacific First Financial's acquisition by Royal Trustco Ltd of Toronto for $27 a share, or $212 million.</arg>
+      </example>
+      <example src="" name="PP approval">
+        <text>50% of voters approve of the President's job performance.</text>
+        <rel relloc="3">approve</rel>
+        <arg f="" n="0" start="0" end="2">50% of voters</arg>
+        <arg f="" n="1" start="4" end="8">of the President's job performance.</arg>
+      </example>
+      <example src="" name="attribute with as">
+        <text>On Friday, the Merc's board announced that it had approved Sabine Pipe Line Co.'s Henry Hub in Erath, La., as the delivery sit for its long-awaited natural gas futures contract.</text>
+        <rel relloc="9">approved</rel>
+        <arg f="" n="0" start="7" end="7">it</arg>
+        <arg f="" n="1" start="10" end="18">Sabine Pipe Line Co.'s Henry Hub in Erath, La.,</arg>
+        <arg f="AS" n="2" start="20" end="29">the delivery sit for its long-awaited natural gas futures contract.</arg>
+      </example>
+      <example src="" name="attribute with for">
+        <text>Traditionally, the medical establishment has waited two years *trace* to approve adult treatments for pediatric uses, because of a compbination of conservative safety standards and red tape.</text>
+        <rel relloc="10">approve</rel>
+        <arg f="" n="0" start="1" end="3">the medical establishment</arg>
+        <arg f="" n="1" start="11" end="12">adult treatments</arg>
+        <arg f="" n="2" start="13" end="15">for pediatric uses,</arg>
+      </example>
+      <example src="NomBank Frames" name="NP only, all arguments">
+        <text>Internal Revenue Service approval of the move as a tax-freetransaction</text>
+        <rel relloc="3">approval</rel>
+        <arg f="" n="0" start="0" end="2">Internal Revenue Service</arg>
+        <arg f="" n="1" start="4" end="6">of the move</arg>
+        <arg f="" n="2" start="7" end="9">as a tax-freetransaction</arg>
+      </example>
+      <example src="ON sense 1" name="Arg 0 only">
+        <text>It took almost three years to get the approval of the FDA.</text>
+        <rel relloc="8">approval</rel>
+        <arg f="" n="0" start="9" end="11">of the FDA.</arg>
+      </example>
+      <example src="web" name="All arguments">
+        <text>They gained her parent's approval of Charlio as a husband for her.</text>
+        <rel relloc="4">approval</rel>
+        <arg f="" n="0" start="2" end="3">her parent's</arg>
+        <arg f="" n="1" start="5" end="6">of Charlio</arg>
+        <arg f="" n="2" start="7" end="11">as a husband for her.</arg>
+      </example>
       <note>APPROVE-V NOTES: Based on big corpus. Member of Vncls marvel-31.3-6, allow-64, judgement-33. (from approve.01-v)</note>
       <note>APPROVAL-N NOTES: Roleset based on verb entry approve.01 and OntoNotes grouping approval-n sense 1; maps to VN classes allow-64, judgement-33, marvel-31.3-6. Framed by Claire. (from approval.01-n)</note>
-      <roles>
-        <role descr="approver" f="pag" n="0">
-          <vnrole vncls="31.3-6" vntheta="Experiencer"/>
-          <vnrole vncls="64" vntheta="Agent"/>
-          <vnrole vncls="33" vntheta="Agent"/>
-        </role>
-        <role descr="thing approved" f="ppt" n="1">
-          <vnrole vncls="31.3-6" vntheta="Stimulus"/>
-          <vnrole vncls="64" vntheta="Theme"/>
-          <vnrole vncls="33" vntheta="Theme"/>
-        </role>
-        <role descr="secondary attribute" f="prd" n="2"/>
-      </roles>
-      <example name="NP approval" src="" type="">
-        <text>Shareholders approved Pacific First Financial's acquisition by Royal Trustco Ltd of Toronto for $27 a share, or $212 million.</text>
-        <arg f="" n="0">Shareholders</arg>
-        <rel f="">approved</rel>
-        <arg f="" n="1">Pacific First Financial's acquisition by Royal Trustco Ltd of Toronto for $27 a share, or $212 million.</arg>
-      </example>
-      <example name="PP approval" src="" type="">
-        <text>50% of voters approve of the President's job performance.</text>
-        <arg f="" n="0">50% of voters</arg>
-        <rel f="">approve</rel>
-        <arg f="" n="1">of the President's job performance</arg>
-      </example>
-      <example name="attribute with as" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="past" voice="active"/>
-        <text>On Friday, the Merc's board announced that it had approved Sabine Pipe Line Co.'s Henry Hub in Erath, La., as the delivery sit for its long-awaited natural gas futures contract.</text>
-        <arg f="" n="0">it</arg>
-        <rel f="">approved</rel>
-        <arg f="" n="1">Sabine Pipe Line Co.'s Henry Hub in Erath, La.,</arg>
-        <arg f="as" n="2">the delivery sit for its long-awaited natural gas futures contract</arg>
-      </example>
-      <example name="attribute with for" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="active"/>
-        <text>Traditionally, the medical establishment has waited two years *trace* to approve adult treatments for pediatric uses, because of a compbination of conservative safety standards and red tape.</text>
-        <arg f="" n="0">*trace* -&gt; the medical establishment</arg>
-        <rel f="">approve</rel>
-        <arg f="" n="1">adult treatments</arg>
-        <arg f="" n="2">for pediatric uses</arg>
-      </example>
-      <example name="NP only, all arguments" src="NomBank Frames" type="">
-        <text>Internal Revenue Service approval of the move as a tax-freetransaction</text>
-        <arg f="" n="0">Internal Revenue Service</arg>
-        <rel f="">approval</rel>
-        <arg f="" n="1">of the move</arg>
-        <arg f="" n="2">as a tax-free transaction</arg>
-      </example>
-      <example name="Arg 0 only" src="ON sense 1" type="">
-        <text>It took almost three years to get the approval of the FDA.</text>
-        <rel f="">approval</rel>
-        <arg f="" n="0">of the FDA</arg>
-      </example>
-      <example name="All arguments" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>They gained her parent's approval of Charlio as a husband for her.</text>
-        <arg f="" n="0">her parent's</arg>
-        <rel f="">approval</rel>
-        <arg f="" n="1">of Charlio</arg>
-        <arg f="" n="2">as a husband for her</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

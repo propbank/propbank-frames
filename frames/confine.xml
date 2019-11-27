@@ -1,39 +1,58 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="confine">
     <roleset id="confine.01" name="confine, restrict">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">confine</alias>
+        <alias pos="v">confine</alias>
       </aliases>
-      <note>CONFINE-V NOTES: Passive seems to always include the modifier 'largely'. (from confine.01-v)</note>
       <roles>
         <role descr="agent, confiner" f="PAG" n="0">
-          <vnrole vncls="92-1" vntheta="Agent"/>
-          <vnrole vncls="76" vntheta="Cause"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="confine-92-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="limit-76" version="verbnet3.3">cause</rolelink>
+            <rolelink resource="FrameNet" class="Inhibit_movement" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Inhibit_movement" version="1.7">cause</rolelink>
+            <rolelink resource="FrameNet" class="Inhibit_movement" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity confined, restricted" f="PPT" n="1">
-          <vnrole vncls="92-1" vntheta="Theme"/>
-          <vnrole vncls="76" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="confine-92-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="limit-76" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Inhibit_movement" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="confined-to" f="GOL" n="2">
-          <vnrole vncls="92-1" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="confine-92-1" version="verbnet3.3">destination</rolelink>
+            <rolelink resource="FrameNet" class="Inhibit_movement" version="1.7">holding_location</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="passive" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Inhibit_movement" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="confine-92-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="limit-76" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="passive">
         <text>[Arbitrage-related trading during the session]-1 was confined *trace*-1 largely to a round of buy programs near the close, which helped offset the impact of profit-taking among blue chips.</text>
-        <rel f="">confined</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="ADV" n="M">largely</arg>
-        <arg f="" n="2">to a round of buy programs near the close, which helped offset the impact of profit-taking among blue chips</arg>
+        <rel relloc="6">confined</rel>
+        <arg f="" n="1" start="7" end="7">*trace*-1</arg>
+        <arg f="ADV" n="M" start="8" end="8">largely</arg>
+        <arg f="" n="2" start="9" end="27">to a round of buy programs near the close, which helped offset the impact of profit-taking among blue chips.</arg>
       </example>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes bn/voa/00/voa_0053" type="">
+      <example src="ontonotes bn/voa/00/voa_0053" name="ARG0 and ARG1 and ARG2">
         <text>Peruvian President Alberto Fujimori has issued an order confining all military and police to their barracks .</text>
-        <arg f="" n="0">an order</arg>
-        <rel f="">confining</rel>
-        <arg f="" n="1">all military and police</arg>
-        <arg f="" n="2">to their barracks</arg>
+        <rel relloc="8">confining</rel>
+        <arg f="" n="0" start="6" end="7">an order</arg>
+        <arg f="" n="1" start="9" end="12">all military and police</arg>
+        <arg f="" n="2" start="13" end="15">to their barracks</arg>
       </example>
-
+      <note>CONFINE-V NOTES: Passive seems to always include the modifier 'largely'. (from confine.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

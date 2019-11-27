@@ -1,29 +1,47 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="buffet">
     <roleset id="buffet.01" name="pelt, throw lots of things at someone">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">buffet</alias>
+        <alias pos="v">buffet</alias>
       </aliases>
-      <note>BUFFET-V NOTES: I actually doubt any agent will ever appear. (from buffet.01-v)</note>
       <roles>
         <role descr="thrower" f="PAG" n="0">
-          <vnrole vncls="17.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pelt-17.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">cause</rolelink>
+          </rolelinks>
         </role>
         <role descr="victim" f="GOL" n="1">
-          <vnrole vncls="17.2" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pelt-17.2" version="verbnet3.3">destination</rolelink>
+          </rolelinks>
         </role>
         <role descr="things thrown" f="PPT" n="2">
-          <vnrole vncls="17.2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pelt-17.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">victim</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">body_part</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="always passive with instrument?" src="" type="">
-        <text>[The government]-1, already buffeted *trace*-1 by high interest rates and a slowing economy, has been badly hurt by last week's shake-up in Mrs. Thatcher's cabinet.</text>
-        <arg f="TMP" n="M">already</arg>
-        <rel f="">buffeted</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="2">by high interest rates and a slowing economy</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_harm" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="pelt-17.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="always passive with instrument?">
+        <text> The government, already buffeted by high interest rates and a slowing economy, has been badly hurt by last week's shake-up in Mrs. Thatcher's cabinet.</text>
+        <rel relloc="4">buffeted</rel>
+        <arg f="TMP" n="M" start="3" end="3">already</arg>
+        <arg f="" n="1" start="1" end="2">The government,</arg>
+        <arg f="" n="2" start="5" end="12">by high interest rates and a slowing economy,</arg>
       </example>
+      <note>BUFFET-V NOTES: I actually doubt any agent will ever appear. (from buffet.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,36 +1,56 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="obtain">
     <roleset id="obtain.01" name="get">
       <aliases>
-        <alias framenet="Getting" pos="v" verbnet="">obtain</alias>
+        <alias pos="v">obtain</alias>
       </aliases>
-      <note>OBTAIN-V NOTES: This really does occur. (from obtain.01-v)</note>
       <roles>
         <role descr="receiver" f="PAG" n="0">
-          <vnrole vncls="13.5.2-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="obtain-13.5.2-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Getting" version="1.7">recipient</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing gotten" f="PPT" n="1">
-          <vnrole vncls="13.5.2-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="obtain-13.5.2-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Getting" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="received from" f="DIR" n="2">
-          <vnrole vncls="13.5.2-1" vntheta="Source"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="obtain-13.5.2-1" version="verbnet3.3">source</rolelink>
+            <rolelink resource="FrameNet" class="Getting" version="1.7">source</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="get" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Getting" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="obtain-13.5.2-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Transaction.TransferMoney.Purchase" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Transaction.TransferOwnership.Purchase" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Transferownership" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="obtain-v.1" src="annot-overlap" confidence="0.1">70</lexlink>
+      </lexlinks>
+      <example src="" name="get">
         <text>The thrift holding company said it-1 expects *trace*-1 to obtain regulatory approval by year-end.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">obtain</rel>
-        <arg f="" n="1">regulatory approval</arg>
-        <arg f="tmp" n="m">by year-end</arg>
+        <rel relloc="9">obtain</rel>
+        <arg f="" n="0" start="7" end="7">*trace*-1</arg>
+        <arg f="" n="1" start="10" end="11">regulatory approval</arg>
+        <arg f="TMP" n="m" start="12" end="13">by year-end.</arg>
       </example>
-      <example name="ARG1 and ARG2" src="ontonotes bn/p2" type="">
+      <example src="ontonotes bn/p2" name="ARG1 and ARG2">
         <text>But the U.S. State Department still included this list obtained from an Internet search in the UN Security Council draft resolution submitted by France , Germany , and Britain .</text>
-        <arg f="" n="1">this list</arg>
-        <rel f="">obtained</rel>
-        <arg f="" n="2">from an Internet search</arg>
+        <rel relloc="9">obtained</rel>
+        <arg f="" n="1" start="7" end="8">this list</arg>
+        <arg f="" n="2" start="10" end="13">from an Internet search</arg>
       </example>
-
+      <note>OBTAIN-V NOTES: This really does occur. (from obtain.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

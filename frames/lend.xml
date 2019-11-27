@@ -1,47 +1,67 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="lend">
     <roleset id="lend.01" name="give temporarily, allowing to borrow">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">lending</alias>
-        <alias framenet="" pos="v" verbnet="">lend</alias>
+        <alias pos="n">lending</alias>
+        <alias pos="v">lend</alias>
+        <argalias pos="n" arg="0">lender</argalias>
       </aliases>
-      <note>LEND-V NOTES: Based on financial subcorpus, comparison to 'give'. Member of VNcls give-13.1. (from lend.01-v)</note>
-      <note>LENDING-N NOTES: Added by Julia based on BOLT, lend-v.01. Corresponds to VNcls give-13.1. (from lending.01-n)</note>
       <roles>
         <role descr="lender" f="PAG" n="0">
-          <vnrole vncls="13.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="give-13.1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing lent" f="PPT" n="1">
-          <vnrole vncls="13.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="give-13.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Lending" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="lent-to" f="GOL" n="2">
-          <vnrole vncls="13.1" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="give-13.1" version="verbnet3.3">recipient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="nice and obvious" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Lending" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="give-13.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Transfermoney" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="lend-v.2" src="annot-overlap" confidence="0.1">24</lexlink>
+        <lexlink resource="onsense" version="on5" class="lend-v.4" src="annot-overlap" confidence="0.1">6</lexlink>
+        <lexlink resource="onsense" version="on5" class="lend-v.1" src="annot-overlap" confidence="0.1">6</lexlink>
+        <lexlink resource="onsense" version="on5" class="lend-v.3" src="annot-overlap" confidence="0.1">6</lexlink>
+      </lexlinks>
+      <example src="" name="nice and obvious">
         <text>The McAlpine family, which operates a number of multinational companies, including a London-based engineering and construction company, also lent to Meridian National $500,000.</text>
-        <arg f="" n="0">The McAlpine family, which operates a number of multinational companies, including a London-based engineering and construction company,</arg>
-        <arg f="dis" n="m">also</arg>
-        <rel f="">lent</rel>
-        <arg f="" n="2">to Meridian National</arg>
-        <arg f="" n="1">$ 500,000</arg>
+        <rel relloc="18">lent</rel>
+        <arg f="" n="0" start="0" end="16">The McAlpine family, which operates a number of multinational companies, including a London-based engineering and construction company,</arg>
+        <arg f="DIS" n="m" start="17" end="17">also</arg>
+        <arg f="" n="2" start="19" end="21">to Meridian National</arg>
+        <arg f="" n="1" start="22" end="22">$500,000.</arg>
       </example>
-      <example name="non-obvious benefactive" src="" type="">
+      <example src="" name="non-obvious benefactive">
         <text>HomeFed had been one of the handful of large West Coast thrifts that in recent quarters had counteracted interest-rate problems dogging the industry by *trace* keeping a lid on problem assets and lending heavily into the furious California housing market.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">lending</rel>
-        <arg f="mnr" n="m">heavily</arg>
-        <arg f="" n="2">into the furious California housing market</arg>
+        <rel relloc="32">lending</rel>
+        <arg f="" n="0" start="24" end="24">*trace*</arg>
+        <arg f="MNR" n="m" start="33" end="33">heavily</arg>
+        <arg f="" n="2" start="34" end="39">into the furious California housing market.</arg>
       </example>
-      <example name="All args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="internet" name="All args">
         <text>The extra funds allow banks to increase their lending of business credit to small businesses.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">lending</rel>
-        <arg f="" n="1">of business credit</arg>
-        <arg f="" n="2">to small businesses</arg>
+        <rel relloc="8">lending</rel>
+        <arg f="" n="0" start="7" end="7">their</arg>
+        <arg f="" n="1" start="9" end="11">of business credit</arg>
+        <arg f="" n="2" start="12" end="14">to small businesses.</arg>
       </example>
+      <note>LEND-V NOTES: Based on financial subcorpus, comparison to 'give'. Member of VNcls give-13.1. (from lend.01-v)</note>
+      <note>LENDING-N NOTES: Added by Julia based on BOLT, lend-v.01. Corresponds to VNcls give-13.1. (from lending.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

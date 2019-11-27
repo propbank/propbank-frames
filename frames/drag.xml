@@ -1,122 +1,152 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="drag">
     <roleset id="drag.01" name="(try to) cause motion, pulling on">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">drag</alias>
-        <alias framenet="" pos="v" verbnet="">drag</alias>
+        <alias pos="n">drag</alias>
+        <alias pos="v">drag</alias>
       </aliases>
-      <note>DRAG-V NOTES: Frames file for 'drag' based on sentences in financial subcorpus. Verbnet entry carry-11.4, other framed members include kick and push. Comparison with 'push'. (from drag.01-v predicate notes)</note>
-      <note>DRAG-N NOTES: Based on verb entry drag.01. Corresponds to Verbnet entry carry-11.4. Differs from verb entry because I removed mappings to 'search' class because this is different sense that can be added as needed (e.g. "drag the lake for abandoned cars"), and I added arg3 for source (distinguishing this from true argm-dir). Framed by Claire. (from drag.01-n)</note>
       <roles>
         <role descr="dragger" f="PAG" n="0">
-          <vnrole vncls="11.4" vntheta="Agent"/>
-          <vnrole vncls="35.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="carry-11.4" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="search-35.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_motion" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_motion" version="1.7">cause</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing dragged" f="PPT" n="1">
-          <vnrole vncls="11.4" vntheta="Theme"/>
-          <vnrole vncls="35.2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="carry-11.4" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="search-35.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Cause_motion" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="direction" f="dir" n="2">
-          <vnrole vncls="11.4" vntheta="Destination"/>
-          <vnrole vncls="35.2" vntheta="Location"/>
+        <role descr="direction" f="DIR" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="carry-11.4" version="verbnet3.3">destination</rolelink>
+            <rolelink resource="VerbNet" class="search-35.2" version="verbnet3.3">location</rolelink>
+            <rolelink resource="FrameNet" class="Cause_motion" version="1.7">goal</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="drag-v: typical usage" src="typical usage" type="typical usage">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_motion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="carry-11.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="search-35.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="drag-v.1" src="annot-overlap" confidence="0.1">17</lexlink>
+        <lexlink resource="onsense" version="on5" class="drag-v.2" src="annot-overlap" confidence="0.1">12</lexlink>
+        <lexlink resource="onsense" version="on5" class="drag-v.6" src="annot-overlap" confidence="0.1">7</lexlink>
+      </lexlinks>
+      <example src="typical usage" name="drag-v: typical usage">
         <text>But, he observes, while makers suffer losses when program trading drags the market down, they also make money when program trading pushes the prices higher.</text>
-        <arg f="" n="0">program trading</arg>
-        <rel f="">drags</rel>
-        <arg f="" n="1">the market</arg>
-        <arg f="" n="2">down</arg>
+        <rel relloc="10">drags</rel>
+        <arg f="" n="0" start="8" end="9">program trading</arg>
+        <arg f="" n="1" start="11" end="12">the market</arg>
+        <arg f="" n="2" start="13" end="13">down,</arg>
       </example>
-      <example name="drag-n: DIR for source and direction" src="web" type="">
+      <example src="web" name="drag-n: DIR for source and direction">
         <text>A drag of one the OBNOXIANS by mouse from one corner to the other will allow you to win the game.</text>
-        <rel f="">drag</rel>
-        <arg f="" n="1">of one of the OBNOXIANS</arg>
-        <arg f="dir" n="m">from one corner</arg>
-        <arg f="" n="2">to the other</arg>
+        <rel relloc="1">drag</rel>
+        <arg f="" n="1" start="2" end="5">of one the OBNOXIANS</arg>
+        <arg f="DIR" n="m" start="8" end="10">from one corner</arg>
+        <arg f="" n="2" start="11" end="13">to the other</arg>
       </example>
-      <example name="drag-n: Arg 1 in 'of' PP" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="drag-n: Arg 1 in 'of' PP">
         <text>Note that the job of the engine is just to overcome the drag of the airplane, not to lift the airplane.</text>
-        <rel f="">drag</rel>
-        <arg f="" n="1">of the airplane</arg>
+        <rel relloc="12">drag</rel>
+        <arg f="" n="1" start="13" end="15">of the airplane,</arg>
       </example>
-      <example name="drag-n: arg 0, 1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="internet" name="drag-n: arg 0, 1">
         <text>...the propeller could be fixed in a vertical position to reduce its drag on the water.</text>
-        <arg f="" n="0">its</arg>
-        <rel f="">drag</rel>
-        <arg f="" n="1">on the water</arg>
+        <rel relloc="12">drag</rel>
+        <arg f="" n="0" start="11" end="11">its</arg>
+        <arg f="" n="1" start="13" end="15">on the water.</arg>
       </example>
-      <example name="dragging-n: With arg0...yuck, sorry, arg0s are hard to find in this context..." src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="dragging-n: With arg0...yuck, sorry, arg0s are hard to find in this context...">
         <text>If you have been giving her wormer it could be that her dragging of her butt across the floor could be from the worms coming out.</text>
-        <arg f="" n="0">her</arg>
-        <rel f="">dragging</rel>
-        <arg f="" n="1">of her butt</arg>
-        <arg f="dir" n="m">across the floor</arg>
+        <rel relloc="12">dragging</rel>
+        <arg f="" n="0" start="5" end="5">her</arg>
+        <arg f="" n="1" start="13" end="15">of her butt</arg>
+        <arg f="DIR" n="m" start="16" end="18">across the floor</arg>
       </example>
+      <note>DRAG-V NOTES: Frames file for 'drag' based on sentences in financial subcorpus. Verbnet entry carry-11.4, other framed members include kick and push. Comparison with 'push'. (from drag.01-v predicate notes)</note>
+      <note>DRAG-N NOTES: Based on verb entry drag.01. Corresponds to Verbnet entry carry-11.4. Differs from verb entry because I removed mappings to 'search' class because this is different sense that can be added as needed (e.g. "drag the lake for abandoned cars"), and I added arg3 for source (distinguishing this from true argm-dir). Framed by Claire. (from drag.01-n)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="drag_on">
     <roleset id="drag_on.02" name="drag continuously over a span of time">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">drag_on</alias>
+        <alias pos="v">drag_on</alias>
       </aliases>
-      <note>DRAG_ON-V NOTES: Framed by Claire (from drag.02-v)</note>
       <roles>
         <role descr="dragger" f="PAG" n="0"/>
         <role descr="thing dragged" f="PPT" n="1"/>
-        <role descr="direction or path" f="dir" n="2"/>
+        <role descr="direction or path" f="DIR" n="2"/>
       </roles>
-      <example name="drag_on-v: Metaphorical" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="onsense" version="on5" class="drag-v.2" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="" name="drag_on-v: Metaphorical">
         <text>If it drags on again without solution...</text>
-        <arg f="" n="1">it</arg>
-        <rel f="">[drag][on]</rel>
-        <arg f="tmp" n="m">again</arg>
-        <arg f="mnr" n="m">without solution</arg>
+        <rel relloc="2 3">drags on</rel>
+        <arg f="" n="1" start="1" end="1">it</arg>
+        <arg f="TMP" n="m" start="4" end="4">again</arg>
+        <arg f="MNR" n="m" start="5" end="6">without solution...</arg>
       </example>
+      <note>DRAG_ON-V NOTES: Framed by Claire (from drag.02-v)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="drag_feet">
     <roleset id="drag_feet.03" name="procrastinate, be very slow in doing">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">drag_feet</alias>
-        <mwe id="drag_feet">
-          <token slot="A" arg="" pos="VB" head="" dep="">drag</token>
-          <token slot="B" arg="" pos="NNS" head="A" dep="dobj">feet</token>
-          <token slot="B" arg="" pos="NN" head="A" dep="dobj">foot</token>
-        </mwe>
-      </aliases>
-      <mappings alias="drag_feet">
-        <source>
+        <alias pos="m">drag_feet</alias>
+        <mwp-descriptions id="drag_feet">
+          <syntaxdesc slots="B A">
+            <token slot="A" arg="" pos="VB" head="" dep="">drag</token>
+            <token slot="B" arg="" pos="NNS" head="A" dep="dobj">feet</token>
+            <token slot="B" arg="" pos="NN" head="A" dep="dobj">foot</token>
+          </syntaxdesc>
+          <mapping>
+            <source>
             (A / drag-01
                 :arg0 (n / NARG0)
                 :arg1 (B / feet
                     :part-of (n))
                 :topic (n1 / NARG1))
         </source>
-        <target>
+            <target>
             (A / procrastinate-01
                 :arg0 (n / NARG0)
                 :arg1 (n1 / NARG1))
         </target>
-      </mappings>
-      <note>DRAG_FEET-M NOTES: Added by Tim/Julia during initial MWE framing.</note>
+          </mapping>
+        </mwp-descriptions>
+      </aliases>
       <roles>
-        <role descr="procrastinator" f="pag" n="0"/>
-        <role descr="task/event put off" f="ppt" n="1"/>
+        <role descr="procrastinator" f="PAG" n="0"/>
+        <role descr="task/event put off" f="PPT" n="1"/>
       </roles>
-      <example name="drag_feet-m" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="drag_feet-m">
         <text>Jonathan was assigned summer reading for school, and was dragging his feet about reading the book.</text>
-        <arg f="" n="0">Jonathan</arg>
-        <rel f="">[dragging][feet]</rel>
-        <arg f="" n="1">about reading the book</arg>
+        <rel relloc="9 11">dragging feet</rel>
+        <arg f="" n="0" start="0" end="0">Jonathan</arg>
+        <arg f="" n="1" start="12" end="15">about reading the book.</arg>
       </example>
+      <note>DRAG_FEET-M NOTES: Added by Tim/Julia during initial MWE framing.</note>
     </roleset>
   </predicate>
 </frameset>

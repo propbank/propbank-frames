@@ -1,82 +1,123 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="poison">
     <roleset id="poison.01" name="kill via poison, kill or make sick via poison">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">poisoning</alias>
-        <alias framenet="Cause_harm" pos="v" verbnet="">poison</alias>
+        <alias pos="n">poisoning</alias>
+        <alias pos="v">poison</alias>
       </aliases>
-      <note>POISON-V NOTES: Based on WSJ. Member of VNcls poison-42.2. (from poison.01-v)</note>
-      <note>POISONING-N NOTES: ~poison.01 (from poisoning.01-n)</note>
       <roles>
         <role descr="killer" f="PAG" n="0">
-          <vnrole vncls="42.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="poison-42.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">cause</rolelink>
+          </rolelinks>
         </role>
         <role descr="corpse" f="PPT" n="1">
-          <vnrole vncls="42.2" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="poison-42.2" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">victim</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">body_part</rolelink>
+          </rolelinks>
         </role>
         <role descr="poison" f="MNR" n="2">
-          <vnrole vncls="42.2" vntheta="Instrument"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="poison-42.2" version="verbnet3.3">instrument</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">instrument</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="unk" src="ontonotes bn/p2" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_harm" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="poison-42.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Life.Injure.InjuryCausedByViolentEvents" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Injure" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+      </lexlinks>
+      <example src="ontonotes bn/p2" name="unk">
         <text>After a large quantity of the radioactive material polonium was detected in the body of former Russian agent Litvinenko , who died of poisoning , the British police conducted random dragnet investigations in areas related to Litvinenko , and as a result found polonium in 12 of these locations .</text>
-        <rel f="">poisoning</rel>
+        <rel relloc="23">poisoning</rel>
       </example>
-
-      <example name="All args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="All args">
         <text>Myrtle's poisoning of her husband with arsenic landed her in the slammer.</text>
-        <arg f="" n="0">Myrtle's</arg>
-        <rel f="">poisoning</rel>
-        <arg f="" n="1">of her husband</arg>
-        <arg f="" n="2">with arsenic</arg>
+        <rel relloc="1">poisoning</rel>
+        <arg f="" n="0" start="0" end="0">Myrtle's</arg>
+        <arg f="" n="1" start="2" end="4">of her husband</arg>
+        <arg f="" n="2" start="5" end="6">with arsenic</arg>
       </example>
+      <note>POISON-V NOTES: Based on WSJ. Member of VNcls poison-42.2. (from poison.01-v)</note>
+      <note>POISONING-N NOTES: ~poison.01 (from poisoning.01-n)</note>
     </roleset>
     <roleset id="poison.02" name="put poison on/in something">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">poison</alias>
+        <alias pos="v">poison</alias>
       </aliases>
-      <note>POISON-V NOTES: Based on WSJ. Member of VNcls butter-9.9. (from poison.02-v)</note>
       <roles>
         <role descr="applier" f="PAG" n="0">
-          <vnrole vncls="9.9" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="butter-9.9" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="poisoned substance" f="GOL" n="1">
-          <vnrole vncls="9.9" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="butter-9.9" version="verbnet3.3">destination</rolelink>
+          </rolelinks>
         </role>
         <role descr="poison" f="PPT" n="2">
-          <vnrole vncls="9.9" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="butter-9.9" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="inferred agent" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_harm" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="butter-9.9" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Conflict.Attack.BiologicalChemicalPoisonAttack" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+      </lexlinks>
+      <example src="" name="inferred agent">
         <text>Euro Disneyland shares made a debut like Snow White yesterday while most of the London stock market looked like it had eaten the Evil Queen's poisoned apple.</text>
-        <arg f="" n="0">the Evil Queen's</arg>
-        <rel f="">poisoned</rel>
-        <arg f="" n="1">apple</arg>
+        <rel relloc="25">poisoned</rel>
+        <arg f="" n="0" start="22" end="24">the Evil Queen's</arg>
+        <arg f="" n="1" start="26" end="26">apple.</arg>
       </example>
+      <note>POISON-V NOTES: Based on WSJ. Member of VNcls butter-9.9. (from poison.02-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="poisonous">
     <roleset id="poisonous.03" name="venomous, toxic">
       <aliases>
-        <alias framenet="Toxic_substance" pos="j" verbnet="">poisonous</alias>
+        <alias pos="j">poisonous</alias>
       </aliases>
-      <note>POISONOUS-J NOTES: Added by Julia based on BOLT-7. Relation to poison.01, poison.02. (from poisonous.01-j)</note>
       <roles>
-        <role descr="entity susceptible to poison" f="ppt" n="1"/>
-        <role descr="poison" f="pag" n="2"/>
+        <role descr="entity susceptible to poison" f="PPT" n="1"/>
+        <role descr="poison" f="PAG" n="2"/>
       </roles>
-      <example name="both args" src="BOLT-7" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Toxic_substance" version="1.7" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="BOLT-7" name="both args">
         <text>Korean people are utterly , ruthlessly poisonous to Chinese people ,</text>
-        <arg f="" n="2">Korean people</arg>
-        <arg f="ext" n="m">utterly</arg>
-        <arg f="mnr" n="m">ruthlessly</arg>
-        <rel f="">poisonous</rel>
-        <arg f="" n="1">to Chinese people</arg>
+        <rel relloc="6">poisonous</rel>
+        <arg f="" n="2" start="0" end="1">Korean people</arg>
+        <arg f="EXT" n="m" start="3" end="3">utterly</arg>
+        <arg f="MNR" n="m" start="5" end="5">ruthlessly</arg>
+        <arg f="" n="1" start="7" end="9">to Chinese people</arg>
       </example>
+      <note>POISONOUS-J NOTES: Added by Julia based on BOLT-7. Relation to poison.01, poison.02. (from poisonous.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

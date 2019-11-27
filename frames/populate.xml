@@ -1,50 +1,57 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="populate">
     <roleset id="populate.01" name="provide inhabitants for, fill with inhabitants">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">population</alias>
-        <alias framenet="" pos="v" verbnet="">populate</alias>
+        <alias pos="n">population</alias>
+        <alias pos="v">populate</alias>
       </aliases>
+      <roles>
+        <role descr="provider" f="PAG" n="0"/>
+        <role descr="area" f="PPT" n="1"/>
+        <role descr="population" f="COM" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Colonization" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Transportperson" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="population-n.2" src="annot-overlap" confidence="0.1">3</lexlink>
+        <lexlink resource="onsense" version="on5" class="populate-v.1" src="annot-overlap" confidence="0.1">7</lexlink>
+        <lexlink resource="onsense" version="on5" class="population-n.1" src="annot-overlap" confidence="0.1">3</lexlink>
+      </lexlinks>
+      <example src="" name="area and population">
+        <text>With more than 15 million exercise bikes sold in the past five years, he adds, ``[a lot of garages, basements and attics]-1 must be populated *trace*-1 with them.''</text>
+        <rel relloc="24">populated</rel>
+        <arg f="ADV" n="m" start="0" end="12">With more than 15 million exercise bikes sold in the past five years,</arg>
+        <arg f="MOD" n="m" start="22" end="22">must</arg>
+        <arg f="" n="1" start="25" end="25">*trace*-1</arg>
+        <arg f="" n="2" start="26" end="27">with them.''</arg>
+      </example>
+      <example src="" name="agent and area">
+        <text>Las Colinas, once a huge Texas ranch, is a sprawling complex of office buildings, homes and recreational facilities that [its developers]-1 have been struggling *trace*-1 to populate *trace* in recent years.</text>
+        <rel relloc="26">populate</rel>
+        <arg f="" n="0" start="27" end="27">*trace*</arg>
+        <arg f="" n="1" start="27" end="27">*trace*</arg>
+        <arg f="RCL" n="m" start="8" end="10">a sprawling complex</arg>
+      </example>
+      <example src="" name="population as subject">
+        <text>There are moments in this ``Summerfolk'' when the characters populating the vast multilevel country house (which looks like a parody of Frank Lloyd Wright and is designed by Victoria Petrovich) spout philosophic bon mots with the self-conscious rat-a-tat-tat pacing of ``Laugh In.''</text>
+        <rel relloc="9">populating</rel>
+        <arg f="" n="2" start="7" end="8">the characters</arg>
+        <arg f="" n="1" start="10" end="29">the vast multilevel country house (which looks like a parody of Frank Lloyd Wright and is designed by Victoria Petrovich)</arg>
+      </example>
+      <example src="" name="Arg1, Arg2">
+        <text>The yuppies' population of the previously predominantly immigrant neighborhood angered native residents.</text>
+        <rel relloc="2">population</rel>
+        <arg f="" n="2" start="0" end="1">The yuppies'</arg>
+        <arg f="" n="1" start="3" end="8">of the previously predominantly immigrant neighborhood</arg>
+      </example>
       <note>POPULATE-V NOTES: This is based on 'fill' and it is crucial to distinguish between theagent causing some area to have a population, and the populationitself. (from populate.01-v)</note>
       <note>POPULATION-N NOTES: ~populate.01 (from population.01-n)</note>
-      <roles>
-        <note>The rel cannot be its own argument. If the rel is your Arg2 here, it is not eventive. (from population.01-n)</note>
-        <role descr="provider" f="pag" n="0"/>
-        <role descr="area" f="ppt" n="1"/>
-        <role descr="population" f="com" n="2"/>
-      </roles>
-      <example name="area and population" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>With more than 15 million exercise bikes sold in the past five years, he adds, ``[a lot of garages, basements and attics]-1 must be populated *trace*-1 with them.''</text>
-        <arg f="adv" n="m">With more than 15 million exercise bikes sold in the past five years</arg>
-        <arg f="mod" n="m">must</arg>
-        <rel f="">populated</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="2">with them</arg>
-      </example>
-      <example name="agent and area" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>Las Colinas, once a huge Texas ranch, is a sprawling complex of office buildings, homes and recreational facilities that [its developers]-1 have been struggling *trace*-1 to populate *trace* in recent years.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">populate</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="rcl" n="m">that -&gt; a sprawling complex</arg>
-      </example>
-      <example name="population as subject" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="present" voice="active"/>
-        <text>There are moments in this ``Summerfolk'' when the characters populating the vast multilevel country house (which looks like a parody of Frank Lloyd Wright and is designed by Victoria Petrovich) spout philosophic bon mots with the self-conscious rat-a-tat-tat pacing of ``Laugh In.''</text>
-        <arg f="" n="2">the characters</arg>
-        <rel f="">populating</rel>
-        <arg f="" n="1">the vast multilevel country house (which looks like a parody of Frank Lloyd Wright and is designed by Victoria Petrovich)</arg>
-      </example>
-      <example name="Arg1, Arg2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The yuppies' population of the previously predominantly immigrant neighborhood angered native residents.</text>
-        <arg f="" n="2">The yuppies'</arg>
-        <rel f="">population</rel>
-        <arg f="" n="1">of the previously predominantly immigrant neighborhood</arg>
-      </example>
+      <note>The rel cannot be its own argument. If the rel is your Arg2 here, it is not eventive. (from population.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,53 +1,67 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="advertise">
     <roleset id="advertise.01" name="make a commercial pitch">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">advertise</alias>
-        <alias framenet="" pos="v" verbnet="">advertize</alias>
-        <alias framenet="" pos="n" verbnet="">advertisement</alias>
-        <alias framenet="" pos="n" verbnet="">advertising</alias>
+        <alias pos="v">advertise</alias>
+        <alias pos="v">advertize</alias>
+        <alias pos="n">advertisement</alias>
+        <alias pos="n">advertising</alias>
+        <argalias pos="n" arg="0">advertiser</argalias>
       </aliases>
+      <roles>
+        <role descr="advertiser" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="search-35.2" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing being pitched, advertised" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="search-35.2" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Attempt_suasion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="search-35.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="advertise-v.1" src="annot-overlap" confidence="0.1">21</lexlink>
+        <lexlink resource="onsense" version="on5" class="advertising-n.3" src="annot-overlap" confidence="0.1">3</lexlink>
+      </lexlinks>
+      <example src="" name="intransitive agentive">
+        <text> Cotton Inc. will spend nearly $2 million on broadcasting on Thanksgiving Day alone, advertising on such programs as ``Good Morning America,'' ``Macy's Thanksgiving Day Parade'' and the NFL holiday game.</text>
+        <rel relloc="14">advertising</rel>
+        <arg f="" n="0" start="1" end="2">Cotton Inc.</arg>
+        <arg f="LOC" n="m" start="15" end="30">on such programs as ``Good Morning America,'' ``Macy's Thanksgiving Day Parade'' and the NFL holiday game.</arg>
+      </example>
+      <example src="" name="transitive agentive">
+        <text>Pepsi said it will spend $10 million advertising the promotion.</text>
+        <rel relloc="7">advertising</rel>
+        <arg f="" n="0" start="2" end="2">it</arg>
+        <arg f="" n="1" start="8" end="9">the promotion.</arg>
+      </example>
+      <example src="ON sense 3" name="Arg 1 only">
+        <text>The advertising of this conference was not well organized.</text>
+        <rel relloc="1">advertising</rel>
+        <arg f="" n="1" start="2" end="8">of this conference was not well organized.</arg>
+      </example>
+      <example src="NomBank Frames" name="NP only, Arg1">
+        <text>tobacco advertising</text>
+        <rel relloc="1">advertising</rel>
+        <arg f="" n="1" start="0" end="0">tobacco</arg>
+      </example>
+      <example src="ontonotes mz/sinorama/10/ectb_1001" name="ARG0 and ARG1">
+        <text>Strolling through downtown Macau one notices prominent signs advertising popular Taiwanese snack - stops , like Dingtaifeng Dumpling Restaurant and Quickly Iced Drinks .</text>
+        <rel relloc="8">advertising</rel>
+        <arg f="" n="0" start="6" end="7">prominent signs</arg>
+        <arg f="" n="1" start="9" end="22">popular Taiwanese snack - stops , like Dingtaifeng Dumpling Restaurant and Quickly Iced Drinks</arg>
+      </example>
       <note>ADVERTISE-V NOTES: Member of Vncls search-35.2. (from advertise.01-v)</note>
       <note>ADVERTISING-N NOTES: Roleset based on verb entry advertise.01, OntoNotes grouping advertising-n sense 3; maps to VN class search-35.2. Framed by Claire. (from advertising.01-n)</note>
       <note>ADVERTISEMENT-N NOTES: Automatically created by Julia as an alias file for unification. (from advertisement.01-n)</note>
-      <roles>
-        <role descr="advertiser" f="PAG" n="0">
-          <vnrole vncls="35.2" vntheta="Agent"/>
-        </role>
-        <role descr="thing being pitched, advertised" f="PPT" n="1">
-          <vnrole vncls="35.2" vntheta="Theme"/>
-        </role>
-      </roles>
-      <example name="intransitive agentive" src="" type="">
-        <text>[Cotton Inc.]-1 will spend nearly $2 million on broadcasting on Thanksgiving Day alone, *trace*-1 advertising on such programs as ``Good Morning America,'' ``Macy's Thanksgiving Day Parade'' and the NFL holiday game.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">advertising</rel>
-        <arg f="loc" n="m">on such programs as ``Good Morning America,'' ``Macy's Thanksgiving Day Parade'' and the NFL holiday game</arg>
-      </example>
-      <example name="transitive agentive" src="" type="">
-        <text>Pepsi said [it]-2 will spend $10 million *trace*-2 advertising the promotion.</text>
-        <arg f="" n="0">*trace*-2</arg>
-        <rel f="">advertising</rel>
-        <arg f="" n="1">the promotion</arg>
-      </example>
-      <example name="Arg 1 only" src="ON sense 3" type="">
-        <text>The advertising of this conference was not well organized.</text>
-        <rel f="">advertising</rel>
-        <arg f="" n="1">of this conference was not well organized.</arg>
-      </example>
-      <example name="NP only, Arg1" src="NomBank Frames" type="">
-        <text>tobacco advertising</text>
-        <arg f="" n="1">tobacco</arg>
-        <rel f="">advertising</rel>
-      </example>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1001" type="">
-        <text>Strolling through downtown Macau one notices prominent signs advertising popular Taiwanese snack - stops , like Dingtaifeng Dumpling Restaurant and Quickly Iced Drinks .</text>
-        <arg f="" n="0">prominent signs</arg>
-        <rel f="">advertising</rel>
-        <arg f="" n="1">popular Taiwanese snack - stops , like Dingtaifeng Dumpling Restaurant and Quickly Iced Drinks</arg>
-      </example>
-
     </roleset>
   </predicate>
 </frameset>

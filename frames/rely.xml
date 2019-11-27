@@ -1,69 +1,85 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="rely">
     <roleset id="rely.01" name="need">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">rely</alias>
-        <alias framenet="" pos="n" verbnet="">reliance</alias>
-        <alias framenet="" pos="j" verbnet="">reliant</alias>
+        <alias pos="v">rely</alias>
+        <alias pos="n">reliance</alias>
+        <alias pos="j">reliant</alias>
       </aliases>
+      <roles>
+        <role descr="relier, needer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="rely-70" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing needed, relied on" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="rely-70" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="for, in order to" f="PRP" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="rely-70" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="rely-v.1" src="annot-overlap" confidence="0.1">85</lexlink>
+      </lexlinks>
+      <example src="" name="rely-v: prepositional arg2">
+        <text>Michael, which also processes potatoes, still relies onspuds for about a fourth of its sales and nearly half its pretaxprofit.</text>
+        <rel relloc="6">relies</rel>
+        <arg f="" n="0" start="0" end="4">Michael, which also processes potatoes,</arg>
+        <arg f="TMP" n="m" start="5" end="5">still</arg>
+        <arg f="" n="1" start="7" end="7">onspuds</arg>
+        <arg f="" n="2" start="8" end="19">for about a fourth of its sales and nearly half its pretaxprofit.</arg>
+      </example>
+      <example src="" name="rely-v: sentential arg2">
+        <text>Still, Unisys said its European business was weak during thequarter, a worrisome sign given that the company has relied on solidresults overseas to overcome weakness in the U.S. over the pastseveral quarters.</text>
+        <rel relloc="18">relied</rel>
+        <arg f="" n="0" start="15" end="16">the company</arg>
+        <arg f="" n="1" start="19" end="21">on solidresults overseas</arg>
+        <arg f="" n="2" start="22" end="27">to overcome weakness in the U.S.</arg>
+        <arg f="TMP" n="m" start="28" end="31">over the pastseveral quarters.</arg>
+      </example>
+      <example src="" name="reliance-n">
+        <text>A handful of states have slowly started to shift their reliance on various taxes in recent years.</text>
+        <rel relloc="10">reliance</rel>
+        <arg f="" n="0" start="9" end="9">their</arg>
+        <arg f="" n="1" start="11" end="13">on various taxes</arg>
+        <arg f="TMP" n="m" start="14" end="16">in recent years.</arg>
+      </example>
       <note>RELY-V NOTES: Frames file for 'rely' based on sentences in financial subcorpus.Verbnet entry rely-70, no Framenet entry. Comparison to need. (from rely.01-v predicate notes)</note>
       <note>RELIANT-J NOTES: Automatically created by Julia as an alias file for unification. (from reliant.01-j)</note>
       <note>RELIANCE_N NOTES: added by Julia. </note>
-      <roles>
-        <role descr="relier, needer" f="pag" n="0">
-          <vnrole vncls="70" vntheta="agent"/>
-        </role>
-        <role descr="thing needed, relied on" f="ppt" n="1">
-          <vnrole vncls="70" vntheta="theme"/>
-        </role>
-        <role descr="for, in order to" f="prp" n="2"/>
-      </roles>
-      <example name="rely-v: prepositional arg2" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>Michael, which also processes potatoes, still relies onspuds for about a fourth of its sales and nearly half its pretaxprofit.</text>
-        <arg f="" n="0">Michael, which also processes potatoes,</arg>
-        <arg f="tmp" n="m">still</arg>
-        <rel f="">relies</rel>
-        <arg f="" n="1">on spuds</arg>
-        <arg f="" n="2">for about a fourth of its sales and nearly half its pretax profit</arg>
-      </example>
-      <example name="rely-v: sentential arg2" src="" type="">
-        <inflection aspect="perfect" form="participle" person="third" tense="present" voice="active"/>
-        <text>Still, Unisys said its European business was weak during thequarter, a worrisome sign given that the company has relied on solidresults overseas to overcome weakness in the U.S. over the pastseveral quarters.</text>
-        <arg f="" n="0">the company</arg>
-        <rel f="">relied</rel>
-        <arg f="" n="1">on solid results overseas</arg>
-        <arg f="" n="2">to overcome weakness in the U.S.</arg>
-        <arg f="tmp" n="m">over the past several quarters</arg>
-      </example>
-      <example name="reliance-n" src="" type="">
-        <text>A handful of states have slowly started to shift their reliance on various taxes in recent years.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">reliance</rel>
-        <arg f="" n="1">on various taxes</arg>
-        <arg f="tmp" n="m">in recent years</arg>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="reliable">
     <roleset id="reliable.02" name="able to be counted on">
       <aliases>
-        <alias framenet="Trust" pos="j" verbnet="">reliable</alias>
+        <alias pos="j">reliable</alias>
       </aliases>
-      <note>RELIABLE-J NOTES: Added by Julia based on BOLT-4,5. (from reliable.01-j)</note>
       <roles>
-        <role descr="relier" f="pag" n="0"/>
-        <role descr="reliable entity" f="ppt" n="1"/>
-        <role descr="for what purpose" f="prp" n="2"/>
+        <role descr="relier" f="PAG" n="0"/>
+        <role descr="reliable entity" f="PPT" n="1"/>
+        <role descr="for what purpose" f="PRP" n="2"/>
       </roles>
-      <example name="args 1, 2" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Trust" version="1.7" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="internet" name="args 1, 2">
         <text>The BILAG2004-Pregnancy index is reliable for assessment of disease activity in pregnant SLE patients.</text>
-        <arg f="" n="1">The BILAG2004-Pregnancy index</arg>
-        <rel f="">reliable</rel>
-        <arg f="" n="2">for assessment of disease activity in pregnant SLE patients</arg>
+        <rel relloc="4">reliable</rel>
+        <arg f="" n="1" start="0" end="2">The BILAG2004-Pregnancy index</arg>
+        <arg f="" n="2" start="5" end="13">for assessment of disease activity in pregnant SLE patients.</arg>
       </example>
+      <note>RELIABLE-J NOTES: Added by Julia based on BOLT-4,5. (from reliable.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

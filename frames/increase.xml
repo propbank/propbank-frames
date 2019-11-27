@@ -1,112 +1,132 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="increase">
     <roleset id="increase.01" name="go up incrementally">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">increase</alias>
-        <alias framenet="" pos="n" verbnet="">increase</alias>
+        <alias pos="v">increase</alias>
+        <alias pos="n">increase</alias>
       </aliases>
+      <roles>
+        <role descr="causer of increase" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_change_of_position_on_a_scale" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_change_of_position_on_a_scale" version="1.7">cause</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing increasing" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="VerbNet" class="45.6-1" version="UNK">patient</rolelink>
+            <rolelink resource="FrameNet" class="Cause_change_of_position_on_a_scale" version="1.7">attribute</rolelink>
+            <rolelink resource="FrameNet" class="Change_position_on_a_scale" version="1.7">attribute</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="amount increased by, EXT or MNR" f="EXT" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="45.6-1" version="UNK">extent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="start point" f="DIR" n="3"/>
+        <role descr="end point" f="GOL" n="4"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_change_of_position_on_a_scale" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Change_position_on_a_scale" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="45.6-1" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="increase-v.1" src="annot-overlap" confidence="0.1">641</lexlink>
+        <lexlink resource="onsense" version="on5" class="increase-n.1" src="annot-overlap" confidence="0.1">232</lexlink>
+      </lexlinks>
+      <example src="" name="agentive, with end point">
+        <text>Faulding increased its interest to 70% of Moleculon's stock.</text>
+        <rel relloc="1">increased</rel>
+        <arg f="" n="0" start="0" end="0">Faulding</arg>
+        <arg f="" n="1" start="2" end="3">its interest</arg>
+        <arg f="" n="4" start="4" end="8">to 70% of Moleculon's stock.</arg>
+      </example>
+      <example src="" name="agentive, with extent">
+        <text>The Polish government increased home electricity charges by 150%.</text>
+        <rel relloc="3">increased</rel>
+        <arg f="" n="0" start="0" end="2">The Polish government</arg>
+        <arg f="" n="1" start="4" end="6">home electricity charges</arg>
+        <arg f="" n="2" start="7" end="8">by 150%.</arg>
+      </example>
+      <example src="" name="ergative, with extent and end point">
+        <text>The nation's exports increased 4% to $50.45 billion.</text>
+        <rel relloc="3">increased</rel>
+        <arg f="" n="1" start="0" end="2">The nation's exports</arg>
+        <arg f="" n="2" start="4" end="4">4%</arg>
+        <arg f="" n="4" start="5" end="7">to $50.45 billion.</arg>
+      </example>
+      <example src="" name="ergative, with manner">
+        <text>Output will be gradually increased.</text>
+        <rel relloc="4">increased.</rel>
+        <arg f="" n="1" start="0" end="0">Output</arg>
+        <arg f="" n="2" start="3" end="3">gradually</arg>
+      </example>
+      <example src="" name="ergative, with start and end points">
+        <text>Net income increased to $274 million from $130 million.</text>
+        <rel relloc="2">increased</rel>
+        <arg f="" n="1" start="0" end="1">Net income</arg>
+        <arg f="" n="4" start="3" end="5">to $274 million</arg>
+        <arg f="" n="3" start="6" end="8">from $130 million.</arg>
+      </example>
+      <example src="" name="locative">
+        <text>...a hit wine dramatically increase in price</text>
+        <rel relloc="4">increase</rel>
+        <arg f="" n="1" start="0" end="2">...a hit wine</arg>
+        <arg f="" n="2" start="3" end="3">dramatically</arg>
+        <arg f="LOC" n="m" start="5" end="6">in price</arg>
+      </example>
+      <example src="" name="temporal">
+        <text>Georgia Gulf stock increased $1.75 a share yesterday</text>
+        <rel relloc="3">increased</rel>
+        <arg f="" n="1" start="0" end="2">Georgia Gulf stock</arg>
+        <arg f="" n="2" start="4" end="6">$1.75 a share</arg>
+        <arg f="TMP" n="m" start="7" end="7">yesterday</arg>
+      </example>
+      <example src="" name="with purpose clause">
+        <text>Mr. Martin increased prices on some wines just to slow down movement.</text>
+        <rel relloc="2">increased</rel>
+        <arg f="" n="0" start="0" end="1">Mr. Martin</arg>
+        <arg f="" n="1" start="3" end="6">prices on some wines</arg>
+        <arg f="PNC" n="m" start="7" end="11">just to slow down movement.</arg>
+      </example>
+      <example src="NP only" name="NP only">
+        <text>a 3.1 % increase in revenue to $ 992.7 million from $ 963 milliona year earlier</text>
+        <rel relloc="3">increase</rel>
+        <arg f="EXT" n="m" start="1" end="2">3.1 %</arg>
+        <arg f="" n="1" start="4" end="5">in revenue</arg>
+        <arg f="" n="4" start="6" end="9">to $ 992.7 million</arg>
+        <arg f="" n="3" start="10" end="15">from $ 963 milliona year earlier</arg>
+      </example>
+      <example src="Non-numerical extent, NP only" name="Non-numerical extent, NP only">
+        <text>`` a very meaningful '' increase in operating profit by Colgate's U.S. business</text>
+        <rel relloc="5">increase</rel>
+        <arg f="EXT" n="m" start="2" end="3">very meaningful</arg>
+        <arg f="" n="1" start="6" end="8">in operating profit</arg>
+        <arg f="" n="0" start="9" end="12">by Colgate's U.S. business</arg>
+      </example>
+      <example src="Agricultural domain, body part attribute." name="Agricultural domain, body part attribute.">
+        <text>They recorded the cattle's increase in weight over a period of weeks.</text>
+        <rel relloc="4">increase</rel>
+        <arg f="" n="1" start="2" end="3">the cattle's</arg>
+        <arg f="" n="2" start="4" end="5">increase in</arg>
+      </example>
+      <example src="Typical example" name="Typical example">
+        <text>These recent increases in the price of oil have impacted the markets.</text>
+        <rel relloc="2">increases</rel>
+        <arg f="TMP" n="m" start="1" end="1">recent</arg>
+        <arg f="" n="1" start="3" end="7">in the price of oil</arg>
+      </example>
       <note>INCREASE-V NOTES: Let's use EXT for numericals only, otherwise Arg2-MNR: (from increase.01-v)</note>
       <note>INCREASE-N NOTES: Roleset based on verb entry increase.01, OntoNotes sense grouping increase.01; maps to VN entries cos-45.4 and calibratable_cos-45.6-1. Framed by Claire. (from increase.01-n)</note>
-      <roles>
-        <note>Use argM-ext for mentions of extent of increase. (from increase.01-n)</note>
-        <role descr="causer of increase" f="pag" n="0">
-          <vnrole vncls="45.4" vntheta="agent"/>
-        </role>
-        <role descr="thing increasing" f="ppt" n="1">
-          <vnrole vncls="45.4" vntheta="patient"/>
-          <vnrole vncls="45.6-1" vntheta="patient"/>
-        </role>
-        <role descr="amount increased by, EXT or MNR" f="ext" n="2">
-          <vnrole vncls="45.6-1" vntheta="extent"/>
-        </role>
-        <role descr="start point" f="dir" n="3"/>
-        <role descr="end point" f="gol" n="4"/>
-      </roles>
-      <example name="agentive, with end point" src="" type="">
-        <text>Faulding increased its interest to 70% of Moleculon's stock.</text>
-        <arg f="" n="0">Faulding</arg>
-        <rel f="">increased</rel>
-        <arg f="" n="1">its intereset</arg>
-        <arg f="" n="4">to 70% of Moleculon's stock</arg>
-      </example>
-      <example name="agentive, with extent" src="" type="">
-        <text>The Polish government increased home electricity charges by 150%.</text>
-        <arg f="" n="0">The Polish government</arg>
-        <rel f="">increased</rel>
-        <arg f="" n="1">home electricity charges</arg>
-        <arg f="" n="2">by 150%</arg>
-      </example>
-      <example name="ergative, with extent and end point" src="" type="">
-        <text>The nation's exports increased 4% to $50.45 billion.</text>
-        <arg f="" n="1">The nation's exports</arg>
-        <rel f="">increased</rel>
-        <arg f="" n="2">4%</arg>
-        <arg f="" n="4">to $50.45 billion.</arg>
-      </example>
-      <example name="ergative, with manner" src="" type="">
-        <text>Output will be gradually increased.</text>
-        <arg f="" n="1">Output</arg>
-        <arg f="" n="2">gradually</arg>
-        <rel f="">increased</rel>
-      </example>
-      <example name="ergative, with start and end points" src="" type="">
-        <text>Net income increased to $274 million from $130 million.</text>
-        <arg f="" n="1">Net income</arg>
-        <rel f="">increased</rel>
-        <arg f="" n="4">to $274 million</arg>
-        <arg f="" n="3">from $130 million</arg>
-      </example>
-      <example name="locative" src="" type="">
-        <text>...a hit wine dramatically increase in price</text>
-        <arg f="" n="1">...a hit wine</arg>
-        <arg f="" n="2">dramatically</arg>
-        <rel f="">increase</rel>
-        <arg f="loc" n="m">in price</arg>
-      </example>
-      <example name="temporal" src="" type="">
-        <text>Georgia Gulf stock increased $1.75 a share yesterday</text>
-        <arg f="" n="1">Georgia Gulf stock</arg>
-        <rel f="">increased</rel>
-        <arg f="" n="2">$1.75 a share</arg>
-        <arg f="tmp" n="m">yesterday</arg>
-      </example>
-      <example name="with purpose clause" src="" type="">
-        <text>Mr. Martin increased prices on some wines just to slow down movement.</text>
-        <arg f="" n="0">Mr Martin</arg>
-        <rel f="">increased</rel>
-        <arg f="" n="1">prices on some wines</arg>
-        <arg f="pnc" n="m">just to slow down movement</arg>
-      </example>
-      <example name="NP only" src="NP only" type="NP only">
-        <text>a 3.1 % increase in revenue to $ 992.7 million from $ 963 milliona year earlier</text>
-        <arg f="ext" n="m">3.1 %</arg>
-        <rel f="">increase</rel>
-        <arg f="" n="1">in revenue</arg>
-        <arg f="" n="4">to $ 992.7 million</arg>
-        <arg f="" n="3">from $ 963 million a year earlier</arg>
-      </example>
-      <example name="Non-numerical extent, NP only" src="Non-numerical extent, NP only" type="Non-numerical extent, NP only">
-        <text>`` a very meaningful '' increase in operating profit by Colgate's U.S. business</text>
-        <arg f="ext" n="m">very meaningful</arg>
-        <rel f="">increase</rel>
-        <arg f="" n="1">in operating profit</arg>
-        <arg f="" n="0">by Colgate 's U.S. business</arg>
-      </example>
-      <example name="Agricultural domain, body part attribute." src="Agricultural domain, body part attribute." type="Agricultural domain, body part attribute.">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>They recorded the cattle's increase in weight over a period of weeks.</text>
-        <arg f="" n="1">the cattle's</arg>
-        <rel f="">increase</rel>
-        <arg f="" n="2">in body weight</arg>
-      </example>
-      <example name="Typical example" src="Typical example" type="Typical example">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>These recent increases in the price of oil have impacted the markets.</text>
-        <arg f="tmp" n="m">recent</arg>
-        <rel f="">increases</rel>
-        <arg f="" n="1">in the price of oil</arg>
-      </example>
+      <note>Use argM-ext for mentions of extent of increase. (from increase.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

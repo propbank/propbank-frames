@@ -1,29 +1,51 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="homicide">
     <roleset id="homicide.01" name="kill another">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">homicide</alias>
+        <alias pos="n">homicide</alias>
       </aliases>
-      <note>HOMICIDE-N NOTES: Based on ontonnouns. Comparison with kill.01. Framed by Katie. (from homicide.01-n)</note>
       <roles>
-        <role descr="killer" f="pag" n="0"/>
-        <role descr="victim" f="ppt" n="1"/>
-        <role descr="instrument" f="mnr" n="2"/>
+        <role descr="killer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Killing" version="1.7">cause</rolelink>
+            <rolelink resource="FrameNet" class="Killing" version="1.7">killer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="victim" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Killing" version="1.7">victim</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="instrument" f="MNR" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Killing" version="1.7">means</rolelink>
+            <rolelink resource="FrameNet" class="Killing" version="1.7">instrument</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="arg 0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Killing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Life.Die.DeathCausedByViolentEvents" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Die" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+      </lexlinks>
+      <example src="" name="arg 0">
         <text>Homicide by prisoner VEH 1 DEG.</text>
-        <rel f="">homicide</rel>
-        <arg f="" n="0">by prisoner VEH 1 DEG</arg>
+        <rel relloc="0">Homicide</rel>
+        <arg f="" n="0" start="1" end="5">by prisoner VEH 1 DEG.</arg>
       </example>
-      <example name="arg 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="arg 2">
         <text>Berkeley homicide with hammer.</text>
-        <arg f="loc" n="m">Berkeley</arg>
-        <rel f="">homicide</rel>
-        <arg f="" n="2">with hammer.</arg>
+        <rel relloc="1">homicide</rel>
+        <arg f="LOC" n="m" start="0" end="0">Berkeley</arg>
+        <arg f="" n="2" start="2" end="3">with hammer.</arg>
       </example>
+      <note>HOMICIDE-N NOTES: Based on ontonnouns. Comparison with kill.01. Framed by Katie. (from homicide.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

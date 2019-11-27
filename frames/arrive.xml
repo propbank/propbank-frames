@@ -1,72 +1,88 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="arrive">
     <roleset id="arrive.01" name="move, come to">
       <aliases>
-        <alias framenet="Arriving" pos="v" verbnet="">arrive</alias>
-        <alias framenet="arriving" pos="n" verbnet="">arrival</alias>
+        <alias pos="v">arrive</alias>
+        <alias pos="n">arrival</alias>
       </aliases>
-      <note>ARRIVE-V NOTES: Based on financial subcorpus. Comparison to 'come'. Member of VNcls escape-51.1-2. (from arrive.01-v)</note>
-      <note>ARRIVAL-N NOTES: Roleset based on arrive.01. Verbnet class 51.1-2, framenet class arriving. Framed by Katie. (from arrival.01-n)</note>
       <roles>
         <role descr="entity in motion / 'comer'" f="PPT" n="1">
-          <vnrole vncls="51.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="escape-51.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Arriving" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="extent -- rare)" f="ext" n="2"/>
-        <role descr="start point -- also rare)" f="dir" n="3"/>
+        <role descr="extent -- rare)" f="EXT" n="2"/>
+        <role descr="start point -- also rare)" f="DIR" n="3"/>
         <role descr="end point, destination" f="LOC" n="4">
-          <vnrole vncls="51.1" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="escape-51.1" version="verbnet3.3">destination</rolelink>
+            <rolelink resource="FrameNet" class="Arriving" version="1.7">goal</rolelink>
+            <rolelink resource="FrameNet" class="Arriving" version="1.7">path</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="unaccusative" src="" type="">
-        <text>But with the index proving somewhat better than expected and [the widely anticipated report on October]-1 employment scheduled *trace*-1 to arrive tomorrow, stock prices firmed only modestly in response to the report and then faltered.</text>
-        <arg f="" n="1">*trace*-1</arg>
-        <rel f="">arrive</rel>
-        <arg f="tmp" n="m">tomorrow</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Arriving" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="escape-51.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Transportperson" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Transportartifact" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="arrive-v.1" src="annot-overlap" confidence="0.1">150</lexlink>
+        <lexlink resource="onsense" version="on5" class="arrival-n.2" src="annot-overlap" confidence="0.1">18</lexlink>
+      </lexlinks>
+      <example src="" name="unaccusative">
+        <text>But with the index proving somewhat better than expected and the widely anticipated report on October employment scheduled to arrive tomorrow, stock prices firmed only modestly in response to the report and then faltered.</text>
+        <rel relloc="19">arrive</rel>
+        <arg f="" n="1" start="10" end="15">the widely anticipated report on October</arg>
+        <arg f="TMP" n="m" start="20" end="20">tomorrow,</arg>
       </example>
-      <example name="with end point, destination" src="" type="">
+      <example src="" name="with end point, destination">
         <text>When he arrived in the U.S. in 1969 -- the start of an eight-year tour -- he tried selling Japanese yen-denominated bonds to U.S. investors.</text>
-        <arg f="" n="1">he</arg>
-        <rel f="">arrived</rel>
-        <arg f="" n="4">in the U.S.</arg>
-        <arg f="tmp" n="m">in 1969 -- the start of an eight-year tour --</arg>
+        <rel relloc="2">arrived</rel>
+        <arg f="" n="1" start="1" end="1">he</arg>
+        <arg f="" n="4" start="3" end="5">in the U.S.</arg>
+        <arg f="TMP" n="m" start="6" end="15">in 1969 -- the start of an eight-year tour --</arg>
       </example>
-      <example name="ARG1 and ARG3" src="ontonotes mz/sinorama/10/ectb_1001" type="">
+      <example src="ontonotes mz/sinorama/10/ectb_1001" name="ARG1 and ARG3">
         <text>But as Tan Zhiqiang points out , nearly a quarter of the residents of Macau have arrived from the mainland during the past ten years .</text>
-        <arg f="dis" n="m">But</arg>
-        <arg f="adv" n="m">as Tan Zhiqiang points out</arg>
-        <arg f="" n="1">nearly a quarter of the residents of Macau</arg>
-        <rel f="">arrived</rel>
-        <arg f="" n="3">from the mainland</arg>
-        <arg f="tmp" n="m">during the past ten years</arg>
+        <rel relloc="16">arrived</rel>
+        <arg f="DIS" n="m" start="0" end="0">But</arg>
+        <arg f="ADV" n="m" start="1" end="5">as Tan Zhiqiang points out</arg>
+        <arg f="" n="1" start="7" end="14">nearly a quarter of the residents of Macau</arg>
+        <arg f="" n="3" start="17" end="19">from the mainland</arg>
+        <arg f="TMP" n="m" start="20" end="24">during the past ten years</arg>
       </example>
-
-      <example name="Example with rare arg 3" src="" type="">
+      <example src="" name="Example with rare arg 3">
         <text>the arrival of cocoa from the interior</text>
-        <rel f="">arrival</rel>
-        <arg f="" n="1">of cocoa</arg>
-        <arg f="" n="3">from the interior</arg>
+        <rel relloc="1">arrival</rel>
+        <arg f="" n="1" start="2" end="3">of cocoa</arg>
+        <arg f="" n="3" start="4" end="6">from the interior</arg>
       </example>
-      <example name="Example with arg 4" src="" type="">
+      <example src="" name="Example with arg 4">
         <text>the arrival on the market of $ 4.52 billion in 30-year bondsoffered by the Resolution Funding Corp. as part of the government's bailout of the savings and loan industry</text>
-        <rel f="">arrival</rel>
-        <arg f="" n="4">on the market</arg>
-        <arg f="" n="1">of $ 4.52 billion in 30-year bonds offered by the Resolution Funding Corp. as part of the government 's bailout of the savings and loan industry</arg>
+        <rel relloc="1">arrival</rel>
+        <arg f="" n="4" start="2" end="4">on the market</arg>
+        <arg f="" n="1" start="5" end="28">of $ 4.52 billion in 30-year bondsoffered by the Resolution Funding Corp. as part of the government's bailout of the savings and loan industry</arg>
       </example>
-      <example name="Very common instance of having only arg 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="Very common instance of having only arg 1">
         <text>The arrival of the wolves</text>
-        <rel f="">arrival</rel>
-        <arg f="" n="1">of the wolves</arg>
+        <rel relloc="1">arrival</rel>
+        <arg f="" n="1" start="2" end="4">of the wolves</arg>
       </example>
-      <example name="example with all but arg 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="example with all but arg 2">
         <text>On our arrival from Waterloo at Allgate</text>
-        <arg f="" n="1">Our</arg>
-        <rel f="">arrival</rel>
-        <arg f="" n="3">from Waterloo</arg>
-        <arg f="" n="4">at Allgate</arg>
+        <rel relloc="2">arrival</rel>
+        <arg f="" n="1" start="1" end="1">our</arg>
+        <arg f="" n="3" start="3" end="4">from Waterloo</arg>
+        <arg f="" n="4" start="5" end="6">at Allgate</arg>
       </example>
+      <note>ARRIVE-V NOTES: Based on financial subcorpus. Comparison to 'come'. Member of VNcls escape-51.1-2. (from arrive.01-v)</note>
+      <note>ARRIVAL-N NOTES: Roleset based on arrive.01. Verbnet class 51.1-2, framenet class arriving. Framed by Katie. (from arrival.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

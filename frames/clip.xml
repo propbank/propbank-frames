@@ -1,109 +1,125 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="clip">
     <roleset id="clip.01" name="to cut, cut off, or cut out">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">clip</alias>
-        <alias framenet="" pos="v" verbnet="">clip</alias>
+        <alias pos="n">clip</alias>
+        <alias pos="v">clip</alias>
       </aliases>
-      <note>CLIP-V NOTES: Frames file for 'clip' based on survey of sentences in the WSJ corpus. (from clip.01-v predicate notes)</note>
-      <note>CLIP-N NOTES: Roleset based on verb entry clip.01, OntoNotes grouping clip-n senses 4&amp; 5; maps to VN classes braid-41.2.2 &amp; cut-21.1-1. Framed by Claire. (from clip.01-n)</note>
       <roles>
-        <role descr="clipper, agent" f="pag" n="0">
-          <vnrole vncls="21.1-1" vntheta="agent"/>
-          <vnrole vncls="41.2.2" vntheta="agent"/>
+        <role descr="clipper, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="cut-21.1-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="braid-41.2.2" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing clipped" f="ppt" n="1">
-          <vnrole vncls="21.1-1" vntheta="patient"/>
-          <vnrole vncls="41.2.2" vntheta="patient"/>
+        <role descr="thing clipped" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="cut-21.1-1" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="VerbNet" class="braid-41.2.2" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="clipped from, source" f="dir" n="2">
-          <vnrole vncls="21.1-1" vntheta="source"/>
+        <role descr="clipped from, source" f="DIR" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="cut-21.1-1" version="verbnet3.3">source</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>[*-1] Assuming [0]it was n't one of those columns that you clipped [*T*-2] and put [*T*-2] on the refrigerator door , I 'll review the facts .</text>
-        <arg f="" n="0">you</arg>
-        <rel f="">clipped</rel>
-        <arg f="" n="1">[*T*-2]</arg>
-        <arg f="rcl" n="m">that -&gt; those columns</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="cut-21.1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="braid-41.2.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="transitive">
+        <text>[*-1] Assuming [0]it was n't one of those columns that you clipped [*T*] and put [*T*] on the refrigerator door , I 'll review the facts .</text>
+        <rel relloc="11">clipped</rel>
+        <arg f="" n="0" start="10" end="10">you</arg>
+        <arg f="" n="1" start="12" end="12">[*T*]</arg>
+        <arg f="RCL" n="m" start="7" end="8">those columns</arg>
       </example>
-      <example name="all arguments" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
+      <example src="" name="all arguments">
         <text>For another , sympathetic fans have sent Ms. Shere copies-1 of her recipes clipped [*]-1 from magazines over the years .</text>
-        <rel f="">clipped</rel>
-        <arg f="" n="1">[*]</arg>
-        <arg f="" n="2">from magazines</arg>
-        <arg f="tmp" n="m">over the years</arg>
+        <rel relloc="13">clipped</rel>
+        <arg f="" n="1" start="14" end="14">[*]-1</arg>
+        <arg f="" n="2" start="15" end="16">from magazines</arg>
+        <arg f="TMP" n="m" start="17" end="19">over the years</arg>
       </example>
-      <example name="MNR only" src="ON sense 4" type="">
+      <example src="ON sense 4" name="MNR only">
         <text>I need to give the poodles a good clip this weekend.</text>
-        <arg f="mnr" n="m">good</arg>
-        <rel f="">clip</rel>
+        <rel relloc="8">clip</rel>
+        <arg f="MNR" n="m" start="7" end="7">good</arg>
       </example>
-      <example name="Args 1 &amp; 2" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="Args 1 &amp; 2">
         <text>Primary Offering: A clip of hair from Keith Hernandez's mustache.</text>
-        <rel f="">clip</rel>
-        <arg f="" n="1">of hair</arg>
-        <arg f="" n="2">from Keith Hernandez's mustache</arg>
+        <rel relloc="3">clip</rel>
+        <arg f="" n="1" start="4" end="5">of hair</arg>
+        <arg f="" n="2" start="6" end="9">from Keith Hernandez's mustache.</arg>
       </example>
-      
-      <example name="ARG1 and ARG0" src="ontonotes nw/wsj/01/wsj_0108" type="">
+      <example src="ontonotes nw/wsj/01/wsj_0108" name="ARG1 and ARG0">
         <text>Assuming it was n't one of those columns that you clipped and put on the refrigerator door , I 'll review the facts .</text>
-        <arg f="" n="1">[one of those columns][that]</arg>
-        <arg f="" n="0">you</arg>
-        <rel f="">clipped</rel>
+        <rel relloc="10">clipped</rel>
+        <arg f="" n="1" start="4" end="7">one of those columns</arg>
+        <arg f="" n="1" start="8" end="8">that</arg>
+        <arg f="" n="0" start="9" end="9">you</arg>
       </example>
-
-      <example name="ARG1 and ARG2" src="ontonotes nw/wsj/02/wsj_0261" type="">
+      <example src="ontonotes nw/wsj/02/wsj_0261" name="ARG1 and ARG2">
         <text>For another , sympathetic fans have sent Ms. Shere copies of her recipes clipped from magazines over the years .</text>
-        <arg f="" n="1">copies of her recipes</arg>
-        <rel f="">clipped</rel>
-        <arg f="" n="2">from magazines</arg>
-        <arg f="tmp" n="m">over the years</arg>
+        <rel relloc="13">clipped</rel>
+        <arg f="" n="1" start="9" end="12">copies of her recipes</arg>
+        <arg f="" n="2" start="14" end="15">from magazines</arg>
+        <arg f="TMP" n="m" start="16" end="18">over the years</arg>
       </example>
-
+      <note>CLIP-V NOTES: Frames file for 'clip' based on survey of sentences in the WSJ corpus. (from clip.01-v predicate notes)</note>
+      <note>CLIP-N NOTES: Roleset based on verb entry clip.01, OntoNotes grouping clip-n senses 4&amp; 5; maps to VN classes braid-41.2.2 &amp; cut-21.1-1. Framed by Claire. (from clip.01-n)</note>
     </roleset>
     <roleset id="clip.03" name="hit very slightly on the edge">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">clip</alias>
+        <alias pos="v">clip</alias>
       </aliases>
-      <note>CLIP-V NOTES: Added by Julia based on BOLT. No VNcls. (from clip.03-v)</note>
       <roles>
-        <role descr="hitter (agent)" f="pag" n="0"/>
-        <role descr="entity hit" f="gol" n="1"/>
-        <role descr="thing in motion" f="ppt" n="2"/>
+        <role descr="hitter (agent)" f="PAG" n="0"/>
+        <role descr="entity hit" f="GOL" n="1"/>
+        <role descr="thing in motion" f="PPT" n="2"/>
       </roles>
-      <example name="args 0, 1" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="BOLT" name="args 0, 1">
         <text>The 36 - year - old achieved the new landmark from the third ball of the 46th over , *PRO* clipping his 140th delivery faced for a couple into the leg - side from the bowling of Wayne Parnell</text>
-        <arg f="" n="0">*PRO*, *link -&gt; [The 36 - year - old]</arg>
-        <rel f="">clipping</rel>
-        <arg f="" n="1"> his 140th delivery</arg>
+        <rel relloc="20">clipping</rel>
+        <arg f="" n="0" start="0" end="5">The 36 - year - old</arg>
+        <arg f="" n="1" start="21" end="23">his 140th delivery</arg>
       </example>
+      <note>CLIP-V NOTES: Added by Julia based on BOLT. No VNcls. (from clip.03-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="clip_off">
     <roleset id="clip_off.02" name="to cut, cut off, or cut out">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">clip_off</alias>
+        <alias pos="v">clip_off</alias>
       </aliases>
-      <note>CLIP_OFF-V NOTES: (from clip.02-v)</note>
       <roles>
-        <role descr="clipper, agent" f="pag" n="0"/>
-        <role descr="thing clipped" f="ppt" n="1"/>
-        <role descr="clipped from" f="dir" n="2"/>
+        <role descr="clipper, agent" f="PAG" n="0"/>
+        <role descr="thing clipped" f="PPT" n="1"/>
+        <role descr="clipped from" f="DIR" n="2"/>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="active"/>
-        <text>The anthers in these plants are difficult [0] [*]to clip [*T*-1] off .</text>
-        <arg f="" n="0">[*]</arg>
-        <rel f="">[ clip] [ off]</rel>
-        <arg f="" n="1">[*T*-1]</arg>
-        <arg f="rcl" n="m">[0] -&gt; The anthers in these plants</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="transitive">
+        <text>The anthers in these plants are difficult [0] [*]to clip [*T*] off .</text>
+        <rel relloc="9 11">clip off</rel>
+        <arg f="" n="0" start="7" end="7">[0]</arg>
+        <arg f="" n="1" start="10" end="10">[*T*]</arg>
+        <arg f="RCL" n="m" start="0" end="4">The anthers in these plants</arg>
       </example>
+      <note>CLIP_OFF-V NOTES: (from clip.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

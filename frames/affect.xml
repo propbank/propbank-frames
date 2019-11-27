@@ -1,13 +1,67 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="affect">
     <roleset id="affect.01" name="have an effect on, have an effect on">
       <aliases>
-        <alias framenet="Objective_influence" pos="v" verbnet="">affect</alias>
-        <alias framenet="Objective_influence" pos="n" verbnet="">effect</alias>
-        <alias framenet="" pos="j" verbnet="">affected</alias>
-        <alias framenet="" pos="l" verbnet="">have_effect</alias>
+        <alias pos="v">affect</alias>
+        <alias pos="n">effect</alias>
+        <alias pos="j">affected</alias>
+        <alias pos="l">have_effect</alias>
       </aliases>
+      <roles>
+        <role descr="thing affecting" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="amuse-31.1" version="verbnet3.3">stimulus</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing affected" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="amuse-31.1" version="verbnet3.3">experiencer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="instrument, effect had" f="MNR" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Subjective_influence" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Objective_influence" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="amuse-31.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="affect-v.1" src="annot-overlap" confidence="0.1">137</lexlink>
+      </lexlinks>
+      <example src="" name="affect-v: simple transitive">
+        <text>The funding mechanism would affect the antitrust operations of the Justice Department and the Federal Trade Commission.</text>
+        <rel relloc="4">affect</rel>
+        <arg f="" n="0" start="0" end="2">The funding mechanism</arg>
+        <arg f="MOD" n="m" start="3" end="3">would</arg>
+        <arg f="" n="1" start="5" end="16">the antitrust operations of the Justice Department and the Federal Trade Commission.</arg>
+      </example>
+      <example src="BOLT-4,5" name="affected-j">
+        <text>Even people with good credit and little debt will be affected.</text>
+        <rel relloc="10">affected.</rel>
+        <arg f="ADV" n="m" start="0" end="0">Even</arg>
+        <arg f="" n="1" start="1" end="7">people with good credit and little debt</arg>
+        <arg f="MOD" n="m" start="8" end="8">will</arg>
+      </example>
+      <example src="nouns-lv" name="have_effect-l: args 0 &amp; 1">
+        <text>Another graduate of a Taiwan institution declares bluntly that he only spent four years in Taiwan getting his degree , and the place had virtually no effect on him at all .</text>
+        <rel relloc="26">effect</rel>
+        <arg f="" n="0" start="21" end="22">the place</arg>
+        <arg f="LVB" n="m" start="23" end="23">had</arg>
+        <arg f="ADV" n="m" start="24" end="24">virtually</arg>
+        <arg f="NEG" n="m" start="25" end="25">no</arg>
+        <arg f="" n="1" start="27" end="28">on him</arg>
+        <arg f="ADV" n="m" start="29" end="30">at all</arg>
+      </example>
+      <example src="web" name="have_effect-l: Arg2">
+        <text>Not an unreasonable admonition, really, but it had the effect of muzzling Galileo on the matter.</text>
+        <rel relloc="9">effect</rel>
+        <arg f="" n="0" start="6" end="6">it</arg>
+        <arg f="LVB" n="m" start="7" end="7">had</arg>
+        <arg f="" n="2" start="10" end="15">of muzzling Galileo on the matter.</arg>
+      </example>
       <note>AFFECT-V NOTES: Frames file for 'affect' based on survey of initial sentences of big corpus; adjectival usage based on BOLT-4,5. Member of Vncls amuse-31.1. (from affect.01-v)</note>
       <note>EFFECT-N NOTES: Based on verb entry affect.01; corresponds to Vncls amuse-31.1. Differs from verb frame in arg2 because mention of affect itself is possible with noun. (from effect.01-n)</note>
       <note>AFFECTED-J NOTES: Automatically created by Julia as an alias file for unification. (from affected.01-j)</note>
@@ -32,193 +86,173 @@
         new savings to come about. Using affect in the very similar sentence
         These measures will affect savings implies that the measures will
         cause a change in savings that have already been realized.</note>
-      <roles>
-        <role descr="thing affecting" f="pag" n="0">
-          <vnrole vncls="31.1" vntheta="stimulus"/>
-        </role>
-        <role descr="thing affected" f="ppt" n="1">
-          <vnrole vncls="31.1" vntheta="experiencer"/>
-        </role>
-        <role descr="instrument, effect had" f="mnr" n="2"/>
-      </roles>
-      <example name="affect-v: simple transitive" src="" type="">
-        <text>The funding mechanism would affect the antitrust operations of the Justice Department and the Federal Trade Commission.</text>
-        <arg f="" n="0">The funding mechanism</arg>
-        <arg f="mod" n="m">would</arg>
-        <rel f="">affect</rel>
-        <arg f="" n="1">the antitrust operations of the Justice Department and the Federal Trade Commission</arg>
-      </example>
-      <example name="affected-j" src="BOLT-4,5" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Even people with good credit and little debt will be affected.</text>
-        <arg f="adv" n="m">Even</arg>
-        <arg f="" n="1">people with good credit and little debt</arg>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">affected</rel>
-      </example>
-      <example name="have_effect-l: args 0 &amp; 1" src="nouns-lv" type="">
-        <text>Another graduate of a Taiwan institution declares bluntly that he only spent four years in Taiwan getting his degree , and the place had virtually no effect on him at all .</text>
-        <arg f="" n="0">the place</arg>
-        <arg f="lvb" n="m">had</arg>
-        <arg f="adv" n="m">virtually</arg>
-        <arg f="neg" n="m">no</arg>
-        <rel f="">effect</rel>
-        <arg f="" n="1">on him</arg>
-        <arg f="adv" n="m">at all</arg>
-      </example>
-      <example name="have_effect-l: Arg2" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Not an unreasonable admonition, really, but it had the effect of muzzling Galileo on the matter.</text>
-        <arg f="" n="0">it</arg>
-        <arg f="lvb" n="m">had</arg>
-        <rel f="">effect</rel>
-        <arg f="" n="2">of muzzling Galileo on the matter.</arg>
-      </example>
     </roleset>
     <roleset id="affect.02" name="assume, take on">
       <aliases>
-        <alias framenet="Feigning" pos="v" verbnet="">affect</alias>
-        <alias framenet="" pos="n" verbnet="">affectation</alias>
+        <alias pos="v">affect</alias>
+        <alias pos="n">affectation</alias>
       </aliases>
-      <note>AFFECT-V NOTES: No Vncls (from affect.02-v)</note>
       <roles>
-        <role descr="agent, assumer" f="pag" n="0"/>
-        <role descr="characteristic" f="ppt" n="1"/>
+        <role descr="agent, assumer" f="PAG" n="0"/>
+        <role descr="characteristic" f="PPT" n="1"/>
       </roles>
-      <example name="affect-v: copycat" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Feigning" version="1.7" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="affect-v: copycat">
         <text>Salesmen will affect the accent of the region of the country they are calling.</text>
-        <arg f="" n="0">Salesmen</arg>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">affect</rel>
-        <arg f="" n="1">the accent of the region of the country they are calling.</arg>
+        <rel relloc="2">affect</rel>
+        <arg f="" n="0" start="0" end="0">Salesmen</arg>
+        <arg f="MOD" n="m" start="1" end="1">will</arg>
+        <arg f="" n="1" start="3" end="13">the accent of the region of the country they are calling.</arg>
       </example>
+      <note>AFFECT-V NOTES: No Vncls (from affect.02-v)</note>
     </roleset>
   </predicate>
-
   <predicate lemma="effect">
     <roleset id="effect.03" name="bring into existence, bring about, enact">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">effect</alias>
+        <alias pos="v">effect</alias>
       </aliases>
-      <note>EFFECT-V NOTES: Frames file for 'effect' based on sentences in wsj. No Verbnet entry. The difference between 'effect' and 'affect'is one of the greatpitfalls of English. 'Affect' means to influence,'effect' means tobring about or execute. (from effect.01-v)</note>
       <roles>
-        <role descr="cause" f="pag" n="0"/>
-        <role descr="effect, usually a change" f="ppt" n="1"/>
+        <role descr="cause" f="PAG" n="0"/>
+        <role descr="effect, usually a change" f="PPT" n="1"/>
       </roles>
-      <example name="effect-v: perilous example" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>[Mr. Dang]-1 is alleged [*-1]-2 to have used the account of Singapore hotel and property magnate Ong Beng Seng [*-2] to effect the transactions.</text>
-        <arg f="" n="0">[*-2]</arg>
-        <rel f="">effect</rel>
-        <arg f="" n="1">the transactions</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Accomplishment" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="effect-v.1" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="" name="effect-v: perilous example">
+        <text>[Mr. Dang]-1 is alleged *-1 to have used the account of Singapore hotel and property magnate Ong Beng Seng [*] to effect the transactions.</text>
+        <rel relloc="21">effect</rel>
+        <arg f="" n="0" start="4" end="4">*-1</arg>
+        <arg f="" n="1" start="22" end="23">the transactions.</arg>
       </example>
-      <example name="effect-v: proper lexical item" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
+      <example src="" name="effect-v: proper lexical item">
         <text>But even if he effects a Hyde-to-Jekyll transformation, he will face a serious ideological crisis and Reunification ScenarioTwo.</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">effects</rel>
-        <arg f="" n="1">a Hyde-to-Jekyll transformation</arg>
+        <rel relloc="4">effects</rel>
+        <arg f="" n="0" start="3" end="3">he</arg>
+        <arg f="" n="1" start="5" end="7">a Hyde-to-Jekyll transformation,</arg>
       </example>
+      <note>EFFECT-V NOTES: Frames file for 'effect' based on sentences in wsj. No Verbnet entry. The difference between 'effect' and 'affect'is one of the greatpitfalls of English. 'Affect' means to influence,'effect' means tobring about or execute. (from effect.01-v)</note>
     </roleset>
   </predicate>
-
   <predicate lemma="effective">
     <roleset id="effective.04" name="cause an effect, successful in creating a desired effect">
       <aliases>
-        <alias framenet="Usefulness Being_in_effect" pos="j" verbnet="">effective</alias>
+        <alias pos="j">effective</alias>
       </aliases>
-      <note>EFFECTIVE-J NOTES: Added by Julia based on BOLT-1, effect-v.01. (from effective.01-j)</note>
       <roles>
-        <role descr="cause" f="pag" n="0"/>
-        <role descr="domain in which arg0 is effective; outcome effected" f="ppt" n="1"/>
+        <role descr="cause" f="PAG" n="0"/>
+        <role descr="domain in which arg0 is effective; outcome effected" f="PPT" n="1"/>
       </roles>
-      <example name="effective-j: both args with EXT" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Usefulness" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Being_in_effect" version="1.7" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="BOLT" name="effective-j: both args with EXT">
         <text>They note that it is 87 % effective in preventing people in that range from getting the flu at all but people in the 18 - 49range only had lessened symptoms .</text>
-        <arg f="" n="0">it</arg>
-        <arg f="ext" n="m">87%</arg>
-        <rel f="">effective</rel>
-        <arg f="" n="1">in preventing people in that range from getting the flu at all</arg>
+        <rel relloc="7">effective</rel>
+        <arg f="" n="0" start="3" end="3">it</arg>
+        <arg f="EXT" n="m" start="5" end="6">87 %</arg>
+        <arg f="" n="1" start="8" end="19">in preventing people in that range from getting the flu at all</arg>
       </example>
+      <note>EFFECTIVE-J NOTES: Added by Julia based on BOLT-1, effect-v.01. (from effective.01-j)</note>
     </roleset>
   </predicate>
-
   <predicate lemma="take_effect">
     <roleset id="take_effect.05" name="begin being in effect">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">effect</alias>
-        <alias framenet="" pos="l" verbnet="">take_effect</alias>
-        <alias framenet="" pos="m" verbnet="">come_into_effect</alias>
-        <alias framenet="" pos="m" verbnet="">go_into_effect</alias>
-        <mwe id="come_into_effect">
-          <token slot="A" arg="" pos="VB" head="" dep="">come</token>
-          <token slot="A" arg="" pos="VB" head="" dep="">go</token>
-          <token slot="B" arg="" pos="IN" head="C" dep="case">into</token>
-          <token slot="C" arg="" pos="NN" head="A" dep="obl">effect</token>
-        </mwe>
-      </aliases>
-      <mappings alias="come_into_effect">
-        <source>
+        <alias pos="n">effect</alias>
+        <alias pos="l">take_effect</alias>
+        <alias pos="m">come_into_effect</alias>
+        <mwp-descriptions id="come_into_effect">
+          <syntaxdesc slots="B C A">
+            <token slot="A" arg="" pos="VB" head="" dep="">come</token>
+            <token slot="A" arg="" pos="VB" head="" dep="">go</token>
+            <token slot="B" arg="" pos="IN" head="C" dep="case">into</token>
+            <token slot="C" arg="" pos="NN" head="A" dep="obl">effect</token>
+          </syntaxdesc>
+          <mapping>
+            <source>
           (A /come-04
             :arg1 (n1 / NARG1)
             :arg2 (C / effect-03 
                 :arg0 (n / NARG0)
                 :arg1 (n1)))
         </source>
-        <target>
+            <target>
           (a / activate-01
               :arg0 (n / NARG0)
               :arg1 (n1 / NARG1))
         </target>
-      </mappings>
-      <note>EFFECT-N, TAKE_EFFECT-L, GO_INTO_EFFECT-L, COME_INTO_EFFECT-L NOTES: The vast majority of 'effect-n' instances are going to go under affect.01. The instances here will be part of LVCs.</note>
+          </mapping>
+        </mwp-descriptions>
+        <alias pos="m">go_into_effect</alias>
+      </aliases>
       <roles>
-        <role descr="cause" f="pag" n="0"/>
-        <role descr="effect, usually a change" f="ppt" n="1"/>
+        <role descr="cause" f="PAG" n="0"/>
+        <role descr="effect, usually a change" f="PPT" n="1"/>
       </roles>
-      <example name="take_effect-l" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <example src="" name="take_effect-l">
         <text>The revisions will take effect Friday.</text>
-        <arg f="" n="1">The revisions</arg>
-        <arg f="mod" n="m">will</arg>
-        <arg f="lvb" n="m">take</arg>
-        <rel f="">effect</rel>
-        <arg f="tmp" n="m">Friday</arg>
+        <rel relloc="4">effect</rel>
+        <arg f="" n="1" start="0" end="1">The revisions</arg>
+        <arg f="MOD" n="m" start="2" end="2">will</arg>
+        <arg f="LVB" n="m" start="3" end="3">take</arg>
+        <arg f="TMP" n="m" start="5" end="5">Friday.</arg>
       </example>
-      <example name="come_into_effect-m" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>[Parody copyright laws]-1 set *PRO*-1 to come into effect 20 October 2014.</text>
-        <arg f="" n="1">*PRO*-1</arg>
-        <rel f="">[come][into][effect]</rel>
-        <arg f="tmp" n="m">20 October 2014</arg>
+      <example src="" name="come_into_effect-m">
+        <text> Parody copyright laws set to come into effect 20 October 2014.</text>
+        <rel relloc="6 7 8">come into effect</rel>
+        <arg f="" n="1" start="1" end="3">Parody copyright laws</arg>
+        <arg f="TMP" n="m" start="9" end="11">20 October 2014.</arg>
       </example>
-      <example name="go_into_effect-m" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="go_into_effect-m">
         <text>The Homestead Act Went Into Effect May 20, 1862.</text>
-        <arg f="" n="1">The Homestead Act</arg>
-        <rel f="">[go][into][effect]</rel>
-        <arg f="tmp" n="m">May 20, 1862</arg>
+        <rel relloc="0 2 3 5">The Act Went Effect</rel>
+        <arg f="" n="1" start="0" end="2">The Homestead Act</arg>
+        <arg f="TMP" n="m" start="6" end="8">May 20, 1862.</arg>
       </example>
+      <note>EFFECT-N, TAKE_EFFECT-L, GO_INTO_EFFECT-L, COME_INTO_EFFECT-L NOTES: The vast majority of 'effect-n' instances are going to go under affect.01. The instances here will be part of LVCs.</note>
     </roleset>
   </predicate>
-
   <predicate lemma="in_effect">
     <roleset id="in_effect.06" name="in an active state, a state where a certain effect holds">
       <aliases>
-        <alias framenet="" pos="x" verbnet="">in_effect</alias>
+        <alias pos="x">in_effect</alias>
       </aliases>
       <roles>
-        <role descr="cause" f="pag" n="0"/>
-        <role descr="active thing" f="ppt" n="1"/>
+        <role descr="cause" f="PAG" n="0"/>
+        <role descr="active thing" f="PPT" n="1"/>
       </roles>
-      <note>Reframed by Julia and Tim in early stages of MWE framing.</note>
-      <example name="in_effect-x" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>It was before 6:30 so the early bird special was in effect, making the meal a tad cheaper than he'd figured. </text>
-        <arg f="" n="1">the early bird special</arg>
-        <rel f="">[in][effect]</rel>
-        <arg f="adv" n="m">making the meal a tad cheaper than he'd figured</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <example src="" name="in_effect-x">
+        <text>It was before 6:30 so the early bird special was in effect, making the meal a tad cheaper than he'd figured.</text>
+        <rel relloc="10 11">in effect,</rel>
+        <arg f="" n="1" start="5" end="8">the early bird special</arg>
+        <arg f="ADV" n="m" start="12" end="20">making the meal a tad cheaper than he'd figured.</arg>
       </example>
+      <note>Reframed by Julia and Tim in early stages of MWE framing.</note>
     </roleset>
   </predicate>
 </frameset>

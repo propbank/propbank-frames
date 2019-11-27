@@ -1,62 +1,81 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="dissolve">
     <roleset id="dissolve.01" name="cause to come apart">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">dissolve</alias>
-        <alias framenet="dispersal" pos="n" verbnet="">dissolution</alias>
+        <alias pos="v">dissolve</alias>
+        <alias pos="n">dissolution</alias>
       </aliases>
+      <roles>
+        <role descr="causer, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Dispersal" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Dispersal" version="1.7">cause</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing dissolving" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Dispersal" version="1.7">individuals</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="medium, such as water" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Dispersal" version="1.7">result</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="into components" f="PRD" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Dispersal" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="dissolve-v.4" src="annot-overlap" confidence="0.1">9</lexlink>
+        <lexlink resource="onsense" version="on5" class="dissolution-n.4" src="annot-overlap" confidence="0.1">7</lexlink>
+        <lexlink resource="onsense" version="on5" class="dissolve-v.3" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="" name="from the corpus">
+        <text>He-1 joins Nov. 13, *trace*-1 dissolving his consulting firm, Canter, Achenbaum Associates.</text>
+        <rel relloc="5">dissolving</rel>
+        <arg f="" n="0" start="4" end="4">*trace*-1</arg>
+        <arg f="" n="1" start="6" end="11">his consulting firm, Canter, Achenbaum Associates.</arg>
+      </example>
+      <example src="ontonotes wb/c2e/00/c2e_0001" name="ARG1 and ARG2">
+        <text>I have read relevant information that L - Ascorbic acid oxidizes easily after it dissolves in the water .</text>
+        <rel relloc="14">dissolves</rel>
+        <arg f="" n="1" start="13" end="13">it</arg>
+        <arg f="" n="2" start="15" end="17">in the water</arg>
+      </example>
+      <example src="" name="with components">
+        <text>John dissolved his corporation into three spinoff companies.</text>
+        <rel relloc="1">dissolved</rel>
+        <arg f="" n="0" start="0" end="0">John</arg>
+        <arg f="" n="1" start="2" end="3">his corporation</arg>
+        <arg f="" n="3" start="4" end="7">into three spinoff companies.</arg>
+      </example>
+      <example src="" name="Arg 1 (most common)">
+        <text>the eventual dissolution of the EC</text>
+        <rel relloc="2">dissolution</rel>
+        <arg f="TMP" n="m" start="1" end="1">eventual</arg>
+        <arg f="" n="1" start="3" end="5">of the EC</arg>
+      </example>
+      <example src="" name="With temporal after arg 1">
+        <text>dissolution of Hungary 's Communist Party this month</text>
+        <rel relloc="0">dissolution</rel>
+        <arg f="" n="1" start="1" end="5">of Hungary 's Communist Party</arg>
+        <arg f="TMP" n="m" start="6" end="7">this month</arg>
+      </example>
+      <example src="" name="One more with arg 1 only">
+        <text>The dissolution of the Warsaw Pact</text>
+        <rel relloc="1">dissolution</rel>
+        <arg f="" n="1" start="2" end="5">of the Warsaw Pact</arg>
+      </example>
       <note>DISSOLVE-V NOTES: Frames file for 'dissolve' based on sentences in financial subcorpus. Verbnet entry other_cos-45.4, other framed members include alter, decrease, halt, narrow, shut, slow, sweeten, weaken and worsen. No comparison. (from dissolve.01-v predicate notes)</note>
       <note>DISSOLUTION-N NOTES: Based on sentences in nouns-00040. Comparison to 'dissolve.01' Vn classes other_cos-45.4 and break-45.1. Fn class dispersal.Framed by Katie. (from dissolution.01-n)</note>
-      <roles>
-        <role descr="causer, agent" f="pag" n="0">
-          <vnrole vncls="45.4" vntheta="agent"/>
-        </role>
-        <role descr="thing dissolving" f="ppt" n="1">
-          <vnrole vncls="45.4" vntheta="patient"/>
-        </role>
-        <role descr="medium, such as water" f="gol" n="2"/>
-        <role descr="into components" f="prd" n="3"/>
-      </roles>
-      <example name="from the corpus" src="" type="">
-        <text>He-1 joins Nov. 13, *trace*-1 dissolving his consulting firm, Canter, Achenbaum Associates.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">dissolving</rel>
-        <arg f="" n="1">his consulting firm, Canter, Achenbaum Associates</arg>
-      </example>
-      <example name="ARG1 and ARG2" src="ontonotes wb/c2e/00/c2e_0001" type="">
-        <text>I have read relevant information that L - Ascorbic acid oxidizes easily after it dissolves in the water .</text>
-        <arg f="" n="1">it</arg>
-        <rel f="">dissolves</rel>
-        <arg f="" n="2">in the water</arg>
-      </example>
-
-      
-      <example name="with components" src="" type="">
-        <text>John dissolved his corporation into three spinoff companies.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">dissolved</rel>
-        <arg f="" n="1">his corporation</arg>
-        <arg f="" n="3">into three spinoff companies</arg>
-      </example>
-      <example name="Arg 1 (most common)" src="" type="">
-        <text>the eventual dissolution of the EC</text>
-        <arg f="tmp" n="m">eventual</arg>
-        <rel f="">dissolution</rel>
-        <arg f="" n="1">of the EC</arg>
-      </example>
-      <example name="With temporal after arg 1" src="" type="">
-        <text>dissolution of Hungary 's Communist Party this month</text>
-        <rel f="">dissolution</rel>
-        <arg f="" n="1">of Hungary 's Communist Party</arg>
-        <arg f="tmp" n="m">this month</arg>
-      </example>
-      <example name="One more with arg 1 only" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The dissolution of the Warsaw Pact</text>
-        <rel f="">dissolution</rel>
-        <arg f="" n="1">of the Warsaw Pact</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

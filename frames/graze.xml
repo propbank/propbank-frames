@@ -1,46 +1,57 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="graze">
     <roleset id="graze.01" name="(allow to) eat grass, or eat steadily in small amounts through the day">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">graze</alias>
-        <alias framenet="" pos="v" verbnet="">grazing</alias>
+        <alias pos="v">graze</alias>
+        <alias pos="v">grazing</alias>
       </aliases>
-      <note>GRAZE-V NOTES: Can't deny that ArgA! (from graze.01-v)</note>
       <roles>
-        <role descr="rancher" f="pag" n="0"/>
-        <role descr="cow" f="ppt" n="1">
-          <vnrole vncls="39.5" vntheta="Agent"/>
-          <vnrole vncls="20-1" vntheta="Experiencer"/>
+        <role descr="rancher" f="PAG" n="0"/>
+        <role descr="cow" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="dine-39.5" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="touch-20-1" version="verbnet3.3">experiencer</rolelink>
+          </rolelinks>
         </role>
-        <role descr="grass, pasture" f="gol" n="2">
-          <vnrole vncls="39.5" vntheta="Patient"/>
-          <vnrole vncls="20-1" vntheta="Instrument"/>
+        <role descr="grass, pasture" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="dine-39.5" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="VerbNet" class="touch-20-1" version="verbnet3.3">instrument</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="graze-v: basic transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>The Soviets' explanation is that the anthrax came from one lot of animal feed made from the bones of cattle that [*T*-1] grazed on soil that was naturally infected with anthrax spores.</text>
-        <arg f="" n="1">[*T*-1]</arg>
-        <rel f="">grazed</rel>
-        <arg f="" n="2">on soil that [*T*-2] was naturally infected with anthrax spores</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="dine-39.5" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="touch-20-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="graze-v.1" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="" name="graze-v: basic transitive">
+        <text>The Soviets' explanation is that the anthrax came from one lot of animal feed made from the bones of cattle that [*T*] grazed on soil that was naturally infected with anthrax spores.</text>
+        <rel relloc="22">grazed</rel>
+        <arg f="" n="1" start="21" end="21">[*T*]</arg>
+        <arg f="" n="2" start="23" end="31">on soil that was naturally infected with anthrax spores.</arg>
       </example>
-      <example name="graze-v: intransitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
+      <example src="" name="graze-v: intransitive">
         <text>They graze at the Farmers Market, a combination gourmet food court and grocery store, while a pianist accompanies the noon fashion show with a selection of dreamy melodies.</text>
-        <arg f="" n="1">They</arg>
-        <rel f="">graze</rel>
-        <arg f="LOC" n="M">at the Farmers Market, a combination gourmet food court and grocery store</arg>
-        <arg f="TMP" n="M">while a pianist accompanies the noon fashion show with a selection of dreamy melodies</arg>
+        <rel relloc="1">graze</rel>
+        <arg f="" n="1" start="0" end="0">They</arg>
+        <arg f="LOC" n="M" start="2" end="13">at the Farmers Market, a combination gourmet food court and grocery store,</arg>
+        <arg f="TMP" n="M" start="14" end="27">while a pianist accompanies the noon fashion show with a selection of dreamy melodies.</arg>
       </example>
-      <example name="ARG0 and ARG2" src="ontonotes wb/a2e/00/a2e_0025" type="">
+      <example src="ontonotes wb/a2e/00/a2e_0025" name="ARG0 and ARG2">
         <text>Finally , I say : -LRB- The Kingdom of Saudi Arabia was established on the basis of the words of God , on the words of His messenger , and on the application of the religion of God and the Sunna of His messenger -LRB- may God bless him and grant him salvation -RRB- . This way of doing things will not change in spite of the liberals , so it is better for them to pursue al - Qusaybi , Khalid al - Harbi , and others whom purity and virtuousness do not suit , and who want to graze like cattle in every corrupt world . -RRB-</text>
-        <arg f="" n="0">[who][others]</arg>
-        <rel f="">graze</rel>
-        <arg f="mnr" n="m">like cattle</arg>
-        <arg f="" n="2">in every corrupt world</arg>
+        <rel relloc="100">graze</rel>
+        <arg f="" n="0" start="97" end="97">who</arg>
+        <arg f="" n="0" start="87" end="87">others</arg>
+        <arg f="MNR" n="m" start="101" end="102">like cattle</arg>
+        <arg f="" n="2" start="103" end="106">in every corrupt world</arg>
       </example>
-
+      <note>GRAZE-V NOTES: Can't deny that ArgA! (from graze.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

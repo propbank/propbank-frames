@@ -1,59 +1,74 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="interpose">
     <roleset id="interpose.01" name="be, come, or place between">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">interpose</alias>
-        <alias framenet="" pos="n" verbnet="">interposition</alias>
+        <alias pos="v">interpose</alias>
+        <alias pos="n">interposition</alias>
       </aliases>
-      <note>INTERPOSE-V NOTES: Added by Julia based on ULA. No VNcls. (from interpose.01-v)</note>
-      <note>INTERPOSITION-N NOTES: (from interposition.01-n)</note>
       <roles>
         <role descr="agent" f="PAG" n="0"/>
         <role descr="thing being interposed" f="PPT" n="1"/>
-        <role descr="interposed into" f="gol" n="2"/>
+        <role descr="interposed into" f="GOL" n="2"/>
       </roles>
-      <example name="Corpus example" src="ULA" type="-">
-        <inflection aspect="perfect" form="participle" person="third" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="ULA" name="Corpus example">
         <text>And I understand that you object to that , and I understand the defendants have interposed not only this objection but they have also argued against that .</text>
-        <arg f="" n="0">the defendants</arg>
-        <rel f="">interposed</rel>
-        <arg f="" n="1">this objection</arg>
+        <rel relloc="15">interposed</rel>
+        <arg f="" n="0" start="12" end="13">the defendants</arg>
+        <arg f="" n="1" start="18" end="19">this objection</arg>
       </example>
-      <example name="all args" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
+      <example src="internet" name="all args">
         <text>Then she tiptoed to his side, interposed the parasol between him and the sun, and brushed away the flies.</text>
-        <arg f="tmp" n="m">Then</arg>
-        <arg f="" n="0">she</arg>
-        <rel f="">interposed</rel>
-        <arg f="" n="1">the parasol</arg>
-        <arg f="" n="2">between him and the sun</arg>
+        <rel relloc="6">interposed</rel>
+        <arg f="TMP" n="m" start="0" end="0">Then</arg>
+        <arg f="" n="0" start="1" end="1">she</arg>
+        <arg f="" n="1" start="7" end="8">the parasol</arg>
+        <arg f="" n="2" start="9" end="13">between him and the sun,</arg>
       </example>
+      <note>INTERPOSE-V NOTES: Added by Julia based on ULA. No VNcls. (from interpose.01-v)</note>
+      <note>INTERPOSITION-N NOTES: (from interposition.01-n)</note>
     </roleset>
     <roleset id="interpose.02" name="utterance">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">interpose</alias>
+        <alias pos="v">interpose</alias>
       </aliases>
-      <note>INTERPOSE-V NOTES: Added by Julia. Member of VNcls say-37.7-1. (from interpose.02-v)</note>
       <roles>
         <role descr="Speaker" f="PAG" n="0">
-          <vnrole vncls="37.7-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="say-37.7-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="utterance" f="PPT" n="1">
-          <vnrole vncls="37.7-1" vntheta="Topic"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="say-37.7-1" version="verbnet3.3">topic</rolelink>
+          </rolelinks>
         </role>
         <role descr="hearer" f="GOL" n="2">
-          <vnrole vncls="37.7-1" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="say-37.7-1" version="verbnet3.3">recipient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="args 0 and 1" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
-        <text>[?But he has broken the taboo, your great taboo of the laying-yard, and must go to the eating,?]-1 Agno interposed *trace*-1 quickly.</text>
-        <arg f="" n="0">Agno</arg>
-        <rel f="">interposed</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="mnr" n="m">quickly</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="say-37.7-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="internet" name="args 0 and 1">
+        <text> ?But he has broken the taboo, your great taboo of the laying-yard, and must go to the eating,? Agno interposed quickly.</text>
+        <rel relloc="20">interposed</rel>
+        <arg f="" n="0" start="19" end="19">Agno</arg>
+        <arg f="" n="1" start="1" end="18">?But he has broken the taboo, your great taboo of the laying-yard, and must go to the eating,?</arg>
+        <arg f="MNR" n="m" start="21" end="21">quickly.</arg>
       </example>
+      <note>INTERPOSE-V NOTES: Added by Julia. Member of VNcls say-37.7-1. (from interpose.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

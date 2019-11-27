@@ -1,33 +1,68 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="taxi">
     <roleset id="taxi.01" name="airplane moving on the ground">
       <aliases>
-        <alias framenet="Operate_vehicle Ride_vehicle Self_motion" pos="v" verbnet="">taxi</alias>
+        <alias pos="v">taxi</alias>
       </aliases>
-      <note>TAXI-V NOTES: frame by Perryn. Member of Vncls vehicle-51.4.1. (from taxi.01-v)</note>
       <roles>
         <role descr="agent, driver" f="PAG" n="0">
-          <vnrole vncls="51.4.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="vehicle-51.4.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Operate_vehicle" version="1.7">driver</rolelink>
+            <rolelink resource="FrameNet" class="Ride_vehicle" version="1.7">vehicle</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">source</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing moved" f="PPT" n="1">
-          <vnrole vncls="51.4.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="vehicle-51.4.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Operate_vehicle" version="1.7">vehicle</rolelink>
+            <rolelink resource="FrameNet" class="Ride_vehicle" version="1.7">theme</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">self_mover</rolelink>
+          </rolelinks>
         </role>
         <role descr="locations, or start point" f="LOC" n="2">
-          <vnrole vncls="51.4.1" vntheta="Location"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="vehicle-51.4.1" version="verbnet3.3">location</rolelink>
+            <rolelink resource="FrameNet" class="Operate_vehicle" version="1.7">area</rolelink>
+            <rolelink resource="FrameNet" class="Operate_vehicle" version="1.7">goal</rolelink>
+            <rolelink resource="FrameNet" class="Ride_vehicle" version="1.7">area</rolelink>
+            <rolelink resource="FrameNet" class="Ride_vehicle" version="1.7">goal</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">place</rolelink>
+          </rolelinks>
         </role>
         <role descr="destination" f="LOC" n="3">
-          <vnrole vncls="51.4.1" vntheta="Location"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="vehicle-51.4.1" version="verbnet3.3">location</rolelink>
+            <rolelink resource="FrameNet" class="Operate_vehicle" version="1.7">area</rolelink>
+            <rolelink resource="FrameNet" class="Operate_vehicle" version="1.7">goal</rolelink>
+            <rolelink resource="FrameNet" class="Ride_vehicle" version="1.7">area</rolelink>
+            <rolelink resource="FrameNet" class="Ride_vehicle" version="1.7">goal</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">goal</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">path</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="air force one" src="" type="">
-        <text>You're looking at the picture of [Air Force One]-1 taxiing in on the tarmac, *PRO*-1 getting ready for the president.</text>
-        <arg f="" n="0">Air Force One</arg>
-        <rel f="">taxiing</rel>
-        <arg f="dir" n="m">in</arg>
-        <arg f="loc" n="m">on the tarmac</arg>
-        <arg f="prd" n="m">getting ready for the president</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Operate_vehicle" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Self_motion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Ride_vehicle" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="vehicle-51.4.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="air force one">
+        <text>You're looking at the picture of [Air Force One]-1 taxiing in on the tarmac,  getting ready for the president.</text>
+        <rel relloc="9">taxiing</rel>
+        <arg f="" n="0" start="6" end="7">[Air Force</arg>
+        <arg f="DIR" n="m" start="10" end="10">in</arg>
+        <arg f="LOC" n="m" start="11" end="13">on the tarmac,</arg>
+        <arg f="PRD" n="m" start="15" end="19">getting ready for the president.</arg>
       </example>
+      <note>TAXI-V NOTES: frame by Perryn. Member of Vncls vehicle-51.4.1. (from taxi.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

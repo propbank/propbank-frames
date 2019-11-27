@@ -1,63 +1,72 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="holiday">
     <roleset id="holiday.01" name="vacation, taking a vacation, break (from something)">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">holiday</alias>
-        <alias framenet="Temporary_leave" pos="n" verbnet="">holiday</alias>
-        <alias framenet="" pos="n" verbnet="">holidaying</alias>
+        <alias pos="v">holiday</alias>
+        <alias pos="n">holiday</alias>
+        <alias pos="n">holidaying</alias>
       </aliases>
+      <roles>
+        <role descr="vacationer" f="PPT" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="weekend-56" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="locaction" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="weekend-56" version="verbnet3.3">location</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="holiday away from what" f="VSP" n="2"/>
+        <role descr="holiday commemorating what" f="PRP" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Temporary_leave" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="weekend-56" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web usage" name="All arguments">
+        <text>They holidayed in Mexico together last month</text>
+        <rel relloc="1">holidayed</rel>
+        <arg f="" n="0" start="0" end="0">They</arg>
+        <arg f="" n="1" start="2" end="3">in Mexico</arg>
+        <arg f="TMP" n="m" start="5" end="6">last month</arg>
+      </example>
+      <example src="internet" name="NOT EVENTIVE. .YY">
+        <text>The population increases in the season when tourists come from all across the globe to spend their holiday in Turkey.</text>
+        <rel relloc="17">holiday</rel>
+      </example>
+      <example src="internet" name="args 0, 1">
+        <text>The two then embark on their holiday in Fiji.</text>
+        <rel relloc="6">holiday</rel>
+        <arg f="" n="0" start="5" end="5">their</arg>
+        <arg f="" n="1" start="7" end="8">in Fiji.</arg>
+      </example>
+      <example src="internet" name="Light verb">
+        <text>I may take a holiday in Spain / Leave my wings behind me / Drink my worries down the drain / And fly away to somewhere new /</text>
+        <rel relloc="4">holiday</rel>
+        <arg f="" n="0" start="0" end="0">I</arg>
+        <arg f="MOD" n="m" start="1" end="1">may</arg>
+        <arg f="LVB" n="m" start="2" end="2">take</arg>
+        <arg f="" n="1" start="5" end="6">in Spain</arg>
+      </example>
+      <example src="BOLT" name="just arg2">
+        <text>When asked why no economists support her tax holiday plan , she said they were elitists who do n't understand the pain the common man is in .</text>
+        <rel relloc="8">holiday</rel>
+        <arg f="" n="2" start="7" end="7">tax</arg>
+      </example>
+      <example src="" name="holidaying-n">
+        <text>Many families are set to plan a best holidaying .</text>
+        <rel relloc="8">holidaying</rel>
+        <arg f="ADJ" n="m" start="7" end="7">best</arg>
+      </example>
       <note>HOLIDAY-V NOTES: corrected by claire (from holiday.01-v)</note>
       <note>HOLIDAY-N NOTES: Added by Julia based on BOLT, holiday-v.01, WN sense #1. Corresponds to VNcls weekend-56 (from holiday.01-n)</note>
-      <roles>
-        <note>Watch out for calendar dates. Try to only select instances that indicate the act of taking a vacation. It can be blurry, so do your best. If it's too blurry to tell, go ahead and tag. (from holiday.01-n)</note>
-        <role descr="vacationer" f="ppt" n="0">
-          <vnrole vncls="56" vntheta="theme"/>
-        </role>
-        <role descr="locaction" f="ppt" n="1">
-          <vnrole vncls="56" vntheta="location"/>
-        </role>
-        <role descr="holiday away from what" f="vsp" n="2"/>
-        <role descr="holiday commemorating what" f="prp" n="3"/>
-      </roles>
-      <example name="All arguments" src="web usage" type="">
-        <text>They holidayed in Mexico together last month</text>
-        <arg f="" n="0">They</arg>
-        <rel f="">holidayed</rel>
-        <arg f="" n="1">in Mexico</arg>
-        <arg f="tmp" n="m">last month</arg>
-      </example>
-      <example name="NOT EVENTIVE. .YY" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The population increases in the season when tourists come from all across the globe to spend their holiday in Turkey.</text>
-      </example>
-      <example name="args 0, 1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The two then embark on their holiday in Fiji.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">holiday</rel>
-        <arg f="" n="1">in Fiji</arg>
-      </example>
-      <example name="Light verb" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I may take a holiday in Spain / Leave my wings behind me / Drink my worries down the drain / And fly away to somewhere new /</text>
-        <arg f="" n="0">I</arg>
-        <arg f="mod" n="m">may</arg>
-        <arg f="lvb" n="m">take</arg>
-        <rel f="">holiday</rel>
-        <arg f="" n="1">in Spain</arg>
-      </example>
-      <example name="just arg2" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>When asked why no economists support her tax holiday plan , she said they were elitists who do n't understand the pain the common man is in .</text>
-        <arg f="" n="2">tax</arg>
-        <rel f="">holiday</rel>
-      </example>
-      <example name="holidaying-n" src="" type="">
-        <text>Many families are set to plan a best holidaying .</text>
-        <arg f="adj" n="m">best</arg>
-        <rel f="">holidaying</rel>
-      </example>
+      <note>Watch out for calendar dates. Try to only select instances that indicate the act of taking a vacation. It can be blurry, so do your best. If it's too blurry to tell, go ahead and tag. (from holiday.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

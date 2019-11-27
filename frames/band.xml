@@ -1,43 +1,57 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="band">
     <roleset id="band.01" name="attach">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">banding</alias>
-        <alias framenet="Come_together" pos="v" verbnet="">band</alias>
+        <alias pos="n">banding</alias>
+        <alias pos="v">band</alias>
       </aliases>
+      <roles>
+        <role descr="causer of banding together, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="shake-22.3-2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="tape-22.4" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="first (or all) thing(s) attached" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="shake-22.3-2" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="VerbNet" class="tape-22.4" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Come_together" version="1.7">individuals</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="other things, if present/separate" f="PPT" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="tape-22.4" version="verbnet3.3">co-patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="attribute of patients" f="PRD" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Come_together" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="shake-22.3-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="tape-22.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="always band together?">
+        <text> Many of the companies are even dropping their traditional independence and trying to band together to create some sort of standard.</text>
+        <rel relloc="14">band</rel>
+        <arg f="" n="1" start="1" end="4">Many of the companies</arg>
+        <arg f="" n="3" start="15" end="15">together</arg>
+        <arg f="PNC" n="m" start="16" end="21">to create some sort of standard.</arg>
+      </example>
+      <example src="" name="Arg0, 1">
+        <text>Stewart is optimistic about the species population, and with his banding of dozens and dozens of birds each year, he knows that there is more to find out about this hawk that is called "the Urban Bird."</text>
+        <rel relloc="10">banding</rel>
+        <arg f="" n="0" start="9" end="9">his</arg>
+        <arg f="" n="1" start="11" end="16">of dozens and dozens of birds</arg>
+        <arg f="TMP" n="m" start="17" end="18">each year,</arg>
+      </example>
       <note>BAND-V NOTES: Frames file for 'band' based on sentences in wsj. Verbnet entries 22.4, 22.3-2. (from band.01-v predicate notes)</note>
       <note>BANDING-N NOTES: band.01 (from banding.01-n)</note>
-      <roles>
-        <role descr="causer of banding together, agent" f="pag" n="0">
-          <vnrole vncls="22.3-2" vntheta="agent"/>
-          <vnrole vncls="22.4" vntheta="agent"/>
-        </role>
-        <role descr="first (or all) thing(s) attached" f="ppt" n="1">
-          <vnrole vncls="22.3-2" vntheta="patient"/>
-          <vnrole vncls="22.4" vntheta="patient"/>
-        </role>
-        <role descr="other things, if present/separate" f="ppt" n="2">
-          <vnrole vncls="22.4" vntheta="co-patient"/>
-        </role>
-        <role descr="attribute of patients" f="prd" n="3"/>
-      </roles>
-      <example name="always band together?" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>[Many of the companies]-2 are even dropping their traditional independence and trying *trace*-2 to band together to create some sort of standard.</text>
-        <arg f="" n="1">*trace*-2</arg>
-        <rel f="">band</rel>
-        <arg f="" n="3">together</arg>
-        <arg f="pnc" n="m">to create some sort of standard</arg>
-      </example>
-      <example name="Arg0, 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Stewart is optimistic about the species population, and with his banding of dozens and dozens of birds each year, he knows that there is more to find out about this hawk that is called "the Urban Bird."</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">banding</rel>
-        <arg f="" n="1">of dozens and dozens of birds</arg>
-        <arg f="tmp" n="m">each year</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

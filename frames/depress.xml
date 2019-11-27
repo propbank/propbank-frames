@@ -1,103 +1,120 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="depress">
     <roleset id="depress.01" name="bring or bringing down (in mood or activity), blue, feeling down, sad">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">depress</alias>
-        <alias framenet="Medical_conditions" pos="n" verbnet="">depression</alias>
-        <alias framenet="" pos="j" verbnet="">depressing</alias>
-        <alias framenet="Emotion_directed" pos="j" verbnet="">depressed</alias>
+        <alias pos="v">depress</alias>
+        <alias pos="n">depression</alias>
+        <alias pos="j">depressing</alias>
+        <alias pos="j">depressed</alias>
       </aliases>
+      <roles>
+        <role descr="causer of depression" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="amuse-31.1" version="verbnet3.3">stimulus</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity getting depressed" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="amuse-31.1" version="verbnet3.3">experiencer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="instrument, if causer also present" f="MNR" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Medical_conditions" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Emotion_directed" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="amuse-31.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="depression-n.1" src="annot-overlap" confidence="0.1">30</lexlink>
+        <lexlink resource="onsense" version="on5" class="depression-n.2" src="annot-overlap" confidence="0.1">5</lexlink>
+      </lexlinks>
+      <example src="probably COCA (2018 example fix)" name="ARG2">
+        <text>the American parks depressed him with their squalor, their lack of organization, haphazard and tiring acres of concrete, their surly personnel.</text>
+        <rel relloc="3">depressed</rel>
+        <arg f="" n="0" start="0" end="2">the American parks</arg>
+        <arg f="" n="1" start="4" end="4">him</arg>
+        <arg f="" n="2" start="5" end="20">with their squalor, their lack of organization, haphazard and tiring acres of concrete, their surly personnel.</arg>
+      </example>
+      <example src="" name="depression-n: Arg1">
+        <text>The patient's depression worsened.</text>
+        <rel relloc="2">depression</rel>
+        <arg f="" n="1" start="0" end="1">The patient's</arg>
+      </example>
+      <example src="" name="depression-n: with causer (kind of awkward)">
+        <text>The bad news' depression of the entire team was to blame for their poor game performance.</text>
+        <rel relloc="3">depression</rel>
+        <arg f="" n="0" start="0" end="2">The bad news'</arg>
+        <arg f="" n="1" start="4" end="7">of the entire team</arg>
+      </example>
+      <example src="" name="depression-n: make less active">
+        <text>the economic depression of the previous decade</text>
+        <rel relloc="2">depression</rel>
+        <arg f="" n="1" start="1" end="1">economic</arg>
+        <arg f="TMP" n="m" start="3" end="6">of the previous decade</arg>
+      </example>
+      <example src="BOLT" name="depressing-j">
+        <text>Yeah but you re so depressing Haha . you re like i work sleep do studies&amp; work and sleep &amp; do studies Haha .</text>
+        <rel relloc="5">depressing</rel>
+        <arg f="" n="0" start="2" end="2">you</arg>
+        <arg f="EXT" n="m" start="4" end="4">so</arg>
+        <arg f="DIS" n="m" start="6" end="6">Haha</arg>
+      </example>
+      <example src="internet" name="depressed-j: args 0, 1">
+        <text>I am depressed about my life and not being able to work..:</text>
+        <rel relloc="2">depressed</rel>
+        <arg f="" n="1" start="0" end="0">I</arg>
+        <arg f="" n="0" start="3" end="11">about my life and not being able to work..:</arg>
+      </example>
       <note>DEPRESS-V NOTES: Do try to distinguish between agents and instruments, as this makes adifference for the so-called 'psych' verbs (of which this is one). (from depress.01-v)</note>
       <note>DEPRESSION-N NOTES: Based on frame for depress-v.01. Framed by Anwen March 2011 (from depression.01-n)</note>
       <note>DEPRESSING-J NOTES: Added by Julia based on BOLT. (from depressing.01-j)</note>
       <note>DEPRESSED-J NOTES: Added by Julia based on BOLT-1, depress-v.01. Corresponds to VNcls ammuse-31.1. (from depressed.01-j)</note>
-      <roles>
-        <role descr="causer of depression" f="pag" n="0">
-          <vnrole vncls="31.1" vntheta="stimulus"/>
-        </role>
-        <role descr="entity getting depressed" f="ppt" n="1">
-          <vnrole vncls="31.1" vntheta="experiencer"/>
-        </role>
-        <role descr="instrument, if causer also present" f="mnr" n="2"/>
-      </roles>
-      <example name="ARG2" src="probably COCA (2018 example fix)" type="">
-        <text>the American parks depressed him with their squalor, their lack of organization, haphazard and tiring acres of concrete, their surly personnel.</text>
-        <arg f="" n="0">the American parks</arg>
-        <rel f="">depressed</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="" n="2">with their squalor, their lack of organization, haphazard and tiring acres of concrete, their surly personnel.</arg>
-      </example>
-
-      <example name="depression-n: Arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The patient's depression worsened.</text>
-        <arg f="" n="1">The patient's</arg>
-        <rel f="">depression</rel>
-      </example>
-      <example name="depression-n: with causer (kind of awkward)" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The bad news' depression of the entire team was to blame for their poor game performance.</text>
-        <arg f="" n="0">The bad news'</arg>
-        <rel f="">depression</rel>
-        <arg f="" n="1">of the entire team</arg>
-      </example>
-      <example name="depression-n: make less active" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>the economic depression of the previous decade</text>
-        <arg f="" n="1">economic</arg>
-        <rel f="">depression</rel>
-        <arg f="tmp" n="m">of the previous decade</arg>
-      </example>
-      <example name="depressing-j" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Yeah but you re so depressing Haha . you re like i work sleep do studies&amp; work and sleep &amp; do studies Haha .</text>
-        <arg f="" n="0">you</arg>
-        <arg f="ext" n="m">so</arg>
-        <rel f="">depressing</rel>
-        <arg f="dis" n="m">Haha</arg>
-      </example>
-      <example name="depressed-j: args 0, 1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I am depressed about my life and not being able to work..:</text>
-        <arg f="" n="1">I</arg>
-        <rel f="">depressed</rel>
-        <arg f="" n="0">about my life and not being able to work</arg>
-      </example>
     </roleset>
     <roleset id="depress.02" name="bring down (stock prices)">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">depress</alias>
-        <alias framenet="" pos="n" verbnet="">depression</alias>
+        <alias pos="v">depress</alias>
+        <alias pos="n">depression</alias>
       </aliases>
-      <note>DEPRESS-V NOTES: Frames file for 'depress' based on sentences in financial subcorpus. Verbnet entry 31.1, other framed members include comfort, convince encourage, interest, reassure, repel, scare, shock, spook, threaten and worry. Comparison with, gee, pick one. (from depress.02-v predicate notes)</note>
       <roles>
-        <role descr="causer of depression (agent or instrument)" f="pag" n="0"/>
-        <role descr="stock" f="ppt" n="1"/>
-        <role descr="EXT" f="ext" n="2"/>
+        <role descr="causer of depression (agent or instrument)" f="PAG" n="0"/>
+        <role descr="stock" f="PPT" n="1"/>
+        <role descr="EXT" f="EXT" n="2"/>
         <role descr="start point" f="DIR" n="3"/>
         <role descr="end point" f="GOL" n="4"/>
       </roles>
-      <example name="depress-v: it was inevitable" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Change_position_on_a_scale" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="depress-v.2" src="annot-overlap" confidence="0.1">12</lexlink>
+      </lexlinks>
+      <example src="" name="depress-v: it was inevitable">
         <text>However, the executive noted that slackening demand for new mortgages depressed new loan originations to $1 billion, 30% below the same period last year.</text>
-        <arg f="" n="0">slackening demand for new mortgages</arg>
-        <rel f="">depressed</rel>
-        <arg f="" n="1">new loan originations</arg>
-        <arg f="" n="4">to $1 billion, 30% below the same period last year</arg>
+        <rel relloc="10">depressed</rel>
+        <arg f="" n="0" start="5" end="9">slackening demand for new mortgages</arg>
+        <arg f="" n="1" start="11" end="13">new loan originations</arg>
+        <arg f="" n="4" start="14" end="23">to $1 billion, 30% below the same period last year.</arg>
       </example>
-      <example name="depress-v: passive" src="" type="">
+      <example src="" name="depress-v: passive">
         <text>[London shares]-1 were depressed *trace*-1 initially by overnight losses in New York.</text>
-        <rel f="">depressed</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="tmp" n="m">initially</arg>
-        <arg f="" n="0">by overnight losses in New York</arg>
+        <rel relloc="3">depressed</rel>
+        <arg f="" n="1" start="4" end="4">*trace*-1</arg>
+        <arg f="TMP" n="m" start="5" end="5">initially</arg>
+        <arg f="" n="0" start="6" end="11">by overnight losses in New York.</arg>
       </example>
-      <example name="depress-v: active" src="" type="">
+      <example src="" name="depress-v: active">
         <text>The industry's chemical profits also declined because excess capacity has depressed prices.</text>
-        <arg f="" n="0">excess capacity</arg>
-        <rel f="">depressed</rel>
-        <arg f="" n="1">prices</arg>
+        <rel relloc="10">depressed</rel>
+        <arg f="" n="0" start="7" end="8">excess capacity</arg>
+        <arg f="" n="1" start="11" end="11">prices.</arg>
       </example>
+      <note>DEPRESS-V NOTES: Frames file for 'depress' based on sentences in financial subcorpus. Verbnet entry 31.1, other framed members include comfort, convince encourage, interest, reassure, repel, scare, shock, spook, threaten and worry. Comparison with, gee, pick one. (from depress.02-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,53 +1,62 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="underestimate">
     <roleset id="underestimate.01" name="underestimate, perceiving something as having lower value than it actually has">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">underestimation</alias>
-        <alias framenet="" pos="v" verbnet="">underestimate</alias>
+        <alias pos="n">underestimation</alias>
+        <alias pos="v">underestimate</alias>
       </aliases>
+      <roles>
+        <role descr="underestimator" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="characterize-29.2-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing underestimated" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="characterize-29.2-1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="by how much" f="EXT" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Judgment_communication" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="characterize-29.2-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="underestimate-v.1" src="annot-overlap" confidence="0.1">19</lexlink>
+      </lexlinks>
+      <example src="ontonotes nw/wsj/13/wsj_1302" name="ARG0 and ARG2 and ARG1">
+        <text>John Wetherell , a Lloyd 's underwriter , says he and his fellow underwriters underestimated by as much as 50 % the premiums they should have charged for property risks from 1980 to 1985 .</text>
+        <rel relloc="14">underestimated</rel>
+        <arg f="" n="0" start="9" end="13">he and his fellow underwriters</arg>
+        <arg f="" n="2" start="15" end="20">by as much as 50 %</arg>
+        <arg f="" n="1" start="21" end="33">the premiums they should have charged for property risks from 1980 to 1985</arg>
+      </example>
+      <example src="" name="missing extent">
+        <text>I had underestimated, however, both Mr. Gelbart's wit and the persistence of scandal in Washington.</text>
+        <rel relloc="2">underestimated,</rel>
+        <arg f="" n="0" start="0" end="0">I</arg>
+        <arg f="DIS" n="m" start="3" end="3">however,</arg>
+        <arg f="" n="1" start="4" end="14">both Mr. Gelbart's wit and the persistence of scandal in Washington.</arg>
+      </example>
+      <example src="" name="missing agent">
+        <text>In other words, the growth rates of both total GNP and real private business product per labor hour have been underestimated [*]by about 20%.</text>
+        <rel relloc="20">underestimated</rel>
+        <arg f="" n="1" start="3" end="17">the growth rates of both total GNP and real private business product per labor hour</arg>
+        <arg f="" n="2" start="22" end="23">about 20%.</arg>
+      </example>
+      <example src="" name="missing agent and EXT">
+        <text>But while verbal high jinks alone won't help PASOK regain power, Mr. Papandreou should never be underestimated [*].</text>
+        <rel relloc="16">underestimated</rel>
+        <arg f="MOD" n="m" start="13" end="13">should</arg>
+        <arg f="NEG" n="m" start="14" end="14">never</arg>
+        <arg f="" n="1" start="11" end="12">Mr. Papandreou</arg>
+      </example>
       <note>UNDERESTIMATE-V NOTES: No Verbnet entry. (from underestimate.01-v)</note>
       <note>UNDERESTIMATION-N NOTES: underestimate.01 (from underestimation.01-n)</note>
-      <roles>
-        <role descr="underestimator" f="pag" n="0">
-          <vnrole vncls="29.2-1" vntheta="agent"/>
-        </role>
-        <role descr="thing underestimated" f="ppt" n="1">
-          <vnrole vncls="29.2-1" vntheta="theme"/>
-        </role>
-        <role descr="by how much" f="ext" n="2"/>
-      </roles>
-      <example name="ARG0 and ARG2 and ARG1" src="ontonotes nw/wsj/13/wsj_1302" type="">
-        <text>John Wetherell , a Lloyd 's underwriter , says he and his fellow underwriters underestimated by as much as 50 % the premiums they should have charged for property risks from 1980 to 1985 .</text>
-        <arg f="" n="0">he and his fellow underwriters</arg>
-        <rel f="">underestimated</rel>
-        <arg f="" n="2">by as much as 50 %</arg>
-        <arg f="" n="1">the premiums they should have charged for property risks from 1980 to 1985</arg>
-      </example>
-
-      <example name="missing extent" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="past" voice="active"/>
-        <text>I had underestimated, however, both Mr. Gelbart's wit and the persistence of scandal in Washington.</text>
-        <arg f="" n="0">I</arg>
-        <rel f="">underestimated</rel>
-        <arg f="dis" n="m">however</arg>
-        <arg f="" n="1">both Mr. Gelbart's wit and the persistence of scandal in Washington</arg>
-      </example>
-      <example name="missing agent" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>In other words, [the growth rates of both total GNP and real private business product per labor hour]-1 have been underestimated [*-1]by about 20%.</text>
-        <rel f="">underestimated</rel>
-        <arg f="" n="1">[*-1]</arg>
-        <arg f="" n="2">by about 20%</arg>
-      </example>
-      <example name="missing agent and EXT" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>But while verbal high jinks alone won't help PASOK regain power, [Mr. Papandreou]-1 should never be underestimated [*-1].</text>
-        <arg f="mod" n="m">should</arg>
-        <arg f="neg" n="m">never</arg>
-        <rel f="">underestimated</rel>
-        <arg f="" n="1">[*-1]</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

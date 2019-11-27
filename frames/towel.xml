@@ -1,44 +1,59 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="towel">
     <roleset id="towel.01" name="towel">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">towel</alias>
+        <alias pos="v">towel</alias>
       </aliases>
-      <note>TOWEL-V NOTES: Member of Vncls braid-41.2.2, wipe_instr-10.4.2. Updated by Julia, 11/2010. (from towel.01-v)</note>
       <roles>
-        <role descr="toweler, agent" f="pag" n="0">
-          <vnrole vncls="10.4.2" vntheta="agent"/>
-          <vnrole vncls="41.2.2" vntheta="agent"/>
+        <role descr="toweler, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="wipe_instr-10.4.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="braid-41.2.2" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="liquid" f="ppt" n="1">
-          <vnrole vncls="10.4.2" vntheta="theme"/>
+        <role descr="liquid" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="wipe_instr-10.4.2" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="surface dried" f="dir" n="2">
-          <vnrole vncls="10.4.2" vntheta="initial_location"/>
-          <vnrole vncls="41.2.2" vntheta="patient"/>
+        <role descr="surface dried" f="DIR" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="wipe_instr-10.4.2" version="verbnet3.3">initial_location</rolelink>
+            <rolelink resource="VerbNet" class="braid-41.2.2" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="instrument, towel" f="mnr" n="3">
-          <vnrole vncls="10.4.2" vntheta="instrument"/>
+        <role descr="instrument, towel" f="MNR" n="3">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="wipe_instr-10.4.2" version="verbnet3.3">instrument</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="liquid as core arg" src="web usage" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="wipe_instr-10.4.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="braid-41.2.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web usage" name="liquid as core arg">
         <text>Naruto sighed as he toweled the water from his face.</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">toweled</rel>
-        <arg f="" n="1">the water</arg>
-        <arg f="" n="2">from his face</arg>
+        <rel relloc="4">toweled</rel>
+        <arg f="" n="0" start="3" end="3">he</arg>
+        <arg f="" n="1" start="5" end="6">the water</arg>
+        <arg f="" n="2" start="7" end="9">from his face.</arg>
       </example>
-      <example name="surface dried as core arg" src="WSJ" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
-        <text>When she got home, she-1 quickly shrugged off her raincoat, then *-1 toweled her sopping hair dry.</text>
-        <arg f="tmp" n="m">When she got home</arg>
-        <arg f="tmp" n="m">then</arg>
-        <arg f="" n="0">*-1</arg>
-        <rel f="">toweled</rel>
-        <arg f="" n="2">her sopping hair</arg>
-        <arg f="prd" n="m">dry</arg>
+      <example src="WSJ" name="surface dried as core arg">
+        <text>When she got home, she quickly shrugged off her raincoat, then toweled her sopping hair dry.</text>
+        <rel relloc="11">toweled</rel>
+        <arg f="TMP" n="m" start="0" end="3">When she got home,</arg>
+        <arg f="TMP" n="m" start="10" end="10">then</arg>
+        <arg f="" n="0" start="1" end="1">she</arg>
+        <arg f="" n="2" start="12" end="14">her sopping hair</arg>
+        <arg f="PRD" n="m" start="15" end="15">dry.</arg>
       </example>
+      <note>TOWEL-V NOTES: Member of Vncls braid-41.2.2, wipe_instr-10.4.2. Updated by Julia, 11/2010. (from towel.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,63 +1,65 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="poll">
     <roleset id="poll.01" name="survey, as of voters">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">poll</alias>
-        <alias framenet="" pos="n" verbnet="">poll</alias>
-        <alias framenet="" pos="n" verbnet="">polling</alias>
-        <alias framenet="" pos="l" verbnet="">do_poll</alias>
-        <alias framenet="" pos="l" verbnet="">take_poll</alias>
-        <alias framenet="" pos="l" verbnet="">give_poll</alias>
+        <alias pos="v">poll</alias>
+        <alias pos="n">poll</alias>
+        <alias pos="n">polling</alias>
+        <alias pos="l">do_poll</alias>
+        <alias pos="l">take_poll</alias>
+        <alias pos="l">give_poll</alias>
       </aliases>
+      <roles>
+        <role descr="poller" f="PAG" n="0"/>
+        <role descr="people asked" f="PPT" n="1"/>
+        <role descr="topic" f="PPT" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="onsense" version="on5" class="poll-v.1" src="annot-overlap" confidence="0.1">11</lexlink>
+      </lexlinks>
+      <example src="" name="poll-v: without topic">
+        <text>The consensus of economists-1 polled *trace*-1 by Dow Jones Capital Markets Report calls for a 2.5% annual growth rate for GNP during the quarter.</text>
+        <rel relloc="4">polled</rel>
+        <arg f="" n="1" start="5" end="5">*trace*-1</arg>
+        <arg f="" n="0" start="6" end="11">by Dow Jones Capital Markets Report</arg>
+      </example>
+      <example src="ontonotes nw/wsj/00/wsj_0036" name="ARG0 and ARG1 and ARG2">
+        <text>For the first time , the October survey polled members on imports .</text>
+        <rel relloc="8">polled</rel>
+        <arg f="TMP" n="m" start="0" end="3">For the first time</arg>
+        <arg f="" n="0" start="5" end="7">the October survey</arg>
+        <arg f="" n="1" start="9" end="9">members</arg>
+        <arg f="" n="2" start="10" end="11">on imports</arg>
+      </example>
+      <example src="BOLT" name="poll-n: arg1 as a region">
+        <text>In the Suffolk poll for Wednesday , it was Romney 43 % and Santorum 6 % .</text>
+        <rel relloc="3">poll</rel>
+        <arg f="" n="1" start="2" end="2">Suffolk</arg>
+        <arg f="TMP" n="m" start="4" end="5">for Wednesday</arg>
+      </example>
+      <example src="internet" name="poll-n: Args 0, 1">
+        <text>However, their poll of Apathetic people is too close to call, as is the poll of unregistered, non voters.</text>
+        <rel relloc="2">poll</rel>
+        <arg f="" n="0" start="1" end="1">their</arg>
+        <arg f="" n="1" start="3" end="5">of Apathetic people</arg>
+      </example>
+      <example src="BOLT" name="NOT EVENTIVE. .YY!">
+        <text>Anything which makes voting more difficult they figure will reduce the number of voters going to the polls to vote for Democrats .</text>
+        <rel relloc="17">polls</rel>
+      </example>
+      <example src="BOLT" name="poll-n: arg2">
+        <text>Now the Tories are facing the unpopularity of government and Labour are ahead on the opinion polls .</text>
+        <rel relloc="16">polls</rel>
+        <arg f="" n="2" start="15" end="15">opinion</arg>
+      </example>
       <note>POLL-V NOTES: No relevant VN class. (from poll.01-v)</note>
       <note>POLL-N NOTES: Added by Julia based on BOLT, WordNet, poll-v.01. No VNcls. (from poll.01-n)</note>
-      <roles>
-        <note>Watch out for instances that refer to physical voting locations. These are not events, and should be labelled .YY. (from poll.01-n)</note>
-        <role descr="poller" f="pag" n="0"/>
-        <role descr="people asked" f="ppt" n="1"/>
-        <role descr="topic" f="ppt" n="2"/>
-      </roles>
-      <example name="poll-v: without topic" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>The consensus of economists-1 polled *trace*-1 by Dow Jones Capital Markets Report calls for a 2.5% annual growth rate for GNP during the quarter.</text>
-        <rel f="">polled</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="0">by Dow Jones Capital Markets Report</arg>
-      </example>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes nw/wsj/00/wsj_0036" type="">
-        <text>For the first time , the October survey polled members on imports .</text>
-        <arg f="tmp" n="m">For the first time</arg>
-        <arg f="" n="0">the October survey</arg>
-        <rel f="">polled</rel>
-        <arg f="" n="1">members</arg>
-        <arg f="" n="2">on imports</arg>
-      </example>
-
-      <example name="poll-n: arg1 as a region" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>In the Suffolk poll for Wednesday , it was Romney 43 % and Santorum 6 % .</text>
-        <arg f="" n="1">Suffolk</arg>
-        <rel f="">poll</rel>
-        <arg f="tmp" n="m">for Wednesday</arg>
-      </example>
-      <example name="poll-n: Args 0, 1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>However, their poll of Apathetic people is too close to call, as is the poll of unregistered, non voters.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">poll</rel>
-        <arg f="" n="1">of Apathetic people</arg>
-      </example>
-      <example name="NOT EVENTIVE. .YY!" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Anything which makes voting more difficult they figure will reduce the number of voters going to the polls to vote for Democrats .</text>
-      </example>
-      <example name="poll-n: arg2" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Now the Tories are facing the unpopularity of government and Labour are ahead on the opinion polls .</text>
-        <arg f="" n="2">opinion</arg>
-        <rel f="">polls</rel>
-      </example>
+      <note>Watch out for instances that refer to physical voting locations. These are not events, and should be labelled .YY. (from poll.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

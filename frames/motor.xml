@@ -1,34 +1,50 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="motor">
     <roleset id="motor.01" name="motor">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">motor</alias>
+        <alias pos="v">motor</alias>
       </aliases>
-      <note>MOTOR-V NOTES: hand-checked by Kevin (from motor.01-v)</note>
       <roles>
         <role descr="agent, driver (transitive subject)" f="PAG" n="0">
-          <vnrole vncls="11.5" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="drive-11.5" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing moved (intransitive subject, transitive object)" f="PPT" n="1">
-          <vnrole vncls="11.5" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="drive-11.5" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="locations, or start point" f="LOC" n="2">
-          <vnrole vncls="11.5" vntheta="Initial_Location"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="drive-11.5" version="verbnet3.3">initial_location</rolelink>
+          </rolelinks>
         </role>
         <role descr="destination" f="LOC" n="3">
-          <vnrole vncls="11.5" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="drive-11.5" version="verbnet3.3">destination</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="motor-v: from Google, transitive" src="web usage" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Operate_vehicle" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="drive-11.5" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web usage" name="motor-v: from Google, transitive">
         <text>At the end of the week, the doctor motored him to Harley Street to see the biggest man in brain diseases that HarleyStreet holds.</text>
-        <arg f="tmp" n="m">At the end of the week</arg>
-        <arg f="" n="0">the doctor</arg>
-        <rel f="">motored</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="" n="3">to Harley Street</arg>
-        <arg f="prp" n="m">to see the biggest man in brain diseases that Harley Street holds</arg>
+        <rel relloc="8">motored</rel>
+        <arg f="TMP" n="m" start="0" end="5">At the end of the week,</arg>
+        <arg f="" n="0" start="6" end="7">the doctor</arg>
+        <arg f="" n="1" start="9" end="9">him</arg>
+        <arg f="" n="3" start="10" end="12">to Harley Street</arg>
+        <arg f="PRP" n="m" start="13" end="23">to see the biggest man in brain diseases that HarleyStreet holds.</arg>
       </example>
+      <note>MOTOR-V NOTES: hand-checked by Kevin (from motor.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

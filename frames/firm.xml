@@ -1,91 +1,116 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="firm">
     <roleset id="firm.01" name="(make) become firm">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">firm</alias>
+        <alias pos="v">firm</alias>
       </aliases>
-      <note>FIRM-V NOTES: This totally violates my lexicon, to make this a quantifiable verb.Icky icky icky. (from firm.01-v)</note>
       <roles>
-        <role descr="agent, entity making something else become firm" f="pag" n="0">
-          <vnrole vncls="45.4" vntheta="agent"/>
+        <role descr="agent, entity making something else become firm" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing becoming firm" f="ppt" n="1">
-          <vnrole vncls="45.4" vntheta="patient"/>
+        <role descr="thing becoming firm" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="EXT, amount risen" f="ext" n="2"/>
-        <role descr="start point" f="dir" n="3"/>
-        <role descr="end point" f="gol" n="4"/>
+        <role descr="EXT, amount risen" f="EXT" n="2"/>
+        <role descr="start point" f="DIR" n="3"/>
+        <role descr="end point" f="GOL" n="4"/>
       </roles>
-      <example name="most sensical usage" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="firm-v.2" src="annot-overlap" confidence="0.1">8</lexlink>
+      </lexlinks>
+      <example src="" name="most sensical usage">
         <text>...stock prices firmed only modestly in response to the report and then faltered.</text>
-        <arg f="" n="1">stock prices</arg>
-        <rel f="">firmed</rel>
-        <arg f="mnr" n="m">only modestly</arg>
-        <arg f="adv" n="m">in response to the report</arg>
+        <rel relloc="2">firmed</rel>
+        <arg f="" n="1" start="0" end="1">...stock prices</arg>
+        <arg f="MNR" n="m" start="3" end="4">only modestly</arg>
+        <arg f="ADV" n="m" start="5" end="9">in response to the report</arg>
       </example>
-      <example name="agentive" src="" type="">
+      <example src="" name="agentive">
         <text>It showed some early resilience after central bank support firmed sterling...</text>
-        <arg f="" n="0">central bank support</arg>
-        <rel f="">firmed</rel>
-        <arg f="" n="1">sterling</arg>
+        <rel relloc="9">firmed</rel>
+        <arg f="" n="0" start="6" end="8">central bank support</arg>
+        <arg f="" n="1" start="10" end="10">sterling...</arg>
       </example>
-      <example name="ARG1 and ARG2 and ARG4" src="ontonotes nw/wsj/13/wsj_1337" type="">
+      <example src="ontonotes nw/wsj/13/wsj_1337" name="ARG1 and ARG2 and ARG4">
         <text>Auto shares were mixed , as Daimler - Benz firmed 2 to 723 , Bayerische Motoren Werke lost the same amount to 554 , and Volkswagen inched down 1.4 to 451.6 .</text>
-        <arg f="" n="1">Daimler - Benz</arg>
-        <rel f="">firmed</rel>
-        <arg f="" n="2">2</arg>
-        <arg f="" n="4">to 723</arg>
+        <rel relloc="9">firmed</rel>
+        <arg f="" n="1" start="6" end="8">Daimler - Benz</arg>
+        <arg f="" n="2" start="10" end="10">2</arg>
+        <arg f="" n="4" start="11" end="12">to 723</arg>
       </example>
-
+      <note>FIRM-V NOTES: This totally violates my lexicon, to make this a quantifiable verb.Icky icky icky. (from firm.01-v)</note>
     </roleset>
     <roleset id="firm.03" name="secure, steadfast, resilient">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">firm</alias>
-        <alias framenet="" pos="j" verbnet="">firmer</alias>
+        <alias pos="j">firm</alias>
+        <alias pos="j">firmer</alias>
       </aliases>
+      <roles>
+        <role descr="causer of firmness" f="PAG" n="0"/>
+        <role descr="firm entity" f="PPT" n="1"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="medi-tmprl" name="arg1">
+        <text>The penis is tender when touched , though it is less firm and swollen .</text>
+        <rel relloc="11">firm</rel>
+        <arg f="" n="1" start="8" end="8">it</arg>
+        <arg f="EXT" n="m" start="10" end="10">less</arg>
+      </example>
       <note>FIRM-J NOTES: Added by Julia based on medi-tmprl1to8, relation to 'firm-v.01'. (from firm.01-j)</note>
       <note>FIRMER-J NOTES: Automatically created by Julia as an alias file for unification. (from firmer.01-j)</note>
-      <roles>
-        <role descr="causer of firmness" f="pag" n="0"/>
-        <role descr="firm entity" f="ppt" n="1"/>
-      </roles>
-      <example name="arg1" src="medi-tmprl" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The penis is tender when touched , though it is less firm and swollen .</text>
-        <arg f="" n="1">it</arg>
-        <arg f="ext" n="m">less</arg>
-        <rel f="">firm</rel>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="firm_up">
     <roleset id="firm_up.02" name="make/become firm">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">firm_up</alias>
+        <alias pos="v">firm_up</alias>
       </aliases>
-      <note>FIRM_UP-V NOTES: (from firm.02-v)</note>
       <roles>
-        <role descr="agent, entity making something else become firm" f="pag" n="0">
-          <vnrole vncls="45.4" vntheta="agent"/>
+        <role descr="agent, entity making something else become firm" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing becoming firm" f="ppt" n="1">
-          <vnrole vncls="45.4" vntheta="patient"/>
+        <role descr="thing becoming firm" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="transitive">
         <text>He argues that efforts *trace* to firm up prices will be undermined by producers' plans to expand production capacity.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">[ firm] [ up]</rel>
-        <arg f="" n="1">prices</arg>
+        <rel relloc="6 7">firm up</rel>
+        <arg f="" n="0" start="4" end="4">*trace*</arg>
+        <arg f="" n="1" start="8" end="8">prices</arg>
       </example>
-      <example name="ARG0 and ARG1" src="ontonotes nw/wsj/04/wsj_0417" type="">
+      <example src="ontonotes nw/wsj/04/wsj_0417" name="ARG0 and ARG1">
         <text>But in an interview , Mr. McMaster said he and his investment banker would need access to full financial records before firming up the offer .</text>
-        <arg f="" n="0">he and his investment banker</arg>
-        <rel f="">[firming][up]</rel>
-        <arg f="" n="1">the offer</arg>
+        <rel relloc="21 22">firming up</rel>
+        <arg f="" n="0" start="8" end="12">he and his investment banker</arg>
+        <arg f="" n="1" start="23" end="24">the offer</arg>
       </example>
-
+      <note>FIRM_UP-V NOTES: (from firm.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

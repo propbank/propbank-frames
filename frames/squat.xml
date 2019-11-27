@@ -1,45 +1,68 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="squat">
     <roleset id="squat.01" name="sit ungracefully">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">squat</alias>
+        <alias pos="v">squat</alias>
       </aliases>
-      <note>SQUAT-V NOTES: Frames file for 'squat' based on sentences in wsj. Verbnet entries 47.6, 50; Framenet entries Residence and Posture. (from squat.01-v predicate notes)</note>
       <roles>
-        <role descr="thing sitting, squatting" f="ppt" n="1">
-          <vnrole vncls="47.6" vntheta="Theme"/>
-          <vnrole vncls="50" vntheta="Agent"/>
+        <role descr="thing sitting, squatting" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="spatial_configuration-47.6" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="assuming_position-50" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Posture" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Change_posture" version="1.7">protagonist</rolelink>
+          </rolelinks>
         </role>
         <role descr="location" f="LOC" n="2">
-          <vnrole vncls="47.6" vntheta="Location"/>
-          <vnrole vncls="50" vntheta="Location"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="spatial_configuration-47.6" version="verbnet3.3">location</rolelink>
+            <rolelink resource="VerbNet" class="assuming_position-50" version="verbnet3.3">location</rolelink>
+            <rolelink resource="FrameNet" class="Posture" version="1.7">location</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="passive?" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="present" voice="passive"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Posture" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Change_posture" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="spatial_configuration-47.6" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="assuming_position-50" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="passive?">
         <text>``But the Filipinos and the Americans, when I talk to them, there's so much passion about [Filipino manhood]-1 being diminished *trace*-1 as a result of *trace*-1 being squatted upon *trace*-1 by the Americans and so on.</text>
-        <rel f="">squatted</rel>
-        <arg f="" n="2">upon *trace*</arg>
-        <arg f="" n="1">by the Americans</arg>
+        <rel relloc="27">squatted</rel>
+        <arg f="" n="2" start="28" end="29">upon *trace*-1</arg>
+        <arg f="" n="1" start="30" end="32">by the Americans</arg>
       </example>
+      <note>SQUAT-V NOTES: Frames file for 'squat' based on sentences in wsj. Verbnet entries 47.6, 50; Framenet entries Residence and Posture. (from squat.01-v predicate notes)</note>
     </roleset>
     <roleset id="squat.02" name="occupy a building illegally">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">squat</alias>
+        <alias pos="v">squat</alias>
+        <argalias pos="n" arg="0">squatter</argalias>
       </aliases>
-      <note>SQUAT-V NOTES: I'm not sure if the preposition is necessary or even allowed. (from squat.02-v)</note>
       <roles>
         <role descr="occupier" f="PAG" n="0"/>
         <role descr="occupied" f="PPT" n="1"/>
       </roles>
-      <example name="ARG0 and ARG1" src="ontonotes wb/eng/00/eng_0015" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Residence" version="1.7" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="ontonotes wb/eng/00/eng_0015" name="ARG0 and ARG1">
         <text>To care for all of the region 's displaced Iraqis , the agency had a total budget of $ 22 million in 2006 -- less than $ 7 a person , which must cover not only the Kafkaesque registration programs but also basic survival aid to refugees trapped in desert camps or squatting in abandoned buildings .</text>
-        <arg f="" n="0">refugees</arg>
-        <rel f="">squatting</rel>
-        <arg f="" n="1">in abandoned buildings</arg>
+        <rel relloc="52">squatting</rel>
+        <arg f="" n="0" start="46" end="46">refugees</arg>
+        <arg f="" n="1" start="53" end="55">in abandoned buildings</arg>
       </example>
-
+      <note>SQUAT-V NOTES: I'm not sure if the preposition is necessary or even allowed. (from squat.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

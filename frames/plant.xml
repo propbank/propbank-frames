@@ -1,61 +1,81 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="plant">
     <roleset id="plant.01" name="to put or place, sewing in the ground">
       <aliases>
-        <alias framenet="Placing Planting" pos="v" verbnet="">plant</alias>
-        <alias framenet="" pos="n" verbnet="">planting</alias>
+        <alias pos="v">plant</alias>
+        <alias pos="n">planting</alias>
       </aliases>
-      <note>PLANT-V NOTES: Frames file for 'plant' based on WSJ; nominal 'planting' based on BOLT-7. (from plant.01-v)</note>
-      <note>PLANTING-N NOTES: Added by Julia based on BOLT. (from planting.01-n)</note>
       <roles>
-        <role descr="putter, agent" f="pag" n="0">
-          <vnrole vncls="9.7-2" vntheta="agent"/>
-          <vnrole vncls="9.1-1" vntheta="agent"/>
-          <vnrole vncls="55.5-1" vntheta="agent"/>
+        <role descr="putter, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="spray-9.7-2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="put-9.1-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="establish-55.5-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">cause</rolelink>
+          </rolelinks>
         </role>
-        <role descr="entity planted" f="ppt" n="1">
-          <vnrole vncls="9.7-2" vntheta="theme"/>
-          <vnrole vncls="9.1-1" vntheta="theme"/>
-          <vnrole vncls="55.5-1" vntheta="theme"/>
+        <role descr="entity planted" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="spray-9.7-2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="put-9.1-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="establish-55.5-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="location" f="gol" n="2">
-          <vnrole vncls="9.7-2" vntheta="destination"/>
-          <vnrole vncls="9.1-1" vntheta="destination"/>
+        <role descr="location" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="spray-9.7-2" version="verbnet3.3">destination</rolelink>
+            <rolelink resource="VerbNet" class="put-9.1-1" version="verbnet3.3">destination</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">goal</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">path</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="progressive" form="participle" person="third" tense="present" voice="active"/>
-        <text>It has a long shelf life and `` does n't fool the public , '' says [0] [*T*-2]Grady Auvil , an Orondo , Wash. , grower who [*T*-1] is planting Fujis and spreading the good word about them .</text>
-        <arg f="" n="0">[*T*-1]</arg>
-        <arg f="rcl" n="m">who -&gt; an Orondo , Wash. , grower</arg>
-        <rel f="">planting</rel>
-        <arg f="" n="1">Fujis</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Placing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Planting" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="spray-9.7-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="put-9.1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="establish-55.5-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="plant-v.1" src="annot-overlap" confidence="0.1">26</lexlink>
+        <lexlink resource="onsense" version="on5" class="plant-v.3" src="annot-overlap" confidence="0.1">8</lexlink>
+      </lexlinks>
+      <example src="" name="transitive">
+        <text>It has a long shelf life and `` does n't fool the public , '' says [0] [*T*-2]Grady Auvil , an Orondo , Wash. , grower who [*T*] is planting Fujis and spreading the good word about them .</text>
+        <rel relloc="29">planting</rel>
+        <arg f="" n="0" start="27" end="27">[*T*]</arg>
+        <arg f="RCL" n="m" start="20" end="25">an Orondo , Wash. , grower</arg>
+        <arg f="" n="1" start="30" end="30">Fujis</arg>
       </example>
-      <example name="passive" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="passive"/>
+      <example src="" name="passive">
         <text>But the full effect on prices of [the winter wheat]-1 now being planted [*]-1 wo n't be felt [*-1] until the second half of next year .</text>
-        <arg f="tmp" n="m">now</arg>
-        <rel f="">planted</rel>
-        <arg f="" n="1">[*]</arg>
+        <rel relloc="12">planted</rel>
+        <arg f="TMP" n="m" start="10" end="10">now</arg>
+        <arg f="" n="1" start="13" end="13">[*]-1</arg>
       </example>
-      <example name="all arguments" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>In response to dwindling domestic supplies , Agriculture Secretary Clayton Yeutter last month said [0] the U.S. government would slightly increase the number of acres [0]farmers can plant [*T*-1] in wheat for next year and still qualify for federal support payments .</text>
-        <arg f="" n="0">farmers</arg>
-        <arg f="mod" n="m">can</arg>
-        <rel f="">plant</rel>
-        <arg f="" n="2">[*T*-1]</arg>
-        <arg f="rcl" n="m">[0] -&gt; the number</arg>
-        <arg f="" n="1">in wheat</arg>
-        <arg f="tmp" n="m">for next year</arg>
+      <example src="" name="all arguments">
+        <text>In response to dwindling domestic supplies , Agriculture Secretary Clayton Yeutter last month said [0] the U.S. government would slightly increase the number of acres [0]farmers can plant [*T*] in wheat for next year and still qualify for federal support payments .</text>
+        <rel relloc="27">plant</rel>
+        <arg f="" n="0" start="25" end="25">[0]farmers</arg>
+        <arg f="MOD" n="m" start="26" end="26">can</arg>
+        <arg f="" n="2" start="28" end="28">[*T*]</arg>
+        <arg f="RCL" n="m" start="21" end="22">the number</arg>
+        <arg f="" n="1" start="29" end="30">in wheat</arg>
+        <arg f="TMP" n="m" start="31" end="33">for next year</arg>
       </example>
-      <example name="nominal rel: planting" src="BOLT-7" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="BOLT-7" name="nominal rel: planting">
         <text>So , after its recent failure , Monsanto surely will focus its emphasis on China , try its best to bribe corrupt officials , and make genetically - modified planting expand rapidly in China .</text>
-        <arg f="" n="1">genetically modified</arg>
-        <rel f="">planting</rel>
+        <rel relloc="29">planting</rel>
+        <arg f="" n="1" start="26" end="28">genetically - modified</arg>
       </example>
+      <note>PLANT-V NOTES: Frames file for 'plant' based on WSJ; nominal 'planting' based on BOLT-7. (from plant.01-v)</note>
+      <note>PLANTING-N NOTES: Added by Julia based on BOLT. (from planting.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

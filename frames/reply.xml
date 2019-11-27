@@ -1,70 +1,87 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="reply">
     <roleset id="reply.01" name="say in response, response">
       <aliases>
-        <alias framenet="Communication_response" pos="v" verbnet="">reply</alias>
-        <alias framenet="Communication_response" pos="n" verbnet="">reply</alias>
-        <alias framenet="" pos="j" verbnet="">replied</alias>
+        <alias pos="v">reply</alias>
+        <alias pos="n">reply</alias>
+        <alias pos="j">replied</alias>
       </aliases>
+      <roles>
+        <role descr="replier" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="say-37.7" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Communication_response" version="1.7">speaker</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="in response to" f="GOL" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="say-37.7" version="verbnet3.3">recipient</rolelink>
+            <rolelink resource="FrameNet" class="Communication_response" version="1.7">addressee</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="answer" f="PPT" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="say-37.7" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="FrameNet" class="Communication_response" version="1.7">message</rolelink>
+            <rolelink resource="FrameNet" class="Communication_response" version="1.7">topic</rolelink>
+            <rolelink resource="FrameNet" class="Communication_response" version="1.7">trigger</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Communication_response" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="say-37.7" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Contact.PublicStatementInPerson.Broadcast" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Correspondence" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="reply-v.1" src="annot-overlap" confidence="0.1">24</lexlink>
+        <lexlink resource="onsense" version="on5" class="reply-n.1" src="annot-overlap" confidence="0.1">3</lexlink>
+      </lexlinks>
+      <example src="" name="reply-v: just answer">
+        <text>The CEO, Richard G. Olson, replied ``yes,'' but wouldn't elaborate.</text>
+        <rel relloc="5">replied</rel>
+        <arg f="" n="0" start="0" end="4">The CEO, Richard G. Olson,</arg>
+        <arg f="" n="2" start="0" end="0">The</arg>
+      </example>
+      <example src="ontonotes mz/sinorama/10/ectb_1071" name="ARG2 and ARG0 and ARG1">
+        <text>" Dunno , " is what cyber-authors mostly reply when asked why their works have generated so much interest both in cyberspace and in the conventional publishing trade .</text>
+        <rel relloc="8">reply</rel>
+        <arg f="" n="2" start="5" end="5">what</arg>
+        <arg f="" n="0" start="6" end="6">cyber-authors</arg>
+        <arg f="ADV" n="m" start="7" end="7">mostly</arg>
+        <arg f="" n="1" start="9" end="27">when asked why their works have generated so much interest both in cyberspace and in the conventional publishing trade</arg>
+      </example>
+      <example src="BOLT-2,3" name="replied-j">
+        <text>This-3 happened *-3 to be recently replied to [*]when I checked in just now .</text>
+        <rel relloc="6">replied</rel>
+        <arg f="" n="1" start="2" end="2">*-3</arg>
+        <arg f="TMP" n="m" start="5" end="5">recently</arg>
+      </example>
+      <example src="" name="reply-n: just arg0">
+        <text>The reply of the Metzenbaums and Cohens is that we ca n't abolish these oversight committees because we 've seen too many abuses of executive power .</text>
+        <rel relloc="1">reply</rel>
+        <arg f="" n="0" start="2" end="6">of the Metzenbaums and Cohens</arg>
+      </example>
+      <example src="" name="reply-n: all args, arg1 as the question">
+        <text>... and she remembered nothing else that was said by the testator after his reply of yes to the enquiry by Dr. Talley whether the paper was his will,</text>
+        <rel relloc="14">reply</rel>
+        <arg f="" n="0" start="13" end="13">his</arg>
+        <arg f="" n="2" start="15" end="16">of yes</arg>
+        <arg f="" n="1" start="17" end="28">to the enquiry by Dr. Talley whether the paper was his will,</arg>
+      </example>
+      <example src="ontonotes nw/xinhua/02/chtb_0240" name="ARG0 and ARG1">
+        <text>The Straits Association will arrange experts ' to be presented with the details of the incident and reply to questions .</text>
+        <rel relloc="17">reply</rel>
+        <arg f="" n="0" start="5" end="5">experts</arg>
+        <arg f="" n="1" start="18" end="19">to questions</arg>
+      </example>
       <note>REPLY-V NOTES: Frames file for 'reply' based on financial subcorpus; adjectival 'replied' based on BOLT-4,5. Comparison with say and respond. Member of Vncls say-37.7. (from reply.01-v)</note>
       <note>REPLY-N NOTES: Added by Julia based on reply-v.01. Corresponds to VNcls say-37.7 (from reply.01-n)</note>
       <note>REPLIED-J NOTES: Automatically created by Julia as an alias file for unification. (from replied.01-j)</note>
-      <roles>
-        <role descr="replier" f="pag" n="0">
-          <vnrole vncls="37.7" vntheta="agent"/>
-        </role>
-        <role descr="in response to" f="gol" n="1">
-          <vnrole vncls="37.7" vntheta="recipient"/>
-        </role>
-        <role descr="answer" f="ppt" n="2">
-          <vnrole vncls="37.7" vntheta="topic"/>
-        </role>
-      </roles>
-      <example name="reply-v: just answer" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>The CEO, Richard G. Olson, replied ``yes,'' but wouldn't elaborate.</text>
-        <arg f="" n="0">The CEO, Richard G. Olson,</arg>
-        <rel f="">replied</rel>
-        <arg f="" n="2">yes</arg>
-      </example>
-      <example name="ARG2 and ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1071" type="">
-        <text>" Dunno , " is what cyber-authors mostly reply when asked why their works have generated so much interest both in cyberspace and in the conventional publishing trade .</text>
-        <arg f="" n="2">what</arg>
-        <arg f="" n="0">cyber-authors</arg>
-        <arg f="adv" n="m">mostly</arg>
-        <rel f="">reply</rel>
-        <arg f="" n="1">when asked why their works have generated so much interest both in cyberspace and in the conventional publishing trade</arg>
-      </example>
-
-      <example name="replied-j" src="BOLT-2,3" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>This-3 happened [*-3]-2 to be recently replied to [*-2]when I checked in just now .</text>
-        <arg f="" n="1">[[*-3]-2], [to[*-2]]</arg>
-        <arg f="tmp" n="m">recently</arg>
-        <rel f="">replied</rel>
-      </example>
-      <example name="reply-n: just arg0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The reply of the Metzenbaums and Cohens is that we ca n't abolish these oversight committees because we 've seen too many abuses of executive power .</text>
-        <rel f="">reply</rel>
-        <arg f="" n="0">of the Metzenbaums and Cohens</arg>
-      </example>
-      <example name="reply-n: all args, arg1 as the question" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>... and she remembered nothing else that was said by the testator after his reply of yes to the enquiry by Dr. Talley whether the paper was his will,</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">reply</rel>
-        <arg f="" n="2">of yes</arg>
-        <arg f="" n="1">to the enquiry by Dr. Talley whether the paper was his will</arg>
-      </example>
-      <example name="ARG0 and ARG1" src="ontonotes nw/xinhua/02/chtb_0240" type="">
-        <text>The Straits Association will arrange experts ' to be presented with the details of the incident and reply to questions .</text>
-        <arg f="" n="0">experts</arg>
-        <rel f="">reply</rel>
-        <arg f="" n="1">to questions</arg>
-      </example>
-
     </roleset>
   </predicate>
 </frameset>

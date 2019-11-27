@@ -1,84 +1,110 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="land">
     <roleset id="land.01" name="bring to land, from water or air, or metaphorical extension: (cause to) end up in a location">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">land</alias>
-        <alias framenet="" pos="n" verbnet="">landing</alias>
+        <alias pos="v">land</alias>
+        <alias pos="n">landing</alias>
       </aliases>
-      <note>LAND-V NOTES: Frames file for 'land' based on sentences in financial subcorpus. No access to verbnet. Comparison to 'get'. (from land.01-v predicate notes)</note>
-      <note>LANDING-N NOTES: Based on sentences in nouns-00040. Comparison to land.01. VN class pocket-9.10-1. No FN class. Framed by Katie. (from landing.01-n)</note>
       <roles>
-        <note>Pay attention to the difference between the pilot (arg 0) and the passengers (who will be arg 1). The passengers are not causing the  plane to land, they're simply along for the ride. (from landing.01-n)</note>
         <role descr="bringer, captain, pilot, agent" f="PAG" n="0">
-          <vnrole vncls="9.10-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pocket-9.10-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Vehicle_landing" version="1.7">vehicle</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing landing" f="PPT" n="1">
-          <vnrole vncls="9.10-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pocket-9.10-1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="land-v: ergative, metaphorical" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_to_land" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Vehicle_landing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="pocket-9.10-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="landing-n.3" src="annot-overlap" confidence="0.1">17</lexlink>
+        <lexlink resource="onsense" version="on5" class="land-v.1" src="annot-overlap" confidence="0.1">25</lexlink>
+      </lexlinks>
+      <example src="" name="land-v: ergative, metaphorical">
         <text>For all that, the piece landed unperformed in a dusty archive after Bologna refused to supply a chorus and orchestra.</text>
-        <arg f="dis" n="m">For all that</arg>
-        <arg f="" n="1">the piece</arg>
-        <rel f="">landed</rel>
-        <arg f="prd" n="m">unperformed</arg>
-        <arg f="loc" n="m">in a dusty archive</arg>
-        <arg f="tmp" n="m">after Bologna refused to supply a chorus and orchestra</arg>
+        <rel relloc="5">landed</rel>
+        <arg f="DIS" n="m" start="0" end="2">For all that,</arg>
+        <arg f="" n="1" start="3" end="4">the piece</arg>
+        <arg f="PRD" n="m" start="6" end="6">unperformed</arg>
+        <arg f="LOC" n="m" start="7" end="10">in a dusty archive</arg>
+        <arg f="TMP" n="m" start="11" end="19">after Bologna refused to supply a chorus and orchestra.</arg>
       </example>
-      <example name="land-v: intransitive" src="" type="">
+      <example src="" name="land-v: intransitive">
         <text>At 18,000 feet, he says, [he and his co-pilot]-1 ``were looking for an interstate or a cornfield'' *trace*-1 to land.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">land</rel>
+        <rel relloc="19">land.</rel>
+        <arg f="" n="0" start="17" end="17">*trace*-1</arg>
       </example>
-      <example name="ARG0 and ARG1" src="ontonotes bn/cnn/01/cnn_0188" type="">
+      <example src="ontonotes bn/cnn/01/cnn_0188" name="ARG0 and ARG1">
         <text>The pilot managed to land the plane in Djibouti , where most of the passengers got off , including the ambassador .</text>
-        <arg f="" n="0">The pilot</arg>
-        <rel f="">land</rel>
-        <arg f="" n="1">the plane</arg>
-        <arg f="loc" n="m">in Djibouti , where most of the passengers got off , including the ambassador</arg>
+        <rel relloc="4">land</rel>
+        <arg f="" n="0" start="0" end="1">The pilot</arg>
+        <arg f="" n="1" start="5" end="6">the plane</arg>
+        <arg f="LOC" n="m" start="7" end="20">in Djibouti , where most of the passengers got off , including the ambassador</arg>
       </example>
-
-      <example name="landing-n: arg 1 (because they're not flying the plane, only riding in it)" src="" type="">
+      <example src="" name="landing-n: arg 1 (because they're not flying the plane, only riding in it)">
         <text>their scheduled landing</text>
-        <arg f="" n="1">their</arg>
-        <arg f="prd" n="m">scheduled</arg>
-        <rel f="">landing</rel>
+        <rel relloc="2">landing</rel>
+        <arg f="" n="1" start="0" end="0">their</arg>
+        <arg f="PRD" n="m" start="1" end="1">scheduled</arg>
       </example>
-      <example name="landing-n: Here, 'the enemy' is actually doing the landing" src="" type="">
+      <example src="" name="landing-n: Here, 'the enemy' is actually doing the landing">
         <text>the enemy's amphibious landing</text>
-        <arg f="" n="0">the enemy's</arg>
-        <arg f="mnr" n="m">amphibious</arg>
-        <rel f="">landing</rel>
+        <rel relloc="3">landing</rel>
+        <arg f="" n="0" start="0" end="1">the enemy's</arg>
+        <arg f="MNR" n="m" start="2" end="2">amphibious</arg>
       </example>
-      <example name="landing-n: A more obvious arg 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="landing-n: A more obvious arg 1">
         <text>a helicopter landing</text>
-        <arg f="" n="1">helicopter</arg>
-        <rel f="">landing</rel>
+        <rel relloc="2">landing</rel>
+        <arg f="" n="1" start="1" end="1">helicopter</arg>
       </example>
+      <note>LAND-V NOTES: Frames file for 'land' based on sentences in financial subcorpus. No access to verbnet. Comparison to 'get'. (from land.01-v predicate notes)</note>
+      <note>LANDING-N NOTES: Based on sentences in nouns-00040. Comparison to land.01. VN class pocket-9.10-1. No FN class. Framed by Katie. (from landing.01-n)</note>
+      <note>Pay attention to the difference between the pilot (arg 0) and the passengers (who will be arg 1). The passengers are not causing the  plane to land, they're simply along for the ride. (from landing.01-n)</note>
     </roleset>
     <roleset id="land.02" name="get">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">land</alias>
+        <alias pos="v">land</alias>
       </aliases>
-      <note>LAND-V NOTES: I really don't know if the giver role can appear. (from land.02-v)</note>
       <roles>
         <role descr="getter, lander" f="PAG" n="0">
-          <vnrole vncls="9.10-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pocket-9.10-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing gotten, landed" f="PPT" n="1">
-          <vnrole vncls="9.10-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pocket-9.10-1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="giver?" f="dir" n="2"/>
+        <role descr="giver?" f="DIR" n="2"/>
       </roles>
-      <example name="land-v: transitive" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="pocket-9.10-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="land-v.2" src="annot-overlap" confidence="0.1">6</lexlink>
+      </lexlinks>
+      <example src="" name="land-v: transitive">
         <text>Mr. Wolf's success in that job helped him land the top job with UAL in December 1987.</text>
-        <arg f="" n="0">him</arg>
-        <rel f="">land</rel>
-        <arg f="" n="1">the top job with UAL</arg>
-        <arg f="tmp" n="m">in December 1987</arg>
+        <rel relloc="8">land</rel>
+        <arg f="" n="0" start="7" end="7">him</arg>
+        <arg f="" n="1" start="9" end="13">the top job with UAL</arg>
+        <arg f="TMP" n="m" start="14" end="16">in December 1987.</arg>
       </example>
+      <note>LAND-V NOTES: I really don't know if the giver role can appear. (from land.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

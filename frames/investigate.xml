@@ -1,63 +1,82 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="investigate">
     <roleset id="investigate.01" name="examine closely, close examination">
       <aliases>
-        <alias framenet="Criminal_investigation Scrutiny" pos="n" verbnet="">investigation</alias>
-        <alias framenet="Research Scrutiny Criminal_investigation" pos="v" verbnet="">investigate</alias>
+        <alias pos="n">investigation</alias>
+        <alias pos="v">investigate</alias>
+        <argalias pos="n" arg="0">investigator</argalias>
       </aliases>
-      <note>INVESTIGATE-V NOTES: Member of Vncls investigate-35.4, sight-30.2. Checked by Julia, 10/2010. (from investigate.01-v)</note>
-      <note>INVESTIGATION-N NOTES: Added by Julia based on investigate-v.01. Corresponds to Vncls sight-30.2, investigate-35.4. (from investigation.01-n)</note>
       <roles>
-        <role descr="examiner" f="pag" n="0">
-          <vnrole vncls="30.2" vntheta="Experiencer"/>
-          <vnrole vncls="35.4" vntheta="Agent"/>
+        <role descr="examiner" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="sight-30.2" version="verbnet3.3">experiencer</rolelink>
+            <rolelink resource="VerbNet" class="investigate-35.4" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Scrutiny" version="1.7">cognizer</rolelink>
+            <rolelink resource="FrameNet" class="Scrutiny" version="1.7">cognizer</rolelink>
+          </rolelinks>
         </role>
-        <role descr="examined" f="ppt" n="1">
-          <vnrole vncls="30.2" vntheta="Stimulus"/>
-          <vnrole vncls="35.4" vntheta="Location"/>
+        <role descr="examined" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="sight-30.2" version="verbnet3.3">stimulus</rolelink>
+            <rolelink resource="VerbNet" class="investigate-35.4" version="verbnet3.3">location</rolelink>
+            <rolelink resource="FrameNet" class="Scrutiny" version="1.7">phenomenon</rolelink>
+            <rolelink resource="FrameNet" class="Scrutiny" version="1.7">ground</rolelink>
+          </rolelinks>
         </role>
         <role descr="examined for" f="PPT" n="2">
-          <vnrole vncls="35.4" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="investigate-35.4" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Scrutiny" version="1.7">phenomenon</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="investigate a person" src="" type="">
-        <inflection aspect="progressive" form="participle" person="third" tense="present" voice="passive"/>
-        <text>[Mr. Antar]-1 is being investigated *trace*-1 by a federal grand jury in Newark, where prosecutors have told him that they may soon seek an indictment on racketeering and securities fraud charges.</text>
-        <rel f="">investigated</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="0">by a federal grand jury in Newark, where prosecutors have told him that they may soon seek an indictment on racketeering and securities fraud charges</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Scrutiny" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Criminal_investigation" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Research" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="sight-30.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="investigate-35.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="investigate-v.1" src="annot-overlap" confidence="0.1">94</lexlink>
+      </lexlinks>
+      <example src="" name="investigate a person">
+        <text> Mr. Antar is being investigated by a federal grand jury in Newark, where prosecutors have told him that they may soon seek an indictment on racketeering and securities fraud charges.</text>
+        <rel relloc="5">investigated</rel>
+        <arg f="" n="1" start="1" end="2">Mr. Antar</arg>
+        <arg f="" n="0" start="6" end="30">by a federal grand jury in Newark, where prosecutors have told him that they may soon seek an indictment on racketeering and securities fraud charges.</arg>
       </example>
-      <example name="investigate an SBAR" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>In another setback yesterday, United's machinist union asked [the Treasury Department]-1 *trace*-1 to investigate whether certain aspects of the original buy-out proposal violated tax laws.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">investigate</rel>
-        <arg f="" n="1">whether certain aspects of the original buy-out proposal violated tax laws</arg>
+      <example src="" name="investigate an SBAR">
+        <text>In another setback yesterday, United's machinist union asked the Treasury Department to investigate whether certain aspects of the original buy-out proposal violated tax laws.</text>
+        <rel relloc="12">investigate</rel>
+        <arg f="" n="0" start="8" end="10">the Treasury Department</arg>
+        <arg f="" n="1" start="13" end="23">whether certain aspects of the original buy-out proposal violated tax laws.</arg>
       </example>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1046" type="">
+      <example src="ontonotes mz/sinorama/10/ectb_1046" name="ARG0 and ARG1 and ARG2">
         <text>Prosecutors in Taitung have been investigating county councilors for alleged corruption involving public grants and construction projects , and after half a year of the investigation 19 representatives have been indicted , including the current speaker and deputy speaker of the county council , along with 41 members of the previous two sessions of the council .</text>
-        <arg f="" n="0">Prosecutors in Taitung</arg>
-        <rel f="">investigating</rel>
-        <arg f="" n="1">county councilors</arg>
-        <arg f="" n="2">for alleged corruption involving public grants and construction projects</arg>
+        <rel relloc="5">investigating</rel>
+        <arg f="" n="0" start="0" end="2">Prosecutors in Taitung</arg>
+        <arg f="" n="1" start="6" end="7">county councilors</arg>
+        <arg f="" n="2" start="8" end="16">for alleged corruption involving public grants and construction projects</arg>
       </example>
-
-      <example name="args 0 and 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="args 0 and 1">
         <text>McCarthy began his investigation of the Army Signal Corps Laboratory at Fort Monmouth, New Jersey in 1953.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">investigation</rel>
-        <arg f="" n="1">of the Army Signal Corps Laboratory at Fort Monmouth, New Jersey</arg>
+        <rel relloc="3">investigation</rel>
+        <arg f="" n="0" start="2" end="2">his</arg>
+        <arg f="" n="1" start="4" end="14">of the Army Signal Corps Laboratory at Fort Monmouth, New Jersey</arg>
       </example>
-      <example name="all args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="all args">
         <text>their investigation of the scene for physical evidence</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">investigation</rel>
-        <arg f="" n="1">of the scene</arg>
-        <arg f="" n="2">for physical evidence</arg>
+        <rel relloc="1">investigation</rel>
+        <arg f="" n="0" start="0" end="0">their</arg>
+        <arg f="" n="1" start="2" end="4">of the scene</arg>
+        <arg f="" n="2" start="5" end="7">for physical evidence</arg>
       </example>
+      <note>INVESTIGATE-V NOTES: Member of Vncls investigate-35.4, sight-30.2. Checked by Julia, 10/2010. (from investigate.01-v)</note>
+      <note>INVESTIGATION-N NOTES: Added by Julia based on investigate-v.01. Corresponds to Vncls sight-30.2, investigate-35.4. (from investigation.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

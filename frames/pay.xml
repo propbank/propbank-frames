@@ -1,264 +1,304 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="pay">
     <roleset id="pay.01" name="cf buy and sell, pay for, pay for again">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">paid</alias>
-        <alias framenet="" pos="v" verbnet="">pay</alias>
-        <alias framenet="commerce_pay" pos="n" verbnet="">payment</alias>
-        <alias framenet="" pos="l" verbnet="">make_payment</alias>
-        <alias framenet="commerce_pay" pos="n" verbnet="">repayment</alias>
+        <alias pos="j">paid</alias>
+        <alias pos="v">pay</alias>
+        <alias pos="n">payment</alias>
+        <alias pos="l">make_payment</alias>
+        <alias pos="n">repayment</alias>
       </aliases>
+      <roles>
+        <role descr="payer or buyer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pay-68-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="money or attention" f="VSP" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pay-68-1" version="verbnet3.3">asset</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="person being paid, destination of attention" f="GOL" n="2"/>
+        <role descr="commodity, paid for what" f="PPT" n="3">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pay-68-1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Commerce_pay" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="pay-68-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Transaction.TransferMoney.PayForService" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Transfermoney" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Transferownership" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="pay-v.1" src="annot-overlap" confidence="0.1">392</lexlink>
+        <lexlink resource="onsense" version="on5" class="pay-v.4" src="annot-overlap" confidence="0.1">8</lexlink>
+        <lexlink resource="onsense" version="on5" class="pay-v.2" src="annot-overlap" confidence="0.1">52</lexlink>
+      </lexlinks>
+      <example src="price and commodity" name="price and commodity">
+        <text>Investors pay higher prices for country funds.</text>
+        <rel relloc="1">pay</rel>
+        <arg f="" n="0" start="0" end="0">Investors</arg>
+        <arg f="" n="1" start="2" end="3">higher prices</arg>
+        <arg f="" n="3" start="4" end="6">for country funds.</arg>
+      </example>
+      <example src="seller and purpose" name="seller and purpose">
+        <text>Theatres pay movie producers for showing their films.</text>
+        <rel relloc="1">pay</rel>
+        <arg f="" n="0" start="0" end="0">Theatres</arg>
+        <arg f="" n="2" start="2" end="3">movie producers</arg>
+        <arg f="" n="3" start="4" end="7">for showing their films.</arg>
+      </example>
+      <example src="passive, price and receiver" name="passive, price and receiver">
+        <text>[Mr. Cray]-1 was paid *trace*-1 $600,000 at Cray Research last year.</text>
+        <rel relloc="3">paid</rel>
+        <arg f="" n="2" start="4" end="4">*trace*-1</arg>
+        <arg f="" n="1" start="5" end="5">$600,000</arg>
+        <arg f="LOC" n="m" start="6" end="8">at Cray Research</arg>
+        <arg f="TMP" n="m" start="9" end="10">last year.</arg>
+      </example>
+      <example src="variant: pay on" name="variant: pay on">
+        <text>The Latin American nation has paid very little on its debt.</text>
+        <rel relloc="5">paid</rel>
+        <arg f="" n="0" start="0" end="3">The Latin American nation</arg>
+        <arg f="" n="1" start="6" end="7">very little</arg>
+        <arg f="" n="2" start="8" end="10">on its debt.</arg>
+      </example>
+      <example src="agentive passive" name="agentive passive">
+        <text>...[the TV commercial]-1 paid for *trace*-1 by Giuliani's campaign...</text>
+        <rel relloc="3">paid</rel>
+        <arg f="" n="3" start="4" end="5">for *trace*-1</arg>
+        <arg f="" n="0" start="6" end="8">by Giuliani's campaign...</arg>
+      </example>
+      <example src="payer, payee, payment" name="payer, payee, payment">
+        <text>The transaction would pay shareholders $55 a share.</text>
+        <rel relloc="3">pay</rel>
+        <arg f="" n="0" start="0" end="1">The transaction</arg>
+        <arg f="MOD" n="m" start="2" end="2">would</arg>
+        <arg f="" n="2" start="4" end="4">shareholders</arg>
+        <arg f="" n="1" start="5" end="7">$55 a share.</arg>
+      </example>
+      <example src="pay attention" name="pay attention">
+        <text>The media pays attention to Japanese investment</text>
+        <rel relloc="2">pays</rel>
+        <arg f="" n="0" start="0" end="1">The media</arg>
+        <arg f="" n="1" start="3" end="3">attention</arg>
+        <arg f="" n="2" start="4" end="6">to Japanese investment</arg>
+      </example>
+      <example src="" name="with MNR">
+        <text>in November and December alone, junk bond investors will receive $4.8 billion of coupon interest payments</text>
+        <rel relloc="15">payments</rel>
+        <arg f="MNR" n="m" start="13" end="13">coupon</arg>
+        <arg f="" n="3" start="14" end="14">interest</arg>
+      </example>
+      <example src="" name="args 0 and 2">
+        <text>Bally 's alleged greenmail payment to Mr. Trump</text>
+        <rel relloc="4">payment</rel>
+        <arg f="" n="0" start="0" end="1">Bally 's</arg>
+        <arg f="PRD" n="m" start="2" end="2">alleged</arg>
+        <arg f="PRP" n="m" start="3" end="3">greenmail</arg>
+        <arg f="" n="2" start="5" end="7">to Mr. Trump</arg>
+      </example>
+      <example src="" name="Arg 3 only">
+        <text>tax payments</text>
+        <rel relloc="1">payments</rel>
+        <arg f="" n="3" start="0" end="0">tax</arg>
+      </example>
+      <example src="" name="args 0, 1, and 3">
+        <text>your final $2500 house payment</text>
+        <rel relloc="4">payment</rel>
+        <arg f="" n="0" start="0" end="0">your</arg>
+        <arg f="" n="1" start="2" end="2">$2500</arg>
+        <arg f="" n="3" start="3" end="3">house</arg>
+      </example>
+      <example src="" name="Light Verb!">
+        <text>It said it needs to make the payment by Dec. 1 to avoid a default that could lead to an acceleration of the debt .</text>
+        <rel relloc="7">payment</rel>
+        <arg f="" n="0" start="0" end="0">It</arg>
+        <arg f="LVB" n="m" start="5" end="5">make</arg>
+        <arg f="TMP" n="m" start="8" end="10">by Dec. 1</arg>
+      </example>
+      <example src="wsj" name="Within LVC">
+        <text>The agreement calls for South African debtors to make repayments in eight installments , starting in December of next year .</text>
+        <rel relloc="9">repayments</rel>
+        <arg f="" n="0" start="4" end="6">South African debtors</arg>
+        <arg f="LVB" n="m" start="8" end="8">make</arg>
+        <arg f="MNR" n="m" start="10" end="12">in eight installments</arg>
+        <arg f="TMP" n="m" start="14" end="19">starting in December of next year</arg>
+      </example>
+      <example src="web" name="All arguments">
+        <text>He conditioned it upon his repayment of $13795 to Mr. Crisman, Jr. for the expenses he incurred as guardian.</text>
+        <rel relloc="5">repayment</rel>
+        <arg f="" n="0" start="4" end="4">his</arg>
+        <arg f="" n="1" start="6" end="7">of $13795</arg>
+        <arg f="" n="2" start="8" end="11">to Mr. Crisman, Jr.</arg>
+        <arg f="" n="3" start="12" end="18">for the expenses he incurred as guardian.</arg>
+      </example>
       <note>PAY-V NOTES: . (from pay.01-v predicate notes)</note>
       <note>PAYMENT-N NOTES: Based on sentences in nouns-00040. Comparison to pay.01. VN class pay-68. Framed by Katie. (from payment.01-n)</note>
       <note>REPAYMENT-N NOTES: Based on noun entry payment.01. Corresponds to VN class pay-68. Framed by Claire. (from repayment.01-n)</note>
       <note>PAID-J NOTES: Automatically created by Julia as an alias file for unification. (from paid.01-j)</note>
-      <roles>
-        <role descr="payer or buyer" f="pag" n="0">
-          <vnrole vncls="68-1" vntheta="agent"/>
-        </role>
-        <role descr="money or attention" f="vsp" n="1">
-          <vnrole vncls="68-1" vntheta="asset"/>
-        </role>
-        <role descr="person being paid, destination of attention" f="gol" n="2"/>
-        <role descr="commodity, paid for what" f="ppt" n="3">
-          <vnrole vncls="68-1" vntheta="theme"/>
-        </role>
-      </roles>
-      <example name="price and commodity" src="price and commodity" type="price and commodity">
-        <text>Investors pay higher prices for country funds.</text>
-        <arg f="" n="0">Investors</arg>
-        <rel f="">pay</rel>
-        <arg f="" n="1">higher prices</arg>
-        <arg f="" n="3">for country funds</arg>
-      </example>
-      <example name="seller and purpose" src="seller and purpose" type="seller and purpose">
-        <text>Theatres pay movie producers for showing their films.</text>
-        <arg f="" n="0">Theatres</arg>
-        <rel f="">pay</rel>
-        <arg f="" n="2">movie producers</arg>
-        <arg f="" n="3">for showing their films</arg>
-      </example>
-      <example name="passive, price and receiver" src="passive, price and receiver" type="passive, price and receiver">
-        <text>[Mr. Cray]-1 was paid *trace*-1 $600,000 at Cray Research last year.</text>
-        <arg f="" n="2">*trace*</arg>
-        <rel f="">paid</rel>
-        <arg f="" n="1">$600,000</arg>
-        <arg f="loc" n="m">at Cray Research</arg>
-        <arg f="tmp" n="m">last year</arg>
-      </example>
-      <example name="variant: pay on" src="variant: pay on" type="variant: pay on">
-        <text>The Latin American nation has paid very little on its debt.</text>
-        <arg f="" n="0">The Latin American nation</arg>
-        <rel f="">paid</rel>
-        <arg f="" n="1">very little</arg>
-        <arg f="" n="2">on its debt</arg>
-      </example>
-      <example name="agentive passive" src="agentive passive" type="agentive passive">
-        <text>...[the TV commercial]-1 paid for *trace*-1 by Giuliani's campaign...</text>
-        <rel f="">paid</rel>
-        <arg f="" n="3">for *trace*</arg>
-        <arg f="" n="0">by Giuliani's campaign</arg>
-      </example>
-      <example name="payer, payee, payment" src="payer, payee, payment" type="payer, payee, payment">
-        <text>The transaction would pay shareholders $55 a share.</text>
-        <arg f="" n="0">The transaction</arg>
-        <arg f="mod" n="m">would</arg>
-        <rel f="">pay</rel>
-        <arg f="" n="2">shareholders</arg>
-        <arg f="" n="1">$55 a share</arg>
-      </example>
-      <example name="pay attention" src="pay attention" type="pay attention">
-        <text>The media pays attention to Japanese investment</text>
-        <arg f="" n="0">The media</arg>
-        <rel f="">pays</rel>
-        <arg f="" n="1">attention</arg>
-        <arg f="" n="2">to Japanese investment</arg>
-      </example>
-      <example name="with MNR" src="" type="">
-        <text>in November and December alone, junk bond investors will receive $4.8 billion of coupon interest payments</text>
-        <arg f="mnr" n="m">coupon</arg>
-        <arg f="" n="3">interest</arg>
-        <rel f="">payments</rel>
-      </example>
-      <example name="args 0 and 2" src="" type="">
-        <text>Bally 's alleged greenmail payment to Mr. Trump</text>
-        <arg f="" n="0">Bally's</arg>
-        <arg f="prd" n="m">alleged</arg>
-        <arg f="prp" n="m">greenmail</arg>
-        <rel f="">payment</rel>
-        <arg f="" n="2">to Mr. Trump</arg>
-      </example>
-      <example name="Arg 3 only" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>tax payments</text>
-        <arg f="" n="3">tax</arg>
-        <rel f="">payments</rel>
-      </example>
-      <example name="args 0, 1, and 3" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>your final $2500 house payment</text>
-        <arg f="" n="0">your</arg>
-        <arg f="" n="1">$2500</arg>
-        <arg f="" n="3">house</arg>
-        <rel f="">payment</rel>
-      </example>
-      <example name="Light Verb!" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>It said it-1 needs *-1 to make the payment by Dec. 1 to avoid a default that could lead to an acceleration of the debt .</text>
-        <arg f="" n="0">*-1</arg>
-        <arg f="lvb" n="m">make</arg>
-        <rel f="">payment</rel>
-        <arg f="tmp" n="m">by Dec. 1</arg>
-      </example>
-      <example name="Within LVC" src="wsj" type="">
-        <text>The agreement calls for South African debtors to make repayments in eight installments , starting in December of next year .</text>
-        <arg f="" n="0">South African debtors</arg>
-        <arg f="lvb" n="m">make</arg>
-        <rel f="">repayments</rel>
-        <arg f="mnr" n="m">in eight installments</arg>
-        <arg f="tmp" n="m">starting in December of next year</arg>
-      </example>
-      <example name="All arguments" src="web" type="">
-        <text>He conditioned it upon his repayment of $13795 to Mr. Crisman, Jr. for the expenses he incurred as guardian.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">repayment</rel>
-        <arg f="" n="1">of $13795</arg>
-        <arg f="" n="2">to Mr. Crisman Jr.</arg>
-        <arg f="" n="3">for the expenses he incurred as guardian.</arg>
-      </example>
     </roleset>
     <roleset id="pay.04" name="succeed, work out">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">pay</alias>
+        <alias pos="v">pay</alias>
       </aliases>
-      <note>PAY-V NOTES: . (from pay.04-v predicate notes)</note>
       <roles>
-        <role descr="thing succeeding or working out" f="ppt" n="1"/>
+        <role descr="thing succeeding or working out" f="PPT" n="1"/>
       </roles>
-      <example name="crime doesn't pay" src="crime doesn't pay" type="crime doesn't pay">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="onsense" version="on5" class="pay-v.3" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="crime doesn't pay" name="crime doesn't pay">
         <text>``It's not easy to roll out something that comprehensive, and make it pay,'' Mr. Jacob says.</text>
-        <arg f="" n="1">it</arg>
-        <rel f="">pay</rel>
+        <rel relloc="12">pay,''</rel>
+        <arg f="" n="1" start="11" end="11">it</arg>
       </example>
+      <note>PAY-V NOTES: . (from pay.04-v predicate notes)</note>
     </roleset>
   </predicate>
   <predicate lemma="pay_off">
     <roleset id="pay_off.02" name="pay off">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">payoff_off</alias>
-        <alias framenet="" pos="v" verbnet="">pay_off</alias>
+        <alias pos="n">payoff_off</alias>
+        <alias pos="v">pay_off</alias>
       </aliases>
+      <roles>
+        <role descr="payer" f="PAG" n="0"/>
+        <role descr="debt" f="PPT" n="1"/>
+        <role descr="owed to whom, person paid" f="GOL" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="chump change" name="chump change">
+        <text>The government paid off $13.8 billion in T-bills.</text>
+        <rel relloc="2 3">paid off</rel>
+        <arg f="" n="0" start="0" end="1">The government</arg>
+        <arg f="" n="1" start="4" end="7">$13.8 billion in T-bills.</arg>
+      </example>
+      <example src="With arg 2" name="With arg 2">
+        <text>You could have the flip side and have some judge that-1 was paid *-1 off.</text>
+        <rel relloc="12 14">paid off.</rel>
+        <arg f="" n="2" start="3" end="3">the</arg>
+        <arg f="RCL" n="m" start="8" end="9">some judge</arg>
+      </example>
       <note>PAY_OFF-V NOTES: (from pay.02-v)</note>
       <note>PAYOFF_OFF-N NOTES: Automatically created by Julia as an alias file for unification. (from payoff.02-n)</note>
-      <roles>
-        <role descr="payer" f="pag" n="0"/>
-        <role descr="debt" f="ppt" n="1"/>
-        <role descr="owed to whom, person paid" f="gol" n="2"/>
-      </roles>
-      <example name="chump change" src="chump change" type="chump change">
-        <text>The government paid off $13.8 billion in T-bills.</text>
-        <arg f="" n="0">The government</arg>
-        <rel f="">[paid] [off]</rel>
-        <arg f="" n="1">$13.8 billion in T-bills</arg>
-      </example>
-      <example name="With arg 2" src="With arg 2" type="With arg 2">
-        <text>You could have the flip side and have some judge that-1 was paid *-1 off.</text>
-        <rel f="">paid off</rel>
-        <arg f="" n="2">*-1 --&gt; that</arg>
-        <arg f="rcl" n="m">that --&gt; some judge</arg>
-      </example>
     </roleset>
     <roleset id="pay_off.05" name="succeed, work out (phrasal)">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">pay_off</alias>
+        <alias pos="v">pay_off</alias>
       </aliases>
-      <note>PAY_OFF-V NOTES: (from pay.05-v)</note>
       <roles>
-        <role descr="thing succeeding, working out" f="ppt" n="1"/>
+        <role descr="thing succeeding, working out" f="PPT" n="1"/>
       </roles>
-      <example name="phrasal success" src="phrasal success" type="phrasal success">
-        <inflection aspect="ns" form="full" person="ns" tense="ns" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="phrasal success" name="phrasal success">
         <text>That can pay off down the road as customers, especially the younger ones, change from borrowers to savers/investors.</text>
-        <arg f="" n="1">That</arg>
-        <arg f="mod" n="m">can</arg>
-        <rel f="">pay off</rel>
-        <arg f="tmp" n="m">down the road</arg>
-        <arg f="tmp" n="m">as customers, especially the younger ones, change from borrowers to savers/investors</arg>
+        <rel relloc="2 3">pay off</rel>
+        <arg f="" n="1" start="0" end="0">That</arg>
+        <arg f="MOD" n="m" start="1" end="1">can</arg>
+        <arg f="TMP" n="m" start="4" end="6">down the road</arg>
+        <arg f="TMP" n="m" start="7" end="17">as customers, especially the younger ones, change from borrowers to savers/investors.</arg>
       </example>
+      <note>PAY_OFF-V NOTES: (from pay.05-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="pay_out">
     <roleset id="pay_out.03" name="pay out">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">pay_out</alias>
+        <alias pos="v">pay_out</alias>
       </aliases>
-      <note>PAY_OUT-V NOTES: (from pay.03-v)</note>
       <roles>
-        <role descr="payer or buyer" f="pag" n="0"/>
-        <role descr="money or attention" f="vsp" n="1"/>
-        <role descr="person being paid, destination of attention" f="gol" n="2"/>
-        <role descr="commodity, paid for what" f="ppt" n="3"/>
+        <role descr="payer or buyer" f="PAG" n="0"/>
+        <role descr="money or attention" f="VSP" n="1"/>
+        <role descr="person being paid, destination of attention" f="GOL" n="2"/>
+        <role descr="commodity, paid for what" f="PPT" n="3"/>
       </roles>
-      <example name="Arg0 rel Arg2 Arg3" src="Arg0 rel Arg2 Arg3" type="Arg0 rel Arg2 Arg3">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="Arg0 rel Arg2 Arg3" name="Arg0 rel Arg2 Arg3">
         <text>Businesses are paying out a smaller percentage of their profits.</text>
-        <arg f="" n="0">Businesses</arg>
-        <rel f="">[paying] [out]</rel>
-        <arg f="" n="1">a smaller percentage of their profits</arg>
+        <rel relloc="2 3">paying out</rel>
+        <arg f="" n="0" start="0" end="0">Businesses</arg>
+        <arg f="" n="1" start="4" end="9">a smaller percentage of their profits.</arg>
       </example>
+      <note>PAY_OUT-V NOTES: (from pay.03-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="pay_down">
     <roleset id="pay_down.06" name="reduce indebtedness">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">pay_down</alias>
+        <alias pos="v">pay_down</alias>
       </aliases>
-      <note>PAY_DOWN-V NOTES: (from pay.06-v)</note>
       <roles>
-        <role descr="payer" f="pag" n="0"/>
-        <role descr="debt" f="ppt" n="1"/>
+        <role descr="payer" f="PAG" n="0"/>
+        <role descr="debt" f="PPT" n="1"/>
       </roles>
-      <example name="bastard child of pay (debt) and pay off (debt)" src="bastard child of pay (debt) and pay off (debt)" type="bastard child of pay (debt) and pay off (debt)">
-        <inflection aspect="ns" form="full" person="ns" tense="ns" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="bastard child of pay (debt) and pay off (debt)" name="bastard child of pay (debt) and pay off (debt)">
         <text>But Mr. Wathen's team still must pay down about $82 million of long-term bank debt from the acquisition within the next four years.</text>
-        <arg f="dis" n="m">But</arg>
-        <arg f="" n="0">Mr. Wathen's team</arg>
-        <arg f="dis" n="m">still</arg>
-        <arg f="mod" n="m">must</arg>
-        <rel f="">[pay] [down]</rel>
-        <arg f="" n="1">about $82 million of long-term bank debt from the acquisition</arg>
-        <arg f="tmp" n="m">within the next four years</arg>
+        <rel relloc="6 7">pay down</rel>
+        <arg f="DIS" n="m" start="0" end="0">But</arg>
+        <arg f="" n="0" start="1" end="3">Mr. Wathen's team</arg>
+        <arg f="DIS" n="m" start="4" end="4">still</arg>
+        <arg f="MOD" n="m" start="5" end="5">must</arg>
+        <arg f="" n="1" start="8" end="17">about $82 million of long-term bank debt from the acquisition</arg>
+        <arg f="TMP" n="m" start="18" end="22">within the next four years.</arg>
       </example>
+      <note>PAY_DOWN-V NOTES: (from pay.06-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="pay_up">
     <roleset id="pay_up.07" name="same as pay.01 but sounds tougher">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">pay_up</alias>
+        <alias pos="v">pay_up</alias>
       </aliases>
-      <note>PAY_UP-V NOTES: (from pay.07-v)</note>
       <roles>
-        <role descr="agent, payer" f="pag" n="0"/>
-        <role descr="money paid" f="ppt" n="1"/>
-        <role descr="person being paid, given the money" f="gol" n="2"/>
-        <role descr="commodity, money paid for what?" f="ppt" n="3"/>
+        <role descr="agent, payer" f="PAG" n="0"/>
+        <role descr="money paid" f="PPT" n="1"/>
+        <role descr="person being paid, given the money" f="GOL" n="2"/>
+        <role descr="commodity, money paid for what?" f="PPT" n="3"/>
       </roles>
-      <example name="Payer only" src="Payer only" type="Payer only">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="Payer only" name="Payer only">
         <text>I knew that if I did n't pay up they would burn the car .</text>
-        <arg f="" n="0">I</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">[pay] [up]</rel>
+        <rel relloc="7 8">pay up</rel>
+        <arg f="" n="0" start="0" end="0">I</arg>
+        <arg f="NEG" n="m" start="6" end="6">n't</arg>
       </example>
-      <example name="More arguments" src="More arguments" type="More arguments">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>A consumer court in Bangalore has asked [German airline Lufthansa]-1 *PRO*-1 to pay up compensation for a rude airhostess.</text>
-        <arg f="" n="0">*PRO*-1</arg>
-        <rel f="">[pay] [up]</rel>
-        <arg f="" n="1">compensation</arg>
-        <arg f="" n="3">for a rude airhostess</arg>
+      <example src="More arguments" name="More arguments">
+        <text>A consumer court in Bangalore has asked German airline Lufthansa to pay up compensation for a rude airhostess.</text>
+        <rel relloc="11 12">pay up</rel>
+        <arg f="" n="0" start="7" end="9">German airline Lufthansa</arg>
+        <arg f="" n="1" start="13" end="13">compensation</arg>
+        <arg f="" n="3" start="14" end="17">for a rude airhostess.</arg>
       </example>
+      <note>PAY_UP-V NOTES: (from pay.07-v)</note>
     </roleset>
   </predicate>
 </frameset>

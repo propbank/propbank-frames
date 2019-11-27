@@ -1,28 +1,45 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="slay">
     <roleset id="slay.01" name="to kill violently">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">slaying</alias>
-        <alias framenet="Killing" pos="v" verbnet="">slay</alias>
+        <alias pos="n">slaying</alias>
+        <alias pos="v">slay</alias>
       </aliases>
-      <note>SLAY-V NOTES: Member of VNcls murder-42.1. (from slay.01-v)</note>
-      <note>SLAYING-N NOTES: Automatically created by Julia as an alias file for unification. (from slaying.01-n)</note>
       <roles>
         <role descr="killer" f="PAG" n="0">
-          <vnrole vncls="42.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="murder-42.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Killing" version="1.7">cause</rolelink>
+            <rolelink resource="FrameNet" class="Killing" version="1.7">killer</rolelink>
+          </rolelinks>
         </role>
         <role descr="corpse" f="PPT" n="1">
-          <vnrole vncls="42.1" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="murder-42.1" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Killing" version="1.7">victim</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Killing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="murder-42.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Life.Die.DeathCausedByViolentEvents" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Die" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+      </lexlinks>
+      <example src="" name="transitive">
         <text>Robert H. Knight 's Oct. 5 editorial-page article bemoaning violence in comedy movies ( `` Hollywood , You Slay Me '' ) is interesting , but somewhat off-base .</text>
-        <arg f="" n="0">You</arg>
-        <rel f="">Slay</rel>
-        <arg f="" n="1">Me</arg>
+        <rel relloc="18">Slay</rel>
+        <arg f="" n="0" start="17" end="17">You</arg>
+        <arg f="" n="1" start="19" end="19">Me</arg>
       </example>
+      <note>SLAY-V NOTES: Member of VNcls murder-42.1. (from slay.01-v)</note>
+      <note>SLAYING-N NOTES: Automatically created by Julia as an alias file for unification. (from slaying.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,48 +1,65 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="toll">
     <roleset id="toll.01" name="to (cause) to make a sound of a bell">
       <aliases>
-        <alias framenet="Make_noise" pos="v" verbnet="">toll</alias>
+        <alias pos="v">toll</alias>
       </aliases>
-      <note>TOLL-V NOTES: VerbNet entry sound_emission-43.2. Framed by Claire. (from toll.01-v)</note>
       <roles>
-        <role descr="causer of ringing" f="pag" n="0">
-          <vnrole vncls="43.2" vntheta="agent"/>
+        <role descr="causer of ringing" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="sound_emission-43.2" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="bell" f="ppt" n="1">
-          <vnrole vncls="43.2" vntheta="theme"/>
+        <role descr="bell" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="sound_emission-43.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Make_noise" version="1.7">noisy_event</rolelink>
+            <rolelink resource="FrameNet" class="Make_noise" version="1.7">sound</rolelink>
+          </rolelinks>
         </role>
-        <role descr="ring for" f="gol" n="2"/>
+        <role descr="ring for" f="GOL" n="2"/>
       </roles>
-      <example name="ARG0 and ARG1" src="ontonotes wb/eng/00/eng_0016" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Make_noise" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="sound_emission-43.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="ontonotes wb/eng/00/eng_0016" name="ARG0 and ARG1">
         <text>Read it and remember , the bell tolls for thee .</text>
-        <arg f="" n="0">the bell</arg>
-        <rel f="">tolls</rel>
-        <arg f="" n="1">for thee</arg>
+        <rel relloc="7">tolls</rel>
+        <arg f="" n="0" start="5" end="6">the bell</arg>
+        <arg f="" n="1" start="8" end="9">for thee</arg>
       </example>
-
+      <note>TOLL-V NOTES: VerbNet entry sound_emission-43.2. Framed by Claire. (from toll.01-v)</note>
     </roleset>
     <roleset id="toll.02" name="charge a toll">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">toll</alias>
-        <alias framenet="" pos="n" verbnet="">toll</alias>
+        <alias pos="v">toll</alias>
+        <alias pos="n">toll</alias>
       </aliases>
+      <roles>
+        <role descr="toll-booth employee, person charging toll" f="PAG" n="0"/>
+        <role descr="toll itself, amount charged" f="VSP" n="1"/>
+        <role descr="person charged, paying toll" f="PPT" n="2"/>
+        <role descr="toll for what? commodity" f="GOL" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="Descriptive" name="Descriptive">
+        <text>*PRO* think in terms of the entire NoVa area with a connecting network of electronically tolled roads being priced by the hour.</text>
+        <rel relloc="15">tolled</rel>
+        <arg f="MNR" n="m" start="14" end="14">electronically</arg>
+        <arg f="" n="3" start="16" end="16">roads</arg>
+      </example>
       <note>TOLL-V NOTES: comparison to 'charge.' Framed by Claire. (from toll.02-v)</note>
       <note>TOLL-N NOTES: Automatically created by Julia as an alias file for unification. (from toll.02-n)</note>
-      <roles>
-        <role descr="toll-booth employee, person charging toll" f="pag" n="0"/>
-        <role descr="toll itself, amount charged" f="vsp" n="1"/>
-        <role descr="person charged, paying toll" f="ppt" n="2"/>
-        <role descr="toll for what? commodity" f="gol" n="3"/>
-      </roles>
-      <example name="Descriptive" src="Descriptive" type="Descriptive">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>*PRO* think in terms of the entire NoVa area with a connecting network of electronically tolled roads being priced by the hour.</text>
-        <arg f="mnr" n="m">electronically</arg>
-        <rel f="">tolled</rel>
-        <arg f="" n="3">roads</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

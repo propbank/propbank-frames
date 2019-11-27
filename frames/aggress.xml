@@ -1,77 +1,88 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="aggress">
     <roleset id="aggress.01" name="hostile behavior, actively hostile">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">aggression</alias>
-        <alias framenet="" pos="j" verbnet="">aggressive</alias>
-        <alias framenet="" pos="v" verbnet="">aggress</alias>
+        <alias pos="n">aggression</alias>
+        <alias pos="j">aggressive</alias>
+        <alias pos="v">aggress</alias>
       </aliases>
+      <roles>
+        <role descr="aggressor" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Attack" version="1.7">assailant</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity aggression is directed toward" f="GOL" n="1"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Abusing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Attack" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+      </lexlinks>
+      <example src="BOLT" name="aggression-n: Arg0">
+        <text>Where 's the public outcry about Russian veto and unilateralism -LRB- a criticism routinely employed - rightly -against the United States when it vetoes resolutions on Israeliaggression -RRB- ?</text>
+        <rel relloc="26">Israeliaggression</rel>
+        <arg f="" n="0" start="20" end="20">States</arg>
+      </example>
+      <example src="" name="aggression-n: args 0 and 1">
+        <text>Jan Faull, M.Ed., answers a parent's question about a firstborn toddler's aggression toward the new baby.</text>
+        <rel relloc="11">aggression</rel>
+        <arg f="" n="0" start="8" end="10">a firstborn toddler's</arg>
+        <arg f="" n="1" start="12" end="15">toward the new baby.</arg>
+      </example>
+      <example src="" name="aggression-n: cause">
+        <text>Some dogs may only show aggression over one specific object and nothing else.</text>
+        <rel relloc="5">aggression</rel>
+        <arg f="CAU" n="m" start="6" end="12">over one specific object and nothing else.</arg>
+      </example>
+      <example src="web" name="aggressive-j: All args">
+        <text>The client acknowledged that the dog was aggressive towards his wife.</text>
+        <rel relloc="7">aggressive</rel>
+        <arg f="" n="0" start="4" end="5">the dog</arg>
+        <arg f="" n="1" start="8" end="10">towards his wife.</arg>
+      </example>
       <note>AGGRESSION-N NOTES: Added by Julia based on BOLT. No VNcls. (from aggression.01-n)</note>
       <note>AGGRESSIVE-J NOTES: Based on BOLT P01. (from aggressive.01-j)</note>
       <note>AGGRESS-V NOTES: Automatically added alias.</note>
-      <roles>
-        <role descr="aggressor" f="PAG" n="0"/>
-        <role descr="entity aggression is directed toward" f="gol" n="1"/>
-      </roles>
-      <example name="aggression-n: Arg0" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Where 's the public outcry about Russian veto and unilateralism -LRB- a criticism routinely employed - rightly -against the United States when it vetoes resolutions on Israeliaggression -RRB- ?</text>
-        <arg f="" n="0">Israeli</arg>
-        <rel f="">aggression</rel>
-      </example>
-      <example name="aggression-n: args 0 and 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Jan Faull, M.Ed., answers a parent's question about a firstborn toddler's aggression toward the new baby.</text>
-        <arg f="" n="0">a firstborn toddler's</arg>
-        <rel f="">aggression</rel>
-        <arg f="" n="1">toward the new baby</arg>
-      </example>
-      <example name="aggression-n: cause" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Some dogs may only show aggression over one specific object and nothing else.</text>
-        <rel f="">aggression</rel>
-        <arg f="cau" n="m">over one specific object and nothing else</arg>
-      </example>
-      <example name="aggressive-j: All args" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The client acknowledged that the dog was aggressive towards his wife.</text>
-        <arg f="" n="0">the dog</arg>
-        <rel f="">aggressive</rel>
-        <arg f="" n="1">towards his wife</arg>
-      </example>
     </roleset>
     <roleset id="aggress.02" name="fast-growing">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">aggressive</alias>
-        <alias framenet="" pos="v" verbnet="">aggress</alias>
-        <alias framenet="" pos="n" verbnet="">aggression</alias>
+        <alias pos="j">aggressive</alias>
+        <alias pos="v">aggress</alias>
+        <alias pos="n">aggression</alias>
       </aliases>
-      <note>AGGRESSION-N NOTES: Split off from the original 'aggression' roleset by Julia for unification.</note>
-      <note>AGGRESSIVE-J NOTES: Split off from the original 'aggressive'roleset by Julia for unification.</note>
-      <note>AGGRESS-V NOTES: Automatically added alias.</note>
       <roles>
         <role descr="fast-growing thing" f="PAG" n="0"/>
       </roles>
-      <example name="aggression-n: Arg0" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="BOLT" name="aggression-n: Arg0">
         <text>The cancer's aggression is partly a result of its location.</text>
-        <arg f="" n="0">cancer's</arg>
-        <rel f="">aggression</rel>
+        <rel relloc="2">aggression</rel>
+        <arg f="" n="0" start="1" end="1">cancer's</arg>
       </example>
-      <example name="aggressive-j" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="aggressive-j">
         <text>My Sister's cancer was aggressive in nature, continuing to spread irrespective of treatment.</text>
-        <arg f="" n="0">My sister's cancer</arg>
-        <rel f="">aggressive</rel>
-        <arg f="adv" n="m">in nature</arg>
+        <rel relloc="4">aggressive</rel>
+        <arg f="" n="0" start="0" end="2">My Sister's cancer</arg>
+        <arg f="ADV" n="m" start="5" end="6">in nature,</arg>
       </example>
-      <example name="aggressive-j" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="aggressive-j">
         <text>Loan growth was aggressive, significant, or faster than anticipated.</text>
-        <arg f="" n="0">Loan growth</arg>
-        <rel f="">aggressive</rel>
+        <rel relloc="3">aggressive,</rel>
+        <arg f="" n="0" start="0" end="1">Loan growth</arg>
       </example>
+      <note>AGGRESSION-N NOTES: Split off from the original 'aggression' roleset by Julia for unification.</note>
+      <note>AGGRESSIVE-J NOTES: Split off from the original 'aggressive'roleset by Julia for unification.</note>
+      <note>AGGRESS-V NOTES: Automatically added alias.</note>
     </roleset>
   </predicate>
 </frameset>

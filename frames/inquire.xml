@@ -1,93 +1,107 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="inquire">
     <roleset id="inquire.01" name="to ask about">
       <aliases>
-        <alias framenet="Questioning Criminal_investigation" pos="n" verbnet="">inquiry</alias>
-        <alias framenet="" pos="l" verbnet="">make_inquiry</alias>
-        <alias framenet="Questioning Criminal_investigation" pos="v" verbnet="">inquire</alias>
+        <alias pos="n">inquiry</alias>
+        <alias pos="l">make_inquiry</alias>
+        <alias pos="v">inquire</alias>
       </aliases>
-      <note>INQUIRE-V NOTES: Roleset by Julia based on WSJ and internet searches. Member of Vncls inquire-37.1.2. Comparison to "ask". (from inquire.01-v)</note>
-      <note>INQUIRY-N NOTES: Updated by Julia. Member of Vncls 37.1.2. (from inquiry.01-n)</note>
       <roles>
-        <note>Watch out for LVCs! (from inquiry.01-n)</note>
         <role descr="inquirer" f="PAG" n="0">
-          <vnrole vncls="37.1.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="inquire-37.1.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Questioning" version="1.7">speaker</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing wondered about/investigated" f="PPT" n="1">
-          <vnrole vncls="37.1.2" vntheta="Topic"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="inquire-37.1.2" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="FrameNet" class="Questioning" version="1.7">message</rolelink>
+            <rolelink resource="FrameNet" class="Questioning" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity being asked" f="GOL" n="2">
-          <vnrole vncls="37.1.2" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="inquire-37.1.2" version="verbnet3.3">recipient</rolelink>
+            <rolelink resource="FrameNet" class="Questioning" version="1.7">addressee</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="criminal investigation" src="criminal investigation" type="criminal investigation">
-        <inflection aspect="ns" form="gerund" person="ns" tense="present" voice="active"/>
-        <text>Typically , these laws seek to prevent [executive branch officials]-2 from [*-2]inquiring into whether certain federal programs make any economic sense or proposing more market-oriented alternatives to regulations .</text>
-        <arg f="" n="0">[*-2]</arg>
-        <rel f="">inquiring</rel>
-        <arg f="" n="1">into whether certain federal programs make any economic sense</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Criminal_investigation" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Questioning" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="inquire-37.1.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="inquiry-n.2" src="annot-overlap" confidence="0.1">9</lexlink>
+        <lexlink resource="onsense" version="on5" class="inquiry-n.1" src="annot-overlap" confidence="0.1">17</lexlink>
+      </lexlinks>
+      <example src="criminal investigation" name="criminal investigation">
+        <text>Typically , these laws seek to prevent executive branch officials from [*]inquiring into whether certain federal programs make any economic sense or proposing more market-oriented alternatives to regulations .</text>
+        <rel relloc="11">[*]inquiring</rel>
+        <arg f="" n="0" start="7" end="9">executive branch officials</arg>
+        <arg f="" n="1" start="12" end="20">into whether certain federal programs make any economic sense</arg>
       </example>
-      <example name="intransitive" src="intransitive" type="intransitive">
-        <inflection aspect="ns" form="full" person="third" tense="past" voice="active"/>
+      <example src="intransitive" name="intransitive">
         <text>Aureal inquired, as the two men walked along.</text>
-        <arg f="" n="0">Aureal</arg>
-        <rel f="">inquired</rel>
-        <arg f="tmp" n="m">as the two men walked along.</arg>
+        <rel relloc="1">inquired,</rel>
+        <arg f="" n="0" start="0" end="0">Aureal</arg>
+        <arg f="TMP" n="m" start="2" end="7">as the two men walked along.</arg>
       </example>
-      <example name="Agent and topic, no recipient" src="Agent and topic, no recipient" type="Agent and topic, no recipient">
-        <inflection aspect="ns" form="full" person="other" tense="past" voice="active"/>
+      <example src="Agent and topic, no recipient" name="Agent and topic, no recipient">
         <text>I inquired, at the top of my voice, where the hell I was.</text>
-        <arg f="" n="0">I</arg>
-        <rel f="">inquired</rel>
-        <arg f="mnr" n="m">at the top of my voice</arg>
-        <arg f="" n="1">where the hell I was.</arg>
+        <rel relloc="1">inquired,</rel>
+        <arg f="" n="0" start="0" end="0">I</arg>
+        <arg f="MNR" n="m" start="2" end="7">at the top of my voice,</arg>
+        <arg f="" n="1" start="8" end="12">where the hell I was.</arg>
       </example>
-      <example name="Agent and Recipient, no topic" src="Agent and Recipient, no topic" type="Agent and Recipient, no topic">
-        <inflection aspect="ns" form="full" person="third" tense="past" voice="active"/>
+      <example src="Agent and Recipient, no topic" name="Agent and Recipient, no topic">
         <text>He-1 caught a young man of the men of Succoth, and *trace*-1 inquired of him.</text>
-        <arg f="" n="0">*trace*-1: He</arg>
-        <rel f="">inquired</rel>
-        <arg f="" n="2">of him.</arg>
+        <rel relloc="12">inquired</rel>
+        <arg f="" n="0" start="10" end="11">and *trace*-1</arg>
+        <arg f="" n="2" start="13" end="14">of him.</arg>
       </example>
-      <example name="All args" src="All args" type="All args">
-        <inflection aspect="ns" form="full" person="third" tense="past" voice="active"/>
+      <example src="All args" name="All args">
         <text>Theodosius inquired of him the practices of the Studite monks.</text>
-        <arg f="" n="0">Theodosius</arg>
-        <rel f="">inquired</rel>
-        <arg f="" n="2">of him</arg>
-        <arg f="" n="1">the practices of the Studite monks.</arg>
+        <rel relloc="1">inquired</rel>
+        <arg f="" n="0" start="0" end="0">Theodosius</arg>
+        <arg f="" n="2" start="2" end="3">of him</arg>
+        <arg f="" n="1" start="4" end="9">the practices of the Studite monks.</arg>
       </example>
-      <example name="autogen1" src="" type="">
+      <example src="" name="autogen1">
         <text>their inquiry into his activities at another savings and loan</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">inquiry</rel>
-        <arg f="" n="1">into his activities at another savings and loan</arg>
+        <rel relloc="1">inquiry</rel>
+        <arg f="" n="0" start="0" end="0">their</arg>
+        <arg f="" n="1" start="2" end="9">into his activities at another savings and loan</arg>
       </example>
-      <example name="autogen2" src="" type="">
+      <example src="" name="autogen2">
         <text>an inquiry into the freeway 's collapse</text>
-        <rel f="">inquiry</rel>
-        <arg f="" n="1">into the freeway 's collapse</arg>
+        <rel relloc="1">inquiry</rel>
+        <arg f="" n="1" start="2" end="6">into the freeway 's collapse</arg>
       </example>
-      <example name="this is probably arg2-- although the ex is slightly ambiguous" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="this is probably arg2-- although the ex is slightly ambiguous">
         <text>The tentative settlement between Gulf Power , a Pensacola , Fla. , electric company , and federal prosecutors would mark the end of one part of a wide - ranging inquiry of Southern Co. in the past year</text>
-        <arg f="ext" n="m">wide-ranging</arg>
-        <rel f="">inquiry</rel>
-        <arg f="" n="2">of Souther Co.</arg>
-        <arg f="tmp" n="m">in the past year</arg>
+        <rel relloc="30">inquiry</rel>
+        <arg f="EXT" n="m" start="29" end="29">ranging</arg>
+        <arg f="" n="2" start="31" end="33">of Southern Co.</arg>
+        <arg f="TMP" n="m" start="34" end="37">in the past year</arg>
       </example>
-      <example name="Light Verb! with noun's benefactive!" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="Light Verb! with noun's benefactive!">
         <text>Liverpool never made an inquiry for the England player at the end of last season despite being aware of the ?12m asking price.</text>
-        <arg f="" n="0">Liverpool</arg>
-        <arg f="neg" n="m">never</arg>
-        <arg f="lvb" n="m">made</arg>
-        <rel f="">inquiry</rel>
-        <arg f="gol" n="m">for the England player</arg>
-        <arg f="tmp" n="m">at the end of last season</arg>
-        <arg f="adv" n="m">despite being aware of the ?12m asking price</arg>
+        <rel relloc="4">inquiry</rel>
+        <arg f="" n="0" start="0" end="0">Liverpool</arg>
+        <arg f="NEG" n="m" start="1" end="1">never</arg>
+        <arg f="LVB" n="m" start="2" end="2">made</arg>
+        <arg f="GOL" n="m" start="5" end="8">for the England player</arg>
+        <arg f="TMP" n="m" start="9" end="14">at the end of last season</arg>
+        <arg f="ADV" n="m" start="15" end="22">despite being aware of the ?12m asking price.</arg>
       </example>
+      <note>INQUIRE-V NOTES: Roleset by Julia based on WSJ and internet searches. Member of Vncls inquire-37.1.2. Comparison to "ask". (from inquire.01-v)</note>
+      <note>INQUIRY-N NOTES: Updated by Julia. Member of Vncls 37.1.2. (from inquiry.01-n)</note>
+      <note>Watch out for LVCs! (from inquiry.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,84 +1,125 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="dash">
     <roleset id="dash.01" name="hit">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">dash</alias>
+        <alias pos="v">dash</alias>
       </aliases>
-      <note>DASH-V NOTES: Verbnet predicts an instrument argument; I don't believe thiswill occur. If it does, call it arg2 (from dash.01-v)</note>
       <roles>
-        <role descr="hitter" f="pag" n="0">
-          <vnrole vncls="18.1" vntheta="agent"/>
+        <role descr="hitter" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="hit-18.1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing hit, dashed" f="ppt" n="1">
-          <vnrole vncls="18.1" vntheta="patient"/>
+        <role descr="thing hit, dashed" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="hit-18.1" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="passivized" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="hit-18.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="dash-v.2" src="annot-overlap" confidence="0.1">6</lexlink>
+      </lexlinks>
+      <example src="" name="passivized">
         <text>An official at Wako Securities said [brokerages' excessive expectations about recent advances in Tokyu Group shares and real estate issues]-1 were dashed *trace*-1 Friday.</text>
-        <rel f="">dashed</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="tmp" n="m">Friday</arg>
+        <rel relloc="21">dashed</rel>
+        <arg f="" n="1" start="22" end="22">*trace*-1</arg>
+        <arg f="TMP" n="m" start="23" end="23">Friday.</arg>
       </example>
-      <example name="ARG0 and ARG1" src="ontonotes nw/wsj/22/wsj_2232" type="">
+      <example src="ontonotes nw/wsj/22/wsj_2232" name="ARG0 and ARG1">
         <text>The onslaught of the program selling dashed any hopes that some of the big program trading firms would hold off until the market stabilized .</text>
-        <arg f="" n="0">The onslaught of the program selling</arg>
-        <rel f="">dashed</rel>
-        <arg f="" n="1">any hopes that some of the big program trading firms would hold off until the market stabilized</arg>
+        <rel relloc="6">dashed</rel>
+        <arg f="" n="0" start="0" end="5">The onslaught of the program selling</arg>
+        <arg f="" n="1" start="7" end="23">any hopes that some of the big program trading firms would hold off until the market stabilized</arg>
       </example>
-
+      <note>DASH-V NOTES: Verbnet predicts an instrument argument; I don't believe thiswill occur. If it does, call it arg2 (from dash.01-v)</note>
     </roleset>
     <roleset id="dash.02" name="run for a short distance">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">dash</alias>
+        <alias pos="v">dash</alias>
       </aliases>
-      <note>DASH-V NOTES: Frames file for 'dash' based on sentences in financial subcorpus. Verbnet entries hit-18.1 run-51.3.2, other framed members include batter, beat, kick; charge, float, leap, roll, sneak, spin, walk, wind. Comparison to hit and run. (from dash.02-v predicate notes)</note>
       <roles>
-        <role descr="runner" f="ppt" n="0">
-          <vnrole vncls="51.3.2-2" vntheta="theme"/>
+        <role descr="runner" f="PPT" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="run-51.3.2-2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">self_mover</rolelink>
+          </rolelinks>
         </role>
-        <role descr="path" f="loc" n="1">
-          <vnrole vncls="51.3.2-2" vntheta="location"/>
+        <role descr="path" f="LOC" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="run-51.3.2-2" version="verbnet3.3">location</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">goal</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">path</rolelink>
+          </rolelinks>
         </role>
-        <role descr="destination" f="gol" n="2"/>
+        <role descr="destination" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">place</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="dash-v" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Self_motion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="run-51.3.2-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="dash-v">
         <text>John dashed home.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">dashed</rel>
-        <arg f="" n="2">home</arg>
+        <rel relloc="1">dashed</rel>
+        <arg f="" n="0" start="0" end="0">John</arg>
+        <arg f="" n="2" start="2" end="2">home.</arg>
       </example>
+      <note>DASH-V NOTES: Frames file for 'dash' based on sentences in financial subcorpus. Verbnet entries hit-18.1 run-51.3.2, other framed members include batter, beat, kick; charge, float, leap, roll, sneak, spin, walk, wind. Comparison to hit and run. (from dash.02-v predicate notes)</note>
     </roleset>
   </predicate>
   <predicate lemma="dash_off">
     <roleset id="dash_off.03" name="to write, make, or accomplish hastily">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">dash_off</alias>
+        <alias pos="v">dash_off</alias>
       </aliases>
-      <note>DASH_OFF-V NOTES: (from dash.03-v)</note>
       <roles>
-        <role descr="hurried producer" f="pag" n="0">
-          <vnrole vncls="51.3.2-2" vntheta="agent"/>
+        <role descr="hurried producer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="run-51.3.2-2" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing produced" f="ppt" n="1">
-          <vnrole vncls="51.3.2-2" vntheta="theme"/>
+        <role descr="thing produced" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="run-51.3.2-2" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="benefactive" f="gol" n="2"/>
+        <role descr="benefactive" f="GOL" n="2"/>
       </roles>
-      <example name="With Manner" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="run-51.3.2-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="With Manner">
         <text>Wang-1 could wield his knife like a brush, *-1 dashing off inscriptions with the same fluidity as he painted characters.</text>
-        <arg f="" n="0">*-1 - Wang</arg>
-        <rel f="">[dashing][off]</rel>
-        <arg f="" n="1">inscriptions</arg>
-        <arg f="mnr" n="m">with the same fluidity as he painted characters</arg>
+        <rel relloc="9 10">dashing off</rel>
+        <arg f="" n="0" start="8" end="8">*-1</arg>
+        <arg f="" n="1" start="11" end="11">inscriptions</arg>
+        <arg f="MNR" n="m" start="12" end="19">with the same fluidity as he painted characters.</arg>
       </example>
-      <example name="With Purpose" src="" type="">
+      <example src="" name="With Purpose">
         <text>We dashed off a letter to announce the news.</text>
-        <arg f="" n="0">We</arg>
-        <rel f="">[dashed][off]</rel>
-        <arg f="" n="1">a letter</arg>
-        <arg f="prp" n="m">to announce the news</arg>
+        <rel relloc="1 2">dashed off</rel>
+        <arg f="" n="0" start="0" end="0">We</arg>
+        <arg f="" n="1" start="3" end="4">a letter</arg>
+        <arg f="PRP" n="m" start="5" end="8">to announce the news.</arg>
       </example>
+      <note>DASH_OFF-V NOTES: (from dash.03-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,129 +1,153 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="claim">
     <roleset id="claim.01" name="assert">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">claim</alias>
-        <alias framenet="Statement" pos="v" verbnet="">claim</alias>
-        <alias framenet="" pos="l" verbnet="">make_claim</alias>
+        <alias pos="n">claim</alias>
+        <alias pos="v">claim</alias>
+        <alias pos="l">make_claim</alias>
       </aliases>
-      <note>CLAIM-V NOTES: Frames file for 'claim' based on sentences in financial subcorpus. Verbnet class claim 37.7, other framed members include declare(?). Comparison with assert. (from claim.01-v predicate notes)</note>
-      <note>CLAIM-N NOTES: Based on verb entry claim.01; corresponds to Verbnet class claim 37.7-1. (from claim.01-n)</note>
       <roles>
-        <role descr="claimer, asserter" f="pag" n="0">
-          <vnrole vncls="37.7-1" vntheta="agent"/>
+        <role descr="claimer, asserter" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="say-37.7-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">speaker</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing claimed, asserted" f="ppt" n="1">
-          <vnrole vncls="37.7-1" vntheta="topic"/>
+        <role descr="thing claimed, asserted" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="say-37.7-1" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
-        <role descr="hearer" f="gol" n="2">
-          <vnrole vncls="37.7-1" vntheta="recipient"/>
+        <role descr="hearer" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="say-37.7-1" version="verbnet3.3">recipient</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">addressee</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="arg1 as infinitive" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Statement" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="say-37.7-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Contact.PublicStatementInPerson.Broadcast" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Broadcast" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="claim-v.1" src="annot-overlap" confidence="0.1">114</lexlink>
+        <lexlink resource="onsense" version="on5" class="claim-v.2" src="annot-overlap" confidence="0.1">25</lexlink>
+      </lexlinks>
+      <example src="" name="arg1 as infinitive">
         <text>That represents a very thin ``excess'' return, certainly far less than what most fundamental stock pickers claim *trace* to seek as their performance objective.</text>
-        <arg f="" n="0">most fundamental stock pickers</arg>
-        <rel f="">claim</rel>
-        <arg f="" n="1">*trace* to seek as their performance objective</arg>
+        <rel relloc="16">claim</rel>
+        <arg f="" n="0" start="12" end="15">most fundamental stock pickers</arg>
+        <arg f="" n="1" start="17" end="23">*trace* to seek as their performance objective.</arg>
       </example>
-      <example name="arg1 as full sentence" src="" type="">
+      <example src="" name="arg1 as full sentence">
         <text>Some even claim the group has become a lagging, not leading, indicator.</text>
-        <arg f="" n="0">Some</arg>
-        <arg f="dis" n="m">even</arg>
-        <rel f="">claim</rel>
-        <arg f="" n="1">the group has become a lagging, not leading, indicator</arg>
+        <rel relloc="2">claim</rel>
+        <arg f="" n="0" start="0" end="0">Some</arg>
+        <arg f="DIS" n="m" start="1" end="1">even</arg>
+        <arg f="" n="1" start="3" end="11">the group has become a lagging, not leading, indicator.</arg>
       </example>
-      <example name="arg1 as NP" src="" type="">
+      <example src="" name="arg1 as NP">
         <text>A shareholders' accord would provide the first restitution to thousands of individuals and institutions claiming losses as a result of insider trading by Boesky&amp; Co., once the largest arbitrage fund in the U.S..</text>
-        <arg f="" n="0">individuals and institutions</arg>
-        <rel f="">claiming</rel>
-        <arg f="" n="1">losses as a result of insider trading by Boesky&amp; Co., once the largest arbitrage fund in the U.S.</arg>
+        <rel relloc="14">claiming</rel>
+        <arg f="" n="0" start="11" end="13">individuals and institutions</arg>
+        <arg f="" n="1" start="15" end="32">losses as a result of insider trading by Boesky&amp; Co., once the largest arbitrage fund in the U.S..</arg>
       </example>
-      <example name="passive extraction" src="" type="">
+      <example src="" name="passive extraction">
         <text>DD Acquisition has launched a suit in a Delaware court seeking the withdrawal of Dunkin's poison pill rights and employee stock ownership plans, which it claims *trace* were put in place to deter bidders.</text>
-        <arg f="rcl" n="m">which -&gt; Dunkin's poison pill rights and employee stock ownership plans</arg>
-        <arg f="" n="0">it</arg>
-        <rel f="">claims</rel>
-        <arg f="str" n="1">*trace* were put in place to deter bidders</arg>
+        <rel relloc="25">claims</rel>
+        <arg f="RCL" n="m" start="14" end="22">Dunkin's poison pill rights and employee stock ownership plans,</arg>
+        <arg f="" n="0" start="24" end="24">it</arg>
+        <arg f="STR" n="1" start="26" end="33">*trace* were put in place to deter bidders.</arg>
       </example>
-      <example name="with hearer" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
+      <example src="internet" name="with hearer">
         <text>As he left, the man apologized and claimed to her that his gun wasn't a real firearm, just an unloaded BB gun.</text>
-        <arg f="tmp" n="m">As he left</arg>
-        <arg f="" n="0">the man</arg>
-        <rel f="">claimed</rel>
-        <arg f="" n="2">to her</arg>
-        <arg f="" n="1">that his gun wasn't a real firearm, just an uloaded BB gun.</arg>
+        <rel relloc="7">claimed</rel>
+        <arg f="TMP" n="m" start="0" end="2">As he left,</arg>
+        <arg f="" n="0" start="3" end="4">the man</arg>
+        <arg f="" n="2" start="8" end="9">to her</arg>
+        <arg f="" n="1" start="10" end="21">that his gun wasn't a real firearm, just an unloaded BB gun.</arg>
       </example>
-      <example name="Within LVC" src="nouns-lv" type="">
+      <example src="nouns-lv" name="Within LVC">
         <text>The U.S. attorney 's office , in documents it filed in response , said Mrs. Marcos was making the `` fanciful -- and factually unsupported -- claim that she was kidnapped into this country '' in order to obtain classified material in the case .</text>
-        <arg f="" n="0">Mrs. Marcos</arg>
-        <arg f="lvb" n="m">making</arg>
-        <arg f="adj" n="m">the "fanciful -- and factually unsupported --</arg>
-        <rel f="">claim</rel>
-        <arg f="" n="1">that she was kidnapped into this country ''</arg>
-        <arg f="prp" n="m">in order to obtain classified material in the case .</arg>
+        <rel relloc="26">claim</rel>
+        <arg f="" n="0" start="14" end="15">Mrs. Marcos</arg>
+        <arg f="LVB" n="m" start="17" end="17">making</arg>
+        <arg f="ADJ" n="m" start="18" end="25">the `` fanciful -- and factually unsupported --</arg>
+        <arg f="" n="1" start="27" end="34">that she was kidnapped into this country ''</arg>
+        <arg f="PRP" n="m" start="35" end="44">in order to obtain classified material in the case .</arg>
       </example>
-      <example name="All arguments" src="web" type="">
+      <example src="web" name="All arguments">
         <text>The suspect did not leave the country contrary to her claim to Pilapil that she was in Australia prior to the incident.</text>
-        <arg f="" n="0">her</arg>
-        <rel f="">claim</rel>
-        <arg f="" n="2">to Pilapil</arg>
-        <arg f="" n="1">that she was in Australia prior to the incident.</arg>
+        <rel relloc="10">claim</rel>
+        <arg f="" n="0" start="9" end="9">her</arg>
+        <arg f="" n="2" start="11" end="12">to Pilapil</arg>
+        <arg f="" n="1" start="13" end="21">that she was in Australia prior to the incident.</arg>
       </example>
+      <note>CLAIM-V NOTES: Frames file for 'claim' based on sentences in financial subcorpus. Verbnet class claim 37.7, other framed members include declare(?). Comparison with assert. (from claim.01-v predicate notes)</note>
+      <note>CLAIM-N NOTES: Based on verb entry claim.01; corresponds to Verbnet class claim 37.7-1. (from claim.01-n)</note>
     </roleset>
     <roleset id="claim.02" name="seize">
       <aliases>
-        <alias framenet="Claim_ownership" pos="v" verbnet="">claim</alias>
-        <alias framenet="" pos="n" verbnet="">claim</alias>
+        <alias pos="v">claim</alias>
+        <alias pos="n">claim</alias>
       </aliases>
-      <note>CLAIM-V NOTES: Frames file for 'claim' based on sentences in financial subcorpus. Verbnet class claim 37.7, other framed members include declare(?). Comparison with assert. (from claim.02-v predicate notes)</note>
-      <note>CLAIM-N NOTES: Based on verb entry claim.02; No corresponding VN Class. (from claim.02-n)</note>
       <roles>
         <role descr="claim staker" f="PAG" n="0"/>
-        <role descr="property" f="ppt" n="1"/>
-        <role descr="beneficiary" f="gol" n="2"/>
+        <role descr="property" f="PPT" n="1"/>
+        <role descr="beneficiary" f="GOL" n="2"/>
       </roles>
-      <example name="all args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Claim_ownership" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="claim-v.2" src="annot-overlap" confidence="0.1">12</lexlink>
+        <lexlink resource="onsense" version="on5" class="claim-v.4" src="annot-overlap" confidence="0.1">10</lexlink>
+      </lexlinks>
+      <example src="" name="all args">
         <text>Cortez claimed the new territory for Queen Anna</text>
-        <arg f="" n="0">Cortez</arg>
-        <rel f="">claimed</rel>
-        <arg f="" n="1">the new territory</arg>
-        <arg f="" n="2">for Queen Anna</arg>
+        <rel relloc="1">claimed</rel>
+        <arg f="" n="0" start="0" end="0">Cortez</arg>
+        <arg f="" n="1" start="2" end="4">the new territory</arg>
+        <arg f="" n="2" start="5" end="7">for Queen Anna</arg>
       </example>
-      <example name="With CAU" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="BOLT" name="With CAU">
         <text>I certainly encourage people to claim in the event [0]-2 [the cover]-1 could not be CLAIMED on *-1 [*T*-2], or if they were not told about it and it was not mentioned in their documents -LRB- sometimes it s sold as an after agreement cover , ie when you activate the card , they sell it to you then as a separate thing , but some people were just told they had to have it , which was wrong -RRB- , but I do nt like this idea of people basically trying to steal money from the lender by making false claims .</text>
-        <arg f="mod" n="m">could</arg>
-        <arg f="neg" n="m">not</arg>
-        <rel f="">claimed</rel>
-        <arg f="cau" n="m">on *-1</arg>
-        <arg f="adv" n="m">[*T*-2]</arg>
+        <rel relloc="15">CLAIMED</rel>
+        <arg f="MOD" n="m" start="12" end="12">could</arg>
+        <arg f="NEG" n="m" start="13" end="13">not</arg>
+        <arg f="CAU" n="m" start="16" end="17">on *-1</arg>
+        <arg f="ADV" n="m" start="9" end="9">[0]-2</arg>
       </example>
-      <example name="A more straight-forward example of arg1 and CAU in a similar usage" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>My question is , does the above give us sufficient reason [0]-1 *PRO* to make a complain to Nationwide and potentially claim for the following [*T*-1]:</text>
-        <arg f="" n="0">*PRO*, *link -&gt; [us]</arg>
-        <arg f="adv" n="m">potentially</arg>
-        <rel f="">claim</rel>
-        <arg f="" n="1">for the following</arg>
-        <arg f="cau" n="m">[*T*-1]</arg>
+      <example src="BOLT" name="A more straight-forward example of arg1 and CAU in a similar usage">
+        <text>My question is , does the above give us sufficient reason [0]-1 *PRO* to make a complain to Nationwide and potentially claim for the following []:</text>
+        <rel relloc="21">claim</rel>
+        <arg f="" n="0" start="8" end="8">us</arg>
+        <arg f="ADV" n="m" start="20" end="20">potentially</arg>
+        <arg f="" n="1" start="22" end="24">for the following</arg>
+        <arg f="CAU" n="m" start="11" end="11">[0]-1</arg>
       </example>
-      <example name="Idiomatic" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="Idiomatic">
         <text>Her claim to fame is that she can recite the entire works of Shakespeare.</text>
-        <arg f="" n="0">Her</arg>
-        <rel f="">claim</rel>
-        <arg f="" n="1">to fame</arg>
+        <rel relloc="1">claim</rel>
+        <arg f="" n="0" start="0" end="0">Her</arg>
+        <arg f="" n="1" start="2" end="3">to fame</arg>
       </example>
-      <example name="With benefactive" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="With benefactive">
         <text>This form provides a claim of tax credit for nonresident military spouses.</text>
-        <rel f="">claim</rel>
-        <arg f="" n="1">of tax credits</arg>
-        <arg f="" n="2">for nonresident military spouses</arg>
+        <rel relloc="4">claim</rel>
+        <arg f="" n="1" start="5" end="7">of tax credit</arg>
+        <arg f="" n="2" start="8" end="11">for nonresident military spouses.</arg>
       </example>
+      <note>CLAIM-V NOTES: Frames file for 'claim' based on sentences in financial subcorpus. Verbnet class claim 37.7, other framed members include declare(?). Comparison with assert. (from claim.02-v predicate notes)</note>
+      <note>CLAIM-N NOTES: Based on verb entry claim.02; No corresponding VN Class. (from claim.02-n)</note>
     </roleset>
   </predicate>
 </frameset>

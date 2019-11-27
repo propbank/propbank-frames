@@ -1,61 +1,76 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="ground">
     <roleset id="ground.01" name="restrict to the ground">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">ground</alias>
+        <alias pos="v">ground</alias>
       </aliases>
-      <note>GROUND-V NOTES: Frames file for 'ground' based on sentences in the financial subcorpus. No comparison. (from ground.01-v predicate notes)</note>
       <roles>
         <role descr="entity enforcing grounding" f="PAG" n="0">
-          <vnrole vncls="9.10-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pocket-9.10-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing grounded" f="PPT" n="1">
-          <vnrole vncls="9.10-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pocket-9.10-1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ground-v: passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="past" voice="passive"/>
-        <text>On routes to South America , the company had no backup jets [0] [*T*-2]to ensure delivery when planes-1 were grounded [*-1] [*T*-3] .</text>
-        <rel f="">grounded</rel>
-        <arg f="" n="1">[*-1]</arg>
-        <arg f="tmp" n="m">[*T*-3]</arg>
-        <arg f="rcl" n="m">when</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="pocket-9.10-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="ground-v.1" src="annot-overlap" confidence="0.1">3</lexlink>
+      </lexlinks>
+      <example src="" name="ground-v: passive">
+        <text>On routes to South America , the company had no backup jets [0] [*T*-2]to ensure delivery when planes were grounded [*] [*T*-3] .</text>
+        <rel relloc="19">grounded</rel>
+        <arg f="" n="1" start="17" end="17">planes</arg>
+        <arg f="TMP" n="m" start="21" end="21">[*T*-3]</arg>
+        <arg f="RCL" n="m" start="16" end="16">when</arg>
       </example>
-      <example name="ground-v: agentive" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="ns" voice="active"/>
-        <text>However , if the secretary concludes that a transaction has made a carrier unfit [*-1] to operate , [the department]-2 may revoke its certificate , [*-2] grounding the airline .</text>
-        <arg f="" n="0">[*-2]</arg>
-        <rel f="">grounding</rel>
-        <arg f="" n="1">the airline</arg>
+      <example src="" name="ground-v: agentive">
+        <text>However , if the secretary concludes that a transaction has made a carrier unfit [*-1] to operate , the department may revoke its certificate , [*] grounding the airline .</text>
+        <rel relloc="26">grounding</rel>
+        <arg f="" n="0" start="18" end="19">the department</arg>
+        <arg f="" n="1" start="27" end="28">the airline</arg>
       </example>
+      <note>GROUND-V NOTES: Frames file for 'ground' based on sentences in the financial subcorpus. No comparison. (from ground.01-v predicate notes)</note>
     </roleset>
     <roleset id="ground.02" name="provide a basis for">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">ground</alias>
-        <alias framenet="" pos="j" verbnet="">grounded</alias>
+        <alias pos="v">ground</alias>
+        <alias pos="j">grounded</alias>
       </aliases>
-      <note>GROUND-V, GROUNDED-J NOTES: Added by Julia for AMR.</note>
       <roles>
-        <role descr="agent" f="pag" n="0"/>
-        <role descr="thing having a basis" f="ppt" n="1"/>
-        <role descr="the grounds" f="mnr" n="2"/>
+        <role descr="agent" f="PAG" n="0"/>
+        <role descr="thing having a basis" f="PPT" n="1"/>
+        <role descr="the grounds" f="MNR" n="2"/>
       </roles>
-      <example name="ground-v: all args" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="ground-v: all args">
         <text>information from x-ray crystallography about bond angles and interatomic distances further grounded the theory in chemical and physical facts.</text>
-        <arg f="" n="0">information from x-ray crystallography about bond angles and interatomic distances</arg>
-        <arg f="ext" n="m">further</arg>
-        <rel f="">grounded</rel>
-        <arg f="" n="1">the theory</arg>
-        <arg f="" n="2">in chemical and physical facts</arg>
+        <rel relloc="11">grounded</rel>
+        <arg f="" n="0" start="0" end="9">information from x-ray crystallography about bond angles and interatomic distances</arg>
+        <arg f="EXT" n="m" start="10" end="10">further</arg>
+        <arg f="" n="1" start="12" end="13">the theory</arg>
+        <arg f="" n="2" start="14" end="18">in chemical and physical facts.</arg>
       </example>
-      <example name="grounded-j" src="" type="">
+      <example src="" name="grounded-j">
         <text>You'll have to pony up to subscribe but the headline should be a clue you're thesis isn't grounded in reality.</text>
-        <arg f="" n="1">you're thesis</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">grounded</rel>
-        <arg f="" n="2">in reality</arg>
+        <rel relloc="17">grounded</rel>
+        <arg f="" n="1" start="14" end="15">you're thesis</arg>
+        <arg f="NEG" n="m" start="7" end="7">but</arg>
+        <arg f="" n="2" start="18" end="19">in reality.</arg>
       </example>
+      <note>GROUND-V, GROUNDED-J NOTES: Added by Julia for AMR.</note>
     </roleset>
   </predicate>
 </frameset>

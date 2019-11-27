@@ -1,26 +1,40 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="ambush">
     <roleset id="ambush.01" name="to attack">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">ambush</alias>
-        <alias framenet="Attack" pos="v" verbnet="">ambush</alias>
+        <alias pos="n">ambush</alias>
+        <alias pos="v">ambush</alias>
       </aliases>
+      <roles>
+        <role descr="ambusher, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Attack" version="1.7">assailant</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity ambushed" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Attack" version="1.7">victim</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Attack" version="1.7" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="transitive">
+        <text>Nicaragua 's Defense Ministry said [0] a group of Contra rebels ambushed two trucks carrying troops in northern Nicaragua , [*-1]killing 18 of the soldiers .</text>
+        <rel relloc="11">ambushed</rel>
+        <arg f="" n="0" start="6" end="10">a group of Contra rebels</arg>
+        <arg f="" n="1" start="12" end="15">two trucks carrying troops</arg>
+        <arg f="LOC" n="m" start="16" end="18">in northern Nicaragua</arg>
+        <arg f="ADV" n="m" start="20" end="24">[*-1]killing 18 of the soldiers</arg>
+      </example>
       <note>AMBUSH-V NOTES: No Vncls. (from ambush.01-v)</note>
       <note>AMBUSH-N NOTES: Automatically created by Julia as an alias file for unification. (from ambush.01-n)</note>
-      <roles>
-        <role descr="ambusher, agent" f="PAG" n="0"/>
-        <role descr="entity ambushed" f="PPT" n="1"/>
-      </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Nicaragua 's Defense Ministry said [0] a group of Contra rebels ambushed two trucks carrying troops in northern Nicaragua , [*-1]killing 18 of the soldiers .</text>
-        <arg f="" n="0">a group of Contra rebels</arg>
-        <rel f="">ambushed</rel>
-        <arg f="" n="1">two trucks carrying troops</arg>
-        <arg f="loc" n="m">in northern Nicaragua</arg>
-        <arg f="adv" n="m">[*-1] killing 18 of the soldiers</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

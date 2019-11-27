@@ -1,76 +1,91 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="decrease">
     <roleset id="decrease.01" name="go down incrementally, having gone down">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">decreased</alias>
-        <alias framenet="" pos="v" verbnet="">decrease</alias>
-        <alias framenet="change_position_on_a_scale" pos="n" verbnet="">decrease</alias>
+        <alias pos="j">decreased</alias>
+        <alias pos="v">decrease</alias>
+        <alias pos="n">decrease</alias>
       </aliases>
+      <roles>
+        <role descr="causer of decline, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing decreasing" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="VerbNet" class="45.6-1" version="UNK">patient</rolelink>
+            <rolelink resource="FrameNet" class="Change_position_on_a_scale" version="1.7">attribute</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="amount decreased by, EXT or MNR" f="EXT" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="45.6-1" version="UNK">extent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="start point" f="DIR" n="3"/>
+        <role descr="end point" f="PRD" n="4"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Change_position_on_a_scale" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="45.6-1" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="decrease-v.1" src="annot-overlap" confidence="0.1">42</lexlink>
+        <lexlink resource="onsense" version="on5" class="decrease-n.1" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="" name="transitive agentive">
+        <text>Mr. Terra said in the filing that he-1 sold the stock *trace*-1 to decrease his position in the Evanston, Ill., banking concern.</text>
+        <rel relloc="13">decrease</rel>
+        <arg f="" n="0" start="11" end="11">*trace*-1</arg>
+        <arg f="" n="1" start="14" end="21">his position in the Evanston, Ill., banking concern.</arg>
+      </example>
+      <example src="" name="passivized with start point">
+        <text>[The size of the issue]-1 was decreased *trace*-1 from an originally planned $95.2 million.</text>
+        <rel relloc="6">decreased</rel>
+        <arg f="" n="1" start="7" end="7">*trace*-1</arg>
+        <arg f="" n="3" start="8" end="13">from an originally planned $95.2 million.</arg>
+      </example>
+      <example src="" name="ergative, with extent">
+        <text>Advertising volume at the company's 35 regional newspapers decreased 1.1%.</text>
+        <rel relloc="8">decreased</rel>
+        <arg f="" n="1" start="0" end="7">Advertising volume at the company's 35 regional newspapers</arg>
+        <arg f="" n="2" start="9" end="9">1.1%.</arg>
+      </example>
+      <example src="" name="ergative with start point">
+        <text>Perhaps most prominent, Dow Chemical Co., which as of midyear had racked up eight consecutive record quarters, is expected to report that profit decreased in the latest quarter from a year earlier, if only by a shade.</text>
+        <rel relloc="23">decreased</rel>
+        <arg f="" n="1" start="22" end="22">profit</arg>
+        <arg f="TMP" n="m" start="24" end="27">in the latest quarter</arg>
+        <arg f="" n="3" start="28" end="31">from a year earlier,</arg>
+        <arg f="MNR" n="m" start="32" end="36">if only by a shade.</arg>
+      </example>
+      <example src="" name="with end point">
+        <text>The number of people receiving regular state benefits in the week ended Sept. 30 decreased to a seasonally adjusted 2,202,000, or 2.2 % of those covered [*] by unemployment insurance, from 2,205,000 the previous week, when the insured unemployment rate also was 2.2 % [].</text>
+        <rel relloc="14">decreased</rel>
+        <arg f="" n="1" start="0" end="13">The number of people receiving regular state benefits in the week ended Sept. 30</arg>
+        <arg f="" n="4" start="16" end="29">a seasonally adjusted 2,202,000, or 2.2 % of those covered [*] by unemployment insurance,</arg>
+        <arg f="" n="3" start="30" end="43">from 2,205,000 the previous week, when the insured unemployment rate also was 2.2 %</arg>
+      </example>
+      <example src="" name="Arg 1 only (most common)">
+        <text>A decrease in violence</text>
+        <rel relloc="1">decrease</rel>
+        <arg f="" n="1" start="2" end="3">in violence</arg>
+      </example>
+      <example src="" name="with arg 2">
+        <text>The 10% decrease in trade volume</text>
+        <rel relloc="2">decrease</rel>
+        <arg f="" n="2" start="1" end="1">10%</arg>
+        <arg f="" n="1" start="3" end="5">in trade volume</arg>
+      </example>
       <note>DECREASE-V NOTES: Frames file for 'decrease' based on sentences in financial subcorpus. Verbnet entries calibratable_cos-45.6-1 other_cos-45.4, bunches of other framed members. Comparison with (and reversal from) increase. (from decrease.01-v predicate notes)</note>
       <note>DECREASE-N NOTES: Comparison to decrease-v. VN class calibratable_cos-45.6-1 and other_cos-45.4. Framed by Katie. (from decrease.01-n)</note>
       <note>DECREASED-J NOTES: Added by Julia based on SHARP-SRED. (from decreased.01-j)</note>
-      <roles>
-        <role descr="causer of decline, agent" f="pag" n="0">
-          <vnrole vncls="45.4" vntheta="agent"/>
-        </role>
-        <role descr="thing decreasing" f="ppt" n="1">
-          <vnrole vncls="45.4" vntheta="patient"/>
-          <vnrole vncls="45.6-1" vntheta="patient"/>
-        </role>
-        <role descr="amount decreased by, EXT or MNR" f="ext" n="2">
-          <vnrole vncls="45.6-1" vntheta="extent"/>
-        </role>
-        <role descr="start point" f="dir" n="3"/>
-        <role descr="end point" f="prd" n="4"/>
-      </roles>
-      <example name="transitive agentive" src="" type="">
-        <text>Mr. Terra said in the filing that he-1 sold the stock *trace*-1 to decrease his position in the Evanston, Ill., banking concern.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">decrease</rel>
-        <arg f="" n="1">his position in the Evanston, Ill., banking concern</arg>
-      </example>
-      <example name="passivized with start point" src="" type="">
-        <text>[The size of the issue]-1 was decreased *trace*-1 from an originally planned $95.2 million.</text>
-        <rel f="">decreased</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="3">from an originally planned $95.2 million</arg>
-      </example>
-      <example name="ergative, with extent" src="" type="">
-        <text>Advertising volume at the company's 35 regional newspapers decreased 1.1%.</text>
-        <arg f="" n="1">Advertising volume at the company's 35 regional newspapers</arg>
-        <rel f="">decreased</rel>
-        <arg f="" n="2">1.1%</arg>
-      </example>
-      <example name="ergative with start point" src="" type="">
-        <text>Perhaps most prominent, Dow Chemical Co., which as of midyear had racked up eight consecutive record quarters, is expected to report that profit decreased in the latest quarter from a year earlier, if only by a shade.</text>
-        <arg f="" n="1">profit</arg>
-        <rel f="">decreased</rel>
-        <arg f="tmp" n="m">in the latest quarter</arg>
-        <arg f="" n="3">from a year earlier</arg>
-        <arg f="mnr" n="m">if only by a shade</arg>
-      </example>
-      <example name="with end point" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>The number of people receiving regular state benefits in the week ended Sept. 30 decreased to a seasonally adjusted 2,202,000, or 2.2 % of those covered [*] by unemployment insurance, from 2,205,000 the previous week, when the insured unemployment rate also was 2.2 % [*T*-1].</text>
-        <arg f="" n="1">The number of people receiving regular state benefits in the week ended Sept. 30</arg>
-        <rel f="">decreased</rel>
-        <arg f="" n="4">to a seasonally adjusted 2,202,000, or 2.2 % of those covered [*] by unemployment insurance,</arg>
-        <arg f="" n="3">from 2,205,000 the previous week, when the insured unemployment rate also was 2.2%</arg>
-      </example>
-      <example name="Arg 1 only (most common)" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>A decrease in violence</text>
-        <rel f="">decrease</rel>
-        <arg f="" n="1">in violence</arg>
-      </example>
-      <example name="with arg 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The 10% decrease in trade volume</text>
-        <arg f="" n="2">10%</arg>
-        <rel f="">decrease</rel>
-        <arg f="" n="1">in trade volume</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

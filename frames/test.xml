@@ -1,90 +1,108 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="test">
     <roleset id="test.01" name="check (for), examine">
       <aliases>
-        <alias framenet="Examination Operational_testing" pos="n" verbnet="">test</alias>
-        <alias framenet="" pos="n" verbnet="">testing</alias>
-        <alias framenet="Operational_testing Examination" pos="v" verbnet="">test</alias>
-        <alias framenet="" pos="l" verbnet="">take_test</alias>
-        <alias framenet="" pos="l" verbnet="">give_test</alias>
+        <alias pos="n">test</alias>
+        <alias pos="n">testing</alias>
+        <alias pos="v">test</alias>
+        <alias pos="l">take_test</alias>
+        <alias pos="l">give_test</alias>
       </aliases>
+      <roles>
+        <role descr="examiner" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="investigate-35.4" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Operational_testing" version="1.7">tester</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="examined" f="LOC" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="investigate-35.4" version="verbnet3.3">location</rolelink>
+            <rolelink resource="FrameNet" class="Operational_testing" version="1.7">product</rolelink>
+            <rolelink resource="FrameNet" class="Operational_testing" version="1.7">tested_property</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="in search of, for what" f="PPT" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="investigate-35.4" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Operational_testing" version="1.7">unwanted_characteristics</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="test result" f="PRD" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Operational_testing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Examination" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="investigate-35.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="test-v.1" src="annot-overlap" confidence="0.1">58</lexlink>
+        <lexlink resource="onsense" version="on5" class="test-n.1" src="annot-overlap" confidence="0.1">86</lexlink>
+        <lexlink resource="onsense" version="on5" class="test-n.2" src="annot-overlap" confidence="0.1">22</lexlink>
+        <lexlink resource="onsense" version="on5" class="test-v.2" src="annot-overlap" confidence="0.1">14</lexlink>
+        <lexlink resource="onsense" version="on5" class="test-n.4" src="annot-overlap" confidence="0.1">7</lexlink>
+        <lexlink resource="onsense" version="on5" class="test-n.3" src="annot-overlap" confidence="0.1">7</lexlink>
+      </lexlinks>
+      <example src="" name="just transitive">
+        <text>A Toto spokesman said the toilet not only tests blood pressure, pulse and urine, it also stores the data for up to 130 days.</text>
+        <rel relloc="8">tests</rel>
+        <arg f="" n="0" start="4" end="5">the toilet</arg>
+        <arg f="" n="1" start="9" end="13">blood pressure, pulse and urine,</arg>
+      </example>
+      <example src="ontonotes nw/wsj/12/wsj_1270" name="ARG0 and ARG1 and ARG2">
+        <text>Only 4 % of Missouri small businesses surveyed say they 've tested an employee or applicant for drug or alcohol use ... .</text>
+        <rel relloc="11">tested</rel>
+        <arg f="" n="0" start="9" end="9">they</arg>
+        <arg f="" n="1" start="12" end="15">an employee or applicant</arg>
+        <arg f="" n="2" start="16" end="20">for drug or alcohol use</arg>
+      </example>
+      <example src="BOLT-7" name="with arg3">
+        <text>but now it seems that the gold medal is more important ; the gold medal becomes the totem for showing a national image and reputation and the token of sports officials ' achievements -- thus , there certainly could not be an accident in the food supply , especially an accident caused by athletes eating pork outside , which may make athletes test positive for clenbuterol .</text>
+        <rel relloc="62">test</rel>
+        <arg f="" n="1" start="53" end="53">athletes</arg>
+        <arg f="" n="3" start="63" end="65">positive for clenbuterol</arg>
+      </example>
+      <example src="" name="All args">
+        <text>The clinic's testing of the patient for strep throat did not yield a definitive diagnosis.</text>
+        <rel relloc="2">testing</rel>
+        <arg f="" n="0" start="0" end="1">The clinic's</arg>
+        <arg f="" n="1" start="3" end="5">of the patient</arg>
+        <arg f="" n="2" start="6" end="8">for strep throat</arg>
+      </example>
+      <example src="autogen1" name="autogen1">
+        <text>It did n't run a production test on the three discovery wells itdrilled in the field , which is about 1.6 miles from the IntanField , because the wells are similar to others drilled at itsIntan and Widuri fields</text>
+        <rel relloc="6">test</rel>
+        <arg f="" n="2" start="5" end="5">production</arg>
+        <arg f="" n="1" start="7" end="25">on the three discovery wells itdrilled in the field , which is about 1.6 miles from the IntanField ,</arg>
+      </example>
+      <example src="NP only" name="NP only">
+        <text>viability tests for fetuses 19 weeks and older</text>
+        <rel relloc="1">tests</rel>
+        <arg f="" n="2" start="0" end="0">viability</arg>
+        <arg f="" n="1" start="2" end="7">for fetuses 19 weeks and older</arg>
+      </example>
+      <example src="Infinitival complement as arg 2" name="Infinitival complement as arg 2">
+        <text>They are designing some sophisticated tests to look for the Hadron particle.</text>
+        <rel relloc="5">tests</rel>
+        <arg f="MNR" n="m" start="4" end="4">sophisticated</arg>
+        <arg f="" n="2" start="6" end="11">to look for the Hadron particle.</arg>
+      </example>
+      <example src="&quot;of&quot; PP complement as arg2" name="&quot;of&quot; PP complement as arg2">
+        <text>The young man did not think he could pass the test of loyalty demanded by the mafia don.</text>
+        <rel relloc="10">test</rel>
+        <arg f="" n="2" start="11" end="12">of loyalty</arg>
+      </example>
+      <example src="Figurative" name="Figurative">
+        <text>This old garden hoe has withstood the test of time.</text>
+        <rel relloc="7">test</rel>
+        <arg f="" n="0" start="8" end="9">of time.</arg>
+      </example>
       <note>TEST-V NOTES: Frames file for 'test' based on sentences in financial subcorpus. VerbNet class investigate-35.4. (from test.01-v)</note>
       <note>TESTING-N NOTES: ~test.01 (from testing.01-n)</note>
       <note>TEST-N NOTES: Roleset based on verb entry test.01, OntoNotes sense grouping test.01, test.02; maps to VN class investigate-35.4. Framed by Claire (from test.01-n)</note>
-      <roles>
-        <role descr="examiner" f="pag" n="0">
-          <vnrole vncls="35.4" vntheta="agent"/>
-        </role>
-        <role descr="examined" f="loc" n="1">
-          <vnrole vncls="35.4" vntheta="location"/>
-        </role>
-        <role descr="in search of, for what" f="ppt" n="2">
-          <vnrole vncls="35.4" vntheta="theme"/>
-        </role>
-        <role descr="test result" f="prd" n="3"/>
-      </roles>
-      <example name="just transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>A Toto spokesman said the toilet not only tests blood pressure, pulse and urine, it also stores the data for up to 130 days.</text>
-        <arg f="" n="0">the toilet</arg>
-        <rel f="">tests</rel>
-        <arg f="" n="1">blood pressure, pulse and urine</arg>
-      </example>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes nw/wsj/12/wsj_1270" type="">
-        <text>Only 4 % of Missouri small businesses surveyed say they 've tested an employee or applicant for drug or alcohol use ... .</text>
-        <arg f="" n="0">they</arg>
-        <rel f="">tested</rel>
-        <arg f="" n="1">an employee or applicant</arg>
-        <arg f="" n="2">for drug or alcohol use</arg>
-      </example>
-
-      <example name="with arg3" src="BOLT-7" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>but now it seems that the gold medal is more important ; the gold medal becomes the totem for showing a national image and reputation and the token of sports officials ' achievements -- thus , there certainly could not be an accident in the food supply , especially an accident caused by athletes eating pork outside , which may make athletes test positive for clenbuterol .</text>
-        <arg f="" n="1">athletes</arg>
-        <rel f="">test</rel>
-        <arg f="" n="3">positive for clenbuterol</arg>
-      </example>
-      <example name="All args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The clinic's testing of the patient for strep throat did not yield a definitive diagnosis.</text>
-        <arg f="" n="0">The clinic's</arg>
-        <rel f="">testing</rel>
-        <arg f="" n="1">of the patient</arg>
-        <arg f="" n="2">for strep throat</arg>
-      </example>
-      <example name="autogen1" src="autogen1" type="autogen1">
-        <text>It did n't run a production test on the three discovery wells itdrilled in the field , which is about 1.6 miles from the IntanField , because the wells are similar to others drilled at itsIntan and Widuri fields</text>
-        <arg f="" n="2">production</arg>
-        <rel f="">test</rel>
-        <arg f="" n="1">on the three discovery wells it drilled in the field , which is about 1.6 miles from the Intan Field ,</arg>
-      </example>
-      <example name="NP only" src="NP only" type="NP only">
-        <text>viability tests for fetuses 19 weeks and older</text>
-        <arg f="" n="2">viability</arg>
-        <rel f="">tests</rel>
-        <arg f="" n="1">for fetuses 19 weeks and older</arg>
-      </example>
-      <example name="Infinitival complement as arg 2" src="Infinitival complement as arg 2" type="Infinitival complement as arg 2">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>They are designing some sophisticated tests to look for the Hadron particle.</text>
-        <arg f="mnr" n="m">sophisticated</arg>
-        <rel f="">tests</rel>
-        <arg f="" n="2">to look for the Hadron particle</arg>
-      </example>
-      <example name="&quot;of&quot; PP complement as arg2" src="&quot;of&quot; PP complement as arg2" type="&quot;of&quot; PP complement as arg2">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The young man did not think he could pass the test of loyalty demanded by the mafia don.</text>
-        <rel f="">test</rel>
-        <arg f="" n="2">of loyalty</arg>
-      </example>
-      <example name="Figurative" src="Figurative" type="Figurative">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>This old garden hoe has withstood the test of time.</text>
-        <rel f="">test</rel>
-        <arg f="" n="0">of time</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

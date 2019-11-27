@@ -1,27 +1,40 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="munch">
     <roleset id="munch.01" name="eat casually">
       <aliases>
-        <alias framenet="Ingestion" pos="v" verbnet="">munch</alias>
+        <alias pos="v">munch</alias>
       </aliases>
-      <note>MUNCH-V NOTES: Based on financial subcorpus. Member of VNcls chew-39.2-1. Comparison with 'eat'. (from munch.01-v)</note>
       <roles>
         <role descr="consumer, eater" f="PAG" n="0">
-          <vnrole vncls="39.2-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="chew-39.2-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Ingestion" version="1.7">ingestor</rolelink>
+          </rolelinks>
         </role>
         <role descr="meal" f="PPT" n="1">
-          <vnrole vncls="39.2-1" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="chew-39.2-1" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Ingestion" version="1.7">ingestibles</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="business casual?" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Ingestion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="chew-39.2-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="business casual?">
         <text>*trace*-1 Munching pizza when they could and yelling until their voices gave out, [the two Benjamin Jacobson specialists at the Big Board's UAL trading post]-1 yesterday presided over what can only be described as a financial free-for-all.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">Munching</rel>
-        <arg f="" n="1">pizza</arg>
-        <arg f="tmp" n="m">when they could</arg>
+        <rel relloc="1">Munching</rel>
+        <arg f="" n="0" start="0" end="0">*trace*-1</arg>
+        <arg f="" n="1" start="2" end="2">pizza</arg>
+        <arg f="TMP" n="m" start="3" end="5">when they could</arg>
       </example>
+      <note>MUNCH-V NOTES: Based on financial subcorpus. Member of VNcls chew-39.2-1. Comparison with 'eat'. (from munch.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,31 +1,46 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="charter">
     <roleset id="charter.01" name="to hire or lease by charter">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">charter</alias>
+        <alias pos="v">charter</alias>
       </aliases>
-      <note>CHARTER-V NOTES: Frames file for 'charter' based on survey of sentences in the WSJ corpus. (from charter.01-v predicate notes)</note>
       <roles>
         <role descr="hirer, leaser, agent" f="PAG" n="0">
-          <vnrole vncls="13.5.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="get-13.5.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Renting" version="1.7">recipient</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity chartered" f="PPT" n="1">
-          <vnrole vncls="13.5.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="get-13.5.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Renting" version="1.7">goods</rolelink>
+          </rolelinks>
         </role>
         <role descr="task" f="GOL" n="2">
-          <vnrole vncls="13.5.1" vntheta="Beneficiary"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="get-13.5.1" version="verbnet3.3">beneficiary</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all arguments" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Renting" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="get-13.5.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="all arguments">
         <text>Since commercial airline flights were disrupted [*-1] , the company chartered three planes [*-3]to fly these executives back to the West Coast and bring along portable computers , cellular phones and some claims adjusters .</text>
-        <arg f="CAU" n="M">Since commercial airline flights were disrupted [*-1]</arg>
-        <arg f="" n="0">the company</arg>
-        <rel f="">chartered</rel>
-        <arg f="" n="1">three planes</arg>
-        <arg f="" n="2">[*-3] to fly these executives back to the West Coast and bring along portable computers , cellular phones and some claims adjusters</arg>
+        <rel relloc="10">chartered</rel>
+        <arg f="CAU" n="M" start="0" end="6">Since commercial airline flights were disrupted [*-1]</arg>
+        <arg f="" n="0" start="8" end="9">the company</arg>
+        <arg f="" n="1" start="11" end="12">three planes</arg>
+        <arg f="" n="2" start="13" end="33">[*-3]to fly these executives back to the West Coast and bring along portable computers , cellular phones and some claims adjusters</arg>
       </example>
+      <note>CHARTER-V NOTES: Frames file for 'charter' based on survey of sentences in the WSJ corpus. (from charter.01-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

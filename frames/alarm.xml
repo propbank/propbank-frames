@@ -1,53 +1,65 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="alarm">
     <roleset id="alarm.01" name="to give warning to, frighten">
       <aliases>
-        <alias framenet="Experiencer_obj" pos="v" verbnet="">alarm</alias>
-        <alias framenet="Stimulus_focus" pos="j" verbnet="">alarming</alias>
+        <alias pos="v">alarm</alias>
+        <alias pos="j">alarming</alias>
       </aliases>
-      <note>ALARM-V NOTES: Member of Vncls amuse-31.1. (from alarm.01-v)</note>
-      <note>ALARMING-J NOTES: Roleset based on instances in BOLT P01, parts 2,3. Member of Vncls amuse-31.1. (from alarming.01-j)</note>
       <roles>
         <role descr="warning" f="PAG" n="0">
-          <vnrole vncls="31.1" vntheta="Stimulus"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="amuse-31.1" version="verbnet3.3">stimulus</rolelink>
+            <rolelink resource="FrameNet" class="Experiencer_obj" version="1.7">stimulus</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity alarmed" f="PPT" n="1">
-          <vnrole vncls="31.1" vntheta="Experiencer"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="amuse-31.1" version="verbnet3.3">experiencer</rolelink>
+            <rolelink resource="FrameNet" class="Experiencer_obj" version="1.7">experiencer</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>[Some analysts at least]-1 are buying that argument , and were n't alarmed [*-1]by the losses .</text>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">alarmed</rel>
-        <arg f="" n="1">[*-1]</arg>
-        <arg f="" n="0">by the losses</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Experiencer_obj" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Stimulus_focus" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="amuse-31.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="alarm-v.1" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="" name="passive">
+        <text> Some analysts at least are buying that argument , and were n't alarmed [*]by the losses .</text>
+        <rel relloc="13">alarmed</rel>
+        <arg f="NEG" n="m" start="12" end="12">n't</arg>
+        <arg f="" n="1" start="1" end="4">Some analysts at least</arg>
+        <arg f="" n="0" start="14" end="16">[*]by the losses</arg>
       </example>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>It raises the long-cherished hopes of many Germans for reunification -- a prospect that [*T*-1] almost equally alarms political leaders in Moscow , Washington and Western Europe .</text>
-        <arg f="slc" n="m">that -&gt; a prospect</arg>
-        <arg f="" n="0">[*T*-1] (= that)</arg>
-        <arg f="mnr" n="m">almost equally</arg>
-        <rel f="">alarms</rel>
-        <arg f="" n="1">political leaders in Moscow , Washington and Western Europe</arg>
+      <example src="" name="transitive">
+        <text>It raises the long-cherished hopes of many Germans for reunification -- a prospect that [] almost equally alarms political leaders in Moscow , Washington and Western Europe .</text>
+        <rel relloc="17">alarms</rel>
+        <arg f="SLC" n="m" start="11" end="12">a prospect</arg>
+        <arg f="" n="0" start="13" end="13">that</arg>
+        <arg f="MNR" n="m" start="15" end="16">almost equally</arg>
+        <arg f="" n="1" start="18" end="26">political leaders in Moscow , Washington and Western Europe</arg>
       </example>
-      <example name="&quot;For&quot; realization" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
+      <example src="" name="&quot;For&quot; realization">
         <text>I 'm sure that it must have been alarming for all concerned .</text>
-        <arg f="" n="0">it</arg>
-        <arg f="mod" n="m">must</arg>
-        <rel f="">alarming</rel>
-        <arg f="" n="1">for all concerned.</arg>
+        <rel relloc="8">alarming</rel>
+        <arg f="" n="0" start="4" end="4">it</arg>
+        <arg f="MOD" n="m" start="5" end="5">must</arg>
+        <arg f="" n="1" start="9" end="12">for all concerned .</arg>
       </example>
-      <example name="&quot;To&quot; complement, it EXP" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
+      <example src="" name="&quot;To&quot; complement, it EXP">
         <text>I am an active, healthy woman, so it was alarming to me that I was going through these issues.</text>
-        <rel f="">alarming</rel>
-        <arg f="" n="1">to me</arg>
-        <arg f="" n="0">that I was going trough these issues.</arg>
+        <rel relloc="9">alarming</rel>
+        <arg f="" n="1" start="10" end="11">to me</arg>
+        <arg f="" n="0" start="12" end="18">that I was going through these issues.</arg>
       </example>
+      <note>ALARM-V NOTES: Member of Vncls amuse-31.1. (from alarm.01-v)</note>
+      <note>ALARMING-J NOTES: Roleset based on instances in BOLT P01, parts 2,3. Member of Vncls amuse-31.1. (from alarming.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

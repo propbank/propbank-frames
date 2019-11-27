@@ -1,52 +1,77 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="soar">
     <roleset id="soar.01" name="go up very rapidly">
       <aliases>
-        <alias framenet="Change_position_on_a_scale" pos="v" verbnet="">soar</alias>
+        <alias pos="v">soar</alias>
       </aliases>
-      <note>SOAR-V NOTES: Based on sentences in financial subcorpus. Comparison to 'rise'. Member of VNcls calibratable_cos-45.6-1. (from soar.01-v)</note>
       <roles>
         <role descr="Logical subject, patient, thing rising" f="PPT" n="1">
-          <vnrole vncls="45.6-1" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="45.6-1" version="UNK">patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="EXT, amount risen" f="EXT" n="2">
-          <vnrole vncls="45.6-1" vntheta="Extent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="45.6-1" version="UNK">extent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="start point" f="dir" n="3"/>
-        <role descr="end point" f="gol" n="4"/>
+        <role descr="start point" f="DIR" n="3"/>
+        <role descr="end point" f="GOL" n="4"/>
         <role descr="medium" f="PRD" n="5">
-          <vnrole vncls="45.6-1" vntheta="Attribute"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="45.6-1" version="UNK">attribute</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="token example, all args" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Change_position_on_a_scale" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="45.6-1" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="soar-v.2" src="annot-overlap" confidence="0.1">58</lexlink>
+      </lexlinks>
+      <example src="" name="token example, all args">
         <text>Overall, pretax electronics earnings soared 12% to $107.9 million from $96.4 million.</text>
-        <arg f="dis" n="m">Overall</arg>
-        <arg f="" n="1">pretax electronics earnings</arg>
-        <rel f="">soared</rel>
-        <arg f="ext" n="2">12%</arg>
-        <arg f="" n="4">to $107.9 million</arg>
-        <arg f="" n="3">from $96.4 million</arg>
+        <rel relloc="4">soared</rel>
+        <arg f="DIS" n="m" start="0" end="0">Overall,</arg>
+        <arg f="" n="1" start="1" end="3">pretax electronics earnings</arg>
+        <arg f="EXT" n="2" start="5" end="5">12%</arg>
+        <arg f="" n="4" start="6" end="8">to $107.9 million</arg>
+        <arg f="" n="3" start="9" end="11">from $96.4 million.</arg>
       </example>
+      <note>SOAR-V NOTES: Based on sentences in financial subcorpus. Comparison to 'rise'. Member of VNcls calibratable_cos-45.6-1. (from soar.01-v)</note>
     </roleset>
     <roleset id="soar.02" name="fly">
       <aliases>
-        <alias framenet="Motion" pos="v" verbnet="">soar</alias>
+        <alias pos="v">soar</alias>
       </aliases>
-      <note>SOAR-V NOTES: (somewhat dubious) member of VNcls roll-51.3.1. (from soar.02-v)</note>
       <roles>
         <role descr="thing flying" f="PPT" n="1">
-          <vnrole vncls="51.3.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="roll-51.3.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Motion" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG1" src="ontonotes mz/sinorama/10/ectb_1040" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Motion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="roll-51.3.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="ontonotes mz/sinorama/10/ectb_1040" name="ARG1">
         <text>One with no wings may nonetheless soar .</text>
-        <arg f="" n="1">One with no wings</arg>
-        <arg f="mod" n="m">may</arg>
-        <arg f="adv" n="m">nonetheless</arg>
-        <rel f="">soar</rel>
+        <rel relloc="6">soar</rel>
+        <arg f="" n="1" start="0" end="3">One with no wings</arg>
+        <arg f="MOD" n="m" start="4" end="4">may</arg>
+        <arg f="ADV" n="m" start="5" end="5">nonetheless</arg>
       </example>
-
+      <note>SOAR-V NOTES: (somewhat dubious) member of VNcls roll-51.3.1. (from soar.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

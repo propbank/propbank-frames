@@ -1,32 +1,47 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="putrefy">
     <roleset id="putrefy.01" name="make putrid">
       <aliases>
-        <alias framenet="Rotting" pos="v" verbnet="">putrefy</alias>
+        <alias pos="v">putrefy</alias>
       </aliases>
-      <note>PUTREFY-V NOTES: Automatically created based on framefiles: ferment (45.5), fade (45.4), edited by hwangd. Member of VNcls entity_specific_cos-45.5, other_cos-45.4. (from putrefy.01-v)</note>
       <roles>
         <role descr="agent, causer of rotting" f="PAG" n="0">
-          <vnrole vncls="45.4" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing rotting" f="ppt" n="1">
-          <vnrole vncls="45.4" vntheta="Patient"/>
-          <vnrole vncls="45.5" vntheta="Patient"/>
+        <role descr="thing rotting" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="VerbNet" class="entity_specific_cos-45.5" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Rotting" version="1.7">undergoer</rolelink>
+            <rolelink resource="FrameNet" class="Rotting" version="1.7">undergoer</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="Transitive" src="web usage" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Rotting" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="entity_specific_cos-45.5" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web usage" name="Transitive">
         <text>The virus putrefies the insides of an infected individual.</text>
-        <arg f="" n="0">The virus</arg>
-        <rel f="">putrefies</rel>
-        <arg f="" n="1">the insides of an infected individual</arg>
+        <rel relloc="2">putrefies</rel>
+        <arg f="" n="0" start="0" end="1">The virus</arg>
+        <arg f="" n="1" start="3" end="8">the insides of an infected individual.</arg>
       </example>
-      <example name="Intransitive" src="web usage" type="">
+      <example src="web usage" name="Intransitive">
         <text>In that atmosphere, animal flesh putrefies.</text>
-        <arg f="loc" n="m">In that atmosphere</arg>
-        <arg f="" n="1">animal flesh</arg>
-        <rel f="">putrefies</rel>
+        <rel relloc="5">putrefies.</rel>
+        <arg f="LOC" n="m" start="0" end="2">In that atmosphere,</arg>
+        <arg f="" n="1" start="3" end="4">animal flesh</arg>
       </example>
+      <note>PUTREFY-V NOTES: Automatically created based on framefiles: ferment (45.5), fade (45.4), edited by hwangd. Member of VNcls entity_specific_cos-45.5, other_cos-45.4. (from putrefy.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

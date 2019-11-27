@@ -1,32 +1,55 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="troop">
     <roleset id="troop.01" name="troop">
       <aliases>
-        <alias framenet="Self_motion Mass_motion" pos="v" verbnet="">troop</alias>
+        <alias pos="v">troop</alias>
       </aliases>
-      <note>TROOP-V NOTES: Member of Vncls run-51.3.2. (from troop.01-v)</note>
       <roles>
         <role descr="agent, transitive subject" f="PAG" n="0">
-          <vnrole vncls="51.3.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="run-51.3.2" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="theme, intransitive subject, transitive object" f="PPT" n="1">
-          <vnrole vncls="51.3.2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="run-51.3.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">self_mover</rolelink>
+          </rolelinks>
         </role>
-        <role descr="start point" f="DIR" n="2"/>
+        <role descr="start point" f="DIR" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">source</rolelink>
+          </rolelinks>
+        </role>
         <role descr="end point" f="GOL" n="3"/>
         <role descr="path" f="LOC" n="4">
-          <vnrole vncls="51.3.2" vntheta="Location"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="run-51.3.2" version="verbnet3.3">location</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">area</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">goal</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">path</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="from Google" src="web usage" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Self_motion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Mass_motion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="run-51.3.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web usage" name="from Google">
         <text>They trooped into the pagoda around mid-arfternoon carrying bowls filled with water and flowers.</text>
-        <arg f="" n="1">They</arg>
-        <rel f="">trooped</rel>
-        <arg f="" n="3">into the pagoda</arg>
-        <arg f="tmp" n="m">around mid-afternoon</arg>
-        <arg f="adv" n="m">carrying bowls filled with water and flowers</arg>
+        <rel relloc="1">trooped</rel>
+        <arg f="" n="1" start="0" end="0">They</arg>
+        <arg f="" n="3" start="2" end="4">into the pagoda</arg>
+        <arg f="TMP" n="m" start="5" end="6">around mid-arfternoon</arg>
+        <arg f="ADV" n="m" start="7" end="13">carrying bowls filled with water and flowers.</arg>
       </example>
+      <note>TROOP-V NOTES: Member of Vncls run-51.3.2. (from troop.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

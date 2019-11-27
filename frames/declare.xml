@@ -1,153 +1,160 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="declare">
-
     <roleset id="declare.01" name="announce or assert">
       <aliases>
-        <alias framenet="Statement" pos="n" verbnet="">declaration</alias>
-        <alias framenet="Statement" pos="v" verbnet="">declare</alias>
-        <alias framenet="" pos="l" verbnet="">make_declaration</alias>
+        <alias pos="n">declaration</alias>
+        <alias pos="v">declare</alias>
+        <alias pos="l">make_declaration</alias>
       </aliases>
+      <roles>
+        <role descr="announcer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="say-37.7-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="reflexive_appearance-48.1.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">speaker</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="utterance" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="say-37.7-1" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="VerbNet" class="reflexive_appearance-48.1.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">message</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">topic</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="hearer" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="say-37.7-1" version="verbnet3.3">recipient</rolelink>
+            <rolelink resource="VerbNet" class="reflexive_appearance-48.1.2" version="verbnet3.3">recipient</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">addressee</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="attributive" f="PRD" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Statement" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="say-37.7-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="reflexive_appearance-48.1.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Contact.PublicStatementInPerson.Broadcast" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Broadcast" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="declaration-n.1" src="annot-overlap" confidence="0.1">29</lexlink>
+        <lexlink resource="onsense" version="on5" class="declare-v.1" src="annot-overlap" confidence="0.1">161</lexlink>
+      </lexlinks>
+      <example src="" name="make an announcement">
+        <text>UNIFIRST Corp. declared a 2-for-1 stock split .</text>
+        <rel relloc="2">declared</rel>
+        <arg f="" n="0" start="0" end="1">UNIFIRST Corp.</arg>
+        <arg f="" n="1" start="3" end="6">a 2-for-1 stock split</arg>
+      </example>
+      <example src="internet" name="direct quote">
+        <text>Sarah Palin declared in her speech in Anchorage on Wednesday "screw political correctness".</text>
+        <rel relloc="2">declared</rel>
+        <arg f="" n="0" start="0" end="1">Sarah Palin</arg>
+        <arg f="LOC" n="m" start="3" end="5">in her speech</arg>
+        <arg f="LOC" n="m" start="6" end="7">in Anchorage</arg>
+        <arg f="TMP" n="m" start="8" end="9">on Wednesday</arg>
+        <arg f="" n="1" start="10" end="12">"screw political correctness".</arg>
+      </example>
+      <example src="internet" name="all args">
+        <text>the jury's declaration of her as the continent's best actress for this year.</text>
+        <rel relloc="2">declaration</rel>
+        <arg f="" n="0" start="1" end="1">jury's</arg>
+        <arg f="" n="1" start="3" end="12">of her as the continent's best actress for this year.</arg>
+      </example>
+      <example src="internet" name="with GOL, hearer">
+        <text>Hiromi's strong declaration of her as Shin's girlfriend to the unsuspecting Ai-chan.</text>
+        <rel relloc="2">declaration</rel>
+        <arg f="" n="0" start="0" end="0">Hiromi's</arg>
+        <arg f="MNR" n="m" start="1" end="1">strong</arg>
+        <arg f="" n="1" start="3" end="7">of her as Shin's girlfriend</arg>
+        <arg f="GOL" n="m" start="8" end="11">to the unsuspecting Ai-chan.</arg>
+      </example>
+      <example src="internet" name="Liar?    (with hearer)">
+        <text>When Rhea gave birth to Poseidon, she declared to Cronos that she had given birth to a horse.</text>
+        <rel relloc="7">declared</rel>
+        <arg f="TMP" n="m" start="0" end="5">When Rhea gave birth to Poseidon,</arg>
+        <arg f="" n="0" start="6" end="6">she</arg>
+        <arg f="" n="2" start="8" end="9">to Cronos</arg>
+        <arg f="" n="1" start="10" end="17">that she had given birth to a horse.</arg>
+      </example>
+      <example src="internet" name="With attributive">
+        <text>Later he declared of himself, "A peasant I was born and a peasant I will die."</text>
+        <rel relloc="2">declared</rel>
+        <arg f="TMP" n="m" start="0" end="0">Later</arg>
+        <arg f="" n="0" start="1" end="1">he</arg>
+        <arg f="" n="3" start="3" end="4">of himself,</arg>
+        <arg f="" n="1" start="5" end="15">"A peasant I was born and a peasant I will die."</arg>
+      </example>
+      <example src="" name="Light Verb!">
+        <text>This is the first occasion on which-1 the organized international community of nations has made a Declaration on Human Rights and fundamental freedoms *trace*-1.</text>
+        <rel relloc="16">Declaration</rel>
+        <arg f="" n="0" start="7" end="10">the organized international community</arg>
+        <arg f="LVB" n="m" start="14" end="14">made</arg>
+        <arg f="" n="3" start="17" end="22">on Human Rights and fundamental freedoms</arg>
+        <arg f="TMP" n="m" start="5" end="6">on which-1</arg>
+        <arg f="SLC" n="m" start="2" end="4">the first occasion</arg>
+      </example>
+      <example src="" name="args 0 &amp; 1, mnr">
+        <text>voluntary absolute and ah competent declaration *ICH*-1 on his part [that you were ah released from this agreement]-1</text>
+        <rel relloc="5">declaration</rel>
+        <arg f="MNR" n="m" start="0" end="4">voluntary absolute and ah competent</arg>
+        <arg f="" n="1" start="10" end="17">[that you were ah released from this agreement]-1</arg>
+        <arg f="" n="0" start="7" end="9">on his part</arg>
+      </example>
+      <example src="" name="Args 0 &amp; 1">
+        <text>Ecuador 's declaration of a state of emergencies around the Galapagos Islands</text>
+        <rel relloc="2">declaration</rel>
+        <arg f="" n="0" start="0" end="1">Ecuador 's</arg>
+        <arg f="" n="1" start="3" end="11">of a state of emergencies around the Galapagos Islands</arg>
+      </example>
+      <example src="" name="with VP as arg1">
+        <text>a declaration forecasting Chinese art 's inevitable decline if it stayed stuck in the past</text>
+        <rel relloc="1">declaration</rel>
+        <arg f="" n="1" start="2" end="14">forecasting Chinese art 's inevitable decline if it stayed stuck in the past</arg>
+      </example>
+      <example src="" name="with arg3">
+        <text>the Sino - British joint declaration on Hong Kong</text>
+        <rel relloc="5">declaration</rel>
+        <arg f="" n="0" start="3" end="3">British</arg>
+        <arg f="MNR" n="m" start="4" end="4">joint</arg>
+        <arg f="" n="3" start="6" end="8">on Hong Kong</arg>
+      </example>
+      <example src="" name="When entity judged is included with judgment">
+        <text>Integra-A Hotel&amp; Restaurant Co. said [its planned rights offering to raise about $9 million] -1 was declared  effective...</text>
+        <rel relloc="16">declared</rel>
+        <arg f="" n="1" start="17" end="18"> effective...</arg>
+      </example>
+      <example src="internet" name="from Wookieepedia">
+        <text>The Galactic Senate declared him unfit for duty.</text>
+        <rel relloc="3">declared</rel>
+        <arg f="" n="0" start="0" end="2">The Galactic Senate</arg>
+        <arg f="" n="1" start="4" end="7">him unfit for duty.</arg>
+      </example>
+      <example src="internet" name="burqa burqa">
+        <text>French President Nicolas Sarkozy has declared the burqa "not welcome" in secular France</text>
+        <rel relloc="5">declared</rel>
+        <arg f="" n="0" start="0" end="3">French President Nicolas Sarkozy</arg>
+        <arg f="TMP" n="m" start="4" end="4">has</arg>
+        <arg f="" n="1" start="6" end="12">the burqa "not welcome" in secular France</arg>
+      </example>
+      <example src="internet" name="theme and predicate separated by rel">
+        <text>his declaration as unfit to continue in office</text>
+        <rel relloc="1">declaration</rel>
+        <arg f="" n="1" start="2" end="7">as unfit to continue in office</arg>
+      </example>
+      <example src="" name="with arg2">
+        <text>Our Declaration to the World</text>
+        <rel relloc="1">Declaration</rel>
+        <arg f="" n="0" start="0" end="0">Our</arg>
+        <arg f="" n="2" start="2" end="4">to the World</arg>
+      </example>
       <note>DECLARE-V NOTES: Expect to see all the usual constructions for verbs-of-saying(fronted, split, etc). Arg-3 attributive rare-- see example 3 to differentiate between atts in this sense vs. declare.01VN updated by Julia. Member of Vncls reflexive_appearance-48.1.2, say-37.7-1. (from declare.02-v)</note>
       <note>DECLARATION-N NOTES: updated by Julia. Member of Vncls reflexive_appearance-48.1.2, say-37.7-1. (from declaration.02-n)</note>
-      <roles>
-        <role descr="announcer" f="pag" n="0">
-          <vnrole vncls="37.7-1" vntheta="agent"/>
-          <vnrole vncls="48.1.2" vntheta="agent"/>
-        </role>
-        <role descr="utterance" f="ppt" n="1">
-          <vnrole vncls="37.7-1" vntheta="topic"/>
-          <vnrole vncls="48.1.2" vntheta="theme"/>
-        </role>
-        <role descr="hearer" f="gol" n="2">
-          <vnrole vncls="37.7-1" vntheta="recipient"/>
-          <vnrole vncls="48.1.2" vntheta="recipient"/>
-        </role>
-        <role descr="attributive" f="prd" n="3"/>
-      </roles>
-      <example name="make an announcement" src="" type="">
-        <text>UNIFIRST Corp. declared a 2-for-1 stock split .</text>
-        <arg f="" n="0">UNIFIRST Corp.</arg>
-        <rel f="">declared</rel>
-        <arg f="" n="1">a 2-for-1 stock split</arg>
-      </example>
-      <example name="direct quote" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
-        <text>Sarah Palin declared in her speech in Anchorage on Wednesday "screw political correctness".</text>
-        <arg f="" n="0">Sarah Palin</arg>
-        <rel f="">declared</rel>
-        <arg f="loc" n="m">in her speech</arg>
-        <arg f="loc" n="m">in Anchorage</arg>
-        <arg f="tmp" n="m">on Wednesday</arg>
-        <arg f="" n="1">"screw political correctness"</arg>
-      </example>
-      
-      <example name="all args" src="internet" type="-">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>the jury's declaration of her as the continent's best actress for this year.</text>
-        <arg f="" n="0">jury's</arg>
-        <rel f="">declaration</rel>
-        <arg f="" n="1">of her , as the continent's best actress for this year</arg>
-      </example>
-      <example name="with GOL, hearer" src="internet" type="-">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Hiromi's strong declaration of her as Shin's girlfriend to the unsuspecting Ai-chan.</text>
-        <arg f="" n="0">Hiromi's</arg>
-        <arg f="mnr" n="m">strong</arg>
-        <rel f="">declaration</rel>
-        <arg f="" n="1">of her , as Shin's girlfriend</arg>
-        <arg f="gol" n="m">to the unsuspecting Ai-chan.</arg>
-      </example>
-      <example name="Liar?    (with hearer)" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
-        <text>When Rhea gave birth to Poseidon, she declared to Cronos that she had given birth to a horse.</text>
-        <arg f="tmp" n="m">When Rhea gave birth to Poseiden</arg>
-        <arg f="" n="0">she</arg>
-        <rel f="">declared</rel>
-        <arg f="" n="2">to Cronos</arg>
-        <arg f="" n="1">that she had given birth to a horse.</arg>
-      </example>
-      <example name="With attributive" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="present" voice="active"/>
-        <text>Later he declared of himself, "A peasant I was born and a peasant I will die."</text>
-        <arg f="tmp" n="m">Later</arg>
-        <arg f="" n="0">he</arg>
-        <rel f="">declared</rel>
-        <arg f="" n="3">of himself</arg>
-        <arg f="" n="1">"A peasant I was born and a peasant I will die."</arg>
-      </example>
-      <example name="Light Verb!" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>This is the first occasion on which-1 the organized international community of nations has made a Declaration on Human Rights and fundamental freedoms *trace*-1.</text>
-        <arg f="" n="0">the organized international community</arg>
-        <arg f="lvb" n="m">made</arg>
-        <rel f="">Declaration</rel>
-        <arg f="" n="3">on Human Rights and fundamental freedoms</arg>
-        <arg f="tmp" n="m">*trace*-1 (= [on which]-1)</arg>
-        <arg f="slc" n="m">[on which]-1 -&gt; the first occasion</arg>
-      </example>
-      <example name="args 0 &amp; 1, mnr" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>voluntary absolute and ah competent declaration *ICH*-1 on his part [that you were ah released from this agreement]-1</text>
-        <arg f="mnr" n="m">voluntary absolute and ah competent</arg>
-        <rel f="">declaration</rel>
-        <arg f="" n="1">*ICH*-1 (= that you were ah released from this agreement)</arg>
-        <arg f="" n="0">on his part</arg>
-      </example>
-      <example name="Args 0 &amp; 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Ecuador 's declaration of a state of emergencies around the Galapagos Islands</text>
-        <arg f="" n="0">Ecuador's</arg>
-        <rel f="">declaration</rel>
-        <arg f="" n="1">of a state of emergencies around the Galapagos Islands</arg>
-      </example>
-      <example name="with VP as arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>a declaration forecasting Chinese art 's inevitable decline if it stayed stuck in the past</text>
-        <rel f="">declaration</rel>
-        <arg f="" n="1">forecasting Chinese art's inevitable decline if it stayed stuck in the past</arg>
-      </example>
-      <example name="with arg3" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>the Sino - British joint declaration on Hong Kong</text>
-        <arg f="" n="0">Sino-British</arg>
-        <arg f="mnr" n="m">joint</arg>
-        <rel f="">declaration</rel>
-        <arg f="" n="3">on Hong Kong</arg>
-      </example>
-      <example name="When entity judged is included with judgment" src="" type="">
-        <text>Integra-A Hotel&amp; Restaurant Co. said [its planned rights offering to raise about $9 million] -1 was declared *T*-1 effective...</text>
-        <rel f="">declared</rel>
-        <arg f="" n="1">*T*-1 effective</arg>
-      </example>
-      <example name="from Wookieepedia" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
-        <text>The Galactic Senate declared him unfit for duty.</text>
-        <arg f="" n="0">The Galactic Senate</arg>
-        <rel f="">declared</rel>
-        <arg f="" n="1">him unfit for duty</arg>
-      </example>
-      <example name="burqa burqa" src="internet" type="-">
-        <inflection aspect="perfect" form="participle" person="third" tense="present" voice="active"/>
-        <text>French President Nicolas Sarkozy has declared the burqa "not welcome" in secular France</text>
-        <arg f="" n="0">French President Nicolas Sarkozy</arg>
-        <arg f="tmp" n="m">just</arg>
-        <rel f="">declared</rel>
-        <arg f="" n="1">the burqa "not welcome" in secular France</arg>
-      </example>
-      <example name="theme and predicate separated by rel" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>his declaration as unfit to continue in office</text>
-        <rel f="">declaration</rel>
-        <arg f="" n="1">his   ,   as unfit to continue in office</arg>
-      </example>
-      <example name="with arg2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Our Declaration to the World</text>
-        <arg f="" n="0">Our</arg>
-        <rel f="">declaration</rel>
-        <arg f="" n="2">to the world</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

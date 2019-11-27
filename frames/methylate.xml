@@ -1,36 +1,41 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="methylate">
     <roleset id="methylate.01" name="addition of a methyl group to an atom or group">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">methylate</alias>
-        <alias framenet="" pos="n" verbnet="">methylation</alias>
+        <alias pos="v">methylate</alias>
+        <alias pos="n">methylation</alias>
       </aliases>
+      <roles>
+        <role descr="agent/causer of methylation (e.g. scientist)" f="PAG" n="0"/>
+        <role descr="entity methylated" f="PPT" n="1"/>
+        <role descr="instrument (e.g. enzyme)" f="PRD" n="2"/>
+        <role descr="resulting state of modification" f="PRD" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="" name="methylate-v: passivized, with product of the reaction">
+        <text>Vanillin (I) is brominated (Br2/AcOH) to 5-bromovanillin (II) which is subsequently methylated to give 5-bromoveratraldehyde (III).</text>
+        <rel relloc="11">methylated</rel>
+        <arg f="" n="1" start="6" end="7">5-bromovanillin (II)</arg>
+        <arg f="" n="3" start="14" end="15">5-bromoveratraldehyde (III).</arg>
+      </example>
+      <example src="" name="methylate-v: agent and instrument">
+        <text>To test this hypothesis, we methylated bacterial DNA with CpG methylase.</text>
+        <rel relloc="5">methylated</rel>
+        <arg f="" n="0" start="4" end="4">we</arg>
+        <arg f="" n="1" start="6" end="7">bacterial DNA</arg>
+        <arg f="" n="2" start="9" end="10">CpG methylase.</arg>
+      </example>
+      <example src="" name="methylation-n">
+        <text>The methylation of the gene promoter</text>
+        <rel relloc="1">methylation</rel>
+        <arg f="" n="1" start="2" end="5">of the gene promoter</arg>
+      </example>
       <note>METHYLATION-N NOTES: Based on Thyme data. Slight comparison to hypermethylation. No VN or FN classes. Framed by Katie. (from methylation.01-n)</note>
       <note>METHYLATE-V NOTES: Automatically added alias.</note>
-      <roles>
-        <role descr="agent/causer of methylation (e.g. scientist)" f="pag" n="0"/>
-        <role descr="entity methylated" f="ppt" n="1"/>
-        <role descr="instrument (e.g. enzyme)" f="prd" n="2"/>
-        <role descr="resulting state of modification" f="prd" n="3"/>
-      </roles>
-      <example name="methylate-v: passivized, with product of the reaction" src="" type="">
-        <text>Vanillin (I) is brominated (Br2/AcOH) to 5-bromovanillin (II) which is subsequently methylated to give 5-bromoveratraldehyde (III).</text>
-        <arg f="" n="1">5-bromovanillin (II)</arg>
-        <arg f="" n="3">5-bromoveratraldehyde (III)</arg>
-      </example>
-      <example name="methylate-v: agent and instrument" src="" type="">
-        <text>To test this hypothesis, we methylated bacterial DNA with CpG methylase.</text>
-        <arg f="" n="0">we</arg>
-        <arg f="" n="1">bacterial DNA</arg>
-        <arg f="" n="2">CpG methylase</arg>
-      </example>
-      <example name="methylation-n" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The methylation of the gene promoter</text>
-        <rel f="">methylation</rel>
-        <arg f="" n="1">of the gene promoter</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

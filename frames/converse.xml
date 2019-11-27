@@ -1,93 +1,110 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="converse">
     <roleset id="converse.01" name="make conversation, conversing, talking">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">conversant</alias>
-        <alias framenet="" pos="n" verbnet="">conversation</alias>
-        <alias framenet="" pos="l" verbnet="">have_conversation</alias>
-        <alias framenet="" pos="v" verbnet="">converse</alias>
+        <alias pos="j">conversant</alias>
+        <alias pos="n">conversation</alias>
+        <alias pos="l">have_conversation</alias>
+        <alias pos="v">converse</alias>
       </aliases>
+      <roles>
+        <role descr="talker" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="chit_chat-37.6" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Chatting" version="1.7">interlocutor_1</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="subject or language" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="chit_chat-37.6" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="FrameNet" class="Chatting" version="1.7">topic</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="hearer" f="COM" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="chit_chat-37.6" version="verbnet3.3">co-agent</rolelink>
+            <rolelink resource="FrameNet" class="Chatting" version="1.7">interlocutor_2</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Chatting" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="chit_chat-37.6" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="Without Subject">
+        <text>The false cypresses, which had conversed with the clouds for a million years, were identified * as top-grade timber, and were thus condemned * to an inexorable fate.</text>
+        <rel relloc="5">conversed</rel>
+        <arg f="" n="0" start="3" end="3">which</arg>
+        <arg f="RCL" n="M" start="0" end="2">The false cypresses,</arg>
+        <arg f="" n="2" start="6" end="8">with the clouds</arg>
+        <arg f="TMP" n="M" start="9" end="12">for a million years,</arg>
+      </example>
+      <example src="" name="Converse in a language">
+        <text>...he-1 is capable of *-1 conversing fluently in either Beijing dialect or the southern Fujian dialect used * in Taiwan.</text>
+        <rel relloc="5">conversing</rel>
+        <arg f="" n="0" start="4" end="4">*-1</arg>
+        <arg f="MNR" n="M" start="6" end="6">fluently</arg>
+        <arg f="" n="1" start="8" end="19">either Beijing dialect or the southern Fujian dialect used * in Taiwan.</arg>
+      </example>
+      <example src="" name="All args">
+        <text>Josephine's conversation with Napoleon about the quality of the prune danishes was interrupted by a raging mob of squirrels.</text>
+        <rel relloc="1">conversation</rel>
+        <arg f="" n="0" start="0" end="0">Josephine's</arg>
+        <arg f="" n="2" start="2" end="3">with Napoleon</arg>
+        <arg f="" n="1" start="4" end="10">about the quality of the prune danishes</arg>
+      </example>
+      <example src="" name="Use manner for language">
+        <text>The doctor had a conversation in German about the fine he was going to have to pay on the spot.</text>
+        <rel relloc="4">conversation</rel>
+        <arg f="" n="0" start="0" end="1">The doctor</arg>
+        <arg f="LVB" n="m" start="2" end="2">had</arg>
+        <arg f="MNR" n="m" start="5" end="6">in German</arg>
+        <arg f="" n="1" start="7" end="19">about the fine he was going to have to pay on the spot.</arg>
+      </example>
+      <example src="" name="another with language">
+        <text>I was engrossed in a french conversation about Sarkozy, Dominique StraussKahn.</text>
+        <rel relloc="6">conversation</rel>
+        <arg f="MNR" n="m" start="5" end="5">french</arg>
+        <arg f="" n="1" start="7" end="10">about Sarkozy, Dominique StraussKahn.</arg>
+      </example>
+      <example src="" name="args 0 and 1">
+        <text>Patient is conversant with me following stroke.</text>
+        <rel relloc="2">conversant</rel>
+        <arg f="" n="0" start="0" end="0">Patient</arg>
+        <arg f="" n="1" start="3" end="4">with me</arg>
+        <arg f="TMP" n="m" start="5" end="6">following stroke.</arg>
+      </example>
       <note>CONVERSE-V NOTES: Frame by Claire (from converse.01-v)</note>
       <note>CONVERSATION-N NOTES: converse.01. corresponds to VNcls chit_chat-37.6. (from conversation.01-n)</note>
       <note>CONVERSANT-J NOTES: Based on medical adjectives. Comparison with converse.01-v. Framed by Katie. (from conversant.02-j)</note>
-      <roles>
-        <role descr="talker" f="PAG" n="0">
-          <vnrole vncls="37.6" vntheta="Agent"/>
-        </role>
-        <role descr="subject or language" f="PPT" n="1">
-          <vnrole vncls="37.6" vntheta="Topic"/>
-        </role>
-        <role descr="hearer" f="COM" n="2">
-          <vnrole vncls="37.6" vntheta="co-agent"/>
-        </role>
-      </roles>
-      <example name="Without Subject" src="" type="">
-        <text>The false cypresses, which-1 *-1 had conversed with the clouds for a million years, were identified * as top-grade timber, and were thus condemned * to an inexorable fate.</text>
-        <arg f="" n="0">*-1</arg>
-        <arg f="RCL" n="M">which-1 -- The False Cypresses</arg>
-        <rel f="">conversed</rel>
-        <arg f="" n="2">with the clouds</arg>
-        <arg f="TMP" n="M">for a million years</arg>
-      </example>
-      <example name="Converse in a language" src="" type="">
-        <text>...he-1 is capable of *-1 conversing fluently in either Beijing dialect or the southern Fujian dialect used * in Taiwan.</text>
-        <arg f="" n="0">*-1 -- he</arg>
-        <rel f="">conversing</rel>
-        <arg f="MNR" n="M">fluently</arg>
-        <arg f="" n="1">in either Beijing dialect or the souther Fujian dialectused * in Taiwan</arg>
-      </example>
-      <example name="All args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Josephine's conversation with Napoleon about the quality of the prune danishes was interrupted by a raging mob of squirrels.</text>
-        <arg f="" n="0">Josephine's</arg>
-        <rel f="">conversation</rel>
-        <arg f="" n="2">with Napoleon</arg>
-        <arg f="" n="1">about the quality of the prune danishes</arg>
-      </example>
-      <example name="Use manner for language" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The doctor had a conversation in German about the fine he was going to have to pay on the spot.</text>
-        <arg f="" n="0">The doctor</arg>
-        <arg f="lvb" n="m">had</arg>
-        <rel f="">conversation</rel>
-        <arg f="mnr" n="m">in German</arg>
-        <arg f="" n="1">about the fine he was going to have to pay on the spot</arg>
-      </example>
-      <example name="another with language" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I was engrossed in a french conversation about Sarkozy, Dominique StraussKahn.</text>
-        <arg f="mnr" n="m">french</arg>
-        <rel f="">conversation</rel>
-        <arg f="" n="1">about Sarkozy, Dominique StraussKahn</arg>
-      </example>
-      <example name="args 0 and 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Patient is conversant with me following stroke.</text>
-        <arg f="" n="0">Patient</arg>
-        <rel f="">conversant</rel>
-        <arg f="" n="1">with me</arg>
-        <arg f="tmp" n="m">following stroke.</arg>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="conversant">
     <roleset id="conversant.02" name="familiar with">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">conversant</alias>
+        <alias pos="j">conversant</alias>
       </aliases>
-      <note>CONVERSANT-J NOTES: Based on Thyme and Sharp data. No comparison. No VN or FN classes. Framed by Katie. (from conversant.01-j)</note>
       <roles>
-        <role descr="familiar entity" f="pag" n="0"/>
-        <role descr="thing familiar with" f="ppt" n="1"/>
+        <role descr="familiar entity" f="PAG" n="0"/>
+        <role descr="thing familiar with" f="PPT" n="1"/>
       </roles>
-      <example name="both args" src="dictionary.com" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="dictionary.com" name="both args">
         <text>He was conversant with Spanish history.</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">conversant</rel>
-        <arg f="" n="1">with Spanish history.</arg>
+        <rel relloc="2">conversant</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
+        <arg f="" n="1" start="3" end="5">with Spanish history.</arg>
       </example>
+      <note>CONVERSANT-J NOTES: Based on Thyme and Sharp data. No comparison. No VN or FN classes. Framed by Katie. (from conversant.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

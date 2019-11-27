@@ -1,31 +1,45 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="quarry">
     <roleset id="quarry.01" name="quarry,mine,search">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">quarry</alias>
+        <alias pos="v">quarry</alias>
       </aliases>
-      <note>QUARRY-V NOTES: Automatically created based on framefiles: mine (10.9), excavate (35.2), hand-checked by Kevin. Member of VNcls mine-10.9, search-35.2. (from quarry.01-v)</note>
       <roles>
         <role descr="quarrier, agent" f="PAG" n="0">
-          <vnrole vncls="35.2" vntheta="Agent"/>
-          <vnrole vncls="10.9" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="search-35.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="mine-10.9" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="location (the quarry)" f="loc" n="1">
-          <vnrole vncls="35.2" vntheta="Location"/>
-          <vnrole vncls="10.9" vntheta="Initial_Location"/>
+        <role descr="location (the quarry)" f="LOC" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="search-35.2" version="verbnet3.3">location</rolelink>
+            <rolelink resource="VerbNet" class="mine-10.9" version="verbnet3.3">initial_location</rolelink>
+          </rolelinks>
         </role>
         <role descr="the stone" f="PPT" n="2">
-          <vnrole vncls="10.9" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="mine-10.9" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="quarry.01 regular usage" src="web usage" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="search-35.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="mine-10.9" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web usage" name="quarry.01 regular usage">
         <text>They quarried the granite and limestone building blocks with crude copper wedges and chunks of stone for hammers.</text>
-        <arg f="" n="0">They</arg>
-        <rel f="">quarried</rel>
-        <arg f="" n="2">the granite and limestone building blocks</arg>
-        <arg f="mnr" n="m">with crude copper wedges and chunks of stone for hammers</arg>
+        <rel relloc="1">quarried</rel>
+        <arg f="" n="0" start="0" end="0">They</arg>
+        <arg f="" n="2" start="2" end="7">the granite and limestone building blocks</arg>
+        <arg f="MNR" n="m" start="8" end="17">with crude copper wedges and chunks of stone for hammers.</arg>
       </example>
+      <note>QUARRY-V NOTES: Automatically created based on framefiles: mine (10.9), excavate (35.2), hand-checked by Kevin. Member of VNcls mine-10.9, search-35.2. (from quarry.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

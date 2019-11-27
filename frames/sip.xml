@@ -1,34 +1,51 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="sip">
     <roleset id="sip.01" name="to drink in small quantities">
       <aliases>
-        <alias framenet="Ingestion" pos="v" verbnet="">sip</alias>
+        <alias pos="v">sip</alias>
       </aliases>
-      <note>SIP-V NOTES: Member of Vncls chew-39.2-2. Updated by Julia, 11/2010. (from sip.01-v)</note>
       <roles>
         <role descr="drinker, agent" f="PAG" n="0">
-          <vnrole vncls="39.2-2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="chew-39.2-2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Ingestion" version="1.7">ingestor</rolelink>
+          </rolelinks>
         </role>
         <role descr="drink" f="PPT" n="1">
-          <vnrole vncls="39.2-2" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="chew-39.2-2" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Ingestion" version="1.7">ingestibles</rolelink>
+          </rolelinks>
         </role>
-        <role descr="container" f="dir" n="2"/>
+        <role descr="container" f="DIR" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Ingestion" version="1.7">source</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="all arguments" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Ingestion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="chew-39.2-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="all arguments">
         <text>He sipped tea sweetened with honey from his high-backed leather chair at his bench , while scribbling notes ordering spectators to stop whispering or to take off their hats in his courtroom .</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">sipped</rel>
-        <arg f="" n="1">tea sweetened with honey</arg>
-        <arg f="loc" n="m">from his high-backed leather chair at his bench</arg>
-        <arg f="tmp" n="m">while scribbling notes ordering spectators to stop whispering or to take off their hats in his courtroom</arg>
+        <rel relloc="1">sipped</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
+        <arg f="" n="1" start="2" end="5">tea sweetened with honey</arg>
+        <arg f="LOC" n="m" start="6" end="13">from his high-backed leather chair at his bench</arg>
+        <arg f="TMP" n="m" start="15" end="31">while scribbling notes ordering spectators to stop whispering or to take off their hats in his courtroom</arg>
       </example>
-      <example name="ARG2" src="probably COCA (2018 example fix)" type="">
+      <example src="probably COCA (2018 example fix)" name="ARG2">
         <text>Forty healthy adults sipped water from each of. 7 straws varying in internal diameter (0.65–5.00 mm).</text>
-        <arg f="" n="0">straws varying in internal diameter (0.65–5.00 mm).</arg>
+        <rel relloc="3">sipped</rel>
+        <arg f="" n="0" start="9" end="15">straws varying in internal diameter (0.65–5.00 mm).</arg>
       </example>
-
+      <note>SIP-V NOTES: Member of Vncls chew-39.2-2. Updated by Julia, 11/2010. (from sip.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

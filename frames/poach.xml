@@ -1,62 +1,88 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
-	<predicate lemma="poach">
-		<roleset id="poach.01" name="cook in water">
-			<aliases>
-				<alias framenet="" pos="v" verbnet="">poach</alias>
-			</aliases>
-			<note>POACH-V NOTES: Frames file for 'poach' based on sentences in
+  <predicate lemma="poach">
+    <roleset id="poach.01" name="cook in water">
+      <aliases>
+        <alias pos="v">poach</alias>
+      </aliases>
+      <roles>
+        <role descr="cook" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="preparing-26.3-2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="cooking-45.3" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Absorb_heat" version="1.7">heat_source</rolelink>
+            <rolelink resource="FrameNet" class="Apply_heat" version="1.7">cook</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="food cooked" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="preparing-26.3-2" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="VerbNet" class="cooking-45.3" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Absorb_heat" version="1.7">entity</rolelink>
+            <rolelink resource="FrameNet" class="Apply_heat" version="1.7">food</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="water" f="MNR" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="cooking-45.3" version="verbnet3.3">instrument</rolelink>
+            <rolelink resource="FrameNet" class="Apply_heat" version="1.7">heating_instrument</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Absorb_heat" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Apply_heat" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="preparing-26.3-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="cooking-45.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="probably COCA (2018 example fix)" name="ARG0 and ARG1 and ARG2">
+        <text>I poached them in simmering water</text>
+        <rel relloc="1">poached</rel>
+        <arg f="" n="0" start="0" end="0">I</arg>
+        <arg f="" n="1" start="2" end="2">them</arg>
+        <arg f="" n="2" start="3" end="5">in simmering water</arg>
+      </example>
+      <note>POACH-V NOTES: Frames file for 'poach' based on sentences in
 wsj. Verbnet entries 45.3 35.1 and 26.3; Framenet entry Apply heat.
 (from poach.01-v predicate notes)</note>
-			<roles>
-				<role descr="cook" f="PAG" n="0">
-					<vnrole vncls="26.3-2" vntheta="Agent" />
-					<vnrole vncls="45.3" vntheta="Agent" />
-				</role>
-				<role descr="food cooked" f="ppt" n="1">
-					<vnrole vncls="26.3-2" vntheta="Patient" />
-					<vnrole vncls="45.3" vntheta="Patient" />
-				</role>
-				<role descr="water" f="MNR" n="2">
-					<vnrole vncls="45.3" vntheta="Instrument" />
-				</role>
-			</roles>
-			<example name="ARG0 and ARG1 and ARG2" src="probably COCA (2018 example fix)" type="">
-        <text>I poached them in simmering water</text>
-        <arg f="" n="0">I</arg>
-        <rel f="">poached</rel>
-        <arg f="" n="1">them</arg>
-        <arg f="" n="2">in simmering water</arg>
+    </roleset>
+    <roleset id="poach.02" name="hunt illegally">
+      <aliases>
+        <alias pos="v">poach</alias>
+      </aliases>
+      <roles>
+        <role descr="hunter" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="hunt-35.1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="prey" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="hunt-35.1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="hunt-35.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="not quite illegal">
+        <text>That doesn't scare Digital, which  has grown to be the world's second-largest computer maker by [*]poaching customers of IBM's mid-range machines.</text>
+        <rel relloc="16">[*]poaching</rel>
+        <arg f="" n="0" start="0" end="0">That</arg>
+        <arg f="RCL" n="M" start="3" end="3">Digital,</arg>
+        <arg f="" n="1" start="17" end="21">customers of IBM's mid-range machines.</arg>
       </example>
-
-		</roleset>
-		
-		<roleset id="poach.02" name="hunt illegally">
-			<aliases>
-				<alias framenet="" pos="v" verbnet="">poach</alias>
-			</aliases>
-			<note>POACH-V NOTES: Frames file for 'poach' based on sentences in
+      <note>POACH-V NOTES: Frames file for 'poach' based on sentences in
 wsj. Verbnet entries 45.3 35.1 and 26.3; Framenet entry Apply heat.
 (from poach.02-v predicate notes)</note>
-			<roles>
-				<role descr="hunter" f="PAG" n="0">
-					<vnrole vncls="35.1" vntheta="Agent" />
-				</role>
-				<role descr="prey" f="PPT" n="1">
-					<vnrole vncls="35.1" vntheta="Theme" />
-				</role>
-			</roles>
-			<example name="not quite illegal" src="" type="">
-				<inflection aspect="ns" form="gerund" person="ns" tense="present"
-					voice="active" />
-				<text>That doesn't scare Digital, which [*T*-1]-2 has grown to be
-the world's second-largest computer maker by [*-2]poaching
-customers of IBM's mid-range machines.</text>
-				<arg f="" n="0">[*-2]</arg>
-				<arg f="RCL" n="M">which -&gt; Digital</arg>
-				<rel f="">poaching</rel>
-				<arg f="" n="1">customers of IBM's mid-range machines</arg>
-			</example>
-		</roleset>
-	</predicate>
+    </roleset>
+  </predicate>
 </frameset>

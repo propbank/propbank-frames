@@ -1,62 +1,78 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="assault">
     <roleset id="assault.01" name="to make an assault, attack">
       <aliases>
-        <alias framenet="Attack" pos="v" verbnet="">assault</alias>
-        <alias framenet="" pos="n" verbnet="">assault</alias>
+        <alias pos="v">assault</alias>
+        <alias pos="n">assault</alias>
       </aliases>
-      <note>ASSAULT-V NOTES: Member of Vncls judgement-33. (from assault.01-v)</note>
-      <note>ASSAULT-N NOTES: Roleset based on verb assault.01, OntoNotes grouping assault-n senses 1, 2, 3, 4; maps to VN class judgement-33. Framed by Claire. (from assault.01-n)</note>
       <roles>
         <role descr="assaulter" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="judgment-33.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Attack" version="1.7">assailant</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity assaulted" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="judgment-33.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Attack" version="1.7">victim</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="passive"/>
-        <text>Osbourne 's spokeswoman says [0] Sharon was quote , `` viciously assaulted [*-1]and treated [*-1] at a hospital . ''</text>
-        <arg f="dis" n="m">quote</arg>
-        <arg f="mnr" n="m">viciously</arg>
-        <rel f="">assaulted</rel>
-        <arg f="" n="1">[*-1]</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Attack" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="33" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Life.Injure.InjuryCausedByViolentEvents" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Injure" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="assault-n.1" src="annot-overlap" confidence="0.1">4</lexlink>
+        <lexlink resource="onsense" version="on5" class="assault-n.2" src="annot-overlap" confidence="0.1">7</lexlink>
+        <lexlink resource="onsense" version="on5" class="assault-v.1" src="annot-overlap" confidence="0.1">6</lexlink>
+      </lexlinks>
+      <example src="" name="transitive">
+        <text>Osbourne 's spokeswoman says [0] Sharon was quote , `` viciously assaulted [*]and treated [*] at a hospital . ''</text>
+        <rel relloc="11">assaulted</rel>
+        <arg f="DIS" n="m" start="7" end="7">quote</arg>
+        <arg f="MNR" n="m" start="10" end="10">viciously</arg>
+        <arg f="" n="1" start="14" end="14">[*]</arg>
       </example>
-      <example name="NP only, args 0 &amp; 1" src="NomBank Frames" type="">
+      <example src="NomBank Frames" name="NP only, args 0 &amp; 1">
         <text>The Japanese assault on the luxury market</text>
-        <arg f="" n="0">Japanese</arg>
-        <rel f="">assault</rel>
-        <arg f="" n="1">on the luxury market</arg>
+        <rel relloc="2">assault</rel>
+        <arg f="" n="0" start="1" end="1">Japanese</arg>
+        <arg f="" n="1" start="3" end="6">on the luxury market</arg>
       </example>
-      <example name="Args 0 &amp; 1" src="ON sense 1" type="">
+      <example src="ON sense 1" name="Args 0 &amp; 1">
         <text>The commando's assault of the facility occurred under cover of darkness.</text>
-        <arg f="" n="0">commando's</arg>
-        <rel f="">assault</rel>
-        <arg f="" n="1">of the facility</arg>
+        <rel relloc="2">assault</rel>
+        <arg f="" n="0" start="1" end="1">commando's</arg>
+        <arg f="" n="1" start="3" end="5">of the facility</arg>
       </example>
-      <example name="MNR only" src="ON sense 2" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="ON sense 2" name="MNR only">
         <text>The police record notes a decrease in sexual assaults this past year.</text>
-        <arg f="mnr" n="m">sexual</arg>
-        <rel f="">assaults</rel>
+        <rel relloc="8">assaults</rel>
+        <arg f="MNR" n="m" start="7" end="7">sexual</arg>
       </example>
-      <example name="Metaphorical assault" src="ON sense 4" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="ON sense 4" name="Metaphorical assault">
         <text>The climbers attempted a late spring assault of Mt. Everest.</text>
-        <arg f="tmp" n="m">late spring</arg>
-        <rel f="">assault</rel>
-        <arg f="" n="1">of Mt. Everest</arg>
+        <rel relloc="6">assault</rel>
+        <arg f="TMP" n="m" start="4" end="5">late spring</arg>
+        <arg f="" n="1" start="7" end="9">of Mt. Everest.</arg>
       </example>
-      <example name="All arguments" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="All arguments">
         <text>Pete Townshend screamed profanities at Woodstock immediately preceding his assault of Abbie Hoffman with his guitar.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">assault</rel>
-        <arg f="" n="1">of Abbie Hoffman</arg>
-        <arg f="mnr" n="m">with his guitar.</arg>
+        <rel relloc="9">assault</rel>
+        <arg f="" n="0" start="8" end="8">his</arg>
+        <arg f="" n="1" start="10" end="12">of Abbie Hoffman</arg>
+        <arg f="MNR" n="m" start="13" end="15">with his guitar.</arg>
       </example>
+      <note>ASSAULT-V NOTES: Member of Vncls judgement-33. (from assault.01-v)</note>
+      <note>ASSAULT-N NOTES: Roleset based on verb assault.01, OntoNotes grouping assault-n senses 1, 2, 3, 4; maps to VN class judgement-33. Framed by Claire. (from assault.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

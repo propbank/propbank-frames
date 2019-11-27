@@ -1,182 +1,222 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="walk">
     <roleset id="walk.01" name="walk, be a pedestrian, forward motion, one foot in front of the other">
       <aliases>
-        <alias framenet="Self_motion" pos="n" verbnet="">walk</alias>
-        <alias framenet="" pos="l" verbnet="">take_walk</alias>
-        <alias framenet="" pos="n" verbnet="">walking</alias>
-        <alias framenet="Cotheme Self_motion" pos="v" verbnet="">walk</alias>
+        <alias pos="n">walk</alias>
+        <alias pos="l">take_walk</alias>
+        <alias pos="n">walking</alias>
+        <alias pos="v">walk</alias>
       </aliases>
+      <roles>
+        <role descr="walker, thing in motion" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="run-51.3.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">self_mover</rolelink>
+            <rolelink resource="FrameNet" class="Cotheme" version="1.7">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity being walked, where there is outside Agent" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="run-51.3.2" version="verbnet3.3">location</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">self_mover</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">area</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">goal</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">path</rolelink>
+            <rolelink resource="FrameNet" class="Cotheme" version="1.7">cotheme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="path/ underspecified location walked" f="LOC" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">goal</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">path</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Self_motion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Cotheme" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="run-51.3.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Movement.TransportPerson.SelfMotion" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Transportperson" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="walk-v.1" src="annot-overlap" confidence="0.1">69</lexlink>
+        <lexlink resource="onsense" version="on5" class="walk-v.8" src="annot-overlap" confidence="0.1">13</lexlink>
+        <lexlink resource="onsense" version="on5" class="walk-v.4" src="annot-overlap" confidence="0.1">12</lexlink>
+        <lexlink resource="onsense" version="on5" class="walk-v.2" src="annot-overlap" confidence="0.1">7</lexlink>
+        <lexlink resource="onsense" version="on5" class="walk-n.1" src="annot-overlap" confidence="0.1">6</lexlink>
+      </lexlinks>
+      <example src="" name="GOL as PP">
+        <text>When Mr. Jacobson walked into the office at 7:30 a.m. EDT, he announced: ``OK, buckle up.''</text>
+        <rel relloc="3">walked</rel>
+        <arg f="" n="0" start="1" end="2">Mr. Jacobson</arg>
+        <arg f="GOL" n="m" start="4" end="6">into the office</arg>
+        <arg f="TMP" n="m" start="7" end="10">at 7:30 a.m. EDT,</arg>
+      </example>
+      <example src="" name="DIR as ADV">
+        <text>``The buyers walk away, and the specialist is left alone'' as the buyer of last resort for his stable of stocks, he contends.</text>
+        <rel relloc="2">walk</rel>
+        <arg f="" n="0" start="11" end="12">the buyer</arg>
+        <arg f="DIR" n="m" start="3" end="3">away,</arg>
+      </example>
+      <example src="ontonotes bn/nbc/00/nbc_0037" name="ARG0 and ARG1">
+        <text>He seemed happy and relaxed walking his dog Buddy and helping his wife , the new senator , get ready to head off to Washington tomorrow , without him .</text>
+        <rel relloc="5">walking</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
+        <arg f="" n="1" start="6" end="8">his dog Buddy</arg>
+      </example>
+      <example src="ontonotes mz/sinorama/10/ectb_1067" name="ARG0 and ARG2">
+        <text>Walking amid the hubbub of Taipei today , on streets filled with people and traffic , Ko - nan Street , Shanghai Road , the Tri-Service Stadium and the Star Cafe have long since drifted away like the sound of Ko Lan 's mambo song .</text>
+        <rel relloc="0">Walking</rel>
+        <arg f="LOC" n="m" start="1" end="6">amid the hubbub of Taipei today</arg>
+        <arg f="" n="2" start="8" end="14">on streets filled with people and traffic</arg>
+      </example>
+      <example src="WSJ" name="another ex of 'path'">
+        <text>Firms Walk Fine Line In Distributing Profits</text>
+        <rel relloc="1">Walk</rel>
+        <arg f="" n="0" start="0" end="0">Firms</arg>
+        <arg f="" n="2" start="2" end="3">Fine Line</arg>
+        <arg f="ADV" n="m" start="4" end="6">In Distributing Profits</arg>
+      </example>
+      <example src="" name="with COM">
+        <text>Monica Sharp went out for a walk with her dog weeks ago</text>
+        <rel relloc="6">walk</rel>
+        <arg f="COM" n="m" start="7" end="9">with her dog</arg>
+      </example>
+      <example src="" name="just arg2">
+        <text>@NASA says it may decide by tomorrow whether another space walk will be needed to fix torn thermal blanket that blew a cockpit window</text>
+        <rel relloc="10">walk</rel>
+        <arg f="" n="2" start="9" end="9">space</arg>
+      </example>
+      <example src="" name="Light Verb">
+        <text>"Those people who are always complaining about their lot in life should take a walk around a cancer ward , " Li says .</text>
+        <rel relloc="14">walk</rel>
+        <arg f="" n="0" start="0" end="10">"Those people who are always complaining about their lot in life</arg>
+        <arg f="MOD" n="m" start="11" end="11">should</arg>
+        <arg f="LVB" n="m" start="12" end="12">take</arg>
+        <arg f="" n="2" start="15" end="18">around a cancer ward</arg>
+      </example>
+      <example src="" name="just arg0">
+        <text>The normal walk of the dog can be encumbered by long toenails.</text>
+        <rel relloc="2">walk</rel>
+        <arg f="MNR" n="m" start="1" end="1">normal</arg>
+        <arg f="" n="0" start="3" end="5">of the dog</arg>
+      </example>
       <note>WALK-V NOTES: Frames file for 'walk' based on sentences in financial subcorpus. Verbnet entry run-51.3.2, other framed members include charge, climb, file, jump, leap, roll, run, etc. Comparison with 'run'. Arg1 seems to occur only rarely; DIR occurs most of the time. (from walk.01-v)</note>
       <note>WALK-N NOTES: Added by Julia based loosly on walk-v.01. Corresponds to VNcls run-51.3.2. (from walk.01-n)</note>
       <note>WALKING-N NOTES: walk.01 (from walking.01-n)</note>
-      <roles>
-        <note>Arg 2 is for underspecifed locations (e.g. "around the campus")
+      <note>Arg 2 is for underspecifed locations (e.g. "around the campus")
         or Paths realized as objects: "he walked a mile/the plank."  For
         more semantically specific realizations of DIR and GOL, use the
         ARGM.</note>
-        <role descr="walker, thing in motion" f="pag" n="0">
-          <vnrole vncls="51.3.2" vntheta="theme"/>
-        </role>
-        <role descr="entity being walked, where there is outside Agent" f="ppt" n="1">
-          <vnrole vncls="51.3.2" vntheta="location"/>
-        </role>
-        <role descr="path/ underspecified location walked" f="loc" n="2"/>
-      </roles>
-      <example name="GOL as PP" src="" type="">
-        <text>When Mr. Jacobson walked into the office at 7:30 a.m. EDT, he announced: ``OK, buckle up.''</text>
-        <arg f="" n="0">Mr. Jacobson</arg>
-        <rel f="">walked</rel>
-        <arg f="gol" n="m">into the office</arg>
-        <arg f="tmp" n="m">at 7:30 a.m. EDT</arg>
-      </example>
-      <example name="DIR as ADV" src="" type="">
-        <text>``The buyers walk away, and the specialist is left alone'' as the buyer of last resort for his stable of stocks, he contends.</text>
-        <arg f="" n="0">The buyers</arg>
-        <rel f="">walk</rel>
-        <arg f="dir" n="m">away</arg>
-      </example>
-      <example name="ARG0 and ARG1" src="ontonotes bn/nbc/00/nbc_0037" type="">
-        <text>He seemed happy and relaxed walking his dog Buddy and helping his wife , the new senator , get ready to head off to Washington tomorrow , without him .</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">walking</rel>
-        <arg f="" n="1">his dog Buddy</arg>
-      </example>
-
-      <example name="ARG0 and ARG2" src="ontonotes mz/sinorama/10/ectb_1067" type="">
-        <text>Walking amid the hubbub of Taipei today , on streets filled with people and traffic , Ko - nan Street , Shanghai Road , the Tri-Service Stadium and the Star Cafe have long since drifted away like the sound of Ko Lan 's mambo song .</text>
-        <arg f="" n="0">[]</arg>
-        <rel f="">Walking</rel>
-        <arg f="loc" n="m">amid the hubbub of Taipei today</arg>
-        <arg f="" n="2">on streets filled with people and traffic</arg>
-      </example>
-
-      <example name="another ex of 'path'" src="WSJ" type="-">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>Firms Walk Fine Line In Distributing Profits</text>
-        <arg f="" n="0">Firms</arg>
-        <rel f="">Walk</rel>
-        <arg f="" n="2">Fine Line</arg>
-        <arg f="adv" n="m">In Distributing Profits</arg>
-      </example>
-      <example name="with COM" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Monica Sharp went out for a walk with her dog weeks ago</text>
-        <rel f="">walk</rel>
-        <arg f="com" n="m">with her dog</arg>
-      </example>
-      <example name="just arg2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>@NASA says it may decide by tomorrow whether another space walk will be needed to fix torn thermal blanket that blew a cockpit window</text>
-        <arg f="" n="2">space</arg>
-        <rel f="">walk</rel>
-      </example>
-      <example name="Light Verb" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>"Those people who are always complaining about their lot in life should take a walk around a cancer ward , " Li says .</text>
-        <arg f="" n="0">Those people who are always complaining about their lot in life</arg>
-        <arg f="mod" n="m">should</arg>
-        <arg f="lvb" n="m">take</arg>
-        <rel f="">walk</rel>
-        <arg f="" n="2">around a cancer ward</arg>
-      </example>
-      <example name="just arg0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The normal walk of the dog can be encumbered by long toenails.</text>
-        <arg f="mnr" n="m">normal</arg>
-        <rel f="">walk</rel>
-        <arg f="" n="0">of the dog</arg>
-      </example>
     </roleset>
     <roleset id="walk.02" name="baseball, walk the batter in baseball">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">walk</alias>
-        <alias framenet="" pos="v" verbnet="">walk</alias>
+        <alias pos="n">walk</alias>
+        <alias pos="v">walk</alias>
       </aliases>
+      <roles>
+        <role descr="pitcher" f="PAG" n="0"/>
+        <role descr="batter" f="PPT" n="1"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="ERA">
+        <text>He gave up seven hits, walked five and didn't get a decision.</text>
+        <rel relloc="5">walked</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
+        <arg f="" n="1" start="6" end="6">five</arg>
+      </example>
+      <example src="WSJ" name="Batter as walker">
+        <text>He-1 smoked Toronto in the playoffs with six hits , seven walks and eight stolen bases in 22 at bats , and continued that by going 3 - for - 3 at the plate Sunday , along with  walking , stealing a base and scoring a run .</text>
+        <rel relloc="39">walking</rel>
+        <arg f="" n="1" start="2" end="2">Toronto</arg>
+      </example>
+      <example src="" name="just arg 1">
+        <text>Danielson facilitated the Waterford strategy by calling a time out to discuss an intentional walk of the batter, Alex Tuneski.</text>
+        <rel relloc="14">walk</rel>
+        <arg f="MNR" n="m" start="13" end="13">intentional</arg>
+        <arg f="" n="1" start="15" end="19">of the batter, Alex Tuneski.</arg>
+      </example>
       <note>WALK-V NOTES: (from walk.02-v)</note>
       <note>WALK-N NOTES: Added by Julia based on walk-v.02. No VNcls. (from walk.02-n)</note>
-      <roles>
-        <note>Pay close attention to whether the pitcher or the batter is the one doing the walking-- if you really can't tell, go with arg0. (from walk.02-v)</note>
-        <role descr="pitcher" f="pag" n="0"/>
-        <role descr="batter" f="ppt" n="1"/>
-      </roles>
-      <example name="ERA" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>He gave up seven hits, walked five and didn't get a decision.</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">walked</rel>
-        <arg f="" n="1">five</arg>
-      </example>
-      <example name="Batter as walker" src="WSJ" type="-">
-        <inflection aspect="ns" form="gerund" person="third" tense="present" voice="active"/>
-        <text>He-1 smoked Toronto in the playoffs with six hits , seven walks and eight stolen bases in 22 at bats , and continued that by going 3 - for - 3 at the plate Sunday , along with *PRO*-1 walking , stealing a base and scoring a run .</text>
-        <arg f="" n="1">*PRO*-1: He</arg>
-        <rel f="">walking</rel>
-      </example>
-      <example name="just arg 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Danielson facilitated the Waterford strategy by calling a time out to discuss an intentional walk of the batter, Alex Tuneski.</text>
-        <arg f="mnr" n="m">intentional</arg>
-        <rel f="">walk</rel>
-        <arg f="" n="1">of the batter, Alex Tuneski</arg>
-      </example>
+      <note>Pay close attention to whether the pitcher or the batter is the one doing the walking-- if you really can't tell, go with arg0. (from walk.02-v)</note>
     </roleset>
     <roleset id="walk.03" name="achieve a result through walking">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">walk</alias>
+        <alias pos="v">walk</alias>
       </aliases>
-      <note>WALK-V NOTES: (from walk.03-v)</note>
       <roles>
-        <role descr="walker" f="pag" n="0"/>
-        <role descr="thing affected" f="ppt" n="1"/>
-        <role descr="desired result" f="prd" n="2"/>
+        <role descr="walker" f="PAG" n="0"/>
+        <role descr="thing affected" f="PPT" n="1"/>
+        <role descr="desired result" f="PRD" n="2"/>
       </roles>
-      <example name="I have a headache THIS BIG" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="ns" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="I have a headache THIS BIG">
         <text>Sometimes, if you have a headache, you can go out and walk it right off.''</text>
-        <arg f="" n="0">you</arg>
-        <arg f="mod" n="m">can</arg>
-        <rel f="">walk</rel>
-        <arg f="" n="1">it</arg>
-        <arg f="" n="2">right off</arg>
+        <rel relloc="11">walk</rel>
+        <arg f="" n="0" start="2" end="2">you</arg>
+        <arg f="MOD" n="m" start="7" end="7">can</arg>
+        <arg f="" n="1" start="12" end="12">it</arg>
+        <arg f="" n="2" start="13" end="13">right</arg>
       </example>
+      <note>WALK-V NOTES: (from walk.03-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="walk_in">
     <roleset id="walk_in.04" name="in a free, non-appointment-having manner">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">walk-in</alias>
-        <alias framenet="" pos="j" verbnet="">walk_in</alias>
+        <alias pos="j">walk-in</alias>
+        <alias pos="j">walk_in</alias>
       </aliases>
-      <note>WALK-IN-V NOTES: Added by Julia based on Google.</note>
       <roles>
-        <role descr="entity characterized as 'walk-in'" f="ppt" n="1"/>
+        <role descr="entity characterized as 'walk-in'" f="PPT" n="1"/>
       </roles>
-      <example name="walk-in-j" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="walk-in-j">
         <text>If you miss two appointments, you will only be able to be seen again on a walk in basis.</text>
-        <rel f="">walk-in</rel>
-        <arg f="" n="1">basis</arg>
+        <rel relloc="13 16">again walk</rel>
+        <arg f="" n="1" start="18" end="18">basis.</arg>
       </example>
+      <note>WALK-IN-V NOTES: Added by Julia based on Google.</note>
     </roleset>
     <roleset id="walk_in.05" name="walk_in on someone; interrupt">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">walk_in</alias>
+        <alias pos="v">walk_in</alias>
       </aliases>
-      <note>WALK_IN-V NOTES: Added by Julia.</note>
       <roles>
-        <role descr="interrupter" f="pag" n="0"/>
-        <role descr="entity interrupted" f="ppt" n="1"/>
-        <role descr="while arg1 is doing what" f="prd" n="2"/>
+        <role descr="interrupter" f="PAG" n="0"/>
+        <role descr="entity interrupted" f="PPT" n="1"/>
+        <role descr="while arg1 is doing what" f="PRD" n="2"/>
       </roles>
-      <example name="walk_in-v" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="walk_in-v">
         <text>Paris replied that it was not like he had just walked in on her dancing the rumba with a naked Bolian.</text>
-        <arg f="" n="0">he</arg>
-        <arg f="adv" n="m">just</arg>
-        <rel f="">[walked][in]</rel>
-        <arg f="" n="1">on her</arg>
-        <arg f="" n="2">dancing the rumba with a naked Bolian</arg>
+        <rel relloc="10 11">walked in</rel>
+        <arg f="" n="0" start="7" end="7">he</arg>
+        <arg f="ADV" n="m" start="9" end="9">just</arg>
+        <arg f="" n="1" start="12" end="13">on her</arg>
+        <arg f="" n="2" start="14" end="20">dancing the rumba with a naked Bolian.</arg>
       </example>
+      <note>WALK_IN-V NOTES: Added by Julia.</note>
     </roleset>
   </predicate>
 </frameset>

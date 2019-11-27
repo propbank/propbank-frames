@@ -1,36 +1,49 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="raid">
     <roleset id="raid.01" name="enter suddenly">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">raid</alias>
-        <alias framenet="" pos="n" verbnet="">raid</alias>
+        <alias pos="v">raid</alias>
+        <alias pos="n">raid</alias>
       </aliases>
-      <note>RAID-V NOTES: Not sure about the class membership here, but at least the PAS isn'taffected. (from raid.01-v)</note>
-      <note>RAID-N NOTES: Automatically created by Julia as an alias file for unification. (from raid.01-n)</note>
       <roles>
         <role descr="raider" f="PAG" n="0">
-          <vnrole vncls="35.4" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="investigate-35.4" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Attack" version="1.7">assailant</rolelink>
+          </rolelinks>
         </role>
         <role descr="raided" f="LOC" n="1">
-          <vnrole vncls="35.4" vntheta="Location"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="investigate-35.4" version="verbnet3.3">location</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="active" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Attack" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="investigate-35.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="raid-v.1" src="annot-overlap" confidence="0.1">5</lexlink>
+      </lexlinks>
+      <example src="" name="active">
         <text>Police in Prague raided an international meeting on human rights, detaining Czechoslovakia's former foreign minister, Jiri Hajak, and 14 other activists.</text>
-        <arg f="" n="0">Police in Prague</arg>
-        <rel f="">raided</rel>
-        <arg f="" n="1">an international meeting on human rights</arg>
-        <arg f="ADV" n="M">detaining Czechoslovakia's former foreign minister, Jiri Hajak, and 14 other activists</arg>
+        <rel relloc="3">raided</rel>
+        <arg f="" n="0" start="0" end="2">Police in Prague</arg>
+        <arg f="" n="1" start="4" end="9">an international meeting on human rights,</arg>
+        <arg f="ADV" n="M" start="10" end="20">detaining Czechoslovakia's former foreign minister, Jiri Hajak, and 14 other activists.</arg>
       </example>
-      <example name="passive" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="present" voice="passive"/>
+      <example src="" name="passive">
         <text>[Luxurious homes and ranches]-1 have been raided *trace*-1 by the military authorities, and sophisticated and powerful communications equipment have been seized.</text>
-        <rel f="">raided</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="0">by the military authorities</arg>
+        <rel relloc="6">raided</rel>
+        <arg f="" n="1" start="7" end="7">*trace*-1</arg>
+        <arg f="" n="0" start="8" end="11">by the military authorities,</arg>
       </example>
+      <note>RAID-V NOTES: Not sure about the class membership here, but at least the PAS isn'taffected. (from raid.01-v)</note>
+      <note>RAID-N NOTES: Automatically created by Julia as an alias file for unification. (from raid.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

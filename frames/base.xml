@@ -1,92 +1,110 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="base">
     <roleset id="base.01" name="be located in">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">base</alias>
-        <alias framenet="" pos="j" verbnet="">based</alias>
+        <alias pos="v">base</alias>
+        <alias pos="j">based</alias>
       </aliases>
+      <roles>
+        <role descr="agent basing something somewhere" f="PAG" n="0"/>
+        <role descr="institution" f="PPT" n="1"/>
+        <role descr="M-LOC location, where arg1 is based" f="LOC" n="m"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="onsense" version="on5" class="base-v.3" src="annot-overlap" confidence="0.1">48</lexlink>
+      </lexlinks>
+      <example src="" name="base-v (according to the tree): showing physical location">
+        <text> Hearst, based in New York, ....</text>
+        <rel relloc="2">based</rel>
+        <arg f="" n="1" start="1" end="1">Hearst,</arg>
+        <arg f="LOC" n="m" start="3" end="5">in New York,</arg>
+      </example>
+      <example src="ectb revisions" name="base-v: With agent">
+        <text>When referring to the achievements made in recent years by greatly investing in national infrastructure , Xiang Wang , concurrently a member of the national CPPCC , a member of the Standing Committee of the Jiangxi Province CPPCC , president of the Group , etc. said frankly to the reporters that " *PRO* basing ourselves in the inland and ' building bridges and paving roads ' for the development of the local economy was a wise choice on my part . "</text>
+        <rel relloc="53">basing</rel>
+        <arg f="" n="0" start="52" end="52">*PRO*</arg>
+        <arg f="" n="1" start="54" end="54">ourselves</arg>
+        <arg f="LOC" n="m" start="55" end="57">in the inland</arg>
+      </example>
+      <example src="web" name="base-v: All arguments">
+        <text>They based the company in Southern California but maintained a Boulder operation.</text>
+        <rel relloc="1">based</rel>
+        <arg f="" n="0" start="0" end="0">They</arg>
+        <arg f="" n="1" start="2" end="3">the company</arg>
+        <arg f="LOC" n="m" start="4" end="6">in Southern California</arg>
+      </example>
+      <example src="BOLT-6" name="based-j">
+        <text>Using the city where-1 I am based [*-1] as an example , nearly all the medium and small - sized state - owned enterprises have closed down</text>
+        <rel relloc="6">based</rel>
+        <arg f="" n="1" start="4" end="4">I</arg>
+        <arg f="LOC" n="m" start="7" end="7">[*-1]</arg>
+      </example>
       <note>BASE-V NOTES: Frames file for 'base' based on first handful of sentences from big corpus; adjectival 'based' based on BOLT-6. (from base.01-v)</note>
       <note>BASED-J NOTES: Automatically created by Julia as an alias file for unification. (from based.01-j)</note>
-      <roles>
-        <note>Arg 0 added by Claire due to instances in ectb revisions. (from base.01-v)</note>
-        <role descr="agent basing something somewhere" f="pag" n="0"/>
-        <role descr="institution" f="ppt" n="1"/>
-        <role descr="M-LOC location, where arg1 is based" f="loc" n="m"/>
-      </roles>
-      <example name="base-v (according to the tree): showing physical location" src="" type="">
-        <text>[Hearst]-2, based *trace*-2 in New York, ....</text>
-        <rel f="">based</rel>
-        <arg f="" n="1">*trace*-2</arg>
-        <arg f="loc" n="m">in New York</arg>
-      </example>
-      <example name="base-v: With agent" src="ectb revisions" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>When referring to the achievements made in recent years by greatly investing in national infrastructure , Xiang Wang , concurrently a member of the national CPPCC , a member of the Standing Committee of the Jiangxi Province CPPCC , president of the Group , etc. said frankly to the reporters that " *PRO* basing ourselves in the inland and ' building bridges and paving roads ' for the development of the local economy was a wise choice on my part . "</text>
-        <arg f="" n="0">*PRO*</arg>
-        <rel f="">basing</rel>
-        <arg f="" n="1">ourselves</arg>
-        <arg f="loc" n="m">in the inland</arg>
-      </example>
-      <example name="base-v: All arguments" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>They based the company in Southern California but maintained a Boulder operation.</text>
-        <arg f="" n="0">They</arg>
-        <rel f="">based</rel>
-        <arg f="" n="1">the company</arg>
-        <arg f="loc" n="m">in Southern California</arg>
-      </example>
-      <example name="based-j" src="BOLT-6" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Using the city where-1 I am based [*-1] as an example , nearly all the medium and small - sized state - owned enterprises have closed down</text>
-        <arg f="" n="1">I</arg>
-        <rel f="">based</rel>
-        <arg f="loc" n="m">[*-1]</arg>
-      </example>
+      <note>Arg 0 added by Claire due to instances in ectb revisions. (from base.01-v)</note>
     </roleset>
     <roleset id="base.02" name="justified by, made up of">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">base</alias>
+        <alias pos="v">base</alias>
       </aliases>
-      <note>BASE-V NOTES: DO NOT TAG prepositional usages (where verb actually heads prepositional node: "However, based on current public opinion polls , it appears that whoever wins , Lien included , will be only a 'plurality president,' without a strong mandate to rule."); these are base.ER. (from base.02-v)</note>
       <roles>
-        <role descr="justifier, agent (rarely seen)" f="pag" n="0">
-          <vnrole vncls="97.1" vntheta="agent"/>
+        <role descr="justifier, agent (rarely seen)" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="base-97.1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="decision, whole" f="ppt" n="1">
-          <vnrole vncls="97.1" vntheta="theme"/>
+        <role descr="decision, whole" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="base-97.1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="justification, parts/ arg1 is made up of what?" f="dir" n="2">
-          <vnrole vncls="97.1" vntheta="source"/>
+        <role descr="justification, parts/ arg1 is made up of what?" f="DIR" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="base-97.1" version="verbnet3.3">source</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="base-v: justify" src="" type="">
-        <text>...a [market structure]-1 based *trace*-1 on such variables</text>
-        <rel f="">based</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="2">on such variables</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Taking_sides" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="base-97.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="base-v.1" src="annot-overlap" confidence="0.1">71</lexlink>
+      </lexlinks>
+      <example src="" name="base-v: justify">
+        <text>...a market structure based on such variables</text>
+        <rel relloc="3">based</rel>
+        <arg f="" n="1" start="1" end="2">market structure</arg>
+        <arg f="" n="2" start="4" end="6">on such variables</arg>
       </example>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1006" type="">
+      <example src="ontonotes mz/sinorama/10/ectb_1006" name="ARG0 and ARG1 and ARG2">
         <text>Television stations have always based their decisions on ratings , and it is virtually impossible to expect that they will change a proven formula .</text>
-        <arg f="" n="0">Television stations</arg>
-        <arg f="tmp" n="m">always</arg>
-        <rel f="">based</rel>
-        <arg f="" n="1">their decisions</arg>
-        <arg f="" n="2">on ratings</arg>
+        <rel relloc="4">based</rel>
+        <arg f="" n="0" start="0" end="1">Television stations</arg>
+        <arg f="TMP" n="m" start="3" end="3">always</arg>
+        <arg f="" n="1" start="5" end="6">their decisions</arg>
+        <arg f="" n="2" start="7" end="8">on ratings</arg>
       </example>
-
-      <example name="adverbial, with trace" src="" type="">
-        <text>Milton Roy will pay an initial $ 4 million *trace*-*U* for the operations and [additional payments during the next four years]-1 based *trace*-1 on the earnings performance of the businesses.</text>
-        <arg f="" n="1">*trace*-1</arg>
-        <rel f="">based</rel>
-        <arg f="" n="2">on the earnings performance of the businesses</arg>
+      <example src="" name="adverbial, with trace">
+        <text>Milton Roy will pay an initial $ 4 million *trace*-*U* for the operations and additional payments during the next four years based on the earnings performance of the businesses.</text>
+        <rel relloc="21">based</rel>
+        <arg f="" n="1" start="14" end="20">additional payments during the next four years</arg>
+        <arg f="" n="2" start="22" end="28">on the earnings performance of the businesses.</arg>
       </example>
-      <example name="adverbial" src="" type="">
-        <text>[The exact amount of the refund -16] will be determined *trace-16* next year based on actual collections made *trace*-* until Dec. 31 of this year.</text>
-        <arg f="" n="1">*trace-16*</arg>
-        <rel f="">based</rel>
-        <arg f="" n="2">on actual collections made *trace*-* until Dec. 31 of this year</arg>
+      <example src="" name="adverbial">
+        <text>[The exact amount of the refund 6] will be determined *trace6* next year based on actual collections made *trace*-* until Dec. 31 of this year.</text>
+        <rel relloc="13">based</rel>
+        <arg f="" n="1" start="10" end="10">*trace6*</arg>
+        <arg f="" n="2" start="14" end="24">on actual collections made *trace*-* until Dec. 31 of this year.</arg>
       </example>
+      <note>BASE-V NOTES: DO NOT TAG prepositional usages (where verb actually heads prepositional node: "However, based on current public opinion polls , it appears that whoever wins , Lien included , will be only a 'plurality president,' without a strong mandate to rule."); these are base.ER. (from base.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

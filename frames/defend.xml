@@ -1,69 +1,86 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="defend">
     <roleset id="defend.01" name="defend">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">defense</alias>
-        <alias framenet="" pos="n" verbnet="">defence</alias>
-        <alias framenet="" pos="v" verbnet="">defend</alias>
+        <alias pos="n">defense</alias>
+        <alias pos="n">defence</alias>
+        <alias pos="v">defend</alias>
+        <argalias pos="n" arg="0">defender</argalias>
+        <argalias pos="n" arg="1">defendant</argalias>
       </aliases>
+      <roles>
+        <role descr="defender" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="cognize-85" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Justifying" version="1.7">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="defended" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="cognize-85" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Justifying" version="1.7">act</rolelink>
+            <rolelink resource="FrameNet" class="Justifying" version="1.7">state_of_affairs</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="instrument" f="MNR" n="2"/>
+        <role descr="entity defended against" f="GOL" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Defending" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Justifying" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="cognize-85" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="defend-v.2" src="annot-overlap" confidence="0.1">55</lexlink>
+        <lexlink resource="onsense" version="on5" class="defend-v.1" src="annot-overlap" confidence="0.1">26</lexlink>
+      </lexlinks>
+      <example src="" name="no instrument">
+        <text>...because there won't be a vigorous private bar *trace* *trace* to defend the Bill of Rights...</text>
+        <rel relloc="11">defend</rel>
+        <arg f="RCL" n="m" start="4" end="7">a vigorous private bar</arg>
+        <arg f="" n="0" start="8" end="8">*trace*</arg>
+        <arg f="" n="1" start="12" end="15">the Bill of Rights...</arg>
+      </example>
+      <example src="ontonotes mz/sinorama/10/ectb_1066" name="ARG2 and ARG0 and ARG1">
+        <text>Hence their poison fangs are almost the only tools they have to catch food and defend themselves with .</text>
+        <rel relloc="15">defend</rel>
+        <arg f="" n="2" start="17" end="17">with</arg>
+        <arg f="" n="2" start="6" end="10">the only tools they have</arg>
+        <arg f="" n="1" start="16" end="16">themselves</arg>
+      </example>
+      <example src="CallHome" name="no instrument">
+        <text>Because if I do n't come when-1 Norm does his defense , which I really want to come for that.</text>
+        <rel relloc="10">defense</rel>
+        <arg f="" n="0" start="7" end="7">Norm</arg>
+        <arg f="LVB" n="m" start="8" end="8">does</arg>
+        <arg f="TMP" n="m" start="6" end="6">when-1</arg>
+      </example>
+      <example src="web" name="Args 0 &amp; 1">
+        <text>The Fed chairman is stepping up his defense of a $600 billion bond-purchase plan.</text>
+        <rel relloc="7">defense</rel>
+        <arg f="" n="0" start="6" end="6">his</arg>
+        <arg f="" n="1" start="8" end="13">of a $600 billion bond-purchase plan.</arg>
+      </example>
+      <example src="" name="with arg 3">
+        <text>Estonia had to defend itself from cyter attacks.</text>
+        <rel relloc="3">defend</rel>
+        <arg f="" n="0" start="0" end="0">Estonia</arg>
+        <arg f="" n="1" start="4" end="4">itself</arg>
+        <arg f="" n="3" start="5" end="7">from cyter attacks.</arg>
+      </example>
+      <example src="" name="another with arg 3">
+        <text>We willl defend our country against terrorists</text>
+        <rel relloc="2">defend</rel>
+        <arg f="" n="0" start="0" end="0">We</arg>
+        <arg f="MOD" n="m" start="1" end="1">willl</arg>
+        <arg f="" n="1" start="3" end="4">our country</arg>
+        <arg f="" n="3" start="5" end="6">against terrorists</arg>
+      </example>
       <note>DEFEND-V NOTES: Frames file for 'defend' based on sentences in financial subcorpus. No verbnet entry. Comparison to 'support'. (from defend.01-v predicate notes)</note>
       <note>DEFENSE-N NOTES: Roleset based on verb entry defend.01. Corresponds to VN class defend-85. Framed by Claire. (from defense.01-n)</note>
-      <roles>
-        <role descr="defender" f="pag" n="0">
-          <vnrole vncls="85" vntheta="agent"/>
-        </role>
-        <role descr="defended" f="ppt" n="1">
-          <vnrole vncls="85" vntheta="theme"/>
-        </role>
-        <role descr="instrument" f="mnr" n="2"/>
-        <role descr="entity defended against" f="gol" n="3"/>
-      </roles>
-      <example name="no instrument" src="" type="">
-        <text>...because there won't be a vigorous private bar *trace* *trace* to defend the Bill of Rights...</text>
-        <arg f="rcl" n="m">*trace* -&gt; a vigorous private bar</arg>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">defend</rel>
-        <arg f="" n="1">the Bill of Rights</arg>
-      </example>
-      <example name="ARG2 and ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1066" type="">
-        <text>Hence their poison fangs are almost the only tools they have to catch food and defend themselves with .</text>
-        <arg f="" n="2">[with][the only tools they have]</arg>
-        <arg f="" n="0">[]</arg>
-        <rel f="">defend</rel>
-        <arg f="" n="1">themselves</arg>
-      </example>
-
-      <example name="no instrument" src="CallHome" type="">
-        <text>Because if I do n't come when-1 Norm does his defense *T*-1, which I really want to come for that.</text>
-        <arg f="" n="0">Norm</arg>
-        <arg f="lvb" n="m">does</arg>
-        <rel f="">defense</rel>
-        <arg f="tmp" n="m">*T*-1</arg>
-      </example>
-      <example name="Args 0 &amp; 1" src="web" type="">
-        <text>The Fed chairman is stepping up his defense of a $600 billion bond-purchase plan.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">defense</rel>
-        <arg f="" n="1">of a $600 billion bond-purchase plan.</arg>
-      </example>
-      <example name="with arg 3" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Estonia had to defend itself from cyter attacks.</text>
-        <arg f="" n="0">Estonia</arg>
-        <rel f="">defend</rel>
-        <arg f="" n="1">itself</arg>
-        <arg f="" n="3">from cyber attacks.</arg>
-      </example>
-      <example name="another with arg 3" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>We willl defend our country against terrorists</text>
-        <arg f="" n="0">We</arg>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">defend</rel>
-        <arg f="" n="1">our country</arg>
-        <arg f="" n="3">against terrorists.</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

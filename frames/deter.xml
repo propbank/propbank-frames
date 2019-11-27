@@ -1,36 +1,51 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="deter">
     <roleset id="deter.01" name="deter, scare away">
       <aliases>
-        <alias framenet="-" pos="v" verbnet="forbid-64.4-1">deter</alias>
+        <alias pos="v">deter</alias>
+        <argalias pos="n" arg="0">deterrent</argalias>
       </aliases>
-      <note>DETER-V NOTES: That John, he's a determined one. I wonder if there's a link between'deter' and 'determine'? (from deter.01-v)</note>
       <roles>
-        <role descr="agent, deterer" f="pag" n="0">
-          <vnrole vncls="64.4-1" vntheta="agent"/>
+        <role descr="agent, deterer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="forbid-64.4-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="patient, entity deterred" f="GOL" n="1">
-          <vnrole vncls="64.4-1" vntheta="beneficiary"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="forbid-64.4-1" version="verbnet3.3">beneficiary</rolelink>
+          </rolelinks>
         </role>
-        <role descr="secondary action (deter from X)" f="ppt" n="2">
-           <vnrole vncls="64.4-1" vntheta="theme"/>
+        <role descr="secondary action (deter from X)" f="PPT" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="forbid-64.4-1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="instrument, if separate from arg0" f="mnr" n="3"/>
+        <role descr="instrument, if separate from arg0" f="MNR" n="3"/>
       </roles>
-      <example name="transitive" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="-" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="forbid-64.4-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="deter-v.1" src="annot-overlap" confidence="0.1">21</lexlink>
+      </lexlinks>
+      <example src="" name="transitive">
         <text>Moreover, such a sale could help Armstrong reassure its investors and deter the Belzbergs, who own a 9.85% stake in the Lancaster, Pa., company.</text>
-        <arg f="" n="0">Armstrong</arg>
-        <rel f="">deter</rel>
-        <arg f="" n="1">the Belzbergs, who own a 9.85% stake in the Lancaster, Pa., company</arg>
+        <rel relloc="11">deter</rel>
+        <arg f="" n="0" start="6" end="6">Armstrong</arg>
+        <arg f="" n="1" start="12" end="23">the Belzbergs, who own a 9.85% stake in the Lancaster, Pa., company.</arg>
       </example>
-      <example name="ARG3 and ARG1" src="ontonotes nw/wsj/02/wsj_0242" type="">
+      <example src="ontonotes nw/wsj/02/wsj_0242" name="ARG3 and ARG1">
         <text>Greece and Turkey , for example , are suspected of overstating their arsenals in hopes that they can emerge from the arms - reduction treaty with large remaining forces to deter each other .</text>
-        <arg f="" n="3">large remaining forces</arg>
-        <rel f="">deter</rel>
-        <arg f="" n="1">each other</arg>
+        <rel relloc="30">deter</rel>
+        <arg f="" n="3" start="26" end="28">large remaining forces</arg>
+        <arg f="" n="1" start="31" end="32">each other</arg>
       </example>
-
+      <note>DETER-V NOTES: That John, he's a determined one. I wonder if there's a link between'deter' and 'determine'? (from deter.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

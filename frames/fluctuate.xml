@@ -1,71 +1,78 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="fluctuate">
     <roleset id="fluctuate.01" name="move randomly across some scale, fluctuating">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">fluctuant</alias>
-        <alias framenet="" pos="n" verbnet="">fluctuation</alias>
-        <alias framenet="" pos="v" verbnet="">fluctuate</alias>
+        <alias pos="j">fluctuant</alias>
+        <alias pos="n">fluctuation</alias>
+        <alias pos="v">fluctuate</alias>
       </aliases>
+      <roles>
+        <role descr="thing moving" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="45.6-1" version="UNK">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="EXT or MNR" f="EXT" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="45.6-1" version="UNK">extent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="start point" f="DIR" n="3"/>
+        <role descr="end point" f="GOL" n="4"/>
+        <role descr="medium" f="LOC" n="5"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Change_position_on_a_scale" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="45.6-1" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="fluctuate-v.1" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="" name="arg2 as manner">
+        <text>Nashua's stock has fluctuated sharply on takeover speculation.</text>
+        <rel relloc="3">fluctuated</rel>
+        <arg f="" n="1" start="0" end="1">Nashua's stock</arg>
+        <arg f="" n="2" start="4" end="4">sharply</arg>
+        <arg f="CAU" n="m" start="5" end="7">on takeover speculation.</arg>
+      </example>
+      <example src="" name="arg2 as extent">
+        <text>When the price of polyethylene moves a mere penny a pound, Quantum's annual profit fluctuates by about 85 cents a share, provided no other variables are changing.</text>
+        <rel relloc="14">fluctuates</rel>
+        <arg f="" n="1" start="10" end="13">pound, Quantum's annual profit</arg>
+        <arg f="" n="2" start="16" end="20">about 85 cents a share,</arg>
+        <arg f="ADV" n="m" start="21" end="26">provided no other variables are changing.</arg>
+      </example>
+      <example src="" name="with range">
+        <text>Between then and his bid on Oct. 5, the price fluctuated between $75.625 and $87.375.</text>
+        <rel relloc="10">fluctuated</rel>
+        <arg f="" n="1" start="8" end="9">the price</arg>
+        <arg f="" n="5" start="11" end="14">between $75.625 and $87.375.</arg>
+      </example>
+      <example src="" name="high and low">
+        <text>John's weight fluctuates from a low of 98 pounds to a high of 500.</text>
+        <rel relloc="2">fluctuates</rel>
+        <arg f="" n="1" start="0" end="1">John's weight</arg>
+        <arg f="" n="3" start="3" end="8">from a low of 98 pounds</arg>
+        <arg f="" n="4" start="9" end="13">to a high of 500.</arg>
+      </example>
+      <example src="" name="Arg1">
+        <text>Key factors leading to the seasonal fluctuation of atmospheric CO2.</text>
+        <rel relloc="6">fluctuation</rel>
+        <arg f="TMP" n="m" start="5" end="5">seasonal</arg>
+        <arg f="" n="1" start="7" end="9">of atmospheric CO2.</arg>
+      </example>
+      <example src="SHARP" name="arg1">
+        <text>perineal mass less fluctuant , markedly reduced erythema , less tender , no evidence of drainage</text>
+        <rel relloc="3">fluctuant</rel>
+        <arg f="" n="1" start="0" end="1">perineal mass</arg>
+        <arg f="EXT" n="m" start="2" end="2">less</arg>
+      </example>
       <note>FLUCTUATE-V NOTES: The difference is that EXT is numerical, while MNR can be just anadverb. This was way too much work for such a low-freq verb. (from fluctuate.01-v)</note>
       <note>FLUCTUATION-N NOTES: fluctuate.01 (from fluctuation.01-n)</note>
       <note>FLUCTUANT-J NOTES: Added by Julia based on SHARP. (from fluctuant.01-j)</note>
-      <roles>
-        <role descr="thing moving" f="ppt" n="1">
-          <vnrole vncls="45.6-1" vntheta="patient"/>
-        </role>
-        <role descr="EXT or MNR" f="ext" n="2">
-          <vnrole vncls="45.6-1" vntheta="extent"/>
-        </role>
-        <role descr="start point" f="dir" n="3"/>
-        <role descr="end point" f="gol" n="4"/>
-        <role descr="medium" f="loc" n="5"/>
-      </roles>
-      <example name="arg2 as manner" src="" type="">
-        <inflection aspect="perfect" form="participle" person="third" tense="present" voice="active"/>
-        <text>Nashua's stock has fluctuated sharply on takeover speculation.</text>
-        <arg f="" n="1">Nashua 's stock</arg>
-        <rel f="">fluctuated</rel>
-        <arg f="" n="2">sharply</arg>
-        <arg f="cau" n="m">on takeover speculation</arg>
-      </example>
-      <example name="arg2 as extent" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>When the price of polyethylene moves a mere penny a pound, Quantum's annual profit fluctuates by about 85 cents a share, provided no other variables are changing.</text>
-        <arg f="" n="1">Quantum 's annual profit</arg>
-        <rel f="">fluctuates</rel>
-        <arg f="" n="2">about 85 cents a share</arg>
-        <arg f="adv" n="m">provided no other variables are changing</arg>
-      </example>
-      <example name="with range" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Between then and his bid on Oct. 5, the price fluctuated between $75.625 and $87.375.</text>
-        <arg f="" n="1">the price</arg>
-        <rel f="">fluctuated</rel>
-        <arg f="" n="5">between $75.625 and $87.375</arg>
-      </example>
-      <example name="high and low" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>John's weight fluctuates from a low of 98 pounds to a high of 500.</text>
-        <arg f="" n="1">John's weight</arg>
-        <rel f="">fluctuates</rel>
-        <arg f="" n="3">from a low of 98 pounds</arg>
-        <arg f="" n="4">to a high of 500</arg>
-      </example>
-      <example name="Arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Key factors leading to the seasonal fluctuation of atmospheric CO2.</text>
-        <arg f="tmp" n="m">seasonal</arg>
-        <rel f="">fluctuation</rel>
-        <arg f="" n="1">of atmospheric CO2</arg>
-      </example>
-      <example name="arg1" src="SHARP" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>perineal mass less fluctuant , markedly reduced erythema , less tender , no evidence of drainage</text>
-        <arg f="" n="1">perineal mass</arg>
-        <arg f="ext" n="m">less</arg>
-        <rel f="">fluctuant</rel>
-      </example>
     </roleset>
   </predicate>
 </frameset>

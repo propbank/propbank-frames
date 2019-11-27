@@ -1,92 +1,109 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="guarantee">
     <roleset id="guarantee.01" name="promise">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">guarantee</alias>
-        <alias framenet="" pos="v" verbnet="">guarantee</alias>
+        <alias pos="n">guarantee</alias>
+        <alias pos="v">guarantee</alias>
       </aliases>
-      <note>GUARANTEE-V NOTES: Based on financial subcorpus. No comparison. Member of Vncls conjecture-29.5-1, ensure-99, future_having-13.3, promise-37.13. (from guarantee.01-v)</note>
-      <note>GUARANTEE-N NOTES: Updated by Julia. Member of Vncls conjecture-29.5-1, ensure-99, future_having-13.3, promise-37.13. (from guarantee.01-n)</note>
       <roles>
-        <role descr="entity making guarantee" f="pag" n="0">
-          <vnrole vncls="29.5-2" vntheta="Agent"/>
-          <vnrole vncls="13.3" vntheta="Agent"/>
-          <vnrole vncls="37.13" vntheta="Agent"/>
-          <vnrole vncls="99" vntheta="Cause"/>
+        <role descr="entity making guarantee" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="conjecture-29.5-2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="future_having-13.3" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="promise-37.13" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="ensure-99" version="verbnet3.3">cause</rolelink>
+          </rolelinks>
         </role>
-        <role descr="guarantee" f="ppt" n="1">
-          <vnrole vncls="29.5-2" vntheta="Predicate"/>
-          <vnrole vncls="29.5-2" vntheta="Theme"/>
-          <vnrole vncls="37.13" vntheta="Topic"/>
-          <vnrole vncls="13.3" vntheta="Theme"/>
-          <vnrole vncls="99" vntheta="Theme"/>
+        <role descr="guarantee" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="conjecture-29.5-2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="promise-37.13" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="VerbNet" class="future_having-13.3" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="ensure-99" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="benefactive, guaranteed-to" f="gol" n="2">
-          <vnrole vncls="13.3" vntheta="Goal"/>
-          <vnrole vncls="37.13" vntheta="Topic"/>
-          <vnrole vncls="99" vntheta="Beneficiary"/>
+        <role descr="benefactive, guaranteed-to" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="future_having-13.3" version="verbnet3.3">goal</rolelink>
+            <rolelink resource="VerbNet" class="promise-37.13" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="VerbNet" class="ensure-99" version="verbnet3.3">beneficiary</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="sentence fragment" src="" type="">
-        <text>*trace*-1 Guaranteed *trace*-1 by Svenska Handelsbanken.</text>
-        <rel f="">Guaranteed</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="0">by Svenska Handelsbanken</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="conjecture-29.5-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="future_having-13.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="promise-37.13" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="ensure-99" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="guarantee-v.1" src="annot-overlap" confidence="0.1">60</lexlink>
+        <lexlink resource="onsense" version="on5" class="guarantee-v.2" src="annot-overlap" confidence="0.1">22</lexlink>
+        <lexlink resource="onsense" version="on5" class="guarantee-n.2" src="annot-overlap" confidence="0.1">19</lexlink>
+        <lexlink resource="onsense" version="on5" class="guarantee-n.4" src="annot-overlap" confidence="0.1">13</lexlink>
+      </lexlinks>
+      <example src="" name="sentence fragment">
+        <text>Guaranteed by Svenska Handelsbanken.</text>
+        <rel relloc="0">Guaranteed</rel>
+        <arg f="" n="1" start="0" end="0">Guaranteed</arg>
+        <arg f="" n="0" start="1" end="3">by Svenska Handelsbanken.</arg>
       </example>
-      <example name="guaranteed SBAR" src="" type="">
+      <example src="" name="guaranteed SBAR">
         <text>Maxicare also will guarantee that the banks will realize at least $7 million on certain notes pledged to them.</text>
-        <arg f="" n="0">Maxicare</arg>
-        <arg f="dis" n="m">also</arg>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">guarantee</rel>
-        <arg f="" n="1">that the banks will realize at least $7 million on certain notes pledged to them</arg>
+        <rel relloc="3">guarantee</rel>
+        <arg f="" n="0" start="0" end="0">Maxicare</arg>
+        <arg f="DIS" n="m" start="1" end="1">also</arg>
+        <arg f="MOD" n="m" start="2" end="2">will</arg>
+        <arg f="" n="1" start="4" end="18">that the banks will realize at least $7 million on certain notes pledged to them.</arg>
       </example>
-      <example name="guaranteed NP" src="" type="">
+      <example src="" name="guaranteed NP">
         <text>Apogee said the charge stems from a building supply contract in which the company guaranteed a contractor's performance.</text>
-        <arg f="" n="0">the company</arg>
-        <rel f="">guaranteed</rel>
-        <arg f="" n="1">a contractor's performance</arg>
+        <rel relloc="14">guaranteed</rel>
+        <arg f="" n="0" start="12" end="13">the company</arg>
+        <arg f="" n="1" start="15" end="17">a contractor's performance.</arg>
       </example>
-      <example name="passivized benefactive" src="" type="">
-        <text>According to the Illinois attorney general's suit, Watson&amp; Hughey sent mailings indicating that [recipients]-1 were [*-1] guaranteed cash prizes.</text>
-        <rel f="">guaranteed</rel>
-        <arg f="" n="2">[*-1]</arg>
-        <arg f="" n="1">cash prizes</arg>
+      <example src="" name="passivized benefactive">
+        <text>According to the Illinois attorney general's suit, Watson&amp; Hughey sent mailings indicating that recipients were [*] guaranteed cash prizes.</text>
+        <rel relloc="16">guaranteed</rel>
+        <arg f="" n="2" start="13" end="13">recipients</arg>
+        <arg f="" n="1" start="17" end="18">cash prizes.</arg>
       </example>
-      <example name="guaranteed VP" src="" type="">
+      <example src="" name="guaranteed VP">
         <text>However a Qintex Australia spokesman said his firm had never ``promised or guaranteed'' to make the payment.</text>
-        <arg f="" n="0">his firm</arg>
-        <arg f="neg" n="m">never</arg>
-        <rel f="">guaranteed</rel>
-        <arg f="" n="1">to make the payment</arg>
+        <rel relloc="12">guaranteed''</rel>
+        <arg f="" n="0" start="6" end="7">his firm</arg>
+        <arg f="NEG" n="m" start="9" end="9">never</arg>
+        <arg f="" n="1" start="13" end="16">to make the payment.</arg>
       </example>
-      <example name="autogen1  (when 'it' is the agent, not the thing being circulated)" src="" type="">
+      <example src="" name="autogen1  (when 'it' is the agent, not the thing being circulated)">
         <text>its circulation guarantee to advertisers</text>
-        <arg f="" n="0">its</arg>
-        <arg f="" n="1">circulation</arg>
-        <rel f="">guarantee</rel>
-        <arg f="" n="2">to advertisers</arg>
+        <rel relloc="2">guarantee</rel>
+        <arg f="" n="0" start="0" end="0">its</arg>
+        <arg f="" n="1" start="1" end="1">circulation</arg>
+        <arg f="" n="2" start="3" end="4">to advertisers</arg>
       </example>
-      <example name="autogen2-- with beneficiary" src="" type="">
+      <example src="" name="autogen2-- with beneficiary">
         <text>loan guarantees for the Overseas Private Investment Corp.</text>
-        <arg f="" n="1">loan</arg>
-        <rel f="">guarantees</rel>
-        <arg f="" n="2">for the Overseas Private Investment Corp.</arg>
+        <rel relloc="1">guarantees</rel>
+        <arg f="" n="1" start="0" end="0">loan</arg>
+        <arg f="" n="2" start="2" end="7">for the Overseas Private Investment Corp.</arg>
       </example>
-      <example name="topical arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="topical arg1">
         <text>guarantees about how a Supreme Court justice will rule</text>
-        <rel f="">guarantees</rel>
-        <arg f="" n="1">about how a Supreme Court justice will rule</arg>
+        <rel relloc="0">guarantees</rel>
+        <arg f="" n="1" start="1" end="8">about how a Supreme Court justice will rule</arg>
       </example>
-      <example name="guarantee against" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="guarantee against">
         <text>no guarantee against mistakes</text>
-        <arg f="neg" n="m">no</arg>
-        <rel f="">guarantee</rel>
-        <arg f="" n="1">against mistakes</arg>
+        <rel relloc="1">guarantee</rel>
+        <arg f="NEG" n="m" start="0" end="0">no</arg>
+        <arg f="" n="1" start="2" end="3">against mistakes</arg>
       </example>
+      <note>GUARANTEE-V NOTES: Based on financial subcorpus. No comparison. Member of Vncls conjecture-29.5-1, ensure-99, future_having-13.3, promise-37.13. (from guarantee.01-v)</note>
+      <note>GUARANTEE-N NOTES: Updated by Julia. Member of Vncls conjecture-29.5-1, ensure-99, future_having-13.3, promise-37.13. (from guarantee.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,31 +1,40 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="unemployed">
     <roleset id="unemployed.01" name="not having a job">
       <aliases>
-        <alias framenet="Being_employed" pos="j" verbnet="">unemployed</alias>
+        <alias pos="j">unemployed</alias>
       </aliases>
-      <note>UNEMPLOYED-J NOTES: Added by Julia based on BOLT-1, employ-v.01, employed-j.01. (from unemployed.01-j)</note>
       <roles>
-        <role descr="employer" f="pag" n="0"/>
-        <role descr="employee" f="ppt" n="1"/>
-        <role descr="job" f="prd" n="2"/>
+        <role descr="employer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Being_employed" version="1.7">employer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="employee" f="PPT" n="1"/>
+        <role descr="job" f="PRD" n="2"/>
       </roles>
-      <example name="arg1" src="BOLT_1" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Being_employed" version="1.7" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="BOLT_1" name="arg1">
         <text>Back when-1 I was unemployed [*-1] and sought out private health insurance , as a single male I had to buy coverage that included pregnancy , go figure .</text>
-        <arg f="" n="1">I</arg>
-        <rel f="">unemployed</rel>
-        <arg f="tmp" n="m">[*-1]</arg>
+        <rel relloc="4">unemployed</rel>
+        <arg f="" n="1" start="2" end="2">I</arg>
+        <arg f="TMP" n="m" start="5" end="5">[*-1]</arg>
       </example>
-      <example name="args 1, 2" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="internet" name="args 1, 2">
         <text>I was unemployed as a phlebotomist when the company was shut down and 1500 of us were laid off.</text>
-        <arg f="" n="1">I</arg>
-        <rel f="">unemployed</rel>
-        <arg f="" n="2">as a phlebotomist</arg>
-        <arg f="tmp" n="m">when the company was shut down and 1500 of us were laid off</arg>
+        <rel relloc="2">unemployed</rel>
+        <arg f="" n="1" start="0" end="0">I</arg>
+        <arg f="" n="2" start="3" end="5">as a phlebotomist</arg>
+        <arg f="TMP" n="m" start="6" end="18">when the company was shut down and 1500 of us were laid off.</arg>
       </example>
+      <note>UNEMPLOYED-J NOTES: Added by Julia based on BOLT-1, employ-v.01, employed-j.01. (from unemployed.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

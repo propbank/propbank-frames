@@ -1,162 +1,193 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="divide">
     <roleset id="divide.01" name="mathematics, mathematical dividing">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">dividing</alias>
-        <alias framenet="" pos="v" verbnet="">divide</alias>
+        <alias pos="n">dividing</alias>
+        <alias pos="v">divide</alias>
       </aliases>
+      <roles>
+        <role descr="entity performing calculation" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="multiply-108-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="first operand" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="multiply-108-1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="second operand, divided-by" f="PPT" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="multiply-108-1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="resulting quantity, answer to math problem" f="PRD" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Non-commutative_process" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="multiply-108-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="ontonotes nw/wsj/18/wsj_1849" name="ARG0 and ARG1 and ARG2">
+        <text>Corresponding to the fall in profit rates was -- in the early 1980s -- the drop in the number arrived at if you divide the market value of firms by the replacement costs of their assets , the famous Q ratio associated with Prof. James Tobin .</text>
+        <rel relloc="23">divide</rel>
+        <arg f="" n="0" start="22" end="22">you</arg>
+        <arg f="" n="1" start="24" end="28">the market value of firms</arg>
+        <arg f="" n="2" start="29" end="35">by the replacement costs of their assets</arg>
+      </example>
+      <example src="web" name="All args">
+        <text>In Part A you just divided the mass by the volume to get density.</text>
+        <rel relloc="5">divided</rel>
+        <arg f="LOC" n="m" start="0" end="2">In Part A</arg>
+        <arg f="" n="0" start="3" end="3">you</arg>
+        <arg f="ADV" n="m" start="4" end="4">just</arg>
+        <arg f="" n="1" start="6" end="7">the mass</arg>
+        <arg f="" n="2" start="8" end="10">by the volume</arg>
+        <arg f="" n="3" start="11" end="13">to get density.</arg>
+      </example>
+      <example src="" name="nominal math">
+        <text>What results from the dividing of 4 by 2?.</text>
+        <rel relloc="4">dividing</rel>
+        <arg f="" n="1" start="6" end="6">4</arg>
+        <arg f="" n="2" start="6" end="7">4 by</arg>
+      </example>
       <note>DIVIDE-V NOTES: Based on sentences in financial subcorpus. Comparison with math sense of 'add'.Member of VNcls multiply-108-1. (from divide.01-v)</note>
       <note>DIVIDING-N NOTES: (from dividing.01-n)</note>
-      <roles>
-        <role descr="entity performing calculation" f="pag" n="0">
-          <vnrole vncls="108-1" vntheta="agent"/>
-        </role>
-        <role descr="first operand" f="ppt" n="1">
-          <vnrole vncls="108-1" vntheta="theme"/>
-        </role>
-        <role descr="second operand, divided-by" f="ppt" n="2">
-          <vnrole vncls="108-1" vntheta="theme"/>
-        </role>
-        <role descr="resulting quantity, answer to math problem" f="prd" n="3"/>
-      </roles>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes nw/wsj/18/wsj_1849" type="">
-        <text>Corresponding to the fall in profit rates was -- in the early 1980s -- the drop in the number arrived at if you divide the market value of firms by the replacement costs of their assets , the famous Q ratio associated with Prof. James Tobin .</text>
-        <arg f="" n="0">you</arg>
-        <rel f="">divide</rel>
-        <arg f="" n="1">the market value of firms</arg>
-        <arg f="" n="2">by the replacement costs of their assets</arg>
-      </example>
-
-      <example name="All args" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>In Part A you just divided the mass by the volume to get density.</text>
-        <arg f="loc" n="m">In Part A</arg>
-        <arg f="" n="0">you</arg>
-        <arg f="adv" n="m">just</arg>
-        <rel f="">divide</rel>
-        <arg f="" n="1">the mass</arg>
-        <arg f="" n="2">by the volume</arg>
-        <arg f="" n="3">to get density</arg>
-      </example>
-      <example name="nominal math" src="" type="">
-        <text>What results from the dividing of 4 by 2?.</text>
-        <rel f="">dividing</rel>
-        <arg f="" n="1">4</arg>
-        <arg f="" n="2">by 2</arg>
-      </example>
     </roleset>
     <roleset id="divide.02" name="separate, separated; suffering disunity, causing separation">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">division</alias>
-        <alias framenet="" pos="n" verbnet="">dividing</alias>
-        <alias framenet="Separation" pos="v" verbnet="">divide</alias>
-        <alias framenet="" pos="j" verbnet="">divided</alias>
-        <alias framenet="" pos="j" verbnet="">divisive</alias>
+        <alias pos="n">division</alias>
+        <alias pos="n">dividing</alias>
+        <alias pos="v">divide</alias>
+        <alias pos="j">divided</alias>
+        <alias pos="j">divisive</alias>
       </aliases>
+      <roles>
+        <role descr="topic/causer/agent of division" f="CAU" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="separate-23.1-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="separated entity" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="separate-23.1-1" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="divided among/ between" f="GOL" n="2"/>
+        <role descr="other entity separated from" f="DIR" n="3">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="separate-23.1-1" version="verbnet3.3">co-patient</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Separation" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="separate-23.1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="divide-v.1" src="annot-overlap" confidence="0.1">23</lexlink>
+        <lexlink resource="onsense" version="on5" class="divide-v.3" src="annot-overlap" confidence="0.1">15</lexlink>
+        <lexlink resource="onsense" version="on5" class="division-n.2" src="annot-overlap" confidence="0.1">11</lexlink>
+        <lexlink resource="onsense" version="on5" class="division-n.7" src="annot-overlap" confidence="0.1">7</lexlink>
+        <lexlink resource="onsense" version="on5" class="divide-v.2" src="annot-overlap" confidence="0.1">6</lexlink>
+      </lexlinks>
+      <example src="all args" name="all args">
+        <text>As part of its reorganization this week, Western Digital has divided its business into two segments -- storage products, including controllers and disk drives; and microcomputer products, which include graphics, communications and peripheral control chips.</text>
+        <rel relloc="10">divided</rel>
+        <arg f="ADV" n="m" start="0" end="6">As part of its reorganization this week,</arg>
+        <arg f="" n="0" start="7" end="8">Western Digital</arg>
+        <arg f="" n="1" start="11" end="12">its business</arg>
+        <arg f="" n="2" start="13" end="34">into two segments -- storage products, including controllers and disk drives; and microcomputer products, which include graphics, communications and peripheral control chips.</arg>
+      </example>
+      <example src="passivized" name="passivized">
+        <text> The group is divided primarily between software, semiconductors and computers.</text>
+        <rel relloc="4">divided</rel>
+        <arg f="" n="1" start="1" end="2">The group</arg>
+        <arg f="ADV" n="m" start="5" end="5">primarily</arg>
+        <arg f="" n="2" start="6" end="10">between software, semiconductors and computers.</arg>
+      </example>
+      <example src="active, no arg2" name="active, no arg2">
+        <text> Herbert M. Baum, the 53-year-old president of the company's Campbell U.S.A. unit, and Edwin L. Harper, 47, the chief financial officer, will run Campbell as a team, dividing responsibilities rather evenly until a successor is named.</text>
+        <rel relloc="28">dividing</rel>
+        <arg f="" n="0" start="1" end="21">Herbert M. Baum, the 53-year-old president of the company's Campbell U.S.A. unit, and Edwin L. Harper, 47, the chief financial officer,</arg>
+        <arg f="" n="1" start="29" end="29">responsibilities</arg>
+        <arg f="MNR" n="m" start="30" end="31">rather evenly</arg>
+        <arg f="TMP" n="m" start="32" end="36">until a successor is named.</arg>
+      </example>
+      <example src="WSJ" name="args 0, 1">
+        <text>The House and Senate are divided over whether the United Nations Population Fund will receive any portion of these appropriations , but the size of the increase is itself significant .</text>
+        <rel relloc="5">divided</rel>
+        <arg f="" n="1" start="0" end="3">The House and Senate</arg>
+        <arg f="" n="0" start="6" end="19">over whether the United Nations Population Fund will receive any portion of these appropriations</arg>
+      </example>
+      <example src="internet" name="">
+        <text>Loyalties are divided between teachers and patient</text>
+        <rel relloc="2">divided</rel>
+        <arg f="" n="1" start="0" end="0">Loyalties</arg>
+        <arg f="" n="2" start="3" end="6">between teachers and patient</arg>
+      </example>
+      <example src="" name="All Args">
+        <text>Fluffy's division of the sheep into white sheep and black sheep was executed flawlessly, and she won the sheepherding competition.</text>
+        <rel relloc="1">division</rel>
+        <arg f="" n="0" start="0" end="0">Fluffy's</arg>
+        <arg f="" n="1" start="2" end="4">of the sheep</arg>
+        <arg f="" n="2" start="5" end="10">into white sheep and black sheep</arg>
+      </example>
+      <example src="BOLT" name="just arg0, typical">
+        <text>Australians voted against becoming a republic in a 1999 referendum , but the issue continues [*]to be divisive .</text>
+        <rel relloc="17">divisive</rel>
+        <arg f="" n="0" start="12" end="13">the issue</arg>
+      </example>
+      <example src="internet" name="both args">
+        <text>Such sexual tension was divisive of the civil rights movement;</text>
+        <rel relloc="4">divisive</rel>
+        <arg f="" n="0" start="0" end="2">Such sexual tension</arg>
+        <arg f="" n="1" start="5" end="9">of the civil rights movement;</arg>
+      </example>
       <note>DIVIDE-V NOTES: Based on sentences in financial subcorpus. Member of VNcls separate-23.1-1, other_cos-45.4. (from divide.02-v)</note>
       <note>DIVIDED-J NOTES: Added by Julia based on WSJ data. Corresponds to VNcls separate-23.1-1, other_cos-45.4. (from divided.01-j)</note>
       <note>DIVIDING-N NOTES: (from dividing.02-n)</note>
       <note>DIVISION-N NOTES: Corresponds with divide.02. Framed by anwen april 2011 (from division.01-n)</note>
       <note>DIVISIVE-J NOTES: Added by Julia based on BOLT-1, divide-v.02. Corresponds to VNcls VNcls separate-23.1-1, other_cos-45.4. (from divisive.01-j)</note>
-      <roles>
-        <note>Arg0 differs from the verb frame in that it is more likely to be a subject matter/cause than agent. Arg3 not present in the verb frame. (from divided.01-j)
+      <note>Arg0 differs from the verb frame in that it is more likely to be a subject matter/cause than agent. Arg3 not present in the verb frame. (from divided.01-j)
 Arg2 from divide-v.02 and Arg3 from divided-j.01 not expected to occur, and have been omitted. (from divisive.01-j)</note>
-        <role descr="topic/causer/agent of division" f="cau" n="0">
-          <vnrole vncls="23.1-1" vntheta="agent"/>
-          <vnrole vncls="45.4" vntheta="agent"/>
-        </role>
-        <role descr="separated entity" f="ppt" n="1">
-          <vnrole vncls="23.1-1" vntheta="patient"/>
-          <vnrole vncls="45.4" vntheta="patient"/>
-        </role>
-        <role descr="divided among/ between" f="gol" n="2"/>
-        <role descr="other entity separated from" f="dir" n="3">
-          <vnrole vncls="23.1-1" vntheta="co-patient"/>
-        </role>
-      </roles>
-      <example name="all args" src="all args" type="all args">
-        <text>As part of its reorganization this week, Western Digital has divided its business into two segments -- storage products, including controllers and disk drives; and microcomputer products, which include graphics, communications and peripheral control chips.</text>
-        <arg f="adv" n="m">As part of its reorganization this week</arg>
-        <arg f="" n="0">Western Digital</arg>
-        <rel f="">divided</rel>
-        <arg f="" n="1">its business</arg>
-        <arg f="" n="2">into two segments -- storage products, including controllers and disk drives; and microcomputer products, which include graphics, communications and peripheral control chips</arg>
-      </example>
-      <example name="passivized" src="passivized" type="passivized">
-        <text>[The group]-1 is divided *trace*-1 primarily between software, semiconductors and computers.</text>
-        <rel f="">divided</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="adv" n="m">primarily</arg>
-        <arg f="" n="2">between software, semiconductors and computers</arg>
-      </example>
-      <example name="active, no arg2" src="active, no arg2" type="active, no arg2">
-        <text>[Herbert M. Baum, the 53-year-old president of the company's Campbell U.S.A. unit, and Edwin L. Harper, 47, the chief financial officer,]-1 will run Campbell as a team, *trace*-1 dividing responsibilities rather evenly until a successor is named.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">dividing</rel>
-        <arg f="" n="1">responsibilities</arg>
-        <arg f="mnr" n="m">rather evenly</arg>
-        <arg f="tmp" n="m">until a successor is named</arg>
-      </example>
-      <example name="args 0, 1" src="WSJ" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The House and Senate are divided over whether the United Nations Population Fund will receive any portion of these appropriations , but the size of the increase is itself significant .</text>
-        <arg f="" n="1">The House and Senate</arg>
-        <rel f="">divided</rel>
-        <arg f="" n="0">over whether the United Nations Population Fund will receive any portion of these appropriations</arg>
-      </example>
-      <example name="" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Loyalties are divided between teachers and patient</text>
-        <arg f="" n="1">Loyalties</arg>
-        <rel f="">divided</rel>
-        <arg f="" n="2">between teachers and patient</arg>
-      </example>
-      <example name="All Args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Fluffy's division of the sheep into white sheep and black sheep was executed flawlessly, and she won the sheepherding competition.</text>
-        <arg f="" n="0">Fluffy's</arg>
-        <rel f="">division</rel>
-        <arg f="" n="1">of the sheep</arg>
-        <arg f="" n="2">into white sheep and black sheep</arg>
-      </example>
-      <example name="just arg0, typical" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Australians voted against becoming a republic in a 1999 referendum , but [the issue]-1 continues [*-1]to be divisive .</text>
-        <arg f="" n="0">[*-1]</arg>
-        <rel f="">divisive</rel>
-      </example>
-      <example name="both args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Such sexual tension was divisive of the civil rights movement;</text>
-        <arg f="" n="0">Such sexual tension</arg>
-        <rel f="">divisive</rel>
-        <arg f="" n="1">of the civil rights movement</arg>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="divide_up">
     <roleset id="divide_up.03" name="separate">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">dividing_up</alias>
-        <alias framenet="" pos="v" verbnet="">divide_up</alias>
+        <alias pos="n">dividing_up</alias>
+        <alias pos="v">divide_up</alias>
       </aliases>
+      <roles>
+        <role descr="agent, divider" f="PAG" n="0"/>
+        <role descr="entity divided up 2" f="PPT" n="1"/>
+        <role descr="smaller units arg 1 is divided into/among" f="GOL" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="Passive" name="Passive">
+        <text>* Remember that most modern people live long lives that-1 can be divided *-1 up into many stages.</text>
+        <rel relloc="12 14">divided up</rel>
+        <arg f="MOD" n="m" start="10" end="10">can</arg>
+        <arg f="" n="1" start="13" end="15">*-1 up into</arg>
+        <arg f="SLC" n="m" start="7" end="8">long lives</arg>
+        <arg f="" n="2" start="15" end="17">into many stages.</arg>
+      </example>
       <note>DIVIDE_UP-V NOTES: No VNcls. (from divide.03-v)</note>
       <note>DIVIDING_UP-N NOTES: (from dividing.03-n)</note>
-      <roles>
-        <note>Same Args as divide.02. (from divide.03-v)</note>
-        <role descr="agent, divider" f="pag" n="0"/>
-        <role descr="entity divided up 2" f="ppt" n="1"/>
-        <role descr="smaller units arg 1 is divided into/among" f="gol" n="2"/>
-      </roles>
-      <example name="Passive" src="Passive" type="Passive">
-        <text>* Remember that most modern people live long lives that-1 can be divided *-1 up into many stages.</text>
-        <arg f="mod" n="m">can</arg>
-        <rel f="">[divided][up]</rel>
-        <arg f="" n="1">*-1 (= that)</arg>
-        <arg f="slc" n="m">that -&gt; long lives</arg>
-        <arg f="" n="2">into many stages</arg>
-      </example>
+      <note>Same Args as divide.02. (from divide.03-v)</note>
     </roleset>
   </predicate>
 </frameset>

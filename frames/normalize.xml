@@ -1,77 +1,88 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="normalize">
     <roleset id="normalize.01" name="to make normal, standard, or consistent">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">normalize</alias>
-        <alias framenet="" pos="j" verbnet="">normalized</alias>
-        <alias framenet="" pos="n" verbnet="">normalization</alias>
-        <alias framenet="" pos="v" verbnet="">norm</alias>
+        <alias pos="v">normalize</alias>
+        <alias pos="j">normalized</alias>
+        <alias pos="n">normalization</alias>
+        <alias pos="v">norm</alias>
       </aliases>
+      <roles>
+        <role descr="agent, causer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity normalized" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="transitive">
+        <text>The increased demand would normalize trading and stabilize prices .</text>
+        <rel relloc="4">normalize</rel>
+        <arg f="" n="0" start="0" end="2">The increased demand</arg>
+        <arg f="MOD" n="M" start="3" end="3">would</arg>
+        <arg f="" n="1" start="5" end="5">trading</arg>
+      </example>
       <note>NORMALIZE-V NOTES: Frames file for 'normalize' based on survey of sentences in the WSJ corpus. (from normalize.01-v predicate notes)</note>
       <note>NORMALIZATION-N NOTES: (from normalization.01-n)</note>
       <note>NORMALIZED-J NOTES: Automatically created by Julia as an alias file for unification. (from normalized.01-j)</note>
-      <roles>
-        <role descr="agent, causer" f="PAG" n="0">
-          <vnrole vncls="45.4" vntheta="Agent"/>
-        </role>
-        <role descr="entity normalized" f="PPT" n="1">
-          <vnrole vncls="45.4" vntheta="Patient"/>
-        </role>
-      </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>The increased demand would normalize trading and stabilize prices .</text>
-        <arg f="" n="0">The increased demand</arg>
-        <arg f="MOD" n="M">would</arg>
-        <rel f="">normalize</rel>
-        <arg f="" n="1">trading</arg>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="normal">
     <roleset id="normal.02" name="average, to be expected, abbreviation for &quot;normal&quot;">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">normal</alias>
-        <alias framenet="" pos="j" verbnet="">nl</alias>
-        <alias framenet="" pos="j" verbnet="">nml</alias>
+        <alias pos="j">normal</alias>
+        <alias pos="j">nl</alias>
+        <alias pos="j">nml</alias>
       </aliases>
+      <roles>
+        <role descr="normal thing" f="PAG" n="1"/>
+        <role descr="specific aspect of arg1 that is normal" f="VSP" n="2"/>
+        <role descr="specific measurement, numerical reading of normalcy" f="EXT" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="BOLT-1" name="the arg">
+        <text>All nations have them and they all tend to be different -LRB- which [*] is normal considering different nations have different cultures , traditions and customs -RRB- , it just so happens that in Israel the requirement is that your mother is / was Jewish , it is different to requirments in other countries but it is no less valid .</text>
+        <rel relloc="15">normal</rel>
+        <arg f="" n="1" start="12" end="12">which</arg>
+        <arg f="ADV" n="m" start="16" end="26">considering different nations have different cultures , traditions and customs -RRB-</arg>
+      </example>
+      <example src="medi-tmprl1to8" name="args 1, 2">
+        <text>Sensory examination is normal to fine touch , and proprioception .</text>
+        <rel relloc="3">normal</rel>
+        <arg f="" n="1" start="0" end="1">Sensory examination</arg>
+        <arg f="" n="2" start="5" end="9">fine touch , and proprioception</arg>
+      </example>
+      <example src="medi-tempr1to8" name="args 1, 3">
+        <text>CEA was normal at 1.5 .</text>
+        <rel relloc="2">normal</rel>
+        <arg f="" n="1" start="0" end="0">CEA</arg>
+        <arg f="" n="3" start="3" end="4">at 1.5</arg>
+      </example>
+      <example src="SHARP" name="abbreviation">
+        <text>O/P CL , Tongue NL , No Ulcers , Dentition is edentuous with dentures , Gums are good .</text>
+        <rel relloc="4">NL</rel>
+        <arg f="" n="1" start="3" end="3">Tongue</arg>
+      </example>
       <note>NORMAL-J NOTES: Added by Julia based on BOLT-1, relation to normalize.01. (from normal.01-j)</note>
       <note>NML-J NOTES: Added by Julia based on SHARP. (from nml.01-j)</note>
       <note>NL-J NOTES: Added by Julia based on SHARP. (from nl.01-j)</note>
-      <roles>
-        <note>Arg0 from the verb not included (from normal.01-j)</note>
-        <role descr="normal thing" f="pag" n="1"/>
-        <role descr="specific aspect of arg1 that is normal" f="vsp" n="2"/>
-        <role descr="specific measurement, numerical reading of normalcy" f="ext" n="3"/>
-      </roles>
-      <example name="the arg" src="BOLT-1" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>All nations have them and they all tend to be different -LRB- which-1 [*-1] is normal considering different nations have different cultures , traditions and customs -RRB- , it just so happens that in Israel the requirement is that your mother is / was Jewish , it is different to requirments in other countries but it is no less valid .</text>
-        <arg f="" n="1">[*-1]</arg>
-        <rel f="">normal</rel>
-        <arg f="adv" n="m">considering different nations have different cultures, traditions and customs -RBR-</arg>
-      </example>
-      <example name="args 1, 2" src="medi-tmprl1to8" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Sensory examination is normal to fine touch , and proprioception .</text>
-        <arg f="" n="1">sensory examination</arg>
-        <rel f="">normal</rel>
-        <arg f="" n="2">to fine touch and proprioception</arg>
-      </example>
-      <example name="args 1, 3" src="medi-tempr1to8" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>CEA was normal at 1.5 .</text>
-        <arg f="" n="1">CEA</arg>
-        <rel f="">normal</rel>
-        <arg f="" n="3">at 1.5</arg>
-      </example>
-      <example name="abbreviation" src="SHARP" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>O/P CL , Tongue NL , No Ulcers , Dentition is edentuous with dentures , Gums are good .</text>
-        <arg f="" n="1">Tongue</arg>
-        <rel f="">NL</rel>
-      </example>
+      <note>Arg0 from the verb not included (from normal.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

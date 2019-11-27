@@ -1,104 +1,144 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="hurt">
     <roleset id="hurt.01" name="cause damage to (transitive), causing damage to">
       <aliases>
-        <alias framenet="Cause_harm" pos="v" verbnet="">hurt</alias>
-        <alias framenet="" pos="n" verbnet="">hurting</alias>
+        <alias pos="v">hurt</alias>
+        <alias pos="n">hurting</alias>
       </aliases>
-      
-      
       <roles>
-        <role descr="agent, entity causing damage" f="pag" n="0">
-          <vnrole vncls="31.1" vntheta="stimulus"/>
-          <vnrole vncls="40.8.3-2" vntheta="experiencer"/>
+        <role descr="agent, entity causing damage" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="amuse-31.1" version="verbnet3.3">stimulus</rolelink>
+            <rolelink resource="VerbNet" class="hurt-40.8.3-2" version="verbnet3.3">experiencer</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">cause</rolelink>
+          </rolelinks>
         </role>
-        <role descr="patient, entity experiencing hurt/damage" f="ppt" n="1">
-          <vnrole vncls="31.1" vntheta="experiencer"/>
-          <vnrole vncls="40.8.3-2" vntheta="patient"/>
+        <role descr="patient, entity experiencing hurt/damage" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="amuse-31.1" version="verbnet3.3">experiencer</rolelink>
+            <rolelink resource="VerbNet" class="hurt-40.8.3-2" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">victim</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">body_part</rolelink>
+          </rolelinks>
         </role>
-        <role descr="instrument (if in addition to arg0)" f="mnr" n="2"/>
-        <role descr="benefactive" f="gol" n="3"/>
+        <role descr="instrument (if in addition to arg0)" f="MNR" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">instrument</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="benefactive" f="GOL" n="3"/>
       </roles>
-      <example name="hurt-v: instrumental" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_harm" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="amuse-31.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="hurt-40.8.3-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Life.Injure.InjuryCausedByViolentEvents" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Injure" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="hurt-v.1" src="annot-overlap" confidence="0.1">15</lexlink>
+        <lexlink resource="onsense" version="on5" class="hurt-v.2" src="annot-overlap" confidence="0.1">47</lexlink>
+        <lexlink resource="onsense" version="on5" class="hurt-v.3" src="annot-overlap" confidence="0.1">11</lexlink>
+      </lexlinks>
+      <example src="" name="hurt-v: instrumental">
         <text>Countries with inadequate protections for intellectual-property rights could be hurting themselves by discouraging their own scientists and authors and by deterring US high-technology firms from investing or marketing their best products there.</text>
-        <arg f="" n="0">Countries with inadequate protections for intellectual-property right</arg>
-        <arg f="mod" n="m">could</arg>
-        <rel f="">hurting</rel>
-        <arg f="rec" n="1">themselves</arg>
-        <arg f="" n="2">by discouraging their own scientists and authors and by deterring US high-technology firms from investing or marketing their best products there</arg>
+        <rel relloc="9">hurting</rel>
+        <arg f="" n="0" start="0" end="6">Countries with inadequate protections for intellectual-property rights</arg>
+        <arg f="MOD" n="m" start="7" end="7">could</arg>
+        <arg f="REC" n="1" start="10" end="10">themselves</arg>
+        <arg f="" n="2" start="11" end="31">by discouraging their own scientists and authors and by deterring US high-technology firms from investing or marketing their best products there.</arg>
       </example>
-      <example name="hurt-v: with benefactive" src="" type="">
+      <example src="" name="hurt-v: with benefactive">
         <text>Lower prices hurt margins for most products.</text>
-        <arg f="" n="0">Lower prices</arg>
-        <rel f="">hurt</rel>
-        <arg f="" n="1">margins</arg>
-        <arg f="" n="3">for most products</arg>
+        <rel relloc="2">hurt</rel>
+        <arg f="" n="0" start="0" end="1">Lower prices</arg>
+        <arg f="" n="1" start="3" end="3">margins</arg>
+        <arg f="" n="3" start="4" end="6">for most products.</arg>
       </example>
-      <example name="hurting-n: Arg0,1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="hurting-n: Arg0,1">
         <text>This bill's hurting the lower classes seems to have been overlooked by its sponsors.</text>
-        <arg f="" n="0">This bill's</arg>
-        <rel f="">hurting</rel>
-        <arg f="" n="1">the lower classes</arg>
+        <rel relloc="2">hurting</rel>
+        <arg f="" n="0" start="0" end="1">This bill's</arg>
+        <arg f="" n="1" start="3" end="5">the lower classes</arg>
       </example>
-    <note>HURT-V NOTES: Based on big corpus. Adjectival 'hurtful' based on BOLT-4,5. Member of VNcls amuse-31.1, hurt-40.8.3-2 (from hurt.01-v)
+      <note>HURT-V NOTES: Based on big corpus. Adjectival 'hurtful' based on BOLT-4,5. Member of VNcls amuse-31.1, hurt-40.8.3-2 (from hurt.01-v)
 
 HURTING-N NOTES: hurt.01 (from hurting.01-n)</note>
-</roleset>
+    </roleset>
     <roleset id="hurt.02" name="be experiencing pain (intransitive), experiencing pain">
       <aliases>
-        <alias framenet="Perception_body Experience_bodily_harm" pos="v" verbnet="31.1, 31.3, 40.8.1">hurt</alias>
-        <alias framenet="" pos="n" verbnet="">hurting</alias>
+        <alias pos="v">hurt</alias>
+        <alias pos="n">hurting</alias>
       </aliases>
-      
-      
       <roles>
-        <role descr="patient, entity experiencing pain" f="pag" n="1">
-          <vnrole vncls="40.8.1" vntheta="experiencer"/>
-          <vnrole vncls="31.3" vntheta="experiencer"/>
-        <vnrole vncls="31.1" vntheta="experiencer"/>
-</role>
+        <role descr="patient, entity experiencing pain" f="PAG" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pain-40.8.1" version="verbnet3.3">experiencer</rolelink>
+            <rolelink resource="VerbNet" class="marvel-31.3" version="verbnet3.3">experiencer</rolelink>
+            <rolelink resource="VerbNet" class="amuse-31.1" version="verbnet3.3">experiencer</rolelink>
+            <rolelink resource="FrameNet" class="Perception_body" version="1.7">experiencer</rolelink>
+            <rolelink resource="FrameNet" class="Experience_bodily_harm" version="1.7">body_part</rolelink>
+            <rolelink resource="FrameNet" class="Experience_bodily_harm" version="1.7">experiencer</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="ARG1" src="ontonotes nw/wsj/07/wsj_0728" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Experience_bodily_harm" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Perception_body" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="pain-40.8.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="marvel-31.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="amuse-31.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Life.Injure.IllnessDegradationPhysical" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Injure" version="rich" confidence="0.1" src="reo-expansion"/>
+      </lexlinks>
+      <example src="ontonotes nw/wsj/07/wsj_0728" name="ARG1">
         <text>Contrary to what might be expected based on the headline on John R. Dorfman 's recent Money Matters article -LRB- `` Pros Hit Theorists Right Where It Hurts '' Oct. 3 -RRB- , I was able to stand proudly before my undergraduate finance students and proclaim that the findings of your yearlong experiment on stock picking is completely consistent with what they have been taught in the classroom .</text>
-        <arg f="loc" n="m">Right Where</arg>
-        <arg f="" n="1">It</arg>
-        <rel f="">Hurts</rel>
+        <rel relloc="27">Hurts</rel>
+        <arg f="LOC" n="m" start="24" end="25">Right Where</arg>
+        <arg f="" n="1" start="26" end="26">It</arg>
       </example>
-
-    <note>HURT-V NOTES: Based on big corpus. Member of VNcls marvel-31.3, pain-40.8.1, and amuse-31.1 (from hurt.02-v)
+      <note>HURT-V NOTES: Based on big corpus. Member of VNcls marvel-31.3, pain-40.8.1, and amuse-31.1 (from hurt.02-v)
 
 HURTING-N NOTES: hurt.02 (from hurting.02-n)</note>
-</roleset>
+    </roleset>
   </predicate>
   <predicate lemma="hurtful">
     <roleset id="hurtful.03" name="tending to, able to cause damage to">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">hurtful</alias>
+        <alias pos="j">hurtful</alias>
       </aliases>
-      
       <roles>
-        <role descr="entity causing damage" f="pag" n="0"/>
-        <role descr="entity experiencing hurt/damage" f="ppt" n="1"/>
-        <role descr="instrument (if in addition to arg0)" f="mnr" n="2"/>
-        <role descr="benefactive" f="gol" n="3"/>
+        <role descr="entity causing damage" f="PAG" n="0"/>
+        <role descr="entity experiencing hurt/damage" f="PPT" n="1"/>
+        <role descr="instrument (if in addition to arg0)" f="MNR" n="2"/>
+        <role descr="benefactive" f="GOL" n="3"/>
       </roles>
-      <example name="hurtful-j" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <example src="BOLT" name="hurtful-j">
         <text>My cutie . You should just say you know that 's very hurtful she probably is clueless</text>
-        <arg f="" n="0">that</arg>
-        <arg f="ext" n="m">very</arg>
-        <rel f="">hurtful</rel>
+        <rel relloc="12">hurtful</rel>
+        <arg f="" n="0" start="9" end="9">that</arg>
+        <arg f="EXT" n="m" start="11" end="11">very</arg>
       </example>
-      <example name="hurtful-j" src="BOLT-4,5" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="BOLT-4,5" name="hurtful-j">
         <text>it s bloody hurtful and hard</text>
-        <arg f="" n="0">it</arg>
-        <arg f="dis" n="m">bloody</arg>
-        <rel f="">hurtful</rel>
+        <rel relloc="3">hurtful</rel>
+        <arg f="" n="0" start="0" end="0">it</arg>
+        <arg f="DIS" n="m" start="2" end="2">bloody</arg>
       </example>
-    <note>HURTFUL-J NOTES: Added by Julia based on BOLT. (from hurtful.01-j)</note>
-</roleset>
+      <note>HURTFUL-J NOTES: Added by Julia based on BOLT. (from hurtful.01-j)</note>
+    </roleset>
   </predicate>
 </frameset>

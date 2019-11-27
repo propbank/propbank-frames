@@ -1,30 +1,59 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="oust">
     <roleset id="oust.01" name="cause to cease employment">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">oust</alias>
-        <alias framenet="" pos="n" verbnet="">ousting</alias>
+        <alias pos="v">oust</alias>
+        <alias pos="n">ousting</alias>
+        <alias pos="n">ouster</alias>
       </aliases>
-      <note>OUST-V NOTES: extrapolate passives, forms without job from here. (from oust.01-v)</note>
       <roles>
         <role descr="employer" f="PAG" n="0">
-          <vnrole vncls="10.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="remove-10.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Change_of_leadership" version="1.7">selector</rolelink>
+            <rolelink resource="FrameNet" class="Removing" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Removing" version="1.7">cause</rolelink>
+          </rolelinks>
         </role>
         <role descr="ex-employee" f="PPT" n="1">
-          <vnrole vncls="10.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="remove-10.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Change_of_leadership" version="1.7">old_order</rolelink>
+            <rolelink resource="FrameNet" class="Change_of_leadership" version="1.7">new_leader</rolelink>
+            <rolelink resource="FrameNet" class="Change_of_leadership" version="1.7">old_leader</rolelink>
+            <rolelink resource="FrameNet" class="Removing" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="job" f="DIR" n="2">
-          <vnrole vncls="10.1" vntheta="Source"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="remove-10.1" version="verbnet3.3">source</rolelink>
+            <rolelink resource="FrameNet" class="Change_of_leadership" version="1.7">role</rolelink>
+            <rolelink resource="FrameNet" class="Removing" version="1.7">source</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all args" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Removing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Change_of_leadership" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="remove-10.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Personnel.EndPosition.FiringLayoff" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Endposition" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="oust-v.1" src="annot-overlap" confidence="0.1">23</lexlink>
+      </lexlinks>
+      <example src="" name="all args">
         <text>[Mr. Ackerman]-1 already is seeking *trace*-1 to oust Mr. Edelman as chairman of Datapoint Corp., an Intelogic affiliate.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">oust</rel>
-        <arg f="" n="1">Mr. Edelman</arg>
-        <arg f="" n="2">as chairman of Datapoint Corp., an Intelogic affiliate</arg>
+        <rel relloc="7">oust</rel>
+        <arg f="" n="0" start="5" end="5">*trace*-1</arg>
+        <arg f="" n="1" start="8" end="9">Mr. Edelman</arg>
+        <arg f="" n="2" start="10" end="17">as chairman of Datapoint Corp., an Intelogic affiliate.</arg>
       </example>
+      <note>OUST-V NOTES: extrapolate passives, forms without job from here. (from oust.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,64 +1,83 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="suppose">
     <roleset id="suppose.01" name="think, assume">
       <aliases>
-        <alias framenet="Opinion" pos="v" verbnet="">suppose</alias>
-        <alias framenet="" pos="n" verbnet="">supposition</alias>
-        <alias framenet="" pos="j" verbnet="">supposed</alias>
+        <alias pos="v">suppose</alias>
+        <alias pos="n">supposition</alias>
+        <alias pos="j">supposed</alias>
       </aliases>
-      <note>SUPPOSE-V NOTES: Member of VN class consider-29.9-2. (from suppose.01-v)</note>
       <roles>
-        <role descr="Thinker" f="pag" n="0">
-          <vnrole vncls="29.9-2" vntheta="agent"/>
+        <role descr="Thinker" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="consider-29.9-2" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="Thing thought about" f="ppt" n="1">
-          <vnrole vncls="29.9-2" vntheta="theme"/>
+        <role descr="Thing thought about" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="consider-29.9-2" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="Attributive, how arg1 is thought about" f="prd" n="2">
-          <vnrole vncls="29.9-2" vntheta="attribute"/>
+        <role descr="Attributive, how arg1 is thought about" f="PRD" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="consider-29.9-2" version="verbnet3.3">attribute</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="suppose-v: imperative" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Opinion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="consider-29.9-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="suppose-v.1" src="annot-overlap" confidence="0.1">17</lexlink>
+        <lexlink resource="onsense" version="on5" class="suppose-v.2" src="annot-overlap" confidence="0.1">40</lexlink>
+      </lexlinks>
+      <example src="" name="suppose-v: imperative">
         <text>*trace* Suppose an investor wants to sell a stock, but not for less than $55.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">Suppose</rel>
-        <arg f="" n="1">an investor wants to sell a stock, but not for less than $55</arg>
+        <rel relloc="1">Suppose</rel>
+        <arg f="" n="0" start="0" end="0">*trace*</arg>
+        <arg f="" n="1" start="2" end="14">an investor wants to sell a stock, but not for less than $55.</arg>
       </example>
-      <example name="suppose-v: missing (or inconvenient) thought" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
+      <example src="" name="suppose-v: missing (or inconvenient) thought">
         <text>He thinks the underlying inflation rate is around 5% to 6%, far higher than most people suppose.</text>
-        <arg f="" n="0">most people</arg>
-        <rel f="">suppose</rel>
+        <rel relloc="16">suppose.</rel>
+        <arg f="" n="0" start="14" end="15">most people</arg>
       </example>
-      <example name="ARG1 and ARG2" src="ontonotes tc/ch/00/ch_0053" type="">
+      <example src="ontonotes tc/ch/00/ch_0053" name="ARG1 and ARG2">
         <text>but it 's supposed to get cold tomorrow .</text>
-        <arg f="dis" n="m">but</arg>
-        <arg f="" n="1">it</arg>
-        <rel f="">supposed</rel>
-        <arg f="" n="2">to get cold tomorrow</arg>
+        <rel relloc="3">supposed</rel>
+        <arg f="DIS" n="m" start="0" end="0">but</arg>
+        <arg f="" n="1" start="1" end="1">it</arg>
+        <arg f="" n="2" start="4" end="7">to get cold tomorrow</arg>
       </example>
-
+      <note>SUPPOSE-V NOTES: Member of VN class consider-29.9-2. (from suppose.01-v)</note>
     </roleset>
     <roleset id="suppose.02" name="s'pos'ta">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">suppose</alias>
-        <alias framenet="" pos="j" verbnet="">supposed</alias>
+        <alias pos="v">suppose</alias>
+        <alias pos="j">supposed</alias>
       </aliases>
+      <roles>
+        <role descr="thing seeming" f="PPT" n="1"/>
+        <role descr="attribute" f="PRD" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="onsense" version="on5" class="suppose-v.6" src="annot-overlap" confidence="0.1">21</lexlink>
+      </lexlinks>
+      <example src="" name="suppose-v: ">
+        <text>Market makers are supposed to keep supplies of stocks on hand to maintain orderly trading when imbalances occur.</text>
+        <rel relloc="3">supposed</rel>
+        <arg f="" n="1" start="0" end="1">Market makers</arg>
+        <arg f="" n="2" start="4" end="17">to keep supplies of stocks on hand to maintain orderly trading when imbalances occur.</arg>
+      </example>
       <note>SUPPOSE-V NOTES: This is by far the most common usage. (from suppose.02-v)</note>
       <note>SUPPOSED-J NOTES: Automatically created by Julia as an alias file for unification. (from supposed.02-j)</note>
-      <roles>
-        <role descr="thing seeming" f="ppt" n="1"/>
-        <role descr="attribute" f="prd" n="2"/>
-      </roles>
-      <example name="suppose-v: " src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>Market makers are supposed to keep supplies of stocks on hand to maintain orderly trading when imbalances occur.</text>
-        <arg f="" n="1">Market makers</arg>
-        <rel f="">supposed</rel>
-        <arg f="" n="2">to keep supplies of stocks on hand to maintain orderly trading when imbalances occur</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

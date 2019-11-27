@@ -1,60 +1,71 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="greet">
     <roleset id="greet.01" name="welcome, receive with a   specific reaction">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">greeting</alias>
-        <alias framenet="" pos="v" verbnet="">greet</alias>
+        <alias pos="n">greeting</alias>
+        <alias pos="v">greet</alias>
       </aliases>
-      <note>GREET-V NOTES: Frames file for 'greet' based on sentences in financial subcorpus andautomatic generation from Verbnet classes. (from greet.01-v predicate notes)</note>
-      <note>GREETING-N NOTES: Based on sentences in nouns-00040. Comparison to 'greet.01'. Vn class judgement-33. Framed by Katie. (from greeting.01-n)</note>
       <roles>
         <role descr="greeter" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="judgment-33.1-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing greeted" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="judgment-33.1-1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="secondary attribute, greeted as" f="CAU" n="2">
-          <vnrole vncls="33" vntheta="Attribute"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="judgment-33.1-1" version="verbnet3.3">attribute</rolelink>
+          </rolelinks>
         </role>
-        <role descr="specific reaction" f="mnr" n="3"/>
+        <role descr="specific reaction" f="MNR" n="3"/>
       </roles>
-      <example name="straight transitive" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="33" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="greet-v.1" src="annot-overlap" confidence="0.1">26</lexlink>
+        <lexlink resource="onsense" version="on5" class="greeting-n.1" src="annot-overlap" confidence="0.1">8</lexlink>
+      </lexlinks>
+      <example src="" name="straight transitive">
         <text>``I know it's not over,'' [a sober-faced Mr. Corry]-1 acknowledged while *trace*-1 greeting steel suppliers in New York on Oct. 12 and inviting them to a buffet of salmon and sushi in honor of Kobe Steel Ltd., USX's partner in a steel mill in Lorain, Ohio.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">greeting</rel>
-        <arg f="" n="1">steel suppliers</arg>
-        <arg f="loc" n="m">in New York</arg>
-        <arg f="tmp" n="m">on Oct. 12</arg>
+        <rel relloc="12">greeting</rel>
+        <arg f="" n="0" start="11" end="11">*trace*-1</arg>
+        <arg f="" n="1" start="13" end="14">steel suppliers</arg>
+        <arg f="LOC" n="m" start="15" end="17">in New York</arg>
+        <arg f="TMP" n="m" start="18" end="20">on Oct. 12</arg>
       </example>
-      <example name="with specific reaction" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="present" voice="passive"/>
+      <example src="" name="with specific reaction">
         <text>``If this had happened a few months ago when the atmosphere was still very positive it-1 wouldn't have been greeted *trace*-1 with anything like the impact it has had over the past two weeks,'' says Dennis Jarrett, a market strategist at Kidder Peabody.</text>
-        <arg f="adv" n="m">If this had happened a few months ago when the atmosphere was still very positive</arg>
-        <arg f="mod" n="m">would</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">greeted</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="3">with anything like the impact it has had over the past two weeks</arg>
+        <rel relloc="19">greeted</rel>
+        <arg f="ADV" n="m" start="0" end="14">``If this had happened a few months ago when the atmosphere was still very positive</arg>
+        <arg f="MOD" n="m" start="16" end="16">wouldn't</arg>
+        <arg f="NEG" n="m" start="26" end="26">it</arg>
+        <arg f="" n="1" start="20" end="20">*trace*-1</arg>
+        <arg f="" n="3" start="21" end="33">with anything like the impact it has had over the past two weeks,''</arg>
       </example>
-      <example name="ARG1 and ARG2" src="ontonotes wb/p2" type="">
+      <example src="ontonotes wb/p2" name="ARG1 and ARG2">
         <text>He is welcomed and greeted at the American White House , to be used as a tool with which to fight the Shiite leader Muqtada al - Sadr , who stands against the presence of the Americans in Iraq , and against American President Bush himself , in order to finish him and the Al - Mahdi Army which he leads .</text>
-        <arg f="" n="1">He</arg>
-        <rel f="">greeted</rel>
-        <arg f="loc" n="m">at the American White House</arg>
-        <arg f="" n="2">to be used as a tool with which to fight the Shiite leader Muqtada al - Sadr , who stands against the presence of the Americans in Iraq , and against American President Bush himself , in order to finish him and the Al - Mahdi Army which he leads</arg>
+        <rel relloc="4">greeted</rel>
+        <arg f="" n="1" start="0" end="0">He</arg>
+        <arg f="LOC" n="m" start="5" end="9">at the American White House</arg>
+        <arg f="" n="2" start="11" end="60">to be used as a tool with which to fight the Shiite leader Muqtada al - Sadr , who stands against the presence of the Americans in Iraq , and against American President Bush himself , in order to finish him and the Al - Mahdi Army which he leads</arg>
       </example>
-
-      <example name="Almost all args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="Almost all args">
         <text>His Spring Festival greetings to those overseas Chinese and the Taiwan compatriots</text>
-        <arg f="" n="0">His</arg>
-        <arg f="" n="3">Spring Festival</arg>
-        <rel f="">greetings</rel>
-        <arg f="" n="1">to those overseas Chinese and the Taiwan compatriots</arg>
+        <rel relloc="3">greetings</rel>
+        <arg f="" n="0" start="0" end="0">His</arg>
+        <arg f="" n="3" start="1" end="2">Spring Festival</arg>
+        <arg f="" n="1" start="4" end="11">to those overseas Chinese and the Taiwan compatriots</arg>
       </example>
+      <note>GREET-V NOTES: Frames file for 'greet' based on sentences in financial subcorpus andautomatic generation from Verbnet classes. (from greet.01-v predicate notes)</note>
+      <note>GREETING-N NOTES: Based on sentences in nouns-00040. Comparison to 'greet.01'. Vn class judgement-33. Framed by Katie. (from greeting.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

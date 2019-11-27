@@ -1,54 +1,74 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="drift">
     <roleset id="drift.01" name="move aimlessly">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">drift</alias>
-        <alias framenet="" pos="n" verbnet="">drift</alias>
-        <alias framenet="" pos="n" verbnet="">drifting</alias>
-        <alias framenet="" pos="j" verbnet="">adrift</alias>
+        <alias pos="v">drift</alias>
+        <alias pos="n">drift</alias>
+        <alias pos="n">drifting</alias>
+        <alias pos="j">adrift</alias>
       </aliases>
-      <note>DRIFT-V NOTES: Frames file for 'drift' based on sentences in financial subcorpus and comparison with Chris' old drift file. Well, not so much, since that's not how we're doing things these days. Comparison with 'move' instead. (from drift.01-v predicate notes)</note>
       <roles>
         <role descr="object in motion" f="PPT" n="1">
-          <vnrole vncls="47.3" vntheta="Theme"/>
-          <vnrole vncls="51.3.2-2" vntheta="Theme"/>
-          <vnrole vncls="51.3.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="modes_of_being_with_motion-47.3" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="run-51.3.2-2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="roll-51.3.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Motion" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="drift-v: with LOC" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Motion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="modes_of_being_with_motion-47.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="run-51.3.2-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="roll-51.3.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="drift-v.2" src="annot-overlap" confidence="0.1">9</lexlink>
+        <lexlink resource="onsense" version="on5" class="drift-v.1" src="annot-overlap" confidence="0.1">5</lexlink>
+        <lexlink resource="onsense" version="on5" class="drift-v.5" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="" name="drift-v: with LOC">
         <text>The Dow Jones Industrial Average...drifted on either side of its previous close and finished with a gain of just 0.82 at 2645.90.</text>
-        <arg f="" n="1">The Dow Jones Industrial Average...</arg>
-        <rel f="">drifted</rel>
-        <arg f="LOC" n="M">on either side of its previous close</arg>
+        <rel relloc="4">Average...drifted</rel>
+        <arg f="" n="1" start="0" end="4">The Dow Jones Industrial Average...drifted</arg>
+        <arg f="LOC" n="M" start="5" end="11">on either side of its previous close</arg>
       </example>
-      <example name="drift-v: with DIR" src="" type="">
+      <example src="" name="drift-v: with DIR">
         <text>Growth stocks may underperform cyclical stocks next year if the Federal Reserve begins to let interest rates drift sufficiently lower to boost the economy.</text>
-        <arg f="" n="1">interest rates</arg>
-        <rel f="">drift</rel>
-        <arg f="DIR" n="M">sufficiently lower</arg>
+        <rel relloc="17">drift</rel>
+        <arg f="" n="1" start="15" end="16">interest rates</arg>
+        <arg f="DIR" n="M" start="18" end="19">sufficiently lower</arg>
       </example>
+      <note>DRIFT-V NOTES: Frames file for 'drift' based on sentences in financial subcorpus and comparison with Chris' old drift file. Well, not so much, since that's not how we're doing things these days. Comparison with 'move' instead. (from drift.01-v predicate notes)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="drift_off">
     <roleset id="drift_off.02" name="fall gently into a dreamy state (often sleep)">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">drift_off</alias>
-        <alias framenet="" pos="n" verbnet="">drifting_off</alias>
+        <alias pos="v">drift_off</alias>
+        <alias pos="n">drifting_off</alias>
       </aliases>
-      <note>DRIFT_OFF-V NOTES: Added by Julia.</note>
       <roles>
-        <role descr="sleeper" f="pag" n="1"/>
-        <role descr="sleep" f="ppt" n="2"/>
+        <role descr="sleeper" f="PAG" n="1"/>
+        <role descr="sleep" f="PPT" n="2"/>
       </roles>
-      <example name="drift_off-v" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="drift_off-v">
         <text>As he slowly fell asleep he drifted off into a dream and the night breeze filled the room and surrounded their bodies.</text>
-        <arg f="tmp" n="m">As he slowly fell asleep</arg>
-        <arg f="" n="1">he</arg>
-        <rel f="">[drifted][off]</rel>
-        <arg f="" n="2">into a dream</arg>
+        <rel relloc="6 7">drifted off</rel>
+        <arg f="TMP" n="m" start="0" end="4">As he slowly fell asleep</arg>
+        <arg f="" n="1" start="1" end="1">he</arg>
+        <arg f="" n="2" start="8" end="10">into a dream</arg>
       </example>
+      <note>DRIFT_OFF-V NOTES: Added by Julia.</note>
     </roleset>
   </predicate>
 </frameset>

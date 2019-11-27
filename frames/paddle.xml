@@ -1,37 +1,57 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="paddle">
     <roleset id="paddle.01" name="propel with a paddle">
       <aliases>
-        <alias framenet="Operate_Vehicle" pos="v" verbnet="">paddle</alias>
+        <alias pos="v">paddle</alias>
       </aliases>
-      <note>PADDLE-V NOTES: Roleset by Julia based on internet search. Member of Vncls drive-11.5, nonvehicle-51.4.2. Comparison to ?row?. (from paddle.01-v)</note>
       <roles>
         <role descr="person doing the paddling" f="PAG" n="0">
-          <vnrole vncls="11.5" vntheta="Agent"/>
-          <vnrole vncls="51.4.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="drive-11.5" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="nonvehicle-51.4.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Operate_vehicle" version="1.7">driver</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing being paddled" f="ppt" n="1">
-          <vnrole vncls="11.5" vntheta="Theme"/>
-          <vnrole vncls="51.4.2" vntheta="Theme"/>
+        <role descr="thing being paddled" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="drive-11.5" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="nonvehicle-51.4.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Operate_vehicle" version="1.7">vehicle</rolelink>
+          </rolelinks>
         </role>
         <role descr="source" f="DIR" n="2">
-          <vnrole vncls="11.5" vntheta="Initial_Location"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="drive-11.5" version="verbnet3.3">initial_location</rolelink>
+          </rolelinks>
         </role>
-        <role descr="destination/location" f="loc" n="3">
-          <vnrole vncls="11.5" vntheta="Destination"/>
-          <vnrole vncls="51.4.2" vntheta="Location"/>
+        <role descr="destination/location" f="LOC" n="3">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="drive-11.5" version="verbnet3.3">destination</rolelink>
+            <rolelink resource="VerbNet" class="nonvehicle-51.4.2" version="verbnet3.3">location</rolelink>
+            <rolelink resource="FrameNet" class="Operate_vehicle" version="1.7">area</rolelink>
+            <rolelink resource="FrameNet" class="Operate_vehicle" version="1.7">goal</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="All args" src="internet" type="-">
-        <inflection aspect="ns" form="full" person="third" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Operate_vehicle" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="drive-11.5" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="nonvehicle-51.4.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="internet" name="All args">
         <text>The brothers Archibald paddled their boat from the Puerua stream to Raitangata</text>
-        <arg f="" n="0">The brothers Archibald</arg>
-        <rel f="">paddled</rel>
-        <arg f="" n="1">their boat</arg>
-        <arg f="" n="2">from the Puerua stream</arg>
-        <arg f="" n="3">to Raitangata</arg>
+        <rel relloc="3">paddled</rel>
+        <arg f="" n="0" start="0" end="2">The brothers Archibald</arg>
+        <arg f="" n="1" start="4" end="5">their boat</arg>
+        <arg f="" n="2" start="6" end="9">from the Puerua stream</arg>
+        <arg f="" n="3" start="10" end="11">to Raitangata</arg>
       </example>
+      <note>PADDLE-V NOTES: Roleset by Julia based on internet search. Member of Vncls drive-11.5, nonvehicle-51.4.2. Comparison to ?row?. (from paddle.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

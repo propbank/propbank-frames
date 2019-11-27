@@ -1,97 +1,107 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="recruit">
     <roleset id="recruit.01" name="convince to join">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">recruiting</alias>
-        <alias framenet="" pos="v" verbnet="">recruit</alias>
-        <alias framenet="" pos="n" verbnet="">recruitment</alias>
+        <alias pos="n">recruiting</alias>
+        <alias pos="v">recruit</alias>
+        <alias pos="n">recruitment</alias>
       </aliases>
-      <note>RECRUIT-V NOTES: Based on WSJ. Member of Vncls hire-13.5.3, orphan-29.7. (from recruit.01-v)</note>
-      <note>RECRUITMENT-N NOTES: Based on Bolt data. Comparison to recruit.01. Recruit.01 is a member of VN classes hire-13.5.3 and orphan-29.7. Framed by Katie. (from recruitment.01-n)</note>
       <roles>
         <role descr="recruiter" f="PAG" n="0">
-          <vnrole vncls="13.5.3" vntheta="Agent"/>
-          <vnrole vncls="29.7" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="hire-13.5.3" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="orphan-29.7" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="recruit" f="ppt" n="1">
-          <vnrole vncls="13.5.3" vntheta="Theme"/>
-          <vnrole vncls="29.7" vntheta="Theme"/>
+        <role descr="recruit" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="hire-13.5.3" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="orphan-29.7" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="group, job (sometimes predicate on arg1)" f="PRD" n="2">
-          <vnrole vncls="13.5.3" vntheta="Attribute"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="hire-13.5.3" version="verbnet3.3">attribute</rolelink>
+          </rolelinks>
         </role>
-        <role descr="source" f="dir" n="3"/>
+        <role descr="source" f="DIR" n="3"/>
       </roles>
-      <example name="intransitive" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="ns"/>
-        <text>Hours after the announcement, [representatives of the Orange County Register]-1 were in a bar across the street *trace*-1 recruiting.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">recruiting</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Hiring" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="hire-13.5.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="orphan-29.7" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Personnel.StartPosition.Hiring" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Startposition" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="recruit-v.1" src="annot-overlap" confidence="0.1">26</lexlink>
+      </lexlinks>
+      <example src="" name="intransitive">
+        <text>Hours after the announcement, representatives of the Orange County Register were in a bar across the street recruiting.</text>
+        <rel relloc="17">recruiting.</rel>
+        <arg f="" n="0" start="4" end="9">representatives of the Orange County Register</arg>
       </example>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>The dispute has hampered [the administration]-1's efforts *trace*-1 to recruit prominent doctors to fill prestigious posts at the helm of the NIH and the Centers for Disease Control.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">recruit</rel>
-        <arg f="" n="1">prominent doctors to fill prestigious posts at the helm of the NIH and the Centers for Disease Control</arg>
+      <example src="" name="transitive">
+        <text>The dispute has hampered the administration's efforts to recruit prominent doctors to fill prestigious posts at the helm of the NIH and the Centers for Disease Control.</text>
+        <rel relloc="8">recruit</rel>
+        <arg f="" n="0" start="4" end="5">the administration's</arg>
+        <arg f="" n="1" start="9" end="26">prominent doctors to fill prestigious posts at the helm of the NIH and the Centers for Disease Control.</arg>
       </example>
-      <example name="transitive: PP variant" src="" type="">
-        <inflection aspect="both" form="participle" person="third" tense="present" voice="active"/>
+      <example src="" name="transitive: PP variant">
         <text>In recent months, California's Transportation Department has been recruiting in Pennsylvania, Arizona and Texas for engineers experienced in road and bridge design.</text>
-        <arg f="tmp" n="m">In recent months</arg>
-        <arg f="" n="0">California's Transportation Department</arg>
-        <rel f="">recruiting</rel>
-        <arg f="loc" n="m">in Pennsylvania, Arizona and Texas</arg>
-        <arg f="" n="1">for engineers experienced in road and bridge design</arg>
+        <rel relloc="8">recruiting</rel>
+        <arg f="TMP" n="m" start="0" end="2">In recent months,</arg>
+        <arg f="" n="0" start="3" end="5">California's Transportation Department</arg>
+        <arg f="LOC" n="m" start="9" end="13">in Pennsylvania, Arizona and Texas</arg>
+        <arg f="" n="1" start="14" end="21">for engineers experienced in road and bridge design.</arg>
       </example>
-      <example name="job as infinitive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>Not included on the most-likely-successor list are [Joni Evans]-1, recruited *trace*-1 two years ago to be publisher of adult trade books for Random House, and Sonny Mehta, president of the prestigious Alfred A. Knopf unit.</text>
-        <rel f="">recruited</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="tmp" n="m">two years ago</arg>
-        <arg f="" n="2">to be publisher of adult trade books for Random House</arg>
+      <example src="" name="job as infinitive">
+        <text>Not included on the most-likely-successor list are Joni Evans, recruited two years ago to be publisher of adult trade books for Random House, and Sonny Mehta, president of the prestigious Alfred A. Knopf unit.</text>
+        <rel relloc="9">recruited</rel>
+        <arg f="" n="1" start="7" end="8">Joni Evans,</arg>
+        <arg f="TMP" n="m" start="10" end="12">two years ago</arg>
+        <arg f="" n="2" start="13" end="22">to be publisher of adult trade books for Random House,</arg>
       </example>
-      <example name="job as as-phrase" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <example src="" name="job as as-phrase">
         <text>He had worked with Mr. McDonough on an earlier project and recruited him as architect for the trade center.</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">recruited</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="" n="2">as architect for the trade center</arg>
+        <rel relloc="11">recruited</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
+        <arg f="" n="1" start="12" end="12">him</arg>
+        <arg f="" n="2" start="13" end="18">as architect for the trade center.</arg>
       </example>
-      <example name="all args" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <example src="" name="all args">
         <text>``The big word around Specialized is passion,'' says Erik Eidsmo, a former ski-industry executive whom-1 Mr. Sinyard recruited *trace*-1 from Citicorp to run marketing and sales.</text>
-        <arg f="" n="0">Mr. Sinyard</arg>
-        <rel f="">recruited</rel>
-        <arg f="" n="1">*trace*-1 (= whom)</arg>
-        <arg f="slc" n="m">whom -&gt; a former ski-industry executive</arg>
-        <arg f="" n="3">from Citicorp</arg>
-        <arg f="" n="2">to run marketing and sales</arg>
+        <rel relloc="17">recruited</rel>
+        <arg f="" n="0" start="15" end="16">Mr. Sinyard</arg>
+        <arg f="" n="1" start="14" end="14">whom-1</arg>
+        <arg f="SLC" n="m" start="10" end="13">a former ski-industry executive</arg>
+        <arg f="" n="3" start="19" end="20">from Citicorp</arg>
+        <arg f="" n="2" start="21" end="25">to run marketing and sales.</arg>
       </example>
-      <example name="job sense" src="" type="">
+      <example src="" name="job sense">
         <text>Columbia College's recruitment of teachers</text>
-        <arg f="" n="0">Columbia College's</arg>
-        <rel f="">recruitment</rel>
-        <arg f="" n="1">of teachers</arg>
+        <rel relloc="2">recruitment</rel>
+        <arg f="" n="0" start="0" end="1">Columbia College's</arg>
+        <arg f="" n="1" start="3" end="4">of teachers</arg>
       </example>
-      <example name="medical sense" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="medical sense">
         <text>HIF1g induces the recruitment of bone marrow-derived vascular modulatory cells</text>
-        <rel f="">recruitment</rel>
-        <arg f="" n="1">of bone marrow-derived vascular modulatory cells</arg>
+        <rel relloc="3">recruitment</rel>
+        <arg f="" n="1" start="4" end="9">of bone marrow-derived vascular modulatory cells</arg>
       </example>
-      <example name="with arg 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="with arg 2">
         <text>The school's desperate recruitment of new teachers as department heads</text>
-        <arg f="" n="0">The school's</arg>
-        <arg f="mnr" n="m">desperate</arg>
-        <rel f="">recruitment</rel>
-        <arg f="" n="1">of new teachers</arg>
-        <arg f="" n="2">as department heads</arg>
+        <rel relloc="3">recruitment</rel>
+        <arg f="" n="0" start="0" end="1">The school's</arg>
+        <arg f="MNR" n="m" start="2" end="2">desperate</arg>
+        <arg f="" n="1" start="4" end="6">of new teachers</arg>
+        <arg f="" n="2" start="7" end="9">as department heads</arg>
       </example>
+      <note>RECRUIT-V NOTES: Based on WSJ. Member of Vncls hire-13.5.3, orphan-29.7. (from recruit.01-v)</note>
+      <note>RECRUITMENT-N NOTES: Based on Bolt data. Comparison to recruit.01. Recruit.01 is a member of VN classes hire-13.5.3 and orphan-29.7. Framed by Katie. (from recruitment.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

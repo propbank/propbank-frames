@@ -1,58 +1,61 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="apologize">
     <roleset id="apologize.01" name="be contrite">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">apologize</alias>
-        <alias framenet="" pos="n" verbnet="">apology</alias>
-        <alias framenet="" pos="l" verbnet="">make_apology</alias>
+        <alias pos="v">apologize</alias>
+        <alias pos="n">apology</alias>
+        <alias pos="l">make_apology</alias>
       </aliases>
+      <roles>
+        <role descr="apologist" f="PAG" n="0"/>
+        <role descr="apologize for" f="CAU" n="1"/>
+        <role descr="apologized to" f="GOL" n="2"/>
+        <role descr="utterance, the apology itself" f="PPT" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Justifying" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="apologize-v.1" src="annot-overlap" confidence="0.1">27</lexlink>
+      </lexlinks>
+      <example src="" name="intransitive">
+        <text>The company later apologized and agreed to make $8 million in contributions to charities chosen by him.</text>
+        <rel relloc="3">apologized</rel>
+        <arg f="" n="0" start="0" end="1">The company</arg>
+        <arg f="TMP" n="M" start="2" end="2">later</arg>
+      </example>
+      <example src="" name="transitive">
+        <text> Fujitsu Ltd.'s top executive took the unusual step of publicly apologizing for his company's making bids of just one yen for several local government projects, while computer rival NEC Corp. made a written apology for indulging in the same practice.</text>
+        <rel relloc="11">apologizing</rel>
+        <arg f="" n="0" start="1" end="4">Fujitsu Ltd.'s top executive</arg>
+        <arg f="MNR" n="M" start="10" end="10">publicly</arg>
+        <arg f="" n="1" start="12" end="25">for his company's making bids of just one yen for several local government projects,</arg>
+      </example>
+      <example src="ontonotes mz/sinorama/10/ectb_1045" name="ARG0 and ARG2">
+        <text>President Chen Shui - bian personally attended the anniversary event , and vowed to carry on the policy , initiated by the previous government , of apologizing to and caring for the victims .</text>
+        <rel relloc="26">apologizing</rel>
+        <arg f="" n="2" start="13" end="13">to</arg>
+        <arg f="" n="2" start="31" end="32">the victims</arg>
+      </example>
+      <example src="web" name="all args">
+        <text>Witherspoon wrote this as his apology to her for crossing that line.</text>
+        <rel relloc="5">apology</rel>
+        <arg f="" n="0" start="4" end="4">his</arg>
+        <arg f="" n="2" start="6" end="7">to her</arg>
+        <arg f="" n="1" start="8" end="11">for crossing that line.</arg>
+      </example>
+      <example src="BOLT" name="with arg3">
+        <text>I 've also had bids erased at the last second because the item is no longer available , and post auction apologies that when they came to pack it they could n't find it</text>
+        <rel relloc="21">apologies</rel>
+        <arg f="TMP" n="m" start="19" end="20">post auction</arg>
+        <arg f="" n="3" start="22" end="33">that when they came to pack it they could n't find it</arg>
+      </example>
       <note>APOLOGIZE-V NOTES: Could also be a verb of saying:"'I'm sorry,' apologized Mary."butthis doesn't occur in wsj. (from apologize.01-v)</note>
       <note>APOLOGY-N NOTES: Roleset based on instances in nouns-lv and verb frame apologize.01. Framed by Claire. (from apology.01-n)</note>
-      <roles>
-        <note>Arg3 added by Julia based on BOLT instance. (from apology.01-n)</note>
-        <role descr="apologist" f="pag" n="0"/>
-        <role descr="apologize for" f="cau" n="1"/>
-        <role descr="apologized to" f="gol" n="2"/>
-        <role descr="utterance, the apology itself" f="ppt" n="3"/>
-      </roles>
-      <example name="intransitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>The company later apologized and agreed to make $8 million in contributions to charities chosen by him.</text>
-        <arg f="" n="0">The company</arg>
-        <arg f="TMP" n="M">later</arg>
-        <rel f="">apologized</rel>
-      </example>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="present" voice="active"/>
-        <text>[Fujitsu Ltd.'s top executive]-1 took the unusual step of *trace*-1 publicly apologizing for his company's making bids of just one yen for several local government projects, while computer rival NEC Corp. made a written apology for indulging in the same practice.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <arg f="MNR" n="M">publicly</arg>
-        <rel f="">apologizing</rel>
-        <arg f="" n="1">for his company's making bids of just one yen for several local government projects</arg>
-      </example>
-      <example name="ARG0 and ARG2" src="ontonotes mz/sinorama/10/ectb_1045" type="">
-        <text>President Chen Shui - bian personally attended the anniversary event , and vowed to carry on the policy , initiated by the previous government , of apologizing to and caring for the victims .</text>
-        <arg f="" n="0">[]</arg>
-        <rel f="">apologizing</rel>
-        <arg f="" n="2">[to][the victims]</arg>
-      </example>
-
-      <example name="all args" src="web" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Witherspoon wrote this as his apology to her for crossing that line.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">apology</rel>
-        <arg f="" n="2">to her</arg>
-        <arg f="" n="1">for crossing that line.</arg>
-      </example>
-      <example name="with arg3" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I 've also had bids erased at the last second because the item is no longer available , and post auction apologies that when they came to pack it they could n't find it</text>
-        <arg f="tmp" n="m">post auction</arg>
-        <rel f="">apologies</rel>
-        <arg f="" n="3">that when they came to pack it they couldn't find it</arg>
-      </example>
+      <note>Arg3 added by Julia based on BOLT instance. (from apology.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

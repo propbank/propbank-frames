@@ -1,94 +1,110 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="consume">
     <roleset id="consume.01" name="eat, use up, devouring">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">consuming</alias>
-        <alias framenet="" pos="n" verbnet="">consumption</alias>
-        <alias framenet="Ingestion Expend_resource" pos="v" verbnet="">consume</alias>
-        <alias framenet="" pos="n" verbnet="">consuming</alias>
+        <alias pos="j">consuming</alias>
+        <alias pos="n">consumption</alias>
+        <alias pos="v">consume</alias>
+        <alias pos="n">consuming</alias>
+        <argalias pos="n" arg="0">consumer</argalias>
       </aliases>
+      <roles>
+        <role descr="consumer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="39.4-1" version="UNK">agent</rolelink>
+            <rolelink resource="VerbNet" class="consume-66" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Ingestion" version="1.7">ingestor</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="consumed" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="39.4-1" version="UNK">patient</rolelink>
+            <rolelink resource="VerbNet" class="consume-66" version="verbnet3.3">asset</rolelink>
+            <rolelink resource="FrameNet" class="Ingestion" version="1.7">ingestibles</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Ingestion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Expend_resource" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="39.4-1" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="consume-66" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Transfermoney" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Transferownership" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="consume-v.1" src="annot-overlap" confidence="0.1">12</lexlink>
+        <lexlink resource="onsense" version="on5" class="consume-v.2" src="annot-overlap" confidence="0.1">16</lexlink>
+        <lexlink resource="onsense" version="on5" class="consumption-n.1" src="annot-overlap" confidence="0.1">14</lexlink>
+        <lexlink resource="onsense" version="on5" class="consumption-n.3" src="annot-overlap" confidence="0.1">7</lexlink>
+      </lexlinks>
+      <example src="" name="consume-v: active">
+        <text>[The Miami fast-food chain, owned by Grand Metropolitan of Britain,]-1 expects *trace*-1 to consume roughly 34 million pounds of liquefied eggs annually.</text>
+        <rel relloc="13">consume</rel>
+        <arg f="" n="0" start="11" end="11">*trace*-1</arg>
+        <arg f="" n="1" start="14" end="20">roughly 34 million pounds of liquefied eggs</arg>
+        <arg f="TMP" n="m" start="21" end="21">annually.</arg>
+      </example>
+      <example src="" name="consume-v: passive, odd agent">
+        <text>While the vast bulk of it was indeed spent by reputable organizations on the good works it was raised for, it's equally true that [a sizable hunk]-1 was consumed *trace*-1 in ``expenses'' claimed by other operators, including fraudulent expenses.</text>
+        <rel relloc="28">consumed</rel>
+        <arg f="" n="1" start="29" end="29">*trace*-1</arg>
+        <arg f="" n="0" start="30" end="38">in ``expenses'' claimed by other operators, including fraudulent expenses.</arg>
+      </example>
+      <example src="BOLT-4,5" name="consuming-j: concatenation of arg0">
+        <text>I too would buy a lace front wig if I did it but they 're so damn expensive and time consuming to put on .</text>
+        <rel relloc="20">consuming</rel>
+        <arg f="" n="0" start="13" end="13">they</arg>
+        <arg f="" n="0" start="21" end="23">to put on</arg>
+        <arg f="EXT" n="m" start="15" end="15">so</arg>
+        <arg f="" n="1" start="19" end="19">time</arg>
+      </example>
+      <example src="BOLT" name="consuming-j">
+        <text>I do n't know . I 'm like not even thinking about my class content , this is all consuming</text>
+        <rel relloc="19">consuming</rel>
+        <arg f="" n="0" start="16" end="16">this</arg>
+        <arg f="" n="1" start="18" end="18">all</arg>
+      </example>
+      <example src="BOLT-7" name="consuming-n">
+        <text>At the same time , green living and green consuming *ICH*-2 are necessary to reduce PM2.5 concentration , [such as improving automobile fuel oil quality , greatly developing transit transportation and new energy automobiles , guide people to take green transportation , etc]-2.</text>
+        <rel relloc="9">consuming</rel>
+        <arg f="MNR" n="m" start="5" end="5">green</arg>
+        <arg f="ADJ" n="m" start="10" end="10">*ICH*-2</arg>
+      </example>
+      <example src="NomBank Frames" name="consumption-n: NP only, Args 0 &amp; 1">
+        <text>U.S. liquor consumption</text>
+        <rel relloc="2">consumption</rel>
+        <arg f="" n="0" start="0" end="0">U.S.</arg>
+        <arg f="" n="1" start="1" end="1">liquor</arg>
+      </example>
+      <example src="ON sense 1" name="consumption-n: Arg1 only, pre-relation position">
+        <text>Sugar consumption is off the charts lately.</text>
+        <rel relloc="1">consumption</rel>
+        <arg f="" n="1" start="0" end="0">Sugar</arg>
+      </example>
+      <example src="ON sense 2" name="consumption-n: Arg 1 as &quot;of&quot; PP">
+        <text>The consumption of the world's oil supply will have disastrous consequences.</text>
+        <rel relloc="1">consumption</rel>
+        <arg f="" n="1" start="2" end="6">of the world's oil supply</arg>
+      </example>
+      <example src="ON sense 3" name="consumption-n: Arg 0 only, pre-relational position">
+        <text>Some fish are not safe for human consumption.</text>
+        <rel relloc="7">consumption.</rel>
+        <arg f="" n="0" start="6" end="6">human</arg>
+      </example>
+      <example src="web" name="consumption-n: All arguments">
+        <text>As chidren's body weights have increased, so has their consumption of fast foods and soft drinks.</text>
+        <rel relloc="9">consumption</rel>
+        <arg f="" n="0" start="8" end="8">their</arg>
+        <arg f="" n="1" start="10" end="15">of fast foods and soft drinks.</arg>
+      </example>
       <note>CONSUME-V NOTES: Frames file for 'consume' based on financial subcorpus; adjectival 'consuming' based on BOLT-4,5. Member of VNcls devour-39.4-1, consume-66. (from consume.01-v)</note>
       <note>CONSUMPTION-N NOTES: Roleset based on verb entry consume.01, OntoNotes grouping consumption senses 1-3; maps to VN classes devour-39.4-1&amp; consume-66. Framed by Claire. (from consumption.01-n)</note>
       <note>CONSUMING-J NOTES: Added by Julia based on BOLT. (from consuming.01-j)</note>
       <note>CONSUMING-N NOTES: Automatically created by Julia as an alias file for unification. (from consuming.01-n)</note>
-      <roles>
-        <role descr="consumer" f="pag" n="0">
-          <vnrole vncls="39.4-1" vntheta="agent"/>
-          <vnrole vncls="66" vntheta="agent"/>
-        </role>
-        <role descr="consumed" f="ppt" n="1">
-          <vnrole vncls="39.4-1" vntheta="patient"/>
-          <vnrole vncls="66" vntheta="asset"/>
-        </role>
-      </roles>
-      <example name="consume-v: active" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>[The Miami fast-food chain, owned by Grand Metropolitan of Britain,]-1 expects *trace*-1 to consume roughly 34 million pounds of liquefied eggs annually.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">consume</rel>
-        <arg f="" n="1">roughly 34 million pounds of liquefied eggs</arg>
-        <arg f="tmp" n="m">annually</arg>
-      </example>
-      <example name="consume-v: passive, odd agent" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="past" voice="passive"/>
-        <text>While the vast bulk of it was indeed spent by reputable organizations on the good works it was raised for, it's equally true that [a sizable hunk]-1 was consumed *trace*-1 in ``expenses'' claimed by other operators, including fraudulent expenses.</text>
-        <rel f="">consumed</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="0">by `` expenses '' claimed by other operators , including fraudulent expenses</arg>
-      </example>
-      <example name="consuming-j: concatenation of arg0" src="BOLT-4,5" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I too would buy a lace front wig if I did it but they 're so damn expensive and time consuming to put on .</text>
-        <arg f="" n="0">[they][to put on]</arg>
-        <arg f="ext" n="m">so</arg>
-        <arg f="" n="1">time</arg>
-        <rel f="">consuming</rel>
-      </example>
-      <example name="consuming-j" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I do n't know . I 'm like not even thinking about my class content , this is all consuming</text>
-        <arg f="" n="0">this</arg>
-        <arg f="" n="1">all</arg>
-        <rel f="">consuming</rel>
-      </example>
-      <example name="consuming-n" src="BOLT-7" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>At the same time , green living and green consuming *ICH*-2 are necessary to reduce PM2.5 concentration , [such as improving automobile fuel oil quality , greatly developing transit transportation and new energy automobiles , guide people to take green transportation , etc]-2.</text>
-        <arg f="mnr" n="m">green</arg>
-        <rel f="">consuming</rel>
-        <arg f="adj" n="m">*ICH*-2</arg>
-      </example>
-      <example name="consumption-n: NP only, Args 0 &amp; 1" src="NomBank Frames" type="">
-        <text>U.S. liquor consumption</text>
-        <arg f="" n="0">U.S.</arg>
-        <arg f="" n="1">liquor</arg>
-        <rel f="">consumption</rel>
-      </example>
-      <example name="consumption-n: Arg1 only, pre-relation position" src="ON sense 1" type="">
-        <text>Sugar consumption is off the charts lately.</text>
-        <arg f="" n="1">sugar</arg>
-        <rel f="">consumption</rel>
-      </example>
-      <example name="consumption-n: Arg 1 as &quot;of&quot; PP" src="ON sense 2" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The consumption of the world's oil supply will have disastrous consequences.</text>
-        <rel f="">consumption</rel>
-        <arg f="" n="1">of the world's oil supply</arg>
-      </example>
-      <example name="consumption-n: Arg 0 only, pre-relational position" src="ON sense 3" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Some fish are not safe for human consumption.</text>
-        <arg f="" n="0">human</arg>
-        <rel f="">consumption</rel>
-      </example>
-      <example name="consumption-n: All arguments" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>As chidren's body weights have increased, so has their consumption of fast foods and soft drinks.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">consumption</rel>
-        <arg f="" n="1">of fast foods and soft drinks</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

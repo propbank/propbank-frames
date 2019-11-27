@@ -1,36 +1,51 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="crawl">
     <roleset id="crawl.01" name="to  advance slowly">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">crawl</alias>
+        <alias pos="v">crawl</alias>
       </aliases>
-      <note>CRAWL-V NOTES: Frames file for 'crawl' based on survey of sentences in the WSJ corpus. (from crawl.01-v predicate notes)</note>
       <roles>
         <role descr="agent, entity crawling" f="PPT" n="0">
-          <vnrole vncls="47.7" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="meander-47.7" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">self_mover</rolelink>
+          </rolelinks>
         </role>
         <role descr="direction" f="LOC" n="1">
-          <vnrole vncls="47.7" vntheta="Location"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="meander-47.7" version="verbnet3.3">location</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">goal</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">area</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">path</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG0 and ARG1" src="ontonotes bn/cnn/02/cnn_0219" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Self_motion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="meander-47.7" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="crawl-v.1" src="annot-overlap" confidence="0.1">10</lexlink>
+      </lexlinks>
+      <example src="ontonotes bn/cnn/02/cnn_0219" name="ARG0 and ARG1">
         <text>She does n't mind them crawling around underneath her .</text>
-        <arg f="" n="0">them</arg>
-        <rel f="">crawling</rel>
-        <arg f="" n="1">around</arg>
-        <arg f="loc" n="m">underneath her</arg>
+        <rel relloc="5">crawling</rel>
+        <arg f="" n="0" start="4" end="4">them</arg>
+        <arg f="" n="1" start="6" end="6">around</arg>
+        <arg f="LOC" n="m" start="7" end="8">underneath her</arg>
       </example>
-
-      <example name="prepositional Arg1" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>Colleagues today recall with some humor how meetings would crawl into the early morning hours [*T*-1] as Mr. Dinkins would march his staff out of board meetings and into his private office [*-2]to discuss , en masse , certain controversial proposals .</text>
-        <arg f="" n="0">meetings</arg>
-        <arg f="MOD" n="M">would</arg>
-        <rel f="">crawl</rel>
-        <arg f="" n="1">into the early morning hours</arg>
-        <arg f="ADV" n="M">as Mr. Dinkins would march his staff out of board meetings and into his private office [*-2] to discuss , en masse , certain controversial proposals</arg>
+      <example src="" name="prepositional Arg1">
+        <text>Colleagues today recall with some humor how meetings would crawl into the early morning hours [] as Mr. Dinkins would march his staff out of board meetings and into his private office [*-2]to discuss , en masse , certain controversial proposals .</text>
+        <rel relloc="9">crawl</rel>
+        <arg f="" n="0" start="7" end="7">meetings</arg>
+        <arg f="MOD" n="M" start="8" end="8">would</arg>
+        <arg f="" n="1" start="10" end="14">into the early morning hours</arg>
+        <arg f="ADV" n="M" start="16" end="40">as Mr. Dinkins would march his staff out of board meetings and into his private office [*-2]to discuss , en masse , certain controversial proposals</arg>
       </example>
+      <note>CRAWL-V NOTES: Frames file for 'crawl' based on survey of sentences in the WSJ corpus. (from crawl.01-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,34 +1,46 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="effort">
     <roleset id="effort.01" name="attempt">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">effort</alias>
-        <alias framenet="" pos="l" verbnet="">make_effort</alias>
+        <alias pos="n">effort</alias>
+        <alias pos="l">make_effort</alias>
       </aliases>
-      <note>EFFORT-N NOTES: Based on verb entry try.01; semantically corresponds to VN class try-61. (from effort.01-n)</note>
       <roles>
-        <role descr="Agent/Entity Trying" f="pag" n="0">
-          <vnrole vncls="try-61" vntheta="agent"/>
+        <role descr="Agent/Entity Trying" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="try-61" version="UNK">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing tried" f="ppt" n="1">
-          <vnrole vncls="try-61" vntheta="theme"/>
-          <vnrole vncls="try-61" vntheta="theme"/>
+        <role descr="thing tried" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="try-61" version="UNK">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="make_effort-l: Within LVC, all arguments" src="nouns-lv" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Attempt" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="try-61" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="effort-n.1" src="annot-overlap" confidence="0.1">19</lexlink>
+      </lexlinks>
+      <example src="nouns-lv" name="make_effort-l: Within LVC, all arguments">
         <text>If you make an effort to do what you can , you will immediately find that your burdens have been lightened .</text>
-        <arg f="" n="0">you</arg>
-        <arg f="lvb" n="m">make</arg>
-        <rel f="">effort</rel>
-        <arg f="" n="1">to do what you can</arg>
+        <rel relloc="4">effort</rel>
+        <arg f="" n="0" start="1" end="1">you</arg>
+        <arg f="LVB" n="m" start="2" end="2">make</arg>
+        <arg f="" n="1" start="5" end="9">to do what you can</arg>
       </example>
-      <example name="effort-n: nominal Arg1" src="web" type="">
+      <example src="web" name="effort-n: nominal Arg1">
         <text>Simon became inarticulate in his effort to express mankind's essential illness</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">effort</rel>
-        <arg f="" n="1">to express mankind's essential illness</arg>
+        <rel relloc="5">effort</rel>
+        <arg f="" n="0" start="4" end="4">his</arg>
+        <arg f="" n="1" start="6" end="10">to express mankind's essential illness</arg>
       </example>
+      <note>EFFORT-N NOTES: Based on verb entry try.01; semantically corresponds to VN class try-61. (from effort.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

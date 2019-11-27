@@ -1,42 +1,57 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="bury">
     <roleset id="bury.01" name="put in the ground">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">bury</alias>
-        <alias framenet="" pos="n" verbnet="">burial</alias>
+        <alias pos="v">bury</alias>
+        <alias pos="n">burial</alias>
       </aliases>
-      <note>BURY-V NOTES: The arg2 is troubling--it really should be just an ArgM-LOC, exceptfor the 'buried in debt' example. (from bury.01-v)</note>
       <roles>
         <role descr="burier" f="PAG" n="0">
-          <vnrole vncls="9.1-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="put-9.1-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="buried" f="PPT" n="1">
-          <vnrole vncls="9.1-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="put-9.1-1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="ground (usually understood)" f="GOL" n="2">
-          <vnrole vncls="9.1-1" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="put-9.1-1" version="verbnet3.3">destination</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="metaphorical ground must be stated" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Burying" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="put-9.1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="bury-v.1" src="annot-overlap" confidence="0.1">24</lexlink>
+        <lexlink resource="onsense" version="on5" class="bury-v.3" src="annot-overlap" confidence="0.1">3</lexlink>
+        <lexlink resource="onsense" version="on5" class="bury-v.2" src="annot-overlap" confidence="0.1">5</lexlink>
+      </lexlinks>
+      <example src="" name="metaphorical ground must be stated">
         <text>Hitachi Zosen Corp., [a shipbuilder]-3 buried *trace*-3 in debt just a few years ago, will build a machinery plant, its first expansion in 14 years.</text>
-        <rel f="">buried</rel>
-        <arg f="" n="1">*trace*-3</arg>
-        <arg f="in" n="2">debt</arg>
-        <arg f="TMP" n="M">just a few years ago</arg>
+        <rel relloc="5">buried</rel>
+        <arg f="" n="1" start="6" end="6">*trace*-3</arg>
+        <arg f="IN" n="2" start="8" end="8">debt</arg>
+        <arg f="TMP" n="M" start="9" end="13">just a few years ago,</arg>
       </example>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1063" type="">
+      <example src="ontonotes mz/sinorama/10/ectb_1063" name="ARG0 and ARG1 and ARG2">
         <text>At an age when other children were still busy at their games , Wang used to bury himself among books , for hours on end , in the family library .</text>
-        <arg f="tmp" n="m">At an age when other children were still busy at their games</arg>
-        <arg f="" n="0">Wang</arg>
-        <rel f="">bury</rel>
-        <arg f="" n="1">himself</arg>
-        <arg f="" n="2">among books</arg>
-        <arg f="tmp" n="m">for hours on end</arg>
-        <arg f="loc" n="m">in the family library</arg>
+        <rel relloc="16">bury</rel>
+        <arg f="TMP" n="m" start="0" end="11">At an age when other children were still busy at their games</arg>
+        <arg f="" n="0" start="13" end="13">Wang</arg>
+        <arg f="" n="1" start="17" end="17">himself</arg>
+        <arg f="" n="2" start="18" end="19">among books</arg>
+        <arg f="TMP" n="m" start="21" end="24">for hours on end</arg>
+        <arg f="LOC" n="m" start="26" end="29">in the family library</arg>
       </example>
-
+      <note>BURY-V NOTES: The arg2 is troubling--it really should be just an ArgM-LOC, exceptfor the 'buried in debt' example. (from bury.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

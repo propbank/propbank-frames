@@ -1,64 +1,96 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="steam">
     <roleset id="steam.01" name="cook by applying steam">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">steam</alias>
+        <alias pos="v">steam</alias>
       </aliases>
-      <note>STEAM-V NOTES: Frames file for 'steam' based on sentences in wsj. Verbnet entries 45.3 and 43.4, Framenet entry Apply heat. (from steam.01-v predicate notes)</note>
       <roles>
         <role descr="cook" f="PAG" n="0">
-          <vnrole vncls="45.3" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="cooking-45.3" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Absorb_heat" version="1.7">heat_source</rolelink>
+            <rolelink resource="FrameNet" class="Apply_heat" version="1.7">cook</rolelink>
+          </rolelinks>
         </role>
         <role descr="food" f="PPT" n="1">
-          <vnrole vncls="45.3" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="cooking-45.3" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Absorb_heat" version="1.7">entity</rolelink>
+            <rolelink resource="FrameNet" class="Apply_heat" version="1.7">food</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="down home cooking" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Absorb_heat" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Apply_heat" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="cooking-45.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="down home cooking">
         <text>John steamed 20 pounds of Brussels sprouts for dinner.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">steamed</rel>
-        <arg f="" n="1">20 pounds of Brussels sprouts</arg>
-        <arg f="adv" n="m">for dinner</arg>
+        <rel relloc="1">steamed</rel>
+        <arg f="" n="0" start="0" end="0">John</arg>
+        <arg f="" n="1" start="2" end="6">20 pounds of Brussels sprouts</arg>
+        <arg f="ADV" n="m" start="7" end="8">for dinner.</arg>
       </example>
+      <note>STEAM-V NOTES: Frames file for 'steam' based on sentences in wsj. Verbnet entries 45.3 and 43.4, Framenet entry Apply heat. (from steam.01-v predicate notes)</note>
     </roleset>
     <roleset id="steam.02" name="emit steam">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">steam</alias>
+        <alias pos="v">steam</alias>
       </aliases>
-      <note>STEAM-V NOTES: Frames file for 'steam' based on sentences in wsj. Verbnet entries 45.3 and 43.4, Framenet entry Apply heat. (from steam.02-v predicate notes)</note>
       <roles>
         <role descr="steamer" f="DIR" n="1">
-          <vnrole vncls="43.4" vntheta="Source"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="substance_emission-43.4" version="verbnet3.3">source</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG1" src="ontonotes wb/c2e/00/c2e_0038" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="substance_emission-43.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="ontonotes wb/c2e/00/c2e_0038" name="ARG1">
         <text>Steaming lamb hot pot , along with this lively atmosphere , will surely increase the heart - felt warmth of hometown feelings in this winter that is already not very cold .</text>
-        <rel f="">Steaming</rel>
-        <arg f="" n="1">[lamb][hot][pot]</arg>
+        <rel relloc="0">Steaming</rel>
+        <arg f="" n="1" start="1" end="1">lamb</arg>
+        <arg f="" n="1" start="2" end="2">hot</arg>
+        <arg f="" n="1" start="3" end="3">pot</arg>
       </example>
-
+      <note>STEAM-V NOTES: Frames file for 'steam' based on sentences in wsj. Verbnet entries 45.3 and 43.4, Framenet entry Apply heat. (from steam.02-v predicate notes)</note>
     </roleset>
     <roleset id="steam.03" name="manner of motion">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">steam</alias>
+        <alias pos="v">steam</alias>
       </aliases>
-      <note>STEAM-V NOTES: Frames file for 'steam' based on sentences in wsj. Verbnet entries 45.3 and 43.4, Framenet entry Apply heat. (from steam.03-v predicate notes)</note>
       <roles>
         <role descr="entity in motion" f="PAG" n="0"/>
         <role descr="path" f="PPT" n="1"/>
       </roles>
-      <example name="full steam ahead!" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="onsense" version="on5" class="steam-v.1" src="annot-overlap" confidence="0.1">3</lexlink>
+      </lexlinks>
+      <example src="" name="full steam ahead!">
         <text>Instead, the rally only paused for about 25 minutes and then steamed forward as institutions resumed buying.</text>
-        <arg f="dis" n="m">Instead</arg>
-        <arg f="" n="0">the rally</arg>
-        <arg f="tmp" n="m">then</arg>
-        <rel f="">steamed</rel>
-        <arg f="" n="1">forward</arg>
-        <arg f="tmp" n="m">as institutions resumed buying</arg>
+        <rel relloc="11">steamed</rel>
+        <arg f="DIS" n="m" start="0" end="0">Instead,</arg>
+        <arg f="" n="0" start="1" end="2">the rally</arg>
+        <arg f="TMP" n="m" start="10" end="10">then</arg>
+        <arg f="" n="1" start="12" end="12">forward</arg>
+        <arg f="TMP" n="m" start="13" end="16">as institutions resumed buying.</arg>
       </example>
+      <note>STEAM-V NOTES: Frames file for 'steam' based on sentences in wsj. Verbnet entries 45.3 and 43.4, Framenet entry Apply heat. (from steam.03-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

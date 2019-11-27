@@ -1,56 +1,81 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="smuggle">
     <roleset id="smuggle.01" name="move clandestinely">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">smuggling</alias>
-        <alias framenet="Smuggling" pos="v" verbnet="">smuggle</alias>
+        <alias pos="n">smuggling</alias>
+        <alias pos="v">smuggle</alias>
+        <argalias pos="n" arg="0">smuggler</argalias>
       </aliases>
-      <note>SMUGGLE-V NOTES: Member of VNcls steal-10.5, send-11.1-1. (from smuggle.01-v)</note>
-      <note>SMUGGLING-N NOTES: Automatically created by Julia as an alias file for unification. (from smuggling.01-n)</note>
       <roles>
         <role descr="thief" f="PAG" n="0">
-          <vnrole vncls="10.5-1" vntheta="Agent"/>
-          <vnrole vncls="11.1-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="steal-10.5-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="send-11.1-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Smuggling" version="1.7">perpetrator</rolelink>
+          </rolelinks>
         </role>
         <role descr="stolen object" f="PPT" n="1">
-          <vnrole vncls="10.5-1" vntheta="Theme"/>
-          <vnrole vncls="11.1-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="steal-10.5-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="send-11.1-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Smuggling" version="1.7">goods</rolelink>
+          </rolelinks>
         </role>
-        <role descr="stolen-from" f="dir" n="2">
-          <vnrole vncls="10.5-1" vntheta="Source"/>
-          <vnrole vncls="11.1-1" vntheta="Initial_Location"/>
+        <role descr="stolen-from" f="DIR" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="steal-10.5-1" version="verbnet3.3">source</rolelink>
+            <rolelink resource="VerbNet" class="send-11.1-1" version="verbnet3.3">initial_location</rolelink>
+            <rolelink resource="FrameNet" class="Smuggling" version="1.7">source</rolelink>
+          </rolelinks>
         </role>
-        <role descr="destination" f="gol" n="3">
-          <vnrole vncls="10.5-1" vntheta="Beneficiary"/>
-          <vnrole vncls="11.1-1" vntheta="Destination"/>
+        <role descr="destination" f="GOL" n="3">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="steal-10.5-1" version="verbnet3.3">beneficiary</rolelink>
+            <rolelink resource="VerbNet" class="send-11.1-1" version="verbnet3.3">destination</rolelink>
+            <rolelink resource="FrameNet" class="Smuggling" version="1.7">place</rolelink>
+            <rolelink resource="FrameNet" class="Smuggling" version="1.7">goal</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="args as DIR" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>Still, employees-1 do occasionally try [*-1] to smuggle out a gem or two.</text>
-        <arg f="" n="0">[*-1]</arg>
-        <rel f="">smuggle</rel>
-        <arg f="" n="2">out</arg>
-        <arg f="" n="1">a gem or two</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Smuggling" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="steal-10.5-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="send-11.1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Movement.TransportArtifact.SmuggleExtract" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Movement.TransportPerson.SmuggleExtract" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Transferownership" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Transportperson" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Transportartifact" version="rich" confidence="0.1" src="reo-expansion"/>
+      </lexlinks>
+      <example src="" name="args as DIR">
+        <text>Still, employees do occasionally try [*] to smuggle out a gem or two.</text>
+        <rel relloc="7">smuggle</rel>
+        <arg f="" n="0" start="1" end="1">employees</arg>
+        <arg f="" n="2" start="8" end="8">out</arg>
+        <arg f="" n="1" start="9" end="12">a gem or two.</arg>
       </example>
-      <example name="ARG0 and ARG2 and ARG1" src="ontonotes nw/wsj/11/wsj_1121" type="">
+      <example src="ontonotes nw/wsj/11/wsj_1121" name="ARG0 and ARG2 and ARG1">
         <text>Still , employees do occasionally try to smuggle out a gem or two .</text>
-        <arg f="" n="0">employees</arg>
-        <rel f="">smuggle</rel>
-        <arg f="" n="2">out</arg>
-        <arg f="" n="1">a gem or two</arg>
+        <rel relloc="7">smuggle</rel>
+        <arg f="" n="0" start="2" end="2">employees</arg>
+        <arg f="" n="2" start="8" end="8">out</arg>
+        <arg f="" n="1" start="9" end="12">a gem or two</arg>
       </example>
-
-      <example name="ARG0 and ARG1 and ARG3" src="ontonotes mz/sinorama/10/ectb_1077" type="">
+      <example src="ontonotes mz/sinorama/10/ectb_1077" name="ARG0 and ARG1 and ARG3">
         <text>Her husband , played by Leung , smuggles himself into America to try to find her .</text>
-        <arg f="" n="0">Her husband , played by Leung</arg>
-        <rel f="">smuggles</rel>
-        <arg f="" n="1">himself</arg>
-        <arg f="" n="3">into America</arg>
-        <arg f="prp" n="m">to try to find her</arg>
+        <rel relloc="7">smuggles</rel>
+        <arg f="" n="0" start="0" end="5">Her husband , played by Leung</arg>
+        <arg f="" n="1" start="8" end="8">himself</arg>
+        <arg f="" n="3" start="9" end="10">into America</arg>
+        <arg f="PRP" n="m" start="11" end="15">to try to find her</arg>
       </example>
-
+      <note>SMUGGLE-V NOTES: Member of VNcls steal-10.5, send-11.1-1. (from smuggle.01-v)</note>
+      <note>SMUGGLING-N NOTES: Automatically created by Julia as an alias file for unification. (from smuggling.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

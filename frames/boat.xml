@@ -1,29 +1,39 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="boat">
     <roleset id="boat.01" name="to ride in a boat">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">boat</alias>
-        <alias framenet="" pos="n" verbnet="">boating</alias>
+        <alias pos="v">boat</alias>
+        <alias pos="n">boating</alias>
       </aliases>
-      <note>BOAT-V NOTES: Frames file for 'boat' based on survey of sentences in the WSJ corpus. (from boat.01-v predicate notes)</note>
-      <note>BOATING-N NOTES: Roleset based on instances in BOLT P01. Comparison to verb entry boat.01, which maps to VN class 51.4.1. No FrameNet entry for noun. (from boating.01-n)</note>
       <roles>
-        <note>No realizations found with mention of boater, or really any arguments.  But it seems possible. (from boating.01-n)</note>
         <role descr="boater, agent" f="PAG" n="0">
-          <vnrole vncls="51.4.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="vehicle-51.4.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Operate_vehicle" version="1.7">driver</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="intransitive" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="ns" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Operate_vehicle" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="vehicle-51.4.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="intransitive">
         <text>[*-2] Surrounded [*-1]by stacks of paper , two computers and photos of himself boating and flying , Mr. Phillips laid out several changes [0] he hopes [*-3] to make [*T*-4] at the agency .</text>
-        <arg f="" n="0">himself</arg>
-        <rel f="">boating</rel>
+        <rel relloc="13">boating</rel>
+        <arg f="" n="0" start="12" end="12">himself</arg>
       </example>
-      <example name="no arguments" src="BOLT P01" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="BOLT P01" name="no arguments">
         <text>I think urban culture has recently adopted boating in a major way .</text>
+        <rel relloc="7">boating</rel>
       </example>
+      <note>BOAT-V NOTES: Frames file for 'boat' based on survey of sentences in the WSJ corpus. (from boat.01-v predicate notes)</note>
+      <note>BOATING-N NOTES: Roleset based on instances in BOLT P01. Comparison to verb entry boat.01, which maps to VN class 51.4.1. No FrameNet entry for noun. (from boating.01-n)</note>
+      <note>No realizations found with mention of boater, or really any arguments.  But it seems possible. (from boating.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,61 +1,79 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="chance">
     <roleset id="chance.01" name="to take the risk">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">chance</alias>
-        <alias framenet="" pos="n" verbnet="">chance</alias>
-        <alias framenet="" pos="l" verbnet="">take_chance</alias>
+        <alias pos="v">chance</alias>
+        <alias pos="n">chance</alias>
+        <alias pos="l">take_chance</alias>
       </aliases>
-      <note>CHANCE-V NOTES: Frames file for 'chance' based on survey of sentences in the WSJ corpus. (from chance.01-v predicate notes)</note>
       <roles>
         <role descr="taker of risk, agent" f="PAG" n="0">
-          <vnrole vncls="94-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="risk-94-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="risk taken" f="PPT" n="1">
-          <vnrole vncls="94-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="risk-94-1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="chance-v: transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>They chance [*-2] alienating the customers [0]they hope [*-3] to woo [*T*-1] by [*-4] looking like opportunistic sharks .</text>
-        <arg f="" n="0">They</arg>
-        <rel f="">chance</rel>
-        <arg f="" n="1">[*-2] alienating the customers [0]they hope [*-3] to woo [*T*-1] by [*-4] looking like opportunistic sharks</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Daring" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="risk-94-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="chance-v: transitive">
+        <text>They chance [*-2] alienating the customers [0]they hope [*-3] to woo [] by [*-4] looking like opportunistic sharks .</text>
+        <rel relloc="1">chance</rel>
+        <arg f="" n="0" start="0" end="0">They</arg>
+        <arg f="" n="1" start="2" end="17">[*-2] alienating the customers [0]they hope [*-3] to woo [] by [*-4] looking like opportunistic sharks</arg>
       </example>
-      <example name="take_chance-l" src="" type="">
+      <example src="" name="take_chance-l">
         <text>You took a chance on loving me</text>
-        <arg f="" n="0">You</arg>
-        <arg f="lvb" n="m">took</arg>
-        <rel f="">chance</rel>
-        <arg f="" n="1">on loving me</arg>
+        <rel relloc="3">chance</rel>
+        <arg f="" n="0" start="0" end="0">You</arg>
+        <arg f="LVB" n="m" start="1" end="1">took</arg>
+        <arg f="" n="1" start="4" end="6">on loving me</arg>
       </example>
+      <note>CHANCE-V NOTES: Frames file for 'chance' based on survey of sentences in the WSJ corpus. (from chance.01-v predicate notes)</note>
     </roleset>
     <roleset id="chance.02" name="opportunity, possibility or probability">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">chance</alias>
-        <alias framenet="" pos="l" verbnet="">have_chance</alias>
+        <alias pos="n">chance</alias>
+        <alias pos="l">have_chance</alias>
       </aliases>
-      <note>CHANCE-N NOTES: Added by Julia based on SMS. (from chance.01-n)</note>
       <roles>
-        <role descr="entity having an opportunity" f="pag" n="0"/>
-        <role descr="the opportunity or event" f="ppt" n="1"/>
-        <role descr="likelihood" f="vsp" n="2"/>
+        <role descr="entity having an opportunity" f="PAG" n="0"/>
+        <role descr="the opportunity or event" f="PPT" n="1"/>
+        <role descr="likelihood" f="VSP" n="2"/>
       </roles>
-      <example name="arg1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Opportunity" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Likelihood" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Probability" version="1.7" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="internet" name="arg1">
         <text>I didn't have a chance to speak to her.</text>
-        <rel f="">chance</rel>
-        <arg f="" n="1">to speak to her</arg>
+        <rel relloc="4">chance</rel>
+        <arg f="" n="1" start="5" end="8">to speak to her.</arg>
       </example>
-      <example name="arg1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="internet" name="arg1">
         <text>There is a 40% chance of rain tomorrow</text>
-        <arg f="" n="2">40%</arg>
-        <rel f="">chance</rel>
-        <arg f="" n="1">of rain</arg>
-        <arg f="tmp" n="m">tomorrow</arg>
+        <rel relloc="4">chance</rel>
+        <arg f="" n="2" start="3" end="3">40%</arg>
+        <arg f="" n="1" start="5" end="6">of rain</arg>
+        <arg f="TMP" n="m" start="7" end="7">tomorrow</arg>
       </example>
+      <note>CHANCE-N NOTES: Added by Julia based on SMS. (from chance.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

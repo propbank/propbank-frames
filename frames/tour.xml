@@ -1,57 +1,66 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="tour">
     <roleset id="tour.01" name="visit, view, sight-seeing/showcasing event">
       <aliases>
-        <alias framenet="Travel" pos="v" verbnet="">tour</alias>
-        <alias framenet="Travel Touring" pos="n" verbnet="">tour</alias>
+        <alias pos="v">tour</alias>
+        <alias pos="n">tour</alias>
+        <argalias pos="n" arg="0">tourist</argalias>
       </aliases>
+      <roles>
+        <role descr="tourist" f="PAG" n="0"/>
+        <role descr="location toured" f="LOC" n="1"/>
+        <role descr="subject matter/title of tour (see examples)" f="PPT" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Travel" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Touring" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Transportperson" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="tour-v.1" src="annot-overlap" confidence="0.1">19</lexlink>
+        <lexlink resource="onsense" version="on5" class="tour-n.2" src="annot-overlap" confidence="0.1">4</lexlink>
+        <lexlink resource="onsense" version="on5" class="tour-n.1" src="annot-overlap" confidence="0.1">12</lexlink>
+        <lexlink resource="onsense" version="on5" class="tour-n.4" src="annot-overlap" confidence="0.1">6</lexlink>
+      </lexlinks>
+      <example src="" name="pretty basic">
+        <text>This week, the U.S. auto giant paid for 10 House of Commons members and two House of Lords members to fly to Detroit and tour its operations there.</text>
+        <rel relloc="24">tour</rel>
+        <arg f="" n="0" start="8" end="18">10 House of Commons members and two House of Lords members</arg>
+        <arg f="" n="1" start="25" end="27">its operations there.</arg>
+      </example>
+      <example src="" name="both args">
+        <text>Charles and Diana visited a JC Penney 's on the prince 's last official US tour /.</text>
+        <rel relloc="15">tour</rel>
+        <arg f="" n="0" start="9" end="11">the prince 's</arg>
+        <arg f="TMP" n="m" start="12" end="12">last</arg>
+        <arg f="ADJ" n="m" start="13" end="13">official</arg>
+        <arg f="" n="1" start="14" end="14">US</arg>
+      </example>
+      <example src="" name="with args 0 &amp; 2">
+        <text>As part of his Barnstorm for Reform tour , he is joined by Republican governors from Connecticut , South Dakota , and Montana .</text>
+        <rel relloc="7">tour</rel>
+        <arg f="" n="0" start="3" end="3">his</arg>
+        <arg f="" n="2" start="4" end="6">Barnstorm for Reform</arg>
+      </example>
+      <example src="" name="just arg2">
+        <text>With the success of a new television show and last year 's Oz-fest tour ready to kick off , things were looking great for Ozzy Osbourne .</text>
+        <rel relloc="13">tour</rel>
+        <arg f="TMP" n="m" start="9" end="11">last year 's</arg>
+        <arg f="" n="2" start="12" end="12">Oz-fest</arg>
+      </example>
+      <example src="" name="with MNR">
+        <text>The main attractions include the so - called " eight views of Pali , " the ferry boat scenic tour , hiking on Mt. Kuanyin , Formosa Wonderworld theme park , and the Liao Tianding Temple .</text>
+        <rel relloc="19">tour</rel>
+        <arg f="MNR" n="m" start="16" end="17">ferry boat</arg>
+        <arg f="ADJ" n="m" start="18" end="18">scenic</arg>
+      </example>
       <note>TOUR-V NOTES: Vncls run-51.3.2. (from tour.01-v)</note>
       <note>TOUR-N NOTES: Added by Julia based on relation to tour-v.01, also comparison to parade-n.01. No corresponding VNcls. (from tour.01-n)</note>
-      <roles>
-        <note>Arg 2 should not be possible with the verb. (from tour.01-v)
+      <note>Arg 2 should not be possible with the verb. (from tour.01-v)
 Watch out for light verbs! (from tour.01-n)</note>
-        <role descr="tourist" f="pag" n="0"/>
-        <role descr="location toured" f="loc" n="1"/>
-        <role descr="subject matter/title of tour (see examples)" f="ppt" n="2"/>
-      </roles>
-      <example name="pretty basic" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>This week, the U.S. auto giant paid for 10 House of Commons members and two House of Lords members to fly to Detroit and tour its operations there.</text>
-        <arg f="" n="0">10 House of Commons members and two House of Lords members</arg>
-        <rel f="">tour</rel>
-        <arg f="" n="1">its operations there</arg>
-      </example>
-      <example name="both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Charles and Diana visited a JC Penney 's on the prince 's last official US tour /.</text>
-        <arg f="" n="0">the prince's</arg>
-        <arg f="tmp" n="m">last</arg>
-        <arg f="adj" n="m">official</arg>
-        <arg f="" n="1">US</arg>
-        <rel f="">tour</rel>
-      </example>
-      <example name="with args 0 &amp; 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>As part of his Barnstorm for Reform tour , he is joined by Republican governors from Connecticut , South Dakota , and Montana .</text>
-        <arg f="" n="0">his</arg>
-        <arg f="" n="2">Barnstorm for Reform</arg>
-        <rel f="">tour</rel>
-      </example>
-      <example name="just arg2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>With the success of a new television show and last year 's Oz-fest tour ready to kick off , things were looking great for Ozzy Osbourne .</text>
-        <arg f="tmp" n="m">last year's</arg>
-        <arg f="" n="2">Oz-fest</arg>
-        <rel f="">tour</rel>
-      </example>
-      <example name="with MNR" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The main attractions include the so - called " eight views of Pali , " the ferry boat scenic tour , hiking on Mt. Kuanyin , Formosa Wonderworld theme park , and the Liao Tianding Temple .</text>
-        <arg f="mnr" n="m">ferry boat</arg>
-        <arg f="adj" n="m">scenic</arg>
-        <rel f="">tour</rel>
-      </example>
     </roleset>
   </predicate>
 </frameset>

@@ -1,57 +1,76 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="fancy">
     <roleset id="fancy.01" name="suppose to be, take as">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">fancy</alias>
+        <alias pos="v">fancy</alias>
       </aliases>
-      <note>FANCY-V NOTES: No VNcls. Updated by Julia, 12/2010. (from fancy.01-v)</note>
       <roles>
         <role descr="supposer" f="PAG" n="0"/>
         <role descr="sentential arg" f="PPT" n="1"/>
       </roles>
-      <example name="the one example" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>Jeff Bridges is the younger brother, Jack, who-1 [*T*-1] fancies himself the rebellious artist; he lives in a loft with his sick dog and the occasional visit from the little girl upstairs, who climbs down the fire escape.</text>
-        <arg f="" n="0">[*T*-1] (= who)</arg>
-        <arg f="slc" n="m">who -&gt; Jack</arg>
-        <rel f="">fancies</rel>
-        <arg f="" n="1">himself the rebellious artist</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="the one example">
+        <text>Jeff Bridges is the younger brother, Jack, who-1 [] fancies himself the rebellious artist; he lives in a loft with his sick dog and the occasional visit from the little girl upstairs, who climbs down the fire escape.</text>
+        <rel relloc="9">fancies</rel>
+        <arg f="" n="0" start="2" end="3">is the</arg>
+        <arg f="SLC" n="m" start="6" end="6">Jack,</arg>
+        <arg f="" n="1" start="10" end="13">himself the rebellious artist;</arg>
       </example>
+      <note>FANCY-V NOTES: No VNcls. Updated by Julia, 12/2010. (from fancy.01-v)</note>
     </roleset>
     <roleset id="fancy.02" name="want, like">
       <aliases>
-        <alias framenet="Desiring" pos="v" verbnet="">fancy</alias>
-        <alias framenet="Desiring" pos="n" verbnet="">fancy</alias>
-        <alias framenet="" pos="l" verbnet="">take_fancy</alias>
+        <alias pos="v">fancy</alias>
+        <alias pos="n">fancy</alias>
+        <alias pos="l">take_fancy</alias>
       </aliases>
-      <note>FANCY-V NOTES: Member of VNcls want-32.1, admire-31.2. (from fancy.02-v)</note>
-      <note>FANCY-N NOTES: Based on verb entry fancy.02. Corresponds to VNcls want-32.1, admire-31.2. (from fancy.01-n)</note>
       <roles>
-        <role descr="wanter" f="pag" n="0">
-          <vnrole vncls="31.2" vntheta="Experiencer"/>
-          <vnrole vncls="32.1" vntheta="Pivot"/>
+        <role descr="wanter" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="admire-31.2" version="verbnet3.3">experiencer</rolelink>
+            <rolelink resource="VerbNet" class="want-32.1" version="verbnet3.3">pivot</rolelink>
+            <rolelink resource="FrameNet" class="Desiring" version="1.7">experiencer</rolelink>
+          </rolelinks>
         </role>
-        <role descr="wanted" f="ppt" n="1">
-          <vnrole vncls="31.2" vntheta="Stimulus"/>
-          <vnrole vncls="32.1" vntheta="Theme"/>
+        <role descr="wanted" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="admire-31.2" version="verbnet3.3">stimulus</rolelink>
+            <rolelink resource="VerbNet" class="want-32.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Desiring" version="1.7">event</rolelink>
+            <rolelink resource="FrameNet" class="Desiring" version="1.7">focal_participant</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG0 and ARG1" src="ontonotes nw/xinhua/00/chtb_0013" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Desiring" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="admire-31.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="want-32.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="ontonotes nw/xinhua/00/chtb_0013" name="ARG0 and ARG1">
         <text>Many enterprises have successively taken a fancy for this " Golden Waterway " and are now actively investing in building factories .</text>
-        <arg f="" n="0">Many enterprises</arg>
-        <arg f="mnr" n="m">successively</arg>
-        <arg f="lvb" n="m">taken</arg>
-        <rel f="">fancy</rel>
-        <arg f="" n="1">for this " Golden Waterway "</arg>
+        <rel relloc="6">fancy</rel>
+        <arg f="" n="0" start="0" end="1">Many enterprises</arg>
+        <arg f="MNR" n="m" start="3" end="3">successively</arg>
+        <arg f="LVB" n="m" start="4" end="4">taken</arg>
+        <arg f="" n="1" start="7" end="12">for this " Golden Waterway "</arg>
       </example>
-      <example name="All arguments" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="All arguments">
         <text>Val indulges her fancy for dressing up.</text>
-        <arg f="" n="0">her</arg>
-        <rel f="">fancy</rel>
-        <arg f="" n="1">for dressing up</arg>
+        <rel relloc="3">fancy</rel>
+        <arg f="" n="0" start="2" end="2">her</arg>
+        <arg f="" n="1" start="4" end="6">for dressing up.</arg>
       </example>
+      <note>FANCY-V NOTES: Member of VNcls want-32.1, admire-31.2. (from fancy.02-v)</note>
+      <note>FANCY-N NOTES: Based on verb entry fancy.02. Corresponds to VNcls want-32.1, admire-31.2. (from fancy.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

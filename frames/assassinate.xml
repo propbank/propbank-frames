@@ -1,53 +1,71 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="assassinate">
     <roleset id="assassinate.01" name="to murder">
       <aliases>
-        <alias framenet="Killing" pos="n" verbnet="">assassination</alias>
-        <alias framenet="Killing" pos="v" verbnet="">assassinate</alias>
+        <alias pos="n">assassination</alias>
+        <alias pos="v">assassinate</alias>
+        <argalias pos="n" arg="0">assassin</argalias>
       </aliases>
-      <note>ASSASSINATE-V NOTES: Member of Vncls murder-42.1. (from assassinate.01-v)</note>
-      <note>ASSASSINATION-N NOTES: Corresponds to VNcls murder-42.1. (from assassination.01-n)</note>
       <roles>
         <role descr="assassin, agent" f="PAG" n="0">
-          <vnrole vncls="42.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="murder-42.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Killing" version="1.7">cause</rolelink>
+            <rolelink resource="FrameNet" class="Killing" version="1.7">killer</rolelink>
+          </rolelinks>
         </role>
         <role descr="person assassinated" f="PPT" n="1">
-          <vnrole vncls="42.1" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="murder-42.1" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Killing" version="1.7">victim</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="active"/>
-        <text>As recounted in a stipulation that summarized government documents released for the North trial , [Mr. Noriega]*-2 offered *PRO*-2 to assassinate the Sandinista leadership in exchange `` for a promise to help clean up Noriega 's image and a commitment to lift the U.S. ban on military sales to the Panamanian Defense Forces . ''</text>
-        <arg f="" n="0">*PRO*-2</arg>
-        <rel f="">assassinate</rel>
-        <arg f="" n="1">the Sandinista leadership</arg>
-        <arg f="prp" n="m">in exchange " for a promise to help clean up Noriaga's image and a commitment to lift the U.S. ban on military sales to the Panamanian Defense Forces . "</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Killing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="murder-42.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Life.Die.DeathCausedByViolentEvents" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Die" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="assassination-n.2" src="annot-overlap" confidence="0.1">19</lexlink>
+        <lexlink resource="onsense" version="on5" class="assassinate-v.1" src="annot-overlap" confidence="0.1">10</lexlink>
+      </lexlinks>
+      <example src="" name="transitive">
+        <text>As recounted in a stipulation that summarized government documents released for the North trial , [Mr. offered to assassinate the Sandinista leadership in exchange `` for a promise to help clean up Noriega 's image and a commitment to lift the U.S. ban on military sales to the Panamanian Defense Forces . ''</text>
+        <rel relloc="18">assassinate</rel>
+        <arg f="" n="0" start="27" end="27">promise</arg>
+        <arg f="" n="1" start="19" end="21">the Sandinista leadership</arg>
+        <arg f="PRP" n="m" start="22" end="51">in exchange `` for a promise to help clean up Noriega 's image and a commitment to lift the U.S. ban on military sales to the Panamanian Defense Forces .</arg>
       </example>
-      <example name="passive" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="past" voice="passive"/>
-        <text>[Mrs. Gandhi]*-1 had been assassinated [*-1]by separatist Sikhs , and many Indians feared their country might split apart .</text>
-        <rel f="">assassinated</rel>
-        <arg f="" n="1">[*-1]</arg>
-        <arg f="" n="0">by separatist Sikhs</arg>
+      <example src="" name="passive">
+        <text>[Mrs. had been assassinated [*]by separatist Sikhs , and many Indians feared their country might split apart .</text>
+        <rel relloc="3">assassinated</rel>
+        <arg f="" n="1" start="4" end="4">[*]by</arg>
+        <arg f="" n="0" start="4" end="6">[*]by separatist Sikhs</arg>
       </example>
-      <example name="autogen1" src="" type="">
+      <example src="" name="autogen1">
         <text>the assassination of his mother , Indira Gandhi ,</text>
-        <rel f="">assassination</rel>
-        <arg f="" n="1">of his mother , Indira Gandhi ,</arg>
+        <rel relloc="1">assassination</rel>
+        <arg f="" n="1" start="2" end="8">of his mother , Indira Gandhi ,</arg>
       </example>
-      <example name="autogen2" src="" type="">
+      <example src="" name="autogen2">
         <text>his assassination</text>
-        <arg f="" n="1">his</arg>
-        <rel f="">assassination</rel>
+        <rel relloc="1">assassination</rel>
+        <arg f="" n="1" start="0" end="0">his</arg>
       </example>
-      <example name="ARG0 and ARG1" src="ontonotes bn/voa/02/voa_0246" type="">
+      <example src="ontonotes bn/voa/02/voa_0246" name="ARG0 and ARG1">
         <text>The terrorist group justified its assassination of Socialist Ernest Yuke because he was in favor of stronger ties between his party and the PNB .</text>
-        <arg f="" n="0">its</arg>
-        <rel f="">assassination</rel>
-        <arg f="" n="1">of Socialist Ernest Yuke</arg>
+        <rel relloc="5">assassination</rel>
+        <arg f="" n="0" start="4" end="4">its</arg>
+        <arg f="" n="1" start="6" end="9">of Socialist Ernest Yuke</arg>
       </example>
-
+      <note>ASSASSINATE-V NOTES: Member of Vncls murder-42.1. (from assassinate.01-v)</note>
+      <note>ASSASSINATION-N NOTES: Corresponds to VNcls murder-42.1. (from assassination.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

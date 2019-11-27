@@ -1,27 +1,45 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="barbecue">
     <roleset id="barbecue.01" name="cook by barbecuing">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">barbecue</alias>
+        <alias pos="v">barbecue</alias>
       </aliases>
-      <note>BARBECUE-V NOTES: Created by Jena. (from barbecue.01-v)</note>
       <roles>
         <role descr="cook, agent" f="PAG" n="0">
-          <vnrole vncls="26.3-2" vntheta="agent"/>
-          <vnrole vncls="45.3" vntheta="agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="preparing-26.3-2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="cooking-45.3" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Absorb_heat" version="1.7">heat_source</rolelink>
+            <rolelink resource="FrameNet" class="Apply_heat" version="1.7">cook</rolelink>
+          </rolelinks>
         </role>
         <role descr="food,meaterial" f="PPT" n="1">
-          <vnrole vncls="45.3" vntheta="patient"/>
-          <vnrole vncls="26.3-2" vntheta="patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="cooking-45.3" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="VerbNet" class="preparing-26.3-2" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Absorb_heat" version="1.7">entity</rolelink>
+            <rolelink resource="FrameNet" class="Apply_heat" version="1.7">food</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Absorb_heat" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Apply_heat" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="preparing-26.3-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="cooking-45.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="">
         <text>...and left him * to get on with * barbecuing the meat.</text>
-        <arg f="" n="0">*</arg>
-        <rel f="">barbecuing</rel>
-        <arg f="" n="1">the meat</arg>
+        <rel relloc="9">barbecuing</rel>
+        <arg f="" n="0" start="3" end="3">*</arg>
+        <arg f="" n="1" start="10" end="11">the meat.</arg>
       </example>
+      <note>BARBECUE-V NOTES: Created by Jena. (from barbecue.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

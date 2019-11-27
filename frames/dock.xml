@@ -1,75 +1,84 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="dock">
     <roleset id="dock.01" name="(cause to) park (a ship) in a dock">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">dock</alias>
-        <alias framenet="" pos="n" verbnet="">dockings</alias>
-        <alias framenet="" pos="n" verbnet="">dock</alias>
-        <alias framenet="" pos="n" verbnet="">docking</alias>
+        <alias pos="v">dock</alias>
+        <alias pos="n">dockings</alias>
+        <alias pos="n">dock</alias>
+        <alias pos="n">docking</alias>
       </aliases>
+      <roles>
+        <role descr="agent, docker" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pocket-9.10-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing docked, ship" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pocket-9.10-1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="Destination (the dock)" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pocket-9.10-1" version="verbnet3.3">destination</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="pocket-9.10-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="dock-v.1" src="annot-overlap" confidence="0.1">11</lexlink>
+        <lexlink resource="onsense" version="on5" class="docking-n.1" src="annot-overlap" confidence="0.1">8</lexlink>
+      </lexlinks>
+      <example src="" name="who's stearing this ship?">
+        <text>He was reported *-1 *PRO*-2 missing later that day when-3 the ship docked in Kusadasi Turkey *T*-3</text>
+        <rel relloc="12">docked</rel>
+        <arg f="RCL" n="M" start="6" end="8">later that day</arg>
+        <arg f="" n="1" start="10" end="11">the ship</arg>
+        <arg f="" n="2" start="13" end="15">in Kusadasi Turkey</arg>
+        <arg f="TMP" n="M" start="16" end="16">*T*-3</arg>
+      </example>
+      <example src="" name="'port-side' is location (and not arg 1) because this is where he is boarding rather than the location of the dock">
+        <text>The dockmaster's port-side docking</text>
+        <rel relloc="3">docking</rel>
+        <arg f="" n="0" start="0" end="1">The dockmaster's</arg>
+        <arg f="LOC" n="m" start="2" end="2">port-side</arg>
+      </example>
+      <example src="" name="with arg 2">
+        <text>the first space docking in 1966</text>
+        <rel relloc="3">docking</rel>
+        <arg f="" n="2" start="2" end="2">space</arg>
+        <arg f="TMP" n="m" start="4" end="5">in 1966</arg>
+      </example>
+      <example src="" name="with arg 1">
+        <text>the cart dock</text>
+        <rel relloc="2">dock</rel>
+        <arg f="" n="1" start="1" end="1">cart</arg>
+      </example>
+      <example src="" name="with arg 1">
+        <text>two failed automatic dockings of the Shuttle-Mir</text>
+        <rel relloc="3">dockings</rel>
+        <arg f="MNR" n="m" start="2" end="2">automatic</arg>
+        <arg f="" n="1" start="4" end="6">of the Shuttle-Mir</arg>
+      </example>
+      <example src="" name="with arg 2">
+        <text>space dockings</text>
+        <rel relloc="1">dockings</rel>
+        <arg f="" n="2" start="0" end="0">space</arg>
+      </example>
+      <example src="" name="one more with thing docked">
+        <text>space shuttle dockings</text>
+        <rel relloc="2">dockings</rel>
+        <arg f="" n="1" start="0" end="1">space shuttle</arg>
+      </example>
       <note>DOCK-V NOTES: Frame created by Arrick (from dock.01-v)</note>
       <note>DOCKING-N NOTES: Based on sentences in nouns-00040. Comparison to dock.01-v. VN class pocket-9.10-1. No FN class. Framed by Katie. (from docking.01-n)</note>
       <note>DOCKINGS-N NOTES: Based on sentences in nouns-00040. Comparison to dock.01-v. VN class pocket-9.10-1. No FN class. Framed by Katie. (from dockings.01-n)</note>
       <note>DOCK-N NOTES: Based on sentences in nouns-00040. Comparison to dock.01-v. VN class pocket-9.10-1. No FN class. Framed by Katie. (from dock.01-n)</note>
-      <roles>
-        <role descr="agent, docker" f="PAG" n="0">
-          <vnrole vncls="9.10-1" vntheta="Agent"/>
-        </role>
-        <role descr="thing docked, ship" f="PPT" n="1">
-          <vnrole vncls="9.10-1" vntheta="Theme"/>
-        </role>
-        <role descr="Destination (the dock)" f="GOL" n="2">
-          <vnrole vncls="9.10-1" vntheta="Destination"/>
-        </role>
-      </roles>
-      <example name="who's stearing this ship?" src="" type="">
-        <text>He was reported *-1 *PRO*-2 missing later that day when-3 the ship docked in Kusadasi Turkey *T*-3</text>
-        <arg f="RCL" n="M">when -&gt; later that day</arg>
-        <arg f="" n="1">the ship</arg>
-        <rel f="">docked</rel>
-        <arg f="" n="2">in Kusadasi Turkey</arg>
-        <arg f="TMP" n="M">*T*-3</arg>
-      </example>
-      <example name="'port-side' is location (and not arg 1) because this is where he is boarding rather than the location of the dock" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The dockmaster's port-side docking</text>
-        <arg f="" n="0">The dockmaster's</arg>
-        <arg f="loc" n="m">port-side</arg>
-        <rel f="">docking</rel>
-      </example>
-      <example name="with arg 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>the first space docking in 1966</text>
-        <arg f="" n="2">space</arg>
-        <rel f="">docking</rel>
-        <arg f="tmp" n="m">in 1966</arg>
-      </example>
-      <example name="with arg 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>the cart dock</text>
-        <arg f="" n="1">cart</arg>
-        <rel f="">dock</rel>
-      </example>
-      <example name="with arg 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>two failed automatic dockings of the Shuttle-Mir</text>
-        <arg f="mnr" n="m">automatic</arg>
-        <rel f="">dockings</rel>
-        <arg f="" n="1">of the Shuttle-Mir</arg>
-      </example>
-      <example name="with arg 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>space dockings</text>
-        <arg f="" n="2">space</arg>
-        <rel f="">dockings</rel>
-      </example>
-      <example name="one more with thing docked" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>space shuttle dockings</text>
-        <arg f="" n="1">space shuttle</arg>
-        <rel f="">dockings</rel>
-      </example>
     </roleset>
   </predicate>
 </frameset>

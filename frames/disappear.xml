@@ -1,30 +1,40 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="disappear">
     <roleset id="disappear.01" name="no longer be there">
       <aliases>
-        <alias framenet="Departing" pos="v" verbnet="">disappear</alias>
+        <alias pos="v">disappear</alias>
       </aliases>
-      <note>DISAPPEAR-V NOTES: Member of VNcls disappearance-48.2. (from disappear.01-v)</note>
       <roles>
         <role descr="causal agent" f="PAG" n="0"/>
         <role descr="the disappeared" f="PPT" n="1">
-          <vnrole vncls="48.2" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="disappearance-48.2" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Departing" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="normal usaged" src="" type="">
-        <inflection aspect="ns" form="ns" person="third" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Departing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="disappearance-48.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="disappear-v.1" src="annot-overlap" confidence="0.1">54</lexlink>
+      </lexlinks>
+      <example src="" name="normal usaged">
         <text>``If there's a problem, Peter disappears, and all of a sudden Jon shows up.''</text>
-        <arg f="" n="1">Peter</arg>
-        <rel f="">disappears</rel>
+        <rel relloc="5">disappears,</rel>
+        <arg f="" n="1" start="4" end="4">Peter</arg>
       </example>
-      <example name="ARG0" src="probably COCA (2018 example fix)" type="">
+      <example src="probably COCA (2018 example fix)" name="ARG0">
         <text>They took individuals away and “disappeared” them</text>
-        <arg f="" n="0">They</arg>
-        <rel f="">“disappeared”</rel>
-        <arg f="" n="1">them</arg>
+        <rel relloc="5">“disappeared”</rel>
+        <arg f="" n="0" start="0" end="0">They</arg>
+        <arg f="" n="1" start="6" end="6">them</arg>
       </example>
-
+      <note>DISAPPEAR-V NOTES: Member of VNcls disappearance-48.2. (from disappear.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

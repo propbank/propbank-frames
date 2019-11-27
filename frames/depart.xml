@@ -1,59 +1,80 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="depart">
     <roleset id="depart.01" name="to go away, leave">
       <aliases>
-        <alias framenet="Departing" pos="v" verbnet="">depart</alias>
-        <alias framenet="Departing" pos="n" verbnet="">departure</alias>
+        <alias pos="v">depart</alias>
+        <alias pos="n">departure</alias>
       </aliases>
-      <note>DEPART-V NOTES: VN, FN updated by Julia. Member of Vncls resign-10.11, escape-51.1 (from depart.01-v)</note>
-      <note>DEPARTURE-N NOTES: Updated by Julia. Member of Vncls resign-10.11, escape-51.1 (from departure.01-n)</note>
       <roles>
         <role descr="entity leaving, agent" f="PAG" n="0">
-          <vnrole vncls="51.1-1" vntheta="Theme"/>
-          <vnrole vncls="10.11" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="escape-51.1-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="resign-10.11" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Departing" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="departed from" f="DIR" n="1">
-          <vnrole vncls="51.1-1" vntheta="Initial_Location"/>
-          <vnrole vncls="10.11" vntheta="Source"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="escape-51.1-1" version="verbnet3.3">initial_location</rolelink>
+            <rolelink resource="VerbNet" class="resign-10.11" version="verbnet3.3">source</rolelink>
+            <rolelink resource="FrameNet" class="Departing" version="1.7">source</rolelink>
+          </rolelinks>
         </role>
         <role descr="departed for, destination" f="GOL" n="2">
-          <vnrole vncls="51.1-1" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="escape-51.1-1" version="verbnet3.3">destination</rolelink>
+            <rolelink resource="FrameNet" class="Departing" version="1.7">goal</rolelink>
+            <rolelink resource="FrameNet" class="Departing" version="1.7">path</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="both arguments" src="both arguments" type="both arguments">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="active"/>
-        <text>[*-1] Departing from decades of Soviet dogma , [the new system]-1 would lead to big differences in pay between workers and almost certainly to unemployment .</text>
-        <rel f="">Departing</rel>
-        <arg f="" n="1">from decades of Soviet dogma</arg>
-        <arg f="" n="0">[*-1]</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Departing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="escape-51.1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="resign-10.11" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Transportperson" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="depart-v.1" src="annot-overlap" confidence="0.1">17</lexlink>
+        <lexlink resource="onsense" version="on5" class="departure-n.1" src="annot-overlap" confidence="0.1">21</lexlink>
+        <lexlink resource="onsense" version="on5" class="depart-v.2" src="annot-overlap" confidence="0.1">4</lexlink>
+        <lexlink resource="onsense" version="on5" class="departure-n.2" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="both arguments" name="both arguments">
+        <text>[*] Departing from decades of Soviet dogma , the new system would lead to big differences in pay between workers and almost certainly to unemployment .</text>
+        <rel relloc="1">Departing</rel>
+        <arg f="" n="1" start="2" end="6">from decades of Soviet dogma</arg>
+        <arg f="" n="0" start="8" end="10">the new system</arg>
       </example>
-      <example name="With destination" src="With destination" type="With destination">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>[He]-1's moved on since his acquittal, like Gary Glitter did after his 1999 conviction, *PRO*-1 having departed last June for a Bahrain "vacation" from which he's yet to emerge.</text>
-        <arg f="" n="0">*PRO*-1</arg>
-        <rel f="">departed</rel>
-        <arg f="tmp" n="m">last June</arg>
-        <arg f="" n="2">for a Bahrain "vacation" from which he's yet to emerge</arg>
+      <example src="With destination" name="With destination">
+        <text> He's moved on since his acquittal, like Gary Glitter did after his 1999 conviction, having departed last June for a Bahrain "vacation" from which he's yet to emerge.</text>
+        <rel relloc="16">departed</rel>
+        <arg f="" n="0" start="23" end="23">from</arg>
+        <arg f="TMP" n="m" start="17" end="18">last June</arg>
+        <arg f="" n="2" start="19" end="28">for a Bahrain "vacation" from which he's yet to emerge.</arg>
       </example>
-      <example name="autogen1" src="" type="">
+      <example src="" name="autogen1">
         <text>Nigel Lawson 's departure from the British government</text>
-        <arg f="" n="0">Nigel Lawson 's</arg>
-        <rel f="">departure</rel>
-        <arg f="" n="1">from the British government</arg>
+        <rel relloc="3">departure</rel>
+        <arg f="" n="0" start="0" end="2">Nigel Lawson 's</arg>
+        <arg f="" n="1" start="4" end="7">from the British government</arg>
       </example>
-      <example name="autogen2" src="" type="">
+      <example src="" name="autogen2">
         <text>such a departure from the past that many in the industry areskeptical CNN will follow through with its investigativecommitment , especially after it sees the cost of producingin-depth pieces</text>
-        <rel f="">departure</rel>
-        <arg f="" n="1">from the past</arg>
+        <rel relloc="2">departure</rel>
+        <arg f="" n="1" start="3" end="5">from the past</arg>
       </example>
-      <example name="with arg2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="with arg2">
         <text>his departure to India for the IPL</text>
-        <rel f="">departure</rel>
-        <arg f="" n="1">to India</arg>
-        <arg f="prp" n="m">for the IPL</arg>
+        <rel relloc="1">departure</rel>
+        <arg f="" n="1" start="2" end="3">to India</arg>
+        <arg f="PRP" n="m" start="4" end="6">for the IPL</arg>
       </example>
+      <note>DEPART-V NOTES: VN, FN updated by Julia. Member of Vncls resign-10.11, escape-51.1 (from depart.01-v)</note>
+      <note>DEPARTURE-N NOTES: Updated by Julia. Member of Vncls resign-10.11, escape-51.1 (from departure.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

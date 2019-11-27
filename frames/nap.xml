@@ -1,27 +1,38 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="nap">
     <roleset id="nap.01" name="doze, briefly sleeping">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">nap</alias>
-        <alias framenet="" pos="n" verbnet="">nap</alias>
-        <alias framenet="" pos="l" verbnet="">take_nap</alias>
+        <alias pos="v">nap</alias>
+        <alias pos="n">nap</alias>
+        <alias pos="l">take_nap</alias>
       </aliases>
-      <note>NAP-V NOTES: Edited by hwangd (from nap.01-v)</note>
-      <note>NAP-N NOTES: (from nap.01-n)</note>
       <roles>
         <role descr="sleeper" f="PAG" n="0">
-          <vnrole vncls="40.4" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="snooze-40.4" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Sleep" version="1.7">sleeper</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="All args" src="web usage" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Sleep" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="snooze-40.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web usage" name="All args">
         <text>I shouldn't have napped this evening.</text>
-        <arg f="" n="0">I</arg>
-        <arg f="mod" n="m">should</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">napped</rel>
-        <arg f="tmp" n="m">this evening</arg>
+        <rel relloc="3">napped</rel>
+        <arg f="" n="0" start="0" end="0">I</arg>
+        <arg f="MOD" n="m" start="1" end="1">shouldn't</arg>
+        <arg f="NEG" n="m" start="0" end="0">I</arg>
+        <arg f="TMP" n="m" start="4" end="5">this evening.</arg>
       </example>
+      <note>NAP-V NOTES: Edited by hwangd (from nap.01-v)</note>
+      <note>NAP-N NOTES: (from nap.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

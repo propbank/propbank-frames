@@ -1,40 +1,50 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="abbreviate">
     <roleset id="abbreviate.01" name="make shorter, especially words">
       <aliases>
-        <alias framenet="Change_event_duration" pos="v" verbnet="45.4">abbreviate</alias>
-        <alias framenet="" pos="n" verbnet="">abbreviation</alias>
-        <alias framenet="" pos="j" verbnet="">abbreviated</alias>
+        <alias pos="v">abbreviate</alias>
+        <alias pos="n">abbreviation</alias>
+        <alias pos="j">abbreviated</alias>
       </aliases>
+      <roles>
+        <role descr="causal agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing becoming shorter" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="EXT, arg1 is shortened by how much?" f="EXT" n="2"/>
+        <role descr="start state of arg 1, original word when separate mention" f="DIR" n="3"/>
+        <role descr="end state of arg1, new abbreviation" f="PRD" n="4"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Change_event_duration" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="Passive" name="abbreviate-v: Passive">
+        <text>He secretly planned and founded the "Palestinian National Liberation Movement," abbreviated  the "FATAH."</text>
+        <rel relloc="10">abbreviated</rel>
+        <arg f="" n="1" start="5" end="9">the "Palestinian National Liberation Movement,"</arg>
+        <arg f="" n="4" start="12" end="13">the "FATAH."</arg>
+      </example>
+      <example src="" name="abbreviation-n: almost all args">
+        <text>His abbreviation of urethral catheter out to UCO was confused for urinary catheter out.</text>
+        <rel relloc="1">abbreviation</rel>
+        <arg f="" n="0" start="0" end="0">His</arg>
+        <arg f="" n="1" start="3" end="5">urethral catheter out</arg>
+        <arg f="" n="4" start="6" end="7">to UCO</arg>
+      </example>
       <note>ABBREVIATE-V NOTES: Created by Claire. Member of VN class other_cos-45.4. (from abbreviate.01-v)</note>
       <note>ABBREVIATION-N NOTES: Based on Stratified data. No FN class. Framed by Katie. (from abbreviation.01-n)</note>
-      <roles>
-        <role descr="causal agent" f="pag" n="0">
-          <vnrole vncls="45.4" vntheta="agent"/>
-        </role>
-        <role descr="thing becoming shorter" f="ppt" n="1">
-          <vnrole vncls="45.4" vntheta="patient"/>
-        </role>
-        <role descr="EXT, arg1 is shortened by how much?" f="ext" n="2"/>
-        <role descr="start state of arg 1, original word when separate mention" f="dir" n="3"/>
-        <role descr="end state of arg1, new abbreviation" f="prd" n="4"/>
-      </roles>
-      <example name="abbreviate-v: Passive" src="Passive" type="Passive">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="passive"/>
-        <text>He secretly planned and founded the "Palestinian National Liberation Movement," abbreviated *none* the "FATAH."</text>
-        <rel f="">abbreviated</rel>
-        <arg f="" n="1">*none*&amp; -- &gt; the Palestinian National Liberation Movement</arg>
-        <arg f="" n="4">the "FATAH"</arg>
-      </example>
-      <example name="abbreviation-n: almost all args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>His abbreviation of urethral catheter out to UCO was confused for urinary catheter out.</text>
-        <arg f="" n="0">His</arg>
-        <rel f="">abbreviation</rel>
-        <arg f="" n="1">urethral catheter out</arg>
-        <arg f="" n="4">to UCO</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

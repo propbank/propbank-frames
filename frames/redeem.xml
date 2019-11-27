@@ -1,58 +1,73 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="redeem">
     <roleset id="redeem.01" name="save and exchange">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">redeem</alias>
-        <alias framenet="" pos="n" verbnet="">redemption</alias>
+        <alias pos="v">redeem</alias>
+        <alias pos="n">redemption</alias>
       </aliases>
+      <roles>
+        <role descr="redeemer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="steal-10.5" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing saved and redeemed" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="steal-10.5" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="in-exchange-for" f="PPT" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="steal-10.5" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="redemption-n.1" src="annot-overlap" confidence="0.1">6</lexlink>
+        <lexlink resource="onsense" version="on5" class="redeem-v.2" src="annot-overlap" confidence="0.1">16</lexlink>
+        <lexlink resource="onsense" version="on5" class="redeem-v.1" src="annot-overlap" confidence="0.1">5</lexlink>
+        <lexlink resource="onsense" version="on5" class="redemption-n.2" src="annot-overlap" confidence="0.1">8</lexlink>
+      </lexlinks>
+      <example src="" name="boring transitive">
+        <text>The restaurant operator said it has redeemed its rights issued Monday under its shareholder rights plan.</text>
+        <rel relloc="6">redeemed</rel>
+        <arg f="" n="0" start="4" end="4">it</arg>
+        <arg f="" n="1" start="7" end="15">its rights issued Monday under its shareholder rights plan.</arg>
+      </example>
+      <example src="" name="clearly in exchange">
+        <text>The company said it can redeem the warrants at its option for $1 each.</text>
+        <rel relloc="5">redeem</rel>
+        <arg f="" n="0" start="3" end="3">it</arg>
+        <arg f="MOD" n="m" start="4" end="4">can</arg>
+        <arg f="" n="1" start="6" end="7">the warrants</arg>
+        <arg f="ADV" n="m" start="8" end="10">at its option</arg>
+        <arg f="" n="2" start="11" end="13">for $1 each.</arg>
+      </example>
+      <example src="" name="less obviously in exchange">
+        <text>Hudson's Bay said it will redeem 9.5 million Series H preferred shares on Oct. 31 at a price of C$ 27.75 each.</text>
+        <rel relloc="5">redeem</rel>
+        <arg f="" n="0" start="3" end="3">it</arg>
+        <arg f="MOD" n="m" start="4" end="4">will</arg>
+        <arg f="" n="1" start="6" end="11">9.5 million Series H preferred shares</arg>
+        <arg f="TMP" n="m" start="12" end="14">on Oct. 31</arg>
+        <arg f="" n="2" start="15" end="21">at a price of C$ 27.75 each.</arg>
+      </example>
+      <example src="" name="args 0 and 1">
+        <text>Shareholders' redemption of preferred stock purchase rights .</text>
+        <rel relloc="1">redemption</rel>
+        <arg f="" n="0" start="0" end="0">Shareholders'</arg>
+        <arg f="" n="1" start="2" end="6">of preferred stock purchase rights</arg>
+      </example>
+      <example src="" name="args 1 and 2">
+        <text>the redemption Dec. 6 of the company 's $ 1 cumulative convertible special preferred stock at $ 37.5 a share, not including a 25 cent dividend for the current quarter</text>
+        <rel relloc="1">redemption</rel>
+        <arg f="" n="1" start="4" end="14">of the company 's $ 1 cumulative convertible special preferred stock</arg>
+        <arg f="" n="2" start="15" end="29">at $ 37.5 a share, not including a 25 cent dividend for the current quarter</arg>
+      </example>
       <note>REDEEM-V NOTES: There's a joke here about Jesus redeeming sinners, but let's not gothere. :) (from redeem.01-v)</note>
       <note>REDEMPTION-N NOTES: Based on sentences in nouns-00040. Comparison to redeem.01. VN class steal-10.5. No FN class. Framed by Katie. (from redemption.01-n)</note>
-      <roles>
-        <role descr="redeemer" f="pag" n="0">
-          <vnrole vncls="10.5" vntheta="agent"/>
-        </role>
-        <role descr="thing saved and redeemed" f="ppt" n="1">
-          <vnrole vncls="10.5" vntheta="theme"/>
-        </role>
-        <role descr="in-exchange-for" f="ppt" n="2"/>
-      </roles>
-      <example name="boring transitive" src="" type="">
-        <text>The restaurant operator said it has redeemed its rights issued Monday under its shareholder rights plan.</text>
-        <arg f="" n="0">it</arg>
-        <rel f="">redeemed</rel>
-        <arg f="" n="1">its rights issued Monday under its shareholder rights plan</arg>
-      </example>
-      <example name="clearly in exchange" src="" type="">
-        <text>The company said it can redeem the warrants at its option for $1 each.</text>
-        <arg f="" n="0">it</arg>
-        <arg f="mod" n="m">can</arg>
-        <rel f="">redeem</rel>
-        <arg f="" n="1">the warrants</arg>
-        <arg f="adv" n="m">at its option</arg>
-        <arg f="" n="2">for $ 1 each</arg>
-      </example>
-      <example name="less obviously in exchange" src="" type="">
-        <text>Hudson's Bay said it will redeem 9.5 million Series H preferred shares on Oct. 31 at a price of C$ 27.75 each.</text>
-        <arg f="" n="0">it</arg>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">redeem</rel>
-        <arg f="" n="1">9.5 million Series H preferred shares</arg>
-        <arg f="tmp" n="m">on Oct. 31</arg>
-        <arg f="" n="2">at a price of C$ 27.75 each</arg>
-      </example>
-      <example name="args 0 and 1" src="" type="">
-        <text>Shareholders' redemption of preferred stock purchase rights .</text>
-        <arg f="" n="0">Shareholders'</arg>
-        <rel f="">redemption</rel>
-        <arg f="" n="1">of preferred stock purchase rights</arg>
-      </example>
-      <example name="args 1 and 2" src="" type="">
-        <text>the redemption Dec. 6 of the company 's $ 1 cumulative convertible special preferred stock at $ 37.5 a share, not including a 25 cent dividend for the current quarter</text>
-        <rel f="">redemption</rel>
-        <arg f="" n="1">of the company 's $ 1 cumulative convertible special preferred stock</arg>
-        <arg f="" n="2">at $ 37.5 a share, not including a 25 cent dividend for the current quarter</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

@@ -1,56 +1,65 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="ail">
     <roleset id="ail.01" name="be ill">
       <aliases>
-        <alias framenet="Perception_body" pos="v" verbnet="">ail</alias>
+        <alias pos="v">ail</alias>
       </aliases>
-      <note>AIL-V NOTES: VN updated by Julia. Member of Vncls pain-40.8.1. (from ail.01-v)</note>
       <roles>
-        <note>possibly restricted to the phrase 'what ails you'. (from ail.01-v)</note>
         <role descr="illness" f="PAG" n="0">
-          <vnrole vncls="40.8.1" vntheta="Stimulus"/>
-          <vnrole vncls="40.8.1" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pain-40.8.1" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Perception_body" version="1.7">body_part</rolelink>
+          </rolelinks>
         </role>
         <role descr="sick entity" f="PPT" n="1">
-          <vnrole vncls="40.8.1" vntheta="Experiencer"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pain-40.8.1" version="verbnet3.3">experiencer</rolelink>
+            <rolelink resource="FrameNet" class="Perception_body" version="1.7">experiencer</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="simple object" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Perception_body" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Medical_conditions" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="pain-40.8.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="simple object">
         <text>The ailing company, which has reported net losses for 16 consecutive quarters, said it won't manufacture network computer systems any more and will greatly reduce its costly direct sales force.</text>
-        <rel f="">ailing</rel>
-        <arg f="" n="1">company</arg>
+        <rel relloc="1">ailing</rel>
+        <arg f="" n="1" start="2" end="2">company,</arg>
       </example>
-      <example name="complex object" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
+      <example src="" name="complex object">
         <text>A group of Michigan investors has offered to buy Knight-Ridder Inc.'s ailing Detroit Free Press for $68 million but has left unclear how the offer will be financed.</text>
-        <rel f="">ailing</rel>
-        <arg f="" n="1">Detroit Free Press</arg>
+        <rel relloc="11">ailing</rel>
+        <arg f="" n="1" start="12" end="14">Detroit Free Press</arg>
       </example>
-      <example name="ARG1" src="ontonotes nw/wsj/07/wsj_0776" type="">
+      <example src="ontonotes nw/wsj/07/wsj_0776" name="ARG1">
         <text>The surprise resignations of two top economic government officials heaped more uncertainty on London 's financial markets , which already have been laboring under worries about Britain 's ailing economy .</text>
-        <rel f="">ailing</rel>
-        <arg f="" n="1">economy</arg>
+        <rel relloc="28">ailing</rel>
+        <arg f="" n="1" start="29" end="29">economy</arg>
       </example>
-
-      <example name="both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="both args">
         <text>Peter Zezel died on Tuesday from a blood disorder that-1 *trace*-1 had ailed him for years.</text>
-        <arg f="slc" n="m">that -&gt; a blood disorder</arg>
-        <arg f="" n="0">*trace*-1 (= that)</arg>
-        <rel f="">ailed</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="tmp" n="m">for years</arg>
+        <rel relloc="12">ailed</rel>
+        <arg f="SLC" n="m" start="6" end="8">a blood disorder</arg>
+        <arg f="" n="0" start="10" end="11">*trace*-1 had</arg>
+        <arg f="" n="1" start="13" end="13">him</arg>
+        <arg f="TMP" n="m" start="14" end="15">for years.</arg>
       </example>
-      <example name="patient as subject" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="patient as subject">
         <text>Looper's shoulder ailed him all season.</text>
-        <arg f="" n="0">Looper's shoulder</arg>
-        <rel f="">ailed</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="tmp" n="m">all season</arg>
+        <rel relloc="2">ailed</rel>
+        <arg f="" n="0" start="0" end="1">Looper's shoulder</arg>
+        <arg f="" n="1" start="3" end="3">him</arg>
+        <arg f="TMP" n="m" start="4" end="5">all season.</arg>
       </example>
+      <note>AIL-V NOTES: VN updated by Julia. Member of Vncls pain-40.8.1. (from ail.01-v)</note>
+      <note>possibly restricted to the phrase 'what ails you'. (from ail.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

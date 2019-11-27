@@ -1,99 +1,134 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="assume">
     <roleset id="assume.01" name="acquire">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">assumption</alias>
-        <alias framenet="" pos="v" verbnet="">assume</alias>
+        <alias pos="n">assumption</alias>
+        <alias pos="v">assume</alias>
       </aliases>
+      <roles>
+        <role descr="entity acquiring something" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="adopt-93" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">speaker</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing being acquired" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="adopt-93" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">message</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">topic</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="acquired-from" f="DIR" n="2"/>
+        <role descr="price paid" f="VSP" n="3"/>
+        <role descr="benefactive" f="GOL" n="4">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">addressee</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Adopt_selection" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Required_event" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Awareness" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Statement" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Coming_to_believe" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Attempt" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Opinion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Cogitation" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Have_as_requirement" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="adopt-93" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="assume-v.2" src="annot-overlap" confidence="0.1">25</lexlink>
+        <lexlink resource="onsense" version="on5" class="assumption-n.2" src="annot-overlap" confidence="0.1">8</lexlink>
+        <lexlink resource="onsense" version="on5" class="assumption-n.1" src="annot-overlap" confidence="0.1">7</lexlink>
+      </lexlinks>
+      <example src="" name="acquire, take on">
+        <text>Primerica, as expected, also acquired certain assets of the agency and assumed certain of its liabilities.</text>
+        <rel relloc="11">assumed</rel>
+        <arg f="" n="0" start="0" end="0">Primerica,</arg>
+        <arg f="DIS" n="m" start="1" end="2">as expected,</arg>
+        <arg f="DIS" n="m" start="3" end="3">also</arg>
+        <arg f="" n="1" start="12" end="15">certain of its liabilities.</arg>
+      </example>
+      <example src="" name="autogen1">
+        <text>any assumption of additional responsibility by the politicians</text>
+        <rel relloc="1">assumption</rel>
+        <arg f="" n="1" start="2" end="4">of additional responsibility</arg>
+        <arg f="" n="0" start="5" end="7">by the politicians</arg>
+      </example>
+      <example src="" name="autogen2">
+        <text>the assumption of an estimated $ 300 million in securedliabilities on those properties</text>
+        <rel relloc="1">assumption</rel>
+        <arg f="" n="1" start="2" end="12">of an estimated $ 300 million in securedliabilities on those properties</arg>
+      </example>
+      <example src="" name="with args0, 1, and 2">
+        <text>Commonwealth Government's assumption of debt from semi-government authorities as part of a privatization process.</text>
+        <rel relloc="2">assumption</rel>
+        <arg f="" n="0" start="0" end="1">Commonwealth Government's</arg>
+        <arg f="" n="1" start="3" end="4">of debt</arg>
+        <arg f="" n="2" start="5" end="7">from semi-government authorities</arg>
+        <arg f="PRP" n="m" start="8" end="13">as part of a privatization process.</arg>
+      </example>
       <note>ASSUME-V NOTES: VN, FN updated by Julia. Member of VNcls 93. (from assume.01-v)</note>
       <note>ASSUMPTION-N NOTES: Updated by Julia. (from assumption.02-n)</note>
-      <roles>
-        <note>I doubt the other/higher numbered args will appear, but anything ispossible. (from assume.01-v)</note>
-        <role descr="entity acquiring something" f="pag" n="0">
-          <vnrole vncls="93" vntheta="agent"/>
-        </role>
-        <role descr="thing being acquired" f="ppt" n="1">
-          <vnrole vncls="93" vntheta="theme"/>
-        </role>
-        <role descr="acquired-from" f="dir" n="2"/>
-        <role descr="price paid" f="vsp" n="3"/>
-        <role descr="benefactive" f="gol" n="4"/>
-      </roles>
-      <example name="acquire, take on" src="" type="">
-        <text>Primerica, as expected, also acquired certain assets of the agency and assumed certain of its liabilities.</text>
-        <arg f="" n="0">Primerica</arg>
-        <arg f="dis" n="m">as expected</arg>
-        <arg f="dis" n="m">also</arg>
-        <rel f="">assumed</rel>
-        <arg f="" n="1">certain of its liabilities</arg>
-      </example>
-      <example name="autogen1" src="" type="">
-        <text>any assumption of additional responsibility by the politicians</text>
-        <rel f="">assumption</rel>
-        <arg f="" n="1">of additional responsibility</arg>
-        <arg f="" n="0">by the politicians</arg>
-      </example>
-      <example name="autogen2" src="" type="">
-        <text>the assumption of an estimated $ 300 million in securedliabilities on those properties</text>
-        <rel f="">assumption</rel>
-        <arg f="" n="1">of an estimated $ 300 million in secured liabilities on those properties</arg>
-      </example>
-      <example name="with args0, 1, and 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Commonwealth Government's assumption of debt from semi-government authorities as part of a privatization process.</text>
-        <arg f="" n="0">Commonwealth Government's</arg>
-        <rel f="">assumption</rel>
-        <arg f="" n="1">of debt</arg>
-        <arg f="" n="2">from semi-government authorities</arg>
-        <arg f="prp" n="m">as part of a privatization process</arg>
-      </example>
+      <note>I doubt the other/higher numbered args will appear, but anything ispossible. (from assume.01-v)</note>
     </roleset>
     <roleset id="assume.02" name="believe">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">assumption</alias>
-        <alias framenet="" pos="v" verbnet="">assume</alias>
-        <alias framenet="" pos="l" verbnet="">make_assumption</alias>
+        <alias pos="n">assumption</alias>
+        <alias pos="v">assume</alias>
+        <alias pos="l">make_assumption</alias>
       </aliases>
+      <roles>
+        <role descr="Thinker" f="PAG" n="0"/>
+        <role descr="Thought" f="PPT" n="1"/>
+        <role descr="Attributive (entity arg1 is assumed of/about)" f="VSP" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="onsense" version="on5" class="assume-v.1" src="annot-overlap" confidence="0.1">60</lexlink>
+        <lexlink resource="onsense" version="on5" class="assumption-n.1" src="annot-overlap" confidence="0.1">17</lexlink>
+      </lexlinks>
+      <example src="" name="with a clear assumer">
+        <text>He suggests, for example, that investors may have assumed that just because UAL couldn't get financing, no leveraged buy-outs can get financing.</text>
+        <rel relloc="8">assumed</rel>
+        <arg f="" n="0" start="5" end="5">investors</arg>
+        <arg f="MOD" n="m" start="6" end="6">may</arg>
+        <arg f="" n="1" start="9" end="21">that just because UAL couldn't get financing, no leveraged buy-outs can get financing.</arg>
+      </example>
+      <example src="" name="discourse function">
+        <text>He also said that after the charges, and `` *trace* assuming no dramatic fluctuation in interest rates, the company expects to achieve near-record earnings in 1990.''</text>
+        <rel relloc="10">assuming</rel>
+        <arg f="" n="0" start="9" end="9">*trace*</arg>
+        <arg f="" n="1" start="11" end="16">no dramatic fluctuation in interest rates,</arg>
+      </example>
+      <example src="" name="args 1 &amp;2">
+        <text>his assumption that global warming is entirely a result of humanactivity</text>
+        <rel relloc="1">assumption</rel>
+        <arg f="" n="1" start="2" end="10">that global warming is entirely a result of humanactivity</arg>
+      </example>
+      <example src="" name="all args">
+        <text>He never rebutted the government's assumption of him as being a U.S. Citizen.</text>
+        <rel relloc="5">assumption</rel>
+        <arg f="" n="0" start="3" end="4">the government's</arg>
+        <arg f="" n="2" start="6" end="7">of him</arg>
+        <arg f="" n="1" start="8" end="12">as being a U.S. Citizen.</arg>
+      </example>
+      <example src="nouns 00060" name="just arg2">
+        <text>A Kremlin spokesperson announced that any assumption about Russian government 's involvement in this poisoning incident was fantastic talk without any evidence</text>
+        <rel relloc="6">assumption</rel>
+        <arg f="" n="2" start="8" end="15">Russian government 's involvement in this poisoning incident</arg>
+      </example>
       <note>ASSUME-V NOTES: Important: There is *no* target for the trace! The automatic taggingtries to find one and inevitably picks something wrong. No corresponding VN class. (from assume.02-v)</note>
       <note>ASSUMPTION-N NOTES: Updated by Julia. Member of VNcls 93. (from assumption.01-n)</note>
-      <roles>
-        <role descr="Thinker" f="pag" n="0"/>
-        <role descr="Thought" f="ppt" n="1"/>
-        <role descr="Attributive (entity arg1 is assumed of/about)" f="vsp" n="2"/>
-      </roles>
-      <example name="with a clear assumer" src="" type="">
-        <text>He suggests, for example, that investors may have assumed that just because UAL couldn't get financing, no leveraged buy-outs can get financing.</text>
-        <arg f="" n="0">investors</arg>
-        <arg f="mod" n="m">may</arg>
-        <rel f="">assumed</rel>
-        <arg f="" n="1">that just because UAL couldn't get financing, no leveraged buy-outs can get financing</arg>
-      </example>
-      <example name="discourse function" src="" type="">
-        <text>He also said that after the charges, and `` *trace* assuming no dramatic fluctuation in interest rates, the company expects to achieve near-record earnings in 1990.''</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">assuming</rel>
-        <arg f="" n="1">no dramatic fluctuation in interest rates</arg>
-      </example>
-      <example name="args 1 &amp;2" src="" type="">
-        <text>his assumption that global warming is entirely a result of humanactivity</text>
-        <rel f="">assumption</rel>
-        <arg f="" n="1">that global warming is entirely a result of human activity</arg>
-      </example>
-      <example name="all args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>He never rebutted the government's assumption of him as being a U.S. Citizen.</text>
-        <arg f="" n="0">the government's</arg>
-        <rel f="">assumption</rel>
-        <arg f="" n="2">of him</arg>
-        <arg f="" n="1">as being a U.S. Citizen</arg>
-      </example>
-      <example name="just arg2" src="nouns 00060" type="-">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>A Kremlin spokesperson announced that any assumption about Russian government 's involvement in this poisoning incident was fantastic talk without any evidence</text>
-        <rel f="">assumption</rel>
-        <arg f="" n="2">about Russian government's involvment in this poisoning incident</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

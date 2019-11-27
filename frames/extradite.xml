@@ -1,45 +1,66 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="extradite">
     <roleset id="extradite.01" name="expel">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">extradition</alias>
-        <alias framenet="Extradition" pos="v" verbnet="">extradite</alias>
+        <alias pos="n">extradition</alias>
+        <alias pos="v">extradite</alias>
       </aliases>
-      <note>EXTRADITE-V NOTES: Frames file for 'extradite' based on sentences in wsj. Verbnet entry 10.2. (from extradite.01-v predicate notes)</note>
-      <note>EXTRADITION-N NOTES: Automatically created by Julia as an alias file for unification. (from extradition.01-n)</note>
       <roles>
         <role descr="expeller, agent" f="PAG" n="0">
-          <vnrole vncls="10.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="banish-10.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Extradition" version="1.7">authorities</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity expelled" f="PPT" n="1">
-          <vnrole vncls="10.2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="banish-10.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Extradition" version="1.7">suspect</rolelink>
+          </rolelinks>
         </role>
         <role descr="expelled from" f="DIR" n="2">
-          <vnrole vncls="10.2" vntheta="Source"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="banish-10.2" version="verbnet3.3">source</rolelink>
+            <rolelink resource="FrameNet" class="Extradition" version="1.7">current_jurisdiction</rolelink>
+          </rolelinks>
         </role>
         <role descr="expelled to" f="GOL" n="3">
-          <vnrole vncls="10.2" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="banish-10.2" version="verbnet3.3">destination</rolelink>
+            <rolelink resource="FrameNet" class="Extradition" version="1.7">crime_jurisdiction</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="with destination" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>U.S. District Judge Jack B. Weinstein of Brooklyn, N.Y., ruled that [a man implicated in an attack on an Israeli passenger bus in 1986]-1 can be extradited [*-1]to Israel for trial.</text>
-        <arg f="MOD" n="M">can</arg>
-        <rel f="">extradited</rel>
-        <arg f="" n="1">[*-1]</arg>
-        <arg f="" n="3">to Israel</arg>
-        <arg f="PNC" n="M">for trial</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Extradition" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="banish-10.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Justice.JudicialConsequences.Extradite" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Transportperson" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Extradite" version="rich" confidence="0.1" src="reo-expansion"/>
+      </lexlinks>
+      <example src="" name="with destination">
+        <text>U.S. District Judge Jack B. Weinstein of Brooklyn, N.Y., ruled that a man implicated in an attack on an Israeli passenger bus in 1986 can be extradited [*]to Israel for trial.</text>
+        <rel relloc="26">extradited</rel>
+        <arg f="MOD" n="M" start="24" end="24">can</arg>
+        <arg f="" n="1" start="11" end="23">a man implicated in an attack on an Israeli passenger bus in 1986</arg>
+        <arg f="" n="3" start="18" end="19">an Israeli</arg>
+        <arg f="PNC" n="M" start="29" end="30">for trial.</arg>
       </example>
-      <example name="ARG2" src="probably COCA (2018 example fix)" type="">
+      <example src="probably COCA (2018 example fix)" name="ARG2">
         <text>NSW Police extradited him from Queensland yesterday.</text>
-        <arg f="" n="0">NSW Police</arg>
-        <rel f="">extradited</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="" n="2">from Queensland</arg>
-        <arg f="tmp" n="m"></arg>
+        <rel relloc="2">extradited</rel>
+        <arg f="" n="0" start="0" end="1">NSW Police</arg>
+        <arg f="" n="1" start="3" end="3">him</arg>
+        <arg f="" n="2" start="4" end="5">from Queensland</arg>
+        <arg f="TMP" n="m" start="7" end="7"></arg>
       </example>
-
+      <note>EXTRADITE-V NOTES: Frames file for 'extradite' based on sentences in wsj. Verbnet entry 10.2. (from extradite.01-v predicate notes)</note>
+      <note>EXTRADITION-N NOTES: Automatically created by Julia as an alias file for unification. (from extradition.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

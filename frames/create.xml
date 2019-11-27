@@ -1,78 +1,98 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="create">
     <roleset id="create.01" name="create">
       <aliases>
-        <alias framenet="Creating Invention Intentionally_create Cause_to_start" pos="v" verbnet="26.4, 27.1">create</alias>
-        <alias framenet="Creating Invention Intentionally_create" pos="n" verbnet="">creation</alias>
+        <alias pos="v">create</alias>
+        <alias pos="n">creation</alias>
+        <argalias pos="n" arg="0">creator</argalias>
       </aliases>
-      
-      
       <roles>
-        <role descr="creator" f="pag" n="0">
-          <vnrole vncls="26.4" vntheta="agent"/>
-          <vnrole vncls="27.1" vntheta="cause"/>
+        <role descr="creator" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="create-26.4" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="engender-27.1" version="verbnet3.3">cause</rolelink>
+            <rolelink resource="FrameNet" class="Intentionally_create" version="1.7">creator</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing created" f="ppt" n="1">
-          <vnrole vncls="26.4" vntheta="result"/>
-          <vnrole vncls="27.1" vntheta="theme"/>
+        <role descr="thing created" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="create-26.4" version="verbnet3.3">result</rolelink>
+            <rolelink resource="VerbNet" class="engender-27.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Intentionally_create" version="1.7">created_entity</rolelink>
+          </rolelinks>
         </role>
-        <role descr="materials used" f="vsp" n="2">
-          <vnrole vncls="26.4" vntheta="material"/>
+        <role descr="materials used" f="VSP" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="create-26.4" version="verbnet3.3">material</rolelink>
+          </rolelinks>
         </role>
-        <role descr="benefactive" f="gol" n="3">
-          <vnrole vncls="26.4" vntheta="beneficiary"/>
+        <role descr="benefactive" f="GOL" n="3">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="create-26.4" version="verbnet3.3">beneficiary</rolelink>
+          </rolelinks>
         </role>
-        <role descr="attribute of arg1" f="prd" n="4"/>
+        <role descr="attribute of arg1" f="PRD" n="4"/>
       </roles>
-      <example name="args0-3" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_to_start" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Creating" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Invention" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Intentionally_create" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="create-26.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="engender-27.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Manufacture.Artifact.CreateManufacture" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="create-v.1" src="annot-overlap" confidence="0.1">389</lexlink>
+        <lexlink resource="onsense" version="on5" class="creation-n.1" src="annot-overlap" confidence="0.1">25</lexlink>
+      </lexlinks>
+      <example src="internet" name="args0-3">
         <text>An NC State student created a "monster" out of construction barrels for his estranged girlfriend.</text>
-        <arg f="" n="0">An NC State student</arg>
-        <rel f="">created</rel>
-        <arg f="" n="1">a monster</arg>
-        <arg f="" n="2">out of construction barrels</arg>
-        <arg f="" n="3">for his estranged girlfriend</arg>
+        <rel relloc="4">created</rel>
+        <arg f="" n="0" start="0" end="3">An NC State student</arg>
+        <arg f="" n="1" start="5" end="6">a "monster"</arg>
+        <arg f="" n="2" start="7" end="10">out of construction barrels</arg>
+        <arg f="" n="3" start="11" end="14">for his estranged girlfriend.</arg>
       </example>
-      <example name="with arg4" src="internet" type="-">
-        <inflection aspect="perfect" form="infinitive" person="third" tense="present" voice="active"/>
-        <text>[Arthur Eisenmenger]-1, a former chief graphic designer for the EEC, claims *PRO*-1 to have created it as a generic symbol of Europe.</text>
-        <arg f="" n="0">*PRO*-1</arg>
-        <rel f="">created</rel>
-        <arg f="" n="1">it</arg>
-        <arg f="" n="4">as a generic symbol of Europe.</arg>
+      <example src="internet" name="with arg4">
+        <text> Arthur Eisenmenger, a former chief graphic designer for the EEC, claims to have created it as a generic symbol of Europe.</text>
+        <rel relloc="14">created</rel>
+        <arg f="" n="0" start="1" end="2">Arthur Eisenmenger,</arg>
+        <arg f="" n="1" start="15" end="15">it</arg>
+        <arg f="" n="4" start="16" end="21">as a generic symbol of Europe.</arg>
       </example>
-      <example name="autogen1" src="" type="">
+      <example src="" name="autogen1">
         <text>a company 's creation of new benefit plans</text>
-        <arg f="" n="0">a company 's</arg>
-        <rel f="">creation</rel>
-        <arg f="" n="1">of new benefit plans</arg>
+        <rel relloc="3">creation</rel>
+        <arg f="" n="0" start="0" end="2">a company 's</arg>
+        <arg f="" n="1" start="4" end="7">of new benefit plans</arg>
       </example>
-      <example name="autogen2" src="" type="">
+      <example src="" name="autogen2">
         <text>Creation of a new , realistic U.S. policy</text>
-        <rel f="">Creation</rel>
-        <arg f="" n="1">of a new , realistic U.S. policy</arg>
+        <rel relloc="0">Creation</rel>
+        <arg f="" n="1" start="1" end="7">of a new , realistic U.S. policy</arg>
       </example>
-      <example name="args 0, 1, 2 and TMP" src="internet" type="-">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="internet" name="args 0, 1, 2 and TMP">
         <text>its creation out of nothing by God in the Beginning</text>
-        <arg f="" n="1">its</arg>
-        <rel f="">creation</rel>
-        <arg f="" n="2">out of nothing</arg>
-        <arg f="" n="0">by God</arg>
-        <arg f="tmp" n="m">in the Beginning</arg>
+        <rel relloc="1">creation</rel>
+        <arg f="" n="1" start="0" end="0">its</arg>
+        <arg f="" n="2" start="2" end="4">out of nothing</arg>
+        <arg f="" n="0" start="5" end="6">by God</arg>
+        <arg f="TMP" n="m" start="7" end="9">in the Beginning</arg>
       </example>
-      <example name="with arg4" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="internet" name="with arg4">
         <text>its creation as a select committee in 1789</text>
-        <arg f="" n="1">its</arg>
-        <rel f="">creation</rel>
-        <arg f="" n="4">as a select committee</arg>
-        <arg f="tmp" n="m">in 1789</arg>
+        <rel relloc="1">creation</rel>
+        <arg f="" n="1" start="0" end="0">its</arg>
+        <arg f="" n="4" start="2" end="5">as a select committee</arg>
+        <arg f="TMP" n="m" start="6" end="7">in 1789</arg>
       </example>
-    <note>CREATE-V NOTES: Member of VNcls create-26.4, engender-27.1. Updated by Julia. (from create.01-v)
+      <note>CREATE-V NOTES: Member of VNcls create-26.4, engender-27.1. Updated by Julia. (from create.01-v)
 
 CREATION-N NOTES: Updated by Julia. Member of Vncls create-26.4 (from creation.01-n)</note>
-</roleset>
+    </roleset>
   </predicate>
 </frameset>

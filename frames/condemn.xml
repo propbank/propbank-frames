@@ -1,73 +1,97 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="condemn">
     <roleset id="condemn.01" name="express strong disapproval of">
       <aliases>
-        <alias framenet="Judgment_communication" pos="v" verbnet="">condemn</alias>
-        <alias framenet="" pos="n" verbnet="">condemnation</alias>
+        <alias pos="v">condemn</alias>
+        <alias pos="n">condemnation</alias>
       </aliases>
-      <note>CONDEMN-V NOTES: Member of VNcls judgement-33, suspect-81. (from condemn.01-v)</note>
       <roles>
         <role descr="condemner" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
-          <vnrole vncls="81" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="judgment-33.1-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="suspect-81" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Judgment_communication" version="1.7">communicator</rolelink>
+          </rolelinks>
         </role>
         <role descr="condemned" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
-          <vnrole vncls="81" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="judgment-33.1-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="suspect-81" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Judgment_communication" version="1.7">addressee</rolelink>
+            <rolelink resource="FrameNet" class="Judgment_communication" version="1.7">evaluee</rolelink>
+            <rolelink resource="FrameNet" class="Judgment_communication" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
-        <role descr="grounds for condemnation, condemned as" f="cau" n="2">
-          <vnrole vncls="81" vntheta="Attribute"/>
+        <role descr="grounds for condemnation, condemned as" f="CAU" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="suspect-81" version="verbnet3.3">attribute</rolelink>
+            <rolelink resource="FrameNet" class="Judgment_communication" version="1.7">topic</rolelink>
+            <rolelink resource="FrameNet" class="Judgment_communication" version="1.7">reason</rolelink>
+          </rolelinks>
         </role>
-        <role descr="destination" f="gol" n="3"/>
+        <role descr="destination" f="GOL" n="3">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Judgment_communication" version="1.7">medium</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="straight transitive" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Judgment_communication" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="33" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="suspect-81" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Broadcast" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="condemn-v.1" src="annot-overlap" confidence="0.1">33</lexlink>
+        <lexlink resource="onsense" version="on5" class="condemn-v.2" src="annot-overlap" confidence="0.1">7</lexlink>
+      </lexlinks>
+      <example src="" name="straight transitive">
         <text>The two, Szeto Wah and Martin Lee, were deemed unfit because they had condemned China's crackdown on its pro-democracy movement.</text>
-        <arg f="" n="0">they</arg>
-        <rel f="">condemned</rel>
-        <arg f="" n="1">China's crackdown on its pro-democracy movement</arg>
+        <rel relloc="13">condemned</rel>
+        <arg f="" n="0" start="11" end="11">they</arg>
+        <arg f="" n="1" start="14" end="19">China's crackdown on its pro-democracy movement.</arg>
       </example>
-      <example name="condemn as" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <example src="" name="condemn as">
         <text>A White House spokesman condemned the truce suspension as ``deplorable'' but brushed off talk of renewing military funding for the insurgents.</text>
-        <arg f="" n="0">A White House spokesman</arg>
-        <rel f="">condemned</rel>
-        <arg f="" n="1">the truce suspension</arg>
-        <arg f="" n="2">as deplorable</arg>
+        <rel relloc="4">condemned</rel>
+        <arg f="" n="0" start="0" end="3">A White House spokesman</arg>
+        <arg f="" n="1" start="5" end="7">the truce suspension</arg>
+        <arg f="" n="2" start="8" end="9">as ``deplorable''</arg>
       </example>
-      <example name="condemn to" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="condemn to">
         <text>For instance, juries-1 would have *trace*-1 to consider specific ``aggravating'' and ``mitigating'' factors before *trace*-1 deciding whether *trace*-1 to condemn someone to death.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">condemn</rel>
-        <arg f="" n="1">someone</arg>
-        <arg f="" n="3">to death</arg>
+        <rel relloc="19">condemn</rel>
+        <arg f="" n="0" start="5" end="5">*trace*-1</arg>
+        <arg f="" n="1" start="20" end="20">someone</arg>
+        <arg f="" n="3" start="21" end="22">to death.</arg>
       </example>
-      <example name="with grounds as gerund" src="criticize.01" type="">
+      <example src="criticize.01" name="with grounds as gerund">
         <text>The internal investigation also condemned MiniScribe's auditors, Coopers&amp; Lybrand, for allegedly ignoring numerous red flags.</text>
-        <arg f="" n="0">The internal investigation</arg>
-        <arg f="dis" n="m">also</arg>
-        <rel f="">condemned</rel>
-        <arg f="" n="1">MiniScribe's auditors, Coopers&amp; Lybrand,</arg>
-        <arg f="" n="2">for allegedly ignoring numerous red flags</arg>
+        <rel relloc="4">condemned</rel>
+        <arg f="" n="0" start="0" end="2">The internal investigation</arg>
+        <arg f="DIS" n="m" start="3" end="3">also</arg>
+        <arg f="" n="1" start="5" end="8">MiniScribe's auditors, Coopers&amp; Lybrand,</arg>
+        <arg f="" n="2" start="9" end="14">for allegedly ignoring numerous red flags.</arg>
       </example>
-      <example name="with grounds as full clause" src="criticize.01" type="">
+      <example src="criticize.01" name="with grounds as full clause">
         <text>A Poquet spokesman, for example, condemns the Atari Portfolio because it requires three batteries while the Poquet needs only two.</text>
-        <arg f="" n="0">A Poquet spokesman</arg>
-        <arg f="dis" n="m">for example</arg>
-        <rel f="">condemns</rel>
-        <arg f="" n="1">the Atari Portfolio</arg>
-        <arg f="" n="2">because it requires three batteries while the Poquet needs only two</arg>
+        <rel relloc="5">condemns</rel>
+        <arg f="" n="0" start="0" end="2">A Poquet spokesman,</arg>
+        <arg f="DIS" n="m" start="3" end="4">for example,</arg>
+        <arg f="" n="1" start="6" end="8">the Atari Portfolio</arg>
+        <arg f="" n="2" start="9" end="19">because it requires three batteries while the Poquet needs only two.</arg>
       </example>
-      <example name="ARG1 and ARG3" src="ontonotes mz/sinorama/10/ectb_1070" type="">
+      <example src="ontonotes mz/sinorama/10/ectb_1070" name="ARG1 and ARG3">
         <text>The false cypresses , which had conversed with the clouds for a million years , were identified as top - grade timber , and were thus condemned to an inexorable fate .</text>
-        <arg f="" n="1">The false cypresses , which had conversed with the clouds for a million years</arg>
-        <arg f="cau" n="m">thus</arg>
-        <rel f="">condemned</rel>
-        <arg f="" n="3">to an inexorable fate</arg>
+        <rel relloc="26">condemned</rel>
+        <arg f="" n="1" start="0" end="13">The false cypresses , which had conversed with the clouds for a million years</arg>
+        <arg f="CAU" n="m" start="25" end="25">thus</arg>
+        <arg f="" n="3" start="27" end="30">to an inexorable fate</arg>
       </example>
-
+      <note>CONDEMN-V NOTES: Member of VNcls judgement-33, suspect-81. (from condemn.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

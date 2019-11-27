@@ -1,76 +1,94 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="correct">
     <roleset id="correct.01" name="make right">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">correct</alias>
-        <alias framenet="" pos="n" verbnet="">correction</alias>
+        <alias pos="v">correct</alias>
+        <alias pos="n">correction</alias>
       </aliases>
-      <note>CORRECT-V NOTES: Member of VNcls other_cos-45.4. (from correct.01-v)</note>
-      <note>CORRECTION-N NOTES: Based on temprel data. Comparison to correct-v. Framed by Katie. (from correction.01-n)</note>
       <roles>
         <role descr="corrector" f="PAG" n="0">
-          <vnrole vncls="45.4" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing that was wrong" f="PPT" n="1">
-          <vnrole vncls="45.4" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="very straightforward" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Resolve_problem" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="correct-v.1" src="annot-overlap" confidence="0.1">20</lexlink>
+      </lexlinks>
+      <example src="" name="very straightforward">
         <text>Intel said it had corrected the problems and would start producing bugless chips next week.</text>
-        <arg f="" n="0">it</arg>
-        <rel f="">corrected</rel>
-        <arg f="" n="1">the problems</arg>
+        <rel relloc="4">corrected</rel>
+        <arg f="" n="0" start="2" end="2">it</arg>
+        <arg f="" n="1" start="5" end="6">the problems</arg>
       </example>
-      <example name="targetless trace" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="targetless trace">
         <text>The 1988 period was restated from net income of $8 million *trace* to correct an overstatement in the company's Boston Co. subsidiary.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">correct</rel>
-        <arg f="" n="1">an overstatement in the company's Boston Co. subsidiary</arg>
+        <rel relloc="13">correct</rel>
+        <arg f="" n="0" start="11" end="11">*trace*</arg>
+        <arg f="" n="1" start="14" end="21">an overstatement in the company's Boston Co. subsidiary.</arg>
       </example>
-      <example name="medical example" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="medical example">
         <text>attenuation correction</text>
-        <arg f="" n="1">attenuation</arg>
-        <rel f="">correction</rel>
+        <rel relloc="1">correction</rel>
+        <arg f="" n="1" start="0" end="0">attenuation</arg>
       </example>
-      <example name="both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="both args">
         <text>His correction of several passages</text>
-        <arg f="" n="0">His</arg>
-        <rel f="">correction</rel>
-        <arg f="" n="1">of several passages</arg>
+        <rel relloc="1">correction</rel>
+        <arg f="" n="0" start="0" end="0">His</arg>
+        <arg f="" n="1" start="2" end="4">of several passages</arg>
       </example>
+      <note>CORRECT-V NOTES: Member of VNcls other_cos-45.4. (from correct.01-v)</note>
+      <note>CORRECTION-N NOTES: Based on temprel data. Comparison to correct-v. Framed by Katie. (from correction.01-n)</note>
     </roleset>
     <roleset id="correct.02" name="right">
       <aliases>
-        <alias framenet="Correctness Suitability" pos="j" verbnet="">correct</alias>
+        <alias pos="j">correct</alias>
       </aliases>
-      <note>CORRECT-J NOTES: Added by Julia based on BOLT, relation to correct-v.01. Corresponds to VNcls other_cos-45.4. (from correct.01-j)</note>
       <roles>
-        <note>Doesn't include the verb's arg0 (from correct.01-j)</note>
-        <role descr="correct entity" f="ppt" n="1">
-          <vnrole vncls="45.5" vntheta="patient"/>
+        <role descr="correct entity" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="entity_specific_cos-45.5" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="argM-ADVs" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Suitability" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Correctness" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="entity_specific_cos-45.5" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="BOLT" name="argM-ADVs">
         <text>You 're from the UK and England so in my opinion which ever one you choose to identify yourself as you are correct .</text>
-        <arg f="adv" n="m">so</arg>
-        <arg f="adv" n="m">in my opinion</arg>
-        <arg f="adv" n="m">which ever one you choose to identify yourself as</arg>
-        <arg f="" n="1">you</arg>
-        <rel f="">correct</rel>
+        <rel relloc="22">correct</rel>
+        <arg f="ADV" n="m" start="7" end="7">so</arg>
+        <arg f="ADV" n="m" start="8" end="10">in my opinion</arg>
+        <arg f="ADV" n="m" start="11" end="19">which ever one you choose to identify yourself as</arg>
+        <arg f="" n="1" start="0" end="0">You</arg>
       </example>
-      <example name="Arg1, ADV-attributive" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="internet" name="Arg1, ADV-attributive">
         <text>Lamarck was correct about the connection between the environment and evolution.</text>
-        <arg f="" n="1">Lamarck</arg>
-        <rel f="">correct</rel>
-        <arg f="adv" n="m">about the connection between the environment and evolution</arg>
+        <rel relloc="2">correct</rel>
+        <arg f="" n="1" start="0" end="0">Lamarck</arg>
+        <arg f="ADV" n="m" start="3" end="10">about the connection between the environment and evolution.</arg>
       </example>
+      <note>CORRECT-J NOTES: Added by Julia based on BOLT, relation to correct-v.01. Corresponds to VNcls other_cos-45.4. (from correct.01-j)</note>
+      <note>Doesn't include the verb's arg0 (from correct.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

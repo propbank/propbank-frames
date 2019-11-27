@@ -1,143 +1,184 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="spend">
     <roleset id="spend.01" name="use money">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">spend</alias>
-        <alias framenet="" pos="n" verbnet="">spending</alias>
+        <alias pos="v">spend</alias>
+        <alias pos="n">spending</alias>
       </aliases>
+      <roles>
+        <role descr="spender, buyer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pay-68" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing bought, commodity" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pay-68" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="seller" f="DIR" n="2"/>
+        <role descr="price paid, money" f="VSP" n="3">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pay-68" version="verbnet3.3">asset</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="benefactive" f="GOL" n="4"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Expend_resource" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Using_resource" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="pay-68" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Transfermoney" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Transferownership" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="spend-v.2" src="annot-overlap" confidence="0.1">152</lexlink>
+        <lexlink resource="onsense" version="on5" class="spend-v.1" src="annot-overlap" confidence="0.1">3</lexlink>
+        <lexlink resource="onsense" version="on5" class="spend-v.3" src="annot-overlap" confidence="0.1">6</lexlink>
+      </lexlinks>
+      <example src="" name="spend-v: demonstrating commodity and price">
+        <text>The NIH currently spends about $8 million annually on fetal-tissue research.</text>
+        <rel relloc="3">spends</rel>
+        <arg f="" n="0" start="0" end="1">The NIH</arg>
+        <arg f="TMP" n="m" start="2" end="2">currently</arg>
+        <arg f="" n="3" start="4" end="6">about $8 million</arg>
+        <arg f="TMP" n="m" start="7" end="7">annually</arg>
+        <arg f="" n="1" start="8" end="10">on fetal-tissue research.</arg>
+      </example>
+      <example src="" name="spend-v: with TMP">
+        <text>They spent $325,000 in 1989.</text>
+        <rel relloc="1">spent</rel>
+        <arg f="" n="0" start="0" end="0">They</arg>
+        <arg f="" n="3" start="2" end="2">$325,000</arg>
+        <arg f="TMP" n="m" start="3" end="4">in 1989.</arg>
+      </example>
+      <example src="BOLT" name="spending-n: arg0">
+        <text>Government spending is actually increasing .</text>
+        <rel relloc="1">spending</rel>
+        <arg f="" n="0" start="0" end="0">Government</arg>
+      </example>
+      <example src="internet" name="spending-n: arg 0, 1 and 3">
+        <text>The question is whether his spending $7.7 million on food, drink, hotels and parties is excessive.</text>
+        <rel relloc="5">spending</rel>
+        <arg f="" n="0" start="4" end="4">his</arg>
+        <arg f="" n="3" start="6" end="7">$7.7 million</arg>
+        <arg f="" n="1" start="8" end="13">on food, drink, hotels and parties</arg>
+      </example>
       <note>SPEND-V NOTES: Based on big corpus, comparison with 'buy', 'sell'. Member of VN class pay-68. (from spend.01-v)</note>
       <note>SPENDING-N NOTES: Added by Julia based on BOLT, spend.01. Corresponds to VNcls pay-68. (from spending.01-n)</note>
-      <roles>
-        <note>Args 2 and 4 might not occur. (from spend.01-v)</note>
-        <role descr="spender, buyer" f="pag" n="0">
-          <vnrole vncls="68" vntheta="agent"/>
-        </role>
-        <role descr="thing bought, commodity" f="ppt" n="1">
-          <vnrole vncls="68" vntheta="theme"/>
-        </role>
-        <role descr="seller" f="dir" n="2"/>
-        <role descr="price paid, money" f="vsp" n="3">
-          <vnrole vncls="68" vntheta="asset"/>
-        </role>
-        <role descr="benefactive" f="gol" n="4"/>
-      </roles>
-      <example name="spend-v: demonstrating commodity and price" src="" type="">
-        <text>The NIH currently spends about $8 million annually on fetal-tissue research.</text>
-        <arg f="" n="0">The NIH</arg>
-        <arg f="tmp" n="m">currently</arg>
-        <rel f="">spends</rel>
-        <arg f="" n="3">about $8 million</arg>
-        <arg f="tmp" n="m">annually</arg>
-        <arg f="" n="1">on fetal-tissue research.</arg>
-      </example>
-      <example name="spend-v: with TMP" src="" type="">
-        <text>They spent $325,000 in 1989.</text>
-        <arg f="" n="0">They</arg>
-        <rel f="">spent</rel>
-        <arg f="" n="3">$325,000</arg>
-        <arg f="tmp" n="m">in 1989</arg>
-      </example>
-      <example name="spending-n: arg0" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Government spending is actually increasing .</text>
-        <arg f="" n="0">Government</arg>
-        <rel f="">spending</rel>
-      </example>
-      <example name="spending-n: arg 0, 1 and 3" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The question is whether his spending $7.7 million on food, drink, hotels and parties is excessive.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">spending</rel>
-        <arg f="" n="3">$7.7 million</arg>
-        <arg f="" n="1">on food, drink, hotels and parties</arg>
-      </example>
+      <note>Args 2 and 4 might not occur. (from spend.01-v)</note>
     </roleset>
     <roleset id="spend.02" name="bide time">
       <aliases>
-        <alias framenet="using_resource" pos="v" verbnet="">spend</alias>
+        <alias pos="v">spend</alias>
       </aliases>
-      <note>SPEND-V NOTES: VN class consume-66-1 (from spend.02-v)</note>
       <roles>
-        <role descr="bider, waiter" f="pag" n="0">
-          <vnrole vncls="66-1" vntheta="agent"/>
+        <role descr="bider, waiter" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="consume-66-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="unit of time" f="vsp" n="1">
-          <vnrole vncls="66-1" vntheta="asset"/>
+        <role descr="unit of time" f="VSP" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="consume-66-1" version="verbnet3.3">asset</rolelink>
+          </rolelinks>
         </role>
-        <role descr="activity" f="gol" n="2">
-          <vnrole vncls="66-1" vntheta="goal"/>
+        <role descr="activity" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="consume-66-1" version="verbnet3.3">goal</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="spend-v: spend time" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Using_resource" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="consume-66-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="spend-v.1" src="annot-overlap" confidence="0.1">164</lexlink>
+        <lexlink resource="onsense" version="on5" class="spend-v.3" src="annot-overlap" confidence="0.1">14</lexlink>
+      </lexlinks>
+      <example src="" name="spend-v: spend time">
         <text>He spends his days *trace-1* sketching passers-by or *trace-2* trying to.</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">spends</rel>
-        <arg f="" n="1">his days</arg>
-        <arg f="" n="2">*trace-1* sketching passers-by or *trace-2* trying to.</arg>
+        <rel relloc="1">spends</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
+        <arg f="" n="1" start="2" end="3">his days</arg>
+        <arg f="" n="2" start="4" end="10">*trace-1* sketching passers-by or *trace-2* trying to.</arg>
       </example>
-      <example name="spend-v: simpler example" src="" type="">
+      <example src="" name="spend-v: simpler example">
         <text>Mr. Bernstein has spent much of his time in recent years on human rights issues.</text>
-        <arg f="" n="0">Mr. Bernstein</arg>
-        <rel f="">spent</rel>
-        <arg f="" n="1">much of his time</arg>
-        <arg f="tmp" n="m">in recent years</arg>
-        <arg f="" n="2">on human rights issues.</arg>
+        <rel relloc="3">spent</rel>
+        <arg f="" n="0" start="0" end="1">Mr. Bernstein</arg>
+        <arg f="" n="1" start="4" end="7">much of his time</arg>
+        <arg f="TMP" n="m" start="8" end="10">in recent years</arg>
+        <arg f="" n="2" start="11" end="14">on human rights issues.</arg>
       </example>
+      <note>SPEND-V NOTES: VN class consume-66-1 (from spend.02-v)</note>
     </roleset>
     <roleset id="spend.04" name="be used up">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">spend</alias>
-        <alias framenet="used_up" pos="j" verbnet="">spent</alias>
+        <alias pos="v">spend</alias>
+        <alias pos="j">spent</alias>
       </aliases>
-      <note>Based on AMR annotations. Adjective 'spent' is a member of FN class used_up.</note>
       <roles>
-        <role descr="thing used up" f="ppt" n="1"/>
-        <role descr="cause" f="cau" n="2"/>
+        <role descr="thing used up" f="PPT" n="1"/>
+        <role descr="cause" f="CAU" n="2"/>
       </roles>
-      <example name="spent-j: arg 1 only - most common" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Used_up" version="1.7" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="spent-j: arg 1 only - most common">
         <text>the spent fuel rod</text>
-        <rel f="">spent</rel>
-        <arg f="" n="1">fuel rod</arg>
+        <rel relloc="1">spent</rel>
+        <arg f="" n="1" start="2" end="3">fuel rod</arg>
       </example>
-      <example name="spent-j: with arg 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="spent-j: with arg 2">
         <text>Man! I am completely spent from that basketball game!</text>
-        <arg f="dis" n="m">Man!</arg>
-        <arg f="" n="1">I</arg>
-        <arg f="ext" n="m">completely</arg>
-        <rel f="">spent</rel>
-        <arg f="" n="2">from that basketball game</arg>
+        <rel relloc="4">spent</rel>
+        <arg f="DIS" n="m" start="0" end="0">Man!</arg>
+        <arg f="" n="1" start="1" end="1">I</arg>
+        <arg f="EXT" n="m" start="3" end="3">completely</arg>
+        <arg f="" n="2" start="5" end="8">from that basketball game!</arg>
       </example>
-      <example name="spent-j" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="spent-j">
         <text>The shampoo and conditioner are completely spent.</text>
-        <arg f="" n="1">The shampoo and conditioner</arg>
-        <arg f="ext" n="m">completely</arg>
-        <rel f="">spent.</rel>
+        <rel relloc="6">spent.</rel>
+        <arg f="" n="1" start="0" end="3">The shampoo and conditioner</arg>
+        <arg f="EXT" n="m" start="5" end="5">completely</arg>
       </example>
+      <note>Based on AMR annotations. Adjective 'spent' is a member of FN class used_up.</note>
     </roleset>
   </predicate>
   <predicate lemma="spend_down">
     <roleset id="spend_down.03" name="spend money so that one is eligible for medicaid, services for poor">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">spend_down</alias>
+        <alias pos="v">spend_down</alias>
       </aliases>
-      <note>SPEND_DOWN-V NOTES: Roleset based on instances in wsj-nw. Framed by Claire. (from spend.03-v)</note>
       <roles>
-        <role descr="spender" f="pag" n="0"/>
-        <role descr="money spent down" f="ppt" n="1"/>
-        <role descr="limit spent down to" f="gol" n="2"/>
+        <role descr="spender" f="PAG" n="0"/>
+        <role descr="money spent down" f="PPT" n="1"/>
+        <role descr="limit spent down to" f="GOL" n="2"/>
       </roles>
-      <example name="spend_down-v: Args 0 &amp; 2" src="wsj-nw" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="wsj-nw" name="spend_down-v: Args 0 &amp; 2">
         <text>Residents start out as private payers but `` spend down '' to Medicaid levels in a single nursing home stay.</text>
-        <arg f="" n="0">Residents</arg>
-        <rel f="">[spend][down]</rel>
-        <arg f="" n="2">to Medicaid levels</arg>
-        <arg f="tmp" n="m">in a single nursing home stay.</arg>
+        <rel relloc="8 9">spend down</rel>
+        <arg f="" n="0" start="0" end="0">Residents</arg>
+        <arg f="" n="2" start="11" end="13">to Medicaid levels</arg>
+        <arg f="TMP" n="m" start="14" end="19">in a single nursing home stay.</arg>
       </example>
+      <note>SPEND_DOWN-V NOTES: Roleset based on instances in wsj-nw. Framed by Claire. (from spend.03-v)</note>
     </roleset>
   </predicate>
 </frameset>

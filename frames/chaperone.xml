@@ -1,34 +1,45 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="chaperone">
     <roleset id="chaperone.01" name="act as a chaperone">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">chaperone</alias>
+        <alias pos="v">chaperone</alias>
       </aliases>
-      <note>CHAPERONE-V NOTES: Handcorrected by Claire. (from chaperone.01-v)</note>
       <roles>
         <role descr="entity acting as a chaperone" f="PAG" n="0">
-          <vnrole vncls="29.8-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="captain-29.8-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="person chaperoned, the chaperoned-for" f="GOL" n="1">
-          <vnrole vncls="29.8-1" vntheta="Beneficiary"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="captain-29.8-1" version="verbnet3.3">beneficiary</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="With destination" src="web usage" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cotheme" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="captain-29.8-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web usage" name="With destination">
         <text>As an extension agent, he chaperoned 4-H trips to China, Europe, Russia, as well as the eastern United States.</text>
-        <arg f="prd" n="m">As an extension agent</arg>
-        <arg f="" n="0">he</arg>
-        <rel f="">chaperoned</rel>
-        <arg f="" n="1">4-H trips</arg>
-        <arg f="gol" n="m">to China Europe, Russia, as well as the Eastern United States.</arg>
+        <rel relloc="5">chaperoned</rel>
+        <arg f="PRD" n="m" start="0" end="3">As an extension agent,</arg>
+        <arg f="" n="0" start="4" end="4">he</arg>
+        <arg f="" n="1" start="6" end="7">4-H trips</arg>
+        <arg f="GOL" n="m" start="8" end="18">to China, Europe, Russia, as well as the eastern United States.</arg>
       </example>
-      <example name="Event as arg1" src="web usage" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web usage" name="Event as arg1">
         <text>As she chaperones the dance, Cate's thoughts drift back to her high school formal.</text>
-        <arg f="" n="0">she</arg>
-        <rel f="">chaperones</rel>
-        <arg f="" n="1">the dance</arg>
+        <rel relloc="2">chaperones</rel>
+        <arg f="" n="0" start="1" end="1">she</arg>
+        <arg f="" n="1" start="3" end="4">the dance,</arg>
       </example>
+      <note>CHAPERONE-V NOTES: Handcorrected by Claire. (from chaperone.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

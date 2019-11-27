@@ -1,60 +1,79 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="destroy">
     <roleset id="destroy.01" name="destroy">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">destructive</alias>
-        <alias framenet="" pos="n" verbnet="">destruction</alias>
-        <alias framenet="Destroying" pos="v" verbnet="">destroy</alias>
+        <alias pos="j">destructive</alias>
+        <alias pos="n">destruction</alias>
+        <alias pos="v">destroy</alias>
       </aliases>
+      <roles>
+        <role descr="destroyer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="destroy-44" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Destroying" version="1.7">cause</rolelink>
+            <rolelink resource="FrameNet" class="Destroying" version="1.7">destroyer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing destroyed" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="destroy-44" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Destroying" version="1.7">undergoer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="instrument of destruction" f="MNR" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="destroy-44" version="verbnet3.3">instrument</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Killing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Destroying" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="destroy-44" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Life.Die.DeathCausedByViolentEvents" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Die" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="destroy-v.1" src="annot-overlap" confidence="0.1">62</lexlink>
+        <lexlink resource="onsense" version="on5" class="destroy-v.2" src="annot-overlap" confidence="0.1">11</lexlink>
+      </lexlinks>
+      <example src="" name="no instrument">
+        <text>Program traders argue that a reinstatement of the rule would destroy the ``pricing efficiency'' of the futures and stock markets.</text>
+        <rel relloc="10">destroy</rel>
+        <arg f="" n="0" start="4" end="8">a reinstatement of the rule</arg>
+        <arg f="MOD" n="m" start="9" end="9">would</arg>
+        <arg f="" n="1" start="11" end="19">the ``pricing efficiency'' of the futures and stock markets.</arg>
+      </example>
+      <example src="ontonotes pt/nt/45/nt_4514" name="ARG0 and ARG1 and ARG2">
+        <text>Do n't destroy anyone 's faith by eating something they think is wrong .</text>
+        <rel relloc="2">destroy</rel>
+        <arg f="NEG" n="m" start="1" end="1">n't</arg>
+        <arg f="" n="1" start="3" end="5">anyone 's faith</arg>
+        <arg f="" n="2" start="6" end="12">by eating something they think is wrong</arg>
+      </example>
+      <example src="BOLT P01, parts 2,3" name="Adj example: destructive">
+        <text>...no matter how destructive ICH-2 they are [to the coming generations , or to the rest of the biosphere]-2.</text>
+        <rel relloc="3">destructive</rel>
+        <arg f="EXT" n="m" start="2" end="2">how</arg>
+        <arg f="" n="1" start="6" end="18">are [to the coming generations , or to the rest of the biosphere]-2.</arg>
+        <arg f="" n="0" start="5" end="5">they</arg>
+      </example>
+      <example src="" name="Arg0 and Arg1">
+        <text>The alien warlords' destruction of Delaware was part of their master plan.</text>
+        <rel relloc="3">destruction</rel>
+        <arg f="" n="0" start="0" end="2">The alien warlords'</arg>
+        <arg f="" n="1" start="4" end="5">of Delaware</arg>
+      </example>
       <note>DESTROY-V NOTES: Member of VNcls destroy-44. (from destroy.01-v)</note>
       <note>DESTRUCTION-N NOTES: Corresponds with destroy.01 (from destruction.01-n)</note>
       <note>DESTRUCTIVE-J NOTES: Automatically created by Julia as an alias file for unification. (from destructive.01-j)</note>
-      <roles>
-        <note>Verbnet predicts an instrumental subject.  They also bring thedistinction between agent and instrument down to intentionality, whichwe've been trying to avoid.  If you feel you can consistently makethat decision, go ahead; otherwise only use arg2 when there is also anarg0.
+      <note>Verbnet predicts an instrumental subject.  They also bring thedistinction between agent and instrument down to intentionality, whichwe've been trying to avoid.  If you feel you can consistently makethat decision, go ahead; otherwise only use arg2 when there is also anarg0.
 
 ADJ note: not sure an instrument distinct from a destroyer is possible with adj.  Where there is just a "causer" default to arg0. (from destroy.01-v)</note>
-        <role descr="destroyer" f="pag" n="0">
-          <vnrole vncls="44" vntheta="agent"/>
-        </role>
-        <role descr="thing destroyed" f="ppt" n="1">
-          <vnrole vncls="44" vntheta="patient"/>
-        </role>
-        <role descr="instrument of destruction" f="mnr" n="2">
-          <vnrole vncls="44" vntheta="instrument"/>
-        </role>
-      </roles>
-      <example name="no instrument" src="" type="">
-        <text>Program traders argue that a reinstatement of the rule would destroy the ``pricing efficiency'' of the futures and stock markets.</text>
-        <arg f="" n="0">a reinstatement of the rule</arg>
-        <arg f="mod" n="m">would</arg>
-        <rel f="">destroy</rel>
-        <arg f="" n="1">the ``pricing efficiency'' of the futures and stock markets</arg>
-      </example>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes pt/nt/45/nt_4514" type="">
-        <text>Do n't destroy anyone 's faith by eating something they think is wrong .</text>
-        <arg f="" n="0">[]</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">destroy</rel>
-        <arg f="" n="1">anyone 's faith</arg>
-        <arg f="" n="2">by eating something they think is wrong</arg>
-      </example>
-
-      <example name="Adj example: destructive" src="BOLT P01, parts 2,3" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>...no matter how destructive ICH-2 they are [to the coming generations , or to the rest of the biosphere]-2.</text>
-        <arg f="ext" n="m">how</arg>
-        <rel f="">destructive</rel>
-        <arg f="" n="1">ICH-2 (to the coming generations , or to the rest of the biosphere)</arg>
-        <arg f="" n="0">they</arg>
-      </example>
-      <example name="Arg0 and Arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The alien warlords' destruction of Delaware was part of their master plan.</text>
-        <arg f="" n="0">The alien warlords'</arg>
-        <rel f="">destruction</rel>
-        <arg f="" n="1">of Delaware</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

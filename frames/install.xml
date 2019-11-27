@@ -1,60 +1,77 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="install">
     <roleset id="install.01" name="put in place">
       <aliases>
-        <alias framenet="Installing" pos="v" verbnet="">install</alias>
-        <alias framenet="" pos="v" verbnet="">instal</alias>
-        <alias framenet="" pos="n" verbnet="">installation</alias>
-        <alias framenet="" pos="n" verbnet="">installment</alias>
+        <alias pos="v">install</alias>
+        <alias pos="v">instal</alias>
+        <alias pos="n">installation</alias>
+        <alias pos="n">installment</alias>
       </aliases>
-      <note>INSTALL-V NOTES: Member of Vncls appoint-29.1, put-9.1-1. Updated by Julia, 10/2010. (from install.01-v)</note>
-      <note>INSTALLMENT-N NOTES: Roleset based on instances in BOLT DF07. Framed by Claire. (from installment.01-n)</note>
       <roles>
         <role descr="putter" f="PAG" n="0">
-          <vnrole vncls="9.1-1" vntheta="agent"/>
-          <vnrole vncls="29.1" vntheta="agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="put-9.1-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="appoint-29.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Change_of_leadership" version="1.7">selector</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing put" f="PPT" n="1">
-          <vnrole vncls="9.1-1" vntheta="theme"/>
-          <vnrole vncls="29.1" vntheta="theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="put-9.1-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="appoint-29.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Change_of_leadership" version="1.7">new_leader</rolelink>
+          </rolelinks>
         </role>
-        <role descr="installed where or as" f="loc" n="2">
-          <vnrole vncls="9.1-1" vntheta="destination"/>
-          <vnrole vncls="29.1" vntheta="result"/>
+        <role descr="installed where or as" f="LOC" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="put-9.1-1" version="verbnet3.3">destination</rolelink>
+            <rolelink resource="VerbNet" class="appoint-29.1" version="verbnet3.3">result</rolelink>
+            <rolelink resource="FrameNet" class="Change_of_leadership" version="1.7">role</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="install-v: literal place" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Change_of_leadership" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Installing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="put-9.1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="appoint-29.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="install-v.1" src="annot-overlap" confidence="0.1">34</lexlink>
+      </lexlinks>
+      <example src="" name="install-v: literal place">
         <text>Digital, however, doesn't expect to displace IBM mainframes that-1 [*trace*-1]-2 are already installed *trace*-2 at big companies.</text>
-        <arg f="tmp" n="m">already</arg>
-        <rel f="">installed</rel>
-        <arg f="" n="1">*trace*-2 (= *trace*-1 = that)</arg>
-        <arg f="slc" n="m">that -&gt; IBM mainframes</arg>
-        <arg f="" n="2">at big companies</arg>
+        <rel relloc="12">installed</rel>
+        <arg f="TMP" n="m" start="11" end="11">already</arg>
+        <arg f="" n="1" start="9" end="9">[*trace*-1]-2</arg>
+        <arg f="SLC" n="m" start="6" end="7">IBM mainframes</arg>
+        <arg f="" n="2" start="14" end="16">at big companies.</arg>
       </example>
-      <example name="install-v: no place at all" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>The disagreement centers on testing deadlines and other issues involving [a FileNet system]-1 installed *trace*-1 earlier this year.</text>
-        <rel f="">installed</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="tmp" n="m">earlier this year</arg>
+      <example src="" name="install-v: no place at all">
+        <text>The disagreement centers on testing deadlines and other issues involving a FileNet system installed earlier this year.</text>
+        <rel relloc="13">installed</rel>
+        <arg f="" n="1" start="10" end="12">a FileNet system</arg>
+        <arg f="TMP" n="m" start="14" end="16">earlier this year.</arg>
       </example>
-      <example name="install-v: with agent, different kind of 'place'" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>In July, [11 NFL owners]-1, almost all of them new, blocked an effort *trace*-1 to install Jim Finks as a replacement for retiring league commissioner Pete Rozelle.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">install</rel>
-        <arg f="" n="1">Jim Finks</arg>
-        <arg f="" n="2">as a replacement for retiring league commissioner Pete Rozelle</arg>
+      <example src="" name="install-v: with agent, different kind of 'place'">
+        <text>In July, 11 NFL owners, almost all of them new, blocked an effort to install Jim Finks as a replacement for retiring league commissioner Pete Rozelle.</text>
+        <rel relloc="14">install</rel>
+        <arg f="" n="0" start="2" end="4">11 NFL owners,</arg>
+        <arg f="" n="1" start="15" end="16">Jim Finks</arg>
+        <arg f="" n="2" start="17" end="25">as a replacement for retiring league commissioner Pete Rozelle.</arg>
       </example>
-      <example name="installment-n: All args" src="web" type="">
+      <example src="web" name="installment-n: All args">
         <text>His installment of new gang members in crucial positions...</text>
-        <arg f="" n="0">His</arg>
-        <rel f="">installment</rel>
-        <arg f="" n="1">of new gang members</arg>
-        <arg f="" n="2">in crucial positions</arg>
+        <rel relloc="1">installment</rel>
+        <arg f="" n="0" start="0" end="0">His</arg>
+        <arg f="" n="1" start="2" end="5">of new gang members</arg>
+        <arg f="" n="2" start="6" end="8">in crucial positions...</arg>
       </example>
+      <note>INSTALL-V NOTES: Member of Vncls appoint-29.1, put-9.1-1. Updated by Julia, 10/2010. (from install.01-v)</note>
+      <note>INSTALLMENT-N NOTES: Roleset based on instances in BOLT DF07. Framed by Claire. (from installment.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

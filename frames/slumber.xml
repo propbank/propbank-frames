@@ -1,33 +1,45 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="slumber">
     <roleset id="slumber.01" name="sleep">
       <aliases>
-        <alias framenet="Sleep" pos="v" verbnet="">slumber</alias>
+        <alias pos="v">slumber</alias>
       </aliases>
-      <note>SLUMBER-V NOTES: Based on 'sleep-v'. Member of VNcls snooze-40.4. (from slumber.01-v)</note>
       <roles>
         <role descr="sleeper" f="PAG" n="0">
-          <vnrole vncls="40.4" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="snooze-40.4" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Sleep" version="1.7">sleeper</rolelink>
+          </rolelinks>
         </role>
         <role descr="cognate object" f="PPT" n="1">
-          <vnrole vncls="40.4" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="snooze-40.4" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="sleepy-time" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Sleep" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="snooze-40.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="sleepy-time">
         <text>Will the people slumber still or stir to rage?</text>
-        <arg f="" n="0">the people</arg>
-        <rel f="">slumber</rel>
-        <arg f="tmp" n="m">still</arg>
+        <rel relloc="3">slumber</rel>
+        <arg f="" n="0" start="1" end="2">the people</arg>
+        <arg f="TMP" n="m" start="4" end="4">still</arg>
       </example>
-      <example name="both args" src="internet" type="-">
-        <inflection aspect="perfect" form="participle" person="third" tense="present" voice="active"/>
+      <example src="internet" name="both args">
         <text>Discussion with one's fellows awakens questions that-1 *trace*-1 have slumbered a dogmatic slumber.</text>
-        <arg f="" n="0">*trace*-1 (= that)</arg>
-        <arg f="slc" n="m">that -&gt; questions</arg>
-        <rel f="">slumbered</rel>
-        <arg f="" n="1">a dogmatic slumber</arg>
+        <rel relloc="9">slumbered</rel>
+        <arg f="" n="0" start="6" end="6">that-1</arg>
+        <arg f="SLC" n="m" start="5" end="5">questions</arg>
+        <arg f="" n="1" start="10" end="12">a dogmatic slumber.</arg>
       </example>
+      <note>SLUMBER-V NOTES: Based on 'sleep-v'. Member of VNcls snooze-40.4. (from slumber.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

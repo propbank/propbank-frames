@@ -1,836 +1,1085 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="go">
     <roleset id="go.01" name="motion">
       <aliases>
-        <alias framenet="Motion" pos="v" verbnet="">go</alias>
+        <alias pos="v">go</alias>
       </aliases>
-      <note>GO-V NOTES: Member of VNcls meander-47.7, escape-51.1-2. (from go.01-v)</note>
       <roles>
-        <note>Treebank uses every possible syntax for the stock-report usage of this sense. You'll have to dig into constituents to pull these args apart. The "direction" arg is more mandatory than the ArgM label would suggest. (from go.01-v)</note>
-        <role descr="entity in motion/goer" f="ppt" n="1">
-          <vnrole vncls="47.7" vntheta="theme"/>
-          <vnrole vncls="51.1" vntheta="theme"/>
+        <role descr="entity in motion/goer" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="meander-47.7" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="escape-51.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Motion" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="extent" f="ext" n="2"/>
-        <role descr="start point" f="dir" n="3"/>
-        <role descr="end point, end state of arg1" f="gol" n="4"/>
+        <role descr="extent" f="EXT" n="2"/>
+        <role descr="start point" f="DIR" n="3">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Motion" version="1.7">source</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="end point, end state of arg1" f="GOL" n="4">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Motion" version="1.7">goal</rolelink>
+            <rolelink resource="FrameNet" class="Motion" version="1.7">path</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="go-v: start and end points" src="start and end points" type="start and end points">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Motion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="meander-47.7" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="escape-51.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Transportperson" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Transportartifact" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="go-v.1" src="annot-overlap" confidence="0.1">187</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.4" src="annot-overlap" confidence="0.1">34</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.2" src="annot-overlap" confidence="0.1">20</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.15" src="annot-overlap" confidence="0.1">14</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.10" src="annot-overlap" confidence="0.1">31</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.11" src="annot-overlap" confidence="0.1">4</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.5" src="annot-overlap" confidence="0.1">17</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.7" src="annot-overlap" confidence="0.1">3</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.14" src="annot-overlap" confidence="0.1">6</lexlink>
+      </lexlinks>
+      <example src="start and end points" name="go-v: start and end points">
         <text>What flights go from Seattle to Boston via Minneapolis?</text>
-        <arg f="" n="1">what flights</arg>
-        <rel f="">go</rel>
-        <arg f="" n="3">from Seattle</arg>
-        <arg f="" n="4">to Boston</arg>
-        <arg f="loc" n="m">via Minneapolis</arg>
+        <rel relloc="2">go</rel>
+        <arg f="" n="1" start="0" end="1">What flights</arg>
+        <arg f="" n="3" start="3" end="4">from Seattle</arg>
+        <arg f="" n="4" start="5" end="6">to Boston</arg>
+        <arg f="LOC" n="m" start="7" end="8">via Minneapolis?</arg>
       </example>
-      <example name="go-v: extent" src="extent" type="extent">
+      <example src="extent" name="go-v: extent">
         <text>Imports have gone down 33%</text>
-        <arg f="" n="1">Imports</arg>
-        <arg f="dir" n="m">down</arg>
-        <arg f="" n="2">33%</arg>
+        <rel relloc="2">gone</rel>
+        <arg f="" n="1" start="0" end="0">Imports</arg>
+        <arg f="DIR" n="m" start="3" end="3">down</arg>
+        <arg f="" n="2" start="4" end="4">33%</arg>
       </example>
-      <example name="go-v: extent and end point" src="extent and end point" type="extent and end point">
+      <example src="extent and end point" name="go-v: extent and end point">
         <text>Woolworth went up 1 3/4 to 59 1/2.</text>
-        <arg f="" n="1">Woolworth</arg>
-        <rel f="">went</rel>
-        <arg f="dir" n="m">up</arg>
-        <arg f="" n="2">1 3/4</arg>
-        <arg f="" n="4">to 59 1/2</arg>
+        <rel relloc="1">went</rel>
+        <arg f="" n="1" start="0" end="0">Woolworth</arg>
+        <arg f="DIR" n="m" start="2" end="2">up</arg>
+        <arg f="" n="2" start="3" end="4">1 3/4</arg>
+        <arg f="" n="4" start="5" end="7">to 59 1/2.</arg>
       </example>
-      <example name="go-v: with direction, don't be fooled by animate subject! This movement is not construed as self-directed here!" src="with direction" type="with direction">
+      <example src="with direction" name="go-v: with direction, don't be fooled by animate subject! This movement is not construed as self-directed here!">
         <text>[A lot of people]-1 would like TRACE-1 to go back to 1970.</text>
-        <arg f="" n="1">TRACE</arg>
-        <rel f="">go</rel>
-        <arg f="dir" n="m">back</arg>
-        <arg f="" n="4">to 1970</arg>
+        <rel relloc="8">go</rel>
+        <arg f="" n="1" start="6" end="6">TRACE-1</arg>
+        <arg f="DIR" n="m" start="9" end="9">back</arg>
+        <arg f="" n="4" start="10" end="11">to 1970.</arg>
       </example>
-      <example name="go-v: as 'extend'" src="as 'extend'" type="as 'extend'">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
+      <example src="as 'extend'" name="go-v: as 'extend'">
         <text>At closely held Deltec Securities Corp., junk bond money managers Amy K. Minella and Hannah H. Strasser say the problems of the junk market go deeper than a temporary malaise.</text>
-        <arg f="" n="1">the problems of the junk market</arg>
-        <rel f="">go</rel>
-        <arg f="" n="4">deeper than a temporary malaise</arg>
+        <rel relloc="24">go</rel>
+        <arg f="" n="1" start="18" end="23">the problems of the junk market</arg>
+        <arg f="" n="4" start="25" end="29">deeper than a temporary malaise.</arg>
       </example>
-      <example name="go-v: and keep going!" src="and keep going!" type="and keep going!">
-        <inflection aspect="ns" form="full" person="ns" tense="ns" voice="active"/>
+      <example src="and keep going!" name="go-v: and keep going!">
         <text>The protesters who greeted Mikhail Gorbachev at East Berlin's airport earlier this month weren't shouting ``Go U.S.A'' -- they were chanting ``Gorby, Help Us.''</text>
-        <rel f="">Go</rel>
-        <arg f="" n="1">U.S.A</arg>
+        <rel relloc="15">``Go</rel>
+        <arg f="" n="1" start="16" end="16">U.S.A''</arg>
       </example>
+      <note>GO-V NOTES: Member of VNcls meander-47.7, escape-51.1-2. (from go.01-v)</note>
+      <note>Treebank uses every possible syntax for the stock-report usage of this sense. You'll have to dig into constituents to pull these args apart. The "direction" arg is more mandatory than the ArgM label would suggest. (from go.01-v)</note>
     </roleset>
-    
     <roleset id="go.02" name="self-directed motion, disapear or go away">
       <aliases>
-        <alias framenet="Motion Waver_between_options" pos="v" verbnet="">go</alias>
-        <alias framenet="" pos="n" verbnet="">going</alias>
-        <alias framenet="" pos="j" verbnet="">gone</alias>
+        <alias pos="v">go</alias>
+        <alias pos="n">going</alias>
+        <alias pos="j">gone</alias>
       </aliases>
+      <roles>
+        <role descr="goer" f="PPT" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="escape-51.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Motion" version="1.7">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="journey" f="PPT" n="1"/>
+        <role descr="start point" f="DIR" n="3">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Motion" version="1.7">source</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="end point" f="GOL" n="4">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Motion" version="1.7">goal</rolelink>
+            <rolelink resource="FrameNet" class="Motion" version="1.7">path</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Motion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Waver_between_options" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="escape-51.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Transportperson" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Transportartifact" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="go-v.10" src="annot-overlap" confidence="0.1">7</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.1" src="annot-overlap" confidence="0.1">682</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.2" src="annot-overlap" confidence="0.1">49</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.3" src="annot-overlap" confidence="0.1">3</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.4" src="annot-overlap" confidence="0.1">13</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.14" src="annot-overlap" confidence="0.1">17</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.15" src="annot-overlap" confidence="0.1">14</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.7" src="annot-overlap" confidence="0.1">9</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.9" src="annot-overlap" confidence="0.1">30</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.12" src="annot-overlap" confidence="0.1">5</lexlink>
+      </lexlinks>
+      <example src="journey" name="go-v: journey">
+        <text>He and two colleagues went on an overnight fishing trip.</text>
+        <rel relloc="4">went</rel>
+        <arg f="" n="0" start="0" end="3">He and two colleagues</arg>
+        <arg f="" n="1" start="5" end="9">on an overnight fishing trip.</arg>
+      </example>
+      <example src="end point" name="go-v: end point">
+        <text>The lawyers went to work</text>
+        <rel relloc="2">went</rel>
+        <arg f="" n="0" start="0" end="1">The lawyers</arg>
+        <arg f="" n="4" start="3" end="4">to work</arg>
+      </example>
+      <example src="with manner" name="go-v: with manner">
+        <text>Currently in the middle of a four-week, 20-city tour as a solo pianist, Mr. Glass has left behind his synthesizers, equipment and collaborators in favor of [*] going it alone.</text>
+        <rel relloc="27">going</rel>
+        <arg f="" n="0" start="13" end="14">Mr. Glass</arg>
+        <arg f="" n="1" start="28" end="28">it</arg>
+        <arg f="MNR" n="m" start="29" end="29">alone.</arg>
+      </example>
+      <example src="as nominal" name="going-n: as nominal">
+        <text>``I think Bush's going there is a helpful sign,'' said Sen. Terry Sanford (D., N.C.) a member of the Foreign Relations Committee who pushed to provide Costa Rica about the same amount of aid as it received last year.</text>
+        <rel relloc="3">going</rel>
+        <arg f="" n="0" start="1" end="2">think Bush's</arg>
+        <arg f="" n="4" start="4" end="4">there</arg>
+      </example>
+      <example src="" name="gone-j: go on vacation, leave habitual places">
+        <text>I am gone for three weeks on vacation.</text>
+        <rel relloc="2">gone</rel>
+        <arg f="" n="0" start="0" end="0">I</arg>
+        <arg f="TMP" n="m" start="3" end="5">for three weeks</arg>
+        <arg f="" n="1" start="6" end="7">on vacation.</arg>
+      </example>
+      <example src="" name="gone-j: MIA">
+        <text>The pen is gone.</text>
+        <rel relloc="3">gone.</rel>
+        <arg f="" n="0" start="0" end="1">The pen</arg>
+      </example>
+      <example src="" name="gone-j: Gone from place">
+        <text>I am gone from the forum for two days and what happens?</text>
+        <rel relloc="2">gone</rel>
+        <arg f="" n="0" start="0" end="0">I</arg>
+        <arg f="" n="3" start="3" end="5">from the forum</arg>
+        <arg f="TMP" n="m" start="6" end="8">for two days</arg>
+      </example>
       <note>GO-V NOTES: Member of VNcls escape-51.1-2. (from go.02-v)</note>
       <note>GONE-J NOTES: Based on Thyme and Sharp data. Comparison to and extention of go.02 and leave.01. Go.02 is a member of VN class escape-51.1-2. Leave.01 is a member of VN classes escape-51.1-1, leave-51.2-1, and resign-10.11. Framed by Katie. (from gone.01-j)</note>
       <note>GO-V NOTES: This is an incorrect parse from Treebank; "be gone" is clearly notpassive but rather copula+adjective. I hope this is anisolated example (it's not, unfortunately) (from go.13-v)</note>
-      <roles>
-        <role descr="goer" f="ppt" n="0">
-          <vnrole vncls="51.1" vntheta="theme"/>
-        </role>
-        <role descr="journey" f="ppt" n="1"/>
-        <role descr="start point" f="dir" n="3"/>
-        <role descr="end point" f="gol" n="4"/>
-      </roles>
-      <example name="go-v: journey" src="journey" type="journey">
-        <text>He and two colleagues went on an overnight fishing trip.</text>
-        <arg f="" n="0">He and two colleagues</arg>
-        <rel f="">went</rel>
-        <arg f="" n="1">on an overnight fishing trip</arg>
-      </example>
-      <example name="go-v: end point" src="end point" type="end point">
-        <text>The lawyers went to work</text>
-        <arg f="" n="0">the lawyers</arg>
-        <rel f="">went</rel>
-        <arg f="" n="4">to work</arg>
-      </example>
-      <example name="go-v: with manner" src="with manner" type="with manner">
-        <inflection aspect="ns" form="gerund" person="ns" tense="ns" voice="ns"/>
-        <text>Currently in the middle of a four-week, 20-city tour as a solo pianist, [Mr. Glass]-1 has left behind his synthesizers, equipment and collaborators in favor of [*-1] going it alone.</text>
-        <arg f="" n="0">[*-1]</arg>
-        <rel f="">going</rel>
-        <arg f="" n="1">it</arg>
-        <arg f="mnr" n="m">alone</arg>
-      </example>
-      <example name="going-n: as nominal" src="as nominal" type="as nominal">
-        <inflection aspect="ns" form="gerund" person="ns" tense="ns" voice="ns"/>
-        <text>``I think Bush's going there is a helpful sign,'' said Sen. Terry Sanford (D., N.C.) a member of the Foreign Relations Committee who pushed to provide Costa Rica about the same amount of aid as it received last year.</text>
-        <arg f="" n="0">Bush 's</arg>
-        <rel f="">going</rel>
-        <arg f="" n="4">there</arg>
-      </example>
-      <example name="gone-j: go on vacation, leave habitual places" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I am gone for three weeks on vacation.</text>
-        <arg f="" n="0">I</arg>
-        <rel f="">gone</rel>
-        <arg f="tmp" n="m">for three weeks</arg>
-        <arg f="" n="1">on vacation.</arg>
-      </example>
-      <example name="gone-j: MIA" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The pen is gone.</text>
-        <arg f="" n="0">The pen</arg>
-        <rel f="">gone</rel>
-      </example>
-      <example name="gone-j: Gone from place" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I am gone from the forum for two days and what happens?</text>
-        <arg f="" n="0">I</arg>
-        <rel f="">gone</rel>
-        <arg f="" n="3">from the forum</arg>
-        <arg f="tmp" n="m">for two days</arg>
-      </example>
     </roleset>
-    
     <roleset id="go.03" name="pursue (often with after)">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">go</alias>
+        <alias pos="v">go</alias>
       </aliases>
-      <note>GO-V NOTES: No VNcls. (from go.03-v)</note>
       <roles>
-        <role descr="pursuer" f="pag" n="0"/>
-        <role descr="goal" f="ppt" n="1"/>
+        <role descr="pursuer" f="PAG" n="0"/>
+        <role descr="goal" f="PPT" n="1"/>
       </roles>
-      <example name="go-v: go after" src="go after" type="go after">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cotheme" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Transportperson" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="go-v.1" src="annot-overlap" confidence="0.1">20</lexlink>
+      </lexlinks>
+      <example src="go after" name="go-v: go after">
         <text>Portfolio managers go after the highest rates.</text>
-        <arg f="" n="0">Portfolio managers</arg>
-        <rel f="">go</rel>
-        <arg f="" n="1">after the highest rates</arg>
+        <rel relloc="2">go</rel>
+        <arg f="" n="0" start="0" end="1">Portfolio managers</arg>
+        <arg f="" n="1" start="3" end="6">after the highest rates.</arg>
       </example>
+      <note>GO-V NOTES: No VNcls. (from go.03-v)</note>
     </roleset>
-    
     <roleset id="go.04" name="modal / future">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">go</alias>
+        <alias pos="v">go</alias>
       </aliases>
-      <note>GO-V NOTES: No VNcls. (from go.04-v)</note>
-      <roles>
-      <note>Do not tag! (leave the rel, of course). (from go.04-v)</note>
-      </roles>
-      <example name="go-v: modal" src="modal" type="modal">
+      <roles/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="onsense" version="on5" class="go-v.7" src="annot-overlap" confidence="0.1">683</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.1" src="annot-overlap" confidence="0.1">7</lexlink>
+      </lexlinks>
+      <example src="modal" name="go-v: modal">
         <text>I'm going to eat lunch now.</text>
+        <rel relloc="1">going</rel>
       </example>
+      <note>GO-V NOTES: No VNcls. (from go.04-v)</note>
+      <note>Do not tag! (leave the rel, of course). (from go.04-v)</note>
     </roleset>
-    
     <roleset id="go.05" name="serial verb construction">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">go</alias>
+        <alias pos="v">go</alias>
       </aliases>
-      <note>GO-V NOTES: This is dangerously close to the modal construction, except there's no"to" (ie, "I'm going to leave now"). Includes the idiom "go begging". (from go.05-v)</note>
       <roles>
-        <role descr="subject" f="pag" n="0"/>
-        <role descr="subsequent action" f="ppt" n="1"/>
+        <role descr="subject" f="PAG" n="0"/>
+        <role descr="subsequent action" f="PPT" n="1"/>
       </roles>
-      <example name="go-v: very typical" src="very typical" type="very typical">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="onsense" version="on5" class="go-v.1" src="annot-overlap" confidence="0.1">24</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.14" src="annot-overlap" confidence="0.1">26</lexlink>
+      </lexlinks>
+      <example src="very typical" name="go-v: very typical">
         <text>He went *trace* looking for a replacement for Mr. Landry.</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">went</rel>
-        <arg f="" n="1">*trace* looking for a replacement for Mr. Landry</arg>
+        <rel relloc="1">went</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
+        <arg f="" n="1" start="2" end="9">*trace* looking for a replacement for Mr. Landry.</arg>
       </example>
+      <note>GO-V NOTES: This is dangerously close to the modal construction, except there's no"to" (ie, "I'm going to leave now"). Includes the idiom "go begging". (from go.05-v)</note>
     </roleset>
-    
     <roleset id="go.06" name="proceed (with a variety of prepositions)">
       <aliases>
-        <alias framenet="Scrutiny Forgoing" pos="v" verbnet="">go</alias>
-        <alias framenet="" pos="n" verbnet="">go</alias>
+        <alias pos="v">go</alias>
+        <alias pos="n">go</alias>
       </aliases>
-      <note>GO-V NOTES: No VNcls. (from go.06-v)</note>
       <roles>
-        <role descr="entity proceeding" f="pag" n="0"/>
-        <role descr="project" f="ppt" n="1"/>
-        <role descr="direction, usually a particle" f="dir" n="2"/>
+        <role descr="entity proceeding" f="PAG" n="0"/>
+        <role descr="project" f="PPT" n="1"/>
+        <role descr="direction, usually a particle" f="DIR" n="2"/>
       </roles>
-      <example name="go-v: transitive and direction" src="transitive and direction" type="transitive and direction">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Scrutiny" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Forgoing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="go-v.5" src="annot-overlap" confidence="0.1">28</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.1" src="annot-overlap" confidence="0.1">90</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.4" src="annot-overlap" confidence="0.1">22</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.15" src="annot-overlap" confidence="0.1">15</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.7" src="annot-overlap" confidence="0.1">3</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.10" src="annot-overlap" confidence="0.1">5</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.14" src="annot-overlap" confidence="0.1">21</lexlink>
+      </lexlinks>
+      <example src="transitive and direction" name="go-v: transitive and direction">
         <text>Boeing goes ahead with its plans for the 767.</text>
-        <arg f="" n="0">Boeing</arg>
-        <rel f="">goes</rel>
-        <arg f="" n="2">ahead</arg>
-        <arg f="" n="1">with its plans for the 767</arg>
+        <rel relloc="1">goes</rel>
+        <arg f="" n="0" start="0" end="0">Boeing</arg>
+        <arg f="" n="2" start="2" end="2">ahead</arg>
+        <arg f="" n="1" start="3" end="8">with its plans for the 767.</arg>
       </example>
-      <example name="go-v: intransitive, direction only" src="intransitive, direction only" type="intransitive, direction only">
+      <example src="intransitive, direction only" name="go-v: intransitive, direction only">
         <text>Mrs. Yeagin went into education.</text>
-        <arg f="" n="0">Mrs. Yeagin</arg>
-        <rel f="">went</rel>
-        <arg f="" n="2">into education</arg>
+        <rel relloc="2">went</rel>
+        <arg f="" n="0" start="0" end="1">Mrs. Yeagin</arg>
+        <arg f="" n="2" start="3" end="4">into education.</arg>
       </example>
-      <example name="go-v: ergative" src="ergative" type="ergative">
+      <example src="ergative" name="go-v: ergative">
         <text>Boeing's plans for the 767 went without a hitch.</text>
-        <arg f="" n="1">Boeing's plans</arg>
-        <rel f="">went</rel>
-        <arg f="mnr" n="m">without a hitch</arg>
+        <rel relloc="5">went</rel>
+        <arg f="" n="1" start="0" end="1">Boeing's plans</arg>
+        <arg f="MNR" n="m" start="6" end="8">without a hitch.</arg>
       </example>
-      <example name="go-v: transitive, no direction" src="transitive, no direction" type="transitive, no direction">
+      <example src="transitive, no direction" name="go-v: transitive, no direction">
         <text>They went about it with a systematic approach.</text>
-        <arg f="" n="0">they</arg>
-        <arg f="" n="1">about it</arg>
-        <arg f="mnr" n="m">with a systematic approach</arg>
+        <rel relloc="3 5">it a</rel>
+        <arg f="" n="0" start="0" end="0">They</arg>
+        <arg f="" n="1" start="2" end="3">about it</arg>
+        <arg f="MNR" n="m" start="4" end="7">with a systematic approach.</arg>
       </example>
-      <example name="go-n: Light verb 'give the go_ahead'" src="" type="">
+      <example src="" name="go-n: Light verb 'give the go_ahead'">
         <text>Coulson 'gave the go-ahead for Royal phone hacking'.</text>
-        <arg f="" n="0">Coulson</arg>
-        <arg f="lvb" n="m">gave</arg>
-        <rel f="">go</rel>
-        <arg f="" n="2">ahead</arg>
-        <arg f="" n="1">for Royal phone hacking</arg>
+        <rel relloc="3">go-ahead</rel>
+        <arg f="" n="0" start="0" end="0">Coulson</arg>
+        <arg f="LVB" n="m" start="1" end="1">'gave</arg>
+        <arg f="" n="2" start="2" end="2">the</arg>
+        <arg f="" n="1" start="4" end="7">for Royal phone hacking'.</arg>
       </example>
+      <note>GO-V NOTES: No VNcls. (from go.06-v)</note>
     </roleset>
-    
     <roleset id="go.07" name="sell">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">go</alias>
+        <alias pos="v">go</alias>
       </aliases>
-      <note>GO-V NOTES: No VNcls. (from go.07-v)</note>
       <roles>
-        <role descr="commodity" f="ppt" n="1"/>
-        <role descr="buyer" f="gol" n="2"/>
-        <role descr="price" f="vsp" n="3"/>
+        <role descr="commodity" f="PPT" n="1"/>
+        <role descr="buyer" f="GOL" n="2"/>
+        <role descr="price" f="VSP" n="3"/>
       </roles>
-      <example name="go-v: unaccusative with price" src="unaccusative with price" type="unaccusative with price">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="onsense" version="on5" class="go-v.15" src="annot-overlap" confidence="0.1">3</lexlink>
+      </lexlinks>
+      <example src="unaccusative with price" name="go-v: unaccusative with price">
         <text>Chateau Yquem now goes for $100 a bottle</text>
-        <arg f="" n="1">Chateau Yquem</arg>
-        <arg f="tmp" n="m">now</arg>
-        <rel f="">goes</rel>
-        <arg f="" n="3">for $100 a bottle</arg>
+        <rel relloc="3">goes</rel>
+        <arg f="" n="1" start="0" end="1">Chateau Yquem</arg>
+        <arg f="TMP" n="m" start="2" end="2">now</arg>
+        <arg f="" n="3" start="4" end="7">for $100 a bottle</arg>
       </example>
+      <note>GO-V NOTES: No VNcls. (from go.07-v)</note>
     </roleset>
-    
     <roleset id="go.08" name="become">
       <aliases>
-        <alias framenet="Becoming Losing_it" pos="v" verbnet="">go</alias>
+        <alias pos="v">go</alias>
       </aliases>
-      <note>GO-V NOTES: Related to VNcls marvel-31.3 (go_apeshit, go_ballistic are members, but not just plain 'go'.) (from go.08-v)</note>
       <roles>
-        <note>Use this sense for inceptive uses of go, such as become at war - to start war.</note>
-        <role descr="object" f="ppt" n="1">
-          <vnrole vncls="31.3-2" vntheta="experiencer"/>
+        <role descr="object" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="31.3-2" version="UNK">experiencer</rolelink>
+          </rolelinks>
         </role>
-        <role descr="attribute of arg1" f="prd" n="2"/>
-        <role descr="with reference to what" f="pag" n="3">
-          <vnrole vncls="31.3-2" vntheta="stimulus"/>
+        <role descr="attribute of arg1" f="PRD" n="2"/>
+        <role descr="with reference to what" f="PAG" n="3">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="31.3-2" version="UNK">stimulus</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="go-v: go private" src="go private" type="go private">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Becoming" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Losing_it" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="31.3-2" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Personnel.StartPosition.Hiring" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Startposition" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="go-v.4" src="annot-overlap" confidence="0.1">89</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.15" src="annot-overlap" confidence="0.1">4</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.1" src="annot-overlap" confidence="0.1">7</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.14" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="go private" name="go-v: go private">
         <text>Georgia Gulf will go private.</text>
-        <arg f="" n="1">Georgia Gulf</arg>
-        <rel f="">go</rel>
-        <arg f="" n="2">private</arg>
+        <rel relloc="3">go</rel>
+        <arg f="" n="1" start="0" end="1">Georgia Gulf</arg>
+        <arg f="" n="2" start="4" end="4">private.</arg>
       </example>
-      <example name="go-v: go off" src="go off" type="go off">
+      <example src="go off" name="go-v: go off">
         <text>The lights went off last night.</text>
-        <arg f="" n="1">the lights</arg>
-        <rel f="">went</rel>
-        <arg f="" n="2">off</arg>
-        <arg f="tmp" n="m">last night</arg>
+        <rel relloc="2">went</rel>
+        <arg f="" n="1" start="0" end="1">The lights</arg>
+        <arg f="" n="2" start="3" end="3">off</arg>
+        <arg f="TMP" n="m" start="4" end="5">last night.</arg>
       </example>
-      <example name="go-v: with another argument" src="with another argument" type="with another argument">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>Contel's Mr. Wohlstetter said [the group of Big Board companies]-1 isn't ready [*-1]to go public yet with its effort, and that he doesn't plan to be the leader once it is public.</text>
-        <arg f="" n="1">[*-1]</arg>
-        <rel f="">go</rel>
-        <arg f="" n="2">public</arg>
-        <arg f="tmp" n="m">yet</arg>
-        <arg f="" n="3">with its effort</arg>
+      <example src="with another argument" name="go-v: with another argument">
+        <text>Contel's Mr. Wohlstetter said the group of Big Board companies isn't ready [*]to go public yet with its effort, and that he doesn't plan to be the leader once it is public.</text>
+        <rel relloc="13">go</rel>
+        <arg f="" n="1" start="4" end="9">the group of Big Board companies</arg>
+        <arg f="" n="2" start="14" end="14">public</arg>
+        <arg f="TMP" n="m" start="15" end="15">yet</arg>
+        <arg f="" n="3" start="16" end="18">with its effort,</arg>
       </example>
-      <example name="go-v: less become, more continue" src="less become, more continue" type="less become, more continue">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
+      <example src="less become, more continue" name="go-v: less become, more continue">
         <text>What's more, the losses they and the others caused ``are just what we are stumbling over,'' says Mr. Stapf, adding that the majority of misdeeds probably go [*-6] undetected.</text>
-        <arg f="" n="1">the majority of misdeeds</arg>
-        <arg f="adv" n="m">probably</arg>
-        <rel f="">go</rel>
-        <arg f="" n="2">[*-6] undetected</arg>
+        <rel relloc="26">go</rel>
+        <arg f="" n="1" start="21" end="24">the majority of misdeeds</arg>
+        <arg f="ADV" n="m" start="25" end="25">probably</arg>
+        <arg f="" n="2" start="28" end="28">undetected.</arg>
       </example>
+      <note>GO-V NOTES: Related to VNcls marvel-31.3 (go_apeshit, go_ballistic are members, but not just plain 'go'.) (from go.08-v)</note>
+      <note>Use this sense for inceptive uses of go, such as become at war - to start war.</note>
     </roleset>
-    
     <roleset id="go.09" name="operate">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">go</alias>
+        <alias pos="v">go</alias>
       </aliases>
-      <note>GO-V NOTES: No VNcls. (from go.09-v)</note>
       <roles>
-        <role descr="thing going" f="ppt" n="1"/>
+        <role descr="thing going" f="PPT" n="1"/>
       </roles>
-      <example name="go-v: work" src="work" type="work">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="onsense" version="on5" class="go-v.5" src="annot-overlap" confidence="0.1">3</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.11" src="annot-overlap" confidence="0.1">5</lexlink>
+      </lexlinks>
+      <example src="work" name="go-v: work">
         <text>[The order printers]-1 start *trace*-1 to go on the trading floor.</text>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="loc" n="m">on the trading floor</arg>
+        <rel relloc="6">go</rel>
+        <arg f="" n="1" start="4" end="4">*trace*-1</arg>
+        <arg f="LOC" n="m" start="7" end="10">on the trading floor.</arg>
       </example>
+      <note>GO-V NOTES: No VNcls. (from go.09-v)</note>
     </roleset>
-    
     <roleset id="go.10" name="benefactive">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">go</alias>
+        <alias pos="v">go</alias>
       </aliases>
-      <note>GO-V NOTES: No VNcls. (from go.10-v)</note>
       <roles>
-        <role descr="thing going" f="ppt" n="1"/>
-        <role descr="receiver" f="gol" n="2"/>
+        <role descr="thing going" f="PPT" n="1"/>
+        <role descr="receiver" f="GOL" n="2"/>
       </roles>
-      <example name="go-v: with receiver" src="with receiver" type="with receiver">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="onsense" version="on5" class="go-v.1" src="annot-overlap" confidence="0.1">16</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.13" src="annot-overlap" confidence="0.1">8</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.2" src="annot-overlap" confidence="0.1">6</lexlink>
+      </lexlinks>
+      <example src="with receiver" name="go-v: with receiver">
         <text>The rest went to investors from France and Hong Kong.</text>
-        <arg f="" n="1">the rest</arg>
-        <rel f="">went</rel>
-        <arg f="" n="2">to investors from France and Hong Kong</arg>
+        <rel relloc="2">went</rel>
+        <arg f="" n="1" start="0" end="1">The rest</arg>
+        <arg f="" n="2" start="3" end="9">to investors from France and Hong Kong.</arg>
       </example>
-      <example name="go-v: with purpose" src="with purpose" type="with purpose">
+      <example src="with purpose" name="go-v: with purpose">
         <text>$455 million will go for antitrust enforcement.</text>
-        <arg f="" n="1">$455 million</arg>
-        <rel f="">go</rel>
-        <arg f="prp" n="m">for antitrust enforcement</arg>
+        <rel relloc="3">go</rel>
+        <arg f="" n="1" start="0" end="1">$455 million</arg>
+        <arg f="PRP" n="m" start="4" end="6">for antitrust enforcement.</arg>
       </example>
-      <example name="go-v: go with" src="go with" type="go with">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
+      <example src="go with" name="go-v: go with">
         <text>Bethlehem-1 had little choice but [*]-1 to go with a European steelmaker, because its competitors already have tapped the Japanese and South Korean industry leaders, analysts noted.</text>
-        <arg f="" n="1">[*]</arg>
-        <rel f="">go</rel>
-        <arg f="" n="2">with a European steelmaker</arg>
+        <rel relloc="7">go</rel>
+        <arg f="" n="1" start="5" end="5">[*]-1</arg>
+        <arg f="" n="2" start="8" end="11">with a European steelmaker,</arg>
       </example>
+      <note>GO-V NOTES: No VNcls. (from go.10-v)</note>
     </roleset>
-    
     <roleset id="go.11" name="serve">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">go</alias>
+        <alias pos="v">go</alias>
       </aliases>
-      <note>GO-V NOTES: This seems close to the benefactive, hence its placement here. I also read the purpose clause as goes "to prove character". (from go.11-v)</note>
       <roles>
-        <role descr="thing going" f="pag" n="1"/>
-        <role descr="purpose" f="prp" n="2"/>
+        <role descr="thing going" f="PAG" n="1"/>
+        <role descr="purpose" f="PRP" n="2"/>
       </roles>
-      <example name="go-v: only in TV criminal/courtroom dramas?" src="only in TV criminal/courtroom dramas?" type="only in TV criminal/courtroom dramas?">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="onsense" version="on5" class="go-v.15" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="only in TV criminal/courtroom dramas?" name="go-v: only in TV criminal/courtroom dramas?">
         <text>The crime goes to character.</text>
-        <arg f="" n="1">The crime</arg>
-        <rel f="">goes</rel>
-        <arg f="" n="2">to character</arg>
+        <rel relloc="2">goes</rel>
+        <arg f="" n="1" start="0" end="1">The crime</arg>
+        <arg f="" n="2" start="3" end="4">to character.</arg>
       </example>
-      <example name="go-v: goes without saying" src="goes without saying" type="goes without saying">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>Which-1 [*T*-1] goes [*-2]to show that the First Law applies in insurance as in anything else: There is no free lunch, there isonly marketing.</text>
-        <arg f="" n="1">[*T*-1]</arg>
-        <rel f="">goes</rel>
-        <arg f="" n="2">[*-2] to show that the First Law applies ininsurance as in anything else: There is no free lunch, there is only marketing</arg>
+      <example src="goes without saying" name="go-v: goes without saying">
+        <text>Which [*T*] goes [*-2]to show that the First Law applies in insurance as in anything else: There is no free lunch, there isonly marketing.</text>
+        <rel relloc="2">goes</rel>
+        <arg f="" n="1" start="0" end="0">Which</arg>
+        <arg f="" n="2" start="3" end="23">[*-2]to show that the First Law applies in insurance as in anything else: There is no free lunch, there isonly marketing.</arg>
       </example>
-      <example name="go-v: with GOL" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="go-v: with GOL">
         <text>That goes for Isreal too , if Egypt or Syria were anything worthwhile , Isreal would n't of got what they did .</text>
-        <arg f="" n="1">That</arg>
-        <rel f="">goes</rel>
-        <arg f="gol" n="m">for Israel too</arg>
+        <rel relloc="1">goes</rel>
+        <arg f="" n="1" start="0" end="0">That</arg>
+        <arg f="GOL" n="m" start="2" end="4">for Isreal too</arg>
       </example>
+      <note>GO-V NOTES: This seems close to the benefactive, hence its placement here. I also read the purpose clause as goes "to prove character". (from go.11-v)</note>
     </roleset>
-    
     <roleset id="go.12" name="experience, undergo">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">go</alias>
+        <alias pos="v">go</alias>
       </aliases>
-      <note>GO-V NOTES: Be wary of the distinction with motion through some medium, such as"John goes through the park on his way to school."(from go.12-v)</note>
       <roles>
-        <role descr="experiencer" f="ppt" n="1"/>
-        <role descr="experienced" f="pag" n="2"/>
+        <role descr="experiencer" f="PPT" n="1"/>
+        <role descr="experienced" f="PAG" n="2"/>
       </roles>
-      <example name="go-v: oh the agony" src="oh the agony" type="oh the agony">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="onsense" version="on5" class="go-v.15" src="annot-overlap" confidence="0.1">31</lexlink>
+        <lexlink resource="onsense" version="on5" class="go-v.1" src="annot-overlap" confidence="0.1">8</lexlink>
+      </lexlinks>
+      <example src="oh the agony" name="go-v: oh the agony">
         <text>This market is still going through its pains</text>
-        <arg f="" n="1">the market</arg>
-        <arg f="dis" n="m">still</arg>
-        <rel f="">going</rel>
-        <arg f="" n="2">through its pains</arg>
+        <rel relloc="4">going</rel>
+        <arg f="" n="1" start="0" end="1">This market</arg>
+        <arg f="DIS" n="m" start="3" end="3">still</arg>
+        <arg f="" n="2" start="5" end="7">through its pains</arg>
       </example>
+      <note>GO-V NOTES: Be wary of the distinction with motion through some medium, such as"John goes through the park on his way to school."(from go.12-v)</note>
     </roleset>
-    
     <roleset id="go.14" name="be left">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">go</alias>
+        <alias pos="v">go</alias>
       </aliases>
-      <note>GO-V NOTES: always infinitival? (from go.14-v)</note>
       <roles>
-        <role descr="thing left" f="ppt" n="1"/>
+        <role descr="thing left" f="PPT" n="1"/>
       </roles>
-      <example name="go-v: left" src="left" type="left">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="onsense" version="on5" class="go-v.1" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="left" name="go-v: left">
         <text>With 15 seconds of trading [0]-1 *trace*-1 to go, ...</text>
-        <arg f="" n="1">*trace*-1 (= [0])</arg>
-        <arg f="slc" n="m">[0] -&gt; 15 seconds of trading</arg>
-        <rel f="">go</rel>
+        <rel relloc="8">go,</rel>
+        <arg f="" n="1" start="6" end="6">*trace*-1</arg>
+        <arg f="SLC" n="m" start="1" end="4">15 seconds of trading</arg>
       </example>
+      <note>GO-V NOTES: always infinitival? (from go.14-v)</note>
     </roleset>
-    
     <roleset id="go.21" name="have on your side">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">go</alias>
+        <alias pos="v">go</alias>
       </aliases>
-      <note>GO-V NOTES: No VNcls. (from go.21-v)</note>
       <roles>
-        <role descr="thing on your side, supporter" f="ppt" n="1"/>
-        <role descr="beneficiary, supported" f="gol" n="2"/>
+        <role descr="thing on your side, supporter" f="PPT" n="1"/>
+        <role descr="beneficiary, supported" f="GOL" n="2"/>
       </roles>
-      <example name="go-v: the only thing?" src="the only thing?" type="the only thing?">
-        <inflection aspect="ns" form="gerund" person="ns" tense="ns" voice="ns"/>
-        <text>The one thing [0] Mr. Phillips clearly does have [*T*-1]going for him is continuity, although it isn't certain if that will be enough.</text>
-        <arg f="" n="1">[*T*-1] (= [0])</arg>
-        <arg f="slc" n="m">[0] -&gt; The one thing</arg>
-        <rel f="">going</rel>
-        <arg f="" n="2">for him</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="the only thing?" name="go-v: the only thing?">
+        <text>The one thing [0] Mr. Phillips clearly does have []going for him is continuity, although it isn't certain if that will be enough.</text>
+        <rel relloc="9">[]going</rel>
+        <arg f="" n="1" start="3" end="3">[0]</arg>
+        <arg f="SLC" n="m" start="0" end="2">The one thing</arg>
+        <arg f="" n="2" start="10" end="11">for him</arg>
       </example>
+      <note>GO-V NOTES: No VNcls. (from go.21-v)</note>
     </roleset>
-    
     <roleset id="go.22" name="go with, match, accompany">
       <aliases>
-        <alias framenet="Compatibility" pos="v" verbnet="">go</alias>
+        <alias pos="v">go</alias>
       </aliases>
-      <note>GO-V NOTES: No VNcls. (from go.22-v)</note>
       <roles>
-        <role descr="topic" f="ppt" n="1"/>
-        <role descr="what you get for free, matching thing" f="com" n="2"/>
+        <role descr="topic" f="PPT" n="1"/>
+        <role descr="what you get for free, matching thing" f="COM" n="2"/>
       </roles>
-      <example name="go-v: and a set of Ginsu knives" src="and a set of Ginsu knives" type="and a set of Ginsu knives">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>Instead, they focus on events in department stores and pour their promotional budgets into gifts that-1 [*T*-1]go along with purchases.</text>
-        <arg f="" n="1">[*T*-1] (= that)</arg>
-        <arg f="slc" n="m">that -&gt; gifts</arg>
-        <rel f="">go</rel>
-        <arg f="" n="2">along with purchases</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Compatibility" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="go-v.8" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="and a set of Ginsu knives" name="go-v: and a set of Ginsu knives">
+        <text>Instead, they focus on events in department stores and pour their promotional budgets into gifts that-1 []go along with purchases.</text>
+        <rel relloc="16">[]go</rel>
+        <arg f="" n="1" start="15" end="15">that-1</arg>
+        <arg f="SLC" n="m" start="14" end="14">gifts</arg>
+        <arg f="" n="2" start="17" end="19">along with purchases.</arg>
       </example>
+      <note>GO-V NOTES: No VNcls. (from go.22-v)</note>
     </roleset>
-    
     <roleset id="go.23" name="say">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">go</alias>
+        <alias pos="v">go</alias>
       </aliases>
-      <note>GO-V NOTES: predicate added by Arrick (from go.23-v)</note>
       <roles>
-        <role descr="Sayer" f="pag" n="0"/>
-        <role descr="Utterance" f="ppt" n="1"/>
-        <role descr="Hearer" f="gol" n="2"/>
+        <role descr="Sayer" f="PAG" n="0"/>
+        <role descr="Utterance" f="PPT" n="1"/>
+        <role descr="Hearer" f="GOL" n="2"/>
       </roles>
-      <example name="go-v: non-agentive speaker" src="non-agentive speaker" type="non-agentive speaker">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="onsense" version="on5" class="go-v.6" src="annot-overlap" confidence="0.1">6</lexlink>
+      </lexlinks>
+      <example src="non-agentive speaker" name="go-v: non-agentive speaker">
         <text>The old saying goes: 'Officials come and go, but yamen [government offices in feudal China]-1 are made [*]-1 of iron.'</text>
-        <arg f="" n="0">The old saying</arg>
-        <rel f="">goes</rel>
-        <arg f="" n="1">"Officials come and go but yamen [governemnt offices in feudal China are made [*]-1 of iron."</arg>
+        <rel relloc="3">goes:</rel>
+        <arg f="" n="0" start="0" end="2">The old saying</arg>
+        <arg f="" n="1" start="4" end="19">'Officials come and go, but yamen [government offices in feudal China]-1 are made [*]-1 of iron.'</arg>
       </example>
+      <note>GO-V NOTES: predicate added by Arrick (from go.23-v)</note>
     </roleset>
-    
     <roleset id="go.24" name="existential">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">go</alias>
+        <alias pos="v">go</alias>
       </aliases>
-      <note>GO-V NOTES: predicate added by Arrick (from go.24-v)</note>
       <roles>
-        <role descr="here, there" f="adv" n="m"/>
-        <role descr="fixed: you" f="ppt" n="1"/>
+        <role descr="here, there" f="ADV" n="m"/>
+        <role descr="fixed: you" f="PPT" n="1"/>
       </roles>
-      <example name="go-v: existential there" src="existential there" type="existential there">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="existential there" name="go-v: existential there">
         <text>Well there you go.</text>
-        <arg f="dis" n="m">well</arg>
-        <arg f="adv" n="m">there</arg>
-        <arg f="" n="1">you</arg>
-        <rel f="">go</rel>
+        <rel relloc="3">go.</rel>
+        <arg f="DIS" n="m" start="0" end="0">Well</arg>
+        <arg f="ADV" n="m" start="1" end="1">there</arg>
+        <arg f="" n="1" start="2" end="2">you</arg>
       </example>
+      <note>GO-V NOTES: predicate added by Arrick (from go.24-v)</note>
     </roleset>
-    
     <roleset id="go.29" name="potty">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">go</alias>
+        <alias pos="v">go</alias>
       </aliases>
-      <note>GO-V NOTES: No VNcls. (from go.29-v)</note>
       <roles>
-        <role descr="potty-er" f="pag" n="0"/>
-        <role descr="duty done" f="ppt" n="1"/>
+        <role descr="potty-er" f="PAG" n="0"/>
+        <role descr="duty done" f="PPT" n="1"/>
       </roles>
-      <example name="go-v: Arg 0 only" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="" name="go-v: Arg 0 only">
         <text>He was still going two-to-three times a day which was his norm.</text>
-        <arg f="" n="0">He</arg>
-        <arg f="tmp" n="m">still</arg>
-        <rel f="">going</rel>
-        <arg f="tmp" n="m">two-to-three times a day which was his norm.</arg>
+        <rel relloc="3">going</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
+        <arg f="TMP" n="m" start="2" end="2">still</arg>
+        <arg f="TMP" n="m" start="4" end="11">two-to-three times a day which was his norm.</arg>
       </example>
-      <example name="go-v: in case you couldn't figure out arg 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="go-v: in case you couldn't figure out arg 1">
         <text>Mary told mom that the dog went number 2 on the rug.</text>
-        <arg f="" n="0">the dog</arg>
-        <rel f="">went</rel>
-        <arg f="" n="1">number 2</arg>
-        <arg f="loc" n="m">on the rug.</arg>
+        <rel relloc="6">went</rel>
+        <arg f="" n="0" start="4" end="5">the dog</arg>
+        <arg f="" n="1" start="7" end="8">number 2</arg>
+        <arg f="LOC" n="m" start="9" end="11">on the rug.</arg>
       </example>
+      <note>GO-V NOTES: No VNcls. (from go.29-v)</note>
     </roleset>
-    
     <roleset id="go.31" name="an attempt, effort">
       <aliases>
-        <alias framenet="Attempt" pos="n" verbnet="">go</alias>
-        <alias framenet="" pos="l" verbnet="">have_go</alias>
-        <alias framenet="" pos="l" verbnet="">give_go</alias>
+        <alias pos="n">go</alias>
+        <alias pos="l">have_go</alias>
+        <alias pos="l">give_go</alias>
       </aliases>
-      <note>GO-N NOTES: Roleset based on instances in BOLT P01, part 4. Loosely based on attempt-v.01. Be careful because "have a go" is a roleset for "have" (have.10), so it shouldn't be treated as an LV. (from go.01-n)</note>
       <roles>
-        <role descr="Agent, entity trying something" f="pag" n="0"/>
-        <role descr="Thing attempted" f="ppt" n="1"/>
+        <role descr="Agent, entity trying something" f="PAG" n="0"/>
+        <role descr="Thing attempted" f="PPT" n="1"/>
       </roles>
-      <example name="go-n: All args, nominal" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Attempt" version="1.7" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web" name="go-n: All args, nominal">
         <text>Alfie backstage getting ready for his go at Elvis.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">go</rel>
-        <arg f="" n="1">at Elvis.</arg>
+        <rel relloc="6">go</rel>
+        <arg f="" n="0" start="5" end="5">his</arg>
+        <arg f="" n="1" start="7" end="8">at Elvis.</arg>
       </example>
+      <note>GO-N NOTES: Roleset based on instances in BOLT P01, part 4. Loosely based on attempt-v.01. Be careful because "have a go" is a roleset for "have" (have.10), so it shouldn't be treated as an LV. (from go.01-n)</note>
     </roleset>
-    
     <roleset id="go.32" name="attack or insult">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">go</alias>
-        <alias framenet="" pos="l" verbnet="">have_go</alias>
+        <alias pos="n">go</alias>
+        <alias pos="l">have_go</alias>
       </aliases>
-      <note>GO-N NOTES: Roleset based on instances in BOLT P01, part 4. Loosely based on attack-v.01. (from go.02-n)</note>
       <roles>
-        <role descr="attacker" f="pag" n="0"/>
-        <role descr="attacked, insulted entity" f="ppt" n="1"/>
+        <role descr="attacker" f="PAG" n="0"/>
+        <role descr="attacked, insulted entity" f="PPT" n="1"/>
       </roles>
-      <example name="go-n: All args, within LVC again" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I'd like to make this clear: It's not the Muslims *ICH*-3 whnp-1 we're having a go at *T*-1 [but the officials]-3.</text>
-        <arg f="slc" n="m">whnp-1 *-&gt; the Muslims *ICH*-3</arg>
-        <arg f="" n="0">we</arg>
-        <arg f="lvb" n="m">having</arg>
-        <rel f="">go</rel>
-        <arg f="" n="1">at *T*-1</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="go-n: All args, within LVC again">
+        <text>I'd like to make this clear: It's not the Muslims *ICH*-3 whnp we're having a go at [but the officials]-3.</text>
+        <rel relloc="15">go</rel>
+        <arg f="SLC" n="m" start="8" end="10">the Muslims *ICH*-3</arg>
+        <arg f="" n="0" start="2" end="2">to</arg>
+        <arg f="LVB" n="m" start="13" end="13">having</arg>
+        <arg f="" n="1" start="11" end="11">whnp</arg>
       </example>
-      <example name="go-n: All args, with cause, again LVC" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="go-n: All args, with cause, again LVC">
         <text>She had a go at him for being late.</text>
-        <arg f="" n="0">She</arg>
-        <arg f="lvb" n="m">had</arg>
-        <rel f="">go</rel>
-        <arg f="" n="1">at him</arg>
-        <arg f="cau" n="m">for being late.</arg>
+        <rel relloc="3">go</rel>
+        <arg f="" n="0" start="0" end="0">She</arg>
+        <arg f="LVB" n="m" start="1" end="1">had</arg>
+        <arg f="" n="1" start="4" end="5">at him</arg>
+        <arg f="CAU" n="m" start="6" end="8">for being late.</arg>
       </example>
+      <note>GO-N NOTES: Roleset based on instances in BOLT P01, part 4. Loosely based on attack-v.01. (from go.02-n)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="go_on">
     <roleset id="go_on.15" name="go on: occur, continue">
       <aliases>
-        <alias framenet="Process_continue" pos="v" verbnet="">go_on</alias>
-        <alias framenet="" pos="j" verbnet="">ongoing</alias>
+        <alias pos="v">go_on</alias>
+        <alias pos="j">ongoing</alias>
       </aliases>
-      <note>GO_ON-V NOTES: Member of VNcls begin-55.1. (from go.15-v)</note>
-      <note>ONGOING_ON-J NOTES: Automatically created by Julia as an alias file for unification. (from ongoing.15-j)</note>
       <roles>
-        <role descr="thing/entity continuing/ occuring" f="pag" n="1">
-          <vnrole vncls="55.1" vntheta="agent"/>
+        <role descr="thing/entity continuing/ occuring" f="PAG" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="begin-55.1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="go_on-v: ergative" src="ergative" type="ergative">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Process_continue" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="begin-55.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="ergative" name="go_on-v: ergative">
         <text>The professor's droning voice goes on endlessly.</text>
-        <arg f="" n="1">the professor's droning voice</arg>
-        <rel f="">goes on</rel>
-        <arg f="mnr" n="m">endlessly</arg>
+        <rel relloc="4 5">goes on</rel>
+        <arg f="" n="1" start="0" end="3">The professor's droning voice</arg>
+        <arg f="MNR" n="m" start="6" end="6">endlessly.</arg>
       </example>
-      <example name="go_on-v: transitive" src="transitive" type="transitive">
+      <example src="transitive" name="go_on-v: transitive">
         <text>A state court judge has allowed the charity to go on *trace* soliciting funds.</text>
-        <arg f="" n="1">[*trace* soliciting funds]</arg>
-        <rel f="">go on</rel>
+        <rel relloc="9 10">go on</rel>
+        <arg f="" n="1" start="11" end="13">*trace* soliciting funds.</arg>
       </example>
+      <note>GO_ON-V NOTES: Member of VNcls begin-55.1. (from go.15-v)</note>
+      <note>ONGOING_ON-J NOTES: Automatically created by Julia as an alias file for unification. (from ongoing.15-j)</note>
     </roleset>
-    
     <roleset id="go_on.25" name="continue speaking">
       <aliases>
-        <alias framenet="Speak_on_topic" pos="v" verbnet="">go_on</alias>
+        <alias pos="v">go_on</alias>
       </aliases>
-      <note>GO_ON-V NOTES: Roleset based on instances in webtext-p2.5 (2500-2999). Comparison to other communication verbs. Framed by Claire (from go.25-v)</note>
       <roles>
-        <role descr="speaker" f="pag" n="0"/>
-        <role descr="utterance" f="ppt" n="1"/>
-        <role descr="listener, audience spoken to" f="gol" n="2"/>
+        <role descr="speaker" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Speak_on_topic" version="1.7">speaker</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="utterance" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Speak_on_topic" version="1.7">topic</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="listener, audience spoken to" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Speak_on_topic" version="1.7">audience</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="go_on-v: He goes on for a while..." src="He goes on for a while..." type="He goes on for a while...">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Speak_on_topic" version="1.7" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="He goes on for a while..." name="go_on-v: He goes on for a while...">
         <text>He goes on , By *PRO* putting the underlying origin of the , uh , street children class in Egypt under the microscope , you will find that one of the most dangerous reasons behind their growth is the chaotic migration from the countryside to the cities , and to a certain extent , the ruralization of the cities and the urbanization of the countryside .</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">[goes][on]</rel>
-        <arg f="" n="1">By *PRO* putting the underlying origin of the , uh , street children class in Egypt under the microscope , you will find that one of the most dangerous reasons behind their growth is the chaotic migration from the countryside to the cities , and to a certain extent , the ruralization of the cities and the urbanization of the countryside .</arg>
+        <rel relloc="1 2">goes on</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
+        <arg f="" n="1" start="4" end="65">By *PRO* putting the underlying origin of the , uh , street children class in Egypt under the microscope , you will find that one of the most dangerous reasons behind their growth is the chaotic migration from the countryside to the cities , and to a certain extent , the ruralization of the cities and the urbanization of the countryside .</arg>
       </example>
+      <note>GO_ON-V NOTES: Roleset based on instances in webtext-p2.5 (2500-2999). Comparison to other communication verbs. Framed by Claire (from go.25-v)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="go_off">
     <roleset id="go_off.16" name="become on">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">go_off</alias>
+        <alias pos="v">go_off</alias>
       </aliases>
-      <note>GO_OFF-V NOTES: No VNcls. (from go.16-v)</note>
       <roles>
-        <role descr="thing becoming on, exploding" f="ppt" n="1"/>
+        <role descr="thing becoming on, exploding" f="PPT" n="1"/>
       </roles>
-      <example name="go_off-v: bomb goes off" src="bomb goes off" type="bomb goes off">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="bomb goes off" name="go_off-v: bomb goes off">
         <text>It's [a time bomb]-1 just waiting *trace*-1 to go off.</text>
-        <arg f="" n="1">*trace*</arg>
-        <rel f="">go off</rel>
+        <rel relloc="8 9">go off.</rel>
+        <arg f="" n="1" start="6" end="6">*trace*-1</arg>
       </example>
+      <note>GO_OFF-V NOTES: No VNcls. (from go.16-v)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="go_out">
     <roleset id="go_out.17" name="leave">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">go_out</alias>
+        <alias pos="v">go_out</alias>
       </aliases>
-      <note>GO_OUT-V NOTES: Related to VNcls escape-51.1-2, but verb particle construction is not member. (from go.17-v)</note>
       <roles>
-        <role descr="entity leaving" f="pag" n="0"/>
-        <role descr="place left" f="ppt" n="1"/>
+        <role descr="entity leaving" f="PAG" n="0"/>
+        <role descr="place left" f="PPT" n="1"/>
       </roles>
-      <example name="go_out-v: like a lamb" src="like a lamb" type="like a lamb">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Departing" version="1.7" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="like a lamb" name="go_out-v: like a lamb">
         <text>Airlines in 1989 came in like a bang and are going out like a whimper.</text>
-        <arg f="" n="1">Airlines in 1989</arg>
-        <rel f="">going out</rel>
-        <arg f="mnr" n="m">like a whimper</arg>
+        <rel relloc="10 11">going out</rel>
+        <arg f="" n="1" start="0" end="2">Airlines in 1989</arg>
+        <arg f="MNR" n="m" start="12" end="14">like a whimper.</arg>
       </example>
+      <note>GO_OUT-V NOTES: Related to VNcls escape-51.1-2, but verb particle construction is not member. (from go.17-v)</note>
     </roleset>
-    
     <roleset id="go_out.18" name="extinguish">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">go_out</alias>
+        <alias pos="v">go_out</alias>
       </aliases>
-      <note>GO_OUT-V NOTES: (from go.18-v)</note>
       <roles>
-        <role descr="thing being extinguished" f="ppt" n="1"/>
+        <role descr="thing being extinguished" f="PPT" n="1"/>
       </roles>
-      <example name="go_out-v: nirvana" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="" name="go_out-v: nirvana">
         <text>The light went out.</text>
-        <arg f="" n="1">The light</arg>
-        <rel f="">[went] [out]</rel>
+        <rel relloc="2 3">went out.</rel>
+        <arg f="" n="1" start="0" end="1">The light</arg>
       </example>
-      <example name="go_out-v" src="" type="">
+      <example src="" name="go_out-v">
         <text>Well unless of course the third compressor he put in the car goes out.</text>
-        <arg f="" n="1">the third compressor he put in the car</arg>
-        <rel f="">[goes][out]</rel>
+        <rel relloc="12 13">goes out.</rel>
+        <arg f="" n="1" start="4" end="11">the third compressor he put in the car</arg>
       </example>
+      <note>GO_OUT-V NOTES: (from go.18-v)</note>
     </roleset>
-    
     <roleset id="go_out.34" name="date">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">go_out</alias>
+        <alias pos="v">go_out</alias>
       </aliases>
-      <note>GO_OUT-V NOTES: Added by Julia for BOLT</note>
       <roles>
-        <role descr="First dater" f="pag" n="0"/>
-        <role descr="Second dater" f="pag" n="1"/>
+        <role descr="First dater" f="PAG" n="0"/>
+        <role descr="Second dater" f="PAG" n="1"/>
       </roles>
-      <example name="go_out-v: romance" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="" name="go_out-v: romance">
         <text>No , he tells Yomna a couple of nice words and goes out with her to fool around and then he would n't talk to her again , he 's dirty and she allows him to degrade her</text>
-        <arg f="dis" n="m">No</arg>
-        <arg f="" n="0">he</arg>
-        <rel f="">[goes][out]</rel>
-        <arg f="" n="1">with her</arg>
-        <arg f="prp" n="m">to fool around</arg>
+        <rel relloc="11 12">goes out</rel>
+        <arg f="DIS" n="m" start="0" end="0">No</arg>
+        <arg f="" n="0" start="2" end="2">he</arg>
+        <arg f="" n="1" start="13" end="14">with her</arg>
+        <arg f="PRP" n="m" start="15" end="17">to fool around</arg>
       </example>
+      <note>GO_OUT-V NOTES: Added by Julia for BOLT</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="go_back">
     <roleset id="go_back.19" name="return to being">
       <aliases>
-        <alias framenet="Going_back_on_a_commitment" pos="v" verbnet="">go_back</alias>
+        <alias pos="v">go_back</alias>
       </aliases>
-      <note>GO_BACK-V NOTES: Cf. get, return. Member of VNcls convert-26.6.2. (from go.19-v)</note>
       <roles>
-        <role descr="thing going back to previous state" f="pag" n="1">
-          <vnrole vncls="26.6.2" vntheta="agent"/>
+        <role descr="thing going back to previous state" f="PAG" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="convert-26.6.2" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="previous state" f="dir" n="2">
-          <vnrole vncls="26.6.2" vntheta="source"/>
+        <role descr="previous state" f="DIR" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="convert-26.6.2" version="verbnet3.3">source</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="go_back-v: return" src="return" type="return">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Going_back_on_a_commitment" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="convert-26.6.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="return" name="go_back-v: return">
         <text>The board and UAL's management can't go back to business as usual.</text>
-        <arg f="" n="1">The board and UAL's management</arg>
-        <arg f="mod" n="m">ca</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">go back</rel>
-        <arg f="" n="2">to business as usual</arg>
+        <rel relloc="6 7">go back</rel>
+        <arg f="" n="1" start="0" end="4">The board and UAL's management</arg>
+        <arg f="MOD" n="m" start="6" end="6">go</arg>
+        <arg f="NEG" n="m" start="5" end="5">can't</arg>
+        <arg f="" n="2" start="8" end="11">to business as usual.</arg>
       </example>
+      <note>GO_BACK-V NOTES: Cf. get, return. Member of VNcls convert-26.6.2. (from go.19-v)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="go_through">
     <roleset id="go_through.20" name="come to completion">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">go_through</alias>
+        <alias pos="v">go_through</alias>
       </aliases>
-      <note>GO_THROUGH-V NOTES: Note the distinction between this and other "go through" usages(physical motion through a medium, undergoing some experience) (from go.20-v)</note>
       <roles>
-        <role descr="agent" f="pag" n="0"/>
-        <role descr="thing coming to completion" f="ppt" n="1"/>
+        <role descr="agent" f="PAG" n="0"/>
+        <role descr="thing coming to completion" f="PPT" n="1"/>
       </roles>
-      <example name="go_through-v: let's make a deal" src="let's make a deal" type="let's make a deal">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="let's make a deal" name="go_through-v: let's make a deal">
         <text>We're in no way committed to a deal going through at all.</text>
-        <arg f="" n="1">a deal</arg>
-        <rel f="">going through</rel>
-        <arg f="adv" n="m">at all</arg>
+        <rel relloc="8 9">going through</rel>
+        <arg f="" n="1" start="6" end="7">a deal</arg>
+        <arg f="ADV" n="m" start="10" end="11">at all.</arg>
       </example>
-      <example name="go_through-v: both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="go_through-v: both args">
         <text>Has anyone else got stuff cheap like this and the seller went through with it or not ?</text>
-        <arg f="" n="0">the seller</arg>
-        <rel f="">[went] [through]</rel>
-        <arg f="" n="1">with it</arg>
+        <rel relloc="11 12">went through</rel>
+        <arg f="" n="0" start="9" end="10">the seller</arg>
+        <arg f="" n="1" start="13" end="14">with it</arg>
       </example>
+      <note>GO_THROUGH-V NOTES: Note the distinction between this and other "go through" usages(physical motion through a medium, undergoing some experience) (from go.20-v)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="go_over">
     <roleset id="go_over.26" name="review, discuss, analyze, explain">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">go_over</alias>
+        <alias pos="v">go_over</alias>
       </aliases>
-      <note>GO_OVER-V NOTES: compare to review, analyze (from go.26-v)</note>
       <roles>
-        <role descr="reviewer" f="pag" n="0">
-          <vnrole vncls="34.1" vntheta="agent"/>
+        <role descr="reviewer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="assessment-34.1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing reviewed, gone over" f="ppt" n="1">
-          <vnrole vncls="34.1" vntheta="theme"/>
+        <role descr="thing reviewed, gone over" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="assessment-34.1" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="attribute" f="prd" n="2"/>
-        <role descr="gone over with whom" f="com" n="m"/>
+        <role descr="attribute" f="PRD" n="2"/>
+        <role descr="gone over with whom" f="COM" n="m"/>
       </roles>
-      <example name="go_over-v: Arg0,1, COM" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="assessment-34.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="go_over-v: Arg0,1, COM">
         <text>The surgeon went over the procedure with the nurses before beginning.</text>
-        <arg f="" n="0">The surgeon</arg>
-        <rel f="">went over</rel>
-        <arg f="" n="1">the procedure</arg>
-        <arg f="com" n="m">with the nurses</arg>
-        <arg f="tmp" n="m">before beginning</arg>
+        <rel relloc="2 3">went over</rel>
+        <arg f="" n="0" start="0" end="1">The surgeon</arg>
+        <arg f="" n="1" start="4" end="5">the procedure</arg>
+        <arg f="COM" n="m" start="6" end="8">with the nurses</arg>
+        <arg f="TMP" n="m" start="9" end="10">before beginning.</arg>
       </example>
+      <note>GO_OVER-V NOTES: compare to review, analyze (from go.26-v)</note>
     </roleset>
-    
     <roleset id="go_over.30" name="be received, create an impression">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">go_over</alias>
+        <alias pos="v">go_over</alias>
       </aliases>
-      <note>GO_OVER-V NOTES: Added by Julia based on BOLT. No VNcls. (from go.30-v)</note>
       <roles>
-        <role descr="thing being received" f="pag" n="1"/>
+        <role descr="thing being received" f="PAG" n="1"/>
       </roles>
-      <example name="go_over-v: with MNR" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>While I do not underestimate the stupidity of the American voter , Romney s Gorden Gekko greed is good past is nt going *-1 togo over very well this year .</text>
-        <arg f="" n="1">*-1</arg>
-        <rel f="">go_over</rel>
-        <arg f="mnr" n="m">very well</arg>
-        <arg f="tmp" n="m">this year</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="BOLT" name="go_over-v: with MNR">
+        <text>While I do not underestimate the stupidity of the American voter , Romney s Gorden Gekko greed is good past is nt going togo over very well this year .</text>
+        <rel relloc="18 24">good over</rel>
+        <arg f="MNR" n="m" start="25" end="26">very well</arg>
+        <arg f="TMP" n="m" start="27" end="28">this year</arg>
       </example>
+      <note>GO_OVER-V NOTES: Added by Julia based on BOLT. No VNcls. (from go.30-v)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="go_down">
     <roleset id="go_down.27" name="happen">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">go_down</alias>
+        <alias pos="v">go_down</alias>
       </aliases>
-      <note>GO_DOWN-V NOTES: Added by Julia based on BOLT. No VNcls. (from go.27-v)</note>
       <roles>
-        <role descr="thing happening" f="pag" n="1"/>
+        <role descr="thing happening" f="PAG" n="1"/>
       </roles>
-      <example name="go_down-v: from BOLT" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>If ahmadinejad did say this , does he have any info as to what-2 [*-2]-1 is gon [*-1]na go down ?</text>
-        <arg f="" n="1">[*-1]</arg>
-        <rel f="">[go] [down]</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="" name="go_down-v: from BOLT">
+        <text>If ahmadinejad did say this , does he have any info as to what-2 *-2 is gon [*]na go down ?</text>
+        <rel relloc="18 19">go down</rel>
+        <arg f="" n="1" start="14" end="14">*-2</arg>
       </example>
+      <note>GO_DOWN-V NOTES: Added by Julia based on BOLT. No VNcls. (from go.27-v)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="undergo">
     <roleset id="undergo.28" name="experience, undergo">
       <aliases>
-        <alias framenet="Undergoing" pos="v" verbnet="">undergo</alias>
-        <alias framenet="" pos="v" verbnet="">under_go</alias>
+        <alias pos="v">undergo</alias>
+        <alias pos="v">under_go</alias>
       </aliases>
+      <roles>
+        <role descr="experiencer" f="PPT" n="1"/>
+        <role descr="experienced" f="PAG" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Undergoing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="undergo-v.1" src="annot-overlap" confidence="0.1">22</lexlink>
+      </lexlinks>
+      <example src="" name="undergo-v: pretty typical">
+        <text>Periods before the advent of futures or program trading were often more volatile, usually when fundamental market conditions were undergoing change (1973-75, 1937-40, and 1928-33 for example).</text>
+        <rel relloc="19">undergoing</rel>
+        <arg f="" n="1" start="15" end="17">fundamental market conditions</arg>
+        <arg f="" n="2" start="20" end="20">change</arg>
+      </example>
+      <example src="" name="under_go-v: both args">
+        <text>Patient under went neoadjuvant chemotherapy and radiation</text>
+        <rel relloc="1">under</rel>
+        <arg f="" n="1" start="0" end="0">Patient</arg>
+        <arg f="" n="2" start="3" end="6">neoadjuvant chemotherapy and radiation</arg>
+      </example>
       <note>UNDERGO-V NOTES: No Vncls. Comparison with 'go through'. (from undergo.01-v)</note>
       <note>UNDER_GO-V NOTES: Based on tempral and stratified data. Comparison to go.12. Framed by Katie. (from go.28-v)</note>
-      <roles>
-        <role descr="experiencer" f="ppt" n="1"/>
-        <role descr="experienced" f="pag" n="2"/>
-      </roles>
-      <example name="undergo-v: pretty typical" src="" type="">
-        <text>Periods before the advent of futures or program trading were often more volatile, usually when fundamental market conditions were undergoing change (1973-75, 1937-40, and 1928-33 for example).</text>
-        <arg f="" n="1">fundamental market conditions</arg>
-        <rel f="">undergoing</rel>
-        <arg f="" n="2">change</arg>
-      </example>
-      <example name="under_go-v: both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Patient under went neoadjuvant chemotherapy and radiation</text>
-        <arg f="" n="1">Patient</arg>
-        <rel f="">under</rel>
-        <rel f="">went</rel>
-        <arg f="" n="2">neoadjuvant chemotherapy and radiation</arg>
-      </example>
     </roleset>
   </predicate>
-  
   <predicate lemma="gone">
     <roleset id="gone.33" name="telling time: after X o'clock">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">gone</alias>
+        <alias pos="j">gone</alias>
       </aliases>
-      <note>GONE-J NOTES: Added by Julia for BOLT. Don't tag the dummy "it"</note>
       <roles>
-        <role descr="time stamp that has passed" f="tmp" n="1"/>
+        <role descr="time stamp that has passed" f="TMP" n="1"/>
       </roles>
-      <example name="gone-j" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="" name="gone-j">
         <text>Teacher , last night it was gone seven clock when I 'd finished electron microscopy , and then I went out to have something to eat .</text>
-        <arg f="dis" n="m">Teacher</arg>
-        <arg f="tmp" n="m">last night</arg>
-        <rel f="">gone</rel>
-        <arg f="" n="1">seven clock</arg>
-        <arg f="tmp" n="m">when I 'd finished electron microscopy</arg>
+        <rel relloc="6">gone</rel>
+        <arg f="DIS" n="m" start="0" end="0">Teacher</arg>
+        <arg f="TMP" n="m" start="2" end="3">last night</arg>
+        <arg f="" n="1" start="7" end="8">seven clock</arg>
+        <arg f="TMP" n="m" start="9" end="14">when I 'd finished electron microscopy</arg>
       </example>
+      <note>GONE-J NOTES: Added by Julia for BOLT. Don't tag the dummy "it"</note>
     </roleset>
   </predicate>
 </frameset>

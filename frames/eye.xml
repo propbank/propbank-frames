@@ -1,205 +1,241 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="eye">
     <roleset id="eye.01" name="to watch closely">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">eye</alias>
+        <alias pos="v">eye</alias>
       </aliases>
-      <note>EYE-V NOTES: Frames file for 'eye' based on survey of sentences in the WSJ corpus. (from eye.01-v predicate notes)</note>
       <roles>
         <role descr="watcher" f="PPT" n="0">
-          <vnrole vncls="30.2" vntheta="Experiencer"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="sight-30.2" version="verbnet3.3">experiencer</rolelink>
+            <rolelink resource="FrameNet" class="Perception_active" version="1.7">perceiver_agentive</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity eyed" f="PAG" n="1">
-          <vnrole vncls="30.2" vntheta="Stimulus"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="sight-30.2" version="verbnet3.3">stimulus</rolelink>
+            <rolelink resource="FrameNet" class="Perception_active" version="1.7">phenomenon</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="eye-v: transitive" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="present" voice="active"/>
-        <text>Colleges , she says [0] [*T*-1], are eyeing registration through 900 service .</text>
-        <arg f="" n="0">Colleges</arg>
-        <rel f="">eyeing</rel>
-        <arg f="" n="1">registration through 900 service</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Perception_active" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="sight-30.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="eye-v: transitive">
+        <text>Colleges , she says [0] [], are eyeing registration through 900 service .</text>
+        <rel relloc="7">eyeing</rel>
+        <arg f="" n="0" start="0" end="0">Colleges</arg>
+        <arg f="" n="1" start="8" end="11">registration through 900 service</arg>
       </example>
+      <note>EYE-V NOTES: Frames file for 'eye' based on survey of sentences in the WSJ corpus. (from eye.01-v predicate notes)</note>
     </roleset>
   </predicate>
-  
-  <predicate lemma="keep_eye_out">      
+  <predicate lemma="keep_eye_out">
     <roleset id="keep_eye_out.02" name="be alert for a yet-unseen thing">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">keep_eye_out</alias>
-        <alias framenet="" pos="m" verbnet="">keep_eye_open</alias>
-        <alias framenet="" pos="m" verbnet="">keep_eyes_peeled</alias>
-        <mwe id="keep_eye_out">
-          <token slot="A" arg="" pos="VB*" head="" dep="">keep</token>
-          <token slot="B" arg="" pos="NN" head="A" dep="dobj">eye</token>
-          <token slot="B" arg="" pos="NNS" head="A" dep="dobj">eyes</token>
-          <token slot="C" arg="" pos="RB" head="A" dep="ccomp">out</token>
-          <token slot="C" arg="" pos="RB" head="A" dep="advmod">out</token>
-          <token slot="C" arg="" pos="JJ" head="A" dep="ccomp">open</token>
-          <token slot="C" arg="" pos="JJ" head="A" dep="ccomp">peeled</token>
-          <token slot="C" arg="" pos="VBN" head="A" dep="ccomp">peeled</token>
-        </mwe>
-      </aliases>
-      <mappings alias="keep_eye_out">
-        <source>
+        <alias pos="m">keep_eye_out</alias>
+        <mwp-descriptions id="keep_eye_out">
+          <syntaxdesc slots="B C A">
+            <token slot="A" arg="" pos="VB*" head="" dep="">keep</token>
+            <token slot="B" arg="" pos="NN" head="A" dep="dobj">eye</token>
+            <token slot="B" arg="" pos="NNS" head="A" dep="dobj">eyes</token>
+            <token slot="C" arg="" pos="RB" head="A" dep="ccomp">out</token>
+            <token slot="C" arg="" pos="RB" head="A" dep="advmod">out</token>
+            <token slot="C" arg="" pos="JJ" head="A" dep="ccomp">open</token>
+            <token slot="C" arg="" pos="JJ" head="A" dep="ccomp">peeled</token>
+            <token slot="C" arg="" pos="VBN" head="A" dep="ccomp">peeled</token>
+          </syntaxdesc>
+          <mapping>
+            <source>
             (A / keep-02
                 :arg0 (n / NARG0)
                 :arg1 (B / eye-01
                      :part-of n
                      :direction (C / out)))
         </source>
-        <target>
+            <target>
             (A / keep-02
                 :arg0 (n / NARG0)
                 :arg1 (w / watch_out-02
                     :arg0 n
                     :arg1 (n1 / NARG1)))
         </target>
-      </mappings>
-      <note>KEEP_EYE_OUT-M NOTES: Added by Julia/Tim during intial MWE framing.</note>
+          </mapping>
+        </mwp-descriptions>
+        <alias pos="m">keep_eye_open</alias>
+        <alias pos="m">keep_eyes_peeled</alias>
+      </aliases>
       <roles>
         <role descr="watcher out" f="PAG" n="0"/>
         <role descr="thing watched out for" f="PPT" n="1"/>
       </roles>
-      <example name="keep_eye_out-m: transitive" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="keep_eye_out-m: transitive">
         <text>Keep an eye out for snakes this summer</text>
-        <rel f="">[Keep][eye][out]</rel>
-        <arg f="" n="1">for snakes</arg>
-        <arg f="tmp" n="m">this summer</arg>
+        <rel relloc="0 2 3">Keep eye out</rel>
+        <arg f="" n="1" start="4" end="5">for snakes</arg>
+        <arg f="TMP" n="m" start="6" end="7">this summer</arg>
       </example>
+      <note>KEEP_EYE_OUT-M NOTES: Added by Julia/Tim during intial MWE framing.</note>
     </roleset>
   </predicate>
-  
-  <predicate lemma="open_eyes">      
+  <predicate lemma="open_eyes">
     <roleset id="open_eyes.03" name="cause to know">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">open_eyes</alias>
-        <mwe id="open_eyes">
-           <token slot="A" arg="" pos="VB*" head="" dep="">open</token>
-           <token slot="B" arg="1" pos="NNS" head="A" dep="dobj">eyes</token>
-        </mwe>
-      </aliases>
-      <mappings alias="open_eyes">
-        <source>
+        <alias pos="m">open_eyes</alias>
+        <mwp-descriptions id="open_eyes">
+          <syntaxdesc slots="B A">
+            <token slot="A" arg="" pos="VB*" head="" dep="">open</token>
+            <token slot="B" arg="1" pos="NNS" head="A" dep="dobj">eyes</token>
+          </syntaxdesc>
+          <mapping>
+            <source>
             (A / open-01
                 :arg0 (n / NARG0)
                 :arg1 (B / eye
                     :part-of (n1 / NARG1)))
         </source>
-        <target>
+            <target>
             (A / cause-01
                 :arg0 (n / NARG0)
                 :arg1 (B / know-01
                     :arg0 (n1 / NARG1)
                     :arg1 (n2 / NARG2)))
         </target>
-      </mappings>
-      <note>OPEN_EYES-M NOTES: Added by Tim/Julia during initial MWE framing.</note>
+          </mapping>
+        </mwp-descriptions>
+      </aliases>
       <roles>
-       <role descr="informer; causer of understanding" f="PAG" n="0"/>
+        <role descr="informer; causer of understanding" f="PAG" n="0"/>
         <role descr="informed; person whose eyes are now open" f="GOL" n="1"/>
         <role descr="information; revelation" f="PPT" n="2"/>
       </roles>
-      <example name="open_eyes-m: transitive" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="open_eyes-m: transitive">
         <text>And the experience opened my eyes to the magic of music.</text>
-        <arg f="" n="0">the experience</arg>
-        <rel f="">[opened][eyes]</rel>
-        <arg f="" n="1">my</arg>
-        <arg f="" n="2">to the magic of music</arg>
+        <rel relloc="3 5">opened eyes</rel>
+        <arg f="" n="0" start="1" end="2">the experience</arg>
+        <arg f="" n="1" start="4" end="4">my</arg>
+        <arg f="" n="2" start="6" end="10">to the magic of music.</arg>
       </example>
+      <note>OPEN_EYES-M NOTES: Added by Tim/Julia during initial MWE framing.</note>
     </roleset>
   </predicate>
-  
-  <predicate lemma="eye_on_ball">      
+  <predicate lemma="eye_on_ball">
     <roleset id="eye_on_ball.04" name="be ready and attentive; keeping track of an issue">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">eye_on_ball</alias>
-        <alias framenet="" pos="m" verbnet="">have_eye_on_ball</alias>
-        <mwe id="eye_on_ball">
-           <token slot="A" arg="" pos="NN*" head="" dep="">have</token>
-           <token slot="A" arg="" pos="" head="" dep=""></token>
-           <token slot="B" arg="" pos="NN*" head="" dep="">eye</token>
-           <token slot="C" arg="" pos="IN" head="C" dep="case">on</token>
-           <token slot="D" arg="" pos="NN" head="A" dep="nmod">ball</token>
-        </mwe>
-      </aliases>
-      <mappings alias="eye_on_ball">
-        <source>
+        <alias pos="m">eye_on_ball</alias>
+        <mwp-descriptions id="eye_on_ball">
+          <syntaxdesc slots="B C D A">
+            <token slot="A" arg="" pos="NN*" head="" dep="">have</token>
+            <token slot="A" arg="" pos="" head="" dep=""></token>
+            <token slot="B" arg="" pos="NN*" head="" dep="">eye</token>
+            <token slot="C" arg="" pos="IN" head="C" dep="case">on</token>
+            <token slot="D" arg="" pos="NN" head="A" dep="nmod">ball</token>
+          </syntaxdesc>
+          <mapping>
+            <source>
             (B / eye-01
                 :arg0 (n / NARG0)
                 :arg1 (D / ball
                     :mod (n1 / NARG1)))
         </source>
-        <target>
+            <target>
             (A / attend-01
                 :arg0 (n / NARG0)
                 :arg1 (n1 / NARG1))
         </target>
-      </mappings>
-      <note>KEEP_EYE_ON_BALL-M NOTES: Added by Julia/Tim during inital MWE framing.</note>
+          </mapping>
+        </mwp-descriptions>
+        <alias pos="m">have_eye_on_ball</alias>
+      </aliases>
       <roles>
         <role descr="attentive entity" f="PAG" n="0"/>
         <role descr="issue arg0 is attentive to" f="VSP" n="1"/>
       </roles>
-      <example name="have_eye_on_ball-m" src="" type="">
-        <text>Next, how could I forget...our wonderful Alderman Tunney...who-1 *-1 constantly has his eye on the ball regarding how big the signs will be in Wrigley Field while his constituents get robbed and beaten outside of their homes.</text>
-        <arg f="" n="0">*-1</arg>
-        <arg f="tmp" n="m">constantly</arg>
-        <rel f="">[has][eye][on][ball]</rel>
-        <arg f="" n="1">regarding how big the signs will be in Wrigley Field </arg>
-        <arg f="tmp" n="m">while his constituents get robbed and beaten outside of their homes</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="have_eye_on_ball-m">
+        <text>Next, how could I forget...our wonderful Alderman Tunney...who constantly has his eye on the ball regarding how big the signs will be in Wrigley Field while his constituents get robbed and beaten outside of their homes.</text>
+        <rel relloc="9 11 12 14">has eye on ball</rel>
+        <arg f="" n="0" start="7" end="7">Tunney...who</arg>
+        <arg f="TMP" n="m" start="8" end="8">constantly</arg>
+        <arg f="" n="1" start="15" end="24">regarding how big the signs will be in Wrigley Field</arg>
+        <arg f="TMP" n="m" start="25" end="35">while his constituents get robbed and beaten outside of their homes.</arg>
       </example>
+      <note>KEEP_EYE_ON_BALL-M NOTES: Added by Julia/Tim during inital MWE framing.</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="have_eye_on">
     <roleset id="have_eye_on.05" name="watch closely and possibly warily">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">have_eye</alias>
-        <alias framenet="" pos="m" verbnet="">have_got_eye</alias>
-        <alias framenet="" pos="n" verbnet="">eye</alias>
-        <alias framenet="" pos="m" verbnet="">have_eye_on</alias>
-
-        <mwe id="have_eye">
-           <token slot="A" arg="" pos="NN*" head="" dep="">have</token>
-           <token slot="A" arg="" pos="" head="" dep=""></token>
-           <token slot="B" arg="" pos="VBD" head="" dep="">got</token>
-           <token slot="C" arg="" pos="NN*" head="" dep="">eye</token>
-           <token slot="C" arg="" pos="NN*" head="" dep="">eyeball</token>
-        </mwe>
+        <alias pos="m">have_eye</alias>
+        <mwp-descriptions id="have_eye">
+          <syntaxdesc slots="B C A">
+            <token slot="A" arg="" pos="NN*" head="" dep="">have</token>
+            <token slot="A" arg="" pos="" head="" dep=""></token>
+            <token slot="B" arg="" pos="VBD" head="" dep="">got</token>
+            <token slot="C" arg="" pos="NN*" head="" dep="">eye</token>
+            <token slot="C" arg="" pos="NN*" head="" dep="">eyeball</token>
+          </syntaxdesc>
+        </mwp-descriptions>
+        <alias pos="m">have_got_eye</alias>
+        <alias pos="n">eye</alias>
+        <alias pos="m">have_eye_on</alias>
       </aliases>
-      <note>HAVE_EYE_ON-M NOTES: Added by Julia during initial MWE framing</note>
       <roles>
-        <role descr="watcher" f="pag" n="0"/>
-        <role descr="watched" f="ppt" n="1"/>
-        <role descr="number of eyes" f="vsp" n="2"/>
+        <role descr="watcher" f="PAG" n="0"/>
+        <role descr="watched" f="PPT" n="1"/>
+        <role descr="number of eyes" f="VSP" n="2"/>
       </roles>
-      <example name="have_got_eye-m" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="have_got_eye-m">
         <text>I've got my eye on you.</text>
-        <arg f="" n="0">I</arg>
-        <rel f="">['ve][got][eye]</rel>
-        <arg f="" n="1">on you</arg>
+        <rel relloc="0 1 3">I've got eye</rel>
+        <arg f="" n="0" start="6" end="6"></arg>
+        <arg f="" n="1" start="4" end="5">on you.</arg>
       </example>
-      <example name="eye-n" src="" type="">
+      <example src="" name="eye-n">
         <text>I want to put my eyeballs on my son for a minute.</text>
-        <arg f="" n="0">my</arg>
-        <rel f="">eyeballs</rel>
-        <arg f="" n="1">on my son</arg>
-        <arg f="tmp" n="m">for a minute</arg>
+        <rel relloc="5">eyeballs</rel>
+        <arg f="" n="0" start="4" end="4">my</arg>
+        <arg f="" n="1" start="6" end="8">on my son</arg>
+        <arg f="TMP" n="m" start="9" end="11">for a minute.</arg>
       </example>
-      <example name="eye-n" src="" type="">
+      <example src="" name="eye-n">
         <text>All eyes on me!</text>
-        <arg f="" n="2">all</arg>
-        <rel f="">[eyes]</rel>
-        <arg f="" n="1">on me</arg>
+        <rel relloc="1">eyes</rel>
+        <arg f="" n="2" start="0" end="0">All</arg>
+        <arg f="" n="1" start="2" end="3">on me!</arg>
       </example>
-      <example name="eye-n" src="" type="">
+      <example src="" name="eye-n">
         <text>I'm keeping my eye on the stock market.</text>
-        <arg f="" n="0">my</arg>
-        <rel f="">[eye]</rel>
-        <arg f="" n="1">on the stock market</arg>
-       </example>
+        <rel relloc="3">eye</rel>
+        <arg f="" n="0" start="2" end="2">my</arg>
+        <arg f="" n="1" start="4" end="7">on the stock market.</arg>
+      </example>
+      <note>HAVE_EYE_ON-M NOTES: Added by Julia during initial MWE framing</note>
     </roleset>
   </predicate>
 </frameset>

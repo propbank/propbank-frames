@@ -1,36 +1,48 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="elude">
     <roleset id="elude.01" name="avoid">
       <aliases>
-        <alias framenet="Evading" pos="v" verbnet="">elude</alias>
-        <alias framenet="" pos="j" verbnet="">elusive</alias>
+        <alias pos="v">elude</alias>
+        <alias pos="j">elusive</alias>
       </aliases>
-      <note>ELUDE-V NOTES: Frames file for 'elude' based on sentences in wsj and automaticexpansion via verbnet; adjectival 'elusive' based on BOLT-6. (from elude.01-v)</note>
-      <note>ELUSIVE-J NOTES: Automatically created by Julia as an alias file for unification. (from elusive.01-j)</note>
       <roles>
-        <role descr="avoider" f="pag" n="0">
-          <vnrole vncls="52" vntheta="agent"/>
+        <role descr="avoider" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="avoid-52" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Evading" version="1.7">evader</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing avoided" f="ppt" n="1">
-          <vnrole vncls="52" vntheta="theme"/>
+        <role descr="thing avoided" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="avoid-52" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Evading" version="1.7">pursuer</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="elude-v: really easy" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Evading" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="avoid-52" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="elude-v: really easy">
         <text>Time eluded Paramount by acquiring Warner Communications Inc.</text>
-        <arg f="" n="0">Time</arg>
-        <rel f="">eluded</rel>
-        <arg f="" n="1">Paramount</arg>
-        <arg f="mnr" n="m">by acquiring Warner Communications Inc</arg>
+        <rel relloc="1">eluded</rel>
+        <arg f="" n="0" start="0" end="0">Time</arg>
+        <arg f="" n="1" start="2" end="2">Paramount</arg>
+        <arg f="MNR" n="m" start="3" end="7">by acquiring Warner Communications Inc.</arg>
       </example>
-      <example name="elusive-j" src="BOLT-6" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Yet it-1 seems [*-1] to be too elusive and hardly feasible .</text>
-        <arg f="" n="0">[*-1]</arg>
-        <arg f="ext" n="m">too</arg>
-        <rel f="">elusive</rel>
+      <example src="BOLT-6" name="elusive-j">
+        <text>Yet it seems [*] to be too elusive and hardly feasible .</text>
+        <rel relloc="7">elusive</rel>
+        <arg f="" n="0" start="1" end="1">it</arg>
+        <arg f="EXT" n="m" start="6" end="6">too</arg>
       </example>
+      <note>ELUDE-V NOTES: Frames file for 'elude' based on sentences in wsj and automaticexpansion via verbnet; adjectival 'elusive' based on BOLT-6. (from elude.01-v)</note>
+      <note>ELUSIVE-J NOTES: Automatically created by Julia as an alias file for unification. (from elusive.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

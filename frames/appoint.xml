@@ -1,85 +1,107 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="appoint">
     <roleset id="appoint.01" name="name to a position, hire">
       <aliases>
-        <alias framenet="Change_of_leadership" pos="v" verbnet="">appoint</alias>
-        <alias framenet="" pos="n" verbnet="">appointment</alias>
+        <alias pos="v">appoint</alias>
+        <alias pos="n">appointment</alias>
       </aliases>
-      <note>APPOINT-V NOTES: Member of Vncls appoint-29.1. (from appoint.01-v)</note>
-      <note>APPOINTMENT-N NOTES: Roleset based on verb appoint.01, OntoNotes grouping appointment-n sense 1; maps to VN class appoint-29.1. Framed by Claire. (from appointment.01-n)</note>
       <roles>
         <role descr="appointer, employer" f="PAG" n="0">
-          <vnrole vncls="29.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="appoint-29.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Change_of_leadership" version="1.7">selector</rolelink>
+          </rolelinks>
         </role>
         <role descr="appointee, employee" f="PPT" n="1">
-          <vnrole vncls="29.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="appoint-29.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Change_of_leadership" version="1.7">new_leader</rolelink>
+          </rolelinks>
         </role>
         <role descr="job, position" f="PRD" n="2">
-          <vnrole vncls="29.1" vntheta="Result"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="appoint-29.1" version="verbnet3.3">result</rolelink>
+            <rolelink resource="FrameNet" class="Change_of_leadership" version="1.7">role</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="passive, NP job" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Appointing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Change_of_leadership" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="appoint-29.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Personnel.StartPosition.Hiring" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Startposition" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="appoint-v.1" src="annot-overlap" confidence="0.1">48</lexlink>
+        <lexlink resource="onsense" version="on5" class="appointment-n.1" src="annot-overlap" confidence="0.1">38</lexlink>
+      </lexlinks>
+      <example src="" name="passive, NP job">
         <text>Bertin Nadeau, newly appointed chairman and interim chief executive of Provigo, wouldn't say if Mr. Lortie was asked to leave.</text>
-        <arg f="" n="1">Bertin Nadeau</arg>
-        <arg f="tmp" n="m">newly</arg>
-        <rel f="">appointed</rel>
-        <arg f="" n="2">chairman and interim chief executive of Provigo</arg>
+        <rel relloc="3">appointed</rel>
+        <arg f="" n="1" start="0" end="1">Bertin Nadeau,</arg>
+        <arg f="TMP" n="m" start="2" end="2">newly</arg>
+        <arg f="" n="2" start="4" end="10">chairman and interim chief executive of Provigo,</arg>
       </example>
-      <example name="all args, sentential job" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <example src="" name="all args, sentential job">
         <text>Soo Line said its board appointed a special committee of independent directors to study the proposal.</text>
-        <arg f="" n="0">its board</arg>
-        <rel f="">appointed</rel>
-        <arg f="" n="1">a special committee, of independent directors</arg>
-        <arg f="" n="2">to study the proposal</arg>
+        <rel relloc="5">appointed</rel>
+        <arg f="" n="0" start="3" end="4">its board</arg>
+        <arg f="" n="1" start="6" end="11">a special committee of independent directors</arg>
+        <arg f="" n="2" start="12" end="15">to study the proposal.</arg>
       </example>
-      <example name="NP only, Args 0 and 2" src="NomBank Frames" type="">
+      <example src="NomBank Frames" name="NP only, Args 0 and 2">
         <text>its appointment to assist the managers</text>
-        <arg f="" n="0">its</arg>
-        <rel f="">appointment</rel>
-        <arg f="prd" n="2">to assist the managers</arg>
+        <rel relloc="1">appointment</rel>
+        <arg f="" n="0" start="0" end="0">its</arg>
+        <arg f="PRD" n="2" start="2" end="5">to assist the managers</arg>
       </example>
-      <example name="NP only, args 1 &amp; 2" src="NomBank Frames" type="">
+      <example src="NomBank Frames" name="NP only, args 1 &amp; 2">
         <text>Mr. Brawer 's appointment as president</text>
-        <arg f="" n="1">Mr. Brawer 's</arg>
-        <rel f="">appointment</rel>
-        <arg f="" n="2">as president</arg>
+        <rel relloc="3">appointment</rel>
+        <arg f="" n="1" start="0" end="2">Mr. Brawer 's</arg>
+        <arg f="" n="2" start="4" end="5">as president</arg>
       </example>
-      <example name="All arguments" src="ON sense 1" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="ON sense 1" name="All arguments">
         <text>The president's appointment of Smith to his personal staff was unexpected.</text>
-        <arg f="" n="0">The president's</arg>
-        <rel f="">appointment</rel>
-        <arg f="" n="1">of Smith</arg>
-        <arg f="" n="2">to his personal staff</arg>
+        <rel relloc="2">appointment</rel>
+        <arg f="" n="0" start="0" end="1">The president's</arg>
+        <arg f="" n="1" start="3" end="4">of Smith</arg>
+        <arg f="" n="2" start="5" end="8">to his personal staff</arg>
       </example>
+      <note>APPOINT-V NOTES: Member of Vncls appoint-29.1. (from appoint.01-v)</note>
+      <note>APPOINTMENT-N NOTES: Roleset based on verb appoint.01, OntoNotes grouping appointment-n sense 1; maps to VN class appoint-29.1. Framed by Claire. (from appointment.01-n)</note>
     </roleset>
   </predicate>
   <predicate lemma="appointment">
     <roleset id="appointment.02" name="time to meet">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">appointment</alias>
+        <alias pos="n">appointment</alias>
       </aliases>
-      <note>APPOINTMENT-N NOTES: (from appointment.02-n)</note>
       <roles>
-        <role descr="first person meeting" f="pag" n="0"/>
-        <role descr="second person meeting, who arg0 has appt. with" f="com" n="1"/>
+        <role descr="first person meeting" f="PAG" n="0"/>
+        <role descr="second person meeting, who arg0 has appt. with" f="COM" n="1"/>
       </roles>
-      <example name="arg1 only" src="p01, part 5" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="p01, part 5" name="arg1 only">
         <text>...simply book another appointment with a different doctor.</text>
-        <rel f="">appointment</rel>
-        <arg f="" n="1">with a different doctor</arg>
+        <rel relloc="3">appointment</rel>
+        <arg f="" n="1" start="4" end="7">with a different doctor.</arg>
       </example>
-      <example name="fun example" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="fun example">
         <text>Two women...one good, one bad...help Ladd keep his appointment with danger!</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">appointment</rel>
-        <arg f="" n="1">with danger!</arg>
+        <rel relloc="8">appointment</rel>
+        <arg f="" n="0" start="7" end="7">his</arg>
+        <arg f="" n="1" start="9" end="10">with danger!</arg>
       </example>
+      <note>APPOINTMENT-N NOTES: (from appointment.02-n)</note>
     </roleset>
   </predicate>
 </frameset>

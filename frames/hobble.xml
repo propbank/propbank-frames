@@ -1,60 +1,84 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="hobble">
     <roleset id="hobble.01" name="walk as if feet tied together">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">hobble</alias>
+        <alias pos="v">hobble</alias>
       </aliases>
-      <note>HOBBLE-V NOTES: Frames file for 'hobble' based on sentences in financial subcorpus andautomatic expansion via verbnet. (from hobble.01-v predicate notes)</note>
       <roles>
-        <role descr="walker" f="ppt" n="0">
-          <vnrole vncls="51.3.2-2" vntheta="theme"/>
+        <role descr="walker" f="PPT" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="run-51.3.2-2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">self_mover</rolelink>
+          </rolelinks>
         </role>
-        <role descr="path" f="loc" n="1">
-          <vnrole vncls="51.3.2-2" vntheta="location"/>
+        <role descr="path" f="LOC" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="run-51.3.2-2" version="verbnet3.3">location</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">goal</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">path</rolelink>
+          </rolelinks>
         </role>
-        <role descr="destination" f="gol" n="2"/>
+        <role descr="destination" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">place</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="hobble-v: with direction" src="run.02" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Self_motion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="run-51.3.2-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="run.02" name="hobble-v: with direction">
         <text>A good number decide it's not worth it and hobble for home.</text>
-        <arg f="" n="0">A good number</arg>
-        <rel f="">hobble</rel>
-        <arg f="" n="2">for home</arg>
+        <rel relloc="9">hobble</rel>
+        <arg f="" n="0" start="0" end="2">A good number</arg>
+        <arg f="" n="2" start="10" end="11">for home.</arg>
       </example>
-      <example name="hobble-v: with path" type="" src="">
+      <example src="" name="hobble-v: with path">
         <text>I saw the gnarled, stooped, feathery, grizzled, salty old sea dog hobble across die beach.</text>
-        <arg n="0" f="">the gnarled, stooped, feathery, grizzled, salty old sea dog</arg>
-        <rel f="">hobble</rel>
-        <arg n="1" f="">across die beach</arg>
+        <rel relloc="11">hobble</rel>
+        <arg f="" n="0" start="2" end="10">the gnarled, stooped, feathery, grizzled, salty old sea dog</arg>
+        <arg f="" n="1" start="12" end="14">across die beach.</arg>
       </example>
+      <note>HOBBLE-V NOTES: Frames file for 'hobble' based on sentences in financial subcorpus andautomatic expansion via verbnet. (from hobble.01-v predicate notes)</note>
     </roleset>
     <roleset id="hobble.02" name="tie the feet of,   metaphorically 'hinder'">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">hobble</alias>
+        <alias pos="v">hobble</alias>
       </aliases>
-      <note>HOBBLE-V NOTES: It's easy to see how the two senses are related; nevertheless theyshould be distinguished. (from hobble.02-v)</note>
       <roles>
-        <role descr="tier, hinderer" f="pag" n="0"/>
-        <role descr="tied, hindered" f="ppt" n="1"/>
-        <role descr="rope, instrument" f="mnr" n="2"/>
+        <role descr="tier, hinderer" f="PAG" n="0"/>
+        <role descr="tied, hindered" f="PPT" n="1"/>
+        <role descr="rope, instrument" f="MNR" n="2"/>
       </roles>
-      <example name="agent or instrument subject?" src="" type="">
-        <inflection aspect="perfect" form="participle" person="third" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="onsense" version="on5" class="hobble-v.2" src="annot-overlap" confidence="0.1">3</lexlink>
+      </lexlinks>
+      <example src="" name="agent or instrument subject?">
         <text>Dealing with the sales this month could be particularly challenging because almost every problem that *trace* has hobbled the program in the past is popping up again.</text>
-        <arg f="" n="0">*trace*</arg>
-        <arg f="rcl" n="m">that -&gt; almost every problem</arg>
-        <rel f="">hobbled</rel>
-        <arg f="" n="1">the program</arg>
-        <arg f="tmp" n="m">in the past</arg>
+        <rel relloc="17">hobbled</rel>
+        <arg f="" n="0" start="15" end="15">*trace*</arg>
+        <arg f="RCL" n="m" start="11" end="13">almost every problem</arg>
+        <arg f="" n="1" start="18" end="19">the program</arg>
+        <arg f="TMP" n="m" start="20" end="22">in the past</arg>
       </example>
-      <example name="ARG2" src="probably COCA (2018 example fix)" type="">
+      <example src="probably COCA (2018 example fix)" name="ARG2">
         <text>Someone hobbled him with a leather cord.</text>
-        <arg f="" n="0">Someone</arg>
-        <rel f="">hobbled</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="" n="2">with a leather cord.</arg>
+        <rel relloc="1">hobbled</rel>
+        <arg f="" n="0" start="0" end="0">Someone</arg>
+        <arg f="" n="1" start="2" end="2">him</arg>
+        <arg f="" n="2" start="3" end="6">with a leather cord.</arg>
       </example>
-
+      <note>HOBBLE-V NOTES: It's easy to see how the two senses are related; nevertheless theyshould be distinguished. (from hobble.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,66 +1,83 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="clamp">
     <roleset id="clamp.01" name="attach firmly">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">clamp</alias>
-        <alias framenet="" pos="n" verbnet="">clamping</alias>
+        <alias pos="v">clamp</alias>
+        <alias pos="n">clamping</alias>
       </aliases>
-      <note>CLAMP-V NOTES: Based on fiancial subcorpus. Member of VNcls tape-22.4. (from clamp.01-v)</note>
       <roles>
         <role descr="attacher, agent causing attachment" f="PAG" n="0">
-          <vnrole vncls="22.4-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="tape-22.4-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="first thing being clamped" f="ppt" n="1">
-          <vnrole vncls="22.4-1" vntheta="Patient"/>
+        <role descr="first thing being clamped" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="tape-22.4-1" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="second thing, clamped to what" f="ppt" n="2">
-          <vnrole vncls="22.4-1" vntheta="co-patient"/>
+        <role descr="second thing, clamped to what" f="PPT" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="tape-22.4-1" version="verbnet3.3">co-patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="clamp-v: from the corpus" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="tape-22.4-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="clamp-v.2" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="" name="clamp-v: from the corpus">
         <text>``He has clamped on their ankle like a pit bull,'' says Paul Leming, a vice president with Morgan Stanley&amp; Co.</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">clamped</rel>
-        <arg f="" n="1">on their ankle</arg>
-        <arg f="mnr" n="m">like a pit bull</arg>
+        <rel relloc="2">clamped</rel>
+        <arg f="" n="0" start="0" end="0">``He</arg>
+        <arg f="" n="1" start="3" end="5">on their ankle</arg>
+        <arg f="MNR" n="m" start="6" end="9">like a pit bull,''</arg>
       </example>
-      <example name="clamp-v: two explicit things being clamped" src="" type="">
+      <example src="" name="clamp-v: two explicit things being clamped">
         <text>John clamped his finger to the board.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">clamped</rel>
-        <arg f="" n="1">his finger</arg>
-        <arg f="" n="2">to the board</arg>
+        <rel relloc="1">clamped</rel>
+        <arg f="" n="0" start="0" end="0">John</arg>
+        <arg f="" n="1" start="2" end="3">his finger</arg>
+        <arg f="" n="2" start="4" end="6">to the board.</arg>
       </example>
-      
+      <note>CLAMP-V NOTES: Based on fiancial subcorpus. Member of VNcls tape-22.4. (from clamp.01-v)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="clamp_down">
     <roleset id="clamp_down.02" name="enforce more strictly">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">clamp_down</alias>
-        <alias framenet="" pos="n" verbnet="">clamping_down</alias>
+        <alias pos="v">clamp_down</alias>
+        <alias pos="n">clamping_down</alias>
       </aliases>
-      <note>CLAMP_DOWN-V NOTES: Added by Julia.</note>
       <roles>
-        <role descr="enforcer" f="pag" n="0"/>
-        <role descr="crime or violation enforced" f="ppt" n="1"/>
-        <role descr="perpetrator" f="gol" n="2"/>
+        <role descr="enforcer" f="PAG" n="0"/>
+        <role descr="crime or violation enforced" f="PPT" n="1"/>
+        <role descr="perpetrator" f="GOL" n="2"/>
       </roles>
-      <example name="clamp_down-v" src="" type="">
-        <text>T-Mobile has announced that [it]-1 's going *PRO*-1 to seriously clamp down on any users using unauthorized methods to get around its tethering cap.</text>
-        <arg f="" n="0">*PRO*-1</arg>
-        <arg f="adv" n="m">seriously</arg>
-        <rel f="">[clamp][down]</rel>
-        <arg f="" n="1">on any users using unauthorized methods to get around its tethering cap</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="clamp_down-v">
+        <text>T-Mobile has announced that it 's going to seriously clamp down on any users using unauthorized methods to get around its tethering cap.</text>
+        <rel relloc="9 10">clamp down</rel>
+        <arg f="" n="0" start="4" end="4">it</arg>
+        <arg f="ADV" n="m" start="8" end="8">seriously</arg>
+        <arg f="" n="1" start="11" end="22">on any users using unauthorized methods to get around its tethering cap.</arg>
       </example>
-      <example name="clamp_down-v" src="" type="">
+      <example src="" name="clamp_down-v">
         <text>Driver Roger Hercules said there was much chaos in the Cheapside bus terminal and demanded that the police clamp down on loiterers, some of whom he felt were drug addicts.</text>
-        <arg f="" n="0">the police</arg>
-        <rel f="">[clamp][down]</rel>
-        <arg f="" n="2">on loiterers, some of whom he felt were drug addicts</arg>
+        <rel relloc="18 19">clamp down</rel>
+        <arg f="" n="0" start="16" end="17">the police</arg>
+        <arg f="" n="2" start="20" end="29">on loiterers, some of whom he felt were drug addicts.</arg>
       </example>
+      <note>CLAMP_DOWN-V NOTES: Added by Julia.</note>
     </roleset>
   </predicate>
 </frameset>

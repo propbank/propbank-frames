@@ -1,63 +1,84 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="dine">
     <roleset id="dine.01" name="eat dinner, eating, properly and politely">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">dine</alias>
-        <alias framenet="" pos="n" verbnet="">dining</alias>
+        <alias pos="v">dine</alias>
+        <alias pos="n">dining</alias>
       </aliases>
-      <note>DINE-V NOTES: Frames file for 'dine' based on sentences in financial subcorpus. No Verbnet entry, comparison with 'eat'. (from dine.01-v predicate notes)</note>
-      <note>DINING-N NOTES: Added by Julia based on BOLT, dine-n.01. Corresponds to VNcls dine-39.5. (from dining.01-n)</note>
       <roles>
-        <role descr="eater" f="pag" n="0">
-          <vnrole vncls="39.5" vntheta="agent"/>
+        <role descr="eater" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="dine-39.5" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Ingestion" version="1.7">ingestor</rolelink>
+          </rolelinks>
         </role>
-        <role descr="meal" f="ppt" n="1">
-          <vnrole vncls="39.5" vntheta="patient"/>
+        <role descr="meal" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="dine-39.5" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Ingestion" version="1.7">ingestibles</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG0" src="ontonotes mz/sinorama/10/ectb_1030" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Ingestion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="dine-39.5" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="dine-v.1" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="ontonotes mz/sinorama/10/ectb_1030" name="ARG0">
         <text>The next stop on the itinerary was Chad , where Chen dined with Chad 's President Idris Debi .</text>
-        <arg f="loc" n="m">[where][Chad]</arg>
-        <arg f="" n="0">Chen</arg>
-        <rel f="">dined</rel>
-        <arg f="mnr" n="m">with Chad 's President Idris Debi</arg>
+        <rel relloc="11">dined</rel>
+        <arg f="LOC" n="m" start="9" end="9">where</arg>
+        <arg f="LOC" n="m" start="7" end="7">Chad</arg>
+        <arg f="" n="0" start="10" end="10">Chen</arg>
+        <arg f="MNR" n="m" start="12" end="17">with Chad 's President Idris Debi</arg>
       </example>
-
-      <example name="with ADJ" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="BOLT" name="with ADJ">
         <text>No restaurant I 've worked in -LRB- and there have been quite a few - ranging from Subway to fine dining -RRB- would have found that kind of language acceptable , especially within earshot of customers .</text>
-        <arg f="adj" n="m">fine</arg>
-        <rel f="">dining</rel>
+        <rel relloc="20">dining</rel>
+        <arg f="ADJ" n="m" start="19" end="19">fine</arg>
       </example>
-      <example name="both args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="internet" name="both args">
         <text>Their dining on native vegetation has cleared the way for nonnative trees, and maples, to thrive where oaks and hickories are supposed to be</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">dining</rel>
-        <arg f="" n="1">on native vegetation</arg>
+        <rel relloc="1">dining</rel>
+        <arg f="" n="0" start="0" end="0">Their</arg>
+        <arg f="" n="1" start="2" end="4">on native vegetation</arg>
       </example>
+      <note>DINE-V NOTES: Frames file for 'dine' based on sentences in financial subcorpus. No Verbnet entry, comparison with 'eat'. (from dine.01-v predicate notes)</note>
+      <note>DINING-N NOTES: Added by Julia based on BOLT, dine-n.01. Corresponds to VNcls dine-39.5. (from dining.01-n)</note>
     </roleset>
   </predicate>
   <predicate lemma="dine_out">
     <roleset id="dine_out.02" name="eat dinner at a restaurant">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">dine_out</alias>
+        <alias pos="v">dine_out</alias>
       </aliases>
-      <note>DINE_OUT-V NOTES: (from dine.02-v)</note>
       <roles>
         <role descr="eater, diner" f="PAG" n="0">
-          <vnrole vncls="39.5" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="dine-39.5" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="living the high life" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="dine-39.5" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="living the high life">
         <text>He and Mr. Roderick were even dining out together.</text>
-        <arg f="" n="0">He and Mr. Roderick</arg>
-        <arg f="DIS" n="M">even</arg>
-        <rel f="">[ dining] [ out]</rel>
-        <arg f="MNR" n="M">together</arg>
+        <rel relloc="6 7">dining out</rel>
+        <arg f="" n="0" start="0" end="3">He and Mr. Roderick</arg>
+        <arg f="DIS" n="M" start="5" end="5">even</arg>
+        <arg f="MNR" n="M" start="8" end="8">together.</arg>
       </example>
+      <note>DINE_OUT-V NOTES: (from dine.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

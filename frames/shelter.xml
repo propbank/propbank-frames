@@ -1,52 +1,64 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="shelter">
     <roleset id="shelter.01" name="put/be in a shelter">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">shelter</alias>
+        <alias pos="v">shelter</alias>
       </aliases>
-      <note>SHELTER-V NOTES: Member of VNcls lodge-46, exist-47.1-1 (which seems odd...), concealment-16. (from shelter.01-v)</note>
       <roles>
-        <note>It might be hard to distinguish LOC adjuncts and the shelter itself.Be clever. (from shelter.01-v)</note>
-        <role descr="agent, putter in shelter" f="pag" n="0">
-          <vnrole vncls="16" vntheta="agent"/>
+        <role descr="agent, putter in shelter" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="concealment-16" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing in shelter (if separate from arg0)" f="ppt" n="1">
-          <vnrole vncls="47.1-1" vntheta="theme"/>
-          <vnrole vncls="16" vntheta="patient"/>
-          <vnrole vncls="46" vntheta="theme"/>
+        <role descr="thing in shelter (if separate from arg0)" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="exist-47.1-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="concealment-16" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="VerbNet" class="lodge-46" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="shelter" f="loc" n="2">
-          <vnrole vncls="47.1-1" vntheta="location"/>
-          <vnrole vncls="16" vntheta="location"/>
-          <vnrole vncls="46" vntheta="location"/>
+        <role descr="shelter" f="LOC" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="exist-47.1-1" version="verbnet3.3">location</rolelink>
+            <rolelink resource="VerbNet" class="concealment-16" version="verbnet3.3">location</rolelink>
+            <rolelink resource="VerbNet" class="lodge-46" version="verbnet3.3">location</rolelink>
+          </rolelinks>
         </role>
-        <role descr="danger, sheltered from" f="cau" n="3"/>
+        <role descr="danger, sheltered from" f="CAU" n="3"/>
       </roles>
-      <example name="single arg, passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="concealment-16" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="exist-47.1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="lodge-46" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="single arg, passive">
         <text>The man, it seems, has [a Lichtenstein corporation]-1, licensed in Libya and sheltered [*]-1 in the Bahamas.</text>
-        <rel f="">sheltered</rel>
-        <arg f="" n="1">[*]</arg>
-        <arg f="loc" n="m">in the Bahamas</arg>
+        <rel relloc="12">sheltered</rel>
+        <arg f="" n="1" start="5" end="5">[a</arg>
+        <arg f="LOC" n="m" start="14" end="16">in the Bahamas.</arg>
       </example>
-      <example name="agent, shelter, and danger" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <example src="" name="agent, shelter, and danger">
         <text>John sheltered the storm in a cardboard box.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">sheltered</rel>
-        <arg f="" n="3">the storm</arg>
-        <arg f="" n="2">in a cardboard box</arg>
+        <rel relloc="1">sheltered</rel>
+        <arg f="" n="0" start="0" end="0">John</arg>
+        <arg f="" n="3" start="2" end="3">the storm</arg>
+        <arg f="" n="2" start="4" end="7">in a cardboard box.</arg>
       </example>
-      <example name="with patient" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <example src="" name="with patient">
         <text>John sheltered Mary from the storm in his yurt.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">sheltered</rel>
-        <arg f="" n="1">Mary</arg>
-        <arg f="" n="3">from the storm</arg>
-        <arg f="" n="2">in his yurt</arg>
+        <rel relloc="1">sheltered</rel>
+        <arg f="" n="0" start="0" end="0">John</arg>
+        <arg f="" n="1" start="2" end="2">Mary</arg>
+        <arg f="" n="3" start="3" end="5">from the storm</arg>
+        <arg f="" n="2" start="6" end="8">in his yurt.</arg>
       </example>
+      <note>SHELTER-V NOTES: Member of VNcls lodge-46, exist-47.1-1 (which seems odd...), concealment-16. (from shelter.01-v)</note>
+      <note>It might be hard to distinguish LOC adjuncts and the shelter itself.Be clever. (from shelter.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,66 +1,88 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="describe">
     <roleset id="describe.01" name="assign a label or attribute">
       <aliases>
-        <alias framenet="communicate_categorization Statement" pos="n" verbnet="">description</alias>
-        <alias framenet="Communicate_categorization" pos="v" verbnet="">describe</alias>
+        <alias pos="n">description</alias>
+        <alias pos="v">describe</alias>
       </aliases>
-      <note>DESCRIBE-V NOTES: Comparison to 'call' attributive sense. Member of VNcls characterize-29.2-1-1. (from describe.01-v)</note>
-      <note>DESCRIPTION-N NOTES: Based on nouns00080. Vn class characterize-29.2-1-1. Fn class communicate_categorization. Framed by Katie. (from description.01-n)</note>
       <roles>
         <role descr="describer" f="PAG" n="0">
-          <vnrole vncls="29.2-1-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="characterize-29.2-1-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">speaker</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing described" f="PPT" n="1">
-          <vnrole vncls="29.2-1-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="characterize-29.2-1-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">addressee</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
         <role descr="secondary attribute, described-as" f="PRD" n="2">
-          <vnrole vncls="29.2-1-1" vntheta="Attribute"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="characterize-29.2-1-1" version="verbnet3.3">attribute</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all args" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Communicate_categorization" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Statement" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="characterize-29.2-1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Contact.PublicStatementInPerson.Broadcast" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Correspondence" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Broadcast" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="description-n.1" src="annot-overlap" confidence="0.1">11</lexlink>
+        <lexlink resource="onsense" version="on5" class="describe-v.1" src="annot-overlap" confidence="0.1">138</lexlink>
+      </lexlinks>
+      <example src="" name="all args">
         <text>The SEC documents describe those chips, which are made of gallium arsenide, as *trace* being so fragile and minute they will require special robotic handling equipment.</text>
-        <arg f="" n="0">The SEC documents</arg>
-        <rel f="">describe</rel>
-        <arg f="" n="1">those chips, which are made of gallium arsenide</arg>
-        <arg f="" n="2">as *trace* being so fragile and minute they will require special robotic handling equipment</arg>
+        <rel relloc="3">describe</rel>
+        <arg f="" n="0" start="0" end="2">The SEC documents</arg>
+        <arg f="" n="1" start="4" end="11">those chips, which are made of gallium arsenide,</arg>
+        <arg f="" n="2" start="12" end="25">as *trace* being so fragile and minute they will require special robotic handling equipment.</arg>
       </example>
-      <example name="inverted attribute" src="" type="">
+      <example src="" name="inverted attribute">
         <text>a ``seething mass,'' as one trader described it.</text>
-        <arg f="" n="2">a ``seething mass,''</arg>
-        <arg f="" n="0">one trader</arg>
-        <rel f="">described</rel>
-        <arg f="" n="1">it</arg>
+        <rel relloc="6">described</rel>
+        <arg f="" n="2" start="0" end="2">a ``seething mass,''</arg>
+        <arg f="" n="0" start="4" end="5">one trader</arg>
+        <arg f="" n="1" start="7" end="7">it.</arg>
       </example>
-      <example name="no attribute" src="" type="">
+      <example src="" name="no attribute">
         <text>It didn't describe the source of funds or the specific terms of StatesWest securities which were part of the offer.</text>
-        <arg f="" n="0">It</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">describe</rel>
-        <arg f="" n="1">the source of funds or the specific terms of StatesWest securities which were part of the offer</arg>
+        <rel relloc="2">describe</rel>
+        <arg f="" n="0" start="0" end="0">It</arg>
+        <arg f="NEG" n="m" start="0" end="0">It</arg>
+        <arg f="" n="1" start="3" end="19">the source of funds or the specific terms of StatesWest securities which were part of the offer.</arg>
       </example>
-      <example name="all args" src="" type="">
+      <example src="" name="all args">
         <text>Mr. Masson 's description of himself as a `` private asset but public liability '' to Anna Freud</text>
-        <arg f="" n="0">Mr. Masson 's</arg>
-        <rel f="">description</rel>
-        <arg f="" n="1">of himself</arg>
-        <arg f="" n="2">as a `` private asset but public liability ''</arg>
-        <arg f="gol" n="m">to Anna Freud</arg>
+        <rel relloc="3">description</rel>
+        <arg f="" n="0" start="0" end="2">Mr. Masson 's</arg>
+        <arg f="" n="1" start="4" end="5">of himself</arg>
+        <arg f="" n="2" start="6" end="14">as a `` private asset but public liability ''</arg>
+        <arg f="GOL" n="m" start="15" end="17">to Anna Freud</arg>
       </example>
-      <example name="Another arg 0 and 1" src="" type="">
+      <example src="" name="Another arg 0 and 1">
         <text>Mr. Gould 's minute descriptions of these creatures</text>
-        <arg f="" n="0">Mr. Gould 's</arg>
-        <arg f="mnr" n="m">minute</arg>
-        <rel f="">descriptions</rel>
-        <arg f="" n="1">of these creatures</arg>
+        <rel relloc="4">descriptions</rel>
+        <arg f="" n="0" start="0" end="2">Mr. Gould 's</arg>
+        <arg f="MNR" n="m" start="3" end="3">minute</arg>
+        <arg f="" n="1" start="5" end="7">of these creatures</arg>
       </example>
-      <example name="Most common medical usage" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="Most common medical usage">
         <text>Gross description:</text>
-        <arg f="adj" n="m">Gross</arg>
-        <rel f="">description</rel>
+        <rel relloc="1">description:</rel>
+        <arg f="ADJ" n="m" start="0" end="0">Gross</arg>
       </example>
+      <note>DESCRIBE-V NOTES: Comparison to 'call' attributive sense. Member of VNcls characterize-29.2-1-1. (from describe.01-v)</note>
+      <note>DESCRIPTION-N NOTES: Based on nouns00080. Vn class characterize-29.2-1-1. Fn class communicate_categorization. Framed by Katie. (from description.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

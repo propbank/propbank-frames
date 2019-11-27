@@ -1,68 +1,94 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="injure">
     <roleset id="injure.01" name="cause hurt, cause/experience hurt, damaged, hurt">
       <aliases>
-        <alias framenet="Experience_bodily_harm Cause_harm" pos="v" verbnet="">injure</alias>
-        <alias framenet="Experience_bodily_harm Cause_harm" pos="n" verbnet="">injury</alias>
-        <alias framenet="" pos="j" verbnet="">injured</alias>
+        <alias pos="v">injure</alias>
+        <alias pos="n">injury</alias>
+        <alias pos="j">injured</alias>
       </aliases>
+      <roles>
+        <role descr="agent, entity causing/possessing arg1's injury " f="PPT" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="hurt-40.8.3-2" version="verbnet3.3">experiencer</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">victim</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">body_part</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">cause</rolelink>
+            <rolelink resource="FrameNet" class="Experience_bodily_harm" version="1.7">body_part</rolelink>
+            <rolelink resource="FrameNet" class="Experience_bodily_harm" version="1.7">experiencer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="injured entity (body part if arg0 is possessor)" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="hurt-40.8.3-2" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="instrument, injured doing what" f="MNR" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">means</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">instrument</rolelink>
+            <rolelink resource="FrameNet" class="Experience_bodily_harm" version="1.7">injuring_entity</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_harm" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Experience_bodily_harm" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="hurt-40.8.3-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Life.Injure.IllnessDegradationPhysical" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Life.Injure.InjuryCausedByViolentEvents" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Injure" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="injure-v.1" src="annot-overlap" confidence="0.1">73</lexlink>
+        <lexlink resource="onsense" version="on5" class="injury-n.1" src="annot-overlap" confidence="0.1">34</lexlink>
+      </lexlinks>
+      <example src="" name="just transitive">
+        <text> A series of explosions tore through the huge Phillips PetroleumCo. plastics plant near here, injuring more than a hundred andclosing parts of the Houston Ship Channel.</text>
+        <rel relloc="15">injuring</rel>
+        <arg f="" n="0" start="1" end="4">A series of explosions</arg>
+        <arg f="" n="1" start="16" end="19">more than a hundred</arg>
+      </example>
+      <example src="ontonotes mz/sinorama/10/ectb_1026" name="ARG1 and ARG0">
+        <text>Our compatriots have been injured by the September 21 earthquake , but with the spirit of a " volunteer Taiwan , " Taiwan 's new family will stand up resolutely on its feet once again .</text>
+        <rel relloc="4">injured</rel>
+        <arg f="" n="1" start="0" end="1">Our compatriots</arg>
+        <arg f="" n="0" start="5" end="9">by the September 21 earthquake</arg>
+      </example>
+      <example src="" name="args 1 nd 2">
+        <text>his old football injuries</text>
+        <rel relloc="3">injuries</rel>
+        <arg f="" n="1" start="0" end="0">his</arg>
+        <arg f="TMP" n="m" start="1" end="1">old</arg>
+        <arg f="" n="2" start="2" end="2">football</arg>
+      </example>
+      <example src="" name="arg0 experiencer, arg1 body part patient">
+        <text>his injury of his left knee</text>
+        <rel relloc="1">injury</rel>
+        <arg f="" n="0" start="0" end="0">his</arg>
+        <arg f="" n="1" start="2" end="5">of his left knee</arg>
+      </example>
+      <example src="" name="agent arg0, person patient">
+        <text>his injury of her</text>
+        <rel relloc="1">injury</rel>
+        <arg f="" n="0" start="0" end="0">his</arg>
+        <arg f="" n="1" start="2" end="3">of her</arg>
+      </example>
+      <example src="" name="">
+        <text>Many Puerto Rican's believe this was why-1 Cotto 's face was so badly injured [*-1] and that a normally tough fighter was systematically broken down .</text>
+        <rel relloc="13">injured</rel>
+        <arg f="" n="1" start="7" end="9">Cotto 's face</arg>
+        <arg f="EXT" n="m" start="11" end="11">so</arg>
+        <arg f="EXT" n="m" start="12" end="12">badly</arg>
+        <arg f="CAU" n="m" start="14" end="14">[*-1]</arg>
+      </example>
       <note>INJURE-V NOTES: Based on sentences in financial subcorpus and automatic expansion via verbnet. Member of Vncls hurt-40.8.3-2. (from injure.01-v)</note>
       <note>INJURY-N NOTES: Updated by Julia. Member of Vncls hurt-40.8.3-2. (from injury.01-n)</note>
       <note>INJURED-J NOTES: Added by Julia based on BOLT-1, injure.01. Corresponds to Vncls hurt-40.8.3-2. (from injured.01-j)</note>
-      <roles>
-        <role descr="agent, entity causing/possessing arg1's injury " f="ppt" n="0">
-          <vnrole vncls="40.8.3-2" vntheta="experiencer"/>
-        </role>
-        <role descr="injured entity (body part if arg0 is possessor)" f="ppt" n="1">
-          <vnrole vncls="40.8.3-2" vntheta="patient"/>
-        </role>
-        <role descr="instrument, injured doing what" f="mnr" n="2"/>
-      </roles>
-      <example name="just transitive" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
-        <text>[A series of explosions]-1 tore through the huge Phillips PetroleumCo. plastics plant near here, *trace*-1 injuring more than a hundred andclosing parts of the Houston Ship Channel.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">injuring</rel>
-        <arg f="" n="1">more than a hundred</arg>
-      </example>
-      <example name="ARG1 and ARG0" src="ontonotes mz/sinorama/10/ectb_1026" type="">
-        <text>Our compatriots have been injured by the September 21 earthquake , but with the spirit of a " volunteer Taiwan , " Taiwan 's new family will stand up resolutely on its feet once again .</text>
-        <arg f="" n="1">Our compatriots</arg>
-        <rel f="">injured</rel>
-        <arg f="" n="0">by the September 21 earthquake</arg>
-      </example>
-
-      <example name="args 1 nd 2" src="" type="">
-        <text>his old football injuries</text>
-        <arg f="" n="1">his</arg>
-        <arg f="tmp" n="m">old</arg>
-        <arg f="" n="2">football</arg>
-        <rel f="">injuries</rel>
-      </example>
-      <example name="arg0 experiencer, arg1 body part patient" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>his injury of his left knee</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">injury</rel>
-        <arg f="" n="1">of his left knee</arg>
-      </example>
-      <example name="agent arg0, person patient" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>his injury of her</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">injury</rel>
-        <arg f="" n="1">of her</arg>
-      </example>
-      <example name="" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Many Puerto Rican's believe this was why-1 Cotto 's face was so badly injured [*-1] and that a normally tough fighter was systematically broken down .</text>
-        <arg f="" n="1">Cotto's face</arg>
-        <arg f="ext" n="m">so</arg>
-        <arg f="ext" n="m">badly</arg>
-        <rel f="">injured</rel>
-        <arg f="cau" n="m">[*-1]</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

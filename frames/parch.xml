@@ -1,28 +1,38 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="parch">
     <roleset id="parch.01" name="make very very dry">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">parch</alias>
-        <alias framenet="" pos="n" verbnet="">parching</alias>
-        <alias framenet="" pos="j" verbnet="">parched</alias>
+        <alias pos="v">parch</alias>
+        <alias pos="n">parching</alias>
+        <alias pos="j">parched</alias>
       </aliases>
-      <note>PARCH-V NOTES: Based on WSJ. Member of VNcls cooking-45.3. (from parch.01-v)</note>
       <roles>
         <role descr="cause of dryness, agent" f="PAG" n="0">
-          <vnrole vncls="45.3" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="cooking-45.3" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="dry thing" f="PPT" n="1">
-          <vnrole vncls="45.3" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="cooking-45.3" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="parched-j" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="cooking-45.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="parched-j">
         <text>In less parched areas, meanwhile, farmers who had little or no loss of production profited greatly from the higher prices.</text>
-        <arg f="ext" n="m">less</arg>
-        <rel f="">parched</rel>
-        <arg f="" n="1">areas</arg>
+        <rel relloc="2">parched</rel>
+        <arg f="EXT" n="m" start="1" end="1">less</arg>
+        <arg f="" n="1" start="3" end="3">areas,</arg>
       </example>
+      <note>PARCH-V NOTES: Based on WSJ. Member of VNcls cooking-45.3. (from parch.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

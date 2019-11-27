@@ -1,107 +1,130 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="construct">
     <roleset id="construct.01" name="build, building of some structure (not the structure itself)">
       <aliases>
-        <alias framenet="Building" pos="v" verbnet="">construct</alias>
-        <alias framenet="" pos="n" verbnet="">construction</alias>
+        <alias pos="v">construct</alias>
+        <alias pos="n">construction</alias>
       </aliases>
-      <note>CONSTRUCT-V NOTES: Member of VNcls create-26.4, other_cos-45.4. (from construct.01-v)</note>
-      <note>CONSTRUCTION-N NOTES: construct.01 (from construction.01-n)</note>
       <roles>
-        <note>An end state is probably very rare with "construct.". I'm not sure args1-4 can all appear at once. (from construct.01-v)</note>
         <role descr="builder" f="PAG" n="0">
-          <vnrole vncls="26.4" vntheta="Agent"/>
-          <vnrole vncls="45.4" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="create-26.4" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Building" version="1.7">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="construction" f="ppt" n="1">
-          <vnrole vncls="26.4" vntheta="Result"/>
-          <vnrole vncls="45.4" vntheta="Patient"/>
+        <role descr="construction" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="create-26.4" version="verbnet3.3">result</rolelink>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Building" version="1.7">created_entity</rolelink>
+          </rolelinks>
         </role>
         <role descr="material, start state" f="VSP" n="2">
-          <vnrole vncls="26.4" vntheta="Material"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="create-26.4" version="verbnet3.3">material</rolelink>
+            <rolelink resource="FrameNet" class="Building" version="1.7">components</rolelink>
+          </rolelinks>
         </role>
         <role descr="end state of arg1" f="PRD" n="4">
-          <vnrole vncls="26.4" vntheta="Result"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="create-26.4" version="verbnet3.3">result</rolelink>
+            <rolelink resource="FrameNet" class="Building" version="1.7">created_entity</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="straight transitive" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Building" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="create-26.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Manufacture.Artifact.Build" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="construct-v.1" src="annot-overlap" confidence="0.1">50</lexlink>
+        <lexlink resource="onsense" version="on5" class="construction-n.3" src="annot-overlap" confidence="0.1">5</lexlink>
+        <lexlink resource="onsense" version="on5" class="construction-n.1" src="annot-overlap" confidence="0.1">132</lexlink>
+        <lexlink resource="onsense" version="on5" class="construction-n.2" src="annot-overlap" confidence="0.1">19</lexlink>
+        <lexlink resource="onsense" version="on5" class="construction-n.5" src="annot-overlap" confidence="0.1">20</lexlink>
+      </lexlinks>
+      <example src="" name="straight transitive">
         <text>If he-1 were able *trace*-1 to construct a popular and efficient corporatist system, he or his heir would be wellplaced to rein in political opposition, and to re-establish control in Eastern Europe.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">construct</rel>
-        <arg f="" n="1">a popular and efficient corporatist system</arg>
+        <rel relloc="6">construct</rel>
+        <arg f="" n="0" start="4" end="4">*trace*-1</arg>
+        <arg f="" n="1" start="7" end="12">a popular and efficient corporatist system,</arg>
       </example>
-      <example name="locative?" src="" type="">
-        <inflection aspect="perfect" form="participle" person="third" tense="present" voice="active"/>
+      <example src="" name="locative?">
         <text>But the music has its charm, and Mr. Glass has constructed his solo program around a move from the simple to the relatively complex.</text>
-        <arg f="" n="0">Mr. Glass</arg>
-        <rel f="">constructed</rel>
-        <arg f="" n="1">his solo program</arg>
-        <arg f="loc" n="m">around a move from the simple to the relatively complex</arg>
+        <rel relloc="10">constructed</rel>
+        <arg f="" n="0" start="7" end="8">Mr. Glass</arg>
+        <arg f="" n="1" start="11" end="13">his solo program</arg>
+        <arg f="LOC" n="m" start="14" end="23">around a move from the simple to the relatively complex.</arg>
       </example>
-      <example name="end state as predicate" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
+      <example src="" name="end state as predicate">
         <text>Indexes-1 can be constructed *trace*-1 to serve social goals, such as eliminating the stocks of companies doing business in South Africa.</text>
-        <arg f="mod" n="m">can</arg>
-        <rel f="">constructed</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="prp" n="m">to serve social goals, such as eliminating the stocks of companies doing business in South Africa</arg>
+        <rel relloc="3">constructed</rel>
+        <arg f="MOD" n="m" start="1" end="1">can</arg>
+        <arg f="" n="1" start="4" end="4">*trace*-1</arg>
+        <arg f="PRP" n="m" start="5" end="20">to serve social goals, such as eliminating the stocks of companies doing business in South Africa.</arg>
       </example>
-      <example name="ARG1 and ARG2" src="ontonotes nw/xinhua/01/chtb_0141" type="">
+      <example src="ontonotes nw/xinhua/01/chtb_0141" name="ARG1 and ARG2">
         <text>A great mass of projects constructed with introduced foreign investment such as fertilizer , mucilage glue short fibers , freon - free compressors , top - grade household ceramics , auto engines , etc. are increasingly becoming representatives of the superior industries of Jiangxi .</text>
-        <arg f="" n="1">projects</arg>
-        <rel f="">constructed</rel>
-        <arg f="" n="2">with introduced foreign investment</arg>
+        <rel relloc="5">constructed</rel>
+        <arg f="" n="1" start="4" end="4">projects</arg>
+        <arg f="" n="2" start="6" end="9">with introduced foreign investment</arg>
       </example>
-
-      <example name="With end state" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="web" name="With end state">
         <text>We had three or four long jam sessions and using Pro Tools, we constructed it into a song.</text>
-        <arg f="mnr" n="m">using Pro Tools</arg>
-        <arg f="" n="0">we</arg>
-        <rel f="">constructed</rel>
-        <arg f="" n="1">it</arg>
-        <arg f="" n="4">into a song</arg>
+        <rel relloc="13">constructed</rel>
+        <arg f="MNR" n="m" start="9" end="11">using Pro Tools,</arg>
+        <arg f="" n="0" start="0" end="0">We</arg>
+        <arg f="" n="1" start="14" end="14">it</arg>
+        <arg f="" n="4" start="15" end="17">into a song.</arg>
       </example>
-      <example name="Arg0, 1 (construction of)" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="Arg0, 1 (construction of)">
         <text>Trump's construction of the new downtown monstrosity angered long-term residents.</text>
-        <arg f="" n="0">Trump's</arg>
-        <rel f="">construction</rel>
-        <arg f="" n="1">of the new downtown monstrosity</arg>
+        <rel relloc="1">construction</rel>
+        <arg f="" n="0" start="0" end="0">Trump's</arg>
+        <arg f="" n="1" start="2" end="6">of the new downtown monstrosity</arg>
       </example>
-      <example name="Arg2 (construction on)" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="Arg2 (construction on)">
         <text>Construction on Bob's porch stalled for weeks.</text>
-        <rel f="">Construction</rel>
-        <arg f="" n="1">on Bob's porch</arg>
+        <rel relloc="0">Construction</rel>
+        <arg f="" n="1" start="1" end="3">on Bob's porch</arg>
       </example>
+      <note>CONSTRUCT-V NOTES: Member of VNcls create-26.4, other_cos-45.4. (from construct.01-v)</note>
+      <note>CONSTRUCTION-N NOTES: construct.01 (from construction.01-n)</note>
+      <note>An end state is probably very rare with "construct.". I'm not sure args1-4 can all appear at once. (from construct.01-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="constructive">
     <roleset id="constructive.02" name="affirming, building up">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">constructive</alias>
+        <alias pos="j">constructive</alias>
       </aliases>
-      <note>CONSTRUCTIVE-J NOTES: Added by Julia based on BOLT-6. Metaphorical relation to construct.01 (from constructive.01-j)</note>
       <roles>
-        <role descr="affirming entity/act" f="pag" n="0"/>
-        <role descr="entity built up, affirmed" f="ppt" n="1"/>
+        <role descr="affirming entity/act" f="PAG" n="0"/>
+        <role descr="entity built up, affirmed" f="PPT" n="1"/>
       </roles>
-      <example name="arg0" src="BOLT-6" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="BOLT-6" name="arg0">
         <text>From this point of view , it is obvious that the formulation and publishing of this provision is constructive .</text>
-        <arg f="" n="0">the formulation and publishing of this provision</arg>
-        <rel f="">constructive</rel>
+        <rel relloc="18">constructive</rel>
+        <arg f="" n="0" start="10" end="16">the formulation and publishing of this provision</arg>
       </example>
-      <example name="both args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="internet" name="both args">
         <text>he wasn't selfish, wasn't irresponsible, was constructive of community and family, even if it put himself in danger.</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">constructive</rel>
-        <arg f="" n="1">of community and family</arg>
+        <rel relloc="6">constructive</rel>
+        <arg f="" n="0" start="0" end="0">he</arg>
+        <arg f="" n="1" start="7" end="10">of community and family,</arg>
       </example>
+      <note>CONSTRUCTIVE-J NOTES: Added by Julia based on BOLT-6. Metaphorical relation to construct.01 (from constructive.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

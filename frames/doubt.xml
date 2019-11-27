@@ -1,88 +1,106 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="doubt">
     <roleset id="doubt.01" name="doubt, disbelieve">
       <aliases>
-        <alias framenet="Certainty" pos="v" verbnet="">doubt</alias>
-        <alias framenet="" pos="n" verbnet="">doubt</alias>
-        <alias framenet="" pos="j" verbnet="">doubtful</alias>
+        <alias pos="v">doubt</alias>
+        <alias pos="n">doubt</alias>
+        <alias pos="j">doubtful</alias>
       </aliases>
+      <roles>
+        <role descr="disbeliever" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="conjecture-29.5-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="judgment-33.1-1-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Certainty" version="1.7">cognizer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="disbelief" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="conjecture-29.5-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="judgment-33.1-1-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Certainty" version="1.7">content</rolelink>
+            <rolelink resource="FrameNet" class="Certainty" version="1.7">topic</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Certainty" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="conjecture-29.5-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="33" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="doubt-v.1" src="annot-overlap" confidence="0.1">33</lexlink>
+      </lexlinks>
+      <example src="" name="doubt-v: sentential disbelief">
+        <text>Although takeover experts said they doubted Mr. Steinberg will make a bid by himself...</text>
+        <rel relloc="5">doubted</rel>
+        <arg f="" n="0" start="4" end="4">they</arg>
+        <arg f="" n="1" start="6" end="13">Mr. Steinberg will make a bid by himself...</arg>
+      </example>
+      <example src="ontonotes mz/sinorama/10/ectb_1017" name="ARG0 and ARG1">
+        <text>Although the original plan only calls for the Shihkang Work Station to operate for one year , Li Chieh - ying opines , " I have my doubts about whether we 'll actually be able to leave after a year . "</text>
+        <rel relloc="27">doubts</rel>
+        <arg f="" n="0" start="24" end="24">I</arg>
+        <arg f="LVB" n="m" start="25" end="25">have</arg>
+        <arg f="" n="1" start="28" end="39">about whether we 'll actually be able to leave after a year</arg>
+      </example>
+      <example src="nouns-lv" name="doubt-n: Within LVC">
+        <text>Although the original plan only calls for the Shihkang Work Station to operate for one year , Li Chieh - ying opines , " I havemy doubts about whether we 'll actually be able to leave after ayear . "</text>
+        <rel relloc="26">doubts</rel>
+        <arg f="" n="0" start="24" end="24">I</arg>
+        <arg f="LVB" n="m" start="25" end="25">havemy</arg>
+        <arg f="" n="1" start="27" end="37">about whether we 'll actually be able to leave after ayear</arg>
+      </example>
+      <example src="web" name="doubt-n: all args">
+        <text>We see her utter desperation in the plaintive tones of the song itself and in her doubt that her life can ever be healed.</text>
+        <rel relloc="16">doubt</rel>
+        <arg f="" n="0" start="2" end="2">her</arg>
+        <arg f="" n="1" start="17" end="23">that her life can ever be healed.</arg>
+      </example>
+      <example src="SMS" name="doubtful-j: arg0">
+        <text>My mom keeps putting it off , which i hope is because she plans to give me the new one for my birthday , but I 'm also doubtful because she 's so adamant about me not getting it</text>
+        <rel relloc="28">doubtful</rel>
+        <arg f="" n="0" start="8" end="8">i</arg>
+        <arg f="ADV" n="m" start="27" end="27">also</arg>
+        <arg f="CAU" n="m" start="29" end="37">because she 's so adamant about me not getting</arg>
+      </example>
+      <example src="BOLT-7" name="doubtful-j; empty it.">
+        <text>It was somewhat doubtful that the fox had borrowed the tiger 's terror .</text>
+        <rel relloc="3">doubtful</rel>
+        <arg f="EXT" n="m" start="2" end="2">somewhat</arg>
+        <arg f="" n="1" start="5" end="12">the fox had borrowed the tiger 's terror</arg>
+      </example>
       <note>DOUBT-V NOTES: Frames file for 'doubt' based on sentences in financial subcorpus; adjectival 'doubtful' based on BOLT-7. Memberof VNcls conjecture-29.5-1, judgment-33-1-1. Comparison with'believe'. (from doubt.01-v)</note>
       <note>DOUBT-N NOTES: Frames file for 'doubt' based on sentences infinancial subcorpus. No access to verbnet. Comparison with'believe'. (from doubt.01-n predicate notes)</note>
       <note>DOUBTFUL-J: Added by Julia based on SMS. (from doubtful.01-j)</note>
-      <roles>
-        <role descr="disbeliever" f="pag" n="0">
-          <vnrole vncls="29.5-1" vntheta="agent"/>
-          <vnrole vncls="33" vntheta="agent"/>
-        </role>
-        <role descr="disbelief" f="ppt" n="1">
-          <vnrole vncls="29.5-1" vntheta="theme"/>
-          <vnrole vncls="33" vntheta="theme"/>
-        </role>
-      </roles>
-      <example name="doubt-v: sentential disbelief" src="" type="">
-        <text>Although takeover experts said they doubted Mr. Steinberg will make a bid by himself...</text>
-        <arg f="" n="0">they</arg>
-        <rel f="">doubted</rel>
-        <arg f="" n="1">Mr. Steinberg will make a bid by himself</arg>
-      </example>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1017" type="">
-        <text>Although the original plan only calls for the Shihkang Work Station to operate for one year , Li Chieh - ying opines , " I have my doubts about whether we 'll actually be able to leave after a year . "</text>
-        <arg f="" n="0">I</arg>
-        <arg f="lvb" n="m">have</arg>
-        <rel f="">doubts</rel>
-        <arg f="" n="1">about whether we 'll actually be able to leave after a year</arg>
-      </example>
-
-      <example name="doubt-n: Within LVC" src="nouns-lv" type="">
-        <text>Although the original plan only calls for the Shihkang Work Station to operate for one year , Li Chieh - ying opines , " I havemy doubts about whether we 'll actually be able to leave after ayear . "</text>
-        <arg f="" n="0">I</arg>
-        <arg f="lvb" n="m">have</arg>
-        <rel f="">doubts</rel>
-        <arg f="" n="1">about whether we 'll actually be able to leave after a year</arg>
-      </example>
-      <example name="doubt-n: all args" src="web" type="">
-        <text>We see her utter desperation in the plaintive tones of the song itself and in her doubt that her life can ever be healed.</text>
-        <arg f="" n="0">Her</arg>
-        <rel f="">doubt</rel>
-        <arg f="" n="1">that her life can ever be healed</arg>
-      </example>
-      <example name="doubtful-j: arg0" src="SMS" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>My mom keeps putting it off , which i hope is because she plans to give me the new one for my birthday , but I 'm also doubtful because she 's so adamant about me not getting it</text>
-        <arg f="" n="0">I</arg>
-        <arg f="adv" n="m">also</arg>
-        <rel f="">doubtful</rel>
-        <arg f="cau" n="m">because she's so adamant about me not getting</arg>
-      </example>
-      <example name="doubtful-j; empty it." src="BOLT-7" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>It was somewhat doubtful that the fox had borrowed the tiger 's terror .</text>
-        <arg f="ext" n="m">somewhat</arg>
-        <rel f="">doubtful</rel>
-        <arg f="" n="1">that the fox had borrowed the tiger's terror</arg>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="dubious">
     <roleset id="dubious.02" name="skeptical/hard to believe">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">dubious</alias>
+        <alias pos="j">dubious</alias>
       </aliases>
-      <note>DUBIOUS-J NOTES: Added by Julia based on BOLT-7. Related to 'doubt'. (from dubious.01-j)</note>
       <roles>
-        <role descr="skeptic" f="pag" n="0"/>
-        <role descr="hard to believe thing" f="ppt" n="1"/>
+        <role descr="skeptic" f="PAG" n="0"/>
+        <role descr="hard to believe thing" f="PPT" n="1"/>
       </roles>
-      <example name="both args" src="BOLT-7" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="BOLT-7" name="both args">
         <text>Meanwhile , the difficulty to pass this by referendum in Taiwan is also predictable . After all , Taiwanese people are accustomed to status quo and are highly dubious about any changes .</text>
-        <arg f="adv" n="m">after all</arg>
-        <arg f="" n="0">Taiwanese people</arg>
-        <arg f="ext" n="m">highly</arg>
-        <rel f="">dubious</rel>
-        <arg f="" n="1">about any changes</arg>
+        <rel relloc="28">dubious</rel>
+        <arg f="ADV" n="m" start="15" end="16">After all</arg>
+        <arg f="" n="0" start="18" end="19">Taiwanese people</arg>
+        <arg f="EXT" n="m" start="27" end="27">highly</arg>
+        <arg f="" n="1" start="29" end="31">about any changes</arg>
       </example>
+      <note>DUBIOUS-J NOTES: Added by Julia based on BOLT-7. Related to 'doubt'. (from dubious.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

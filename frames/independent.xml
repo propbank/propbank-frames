@@ -1,35 +1,45 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="independent">
     <roleset id="independent.01" name="not relying on, freestanding">
       <aliases>
-        <alias framenet="Contingency" pos="j" verbnet="">independent</alias>
+        <alias pos="j">independent</alias>
       </aliases>
-      <note>INDEPENDENT-J NOTES: Added by Julia based on BOLT-1, depend.01. Corresponds to VNcls rely-70. (from independent.01-j)</note>
       <roles>
-        <role descr="independet entity" f="ppt" n="0">
-          <vnrole vncls="70" vntheta="agent"/>
+        <role descr="independet entity" f="PPT" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="rely-70" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="standing separate from, indepedent of" f="ppt" n="1">
-          <vnrole vncls="70" vntheta="patient"/>
+        <role descr="standing separate from, indepedent of" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="rely-70" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="arg0" src="BOLT-1" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Contingency" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="rely-70" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="BOLT-1" name="arg0">
         <text>I was also annoyed by a woman in the audience who said Scotland should be independent -LRB- she was English -RRB- because " all countries should be independent " , including Wales and " Ireland " .</text>
-        <arg f="" n="0">Scotland</arg>
-        <arg f="mod" n="m">should</arg>
-        <rel f="">independent</rel>
-        <arg f="cau" n="m">because "all countries should be independent", including Wales and " Ireland "</arg>
+        <rel relloc="15">independent</rel>
+        <arg f="" n="0" start="12" end="12">Scotland</arg>
+        <arg f="MOD" n="m" start="13" end="13">should</arg>
+        <arg f="CAU" n="m" start="21" end="35">because " all countries should be independent " , including Wales and " Ireland "</arg>
       </example>
-      <example name="both args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="internet" name="both args">
         <text>Caribbean reef development was independent of coral diversity over 28 million years..</text>
-        <arg f="" n="0">Caribbean reef development</arg>
-        <rel f="">independent</rel>
-        <arg f="" n="1">of coral diversity</arg>
-        <arg f="tmp" n="m">over 2.8 million years</arg>
+        <rel relloc="4">independent</rel>
+        <arg f="" n="0" start="0" end="2">Caribbean reef development</arg>
+        <arg f="" n="1" start="5" end="7">of coral diversity</arg>
+        <arg f="TMP" n="m" start="8" end="11">over 28 million years..</arg>
       </example>
+      <note>INDEPENDENT-J NOTES: Added by Julia based on BOLT-1, depend.01. Corresponds to VNcls rely-70. (from independent.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

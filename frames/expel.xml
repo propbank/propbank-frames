@@ -1,54 +1,73 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="expel">
     <roleset id="expel.01" name="to force or drive out, to discharge from">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">expel</alias>
-        <alias framenet="Removing Exclude_member" pos="n" verbnet="">expulsion</alias>
+        <alias pos="v">expel</alias>
+        <alias pos="n">expulsion</alias>
       </aliases>
-      <note>EXPEL-V NOTES: Frames file for 'expel' based on survey of sentences in the WSJ corpus. (from expel.01-v predicate notes)</note>
-      <note>EXPULSION-N NOTES: Added by Julia based on BOLT, expel.01. Corresponds to VNcls banish-10.2, fire-10.10, remove-10.1. (from expulsion.01-n)</note>
       <roles>
         <role descr="expeller, agent" f="PAG" n="0">
-          <vnrole vncls="10.2" vntheta="Agent"/>
-          <vnrole vncls="10.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="banish-10.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="remove-10.1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Removing" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Removing" version="1.7">cause</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity expelled" f="PPT" n="1">
-          <vnrole vncls="10.2" vntheta="Theme"/>
-          <vnrole vncls="10.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="banish-10.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="VerbNet" class="remove-10.1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Removing" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="expelled from" f="DIR" n="2">
-          <vnrole vncls="10.2" vntheta="Source"/>
-          <vnrole vncls="10.1" vntheta="Source"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="banish-10.2" version="verbnet3.3">source</rolelink>
+            <rolelink resource="VerbNet" class="remove-10.1" version="verbnet3.3">source</rolelink>
+            <rolelink resource="FrameNet" class="Removing" version="1.7">source</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="passive with Arg2" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="past" voice="passive"/>
-        <text>[Two firms]-150 were expelled [*-150]from the NASD , three were suspended or barred [*-1] and nine were fined [*-151] .</text>
-        <rel f="">expelled</rel>
-        <arg f="" n="1">[*-150]</arg>
-        <arg f="" n="2">from the NASD</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Removing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Exclude_member" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="banish-10.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="remove-10.1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Personnel.EndPosition.FiringLayoff" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Endposition" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="expel-v.1" src="annot-overlap" confidence="0.1">12</lexlink>
+      </lexlinks>
+      <example src="" name="passive with Arg2">
+        <text> Two firms50 were expelled [*50]from the NASD , three were suspended or barred [*] and nine were fined [*51] .</text>
+        <rel relloc="4">expelled</rel>
+        <arg f="" n="1" start="1" end="2">Two firms50</arg>
+        <arg f="" n="2" start="5" end="7">[*50]from the NASD</arg>
       </example>
-      <example name="passive with ArgM-CAU" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="past" voice="passive"/>
-        <text>[First Securities Group of California and a principal of the firm , Louis Fernando Vargas of Marina del Rey , Calif. ,]-1 were jointly fined [*-1]$ 15,000 [*U*] and expelled [*-1] for alleged violations of reporting requirements on securities sales .</text>
-        <rel f="">expelled</rel>
-        <arg f="" n="1">[*-1]</arg>
-        <arg f="CAU" n="M">for alleged violations of reporting requirements on securities sales</arg>
+      <example src="" name="passive with ArgM-CAU">
+        <text> First Securities Group of California and a principal of the firm , Louis Fernando Vargas of Marina del Rey , Calif. , were jointly fined [*]$ 15,000 [*U*] and expelled [*] for alleged violations of reporting requirements on securities sales .</text>
+        <rel relloc="30">expelled</rel>
+        <arg f="" n="1" start="1" end="22">First Securities Group of California and a principal of the firm , Louis Fernando Vargas of Marina del Rey , Calif. ,</arg>
+        <arg f="CAU" n="M" start="32" end="40">for alleged violations of reporting requirements on securities sales</arg>
       </example>
-      <example name="TMP" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="BOLT" name="TMP">
         <text>The ones who are students at UC - Davis deserve immediate expulsion .</text>
-        <arg f="tmp" n="m">immediate</arg>
-        <rel f="">expulsion</rel>
+        <rel relloc="11">expulsion</rel>
+        <arg f="TMP" n="m" start="10" end="10">immediate</arg>
       </example>
-      <example name="args 0, 1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="internet" name="args 0, 1">
         <text>For decades there has been a continuing effort by Israelis to cover up their expulsion of the 750,000 refugees who fled their homes during the 1948 war.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">expulsion</rel>
-        <arg f="" n="1">of the 750,000 refugees who fled their homes during the 1948 war</arg>
+        <rel relloc="14">expulsion</rel>
+        <arg f="" n="0" start="13" end="13">their</arg>
+        <arg f="" n="1" start="15" end="26">of the 750,000 refugees who fled their homes during the 1948 war.</arg>
       </example>
+      <note>EXPEL-V NOTES: Frames file for 'expel' based on survey of sentences in the WSJ corpus. (from expel.01-v predicate notes)</note>
+      <note>EXPULSION-N NOTES: Added by Julia based on BOLT, expel.01. Corresponds to VNcls banish-10.2, fire-10.10, remove-10.1. (from expulsion.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

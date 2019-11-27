@@ -1,55 +1,82 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="acquire">
     <roleset id="acquire.01" name="get, acquire">
       <aliases>
-        <alias framenet="Getting Come_down_with" pos="v" verbnet="13.5.2-1">acquire</alias>
-        <alias framenet="Getting" pos="n" verbnet="">acquisition</alias>
+        <alias pos="v">acquire</alias>
+        <alias pos="n">acquisition</alias>
       </aliases>
-      <note>ACQUIRE-V NOTES: Based on big corpus, comparison with 'gain' and 'buy'. Member of Vncls obtain-13.5.2-1. (from acquire.01-v)</note>
-      <note>ACQUISITION-N NOTES: Roleset based on instances in nouns-lv task and acquire.01 roleset. Associated verb is member of Vncls obtain-13.5.2-1. (from acquisition.01-n)</note>
       <roles>
         <role descr="agent, entity acquiring something" f="PAG" n="0">
-          <vnrole vncls="13.5.2-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="obtain-13.5.2-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Getting" version="1.7">recipient</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing acquired" f="PPT" n="1">
-          <vnrole vncls="13.5.2-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="obtain-13.5.2-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Getting" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="seller" f="DIR" n="2">
-          <vnrole vncls="13.5.2-1" vntheta="Source"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="obtain-13.5.2-1" version="verbnet3.3">source</rolelink>
+          </rolelinks>
         </role>
-        <role descr="price paid" f="vsp" n="3"/>
-        <role descr="benefactive" f="gol" n="4"/>
+        <role descr="price paid" f="VSP" n="3"/>
+        <role descr="benefactive" f="GOL" n="4">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Getting" version="1.7">beneficiary</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="acquire-v" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Getting" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Come_down_with" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="obtain-13.5.2-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Transaction.TransferMoney.Purchase" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Transaction.TransferOwnership.Purchase" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Transferownership" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="acquire-v.3" src="annot-overlap" confidence="0.1">80</lexlink>
+        <lexlink resource="onsense" version="on5" class="acquire-v.2" src="annot-overlap" confidence="0.1">5</lexlink>
+        <lexlink resource="onsense" version="on5" class="acquisition-n.2" src="annot-overlap" confidence="0.1">3</lexlink>
+      </lexlinks>
+      <example src="" name="acquire-v">
         <text>New England Electric will acquire PS of New Hampshire.</text>
-        <arg f="" n="0">New England Electric</arg>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">acquire</rel>
-        <arg f="" n="1">PS of New Hampshire.</arg>
+        <rel relloc="4">acquire</rel>
+        <arg f="" n="0" start="0" end="2">New England Electric</arg>
+        <arg f="MOD" n="m" start="3" end="3">will</arg>
+        <arg f="" n="1" start="5" end="8">PS of New Hampshire.</arg>
       </example>
-      <example name="acquire-v" src="" type="">
+      <example src="" name="acquire-v">
         <text>Its Moleculon affiliate acquired Kalipharma Inc for $23 million.</text>
-        <arg f="" n="0">Its Moleculon affiliate</arg>
-        <rel f="">acquired</rel>
-        <arg f="" n="1">Kalipharma Inc</arg>
-        <arg f="" n="3">for $23 million.</arg>
+        <rel relloc="3">acquired</rel>
+        <arg f="" n="0" start="0" end="2">Its Moleculon affiliate</arg>
+        <arg f="" n="1" start="4" end="5">Kalipharma Inc</arg>
+        <arg f="" n="3" start="6" end="8">for $23 million.</arg>
       </example>
-      <example name="acquisition-n: Args 0, 1, 2, 3" src="web" type="">
+      <example src="web" name="acquisition-n: Args 0, 1, 2, 3">
         <text>The firm advises on the details of their acquisition of TPF's almond assets for $160 million from the Receivers and Managers group.</text>
-        <arg f="" n="0">Their</arg>
-        <rel f="">acquisition</rel>
-        <arg f="" n="1">of TPF's almond assets</arg>
-        <arg f="" n="3">for $160 million</arg>
-        <arg f="" n="2">from the Receivers and Managers group</arg>
+        <rel relloc="8">acquisition</rel>
+        <arg f="" n="0" start="7" end="7">their</arg>
+        <arg f="" n="1" start="9" end="12">of TPF's almond assets</arg>
+        <arg f="" n="3" start="13" end="15">for $160 million</arg>
+        <arg f="" n="2" start="16" end="21">from the Receivers and Managers group.</arg>
       </example>
-      <example name="acquisition-n: Args 0, 1, 4" src="web" type="">
+      <example src="web" name="acquisition-n: Args 0, 1, 4">
         <text>Not that I commend what he did; for he, perhaps, by his acquisition of money for Sparta, injured her more than Sulla injured Rome.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">acquisition</rel>
-        <arg f="" n="1">of money</arg>
-        <arg f="" n="3">for Sparta</arg>
+        <rel relloc="12">acquisition</rel>
+        <arg f="" n="0" start="11" end="11">his</arg>
+        <arg f="" n="1" start="13" end="14">of money</arg>
+        <arg f="" n="3" start="15" end="16">for Sparta,</arg>
       </example>
+      <note>ACQUIRE-V NOTES: Based on big corpus, comparison with 'gain' and 'buy'. Member of Vncls obtain-13.5.2-1. (from acquire.01-v)</note>
+      <note>ACQUISITION-N NOTES: Roleset based on instances in nouns-lv task and acquire.01 roleset. Associated verb is member of Vncls obtain-13.5.2-1. (from acquisition.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

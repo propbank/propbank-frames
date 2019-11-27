@@ -1,40 +1,53 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="trap">
     <roleset id="trap.01" name="to catch in or as if in  a trap, caught">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">trapped</alias>
-        <alias framenet="" pos="v" verbnet="">trap</alias>
-        <alias framenet="" pos="n" verbnet="">trapping</alias>
+        <alias pos="j">trapped</alias>
+        <alias pos="v">trap</alias>
+        <alias pos="n">trapping</alias>
       </aliases>
+      <roles>
+        <role descr="trapper, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pocket-9.10" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity trapped" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pocket-9.10" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="location" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="pocket-9.10" version="verbnet3.3">destination</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="pocket-9.10" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="trap-v.2" src="annot-overlap" confidence="0.1">9</lexlink>
+        <lexlink resource="onsense" version="on5" class="trap-v.1" src="annot-overlap" confidence="0.1">3</lexlink>
+      </lexlinks>
+      <example src="" name="non-agentive">
+        <text>Now , some see Mr. Bush trapped in a position he is neither comfortable with nor able to escape .</text>
+        <rel relloc="6">trapped</rel>
+        <arg f="" n="1" start="4" end="5">Mr. Bush</arg>
+        <arg f="" n="2" start="7" end="18">in a position he is neither comfortable with nor able to escape</arg>
+      </example>
+      <example src="" name="transitive">
+        <text>Mr. Weisman predicts [stocks]-1 will appear [*-1]to stabilize in the next few days before *-1 declining again , [*] trapping more investors .</text>
+        <rel relloc="19">trapping</rel>
+        <arg f="" n="0" start="14" end="14">*-1</arg>
+        <arg f="" n="1" start="20" end="21">more investors</arg>
+      </example>
       <note>TRAP-V NOTES: Member of Vncls pocket-9.10. (from trap.01-v)</note>
       <note>TRAPPING-N NOTES: (from trapping.01-n)</note>
       <note>TRAPPED-J NOTES: Added by Julia based on SMS. (from trapped.01-j)</note>
-      <roles>
-        <role descr="trapper, agent" f="PAG" n="0">
-          <vnrole vncls="9.10" vntheta="Agent"/>
-        </role>
-        <role descr="entity trapped" f="PPT" n="1">
-          <vnrole vncls="9.10" vntheta="Theme"/>
-        </role>
-        <role descr="location" f="GOL" n="2">
-          <vnrole vncls="9.10" vntheta="Destination"/>
-        </role>
-      </roles>
-      <example name="non-agentive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Now , some see [Mr. Bush]-1 trapped *trace*-1 in a position he is neither comfortable with nor able to escape .</text>
-        <rel f="">trapped</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="2">in a position he is neither comfortable with nor able to escape</arg>
-      </example>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="active"/>
-        <text>Mr. Weisman predicts [stocks]-1 will appear [*-1]to stabilize in the next few days before [*-1]-2 declining again , [*-2] trapping more investors .</text>
-        <arg f="" n="0">[*-2]</arg>
-        <rel f="">trapping</rel>
-        <arg f="" n="1">more investors</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

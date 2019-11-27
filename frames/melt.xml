@@ -1,84 +1,110 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="melt">
     <roleset id="melt.01" name="to change from a solid to a liquid state, melted, in a (hot) liquid state">
       <aliases>
-        <alias framenet="Cause_change_of_phase Change_of_phase Apply_heat" pos="v" verbnet="">melt</alias>
-        <alias framenet="Apply_heat" pos="n" verbnet="">melting</alias>
-        <alias framenet="" pos="j" verbnet="">molten</alias>
-        <alias framenet="Substance_by_phase" pos="j" verbnet="">melted</alias>
+        <alias pos="v">melt</alias>
+        <alias pos="n">melting</alias>
+        <alias pos="j">molten</alias>
+        <alias pos="j">melted</alias>
       </aliases>
-      <note>MELT-V NOTES: Frames file for 'melt' based on survey of sentences in the WSJ corpus. (from melt.01-v predicate notes)</note>
-      <note>MOLTEN-J NOTES: Added automatically by Julia. (from molten.01-j)</note>
       <roles>
         <role descr="agent" f="PAG" n="0">
-          <vnrole vncls="26.5" vntheta="Agent"/>
-          <vnrole vncls="45.4" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="knead-26.5" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Apply_heat" version="1.7">cook</rolelink>
+            <rolelink resource="FrameNet" class="Cause_change_of_phase" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_change_of_phase" version="1.7">cause</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing melted" f="PPT" n="1">
-          <vnrole vncls="26.5" vntheta="Material"/>
-          <vnrole vncls="45.4" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="knead-26.5" version="verbnet3.3">material</rolelink>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Apply_heat" version="1.7">food</rolelink>
+            <rolelink resource="FrameNet" class="Change_of_phase" version="1.7">undergoer</rolelink>
+            <rolelink resource="FrameNet" class="Cause_change_of_phase" version="1.7">undergoer</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="melt-v: transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Apply_heat" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Cause_change_of_phase" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Change_of_phase" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Substance_by_phase" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="knead-26.5" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="melt-v.1" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="" name="melt-v: transitive">
         <text>A substantial warming would melt some of the Earth 's polar ice caps , [*-1] raising the level of the oceans and causing widespread flooding of heavily populated coastal areas .</text>
-        <arg f="" n="0">A substantial warming</arg>
-        <arg f="MOD" n="M">would</arg>
-        <rel f="">melt</rel>
-        <arg f="" n="1">some of the Earth 's polar ice caps</arg>
-        <arg f="ADV" n="M">[*-1] raising the level of the oceans and causing widespread flooding of heavily populated coastal areas</arg>
+        <rel relloc="4">melt</rel>
+        <arg f="" n="0" start="0" end="2">A substantial warming</arg>
+        <arg f="MOD" n="M" start="3" end="3">would</arg>
+        <arg f="" n="1" start="5" end="12">some of the Earth 's polar ice caps</arg>
+        <arg f="ADV" n="M" start="15" end="29">raising the level of the oceans and causing widespread flooding of heavily populated coastal areas</arg>
       </example>
-      <example name="melt-v: intransitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>A partnership with a Williamsburg , Va. , unit of Shell Oil Co. recently patented a process for [*] producing plastic food containers that [*T*-1]wo n't melt in microwave ovens .</text>
-        <arg f="" n="1">[*T*-1]</arg>
-        <arg f="MOD" n="M">wo</arg>
-        <arg f="NEG" n="M">n't</arg>
-        <rel f="">melt</rel>
-        <arg f="LOC" n="M">in microwave ovens</arg>
+      <example src="" name="melt-v: intransitive">
+        <text>A partnership with a Williamsburg , Va. , unit of Shell Oil Co. recently patented a process for [*] producing plastic food containers that [*T*]wo n't melt in microwave ovens .</text>
+        <rel relloc="26">melt</rel>
+        <arg f="" n="1" start="24" end="24">[*T*]wo</arg>
+        <arg f="MOD" n="M" start="0" end="0">A</arg>
+        <arg f="NEG" n="M" start="25" end="25">n't</arg>
+        <arg f="LOC" n="M" start="27" end="29">in microwave ovens</arg>
       </example>
-      <example name="molten-j: both args" src="internet" type="">
+      <example src="internet" name="molten-j: both args">
         <text>Initially, the Earth was molten from this release of energy, but a solid surface formed within a few million years</text>
-        <arg f="tmp" n="m">Initially</arg>
-        <arg f="" n="1">the Earth</arg>
-        <rel f="">molten</rel>
-        <arg f="" n="0">from this release of energy</arg>
+        <rel relloc="4">molten</rel>
+        <arg f="TMP" n="m" start="0" end="0">Initially,</arg>
+        <arg f="" n="1" start="1" end="2">the Earth</arg>
+        <arg f="" n="0" start="5" end="9">from this release of energy,</arg>
       </example>
+      <note>MELT-V NOTES: Frames file for 'melt' based on survey of sentences in the WSJ corpus. (from melt.01-v predicate notes)</note>
+      <note>MOLTEN-J NOTES: Added automatically by Julia. (from molten.01-j)</note>
     </roleset>
   </predicate>
   <predicate lemma="melt_down">
     <roleset id="melt_down.02" name="experience (usually emotional) system failure">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">melt_down</alias>
-        <alias framenet="" pos="n" verbnet="">meltdown</alias>
-        <alias framenet="" pos="l" verbnet="">have_meltdown</alias>
+        <alias pos="v">melt_down</alias>
+        <alias pos="n">meltdown</alias>
+        <alias pos="l">have_meltdown</alias>
       </aliases>
-      <note>MELT_DOWN-V NOTES: </note>
       <roles>
-        <role descr="entity having a fit" f="pag" n="0"/>
-        <role descr="over what" f="ppt" n="1"/>
+        <role descr="entity having a fit" f="PAG" n="0"/>
+        <role descr="over what" f="PPT" n="1"/>
       </roles>
-      <example name="melt_down-v" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="melt_down-v">
         <text>25 years ago, Jesse Spano melted down over #caffeine pills.</text>
-        <arg f="tmp" n="m">25 years ago</arg>
-        <arg f="" n="0">Jesse Spano</arg>
-        <rel f="">[melted][down]</rel>
-        <arg f="" n="1">over #caffeine pills</arg>
+        <rel relloc="5 6">melted down</rel>
+        <arg f="TMP" n="m" start="0" end="2">25 years ago,</arg>
+        <arg f="" n="0" start="3" end="4">Jesse Spano</arg>
+        <arg f="" n="1" start="7" end="9">over #caffeine pills.</arg>
       </example>
-      <example name="meltdown-n" src="" type="">
+      <example src="" name="meltdown-n">
         <text>her little spazzo meltdown flip-off to Serenity</text>
-        <arg f="mnr" n="m">spazzo</arg>
-        <rel f="">meltdown</rel>
+        <rel relloc="3">meltdown</rel>
+        <arg f="MNR" n="m" start="2" end="2">spazzo</arg>
       </example>
-      <example name="have_meltdown-l" src="" type="">
+      <example src="" name="have_meltdown-l">
         <text>[That Time]-1 I Had a Meltdown Over Spring Rolls *WHNP*-1.</text>
-        <arg f="" n="0">I</arg>
-        <arg f="lvb" n="m">had</arg>
-        <rel f="">meltdown</rel>
-        <arg f="" n="1">over spring rolls</arg>
-        <arg f="tmp" n="m">*WHNP*-1</arg>
+        <rel relloc="5">Meltdown</rel>
+        <arg f="" n="0" start="2" end="2">I</arg>
+        <arg f="LVB" n="m" start="3" end="3">Had</arg>
+        <arg f="" n="1" start="6" end="8">Over Spring Rolls</arg>
+        <arg f="TMP" n="m" start="9" end="9">*WHNP*-1.</arg>
       </example>
+      <note>MELT_DOWN-V NOTES: </note>
     </roleset>
   </predicate>
 </frameset>

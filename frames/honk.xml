@@ -1,38 +1,56 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="honk">
     <roleset id="honk.01" name="(cause to) emit a honking sound">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">honk</alias>
+        <alias pos="v">honk</alias>
       </aliases>
-      <note>HONK-V NOTES: Frameset added by Miriam based on WSJ. Member of VNcls animal_sounds-38, sound_emission-43.2 (from honk.01-v)</note>
       <roles>
         <role descr="causer, agent" f="PAG" n="0">
-          <vnrole vncls="38" vntheta="Agent"/>
-          <vnrole vncls="43.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="animal_sounds-38" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="sound_emission-43.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Make_noise" version="1.7">noisy_event</rolelink>
+            <rolelink resource="FrameNet" class="Make_noise" version="1.7">sound_source</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing honking" f="PPT" n="1">
-          <vnrole vncls="43.2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="sound_emission-43.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Make_noise" version="1.7">noisy_event</rolelink>
+            <rolelink resource="FrameNet" class="Make_noise" version="1.7">sound</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity honked at" f="GOL" n="2">
-          <vnrole vncls="38" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="animal_sounds-38" version="verbnet3.3">recipient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Make_noise" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Cause_to_make_noise" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="animal_sounds-38" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="sound_emission-43.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="transitive">
         <text>John honked the horn of his car.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">honked</rel>
-        <arg f="" n="1">the horn of his car</arg>
+        <rel relloc="1">honked</rel>
+        <arg f="" n="0" start="0" end="0">John</arg>
+        <arg f="" n="1" start="2" end="6">the horn of his car.</arg>
       </example>
-      <example name="honk at someone" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <example src="" name="honk at someone">
         <text>He honked his car horn at the officer.</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">honked</rel>
-        <arg f="" n="1">his car horn</arg>
-        <arg f="" n="2">at the officer</arg>
+        <rel relloc="1">honked</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
+        <arg f="" n="1" start="2" end="4">his car horn</arg>
+        <arg f="" n="2" start="5" end="7">at the officer.</arg>
       </example>
+      <note>HONK-V NOTES: Frameset added by Miriam based on WSJ. Member of VNcls animal_sounds-38, sound_emission-43.2 (from honk.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

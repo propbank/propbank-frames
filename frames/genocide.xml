@@ -1,32 +1,53 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="genocide">
     <roleset id="genocide.01" name="cause to undergo genocide">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">genocide</alias>
-        <alias framenet="" pos="n" verbnet="">genocide</alias>
+        <alias pos="v">genocide</alias>
+        <alias pos="n">genocide</alias>
       </aliases>
+      <roles>
+        <role descr="agent, cause of genocide" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Killing" version="1.7">cause</rolelink>
+            <rolelink resource="FrameNet" class="Killing" version="1.7">killer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity/people undergoing genocide" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Killing" version="1.7">victim</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="instrument of genocide" f="MNR" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Killing" version="1.7">instrument</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Killing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Life.Die.DeathCausedByViolentEvents" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Die" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+      </lexlinks>
+      <example src="BOLT" name="Passive, arg1 only">
+        <text>All these Holocaust lobbyists get furious if anybody says Jews are n't the only tribe WHNP-NONE- to get genocided *, but that 's just politics - " Our genocide is better than your genocide ! "</text>
+        <rel relloc="18">genocided</rel>
+        <arg f="SLC" n="m" start="12" end="14">the only tribe</arg>
+        <arg f="" n="1" start="19" end="19">*,</arg>
+      </example>
+      <example src="web" name="Args 0 &amp; 1">
+        <text>Destruction of European Jews is just another step on the journey the Germans, embarked on when they genocided the Hereros in West Africa.</text>
+        <rel relloc="17">genocided</rel>
+        <arg f="" n="0" start="16" end="16">they</arg>
+        <arg f="" n="1" start="18" end="22">the Hereros in West Africa.</arg>
+      </example>
       <note>GENOCIDE-V NOTES: Roleset based on instances in BOLT-P01-3. Framed by Claire. (from genocide.01-v)</note>
       <note>GENOCIDE-N NOTES: Automatically created by Julia as an alias file for unification. (from genocide.01-n)</note>
-      <roles>
-        <role descr="agent, cause of genocide" f="pag" n="0"/>
-        <role descr="entity/people undergoing genocide" f="ppt" n="1"/>
-        <role descr="instrument of genocide" f="mnr" n="2"/>
-      </roles>
-      <example name="Passive, arg1 only" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>All these Holocaust lobbyists get furious if anybody says Jews are n't the only tribe WHNP-2-NONE- to get genocided *-2, but that 's just politics - " Our genocide is better than your genocide ! "</text>
-        <arg f="slc" n="m">WHNP-2-NONE *--&gt; [the only tribe]</arg>
-        <rel f="">genocided</rel>
-        <arg f="" n="1">*-2</arg>
-      </example>
-      <example name="Args 0 &amp; 1" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Destruction of European Jews is just another step on the journey the Germans, embarked on when they genocided the Hereros in West Africa.</text>
-        <arg f="" n="0">they</arg>
-        <rel f="">genocided</rel>
-        <arg f="" n="1">the Heroes in West Africa.</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

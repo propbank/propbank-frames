@@ -1,45 +1,56 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="contaminate">
     <roleset id="contaminate.01" name="befoul">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">contaminate</alias>
-        <alias framenet="" pos="n" verbnet="">contamination</alias>
+        <alias pos="v">contaminate</alias>
+        <alias pos="n">contamination</alias>
       </aliases>
-      <note>CONTAMINATE-V NOTES: Do try to distinguish between agent/source of contamination and thecontaminant itself; this will result in some Arg2's being subjects. (from contaminate.01-v)</note>
-      <note>CONTAMINATION-N NOTES: Corresponds to contaminate.01. Framed by anwen april 2011 (from contamination.01-n)</note>
       <roles>
         <role descr="causer of contamination" f="PAG" n="0">
-          <vnrole vncls="9.8" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="fill-9.8" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing becoming contaminated" f="GOL" n="1">
-          <vnrole vncls="9.8" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="fill-9.8" version="verbnet3.3">destination</rolelink>
+          </rolelinks>
         </role>
         <role descr="contaminant" f="PPT" n="2">
-          <vnrole vncls="9.8" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="fill-9.8" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="contaminate-v: transitive" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="fill-9.8" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="contaminate-v.1" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="" name="contaminate-v: transitive">
         <text>At stake was an $80,000 settlement involving who should pay what share of cleanup costs at the site of a former gas station, where underground fuel tanks had leaked and contaminated the soil.</text>
-        <arg f="" n="0">underground fuel tanks</arg>
-        <rel f="">contaminated</rel>
-        <arg f="" n="1">the soil</arg>
+        <rel relloc="30">contaminated</rel>
+        <arg f="" n="0" start="24" end="26">underground fuel tanks</arg>
+        <arg f="" n="1" start="31" end="32">the soil.</arg>
       </example>
-      <example name="ARG1" src="ontonotes mz/sinorama/10/ectb_1008" type="">
+      <example src="ontonotes mz/sinorama/10/ectb_1008" name="ARG1">
         <text>A fund will be established to clean up future cases of soil and groundwater contamination .</text>
-        <arg f="" n="1">soil and groundwater</arg>
-        <rel f="">contamination</rel>
+        <rel relloc="14">contamination</rel>
+        <arg f="" n="1" start="11" end="13">soil and groundwater</arg>
       </example>
-
-      <example name="contamination-n" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="contamination-n">
         <text>The dirty hippies' contamination of Yosemite with Giardia from their hippie dogs caused the stream water to not be drinkable.</text>
-        <arg f="" n="0">The dirty hippies'</arg>
-        <rel f="">contamination</rel>
-        <arg f="" n="1">of Yosemite</arg>
-        <arg f="" n="2">with Giardia from their hippie dogs</arg>
+        <rel relloc="3">contamination</rel>
+        <arg f="" n="0" start="0" end="2">The dirty hippies'</arg>
+        <arg f="" n="1" start="4" end="5">of Yosemite</arg>
+        <arg f="" n="2" start="6" end="11">with Giardia from their hippie dogs</arg>
       </example>
+      <note>CONTAMINATE-V NOTES: Do try to distinguish between agent/source of contamination and thecontaminant itself; this will result in some Arg2's being subjects. (from contaminate.01-v)</note>
+      <note>CONTAMINATION-N NOTES: Corresponds to contaminate.01. Framed by anwen april 2011 (from contamination.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

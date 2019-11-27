@@ -1,50 +1,66 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="insert">
     <roleset id="insert.01" name="to put or set into, between, or among, putting into/between">
       <aliases>
-        <alias framenet="Placing" pos="v" verbnet="">insert</alias>
-        <alias framenet="" pos="n" verbnet="">insertion</alias>
+        <alias pos="v">insert</alias>
+        <alias pos="n">insertion</alias>
       </aliases>
-      <note>INSERT-V NOTES: Based on WSJ. Member of VNcls put-9.1-1. (from insert.01-v)</note>
-      <note>INSERTION-N NOTES: ~insert.01 (from insertion.01-n)</note>
       <roles>
         <role descr="inserter" f="PAG" n="0">
-          <vnrole vncls="9.1-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="put-9.1-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">cause</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity inserted" f="PPT" n="1">
-          <vnrole vncls="9.1-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="put-9.1-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="inserted where" f="GOL" n="2">
-          <vnrole vncls="9.1-1" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="put-9.1-1" version="verbnet3.3">destination</rolelink>
+            <rolelink resource="FrameNet" class="Placing" version="1.7">goal</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>At Plant Genetic Systems , researchers have isolated a pollen-inhibiting gene that-1 [*T*-1]-20 can be inserted [*-20]in a plant [*] to confer male sterility .</text>
-        <arg f="mod" n="m">can</arg>
-        <rel f="">inserted</rel>
-        <arg f="" n="1">[*-20] (= *T*-1 = that)</arg>
-        <arg f="slc" n="m">that -&gt; a pollen-inhibiting gene</arg>
-        <arg f="" n="2">in a plant</arg>
-        <arg f="prp" n="m">[*] to confer male sterility</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Placing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="put-9.1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="insert-v.1" src="annot-overlap" confidence="0.1">9</lexlink>
+      </lexlinks>
+      <example src="" name="passive">
+        <text>At Plant Genetic Systems , researchers have isolated a pollen-inhibiting gene that-1 []-20 can be inserted [*-20]in a plant [*] to confer male sterility .</text>
+        <rel relloc="15">inserted</rel>
+        <arg f="MOD" n="m" start="13" end="13">can</arg>
+        <arg f="" n="1" start="16" end="17">[*-20]in a</arg>
+        <arg f="SLC" n="m" start="8" end="10">a pollen-inhibiting gene</arg>
+        <arg f="" n="2" start="17" end="18">a plant</arg>
+        <arg f="PRP" n="m" start="20" end="23">to confer male sterility</arg>
       </example>
-      <example name="all arguments" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <example src="" name="all arguments">
         <text>Congress inserted the following into the Interior appropriation : `` None of the funds available under this title may be used [*-1] [*]to prepare reports on contacts between employees of the Dept. of the Interior and Members and committees of Congress and their staff . ''</text>
-        <arg f="" n="0">Congress</arg>
-        <rel f="">inserted</rel>
-        <arg f="" n="1">the following</arg>
-        <arg f="" n="2">into the Interior appropriation</arg>
+        <rel relloc="1">inserted</rel>
+        <arg f="" n="0" start="0" end="0">Congress</arg>
+        <arg f="" n="1" start="2" end="3">the following</arg>
+        <arg f="" n="2" start="4" end="7">into the Interior appropriation</arg>
       </example>
-      <example name="All Args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="All Args">
         <text>Her insertion of the key into the rusty old lock made a loud clattering noise.</text>
-        <arg f="" n="0">Her</arg>
-        <rel f="">insertion</rel>
-        <arg f="" n="1">of the key</arg>
-        <arg f="" n="2">into the rusty old lock</arg>
+        <rel relloc="1">insertion</rel>
+        <arg f="" n="0" start="0" end="0">Her</arg>
+        <arg f="" n="1" start="2" end="4">of the key</arg>
+        <arg f="" n="2" start="5" end="9">into the rusty old lock</arg>
       </example>
+      <note>INSERT-V NOTES: Based on WSJ. Member of VNcls put-9.1-1. (from insert.01-v)</note>
+      <note>INSERTION-N NOTES: ~insert.01 (from insertion.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

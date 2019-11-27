@@ -1,41 +1,59 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="rid">
     <roleset id="rid.01" name="get rid of, eliminate, eliminating/eliminated">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">rid</alias>
-        <alias framenet="" pos="j" verbnet="">rid</alias>
-        <alias framenet="" pos="l" verbnet="">get_rid</alias>
+        <alias pos="v">rid</alias>
+        <alias pos="j">rid</alias>
+        <alias pos="l">get_rid</alias>
       </aliases>
-      <note>RID-V NOTES: Both arg1 and arg2 seem to be required. (from rid.01-v)</note>
-      <note>RID-J NOTES: Added by Julia based on SMS. (from rid.01-j)</note>
       <roles>
         <role descr="entity removing" f="PAG" n="0">
-          <vnrole vncls="10.6" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="deprive-10.6.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Emptying" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Emptying" version="1.7">cause</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing being removed" f="PPT" n="1">
-          <vnrole vncls="10.6" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="deprive-10.6.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Emptying" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="removed from" f="DIR" n="2">
-          <vnrole vncls="10.6" vntheta="Source"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="deprive-10.6.2" version="verbnet3.3">source</rolelink>
+            <rolelink resource="FrameNet" class="Emptying" version="1.7">source</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="rid-v" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Emptying" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="10.6" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="rid-v.1" src="annot-overlap" confidence="0.1">19</lexlink>
+      </lexlinks>
+      <example src="" name="rid-v">
         <text>[The privatization program]-1 is designed *trace*-1 to rid the government of hundreds of assets and to raise critically needed funds .</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">rid</rel>
-        <arg f="" n="2">the government</arg>
-        <arg f="" n="1">of hundreds of assets</arg>
+        <rel relloc="7">rid</rel>
+        <arg f="" n="0" start="5" end="5">*trace*-1</arg>
+        <arg f="" n="2" start="8" end="9">the government</arg>
+        <arg f="" n="1" start="10" end="13">of hundreds of assets</arg>
       </example>
-      <example name="get_rid-l: arg0" src="SMS" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Right . How-1 do I get rid if him *T*-1?</text>
-        <arg f="" n="0">I</arg>
-        <arg f="lvb" n="m">get</arg>
-        <rel f="">rid</rel>
-        <arg f="" n="1">of him</arg>
-        <arg f="mnr" n="m">*T*-1</arg>
+      <example src="SMS" name="get_rid-l: arg0">
+        <text>Right . How-1 do I get rid if him ?</text>
+        <rel relloc="6">rid</rel>
+        <arg f="" n="0" start="4" end="4">I</arg>
+        <arg f="LVB" n="m" start="5" end="5">get</arg>
+        <arg f="" n="1" start="7" end="8">if him</arg>
+        <arg f="MNR" n="m" start="2" end="2">How-1</arg>
       </example>
+      <note>RID-V NOTES: Both arg1 and arg2 seem to be required. (from rid.01-v)</note>
+      <note>RID-J NOTES: Added by Julia based on SMS. (from rid.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

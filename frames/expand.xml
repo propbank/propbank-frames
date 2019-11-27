@@ -1,101 +1,114 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="expand">
     <roleset id="expand.01" name="(cause to) grow">
       <aliases>
-        <alias framenet="Expansion Cause_expansion" pos="n" verbnet="">expansion</alias>
-        <alias framenet="" pos="j" verbnet="">expanded</alias>
-        <alias framenet="Expansion Cause_expansion" pos="v" verbnet="">expand</alias>
+        <alias pos="n">expansion</alias>
+        <alias pos="j">expanded</alias>
+        <alias pos="v">expand</alias>
       </aliases>
+      <roles>
+        <role descr="causer of growth, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_expansion" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_expansion" version="1.7">cause</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing grown" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Expansion" version="1.7">item</rolelink>
+            <rolelink resource="FrameNet" class="Cause_expansion" version="1.7">item</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="amount increased by, EXT or MNR" f="EXT" n="2"/>
+        <role descr="start point" f="DIR" n="3"/>
+        <role descr="end point" f="GOL" n="4"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_expansion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Expansion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="expand-v.1" src="annot-overlap" confidence="0.1">157</lexlink>
+        <lexlink resource="onsense" version="on5" class="expansion-n.3" src="annot-overlap" confidence="0.1">30</lexlink>
+      </lexlinks>
+      <example src="" name="agentive">
+        <text>Japan-1 has to *trace*-1 expand its functions in Asia.</text>
+        <rel relloc="4">expand</rel>
+        <arg f="" n="0" start="3" end="3">*trace*-1</arg>
+        <arg f="" n="1" start="5" end="8">its functions in Asia.</arg>
+      </example>
+      <example src="" name="besuboru">
+        <text>The strike zone expands depending on the size of the batter.</text>
+        <rel relloc="3">expands</rel>
+        <arg f="" n="1" start="0" end="2">The strike zone</arg>
+        <arg f="ADV" n="m" start="4" end="10">depending on the size of the batter.</arg>
+      </example>
+      <example src="" name="abstract event">
+        <text>James L. Pate was named a director of this oil concern, *trace* expanding the board to 14 members.</text>
+        <rel relloc="12">expanding</rel>
+        <arg f="" n="0" start="11" end="11">*trace*</arg>
+        <arg f="" n="1" start="13" end="14">the board</arg>
+        <arg f="" n="4" start="15" end="17">to 14 members.</arg>
+      </example>
+      <example src="" name="autogen1">
+        <text>Fluor , based in Irvine , Calif. , will direct expansion of themine 's capacity to 52,000 metric tons a day from 32,000 metrictons a day .</text>
+        <rel relloc="10">expansion</rel>
+        <arg f="" n="1" start="11" end="14">of themine 's capacity</arg>
+        <arg f="" n="4" start="15" end="20">to 52,000 metric tons a day</arg>
+        <arg f="" n="3" start="21" end="25">from 32,000 metrictons a day</arg>
+      </example>
+      <example src="" name="autogen2">
+        <text>U.S. economic expansion</text>
+        <rel relloc="2">expansion</rel>
+        <arg f="" n="0" start="0" end="0">U.S.</arg>
+        <arg f="" n="1" start="1" end="1">economic</arg>
+      </example>
+      <example src="" name="with args 1 &amp; 4">
+        <text>the expansion of English teaching into early education</text>
+        <rel relloc="1">expansion</rel>
+        <arg f="" n="1" start="2" end="4">of English teaching</arg>
+        <arg f="" n="4" start="5" end="7">into early education</arg>
+      </example>
+      <example src="" name="arg1">
+        <text>a big expansion in U.S. - Soviet trade</text>
+        <rel relloc="2">expansion</rel>
+        <arg f="ADJ" n="m" start="1" end="1">big</arg>
+        <arg f="" n="1" start="3" end="7">in U.S. - Soviet trade</arg>
+      </example>
+      <example src="" name="lots of argMs">
+        <text>a proposed two - step , 830 million Canadian - dollar -LRB- US$ 705.6 million -RRB- expansion of its system</text>
+        <rel relloc="16">expansion</rel>
+        <arg f="PRD" n="m" start="1" end="1">proposed</arg>
+        <arg f="MNR" n="m" start="4" end="4">step</arg>
+        <arg f="" n="2" start="6" end="15">830 million Canadian - dollar -LRB- US$ 705.6 million -RRB-</arg>
+        <arg f="" n="1" start="17" end="19">of its system</arg>
+      </example>
+      <example src="" name="simple arg 1 only">
+        <text>Multiple ducts are expanded.</text>
+        <rel relloc="3">expanded.</rel>
+        <arg f="" n="1" start="0" end="1">Multiple ducts</arg>
+      </example>
+      <example src="" name="with extent">
+        <text>The Japanese console market was expended by 1.2%.</text>
+        <rel relloc="5">expended</rel>
+        <arg f="" n="1" start="0" end="3">The Japanese console market</arg>
+        <arg f="" n="2" start="6" end="7">by 1.2%.</arg>
+      </example>
+      <example src="" name="With non-agentive arg 0">
+        <text>The balloon was expanded by air.</text>
+        <rel relloc="3">expanded</rel>
+        <arg f="" n="1" start="0" end="1">The balloon</arg>
+        <arg f="" n="0" start="4" end="5">by air.</arg>
+      </example>
       <note>EXPAND-V NOTES: Frames file for 'expand' based on survey of initial sentences of big corpus and comparison with 'grow' (from expand.01-v predicate notes)</note>
       <note>EXPANSION-N NOTES: (from expansion.01-n)</note>
       <note>EXPANDED-J NOTES: Based on Thyme and Sharp data. Comparison to expand.01. Expand.01 is a member of VN class other_cos-45.4. Framed by Katie. (from expanded.01-j)</note>
-      <roles>
-        <role descr="causer of growth, agent" f="pag" n="0">
-          <vnrole vncls="45.4" vntheta="agent"/>
-        </role>
-        <role descr="thing grown" f="ppt" n="1">
-          <vnrole vncls="45.4" vntheta="patient"/>
-        </role>
-        <role descr="amount increased by, EXT or MNR" f="ext" n="2"/>
-        <role descr="start point" f="dir" n="3"/>
-        <role descr="end point" f="gol" n="4"/>
-      </roles>
-      <example name="agentive" src="" type="">
-        <text>Japan-1 has to *trace*-1 expand its functions in Asia.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">expand</rel>
-        <arg f="" n="1">its functions in Asia</arg>
-      </example>
-      <example name="besuboru" src="" type="">
-        <text>The strike zone expands depending on the size of the batter.</text>
-        <arg f="" n="1">The strike zone</arg>
-        <rel f="">expands</rel>
-        <arg f="adv" n="m">depending on the size of the batter</arg>
-      </example>
-      <example name="abstract event" src="" type="">
-        <text>James L. Pate was named a director of this oil concern, *trace* expanding the board to 14 members.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">expanding</rel>
-        <arg f="" n="1">the board</arg>
-        <arg f="" n="4">to 14 members</arg>
-      </example>
-      <example name="autogen1" src="" type="">
-        <text>Fluor , based in Irvine , Calif. , will direct expansion of themine 's capacity to 52,000 metric tons a day from 32,000 metrictons a day .</text>
-        <rel f="">expansion</rel>
-        <arg f="" n="1">of the mine 's capacity</arg>
-        <arg f="" n="4">to 52,000 metric tons a day</arg>
-        <arg f="" n="3">from 32,000 metric tons a day</arg>
-      </example>
-      <example name="autogen2" src="" type="">
-        <text>U.S. economic expansion</text>
-        <arg f="" n="0">U.S.</arg>
-        <arg f="" n="1">economic</arg>
-        <rel f="">expansion</rel>
-      </example>
-      <example name="with args 1 &amp; 4" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>the expansion of English teaching into early education</text>
-        <rel f="">expansion</rel>
-        <arg f="" n="1">of English teaching</arg>
-        <arg f="" n="4">into early education</arg>
-      </example>
-      <example name="arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>a big expansion in U.S. - Soviet trade</text>
-        <arg f="adj" n="m">big</arg>
-        <rel f="">expansion</rel>
-        <arg f="" n="1">in U.S. - Soviet trade</arg>
-      </example>
-      <example name="lots of argMs" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>a proposed two - step , 830 million Canadian - dollar -LRB- US$ 705.6 million -RRB- expansion of its system</text>
-        <arg f="prd" n="m">proposed</arg>
-        <arg f="mnr" n="m">two-step</arg>
-        <arg f="" n="2">830 million Canadian - dollar -LRB- US$ 705.6 million -RBR-</arg>
-        <rel f="">expansion</rel>
-        <arg f="" n="1">of its system</arg>
-      </example>
-      <example name="simple arg 1 only" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Multiple ducts are expanded.</text>
-        <arg f="" n="1">Multiple ducts</arg>
-        <rel f="">expanded</rel>
-      </example>
-      <example name="with extent" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The Japanese console market was expended by 1.2%.</text>
-        <arg f="" n="1">The Japanese console market</arg>
-        <rel f="">expanded</rel>
-        <arg f="" n="2">by 1.2%</arg>
-      </example>
-      <example name="With non-agentive arg 0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The balloon was expanded by air.</text>
-        <arg f="" n="1">The balloon</arg>
-        <rel f="">expanded</rel>
-        <arg f="" n="0">by air</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

@@ -1,37 +1,46 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="rust">
     <roleset id="rust.01" name="become rusty">
       <aliases>
-        <alias framenet="Corroding" pos="v" verbnet="">rust</alias>
+        <alias pos="v">rust</alias>
       </aliases>
-      <note>RUST-V NOTES: Based on WSJ. Member of VNcls entity_specific_cos-45.5, entity_specific_modes_being-47.2. (from rust.01-v)</note>
       <roles>
         <role descr="agent/causer of rust" f="PAG" n="0"/>
-        <role descr="rusty thing" f="ppt" n="1">
-          <vnrole vncls="45.5" vntheta="patient"/>
+        <role descr="rusty thing" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="entity_specific_cos-45.5" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Corroding" version="1.7">undergoer</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="adjectival" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Corroding" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="entity_specific_cos-45.5" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="adjectival">
         <text>Pictures of rusted oil drums swim into focus, and the female voice purrs, ``That hazardous waste on his [Mr. Courter's] property -- the neighbors are suing for consumer fraud.''</text>
-        <rel f="">rusted</rel>
-        <arg f="" n="1">[ oil] [ drums]</arg>
+        <rel relloc="2">rusted</rel>
+        <arg f="" n="1" start="16" end="16">on</arg>
+        <arg f="" n="1" start="3" end="4">oil drums</arg>
       </example>
-      <example name="ARG1" src="ontonotes pt/nt/59/nt_5905" type="">
+      <example src="ontonotes pt/nt/59/nt_5905" name="ARG1">
         <text>Your gold and silver will rust , and that rust will be a proof that you were wrong .</text>
-        <arg f="" n="1">Your gold and silver</arg>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">rust</rel>
+        <rel relloc="5">rust</rel>
+        <arg f="" n="1" start="0" end="3">Your gold and silver</arg>
+        <arg f="MOD" n="m" start="4" end="4">will</arg>
       </example>
-
-      <example name="both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="both args">
         <text>The steady dripping of water rusted the metal</text>
-        <arg f="" n="0">The steady dripping of water</arg>
-        <rel f="">rusted</rel>
-        <arg f="" n="1">the metal</arg>
+        <rel relloc="5">rusted</rel>
+        <arg f="" n="0" start="0" end="4">The steady dripping of water</arg>
+        <arg f="" n="1" start="6" end="7">the metal</arg>
       </example>
+      <note>RUST-V NOTES: Based on WSJ. Member of VNcls entity_specific_cos-45.5, entity_specific_modes_being-47.2. (from rust.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,29 +1,49 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="saunter">
     <roleset id="saunter.01" name="saunter">
       <aliases>
-        <alias framenet="Self_motion" pos="v" verbnet="">saunter</alias>
+        <alias pos="v">saunter</alias>
       </aliases>
-      <note>SAUNTER-V NOTES: hand-checked by Kevin. Member of Vncls run-51.3.2. (from saunter.01-v)</note>
       <roles>
-        <role descr="entity sauntering" f="ppt" n="1">
-          <vnrole vncls="51.3.2" vntheta="theme"/>
+        <role descr="entity sauntering" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="run-51.3.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">self_mover</rolelink>
+          </rolelinks>
         </role>
-        <role descr="start point" f="dir" n="2"/>
-        <role descr="end point" f="loc" n="3">
-          <vnrole vncls="51.3.2" vntheta="location"/>
+        <role descr="start point" f="DIR" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">source</rolelink>
+          </rolelinks>
         </role>
-        <role descr="path" f="dir" n="4"/>
+        <role descr="end point" f="LOC" n="3">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="run-51.3.2" version="verbnet3.3">location</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">area</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">goal</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">path</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="path" f="DIR" n="4"/>
       </roles>
-      <example name="from Google" src="web usage" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Self_motion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="run-51.3.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="web usage" name="from Google">
         <text>For the next 81 minutes, they sauntered around the ornate galleries, removing masterworks including those by Rembrandt,Vermeer, and Manet.</text>
-        <arg f="tmp" n="m">For the next 81 minutes</arg>
-        <arg f="" n="1">they</arg>
-        <rel f="">sauntered</rel>
-        <arg f="" n="4">around the ornate galleries</arg>
-        <arg f="prd" n="m">removing masterworks including those by Rembrandt</arg>
+        <rel relloc="6">sauntered</rel>
+        <arg f="TMP" n="m" start="0" end="4">For the next 81 minutes,</arg>
+        <arg f="" n="1" start="5" end="5">they</arg>
+        <arg f="" n="4" start="7" end="10">around the ornate galleries,</arg>
+        <arg f="PRD" n="m" start="11" end="15">removing masterworks including those by</arg>
       </example>
+      <note>SAUNTER-V NOTES: hand-checked by Kevin. Member of Vncls run-51.3.2. (from saunter.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

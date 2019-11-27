@@ -1,91 +1,112 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="bark">
     <roleset id="bark.01" name="vocalize like a dog">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">bark</alias>
-        <alias framenet="" pos="n" verbnet="">barking</alias>
+        <alias pos="v">bark</alias>
+        <alias pos="n">barking</alias>
       </aliases>
-      <note>BARK-V NOTES: Since when did John have a dog? (from bark.01-v)</note>
       <roles>
         <role descr="barker" f="PAG" n="0">
-          <vnrole vncls="37.3" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Communication_noise" version="1.7">speaker</rolelink>
+          </rolelinks>
         </role>
         <role descr="utterance" f="PPT" n="1">
-          <vnrole vncls="37.3" vntheta="Topic"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="FrameNet" class="Communication_noise" version="1.7">message</rolelink>
+            <rolelink resource="FrameNet" class="Communication_noise" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
         <role descr="hearer" f="GOL" n="2">
-          <vnrole vncls="37.3" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3">recipient</rolelink>
+            <rolelink resource="FrameNet" class="Communication_noise" version="1.7">addressee</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1077" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Make_noise" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Communication_noise" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="ontonotes mz/sinorama/10/ectb_1077" name="ARG0 and ARG1">
         <text>Weighing only about 40 kilos , Law looks light enough to blow away in a strong wind , so it 's hard to imagine her barking out orders on a film set .</text>
-        <arg f="" n="0">her</arg>
-        <rel f="">barking</rel>
-        <arg f="dir" n="m">out</arg>
-        <arg f="" n="1">orders</arg>
-        <arg f="loc" n="m">on a film set</arg>
+        <rel relloc="25">barking</rel>
+        <arg f="" n="0" start="24" end="24">her</arg>
+        <arg f="DIR" n="m" start="26" end="26">out</arg>
+        <arg f="" n="1" start="27" end="27">orders</arg>
+        <arg f="LOC" n="m" start="28" end="31">on a film set</arg>
       </example>
-
-      <example name="ARG0 and ARG1 and ARG2" src="probably COCA (2018 example fix)" type="">
+      <example src="probably COCA (2018 example fix)" name="ARG0 and ARG1 and ARG2">
         <text>She must have barked an order at the driver because he hurled himself into the driver's seat</text>
-        <arg f="" n="0">She</arg>
-        <arg f="mod" n="m">must</arg>
-        <rel f="">barked</rel>
-        <arg f="" n="1">an order</arg>
-        <arg f="" n="2">at the driver</arg>
-        <arg f="cau" n="m">because he hurled himself into the driver's seat</arg>
+        <rel relloc="3">barked</rel>
+        <arg f="" n="0" start="0" end="0">She</arg>
+        <arg f="MOD" n="m" start="1" end="1">must</arg>
+        <arg f="" n="1" start="4" end="5">an order</arg>
+        <arg f="" n="2" start="6" end="8">at the driver</arg>
+        <arg f="CAU" n="m" start="9" end="16">because he hurled himself into the driver's seat</arg>
       </example>
-
+      <note>BARK-V NOTES: Since when did John have a dog? (from bark.01-v)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="bark_up_wrong_tree">
     <roleset id="bark_up_wrong_tree.02" name="follow the wrong lead">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">bark_up_wrong_tree</alias>
-        <mwe id='bark_up_wrong_tree'>
-          <token slot="A" arg="" pos="VB*" head='' dep="">bark</token>
-          <token slot="B" arg="" pos="IN" head='E' dep="case">up</token>
-          <token slot="C" arg="" pos="JJ" head='E' dep="amod">wrong</token>
-          <token slot="D" arg="1" pos="NN" head='A' dep="obl">tree</token>
-        </mwe>
-      </aliases>
-      <mappings alias="bark_up_wrong_tree">
-        <source>
+        <alias pos="m">bark_up_wrong_tree</alias>
+        <mwp-descriptions id="bark_up_wrong_tree">
+          <syntaxdesc slots="B C D A">
+            <token slot="A" arg="" pos="VB*" head="" dep="">bark</token>
+            <token slot="B" arg="" pos="IN" head="E" dep="case">up</token>
+            <token slot="C" arg="" pos="JJ" head="E" dep="amod">wrong</token>
+            <token slot="D" arg="1" pos="NN" head="A" dep="obl">tree</token>
+          </syntaxdesc>
+          <mapping>
+            <source>
             (A / bark-01
                 :arg0 (n / NARG0)
                 :direction (B / up
                       :op1 (D / tree
                          :arg2-of (C / wrong-04))))
         </source>
-        <target>
+            <target>
             (A / pursue-01
                 :arg0 (n / NARG0)
                 :arg1 (D / goal
                     :arg2-of (C / wrong-04)
                     :mod (n1 / NARG1)))
         </target>
-      </mappings>
-      <note>BARK_UP_WRONG_TREE-V NOTES: Added during initial MWE frame creation.</note>
+          </mapping>
+        </mwp-descriptions>
+      </aliases>
       <roles>
         <role descr="barker, person following bad lead" f="PAG" n="0"/>
         <role descr="incorrect proposition or assumption" f="PPT" n="1"/>
       </roles>
-      <example name="bark_up_wrong_tree-v: stupid idioms" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="bark_up_wrong_tree-v: stupid idioms">
         <text>They are barking up the wrong tree, because it is basically their fault they can't attract new employees.</text>
-        <arg f="" n="0">They</arg>
-        <rel f="">[barking][up][wrong][tree]</rel>
-        <arg f="cau" n="m">because it is basically their fault they can't attract new employees</arg>
+        <rel relloc="2 3 5 6">barking up wrong tree,</rel>
+        <arg f="" n="0" start="0" end="0">They</arg>
+        <arg f="CAU" n="m" start="7" end="17">because it is basically their fault they can't attract new employees.</arg>
       </example>
-      <example name="bark_up_wrong_tree-v: with arg1" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="present" voice="active"/>
+      <example src="" name="bark_up_wrong_tree-v: with arg1">
         <text>You're barking up the wrong tree, by looking for good nutrition in a hot dog.</text>
-        <arg f="" n="0">You</arg>
-        <rel f="">[ barking][ up][wrong][tree]</rel>
-        <arg f="" n="1">by looking for good nutrition in a hot dog</arg>
+        <rel relloc="1 2 4 5">barking up wrong tree,</rel>
+        <arg f="" n="0" start="8" end="8">for</arg>
+        <arg f="" n="1" start="6" end="14">by looking for good nutrition in a hot dog.</arg>
       </example>
+      <note>BARK_UP_WRONG_TREE-V NOTES: Added during initial MWE frame creation.</note>
     </roleset>
   </predicate>
 </frameset>

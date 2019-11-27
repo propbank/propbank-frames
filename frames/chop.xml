@@ -1,112 +1,158 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="chop">
     <roleset id="chop.01" name="cut up, (attempt to) cut with a chopping motion">
       <aliases>
-        <alias framenet="Cause_harm Cutting" pos="v" verbnet="">chop</alias>
-        <alias framenet="" pos="n" verbnet="">chop</alias>
+        <alias pos="v">chop</alias>
+        <alias pos="n">chop</alias>
       </aliases>
-      <note>CHOP-V NOTES: Based on sentences in financial subcorpus. Member of VNcls carve-21.2-2, cut-21.1-1, swat-18.2. (from chop.01-v)</note>
-      <note>CHOP-N NOTES: Roleset based on verb entry chop.01, OntoNotes grouping chop-n sense 6; maps to VN class carve-21.2.2, cut-21.1-1&amp; swat-18.2. Framed by Claire. (from chop.01-n)</note>
       <roles>
         <role descr="chopper" f="PAG" n="0">
-          <vnrole vncls="21.2-2" vntheta="Agent"/>
-          <vnrole vncls="21.1-1" vntheta="Agent"/>
-          <vnrole vncls="18.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="carve-21.2-2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="cut-21.1-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="swat-18.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">agent</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">cause</rolelink>
+          </rolelinks>
         </role>
         <role descr="chopped" f="PPT" n="1">
-          <vnrole vncls="21.2-2" vntheta="Patient"/>
-          <vnrole vncls="21.1-1" vntheta="Patient"/>
-          <vnrole vncls="18.2" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="carve-21.2-2" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="VerbNet" class="cut-21.1-1" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="VerbNet" class="swat-18.2" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">victim</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">body_part</rolelink>
+          </rolelinks>
         </role>
         <role descr="instrument" f="MNR" n="2">
-          <vnrole vncls="21.2-2" vntheta="Instrument"/>
-          <vnrole vncls="21.1-1" vntheta="Instrument"/>
-          <vnrole vncls="18.2" vntheta="Instrument"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="carve-21.2-2" version="verbnet3.3">instrument</rolelink>
+            <rolelink resource="VerbNet" class="cut-21.1-1" version="verbnet3.3">instrument</rolelink>
+            <rolelink resource="VerbNet" class="swat-18.2" version="verbnet3.3">instrument</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">means</rolelink>
+            <rolelink resource="FrameNet" class="Cause_harm" version="1.7">instrument</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG1" src="ontonotes mz/sinorama/10/ectb_1007" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_harm" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Cutting" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="carve-21.2-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="cut-21.1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="swat-18.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="chop-v.1" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="ontonotes mz/sinorama/10/ectb_1007" name="ARG1">
         <text>In addition to servings of chicken , duck , fish and pork , they always have some of the specialties of her husband 's home region , Anhui Province in mainland China , including yuanzi meatballs -LRB- minced pork blended with chopped spring onion , ginger , garlic and rice noodles , rolled in cornstarch flour and deep - fried -RRB- .</text>
-        <rel f="">chopped</rel>
-        <arg f="" n="1">spring onion , ginger , garlic and rice noodles</arg>
+        <rel relloc="41">chopped</rel>
+        <arg f="" n="1" start="42" end="50">spring onion , ginger , garlic and rice noodles</arg>
       </example>
-
-      <example name="Arg0, Arg1 as &quot;to&quot; PP" src="ON sense 6" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <example src="ON sense 6" name="Arg0, Arg1 as &quot;to&quot; PP">
         <text>A chop to the throat from a black belt can be lethal.</text>
-        <rel f="">chop</rel>
-        <arg f="" n="1">to the throat</arg>
-        <arg f="" n="0">from a black belt</arg>
+        <rel relloc="1">chop</rel>
+        <arg f="" n="1" start="2" end="4">to the throat</arg>
+        <arg f="" n="0" start="5" end="8">from a black belt</arg>
       </example>
-      <example name="Arg2 and ArgMs" src="ON sense 6" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="ON sense 6" name="Arg2 and ArgMs">
         <text>She sectioned a whole chicken with a few skillful chops of the cleaver.</text>
-        <arg f="tmp" n="m">few</arg>
-        <arg f="mnr" n="m">skillful</arg>
-        <rel f="">chops</rel>
-        <arg f="" n="2">of the cleaver.</arg>
+        <rel relloc="9">chops</rel>
+        <arg f="TMP" n="m" start="7" end="7">few</arg>
+        <arg f="MNR" n="m" start="8" end="8">skillful</arg>
+        <arg f="" n="2" start="10" end="12">of the cleaver.</arg>
       </example>
-      
+      <note>CHOP-V NOTES: Based on sentences in financial subcorpus. Member of VNcls carve-21.2-2, cut-21.1-1, swat-18.2. (from chop.01-v)</note>
+      <note>CHOP-N NOTES: Roleset based on verb entry chop.01, OntoNotes grouping chop-n sense 6; maps to VN class carve-21.2.2, cut-21.1-1&amp; swat-18.2. Framed by Claire. (from chop.01-n)</note>
     </roleset>
   </predicate>
   <predicate lemma="chop_down">
     <roleset id="chop_down.02" name="fell, as a tree">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">chop_down</alias>
+        <alias pos="v">chop_down</alias>
       </aliases>
-      <note>CHOP_DOWN-V NOTES: See VNcls carve-21.2-2 (from chop.02-v)</note>
       <roles>
         <role descr="chopper" f="PAG" n="0">
-          <vnrole vncls="21.2-2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="carve-21.2-2" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="chopped" f="PPT" n="1">
-          <vnrole vncls="21.2-2" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="carve-21.2-2" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="instrument" f="MNR" n="2">
-          <vnrole vncls="21.2-2" vntheta="Instrument"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="carve-21.2-2" version="verbnet3.3">instrument</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="the only example?" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="present" voice="active"/>
-        <text>He already has achieved vertical integration on a limited scale: [Quebecor]-2 can put a weekly newspaper on almost any Quebec doorstep without using outside help, from *trace*-2 chopping down the tree to making the newsprint to flinging it up onto the porch.</text>
-        <arg f="" n="0">*trace*-2</arg>
-        <rel f="">[ chopping] [ down]</rel>
-        <arg f="" n="1">the tree</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="carve-21.2-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="the only example?">
+        <text>He already has achieved vertical integration on a limited scale: Quebecor can put a weekly newspaper on almost any Quebec doorstep without using outside help, from chopping down the tree to making the newsprint to flinging it up onto the porch.</text>
+        <rel relloc="26 27">chopping down</rel>
+        <arg f="" n="0" start="10" end="10">Quebecor</arg>
+        <arg f="" n="1" start="28" end="29">the tree</arg>
       </example>
+      <note>CHOP_DOWN-V NOTES: See VNcls carve-21.2-2 (from chop.02-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="chop_up">
     <roleset id="chop_up.03" name="render into pieces">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">chop_up</alias>
+        <alias pos="v">chop_up</alias>
       </aliases>
-      <note>CHOP_UP-V NOTES: See VNcls carve-21.2-2, cut-21.1-1, swat-18.2. (from chop.03-v)</note>
       <roles>
         <role descr="chopper" f="PAG" n="0">
-          <vnrole vncls="21.2-2" vntheta="Agent"/>
-          <vnrole vncls="18.2" vntheta="Agent"/>
-          <vnrole vncls="21.1-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="carve-21.2-2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="swat-18.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="cut-21.1-1" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="chopped" f="PPT" n="1">
-          <vnrole vncls="21.2-2" vntheta="Patient"/>
-          <vnrole vncls="18.2" vntheta="Patient"/>
-          <vnrole vncls="21.1-1" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="carve-21.2-2" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="VerbNet" class="swat-18.2" version="verbnet3.3">patient</rolelink>
+            <rolelink resource="VerbNet" class="cut-21.1-1" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="instrument" f="MNR" n="2">
-          <vnrole vncls="21.2-2" vntheta="Instrument"/>
-          <vnrole vncls="18.2" vntheta="Instrument"/>
-          <vnrole vncls="21.1-1" vntheta="Instrument"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="carve-21.2-2" version="verbnet3.3">instrument</rolelink>
+            <rolelink resource="VerbNet" class="swat-18.2" version="verbnet3.3">instrument</rolelink>
+            <rolelink resource="VerbNet" class="cut-21.1-1" version="verbnet3.3">instrument</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="basic" src="COCA" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="carve-21.2-2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="swat-18.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="cut-21.1-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="COCA" name="basic">
         <text>Chop up the dried slices first for faster cooking</text>
-        <rel f="">chop up</rel>
-        <arg f="" n="1">the dried slices</arg>
-        <arg f="tmp" n="m">first</arg>
-        <arg f="prp" n="m">for faster cooking</arg>
+        <rel relloc="0 1">Chop up</rel>
+        <arg f="" n="1" start="2" end="4">the dried slices</arg>
+        <arg f="TMP" n="m" start="5" end="5">first</arg>
+        <arg f="PRP" n="m" start="6" end="8">for faster cooking</arg>
       </example>
-      
-      
+      <note>CHOP_UP-V NOTES: See VNcls carve-21.2-2, cut-21.1-1, swat-18.2. (from chop.03-v)</note>
     </roleset>
   </predicate>
 </frameset>

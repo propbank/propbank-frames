@@ -1,36 +1,52 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="chant">
     <roleset id="chant.01" name="to recite as a chant, intone">
       <aliases>
-        <alias framenet="Communication_manner" pos="v" verbnet="">chant</alias>
+        <alias pos="v">chant</alias>
       </aliases>
-      <note>CHANT-V NOTES: Based on WSJ. Member of VNcls manner_speaking-37.3, performance-26.7-1. (from chant.01-v)</note>
       <roles>
         <role descr="reciter, agent" f="PAG" n="0">
-          <vnrole vncls="37.3" vntheta="Agent"/>
-          <vnrole vncls="26.7-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="VerbNet" class="performance-26.7-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Communication_manner" version="1.7">speaker</rolelink>
+          </rolelinks>
         </role>
-        <role descr="utterance" f="ppt" n="1">
-          <vnrole vncls="37.3" vntheta="Topic"/>
-          <vnrole vncls="26.7-1" vntheta="Theme"/>
+        <role descr="utterance" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="VerbNet" class="performance-26.7-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Communication_manner" version="1.7">message</rolelink>
+            <rolelink resource="FrameNet" class="Communication_manner" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Communication_manner" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="performance-26.7-1" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="ERE" class="Broadcast" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="chant-v.1" src="annot-overlap" confidence="0.1">8</lexlink>
+      </lexlinks>
+      <example src="" name="transitive">
         <text>In the stands , people waved ANC flags , wore ANC T-shirts , sang ANC songs and chanted ANC slogans .</text>
-        <arg f="loc" n="m">In the stands</arg>
-        <arg f="" n="0">people</arg>
-        <rel f="">chanted</rel>
-        <arg f="" n="1">ANC slogans</arg>
+        <rel relloc="17">chanted</rel>
+        <arg f="LOC" n="m" start="0" end="2">In the stands</arg>
+        <arg f="" n="0" start="4" end="4">people</arg>
+        <arg f="" n="1" start="18" end="19">ANC slogans</arg>
       </example>
-      <example name="another transitive" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="past" voice="active"/>
+      <example src="" name="another transitive">
         <text>The protesters who greeted Mikhail Gorbachev at East Berlin 's airport earlier this month were n't shouting `` Go U.S.A '' -- they were chanting `` Gorby , Help Us . ''</text>
-        <arg f="" n="0">they</arg>
-        <rel f="">chanting</rel>
-        <arg f="" n="1">Gorby , [*] Help Us</arg>
+        <rel relloc="24">chanting</rel>
+        <arg f="" n="0" start="22" end="22">they</arg>
+        <arg f="" n="1" start="26" end="29">Gorby , Help Us</arg>
       </example>
+      <note>CHANT-V NOTES: Based on WSJ. Member of VNcls manner_speaking-37.3, performance-26.7-1. (from chant.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,50 +1,69 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="burglarize">
     <roleset id="burglarize.01" name="steal from">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">burglarize</alias>
-        <alias framenet="" pos="n" verbnet="">burglary</alias>
+        <alias pos="v">burglarize</alias>
+        <alias pos="n">burglary</alias>
       </aliases>
-      <note>BURGLARIZE-V NOTES: I'll assume you can extrapolate an active example. (from burglarize.01-v)</note>
       <roles>
         <role descr="thief, burglar" f="PAG" n="0"/>
         <role descr="thing/place stolen from" f="PPT" n="1"/>
       </roles>
-      <example name="passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="third" tense="present" voice="passive"/>
-        <text>In Brooklyn and the Bronx, [one out of four commercial firms]*-1 is burglarized [*-1]each year.</text>
-        <arg f="LOC" n="M">In Brooklyn and the Bronx</arg>
-        <rel f="">burglarized</rel>
-        <arg f="" n="1">[*-1]</arg>
-        <arg f="TMP" n="M">each year</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Offenses" version="1.7" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="passive">
+        <text>In Brooklyn and the Bronx, [one out of four commercial is burglarized [*]each year.</text>
+        <rel relloc="11">burglarized</rel>
+        <arg f="LOC" n="M" start="0" end="4">In Brooklyn and the Bronx,</arg>
+        <arg f="" n="1" start="5" end="5">[one</arg>
+        <arg f="TMP" n="M" start="12" end="13">[*]each year.</arg>
       </example>
+      <note>BURGLARIZE-V NOTES: I'll assume you can extrapolate an active example. (from burglarize.01-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="burgle">
     <roleset id="burgle.02" name="to engage in or commit robbery">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">burgle</alias>
+        <alias pos="v">burgle</alias>
       </aliases>
-      <note>BURGLE-V NOTES: Roleset for 'burgle' based on expansion parallel to VerbNet, Internet usage. VerbNet class 10.6; comparison to 'rob.' (from burgle.01-v)</note>
       <roles>
         <role descr="robber, thief" f="PAG" n="0">
-          <vnrole vncls="10.6-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="10.6-1" version="UNK">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="person, entity burgled" f="DIR" n="1">
-          <vnrole vncls="10.6-1" vntheta="Source"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="10.6-1" version="UNK">source</rolelink>
+          </rolelinks>
         </role>
         <role descr="money or valuables, thing taken" f="PPT" n="2">
-          <vnrole vncls="10.6-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="10.6-1" version="UNK">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="passive" src="passive" type="passive">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="passive"/>
-        <text>[A house in Vicarage Lane]-1 was burgled *-1 by offenders who entered through a back door.</text>
-        <rel f="">burgled</rel>
-        <arg f="" n="1">[*-1]</arg>
-        <arg f="" n="0">by offenders who entered through a back door</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Theft" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="10.6-1" version="UNK" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="passive" name="passive">
+        <text> A house in Vicarage Lane was burgled by offenders who entered through a back door.</text>
+        <rel relloc="7">burgled</rel>
+        <arg f="" n="1" start="1" end="5">A house in Vicarage Lane</arg>
+        <arg f="" n="0" start="8" end="15">by offenders who entered through a back door.</arg>
       </example>
+      <note>BURGLE-V NOTES: Roleset for 'burgle' based on expansion parallel to VerbNet, Internet usage. VerbNet class 10.6; comparison to 'rob.' (from burgle.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

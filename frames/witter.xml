@@ -1,36 +1,47 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="witter">
     <roleset id="witter.01" name="drone on about something trivial">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">witter</alias>
+        <alias pos="v">witter</alias>
       </aliases>
-      <note>WITTER-V NOTES: Added by Julia based on BOLT. Member of VNcls manner_speaking-37.3. (from witter.01-v)</note>
       <roles>
         <role descr="speaker" f="PAG" n="0">
-          <vnrole vncls="37.3" vntheta="agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="utterance" f="ppt" n="1">
-          <vnrole vncls="37.3" vntheta="topic"/>
+        <role descr="utterance" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3">topic</rolelink>
+          </rolelinks>
         </role>
-        <role descr="hearer" f="gol" n="2">
-          <vnrole vncls="37.3" vntheta="recipient"/>
+        <role descr="hearer" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3">recipient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="standard intransitive" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="BOLT" name="standard intransitive">
         <text>He is very boring and will never use a simple word if there is a longer one available but worst of all - he witters .</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">witters</rel>
+        <rel relloc="24">witters</rel>
+        <arg f="" n="0" start="0" end="0">He</arg>
       </example>
-      <example name="args 0, 1, with DSP" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="internet" name="args 0, 1, with DSP">
         <text>["I can also now tell the House," he wittered *trace*-1, "that we are ready to sign tax information exchange agreements with three additional countries . . ."]-1</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">wittered</rel>
-        <arg f="" n="1">*trace*-1 (tag on the normal parent NP node, sister to rel)</arg>
-        <arg f="dsp" n="m">*trace*-1 (tag on the actual word itself, the lowest leaf node)</arg>
+        <rel relloc="8">wittered</rel>
+        <arg f="" n="0" start="7" end="7">he</arg>
+        <arg f="" n="1" start="9" end="16">*trace*-1, "that we are ready to sign tax</arg>
+        <arg f="DSP" n="m" start="9" end="13">*trace*-1, "that we are ready</arg>
       </example>
+      <note>WITTER-V NOTES: Added by Julia based on BOLT. Member of VNcls manner_speaking-37.3. (from witter.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

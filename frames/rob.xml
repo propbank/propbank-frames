@@ -1,37 +1,59 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="rob">
     <roleset id="rob.01" name="to engage in or commit robbery">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">rob</alias>
+        <alias pos="v">rob</alias>
+        <argalias pos="n" arg="0">robber</argalias>
       </aliases>
-      <note>ROB-V NOTES: Frames file for 'rob' based on survey of sentences in the WSJ corpus. (from rob.01-v predicate notes)</note>
       <roles>
         <role descr="robber, thief" f="PAG" n="0">
-          <vnrole vncls="10.6" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="cheat-10.6.1-1-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Robbery" version="1.7">perpetrator</rolelink>
+          </rolelinks>
         </role>
         <role descr="person robbed" f="DIR" n="1">
-          <vnrole vncls="10.6" vntheta="Source"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="cheat-10.6.1-1-1" version="verbnet3.3">source</rolelink>
+            <rolelink resource="FrameNet" class="Robbery" version="1.7">victim</rolelink>
+            <rolelink resource="FrameNet" class="Robbery" version="1.7">source</rolelink>
+          </rolelinks>
         </role>
         <role descr="money or valuables, thing taken" f="PPT" n="2">
-          <vnrole vncls="10.6" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="cheat-10.6.1-1-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Robbery" version="1.7">goods</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="passive" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="ns" voice="passive"/>
-        <text>Seventeen percent reported [their customers]-1 being robbed [*-1].</text>
-        <rel f="">robbed</rel>
-        <arg f="" n="1">[*-1]</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Robbery" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="10.6" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Conflict.Attack.StealRobHijack" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Transfermoney" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Attack" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="rob-v.2" src="annot-overlap" confidence="0.1">8</lexlink>
+        <lexlink resource="onsense" version="on5" class="rob-v.1" src="annot-overlap" confidence="0.1">7</lexlink>
+      </lexlinks>
+      <example src="" name="passive">
+        <text>Seventeen percent reported their customers being robbed [*].</text>
+        <rel relloc="6">robbed</rel>
+        <arg f="" n="1" start="3" end="4">their customers</arg>
       </example>
-      <example name="passive with adverbials" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="past" voice="passive"/>
-        <text>In his first year of [*] operating the store [0]he bought [*T*-2] for $ 220,000 [*U*] , [Mr. Ortiz]-1 was robbed [*-1] at least twice at gunpoint .</text>
-        <arg f="TMP" n="M">In his first year of [*] operating the store [0]he bought [*T*-2] for $ 220,000 [*U*]</arg>
-        <rel f="">robbed</rel>
-        <arg f="" n="1">[*-1]</arg>
-        <arg f="ADV" n="M">at least twice</arg>
-        <arg f="MNR" n="M">at gunpoint</arg>
+      <example src="" name="passive with adverbials">
+        <text>In his first year of [*] operating the store [0]he bought [*T*-2] for $ 220,000 [*U*] , Mr. Ortiz was robbed [*] at least twice at gunpoint .</text>
+        <rel relloc="20">robbed</rel>
+        <arg f="TMP" n="M" start="0" end="15">In his first year of [*] operating the store [0]he bought [*T*-2] for $ 220,000 [*U*]</arg>
+        <arg f="" n="1" start="17" end="18">Mr. Ortiz</arg>
+        <arg f="ADV" n="M" start="22" end="24">at least twice</arg>
+        <arg f="MNR" n="M" start="25" end="26">at gunpoint</arg>
       </example>
+      <note>ROB-V NOTES: Frames file for 'rob' based on survey of sentences in the WSJ corpus. (from rob.01-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

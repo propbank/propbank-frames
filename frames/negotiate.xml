@@ -1,69 +1,91 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="negotiate">
     <roleset id="negotiate.01" name="work out terms of agreement">
       <aliases>
-        <alias framenet="Discussion" pos="n" verbnet="">negotiation</alias>
-        <alias framenet="Discussion" pos="v" verbnet="">negotiate</alias>
-        <alias framenet="" pos="n" verbnet="">negotiating</alias>
+        <alias pos="n">negotiation</alias>
+        <alias pos="v">negotiate</alias>
+        <alias pos="n">negotiating</alias>
+        <argalias pos="n" arg="0">negotiator</argalias>
       </aliases>
-      <note>NEGOTIATE-V NOTES: Treebank sometimes puts the co-negotiator in with the agreement, whichis certainly plausible (ie, "negotiating a pact with GM" is it a pactwith GM or a negotiation with GM? (Both, really.) Follow Treebank'sparsing. (from negotiate.01-v)</note>
-      <note>NEGOTIATION-N NOTES: Updated by Julia. Corresponds to VNcls negotiate-36.1. (from negotiation.01-n)</note>
       <roles>
         <role descr="negotiator" f="PAG" n="0">
-          <vnrole vncls="36.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="settle-36.1.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Discussion" version="1.7">interlocutor_1</rolelink>
+          </rolelinks>
         </role>
         <role descr="explicit other party" f="COM" n="1">
-          <vnrole vncls="36.1" vntheta="co-agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="settle-36.1.2" version="verbnet3.3">co-agent</rolelink>
+            <rolelink resource="FrameNet" class="Discussion" version="1.7">interlocutor_2</rolelink>
+          </rolelinks>
         </role>
         <role descr="agreement" f="PPT" n="2">
-          <vnrole vncls="36.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="settle-36.1.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Discussion" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="NP/PP" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Discussion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="36.1" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Contact.Discussion.Correspondence" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Contact.Discussion.Meet" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Meet" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="onsense" version="on5" class="negotiation-n.1" src="annot-overlap" confidence="0.1">118</lexlink>
+        <lexlink resource="onsense" version="on5" class="negotiate-v.1" src="annot-overlap" confidence="0.1">75</lexlink>
+      </lexlinks>
+      <example src="" name="NP/PP">
         <text>[Both companies]-1 are in the process of *trace*-1 negotiating contracts with LTV and others.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">negotiating</rel>
-        <arg f="" n="2">contracts</arg>
-        <arg f="" n="1">with LTV and others</arg>
+        <rel relloc="8">negotiating</rel>
+        <arg f="" n="0" start="7" end="7">*trace*-1</arg>
+        <arg f="" n="2" start="9" end="9">contracts</arg>
+        <arg f="" n="1" start="10" end="13">with LTV and others.</arg>
       </example>
-      <example name="double PP" src="" type="">
+      <example src="" name="double PP">
         <text>It-1 recently signed a preliminary agreement *trace*-1 to negotiate exclusively with the Bank of Tokyo Ltd. for the sale of part of its leasing business to the Japanese bank.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">negotiate</rel>
-        <arg f="" n="1">with the Bank of Tokyo Ltd.</arg>
-        <arg f="" n="2">for the sale of part of its leasing business to the Japanese bank</arg>
+        <rel relloc="8">negotiate</rel>
+        <arg f="" n="0" start="6" end="6">*trace*-1</arg>
+        <arg f="" n="1" start="10" end="15">with the Bank of Tokyo Ltd.</arg>
+        <arg f="" n="2" start="16" end="28">for the sale of part of its leasing business to the Japanese bank.</arg>
       </example>
-      <example name="unstated agreement" src="" type="">
+      <example src="" name="unstated agreement">
         <text>Although [Georgia Gulf]-1 hasn't been eager *trace*-1 to negotiate with Mr. Simmons and NL, a specialty chemicals concern...</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">negotiate</rel>
-        <arg f="" n="1">with Mr. Simmons and NL, a specialty chemicals concern,</arg>
+        <rel relloc="8">negotiate</rel>
+        <arg f="" n="0" start="6" end="6">*trace*-1</arg>
+        <arg f="" n="1" start="9" end="17">with Mr. Simmons and NL, a specialty chemicals concern...</arg>
       </example>
-      <example name="unstated co-negotiator" src="" type="">
+      <example src="" name="unstated co-negotiator">
         <text>Santa Fe has disclosed that it is negotiating to sell a 20% interest in its real estate unit to the California Public Employees Retirement System for roughly $400 million.</text>
-        <arg f="" n="0">it</arg>
-        <rel f="">negotiating</rel>
-        <arg f="" n="2">to sell a 20 % interest in its real estate unit to the California Public Employees Retirement System for roughly $400 million</arg>
+        <rel relloc="7">negotiating</rel>
+        <arg f="" n="0" start="5" end="5">it</arg>
+        <arg f="" n="2" start="8" end="28">to sell a 20% interest in its real estate unit to the California Public Employees Retirement System for roughly $400 million.</arg>
       </example>
-      <example name="args 1 and 2" src="" type="">
+      <example src="" name="args 1 and 2">
         <text>Warner itself was in negotiations with MGM over certain movie andother rights</text>
-        <rel f="">negotiations</rel>
-        <arg f="" n="1">with MGM</arg>
-        <arg f="" n="2">over certain movie and other rights</arg>
+        <rel relloc="4">negotiations</rel>
+        <arg f="" n="1" start="5" end="6">with MGM</arg>
+        <arg f="" n="2" start="7" end="11">over certain movie andother rights</arg>
       </example>
-      <example name="autogen2" src="" type="">
+      <example src="" name="autogen2">
         <text>Negotiations for a new agreement</text>
-        <rel f="">Negotiations</rel>
-        <arg f="" n="2">for a new agreement</arg>
+        <rel relloc="0">Negotiations</rel>
+        <arg f="" n="2" start="1" end="4">for a new agreement</arg>
       </example>
-      <example name="joint actors = arg0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="joint actors = arg0">
         <text>the negotiation between China and Korea on the co-operation in the four major domains : automotive , civil aviation , high definition TV and program - controlled switchboards ...</text>
-        <rel f="">negotiations</rel>
-        <arg f="" n="0">between China and Korea</arg>
-        <arg f="" n="2">in the four major domains : automotive , civil aviation , high definition TV and program - controlled switchboards</arg>
+        <rel relloc="1">negotiation</rel>
+        <arg f="" n="0" start="2" end="5">between China and Korea</arg>
+        <arg f="" n="2" start="9" end="27">in the four major domains : automotive , civil aviation , high definition TV and program - controlled switchboards</arg>
       </example>
+      <note>NEGOTIATE-V NOTES: Treebank sometimes puts the co-negotiator in with the agreement, whichis certainly plausible (ie, "negotiating a pact with GM" is it a pactwith GM or a negotiation with GM? (Both, really.) Follow Treebank'sparsing. (from negotiate.01-v)</note>
+      <note>NEGOTIATION-N NOTES: Updated by Julia. Corresponds to VNcls negotiate-36.1. (from negotiation.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

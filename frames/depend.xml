@@ -1,64 +1,82 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="depend">
     <roleset id="depend.01" name="rely">
       <aliases>
-        <alias framenet="Reliance Contingency Contingency" pos="v"
-        verbnet="">depend</alias>
-        <alias framenet="" pos="n" verbnet="">dependency</alias>
-        <alias framenet="Contingency" pos="j" verbnet="">dependent</alias>
+        <alias pos="v">depend</alias>
+        <alias pos="n">dependency</alias>
+        <alias pos="j">dependent</alias>
       </aliases>
+      <roles>
+        <role descr="depender" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="rely-70" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Reliance" version="1.7">protagonist</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="depended on" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="rely-70" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Reliance" version="1.7">means</rolelink>
+            <rolelink resource="FrameNet" class="Reliance" version="1.7">instrument</rolelink>
+            <rolelink resource="FrameNet" class="Reliance" version="1.7">intermediary</rolelink>
+            <rolelink resource="FrameNet" class="Reliance" version="1.7">benefit</rolelink>
+            <rolelink resource="FrameNet" class="Reliance" version="1.7">purpose</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Contingency" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Reliance" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="rely-70" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="depend-v.1" src="annot-overlap" confidence="0.1">46</lexlink>
+        <lexlink resource="onsense" version="on5" class="depend-v.2" src="annot-overlap" confidence="0.1">22</lexlink>
+      </lexlinks>
+      <example src="" name="transitive">
+        <text>[The survival of spinoff Cray Computer Corp. as a fledgling in the supercomputer business]-1 appears *trace*-1 to depend heavily on the creativity -- and longevity -- of its chairman and chief designer, Seymour Cray.</text>
+        <rel relloc="17">depend</rel>
+        <arg f="" n="0" start="15" end="15">*trace*-1</arg>
+        <arg f="MNR" n="m" start="18" end="18">heavily</arg>
+        <arg f="" n="1" start="19" end="33">on the creativity -- and longevity -- of its chairman and chief designer, Seymour Cray.</arg>
+      </example>
+      <example src="" name="discourse-level event">
+        <text>*trace* Depending upon how many warrants and options are exercised prior to completion of the transaction, Heritage would issue between 1.8 million and 2.35 million preferred shares, a Heritage spokesman estimated.</text>
+        <rel relloc="1">Depending</rel>
+        <arg f="" n="0" start="0" end="0">*trace*</arg>
+        <arg f="" n="1" start="2" end="15">upon how many warrants and options are exercised prior to completion of the transaction,</arg>
+      </example>
+      <example src="" name="without trace, even">
+        <text>The agreement also provides for potential payments of additional proceeds to National Aluminum over the next two years, depending on the plant's shipping levels.</text>
+        <rel relloc="18">depending</rel>
+        <arg f="" n="1" start="19" end="23">on the plant's shipping levels.</arg>
+      </example>
+      <example src="ontonotes mz/sinorama/10/ectb_1053" name="ARG0 and ARG1">
+        <text>But when we start out from the notion of rights , and support those rights with legal guarantees , we find it is better to have guaranteed rights than to depend on everyone fulfilling their obligations .</text>
+        <rel relloc="30">depend</rel>
+        <arg f="" n="1" start="31" end="35">on everyone fulfilling their obligations</arg>
+      </example>
+      <example src="BOLT P01, parts 2,3" name="Both args, misspelled">
+        <text>I see equality as a goal to strive for , although in effect , it is somewhat arbitrary , dependant on the whims of changing times .</text>
+        <rel relloc="19">dependant</rel>
+        <arg f="ADV" n="m" start="11" end="12">in effect</arg>
+        <arg f="" n="0" start="14" end="14">it</arg>
+        <arg f="" n="1" start="20" end="25">on the whims of changing times</arg>
+      </example>
+      <example src="cryo" name="Noun: Arg0">
+        <text>Dependencies of surface rms height.</text>
+        <rel relloc="0">Dependencies</rel>
+        <arg f="" n="0" start="2" end="4">surface rms height.</arg>
+      </example>
       <note>DEPEND-V NOTES: Member of VNcls rely-70. (from depend.01-v)</note>
       <note>DEPENDENT-J NOTES: Roleset based on instances in BOLT P01,
       parts 2,3. Framed by Claire. Member of VNcls rely-70. (from
       dependent.01-j)</note>
       <note>DEPENDENCY-N NOTES: based on cryo data. Framed by Meredith. No
-      VN/FN classes.</note> 
-      <roles>
-        <role descr="depender" f="PAG" n="0">
-          <vnrole vncls="70" vntheta="Agent"/>
-        </role>
-        <role descr="depended on" f="PPT" n="1">
-          <vnrole vncls="70" vntheta="Theme"/>
-        </role>
-      </roles>
-      <example name="transitive" src="" type="">
-        <text>[The survival of spinoff Cray Computer Corp. as a fledgling in the supercomputer business]-1 appears *trace*-1 to depend heavily on the creativity -- and longevity -- of its chairman and chief designer, Seymour Cray.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">depend</rel>
-        <arg f="mnr" n="m">heavily</arg>
-        <arg f="" n="1">on the creativity -- and longevity -- of its chairman and chief designer, Seymour Cray.</arg>
-      </example>
-      <example name="discourse-level event" src="" type="">
-        <text>*trace* Depending upon how many warrants and options are exercised prior to completion of the transaction, Heritage would issue between 1.8 million and 2.35 million preferred shares, a Heritage spokesman estimated.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">Depending</rel>
-        <arg f="" n="1">upon how many warrants and options are exercised prior to completion of the transaction</arg>
-      </example>
-      <example name="without trace, even" src="" type="">
-        <text>The agreement also provides for potential payments of additional proceeds to National Aluminum over the next two years, depending on the plant's shipping levels.</text>
-        <rel f="">depending</rel>
-        <arg f="" n="1">on the plant's shipping levels</arg>
-      </example>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1053" type="">
-        <text>But when we start out from the notion of rights , and support those rights with legal guarantees , we find it is better to have guaranteed rights than to depend on everyone fulfilling their obligations .</text>
-        <arg f="" n="0">[]</arg>
-        <rel f="">depend</rel>
-        <arg f="" n="1">on everyone fulfilling their obligations</arg>
-      </example>
-
-      <example name="Both args, misspelled" src="BOLT P01, parts 2,3" type="">
-        <text>I see equality as a goal to strive for , although in effect , it is somewhat arbitrary , dependant on the whims of changing times .</text>
-        <arg f="adv" n="m">in effect</arg>
-        <arg f="" n="0">it</arg>
-        <rel f="">dependant</rel>
-        <arg f="" n="1">on the whims of changing times</arg>
-      </example>
-      <example name="Noun: Arg0" src="cryo" type="">
-        <text>Dependencies of surface rms height.</text>
-        <rel f="">dependencies</rel>
-        <arg f="" n="0">surface rms height</arg>
-      </example>
+      VN/FN classes.</note>
     </roleset>
   </predicate>
 </frameset>

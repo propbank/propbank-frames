@@ -1,108 +1,115 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="sentence">
     <roleset id="sentence.01" name="assign criminal punishment">
       <aliases>
-        <alias framenet="Sentencing" pos="v" verbnet="">sentence</alias>
-        <alias framenet="" pos="n" verbnet="">sentencing</alias>
-        <alias framenet="" pos="n" verbnet="">sentence</alias>
+        <alias pos="v">sentence</alias>
+        <alias pos="n">sentencing</alias>
+        <alias pos="n">sentence</alias>
       </aliases>
+      <roles>
+        <role descr="judge/jury" f="PAG" n="0"/>
+        <role descr="criminal" f="PPT" n="1"/>
+        <role descr="punishment" f="PPT" n="2"/>
+        <role descr="crime" f="CAU" n="3"/>
+        <role descr="duration of punishment" f="EXT" n="4"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Sentencing" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="sentence-n.2" src="annot-overlap" confidence="0.1">30</lexlink>
+        <lexlink resource="onsense" version="on5" class="sentence-v.1" src="annot-overlap" confidence="0.1">42</lexlink>
+      </lexlinks>
+      <example src="" name="all args">
+        <text>[Dallas District Judge Jack Hampton]-1 had sparked calls for a judicial inquiry with his remarks to the press last December, two weeks after *trace*-1 sentencing an 18-year-old defendant to 30 years in state prison for killing two homosexual men in a city park.</text>
+        <rel relloc="24">sentencing</rel>
+        <arg f="" n="0" start="23" end="23">*trace*-1</arg>
+        <arg f="" n="1" start="25" end="27">an 18-year-old defendant</arg>
+        <arg f="" n="2" start="28" end="33">to 30 years in state prison</arg>
+        <arg f="" n="3" start="34" end="42">for killing two homosexual men in a city park.</arg>
+      </example>
+      <example src="" name="passive, without crime">
+        <text>He-1 was sentenced *trace*-1 to 500 hours of community service and restitution to the museum of $45,000.</text>
+        <rel relloc="2">sentenced</rel>
+        <arg f="" n="1" start="3" end="3">*trace*-1</arg>
+        <arg f="" n="2" start="4" end="16">to 500 hours of community service and restitution to the museum of $45,000.</arg>
+      </example>
+      <example src="" name="Example with all but arg 0">
+        <text>his prison sentence for income-tax evasion</text>
+        <rel relloc="2">sentence</rel>
+        <arg f="" n="1" start="0" end="0">his</arg>
+        <arg f="" n="2" start="1" end="1">prison</arg>
+        <arg f="" n="3" start="3" end="5">for income-tax evasion</arg>
+      </example>
+      <example src="" name="Arg 0 as a court body">
+        <text>many people would receive federal death sentences</text>
+        <rel relloc="6">sentences</rel>
+        <arg f="" n="0" start="4" end="4">federal</arg>
+        <arg f="" n="2" start="5" end="5">death</arg>
+      </example>
+      <example src="" name="Example with arg 1 and 4">
+        <text>His 18-year sentence</text>
+        <rel relloc="2">sentence</rel>
+        <arg f="" n="1" start="0" end="0">His</arg>
+        <arg f="" n="4" start="1" end="1">18-year</arg>
+      </example>
+      <example src="" name="Example with args 2 and 4">
+        <text>A prison sentence of less than three years</text>
+        <rel relloc="2">sentence</rel>
+        <arg f="" n="2" start="1" end="1">prison</arg>
+        <arg f="" n="4" start="3" end="7">of less than three years</arg>
+      </example>
+      <example src="ontonotes bn/cnn/03/cnn_0368" name="ARG4 and ARG3">
+        <text>Sears was serving a 30 - year sentence for the self - confessed 1992 killing of his wife in Clinton , Maryland , but after a relentless campaign that included a letter from his psychiatrist saying Sears was unlikely to commit such violence again , the judge in this case , got him released .</text>
+        <rel relloc="7">sentence</rel>
+        <arg f="" n="4" start="4" end="6">30 - year</arg>
+        <arg f="" n="3" start="8" end="21">for the self - confessed 1992 killing of his wife in Clinton , Maryland</arg>
+      </example>
+      <example src="" name="Traditional punishment">
+        <text>A sentence of 100 lashes</text>
+        <rel relloc="1">sentence</rel>
+        <arg f="" n="2" start="2" end="4">of 100 lashes</arg>
+      </example>
+      <example src="internet" name="args 0, 1, 2">
+        <text>Their sentencing him to solitary confinement, what a joke.</text>
+        <rel relloc="1">sentencing</rel>
+        <arg f="" n="0" start="0" end="0">Their</arg>
+        <arg f="" n="1" start="2" end="2">him</arg>
+        <arg f="" n="2" start="3" end="5">to solitary confinement,</arg>
+      </example>
       <note>SENTENCE-V NOTES: No Vncls. (from sentence.01-v)</note>
       <note>SENTENCE-N NOTES: Roleset based on sentence.01. No corresponding VN class. Framed by Katie (from sentence.01-n)</note>
       <note>SENTENCING-N NOTES: Added by Julia based on BOLT, sentence-n.01. No VNcls. (from sentencing.01-n)</note>
-      <roles>
-        <note>The crime is often fairly remotely located, especially in cases of"sentence and fine". (from sentence.01-v)</note>
-        <role descr="judge/jury" f="pag" n="0"/>
-        <role descr="criminal" f="ppt" n="1"/>
-        <role descr="punishment" f="ppt" n="2"/>
-        <role descr="crime" f="cau" n="3"/>
-        <role descr="duration of punishment" f="ext" n="4"/>
-      </roles>
-      <example name="all args" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="present" voice="active"/>
-        <text>[Dallas District Judge Jack Hampton]-1 had sparked calls for a judicial inquiry with his remarks to the press last December, two weeks after *trace*-1 sentencing an 18-year-old defendant to 30 years in state prison for killing two homosexual men in a city park.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">sentencing</rel>
-        <arg f="" n="1">an 18-year-old defendant</arg>
-        <arg f="" n="2">to 30 years in state prison</arg>
-        <arg f="" n="3">for killing two homosexual men in a city park</arg>
-      </example>
-      <example name="passive, without crime" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>He-1 was sentenced *trace*-1 to 500 hours of community service and restitution to the museum of $45,000.</text>
-        <rel f="">sentenced</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="2">to 500 hours of community service and restitution to the museum of $45,000</arg>
-      </example>
-      <example name="Example with all but arg 0" src="" type="">
-        <text>his prison sentence for income-tax evasion</text>
-        <arg f="" n="1">his</arg>
-        <arg f="" n="2">prison</arg>
-        <rel f="">sentence</rel>
-        <arg f="" n="3">for income-tax evasion</arg>
-      </example>
-      <example name="Arg 0 as a court body" src="" type="">
-        <text>many people would receive federal death sentences</text>
-        <arg f="" n="0">federal</arg>
-        <arg f="" n="2">death</arg>
-        <rel f="">sentences</rel>
-      </example>
-      <example name="Example with arg 1 and 4" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>His 18-year sentence</text>
-        <arg f="" n="1">His</arg>
-        <arg f="" n="4">18-year</arg>
-        <rel f="">sentence</rel>
-      </example>
-      <example name="Example with args 2 and 4" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>A prison sentence of less than three years</text>
-        <arg f="" n="2">prison</arg>
-        <rel f="">sentence</rel>
-        <arg f="" n="4">of less than three years</arg>
-      </example>
-      <example name="ARG4 and ARG3" src="ontonotes bn/cnn/03/cnn_0368" type="">
-        <text>Sears was serving a 30 - year sentence for the self - confessed 1992 killing of his wife in Clinton , Maryland , but after a relentless campaign that included a letter from his psychiatrist saying Sears was unlikely to commit such violence again , the judge in this case , got him released .</text>
-        <arg f="" n="4">30 - year</arg>
-        <rel f="">sentence</rel>
-        <arg f="" n="3">for the self - confessed 1992 killing of his wife in Clinton , Maryland</arg>
-      </example>
-
-      <example name="Traditional punishment" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>A sentence of 100 lashes</text>
-        <rel f="">sentence</rel>
-        <arg f="" n="2">of 100 lashes</arg>
-      </example>
-      <example name="args 0, 1, 2" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Their sentencing him to solitary confinement, what a joke.</text>
-        <arg f="" n="0">Their</arg>
-        <rel f="">sentencing</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="" n="2">to solitary confinement</arg>
-      </example>
+      <note>The crime is often fairly remotely located, especially in cases of"sentence and fine". (from sentence.01-v)</note>
     </roleset>
     <roleset id="sentence.02" name="what your english teacher made you write correctly and completely">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">sentence</alias>
+        <alias pos="n">sentence</alias>
       </aliases>
-      <note>SENTENCE-N NOTES: No corresponding VN class. Framed by Katie. (from sentence.02-n)</note>
       <roles>
-        <role descr="writer" f="pag" n="0"/>
-        <role descr="theme (topic/thing written)" f="ppt" n="1"/>
+        <role descr="writer" f="PAG" n="0"/>
+        <role descr="theme (topic/thing written)" f="PPT" n="1"/>
       </roles>
-      <example name="Example with both args" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="Example with both args">
         <text>His next sentence about a radio interview,</text>
-        <arg f="" n="0">His</arg>
-        <arg f="tmp" n="m">next</arg>
-        <rel f="">sentence</rel>
-        <arg f="" n="1">about a radio interview,</arg>
+        <rel relloc="2">sentence</rel>
+        <arg f="" n="0" start="0" end="0">His</arg>
+        <arg f="TMP" n="m" start="1" end="1">next</arg>
+        <arg f="" n="1" start="3" end="6">about a radio interview,</arg>
       </example>
-      <example name="Example of the type of sentence to use this sense for" src="" type="">
+      <example src="" name="Example of the type of sentence to use this sense for">
         <text>the first to use silences and sentence fragments and menacingstares, almost to the exclusion of what we previously understoodto be theatrical dialogue</text>
-        <rel f="">sentence</rel>
+        <rel relloc="6">sentence</rel>
       </example>
+      <note>SENTENCE-N NOTES: No corresponding VN class. Framed by Katie. (from sentence.02-n)</note>
     </roleset>
   </predicate>
 </frameset>

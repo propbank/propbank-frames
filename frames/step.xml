@@ -1,243 +1,296 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="step">
     <roleset id="step.01" name="move incrementally, incremental movement">
       <aliases>
-        <alias framenet="Self_motion" pos="v" verbnet="">step</alias>
-        <alias framenet="Self_motion Intentionally_act" pos="n" verbnet="">step</alias>
-        <alias framenet="" pos="l" verbnet="">take_step</alias>
+        <alias pos="v">step</alias>
+        <alias pos="n">step</alias>
+        <alias pos="l">take_step</alias>
       </aliases>
+      <roles>
+        <role descr="outside agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="run-51.3.2" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">self_mover</rolelink>
+            <rolelink resource="FrameNet" class="Intentionally_act" version="1.7">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity in motion" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">self_mover</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="destination or metaphorical goal" f="GOL" n="2"/>
+        <role descr="source" f="DIR" n="3">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">source</rolelink>
+            <rolelink resource="FrameNet" class="Intentionally_act" version="1.7">means</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="step itself, action taken to achieve goal" f="PPT" n="4"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Self_motion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="FrameNet" class="Intentionally_act" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="run-51.3.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="step-n.3" src="annot-overlap" confidence="0.1">3</lexlink>
+        <lexlink resource="onsense" version="on5" class="step-n.1" src="annot-overlap" confidence="0.1">5</lexlink>
+        <lexlink resource="onsense" version="on5" class="step-v.1" src="annot-overlap" confidence="0.1">30</lexlink>
+        <lexlink resource="onsense" version="on5" class="step-v.3" src="annot-overlap" confidence="0.1">3</lexlink>
+      </lexlinks>
+      <example src="" name="step-v: destination and direction">
+        <text>Maybe she could step across the plaza to the Met -- where she has still to make her debut -- and help out her Czech compatriot by singing the slow parts of ``Traviata.''</text>
+        <rel relloc="3">step</rel>
+        <arg f="ADV" n="m" start="0" end="0">Maybe</arg>
+        <arg f="" n="1" start="1" end="1">she</arg>
+        <arg f="MOD" n="m" start="2" end="2">could</arg>
+        <arg f="DIR" n="m" start="4" end="6">across the plaza</arg>
+        <arg f="" n="2" start="7" end="19">to the Met -- where she has still to make her debut --</arg>
+      </example>
+      <example src="" name="step-v: direction only">
+        <text>A Ford takeover of Jaguar would ``have such implications for the balance of power in the 1990s that General Motors can't afford to step aside.</text>
+        <rel relloc="23">step</rel>
+        <arg f="" n="1" start="18" end="19">General Motors</arg>
+        <arg f="DIR" n="m" start="24" end="24">aside.</arg>
+      </example>
+      <example src="" name="step-v: with arg2">
+        <text>Institutions, meanwhile, stepped back to the sidelines as the direction of U.S. interest rates remained unclear.</text>
+        <rel relloc="2">stepped</rel>
+        <arg f="" n="1" start="0" end="0">Institutions,</arg>
+        <arg f="TMP" n="m" start="1" end="1">meanwhile,</arg>
+        <arg f="" n="2" start="3" end="6">back to the sidelines</arg>
+        <arg f="TMP" n="m" start="7" end="15">as the direction of U.S. interest rates remained unclear.</arg>
+      </example>
+      <example src="BOLT" name="step-v: args 0, 1 and 2">
+        <text>2 . Iraqis do n't have garages at their houses . Thus , I would conclude that this guy has never stepped foot in Iraq</text>
+        <rel relloc="21">stepped</rel>
+        <arg f="" n="0" start="17" end="18">this guy</arg>
+        <arg f="NEG" n="m" start="20" end="20">never</arg>
+        <arg f="" n="1" start="22" end="22">foot</arg>
+        <arg f="" n="2" start="23" end="24">in Iraq</arg>
+      </example>
+      <example src="" name="step-n: just arg1">
+        <text>Jack Hannah says that there is a sense of healing and as in the mighty steps of elephants there are small steps being made towards recovery /.</text>
+        <rel relloc="15">steps</rel>
+        <arg f="ADJ" n="m" start="14" end="14">mighty</arg>
+        <arg f="" n="1" start="16" end="17">of elephants</arg>
+      </example>
+      <example src="" name="step-n: adjectival arg1">
+        <text>The shackles of midlife make middle - aged steps heavy .</text>
+        <rel relloc="8">steps</rel>
+        <arg f="" n="1" start="5" end="7">middle - aged</arg>
+      </example>
+      <example src="" name="step-n: all args">
+        <text>A visit to the chateau enables you to begin the walk, following in her steps from devoted wife and mother to becoming a Doctor of the Church</text>
+        <rel relloc="14">steps</rel>
+        <arg f="" n="1" start="13" end="13">her</arg>
+        <arg f="" n="3" start="15" end="19">from devoted wife and mother</arg>
+        <arg f="" n="2" start="20" end="26">to becoming a Doctor of the Church</arg>
+      </example>
+      <example src="nouns-lv" name="step-n: Within LVC, with action taken (arg 4)">
+        <text>Fujitsu Ltd. 's top executive took the unusual step of publicly apologizing for his company 's making bids of just one yen for several local government projects , while computer rival NEC Corp. made a written apology for indulging in the same practice .</text>
+        <rel relloc="8">step</rel>
+        <arg f="" n="0" start="0" end="4">Fujitsu Ltd. 's top executive</arg>
+        <arg f="LVB" n="m" start="5" end="5">took</arg>
+        <arg f="ADJ" n="m" start="7" end="7">unusual</arg>
+        <arg f="" n="4" start="9" end="26">of publicly apologizing for his company 's making bids of just one yen for several local government projects</arg>
+        <arg f="TMP" n="m" start="28" end="42">while computer rival NEC Corp. made a written apology for indulging in the same practice</arg>
+      </example>
       <note>STEP-V NOTES: Baswd on financial subcorpus. Comparison with 'move'. Member of VNcls run-51.3.2. (from step.01-v)</note>
       <note>STEP-N NOTES: Added by Julia based on step-v.01. Corresponds to VNcls VNcls run-51.3.2. (from step.01-n)</note>
-      <roles>
-        <role descr="outside agent" f="pag" n="0">
-          <vnrole vncls="51.3.2" vntheta="theme"/>
-        </role>
-        <role descr="entity in motion" f="ppt" n="1"/>
-        <role descr="destination or metaphorical goal" f="gol" n="2"/>
-        <role descr="source" f="dir" n="3"/>
-        <role descr="step itself, action taken to achieve goal" f="ppt" n="4"/>
-      </roles>
-      <example name="step-v: destination and direction" src="" type="">
-        <text>Maybe she could step across the plaza to the Met -- where she has still to make her debut -- and help out her Czech compatriot by singing the slow parts of ``Traviata.''</text>
-        <arg f="adv" n="m">Maybe</arg>
-        <arg f="" n="1">she</arg>
-        <arg f="mod" n="m">could</arg>
-        <rel f="">step</rel>
-        <arg f="dir" n="m">across the plaza</arg>
-        <arg f="" n="2">to the Met -- where she has still to make her debut --</arg>
-      </example>
-      <example name="step-v: direction only" src="" type="">
-        <text>A Ford takeover of Jaguar would ``have such implications for the balance of power in the 1990s that [General Motors]-1 can't afford *trace*-1 to step aside.</text>
-        <arg f="" n="1">*trace*-1</arg>
-        <rel f="">step</rel>
-        <arg f="dir" n="m">aside</arg>
-      </example>
-      <example name="step-v: with arg2" src="" type="">
-        <text>Institutions, meanwhile, stepped back to the sidelines as the direction of U.S. interest rates remained unclear.</text>
-        <arg f="" n="1">Institutions</arg>
-        <arg f="tmp" n="m">meanwhile</arg>
-        <rel f="">stepped</rel>
-        <arg f="" n="2">back to the sidelines</arg>
-        <arg f="tmp" n="m">as the direction of U.S. interest rates remained unclear</arg>
-      </example>
-      <example name="step-v: args 0, 1 and 2" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>2 . Iraqis do n't have garages at their houses . Thus , I would conclude that this guy has never stepped foot in Iraq</text>
-        <arg f="" n="0">this guy</arg>
-        <arg f="neg" n="m">never</arg>
-        <rel f="">stepped</rel>
-        <arg f="" n="1">foot</arg>
-        <arg f="" n="2">in Iraq</arg>
-      </example>
-      <example name="step-n: just arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Jack Hannah says that there is a sense of healing and as in the mighty steps of elephants there are small steps being made towards recovery /.</text>
-        <arg f="adj" n="m">mighty</arg>
-        <rel f="">steps</rel>
-        <arg f="" n="1">of elephants</arg>
-      </example>
-      <example name="step-n: adjectival arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The shackles of midlife make middle - aged steps heavy .</text>
-        <arg f="" n="1">middle-aged</arg>
-        <rel f="">steps</rel>
-      </example>
-      <example name="step-n: all args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>A visit to the chateau enables you to begin the walk, following in her steps from devoted wife and mother to becoming a Doctor of the Church</text>
-        <arg f="" n="1">her</arg>
-        <rel f="">steps</rel>
-        <arg f="" n="3">from devoted wife and mother</arg>
-        <arg f="" n="2">to becoming a Doctor of the Church</arg>
-      </example>
-      <example name="step-n: Within LVC, with action taken (arg 4)" src="nouns-lv" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Fujitsu Ltd. 's top executive took the unusual step of publicly apologizing for his company 's making bids of just one yen for several local government projects , while computer rival NEC Corp. made a written apology for indulging in the same practice .</text>
-        <arg f="" n="0">Fujitsu Ltd. 's top executive</arg>
-        <arg f="lvb" n="m">took</arg>
-        <arg f="adj" n="m">unusual</arg>
-        <rel f="">step</rel>
-        <arg f="" n="4">of publicly apologizing for his company 's making bids of just one yen for several local government projects</arg>
-        <arg f="tmp" n="m">while computer rival NEC Corp. made a written apology for indulging in the same practice</arg>
-      </example>
     </roleset>
   </predicate>
-  
   <predicate lemma="step_in">
     <roleset id="step_in.02" name="intervene">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">step_in</alias>
-        <alias framenet="" pos="n" verbnet="">stepping_in</alias>
+        <alias pos="v">step_in</alias>
+        <alias pos="n">stepping_in</alias>
       </aliases>
-      <note>STEP_IN-V NOTES: No Vncls. (from step.02-v)</note>
       <roles>
-        <role descr="entity intervening" f="pag" n="1"/>
+        <role descr="entity intervening" f="PAG" n="1"/>
       </roles>
-      <example name="step_in-v: entry of the gladiators" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="onsense" version="on5" class="step-v.5" src="annot-overlap" confidence="0.1">6</lexlink>
+      </lexlinks>
+      <example src="" name="step_in-v: entry of the gladiators">
         <text>International Paper or Weyerhaeuser could step in . ''</text>
-        <arg f="" n="1">International Paper or Weyerhaeuser</arg>
-        <arg f="mod" n="m">could</arg>
-        <rel f="">[step][in]</rel>
+        <rel relloc="5 6">step in</rel>
+        <arg f="" n="1" start="0" end="3">International Paper or Weyerhaeuser</arg>
+        <arg f="MOD" n="m" start="4" end="4">could</arg>
       </example>
+      <note>STEP_IN-V NOTES: No Vncls. (from step.02-v)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="step_up">
     <roleset id="step_up.03" name="increase incrementally">
       <aliases>
-        <alias framenet="Cause_change_of_position_on_a_scale" pos="v" verbnet="">step_up</alias>
-        <alias framenet="" pos="n" verbnet="">stepping_up</alias>
+        <alias pos="v">step_up</alias>
+        <alias pos="n">stepping_up</alias>
       </aliases>
-      <note>STEP_UP-V NOTES: No Vncls. (from step.03-v)</note>
       <roles>
         <role descr="cause of increase" f="PAG" n="0"/>
-        <role descr="thing increasing" f="ppt" n="1"/>
+        <role descr="thing increasing" f="PPT" n="1"/>
       </roles>
-      <example name="step_up-v: automatically generated" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Cause_change_of_position_on_a_scale" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="step-v.10" src="annot-overlap" confidence="0.1">15</lexlink>
+      </lexlinks>
+      <example src="" name="step_up-v: automatically generated">
         <text>The offer, which follows a $55-a-share bid that was rejected in September, steps up pressure on the chemicals concern.</text>
-        <arg f="" n="0">The offer , which follows a $ 55-a-share bid that was rejected in September ,</arg>
-        <rel f="">[ steps] [ up]</rel>
-        <arg f="" n="1">pressure on the chemicals concern</arg>
+        <rel relloc="12 13">steps up</rel>
+        <arg f="" n="0" start="0" end="11">The offer, which follows a $55-a-share bid that was rejected in September,</arg>
+        <arg f="" n="1" start="14" end="18">pressure on the chemicals concern.</arg>
       </example>
+      <note>STEP_UP-V NOTES: No Vncls. (from step.03-v)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="step_down">
     <roleset id="step_down.04" name="resign">
       <aliases>
-        <alias framenet="Quitting" pos="v" verbnet="">step_down</alias>
-        <alias framenet="" pos="n" verbnet="">stepping_down</alias>
+        <alias pos="v">step_down</alias>
+        <alias pos="n">stepping_down</alias>
       </aliases>
-      <note>STEP_DOWN-V NOTES: No Vncls. (from step.04-v)</note>
       <roles>
         <role descr="resigner" f="PAG" n="0"/>
-        <role descr="position resigned" f="dir" n="1"/>
+        <role descr="position resigned" f="DIR" n="1"/>
       </roles>
-      <example name="step_down-v: resign" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Quitting" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="step-v.1" src="annot-overlap" confidence="0.1">24</lexlink>
+      </lexlinks>
+      <example src="" name="step_down-v: resign">
         <text>He succeeds James A. Taylor, who-1 *trace*-1 stepped down as chairman, president and chief executive in March for health reasons.</text>
-        <arg f="" n="0">*trace*-1 (= who)</arg>
-        <arg f="slc" n="m">who -&gt; James A. Taylor</arg>
-        <rel f="">[ stepped] [ down]</rel>
-        <arg f="" n="1">as chairman , president and chief executive</arg>
-        <arg f="tmp" n="m">in March</arg>
-        <arg f="cau" n="m">for health reasons</arg>
+        <rel relloc="7 8">stepped down</rel>
+        <arg f="" n="0" start="5" end="5">who-1</arg>
+        <arg f="SLC" n="m" start="2" end="4">James A. Taylor,</arg>
+        <arg f="" n="1" start="9" end="14">as chairman, president and chief executive</arg>
+        <arg f="TMP" n="m" start="15" end="16">in March</arg>
+        <arg f="CAU" n="m" start="17" end="19">for health reasons.</arg>
       </example>
+      <note>STEP_DOWN-V NOTES: No Vncls. (from step.04-v)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="step_aside">
     <roleset id="step_aside.05" name="resign">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">step_aside</alias>
-        <mwe id="step_aside">
-          <token slot="A" arg="" pos="VB*" head="" dep="">step</token>
-          <token slot="A" arg="" pos="NN*" head="" dep="">stepping</token>
-          <token slot="B" arg="" pos="JJ" head="A" dep="acomp">aside</token>
-        </mwe>
+        <alias pos="m">step_aside</alias>
+        <mwp-descriptions id="step_aside">
+          <syntaxdesc slots="B A">
+            <token slot="A" arg="" pos="VB*" head="" dep="">step</token>
+            <token slot="A" arg="" pos="NN*" head="" dep="">stepping</token>
+            <token slot="B" arg="" pos="JJ" head="A" dep="acomp">aside</token>
+          </syntaxdesc>
+        </mwp-descriptions>
       </aliases>
-      <note>STEP_ASIDE-V NOTES: No Vncls. Added by Julia based on WSJ. (from step.05-v)</note>
       <roles>
         <role descr="resigner" f="PAG" n="0"/>
-        <role descr="job/position" f="ppt" n="1"/>
+        <role descr="job/position" f="PPT" n="1"/>
       </roles>
-      <example name="step_aside-v: both args" src="WSJ" type="-">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="WSJ" name="step_aside-v: both args">
         <text>Mr. Wall 's deputies complained that they had n't been given an opportunity to respond to the criticism brought out during the Banking Committee 's hearings , which Committee Chairman Henry Gonzalez -LRB- D. , Texas -RRB- has used as a forum to flay Mr. Wall 's handling of the affair and to demand that he step aside from his job .</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">[step] [aside]</rel>
-        <arg f="" n="1">from his job</arg>
+        <rel relloc="56 57">step aside</rel>
+        <arg f="" n="0" start="55" end="55">he</arg>
+        <arg f="" n="1" start="58" end="60">from his job</arg>
       </example>
+      <note>STEP_ASIDE-V NOTES: No Vncls. Added by Julia based on WSJ. (from step.05-v)</note>
     </roleset>
   </predicate>
-
-
   <predicate lemma="in_step">
     <roleset id="in_step.06" name="be in sync with">
       <aliases>
-        <alias framenet="" pos="x" verbnet="">in_step</alias>
+        <alias pos="x">in_step</alias>
       </aliases>
       <roles>
-         <role descr="cause, agent" f="PAG" n="0"/>
-         <role descr="first synchronized entity" f="PPT" n="1"/>
-         <role descr="in synch with" f="COM" n="2"/>
+        <role descr="cause, agent" f="PAG" n="0"/>
+        <role descr="first synchronized entity" f="PPT" n="1"/>
+        <role descr="in synch with" f="COM" n="2"/>
       </roles>
-      <example name="in_step-x: args 1 and 2 " src="" type="">
-        <text> God-1 wanted to *-1 put me in step with the people of Malawi.</text>
-        <arg f="" n="1">Me</arg>
-        <rel f="">in_step</rel>
-        <arg f="" n="2">with the people of Malawi</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <example src="" name="in_step-x: args 1 and 2 ">
+        <text>God-1 wanted to *-1 put me in step with the people of Malawi.</text>
+        <rel relloc="6 7">in step</rel>
+        <arg f="" n="1" start="5" end="5">me</arg>
+        <arg f="" n="2" start="8" end="12">with the people of Malawi.</arg>
       </example>
-      <example name="in_step-x: keep up with" src="" type="">
-        <text> Gasoline prices-1 rose in step with oil prices. </text>
-        <arg f="" n="1">Gasoline prices</arg>
-        <rel f="">[in],[step]</rel>
-        <arg f="" n="2">with oil prices</arg>
+      <example src="" name="in_step-x: keep up with">
+        <text>Gasoline prices-1 rose in step with oil prices.</text>
+        <rel relloc="3 4">in step</rel>
+        <arg f="" n="1" start="0" end="1">Gasoline prices-1</arg>
+        <arg f="" n="2" start="5" end="7">with oil prices.</arg>
       </example>
     </roleset>
   </predicate>
-  
   <predicate lemma="step_back">
     <roleset id="step_back.07" name="pause an activity, perhaps to look at the big picture">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">take_step_back</alias>
-        <alias framenet="" pos="v" verbnet="">step_back</alias>
-        <mwe id="take_step_back">
-          <token slot="A" arg="" pos="VB*" head="" dep="">take</token>
-          <token slot="B" arg="" pos="NN" head="A" dep="dobj">step</token> 
-          <token slot="C" arg="" pos="RB" head="A" dep="advmod">back</token>
-          <token slot="C" arg="" pos="RP" head="A" dep="compound:prt">back</token>
-          <token slot="C" arg="" pos="JJ" head="A" dep="acomp">back</token>
-        </mwe>
-      </aliases>
-      <mappings alias="take_step_back">
-        <source>
+        <alias pos="m">take_step_back</alias>
+        <mwp-descriptions id="take_step_back">
+          <syntaxdesc slots="B C A">
+            <token slot="A" arg="" pos="VB*" head="" dep="">take</token>
+            <token slot="B" arg="" pos="NN" head="A" dep="dobj">step</token>
+            <token slot="C" arg="" pos="RB" head="A" dep="advmod">back</token>
+            <token slot="C" arg="" pos="RP" head="A" dep="compound:prt">back</token>
+            <token slot="C" arg="" pos="JJ" head="A" dep="acomp">back</token>
+          </syntaxdesc>
+          <mapping>
+            <source>
             (B / step-01
                :arg1 (n / NARG0)
                :direction (C / back)
                :arg3 (n2 / NARG1)) 
         </source>
-        <target>
+            <target>
             (B / pause-01
                :arg0 (n / NARG0)
                :arg1 (n2 / NARG1))
         </target>
-      </mappings>
+          </mapping>
+        </mwp-descriptions>
+        <alias pos="v">step_back</alias>
+      </aliases>
       <roles>
-         <role descr="viewer" f="PAG" n="0"/>
-         <role descr="thing stepped back from; activity one is halting" f="PPT" n="1"/>
-         <role descr="new activity, bigger picture viewed" f="GOL" n="2"/>
+        <role descr="viewer" f="PAG" n="0"/>
+        <role descr="thing stepped back from; activity one is halting" f="PPT" n="1"/>
+        <role descr="new activity, bigger picture viewed" f="GOL" n="2"/>
       </roles>
-      <example name="take_step_back-m: args 1 and 2 " src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example src="" name="take_step_back-m: args 1 and 2 ">
         <text>It's amazing to take a step back and actually see the impact I can make.</text>
-        <rel f="">[take][step][back]</rel>
+        <rel relloc="3 5 6">take step back</rel>
       </example>
-      <example name="take_step_back-m: keep up with" src="" type="">
-        <text>  If we take a step back from EPL-related tourism, to examine tourism itself, we see that the tourism industry as a whole works on a model that downplays the monetary exchange that sits at its heart. </text>
-        <arg f="" n="0">we</arg>
-        <rel f="">[take][step][back]</rel>
-        <arg f="" n="1">from EPL-related tourism</arg>
-        <arg f="" n="2">to examine tourism itself</arg>
+      <example src="" name="take_step_back-m: keep up with">
+        <text>If we take a step back from EPL-related tourism, to examine tourism itself, we see that the tourism industry as a whole works on a model that downplays the monetary exchange that sits at its heart.</text>
+        <rel relloc="2 4 5">take step back</rel>
+        <arg f="" n="0" start="1" end="1">we</arg>
+        <arg f="" n="1" start="6" end="8">from EPL-related tourism,</arg>
+        <arg f="" n="2" start="9" end="12">to examine tourism itself,</arg>
       </example>
     </roleset>
   </predicate>

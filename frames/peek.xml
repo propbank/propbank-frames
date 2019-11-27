@@ -1,35 +1,46 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="peek">
     <roleset id="peek.01" name="look at, sneakily">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">peek</alias>
+        <alias pos="v">peek</alias>
       </aliases>
-      <note>PEEK-V NOTES: Frames file for 'peek' based on sentences in wsj. Verbnet entry 30.3, Framenet entry Perception active. (from peek.01-v predicate notes)</note>
       <roles>
         <role descr="looker" f="PPT" n="0">
-          <vnrole vncls="30.3" vntheta="Experiencer"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="peer-30.3" version="verbnet3.3">experiencer</rolelink>
+            <rolelink resource="FrameNet" class="Perception_active" version="1.7">perceiver_agentive</rolelink>
+          </rolelinks>
         </role>
         <role descr="looked at" f="PAG" n="1">
-          <vnrole vncls="30.3" vntheta="Stimulus"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="peer-30.3" version="verbnet3.3">stimulus</rolelink>
+            <rolelink resource="FrameNet" class="Perception_active" version="1.7">phenomenon</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="bad example" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Perception_active" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="peer-30.3" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="bad example">
         <text>[*] Peeking Inside Arteries From Outside the Body</text>
-        <arg f="" n="0">[*]</arg>
-        <rel f="">Peeking</rel>
-        <arg f="" n="1">Inside Arteries</arg>
-        <arg f="LOC" n="M">From Outside the Body</arg>
+        <rel relloc="1">Peeking</rel>
+        <arg f="" n="0" start="0" end="0">[*]</arg>
+        <arg f="" n="1" start="2" end="3">Inside Arteries</arg>
+        <arg f="LOC" n="M" start="4" end="7">From Outside the Body</arg>
       </example>
-      <example name="ARG0 and ARG1" src="ontonotes nw/wsj/12/wsj_1218" type="">
+      <example src="ontonotes nw/wsj/12/wsj_1218" name="ARG0 and ARG1">
         <text>Peeking Inside Arteries From Outside the Body</text>
-        <arg f="" n="0">[]</arg>
-        <rel f="">Peeking</rel>
-        <arg f="" n="1">Inside Arteries</arg>
-        <arg f="loc" n="m">From Outside the Body</arg>
+        <rel relloc="0">Peeking</rel>
+        <arg f="" n="1" start="1" end="2">Inside Arteries</arg>
+        <arg f="LOC" n="m" start="3" end="6">From Outside the Body</arg>
       </example>
-
+      <note>PEEK-V NOTES: Frames file for 'peek' based on sentences in wsj. Verbnet entry 30.3, Framenet entry Perception active. (from peek.01-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

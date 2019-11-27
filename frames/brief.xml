@@ -1,48 +1,63 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="brief">
     <roleset id="brief.01" name="give a summary of information">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">briefing</alias>
-        <alias framenet="" pos="v" verbnet="">brief</alias>
+        <alias pos="n">briefing</alias>
+        <alias pos="v">brief</alias>
       </aliases>
-      <note>BRIEF-V NOTES: Frames file for 'brief' based on sentences in wsj. No Verbnet entry. (from brief.01-v predicate notes)</note>
-      <note>BRIEFING-N NOTES: (from briefing.01-n)</note>
       <roles>
         <role descr="giver" f="PAG" n="0">
-          <vnrole vncls="37.9" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="advise-37.9" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Telling" version="1.7">speaker</rolelink>
+          </rolelinks>
         </role>
         <role descr="receiver of information, entity briefed" f="GOL" n="1">
-          <vnrole vncls="37.9" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="advise-37.9" version="verbnet3.3">recipient</rolelink>
+            <rolelink resource="FrameNet" class="Telling" version="1.7">addressee</rolelink>
+          </rolelinks>
         </role>
         <role descr="topic" f="PPT" n="2">
-          <vnrole vncls="37.9" vntheta="Topic"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="advise-37.9" version="verbnet3.3">topic</rolelink>
+            <rolelink resource="FrameNet" class="Telling" version="1.7">message</rolelink>
+            <rolelink resource="FrameNet" class="Telling" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all args" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>Eventually, [Mr. Stoll]-1 was invited *trace* to both the CIA and NSA *trace*-1 to brief high-ranking officers on computer theft.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">brief</rel>
-        <arg f="" n="1">high-ranking officers</arg>
-        <arg f="" n="2">on computer theft</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Telling" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="advise-37.9" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="all args">
+        <text>Eventually, Mr. Stoll was invited *trace* to both the CIA and NSA to brief high-ranking officers on computer theft.</text>
+        <rel relloc="13">brief</rel>
+        <arg f="" n="0" start="1" end="2">Mr. Stoll</arg>
+        <arg f="" n="1" start="14" end="15">high-ranking officers</arg>
+        <arg f="" n="2" start="16" end="18">on computer theft.</arg>
       </example>
-      <example name="lacking topic" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="lacking topic">
         <text>And [he]-3 plans *trace*-3 to brief the president at the end of the week, U.S. sources said.</text>
-        <arg f="" n="0">*trace*-3</arg>
-        <rel f="">brief</rel>
-        <arg f="" n="1">the president</arg>
-        <arg f="TMP" n="M">at the end of the week</arg>
+        <rel relloc="5">brief</rel>
+        <arg f="" n="0" start="3" end="3">*trace*-3</arg>
+        <arg f="" n="1" start="6" end="7">the president</arg>
+        <arg f="TMP" n="M" start="8" end="13">at the end of the week,</arg>
       </example>
-      <example name="lacking agent too" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>Administration officials say [President Bush]-1 was briefed *trace*-1 throughout Friday afternoon and evening, even after leaving for Camp David.</text>
-        <rel f="">briefed</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="TMP" n="M">throughout Friday afternoon and evening</arg>
-        <arg f="ADV" n="M">even after leaving for Camp David</arg>
+      <example src="" name="lacking agent too">
+        <text>Administration officials say President Bush was briefed throughout Friday afternoon and evening, even after leaving for Camp David.</text>
+        <rel relloc="6">briefed</rel>
+        <arg f="" n="1" start="3" end="4">President Bush</arg>
+        <arg f="TMP" n="M" start="7" end="11">throughout Friday afternoon and evening,</arg>
+        <arg f="ADV" n="M" start="12" end="17">even after leaving for Camp David.</arg>
       </example>
+      <note>BRIEF-V NOTES: Frames file for 'brief' based on sentences in wsj. No Verbnet entry. (from brief.01-v predicate notes)</note>
+      <note>BRIEFING-N NOTES: (from briefing.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

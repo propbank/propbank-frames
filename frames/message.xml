@@ -1,50 +1,69 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="message">
     <roleset id="message.01" name="send a message via chat function on a phone/computer">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">message</alias>
-        <alias framenet="" pos="n" verbnet="">messaging</alias>
-        <alias framenet="" pos="v" verbnet="">message</alias>
+        <alias pos="n">message</alias>
+        <alias pos="n">messaging</alias>
+        <alias pos="v">message</alias>
       </aliases>
+      <roles>
+        <role descr="person communicating a message, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">speaker</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="message itself" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">message</rolelink>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">topic</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="receiver, recipient of message" f="GOL" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Statement" version="1.7">addressee</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Statement" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="AidaOntology" version="Jan2019" class="Contact.PublicStatementInPerson.Broadcast" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Correspondence" version="rich" confidence="0.1" src="reo-expansion"/>
+        <lexlink resource="ERE" class="Broadcast" version="rich" confidence="0.1" src="reo-expansion"/>
+      </lexlinks>
+      <example src="web" name="message-v: All arguments">
+        <text>She messaged me back saying she didn't do it.</text>
+        <rel relloc="1">messaged</rel>
+        <arg f="" n="0" start="0" end="0">She</arg>
+        <arg f="" n="2" start="2" end="2">me</arg>
+        <arg f="DIR" n="m" start="3" end="3">back</arg>
+        <arg f="" n="1" start="4" end="8">saying she didn't do it.</arg>
+      </example>
+      <example src="web" name="message-v">
+        <text>She messaged that she can't live without me.</text>
+        <rel relloc="1">messaged</rel>
+        <arg f="" n="0" start="0" end="0">She</arg>
+        <arg f="" n="1" start="2" end="7">that she can't live without me.</arg>
+      </example>
+      <example src="" name="messaging-n">
+        <text>messaging via email to patient ok</text>
+        <rel relloc="0">messaging</rel>
+        <arg f="MNR" n="m" start="1" end="2">via email</arg>
+        <arg f="" n="2" start="3" end="4">to patient</arg>
+      </example>
+      <example src="" name="messaging-n: arg m only">
+        <text>secure messaging</text>
+        <rel relloc="1">messaging</rel>
+        <arg f="MNR" n="m" start="0" end="0">secure</arg>
+      </example>
       <note>NOTE: for 'text message' use the 'text.xml' frame file. </note>
       <note>MESSAGE-V NOTES: Roleset based on PropBanking of Tweets for crisis informatics. Framed by Claire with consultation from Sarah. (from message.01-v)</note>
       <note>MESSAGING-N NOTES: Based on Thyme and Sharp data. Comparison to message.01. No VN or FN classes. Framed by Katie. (from messaging.01-n)</note>
       <note>MESSAGE-N NOTES: Automatically created by Julia as an alias file for unification. (from message.01-n)</note>
-      <roles>
-        <role descr="person communicating a message, agent" f="PAG" n="0"/>
-        <role descr="message itself" f="ppt" n="1"/>
-        <role descr="receiver, recipient of message" f="gol" n="2"/>
-      </roles>
-      <example name="message-v: All arguments" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>She messaged me back saying she didn't do it.</text>
-        <arg f="" n="0">She</arg>
-        <rel f="">messaged</rel>
-        <arg f="" n="2">me</arg>
-        <arg f="dir" n="m">back</arg>
-        <arg f="" n="1">saying she didn't do it.</arg>
-      </example>
-      <example name="message-v" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>She messaged that she can't live without me.</text>
-        <arg f="" n="0">She</arg>
-        <rel f="">messaged</rel>
-        <arg f="" n="1">that she can't live without me.</arg>
-      </example>
-      <example name="messaging-n" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>messaging via email to patient ok</text>
-        <rel f="">messaging</rel>
-        <arg f="mnr" n="m">via email</arg>
-        <arg f="" n="2">to patient</arg>
-      </example>
-      <example name="messaging-n: arg m only" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>secure messaging</text>
-        <arg f="mnr" n="m">secure</arg>
-        <rel f="">messaging</rel>
-      </example>
     </roleset>
   </predicate>
 </frameset>

@@ -1,64 +1,75 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="reopen">
     <roleset id="reopen.01" name="open, opening again">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">reopen</alias>
-        <alias framenet="" pos="n" verbnet="">reopening</alias>
+        <alias pos="v">reopen</alias>
+        <alias pos="n">reopening</alias>
       </aliases>
+      <roles>
+        <role descr="opener" f="PAG" n="0">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing opening" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="instrument" f="MNR" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3">instrument</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="benefactive" f="GOL" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="other_cos-45.4" version="verbnet3.3" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="reopen-v.1" src="annot-overlap" confidence="0.1">39</lexlink>
+      </lexlinks>
+      <example src="" name="basic transitive">
+        <text>In a surprise announcement, the Treasury said it will reopen the outstanding benchmark 30-year bond rather than create a new one for next week's quarterly refunding of the federal debt.</text>
+        <rel relloc="9">reopen</rel>
+        <arg f="" n="0" start="7" end="7">it</arg>
+        <arg f="MOD" n="m" start="8" end="8">will</arg>
+        <arg f="" n="1" start="10" end="14">the outstanding benchmark 30-year bond</arg>
+      </example>
+      <example src="" name="with instrument">
+        <text>By Wednesday, frustrated Belgian brokers reopened the market by using the time-honored method of quoting stocks with chalk on a blackboard.</text>
+        <rel relloc="5">reopened</rel>
+        <arg f="TMP" n="m" start="0" end="1">By Wednesday,</arg>
+        <arg f="" n="0" start="2" end="4">frustrated Belgian brokers</arg>
+        <arg f="" n="1" start="6" end="7">the market</arg>
+        <arg f="" n="2" start="8" end="20">by using the time-honored method of quoting stocks with chalk on a blackboard.</arg>
+      </example>
+      <example src="" name="ergative">
+        <text>The new institution is also called Century Bank, and the failed bank's five offices will reopen today.</text>
+        <rel relloc="15">reopen</rel>
+        <arg f="" n="1" start="9" end="13">the failed bank's five offices</arg>
+        <arg f="MOD" n="m" start="14" end="14">will</arg>
+        <arg f="TMP" n="m" start="16" end="16">today.</arg>
+      </example>
+      <example src="open.01" name="topicalized instrument">
+        <text>This can opener reopens bottles, too!</text>
+        <rel relloc="3">reopens</rel>
+        <arg f="" n="2" start="0" end="2">This can opener</arg>
+        <arg f="" n="1" start="4" end="4">bottles,</arg>
+        <arg f="DIS" n="m" start="5" end="5">too!</arg>
+      </example>
+      <example src="open.01" name="benefactive">
+        <text>South Korea has reopened its market to foreign cigarettes.</text>
+        <rel relloc="3">reopened</rel>
+        <arg f="" n="0" start="0" end="1">South Korea</arg>
+        <arg f="" n="1" start="4" end="5">its market</arg>
+        <arg f="" n="3" start="6" end="8">to foreign cigarettes.</arg>
+      </example>
       <note>REOPEN-V NOTES: Member of Vncls other_cos-45.4. Updated by Julia, 10/2010. (from reopen.01-v)</note>
       <note>REOPENING-N NOTES: (from reopening.01-n)</note>
-      <roles>
-        <role descr="opener" f="pag" n="0">
-          <vnrole vncls="45.4" vntheta="agent"/>
-        </role>
-        <role descr="thing opening" f="ppt" n="1">
-          <vnrole vncls="45.4" vntheta="patient"/>
-        </role>
-        <role descr="instrument" f="mnr" n="2">
-          <vnrole vncls="45.4" vntheta="instrument"/>
-        </role>
-        <role descr="benefactive" f="gol" n="3"/>
-      </roles>
-      <example name="basic transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="future" voice="active"/>
-        <text>In a surprise announcement, the Treasury said it will reopen the outstanding benchmark 30-year bond rather than create a new one for next week's quarterly refunding of the federal debt.</text>
-        <arg f="" n="0">it</arg>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">reopen</rel>
-        <arg f="" n="1">the outstanding benchmark 30-year bond</arg>
-      </example>
-      <example name="with instrument" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>By Wednesday, frustrated Belgian brokers reopened the market by using the time-honored method of quoting stocks with chalk on a blackboard.</text>
-        <arg f="tmp" n="m">By Wednesday</arg>
-        <arg f="" n="0">frustrated Belgian brokers</arg>
-        <rel f="">reopened</rel>
-        <arg f="" n="1">the market</arg>
-        <arg f="" n="2">by using the time-honored method of quoting stocks with chalk on a blackboard</arg>
-      </example>
-      <example name="ergative" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="ns" voice="active"/>
-        <text>The new institution is also called Century Bank, and the failed bank's five offices will reopen today.</text>
-        <arg f="" n="1">the failed bank's five offices</arg>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">reopen</rel>
-        <arg f="tmp" n="m">today</arg>
-      </example>
-      <example name="topicalized instrument" src="open.01" type="">
-        <text>This can opener reopens bottles, too!</text>
-        <arg f="" n="2">This can opener</arg>
-        <rel f="">reopens</rel>
-        <arg f="" n="1">bottles</arg>
-        <arg f="dis" n="m">too</arg>
-      </example>
-      <example name="benefactive" src="open.01" type="">
-        <text>South Korea has reopened its market to foreign cigarettes.</text>
-        <arg f="" n="0">South Korea</arg>
-        <rel f="">reopened</rel>
-        <arg f="" n="1">its market</arg>
-        <arg f="" n="3">to foreign cigarettes</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

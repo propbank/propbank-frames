@@ -1,68 +1,94 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="hike">
     <roleset id="hike.01" name="walk for pleasure or exercise">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">hiking</alias>
-        <alias framenet="" pos="v" verbnet="">hike</alias>
+        <alias pos="n">hiking</alias>
+        <alias pos="v">hike</alias>
       </aliases>
-      <note>HIKE-V NOTES: Created by Jena. (from hike.01-v)</note>
-      <note>HIKING-N NOTES: Based on Sharp data. Comparison to hike.01. Hike.01 is a member of VN class run-51.3.2. Framed by Katie. (from hiking.01-n)</note>
       <roles>
         <role descr="causer of motion" f="PAG" n="0">
-          <vnrole vncls="51.3.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="run-51.3.2" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">self_mover</rolelink>
+          </rolelinks>
         </role>
         <role descr="path of motion; location" f="LOC" n="1">
-          <vnrole vncls="51.3.2" vntheta="Location"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="run-51.3.2" version="verbnet3.3">location</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">area</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">goal</rolelink>
+            <rolelink resource="FrameNet" class="Self_motion" version="1.7">path</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Self_motion" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="run-51.3.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="" name="">
         <text>The main attractions include * hiking on Mt. Kuanyin, Formosa Wonderworld, and the Liao Tiading Temple.</text>
-        <arg f="" n="0">*</arg>
-        <rel f="">hiking</rel>
-        <arg f="" n="1">on Mt. Kuanyin</arg>
+        <rel relloc="5">hiking</rel>
+        <arg f="" n="0" start="4" end="4">*</arg>
+        <arg f="" n="1" start="6" end="8">on Mt. Kuanyin,</arg>
       </example>
-      <example name="arg 1 only" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="arg 1 only">
         <text>He enjoys hiking near his home.</text>
-        <rel f="">hiking</rel>
-        <arg f="" n="1">near his home</arg>
+        <rel relloc="2">hiking</rel>
+        <arg f="" n="1" start="3" end="5">near his home.</arg>
       </example>
+      <note>HIKE-V NOTES: Created by Jena. (from hike.01-v)</note>
+      <note>HIKING-N NOTES: Based on Sharp data. Comparison to hike.01. Hike.01 is a member of VN class run-51.3.2. Framed by Katie. (from hiking.01-n)</note>
     </roleset>
     <roleset id="hike.02" name="cause something to move, probably up (as a skirt)">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">hike</alias>
+        <alias pos="v">hike</alias>
       </aliases>
-      <note>HIKE-V NOTES: Frames file for 'hike' based on sentences in ectb.Based on Verbnet frame 51.3.2, 'creep', and 'swim' (from hike.02-v predicate notes)</note>
       <roles>
         <role descr="agent, cause of motion" f="PAG" n="0">
-          <vnrole vncls="51.3.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="run-51.3.2" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing being moved" f="PPT" n="1">
-          <vnrole vncls="51.3.2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="run-51.3.2" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="location/destination of movement" f="LOC" n="2">
-          <vnrole vncls="51.3.2" vntheta="Location"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="run-51.3.2" version="verbnet3.3">location</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="silly victorian racing" src="WSJ" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="VerbNet" class="run-51.3.2" version="verbnet3.3" confidence="0.5" src="manual"/>
+      </lexlinks>
+      <example src="WSJ" name="silly victorian racing">
         <text>Maude-1 swooped up the cup and *trace*-1 hiked up her top hoop as if about to take off with a racing start .</text>
-        <arg f="" n="0">*trace*-1: Maude</arg>
-        <rel f="">hiked</rel>
-        <arg f="dir" n="m">up</arg>
-        <arg f="" n="1">her top hoop</arg>
-        <arg f="mnr" n="m">as if about to take off with a racing start</arg>
+        <rel relloc="7">hiked</rel>
+        <arg f="" n="0" start="2" end="2">up</arg>
+        <arg f="DIR" n="m" start="2" end="2">up</arg>
+        <arg f="" n="1" start="9" end="11">her top hoop</arg>
+        <arg f="MNR" n="m" start="12" end="21">as if about to take off with a racing start</arg>
       </example>
-      <example name="All args + direction" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
+      <example src="internet" name="All args + direction">
         <text>She hiked her skirt up over her knees and proceeded up the ladder.</text>
-        <arg f="" n="0">She</arg>
-        <rel f="">hiked</rel>
-        <arg f="" n="1">her skirt</arg>
-        <arg f="dir" n="m">up</arg>
-        <arg f="" n="2">over her knees</arg>
+        <rel relloc="1">hiked</rel>
+        <arg f="" n="0" start="0" end="0">She</arg>
+        <arg f="" n="1" start="2" end="3">her skirt</arg>
+        <arg f="DIR" n="m" start="4" end="4">up</arg>
+        <arg f="" n="2" start="5" end="7">over her knees</arg>
       </example>
+      <note>HIKE-V NOTES: Frames file for 'hike' based on sentences in ectb.Based on Verbnet frame 51.3.2, 'creep', and 'swim' (from hike.02-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

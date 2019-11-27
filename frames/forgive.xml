@@ -1,77 +1,88 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <frameset>
   <predicate lemma="forgive">
     <roleset id="forgive.01" name="release from blame/sin">
       <aliases>
-        <alias framenet="Forgiveness" pos="v" verbnet="">forgive</alias>
-        <alias framenet="" pos="n" verbnet="">forgiving</alias>
+        <alias pos="v">forgive</alias>
+        <alias pos="n">forgiving</alias>
       </aliases>
-      <note>FORGIVE-V NOTES: Member of VNcls judgment-33. Financial sense included in this roleset. (from forgive.01-v)</note>
-      <note>FORGIVING-N NOTES: Added by Julia based on BOLT, forgive.01. Corresponds to VNcls judgment-33. (from forgiving.01-n)</note>
       <roles>
         <role descr="forgiver" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <rolelinks>
+            <rolelink resource="VerbNet" class="judgment-33.1-1" version="verbnet3.3">agent</rolelink>
+            <rolelink resource="FrameNet" class="Forgiveness" version="1.7">judge</rolelink>
+          </rolelinks>
         </role>
-        <role descr="entity forgiven" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+        <role descr="entity forgiven" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="judgment-33.1-1" version="verbnet3.3">theme</rolelink>
+            <rolelink resource="FrameNet" class="Forgiveness" version="1.7">evaluee</rolelink>
+          </rolelinks>
         </role>
-        <role descr="for what" f="cau" n="2">
-          <vnrole vncls="33" vntheta="attribute"/>
+        <role descr="for what" f="CAU" n="2">
+          <rolelinks>
+            <rolelink resource="VerbNet" class="judgment-33.1-1" version="verbnet3.3">attribute</rolelink>
+            <rolelink resource="FrameNet" class="Forgiveness" version="1.7">offense</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all args" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="3.0" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Forgiveness" version="1.7" confidence="0.5" src="manual"/>
+        <lexlink resource="VerbNet" class="33" version="UNK" confidence="0.5" src="manual"/>
+        <lexlink resource="onsense" version="on5" class="forgive-v.1" src="annot-overlap" confidence="0.1">17</lexlink>
+        <lexlink resource="onsense" version="on5" class="forgive-v.2" src="annot-overlap" confidence="0.1">4</lexlink>
+      </lexlinks>
+      <example src="" name="all args">
         <text>Instead, Mr. Nixon reminded his host, Chinese President Yang Shangkun, that Americans haven't forgiven China's leaders for the military assault of June 3-4 that killed hundreds, and perhaps thousands, of demonstrators.</text>
-        <arg f="" n="0">Americans</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">forgiven</rel>
-        <arg f="" n="1">China's leaders</arg>
-        <arg f="" n="2">for the military assault of June 3-4 that killed hundreds, and perhaps thousands, of demonstrators</arg>
+        <rel relloc="13">forgiven</rel>
+        <arg f="" n="0" start="11" end="11">Americans</arg>
+        <arg f="NEG" n="m" start="1" end="1">Mr.</arg>
+        <arg f="" n="1" start="14" end="15">China's leaders</arg>
+        <arg f="" n="2" start="16" end="30">for the military assault of June 3-4 that killed hundreds, and perhaps thousands, of demonstrators.</arg>
       </example>
-      <example name="unstated or generalized sinner" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="unstated or generalized sinner">
         <text>If [the political establishment]-1 is reluctant *trace*-1 to forgive sexual misadventures, the private sector sometimes will.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">forgive</rel>
-        <arg f="" n="2">sexual misadventures</arg>
+        <rel relloc="8">forgive</rel>
+        <arg f="" n="0" start="6" end="6">*trace*-1</arg>
+        <arg f="" n="2" start="9" end="10">sexual misadventures,</arg>
       </example>
-      <example name="specialized usage: forgive debt" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
+      <example src="" name="specialized usage: forgive debt">
         <text>[Holders of SCI TV's $507 million of high-yield junk bonds]-1 are being asked *trace*-1 to forgive a lot of debt in exchange for taking a 39% equity stake in SCI TV.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">forgive</rel>
-        <arg f="" n="2">a lot of debt</arg>
-        <arg f="adv" n="m">in exchange for taking a 39% equity stake in SCI TV</arg>
+        <rel relloc="15">forgive</rel>
+        <arg f="" n="0" start="13" end="13">*trace*-1</arg>
+        <arg f="" n="2" start="16" end="19">a lot of debt</arg>
+        <arg f="ADV" n="m" start="20" end="30">in exchange for taking a 39% equity stake in SCI TV.</arg>
       </example>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes pt/nt/47/nt_4712" type="">
+      <example src="ontonotes pt/nt/47/nt_4712" name="ARG0 and ARG1 and ARG2">
         <text>Forgive me for this !</text>
-        <arg f="" n="0">[]</arg>
-        <rel f="">Forgive</rel>
-        <arg f="" n="1">me</arg>
-        <arg f="" n="2">for this</arg>
+        <rel relloc="0">Forgive</rel>
+        <arg f="" n="1" start="1" end="1">me</arg>
+        <arg f="" n="2" start="2" end="3">for this</arg>
       </example>
-
-      <example name="financial sense. arg2" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="BOLT" name="financial sense. arg2">
         <text>France and Germany are trying their best to prop up Greece with more loans and forgiving of loans , but that seems like a losing proposition when Greece really does n't have an economy that can pay back the loans they already have .</text>
-        <rel f="">forgiving</rel>
-        <arg f="" n="2">of loans</arg>
+        <rel relloc="15">forgiving</rel>
+        <arg f="" n="2" start="16" end="17">of loans</arg>
       </example>
-      <example name="args 1 and 2" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="internet" name="args 1 and 2">
         <text>Help pay the other fellow's debts by forgiving him his debts and declaring for him the abundance that is his already in Spirit.</text>
-        <rel f="">forgiving</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="" n="2">his debts</arg>
+        <rel relloc="7">forgiving</rel>
+        <arg f="" n="1" start="8" end="8">him</arg>
+        <arg f="" n="2" start="9" end="10">his debts</arg>
       </example>
-      <example name="all args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example src="internet" name="all args">
         <text>His family was adamant about his forgiving her for her outburst days ago.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">forgiving</rel>
-        <arg f="" n="1">her</arg>
-        <arg f="" n="2">for her outburst days ago</arg>
+        <rel relloc="6">forgiving</rel>
+        <arg f="" n="0" start="0" end="0">His</arg>
+        <arg f="" n="1" start="7" end="7">her</arg>
+        <arg f="" n="2" start="8" end="12">for her outburst days ago.</arg>
       </example>
+      <note>FORGIVE-V NOTES: Member of VNcls judgment-33. Financial sense included in this roleset. (from forgive.01-v)</note>
+      <note>FORGIVING-N NOTES: Added by Julia based on BOLT, forgive.01. Corresponds to VNcls judgment-33. (from forgiving.01-n)</note>
     </roleset>
   </predicate>
 </frameset>
