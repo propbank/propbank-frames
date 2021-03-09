@@ -1,64 +1,67 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="detail">
-    <roleset id="detail.01" name="describe in detail">
-      <aliases>
-        <alias pos="v">detail</alias>
-      </aliases>
-      <roles>
-        <role descr="describer" f="PAG" n="0">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="characterize-29.2" version="verbnet3.3">agent</rolelink>
-            <rolelink resource="FrameNet" class="Statement" version="1.7">speaker</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="details" f="PPT" n="1">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="characterize-29.2" version="verbnet3.3">theme</rolelink>
-            <rolelink resource="FrameNet" class="Statement" version="1.7">addressee</rolelink>
-            <rolelink resource="FrameNet" class="Statement" version="1.7">topic</rolelink>
-          </rolelinks>
-        </role>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Statement" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="VerbNet" class="characterize-29.2" version="verbnet3.3" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="onsense" version="on5" class="detail-v.1" src="annot-overlap" confidence="0.1">14</lexlink>
-      </lexlinks>
-      <example src="" name="detail-v: boring">
-        <text>MiniScribe filed a status report with the NASD on Monday, detailing its efforts to comply with listing requirements and requesting an extension of the exception, but hasn't received a response.</text>
-        <rel relloc="10">detailing</rel>
-        <arg f="" n="0" start="2" end="4">a status report</arg>
-        <arg f="" n="1" start="11" end="17">its efforts to comply with listing requirements</arg>
-      </example>
-      <note>DETAIL-V NOTES: Might take an arg2"listener", but we'll wait and see. (from detail.01-v)</note>
-    </roleset>
-  </predicate>
-  <predicate lemma="detailed">
-    <roleset id="detailed.02" name="elaborate">
-      <aliases>
-        <alias pos="j">detailed</alias>
-      </aliases>
-      <roles>
-        <role descr="elaborate thing or that which is elaborated on" f="PPT" n="1"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="-"/>
-      </usagenotes>
-      <lexlinks/>
-      <example src="" name="detailed-j: elaborate thing">
-        <text>The colonoscopy report is not extremely detailed</text>
-        <rel relloc="6">detailed</rel>
-        <arg f="" n="1" start="0" end="2">The colonoscopy report</arg>
-        <arg f="NEG" n="m" start="4" end="4">not</arg>
-        <arg f="EXT" n="m" start="5" end="5">extremely</arg>
-      </example>
-      <note>DETAILED-J NOTES: Based on Thyme data. No comparison. Frame differs from detail.01-v in that you cannot have an Arg0 with detailed (*The report was extremely detailed by him) (from detailed-j.01)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="detail">
+      <roleset id="detail.01" name="describe in detail">
+         <aliases>
+            <alias pos="v">detail</alias>
+         </aliases>
+         <roles>
+            <role descr="describer" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="characterize-29.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="Statement" resource="FrameNet" version="1.7">speaker</rolelink>
+                  <rolelink class="characterize-29.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="details" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="characterize-29.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="Statement" resource="FrameNet" version="1.7">addressee</rolelink>
+                  <rolelink class="Statement" resource="FrameNet" version="1.7">topic</rolelink>
+                  <rolelink class="characterize-29.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Statement" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="characterize-29.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+            <lexlink class="detail-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">14</lexlink>
+            <lexlink class="characterize-29.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="detail-v: boring" src="">
+            <text>MiniScribe filed a status report with the NASD on Monday, detailing its efforts to comply with listing requirements and requesting an extension of the exception, but hasn't received a response.</text>
+            <rel relloc="10">detailing</rel>
+            <arg end="4" f="" n="0" start="2">a status report</arg>
+            <arg end="17" f="" n="1" start="11">its efforts to comply with listing requirements</arg>
+         </example>
+         <note>DETAIL-V NOTES: Might take an arg2&quot;listener&quot;, but we'll wait and see. (from detail.01-v)</note>
+      </roleset>
+   </predicate>
+   <predicate lemma="detailed">
+      <roleset id="detailed.02" name="elaborate">
+         <aliases>
+            <alias pos="j">detailed</alias>
+         </aliases>
+         <roles>
+            <role descr="elaborate thing or that which is elaborated on" f="PPT" n="1"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="-" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="detailed-j: elaborate thing" src="">
+            <text>The colonoscopy report is not extremely detailed</text>
+            <rel relloc="6">detailed</rel>
+            <arg end="2" f="" n="1" start="0">The colonoscopy report</arg>
+            <arg end="4" f="NEG" n="m" start="4">not</arg>
+            <arg end="5" f="EXT" n="m" start="5">extremely</arg>
+         </example>
+         <note>DETAILED-J NOTES: Based on Thyme data. No comparison. Frame differs from detail.01-v in that you cannot have an Arg0 with detailed (*The report was extremely detailed by him) (from detailed-j.01)</note>
+      </roleset>
+   </predicate>
 </frameset>

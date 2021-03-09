@@ -1,70 +1,76 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="refund">
-    <roleset id="refund.01" name="pay back">
-      <aliases>
-        <alias pos="n">refund</alias>
-        <alias pos="v">refund</alias>
-        <alias pos="l">give_refund</alias>
-      </aliases>
-      <roles>
-        <role descr="refunder" f="PAG" n="0">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="give-13.1" version="verbnet3.3">agent</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="amount refunded" f="PPT" n="1">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="give-13.1" version="verbnet3.3">theme</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="refunded to" f="GOL" n="2">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="give-13.1" version="verbnet3.3">recipient</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="in exchange for (might not be present)" f="VSP" n="3"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="VerbNet" class="give-13.1" version="verbnet3.3" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="onsense" version="on5" class="refund-v.1" src="annot-overlap" confidence="0.1">4</lexlink>
-      </lexlinks>
-      <example src="" name="no benefactive">
-        <text>The Illinois Supreme Court ordered [the commission]-1 *trace*-1 to audit Commonwealth Edison's construction expenses and refund any unreasonable expenses.</text>
-        <rel relloc="15">refund</rel>
-        <arg f="" n="0" start="7" end="7">*trace*-1</arg>
-        <arg f="" n="1" start="16" end="18">any unreasonable expenses.</arg>
-      </example>
-      <example src="" name="with benefactive">
-        <text>[Commonwealth Edison Co.]-1 was ordered *trace*-1 to refund about $250 million to its current and former ratepayers for illegal rates collected for cost overruns on a nuclear power plant.</text>
-        <rel relloc="7">refund</rel>
-        <arg f="" n="0" start="5" end="5">*trace*-1</arg>
-        <arg f="" n="1" start="8" end="10">about $250 million</arg>
-        <arg f="" n="2" start="11" end="16">to its current and former ratepayers</arg>
-        <arg f="CAU" n="m" start="17" end="28">for illegal rates collected for cost overruns on a nuclear power plant.</arg>
-      </example>
-      <example src="" name="Within LVC">
-        <text>State court Judge Richard Curry ordered Edison *to make average refunds of about $ 45 to $ 50 each to Edison customers who have received electric service since April 1986.</text>
-        <rel relloc="10">refunds</rel>
-        <arg f="" n="0" start="6" end="6">Edison</arg>
-        <arg f="LVB" n="m" start="8" end="8">make</arg>
-        <arg f="ADJ" n="m" start="9" end="9">average</arg>
-        <arg f="" n="1" start="11" end="18">of about $ 45 to $ 50 each</arg>
-        <arg f="" n="2" start="19" end="29">to Edison customers who have received electric service since April 1986.</arg>
-      </example>
-      <example src="web" name="With arg3">
-        <text>Is anyone else still waiting on their refund for the fall semester?</text>
-        <rel relloc="7">refund</rel>
-        <arg f="" n="2" start="6" end="6">their</arg>
-        <arg f="" n="3" start="8" end="11">for the fall semester?</arg>
-      </example>
-      <note>REFUND-V NOTES: Frames file for 'refund' based on sentences in financial subcorpus and comparison to 'pay'. Verbnet class give-13.1. (from refund.01-v)</note>
-      <note>REFUND-N NOTES: Roleset based on verb entry refund.01, corresponds to Verbnet class give-13.1. (from refund.01-n)</note>
-      <note>Args 1 and 3 are actually reversed from the 'pay' roleset. (from refund.01-v)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="refund">
+      <roleset id="refund.01" name="pay back">
+         <aliases>
+            <alias pos="n">refund</alias>
+            <alias pos="v">refund</alias>
+            <alias pos="l">give_refund</alias>
+         </aliases>
+         <roles>
+            <role descr="refunder" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="amount refunded" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="refunded to" f="GOL" n="2">
+               <rolelinks>
+                  <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+                  <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="in exchange for (might not be present)" f="VSP" n="3">
+               <rolelinks/>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="give-13.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+            <lexlink class="refund-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+            <lexlink class="give-13.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="no benefactive" src="">
+            <text>The Illinois Supreme Court ordered [the commission]-1 *trace*-1 to audit Commonwealth Edison's construction expenses and refund any unreasonable expenses.</text>
+            <rel relloc="15">refund</rel>
+            <arg end="7" f="" n="0" start="7">*trace*-1</arg>
+            <arg end="18" f="" n="1" start="16">any unreasonable expenses.</arg>
+         </example>
+         <example name="with benefactive" src="">
+            <text>[Commonwealth Edison Co.]-1 was ordered *trace*-1 to refund about $250 million to its current and former ratepayers for illegal rates collected for cost overruns on a nuclear power plant.</text>
+            <rel relloc="7">refund</rel>
+            <arg end="5" f="" n="0" start="5">*trace*-1</arg>
+            <arg end="10" f="" n="1" start="8">about $250 million</arg>
+            <arg end="16" f="" n="2" start="11">to its current and former ratepayers</arg>
+            <arg end="28" f="CAU" n="m" start="17">for illegal rates collected for cost overruns on a nuclear power plant.</arg>
+         </example>
+         <example name="Within LVC" src="">
+            <text>State court Judge Richard Curry ordered Edison *to make average refunds of about $ 45 to $ 50 each to Edison customers who have received electric service since April 1986.</text>
+            <rel relloc="10">refunds</rel>
+            <arg end="6" f="" n="0" start="6">Edison</arg>
+            <arg end="8" f="LVB" n="m" start="8">make</arg>
+            <arg end="9" f="ADJ" n="m" start="9">average</arg>
+            <arg end="18" f="" n="1" start="11">of about $ 45 to $ 50 each</arg>
+            <arg end="29" f="" n="2" start="19">to Edison customers who have received electric service since April 1986.</arg>
+         </example>
+         <example name="With arg3" src="web">
+            <text>Is anyone else still waiting on their refund for the fall semester?</text>
+            <rel relloc="7">refund</rel>
+            <arg end="6" f="" n="2" start="6">their</arg>
+            <arg end="11" f="" n="3" start="8">for the fall semester?</arg>
+         </example>
+         <note>REFUND-V NOTES: Frames file for 'refund' based on sentences in financial subcorpus and comparison to 'pay'. Verbnet class give-13.1. (from refund.01-v)</note>
+         <note>REFUND-N NOTES: Roleset based on verb entry refund.01, corresponds to Verbnet class give-13.1. (from refund.01-n)</note>
+         <note>Args 1 and 3 are actually reversed from the 'pay' roleset. (from refund.01-v)</note>
+      </roleset>
+   </predicate>
 </frameset>

@@ -1,59 +1,71 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="inch">
-    <roleset id="inch.01" name="move very slowly">
-      <aliases>
-        <alias pos="v">inch</alias>
-      </aliases>
-      <roles>
-        <role descr="causer of motion" f="PAG" n="0">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="run-51.3.2-2" version="verbnet3.3">agent</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="entity in motion" f="PPT" n="1">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="run-51.3.2-2" version="verbnet3.3">theme</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="EXT" f="EXT" n="2"/>
-        <role descr="start point" f="DIR" n="3"/>
-        <role descr="end point" f="LOC" n="4">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="run-51.3.2-2" version="verbnet3.3">location</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="direction" f="LOC" n="5">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="run-51.3.2-2" version="verbnet3.3">location</rolelink>
-          </rolelinks>
-        </role>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="VerbNet" class="run-51.3.2-2" version="verbnet3.3" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="onsense" version="on5" class="inch-v.1" src="annot-overlap" confidence="0.1">15</lexlink>
-      </lexlinks>
-      <example src="" name="almost all args">
-        <text>...revenue inched up 1.4% to $7.13 billion from $7.03 billion.</text>
-        <rel relloc="1">inched</rel>
-        <arg f="" n="1" start="0" end="0">...revenue</arg>
-        <arg f="" n="5" start="2" end="2">up</arg>
-        <arg f="" n="2" start="3" end="3">1.4%</arg>
-        <arg f="" n="4" start="4" end="6">to $7.13 billion</arg>
-        <arg f="" n="3" start="7" end="9">from $7.03 billion.</arg>
-      </example>
-      <example src="" name="with agent">
-        <text>John inched the car forward.</text>
-        <rel relloc="1">inched</rel>
-        <arg f="" n="0" start="0" end="0">John</arg>
-        <arg f="" n="1" start="2" end="3">the car</arg>
-        <arg f="" n="5" start="4" end="4">forward.</arg>
-      </example>
-      <note>INCH-V NOTES: Frames file for 'inch' based on sentences in financial subcorpus. Verbnet entry 51.3.2, other framed members include bolt, charge, dash, float, leap, roll, scuttle, slide, sneak, and walk. No Framenet entry. Comparison with verbs of quantifiable/incremental motion. (from inch.01-v predicate notes)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="inch">
+      <roleset id="inch.01" name="move very slowly">
+         <aliases>
+            <alias pos="v">inch</alias>
+         </aliases>
+         <roles>
+            <role descr="causer of motion" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="run-51.3.2-2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="run-51.3.2-2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="entity in motion" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="run-51.3.2-2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="run-51.3.2-2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="EXT" f="EXT" n="2">
+               <rolelinks/>
+            </role>
+            <role descr="start point" f="DIR" n="3">
+               <rolelinks>
+                  <rolelink class="run-51.3.2-2" resource="VerbNet" version="verbnet3.3">initial_location</rolelink>
+                  <rolelink class="run-51.3.2-2" resource="VerbNet" version="verbnet3.4">initial_location</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="end point" f="LOC" n="4">
+               <rolelinks>
+                  <rolelink class="run-51.3.2-2" resource="VerbNet" version="verbnet3.3">location</rolelink>
+                  <rolelink class="run-51.3.2-2" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="direction" f="LOC" n="5">
+               <rolelinks>
+                  <rolelink class="run-51.3.2-2" resource="VerbNet" version="verbnet3.3">location</rolelink>
+                  <rolelink class="run-51.3.2-2" resource="VerbNet" version="verbnet3.4">trajectory</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="run-51.3.2-2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+            <lexlink class="inch-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">15</lexlink>
+            <lexlink class="run-51.3.2-2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="almost all args" src="">
+            <text>...revenue inched up 1.4% to $7.13 billion from $7.03 billion.</text>
+            <rel relloc="1">inched</rel>
+            <arg end="0" f="" n="1" start="0">...revenue</arg>
+            <arg end="2" f="" n="5" start="2">up</arg>
+            <arg end="3" f="" n="2" start="3">1.4%</arg>
+            <arg end="6" f="" n="4" start="4">to $7.13 billion</arg>
+            <arg end="9" f="" n="3" start="7">from $7.03 billion.</arg>
+         </example>
+         <example name="with agent" src="">
+            <text>John inched the car forward.</text>
+            <rel relloc="1">inched</rel>
+            <arg end="0" f="" n="0" start="0">John</arg>
+            <arg end="3" f="" n="1" start="2">the car</arg>
+            <arg end="4" f="" n="5" start="4">forward.</arg>
+         </example>
+         <note>INCH-V NOTES: Frames file for 'inch' based on sentences in financial subcorpus. Verbnet entry 51.3.2, other framed members include bolt, charge, dash, float, leap, roll, scuttle, slide, sneak, and walk. No Framenet entry. Comparison with verbs of quantifiable/incremental motion. (from inch.01-v predicate notes)</note>
+      </roleset>
+   </predicate>
 </frameset>

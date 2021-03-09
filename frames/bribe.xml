@@ -1,61 +1,67 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="bribe">
-    <roleset id="bribe.01" name="to make illegal payments in exchange for favors">
-      <aliases>
-        <alias pos="v">bribe</alias>
-      </aliases>
-      <roles>
-        <role descr="briber, agent" f="PAG" n="0">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="best_guess" version="verbnet3.3">agent</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="person  bribed" f="PPT" n="1">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="best_guess" version="verbnet3.3">patient</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="favor" f="PRD" n="2">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="best_guess" version="verbnet3.3">result</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="amount exchanged" f="VSP" n="3"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Commerce_pay" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="VerbNet" class="compel-59.1" version="verbnet3.3" confidence="0.4" src="manual+loose-conversion"/>
-        <lexlink resource="ERE" class="Transfermoney" version="rich" confidence="0.1" src="reo-expansion"/>
-        <lexlink resource="onsense" version="on5" class="bribe-v.1" src="annot-overlap" confidence="0.1">12</lexlink>
-      </lexlinks>
-      <example src="" name="transitive">
-        <text>[*] Starting with Congressman Mario Biaggi ( now serving a jail sentence ) , the company began a career of bribing federal , state and local public officials and those close to public officials , right up to [*RNR*-2] and including [*RNR*-2] E. Robert Wallach , close friend and adviser to former Attorney General Ed Meese .</text>
-        <rel relloc="20">bribing</rel>
-        <arg f="" n="0" start="14" end="15">the company</arg>
-        <arg f="" n="1" start="21" end="27">federal , state and local public officials</arg>
-      </example>
-      <example src="" name="all arguments">
-        <text>Arthur Klein , president of Young&amp; Rubicam 's New York office , stepped down `` temporarily '' in the wake of charges [*ICH*-2] by a federal grand jury in New Haven , Conn. , that he , the agency and another top executive bribed Jamaican tourist officials [*-1] to win its account in 1981 .</text>
-        <rel relloc="43">bribed</rel>
-        <arg f="" n="0" start="35" end="42">he , the agency and another top executive</arg>
-        <arg f="" n="1" start="44" end="46">Jamaican tourist officials</arg>
-        <arg f="" n="2" start="48" end="51">to win its account</arg>
-        <arg f="TMP" n="m" start="52" end="53">in 1981</arg>
-      </example>
-      <example src="" name="with ammount">
-        <text>I bribed the super $500 for keeping quiet about the dogs</text>
-        <rel relloc="1">bribed</rel>
-        <arg f="" n="0" start="0" end="0">I</arg>
-        <arg f="" n="1" start="2" end="3">the super</arg>
-        <arg f="" n="2" start="5" end="10">for keeping quiet about the dogs</arg>
-        <arg f="" n="3" start="4" end="4">$500</arg>
-      </example>
-      <note>BRIBE-V NOTES: Roleset corresponds to VN class force-59-1. (from bribe.01-v)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="bribe">
+      <roleset id="bribe.01" name="to make illegal payments in exchange for favors">
+         <aliases>
+            <alias pos="v">bribe</alias>
+         </aliases>
+         <roles>
+            <role descr="briber, agent" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="compel-59.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="person  bribed" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+                  <rolelink class="compel-59.1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="favor" f="PRD" n="2">
+               <rolelinks>
+                  <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">result</rolelink>
+                  <rolelink class="compel-59.1" resource="VerbNet" version="verbnet3.4">predicate</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="amount exchanged" f="VSP" n="3">
+               <rolelinks/>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Commerce_pay" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="compel-59.1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+            <lexlink class="Transfermoney" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+            <lexlink class="bribe-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">12</lexlink>
+            <lexlink class="compel-59.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="transitive" src="">
+            <text>[*] Starting with Congressman Mario Biaggi ( now serving a jail sentence ) , the company began a career of bribing federal , state and local public officials and those close to public officials , right up to [*RNR*-2] and including [*RNR*-2] E. Robert Wallach , close friend and adviser to former Attorney General Ed Meese .</text>
+            <rel relloc="20">bribing</rel>
+            <arg end="15" f="" n="0" start="14">the company</arg>
+            <arg end="27" f="" n="1" start="21">federal , state and local public officials</arg>
+         </example>
+         <example name="all arguments" src="">
+            <text>Arthur Klein , president of Young&amp; Rubicam 's New York office , stepped down `` temporarily '' in the wake of charges [*ICH*-2] by a federal grand jury in New Haven , Conn. , that he , the agency and another top executive bribed Jamaican tourist officials [*-1] to win its account in 1981 .</text>
+            <rel relloc="43">bribed</rel>
+            <arg end="42" f="" n="0" start="35">he , the agency and another top executive</arg>
+            <arg end="46" f="" n="1" start="44">Jamaican tourist officials</arg>
+            <arg end="51" f="" n="2" start="48">to win its account</arg>
+            <arg end="53" f="TMP" n="m" start="52">in 1981</arg>
+         </example>
+         <example name="with ammount" src="">
+            <text>I bribed the super $500 for keeping quiet about the dogs</text>
+            <rel relloc="1">bribed</rel>
+            <arg end="0" f="" n="0" start="0">I</arg>
+            <arg end="3" f="" n="1" start="2">the super</arg>
+            <arg end="10" f="" n="2" start="5">for keeping quiet about the dogs</arg>
+            <arg end="4" f="" n="3" start="4">$500</arg>
+         </example>
+         <note>BRIBE-V NOTES: Roleset corresponds to VN class force-59-1. (from bribe.01-v)</note>
+      </roleset>
+   </predicate>
 </frameset>

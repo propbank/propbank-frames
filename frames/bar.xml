@@ -1,51 +1,61 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="bar">
-    <roleset id="bar.01" name="stop, prevent">
-      <aliases>
-        <alias pos="v">bar</alias>
-      </aliases>
-      <roles>
-        <role descr="stopper, Agent" f="PAG" n="0">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="67" version="UNK">agent</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="action or object being prevented" f="PPT" n="1">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="67" version="UNK">theme</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="secondary predication on action" f="PRD" n="2"/>
-        <role descr="instrument" f="MNR" n="3"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Prohibiting_or_licensing" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="VerbNet" class="67" version="UNK" confidence="0.0" src="manual+strict-conv"/>
-        <lexlink resource="onsense" version="on5" class="bar-v.1" src="annot-overlap" confidence="0.1">20</lexlink>
-      </lexlinks>
-      <example src="" name="args 1 2">
-        <text>Temple added that Sea Containers is still mired in legal problems in Bermuda, where the Supreme Court has temporarily barred Sea Containers from buying back its own stock in a case brought by Stena and Tiphook.</text>
-        <rel relloc="19">barred</rel>
-        <arg f="" n="0" start="14" end="16">the Supreme Court</arg>
-        <arg f="TMP" n="m" start="18" end="18">temporarily</arg>
-        <arg f="" n="1" start="3" end="4">Sea Containers</arg>
-        <arg f="" n="2" start="22" end="27">from buying back its own stock</arg>
-        <arg f="LOC" n="m" start="28" end="35">in a case brought by Stena and Tiphook.</arg>
-      </example>
-      <example src="" name="with instrument">
-        <text>But neither the pilots nor the machinists appear interested, and Mr. Davis is barred from making a new bid under terms of an agreement he made with UAL in September unless UAL accepts an offer below $300 a share.</text>
-        <rel relloc="13">barred</rel>
-        <arg f="" n="1" start="10" end="11">Mr. Davis</arg>
-        <arg f="" n="2" start="14" end="18">from making a new bid</arg>
-        <arg f="" n="3" start="19" end="29">under terms of an agreement he made with UAL in September</arg>
-        <arg f="ADV" n="m" start="30" end="38">unless UAL accepts an offer below $300 a share.</arg>
-      </example>
-      <note>BAR-V NOTES: Frames file for 'bar' based on sentences in financial subcorpus. No Verbnet entry. Comparison with 'prevent' et al. (from bar.01-v predicate notes)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="bar">
+      <roleset id="bar.01" name="stop, prevent">
+         <aliases>
+            <alias pos="v">bar</alias>
+         </aliases>
+         <roles>
+            <role descr="stopper, Agent" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="67" resource="VerbNet" version="UNK">agent</rolelink>
+                  <rolelink class="forbid-64.4-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="action or object being prevented" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="67" resource="VerbNet" version="UNK">theme</rolelink>
+                  <rolelink class="forbid-64.4-1" resource="VerbNet" version="verbnet3.4">beneficiary</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="secondary predication on action" f="PRD" n="2">
+               <rolelinks>
+                  <rolelink class="forbid-64.4-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="forbid-64.4-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="instrument" f="MNR" n="3">
+               <rolelinks/>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Prohibiting_or_licensing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="67" confidence="0.0" resource="VerbNet" src="manual+strict-conv" version="UNK"/>
+            <lexlink class="bar-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">20</lexlink>
+            <lexlink class="forbid-64.4-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="args 1 2" src="">
+            <text>Temple added that Sea Containers is still mired in legal problems in Bermuda, where the Supreme Court has temporarily barred Sea Containers from buying back its own stock in a case brought by Stena and Tiphook.</text>
+            <rel relloc="19">barred</rel>
+            <arg end="16" f="" n="0" start="14">the Supreme Court</arg>
+            <arg end="18" f="TMP" n="m" start="18">temporarily</arg>
+            <arg end="4" f="" n="1" start="3">Sea Containers</arg>
+            <arg end="27" f="" n="2" start="22">from buying back its own stock</arg>
+            <arg end="35" f="LOC" n="m" start="28">in a case brought by Stena and Tiphook.</arg>
+         </example>
+         <example name="with instrument" src="">
+            <text>But neither the pilots nor the machinists appear interested, and Mr. Davis is barred from making a new bid under terms of an agreement he made with UAL in September unless UAL accepts an offer below $300 a share.</text>
+            <rel relloc="13">barred</rel>
+            <arg end="11" f="" n="1" start="10">Mr. Davis</arg>
+            <arg end="18" f="" n="2" start="14">from making a new bid</arg>
+            <arg end="29" f="" n="3" start="19">under terms of an agreement he made with UAL in September</arg>
+            <arg end="38" f="ADV" n="m" start="30">unless UAL accepts an offer below $300 a share.</arg>
+         </example>
+         <note>BAR-V NOTES: Frames file for 'bar' based on sentences in financial subcorpus. No Verbnet entry. Comparison with 'prevent' et al. (from bar.01-v predicate notes)</note>
+      </roleset>
+   </predicate>
 </frameset>

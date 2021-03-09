@@ -1,137 +1,169 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="book">
-    <roleset id="book.01" name="record charges, fees or records">
-      <aliases>
-        <alias pos="v">book</alias>
-      </aliases>
-      <roles>
-        <role descr="officer, agent doing booking" f="PAG" n="0"/>
-        <role descr="criminal, person or value being booked" f="PPT" n="1"/>
-        <role descr="crime, what you are booked for or as" f="CAU" n="2">
-          <rolelinks>
-            <rolelink resource="FrameNet" class="Arrest" version="1.7">charges</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="prison, place booked into" f="GOL" n="3"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Arrest" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="onsense" version="on5" class="book-v.1" src="annot-overlap" confidence="0.1">5</lexlink>
-        <lexlink resource="onsense" version="on5" class="book-v.3" src="annot-overlap" confidence="0.1">4</lexlink>
-      </lexlinks>
-      <example src="" name="">
-        <text>Christopher Blair Labat , 24 , was booked *-1 Tuesday on one count of aggravated assault</text>
-        <rel relloc="7">booked</rel>
-        <arg f="" n="1" start="0" end="4">Christopher Blair Labat , 24</arg>
-        <arg f="TMP" n="m" start="9" end="9">Tuesday</arg>
-        <arg f="" n="2" start="10" end="15">on one count of aggravated assault</arg>
-      </example>
-      <example src="" name="">
-        <text>He was booked for DUI on Friday night in Beverly Hills.</text>
-        <rel relloc="2">booked</rel>
-        <arg f="" n="1" start="0" end="0">He</arg>
-        <arg f="" n="2" start="3" end="4">for DUI</arg>
-        <arg f="TMP" n="m" start="5" end="7">on Friday night</arg>
-        <arg f="LOC" n="m" start="8" end="10">in Beverly Hills.</arg>
-      </example>
-      <example src="" name="Charges">
-        <text>Some analysts hedge their estimates for Quantum, because it isn't known when the company will book certain one-time charges.</text>
-        <rel relloc="15">book</rel>
-        <arg f="" n="0" start="12" end="13">the company</arg>
-        <arg f="MOD" n="m" start="14" end="14">will</arg>
-        <arg f="" n="1" start="16" end="18">certain one-time charges.</arg>
-      </example>
-      <example src="" name="">
-        <text>If it had been a Chelsea player that was booked for diving there would be outrage</text>
-        <rel relloc="9">booked</rel>
-        <arg f="" n="1" start="4" end="7">a Chelsea player that</arg>
-        <arg f="" n="2" start="10" end="11">for diving</arg>
-      </example>
-      <note>BOOK-V NOTES: Frames file for 'book' based on sentences in financial subcorpus. Verbnet entry get 13.5.1, but I don't see the connection. No comparison. (from book.01-v predicate notes)</note>
-    </roleset>
-    <roleset id="book.03" name="schedule (perhaps fully); purchase a ticker or appointment">
-      <aliases>
-        <alias pos="n">booking</alias>
-        <alias pos="v">book</alias>
-        <alias pos="j">booked</alias>
-      </aliases>
-      <roles>
-        <role descr="person buying/scheduling the activity/appointment" f="PAG" n="0"/>
-        <role descr="activity/room booked; tickets" f="PPT" n="1"/>
-        <role descr="schedule owner" f="GOL" n="2"/>
-        <role descr="the schedule itself" f="GOL" n="3"/>
-        <role descr="booking agent, if different from arg0" f="MNR" n="4"/>
-        <role descr="itinerary, time of activity" f="TMP" n="5"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Reserving" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-      </lexlinks>
-      <example src="SMS" name="arg2">
-        <text>Wow ! Cool . Sorry you have to wait but I guess it 's good I 'm booked !</text>
-        <rel relloc="17">booked</rel>
-        <arg f="" n="2" start="10" end="10">I</arg>
-      </example>
-      <example src="" name="args3 and 1">
-        <text>I doubt it 's me ! :-RRB- It 's probably booked with returning patients . :-RRB-</text>
-        <rel relloc="10">booked</rel>
-        <arg f="" n="3" start="2" end="2">it</arg>
-        <arg f="ADV" n="m" start="9" end="9">probably</arg>
-        <arg f="" n="0" start="11" end="13">with returning patients</arg>
-      </example>
-      <example src="" name="arg5">
-        <text>We 've booked Italy tickets for next October</text>
-        <rel relloc="2">booked</rel>
-        <arg f="" n="0" start="0" end="0">We</arg>
-        <arg f="" n="1" start="3" end="4">Italy tickets</arg>
-        <arg f="" n="5" start="5" end="7">for next October</arg>
-      </example>
-      <example src="" name="booking agent">
-        <text>The one time 0 I actually booked through a travel agent</text>
-        <rel relloc="6">booked</rel>
-        <arg f="TMP" n="m" start="0" end="2">The one time</arg>
-        <arg f="" n="0" start="4" end="4">I</arg>
-        <arg f="ADV" n="m" start="5" end="5">actually</arg>
-        <arg f="" n="4" start="7" end="10">through a travel agent</arg>
-      </example>
-      <example src="passive" name="passive">
-        <text>Peter Otradovec, vice president for planning at the Phoenix, Ariz., carrier, said in an interview that the work stoppage at Boeing, now entering its 13th day, ``has caused some turmoil in our scheduling '' and that more than 500 passengers who [*T*] were booked to fly out of Houston on America West would now be put on other airlines.</text>
-        <rel relloc="43">booked</rel>
-        <arg f="" n="0" start="36" end="40">more than 500 passengers who</arg>
-        <arg f="" n="1" start="44" end="51">to fly out of Houston on America West</arg>
-      </example>
-      <note>BOOK-V NOTES: Added for unification (from book.03-v)</note>
-      <note>BOOKED-J NOTES: Added by Julia based on SMS. (from booked.01-j)</note>
-    </roleset>
-  </predicate>
-  <predicate lemma="book_up">
-    <roleset id="book_up.02" name="book completely">
-      <aliases>
-        <alias pos="v">book_up</alias>
-      </aliases>
-      <roles>
-        <role descr="booker, entity making reservation, etc" f="PAG" n="0"/>
-        <role descr="booked, hotel, etc." f="PPT" n="1"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks/>
-      <example src="Hotels" name="Hotels">
-        <text> All hotels in the 10-mile radius from San Jose have been booked up.</text>
-        <rel relloc="12 13">booked up.</rel>
-        <arg f="" n="1" start="1" end="9">All hotels in the 10-mile radius from San Jose</arg>
-      </example>
-      <note>BOOK_UP-V NOTES: (from book.02-v)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="book">
+      <roleset id="book.01" name="record charges, fees or records">
+         <aliases>
+            <alias pos="v">book</alias>
+         </aliases>
+         <roles>
+            <role descr="officer, agent doing booking" f="PAG" n="0">
+               <rolelinks/>
+            </role>
+            <role descr="criminal, person or value being booked" f="PPT" n="1">
+               <rolelinks/>
+            </role>
+            <role descr="crime, what you are booked for or as" f="CAU" n="2">
+               <rolelinks>
+                  <rolelink class="Arrest" resource="FrameNet" version="1.7">charges</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="prison, place booked into" f="GOL" n="3">
+               <rolelinks/>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Arrest" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="book-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+            <lexlink class="book-v.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+            <lexlink class="get-13.5.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="" src="">
+            <text>Christopher Blair Labat , 24 , was booked *-1 Tuesday on one count of aggravated assault</text>
+            <rel relloc="7">booked</rel>
+            <arg end="4" f="" n="1" start="0">Christopher Blair Labat , 24</arg>
+            <arg end="9" f="TMP" n="m" start="9">Tuesday</arg>
+            <arg end="15" f="" n="2" start="10">on one count of aggravated assault</arg>
+         </example>
+         <example name="" src="">
+            <text>He was booked for DUI on Friday night in Beverly Hills.</text>
+            <rel relloc="2">booked</rel>
+            <arg end="0" f="" n="1" start="0">He</arg>
+            <arg end="4" f="" n="2" start="3">for DUI</arg>
+            <arg end="7" f="TMP" n="m" start="5">on Friday night</arg>
+            <arg end="10" f="LOC" n="m" start="8">in Beverly Hills.</arg>
+         </example>
+         <example name="Charges" src="">
+            <text>Some analysts hedge their estimates for Quantum, because it isn't known when the company will book certain one-time charges.</text>
+            <rel relloc="15">book</rel>
+            <arg end="13" f="" n="0" start="12">the company</arg>
+            <arg end="14" f="MOD" n="m" start="14">will</arg>
+            <arg end="18" f="" n="1" start="16">certain one-time charges.</arg>
+         </example>
+         <example name="" src="">
+            <text>If it had been a Chelsea player that was booked for diving there would be outrage</text>
+            <rel relloc="9">booked</rel>
+            <arg end="7" f="" n="1" start="4">a Chelsea player that</arg>
+            <arg end="11" f="" n="2" start="10">for diving</arg>
+         </example>
+         <note>BOOK-V NOTES: Frames file for 'book' based on sentences in financial subcorpus. Verbnet entry get 13.5.1, but I don't see the connection. No comparison. (from book.01-v predicate notes)</note>
+      </roleset>
+      <roleset id="book.03" name="schedule (perhaps fully); purchase a ticker or appointment">
+         <aliases>
+            <alias pos="n">booking</alias>
+            <alias pos="v">book</alias>
+            <alias pos="j">booked</alias>
+         </aliases>
+         <roles>
+            <role descr="person buying/scheduling the activity/appointment" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="get-13.5.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="get-13.5.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="activity/room booked; tickets" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="get-13.5.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="get-13.5.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="schedule owner" f="GOL" n="2">
+               <rolelinks>
+                  <rolelink class="get-13.5.1" resource="VerbNet" version="verbnet3.3">beneficiary</rolelink>
+                  <rolelink class="get-13.5.1" resource="VerbNet" version="verbnet3.4">beneficiary</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="the schedule itself" f="GOL" n="3">
+               <rolelinks/>
+            </role>
+            <role descr="booking agent, if different from arg0" f="MNR" n="4">
+               <rolelinks>
+                  <rolelink class="get-13.5.1" resource="VerbNet" version="verbnet3.3">source</rolelink>
+                  <rolelink class="get-13.5.1" resource="VerbNet" version="verbnet3.4">source</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="itinerary, time of activity" f="TMP" n="5">
+               <rolelinks/>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Reserving" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="get-13.5.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="arg2" src="SMS">
+            <text>Wow ! Cool . Sorry you have to wait but I guess it 's good I 'm booked !</text>
+            <rel relloc="17">booked</rel>
+            <arg end="10" f="" n="2" start="10">I</arg>
+         </example>
+         <example name="args3 and 1" src="">
+            <text>I doubt it 's me ! :-RRB- It 's probably booked with returning patients . :-RRB-</text>
+            <rel relloc="10">booked</rel>
+            <arg end="2" f="" n="3" start="2">it</arg>
+            <arg end="9" f="ADV" n="m" start="9">probably</arg>
+            <arg end="13" f="" n="0" start="11">with returning patients</arg>
+         </example>
+         <example name="arg5" src="">
+            <text>We 've booked Italy tickets for next October</text>
+            <rel relloc="2">booked</rel>
+            <arg end="0" f="" n="0" start="0">We</arg>
+            <arg end="4" f="" n="1" start="3">Italy tickets</arg>
+            <arg end="7" f="" n="5" start="5">for next October</arg>
+         </example>
+         <example name="booking agent" src="">
+            <text>The one time 0 I actually booked through a travel agent</text>
+            <rel relloc="6">booked</rel>
+            <arg end="2" f="TMP" n="m" start="0">The one time</arg>
+            <arg end="4" f="" n="0" start="4">I</arg>
+            <arg end="5" f="ADV" n="m" start="5">actually</arg>
+            <arg end="10" f="" n="4" start="7">through a travel agent</arg>
+         </example>
+         <example name="passive" src="passive">
+            <text>Peter Otradovec, vice president for planning at the Phoenix, Ariz., carrier, said in an interview that the work stoppage at Boeing, now entering its 13th day, ``has caused some turmoil in our scheduling '' and that more than 500 passengers who [*T*] were booked to fly out of Houston on America West would now be put on other airlines.</text>
+            <rel relloc="43">booked</rel>
+            <arg end="40" f="" n="0" start="36">more than 500 passengers who</arg>
+            <arg end="51" f="" n="1" start="44">to fly out of Houston on America West</arg>
+         </example>
+         <note>BOOK-V NOTES: Added for unification (from book.03-v)</note>
+         <note>BOOKED-J NOTES: Added by Julia based on SMS. (from booked.01-j)</note>
+      </roleset>
+   </predicate>
+   <predicate lemma="book_up">
+      <roleset id="book_up.02" name="book completely">
+         <aliases>
+            <alias pos="v">book_up</alias>
+         </aliases>
+         <roles>
+            <role descr="booker, entity making reservation, etc" f="PAG" n="0"/>
+            <role descr="booked, hotel, etc." f="PPT" n="1"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="Hotels" src="Hotels">
+            <text> All hotels in the 10-mile radius from San Jose have been booked up.</text>
+            <rel relloc="12 13">booked up.</rel>
+            <arg end="9" f="" n="1" start="1">All hotels in the 10-mile radius from San Jose</arg>
+         </example>
+         <note>BOOK_UP-V NOTES: (from book.02-v)</note>
+      </roleset>
+   </predicate>
 </frameset>

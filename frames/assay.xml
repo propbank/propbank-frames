@@ -1,38 +1,54 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="assay">
-    <roleset id="assay.01" name="assess, analyze for content/skill">
-      <aliases>
-        <alias pos="v">assay</alias>
-        <alias pos="n">assay</alias>
-        <alias pos="l">make_assay</alias>
-      </aliases>
-      <roles>
-        <role descr="assessor" f="PAG" n="0"/>
-        <role descr="entity tested" f="PPT" n="1"/>
-        <role descr="tested for what" f="VSP" n="2"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Scrutiny" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-      </lexlinks>
-      <example src="" name="assay-v">
-        <text> Purified His6 protein was assayed for the ability to synthesize c-di-GMP.</text>
-        <rel relloc="5">assayed</rel>
-        <arg f="" n="1" start="1" end="3">Purified His6 protein</arg>
-        <arg f="" n="2" start="6" end="11">for the ability to synthesize c-di-GMP.</arg>
-      </example>
-      <example src="" name="make_assay-l">
-        <text>they made an assay of the contents</text>
-        <rel relloc="3">assay</rel>
-        <arg f="" n="0" start="0" end="0">they</arg>
-        <arg f="LVB" n="m" start="1" end="1">made</arg>
-        <arg f="" n="1" start="4" end="6">of the contents</arg>
-      </example>
-      <note>ASSAY-V NOTES: Added by Julia</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="assay">
+      <roleset id="assay.01" name="assess, analyze for content/skill">
+         <aliases>
+            <alias pos="v">assay</alias>
+            <alias pos="n">assay</alias>
+            <alias pos="l">make_assay</alias>
+         </aliases>
+         <roles>
+            <role descr="assessor" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="assessment-34.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="assessment-34.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="entity tested" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="assessment-34.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="assessment-34.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="tested for what" f="VSP" n="2">
+               <rolelinks>
+                  <rolelink class="assessment-34.1" resource="VerbNet" version="verbnet3.3">attribute</rolelink>
+                  <rolelink class="assessment-34.1" resource="VerbNet" version="verbnet3.4">attribute</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Scrutiny" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="assessment-34.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="assay-v" src="">
+            <text> Purified His6 protein was assayed for the ability to synthesize c-di-GMP.</text>
+            <rel relloc="5">assayed</rel>
+            <arg end="3" f="" n="1" start="1">Purified His6 protein</arg>
+            <arg end="11" f="" n="2" start="6">for the ability to synthesize c-di-GMP.</arg>
+         </example>
+         <example name="make_assay-l" src="">
+            <text>they made an assay of the contents</text>
+            <rel relloc="3">assay</rel>
+            <arg end="0" f="" n="0" start="0">they</arg>
+            <arg end="1" f="LVB" n="m" start="1">made</arg>
+            <arg end="6" f="" n="1" start="4">of the contents</arg>
+         </example>
+         <note>ASSAY-V NOTES: Added by Julia</note>
+      </roleset>
+   </predicate>
 </frameset>

@@ -1,69 +1,83 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="fulfill">
-    <roleset id="fulfill.01" name="bring about, complete, carry out">
-      <aliases>
-        <alias pos="n">fulfillment</alias>
-        <alias pos="v">fulfill</alias>
-      </aliases>
-      <roles>
-        <role descr="fulfiller" f="PAG" n="0"/>
-        <role descr="promise, contract, unresolved issue" f="PPT" n="1"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Experiencer_obj" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="FrameNet" class="Meet_specifications" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="onsense" version="on5" class="fulfill-v.1" src="annot-overlap" confidence="0.1">26</lexlink>
-      </lexlinks>
-      <example src="" name="pretty straightforward">
-        <text>Some note that Sony might have saved itself some trouble by just hiring Mr. Guber and letting [Mr. Peters]-1 stay on *trace*-1 to fulfill the Warner contract.</text>
-        <rel relloc="23">fulfill</rel>
-        <arg f="" n="0" start="21" end="21">*trace*-1</arg>
-        <arg f="" n="1" start="24" end="26">the Warner contract.</arg>
-      </example>
-      <example src="BOLT" name="ADJ, arg1">
-        <text>Is the " equality " issue " religious wish fulfilment " which flies in the face of biological and sociological " fact " ?</text>
-        <rel relloc="9">fulfilment</rel>
-        <arg f="ADJ" n="m" start="7" end="7">religious</arg>
-        <arg f="" n="1" start="8" end="8">wish</arg>
-        <arg f="ADJ" n="m" start="11" end="22">which flies in the face of biological and sociological " fact "</arg>
-      </example>
-      <example src="internet" name="both args">
-        <text>The newspaper did not elaborate on how the other parties postponed their fulfillment of obligations.</text>
-        <rel relloc="12">fulfillment</rel>
-        <arg f="" n="0" start="11" end="11">their</arg>
-        <arg f="" n="1" start="13" end="14">of obligations.</arg>
-      </example>
-      <note>FULFILL-V NOTES: Frames file for 'fulfill' based on sentences in financial subcorpus. No Verbnet entry. (from fulfill.01-v predicate notes)</note>
-      <note>FULFILLMENT-N NOTES: Added by Julia based on fulfill.01, WN sense #2. No VNcls. (from fulfillment.01-n)</note>
-    </roleset>
-    <roleset id="fulfill.02" name="feeling satisfaction at achievement of desires">
-      <aliases>
-        <alias pos="v">fulfill</alias>
-        <alias pos="n">fulfillment</alias>
-      </aliases>
-      <roles>
-        <role descr="experiencer" f="PAG" n="1"/>
-        <role descr="cause of satisfaction" f="CAU" n="2"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Experiencer_focus" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-      </lexlinks>
-      <example src="internet" name="both args">
-        <text>Bramhall took time during the Clapton tour to discuss Welcome, his many ongoing creative projects, and his fulfillment at finally achieving validation and success as an artist.</text>
-        <rel relloc="17">fulfillment</rel>
-        <arg f="" n="1" start="10" end="10">his</arg>
-        <arg f="" n="2" start="18" end="26">at finally achieving validation and success as an artist.</arg>
-      </example>
-      <note>FULFILLMENT-N NOTES: Added by Julia based on WN sense #1. No VNcls. (from fulfillment.02-n)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="fulfill">
+      <roleset id="fulfill.01" name="bring about, complete, carry out">
+         <aliases>
+            <alias pos="n">fulfillment</alias>
+            <alias pos="v">fulfill</alias>
+         </aliases>
+         <roles>
+            <role descr="fulfiller" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="satisfy-55.7" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="satisfy-55.7" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+                  <rolelink class="act-114" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="promise, contract, unresolved issue" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="satisfy-55.7" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="satisfy-55.7" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+                  <rolelink class="act-114" resource="VerbNet" version="verbnet3.4">predicate</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Experiencer_obj" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="Meet_specifications" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="fulfill-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">26</lexlink>
+            <lexlink class="satisfy-55.7" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+            <lexlink class="act-114" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="pretty straightforward" src="">
+            <text>Some note that Sony might have saved itself some trouble by just hiring Mr. Guber and letting [Mr. Peters]-1 stay on *trace*-1 to fulfill the Warner contract.</text>
+            <rel relloc="23">fulfill</rel>
+            <arg end="21" f="" n="0" start="21">*trace*-1</arg>
+            <arg end="26" f="" n="1" start="24">the Warner contract.</arg>
+         </example>
+         <example name="ADJ, arg1" src="BOLT">
+            <text>Is the &quot; equality &quot; issue &quot; religious wish fulfilment &quot; which flies in the face of biological and sociological &quot; fact &quot; ?</text>
+            <rel relloc="9">fulfilment</rel>
+            <arg end="7" f="ADJ" n="m" start="7">religious</arg>
+            <arg end="8" f="" n="1" start="8">wish</arg>
+            <arg end="22" f="ADJ" n="m" start="11">which flies in the face of biological and sociological &quot; fact &quot;</arg>
+         </example>
+         <example name="both args" src="internet">
+            <text>The newspaper did not elaborate on how the other parties postponed their fulfillment of obligations.</text>
+            <rel relloc="12">fulfillment</rel>
+            <arg end="11" f="" n="0" start="11">their</arg>
+            <arg end="14" f="" n="1" start="13">of obligations.</arg>
+         </example>
+         <note>FULFILL-V NOTES: Frames file for 'fulfill' based on sentences in financial subcorpus. No Verbnet entry. (from fulfill.01-v predicate notes)</note>
+         <note>FULFILLMENT-N NOTES: Added by Julia based on fulfill.01, WN sense #2. No VNcls. (from fulfillment.01-n)</note>
+      </roleset>
+      <roleset id="fulfill.02" name="feeling satisfaction at achievement of desires">
+         <aliases>
+            <alias pos="v">fulfill</alias>
+            <alias pos="n">fulfillment</alias>
+         </aliases>
+         <roles>
+            <role descr="experiencer" f="PAG" n="1"/>
+            <role descr="cause of satisfaction" f="CAU" n="2"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Experiencer_focus" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+         </lexlinks>
+         <example name="both args" src="internet">
+            <text>Bramhall took time during the Clapton tour to discuss Welcome, his many ongoing creative projects, and his fulfillment at finally achieving validation and success as an artist.</text>
+            <rel relloc="17">fulfillment</rel>
+            <arg end="10" f="" n="1" start="10">his</arg>
+            <arg end="26" f="" n="2" start="18">at finally achieving validation and success as an artist.</arg>
+         </example>
+         <note>FULFILLMENT-N NOTES: Added by Julia based on WN sense #1. No VNcls. (from fulfillment.02-n)</note>
+      </roleset>
+   </predicate>
 </frameset>

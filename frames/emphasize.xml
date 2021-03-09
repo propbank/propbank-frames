@@ -1,52 +1,65 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="emphasize">
-    <roleset id="emphasize.01" name="emphasize">
-      <aliases>
-        <alias pos="v">emphasize</alias>
-        <alias pos="n">emphasis</alias>
-        <alias pos="l">place_emphasis</alias>
-      </aliases>
-      <roles>
-        <role descr="emphasizer" f="PAG" n="0"/>
-        <role descr="utterance" f="PPT" n="1"/>
-        <role descr="hearer" f="GOL" n="2"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Place_weight_on" version="UNK" confidence="0.0" src="manual+strict-conv"/>
-        <lexlink resource="onsense" version="on5" class="emphasize-v.1" src="annot-overlap" confidence="0.1">69</lexlink>
-        <lexlink resource="onsense" version="on5" class="emphasis-n.1" src="annot-overlap" confidence="0.1">38</lexlink>
-      </lexlinks>
-      <example src="" name="transitive">
-        <text>The statement emphasized that holders representing 75% of the shares voting at a special shareholders' meeting must agree to lift the takeover restrictions.</text>
-        <rel relloc="2">emphasized</rel>
-        <arg f="" n="0" start="0" end="1">The statement</arg>
-        <arg f="" n="1" start="3" end="22">that holders representing 75% of the shares voting at a special shareholders' meeting must agree to lift the takeover restrictions.</arg>
-      </example>
-      <example src="" name="with hearer">
-        <text>Mary emphasized to John that he must never ever call her 'Snoogie-wookums' in public.</text>
-        <rel relloc="1">emphasized</rel>
-        <arg f="" n="0" start="0" end="0">Mary</arg>
-        <arg f="" n="2" start="2" end="3">to John</arg>
-        <arg f="" n="1" start="4" end="13">that he must never ever call her 'Snoogie-wookums' in public.</arg>
-      </example>
-      <example src="" name="both args">
-        <text>the producers' emphasis on natural gas</text>
-        <rel relloc="2">emphasis</rel>
-        <arg f="" n="0" start="0" end="1">the producers'</arg>
-        <arg f="" n="1" start="3" end="5">on natural gas</arg>
-      </example>
-      <example src="" name="arg 1 only">
-        <text>the emphasis on takeover stocks</text>
-        <rel relloc="1">emphasis</rel>
-        <arg f="" n="1" start="2" end="4">on takeover stocks</arg>
-      </example>
-      <note>EMPHASIZE-V NOTES: Frames file for 'emphasize' based on sentences in financial subcorpus. No Verbnet entry. Comparison to 'say' et al. (from emphasize.01-v predicate notes)</note>
-      <note>EMPHASIS-N NOTES: Based on sentences in nouns-9998. Comparison to emphasize.01. VN class promote-102. (from emphasis.01-n)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="emphasize">
+      <roleset id="emphasize.01" name="emphasize">
+         <aliases>
+            <alias pos="v">emphasize</alias>
+            <alias pos="n">emphasis</alias>
+            <alias pos="l">place_emphasis</alias>
+         </aliases>
+         <roles>
+            <role descr="emphasizer" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="promote-102" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="promote-102" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="utterance" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="promote-102" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="promote-102" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="hearer" f="GOL" n="2">
+               <rolelinks/>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Place_weight_on" confidence="0.0" resource="FrameNet" src="manual+strict-conv" version="UNK"/>
+            <lexlink class="emphasize-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">69</lexlink>
+            <lexlink class="emphasis-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">38</lexlink>
+            <lexlink class="promote-102" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="transitive" src="">
+            <text>The statement emphasized that holders representing 75% of the shares voting at a special shareholders' meeting must agree to lift the takeover restrictions.</text>
+            <rel relloc="2">emphasized</rel>
+            <arg end="1" f="" n="0" start="0">The statement</arg>
+            <arg end="22" f="" n="1" start="3">that holders representing 75% of the shares voting at a special shareholders' meeting must agree to lift the takeover restrictions.</arg>
+         </example>
+         <example name="with hearer" src="">
+            <text>Mary emphasized to John that he must never ever call her 'Snoogie-wookums' in public.</text>
+            <rel relloc="1">emphasized</rel>
+            <arg end="0" f="" n="0" start="0">Mary</arg>
+            <arg end="3" f="" n="2" start="2">to John</arg>
+            <arg end="13" f="" n="1" start="4">that he must never ever call her 'Snoogie-wookums' in public.</arg>
+         </example>
+         <example name="both args" src="">
+            <text>the producers' emphasis on natural gas</text>
+            <rel relloc="2">emphasis</rel>
+            <arg end="1" f="" n="0" start="0">the producers'</arg>
+            <arg end="5" f="" n="1" start="3">on natural gas</arg>
+         </example>
+         <example name="arg 1 only" src="">
+            <text>the emphasis on takeover stocks</text>
+            <rel relloc="1">emphasis</rel>
+            <arg end="4" f="" n="1" start="2">on takeover stocks</arg>
+         </example>
+         <note>EMPHASIZE-V NOTES: Frames file for 'emphasize' based on sentences in financial subcorpus. No Verbnet entry. Comparison to 'say' et al. (from emphasize.01-v predicate notes)</note>
+         <note>EMPHASIS-N NOTES: Based on sentences in nouns-9998. Comparison to emphasize.01. VN class promote-102. (from emphasis.01-n)</note>
+      </roleset>
+   </predicate>
 </frameset>

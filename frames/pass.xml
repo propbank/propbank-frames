@@ -1,788 +1,871 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="pass">
-    <roleset id="pass.01" name="bill becomes law">
-      <aliases>
-        <alias pos="v">pass</alias>
-        <alias pos="n">passing</alias>
-        <alias pos="n">passage</alias>
-      </aliases>
-      <roles>
-        <role descr="legislative body" f="PAG" n="0"/>
-        <role descr="bill, state prior to passing" f="PPT" n="1"/>
-        <role descr="law, state after passing" f="PRD" n="2"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="onsense" version="on5" class="pass-v.2" src="annot-overlap" confidence="0.1">80</lexlink>
-        <lexlink resource="onsense" version="on5" class="passage-n.4" src="annot-overlap" confidence="0.1">10</lexlink>
-      </lexlinks>
-      <example src="" name="pass-v: passive">
-        <text>The Senate-House conference committee is used when [a bill]-1 is passed*trace*-1 by the House and Senate in different forms.</text>
-        <rel relloc="10">passed*trace*-1</rel>
-        <arg f="" n="1" start="0" end="0">The</arg>
-        <arg f="" n="0" start="11" end="15">by the House and Senate</arg>
-        <arg f="MNR" n="m" start="16" end="18">in different forms.</arg>
-      </example>
-      <example src="" name="pass-v: distinguishing arg1 from arg2">
-        <text>John passed the bill into law.</text>
-        <rel relloc="1">passed</rel>
-        <arg f="" n="0" start="0" end="0">John</arg>
-        <arg f="" n="1" start="2" end="3">the bill</arg>
-        <arg f="" n="2" start="4" end="5">into law.</arg>
-      </example>
-      <example src="" name="passing-n: arg1">
-        <text>On 14 February , in a statement in which he spoke of a " painful choice " and his " undying determination , " Premier Chang Chun - hsiung announced the resumption of work on the Fourth Nuclear Power Plant , and identified the passing of a plebiscite law as the most important topic for renewed cross-party consultation .</text>
-        <rel relloc="44">passing</rel>
-        <arg f="" n="1" start="45" end="48">of a plebiscite law</arg>
-      </example>
-      <example src="" name="passage-n: Args 0 and 1">
-        <text>congressional and presidential passage of an increase in the federal debt ceiling</text>
-        <rel relloc="3">passage</rel>
-        <arg f="" n="0" start="0" end="2">congressional and presidential</arg>
-        <arg f="" n="1" start="4" end="11">of an increase in the federal debt ceiling</arg>
-      </example>
-      <example src="" name="passage-n: arg 1 only">
-        <text>passage of two constitutional amendment bills</text>
-        <rel relloc="0">passage</rel>
-        <arg f="" n="1" start="1" end="5">of two constitutional amendment bills</arg>
-      </example>
-      <note>PASS-V NOTES: Frames file for 'pass' based on survey of initial sentences of big corpus and comparison with 'fail', 'give', 'send', and reference toverbnet classes give-13.1, send-11.1, and throw-17.1. There areprobably a million senses and phrasals I've missed; the syntax tendsto be pretty straightforward, so if you encounter them while taggingjust go ahead and add them. (from pass.01-v predicate notes)</note>
-      <note>PASSING-N NOTES: Added by Julia based on on499-nouns-be. (from passing.03-n)</note>
-      <note>PASSAGE-N NOTES: Based on sentences in nouns-00040. Comparison to pass.01. No VN class. Framed by Katie. (from passage.01-n)</note>
-    </roleset>
-    <roleset id="pass.02" name="overtake">
-      <aliases>
-        <alias pos="v">pass</alias>
-        <alias pos="n">passing</alias>
-        <alias pos="n">pass</alias>
-      </aliases>
-      <roles>
-        <role descr="entity moving ahead" f="PAG" n="0"/>
-        <role descr="entity falling behind" f="PPT" n="1"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="onsense" version="on5" class="pass-v.1" src="annot-overlap" confidence="0.1">7</lexlink>
-        <lexlink resource="onsense" version="on5" class="pass-v.14" src="annot-overlap" confidence="0.1">3</lexlink>
-      </lexlinks>
-      <example src="" name="pass-v: transitive">
-        <text>[A couple of my law clerks]-1 were going *trace*-1 to pass me in three orfour years.</text>
-        <rel relloc="10">pass</rel>
-        <arg f="" n="0" start="8" end="8">*trace*-1</arg>
-        <arg f="" n="1" start="11" end="11">me</arg>
-        <arg f="TMP" n="m" start="12" end="15">in three orfour years.</arg>
-      </example>
-      <example src="web" name="make_pass-l: Within LVC all arguments">
-        <text>Disaster almost struck as Erik made his pass of the leader on the 13th lap.</text>
-        <rel relloc="7">pass</rel>
-        <arg f="" n="0" start="4" end="4">Erik</arg>
-        <arg f="LVB" n="m" start="5" end="5">made</arg>
-        <arg f="" n="1" start="8" end="10">of the leader</arg>
-        <arg f="TMP" n="m" start="11" end="14">on the 13th lap.</arg>
-      </example>
-      <example src="BOLT" name="passing-n: in passing">
-        <text>SAw the punch in passing , looked a decent one - two .</text>
-        <rel relloc="4">passing</rel>
-      </example>
-      <example src="internet" name="passing-n: Both args">
-        <text>I think his passing her in the stair-well is simply him not knowing what to do with a distraught woman</text>
-        <rel relloc="3">passing</rel>
-        <arg f="" n="0" start="2" end="2">his</arg>
-        <arg f="" n="1" start="4" end="4">her</arg>
-        <arg f="LOC" n="m" start="5" end="7">in the stair-well</arg>
-      </example>
-      <note>PASS-V NOTES: Frames file for 'pass' based on survey of initial sentences of big corpus and comparison with 'fail', 'give', 'send', and reference toverbnet classes give-13.1, send-11.1, and throw-17.1. There areprobably a million senses and phrasals I've missed; the syntax tendsto be pretty straightforward, so if you encounter them while taggingjust go ahead and add them. (from pass.02-v predicate notes)</note>
-    </roleset>
-    <roleset id="pass.03" name="go by">
-      <aliases>
-        <alias pos="v">pass</alias>
-        <alias pos="n">passage</alias>
-        <alias pos="j">passed</alias>
-      </aliases>
-      <roles>
-        <role descr="thing passing" f="PPT" n="1">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="meander-47.7" version="verbnet3.3">theme</rolelink>
-            <rolelink resource="VerbNet" class="occur-48.3" version="verbnet3.3">theme</rolelink>
-          </rolelinks>
-        </role>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Passing" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="VerbNet" class="meander-47.7" version="verbnet3.3" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="VerbNet" class="occur-48.3" version="verbnet3.3" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="onsense" version="on5" class="pass-v.3" src="annot-overlap" confidence="0.1">17</lexlink>
-        <lexlink resource="onsense" version="on5" class="pass-v.1" src="annot-overlap" confidence="0.1">5</lexlink>
-        <lexlink resource="onsense" version="on5" class="passage-n.1" src="annot-overlap" confidence="0.1">4</lexlink>
-      </lexlinks>
-      <example src="" name="pass-v: time passes">
-        <text>Hardly a day passes without news photos of the police dragging limp protestors from some building.</text>
-        <rel relloc="3">passes</rel>
-        <arg f="" n="1" start="0" end="2">Hardly a day</arg>
-        <arg f="ADV" n="m" start="4" end="15">without news photos of the police dragging limp protestors from some building.</arg>
-      </example>
-      <example src="" name="passage-n: arg 1 as a modifier">
-        <text>time's passage</text>
-        <rel relloc="1">passage</rel>
-        <arg f="" n="1" start="0" end="0">time's</arg>
-      </example>
-      <example src="" name="passage-n: non-time example (meaning 'to go by')">
-        <text>completely free passage is to be ensured</text>
-        <rel relloc="2">passage</rel>
-        <arg f="MNR" n="m" start="0" end="1">completely free</arg>
-      </example>
-      <note>PASS-V NOTES: Frames file for 'pass' based on survey of initial sentences of big corpus and comparison with 'fail', 'give', 'send', and reference toverbnet classes give-13.1, send-11.1, and throw-17.1. There areprobably a million senses and phrasals I've missed; the syntax tendsto be pretty straightforward, so if you encounter them while taggingjust go ahead and add them. (from pass.03-v predicate notes)</note>
-      <note>PASSAGE-N NOTES: Based on sentences in nouns-00040. Comparison to pass.03. Vn class spend_time-104. Framed by Katie. (from passage.02-n)</note>
-      <note>PASSED-J NOTES: Automatically created by Julia as an alias file for unification. (from passed.03-j)</note>
-    </roleset>
-    <roleset id="pass.04" name="allow to go by">
-      <aliases>
-        <alias pos="v">pass</alias>
-      </aliases>
-      <roles>
-        <role descr="allower" f="PAG" n="0">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="consume-66" version="verbnet3.3">agent</rolelink>
-            <rolelink resource="VerbNet" class="spend_time-104" version="verbnet3.3">agent</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="thing let go by" f="PPT" n="1">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="consume-66" version="verbnet3.3">asset</rolelink>
-            <rolelink resource="VerbNet" class="spend_time-104" version="verbnet3.3">theme</rolelink>
-          </rolelinks>
-        </role>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="VerbNet" class="consume-66" version="verbnet3.3" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="VerbNet" class="spend_time-104" version="verbnet3.3" confidence="0.8" src="manual+strict-conv"/>
-      </lexlinks>
-      <example src="" name="pass-v: NP object">
-        <text>Warner has passed *trace*-1, or chosen not to produce, [at least 76]-1.</text>
-        <rel relloc="2">passed</rel>
-        <arg f="" n="0" start="0" end="0">Warner</arg>
-        <arg f="" n="1" start="3" end="3">*trace*-1,</arg>
-      </example>
-      <example src="ontonotes nw/wsj/13/wsj_1387" name="ARG0 and ARG1">
-        <text>Devotees pass hours , watching the lights blink and listening to the metal balls ping , as much to gamble as to get a little time to be anonymous , alone with their thoughts .</text>
-        <rel relloc="1">pass</rel>
-        <arg f="" n="0" start="0" end="0">Devotees</arg>
-        <arg f="" n="1" start="2" end="2">hours</arg>
-        <arg f="MNR" n="m" start="4" end="14">watching the lights blink and listening to the metal balls ping</arg>
-        <arg f="PRP" n="m" start="16" end="33">as much to gamble as to get a little time to be anonymous , alone with their thoughts</arg>
-      </example>
-      <note>PASS-V NOTES: Frames file for 'pass' based on survey of initial sentences of big corpus and comparison with 'fail', 'give', 'send', and reference toverbnet classes give-13.1, send-11.1, and throw-17.1. There areprobably a million senses and phrasals I've missed; the syntax tendsto be pretty straightforward, so if you encounter them while taggingjust go ahead and add them. (from pass.04-v predicate notes)</note>
-    </roleset>
-    <roleset id="pass.05" name="give">
-      <aliases>
-        <alias pos="v">pass</alias>
-        <alias pos="n">pass</alias>
-      </aliases>
-      <roles>
-        <role descr="giver" f="PAG" n="0">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="give-13.1" version="verbnet3.3">agent</rolelink>
-            <rolelink resource="VerbNet" class="throw-17.1-1" version="verbnet3.3">agent</rolelink>
-            <rolelink resource="VerbNet" class="send-11.1-1" version="verbnet3.3">agent</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="thing changing hands" f="PPT" n="1">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="give-13.1" version="verbnet3.3">theme</rolelink>
-            <rolelink resource="VerbNet" class="throw-17.1-1" version="verbnet3.3">theme</rolelink>
-            <rolelink resource="VerbNet" class="send-11.1-1" version="verbnet3.3">theme</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="getter" f="GOL" n="2">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="give-13.1" version="verbnet3.3">recipient</rolelink>
-            <rolelink resource="VerbNet" class="throw-17.1-1" version="verbnet3.3">destination</rolelink>
-            <rolelink resource="VerbNet" class="send-11.1-1" version="verbnet3.3">destination</rolelink>
-          </rolelinks>
-        </role>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="VerbNet" class="give-13.1" version="verbnet3.3" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="VerbNet" class="throw-17.1-1" version="verbnet3.3" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="VerbNet" class="send-11.1-1" version="verbnet3.3" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="onsense" version="on5" class="pass-v.4" src="annot-overlap" confidence="0.1">15</lexlink>
-      </lexlinks>
-      <example src="" name="pass-v: idiomatic meaning, compositional syntax">
-        <text>He is just passing the buck to young people.</text>
-        <rel relloc="3">passing</rel>
-        <arg f="" n="0" start="0" end="0">He</arg>
-        <arg f="DIS" n="m" start="2" end="2">just</arg>
-        <arg f="" n="1" start="4" end="5">the buck</arg>
-        <arg f="" n="2" start="6" end="8">to young people.</arg>
-      </example>
-      <example src="invented" name="pass-n: All arguments">
-        <text>His pass of the ball to the other team's player was infamous.</text>
-        <rel relloc="1">pass</rel>
-        <arg f="" n="0" start="0" end="0">His</arg>
-        <arg f="" n="1" start="2" end="4">of the ball</arg>
-        <arg f="" n="2" start="5" end="9">to the other team's player</arg>
-      </example>
-      <note>PASS-V NOTES: Similarly "pass_along", which is often misparsed in Treebank. (from pass.05-v)</note>
-      <note>PASS-N NOTES: Roleset baesd on verb entry pass.05. Corresponds to VN class give-13.1. (from pass.02-n)</note>
-    </roleset>
-    <roleset id="pass.06" name="suffice, get away (with)">
-      <aliases>
-        <alias pos="v">pass</alias>
-      </aliases>
-      <roles>
-        <role descr="thing passing" f="PPT" n="1"/>
-        <role descr="attributive" f="PRD" n="2"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks/>
-      <example src="" name="pass-v: pass for">
-        <text>...the claptrap that *trace* passes for consensus in various international institutions.</text>
-        <rel relloc="4">passes</rel>
-        <arg f="" n="1" start="3" end="3">*trace*</arg>
-        <arg f="RCL" n="m" start="0" end="1">...the claptrap</arg>
-        <arg f="" n="2" start="5" end="6">for consensus</arg>
-        <arg f="LOC" n="m" start="7" end="10">in various international institutions.</arg>
-      </example>
-      <note>PASS-V NOTES: Can also be "pass as" (from pass.06-v)</note>
-    </roleset>
-    <roleset id="pass.07" name="pass a class, pass a test">
-      <aliases>
-        <alias pos="v">pass</alias>
-      </aliases>
-      <roles>
-        <role descr="student" f="PAG" n="1"/>
-        <role descr="test" f="PPT" n="2"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="onsense" version="on5" class="pass-v.2" src="annot-overlap" confidence="0.1">23</lexlink>
-      </lexlinks>
-      <example src="" name="pass-v: success!">
-        <text>The number of balloonists who *trace* have passed a Federal Aviation Authority lighter-than-air test has doubled in the last year.</text>
-        <rel relloc="7">passed</rel>
-        <arg f="" n="1" start="5" end="5">*trace*</arg>
-        <arg f="RCL" n="m" start="0" end="3">The number of balloonists</arg>
-        <arg f="" n="2" start="8" end="13">a Federal Aviation Authority lighter-than-air test</arg>
-      </example>
-      <note>PASS-V NOTES: One presumes the test itself is not lighter than air. (from pass.07-v)</note>
-    </roleset>
-    <roleset id="pass.08" name="push through a passage (like a clot)">
-      <aliases>
-        <alias pos="v">pass</alias>
-      </aliases>
-      <roles>
-        <role descr="passer" f="PAG" n="0"/>
-        <role descr="thing passed (clot, gas, kidney stone, etc)" f="PPT" n="1"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Traversing" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="FrameNet" class="Passing" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="AidaOntology" version="Jan2019" class="Transaction.TransferMoney.Purchase" confidence="0.1" src="reo-expansion"/>
-        <lexlink resource="AidaOntology" version="Jan2019" class="Transaction.TransferOwnership.Purchase" confidence="0.1" src="reo-expansion"/>
-        <lexlink resource="ERE" class="Transferownership" version="rich" confidence="0.1" src="reo-expansion"/>
-        <lexlink resource="ERE" class="Transportperson" version="rich" confidence="0.1" src="reo-expansion"/>
-      </lexlinks>
-      <example src="" name="pass-v: whoever smelt it...">
-        <text>Cruz then allegedly moved closer to one of the officers and passed gas, the station reported.</text>
-        <rel relloc="11">passed</rel>
-        <arg f="" n="0" start="0" end="0">Cruz</arg>
-        <arg f="TMP" n="m" start="1" end="1">then</arg>
-        <arg f="ADV" n="m" start="2" end="2">allegedly</arg>
-        <arg f="" n="1" start="12" end="12">gas,</arg>
-      </example>
-      <example src="" name="pass-v: Bladder sharks?">
-        <text>Recently I passed a kidney stone that looked like a shark's tooth.</text>
-        <rel relloc="2">passed</rel>
-        <arg f="TMP" n="m" start="0" end="0">Recently</arg>
-        <arg f="" n="0" start="1" end="1">I</arg>
-        <arg f="" n="1" start="3" end="11">a kidney stone that looked like a shark's tooth.</arg>
-      </example>
-      <example src="" name="pass-v: Why are all these examples so painful?">
-        <text>My partner passed a blood clot in his urine today after falling through his ceiling about 2 weeks ago and bruising his boy bits.</text>
-        <rel relloc="2">passed</rel>
-        <arg f="" n="0" start="0" end="1">My partner</arg>
-        <arg f="" n="1" start="3" end="5">a blood clot</arg>
-        <arg f="MNR" n="m" start="6" end="8">in his urine</arg>
-        <arg f="TMP" n="m" start="9" end="9">today</arg>
-        <arg f="TMP" n="m" start="10" end="23">after falling through his ceiling about 2 weeks ago and bruising his boy bits.</arg>
-      </example>
-      <example src="" name="pass-v: non-medical/bodily-function-related">
-        <text>If the line passed a clog, it's probably sitting in your filter causing a by-pass situation.</text>
-        <rel relloc="3">passed</rel>
-        <arg f="" n="0" start="1" end="2">the line</arg>
-        <arg f="" n="1" start="4" end="5">a clog,</arg>
-      </example>
-      <note>PASS-V NOTES: Reframed by Julia. No VNcls. (from pass.08-v)</note>
-    </roleset>
-    <roleset id="pass.20" name="die">
-      <aliases>
-        <alias pos="v">pass</alias>
-        <alias pos="n">passing</alias>
-        <alias pos="m">pass_away</alias>
-        <alias pos="m">pass_on</alias>
-        <alias pos="m">pass_over</alias>
-        <alias pos="m">lemma</alias>
-        <mwp-descriptions id="lemma">
-          <syntaxdesc slots="B A">
-            <token slot="A" arg="" pos="VB*" head="" dep="">pass</token>
-            <token slot="A" arg="" pos="NN" head="" dep="">passing</token>
-            <token slot="B" arg="" pos="IN" head="A" dep="">away</token>
-            <token slot="B" arg="" pos="IN" head="A" dep="">on</token>
-            <token slot="B" arg="" pos="IN" head="A" dep="">over</token>
-          </syntaxdesc>
-        </mwp-descriptions>
-      </aliases>
-      <roles>
-        <role descr="entity dying" f="PPT" n="1"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Death" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="FrameNet" class="Process_end" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="AidaOntology" version="Jan2019" class="Life.Die.NonviolentDeath" confidence="0.1" src="reo-expansion"/>
-        <lexlink resource="ERE" class="Die" version="rich" confidence="0.1" src="reo-expansion"/>
-      </lexlinks>
-      <example src="" name="passing-n: only arg">
-        <text>We talked about her husband's passing in March.</text>
-        <rel relloc="5">passing</rel>
-        <arg f="" n="1" start="3" end="4">her husband's</arg>
-      </example>
-      <example src="on499-nouns-be" name="passing-n: arg1">
-        <text>Zemin Jiang , president of the People 's Republic of China , and Peng Li , premier of the State Council , sent a telegraph of condolences on the 23rd on the passing of former US President , Richard Nixon .</text>
-        <rel relloc="32">passing</rel>
-        <arg f="" n="1" start="34" end="39">former US President , Richard Nixon</arg>
-      </example>
-      <example src="" name="pass_on-v: so sorry">
-        <text>John's cat passed on last week.</text>
-        <rel relloc="2 3">passed on</rel>
-        <arg f="" n="1" start="0" end="1">John's cat</arg>
-        <arg f="TMP" n="m" start="4" end="5">last week.</arg>
-      </example>
-      <example src="" name="pass_away-v: die">
-        <text>but you have [unintellegible] 0 Lewis Powell was one of your sources because he 'spassed away.</text>
-        <rel relloc="14 15">'spassed away.</rel>
-        <arg f="" n="1" start="13" end="13">he</arg>
-      </example>
-      <note>PASS-V NOTES: Based on Sharp data. Comparison to pass.15. No VN class. FN class process_end. Framed by Katie. (from pass.20-v)</note>
-      <note>PASSING-N NOTES: Added by Julia based on on499-nouns-be. (from passing.02-n)</note>
-      <note>PASS_ON-V NOTES: Frame edited by Arrick (from pass.15-v)</note>
-      <note>PASS_AWAY-V NOTES: Frame added by Arrick (from pass.16-v)</note>
-    </roleset>
-    <roleset id="pass.22" name="make a pass at, attempt something (esp flirtation)">
-      <aliases>
-        <alias pos="n">pass</alias>
-        <alias pos="l">make_pass</alias>
-      </aliases>
-      <roles>
-        <role descr="entity attempting something" f="PAG" n="0"/>
-        <role descr="thing attempted (often &quot;at&quot; phrase)" f="PPT" n="1"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks/>
-      <example src="wsj" name="make_pass-l: Flirtatious pass, within LVC">
-        <text>Josh makes clumsy passes at Kate when she 's seething with anger and fear , but we know from the outset that he 's not a member of the evil patriarchy .</text>
-        <rel relloc="3">passes</rel>
-        <arg f="" n="0" start="0" end="0">Josh</arg>
-        <arg f="LVB" n="m" start="1" end="1">makes</arg>
-        <arg f="MNR" n="m" start="2" end="2">clumsy</arg>
-        <arg f="" n="1" start="4" end="5">at Kate</arg>
-        <arg f="TMP" n="m" start="6" end="13">when she 's seething with anger and fear</arg>
-      </example>
-      <note>PASS-N NOTES: Roleset based on instances in wsj. Comparison to verb-attempt.01. (from pass.03-n)</note>
-    </roleset>
-  </predicate>
-  <predicate lemma="pass_by">
-    <roleset id="pass_by.17" name="overtake, go past">
-      <aliases>
-        <alias pos="v">pass_by</alias>
-        <argalias pos="n" arg="0">passerby</argalias>
-      </aliases>
-      <roles>
-        <role descr="entity moving ahead; passing entity" f="PAG" n="0"/>
-        <role descr="entity falling behind; thing passed" f="PPT" n="1"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Motion" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="onsense" version="on5" class="pass-v.1" src="annot-overlap" confidence="0.1">5</lexlink>
-      </lexlinks>
-      <example src="" name="pass_by-v">
-        <text>... an important official or a member of the gentry passed by in a carriage or sedan chair...</text>
-        <rel relloc="10 11">passed by</rel>
-        <arg f="" n="0" start="1" end="9">an important official or a member of the gentry</arg>
-        <arg f="MNR" n="m" start="12" end="17">in a carriage or sedan chair...</arg>
-      </example>
-      <note>PASS_BY-V NOTES: (from pass.17-v)</note>
-    </roleset>
-  </predicate>
-  <predicate lemma="pass_off">
-    <roleset id="pass_off.18" name="offer for acceptance under false pretext">
-      <aliases>
-        <alias pos="v">pass_off</alias>
-      </aliases>
-      <roles>
-        <role descr="faker" f="PAG" n="0"/>
-        <role descr="thing offered" f="PPT" n="1"/>
-        <role descr="(possibly) duped judge" f="GOL" n="2"/>
-        <role descr="fake attribute of Arg1" f="PRD" n="3"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <example src="" name="pass_off-v">
-        <text>The charges ran the gamut from not filling out proper forms to purchasing phoney export contracts and trying to pass them off to customs.</text>
-        <rel relloc="19 21">pass off</rel>
-        <arg f="" n="1" start="20" end="20">them</arg>
-        <arg f="" n="2" start="22" end="23">to customs.</arg>
-      </example>
-      <example src="ontonotes bc/p2" name="ARG0 and ARG1 and ARG3">
-        <text>Some even wear army uniforms to pass themselves off as soldiers , and enter and steal from the camps .</text>
-        <rel relloc="6 8">pass off</rel>
-        <arg f="" n="0" start="0" end="0">Some</arg>
-        <arg f="" n="1" start="7" end="7">themselves</arg>
-        <arg f="" n="3" start="9" end="10">as soldiers</arg>
-      </example>
-      <note>PASS_OFF-V NOTES: Frame created by Jena (from pass.18-v)</note>
-    </roleset>
-  </predicate>
-  <predicate lemma="pass_on">
-    <roleset id="pass_on.09" name="give, pass_on: give">
-      <aliases>
-        <alias pos="v">pass_on</alias>
-        <alias pos="n">passing_on</alias>
-      </aliases>
-      <roles>
-        <role descr="giver" f="PAG" n="0">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="send-11.1" version="verbnet3.3">agent</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="thing changing hands" f="PPT" n="1">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="send-11.1" version="verbnet3.3">theme</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="getter" f="GOL" n="2">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="send-11.1" version="verbnet3.3">destination</rolelink>
-          </rolelinks>
-        </role>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="VerbNet" class="send-11.1" version="verbnet3.3" confidence="0.8" src="manual+strict-conv"/>
-      </lexlinks>
-      <example src="" name="pass_on-v: give">
-        <text>Insurers typically pass on a small percentage of the risks they underwrite (to their customers).</text>
-        <rel relloc="2 3">pass on</rel>
-        <arg f="" n="0" start="0" end="0">Insurers</arg>
-        <arg f="TMP" n="m" start="1" end="1">typically</arg>
-        <arg f="" n="1" start="4" end="11">a small percentage of the risks they underwrite</arg>
-        <arg f="" n="2" start="12" end="14">(to their customers).</arg>
-      </example>
-      <example src="on499-nouns-be" name="passing_on-n: args 1, 2">
-        <text>But the alertness of the road guards prevented the passing of this quantity on to our youth .</text>
-        <rel relloc="9 13">passing on</rel>
-        <arg f="" n="1" start="10" end="12">of this quantity</arg>
-        <arg f="" n="2" start="14" end="16">to our youth</arg>
-      </example>
-      <note>PASS_ON-V NOTES: frame by Perryn (from pass.09-v predicate notes)</note>
-      <note>PASSING_ON-N NOTES: Added Julia base (from passing.04-n)</note>
-    </roleset>
-    <roleset id="pass_on.14" name="act as a middle man in the giving process">
-      <aliases>
-        <alias pos="v">pass_on</alias>
-      </aliases>
-      <roles>
-        <role descr="transmitter" f="PAG" n="0">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="send-11.1" version="verbnet3.3">agent</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="thing transmitted" f="PPT" n="1">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="send-11.1" version="verbnet3.3">theme</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="transmitted to" f="GOL" n="2">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="send-11.1" version="verbnet3.3">destination</rolelink>
-          </rolelinks>
-        </role>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="VerbNet" class="send-11.1" version="verbnet3.3" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="onsense" version="on5" class="pass-v.4" src="annot-overlap" confidence="0.1">3</lexlink>
-      </lexlinks>
-      <example src="" name="pass_on-v: passive">
-        <text>Both the costs and the savings could be passed on to shippers on the TransCanada pipeline.</text>
-        <rel relloc="8 9">passed on</rel>
-        <arg f="" n="1" start="0" end="5">Both the costs and the savings</arg>
-        <arg f="MOD" n="m" start="6" end="6">could</arg>
-        <arg f="" n="2" start="10" end="15">to shippers on the TransCanada pipeline.</arg>
-      </example>
-      <example src="probably COCA (2018 example fix)" name="ARG0 and ARG1 and ARG2 and ARG3">
-        <text>it was carried at full speed either by a single runner or (if the distance was great) by relays of runners who passed it on from hand to hand.</text>
-        <rel relloc="22 24">passed on</rel>
-        <arg f="" n="0" start="21" end="21">who</arg>
-        <arg f="" n="1" start="0" end="0">it</arg>
-        <arg f="DIR" n="m" start="25" end="26">from hand</arg>
-        <arg f="" n="2" start="27" end="28">to hand.</arg>
-      </example>
-      <note>PASS_ON-V NOTES: frame by Perryn (from pass.14-v predicate notes)</note>
-    </roleset>
-    <roleset id="pass_on.19" name="to move on from a place to another place">
-      <aliases>
-        <alias pos="v">pass_on</alias>
-      </aliases>
-      <roles>
-        <role descr="mover" f="PAG" n="0">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="send-11.1" version="verbnet3.3">agent</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="thing moved, package" f="PPT" n="1">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="send-11.1" version="verbnet3.3">theme</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="moved from" f="DIR" n="2">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="send-11.1" version="verbnet3.3">initial_location</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="moved to" f="GOL" n="3">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="send-11.1" version="verbnet3.3">destination</rolelink>
-          </rolelinks>
-        </role>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="VerbNet" class="send-11.1" version="verbnet3.3" confidence="0.8" src="manual+strict-conv"/>
-      </lexlinks>
-      <example src="" name="pass_on-v: topical">
-        <text>We pass on from this town of scholarly associations to the industrial centre of Bath, well known for its great shipyards.</text>
-        <rel relloc="1 2">pass on</rel>
-        <arg f="" n="0" start="0" end="0">We</arg>
-        <arg f="" n="2" start="3" end="8">from this town of scholarly associations</arg>
-        <arg f="" n="3" start="9" end="20">to the industrial centre of Bath, well known for its great shipyards.</arg>
-      </example>
-      <note>PASS_ON-V NOTES: frame by Perryn (from pass.19-v predicate notes)</note>
-    </roleset>
-  </predicate>
-  <predicate lemma="pass_out">
-    <roleset id="pass_out.10" name="distribute">
-      <aliases>
-        <alias pos="v">pass_out</alias>
-      </aliases>
-      <roles>
-        <role descr="distributor" f="PAG" n="0">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="contribute-13.2" version="verbnet3.3">agent</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="thing distributed" f="PPT" n="1">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="contribute-13.2" version="verbnet3.3">theme</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="distributed to" f="GOL" n="2">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="contribute-13.2" version="verbnet3.3">recipient</rolelink>
-          </rolelinks>
-        </role>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="VerbNet" class="contribute-13.2" version="verbnet3.3" confidence="0.8" src="manual+strict-conv"/>
-      </lexlinks>
-      <example src="" name="pass_out-v: passive">
-        <text>[The test booklets]-1 were passed *trace*-1 out 48 hours ahead of time.</text>
-        <rel relloc="4 6">passed out</rel>
-        <arg f="" n="1" start="5" end="5">*trace*-1</arg>
-        <arg f="TMP" n="m" start="7" end="11">48 hours ahead of time.</arg>
-      </example>
-      <note>PASS_OUT-V NOTES: (from pass.10-v)</note>
-    </roleset>
-    <roleset id="pass_out.11" name="faint">
-      <aliases>
-        <alias pos="v">pass_out</alias>
-      </aliases>
-      <roles>
-        <role descr="fainter" f="PAG" n="0"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks/>
-      <example src="ontonotes wb/eng/00/eng_0009" name="ARG0">
-        <text>and my buddy passes out .</text>
-        <rel relloc="3 4">passes out</rel>
-        <arg f="DIS" n="m" start="0" end="0">and</arg>
-        <arg f="" n="0" start="1" end="2">my buddy</arg>
-      </example>
-      <note>PASS_OUT-V NOTES: (from pass.11-v)</note>
-    </roleset>
-  </predicate>
-  <predicate lemma="pass_over">
-    <roleset id="pass_over.12" name="ignore, leave behind">
-      <aliases>
-        <alias pos="v">pass_over</alias>
-      </aliases>
-      <roles>
-        <role descr="ignorer" f="PAG" n="0"/>
-        <role descr="thing ignored" f="PPT" n="1"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks/>
-      <example src="" name="pass_over-v: transitive active">
-        <text>...a small French merchant bank that Deutsche Bank had looked at and passed *trace* over.</text>
-        <rel relloc="12 14">passed over.</rel>
-        <arg f="" n="0" start="6" end="7">Deutsche Bank</arg>
-        <arg f="" n="1" start="13" end="13">*trace*</arg>
-      </example>
-      <note>PASS_OVER-V NOTES: (from pass.12-v)</note>
-    </roleset>
-  </predicate>
-  <predicate lemma="pass_up">
-    <roleset id="pass_up.13" name="relinquish">
-      <aliases>
-        <alias pos="v">pass_up</alias>
-      </aliases>
-      <roles>
-        <role descr="entity relinquishing one item" f="PAG" n="0"/>
-        <role descr="item relinquished" f="PPT" n="1"/>
-        <role descr="in favor of another" f="PPT" n="2"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="onsense" version="on5" class="pass-v.14" src="annot-overlap" confidence="0.1">3</lexlink>
-      </lexlinks>
-      <example src="" name="pass_up-v: transitive">
-        <text>Gorbachev-1 is unlikely *trace*-1 to pass up the opportunity to press once again for negotiated cuts in the navies of both nations.</text>
-        <rel relloc="5 6">pass up</rel>
-        <arg f="" n="0" start="3" end="3">*trace*-1</arg>
-        <arg f="" n="1" start="7" end="21">the opportunity to press once again for negotiated cuts in the navies of both nations.</arg>
-      </example>
-      <note>PASS_UP-V NOTES: Similarly "pass_by" (from pass.13-v)</note>
-    </roleset>
-  </predicate>
-  <predicate lemma="come_to_pass">
-    <roleset id="come_to_pass.23" name="occur, perhaps as foretold">
-      <aliases>
-        <alias pos="m">come_to_pass</alias>
-        <mwp-descriptions id="come_to_pass">
-          <syntaxdesc slots="B C A">
-            <token slot="A" arg="" pos="VB*" head="" dep="">come</token>
-            <token slot="B" arg="" pos="TO" head="C" dep="mark">to</token>
-            <token slot="C" arg="" pos="VB" head="A" dep="ccomp">pass</token>
-          </syntaxdesc>
-        </mwp-descriptions>
-      </aliases>
-      <roles>
-        <role descr="event" f="PAG" n="1"/>
-        <role descr="benefactive" f="PPT" n="2"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="-"/>
-      </usagenotes>
-      <lexlinks/>
-      <example src="" name="come_to_pass-m">
-        <text>And lo, it came to pass that Scott Baio tweeted his support for Scott Walker.</text>
-        <rel relloc="3 4 5">came to pass</rel>
-        <arg f="DIS" n="m" start="0" end="0">And</arg>
-        <arg f="DIS" n="m" start="1" end="1">lo,</arg>
-        <arg f="" n="1" start="6" end="14">that Scott Baio tweeted his support for Scott Walker.</arg>
-      </example>
-      <note>COME_TO_PASS-M NOTES: </note>
-    </roleset>
-  </predicate>
-  <predicate lemma="give_pass">
-    <roleset id="give_pass.24" name="ignore or forgive an offense">
-      <aliases>
-        <alias pos="n">pass</alias>
-        <alias pos="l">give_pass</alias>
-        <alias pos="l">get_pass</alias>
-      </aliases>
-      <roles>
-        <role descr="giver of pass; forgiver" f="PAG" n="0"/>
-        <role descr="entity forgiven, given a pass" f="PPT" n="1"/>
-        <role descr="offense ignored" f="GOL" n="2"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="-"/>
-      </usagenotes>
-      <example src="fox via COCA" name="all args">
-        <text>He's supposed to be a genius, and that's why we gave him a pass on the tax stuff.</text>
-        <rel relloc="13">pass</rel>
-        <arg f="" n="0" start="9" end="9">we</arg>
-        <arg f="LVB" n="m" start="10" end="10">gave</arg>
-        <arg f="" n="1" start="11" end="11">him</arg>
-        <arg f="" n="2" start="14" end="17">on the tax stuff.</arg>
-      </example>
-      <note>Prepped by Tim during MWE framing </note>
-    </roleset>
-  </predicate>
+   <predicate lemma="pass">
+      <roleset id="pass.01" name="bill becomes law">
+         <aliases>
+            <alias pos="v">pass</alias>
+            <alias pos="n">passing</alias>
+            <alias pos="n">passage</alias>
+         </aliases>
+         <roles>
+            <role descr="legislative body" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="bill, state prior to passing" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="law, state after passing" f="PRD" n="2">
+               <rolelinks/>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="pass-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">80</lexlink>
+            <lexlink class="passage-n.4" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">10</lexlink>
+            <lexlink class="give-13.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="pass-v: passive" src="">
+            <text>The Senate-House conference committee is used when [a bill]-1 is passed*trace*-1 by the House and Senate in different forms.</text>
+            <rel relloc="10">passed*trace*-1</rel>
+            <arg end="0" f="" n="1" start="0">The</arg>
+            <arg end="15" f="" n="0" start="11">by the House and Senate</arg>
+            <arg end="18" f="MNR" n="m" start="16">in different forms.</arg>
+         </example>
+         <example name="pass-v: distinguishing arg1 from arg2" src="">
+            <text>John passed the bill into law.</text>
+            <rel relloc="1">passed</rel>
+            <arg end="0" f="" n="0" start="0">John</arg>
+            <arg end="3" f="" n="1" start="2">the bill</arg>
+            <arg end="5" f="" n="2" start="4">into law.</arg>
+         </example>
+         <example name="passing-n: arg1" src="">
+            <text>On 14 February , in a statement in which he spoke of a &quot; painful choice &quot; and his &quot; undying determination , &quot; Premier Chang Chun - hsiung announced the resumption of work on the Fourth Nuclear Power Plant , and identified the passing of a plebiscite law as the most important topic for renewed cross-party consultation .</text>
+            <rel relloc="44">passing</rel>
+            <arg end="48" f="" n="1" start="45">of a plebiscite law</arg>
+         </example>
+         <example name="passage-n: Args 0 and 1" src="">
+            <text>congressional and presidential passage of an increase in the federal debt ceiling</text>
+            <rel relloc="3">passage</rel>
+            <arg end="2" f="" n="0" start="0">congressional and presidential</arg>
+            <arg end="11" f="" n="1" start="4">of an increase in the federal debt ceiling</arg>
+         </example>
+         <example name="passage-n: arg 1 only" src="">
+            <text>passage of two constitutional amendment bills</text>
+            <rel relloc="0">passage</rel>
+            <arg end="5" f="" n="1" start="1">of two constitutional amendment bills</arg>
+         </example>
+         <note>PASS-V NOTES: Frames file for 'pass' based on survey of initial sentences of big corpus and comparison with 'fail', 'give', 'send', and reference toverbnet classes give-13.1, send-11.1, and throw-17.1. There areprobably a million senses and phrasals I've missed; the syntax tendsto be pretty straightforward, so if you encounter them while taggingjust go ahead and add them. (from pass.01-v predicate notes)</note>
+         <note>PASSING-N NOTES: Added by Julia based on on499-nouns-be. (from passing.03-n)</note>
+         <note>PASSAGE-N NOTES: Based on sentences in nouns-00040. Comparison to pass.01. No VN class. Framed by Katie. (from passage.01-n)</note>
+      </roleset>
+      <roleset id="pass.02" name="overtake">
+         <aliases>
+            <alias pos="v">pass</alias>
+            <alias pos="n">passing</alias>
+            <alias pos="n">pass</alias>
+         </aliases>
+         <roles>
+            <role descr="entity moving ahead" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="entity falling behind" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="pass-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+            <lexlink class="pass-v.14" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+            <lexlink class="give-13.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="pass-v: transitive" src="">
+            <text>[A couple of my law clerks]-1 were going *trace*-1 to pass me in three orfour years.</text>
+            <rel relloc="10">pass</rel>
+            <arg end="8" f="" n="0" start="8">*trace*-1</arg>
+            <arg end="11" f="" n="1" start="11">me</arg>
+            <arg end="15" f="TMP" n="m" start="12">in three orfour years.</arg>
+         </example>
+         <example name="make_pass-l: Within LVC all arguments" src="web">
+            <text>Disaster almost struck as Erik made his pass of the leader on the 13th lap.</text>
+            <rel relloc="7">pass</rel>
+            <arg end="4" f="" n="0" start="4">Erik</arg>
+            <arg end="5" f="LVB" n="m" start="5">made</arg>
+            <arg end="10" f="" n="1" start="8">of the leader</arg>
+            <arg end="14" f="TMP" n="m" start="11">on the 13th lap.</arg>
+         </example>
+         <example name="passing-n: in passing" src="BOLT">
+            <text>SAw the punch in passing , looked a decent one - two .</text>
+            <rel relloc="4">passing</rel>
+         </example>
+         <example name="passing-n: Both args" src="internet">
+            <text>I think his passing her in the stair-well is simply him not knowing what to do with a distraught woman</text>
+            <rel relloc="3">passing</rel>
+            <arg end="2" f="" n="0" start="2">his</arg>
+            <arg end="4" f="" n="1" start="4">her</arg>
+            <arg end="7" f="LOC" n="m" start="5">in the stair-well</arg>
+         </example>
+         <note>PASS-V NOTES: Frames file for 'pass' based on survey of initial sentences of big corpus and comparison with 'fail', 'give', 'send', and reference toverbnet classes give-13.1, send-11.1, and throw-17.1. There areprobably a million senses and phrasals I've missed; the syntax tendsto be pretty straightforward, so if you encounter them while taggingjust go ahead and add them. (from pass.02-v predicate notes)</note>
+      </roleset>
+      <roleset id="pass.03" name="go by">
+         <aliases>
+            <alias pos="v">pass</alias>
+            <alias pos="n">passage</alias>
+            <alias pos="j">passed</alias>
+         </aliases>
+         <roles>
+            <role descr="thing passing" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="meander-47.7" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="occur-48.3" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+                  <rolelink class="meander-47.7" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Passing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="meander-47.7" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+            <lexlink class="occur-48.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+            <lexlink class="pass-v.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">17</lexlink>
+            <lexlink class="pass-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+            <lexlink class="passage-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+            <lexlink class="meander-47.7" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+            <lexlink class="give-13.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="pass-v: time passes" src="">
+            <text>Hardly a day passes without news photos of the police dragging limp protestors from some building.</text>
+            <rel relloc="3">passes</rel>
+            <arg end="2" f="" n="1" start="0">Hardly a day</arg>
+            <arg end="15" f="ADV" n="m" start="4">without news photos of the police dragging limp protestors from some building.</arg>
+         </example>
+         <example name="passage-n: arg 1 as a modifier" src="">
+            <text>time's passage</text>
+            <rel relloc="1">passage</rel>
+            <arg end="0" f="" n="1" start="0">time's</arg>
+         </example>
+         <example name="passage-n: non-time example (meaning 'to go by')" src="">
+            <text>completely free passage is to be ensured</text>
+            <rel relloc="2">passage</rel>
+            <arg end="1" f="MNR" n="m" start="0">completely free</arg>
+         </example>
+         <note>PASS-V NOTES: Frames file for 'pass' based on survey of initial sentences of big corpus and comparison with 'fail', 'give', 'send', and reference toverbnet classes give-13.1, send-11.1, and throw-17.1. There areprobably a million senses and phrasals I've missed; the syntax tendsto be pretty straightforward, so if you encounter them while taggingjust go ahead and add them. (from pass.03-v predicate notes)</note>
+         <note>PASSAGE-N NOTES: Based on sentences in nouns-00040. Comparison to pass.03. Vn class spend_time-104. Framed by Katie. (from passage.02-n)</note>
+         <note>PASSED-J NOTES: Automatically created by Julia as an alias file for unification. (from passed.03-j)</note>
+      </roleset>
+      <roleset id="pass.04" name="allow to go by">
+         <aliases>
+            <alias pos="v">pass</alias>
+         </aliases>
+         <roles>
+            <role descr="allower" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="consume-66" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="spend_time-104" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+                  <rolelink class="spend_time-104" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="thing let go by" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="consume-66" resource="VerbNet" version="verbnet3.3">asset</rolelink>
+                  <rolelink class="spend_time-104" resource="VerbNet" version="verbnet3.3">duration</rolelink>
+                  <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+                  <rolelink class="spend_time-104" resource="VerbNet" version="verbnet3.4">duration</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="consume-66" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+            <lexlink class="spend_time-104" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+            <lexlink class="spend_time-104" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+            <lexlink class="give-13.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="pass-v: NP object" src="">
+            <text>Warner has passed *trace*-1, or chosen not to produce, [at least 76]-1.</text>
+            <rel relloc="2">passed</rel>
+            <arg end="0" f="" n="0" start="0">Warner</arg>
+            <arg end="3" f="" n="1" start="3">*trace*-1,</arg>
+         </example>
+         <example name="ARG0 and ARG1" src="ontonotes nw/wsj/13/wsj_1387">
+            <text>Devotees pass hours , watching the lights blink and listening to the metal balls ping , as much to gamble as to get a little time to be anonymous , alone with their thoughts .</text>
+            <rel relloc="1">pass</rel>
+            <arg end="0" f="" n="0" start="0">Devotees</arg>
+            <arg end="2" f="" n="1" start="2">hours</arg>
+            <arg end="14" f="MNR" n="m" start="4">watching the lights blink and listening to the metal balls ping</arg>
+            <arg end="33" f="PRP" n="m" start="16">as much to gamble as to get a little time to be anonymous , alone with their thoughts</arg>
+         </example>
+         <note>PASS-V NOTES: Frames file for 'pass' based on survey of initial sentences of big corpus and comparison with 'fail', 'give', 'send', and reference toverbnet classes give-13.1, send-11.1, and throw-17.1. There areprobably a million senses and phrasals I've missed; the syntax tendsto be pretty straightforward, so if you encounter them while taggingjust go ahead and add them. (from pass.04-v predicate notes)</note>
+      </roleset>
+      <roleset id="pass.05" name="give">
+         <aliases>
+            <alias pos="v">pass</alias>
+            <alias pos="n">pass</alias>
+         </aliases>
+         <roles>
+            <role descr="giver" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="throw-17.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="send-11.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="send-11.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+                  <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+                  <rolelink class="throw-17.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="thing changing hands" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="throw-17.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="send-11.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="send-11.1-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+                  <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+                  <rolelink class="throw-17.1-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="getter" f="GOL" n="2">
+               <rolelinks>
+                  <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+                  <rolelink class="throw-17.1-1" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+                  <rolelink class="send-11.1-1" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+                  <rolelink class="send-11.1-1" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+                  <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+                  <rolelink class="throw-17.1-1" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="give-13.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+            <lexlink class="throw-17.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+            <lexlink class="send-11.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+            <lexlink class="pass-v.4" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">15</lexlink>
+            <lexlink class="throw-17.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+            <lexlink class="send-11.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+            <lexlink class="give-13.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="pass-v: idiomatic meaning, compositional syntax" src="">
+            <text>He is just passing the buck to young people.</text>
+            <rel relloc="3">passing</rel>
+            <arg end="0" f="" n="0" start="0">He</arg>
+            <arg end="2" f="DIS" n="m" start="2">just</arg>
+            <arg end="5" f="" n="1" start="4">the buck</arg>
+            <arg end="8" f="" n="2" start="6">to young people.</arg>
+         </example>
+         <example name="pass-n: All arguments" src="invented">
+            <text>His pass of the ball to the other team's player was infamous.</text>
+            <rel relloc="1">pass</rel>
+            <arg end="0" f="" n="0" start="0">His</arg>
+            <arg end="4" f="" n="1" start="2">of the ball</arg>
+            <arg end="9" f="" n="2" start="5">to the other team's player</arg>
+         </example>
+         <note>PASS-V NOTES: Similarly &quot;pass_along&quot;, which is often misparsed in Treebank. (from pass.05-v)</note>
+         <note>PASS-N NOTES: Roleset baesd on verb entry pass.05. Corresponds to VN class give-13.1. (from pass.02-n)</note>
+      </roleset>
+      <roleset id="pass.06" name="suffice, get away (with)">
+         <aliases>
+            <alias pos="v">pass</alias>
+         </aliases>
+         <roles>
+            <role descr="thing passing" f="PPT" n="1"/>
+            <role descr="attributive" f="PRD" n="2"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="pass-v: pass for" src="">
+            <text>...the claptrap that *trace* passes for consensus in various international institutions.</text>
+            <rel relloc="4">passes</rel>
+            <arg end="3" f="" n="1" start="3">*trace*</arg>
+            <arg end="1" f="RCL" n="m" start="0">...the claptrap</arg>
+            <arg end="6" f="" n="2" start="5">for consensus</arg>
+            <arg end="10" f="LOC" n="m" start="7">in various international institutions.</arg>
+         </example>
+         <note>PASS-V NOTES: Can also be &quot;pass as&quot; (from pass.06-v)</note>
+      </roleset>
+      <roleset id="pass.07" name="pass a class, pass a test">
+         <aliases>
+            <alias pos="v">pass</alias>
+         </aliases>
+         <roles>
+            <role descr="student" f="PAG" n="1">
+               <rolelinks>
+                  <rolelink class="spend_time-104" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="spend_time-104" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="test" f="PPT" n="2">
+               <rolelinks/>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="pass-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">23</lexlink>
+            <lexlink class="spend_time-104" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="pass-v: success!" src="">
+            <text>The number of balloonists who *trace* have passed a Federal Aviation Authority lighter-than-air test has doubled in the last year.</text>
+            <rel relloc="7">passed</rel>
+            <arg end="5" f="" n="1" start="5">*trace*</arg>
+            <arg end="3" f="RCL" n="m" start="0">The number of balloonists</arg>
+            <arg end="13" f="" n="2" start="8">a Federal Aviation Authority lighter-than-air test</arg>
+         </example>
+         <note>PASS-V NOTES: One presumes the test itself is not lighter than air. (from pass.07-v)</note>
+      </roleset>
+      <roleset id="pass.08" name="push through a passage (like a clot)">
+         <aliases>
+            <alias pos="v">pass</alias>
+         </aliases>
+         <roles>
+            <role descr="passer" f="PAG" n="0"/>
+            <role descr="thing passed (clot, gas, kidney stone, etc)" f="PPT" n="1"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Traversing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="Passing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="Transaction.TransferMoney.Purchase" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+            <lexlink class="Transaction.TransferOwnership.Purchase" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+            <lexlink class="Transferownership" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+            <lexlink class="Transportperson" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+         </lexlinks>
+         <example name="pass-v: whoever smelt it..." src="">
+            <text>Cruz then allegedly moved closer to one of the officers and passed gas, the station reported.</text>
+            <rel relloc="11">passed</rel>
+            <arg end="0" f="" n="0" start="0">Cruz</arg>
+            <arg end="1" f="TMP" n="m" start="1">then</arg>
+            <arg end="2" f="ADV" n="m" start="2">allegedly</arg>
+            <arg end="12" f="" n="1" start="12">gas,</arg>
+         </example>
+         <example name="pass-v: Bladder sharks?" src="">
+            <text>Recently I passed a kidney stone that looked like a shark's tooth.</text>
+            <rel relloc="2">passed</rel>
+            <arg end="0" f="TMP" n="m" start="0">Recently</arg>
+            <arg end="1" f="" n="0" start="1">I</arg>
+            <arg end="11" f="" n="1" start="3">a kidney stone that looked like a shark's tooth.</arg>
+         </example>
+         <example name="pass-v: Why are all these examples so painful?" src="">
+            <text>My partner passed a blood clot in his urine today after falling through his ceiling about 2 weeks ago and bruising his boy bits.</text>
+            <rel relloc="2">passed</rel>
+            <arg end="1" f="" n="0" start="0">My partner</arg>
+            <arg end="5" f="" n="1" start="3">a blood clot</arg>
+            <arg end="8" f="MNR" n="m" start="6">in his urine</arg>
+            <arg end="9" f="TMP" n="m" start="9">today</arg>
+            <arg end="23" f="TMP" n="m" start="10">after falling through his ceiling about 2 weeks ago and bruising his boy bits.</arg>
+         </example>
+         <example name="pass-v: non-medical/bodily-function-related" src="">
+            <text>If the line passed a clog, it's probably sitting in your filter causing a by-pass situation.</text>
+            <rel relloc="3">passed</rel>
+            <arg end="2" f="" n="0" start="1">the line</arg>
+            <arg end="5" f="" n="1" start="4">a clog,</arg>
+         </example>
+         <note>PASS-V NOTES: Reframed by Julia. No VNcls. (from pass.08-v)</note>
+      </roleset>
+      <roleset id="pass.20" name="die">
+         <aliases>
+            <alias pos="v">pass</alias>
+            <alias pos="n">passing</alias>
+            <alias pos="m">pass_away</alias>
+            <alias pos="m">pass_on</alias>
+            <alias pos="m">pass_over</alias>
+            <alias pos="m">lemma</alias>
+            <mwp-descriptions id="lemma">
+               <syntaxdesc slots="B A">
+                  <token arg="" dep="" head="" pos="VB*" slot="A">pass</token>
+                  <token arg="" dep="" head="" pos="NN" slot="A">passing</token>
+                  <token arg="" dep="" head="A" pos="IN" slot="B">away</token>
+                  <token arg="" dep="" head="A" pos="IN" slot="B">on</token>
+                  <token arg="" dep="" head="A" pos="IN" slot="B">over</token>
+               </syntaxdesc>
+            </mwp-descriptions>
+         </aliases>
+         <roles>
+            <role descr="entity dying" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="die-42.4" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Death" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="Process_end" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="Life.Die.NonviolentDeath" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+            <lexlink class="Die" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+            <lexlink class="die-42.4" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="passing-n: only arg" src="">
+            <text>We talked about her husband's passing in March.</text>
+            <rel relloc="5">passing</rel>
+            <arg end="4" f="" n="1" start="3">her husband's</arg>
+         </example>
+         <example name="passing-n: arg1" src="on499-nouns-be">
+            <text>Zemin Jiang , president of the People 's Republic of China , and Peng Li , premier of the State Council , sent a telegraph of condolences on the 23rd on the passing of former US President , Richard Nixon .</text>
+            <rel relloc="32">passing</rel>
+            <arg end="39" f="" n="1" start="34">former US President , Richard Nixon</arg>
+         </example>
+         <example name="pass_on-v: so sorry" src="">
+            <text>John's cat passed on last week.</text>
+            <rel relloc="2 3">passed on</rel>
+            <arg end="1" f="" n="1" start="0">John's cat</arg>
+            <arg end="5" f="TMP" n="m" start="4">last week.</arg>
+         </example>
+         <example name="pass_away-v: die" src="">
+            <text>but you have [unintellegible] 0 Lewis Powell was one of your sources because he 'spassed away.</text>
+            <rel relloc="14 15">'spassed away.</rel>
+            <arg end="13" f="" n="1" start="13">he</arg>
+         </example>
+         <note>PASS-V NOTES: Based on Sharp data. Comparison to pass.15. No VN class. FN class process_end. Framed by Katie. (from pass.20-v)</note>
+         <note>PASSING-N NOTES: Added by Julia based on on499-nouns-be. (from passing.02-n)</note>
+         <note>PASS_ON-V NOTES: Frame edited by Arrick (from pass.15-v)</note>
+         <note>PASS_AWAY-V NOTES: Frame added by Arrick (from pass.16-v)</note>
+      </roleset>
+      <roleset id="pass.22" name="make a pass at, attempt something (esp flirtation)">
+         <aliases>
+            <alias pos="n">pass</alias>
+            <alias pos="l">make_pass</alias>
+         </aliases>
+         <roles>
+            <role descr="entity attempting something" f="PAG" n="0"/>
+            <role descr="thing attempted (often &quot;at&quot; phrase)" f="PPT" n="1"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="make_pass-l: Flirtatious pass, within LVC" src="wsj">
+            <text>Josh makes clumsy passes at Kate when she 's seething with anger and fear , but we know from the outset that he 's not a member of the evil patriarchy .</text>
+            <rel relloc="3">passes</rel>
+            <arg end="0" f="" n="0" start="0">Josh</arg>
+            <arg end="1" f="LVB" n="m" start="1">makes</arg>
+            <arg end="2" f="MNR" n="m" start="2">clumsy</arg>
+            <arg end="5" f="" n="1" start="4">at Kate</arg>
+            <arg end="13" f="TMP" n="m" start="6">when she 's seething with anger and fear</arg>
+         </example>
+         <note>PASS-N NOTES: Roleset based on instances in wsj. Comparison to verb-attempt.01. (from pass.03-n)</note>
+      </roleset>
+   </predicate>
+   <predicate lemma="pass_by">
+      <roleset id="pass_by.17" name="overtake, go past">
+         <aliases>
+            <alias pos="v">pass_by</alias>
+            <argalias arg="0" pos="n">passerby</argalias>
+         </aliases>
+         <roles>
+            <role descr="entity moving ahead; passing entity" f="PAG" n="0"/>
+            <role descr="entity falling behind; thing passed" f="PPT" n="1"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Motion" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="pass-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+         </lexlinks>
+         <example name="pass_by-v" src="">
+            <text>... an important official or a member of the gentry passed by in a carriage or sedan chair...</text>
+            <rel relloc="10 11">passed by</rel>
+            <arg end="9" f="" n="0" start="1">an important official or a member of the gentry</arg>
+            <arg end="17" f="MNR" n="m" start="12">in a carriage or sedan chair...</arg>
+         </example>
+         <note>PASS_BY-V NOTES: (from pass.17-v)</note>
+      </roleset>
+   </predicate>
+   <predicate lemma="pass_off">
+      <roleset id="pass_off.18" name="offer for acceptance under false pretext">
+         <aliases>
+            <alias pos="v">pass_off</alias>
+         </aliases>
+         <roles>
+            <role descr="faker" f="PAG" n="0"/>
+            <role descr="thing offered" f="PPT" n="1"/>
+            <role descr="(possibly) duped judge" f="GOL" n="2"/>
+            <role descr="fake attribute of Arg1" f="PRD" n="3"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <example name="pass_off-v" src="">
+            <text>The charges ran the gamut from not filling out proper forms to purchasing phoney export contracts and trying to pass them off to customs.</text>
+            <rel relloc="19 21">pass off</rel>
+            <arg end="20" f="" n="1" start="20">them</arg>
+            <arg end="23" f="" n="2" start="22">to customs.</arg>
+         </example>
+         <example name="ARG0 and ARG1 and ARG3" src="ontonotes bc/p2">
+            <text>Some even wear army uniforms to pass themselves off as soldiers , and enter and steal from the camps .</text>
+            <rel relloc="6 8">pass off</rel>
+            <arg end="0" f="" n="0" start="0">Some</arg>
+            <arg end="7" f="" n="1" start="7">themselves</arg>
+            <arg end="10" f="" n="3" start="9">as soldiers</arg>
+         </example>
+         <note>PASS_OFF-V NOTES: Frame created by Jena (from pass.18-v)</note>
+      </roleset>
+   </predicate>
+   <predicate lemma="pass_on">
+      <roleset id="pass_on.09" name="give, pass_on: give">
+         <aliases>
+            <alias pos="v">pass_on</alias>
+            <alias pos="n">passing_on</alias>
+         </aliases>
+         <roles>
+            <role descr="giver" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="thing changing hands" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="getter" f="GOL" n="2">
+               <rolelinks>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="send-11.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+            <lexlink class="send-11.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="pass_on-v: give" src="">
+            <text>Insurers typically pass on a small percentage of the risks they underwrite (to their customers).</text>
+            <rel relloc="2 3">pass on</rel>
+            <arg end="0" f="" n="0" start="0">Insurers</arg>
+            <arg end="1" f="TMP" n="m" start="1">typically</arg>
+            <arg end="11" f="" n="1" start="4">a small percentage of the risks they underwrite</arg>
+            <arg end="14" f="" n="2" start="12">(to their customers).</arg>
+         </example>
+         <example name="passing_on-n: args 1, 2" src="on499-nouns-be">
+            <text>But the alertness of the road guards prevented the passing of this quantity on to our youth .</text>
+            <rel relloc="9 13">passing on</rel>
+            <arg end="12" f="" n="1" start="10">of this quantity</arg>
+            <arg end="16" f="" n="2" start="14">to our youth</arg>
+         </example>
+         <note>PASS_ON-V NOTES: frame by Perryn (from pass.09-v predicate notes)</note>
+         <note>PASSING_ON-N NOTES: Added Julia base (from passing.04-n)</note>
+      </roleset>
+      <roleset id="pass_on.14" name="act as a middle man in the giving process">
+         <aliases>
+            <alias pos="v">pass_on</alias>
+         </aliases>
+         <roles>
+            <role descr="transmitter" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="thing transmitted" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="transmitted to" f="GOL" n="2">
+               <rolelinks>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="send-11.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+            <lexlink class="pass-v.4" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+            <lexlink class="send-11.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="pass_on-v: passive" src="">
+            <text>Both the costs and the savings could be passed on to shippers on the TransCanada pipeline.</text>
+            <rel relloc="8 9">passed on</rel>
+            <arg end="5" f="" n="1" start="0">Both the costs and the savings</arg>
+            <arg end="6" f="MOD" n="m" start="6">could</arg>
+            <arg end="15" f="" n="2" start="10">to shippers on the TransCanada pipeline.</arg>
+         </example>
+         <example name="ARG0 and ARG1 and ARG2 and ARG3" src="probably COCA (2018 example fix)">
+            <text>it was carried at full speed either by a single runner or (if the distance was great) by relays of runners who passed it on from hand to hand.</text>
+            <rel relloc="22 24">passed on</rel>
+            <arg end="21" f="" n="0" start="21">who</arg>
+            <arg end="0" f="" n="1" start="0">it</arg>
+            <arg end="26" f="DIR" n="m" start="25">from hand</arg>
+            <arg end="28" f="" n="2" start="27">to hand.</arg>
+         </example>
+         <note>PASS_ON-V NOTES: frame by Perryn (from pass.14-v predicate notes)</note>
+      </roleset>
+      <roleset id="pass_on.19" name="to move on from a place to another place">
+         <aliases>
+            <alias pos="v">pass_on</alias>
+         </aliases>
+         <roles>
+            <role descr="mover" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="thing moved, package" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="moved from" f="DIR" n="2">
+               <rolelinks>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">initial_location</rolelink>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">initial_location</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="moved to" f="GOL" n="3">
+               <rolelinks>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="send-11.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+            <lexlink class="send-11.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="pass_on-v: topical" src="">
+            <text>We pass on from this town of scholarly associations to the industrial centre of Bath, well known for its great shipyards.</text>
+            <rel relloc="1 2">pass on</rel>
+            <arg end="0" f="" n="0" start="0">We</arg>
+            <arg end="8" f="" n="2" start="3">from this town of scholarly associations</arg>
+            <arg end="20" f="" n="3" start="9">to the industrial centre of Bath, well known for its great shipyards.</arg>
+         </example>
+         <note>PASS_ON-V NOTES: frame by Perryn (from pass.19-v predicate notes)</note>
+      </roleset>
+   </predicate>
+   <predicate lemma="pass_out">
+      <roleset id="pass_out.10" name="distribute">
+         <aliases>
+            <alias pos="v">pass_out</alias>
+         </aliases>
+         <roles>
+            <role descr="distributor" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="contribute-13.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="contribute-13.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="thing distributed" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="contribute-13.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="contribute-13.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="distributed to" f="GOL" n="2">
+               <rolelinks>
+                  <rolelink class="contribute-13.2" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+                  <rolelink class="contribute-13.2" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="contribute-13.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+            <lexlink class="contribute-13.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="pass_out-v: passive" src="">
+            <text>[The test booklets]-1 were passed *trace*-1 out 48 hours ahead of time.</text>
+            <rel relloc="4 6">passed out</rel>
+            <arg end="5" f="" n="1" start="5">*trace*-1</arg>
+            <arg end="11" f="TMP" n="m" start="7">48 hours ahead of time.</arg>
+         </example>
+         <note>PASS_OUT-V NOTES: (from pass.10-v)</note>
+      </roleset>
+      <roleset id="pass_out.11" name="faint">
+         <aliases>
+            <alias pos="v">pass_out</alias>
+         </aliases>
+         <roles>
+            <role descr="fainter" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="contribute-13.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="contribute-13.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="contribute-13.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="ARG0" src="ontonotes wb/eng/00/eng_0009">
+            <text>and my buddy passes out .</text>
+            <rel relloc="3 4">passes out</rel>
+            <arg end="0" f="DIS" n="m" start="0">and</arg>
+            <arg end="2" f="" n="0" start="1">my buddy</arg>
+         </example>
+         <note>PASS_OUT-V NOTES: (from pass.11-v)</note>
+      </roleset>
+   </predicate>
+   <predicate lemma="pass_over">
+      <roleset id="pass_over.12" name="ignore, leave behind">
+         <aliases>
+            <alias pos="v">pass_over</alias>
+         </aliases>
+         <roles>
+            <role descr="ignorer" f="PAG" n="0"/>
+            <role descr="thing ignored" f="PPT" n="1"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="pass_over-v: transitive active" src="">
+            <text>...a small French merchant bank that Deutsche Bank had looked at and passed *trace* over.</text>
+            <rel relloc="12 14">passed over.</rel>
+            <arg end="7" f="" n="0" start="6">Deutsche Bank</arg>
+            <arg end="13" f="" n="1" start="13">*trace*</arg>
+         </example>
+         <note>PASS_OVER-V NOTES: (from pass.12-v)</note>
+      </roleset>
+   </predicate>
+   <predicate lemma="pass_up">
+      <roleset id="pass_up.13" name="relinquish">
+         <aliases>
+            <alias pos="v">pass_up</alias>
+         </aliases>
+         <roles>
+            <role descr="entity relinquishing one item" f="PAG" n="0"/>
+            <role descr="item relinquished" f="PPT" n="1"/>
+            <role descr="in favor of another" f="PPT" n="2"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="pass-v.14" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+         </lexlinks>
+         <example name="pass_up-v: transitive" src="">
+            <text>Gorbachev-1 is unlikely *trace*-1 to pass up the opportunity to press once again for negotiated cuts in the navies of both nations.</text>
+            <rel relloc="5 6">pass up</rel>
+            <arg end="3" f="" n="0" start="3">*trace*-1</arg>
+            <arg end="21" f="" n="1" start="7">the opportunity to press once again for negotiated cuts in the navies of both nations.</arg>
+         </example>
+         <note>PASS_UP-V NOTES: Similarly &quot;pass_by&quot; (from pass.13-v)</note>
+      </roleset>
+   </predicate>
+   <predicate lemma="come_to_pass">
+      <roleset id="come_to_pass.23" name="occur, perhaps as foretold">
+         <aliases>
+            <alias pos="m">come_to_pass</alias>
+            <mwp-descriptions id="come_to_pass">
+               <syntaxdesc slots="B C A">
+                  <token arg="" dep="" head="" pos="VB*" slot="A">come</token>
+                  <token arg="" dep="mark" head="C" pos="TO" slot="B">to</token>
+                  <token arg="" dep="ccomp" head="A" pos="VB" slot="C">pass</token>
+               </syntaxdesc>
+            </mwp-descriptions>
+         </aliases>
+         <roles>
+            <role descr="event" f="PAG" n="1"/>
+            <role descr="benefactive" f="PPT" n="2"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="-" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="come_to_pass-m" src="">
+            <text>And lo, it came to pass that Scott Baio tweeted his support for Scott Walker.</text>
+            <rel relloc="3 4 5">came to pass</rel>
+            <arg end="0" f="DIS" n="m" start="0">And</arg>
+            <arg end="1" f="DIS" n="m" start="1">lo,</arg>
+            <arg end="14" f="" n="1" start="6">that Scott Baio tweeted his support for Scott Walker.</arg>
+         </example>
+         <note>COME_TO_PASS-M NOTES: </note>
+      </roleset>
+   </predicate>
+   <predicate lemma="give_pass">
+      <roleset id="give_pass.24" name="ignore or forgive an offense">
+         <aliases>
+            <alias pos="n">pass</alias>
+            <alias pos="l">give_pass</alias>
+            <alias pos="l">get_pass</alias>
+         </aliases>
+         <roles>
+            <role descr="giver of pass; forgiver" f="PAG" n="0"/>
+            <role descr="entity forgiven, given a pass" f="PPT" n="1"/>
+            <role descr="offense ignored" f="GOL" n="2"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="-" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <example name="all args" src="fox via COCA">
+            <text>He's supposed to be a genius, and that's why we gave him a pass on the tax stuff.</text>
+            <rel relloc="13">pass</rel>
+            <arg end="9" f="" n="0" start="9">we</arg>
+            <arg end="10" f="LVB" n="m" start="10">gave</arg>
+            <arg end="11" f="" n="1" start="11">him</arg>
+            <arg end="17" f="" n="2" start="14">on the tax stuff.</arg>
+         </example>
+         <note>Prepped by Tim during MWE framing </note>
+      </roleset>
+   </predicate>
 </frameset>

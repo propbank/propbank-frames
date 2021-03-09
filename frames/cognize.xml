@@ -1,38 +1,49 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="cognize">
-    <roleset id="cognize.01" name="aware, knowing">
-      <aliases>
-        <alias pos="v">cognize</alias>
-        <alias pos="n">cognition</alias>
-        <alias pos="j">cognizant</alias>
-      </aliases>
-      <roles>
-        <role descr="aware entity" f="PAG" n="0"/>
-        <role descr="aware of" f="PPT" n="1"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="-"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Awareness" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-      </lexlinks>
-      <example src="BOLT-4,5" name="cognizant-j: both args">
-        <text>I expected it after the election , but I guess the GOP vipers are cognizant of their fate and are quickly lining up behind their next late , great " savior " .</text>
-        <rel relloc="14">cognizant</rel>
-        <arg f="" n="0" start="10" end="12">the GOP vipers</arg>
-        <arg f="" n="1" start="15" end="17">of their fate</arg>
-      </example>
-      <example src="BOLT-7" name="cognition-n">
-        <text>so as long as there is a likeness without causality among the angels, each will retain his cognition of the others.</text>
-        <rel relloc="17">cognition</rel>
-        <arg f="" n="0" start="16" end="16">his</arg>
-        <arg f="" n="1" start="18" end="20">of the others.</arg>
-      </example>
-      <note>COGNIZANT-J NOTES: Added by Julia based on BOLT-4,5, recognize.02; nominal 'cognition' based on BOLT-7. (from cognizant.01-j)</note>
-      <note>COGNITION-N NOTES: Automatically created by Julia as an alias file for unification. (from cognition.01-n)</note>
-      <note>COGNIZE-V NOTES: Automatically added alias.</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="cognize">
+      <roleset id="cognize.01" name="aware, knowing">
+         <aliases>
+            <alias pos="v">cognize</alias>
+            <alias pos="n">cognition</alias>
+            <alias pos="j">cognizant</alias>
+         </aliases>
+         <roles>
+            <role descr="aware entity" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="cognize-85" resource="VerbNet" version="verbnet3.3">experiencer</rolelink>
+                  <rolelink class="cognize-85" resource="VerbNet" version="verbnet3.4">experiencer</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="aware of" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="cognize-85" resource="VerbNet" version="verbnet3.3">stimulus</rolelink>
+                  <rolelink class="cognize-85" resource="VerbNet" version="verbnet3.4">stimulus</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="-" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Awareness" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="cognize-85" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="cognizant-j: both args" src="BOLT-4,5">
+            <text>I expected it after the election , but I guess the GOP vipers are cognizant of their fate and are quickly lining up behind their next late , great &quot; savior &quot; .</text>
+            <rel relloc="14">cognizant</rel>
+            <arg end="12" f="" n="0" start="10">the GOP vipers</arg>
+            <arg end="17" f="" n="1" start="15">of their fate</arg>
+         </example>
+         <example name="cognition-n" src="BOLT-7">
+            <text>so as long as there is a likeness without causality among the angels, each will retain his cognition of the others.</text>
+            <rel relloc="17">cognition</rel>
+            <arg end="16" f="" n="0" start="16">his</arg>
+            <arg end="20" f="" n="1" start="18">of the others.</arg>
+         </example>
+         <note>COGNIZANT-J NOTES: Added by Julia based on BOLT-4,5, recognize.02; nominal 'cognition' based on BOLT-7. (from cognizant.01-j)</note>
+         <note>COGNITION-N NOTES: Automatically created by Julia as an alias file for unification. (from cognition.01-n)</note>
+         <note>COGNIZE-V NOTES: Automatically added alias.</note>
+      </roleset>
+   </predicate>
 </frameset>

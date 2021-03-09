@@ -1,70 +1,85 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="correspond">
-    <roleset id="correspond.01" name="exchange letters with or communicate generally, exchange of communication">
-      <aliases>
-        <alias pos="v">correspond</alias>
-        <alias pos="n">correspondence</alias>
-      </aliases>
-      <roles>
-        <role descr="first (or all) correspondent(s)" f="PAG" n="0"/>
-        <role descr="additional correspondent" f="PPT" n="1"/>
-        <role descr="subject matter of correspondence" f="VSP" n="2"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Communication" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="ERE" class="Correspondence" version="rich" confidence="0.1" src="reo-expansion"/>
-        <lexlink resource="onsense" version="on5" class="correspond-v.2" src="annot-overlap" confidence="0.1">5</lexlink>
-      </lexlinks>
-      <example src="ontonotes wb/a2e/00/a2e_0017" name="ARG0 and ARG1">
-        <text>To correspond with me abomnaf@hotmail.com</text>
-        <rel relloc="1">correspond</rel>
-        <arg f="" n="1" start="2" end="3">with me</arg>
-      </example>
-      <example src="" name="">
-        <text>With due respect to `` highly classified correspondence '' and other buzzwords , the leakers are performing a public service .</text>
-        <rel relloc="7">correspondence</rel>
-        <arg f="ADJ" n="m" start="5" end="6">highly classified</arg>
-      </example>
-      <note>CORRESPOND-V NOTES: Frames file for 'correspond' based on sentences in wsj. Verbnet entries battle-36.4-1, correspond-36.1. (from correspond.01-v)</note>
-      <note>CORRESPONDENCE-N NOTES: (from correspondence.01-n)</note>
-    </roleset>
-    <roleset id="correspond.02" name="be parallel/equivalent to">
-      <aliases>
-        <alias pos="v">correspond</alias>
-        <alias pos="n">correspondence</alias>
-      </aliases>
-      <roles>
-        <role descr="topic, theme" f="PPT" n="1"/>
-        <role descr="compared with" f="PPT" n="2"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="onsense" version="on5" class="correspond-v.1" src="annot-overlap" confidence="0.1">13</lexlink>
-      </lexlinks>
-      <example src="" name="decent example">
-        <text>The agency noted that because of a strike by Finance Ministry personnel the provisional estimate doesn't correspond exactly to the consumer price index usually published.</text>
-        <rel relloc="16">correspond</rel>
-        <arg f="" n="1" start="12" end="14">the provisional estimate</arg>
-        <arg f="NEG" n="m" start="0" end="0">The</arg>
-        <arg f="MNR" n="m" start="17" end="17">exactly</arg>
-        <arg f="" n="2" start="18" end="24">to the consumer price index usually published.</arg>
-      </example>
-      <example src="internet" name="both args">
-        <text>Dispersion relation for the causal transform and its correspondence with a one dimensional dynamical system;</text>
-        <rel relloc="8">correspondence</rel>
-        <arg f="" n="1" start="7" end="7">its</arg>
-        <arg f="" n="2" start="9" end="14">with a one dimensional dynamical system;</arg>
-      </example>
-      <note>CORRESPOND-V NOTES: (from correspond.02-v)</note>
-      <note>CORRESPONDENCE-N NOTES: (from correspondence.02-n)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="correspond">
+      <roleset id="correspond.01" name="exchange letters with or communicate generally, exchange of communication">
+         <aliases>
+            <alias pos="v">correspond</alias>
+            <alias pos="n">correspondence</alias>
+         </aliases>
+         <roles>
+            <role descr="first (or all) correspondent(s)" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="correspond-36.1.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="correspond-36.1.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="additional correspondent" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="correspond-36.1.1" resource="VerbNet" version="verbnet3.4">co_agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="subject matter of correspondence" f="VSP" n="2">
+               <rolelinks>
+                  <rolelink class="correspond-36.1.1" resource="VerbNet" version="verbnet3.3">topic</rolelink>
+                  <rolelink class="correspond-36.1.1" resource="VerbNet" version="verbnet3.4">topic</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Communication" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="Correspondence" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+            <lexlink class="correspond-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+            <lexlink class="correspond-36.1.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="ARG0 and ARG1" src="ontonotes wb/a2e/00/a2e_0017">
+            <text>To correspond with me abomnaf@hotmail.com</text>
+            <rel relloc="1">correspond</rel>
+            <arg end="3" f="" n="1" start="2">with me</arg>
+         </example>
+         <example name="" src="">
+            <text>With due respect to `` highly classified correspondence '' and other buzzwords , the leakers are performing a public service .</text>
+            <rel relloc="7">correspondence</rel>
+            <arg end="6" f="ADJ" n="m" start="5">highly classified</arg>
+         </example>
+         <note>CORRESPOND-V NOTES: Frames file for 'correspond' based on sentences in wsj. Verbnet entries battle-36.4-1, correspond-36.1. (from correspond.01-v)</note>
+         <note>CORRESPONDENCE-N NOTES: (from correspondence.01-n)</note>
+      </roleset>
+      <roleset id="correspond.02" name="be parallel/equivalent to">
+         <aliases>
+            <alias pos="v">correspond</alias>
+            <alias pos="n">correspondence</alias>
+         </aliases>
+         <roles>
+            <role descr="topic, theme" f="PPT" n="1"/>
+            <role descr="compared with" f="PPT" n="2"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="correspond-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">13</lexlink>
+         </lexlinks>
+         <example name="decent example" src="">
+            <text>The agency noted that because of a strike by Finance Ministry personnel the provisional estimate doesn't correspond exactly to the consumer price index usually published.</text>
+            <rel relloc="16">correspond</rel>
+            <arg end="14" f="" n="1" start="12">the provisional estimate</arg>
+            <arg end="0" f="NEG" n="m" start="0">The</arg>
+            <arg end="17" f="MNR" n="m" start="17">exactly</arg>
+            <arg end="24" f="" n="2" start="18">to the consumer price index usually published.</arg>
+         </example>
+         <example name="both args" src="internet">
+            <text>Dispersion relation for the causal transform and its correspondence with a one dimensional dynamical system;</text>
+            <rel relloc="8">correspondence</rel>
+            <arg end="7" f="" n="1" start="7">its</arg>
+            <arg end="14" f="" n="2" start="9">with a one dimensional dynamical system;</arg>
+         </example>
+         <note>CORRESPOND-V NOTES: (from correspond.02-v)</note>
+         <note>CORRESPONDENCE-N NOTES: (from correspondence.02-n)</note>
+      </roleset>
+   </predicate>
 </frameset>

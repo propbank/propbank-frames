@@ -1,44 +1,57 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="hamper">
-    <roleset id="hamper.01" name="obstruct, hinder">
-      <aliases>
-        <alias pos="v">hamper</alias>
-      </aliases>
-      <roles>
-        <role descr="obstruction" f="PAG" n="0"/>
-        <role descr="effort" f="PPT" n="1"/>
-        <role descr="secondary agent, agent of arg1" f="GOL" n="2"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Hindering" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="onsense" version="on5" class="hamper-v.1" src="annot-overlap" confidence="0.1">21</lexlink>
-      </lexlinks>
-      <example src="" name="active">
-        <text>A lack of enthusiasm with the latest economic data hampered the stock market's bid to extend Tuesday's sharp gains.</text>
-        <rel relloc="9">hampered</rel>
-        <arg f="" n="0" start="0" end="8">A lack of enthusiasm with the latest economic data</arg>
-        <arg f="" n="1" start="10" end="18">the stock market's bid to extend Tuesday's sharp gains.</arg>
-      </example>
-      <example src="" name="passive">
-        <text>...[the company's performance]-1 was hampered *trace*-1 by problems tied to the introduction of a major new family of computers in April.</text>
-        <rel relloc="4">hampered</rel>
-        <arg f="" n="1" start="5" end="5">*trace*-1</arg>
-        <arg f="" n="0" start="6" end="20">by problems tied to the introduction of a major new family of computers in April.</arg>
-      </example>
-      <example src="ontonotes bn/cnn/04/cnn_0424" name="ARG0 and ARG2 and ARG1">
-        <text>But let 's talk about some of the hurdles that hamper humans to be able to survive there .</text>
-        <rel relloc="10">hamper</rel>
-        <arg f="" n="0" start="9" end="9">that</arg>
-        <arg f="" n="0" start="7" end="8">the hurdles</arg>
-        <arg f="" n="2" start="11" end="11">humans</arg>
-        <arg f="" n="1" start="12" end="17">to be able to survive there</arg>
-      </example>
-      <note>HAMPER-V NOTES: Can anyone say, "John hampers his clothes when he takes them off"? (from hamper.01-v)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="hamper">
+      <roleset id="hamper.01" name="obstruct, hinder">
+         <aliases>
+            <alias pos="v">hamper</alias>
+         </aliases>
+         <roles>
+            <role descr="obstruction" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="forbid-64.4-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="effort" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="forbid-64.4-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="secondary agent, agent of arg1" f="GOL" n="2">
+               <rolelinks>
+                  <rolelink class="forbid-64.4-1" resource="VerbNet" version="verbnet3.4">beneficiary</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Hindering" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="hamper-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">21</lexlink>
+            <lexlink class="forbid-64.4-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="active" src="">
+            <text>A lack of enthusiasm with the latest economic data hampered the stock market's bid to extend Tuesday's sharp gains.</text>
+            <rel relloc="9">hampered</rel>
+            <arg end="8" f="" n="0" start="0">A lack of enthusiasm with the latest economic data</arg>
+            <arg end="18" f="" n="1" start="10">the stock market's bid to extend Tuesday's sharp gains.</arg>
+         </example>
+         <example name="passive" src="">
+            <text>...[the company's performance]-1 was hampered *trace*-1 by problems tied to the introduction of a major new family of computers in April.</text>
+            <rel relloc="4">hampered</rel>
+            <arg end="5" f="" n="1" start="5">*trace*-1</arg>
+            <arg end="20" f="" n="0" start="6">by problems tied to the introduction of a major new family of computers in April.</arg>
+         </example>
+         <example name="ARG0 and ARG2 and ARG1" src="ontonotes bn/cnn/04/cnn_0424">
+            <text>But let 's talk about some of the hurdles that hamper humans to be able to survive there .</text>
+            <rel relloc="10">hamper</rel>
+            <arg end="9" f="" n="0" start="9">that</arg>
+            <arg end="8" f="" n="0" start="7">the hurdles</arg>
+            <arg end="11" f="" n="2" start="11">humans</arg>
+            <arg end="17" f="" n="1" start="12">to be able to survive there</arg>
+         </example>
+         <note>HAMPER-V NOTES: Can anyone say, &quot;John hampers his clothes when he takes them off&quot;? (from hamper.01-v)</note>
+      </roleset>
+   </predicate>
 </frameset>

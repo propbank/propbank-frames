@@ -1,36 +1,47 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="replicate">
-    <roleset id="replicate.01" name="make a copy">
-      <aliases>
-        <alias pos="n">replication</alias>
-        <alias pos="v">replicate</alias>
-      </aliases>
-      <roles>
-        <role descr="copier, agent" f="PAG" n="0"/>
-        <role descr="original" f="PPT" n="1"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Duplication" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="onsense" version="on5" class="replicate-v.1" src="annot-overlap" confidence="0.1">7</lexlink>
-      </lexlinks>
-      <example src="" name="transitive">
-        <text>He said authors of Scoring High ``scrupulously avoid'' replicating exact questions, but he doesn't deny that some items are similar.</text>
-        <rel relloc="8">replicating</rel>
-        <arg f="" n="0" start="2" end="5">authors of Scoring High</arg>
-        <arg f="" n="1" start="9" end="10">exact questions,</arg>
-      </example>
-      <example src="" name="nominal">
-        <text>The technological characteristics of the lighting industry are actually simple assembly and installation and technological replication is very easy.</text>
-        <rel relloc="15">replication</rel>
-        <arg f="" n="1" start="1" end="1">technological</arg>
-      </example>
-      <note>REPLICATE-V NOTES: No Vncls. (from replicate.01-v)</note>
-      <note>Copy not mentioned? (from replicate.01-v)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="replicate">
+      <roleset id="replicate.01" name="make a copy">
+         <aliases>
+            <alias pos="n">replication</alias>
+            <alias pos="v">replicate</alias>
+         </aliases>
+         <roles>
+            <role descr="copier, agent" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="original" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+                  <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Duplication" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="replicate-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+            <lexlink class="other_cos-45.4" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="transitive" src="">
+            <text>He said authors of Scoring High ``scrupulously avoid'' replicating exact questions, but he doesn't deny that some items are similar.</text>
+            <rel relloc="8">replicating</rel>
+            <arg end="5" f="" n="0" start="2">authors of Scoring High</arg>
+            <arg end="10" f="" n="1" start="9">exact questions,</arg>
+         </example>
+         <example name="nominal" src="">
+            <text>The technological characteristics of the lighting industry are actually simple assembly and installation and technological replication is very easy.</text>
+            <rel relloc="15">replication</rel>
+            <arg end="1" f="" n="1" start="1">technological</arg>
+         </example>
+         <note>REPLICATE-V NOTES: No Vncls. (from replicate.01-v)</note>
+         <note>Copy not mentioned? (from replicate.01-v)</note>
+      </roleset>
+   </predicate>
 </frameset>

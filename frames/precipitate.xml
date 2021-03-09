@@ -1,56 +1,61 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="precipitate">
-    <roleset id="precipitate.01" name="to cause to happen">
-      <aliases>
-        <alias pos="n">precipitation</alias>
-        <alias pos="v">precipitate</alias>
-      </aliases>
-      <roles>
-        <role descr="cause" f="PAG" n="0"/>
-        <role descr="precipitated action" f="PPT" n="1"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Causation" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="onsense" version="on5" class="precipitate-v.1" src="annot-overlap" confidence="0.1">6</lexlink>
-      </lexlinks>
-      <example src="" name="transitive">
-        <text>The British press , [*-2] making a mountain out of a molehill , precipitated an unnecessary economic crisis by [*-2]portraying Mrs. Thatcher as an autocrat who [] had thrown economic policy into confusion by [*-3] driving a respected figure from her government .</text>
-        <rel relloc="13">precipitated</rel>
-        <arg f="" n="0" start="0" end="2">The British press</arg>
-        <arg f="ADV" n="m" start="5" end="11">making a mountain out of a molehill</arg>
-        <arg f="" n="1" start="14" end="17">an unnecessary economic crisis</arg>
-        <arg f="MNR" n="m" start="18" end="41">by [*-2]portraying Mrs. Thatcher as an autocrat who [] had thrown economic policy into confusion by [*-3] driving a respected figure from her government</arg>
-      </example>
-      <note>PRECIPITATE-V NOTES: Frames file for 'precipitate' based on survey of sentences in the WSJ corpus. (from precipitate.01-v predicate notes)</note>
-      <note>PRECIPITATION-N NOTES: Added by Julia for unification</note>
-    </roleset>
-    <roleset id="precipitate.02" name="rain/snow/etc.">
-      <aliases>
-        <alias pos="n">precipitation</alias>
-        <alias pos="v">precipitate</alias>
-      </aliases>
-      <roles>
-        <role descr="the watery substance falling from the sky" f="PPT" n="1"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Precipitation" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-      </lexlinks>
-      <example src="BOLT" name="TMP">
-        <text>The amount of precipitation for December was a little ABOVE normal .</text>
-        <rel relloc="3">precipitation</rel>
-        <arg f="TMP" n="m" start="4" end="5">for December</arg>
-      </example>
-      <note>PRECIPITATE-V NOTES: Added by Julia for unification</note>
-      <note>PRECIPITATION-N NOTES: Added by Julia based on BOLT. Corresponds to VNcls weather-57. (from precipitation.01-n)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="precipitate">
+      <roleset id="precipitate.01" name="to cause to happen">
+         <aliases>
+            <alias pos="n">precipitation</alias>
+            <alias pos="v">precipitate</alias>
+         </aliases>
+         <roles>
+            <role descr="cause" f="PAG" n="0"/>
+            <role descr="precipitated action" f="PPT" n="1"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Causation" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="precipitate-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">6</lexlink>
+         </lexlinks>
+         <example name="transitive" src="">
+            <text>The British press , [*-2] making a mountain out of a molehill , precipitated an unnecessary economic crisis by [*-2]portraying Mrs. Thatcher as an autocrat who [] had thrown economic policy into confusion by [*-3] driving a respected figure from her government .</text>
+            <rel relloc="13">precipitated</rel>
+            <arg end="2" f="" n="0" start="0">The British press</arg>
+            <arg end="11" f="ADV" n="m" start="5">making a mountain out of a molehill</arg>
+            <arg end="17" f="" n="1" start="14">an unnecessary economic crisis</arg>
+            <arg end="41" f="MNR" n="m" start="18">by [*-2]portraying Mrs. Thatcher as an autocrat who [] had thrown economic policy into confusion by [*-3] driving a respected figure from her government</arg>
+         </example>
+         <note>PRECIPITATE-V NOTES: Frames file for 'precipitate' based on survey of sentences in the WSJ corpus. (from precipitate.01-v predicate notes)</note>
+         <note>PRECIPITATION-N NOTES: Added by Julia for unification</note>
+      </roleset>
+      <roleset id="precipitate.02" name="rain/snow/etc.">
+         <aliases>
+            <alias pos="n">precipitation</alias>
+            <alias pos="v">precipitate</alias>
+         </aliases>
+         <roles>
+            <role descr="the watery substance falling from the sky" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="weather-57" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Precipitation" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="weather-57" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="TMP" src="BOLT">
+            <text>The amount of precipitation for December was a little ABOVE normal .</text>
+            <rel relloc="3">precipitation</rel>
+            <arg end="5" f="TMP" n="m" start="4">for December</arg>
+         </example>
+         <note>PRECIPITATE-V NOTES: Added by Julia for unification</note>
+         <note>PRECIPITATION-N NOTES: Added by Julia based on BOLT. Corresponds to VNcls weather-57. (from precipitation.01-n)</note>
+      </roleset>
+   </predicate>
 </frameset>

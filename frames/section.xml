@@ -1,74 +1,92 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="section">
-    <roleset id="section.01" name="to divide, dividing into sections">
-      <aliases>
-        <alias pos="v">section</alias>
-        <alias pos="n">sectioning</alias>
-      </aliases>
-      <roles>
-        <role descr="entity dividing, agent" f="PAG" n="0"/>
-        <role descr="entity divided, patient" f="PPT" n="1"/>
-        <role descr="divided into what, end state, oblique" f="PRD" n="2"/>
-        <role descr="divided from what, source" f="DIR" n="3"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Separation" version="UNK" confidence="0.0" src="manual+strict-conv"/>
-      </lexlinks>
-      <example src="" name="without end state">
-        <text>Sandy sectioned the pizza.</text>
-        <rel relloc="1">sectioned</rel>
-        <arg f="" n="0" start="0" end="0">Sandy</arg>
-        <arg f="" n="1" start="2" end="3">the pizza.</arg>
-      </example>
-      <example src="" name="with end state">
-        <text>The viceroy sectioned up the territory into four large areas.</text>
-        <rel relloc="2 3">sectioned up</rel>
-        <arg f="" n="0" start="0" end="1">The viceroy</arg>
-        <arg f="" n="1" start="4" end="5">the territory</arg>
-        <arg f="" n="2" start="6" end="9">into four large areas.</arg>
-      </example>
-      <example src="" name="with source">
-        <text>The teacher sectioned off the unruly child from the rest.</text>
-        <rel relloc="2 3">sectioned off</rel>
-        <arg f="" n="0" start="0" end="1">The teacher</arg>
-        <arg f="" n="1" start="4" end="6">the unruly child</arg>
-        <arg f="" n="3" start="7" end="9">from the rest.</arg>
-      </example>
-      <example src="" name="Arg0,1,2">
-        <text>His sectioning of the pie into seven equal slices left no baked goods remaining after having fed the family of seven racoons living under Earl's porch.</text>
-        <rel relloc="1">sectioning</rel>
-        <arg f="" n="0" start="0" end="0">His</arg>
-        <arg f="" n="1" start="2" end="4">of the pie</arg>
-        <arg f="" n="2" start="5" end="8">into seven equal slices</arg>
-      </example>
-      <note>SECTION-V NOTES: Frames file for "section" loosely based on "disassemble" and "divide" framesets. No Vncls. Updated by Julia, 11/2010. (from section.01-v)</note>
-      <note>SECTIONING-N NOTES: (from sectioning.01-n)</note>
-    </roleset>
-    <roleset id="section.02" name="commit to a psychiatric institution">
-      <aliases>
-        <alias pos="v">section</alias>
-      </aliases>
-      <roles>
-        <role descr="commiter" f="PAG" n="0"/>
-        <role descr="entity being commited" f="PPT" n="1"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks/>
-      <example src="BOLT" name="arg1, with CAU">
-        <text>You ca n't get her-1 sectioned for that .</text>
-        <rel relloc="5">sectioned</rel>
-        <arg f="" n="1" start="0" end="0">You</arg>
-        <arg f="CAU" n="m" start="6" end="7">for that</arg>
-      </example>
-      <note>SECTION-V NOTES: Added by Julia based on BOLT. No VNcls. (from section.02-v)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="section">
+      <roleset id="section.01" name="to divide, dividing into sections">
+         <aliases>
+            <alias pos="v">section</alias>
+            <alias pos="n">sectioning</alias>
+         </aliases>
+         <roles>
+            <role descr="entity dividing, agent" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="entity divided, patient" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+                  <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="divided into what, end state, oblique" f="PRD" n="2">
+               <rolelinks>
+                  <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">result</rolelink>
+                  <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">result</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="divided from what, source" f="DIR" n="3">
+               <rolelinks/>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Separation" confidence="0.0" resource="FrameNet" src="manual+strict-conv" version="UNK"/>
+            <lexlink class="other_cos-45.4" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="without end state" src="">
+            <text>Sandy sectioned the pizza.</text>
+            <rel relloc="1">sectioned</rel>
+            <arg end="0" f="" n="0" start="0">Sandy</arg>
+            <arg end="3" f="" n="1" start="2">the pizza.</arg>
+         </example>
+         <example name="with end state" src="">
+            <text>The viceroy sectioned up the territory into four large areas.</text>
+            <rel relloc="2 3">sectioned up</rel>
+            <arg end="1" f="" n="0" start="0">The viceroy</arg>
+            <arg end="5" f="" n="1" start="4">the territory</arg>
+            <arg end="9" f="" n="2" start="6">into four large areas.</arg>
+         </example>
+         <example name="with source" src="">
+            <text>The teacher sectioned off the unruly child from the rest.</text>
+            <rel relloc="2 3">sectioned off</rel>
+            <arg end="1" f="" n="0" start="0">The teacher</arg>
+            <arg end="6" f="" n="1" start="4">the unruly child</arg>
+            <arg end="9" f="" n="3" start="7">from the rest.</arg>
+         </example>
+         <example name="Arg0,1,2" src="">
+            <text>His sectioning of the pie into seven equal slices left no baked goods remaining after having fed the family of seven racoons living under Earl's porch.</text>
+            <rel relloc="1">sectioning</rel>
+            <arg end="0" f="" n="0" start="0">His</arg>
+            <arg end="4" f="" n="1" start="2">of the pie</arg>
+            <arg end="8" f="" n="2" start="5">into seven equal slices</arg>
+         </example>
+         <note>SECTION-V NOTES: Frames file for &quot;section&quot; loosely based on &quot;disassemble&quot; and &quot;divide&quot; framesets. No Vncls. Updated by Julia, 11/2010. (from section.01-v)</note>
+         <note>SECTIONING-N NOTES: (from sectioning.01-n)</note>
+      </roleset>
+      <roleset id="section.02" name="commit to a psychiatric institution">
+         <aliases>
+            <alias pos="v">section</alias>
+         </aliases>
+         <roles>
+            <role descr="commiter" f="PAG" n="0"/>
+            <role descr="entity being commited" f="PPT" n="1"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="arg1, with CAU" src="BOLT">
+            <text>You ca n't get her-1 sectioned for that .</text>
+            <rel relloc="5">sectioned</rel>
+            <arg end="0" f="" n="1" start="0">You</arg>
+            <arg end="7" f="CAU" n="m" start="6">for that</arg>
+         </example>
+         <note>SECTION-V NOTES: Added by Julia based on BOLT. No VNcls. (from section.02-v)</note>
+      </roleset>
+   </predicate>
 </frameset>

@@ -1,43 +1,55 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="collar">
-    <roleset id="collar.01" name="apprehend, perhaps grabbing by the collar">
-      <aliases>
-        <alias pos="v">collar</alias>
-      </aliases>
-      <roles>
-        <role descr="entity doing the apprehending" f="PAG" n="0"/>
-        <role descr="person nabbed" f="PPT" n="1"/>
-        <role descr="accusations, crimes, for what" f="PRD" n="2">
-          <rolelinks>
-            <rolelink resource="FrameNet" class="Arrest" version="1.7">charges</rolelink>
-          </rolelinks>
-        </role>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Arrest" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-      </lexlinks>
-      <example src="" name="All args">
-        <text>A couple of Russian security types nearly collared him for an imagined security breach.</text>
-        <rel relloc="7">collared</rel>
-        <arg f="" n="0" start="0" end="5">A couple of Russian security types</arg>
-        <arg f="ADV" n="m" start="6" end="6">nearly</arg>
-        <arg f="" n="1" start="8" end="8">him</arg>
-        <arg f="" n="2" start="9" end="13">for an imagined security breach.</arg>
-      </example>
-      <example src="Brown" name="Probably not with an actual collar">
-        <text>`` I 'll collar Tim before night '' .</text>
-        <rel relloc="3">collar</rel>
-        <arg f="" n="0" start="1" end="1">I</arg>
-        <arg f="MOD" n="m" start="2" end="2">'ll</arg>
-        <arg f="" n="1" start="4" end="4">Tim</arg>
-        <arg f="TMP" n="m" start="5" end="6">before night</arg>
-      </example>
-      <note>COLLAR-V NOTES: Added by Julia based on Brown corpus. Comparison to apprehend. No Vncls. (from collar.01-v)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="collar">
+      <roleset id="collar.01" name="apprehend, perhaps grabbing by the collar">
+         <aliases>
+            <alias pos="v">collar</alias>
+         </aliases>
+         <roles>
+            <role descr="entity doing the apprehending" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="prosecute-33.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="prosecute-33.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="person nabbed" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="prosecute-33.2" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+                  <rolelink class="prosecute-33.2" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="accusations, crimes, for what" f="PRD" n="2">
+               <rolelinks>
+                  <rolelink class="Arrest" resource="FrameNet" version="1.7">charges</rolelink>
+                  <rolelink class="prosecute-33.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Arrest" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="prosecute-33.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="All args" src="">
+            <text>A couple of Russian security types nearly collared him for an imagined security breach.</text>
+            <rel relloc="7">collared</rel>
+            <arg end="5" f="" n="0" start="0">A couple of Russian security types</arg>
+            <arg end="6" f="ADV" n="m" start="6">nearly</arg>
+            <arg end="8" f="" n="1" start="8">him</arg>
+            <arg end="13" f="" n="2" start="9">for an imagined security breach.</arg>
+         </example>
+         <example name="Probably not with an actual collar" src="Brown">
+            <text>`` I 'll collar Tim before night '' .</text>
+            <rel relloc="3">collar</rel>
+            <arg end="1" f="" n="0" start="1">I</arg>
+            <arg end="2" f="MOD" n="m" start="2">'ll</arg>
+            <arg end="4" f="" n="1" start="4">Tim</arg>
+            <arg end="6" f="TMP" n="m" start="5">before night</arg>
+         </example>
+         <note>COLLAR-V NOTES: Added by Julia based on Brown corpus. Comparison to apprehend. No Vncls. (from collar.01-v)</note>
+      </roleset>
+   </predicate>
 </frameset>

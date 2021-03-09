@@ -1,57 +1,73 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="import">
-    <roleset id="import.01" name="get a commodity in trade">
-      <aliases>
-        <alias pos="v">import</alias>
-        <alias pos="n">import</alias>
-      </aliases>
-      <roles>
-        <role descr="importer" f="PAG" n="0"/>
-        <role descr="commodity" f="PPT" n="1"/>
-        <role descr="exporter" f="DIR" n="2"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Importing" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="FrameNet" class="Import_export" version="UNK" confidence="0.0" src="manual+strict-conv"/>
-        <lexlink resource="AidaOntology" version="Jan2019" class="Movement.TransportArtifact.ReceiveImport" confidence="0.1" src="reo-expansion"/>
-        <lexlink resource="ERE" class="Transportartifact" version="rich" confidence="0.1" src="reo-expansion"/>
-        <lexlink resource="onsense" version="on5" class="import-v.1" src="annot-overlap" confidence="0.1">52</lexlink>
-        <lexlink resource="onsense" version="on5" class="import-n.2" src="annot-overlap" confidence="0.1">40</lexlink>
-      </lexlinks>
-      <example src="" name="just transitive">
-        <text>Kofcoh is a New York holding company for Rosalco Inc., which *trace* imports furniture and other items.</text>
-        <rel relloc="12">imports</rel>
-        <arg f="" n="0" start="11" end="11">*trace*</arg>
-        <arg f="SLC" n="m" start="8" end="9">Rosalco Inc.,</arg>
-        <arg f="" n="1" start="13" end="16">furniture and other items.</arg>
-      </example>
-      <example src="ontonotes nw/xinhua/00/chtb_0032" name="ARG0 and ARG1 and ARG2">
-        <text>At the same time , China imported technology and complete sets of equipment from more than thirty countries and regions , and the total amount of contract funds has increased by nearly 50 % over that of the " seventh five - year plan " period .</text>
-        <rel relloc="6">imported</rel>
-        <arg f="TMP" n="m" start="0" end="3">At the same time</arg>
-        <arg f="" n="0" start="5" end="5">China</arg>
-        <arg f="" n="1" start="7" end="12">technology and complete sets of equipment</arg>
-        <arg f="" n="2" start="13" end="19">from more than thirty countries and regions</arg>
-      </example>
-      <example src="" name="autogen1">
-        <text>`` They 'll be more timorous in tackling their own voters , likeopening up more to agricultural imports from America , hurtingtheir farmers . ''</text>
-        <rel relloc="17">imports</rel>
-        <arg f="" n="1" start="16" end="16">agricultural</arg>
-        <arg f="" n="2" start="18" end="19">from America</arg>
-      </example>
-      <example src="" name="autogen2">
-        <text>U.S. crude imports</text>
-        <rel relloc="2">imports</rel>
-        <arg f="" n="0" start="0" end="0">U.S.</arg>
-        <arg f="" n="1" start="1" end="1">crude</arg>
-      </example>
-      <note>IMPORT-V NOTES: Frames file for 'import' based on sentences in financial subcorpus. No Verbnet entry. Comparison with 'get' and 'export'. (from import.01-v predicate notes)</note>
-      <note>IMPORT-N NOTES: Updated by Julia. No Vncls. (from import.01-n)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="import">
+      <roleset id="import.01" name="get a commodity in trade">
+         <aliases>
+            <alias pos="v">import</alias>
+            <alias pos="n">import</alias>
+         </aliases>
+         <roles>
+            <role descr="importer" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="commodity" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="exporter" f="DIR" n="2">
+               <rolelinks>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">initial_location</rolelink>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">initial_location</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Importing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="Import_export" confidence="0.0" resource="FrameNet" src="manual+strict-conv" version="UNK"/>
+            <lexlink class="Movement.TransportArtifact.ReceiveImport" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+            <lexlink class="Transportartifact" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+            <lexlink class="import-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">52</lexlink>
+            <lexlink class="import-n.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">40</lexlink>
+            <lexlink class="send-11.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="just transitive" src="">
+            <text>Kofcoh is a New York holding company for Rosalco Inc., which *trace* imports furniture and other items.</text>
+            <rel relloc="12">imports</rel>
+            <arg end="11" f="" n="0" start="11">*trace*</arg>
+            <arg end="9" f="SLC" n="m" start="8">Rosalco Inc.,</arg>
+            <arg end="16" f="" n="1" start="13">furniture and other items.</arg>
+         </example>
+         <example name="ARG0 and ARG1 and ARG2" src="ontonotes nw/xinhua/00/chtb_0032">
+            <text>At the same time , China imported technology and complete sets of equipment from more than thirty countries and regions , and the total amount of contract funds has increased by nearly 50 % over that of the &quot; seventh five - year plan &quot; period .</text>
+            <rel relloc="6">imported</rel>
+            <arg end="3" f="TMP" n="m" start="0">At the same time</arg>
+            <arg end="5" f="" n="0" start="5">China</arg>
+            <arg end="12" f="" n="1" start="7">technology and complete sets of equipment</arg>
+            <arg end="19" f="" n="2" start="13">from more than thirty countries and regions</arg>
+         </example>
+         <example name="autogen1" src="">
+            <text>`` They 'll be more timorous in tackling their own voters , likeopening up more to agricultural imports from America , hurtingtheir farmers . ''</text>
+            <rel relloc="17">imports</rel>
+            <arg end="16" f="" n="1" start="16">agricultural</arg>
+            <arg end="19" f="" n="2" start="18">from America</arg>
+         </example>
+         <example name="autogen2" src="">
+            <text>U.S. crude imports</text>
+            <rel relloc="2">imports</rel>
+            <arg end="0" f="" n="0" start="0">U.S.</arg>
+            <arg end="1" f="" n="1" start="1">crude</arg>
+         </example>
+         <note>IMPORT-V NOTES: Frames file for 'import' based on sentences in financial subcorpus. No Verbnet entry. Comparison with 'get' and 'export'. (from import.01-v predicate notes)</note>
+         <note>IMPORT-N NOTES: Updated by Julia. No Vncls. (from import.01-n)</note>
+      </roleset>
+   </predicate>
 </frameset>

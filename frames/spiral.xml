@@ -1,45 +1,53 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="spiral">
-    <roleset id="spiral.01" name="move in spiral direction">
-      <aliases>
-        <alias pos="v">spiral</alias>
-      </aliases>
-      <roles>
-        <role descr="mover" f="PAG" n="0"/>
-        <role descr="moved" f="PPT" n="1">
-          <rolelinks>
-            <rolelink resource="FrameNet" class="Motion" version="1.7">theme</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="destination" f="GOL" n="2">
-          <rolelinks>
-            <rolelink resource="FrameNet" class="Motion" version="1.7">goal</rolelink>
-            <rolelink resource="FrameNet" class="Motion" version="1.7">path</rolelink>
-          </rolelinks>
-        </role>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Motion" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="onsense" version="on5" class="spiral-v.1" src="annot-overlap" confidence="0.1">3</lexlink>
-      </lexlinks>
-      <example src="" name="down">
-        <text>Confusion about the two banks' hurried efforts to round upfinancing for a new bid that the UAL board hasn't even seen yet helpedsend UAL stock spiraling downward.</text>
-        <rel relloc="25">spiraling</rel>
-        <arg f="" n="1" start="23" end="24">UAL stock</arg>
-        <arg f="" n="2" start="26" end="26">downward.</arg>
-      </example>
-      <example src="" name="up">
-        <text>Kenneth Mitchell, director of Dow's polyethylene business, saysproducers were surprised to learn how much inventories had swelledthroughout the distribution chain as prices spiraled up.</text>
-        <rel relloc="22">spiraled</rel>
-        <arg f="" n="1" start="21" end="21">prices</arg>
-        <arg f="" n="2" start="23" end="23">up.</arg>
-      </example>
-      <note>SPIRAL-V NOTES: Actually, I kinda doubt the agent could appear. (from spiral.01-v)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="spiral">
+      <roleset id="spiral.01" name="move in spiral direction">
+         <aliases>
+            <alias pos="v">spiral</alias>
+         </aliases>
+         <roles>
+            <role descr="mover" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="roll-51.3.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="roll-51.3.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="moved" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="Motion" resource="FrameNet" version="1.7">theme</rolelink>
+                  <rolelink class="roll-51.3.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="destination" f="GOL" n="2">
+               <rolelinks>
+                  <rolelink class="Motion" resource="FrameNet" version="1.7">goal</rolelink>
+                  <rolelink class="Motion" resource="FrameNet" version="1.7">path</rolelink>
+                  <rolelink class="roll-51.3.1" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Motion" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="spiral-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+            <lexlink class="roll-51.3.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="down" src="">
+            <text>Confusion about the two banks' hurried efforts to round upfinancing for a new bid that the UAL board hasn't even seen yet helpedsend UAL stock spiraling downward.</text>
+            <rel relloc="25">spiraling</rel>
+            <arg end="24" f="" n="1" start="23">UAL stock</arg>
+            <arg end="26" f="" n="2" start="26">downward.</arg>
+         </example>
+         <example name="up" src="">
+            <text>Kenneth Mitchell, director of Dow's polyethylene business, saysproducers were surprised to learn how much inventories had swelledthroughout the distribution chain as prices spiraled up.</text>
+            <rel relloc="22">spiraled</rel>
+            <arg end="21" f="" n="1" start="21">prices</arg>
+            <arg end="23" f="" n="2" start="23">up.</arg>
+         </example>
+         <note>SPIRAL-V NOTES: Actually, I kinda doubt the agent could appear. (from spiral.01-v)</note>
+      </roleset>
+   </predicate>
 </frameset>

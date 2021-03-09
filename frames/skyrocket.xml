@@ -1,55 +1,70 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="skyrocket">
-    <roleset id="skyrocket.01" name="go up very fast">
-      <aliases>
-        <alias pos="v">skyrocket</alias>
-      </aliases>
-      <roles>
-        <role descr="Logical subject, patient, thing rising" f="PPT" n="1">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="best_guess" version="verbnet3.3">attribute</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="EXT, amount risen" f="EXT" n="2">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="best_guess" version="verbnet3.3">extent</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="start point" f="DIR" n="3"/>
-        <role descr="end point" f="GOL" n="4"/>
-        <role descr="medium" f="LOC" n="m"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Change_position_on_a_scale" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="VerbNet" class="calibratable_cos-45.6.1-1" version="verbnet3.3" confidence="0.4" src="manual+loose-conversion"/>
-        <lexlink resource="onsense" version="on5" class="skyrocket-v.1" src="annot-overlap" confidence="0.1">6</lexlink>
-      </lexlinks>
-      <example src="" name="ergative, no other args">
-        <text>Art prices are skyrocketing...</text>
-        <rel relloc="3">skyrocketing...</rel>
-        <arg f="" n="1" start="0" end="1">Art prices</arg>
-      </example>
-      <example src="internet" name="with EXT">
-        <text>I also just read that the drug trafficking trade has skyrocketed 50% in the last two years in the Denver area.</text>
-        <rel relloc="10">skyrocketed</rel>
-        <arg f="" n="1" start="5" end="8">the drug trafficking trade</arg>
-        <arg f="" n="2" start="11" end="11">50%</arg>
-        <arg f="TMP" n="m" start="12" end="16">in the last two years</arg>
-        <arg f="LOC" n="m" start="17" end="20">in the Denver area.</arg>
-      </example>
-      <example src="internet" name="with start and end points">
-        <text>The number of pages of tax rules skyrocketed from 40500 in 1995 to 70320 in 2009.</text>
-        <rel relloc="7">skyrocketed</rel>
-        <arg f="" n="1" start="0" end="6">The number of pages of tax rules</arg>
-        <arg f="" n="3" start="8" end="11">from 40500 in 1995</arg>
-        <arg f="" n="4" start="12" end="15">to 70320 in 2009.</arg>
-      </example>
-      <note>SKYROCKET-V NOTES: Bite my butt, it is in verbnet: calibratable_cos-45.6-1. Comparison to 'rise'. (from skyrocket.01-v)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="skyrocket">
+      <roleset id="skyrocket.01" name="go up very fast">
+         <aliases>
+            <alias pos="v">skyrocket</alias>
+         </aliases>
+         <roles>
+            <role descr="Logical subject, patient, thing rising" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">attribute</rolelink>
+                  <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">attribute</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="EXT, amount risen" f="EXT" n="2">
+               <rolelinks>
+                  <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">extent</rolelink>
+                  <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">extent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="start point" f="DIR" n="3">
+               <rolelinks>
+                  <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.3">initial_state</rolelink>
+                  <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">initial_state</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="end point" f="GOL" n="4">
+               <rolelinks>
+                  <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.3">result</rolelink>
+                  <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">result</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="medium" f="LOC" n="m">
+               <rolelinks/>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Change_position_on_a_scale" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="calibratable_cos-45.6.1-1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+            <lexlink class="skyrocket-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">6</lexlink>
+            <lexlink class="calibratable_cos-45.6.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="ergative, no other args" src="">
+            <text>Art prices are skyrocketing...</text>
+            <rel relloc="3">skyrocketing...</rel>
+            <arg end="1" f="" n="1" start="0">Art prices</arg>
+         </example>
+         <example name="with EXT" src="internet">
+            <text>I also just read that the drug trafficking trade has skyrocketed 50% in the last two years in the Denver area.</text>
+            <rel relloc="10">skyrocketed</rel>
+            <arg end="8" f="" n="1" start="5">the drug trafficking trade</arg>
+            <arg end="11" f="" n="2" start="11">50%</arg>
+            <arg end="16" f="TMP" n="m" start="12">in the last two years</arg>
+            <arg end="20" f="LOC" n="m" start="17">in the Denver area.</arg>
+         </example>
+         <example name="with start and end points" src="internet">
+            <text>The number of pages of tax rules skyrocketed from 40500 in 1995 to 70320 in 2009.</text>
+            <rel relloc="7">skyrocketed</rel>
+            <arg end="6" f="" n="1" start="0">The number of pages of tax rules</arg>
+            <arg end="11" f="" n="3" start="8">from 40500 in 1995</arg>
+            <arg end="15" f="" n="4" start="12">to 70320 in 2009.</arg>
+         </example>
+         <note>SKYROCKET-V NOTES: Bite my butt, it is in verbnet: calibratable_cos-45.6-1. Comparison to 'rise'. (from skyrocket.01-v)</note>
+      </roleset>
+   </predicate>
 </frameset>

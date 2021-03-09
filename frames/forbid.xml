@@ -1,59 +1,66 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="forbid">
-    <roleset id="forbid.01" name="disallow, prohibit">
-      <aliases>
-        <alias pos="v">forbid</alias>
-      </aliases>
-      <roles>
-        <role descr="disallower, agent" f="PAG" n="0">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="67" version="UNK">agent</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="forbidden action" f="PPT" n="1">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="67" version="UNK">theme</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="recipient" f="GOL" n="2"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Deny_or_grant_permission" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="FrameNet" class="Prohibiting_or_licensing" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="VerbNet" class="67" version="UNK" confidence="0.0" src="manual+strict-conv"/>
-        <lexlink resource="onsense" version="on5" class="forbid-v.1" src="annot-overlap" confidence="0.1">10</lexlink>
-        <lexlink resource="onsense" version="on5" class="forbid-v.2" src="annot-overlap" confidence="0.1">9</lexlink>
-      </lexlinks>
-      <example src="" name="all arguments">
-        <text>Some supporters were stunned this summer when Mr. Dinkins suggested [*] weakening the law forbidding public employees [*-1]to go on strike [*T*-2] .</text>
-        <rel relloc="14">forbidding</rel>
-        <arg f="" n="0" start="12" end="13">the law</arg>
-        <arg f="" n="2" start="15" end="16">public employees</arg>
-        <arg f="" n="1" start="17" end="20">[*-1]to go on strike</arg>
-      </example>
-      <example src="" name="with Arg1">
-        <text>If there is no moral prohibition that [*T*] expressly forbids it , full speed ahead .</text>
-        <rel relloc="9">forbids</rel>
-        <arg f="" n="0" start="7" end="7">[*T*]</arg>
-        <arg f="RCL" n="m" start="3" end="5">no moral prohibition</arg>
-        <arg f="MNR" n="m" start="8" end="8">expressly</arg>
-        <arg f="" n="1" start="10" end="10">it</arg>
-      </example>
-      <example src="" name="with a prepositional Arg1">
-        <text>The British government currently forbids any outside investor from [*-1] holding more than 15 % of the company 's shares without permission until Dec. 31 ,</text>
-        <rel relloc="4">forbids</rel>
-        <arg f="" n="0" start="0" end="2">The British government</arg>
-        <arg f="TMP" n="m" start="3" end="3">currently</arg>
-        <arg f="" n="2" start="5" end="7">any outside investor</arg>
-        <arg f="" n="1" start="9" end="21">[*-1] holding more than 15 % of the company 's shares without permission</arg>
-        <arg f="TMP" n="m" start="22" end="24">until Dec. 31</arg>
-      </example>
-      <note>FORBID-V NOTES: Frames file for 'forbid' based on survey of sentences in the WSJ corpus. Comparison with 'allow'. (from forbid.01-v predicate notes)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="forbid">
+      <roleset id="forbid.01" name="disallow, prohibit">
+         <aliases>
+            <alias pos="v">forbid</alias>
+         </aliases>
+         <roles>
+            <role descr="disallower, agent" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="67" resource="VerbNet" version="UNK">agent</rolelink>
+                  <rolelink class="allow-64.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="forbidden action" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="67" resource="VerbNet" version="UNK">theme</rolelink>
+                  <rolelink class="allow-64.1-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="recipient" f="GOL" n="2">
+               <rolelinks>
+                  <rolelink class="allow-64.1-1" resource="VerbNet" version="verbnet3.4">beneficiary</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Deny_or_grant_permission" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="Prohibiting_or_licensing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="67" confidence="0.0" resource="VerbNet" src="manual+strict-conv" version="UNK"/>
+            <lexlink class="forbid-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">10</lexlink>
+            <lexlink class="forbid-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">9</lexlink>
+            <lexlink class="allow-64.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="all arguments" src="">
+            <text>Some supporters were stunned this summer when Mr. Dinkins suggested [*] weakening the law forbidding public employees [*-1]to go on strike [*T*-2] .</text>
+            <rel relloc="14">forbidding</rel>
+            <arg end="13" f="" n="0" start="12">the law</arg>
+            <arg end="16" f="" n="2" start="15">public employees</arg>
+            <arg end="20" f="" n="1" start="17">[*-1]to go on strike</arg>
+         </example>
+         <example name="with Arg1" src="">
+            <text>If there is no moral prohibition that [*T*] expressly forbids it , full speed ahead .</text>
+            <rel relloc="9">forbids</rel>
+            <arg end="7" f="" n="0" start="7">[*T*]</arg>
+            <arg end="5" f="RCL" n="m" start="3">no moral prohibition</arg>
+            <arg end="8" f="MNR" n="m" start="8">expressly</arg>
+            <arg end="10" f="" n="1" start="10">it</arg>
+         </example>
+         <example name="with a prepositional Arg1" src="">
+            <text>The British government currently forbids any outside investor from [*-1] holding more than 15 % of the company 's shares without permission until Dec. 31 ,</text>
+            <rel relloc="4">forbids</rel>
+            <arg end="2" f="" n="0" start="0">The British government</arg>
+            <arg end="3" f="TMP" n="m" start="3">currently</arg>
+            <arg end="7" f="" n="2" start="5">any outside investor</arg>
+            <arg end="21" f="" n="1" start="9">[*-1] holding more than 15 % of the company 's shares without permission</arg>
+            <arg end="24" f="TMP" n="m" start="22">until Dec. 31</arg>
+         </example>
+         <note>FORBID-V NOTES: Frames file for 'forbid' based on survey of sentences in the WSJ corpus. Comparison with 'allow'. (from forbid.01-v predicate notes)</note>
+      </roleset>
+   </predicate>
 </frameset>

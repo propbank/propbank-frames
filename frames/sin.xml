@@ -1,34 +1,45 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="sin">
-    <roleset id="sin.01" name="to violate a command or law">
-      <aliases>
-        <alias pos="v">sin</alias>
-      </aliases>
-      <roles>
-        <role descr="Sinner, Agent" f="PAG" n="0"/>
-        <role descr="Thing sinned against, law or command violated" f="PPT" n="1"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Misdeed" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-      </lexlinks>
-      <example src="Intransitive" name="Intransitive">
-        <text>...text messages sealed  with the words: *PRO* sin and spread it.</text>
-        <rel relloc="8">sin</rel>
-        <arg f="" n="0" start="7" end="7">*PRO*</arg>
-      </example>
-      <example src="ontonotes pt/nt/42/nt_4215" name="ARG0 and ARG1">
-        <text>I will say to him : Father , I have sinned against God and have done wrong to you .</text>
-        <rel relloc="10">sinned</rel>
-        <arg f="DIS" n="m" start="6" end="6">Father</arg>
-        <arg f="" n="0" start="0" end="0">I</arg>
-        <arg f="" n="1" start="11" end="12">against God</arg>
-      </example>
-      <note>SIN-V NOTES: Framed by Claire (from sin.01-v)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="sin">
+      <roleset id="sin.01" name="to violate a command or law">
+         <aliases>
+            <alias pos="v">sin</alias>
+         </aliases>
+         <roles>
+            <role descr="Sinner, Agent" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="conspire-71" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="conspire-71" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="Thing sinned against, law or command violated" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="conspire-71" resource="VerbNet" version="verbnet3.3">beneficiary</rolelink>
+                  <rolelink class="conspire-71" resource="VerbNet" version="verbnet3.4">beneficiary</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Misdeed" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="conspire-71" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="Intransitive" src="Intransitive">
+            <text>...text messages sealed  with the words: *PRO* sin and spread it.</text>
+            <rel relloc="8">sin</rel>
+            <arg end="7" f="" n="0" start="7">*PRO*</arg>
+         </example>
+         <example name="ARG0 and ARG1" src="ontonotes pt/nt/42/nt_4215">
+            <text>I will say to him : Father , I have sinned against God and have done wrong to you .</text>
+            <rel relloc="10">sinned</rel>
+            <arg end="6" f="DIS" n="m" start="6">Father</arg>
+            <arg end="0" f="" n="0" start="0">I</arg>
+            <arg end="12" f="" n="1" start="11">against God</arg>
+         </example>
+         <note>SIN-V NOTES: Framed by Claire (from sin.01-v)</note>
+      </roleset>
+   </predicate>
 </frameset>

@@ -1,41 +1,45 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="defuzz">
-    <roleset id="defuzz.01" name="remove fuzz">
-      <aliases>
-        <alias pos="v">defuzz</alias>
-      </aliases>
-      <roles>
-        <role descr="remover" f="PAG" n="0">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="debone-10.8" version="verbnet3.3">agent</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="thing defuzzed" f="DIR" n="1">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="debone-10.8" version="verbnet3.3">source</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="fuzz, thing removed" f="PPT" n="2">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="debone-10.8" version="verbnet3.3">theme</rolelink>
-          </rolelinks>
-        </role>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="VerbNet" class="debone-10.8" version="verbnet3.3" confidence="0.8" src="manual+strict-conv"/>
-      </lexlinks>
-      <example src="web usage" name="Transitive">
-        <text>Can I borrow you travel shaver * to defuzz my sweater?</text>
-        <rel relloc="8">defuzz</rel>
-        <arg f="" n="0" start="6" end="6">*</arg>
-        <arg f="" n="1" start="9" end="10">my sweater?</arg>
-      </example>
-      <note>DEFUZZ-V NOTES: Edited by hwangd (from defuzz.01-v)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="defuzz">
+      <roleset id="defuzz.01" name="remove fuzz">
+         <aliases>
+            <alias pos="v">defuzz</alias>
+         </aliases>
+         <roles>
+            <role descr="remover" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="debone-10.8" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="debone-10.8" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="thing defuzzed" f="DIR" n="1">
+               <rolelinks>
+                  <rolelink class="debone-10.8" resource="VerbNet" version="verbnet3.3">source</rolelink>
+                  <rolelink class="debone-10.8" resource="VerbNet" version="verbnet3.4">source</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="fuzz, thing removed" f="PPT" n="2">
+               <rolelinks>
+                  <rolelink class="debone-10.8" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="debone-10.8" resource="VerbNet" version="verbnet3.4">nm</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="debone-10.8" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+            <lexlink class="debone-10.8" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="Transitive" src="web usage">
+            <text>Can I borrow you travel shaver * to defuzz my sweater?</text>
+            <rel relloc="8">defuzz</rel>
+            <arg end="6" f="" n="0" start="6">*</arg>
+            <arg end="10" f="" n="1" start="9">my sweater?</arg>
+         </example>
+         <note>DEFUZZ-V NOTES: Edited by hwangd (from defuzz.01-v)</note>
+      </roleset>
+   </predicate>
 </frameset>

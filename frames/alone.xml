@@ -1,80 +1,80 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="alone">
-    <roleset id="alone.01" name="isolated, unaccompanied, unique">
-      <aliases>
-        <alias pos="j">alone</alias>
-      </aliases>
-      <roles>
-        <role descr="loner" f="PAG" n="1"/>
-        <role descr="domain in which arg1 is unique" f="PPT" n="2"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="-"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Accompaniment" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-      </lexlinks>
-      <example src="BOLT-4,5" name="alone-j: both args">
-        <text>It 's frustrating , you 're not alone in feeling the way you do .</text>
-        <rel relloc="7">alone</rel>
-        <arg f="" n="1" start="4" end="4">you</arg>
-        <arg f="NEG" n="m" start="6" end="6">not</arg>
-        <arg f="" n="2" start="8" end="13">in feeling the way you do</arg>
-      </example>
-      <note>ALONE-J NOTES: Added by Julia based on BOLT-4,5. (from alone.01-j)</note>
-    </roleset>
-  </predicate>
-  <predicate lemma="leave_alone">
-    <roleset id="leave_alone.02" name="stop bothering">
-      <aliases>
-        <alias pos="m">leave_alone</alias>
-        <mwp-descriptions id="leave_alone">
-          <syntaxdesc slots="B A">
-            <token slot="A" arg="" pos="VB" head="" dep="">leave</token>
-            <token slot="A" arg="" pos="NN" head="" dep="">leaving</token>
-            <token slot="B" arg="" pos="JJ" head="A" dep="xcomp">alone</token>
-            <token slot="B" arg="" pos="RB" head="A" dep="advmod">alone</token>
-          </syntaxdesc>
-          <mapping>
-            <source>
-            (A / leave-14 
+   <predicate lemma="alone">
+      <roleset id="alone.01" name="isolated, unaccompanied, unique">
+         <aliases>
+            <alias pos="j">alone</alias>
+         </aliases>
+         <roles>
+            <role descr="loner" f="PAG" n="1"/>
+            <role descr="domain in which arg1 is unique" f="PPT" n="2"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="-" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Accompaniment" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+         </lexlinks>
+         <example name="alone-j: both args" src="BOLT-4,5">
+            <text>It 's frustrating , you 're not alone in feeling the way you do .</text>
+            <rel relloc="7">alone</rel>
+            <arg end="4" f="" n="1" start="4">you</arg>
+            <arg end="6" f="NEG" n="m" start="6">not</arg>
+            <arg end="13" f="" n="2" start="8">in feeling the way you do</arg>
+         </example>
+         <note>ALONE-J NOTES: Added by Julia based on BOLT-4,5. (from alone.01-j)</note>
+      </roleset>
+   </predicate>
+   <predicate lemma="leave_alone">
+      <roleset id="leave_alone.02" name="stop bothering">
+         <aliases>
+            <alias pos="m">leave_alone</alias>
+            <mwp-descriptions id="leave_alone">
+               <syntaxdesc slots="B A">
+                  <token arg="" dep="" head="" pos="VB" slot="A">leave</token>
+                  <token arg="" dep="" head="" pos="NN" slot="A">leaving</token>
+                  <token arg="" dep="xcomp" head="A" pos="JJ" slot="B">alone</token>
+                  <token arg="" dep="advmod" head="A" pos="RB" slot="B">alone</token>
+               </syntaxdesc>
+               <mapping>
+                  <source>
+            (A / leave-14
                 :arg0 (n / NARG0)
                 :arg1 (B / alone-01
                     :arg1 (n1 / NARG1)))
         </source>
-            <target>
+                  <target>
             (A / bother-01 :polarity -
                 :arg0 (n / NARG0)
                 :arg1 (n1 / NARG1))
         </target>
-          </mapping>
-        </mwp-descriptions>
-        <alias pos="m">leaving_alone</alias>
-      </aliases>
-      <roles>
-        <role descr="bothersome entity" f="PAG" n="0"/>
-        <role descr="entity who doesn't want to be bothered" f="PPT" n="1"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="-"/>
-      </usagenotes>
-      <lexlinks/>
-      <example src="" name="leave_alone-m">
-        <text>Now *PRO* go away then, and leave me alone. I don't want any more of your meretricious persiflage.</text>
-        <rel relloc="6 8">leave alone.</rel>
-        <arg f="DIS" n="m" start="0" end="0">Now</arg>
-        <arg f="" n="0" start="1" end="1">*PRO*</arg>
-        <arg f="" n="1" start="7" end="7">me</arg>
-      </example>
-      <example src="" name="leave_alone-m">
-        <text>Leave the Marines alone.</text>
-        <rel relloc="0 3">Leave alone.</rel>
-        <arg f="" n="1" start="1" end="2">the Marines</arg>
-      </example>
-      <note>LEAVE_ALONE-M NOTES: Added by Julia and Tim.</note>
-    </roleset>
-  </predicate>
+               </mapping>
+            </mwp-descriptions>
+            <alias pos="m">leaving_alone</alias>
+         </aliases>
+         <roles>
+            <role descr="bothersome entity" f="PAG" n="0"/>
+            <role descr="entity who doesn't want to be bothered" f="PPT" n="1"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="-" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="leave_alone-m" src="">
+            <text>Now *PRO* go away then, and leave me alone. I don't want any more of your meretricious persiflage.</text>
+            <rel relloc="6 8">leave alone.</rel>
+            <arg end="0" f="DIS" n="m" start="0">Now</arg>
+            <arg end="1" f="" n="0" start="1">*PRO*</arg>
+            <arg end="7" f="" n="1" start="7">me</arg>
+         </example>
+         <example name="leave_alone-m" src="">
+            <text>Leave the Marines alone.</text>
+            <rel relloc="0 3">Leave alone.</rel>
+            <arg end="2" f="" n="1" start="1">the Marines</arg>
+         </example>
+         <note>LEAVE_ALONE-M NOTES: Added by Julia and Tim.</note>
+      </roleset>
+   </predicate>
 </frameset>

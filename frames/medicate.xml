@@ -1,37 +1,56 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="medicate">
-    <roleset id="medicate.01" name="give medicine to, giving medicine to (not medicine itself)">
-      <aliases>
-        <alias pos="n">medication</alias>
-        <alias pos="v">medicate</alias>
-        <argalias pos="n" arg="2">medicine</argalias>
-      </aliases>
-      <roles>
-        <role descr="doctor" f="PAG" n="0"/>
-        <role descr="patient" f="GOL" n="1"/>
-        <role descr="medication" f="PPT" n="2"/>
-        <role descr="illness" f="CAU" n="3"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks/>
-      <example src="" name="no patients">
-        <text>They medicate with alcohol and too much food.</text>
-        <rel relloc="1">medicate</rel>
-        <arg f="" n="0" start="0" end="0">They</arg>
-        <arg f="" n="2" start="2" end="7">with alcohol and too much food.</arg>
-      </example>
-      <example src="" name="Args0, 1">
-        <text>Dr. Jones's medication of Jasmine lead to her symptoms being resolved.</text>
-        <rel relloc="2">medication</rel>
-        <arg f="" n="0" start="1" end="1">Jones's</arg>
-        <arg f="" n="1" start="3" end="4">of Jasmine</arg>
-      </example>
-      <note>MEDICATE-V NOTES: Frame created by Arrick (from medicate.01-v)</note>
-      <note>MEDICATION-N NOTES: ~medicate.01 (from medication.01-n)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="medicate">
+      <roleset id="medicate.01" name="give medicine to, giving medicine to (not medicine itself)">
+         <aliases>
+            <alias pos="n">medication</alias>
+            <alias pos="v">medicate</alias>
+            <argalias arg="2" pos="n">medicine</argalias>
+         </aliases>
+         <roles>
+            <role descr="doctor" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="remedy-45.7" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="remedy-45.7" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="patient" f="GOL" n="1">
+               <rolelinks>
+                  <rolelink class="remedy-45.7" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+                  <rolelink class="remedy-45.7" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="medication" f="PPT" n="2">
+               <rolelinks>
+                  <rolelink class="remedy-45.7" resource="VerbNet" version="verbnet3.3">instrument</rolelink>
+                  <rolelink class="remedy-45.7" resource="VerbNet" version="verbnet3.4">instrument</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="illness" f="CAU" n="3">
+               <rolelinks/>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="remedy-45.7" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="no patients" src="">
+            <text>They medicate with alcohol and too much food.</text>
+            <rel relloc="1">medicate</rel>
+            <arg end="0" f="" n="0" start="0">They</arg>
+            <arg end="7" f="" n="2" start="2">with alcohol and too much food.</arg>
+         </example>
+         <example name="Args0, 1" src="">
+            <text>Dr. Jones's medication of Jasmine lead to her symptoms being resolved.</text>
+            <rel relloc="2">medication</rel>
+            <arg end="1" f="" n="0" start="1">Jones's</arg>
+            <arg end="4" f="" n="1" start="3">of Jasmine</arg>
+         </example>
+         <note>MEDICATE-V NOTES: Frame created by Arrick (from medicate.01-v)</note>
+         <note>MEDICATION-N NOTES: ~medicate.01 (from medication.01-n)</note>
+      </roleset>
+   </predicate>
 </frameset>

@@ -1,82 +1,86 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="blister">
-    <roleset id="blister.01" name="Cause blisters to form">
-      <aliases>
-        <alias pos="v">blister</alias>
-        <alias pos="n">blistering</alias>
-      </aliases>
-      <roles>
-        <role descr="agent/causer of blisters" f="PAG" n="0"/>
-        <role descr="thing becoming blistered" f="PPT" n="1">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="entity_specific_cos-45.5" version="verbnet3.3">patient</rolelink>
-          </rolelinks>
-        </role>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="VerbNet" class="entity_specific_cos-45.5" version="verbnet3.3" confidence="0.8" src="manual+strict-conv"/>
-      </lexlinks>
-      <example src="Passive blister example" name="blister-v: inchoative">
-        <text>Her feet blistered during the long hike.</text>
-        <rel relloc="2">blistered</rel>
-        <arg f="" n="1" start="0" end="1">Her feet</arg>
-        <arg f="TMP" n="m" start="3" end="6">during the long hike.</arg>
-      </example>
-      <example src="" name="blister-v: transitive">
-        <text>The tight shoes and perspiration blistered her feet.</text>
-        <rel relloc="5">blistered</rel>
-        <arg f="" n="0" start="0" end="4">The tight shoes and perspiration</arg>
-        <arg f="" n="1" start="6" end="7">her feet.</arg>
-      </example>
-      <example src="" name="blister-v: transitive">
-        <text>The heat blistered her hand.</text>
-        <rel relloc="2">blistered</rel>
-        <arg f="" n="0" start="0" end="1">The heat</arg>
-        <arg f="" n="1" start="3" end="4">her hand.</arg>
-      </example>
-      <example src="" name="blistering-n">
-        <text>Nancy's new shoes' blistering of her feet was only worsening as the day went on.</text>
-        <rel relloc="3">blistering</rel>
-        <arg f="" n="0" start="0" end="2">Nancy's new shoes'</arg>
-        <arg f="" n="1" start="4" end="6">of her feet</arg>
-      </example>
-      <note>BLISTER-V NOTES: Roleset by Katie based on internet search, parallel expansion of verbnet, propbank, and sense groupings. Member of VN class entity_specific _cos-45.5. (from blister-v.01)</note>
-      <note>BLISTER-V NOTES: Roleset by Katie based on internet search, parallel expansion of verbnet, propbank, and sense groupings. Causative form of blister. No VNcls. (from blister-v.03)</note>
-      <note>BLISTERING-N NOTES: (from blistering-n.01)</note>
-    </roleset>
-    <roleset id="blister.02" name="Scald, verbally or in writting">
-      <aliases>
-        <alias pos="v">blister</alias>
-      </aliases>
-      <roles>
-        <role descr="Scalder" f="PAG" n="0"/>
-        <role descr="Recipient of scalding" f="PPT" n="1"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks/>
-      <example src="transative blister example" name="transative blister example">
-        <text>The professor blistered the students.</text>
-        <rel relloc="2">blistered</rel>
-        <arg f="" n="0" start="0" end="1">The professor</arg>
-        <arg f="" n="1" start="3" end="4">the students.</arg>
-      </example>
-      <example src="blister with loc and tem" name="blister with loc and tem">
-        <text>The senator blistered the administration in his speech on Friday.</text>
-        <rel relloc="2">blistered</rel>
-        <arg f="" n="0" start="0" end="1">The senator</arg>
-        <arg f="" n="1" start="3" end="4">the administration</arg>
-        <arg f="LOC" n="m" start="5" end="7">in his speech</arg>
-        <arg f="TMP" n="m" start="8" end="9">on Friday.</arg>
-      </example>
-      <note>BLISTER-V NOTES: Roleset by Katie based on internet search, parallel expansion of verbnet, propbank, and sense groupings. No VNcls. (from blister-v.02)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="blister">
+      <roleset id="blister.01" name="Cause blisters to form">
+         <aliases>
+            <alias pos="v">blister</alias>
+            <alias pos="n">blistering</alias>
+         </aliases>
+         <roles>
+            <role descr="agent/causer of blisters" f="PAG" n="0">
+               <rolelinks/>
+            </role>
+            <role descr="thing becoming blistered" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="entity_specific_cos-45.5" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+                  <rolelink class="entity_specific_cos-45.5" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="entity_specific_cos-45.5" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+            <lexlink class="entity_specific_cos-45.5" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="blister-v: inchoative" src="Passive blister example">
+            <text>Her feet blistered during the long hike.</text>
+            <rel relloc="2">blistered</rel>
+            <arg end="1" f="" n="1" start="0">Her feet</arg>
+            <arg end="6" f="TMP" n="m" start="3">during the long hike.</arg>
+         </example>
+         <example name="blister-v: transitive" src="">
+            <text>The tight shoes and perspiration blistered her feet.</text>
+            <rel relloc="5">blistered</rel>
+            <arg end="4" f="" n="0" start="0">The tight shoes and perspiration</arg>
+            <arg end="7" f="" n="1" start="6">her feet.</arg>
+         </example>
+         <example name="blister-v: transitive" src="">
+            <text>The heat blistered her hand.</text>
+            <rel relloc="2">blistered</rel>
+            <arg end="1" f="" n="0" start="0">The heat</arg>
+            <arg end="4" f="" n="1" start="3">her hand.</arg>
+         </example>
+         <example name="blistering-n" src="">
+            <text>Nancy's new shoes' blistering of her feet was only worsening as the day went on.</text>
+            <rel relloc="3">blistering</rel>
+            <arg end="2" f="" n="0" start="0">Nancy's new shoes'</arg>
+            <arg end="6" f="" n="1" start="4">of her feet</arg>
+         </example>
+         <note>BLISTER-V NOTES: Roleset by Katie based on internet search, parallel expansion of verbnet, propbank, and sense groupings. Member of VN class entity_specific _cos-45.5. (from blister-v.01)</note>
+         <note>BLISTER-V NOTES: Roleset by Katie based on internet search, parallel expansion of verbnet, propbank, and sense groupings. Causative form of blister. No VNcls. (from blister-v.03)</note>
+         <note>BLISTERING-N NOTES: (from blistering-n.01)</note>
+      </roleset>
+      <roleset id="blister.02" name="Scald, verbally or in writting">
+         <aliases>
+            <alias pos="v">blister</alias>
+         </aliases>
+         <roles>
+            <role descr="Scalder" f="PAG" n="0"/>
+            <role descr="Recipient of scalding" f="PPT" n="1"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="transative blister example" src="transative blister example">
+            <text>The professor blistered the students.</text>
+            <rel relloc="2">blistered</rel>
+            <arg end="1" f="" n="0" start="0">The professor</arg>
+            <arg end="4" f="" n="1" start="3">the students.</arg>
+         </example>
+         <example name="blister with loc and tem" src="blister with loc and tem">
+            <text>The senator blistered the administration in his speech on Friday.</text>
+            <rel relloc="2">blistered</rel>
+            <arg end="1" f="" n="0" start="0">The senator</arg>
+            <arg end="4" f="" n="1" start="3">the administration</arg>
+            <arg end="7" f="LOC" n="m" start="5">in his speech</arg>
+            <arg end="9" f="TMP" n="m" start="8">on Friday.</arg>
+         </example>
+         <note>BLISTER-V NOTES: Roleset by Katie based on internet search, parallel expansion of verbnet, propbank, and sense groupings. No VNcls. (from blister-v.02)</note>
+      </roleset>
+   </predicate>
 </frameset>

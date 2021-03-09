@@ -1,46 +1,54 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="counter">
-    <roleset id="counter.01" name="make a reaction">
-      <aliases>
-        <alias pos="v">counter</alias>
-      </aliases>
-      <roles>
-        <role descr="reactor" f="PAG" n="0">
-          <rolelinks>
-            <rolelink resource="FrameNet" class="Communication_response" version="1.7">speaker</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="in reaction to" f="PPT" n="1">
-          <rolelinks>
-            <rolelink resource="FrameNet" class="Communication_response" version="1.7">topic</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="reaction" f="PRD" n="2"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Communication_response" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="FrameNet" class="Thwarting" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="onsense" version="on5" class="counter-v.1" src="annot-overlap" confidence="0.1">23</lexlink>
-      </lexlinks>
-      <example src="" name="just prompting of action">
-        <text>But LTV's move marks the first effort by [a major steelmaker]-1 *trace*-1 to counter the free fall in spot prices.</text>
-        <rel relloc="13">counter</rel>
-        <arg f="" n="0" start="11" end="11">*trace*-1</arg>
-        <arg f="" n="1" start="14" end="19">the free fall in spot prices.</arg>
-      </example>
-      <example src="ontonotes nw/wsj/13/wsj_1377" name="ARG0 and ARG1 and ARG2">
-        <text>Detroit tries to counter the foreign invasion with new brands of its own .</text>
-        <rel relloc="3">counter</rel>
-        <arg f="" n="0" start="0" end="0">Detroit</arg>
-        <arg f="" n="1" start="4" end="6">the foreign invasion</arg>
-        <arg f="" n="2" start="7" end="12">with new brands of its own</arg>
-      </example>
-      <note>COUNTER-V NOTES: Frames file for 'counter' based on sentences in financial subcorpus. No Verbnet entry. No comparison. (from counter.01-v predicate notes)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="counter">
+      <roleset id="counter.01" name="make a reaction">
+         <aliases>
+            <alias pos="v">counter</alias>
+         </aliases>
+         <roles>
+            <role descr="reactor" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="Communication_response" resource="FrameNet" version="1.7">speaker</rolelink>
+                  <rolelink class="confront-98" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="in reaction to" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="Communication_response" resource="FrameNet" version="1.7">topic</rolelink>
+                  <rolelink class="confront-98" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="reaction" f="PRD" n="2">
+               <rolelinks>
+                  <rolelink class="confront-98" resource="VerbNet" version="verbnet3.3">instrument</rolelink>
+                  <rolelink class="confront-98" resource="VerbNet" version="verbnet3.4">instrument</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Communication_response" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="Thwarting" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="counter-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">23</lexlink>
+            <lexlink class="confront-98" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="just prompting of action" src="">
+            <text>But LTV's move marks the first effort by [a major steelmaker]-1 *trace*-1 to counter the free fall in spot prices.</text>
+            <rel relloc="13">counter</rel>
+            <arg end="11" f="" n="0" start="11">*trace*-1</arg>
+            <arg end="19" f="" n="1" start="14">the free fall in spot prices.</arg>
+         </example>
+         <example name="ARG0 and ARG1 and ARG2" src="ontonotes nw/wsj/13/wsj_1377">
+            <text>Detroit tries to counter the foreign invasion with new brands of its own .</text>
+            <rel relloc="3">counter</rel>
+            <arg end="0" f="" n="0" start="0">Detroit</arg>
+            <arg end="6" f="" n="1" start="4">the foreign invasion</arg>
+            <arg end="12" f="" n="2" start="7">with new brands of its own</arg>
+         </example>
+         <note>COUNTER-V NOTES: Frames file for 'counter' based on sentences in financial subcorpus. No Verbnet entry. No comparison. (from counter.01-v predicate notes)</note>
+      </roleset>
+   </predicate>
 </frameset>

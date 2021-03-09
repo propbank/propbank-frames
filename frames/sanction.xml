@@ -1,80 +1,88 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="sanction">
-    <roleset id="sanction.01" name="approve">
-      <aliases>
-        <alias pos="v">sanction</alias>
-      </aliases>
-      <roles>
-        <role descr="approver, agent" f="PAG" n="0">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="allow-64.1" version="verbnet3.3">agent</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="entity approved" f="PPT" n="1">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="allow-64.1" version="verbnet3.3">theme</rolelink>
-          </rolelinks>
-        </role>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Deny_or_grant_permission" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="FrameNet" class="Permitting" version="UNK" confidence="0.0" src="manual+strict-conv"/>
-        <lexlink resource="FrameNet" class="Grant_permission" version="UNK" confidence="0.0" src="manual+strict-conv"/>
-        <lexlink resource="VerbNet" class="allow-64.1" version="verbnet3.3" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="onsense" version="on5" class="sanction-v.1" src="annot-overlap" confidence="0.1">4</lexlink>
-      </lexlinks>
-      <example src="transitive" name="transitive">
-        <text>`` Today is not the time [0] [*]to signal that Congress in any way sanctions the dismal state into which antitrust enforcement has fallen [*T*-3] [*T*-2] , '' Mr. Edwards argued [0] [] .</text>
-        <rel relloc="14">sanctions</rel>
-        <arg f="" n="0" start="10" end="10">Congress</arg>
-        <arg f="MNR" n="m" start="11" end="13">in any way</arg>
-        <arg f="" n="1" start="15" end="24">the dismal state into which antitrust enforcement has fallen [*T*-3]</arg>
-      </example>
-      <example src="passive" name="passive">
-        <text> Some forms of private property would be sanctioned [*].</text>
-        <rel relloc="8">sanctioned</rel>
-        <arg f="MOD" n="m" start="6" end="6">would</arg>
-        <arg f="" n="1" start="1" end="5">Some forms of private property</arg>
-      </example>
-      <note>SANCTION-V NOTES: frame created by Olga. Comparison with 'approve'. Member of Vncls allow-64.1. Updated by Julia, 11/2010. (from sanction.01-v)</note>
-    </roleset>
-    <roleset id="sanction.02" name="punish by applying legal sanctions">
-      <aliases>
-        <alias pos="v">sanction</alias>
-      </aliases>
-      <roles>
-        <role descr="entity enforcing sanctions" f="PAG" n="0">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="prosecute-33.2" version="verbnet3.3">agent</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="entity being punished" f="PPT" n="1">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="prosecute-33.2" version="verbnet3.3">theme</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="sanctions, manner of punishment" f="MNR" n="2"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Revenge" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="VerbNet" class="prosecute-33.2" version="verbnet3.3" confidence="0.8" src="manual+strict-conv"/>
-      </lexlinks>
-      <example src="All Arguments" name="All Arguments">
-        <text>The draft clearly pointed out that these people ought to be sanctioned *, including placing a ban on their international travels and participation in international business activities.</text>
-        <rel relloc="11">sanctioned</rel>
-        <arg f="" n="1" start="6" end="7">these people</arg>
-        <arg f="" n="2" start="13" end="26">including placing a ban on their international travels and participation in international business activities.</arg>
-      </example>
-      <note>SANCTION-V NOTES: Created by Claire. Member of Vncls judgement-33. (from sanction.02-v)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="sanction">
+      <roleset id="sanction.01" name="approve">
+         <aliases>
+            <alias pos="v">sanction</alias>
+         </aliases>
+         <roles>
+            <role descr="approver, agent" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="allow-64.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="allow-64.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="entity approved" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="allow-64.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="allow-64.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Deny_or_grant_permission" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="Permitting" confidence="0.0" resource="FrameNet" src="manual+strict-conv" version="UNK"/>
+            <lexlink class="Grant_permission" confidence="0.0" resource="FrameNet" src="manual+strict-conv" version="UNK"/>
+            <lexlink class="allow-64.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+            <lexlink class="sanction-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+            <lexlink class="allow-64.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="transitive" src="transitive">
+            <text>`` Today is not the time [0] [*]to signal that Congress in any way sanctions the dismal state into which antitrust enforcement has fallen [*T*-3] [*T*-2] , '' Mr. Edwards argued [0] [] .</text>
+            <rel relloc="14">sanctions</rel>
+            <arg end="10" f="" n="0" start="10">Congress</arg>
+            <arg end="13" f="MNR" n="m" start="11">in any way</arg>
+            <arg end="24" f="" n="1" start="15">the dismal state into which antitrust enforcement has fallen [*T*-3]</arg>
+         </example>
+         <example name="passive" src="passive">
+            <text> Some forms of private property would be sanctioned [*].</text>
+            <rel relloc="8">sanctioned</rel>
+            <arg end="6" f="MOD" n="m" start="6">would</arg>
+            <arg end="5" f="" n="1" start="1">Some forms of private property</arg>
+         </example>
+         <note>SANCTION-V NOTES: frame created by Olga. Comparison with 'approve'. Member of Vncls allow-64.1. Updated by Julia, 11/2010. (from sanction.01-v)</note>
+      </roleset>
+      <roleset id="sanction.02" name="punish by applying legal sanctions">
+         <aliases>
+            <alias pos="v">sanction</alias>
+         </aliases>
+         <roles>
+            <role descr="entity enforcing sanctions" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="prosecute-33.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="prosecute-33.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="entity being punished" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="prosecute-33.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="prosecute-33.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="sanctions, manner of punishment" f="MNR" n="2">
+               <rolelinks/>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Revenge" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="prosecute-33.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+            <lexlink class="prosecute-33.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="All Arguments" src="All Arguments">
+            <text>The draft clearly pointed out that these people ought to be sanctioned *, including placing a ban on their international travels and participation in international business activities.</text>
+            <rel relloc="11">sanctioned</rel>
+            <arg end="7" f="" n="1" start="6">these people</arg>
+            <arg end="26" f="" n="2" start="13">including placing a ban on their international travels and participation in international business activities.</arg>
+         </example>
+         <note>SANCTION-V NOTES: Created by Claire. Member of Vncls judgement-33. (from sanction.02-v)</note>
+      </roleset>
+   </predicate>
 </frameset>

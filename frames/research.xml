@@ -1,61 +1,72 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="research">
-    <roleset id="research.01" name="study very hard">
-      <aliases>
-        <alias pos="v">research</alias>
-        <alias pos="n">research</alias>
-        <alias pos="l">do_research</alias>
-        <argalias pos="n" arg="0">researcher</argalias>
-      </aliases>
-      <roles>
-        <role descr="student" f="PAG" n="0"/>
-        <role descr="subject" f="PPT" n="1"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Research" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="onsense" version="on5" class="research-v.1" src="annot-overlap" confidence="0.1">20</lexlink>
-      </lexlinks>
-      <example src="ontonotes mz/sinorama/10/ectb_1054" name="ARG0 and ARG1">
-        <text>Ritek is also part of a group -LRB- which includes Dataplay , Samsung and Toshiba -RRB- that is researching and developing a data storage device no larger than a wrist watch , as well as the applications for it .</text>
-        <rel relloc="18">researching</rel>
-        <arg f="" n="0" start="5" end="15">a group -LRB- which includes Dataplay , Samsung and Toshiba -RRB-</arg>
-        <arg f="" n="0" start="16" end="16">that</arg>
-        <arg f="" n="1" start="21" end="38">a data storage device no larger than a wrist watch , as well as the applications for it</arg>
-      </example>
-      <example src="NP only" name="NP only">
-        <text>federal research on the effectiveness of medical treatments</text>
-        <rel relloc="1">research</rel>
-        <arg f="" n="0" start="0" end="0">federal</arg>
-        <arg f="" n="1" start="2" end="7">on the effectiveness of medical treatments</arg>
-      </example>
-      <example src="NP only" name="NP only">
-        <text>audience research</text>
-        <rel relloc="1">research</rel>
-        <arg f="" n="1" start="0" end="0">audience</arg>
-      </example>
-      <example src="Subject only" name="Subject only">
-        <text>Market research shows that viewers prefer blondes.</text>
-        <rel relloc="1">research</rel>
-        <arg f="" n="1" start="0" end="0">Market</arg>
-      </example>
-      <example src="Extent only" name="Extent only">
-        <text>Extensive research provides no indication that bromine has any nutritional use.</text>
-        <rel relloc="1">research</rel>
-        <arg f="EXT" n="m" start="0" end="0">Extensive</arg>
-      </example>
-      <example src="Args 0 and 1" name="Args 0 and 1">
-        <text>Hugo Spiers discusses his research into London taxi drivers and their navigational abilities.</text>
-        <rel relloc="4">research</rel>
-        <arg f="" n="0" start="3" end="3">his</arg>
-        <arg f="" n="1" start="5" end="12">into London taxi drivers and their navigational abilities.</arg>
-      </example>
-      <note>RESEARCH-V NOTES: Frames file for 'research' based on sentences in financial subcorpus. No Verbnet entry. Comparison with 'study' (from research.01-v predicate notes)</note>
-      <note>RESEARCH-N NOTES: Roleset based on verb entry research.01 and OntoNotes sense grouping research.01; no mapping to VN. Framed by Claire (from research.01-n)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="research">
+      <roleset id="research.01" name="study very hard">
+         <aliases>
+            <alias pos="v">research</alias>
+            <alias pos="n">research</alias>
+            <alias pos="l">do_research</alias>
+            <argalias arg="0" pos="n">researcher</argalias>
+         </aliases>
+         <roles>
+            <role descr="student" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="assessment-34.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="assessment-34.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="subject" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="assessment-34.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="assessment-34.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Research" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="research-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">20</lexlink>
+            <lexlink class="assessment-34.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1054">
+            <text>Ritek is also part of a group -LRB- which includes Dataplay , Samsung and Toshiba -RRB- that is researching and developing a data storage device no larger than a wrist watch , as well as the applications for it .</text>
+            <rel relloc="18">researching</rel>
+            <arg end="15" f="" n="0" start="5">a group -LRB- which includes Dataplay , Samsung and Toshiba -RRB-</arg>
+            <arg end="16" f="" n="0" start="16">that</arg>
+            <arg end="38" f="" n="1" start="21">a data storage device no larger than a wrist watch , as well as the applications for it</arg>
+         </example>
+         <example name="NP only" src="NP only">
+            <text>federal research on the effectiveness of medical treatments</text>
+            <rel relloc="1">research</rel>
+            <arg end="0" f="" n="0" start="0">federal</arg>
+            <arg end="7" f="" n="1" start="2">on the effectiveness of medical treatments</arg>
+         </example>
+         <example name="NP only" src="NP only">
+            <text>audience research</text>
+            <rel relloc="1">research</rel>
+            <arg end="0" f="" n="1" start="0">audience</arg>
+         </example>
+         <example name="Subject only" src="Subject only">
+            <text>Market research shows that viewers prefer blondes.</text>
+            <rel relloc="1">research</rel>
+            <arg end="0" f="" n="1" start="0">Market</arg>
+         </example>
+         <example name="Extent only" src="Extent only">
+            <text>Extensive research provides no indication that bromine has any nutritional use.</text>
+            <rel relloc="1">research</rel>
+            <arg end="0" f="EXT" n="m" start="0">Extensive</arg>
+         </example>
+         <example name="Args 0 and 1" src="Args 0 and 1">
+            <text>Hugo Spiers discusses his research into London taxi drivers and their navigational abilities.</text>
+            <rel relloc="4">research</rel>
+            <arg end="3" f="" n="0" start="3">his</arg>
+            <arg end="12" f="" n="1" start="5">into London taxi drivers and their navigational abilities.</arg>
+         </example>
+         <note>RESEARCH-V NOTES: Frames file for 'research' based on sentences in financial subcorpus. No Verbnet entry. Comparison with 'study' (from research.01-v predicate notes)</note>
+         <note>RESEARCH-N NOTES: Roleset based on verb entry research.01 and OntoNotes sense grouping research.01; no mapping to VN. Framed by Claire (from research.01-n)</note>
+      </roleset>
+   </predicate>
 </frameset>

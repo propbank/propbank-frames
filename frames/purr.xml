@@ -1,69 +1,79 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="purr">
-    <roleset id="purr.01" name="emit purring noise">
-      <aliases>
-        <alias pos="v">purr</alias>
-      </aliases>
-      <roles>
-        <role descr="cat" f="PAG" n="0"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Make_noise" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="FrameNet" class="Motion_noise" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-      </lexlinks>
-      <example src="probably COCA (2018 example fix)" name="ARG0">
-        <text>The diesel engine purred at a constant pitch.</text>
-        <rel relloc="3">purred</rel>
-        <arg f="" n="0" start="0" end="2">The diesel engine</arg>
-        <arg f="MNR" n="m" start="4" end="7">at a constant pitch.</arg>
-      </example>
-      <note>PURR-V NOTES: Frames file for 'purr' based on sentences in wsj. Verbnet entry 37.3"manner of speaker", Framenet entries Motion Noise, Communication Noise, and Perception Noise. (from purr.01-v predicate notes)</note>
-    </roleset>
-    <roleset id="purr.02" name="speak in a purring fashion">
-      <aliases>
-        <alias pos="v">purr</alias>
-      </aliases>
-      <roles>
-        <role descr="speaker" f="PAG" n="0">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3">agent</rolelink>
-            <rolelink resource="FrameNet" class="Communication_noise" version="1.7">speaker</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="utterance" f="PPT" n="1">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3">topic</rolelink>
-            <rolelink resource="FrameNet" class="Communication_noise" version="1.7">message</rolelink>
-            <rolelink resource="FrameNet" class="Communication_noise" version="1.7">topic</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="hearer" f="GOL" n="2">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3">recipient</rolelink>
-            <rolelink resource="FrameNet" class="Communication_noise" version="1.7">addressee</rolelink>
-          </rolelinks>
-        </role>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Communication_noise" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="VerbNet" class="manner_speaking-37.3" version="verbnet3.3" confidence="0.8" src="manual+strict-conv"/>
-      </lexlinks>
-      <example src="" name="automatically generated">
-        <text>`` [It 's like an oasis in this room]-1 , '' Ms. Foster purrs *trace*-1 .</text>
-        <rel relloc="13">purrs</rel>
-        <arg f="" n="0" start="11" end="12">Ms. Foster</arg>
-        <arg f="" n="1" start="14" end="14">*trace*-1</arg>
-      </example>
-      <note>PURR-V NOTES: Frames file for 'purr' based on sentences in wsj. Verbnet entry 37.3"manner of speaker", Framenet entries Motion Noise, Communication Noise, and Perception Noise. (from purr.02-v predicate notes)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="purr">
+      <roleset id="purr.01" name="emit purring noise">
+         <aliases>
+            <alias pos="v">purr</alias>
+         </aliases>
+         <roles>
+            <role descr="cat" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="manner_speaking-37.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="manner_speaking-37.3" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Make_noise" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="Motion_noise" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="manner_speaking-37.3" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="ARG0" src="probably COCA (2018 example fix)">
+            <text>The diesel engine purred at a constant pitch.</text>
+            <rel relloc="3">purred</rel>
+            <arg end="2" f="" n="0" start="0">The diesel engine</arg>
+            <arg end="7" f="MNR" n="m" start="4">at a constant pitch.</arg>
+         </example>
+         <note>PURR-V NOTES: Frames file for 'purr' based on sentences in wsj. Verbnet entry 37.3&quot;manner of speaker&quot;, Framenet entries Motion Noise, Communication Noise, and Perception Noise. (from purr.01-v predicate notes)</note>
+      </roleset>
+      <roleset id="purr.02" name="speak in a purring fashion">
+         <aliases>
+            <alias pos="v">purr</alias>
+         </aliases>
+         <roles>
+            <role descr="speaker" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="manner_speaking-37.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="Communication_noise" resource="FrameNet" version="1.7">speaker</rolelink>
+                  <rolelink class="manner_speaking-37.3" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="utterance" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="manner_speaking-37.3" resource="VerbNet" version="verbnet3.3">topic</rolelink>
+                  <rolelink class="Communication_noise" resource="FrameNet" version="1.7">message</rolelink>
+                  <rolelink class="Communication_noise" resource="FrameNet" version="1.7">topic</rolelink>
+                  <rolelink class="manner_speaking-37.3" resource="VerbNet" version="verbnet3.4">topic</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="hearer" f="GOL" n="2">
+               <rolelinks>
+                  <rolelink class="manner_speaking-37.3" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+                  <rolelink class="Communication_noise" resource="FrameNet" version="1.7">addressee</rolelink>
+                  <rolelink class="manner_speaking-37.3" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Communication_noise" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="manner_speaking-37.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+            <lexlink class="manner_speaking-37.3" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="automatically generated" src="">
+            <text>`` [It 's like an oasis in this room]-1 , '' Ms. Foster purrs *trace*-1 .</text>
+            <rel relloc="13">purrs</rel>
+            <arg end="12" f="" n="0" start="11">Ms. Foster</arg>
+            <arg end="14" f="" n="1" start="14">*trace*-1</arg>
+         </example>
+         <note>PURR-V NOTES: Frames file for 'purr' based on sentences in wsj. Verbnet entry 37.3&quot;manner of speaker&quot;, Framenet entries Motion Noise, Communication Noise, and Perception Noise. (from purr.02-v predicate notes)</note>
+      </roleset>
+   </predicate>
 </frameset>

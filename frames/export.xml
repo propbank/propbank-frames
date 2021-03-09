@@ -1,46 +1,62 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="export">
-    <roleset id="export.01" name="ship out commodities">
-      <aliases>
-        <alias pos="v">export</alias>
-        <alias pos="n">exporting</alias>
-        <alias pos="n">export</alias>
-        <argalias pos="n" arg="0">exporter</argalias>
-      </aliases>
-      <roles>
-        <role descr="exporter" f="PAG" n="0"/>
-        <role descr="product" f="PPT" n="1"/>
-        <role descr="importer" f="GOL" n="2"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="FrameNet" class="Exporting" version="1.7" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="AidaOntology" version="Jan2019" class="Movement.TransportArtifact.SendSupplyExport" confidence="0.1" src="reo-expansion"/>
-        <lexlink resource="ERE" class="Transportartifact" version="rich" confidence="0.1" src="reo-expansion"/>
-        <lexlink resource="onsense" version="on5" class="export-v.1" src="annot-overlap" confidence="0.1">48</lexlink>
-      </lexlinks>
-      <example src="" name="export-v: active, missing importer">
-        <text>Westmoreland exports about a fourth of its coal tonnage, including a significant amount of metallurgical coal produced by others that is used by steelmakers overseas.</text>
-        <rel relloc="1">exports</rel>
-        <arg f="" n="0" start="0" end="0">Westmoreland</arg>
-        <arg f="" n="1" start="2" end="24">about a fourth of its coal tonnage, including a significant amount of metallurgical coal produced by others that is used by steelmakers overseas.</arg>
-      </example>
-      <example src="" name="export-v: passive, missing exporter">
-        <text>[Some 70% of them]-1 are *trace*-1 to be exported *trace*-1 to the U.S.</text>
-        <rel relloc="8">exported</rel>
-        <arg f="" n="1" start="5" end="5">*trace*-1</arg>
-        <arg f="" n="2" start="10" end="12">to the U.S.</arg>
-      </example>
-      <example src="" name="exporting-n">
-        <text>So he splashed the information on handbills that he distributed throughout the banana - exporting city of Puerto Armuelles , which was ruled by United Fruit Co .</text>
-        <rel relloc="14">exporting</rel>
-        <arg f="" n="1" start="12" end="12">banana</arg>
-      </example>
-      <note>EXPORT-V NOTES: Note the passive infinitive. (from export.01-v)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="export">
+      <roleset id="export.01" name="ship out commodities">
+         <aliases>
+            <alias pos="v">export</alias>
+            <alias pos="n">exporting</alias>
+            <alias pos="n">export</alias>
+            <argalias arg="0" pos="n">exporter</argalias>
+         </aliases>
+         <roles>
+            <role descr="exporter" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="product" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="importer" f="GOL" n="2">
+               <rolelinks>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+                  <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Exporting" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="Movement.TransportArtifact.SendSupplyExport" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+            <lexlink class="Transportartifact" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+            <lexlink class="export-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">48</lexlink>
+            <lexlink class="send-11.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="export-v: active, missing importer" src="">
+            <text>Westmoreland exports about a fourth of its coal tonnage, including a significant amount of metallurgical coal produced by others that is used by steelmakers overseas.</text>
+            <rel relloc="1">exports</rel>
+            <arg end="0" f="" n="0" start="0">Westmoreland</arg>
+            <arg end="24" f="" n="1" start="2">about a fourth of its coal tonnage, including a significant amount of metallurgical coal produced by others that is used by steelmakers overseas.</arg>
+         </example>
+         <example name="export-v: passive, missing exporter" src="">
+            <text>[Some 70% of them]-1 are *trace*-1 to be exported *trace*-1 to the U.S.</text>
+            <rel relloc="8">exported</rel>
+            <arg end="5" f="" n="1" start="5">*trace*-1</arg>
+            <arg end="12" f="" n="2" start="10">to the U.S.</arg>
+         </example>
+         <example name="exporting-n" src="">
+            <text>So he splashed the information on handbills that he distributed throughout the banana - exporting city of Puerto Armuelles , which was ruled by United Fruit Co .</text>
+            <rel relloc="14">exporting</rel>
+            <arg end="12" f="" n="1" start="12">banana</arg>
+         </example>
+         <note>EXPORT-V NOTES: Note the passive infinitive. (from export.01-v)</note>
+      </roleset>
+   </predicate>
 </frameset>

@@ -1,37 +1,47 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="supervise">
-    <roleset id="supervise.01" name="supervise, overseeing">
-      <aliases>
-        <alias pos="n">supervision</alias>
-        <alias pos="v">supervise</alias>
-        <argalias pos="n" arg="0">supervisor</argalias>
-      </aliases>
-      <roles>
-        <role descr="supervisor" f="PAG" n="0"/>
-        <role descr="thing supervised" f="PPT" n="1"/>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="onsense" version="on5" class="supervise-v.1" src="annot-overlap" confidence="0.1">21</lexlink>
-      </lexlinks>
-      <example src="" name="typical">
-        <text>The bids remain subject to evaluation by the federal bankruptcy court supervising PS of New Hampshire's reorganization.</text>
-        <rel relloc="11">supervising</rel>
-        <arg f="" n="0" start="7" end="10">the federal bankruptcy court</arg>
-        <arg f="" n="1" start="12" end="16">PS of New Hampshire's reorganization.</arg>
-      </example>
-      <example src="" name="Both args">
-        <text>He remains in research through his supervision of two PhD candidates.</text>
-        <rel relloc="6">supervision</rel>
-        <arg f="" n="0" start="5" end="5">his</arg>
-        <arg f="" n="1" start="7" end="10">of two PhD candidates.</arg>
-      </example>
-      <note>SUPERVISE-V NOTES: "Oversee"is a portmanteau for"supervise";"over"="super"and"see"="vise"(eg,"vision"etc). (from supervise.01-v)</note>
-      <note>SUPERVISION-N NOTES: ~supervise.01 (from supervision.01-n)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="supervise">
+      <roleset id="supervise.01" name="supervise, overseeing">
+         <aliases>
+            <alias pos="n">supervision</alias>
+            <alias pos="v">supervise</alias>
+            <argalias arg="0" pos="n">supervisor</argalias>
+         </aliases>
+         <roles>
+            <role descr="supervisor" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="supervision-95.2.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="supervision-95.2.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="thing supervised" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="supervision-95.2.2" resource="VerbNet" version="verbnet3.4">co_agent</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="supervise-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">21</lexlink>
+            <lexlink class="supervision-95.2.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="typical" src="">
+            <text>The bids remain subject to evaluation by the federal bankruptcy court supervising PS of New Hampshire's reorganization.</text>
+            <rel relloc="11">supervising</rel>
+            <arg end="10" f="" n="0" start="7">the federal bankruptcy court</arg>
+            <arg end="16" f="" n="1" start="12">PS of New Hampshire's reorganization.</arg>
+         </example>
+         <example name="Both args" src="">
+            <text>He remains in research through his supervision of two PhD candidates.</text>
+            <rel relloc="6">supervision</rel>
+            <arg end="5" f="" n="0" start="5">his</arg>
+            <arg end="10" f="" n="1" start="7">of two PhD candidates.</arg>
+         </example>
+         <note>SUPERVISE-V NOTES: &quot;Oversee&quot;is a portmanteau for&quot;supervise&quot;;&quot;over&quot;=&quot;super&quot;and&quot;see&quot;=&quot;vise&quot;(eg,&quot;vision&quot;etc). (from supervise.01-v)</note>
+         <note>SUPERVISION-N NOTES: ~supervise.01 (from supervision.01-n)</note>
+      </roleset>
+   </predicate>
 </frameset>

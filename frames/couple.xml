@@ -1,49 +1,53 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="couple">
-    <roleset id="couple.01" name="link one thing with another">
-      <aliases>
-        <alias pos="v">couple</alias>
-        <alias pos="n">coupling</alias>
-      </aliases>
-      <roles>
-        <role descr="joiner" f="PAG" n="0">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="amalgamate-22.2-1" version="verbnet3.3">agent</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="first thing" f="PPT" n="1">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="amalgamate-22.2-1" version="verbnet3.3">patient</rolelink>
-          </rolelinks>
-        </role>
-        <role descr="second thing" f="PPT" n="2">
-          <rolelinks>
-            <rolelink resource="VerbNet" class="amalgamate-22.2-1" version="verbnet3.3">patient</rolelink>
-          </rolelinks>
-        </role>
-      </roles>
-      <usagenotes>
-        <usage resource="PropBank" version="3.0" inuse="+"/>
-        <usage resource="AMR" version="3.0" inuse="+"/>
-      </usagenotes>
-      <lexlinks>
-        <lexlink resource="VerbNet" class="amalgamate-22.2-1" version="verbnet3.3" confidence="0.8" src="manual+strict-conv"/>
-        <lexlink resource="onsense" version="on5" class="couple-v.1" src="annot-overlap" confidence="0.1">9</lexlink>
-      </lexlinks>
-      <example src="" name="typical example">
-        <text>Peter Marcus, an analyst with PaineWebber Inc., said that [a downturn]-1 in the appliance industry, coupled *trace*-1 with sluggish automotive sales, hurt USX results.</text>
-        <rel relloc="15">coupled</rel>
-        <arg f="" n="1" start="16" end="16">*trace*-1</arg>
-        <arg f="" n="2" start="17" end="20">with sluggish automotive sales,</arg>
-      </example>
-      <example src="" name="cryo example">
-        <text>A strong coupling between ALT and GPP.</text>
-        <rel relloc="2">coupling</rel>
-        <arg f="ADJ" n="m" start="1" end="1">strong</arg>
-        <arg f="" n="1" start="3" end="6">between ALT and GPP.</arg>
-      </example>
-      <note>COUPLE-V NOTES: Always in passive? (from couple.01-v)</note>
-    </roleset>
-  </predicate>
+   <predicate lemma="couple">
+      <roleset id="couple.01" name="link one thing with another">
+         <aliases>
+            <alias pos="v">couple</alias>
+            <alias pos="n">coupling</alias>
+         </aliases>
+         <roles>
+            <role descr="joiner" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="amalgamate-22.2-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="amalgamate-22.2-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="first thing" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="amalgamate-22.2-1" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+                  <rolelink class="amalgamate-22.2-1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="second thing" f="PPT" n="2">
+               <rolelinks>
+                  <rolelink class="amalgamate-22.2-1" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+                  <rolelink class="amalgamate-22.2-1" resource="VerbNet" version="verbnet3.4">co_patient</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="amalgamate-22.2-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+            <lexlink class="couple-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">9</lexlink>
+            <lexlink class="amalgamate-22.2-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="typical example" src="">
+            <text>Peter Marcus, an analyst with PaineWebber Inc., said that [a downturn]-1 in the appliance industry, coupled *trace*-1 with sluggish automotive sales, hurt USX results.</text>
+            <rel relloc="15">coupled</rel>
+            <arg end="16" f="" n="1" start="16">*trace*-1</arg>
+            <arg end="20" f="" n="2" start="17">with sluggish automotive sales,</arg>
+         </example>
+         <example name="cryo example" src="">
+            <text>A strong coupling between ALT and GPP.</text>
+            <rel relloc="2">coupling</rel>
+            <arg end="1" f="ADJ" n="m" start="1">strong</arg>
+            <arg end="6" f="" n="1" start="3">between ALT and GPP.</arg>
+         </example>
+         <note>COUPLE-V NOTES: Always in passive? (from couple.01-v)</note>
+      </roleset>
+   </predicate>
 </frameset>
