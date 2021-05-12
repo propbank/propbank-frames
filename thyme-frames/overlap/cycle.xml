@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<frameset>
+  <predicate lemma="cycle">
+    <roleset id="cycle.02" name="go through a cycle">
+      <aliases>
+        <alias pos="v">cycle</alias>
+        <alias pos="n">cycle</alias>
+      </aliases>
+      <roles>
+        <role descr="thing going through cycle" f="PPT" n="1"/>
+        <role descr="EXT or MNR" f="EXT" n="2"/>
+        <role descr="low point" f="-" n="3"/>
+        <role descr="high point" f="-" n="4"/>
+      </roles>
+      <example name="" src="Auto1" type="">
+        <text>The patient will receive cycle four of FOLFOX plus Avastin</text>
+        <amr>(r / receive-01
+      :ARG0 (p / patient-yy)
+      :ARG1 (c / cycle-02
+            :ARG1 (a / and
+                  :op1 (m / medications-drugs :name (n / name :op1 "FOLFOX"))
+                  :op2 (m2 / medications-drugs :name (n2 / name :op1 "Avastin"))
+                  :ARG2-of (t / therapy-01 :implicit +
+                        :ARG1 p))
+            :ord (o / ordinal-entity :value 4)</amr>
+      </example>
+    </roleset>
+  </predicate>
+</frameset>

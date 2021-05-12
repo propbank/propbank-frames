@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<frameset>
+  <predicate lemma="complicate">
+    <roleset id="complicate.01" name="make complicated">
+      <aliases>
+        <alias pos="v">complicate</alias>
+        <alias pos="j">complicated</alias>
+        <alias pos="n">complication</alias>
+      </aliases>
+      <roles>
+        <role descr="agent, entity causing something to become complicated" f="PAG" n="0"/>
+        <role descr="thing becoming complicated" f="PPT" n="1"/>
+        <role descr="benefactive" f="GOL" n="2"/>
+        <role descr="complication itself" f="-" n="3"/>
+      </roles>
+      <example name="" src="Auto1" type="">
+        <text>Ms . Miller was hospitalized on October 29 , 2009 , with complications of diverticulitis requiring IV antibiotics.</text>
+        <amr>(h / hospitalize-01
+      :ARG1 (p / person :name (n / name :op1 "Ms." :op2 "Miller"))
+      :time (d / date-entity :month 10 :day 29 :year 2009)
+      :ARG1-of (c / cause-01
+            :ARG0 (t / thing :pl +
+                  :ARG3-of (c2 / complicate-01
+                        :ARG0 ((d / disease-disorder :name (n / name :op1 "diverticulitis")
+                              :ARG2-of (h / have-disorder-91
+                                    :ARG1 p))</amr>
+      </example>
+    </roleset>
+  </predicate>
+</frameset>

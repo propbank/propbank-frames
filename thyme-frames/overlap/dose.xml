@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<frameset>
+  <predicate lemma="dose">
+    <roleset id="dose-entity.91" name="for medication doses">
+      <aliases>
+        <alias pos="-">-</alias>
+      </aliases>
+      <roles>
+        <role descr="medication" f="PPT" n="1"/>
+        <role descr="form (tablet, capsule, capful, etc.)" f="-" n="2"/>
+        <role descr="strength (amount of active ingredient): May be represented as the mass-quantity of the active ingredient(s) in a single whole unit, or the ratio (percentage-entity) of the active ingredient to the whole substance" f="-" n="3"/>
+        <role descr="frequency (usually rate-entity-91)" f="-" n="4"/>
+        <role descr="total amount (mass or volume) of substance for a single, whole form (ARG2) of the medication (includes active and inactive ingredients" f="-" n="5"/>
+        <role descr="total amount of a course of medication (most often used for cycles of chemotherapy or fractions of radiation)" f="-" n="6"/>
+      </roles>
+      <example name="" src="Auto1" type="">
+        <text>Coumadin 5-mg tablet one-half-tablet twice a day.</text>
+        <amr>(t / therapy-01 :implicit +
+      :ARG2 (m / medications-drugs :name (n / name :op1 "Coumadin")
+                  :ARG1-of (d2 / dose-entity-91
+                        :ARG2 (t2 / tablet :quant "1/2")
+                        :ARG3 (m2 / mass-quantity :quant 5
+                              :unit (m3 / milligram))
+                        :ARG4 (r / rate-entity-91
+                              :ARG1 2
+                              :ARG2 (t3 / temporal-quantity :quant 1
+                                    :unit (d3 / day)))))))</amr>
+      </example>
+    </roleset>
+    <roleset id="dose.01" name="add substance to, adding or administering substance to">
+      <aliases>
+        <alias pos="v">dose</alias>
+        <alias pos="n">dose</alias>
+        <alias pos="n">dosing</alias>
+      </aliases>
+      <roles>
+        <role descr="doser" f="PAG" n="0"/>
+        <role descr="Entity dosed" f="PPT" n="1"/>
+        <role descr="Dosed with" f="MNR" n="2"/>
+        <role descr="dose itself (amount of ARG2 administered; often filled by dose-entity-91)" f="-" n="3"/>
+      </roles>
+      <example name="" src="Auto1" type="">
+        <text>Instructions: unknown dose.</text>
+        <amr>(k / know-01 :polarity -
+      :ARG1 (t / thing
+            :ARG3-of (d / dose-01))
+      :topic (i2 / instruct-01))</amr>
+      </example>
+    </roleset>
+  </predicate>
+</frameset>

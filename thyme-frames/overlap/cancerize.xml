@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<frameset>
+  <predicate lemma="cancer">
+    <roleset id="cancer.03" name="group of diseases involving abnormal cell growth">
+      <aliases>
+        <alias pos="n">cancer</alias>
+      </aliases>
+      <roles>
+        <role descr="patient" f="PPT" n="1"/>
+        <role descr="primary organ" f="LOC" n="2"/>
+        <role descr="specific part of organ, if in addition to :ARG2" f="LOC" n="3"/>
+        <role descr="cell &quot;location&quot;/field (e.g., squamous cell; urothelium) " f="LOC" n="4"/>
+        <role descr="ARG5: physical manifestation (tumor/mass/etc. references) " f="-" n="5"/>
+      </roles>
+      <example name="" src="Auto1" type="">
+        <text>#1 Metastatic colon cancer with known liver metastasis</text>
+        <amr>(c / cancer-03 :li 1
+      :ARG2 (a / anatomical-site :primary + :name (n / name :op1 "colon"))
+      :ARG1-of (m / metastasize-101
+            :ARG2 (a2 / anatomical-site :name (n3 / name :op1 "liver"))
+            :ARG3 (d / disease-disorder :name (n2 / name :op1 "metastasis")
+                  :ARG1-of (k / know-01))
+            :ARG4 a))</amr>
+      </example>
+    </roleset>
+  </predicate>
+</frameset>

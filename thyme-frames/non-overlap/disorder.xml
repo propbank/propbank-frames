@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<frameset>
+  <predicate lemma="have_disorder">
+    <roleset id="have-disorder.91" name="for medical diseases and disorders without rolesets">
+      <aliases>
+        <alias pos="-">-</alias>
+      </aliases>
+      <roles>
+        <role descr="medical patient with disease" f="PAG" n="1"/>
+        <role descr="name/type of disease (always disease_disorder NE)" f="PPT" n="2"/>
+        <role descr="affected body part, only if in addition to ARG2" f="LOC" n="3"/>
+      </roles>
+      <example name="" src="Auto1" type="">
+        <text>#2 History of neutropenia , chemotherapy-related</text>
+        <amr>(h / history-01 :li 2
+      :ARG2 (d / disease-disorder :name (n2 / name :op1 "neutropenia")
+            :ARG2-of (h2 / have-disorder-91 :implicit +)
+            :ARG1-of (r / relate-01
+                  :ARG2 (c / chemotherapy-01))))</amr>
+      </example>
+    </roleset>
+  </predicate>
+</frameset>
