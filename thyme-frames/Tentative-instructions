@@ -1,0 +1,27 @@
+Michael is generating xml files automatically based on the xml csv spreadsheet. 
+(https://docs.google.com/spreadsheets/d/1O0ChXCbFkbRamnfUeYZegInwnNOSDdniicncDrPhnQI/edit#gid=513269126)
+
+Column A in this spreadsheet is marked 00 when files have up-to-date xml files generated and put into the 
+appropriate github folders. If changes are made to the files in the spreadsheet, column A is marked '11'. 
+This signals to Michael that a new xml file should be generated. (Once the file is generated, '11' should 
+be changed back to '00'.)
+
+Generated files that have a name that is the same as a pre-existing xml file in the propbank-development 
+master list go into the thyme-frames/overlap folder.
+
+Generated files that have a novel name go into the thyme-frames/non-overlap folder.
+
+For all of the files that are in the overlap folder, Julia is going in and manually merging them with the 
+pre-existing files of the same name. Julia is doing this work in her own folder on the verbs server-- the 
+merged files can be found at /home/verbs/student/bonnj/THYME/merged-xmls. After the files are merged, Julia
+will put the new versions into a new folder called overlap-merged and then delete the unmerged versions out 
+of the overlap folder. This way, Julia will be able to tell that any new xml files that show up in the overlap
+folder are revised versions-- Julia will make the appropriate updates in the files on the verbs server and 
+copy them into the merged-file folder, then deleting the completed files from the overlap folder once again.
+
+The automatically-generated files are all missing some elements, such as fleshing out the examples and 
+adding notes. These parts are not important for MS-AMR set-up, but should be added before formally publishing
+the files. 
+
+Eventually, fully completed files should be put into a new THYME branch under probank-development. This hasn't 
+been created yet. 
