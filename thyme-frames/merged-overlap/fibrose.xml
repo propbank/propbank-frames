@@ -1,39 +1,55 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="fibrose">
-    <roleset id="fibrose.01" name="to form/consist of fibrous tissue">
-      <aliases>
-        <alias framenet="" pos="j" verbnet="">fibrotic</alias>
-        <alias framenet="" pos="j" verbnet="">fibrose</alias>
-        <alias framenet="" pos="v" verbnet="">fibrose</alias>
-        <alias framenet="" pos="j" verbnet="">fibrous</alias>
-      </aliases>
-      <note>FIBROSE-V NOTES: Based on data in Clinical Notes corpus. Framed by Anwen Feb 2011. (from fibrose.01-v predicate notes)</note>
-      <note>FIBROTIC-J NOTES: Added by Julia based on medi-tmprl1to8. (from fibrotic.01-j)</note>
-      <roles>
-        <role descr="Cause of fibrosing" f="pag" n="0"/>
-        <role descr="Tissue fibrosing" f="ppt" n="1"/>
-      </roles>
-      <example name="fibrose-v: Arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The patient's wound fibrosed.</text>
-        <arg f="" n="1">The patient's wound</arg>
-        <rel f="">fibrosed</rel>
-      </example>
-      <example name="fibrous-j: both args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Second, breast tissue that-1 *-1 is fibrous from poor hormone balance</text>
-        <arg f="" n="1">*-1</arg>
-        <rel f="">fibrous</rel>
-        <arg f="" n="0">from poor hormone balance</arg>
-      </example>
-      <example name="fibrotic-j: arg1" src="medi-tmprl" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The fat is diffusely firm and fibrotic .</text>
-        <arg f="" n="1">The fat</arg>
-        <arg f="ext" n="m">diffusely</arg>
-        <rel f="">fibrotic</rel>
-      </example>
-    </roleset>
-  </predicate>
+   <predicate lemma="fibrose">
+      <roleset id="fibrose.01" name="to form/consist of fibrous tissue">
+         <aliases>
+            <alias pos="v">fibrose</alias>
+            <alias pos="n">fibrosis</alias>
+            <alias pos="j">fibrose</alias>
+            <alias pos="j">fibrotic</alias>
+            <alias pos="j">fibrous</alias>
+         </aliases>
+         <roles>
+            <role descr="Cause of fibrosing" f="PAG" n="0"/>
+            <role descr="fibrotic tissue" f="PPT" n="1"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="-" resource="AMR" version="3.0"/>
+            <usage inuse="+" resource="THYME-AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="fibrose-v: Arg1" src="">
+            <text>The patient's wound fibrosed.</text>
+            <rel relloc="3">fibrosed.</rel>
+            <arg end="2" f="" n="1" start="0">The patient's wound</arg>
+         </example>
+         <example name="fibrous-j: both args" src="internet">
+            <text>Second, breast tissue that is fibrous from poor hormone balance</text>
+            <rel relloc="5">fibrous</rel>
+            <arg end="3" f="" n="1" start="3">that</arg>
+            <arg end="9" f="" n="0" start="6">from poor hormone balance</arg>
+         </example>
+         <example name="fibrotic-j: arg1" src="medi-tmprl">
+            <text>The fat is diffusely firm and fibrotic .</text>
+            <rel relloc="6">fibrotic</rel>
+            <arg end="1" f="" n="1" start="0">The fat</arg>
+            <arg end="3" f="EXT" n="m" start="3">diffusely</arg>
+         </example>
+         <example name="fibrosis-n" src="THYME-AMR">
+            <text>possibly from edema or fibrosis</text>
+            <rel relloc="4">fibrosis</rel>
+            <amr>
+            (c / cause-01
+              :ARG0 (o / or
+                :op1 (d / disease-disorder :name (n / name :op1 "edema"))
+                :op2 (f / fibrose-01))
+              :ARG1-of (p / possible-01))
+            </amr>
+         </example>
+         <note>FIBROSE NOTES: fibrose.02 deleted and merged into this roleset.</note>
+         <note>FIBROSE-V NOTES: Based on data in Clinical Notes corpus. Framed by Anwen Feb 2011. (from fibrose.01-v predicate notes)</note>
+         <note>FIBROTIC-J NOTES: Added by Julia based on medi-tmprl1to8. (from fibrotic.01-j)</note>
+      </roleset>
+   </predicate>
 </frameset>

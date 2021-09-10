@@ -1,76 +1,96 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" ?>
 <frameset>
-  <predicate lemma="regularize">
-    <roleset id="regularize.01" name="to make regular">
-      <aliases>
-        <alias framenet="" pos="v" verbnet="">regularize</alias>
-      </aliases>
-      <note>REGULARIZE-V NOTES: Frames file for 'regularize' based on internet usage examples, expansion via VerbNet. VN 45.4. Comparison with 'normalize.' (from regularize.01-v predicate notes)</note>
-      <roles>
-        <role descr="agent, cause of regularization" f="PAG" n="0">
-          <vnrole vncls="45.4" vntheta="Agent"/>
-        </role>
-        <role descr="entity regularized" f="PPT" n="1">
-          <vnrole vncls="45.4" vntheta="Patient"/>
-        </role>
-      </roles>
-      <example name="transitive" src="" type="">
-        <text>The doctor regularized the heart beat with a pace maker.</text>
-        <arg f="" n="0">The doctor</arg>
-        <rel f="">regularized</rel>
-        <arg f="" n="1">the heart beat</arg>
-        <arg f="MNR" n="M">with a pace maker</arg>
-      </example>
-    </roleset>
-  </predicate>
-  <predicate lemma="regular">
-    <roleset id="regular.02" name="uniform, consistent, having uniform intervals (temporal or spatial)">
-      <aliases>
-        <alias framenet="" pos="j" verbnet="">regular</alias>
-      </aliases>
-      <note>REGULAR-J NOTES: Added by Julia based on medi-tmprl1to8. (from regular.01-j)</note>
-      <roles>
-        <role descr="regular thing" f="pag" n="1"/>
-        <role descr="specific aspect/activity of arg1 that is regular" f="vsp" n="2"/>
-        <role descr="measurement of the period" f="vsp" n="3"/>
-      </roles>
-      <example name="regular-j: raised possessor as arg1, and arg2" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>he is regular with his bowel movements most days..</text>
-        <arg f="" n="1">he</arg>
-        <rel f="">regular</rel>
-        <arg f="" n="2">with his bowel movements</arg>
-        <arg f="tmp" n="m">most days</arg>
-      </example>
-      <example name="regular: arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Heart : Rate is regular .</text>
-        <arg f="" n="1">rate</arg>
-        <rel f="">regular</rel>
-      </example>
-      <example name="regular-j" src="THYME" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Evaluation in the Emergency Department included an abdominal pelvic CT , and this revealed a 9 x 6 - cm regular mass in the sigmoid colon , numerous hepatic lesions</text>
-        <rel f="">regular</rel>
-        <arg f="" n="1">mass</arg>
-      </example>
-    </roleset>
-    <roleset id="regular.03" name="average, ordinary, of the norm">
-      <aliases>
-        <alias framenet="" pos="j" verbnet="">regular</alias>
-      </aliases>
-      <note>REGULAR-J NOTES: Added by Julia based on medi-tmprl (from regular.02-j)</note>
-      <roles>
-        <role descr="ordinary thing" f="ppt" n="1"/>
-      </roles>
-      <example name="" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>If it had expired, it was regular to proceed against the bail, because it might be waived ;</text>
-        <arg f="adv" n="m">If it had expired</arg>
-        <rel f="">regular</rel>
-        <arg f="" n="1">to proceed against the bail</arg>
-        <arg f="cau" n="m">because it might be waived</arg>
-      </example>
-    </roleset>
-  </predicate>
+   <predicate lemma="regularize">
+      <roleset id="regularize.01" name="to make regular">
+         <aliases>
+            <alias pos="v">regularize</alias>
+         </aliases>
+         <roles>
+            <role descr="agent, cause of regularization" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="remedy-45.7" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="entity regularized" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+                  <rolelink class="remedy-45.7" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+               </rolelinks>
+            </role>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="other_cos-45.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+            <lexlink class="remedy-45.7" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="regularize-v: transitive" src="">
+            <text>The doctor regularized the heart beat with a pace maker.</text>
+            <rel relloc="2">regularized</rel>
+            <arg end="1" f="" n="0" start="0">The doctor</arg>
+            <arg end="5" f="" n="1" start="3">the heart beat</arg>
+            <arg end="9" f="MNR" n="M" start="6">with a pace maker.</arg>
+         </example>
+         <note>REGULARIZE-V NOTES: Frames file for 'regularize' based on internet usage examples, expansion via VerbNet. VN 45.4. Comparison with 'normalize.' (from regularize.01-v predicate notes)</note>
+      </roleset>
+   </predicate>
+   <predicate lemma="regular">
+      <roleset id="regular.02" name="uniform, consistent, having uniform intervals (temporal or spatial)">
+         <aliases>
+            <alias pos="j">regular</alias>
+         </aliases>
+         <roles>
+            <role descr="regular thing" f="PPT" n="1"/>
+            <role descr="specific activity/aspect of arg1 that is regular" f="VSP" n="2"/>
+            <role descr="measurement of the period" f="EXT" n="3"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="regular-j: raised possessor as arg1, and arg2" src="internet">
+            <text>he is regular with his bowel movements most days..</text>
+            <rel relloc="2">regular</rel>
+            <arg end="0" f="" n="1" start="0">he</arg>
+            <arg end="6" f="" n="2" start="3">with his bowel movements</arg>
+            <arg end="8" f="TMP" n="m" start="7">most days..</arg>
+         </example>
+         <example name="regular-j: arg1" src="">
+            <text>Heart : Rate is regular .</text>
+            <rel relloc="4">regular</rel>
+            <arg end="2" f="" n="1" start="2">Rate</arg>
+         </example>
+         <example name="regular-j" src="THYME-Auto1">
+            <text>Evaluation in the Emergency Department included an abdominal pelvic CT , and this revealed a 9 x 6 - cm regular mass in the sigmoid colon , numerous hepatic lesions</text>
+            <rel relloc="18">regular</rel>
+            <arg end="19" f="" n="1" start="19">mass</arg>
+         </example>
+         <note>REGULAR-J NOTES: Added by Julia based on medi-tmprl1to8. (from regular.01-j)</note>
+      </roleset>
+      <roleset id="regular.03" name="average, ordinary, of the norm">
+         <aliases>
+            <alias pos="j">regular</alias>
+         </aliases>
+         <roles>
+            <role descr="ordinary thing" f="PPT" n="1"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="regular-j" src="">
+            <text>If it had expired, it was regular to proceed against the bail, because it might be waived ;</text>
+            <rel relloc="6">regular</rel>
+            <arg end="3" f="ADV" n="m" start="0">If it had expired,</arg>
+            <arg end="11" f="" n="1" start="7">to proceed against the bail,</arg>
+            <arg end="16" f="CAU" n="m" start="12">because it might be waived</arg>
+         </example>
+         <note>REGULAR-J NOTES: Added by Julia based on medi-tmprl (from regular.02-j)</note>
+      </roleset>
+   </predicate>
 </frameset>
