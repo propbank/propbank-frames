@@ -1,0 +1,94 @@
+<?xml version="1.0" ?>
+<frameset>
+   <predicate lemma="complicate">
+      <roleset id="complicate.01" name="cause to be more difficult, involved">
+         <aliases>
+            <alias pos="v">complicate</alias>
+            <alias pos="n">complication</alias>
+            <alias pos="j">complicated</alias>
+         </aliases>
+         <roles>
+            <role descr="agent, entity causing something to become complicated" f="PAG" n="0"/>
+            <role descr="thing becoming complicated" f="PPT" n="1"/>
+            <role descr="benefactive" f="GOL" n="2"/>
+            <role descr="complication itself, if in addition to ARG0" f="PRD" n="3"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="+" resource="AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="complication-n.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">11</lexlink>
+            <lexlink class="complication-n.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+            <lexlink class="complicate-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">15</lexlink>
+         </lexlinks>
+         <example name="complicate-v: transitive" src="">
+            <text>Cray Research's decision to link its $98.3 million promissory note to Mr. Cray's presence will complicate a valuation of the new company.</text>
+            <rel relloc="15">complicate</rel>
+            <arg end="13" f="" n="0" start="0">Cray Research's decision to link its $98.3 million promissory note to Mr. Cray's presence</arg>
+            <arg end="14" f="MOD" n="m" start="14">will</arg>
+            <arg end="21" f="" n="1" start="16">a valuation of the new company.</arg>
+         </example>
+         <example name="complicate-v: with benefactive" src="">
+            <text>[The new round of bidding]-1 would seem *trace*-1 to complicate the decision making for Judge James Yacos.</text>
+            <rel relloc="9">complicate</rel>
+            <arg end="7" f="" n="0" start="7">*trace*-1</arg>
+            <arg end="12" f="" n="1" start="10">the decision making</arg>
+            <arg end="16" f="" n="2" start="13">for Judge James Yacos.</arg>
+         </example>
+         <example name="complication-n: Args 0 &amp; 1" src="ON sense 1">
+            <text>His unnecessary complication of the explanation only confused the students.</text>
+            <rel relloc="2">complication</rel>
+            <arg end="0" f="" n="0" start="0">His</arg>
+            <arg end="1" f="MNR" n="m" start="1">unnecessary</arg>
+            <arg end="5" f="" n="1" start="3">of the explanation</arg>
+         </example>
+         <example name="complication-n: Non-agentive complicator" src="ON sense 1">
+            <text>The new experimental data's complication of the existing theory cannot be dismissed.</text>
+            <rel relloc="4">complication</rel>
+            <arg end="3" f="" n="0" start="1">new experimental data's</arg>
+            <arg end="8" f="" n="1" start="5">of the existing theory</arg>
+         </example>
+         <example name="complication-n: Medical, complicator as 'from' PP" src="ON sense 3">
+            <text>He died of complications from the surgery.</text>
+            <rel relloc="3">complications</rel>
+            <arg end="6" f="" n="0" start="4">from the surgery.</arg>
+         </example>
+         <example name="complicated-j: Arg 1 only" src="BOLT P01, parts 2,3">
+            <text>It 's complicated , I 'll grant you that .</text>
+            <rel relloc="2">complicated</rel>
+            <arg end="0" f="" n="1" start="0">It</arg>
+         </example>
+         <example name="complicate-v: All args" src="web">
+            <text>The position is complicated for me by the fact that I really began to write novels, not out of any spiritual urgency, but in order to earn money.</text>
+            <rel relloc="3">complicated</rel>
+            <arg end="1" f="" n="1" start="0">The position</arg>
+            <arg end="5" f="" n="2" start="4">for me</arg>
+            <arg end="27" f="" n="0" start="6">by the fact that I really began to write novels, not out of any spiritual urgency, but in order to earn money.</arg>
+         </example>
+         <example name="complication-n" src="THYME-Auto1">
+            <text>Ms . Miller was hospitalized on October 29 , 2009 , with complications of diverticulitis requiring IV antibiotics.</text>
+            <rel relloc="9">complications</rel>
+            <arg end="11" f="" n="0" start="10">of diverticulitis</arg>
+            <amr>
+            (h / hospitalize-01
+              :ARG1 (p / person :name (n / name :op1 "Ms." :op2 "Miller"))
+              :time (d / date-entity :month 10 :day 29 :year 2009)
+              :ARG1-of (c / cause-01
+                :ARG0 (t / thing :pl +
+                  :ARG3-of (c2 / complicate-01
+                    :ARG0 (d / disease-disorder :name (n2 / name :op1 "diverticulitis")
+                      :ARG2-of (h / have-disorder-91
+                        :ARG1 p)))
+                  :ARG0-of (r / require-01
+                    :ARG1 (m / medications-drugs :name (n3 / name :op1 "antibiotics")
+                      :path (d2 / devices :name (n4 / name :op1 "IV")))))))
+            </amr>
+         </example>
+         <note>COMPLICATE NOTES: Arg2 added for THYME-AMR.</note>
+         <note>COMPLICATE-V NOTES: Be careful for adjectival &quot;complicated&quot; usages confused with verbal&quot;complicated&quot; usages. (from complicate.01-v)</note>
+         <note>COMPLICATION-N NOTES: Roleset based on verb entry complicate.01, OntoNotes grouping complication-n senses 1-3; no mapping to VN. Framed by Claire. (from complication.01-n)</note>
+         <note>COMPLICATED-J NOTES: Roleset based on instances in BOLT P01, parts 2,3. Framed by Claire. (from complicated.01-j)</note>
+      </roleset>
+   </predicate>
+</frameset>
