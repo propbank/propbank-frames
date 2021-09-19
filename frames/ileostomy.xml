@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<frameset>
+  <predicate lemma="ileostomy">
+    <roleset id="ileostomy.01" name="surgery that diverts part of the ileum to an artificial opening in the abdominal wall">
+      <aliases>
+        <alias pos="j">ileostomy</alias>
+      </aliases>
+      <roles>
+        <role descr="agent" f="PAG" n="0"/>
+        <role descr="patient" f="PPT" n="1"/>
+        <role descr="product/result" f="PRD" n="2"/>
+        <role descr="which part(s) of the ileum is used" f="-" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage inuse="-" resource="PropBank" version="3.0"/>
+        <usage inuse="-" resource="AMR" version="3.0"/>
+        <usage inuse="+" resource="THYME-AMR" version="3.0"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="ileostomy-n" src="THYME">
+        <text>Mr. Knopp underwent an end ileostomy for a rectal cancer .</text>
+        <rel relloc="5">ileostomy</rel>
+        <arg end="4" f="" n="2" start="4">end</arg>
+        <arg end="8" f="CAU" n="m" start="5">for a rectal cancer</arg>
+        <amr>
+        (i2 / ileostomy-01
+           :ARG1 (p / person :name (n / name :op1 "Mr." :op2 "Knopp"))
+           :ARG2 (a2 / anatomical-site :name (n3 / name :op1 "end"))
+           :ARG1-of (c / cause-01
+              :ARG0 (c2 / cancer-03
+                 :ARG1 p
+                 :ARG2 (a / anatomical-site :primary + :name (n2 / name :op1 "rectum")))))
+        </amr>
+      </example>
+      <note>ILEOSTOMY NOTES: Added for THYME-AMR.</note>
+    </roleset>
+  </predicate>
+</frameset>

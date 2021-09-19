@@ -3,6 +3,7 @@
    <predicate lemma="incontinent">
       <roleset id="incontinent.01" name="unable to control flow of bodily waste">
          <aliases>
+            <alias pos="n">incontinence</alias>
             <alias pos="j">incontinent</alias>
          </aliases>
          <roles>
@@ -12,15 +13,28 @@
          <usagenotes>
             <usage inuse="+" resource="PropBank" version="3.0"/>
             <usage inuse="-" resource="AMR" version="3.0"/>
+            <usage inuse="+" resource="THYME-AMR" version="3.0"/>
          </usagenotes>
          <lexlinks/>
-         <example name="both args" src="internet">
+         <example name="incontinent-j: both args" src="internet">
             <text>A resident who is incontinent of urine has an increased risk of developing. (A) dementia. (B) urinary tract infections.</text>
             <rel relloc="4">incontinent</rel>
             <arg end="2" f="" n="1" start="2">who</arg>
             <arg end="6" f="" n="2" start="5">of urine</arg>
          </example>
-         <note>INCONTINENT-J NOTES: Added by Julia based on medi-tmprl1to8. (from incontinent.01-j)</note>
+         <example name="incontinence-n" src="THYME">
+            <text>She denies fecal incontinence</text>
+            <rel relloc="3">incontinence</rel>
+            <arg end="2" f="" n="2" start="2">fecal</arg>
+            <amr>
+            (d / deny-01
+               :ARG0 (s / she)
+               :ARG1 (i2 / incontinent-01
+                  :ARG1 s
+                  :ARG2 (a / anatomical-site :name (n / name :op1 "feces"))))
+            </amr>
+         </example>
+         <note>INCONTINENT NOTES: Added by Julia based on medi-tmprl1to8. (from incontinent.01-j)</note>
       </roleset>
    </predicate>
 </frameset>

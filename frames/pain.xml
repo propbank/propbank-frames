@@ -3,26 +3,34 @@
    <predicate lemma="pain">
       <roleset id="pain.01" name="cause hurt to">
          <aliases>
-            <alias pos="j">painful</alias>
             <alias pos="v">pain</alias>
+            <alias pos="n">pain</alias>
+            <alias pos="j">painful</alias>
             <alias pos="j">pained</alias>
          </aliases>
          <roles>
             <role descr="entity causing pain, cause" f="PAG" n="0">
                <rolelinks>
                   <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.3">stimulus</rolelink>
-                  <rolelink class="pain-40.8.1" resource="VerbNet" version="verbnet3.3">experiencer</rolelink>
-                  <rolelink class="Perception_body" resource="FrameNet" version="1.7">experiencer</rolelink>
+                  <rolelink class="pain-40.8.1" resource="VerbNet" version="verbnet3.3">stimulus</rolelink>
+                  <rolelink class="Perception_body" resource="FrameNet" version="1.7">explanation</rolelink>
                   <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.4">stimulus</rolelink>
-                  <rolelink class="pain-40.8.1" resource="VerbNet" version="verbnet3.4">experiencer</rolelink>
+                  <rolelink class="pain-40.8.1" resource="VerbNet" version="verbnet3.4">stimulus</rolelink>
                </rolelinks>
             </role>
             <role descr="entity experiencing hurt/damage" f="PPT" n="1">
                <rolelinks>
                   <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.3">experiencer</rolelink>
+                  <rolelink class="pain-40.8.1" resource="VerbNet" version="verbnet3.3">experiencer</rolelink>
+                  <rolelink class="Perception_body" resource="FrameNet" version="1.7">experiencer</rolelink>
+                  <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.4">experiencer</rolelink>
+                  <rolelink class="pain-40.8.1" resource="VerbNet" version="verbnet3.4">experiencer</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="more specific body part experiencing hurt/damage, if in addition to arg1" f="LOC" n="2">
+               <rolelinks>
                   <rolelink class="pain-40.8.1" resource="VerbNet" version="verbnet3.3">patient</rolelink>
                   <rolelink class="Perception_body" resource="FrameNet" version="1.7">body_part</rolelink>
-                  <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.4">experiencer</rolelink>
                   <rolelink class="pain-40.8.1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
                </rolelinks>
             </role>
@@ -38,12 +46,28 @@
             <lexlink class="pain-40.8.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
             <lexlink class="amuse-31.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
          </lexlinks>
-         <example name="" src="">
+         <example name="pain-v" src="">
             <text>It doesn't pain me. I feel it's very worthwhile.</text>
             <rel relloc="2">pain</rel>
             <arg end="0" f="" n="0" start="0">It</arg>
             <arg end="0" f="NEG" n="m" start="0">It</arg>
             <arg end="3" f="" n="1" start="3">me.</arg>
+         </example>
+         <example name="pain-n" src="THYME-AMR">
+            <text>she denies any significant peripheral neuropathy, abdominal pain </text>
+            <rel relloc="7">pain</rel>
+            <arg end="6" f="" n="1" start="6">abdominal</arg>
+            <amr>
+            (d / deny-01
+              :ARG0 p
+              :ARG1 (o / or
+                :op1 (d3 / disease-disorder :name (n6 / name :op1 "peripheral" :op2 "neuropathy")
+                  :ARG1-of (s4 / significant-02)
+                  :ARG2-of (h2 / have-disorder-91
+                    :ARG1 p))
+                :op2 (p2 / pain-01
+                  :ARG1 (a2 / anatomical-site :name (n3 / name :op1 "abdomen")))
+            </amr>
          </example>
          <note>PAIN-V NOTES: Frame created by Jena. (from pain.01-v)</note>
          <note>PAINED-J NOTES: Automatically created by Julia as an alias file for unification. (from pained.01-j)</note>

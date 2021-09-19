@@ -33,7 +33,7 @@
             <lexlink class="butter-9.9" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
             <lexlink class="butter-9.9" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
          </lexlinks>
-         <example name="fuel" src="">
+         <example name="gas-v: fuel" src="">
             <text>John gassed the car.</text>
             <rel relloc="1">gassed</rel>
             <arg end="0" f="" n="0" start="0">John</arg>
@@ -80,19 +80,19 @@
             <lexlink class="butter-9.9" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
             <lexlink class="poison-42.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
          </lexlinks>
-         <example name="Killing gas" src="">
+         <example name="gas-v: Killing gas" src="">
             <text>[They] were hearded into rooms with drains in the floor and [*]gassed.</text>
             <rel relloc="11">[*]gassed.</rel>
             <arg end="0" f="" n="1" start="0">[They]</arg>
          </example>
-         <example name="Not dead?" src="">
+         <example name="gas-v: Not dead?" src="">
             <text>They retreated, regrouped, went back again... and they just got gassed again...</text>
             <rel relloc="10">gassed</rel>
             <arg end="0" f="" n="1" start="0">They</arg>
             <arg end="8" f="TMP" n="m" start="8">just</arg>
             <arg end="5" f="TMP" n="m" start="5">again...</arg>
          </example>
-         <example name="with gas mentioned" src="google">
+         <example name="gas-v: with gas mentioned" src="google">
             <text>Dinosaurs may have gassed themselves to extinction with methane &quot;emissions&quot;, British scientists say.</text>
             <rel relloc="3">gassed</rel>
             <arg end="0" f="" n="0" start="0">Dinosaurs</arg>
@@ -102,6 +102,43 @@
             <arg end="9" f="" n="2" start="7">with methane &quot;emissions&quot;,</arg>
          </example>
          <note>GAS-V NOTES: Based on sentences in Bolt data. No VN class. Framed by Katie. (from gas.03-v)</note>
+      </roleset>
+      <roleset id="gas.04" name="experience flatulence">
+         <aliases>
+            <alias pos="n">gas</alias>
+            <alias pos="j">gassy</alias>
+         </aliases>
+         <roles>
+            <role descr="flatulent entity" f="PAG" n="1"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="-" resource="PropBank" version="3.0"/>
+            <usage inuse="-" resource="AMR" version="3.0"/>
+            <usage inuse="+" resource="THYME-AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="gas-n" src="">
+            <text>She began to exhibit her current symptomatology which consists of postprandial pain , gas , as well as bloating.</text>
+            <rel relloc="13">gas</rel>
+            <amr>
+            (b / begin-01
+               :ARG0 (s / she)
+               :ARG1 (e / exhibit-01
+                  :ARG0 s
+                  :ARG1 (s2 / symptomatic-01
+                     :ARG0 s
+                     :ARG2 (a / and
+                        :op1 (p / pain-01
+                           :ARG1 s
+                           :ARG1-of (p2 / postprandial-01))
+                        :op2 (g / gas-04
+                           :ARG1 s)
+                        :op3 (b2 / bloat-01
+                           :ARG1 s))
+                     :time (c / current))))
+            </amr>
+         </example>
+         <note>GAS-V NOTES: Added for THYME-AMR. Be careful to distinguish events of experiencing gas symptoms from direct references to the actual substance. Use 'pass-01' + 'gas' with instances of passing gas.</note>
       </roleset>
    </predicate>
    <predicate lemma="gas_up">
@@ -133,7 +170,7 @@
          <lexlinks>
             <lexlink class="butter-9.9" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
          </lexlinks>
-         <example name="fill fully" src="">
+         <example name="gas_up-v: fill fully" src="">
             <text>Today, [the oft-troubled craft]-1 was gassed *-1 up, so to speak, for the last time.</text>
             <rel relloc="5 7">gassed up,</rel>
             <arg end="0" f="TMP" n="m" start="0">Today,</arg>

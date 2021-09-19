@@ -9,10 +9,12 @@
          <roles>
             <role descr="Palpator" f="PAG" n="0"/>
             <role descr="Entity palpated" f="PPT" n="1"/>
+            <role descr="results" f="PRD" n="2"/>
          </roles>
          <usagenotes>
             <usage inuse="+" resource="PropBank" version="3.0"/>
             <usage inuse="-" resource="AMR" version="3.0"/>
+            <usage inuse="+" resource="THYME-AMR" version="3.0"/>
          </usagenotes>
          <lexlinks/>
          <example name="palpate-v: Both args" src="">
@@ -27,6 +29,15 @@
             <arg end="2" f="" n="0" start="1">the doctor's</arg>
             <arg end="7" f="" n="1" start="4">of the patient's liver,</arg>
          </example>
+         <example name="palpation-n" src="THYME-AMR">
+            <text>No pain to palpation.</text>
+            <rel relloc="3">palpation</rel>
+            <amr>
+            (p / pain-01 :polarity -
+              :ARG2-of (p2 / palpate-01))
+            </amr>
+         </example>
+         <note>PALPATE NOTES: Arg2 added for THYME AMR.</note>
          <note>PALPATE-V NOTES: Based on data in Clinical Notes corpus (from palpate.01-v predicate notes)</note>
          <note>PALPATION-N NOTES: Based on data in Clinical Notes corpus (from palpation.01-n predicate notes)</note>
       </roleset>

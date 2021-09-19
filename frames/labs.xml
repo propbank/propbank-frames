@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<frameset>
+  <predicate lemma="labs">
+    <roleset id="labs.01" name="test blood components">
+      <aliases>
+        <alias pos="n">laboratory_workup</alias>
+        <alias pos="n">laboratory_studies</alias>
+        <alias pos="n">lab_panel</alias>
+        <alias pos="n">laboratory_check</alias>
+        <alias pos="n">labs</alias>
+        <alias pos="n">laboratory_tests</alias>
+        <alias pos="n">lab_work</alias>
+      </aliases>
+      <roles>
+        <role descr="performer" f="PAG" n="0"/>
+        <role descr="patient" f="PPT" n="1"/>
+      </roles>
+      <usagenotes>
+        <usage inuse="-" resource="PropBank" version="3.0"/>
+        <usage inuse="-" resource="AMR" version="3.0"/>
+        <usage inuse="+" resource="THYME-AMR" version="3.0"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="labs" src="THYME">
+        <text>Labs demonstrate a hemoglobin of 12.6 and...</text>
+        <rel relloc="0">labs</rel>
+        <amr>
+        (d / demonstrate-01
+           :ARG0 (l / labs-01
+              :ARG2 a)
+           :ARG1 (a / and
+              :op1 (h / have-value-91
+                 :ARG1 (a6 / anatomical-site :name (n / name :op1 "hemoglobin"))
+                 :ARG2 12.6)
+        </amr>
+      </example>
+      <example name="laboratory_workup-n" src="THYME">
+        <text>laboratory workup</text>
+        <rel relloc="0 1">laboratory workup</rel>
+        <amr>
+        (w / work-up-101
+           :manner (l / labs-01))
+        </amr>
+      </example>
+      <example name="laboratory_panel-n" src="THYME">
+        <text>comprehensive laboratory panel</text>
+        <rel relloc="1 2">laboratory workup</rel>
+        <arg end="0" f="ADJ" n="m" start="0"></arg>
+        <amr>
+        (l / labs-01
+           :ARG1-of (c / comprehensive-01))
+        </amr>
+      </example>
+      <note>LABS NOTES: Added for THYME-AMR.</note>
+    </roleset>
+  </predicate>
+</frameset>

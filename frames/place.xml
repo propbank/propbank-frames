@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <frameset>
    <predicate lemma="place">
-      <roleset id="place.01" name="location, put in a location">
+      <roleset id="place.01" name="put in a location">
          <aliases>
             <alias pos="v">place</alias>
             <alias pos="n">placement</alias>
@@ -41,14 +41,14 @@
             <lexlink class="place-v.4" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">8</lexlink>
             <lexlink class="put-9.1-2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
          </lexlinks>
-         <example name="basic 'put' sense" src="">
+         <example name="place-v: basic 'put' sense" src="">
             <text>...the possibility that [Sea Containers' subsidiaries]-1 might be required *trace*-1 to place their shares in the open market.</text>
             <rel relloc="11">place</rel>
             <arg end="9" f="" n="0" start="9">*trace*-1</arg>
             <arg end="13" f="" n="1" start="12">their shares</arg>
             <arg end="17" f="" n="2" start="14">in the open market.</arg>
          </example>
-         <example name="with misplaced modifier (more common than you'd expect)" src="">
+         <example name="place-v: with misplaced modifier (more common than you'd expect)" src="">
             <text>Policies designed to encourage one type of investor over another are akin to [*] placing a sign over the Big Board's door saying: ``Buyers welcome, sellers please go away!''</text>
             <rel relloc="14">placing</rel>
             <arg end="13" f="" n="0" start="13">[*]</arg>
@@ -56,7 +56,7 @@
             <arg end="21" f="" n="2" start="16">sign over the Big Board's door</arg>
             <arg end="28" f="ADV" n="m" start="22">saying: ``Buyers welcome, sellers please go away!''</arg>
          </example>
-         <example name="place an order (with adjuncts)" src="">
+         <example name="place-v: place an order (with adjuncts)" src="">
             <text>Dealers placed heavy buy orders in the morning to start the first trading day for November transactions .</text>
             <rel relloc="1">placed</rel>
             <arg end="0" f="" n="0" start="0">Dealers</arg>
@@ -64,7 +64,7 @@
             <arg end="7" f="TMP" n="m" start="5">in the morning</arg>
             <arg end="16" f="PNC" n="m" start="8">to start the first trading day for November transactions</arg>
          </example>
-         <example name="Arg 2 only" src="">
+         <example name="placement-n: Arg 2 only" src="">
             <text>The placement through Gray Seifert Securities New York to institutional investors.</text>
             <rel relloc="1">placement</rel>
             <arg end="7" f="MNR" n="m" start="2">through Gray Seifert Securities New York</arg>
@@ -77,22 +77,33 @@
    <predicate lemma="in_place">
       <roleset id="in_place.02" name="set, enacted, established; ready">
          <aliases>
-            <alias pos="x">in_place</alias>
+            <alias pos="m">in_place</alias>
          </aliases>
          <roles>
             <role descr="established, set, enacted thing" f="PPT" n="1"/>
-            <role descr="attribute on arg1" f="PPT" n="2"/>
+            <role descr="attribute on arg1" f="PRD" n="2"/>
          </roles>
          <usagenotes>
             <usage inuse="+" resource="PropBank" version="3.0"/>
             <usage inuse="-" resource="AMR" version="3.0"/>
+            <usage inuse="+" resource="THYME-AMR" version="3.0"/>
          </usagenotes>
          <example name="in_place-m" src="">
             <text>The roster is in place and the stage is set for the CONCACAF Olympic Qualifying Championship</text>
             <rel relloc="3 4">in place</rel>
             <arg end="1" f="" n="1" start="0">The roster</arg>
          </example>
-         <note>IN_PLACE NOTES: </note>
+         <example name="in_place-m" src="THYME-Auto1">
+            <text>Functioning ileostomy in place</text>
+            <rel relloc="2 3">in place</rel>
+            <arg end="1" f="" n="1" start="0">functioning ileostomy</arg>
+            <amr>
+            (i2 / in-place-02
+              :ARG1 (d / devices :name (n / name :op1 "ileostomy")
+                :ARG0-of (f / function-01)))
+            </amr>
+         </example>
+         <note>IN_PLACE NOTES: Added with MWEs by Tim & Julia.</note>
       </roleset>
    </predicate>
    <predicate lemma="take_place">
@@ -106,14 +117,14 @@
                </syntaxdesc>
                <mapping>
                   <source>
-            (A / take-01
-                :arg0 (n1 / NARG1)
-                :arg1 (B / place))
-        </source>
+                  (A / take-01
+                      :arg0 (n1 / NARG1)
+                      :arg1 (B / place))
+                  </source>
                   <target>
-            (A / occur-01
-                :arg1 (n1 / NARG1))
-        </target>
+                  (A / occur-01
+                      :arg1 (n1 / NARG1))
+                  </target>
                </mapping>
             </mwp-descriptions>
          </aliases>
@@ -129,11 +140,36 @@
          </lexlinks>
          <example name="take_place-m" src="">
             <text>These events took place 35 years ago.</text>
-            <rel relloc="3 4 5">place 35 years</rel>
+            <rel relloc="2 3">took place</rel>
             <arg end="1" f="" n="1" start="0">These events</arg>
             <arg end="6" f="TMP" n="m" start="4">35 years ago.</arg>
          </example>
          <note>TAKE_PLACE-M NOTES: Upgraded to an MWE format by Julia/Tim. Formerly annotated under take.14, with a fixed &quot;place&quot; arg2.</note>
+      </roleset>
+   </predicate>
+   <predicate lemma="place_down">
+      <roleset id="place_down.04" name="put down in a location">
+         <aliases>
+            <alias pos="v">place_down</alias>
+         </aliases>
+         <roles>
+            <role descr="agent" f="PAG" n="0"/>
+            <role descr="entity placed" f="PPT" n="1"/>
+            <role descr="destination" f="GOL" n="2"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="+" resource="PropBank" version="3.0"/>
+            <usage inuse="-" resource="AMR" version="3.0"/>
+            <usage inuse="+" resource="SpatialAMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="place_down-v" src="Minecraft">
+            <text>and place one of them down</text>
+            <rel relloc="3 4 5">place down</rel>
+            <arg end="1" f="" n="1" start="0">These events</arg>
+            <arg end="6" f="TMP" n="m" start="4">35 years ago.</arg>
+         </example>
+         <note>PLACE-DOWN NOTES: added for SpatialAMR.</note>
       </roleset>
    </predicate>
 </frameset>
