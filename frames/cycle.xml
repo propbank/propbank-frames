@@ -1,10 +1,10 @@
 <?xml version="1.0" ?>
 <frameset>
    <predicate lemma="cycle">
-      <roleset id="cycle.01" name="to ride a bicycle">
+      <roleset id="cycle.01" name="ride a bicycle">
          <aliases>
-            <alias pos="n">cycling</alias>
             <alias pos="v">cycle</alias>
+            <alias pos="n">cycling</alias>
          </aliases>
          <roles>
             <role descr="cyclist, agent" f="PAG" n="0">
@@ -23,13 +23,13 @@
             <lexlink class="vehicle-51.4.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
             <lexlink class="vehicle-51.4.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
          </lexlinks>
-         <example name="with direction" src="">
+         <example name="cycle-v: with direction" src="">
             <text>[A man]-1 gunned down by a stray bullet while [*-1]cycling to work carries , after his death , the official stigma of `` counterrevolutionary , '' his wife says .</text>
             <rel relloc="9">[*-1]cycling</rel>
             <arg end="0" f="" n="0" start="0">[A</arg>
             <arg end="11" f="GOL" n="m" start="10">to work</arg>
          </example>
-         <example name="with GOL" src="internet">
+         <example name="cycling-n: with GOL" src="internet">
             <text>he grew older and more mature, his parents relented and allowed him on the roads and even acquiesced to his cycling to school some two kilometers away.</text>
             <rel relloc="20">cycling</rel>
             <arg end="6" f="" n="0" start="6">his</arg>
@@ -38,9 +38,10 @@
          <note>CYCLE-V NOTES: Frames file for 'cycle' based on survey of sentences in the WSJ corpus. (from cycle.01-v predicate notes)</note>
          <note>CYCLING-N NOTES: Added by Julia based on BOLT, cycle-v.01. corresponds to VNcls vehicle-51.4.1-1. (from cycling.01-n)</note>
       </roleset>
-      <roleset id="cycle.02" name="to go through a cycle">
+      <roleset id="cycle.02" name="go through a cycle">
          <aliases>
             <alias pos="v">cycle</alias>
+            <alias pos="n">cycle</alias>
          </aliases>
          <roles>
             <role descr="Thing going through cycle" f="PPT" n="1"/>
@@ -53,13 +54,30 @@
             <usage inuse="+" resource="AMR" version="3.0"/>
          </usagenotes>
          <lexlinks/>
-         <example name="Args1, 3, 4" src="">
+         <example name="cycle-n: Args1, 3, 4" src="">
             <text>Next came a 104 degree, 95% humidity 48-hour damp heat test, and then a &quot;four corner&quot; test where the machine cycled between 23 and 113 degrees Fahrenheit, both at its highest and lowest operating voltage.</text>
             <rel relloc="20">cycled</rel>
             <arg end="19" f="" n="1" start="18">the machine</arg>
             <arg end="22" f="" n="3" start="21">between 23</arg>
             <arg end="26" f="" n="4" start="23">and 113 degrees Fahrenheit,</arg>
             <arg end="34" f="ADV" n="m" start="27">both at its highest and lowest operating voltage.</arg>
+         </example>
+         <example name="cycle-n" src="THYME-Auto1">
+            <text>The patient will receive cycle four of FOLFOX plus Avastin</text>
+            <rel relloc="4">cycle</rel>
+            <arg end="5" f="ADJ" n="m" start="5">four</arg>
+            <arg end="9" f="" n="1" start="6">of FOLFOX plus Avastin</arg>
+            <amr>
+            (r / receive-01
+              :ARG0 (p / patient-yy)
+              :ARG1 (c / cycle-02
+                :ARG1 (a / and
+                  :op1 (m / medications-drugs :name (n / name :op1 "FOLFOX"))
+                  :op2 (m2 / medications-drugs :name (n2 / name :op1 "Avastin"))
+                  :ARG2-of (t / therapy-01 :implicit +
+                    :ARG1 p))
+                :ord (o / ordinal-entity :value 4)
+            </amr>
          </example>
          <note>CYCLE-V NOTES: Frames file for 'cycle' based on survey of sentences in the WSJ corpus. (from cycle.02-v predicate notes)</note>
       </roleset>

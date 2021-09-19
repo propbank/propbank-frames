@@ -1,30 +1,42 @@
 <?xml version="1.0" ?>
 <frameset>
    <predicate lemma="auscultate">
-      <roleset id="auscultate.01" name="listen to internal organs, listening to internal organs using stethoscope">
+      <roleset id="auscultate.01" name="listen to internal organs using a stethoscope">
          <aliases>
-            <alias pos="n">auscultation</alias>
             <alias pos="v">auscultate</alias>
+            <alias pos="n">auscultation</alias>
          </aliases>
          <roles>
             <role descr="listener" f="PAG" n="0"/>
             <role descr="listened to (sound/organ/patient)" f="PPT" n="1"/>
+            <role descr="results (what the auscultation demonstrates)" f="PRD" n="2"/>
          </roles>
          <usagenotes>
             <usage inuse="+" resource="PropBank" version="3.0"/>
             <usage inuse="-" resource="AMR" version="3.0"/>
+            <usage inuse="+" resource="THYME-AMR" version="3.0"/>
          </usagenotes>
          <lexlinks/>
-         <example name="arg 1 only" src="">
+         <example name="auscultate-v: arg 1 only" src="">
             <text>[No murmers, gallops or extra sounds ] auscultated [*].</text>
             <rel relloc="7">auscultated</rel>
             <arg end="8" f="" n="1" start="8">[*].</arg>
          </example>
-         <example name="All args" src="">
+         <example name="auscultation-n: all args" src="">
             <text>A 23 year-old, healthy Caucasian male was referred for an echocardiogram by his primary care physician who suspected the presence of a prolapsing mitral valve, based on his auscultation of a midsystolic click.</text>
             <rel relloc="28">auscultation</rel>
             <arg end="12" f="" n="0" start="12">his</arg>
             <arg end="32" f="" n="1" start="29">of a midsystolic click.</arg>
+         </example>
+         <example name="auscultation-n" src="THYME-Auto1">
+            <text>Lungs: Clear to auscultation</text>
+            <rel relloc="3">auscultation</rel>
+            <amr>
+              (c / clear-08
+                :ARG1 (a / anatomical-site :pl + :name (n / name :op1 "lung"))
+                :ARG2-of (a2 / auscultate-01
+                  :ARG1 a))
+            </amr>
          </example>
          <note>AUSCULTATE-V NOTES: Based on temprel and stratified data. Comparison to auscultation. No VN or FN classes. Framed by Katie. (from auscultate.01-v)</note>
          <note>AUSCULTATION-N NOTES: (from auscultation.01-n)</note>

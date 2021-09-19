@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<frameset>
+  <predicate lemma="carcinoma">
+    <roleset id="carcinoma.01" name="cancer originating in tissue that lines inner and outer anatomical surfaces">
+      <aliases>
+        <alias pos="n">carcinoma</alias>
+      </aliases>
+      <roles>
+        <role descr="patient" f="PPT" n="1"/>
+        <role descr="primary organ" f="LOC" n="2"/>
+        <role descr="specific part of organ, if in addition to :ARG2" f="LOC" n="3"/>
+        <role descr="cell location/field (e.g., squamous cell; urothelium) " f="LOC" n="4"/>
+        <role descr="ARG5: physical manifestation (tumor/mass references; also carcinoma when it points to the physical mass entity)" f="-" n="5"/>
+      </roles>
+      <usagenotes>
+        <usage inuse="-" resource="PropBank" version="3.0"/>
+        <usage inuse="-" resource="AMR" version="3.0"/>
+        <usage inuse="+" resource="THYME-AMR" version="3.0"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="carcinoma-n" src="THYME">
+        <text>history of a resected stage IV sigmoid carcinoma</text>
+        <rel relloc="7">carcinoma</rel>
+        <arg end="3" f="ADJ" n="m" start="3">resected</arg>
+        <arg end="5" f="ADJ" n="m" start="4">stage IV</arg>
+        <arg end="6" f="" n="2" start="6">sigmoid</arg>
+        <amr>
+        (h / history-01
+           :ARG2 (c / carcinoma-01
+             :ARG2 (a3 / anatomical-site :primary + :name (n4 / name :op1 "sigmoid"))
+             :ARG1-of (r2 / resect-01)
+             :ARG1-of (s4 / stage-02
+                 :ARG2 (a4 / ajcc-entity-91
+                    :ARG2 4))
+        </amr>
+      </example>
+      <note>CARCINOMA NOTES: Added for THYME-AMR.</note>
+    </roleset>
+  </predicate>
+</frameset>

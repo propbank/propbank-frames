@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<frameset>
+  <predicate lemma="electrocardiogram">
+    <roleset id="electrocardiogram.01" name="measures the electrical activity of the heart">
+      <aliases>
+        <alias pos="n">EKG</alias>
+        <alias pos="n">ECG</alias>
+        <alias pos="n">electrocardiogram</alias>
+      </aliases>
+      <roles>
+        <role descr="tester" f="PAG" n="0"/>
+        <role descr="patient" f="PPT" n="1"/>
+      </roles>
+      <usagenotes>
+        <usage inuse="-" resource="PropBank" version="3.0"/>
+        <usage inuse="-" resource="AMR" version="3.0"/>
+        <usage inuse="+" resource="THYME-AMR" version="3.0"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="electrocardiogram-n" src="THYME">
+        <text>PACs and PVCs noted on pre-op ECG .</text>
+        <rel relloc="6">ECG</rel>
+        <arg end="5" f="TMP" n="m" start="5">pre-op</arg>
+        <amr>
+        (n / note-01
+          :ARG1 (a / and
+            :op1 (d / disease-disorder :pl + :name (n2 / name :op1 "PAC"))
+            :op2 (d2 / disease-disorder :pl + :name (n3 / name :op1 "PVC")))
+          :instrument (e / electrocardiogram-01
+            :ARG1-of (p / preop-01)))
+        </amr>
+      </example>
+      <note>ELECTROCARDIOGRAM NOTES: Added for THYME-AMR.</note>
+    </roleset>
+  </predicate>
+</frameset>

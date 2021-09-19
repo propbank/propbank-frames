@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<frameset>
+   <predicate lemma="comorbid">
+      <roleset id="comorbid.01" name="co-occurrence of medical conditions">
+         <aliases>
+            <alias pos="n">comorbidity</alias>
+            <alias pos="j">comorbid</alias>
+         </aliases>
+         <roles>
+            <role descr="person with comorbidities" f="PAG" n="1"/>
+            <role descr="first or all comorbidities" f="PPT" n="2"/>
+            <role descr="comorbid with (second or rest of the comorbidities, if differentiated)" f="PPT" n="3"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="-" resource="PropBank" version="3.0"/>
+            <usage inuse="-" resource="AMR" version="3.0"/>
+            <usage inuse="+" resource="THYME-AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="comorbidities-n" src="THYME">
+            <text>Chronic comorbidities include hypertension.</text>
+            <rel relloc="1">comorbidities</rel>
+            <amr>
+            (i2 / include-01
+                  :ARG1 (d / disease-disorder :name (n / name :op1 "hypertension"))
+                  :ARG2 (t / thing :pl +
+                        :ARG2-of (c / comorbid-01)
+                        :ARG1-of (c2 / chronic-01)))
+            </amr>
+         </example>
+         <example name="comorbid-j" src="THYME">
+            <text>comorbid diabetes mellitus and coronary artery disease</text>
+            <rel relloc="0">comorbid</rel>
+            <arg end="6" f="" n="2" start="1">diabetes mellitus and coronary artery disease</arg>
+            <amr>
+            (a / and
+                  :op1 (d / disease-disorder :name (n / name :op1 "diabetes" :op2 "mellitus"))
+                  :op2 (d2 / disease-disorder :name (n2 / name :op1 "coronary" :op2 "artery" :op3 "disease"))
+                  :ARG2-of (c / comorbid-01))
+            </amr>
+         </example>
+         <example name="comorbidities-n" src="THYME">
+            <text>Her significant comorbidities are diabetes mellitus and history of pancreatitis .</text>
+            <rel relloc="2">comorbidities</rel>
+            <arg end="0" f="" n="1" start="0">her</arg>
+            <arg end="1" f="ADJ" n="m" start="1">significant</arg>
+            <arg end="9" f="" n="2" start="4">diabetes mellitus and coronary artery disease</arg>
+            <amr>
+            (c / comorbid-01
+                  :ARG1 (s / she)
+                  :ARG2 (a / and
+                        :op1 (h / history-02
+                              :ARG1 s
+                              :ARG2 (d / disease-disorder :name (n / name :op1 "pancreatitis")))
+                        :op2 (d2 / disease-disorder :name (n2 / name :op1 "diabetes" :op2 "mellitus"))
+                        :ARG1-of (s2 / significant-02)))
+            </amr>
+         </example>
+         <note>COMORBID NOTES: Added for THYME-AMR.</note>
+      </roleset>
+   </predicate>
+</frameset>

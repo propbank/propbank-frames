@@ -35,14 +35,14 @@
             <arg end="29" f="" n="1" start="28">news releases</arg>
             <arg end="31" f="MNR" n="m" start="30">by topic</arg>
          </example>
-         <example name="ARG0 and ARG1" src="ontonotes nw/wsj/16/wsj_1677">
+         <example name="code-v: ARG0 and ARG1" src="ontonotes nw/wsj/16/wsj_1677">
             <text>Pinpoint Information Corp. , Chantilly , Va. , a producer of $ 1,800 - a - year personalized newsletters about the computer industry that started full operation last month , relies on 12 human readers to code news releases by topic in order to select items for each subscriber .</text>
             <rel relloc="36">code</rel>
             <arg end="34" f="" n="0" start="32">12 human readers</arg>
             <arg end="38" f="" n="1" start="37">news releases</arg>
             <arg end="40" f="MNR" n="m" start="39">by topic</arg>
          </example>
-         <example name="code-v: Arg0, 1" src="">
+         <example name="coding-n: Arg0, 1" src="">
             <text>Their coding of secret orders allowed them to infiltrate the enemy camp.</text>
             <rel relloc="1">coding</rel>
             <arg end="0" f="" n="0" start="0">Their</arg>
@@ -76,12 +76,12 @@
             <lexlink class="classify-29.10" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
             <lexlink class="appoint-29.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
          </lexlinks>
-         <example name="ARG1" src="ontonotes nw/wsj/16/wsj_1677">
+         <example name="code-v: ARG1" src="ontonotes nw/wsj/16/wsj_1677">
             <text>Once all the articles are coded and put in a data base , Pinpoint 's computers pick the most relevant for each subscriber and lay them out in a three - to - five - page newsletter format ; each newsletter is sent directly from the computer to the subscriber 's fax machine .</text>
             <rel relloc="5">coded</rel>
             <arg end="3" f="" n="1" start="1">all the articles</arg>
          </example>
-         <example name="code-v: Arg0, 1" src="">
+         <example name="coding-n: Arg0, 1" src="">
             <text>Her coding of the Javascript program was fueled by massive amount of iced coffee.</text>
             <rel relloc="1">coding</rel>
             <arg end="0" f="" n="0" start="0">Her</arg>
@@ -111,6 +111,39 @@
             <arg end="36" f="" n="2" start="20">for a known cellular function or process -LRB- e.g. the function `` make melanin molecules '' -RRB-</arg>
          </example>
          <note>CODE-V NOTES: Added by Julia for clearearth-biotexts.</note>
+      </roleset>
+      <roleset id="code.05" name="authorization of level of clinical intervention in case of medical emergency">
+         <aliases>
+            <alias pos="n">code</alias>
+            <alias pos="n">code_status</alias>
+         </aliases>
+         <roles>
+            <role descr="authorizer (patient)" f="PAG" n="0"/>
+            <role descr="status (value)" f="PPT" n="1"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="-" resource="PropBank" version="3.0"/>
+            <usage inuse="-" resource="AMR" version="3.0"/>
+            <usage inuse="+" resource="THYME-AMR" version="3.0"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="code-n" src="THYME-Auto1">
+            <text>She wishes to remain full code during this hospitalization.</text>
+            <rel relloc="5">codes</rel>
+            <arg end="4" f="" n="1" start="4">full</arg>
+            <amr>
+            (w / wish-01
+              :ARG0 (s / she)
+              :ARG1 (r / remain-01
+                :ARG1 (c / code-03
+                  :ARG0 s
+                  :ARG1 (f / full-09))
+                :duration (h / hospitalize-01
+                  :ARG1 s
+                  :mod (t / this))))
+            </amr>
+         </example>
+         <note>CODE NOTES: Added for THYME-AMR.</note>
       </roleset>
       <roleset id="code.101" name="medical patient being in cardiac arrest">
          <aliases>
