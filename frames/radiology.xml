@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<frameset>
+  <predicate lemma="radiology">
+    <roleset id="radiology.01" name="medical imaging test (specific types include, among others: CTs, PET scans, MRIs, and ultrasounds)">
+      <aliases>
+        <alias pos="n">radiology</alias>
+        <alias pos="n">radiology_studies</alias>
+      </aliases>
+      <roles>
+        <role descr="radiologist" f="PAG" n="0"/>
+        <role descr="patient" f="PPT" n="1"/>
+      </roles>
+      <usagenotes>
+        <usage inuse="-" resource="PropBank" version="3.0"/>
+        <usage inuse="-" resource="AMR" version="3.0"/>
+        <usage inuse="+" resource="THYME-AMR" version="3.0"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="radiologically-r" src="THYME">
+        <text>She seems to be responding both by CEA and radiologically</text>
+        <rel relloc="9">radiologically</rel>
+        <amr>      
+        (s / seem-01
+           :ARG1 (r / respond-01
+              :ARG0 (s2 / she))
+           :ARG1-of (i2 / infer-01
+              :ARG2 (a2 / and
+                 :op1 (t3 / test-01 :implicit +
+                     :ARG1 (a3 / anatomical-site :name (n / name :op1 "CEA")))
+                 :op2 (r2 / radiology-01
+                     :ARG1 s2))))
+        </amr>
+      </example>
+      <note>RADIOLOGY NOTES: Added for THYME-AMR.</note>
+    </roleset>
+  </predicate>
+</frameset>

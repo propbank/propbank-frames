@@ -63,10 +63,12 @@
                   <rolelink class="substance_emission-43.4-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
                </rolelinks>
             </role>
+            <role descr="more specific destination, if in addition to arg1" f="LOC" n="3"/>
          </roles>
          <usagenotes>
             <usage inuse="+" resource="PropBank" version="3.0"/>
             <usage inuse="-" resource="AMR" version="3.0"/>
+            <usage inuse="+" resource="THYME-AMR" version="3.0"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="substance_emission-43.4-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
@@ -76,6 +78,21 @@
             <rel relloc="1">radiated</rel>
             <arg end="0" f="" n="0" start="0">They</arg>
             <arg end="6" f="" n="1" start="2">the tumor in the spine</arg>
+         </example>
+         <example name="radiation-n" src="">
+            <text>He had already had radiation therapy to the pelvis for a previous cancer.</text>
+            <rel relloc="4">radiation</rel>
+            <amr>
+            (t / therapy-01
+              :ARG1 (h / he)
+              :ARG2 (r / radiate-02
+                :ARG1 h
+                :ARG3 (a2 / anatomical-site :name (n / name :op1 "pelvis")))
+              :ARG3 (c / cancer-03
+                :ARG1 h
+                :mod (p / previous))
+              :mod (a / already))
+            </amr>
          </example>
          <note>RADIATE-V, RADIATION-N NOTES: Added by Julia.</note>
       </roleset>

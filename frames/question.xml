@@ -3,8 +3,8 @@
    <predicate lemma="question">
       <roleset id="question.01" name="ask a question (of a listener)">
          <aliases>
-            <alias pos="n">question</alias>
             <alias pos="v">question</alias>
+            <alias pos="n">question</alias>
             <alias pos="n">questioning</alias>
             <alias pos="l">have_question</alias>
          </aliases>
@@ -44,7 +44,7 @@
             <lexlink class="question-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">24</lexlink>
             <lexlink class="interrogate-37.1.3" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
          </lexlinks>
-         <example name="ARG0 and ARG2 and ARG1" src="ontonotes pt/nt/44/nt_4404">
+         <example name="question-v: ARG0 and ARG2 and ARG1" src="ontonotes pt/nt/44/nt_4404">
             <text>Then Peter was filled with the Holy Spirit and said to them , `` Rulers of the people and you older leaders , are you questioning us today about what we did to help this crippled man ?</text>
             <rel relloc="25">questioning</rel>
             <arg end="21" f="DIS" n="m" start="14">Rulers of the people and you older leaders</arg>
@@ -120,10 +120,10 @@
       </roleset>
       <roleset id="question.03" name="have doubts, be dubious">
          <aliases>
-            <alias pos="j">questionable</alias>
-            <alias pos="n">question</alias>
             <alias pos="v">question</alias>
+            <alias pos="n">question</alias>
             <alias pos="n">questioning</alias>
+            <alias pos="j">questionable</alias>
          </aliases>
          <roles>
             <role descr="entity having doubts" f="PAG" n="0">
@@ -132,12 +132,13 @@
                   <rolelink class="interrogate-37.1.3" resource="VerbNet" version="verbnet3.4">agent</rolelink>
                </rolelinks>
             </role>
-            <role descr="dubious thing" f="PPT" n="1">
+            <role descr="thing whose truth value is in question" f="PPT" n="1">
                <rolelinks>
                   <rolelink class="interrogate-37.1.3" resource="VerbNet" version="verbnet3.3">topic</rolelink>
                   <rolelink class="interrogate-37.1.3" resource="VerbNet" version="verbnet3.4">topic</rolelink>
                </rolelinks>
             </role>
+            <role descr="more general entity being questioned in terms of Arg1, if Arg1 also present" f="VSP" n="2"/>
          </roles>
          <usagenotes>
             <usage inuse="+" resource="PropBank" version="3.0"/>
@@ -166,6 +167,18 @@
             <arg end="2" f="" n="1" start="1">the right</arg>
             <arg end="7" f="" n="0" start="5">by the legislature,</arg>
          </example>
+         <example name="question-n" src="THYME-AMR">
+            <text>There is a question of a CT allergy.</text>
+            <rel relloc="3">question</rel>
+            <arg end="7" f="" n="1" start="4">of a CT allergy</arg>
+            <amr>
+            (q2 / question-03
+              :ARG1 (a / allergic-01
+                :ARG2 (t / thing :implicit +
+                  :instrument-of (c / ct-01))))
+            </amr>
+         </example>
+         <note>QUESTION NOTES: arg2 added for THYME-AMR.</note>
          <note>QUESTIONABLE-J NOTES: Added by Julia based on WSJ data,question-v.01. Corresponds to VNcls interrogate-37.1.3. (from questionable.01-j) This frame file has been reframed following negotiations between Martha, Julia, Tim, Katie, and Ulf. The former .01 roleset included both'ask a question' and 'have doubts' senses, and has been split into .01 and .03 rolesets. Reframing allows 'questionable' to be aliased to only the 'have doubts' sense.</note>
       </roleset>
    </predicate>

@@ -1,9 +1,12 @@
 <?xml version="1.0" ?>
 <frameset>
    <predicate lemma="preop">
-      <roleset id="preop.01" name="in the stage preceding operation">
+      <roleset id="preoperative.01" name="in the stage preceding operation">
          <aliases>
+            <alias pos="j">preoperative</alias>
             <alias pos="j">preop</alias>
+            <alias pos="j">pre-op</alias>
+            <alias pos="r">preoperatively</alias>
          </aliases>
          <roles>
             <role descr="entity in the stage preceding operation" f="PAG" n="1"/>
@@ -13,11 +16,34 @@
             <usage inuse="+" resource="PropBank" version="3.0"/>
             <usage inuse="-" resource="AMR" version="3.0"/>
          </usagenotes>
-         <example name="arg1" src="medi-tmprl">
+         <example name="preop-j: arg1" src="medi-tmprl">
             <text>I have also ordered Hematology consult in regards to the factor V Leiden for any suggestions in case the patient is preop .</text>
             <rel relloc="21">preop</rel>
             <arg end="19" f="" n="1" start="18">the patient</arg>
          </example>
+         <example name="preoperative-j" src="THYME">
+            <text>Dr. Georgie Mozee saw Mr. Young in the preoperative setting.</text>
+            <rel relloc="8">preoperative</rel>
+            <arg end="9" f="" n="1" start="9">setting</arg>
+            <amr>
+            (s / see-09
+               :ARG0 (d / doctor :name (n / name :op1 "Georgie" :op2 "Mozee"))
+               :ARG1 (p / person :name (n2 / name :op1 "Mr." :op2 "Young"))
+               :ARG1-of (s2 / set-01
+                  :ARG2 (p2 / preoperative-01
+                     :ARG1 s)))
+            </amr>
+         </example>
+         <example name="pre-op-j" src="THYME">
+            <text>pre-op ECG</text>
+            <rel relloc="1">pre-op</rel>
+            <arg end="1" f="" n="1" start="1">ECG</arg>
+            <amr>
+            (e / electrocardiogram-01
+              :ARG1-of (p / preoperative-01)))
+            </amr>
+         </example>
+         <note>PREOPERATIVE NOTES: Roleset name changed for THYME AMR.</note>
          <note>PREOP-J NOTES: Added by Julia based on medi-tmprl1to8. (from preop.01-j)</note>
       </roleset>
    </predicate>

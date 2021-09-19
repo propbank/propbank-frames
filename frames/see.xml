@@ -50,14 +50,14 @@
             <lexlink class="see-v.11" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">11</lexlink>
             <lexlink class="see-v.5" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
          </lexlinks>
-         <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1057">
+         <example name="see-v: ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1057">
             <text>But recently many people who are not ordinarily superstitious have sought the services of fortunetellers when they 've seen the value of their stocks decline .</text>
             <rel relloc="18">seen</rel>
             <arg end="15" f="TMP" n="m" start="15">when</arg>
             <arg end="16" f="" n="0" start="16">they</arg>
             <arg end="24" f="" n="1" start="19">the value of their stocks decline</arg>
          </example>
-         <example name="ARG0 and ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1018">
+         <example name="see-v: ARG0 and ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1018">
             <text>&quot; The key factor allowing men to have the courage to display their own bodies is that they see their bodies as their own .</text>
             <rel relloc="18">see</rel>
             <arg end="17" f="" n="0" start="17">they</arg>
@@ -181,6 +181,42 @@
          </example>
          <note>SEE-V NOTES: Added by Julia based on BOLT. No VNcls. (from see.05-v)</note>
       </roleset>
+      <roleset id="see.09" name="visit/consultation by medical professional">
+         <aliases>
+            <alias pos="v">see</alias>
+         </aliases>
+         <roles>
+            <role descr="doctor" f="PAG" n="0"/>
+            <role descr="patient" f="PPT" n="1"/>
+            <role descr="purpose" f="CAU" n="2"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="-" resource="PropBank" version="3.0"/>
+            <usage inuse="-" resource="AMR" version="3.0"/>
+            <usage inuse="+" resource="THYME-AMR" version="3.0"/>
+         </usagenotes>
+         <example name="see-v" src="THYME-AMR">
+            <text>Seventy-five -year -old G1 whom-1 I asked *PRO* to see *-1 for evaluation of a pelvic mass.</text>
+            <rel relloc="9">see</rel>
+            <arg end="7" f="" n="0" start="7">*PRO*</arg>
+            <arg end="10" f="" n="0" start="10">*-1</arg>
+            <arg end="16" f="" n="2" start="11">for evaluation of a pelvic mass</arg>
+         </example>
+         <example name="see-v" src="THYME-AMR">
+            <text>he is going to see Dr. Martinez later today.</text>
+            <rel relloc="4">see</rel>
+            <arg end="0" f="" n="0" start="0">he</arg>
+            <arg end="6" f="" n="1" start="5">Dr. Martinez</arg>
+            <arg end="8" f="TMP" n="m" start="7">later today</arg>
+            <amr>
+            (s / see-09
+              :ARG0 (h / he)
+              :ARG1 (p / person :name (n / name :op1 "Dr." :op2 "Martinez"))
+              :time (t / today))
+            </amr>
+         </example>
+         <note>SEE-V NOTES: Added for THYME-AMR.</note>
+      </roleset>
    </predicate>
    <predicate lemma="saw">
       <roleset id="saw.06" name="cut with a saw">
@@ -201,7 +237,7 @@
                   <rolelink class="split-23.2" resource="VerbNet" version="verbnet3.3">patient</rolelink>
                </rolelinks>
             </role>
-            <role descr="Cut from what? source" f="DIR" n="2">
+            <role descr="Cut from what? source" f="SRC" n="2">
                <rolelinks>
                   <rolelink class="cut-21.1-1" resource="VerbNet" version="verbnet3.3">source</rolelink>
                   <rolelink class="split-23.2" resource="VerbNet" version="verbnet3.3">co-patient</rolelink>

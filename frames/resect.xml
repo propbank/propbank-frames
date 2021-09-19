@@ -9,31 +9,24 @@
          <roles>
             <role descr="Surgeon" f="PAG" n="0"/>
             <role descr="Entity removed" f="PPT" n="1"/>
-            <role descr="Removed from" f="DIR" n="2"/>
+            <role descr="Removed from" f="SRC" n="2"/>
          </roles>
          <usagenotes>
             <usage inuse="+" resource="PropBank" version="3.0"/>
             <usage inuse="-" resource="AMR" version="3.0"/>
          </usagenotes>
          <lexlinks/>
-         <example name="Arg0, Arg1" src="">
+         <example name="resect-v: Arg0, Arg1" src="">
             <text>The doctor resected the seventh rib on the right side.</text>
             <rel relloc="2">resected</rel>
             <arg end="1" f="" n="0" start="0">The doctor</arg>
             <arg end="9" f="" n="1" start="3">the seventh rib on the right side.</arg>
          </example>
-         <example name="Arg1" src="">
+         <example name="resection-n: Arg1" src="">
             <text>Transurethral resection of the prostate (TURP) is surgery to remove all or part of the prostate gland, to treat an enlarged prostate.</text>
             <rel relloc="1">resection</rel>
             <arg end="0" f="ADJ" n="m" start="0">Transurethral</arg>
             <arg end="4" f="" n="1" start="2">of the prostate</arg>
-         </example>
-         <example name="You can actually remove a rectum and anus. This particular procedure is done with incisions made in the abdomin and perineum." src="">
-            <text>Rectum and anus, abdominal perineal resection</text>
-            <rel relloc="5">resection</rel>
-            <arg end="2" f="" n="1" start="0">Rectum and anus,</arg>
-            <arg end="3" f="MNR" n="m" start="3">abdominal</arg>
-            <arg end="4" f="MNR" n="m" start="4">perineal</arg>
          </example>
          <note>RESECT-V NOTES: Based on data in Clinical Notes corpus (from resect.01-v)</note>
          <note>RESECTION-N NOTES: Comparison to excise.01 (from resection.01-n)</note>
@@ -54,12 +47,68 @@
             <usage inuse="+" resource="PropBank" version="3.0"/>
             <usage inuse="-" resource="AMR" version="3.0"/>
          </usagenotes>
-         <example name="arg1" src="medi-tmprl">
+         <example name="resectable-j: arg1" src="medi-tmprl">
             <text> The mass around the left ureter appears to be resectable to me .</text>
             <rel relloc="10">resectable</rel>
             <arg end="6" f="" n="1" start="1">The mass around the left ureter</arg>
          </example>
          <note>RESECTABLE-J NOTES: Added by Julia based on medi-tmprl1to8. Relation to resect.01. (from resectable.01-j)</note>
+      </roleset>
+   </predicate>
+   <predicate lemma="apr">
+      <roleset id="apr.03" name="abdominoperineal resection: a procedure in which the rectum, anus, some of the colon, and other tissue are removed via entry through the abdomen and the perineum">
+         <aliases>
+            <alias pos="n">apr</alias>
+            <alias pos="n">abdominoperineal_resection</alias>
+            <alias pos="n">abdominal_perineal_resection</alias>
+         </aliases>
+         <roles>
+            <role descr="surgeon" f="PAG" n="0"/>
+            <role descr="entity removed" f="PPT" n="1"/>
+            <role descr="source, removed from" f="SRC" n="2"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="-" resource="PropBank" version="3.0"/>
+            <usage inuse="-" resource="AMR" version="3.0"/>
+            <usage inuse="+" resource="THYME-AMR" version="3.0"/>
+         </usagenotes>
+         <example name="abrominal_perineal_resection-n" src="">
+            <text>Rectum and anus, abdominal perineal resection</text>
+            <rel relloc="5">resection</rel>
+            <arg end="2" f="" n="1" start="0">Rectum and anus,</arg>
+            <arg end="3" f="MNR" n="m" start="3">abdominal</arg>
+            <arg end="4" f="MNR" n="m" start="4">perineal</arg>
+         </example>
+         <note>APR NOTES: Added for THYME-AMR. Based on discussion in July 2021 e-mail thread, THYME annotation question: LARs and APRs. These terms are really more name-like than compositional (they refer to more than the "sum of their parts"), but they refer to events so they get frames instead of being NEs.</note>
+      </roleset>
+   </predicate>
+   <predicate lemma="lar">
+      <roleset id="lar.01" name="a procedure in which all or part of the rectum is removed via entry through the abdomen">
+         <aliases>
+            <alias pos="n">LAR</alias>
+            <alias pos="n">low_anterior_resection</alias>
+         </aliases>
+         <roles>
+            <role descr="surgeon" f="PAG" n="0"/>
+            <role descr="entity removed" f="PPT" n="1"/>
+            <role descr="source, removed from" f="SRC" n="2"/>
+         </roles>
+         <usagenotes>
+            <usage inuse="-" resource="PropBank" version="3.0"/>
+            <usage inuse="-" resource="AMR" version="3.0"/>
+            <usage inuse="+" resource="THYME-AMR" version="3.0"/>
+         </usagenotes>
+         <example name="low_anterior_resection-n" src="THYME">
+            <text>laparoscopic low-anterior resection</text>
+            <rel relloc="2">resection</rel>
+            <arg end="0" f="MNR" n="m" start="0">laproscopic</arg>
+            <arg end="1" f="LOC" n="m" start="1">low-anterior</arg>
+            <amr>
+            (l / lar-01
+               :instrument (d / devices :name (n / name :op1 "laparoscope")))
+            </amr>
+         </example>
+         <note>LAR NOTES: Added for THYME AMR.</note>
       </roleset>
    </predicate>
 </frameset>
