@@ -1,0 +1,109 @@
+<?xml version="1.0" ?>
+<frameset>
+   <predicate lemma="behind">
+      <roleset id="behind.01" name="not keeping up with a schedule">
+         <aliases>
+            <alias pos="j">behind</alias>
+         </aliases>
+         <roles>
+            <role descr="entity/accomplishment behind schedule" f="PAG" n="1"/>
+            <role descr="by how much" f="EXT" n="2"/>
+            <role descr="schedule, goal" f="PPT" n="3"/>
+         </roles>
+         <usagenotes>
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+         </usagenotes>
+         <example name="behind-j" src="">
+            <text>we would be decades behind in nuetralizing the threat .</text>
+            <rel relloc="4">behind</rel>
+            <arg end="0" f="" n="1" start="0">we</arg>
+            <arg end="8" f="" n="1" start="5">in nuetralizing the threat</arg>
+            <arg end="1" f="MOD" n="m" start="1">would</arg>
+            <arg end="3" f="" n="2" start="3">decades</arg>
+         </example>
+         <note>BEHIND-J NOTES: Added by Julia.</note>
+      </roleset>
+      <roleset id="behind.02" name="be spatially located past the back side of something">
+         <aliases>
+            <alias pos="j">behind</alias>
+            <alias pos="p">behind</alias>
+            <alias pos="r">behind</alias>
+         </aliases>
+         <roles>
+            <role descr="entity behind" f="SE1" n="1"/>
+            <role descr="behind what" f="SE2" n="2"/>
+            <role descr="anchor" f="ANC" n="3"/>
+            <role descr="axis" f="AXS" n="4"/>
+         </roles>
+         <usagenotes>
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+         </usagenotes>
+         <entailments>
+           <hobbsian>  
+           (forall (Arg1 Arg2 Arg3 Arg4 quant)
+            (iff (ahead-02 Arg1 Arg2 Arg3 Arg4 quant)
+             (exists (f p1 p2 z1 z2)
+              (and (selfAnchoredFramework f Arg3)
+                   (externalTo Arg1 Arg2)
+                   (zAxis Arg4 f)
+                   (frontOf Arg2 Arg1 f)
+                   (atLoc Arg1 p1)
+                   (atLoc Arg2 p2)
+                   (zCoordinate z1 p1 f)
+                   (zCoordinate z2 p2 f)
+                   (lt z1 z2 Arg4)
+                   (distance quant Arg1 Arg2)))))
+           </hobbsian>
+         </entailments>
+         <example name="behind-p" src="Spatial">
+            <text>The outlet is behind the television</text>
+            <rel relloc="3">behind</rel>
+            <arg end="1" f="" n="1" start="0">The outlet</arg>
+            <arg end="5" f="" n="2" start="4">the television</arg>
+            <amr>
+            (b / behind-02
+               :ARG1 (o / outlet)
+               :ARG2 (t / television)
+               :ARG3 (c / cartesian-framework-91
+                   :ARG1 t
+                   :FR (i2 / intrinsic)))
+            </amr>
+         </example>
+         <note>BEHIND-J NOTES: Added by Julia; updated in 2021 for SpatialAMR with the addition of pragmatic arguments 3 and 4</note>
+      </roleset>
+      <roleset id="behind.03" name="be losing">
+         <aliases>
+            <alias pos="j">behind</alias>
+         </aliases>
+         <roles>
+            <role descr="entity losing" f="PAG" n="1"/>
+            <role descr="entity winning" f="PPT" n="2"/>
+            <role descr="by how much" f="EXT" n="3"/>
+            <role descr="competition" f="VSP" n="4"/>
+         </roles>
+         <usagenotes>
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+         </usagenotes>
+         <example name="behind-j" src="">
+            <text>Smith is behind 2-3 in the all-time series .</text>
+            <rel relloc="2">behind</rel>
+            <arg end="0" f="" n="1" start="0">Smith</arg>
+            <arg end="3" f="" n="3" start="3">2-3</arg>
+            <arg end="7" f="" n="4" start="4">in the all-time series</arg>
+         </example>
+         <note>BEHIND-J NOTES: Added by Julia.</note>
+      </roleset>
+   </predicate>
+</frameset>

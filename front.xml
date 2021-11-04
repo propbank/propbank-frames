@@ -1,0 +1,165 @@
+<?xml version="1.0" ?>
+<frameset>
+   <predicate lemma="front">
+      <roleset id="front.01" name="be the front portion of a larger whole">
+         <aliases>
+            <alias pos="n">front</alias>
+            <alias pos="j">front</alias>
+            <alias pos="p">at_the_front_of</alias>
+            <alias pos="r">at_the_front</alias>
+         </aliases>
+         <roles>
+            <role descr="entity that is the front portion" f="PRT" n="1"/>
+            <role descr="larger whole" f="WHL" n="2"/>
+            <role descr="anchor" f="ANC" n="3"/>
+            <role descr="axis" f="AXS" n="4"/>
+         </roles>
+         <usagenotes>
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="front-j" src="">
+            <text>Our room was front of house</text>
+            <rel relloc="3">front</rel>
+            <arg end="6" f="" n="2" start="4">of the house</arg>
+            <amr>
+            (f2 / front-01
+                :ARG1 (r / room
+                  :poss (w / we))
+                :ARG2 (h / house))
+            </amr>
+         </example>
+         <example name="front-n" src="Minecraft">
+            <text>Remove the front block of the structure.</text>
+            <rel relloc="2">front</rel>
+            <arg end="3" f="" n="1" start="3">block</arg>
+            <arg end="6" f="" n="2" start="4">of the structure</arg>
+            <amr>
+            (f2 / front-01
+                :ARG1 (r / room
+                  :poss (w / we))
+                :ARG2 (h / house))
+            </amr>
+         </example>
+         <note>FRONT NOTES: Updated for SpatialAMR. Args 1 and 2 (and name) reworded, Args 3 and 4 added as pragmatic roles.</note>
+         <note>FRONT-J NOTES: Added automatically by Julia. (from front.01-j)</note>
+      </roleset>
+      <roleset id="front.03" name="in front of the front side of something">
+         <aliases>
+            <alias pos="p">in_front_of</alias>
+            <alias pos="r">in_front</alias>
+         </aliases>
+         <roles>
+            <role descr="entity in front" f="SE1" n="1"/>
+            <role descr="in front of what" f="SE2" n="2"/>
+            <role descr="anchor" f="ANC" n="3"/>
+            <role descr="axis" f="AXS" n="4"/>
+         </roles>
+         <usagenotes>
+            <usage resource="PropBank" version="3.4" inuse="-"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+         </usagenotes>
+         <lexlinks/>
+         <entailments>
+           <hobbsian>
+           (forall (Arg1 Arg2 Arg3 Arg4 quant)
+            (iff (ahead-02 Arg1 Arg2 Arg3 Arg4 quant)
+             (exists (f p1 p2 z1 z2)
+              (and (selfAnchoredFramework f Arg3)
+                   (externalTo Arg1 Arg2)
+                   (zAxis Arg4 f)
+                   (frontOf Arg1 Arg2 f)
+                   (atLoc Arg1 p1)
+                   (atLoc Arg2 p2)
+                   (zCoordinate z1 p1 f)
+                   (zCoordinate z2 p2 f)
+                   (lt z2 z1 Arg4)
+                   (distance quant Arg1 Arg2)))))
+           </hobbsian>
+         </entailments>
+         <example name="in_front_of-p" src="Spatial">
+            <text>I 'm in front of the building.</text>
+            <rel relloc="2 3">in front</rel>
+            <arg end="0" f="" n="1" start="0">I</arg>
+            <arg end="6" f="" n="2" start="4">of the building</arg>
+            <amr>
+            (f / front-03
+               :ARG1 (i / i)
+               :ARG2 (b / building))
+            </amr>
+         </example>
+         <note>FRONT NOTES: Added for SpatialAMR.</note>
+      </roleset>
+      <roleset id="front.04" name="direction toward the foreground, when the direction isn't in the direction of any particular entity's 'front' ">
+         <aliases>
+            <alias pos="p">in_front_of</alias>
+            <alias pos="r">in_front</alias>
+         </aliases>
+         <roles>
+            <role descr="entity in the foreground" f="SE1" n="1"/>
+            <role descr="entity in the background" f="SE2" n="2"/>
+            <role descr="anchor (whose viewpoint defines the foreground/background of space)" f="ANC" n="3"/>
+            <role descr="axis" f="AXS" n="4"/>
+         </roles>
+         <usagenotes>
+            <usage resource="PropBank" version="3.4" inuse="-"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="in_front_of-p" src="Minecraft">
+            <text>Put it in front of the chair.</text>
+            <note></note>
+            <rel relloc="">front</rel>
+            <arg end="" f="" n="" start=""></arg>
+            <arg end="" f="" n="" start=""></arg>
+            <amr>
+            (p / put-01 :mode imperative
+               :ARG0 (y / you)
+               :ARG1 (i2 / it)
+               :ARG2 (s / space
+                  :ARG1-of (f / front-03
+                     :ARG2 (c / chair))))
+            </amr>
+         </example>
+         <note>NOTES: Added for SpatialAMR.</note>
+      </roleset>
+   </predicate>
+   <predicate lemma="up_front">
+      <roleset id="up_front.02" name="be straightfoward and honest with">
+         <aliases>
+            <alias pos="j">up_front</alias>
+         </aliases>
+         <roles>
+            <role descr="speaker, one who is direct and honest" f="PAG" n="0"/>
+            <role descr="subject matter, about what" f="PPT" n="1"/>
+            <role descr="listener" f="GOL" n="2"/>
+         </roles>
+         <usagenotes>
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+         </usagenotes>
+         <example name="up_front-j: All args" src="">
+            <text>The mechanic was very up front and honest about the extent of the problem with us.</text>
+            <rel relloc="4 5">up front</rel>
+            <arg end="1" f="" n="0" start="0">The mechanic</arg>
+            <arg end="3" f="EXT" n="m" start="3">very</arg>
+            <arg end="13" f="" n="1" start="8">about the extent of the problem</arg>
+            <arg end="15" f="" n="2" start="14">with us.</arg>
+         </example>
+         <note>Based on google data. Comparison to straightforward.01. No VN or FN classes. Framed by Katie.</note>
+      </roleset>
+   </predicate>
+</frameset>

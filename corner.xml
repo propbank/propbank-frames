@@ -1,0 +1,176 @@
+<?xml version="1.0" ?>
+<frameset>
+   <predicate lemma="corner">
+      <roleset id="corner.01" name="have a monopoly on, having a monopoly (watch out for non-events!)">
+         <aliases>
+            <alias pos="n">corner</alias>
+            <alias pos="v">corner</alias>
+         </aliases>
+         <roles>
+            <role descr="monopolist" f="PAG" n="0"/>
+            <role descr="thing monopolized" f="PPT" n="1"/>
+         </roles>
+         <usagenotes>
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="corner-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+         </lexlinks>
+         <example name="corner-v: corner the market" src="">
+            <text>Since then, Intel has cornered a large part of the market with successive generations of 16-bit and 32-bit chips, all of which can run software written for previous models.</text>
+            <rel relloc="4">cornered</rel>
+            <arg end="1" f="TMP" n="M" start="0">Since then,</arg>
+            <arg end="2" f="" n="0" start="2">Intel</arg>
+            <arg end="10" f="" n="1" start="5">a large part of the market</arg>
+            <arg end="28" f="MNR" n="M" start="11">with successive generations of 16-bit and 32-bit chips, all of which can run software written for previous models.</arg>
+         </example>
+         <example name="corner-v: ARG0 and ARG1" src="ontonotes bn/voa/00/voa_0075">
+            <text>President Hosni Mubarak 's ruling party now controls at least 127 of the 444 parliamentary seats , the Muslim Brotherhood has won six , legal opposition parties control four and other independent candidates have cornered 29 , but these numbers are subject to change as some independent winners pledged their loyalty to President Mubarak 's party .</text>
+            <rel relloc="34">cornered</rel>
+            <arg end="32" f="" n="0" start="30">other independent candidates</arg>
+            <arg end="35" f="" n="1" start="35">29</arg>
+         </example>
+         <example name="NOT EVENTIVE-- use corner-02 if available in your schema, otherwise -yy" src="BOLT">
+            <text>Remember in the 80s when the next ice age was around the corner and we were all going to freeze to death ?</text>
+            <rel relloc="12">corner</rel>
+         </example>
+         <note>CORNER-V NOTES: That was a surprisingly clunky example. (from corner.01-v)</note>
+         <note>CORNER-N NOTES: Added by Julia based on WN eventive noun lexicon, corner.01. No VNcls. (from corner.01-n)</note>
+         <note>If it's a spatial feature, it's NOT an event! Call it .YY! (from corner.01-n)</note>
+      </roleset>
+      <roleset id="corner.02" name="internal: function as the corner part of a larger whole">
+         <aliases>
+            <alias pos="n">corner</alias>
+            <alias pos="j">corner</alias>
+         </aliases>
+         <roles>
+            <role descr="entity that forms a corner" f="PRT" n="1"/>
+            <role descr="larger whole" f="WHL" n="2"/>
+         </roles>
+         <usagenotes>
+            <usage resource="PropBank" version="3.4" inuse="-"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="corner-j" src="Minecraft">
+            <text>Please remove the corner pieces of the purple ring.</text>
+            <rel relloc="">corner</rel>
+            <arg end="" f="" n="" start=""></arg>
+            <arg end="" f="" n="" start=""></arg>
+            <amr>
+            (r / remove-01 :mode imperative :polite +
+               :ARG0 (y / you)
+               :ARG1 (p / piece :pl +
+                  :ARG1-of (c / corner-02
+                     :ARG2 (r2 / ring
+                        :color (p2 / purple)))))
+            </amr>
+         </example>
+         <example name="corner-j" src="Minecraft">
+            <text>What corner are we starting at?</text>
+            <rel relloc="1">corner</rel>
+            <amr>
+            (s / start-01
+               :ARG0 (w / we)
+               :location (a / amr-unknown
+                  :ARG1-of (c / corner-02)))
+            </amr>
+         </example>
+         <note>CORNER NOTES: Added for SpatialAMR.</note>
+      </roleset>
+      <roleset id="corner.03" name="external: exist in negative space formed by a vertex">
+         <aliases>
+            <alias pos="n">corner</alias>
+            <alias pos="p">in_the_corner_of</alias>
+            <alias pos="r">in_the_corner</alias>
+         </aliases>
+         <roles>
+            <role descr="entity in the corner" f="SE1" n="1"/>
+            <role descr="entity with a corner formation" f="SE2" n="2"/>
+         </roles>
+         <usagenotes>
+            <usage resource="PropBank" version="3.4" inuse="-"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="corner-j" src="Minecraft">
+            <text>In each corner of the 4 red branches, we have 3 orange blocks.</text>
+            <rel relloc="2">corner</rel>
+            <arg end="1" f="ADJ" n="m" start="1">each</arg>
+            <arg end="7" f="" n="2" start="3">of the 4 red branches</arg>
+            <amr>
+            (h / have-03
+               :ARG0 (w / we)
+               :ARG1 (b / block :pl +
+                 :color (o / orange))
+               :location (s / space :pl +
+                 :ARG1-of (c / corner-03
+                   :ARG2 (b2 / branch :quant 4
+                     :color (r / red))))
+               :frequency (r2 / rate-entity-91
+                 :ARG1 (b3 / block :quant 3
+                   :ARG1-of (i2 / include-91
+                     :ARG2 b))
+                 :ARG2 (c2 / corner-03
+                   :ARG1-of (i3 / include-91
+                     :ARG2 c)
+                   :mod (e / each))))
+            </amr>
+         </example>
+         <note>CORNER NOTES: Added for SpatialAMR.</note>
+      </roleset>
+      <roleset id="corner.04" name="external: exist in the space outward diagonally from an entity's corner">
+         <aliases>
+            <alias pos="n">corner</alias>
+            <alias pos="p">to_the_corner_of</alias>
+            <alias pos="r">to_the_corner</alias>
+            <alias pos="p">at_the_corner_of</alias>
+            <alias pos="r">at_the_corner</alias>
+            <alias pos="p">on_the_corner_of</alias>
+            <alias pos="r">on_the_corner</alias>
+         </aliases>
+         <roles>
+            <role descr="entity in a space diagonal from and adjacent to SE2" f="SE1" n="1"/>
+            <role descr="entity whose corner arg1 is diagonal from" f="SE2" n="2"/>
+         </roles>
+         <usagenotes>
+            <usage resource="PropBank" version="3.4" inuse="-"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="to_the_X_corner_of-p" src="Minecraft">
+            <text>Start the base block to the upper left corner of the blue one.</text>
+            <rel relloc="4 5 8 9">to the corner of</rel>
+            <arg end="12" f="" n="2" start="10">the blue one</arg>
+            <amr>
+            (s / start-01 :mode imperative
+               :ARG0 (y / you)
+               :ARG1 (b / block
+                 :ARG1-of (b2 / base-03))
+               :location (s2 / space
+                 :ARG1-of (c / corner-04
+                   :ARG2 (o / one
+                     :color (b3 / blue)))
+                 :ARG1-of (l / left-20
+                   :ARG2 o)
+                 :ARG1-of (u / up-03
+                   :ARG4 o)))
+            </amr>
+         </example>
+         <note>CORNER NOTES: Added for SpatialAMR.</note>
+      </roleset>
+   </predicate>
+</frameset>

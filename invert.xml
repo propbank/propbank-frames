@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+<frameset>
+   <predicate lemma="invert">
+      <roleset id="invert.01" name="turn upside down or create the inverse">
+         <aliases>
+            <alias pos="v">invert</alias>
+            <alias pos="n">inversion</alias>
+            <alias pos="j">inverted</alias>
+            <alias pos="j">inverse</alias>
+         </aliases>
+         <roles>
+            <role descr="agent, turner" f="PAG" n="0">
+               <rolelinks>
+                  <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+                  <rolelink class="remedy-45.7" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="thing now upside down" f="PPT" n="1">
+               <rolelinks>
+                  <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+                  <rolelink class="remedy-45.7" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="axis of SE1 inverting" f="AXS" n="2"/>
+            <role descr="end form" f="PRD" n="3"/>
+         </roles>
+         <usagenotes>
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="other_cos-45.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+            <lexlink class="remedy-45.7" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+         </lexlinks>
+         <example name="invert-v: the one example" src="">
+            <text>Mr. Glass has inverted the famous modernist dictum ``less is more.''</text>
+            <rel relloc="3">inverted</rel>
+            <arg end="1" f="" n="0" start="0">Mr. Glass</arg>
+            <arg end="10" f="" n="1" start="4">the famous modernist dictum ``less is more.''</arg>
+            <amr>
+            (i2 / invert-01
+               :ARG0 (p / person :name (n / name :op1 "Mr." :op2 "Class"))
+               :ARG1 (d / dictum
+                  :ARG1-of (f / fame-01)
+                  :mod (m / movement :wiki "Modernism" :name (n2 / name :op1 "Modernism"))
+                  :topic (m2 / more
+                     :domain (l / less))))
+            </amr>
+         </example>
+         <example name="inversion-n: Abstract" src="">
+            <text>His inversion of classic landscape forms symbolized the strength of traditional Confucian values in a time of social crisis.</text>
+            <rel relloc="1">inversion</rel>
+            <arg end="0" f="" n="0" start="0">His</arg>
+            <arg end="5" f="" n="1" start="2">of classic landscape forms</arg>
+            <amr>
+            (s / symbolize-01
+               :ARG1 (i2 / invert-01
+                  :ARG0 (h / he)
+                  :ARG1 (f / form
+                     :mod (l / landscape)
+                     :mod (c / classic)))
+               :ARG2 (s2 / strong-02
+                  :ARG1 (v / value :pl +
+                     :mod (t / tradition)
+                     :mod (p / philosphy :wiki "Confucianism" :name (n / name :op1 "Confucianism")))
+                  :time (c2 / crisis
+                     :mod (s3 / social))))
+            </amr>
+         </example>
+         <example name="inversion-n: Abstract" src="">
+            <text>inverse L? </text>
+            <rel relloc="0">inverse</rel>
+            <arg end="1" f="" n="1" start="1">L</arg>
+            <amr>
+            (t / thing
+               :configuration (s / string-entity :value "L")
+               :ARG1-of (i2 / invert-01)
+               :ARG1-of (r / request-confirmation-91))
+            </amr>
+         </example>
+         <note>INVERT NOTES: Args 2 and 3 added for SpatialAMR.</note>
+         <note>INVERT-V NOTES: Frames file for 'invert' based on sentences in wsj. No access to verbnet at the moment. (from invert.01-v predicate notes)</note>
+         <note>INVERSION-N NOTES: invert.01 (from inversion.01-n)</note>
+      </roleset>
+   </predicate>
+</frameset>
