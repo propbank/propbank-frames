@@ -4,22 +4,25 @@
       <roleset id="bottom_out.01" name="reach the bottom">
          <aliases>
             <alias pos="v">bottom_out</alias>
+            <alias pos="n">bottoming_out</alias>
          </aliases>
          <roles>
             <role descr="thing reaching the bottom" f="PAG" n="0"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks/>
-         <example name="unmodified" src="">
+         <example name="bottom_out-v: unmodified" src="">
             <text>Freight rates are bottoming out and starting to rebound.</text>
             <rel relloc="3 4">bottoming out</rel>
             <arg end="1" f="" n="0" start="0">Freight rates</arg>
          </example>
-         <example name="with time and place" src="">
+         <example name="bottom_out-v: with time and place" src="">
             <text>He expects stocks to decline an additional 5% to 30%, with the Dow perhaps bottoming out between 2000 and 2100 ``between now and June.''</text>
             <rel relloc="14 15">bottoming out</rel>
             <arg end="12" f="" n="0" start="11">the Dow</arg>
@@ -28,6 +31,94 @@
             <arg end="23" f="TMP" n="M" start="20">``between now and June.''</arg>
          </example>
          <note>BOTTOM_OUT-V NOTES: Frames file for 'bottom (out)' based on sentences in financial subcorpus. No Verbnet entry. (from bottom.01-v predicate notes)</note>
+      </roleset>
+      <roleset id="bottom.02" name="underneath">
+         <aliases>
+            <alias pos="n">bottom</alias>
+            <alias pos="p">on_the_bottom_of</alias>
+            <alias pos="p">at_the_bottom_of</alias>
+            <alias pos="r">on_the_bottom</alias>
+            <alias pos="r">at_the_bottom</alias>
+         </aliases>
+         <roles>
+            <role descr="entity underneath" f="SE1" n="1"/>
+            <role descr="underneath what" f="SE2" n="2"/>
+            <role descr="anchor" f="ANC" n="3"/>
+            <role descr="axis" f="AXS" n="4"/>
+         </roles>
+         <usagenotes>
+            <usage resource="PropBank" version="3.4" inuse="-"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="on_the_bottom_of-p" src="Minecraft">
+            <text>Now on the top and bottom of the purple square, add one more purple brick.</text>
+            <rel relloc="1 2 5 6">on the bottom of</rel>
+            <arg end="9" f="" n="2" start="7">the purple square</arg>
+            <amr>
+            (a / add-02 :mode imperative
+             :ARG0 (y / you)
+             :ARG1 (b / brick :pl +
+                :color (p / purple)
+                :ARG1-of (h / have-quant-91
+                   :ARG2 1
+                   :ARG3 (m / more)))
+             :location (a2 / and
+                :op1 (s / space
+                   :ARG1-of (o / on-top-03
+                      :ARG2 (s3 / square
+                         :color (p2 / purple))))
+                :op2 (s2 / space
+                   :ARG1-of (b2 / bottom-02
+                      :ARG2 s3)))
+             :frequency (r / rate-entity-91
+                :ARG1 (b3 / brick :quant 1
+                   :ARG1-of (i2 / include-91
+                      :ARG2 b))
+                :ARG2 (s4 / space
+                   :ARG1-of (i3 / include-91
+                      :ARG2 a2))))
+            </amr>
+         </example>
+         <note>BOTTOM NOTES: Added for SpatialAMR.</note>
+      </roleset>
+      <roleset id="bottom.03" name="function as/be located within the bottom portion of a larger whole">
+         <aliases>
+            <alias pos="n">bottom</alias>
+            <alias pos="j">bottom</alias>
+            <alias pos="r">at_the_bottom</alias>
+         </aliases>
+         <roles>
+            <role descr="bottom entity" f="PRT" n="1"/>
+            <role descr="larger whole" f="WHL" n="2"/>
+            <role descr="anchor" f="ANC" n="3"/>
+            <role descr="axis" f="AXS" n="4"/>
+         </roles>
+         <usagenotes>
+            <usage resource="PropBank" version="3.4" inuse="-"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="bottom-j" src="Minecraft">
+            <text>Attach it to the bottom 3 blocks of the tower.</text>
+            <rel relloc="4">bottom</rel>
+            <arg end="6" f="" n="1" start="5">3 blocks</arg>
+            <arg end="9" f="" n="2" start="7">of the tower</arg>
+            <amr>
+            (a / attach-01 :mode imperative
+               :ARG0 (y / you)
+               :ARG1 (i2 / it)
+               :ARG2 (b / block :quant 3
+                 :ARG1-of (b2 / bottom-03)))
+            </amr>
+         </example>
+         <note>BOTTOM NOTES: Added for SpatialAMR.</note>
       </roleset>
    </predicate>
 </frameset>

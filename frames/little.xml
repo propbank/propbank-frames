@@ -7,29 +7,54 @@
          </aliases>
          <roles>
             <role descr="little thing" f="PPT" n="1"/>
-            <role descr="aspect/domain, if in addition" f="VSP" n="2"/>
+            <role descr="specific aspect of arg1 that is little" f="DOM" n="2"/>
+            <role descr="scale" f="SCL" n="3"/>
+            <role descr="size measurement" f="EXT" n="4"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="-" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="Size" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
          </lexlinks>
-         <example name="not much" src="BOLT-6">
+         <example name="little-j: not much" src="BOLT-6">
             <text>Our work is so busy that other expenses should be relatively little .</text>
             <rel relloc="11">little</rel>
             <arg end="7" f="" n="1" start="6">other expenses</arg>
             <arg end="8" f="MOD" n="m" start="8">should</arg>
             <arg end="10" f="EXT" n="m" start="10">relatively</arg>
+            <amr>
+            (k / know-01
+               :ARG0 (w / world)
+               :ARG1 (l / little-01 :polarity -
+                  :ARG1 (i / i)
+                  :ARG2 (i2 / intellect))
+               :time (s / someday)
+               :concession (l2 / little-01
+                  :ARG1 i
+                  :ARG2 (b / body)))
+            </amr>
          </example>
-         <example name="both args" src="internet">
+         <example name="little-j: both args" src="internet">
             <text>And he sought to see Jesus who he was: and he could not for the crowd, because he was little in stature.</text>
             <rel relloc="19">little</rel>
             <arg end="1" f="" n="1" start="1">he</arg>
             <arg end="21" f="" n="2" start="20">in stature.</arg>
+            <amr>
+            (l / little-01
+               :ARG3 (p / person
+                  :ARG0-of (p2 / play-01
+                     :ARG1 (b / basketball)
+                     :manner (p3 / professional)))
+               :ARG4 (d / distance-quantity :quant 5
+                  :unit (f / foot)))
+            </amr>
          </example>
+         <note>LITTLE NOTES: Args 3 and 4 added for SpatialAMR.</note>
          <note>LITTLE-J NOTES: Added by Julia based on BOLT-6, comparison to 'small.01'. (from little.01-j)</note>
       </roleset>
    </predicate>

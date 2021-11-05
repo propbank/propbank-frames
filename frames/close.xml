@@ -30,9 +30,11 @@
             </role>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="Openness" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
@@ -97,9 +99,11 @@
             </role>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="close-v.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">40</lexlink>
@@ -142,9 +146,11 @@
             </role>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="other_cos-45.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
@@ -178,9 +184,11 @@
             <role descr="target" f="GOL" n="2"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks/>
          <example name="close-v: here they come!" src="">
@@ -197,13 +205,16 @@
             <alias pos="j">close</alias>
          </aliases>
          <roles>
-            <role descr="entity located near something, close thing" f="PPT" n="1"/>
-            <role descr="location, close to what?" f="LOC" n="2"/>
+            <role descr="entity located near something, close thing" f="SE1" n="1"/>
+            <role descr="location, close to what?" f="SE2" n="2"/>
+            <role descr="scale" f="SCL" n="3"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks/>
          <example name="close-j: args 1 and 2" src="">
@@ -211,18 +222,31 @@
             <rel relloc="2">close</rel>
             <arg end="0" f="" n="1" start="0">He</arg>
             <arg end="6" f="" n="2" start="3">to getting the answer.</arg>
+            <amr>
+            (c / close-10
+               :ARG1 (h / he)
+               :ARG2 (g / get-01
+                  :ARG0 h
+                  :ARG1 (a / answer)))
+            </amr>
          </example>
          <example name="close-j: Tight" src="web">
             <text>These quarters are close!</text>
             <rel relloc="3">close!</rel>
             <arg end="1" f="" n="1" start="0">These quarters</arg>
          </example>
-         <example name="close-j: Physical, spatial" src="invented">
+         <example name="close-j: Physical, spatial" src="Spatial">
             <text>Hellems is close to the UMC.</text>
             <rel relloc="2">close</rel>
             <arg end="0" f="" n="1" start="0">Hellems</arg>
             <arg end="5" f="" n="2" start="3">to the UMC.</arg>
+            <amr>
+            (c / close-10
+               :ARG1 (b / building :name (n / name :op1 "Hellems"))
+               :ARG2 (b2 / building :name (n2 / name :op1 "UMC")))
+            </amr>
          </example>
+         <note>CLOSE NOTES: Arg3 added during spatialAMR.</note>
          <note>CLOSE-J NOTES: Roleset based on AMR instances. Closely related to verb-close.06, but different Aktionsart. More than just causation. (from close.01-j)</note>
          <note>CLOSER-J NOTES: Automatically created by Julia as an alias file for unification. (from closer.01-j)</note>
       </roleset>
@@ -235,9 +259,11 @@
             <role descr="original, what arg1 is similar-to" f="PPT" n="2"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <example name="close-j: All args" src="BOLT P01, parts 2,3">
             <text>A politically biased press operating outside the law must be pretty close to treason .</text>
@@ -265,9 +291,11 @@
             <role descr="case, vote, decision" f="PPT" n="1"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="Clarity_of_resolution" confidence="0.0" resource="FrameNet" src="manual+strict-conv" version="UNK"/>
@@ -296,9 +324,11 @@
             <role descr="affectionate with whom?" f="COM" n="2"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="Social_connection" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
@@ -332,10 +362,11 @@
           </rolelinks>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="-" />
-            <usage resource="AMR" version="2019" inuse="-" />
-            <usage resource="AMR" version="THYME 1.0" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="Attention" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
@@ -362,9 +393,11 @@
             </role>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="close-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">6</lexlink>
@@ -394,9 +427,11 @@
             <role descr="anti-beneficiary" f="GOL" n="2"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <example name="close_off-v: spam spam spam, glorious spam" src="">
             <text>``Why anyone would want [*] to close themselves off (from direct mail), a priori, doesn't make any sense,'' says Michael Bronner of Bronner Slosberg Associates, a Boston directmail firm.</text>
@@ -418,9 +453,11 @@
             <role descr="target" f="GOL" n="2"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="close-v.4" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
@@ -444,9 +481,11 @@
             <role descr="thing becoming sealed" f="PPT" n="1"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <example name="close_over-v: clumsy tourists" src="internet">
             <text>They closed over the mound excavation to keep tourists from falling in.</text>
@@ -476,9 +515,11 @@
             <role descr="place/thing being closed up" f="PPT" n="1"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <example name="close_up-v: ergative" src="BOLT">
             <text>Their merchandise was never really that good and the store is closing up very soon , but still , I 'm never going to get over that poor old copy of Windows sitting alone , priced where no one would buy it .</text>

@@ -32,9 +32,11 @@
             </role>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="Placing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
@@ -55,7 +57,7 @@
             <arg end="28" f="" n="2" start="27">on *trace*-1</arg>
             <arg end="32" f="ADV" n="m" start="29">from retirement funds alone.</arg>
          </example>
-         <example name="ARG0 and ARG1 and ARG2" src="ontonotes pt/nt/44/nt_4406">
+         <example name="lay-v: ARG0 and ARG1 and ARG2" src="ontonotes pt/nt/44/nt_4406">
             <text>Then they put these men before the apostles , who prayed and laid their hands on them .</text>
             <rel relloc="12">laid</rel>
             <arg end="7" f="" n="0" start="6">the apostles</arg>
@@ -104,9 +106,11 @@
             <role descr="entity getting laid (most common arg)" f="PPT" n="1"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks/>
          <example name="lay-v: both args" src="internet">
@@ -124,7 +128,7 @@
       </roleset>
    </predicate>
    <predicate lemma="lie">
-      <roleset id="lie.07" name="assume a horizontal position, more generally 'exist', existing">
+      <roleset id="lie.07" name="(cause to) be in a horizontal position, more generally 'exist', existing">
          <aliases>
             <alias pos="v">lie</alias>
             <alias pos="n">lying</alias>
@@ -150,11 +154,15 @@
                   <rolelink class="assuming_position-50" resource="VerbNet" version="verbnet3.4">location</rolelink>
                </rolelinks>
             </role>
+            <role descr="orientation" f="ORT" n="3"/>
+            <role descr="primary prone axis" f="AXS" n="4"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="Posture" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
@@ -172,13 +180,74 @@
             <arg end="0" f="DIS" n="m" start="0">But</arg>
             <arg end="9" f="" n="1" start="1">any chance for prices to surge above fair value</arg>
             <arg end="21" f="" n="2" start="11">in the speculation that accompanies a vigorous merger and buy-out business,</arg>
+            <amr>
+            (a / and
+              :op1 (c / contrast-01
+                :ARG2 (l / lie-07
+                  :ARG1 (c3 / chance-02
+                    :ARG1 (s / surge-01
+                      :ARG1 (p / price-01)
+                      :ARG4 (t / thing
+                        :ARG1-of (a2 / above-01
+                          :ARG2 (t2 / thing
+                            :ARG2-of (v / value-01
+                              :ARG1-of (f / fair-01))))))
+                    :mod (a5 / any))
+                  :ARG2 (s2 / speculate-01
+                    :ARG0-of (a3 / accompany-01
+                      :ARG1 (b / business
+                        :mod (v2 / vigorous)
+                        :mod (a4 / and
+                          :op1 (m / merge-01)
+                          :op2 (b2 / buy-out-03)))))))
+              :op2 (d / dampen-02
+                :ARG0 (c2 / company :wiki "UAL_Corporation" :name (n / name :op1 "UAL"))
+                :ARG1 c3
+                :ARG1-of (o / obvious-01)))
+            </amr>
          </example>
-         <example name="ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1057">
+         <example name="lie-v: ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1057">
             <text>What treasures lie within ?</text>
             <rel relloc="2">lie</rel>
             <arg end="1" f="" n="1" start="0">What treasures</arg>
             <arg end="3" f="" n="2" start="3">within</arg>
+            <amr>
+            (l / lie-07
+               :ARG1 (t / treasure
+                  :mod (a / amr-unknown))
+               :ARG2 (s / space
+                  :ARG1-of (i2 / inside-01)))
+            </amr>
          </example>
+         <example name="lie-v" src="Minecraft">
+            <text>no , *PRO* lying flat</text>
+            <rel relloc="3">lying</rel>
+            <arg end="2" f="" n="1" start="2">*PRO*</arg>
+            <arg end="4" f="MNR" n="m" start="4">flat</arg>
+            <amr>
+            (a / and
+               :op1 (c / confirm-01 :polarity -)
+               :op2 (l / lie-07
+                  :ARG3 (f / flat-06)))
+            </amr>
+         </example>
+         <example name="lie-v" src="Minecraft">
+            <text>all the blocks lie on the ground</text>
+            <rel relloc="3">lie</rel>
+            <arg end="2" f="" n="1" start="0">all the blocks</arg>
+            <arg end="6" f="" n="2" start="4">on the ground</arg>
+            <amr>
+            (l / lie-07
+               :ARG1 (b / block :pl +
+                  :mod (a / all))
+               :ARG2 (s / space
+                  :ARG1-of (o / on-top-03
+                     :ARG2 (g / ground)
+                     :ARG3 (c / cartesian-framework-91
+                        :ARG1 (b2 / build-space)))))
+            </amr>
+         </example>
+         <note>LIE NOTES: Args 3 and 4 added for SpatialAMR.</note>
          <note>LIE-V NOTES: Frames file for 'lie' based on sentences in financial subcorpus. Verbnet classes assuming_position-50 spatial_configuration-47.6, which ignores one major sense. Comparison to 'lay' and 'sit' (from lie.01-v predicate notes)</note>
          <note>LYING-J NOTES: Added by Julia based on medi-tmprl1to8. (from lying.01-j)</note>
       </roleset>
@@ -207,9 +276,11 @@
             </role>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="Prevarication" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
@@ -268,9 +339,11 @@
             <role descr="thing employed" f="PPT" n="1"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks/>
          <example name="lay_on-v" src="">
@@ -305,9 +378,11 @@
             </role>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="remove-10.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
@@ -330,9 +405,11 @@
             <role descr="activity ceased" f="PPT" n="1"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks/>
          <example name="lay_off-v: leave alone" src="">
@@ -355,9 +432,11 @@
             <role descr="relaxed/casual entity" f="PPT" n="1"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks/>
          <example name="laid_back-j" src="SMS">
@@ -393,9 +472,11 @@
             </role>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="assuming_position-50" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
@@ -429,9 +510,11 @@
             <role descr="installed where" f="LOC" n="2"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="-" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
          </usagenotes>
          <lexlinks/>
          <example name="lay_down-v" src="">
@@ -453,9 +536,11 @@
             <role descr="mother or lazy person" f="PPT" n="1"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks/>
          <example name="lie_in-v: Command, LVC" src="BOLT Part 4">
@@ -483,9 +568,11 @@
             <role descr="thing proven false" f="PPT" n="1"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="-" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
          </usagenotes>
          <lexlinks/>
          <example name="give_lie-m" src="">

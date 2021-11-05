@@ -4,6 +4,7 @@
       <roleset id="angle.01" name="move on an angled trajectory">
          <aliases>
             <alias pos="v">angle</alias>
+            <alias pos="n">angling</alias>
          </aliases>
          <roles>
             <role descr="entity in motion" f="PPT" n="0">
@@ -27,9 +28,11 @@
             </role>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="Motion_directional" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
@@ -37,40 +40,109 @@
             <lexlink class="meander-47.7" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
             <lexlink class="meander-47.7" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
          </lexlinks>
-         <example name="Impolite visitors" src="Impolite visitors">
+         <example name="angle-v: Impolite visitors" src="">
             <text> His visitors had crawled through the south fence and were crossing the meadow angling toward the house.</text>
             <rel relloc="14">angling</rel>
             <arg end="2" f="" n="0" start="1">His visitors</arg>
             <arg end="17" f="" n="1" start="15">toward the house.</arg>
+            <amr>
+            (a / and
+               :op1 (c / crawl-01
+                  :ARG0 (p / person :pl +
+                     :ARG0-of (v / visit-01
+                  :ARG1 (s / she)))
+                     :ARG1 (t / trajectory
+                        :ARG4-of (t2 / through-01
+                           :ARG2 (f / fence
+                              :ARG1-of (s2 / south-01
+                                 :ARG3 (c2 / cartesian-framework-91
+                                    :ARG1 (c3 / cartographic-pole)))))))
+               :op2 (c4 / cross-02
+                  :ARG0 p
+                  :ARG1 (m / meadow)
+                  :manner (a2 / angle-01
+                     :ARG0 p
+                     :ARG1 (t3 / trajectory
+                        :ARG4-of (t4 / toward-01
+                           :ARG2 (h / house))))))
+            </amr>
          </example>
          <note>ANGLE-V NOTES: Created by Claire (from angle.01-v)</note>
       </roleset>
       <roleset id="angle.02" name="cause to be/move in an angular fashion">
          <aliases>
             <alias pos="v">angle</alias>
+            <alias pos="n">angle</alias>
+            <alias pos="j">angled</alias>
+            <alias pos="j">at_an_angle</alias>
+            <alias pos="p">at_an_angle_to</alias>
          </aliases>
          <roles>
-            <role descr="Agent, cause" f="PAG" n="0"/>
-            <role descr="Entity now in an angled position/path of motion" f="PPT" n="1"/>
-            <role descr="Description of position/path" f="DIR" n="2"/>
+            <role descr="agent, cause" f="PAG" n="0"/>
+            <role descr="entity angled" f="SE1" n="1">
+               <rolelinks>
+                  <rolelink resource="FrameNet" class="Path_shape" version="1.7">road</rolelink>
+                  <rolelink resource="FrameNet" class="Motion_directional" version="1.7">theme</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="path, axis" f="DIR" n="2">
+               <rolelinks>
+                  <rolelink resource="FrameNet" class="Path_shape" version="1.7">path</rolelink>
+                  <rolelink resource="FrameNet" class="Motion_directional" version="1.7">path</rolelink>
+               </rolelinks>
+            </role>
+            <role descr="compared to what entity" f="SE2" n="3"/>
+            <role descr="angle measurement" f="ANG" n="4"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="Motion_directional" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
             <lexlink class="Path_shape" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
          </lexlinks>
-         <example name="All Arguments" src="All Arguments">
+         <example name="angle-v: All Arguments" src="">
             <text>She angled her lens out of the bushes so that she could get a shot of him.</text>
             <rel relloc="1">angled</rel>
             <arg end="0" f="" n="0" start="0">She</arg>
             <arg end="3" f="" n="1" start="2">her lens</arg>
             <arg end="7" f="" n="2" start="4">out of the bushes</arg>
             <arg end="16" f="PRP" n="m" start="8">so that she could get a shot of him.</arg>
+            <amr>
+            (a / angle-02
+               :ARG0 (s / she)
+               :ARG1 (l / lens
+                  :poss s)
+               :ARG2 (t / trajectory
+                  :ARG5-of (o / out-08
+                     :ARG4 (b / bush :pl +)))
+               :purpose (p / possible-01
+                  :ARG1 (s2 / shoot-03
+                     :ARG0 s
+                     :ARG1 (h / he))))
+            </amr>
          </example>
+         <example name="at_an_angle_to-p" src="">
+            <text>One cable is at an angle to the horizon and the other is horizontal to the ground .</text>
+            <rel relloc="1">at an angle</rel>
+            <arg end="0" f="" n="0" start="0">She</arg>
+            <amr>
+            (a / and
+              :op1 (a2 / angle-02
+                :ARG1 (c / cable :quant 1)
+                :ARG3 (h / horizon))
+              :op2 (h2 / horizontal-01
+                :ARG1 (c2 / cable
+                  :ARG1-of (o / other-01
+                    :ARG2 c))
+                :ARG4 (g / ground)))
+            </amr>
+         </example>
+         <note>ANGLE NOTES: Args 3 and 4 added for spatialAMR.</note>
          <note>ANGLE-V NOTES: Created by Claire (from angle.02-v)</note>
       </roleset>
    </predicate>

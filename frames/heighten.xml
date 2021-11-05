@@ -21,9 +21,11 @@
             </role>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="other_cos-45.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
@@ -51,39 +53,74 @@
       </roleset>
    </predicate>
    <predicate lemma="high">
-      <roleset id="high.02" name="in the upper ranges (altitude, pitch, etc)">
+      <roleset id="high.02" name="location: Arg1 is located (probably far) upward within a substance/space">
          <aliases>
             <alias pos="j">high</alias>
             <alias pos="j">higher</alias>
             <alias pos="n">height</alias>
          </aliases>
          <roles>
-            <role descr="entity in the upper ranges" f="PPT" n="1"/>
-            <role descr="the upper ranges of what (domain)" f="VSP" n="2"/>
+            <role descr="thing located up high" f="SE1" n="1"/>
+            <role descr="high in what substance/space/domain" f="LOC" n="2"/>
+            <role descr="height measurement" f="EXT" n="3"/>
+            <role descr="scale" f="SCL" n="4"/>
+            <role descr="axis" f="AXS" n="5"/>
+            <role descr="anchor" f="ANC" n="6"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="Position_on_a_scale" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
-            <lexlink class="Dimension" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
-            <lexlink class="Measurable_attributes" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
          </lexlinks>
-         <example name="arg1" src="BOLT-1">
+         <example name="height-n" src="Spatial">
+            <text>The airplane is at a height of 30,000 ft .</text>
+            <rel relloc="16">height</rel>
+            <arg end="8" f="" n="2" start="6">of 30,000 ft</arg>
+            <amr>
+            (h / high-02
+               :ARG1 (a / airplane)
+               :ARG3 (d / distance-quantity :quant 30000
+                  :unit (f / foot)))
+            </amr>
+         </example>
+         <example name="high-j: arg1" src="BOLT-1">
             <text>This manifests into the devastation we often see in neighborhoods , where-1 the poverty rate is high [*-1].</text>
             <rel relloc="16">high</rel>
             <arg end="14" f="" n="1" start="12">the poverty rate</arg>
             <arg end="17" f="LOC" n="m" start="17">[*-1].</arg>
+            <amr>
+            (m / manifest-01
+              :ARG1 (t / this)
+              :ARG3 (d / devastate-01
+                :ARG1-of (s / see-01
+                  :ARG0 (w / we)
+                  :frequency (o / often))
+                :location (n / neighborhood :pl +
+                  :location-of (h / high-02
+                    :ARG1 (r / rate
+                      :mod (p / poverty))))))
+            </amr>
          </example>
-         <example name="wide range of arg2s" src="internet">
+         <example name="high-j: wide range of arg2s" src="internet">
             <text>Orchid Beach penthouse is high in altitude, price and glamour</text>
             <rel relloc="4">high</rel>
             <arg end="2" f="" n="1" start="0">Orchid Beach penthouse</arg>
             <arg end="9" f="" n="2" start="5">in altitude, price and glamour</arg>
+            <amr>
+            (h / high-02
+               :ARG1 (b / building :name (n / name :op1 "Orchid" :op2 "Beach" :op3 "penthouse"))
+               :ARG2 (a / and
+                  :op1 (a2 / altitude)
+                  :op2 (p / price-01)
+                  :op3 (g / glamour)))
+            </amr>
          </example>
-         <example name="argMs, lexicalized comparative alias" src="BOLT-1">
+         <example name="higher-j: argMs, lexicalized comparative alias" src="BOLT-1">
             <text>The reason specific ethnic groups are targeted for trying to reduce crime is because , for whatever reason , crime overall is often higher statistically in these groups .</text>
             <rel relloc="23">higher</rel>
             <arg end="17" f="CAU" n="m" start="15">for whatever reason</arg>
@@ -91,7 +128,27 @@
             <arg end="22" f="TMP" n="m" start="22">often</arg>
             <arg end="24" f="ADV" n="m" start="24">statistically</arg>
             <arg end="27" f="LOC" n="m" start="25">in these groups</arg>
+            <amr>
+            (c / cause-01
+               :ARG0 (h / have-degree-91
+                  :ARG1 c2
+                  :ARG2 (h2 / high-02
+                     :mod (s2 / statistics)
+                     :frequency (o2 / often))
+                  :ARG3 (m / more)
+                  :ARG1-of (c4 / cause-01
+                     :ARG0 (w / whatever)))
+               :ARG1 (t / target-01
+                  :ARG1 (e / ethnic-group :pl +
+                     :ARG2-of (s / specific-02))
+                  :ARG2 (t2 / try-01
+                     :ARG1 (r / reduce-01
+                        :ARG1 (c2 / crime-02
+                           :mod e
+                           :mod (o3 / overall))))))
+            </amr>
          </example>
+         <note>HIGH NOTES: Updated for Spatial AMR; This roleset was split (--> high.05) to accommodate the difference between location and dimension-measurement senses.</note>
          <note>HIGH-J NOTES: Added by Julia based on BOLT-1, corresponds somewhat to heighten-v.01. (from high.01-j)</note>
          <note>HIGHER-J NOTES: Automatically created by Julia as an alias file for unification. (from higher.01-j)</note>
       </roleset>
@@ -104,12 +161,14 @@
             <role descr="elated entity" f="PPT" n="1"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks/>
-         <example name="That's a little harsh, but both args." src="internet">
+         <example name="high-j: That's a little harsh, but both args." src="internet">
             <text>Still *PRO* Feeling high from that Toy Story 3 trailer? Well, get ready to be disapointed.</text>
             <rel relloc="3">high</rel>
             <arg end="0" f="TMP" n="m" start="0">Still</arg>
@@ -127,20 +186,70 @@
             <role descr="stoner" f="PPT" n="1"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="Intoxication" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
          </lexlinks>
-         <example name="both args" src="internet">
+         <example name="high-j: both args" src="internet">
             <text>Man runs into Ross Campground Church, announces he's high on &quot;bath salts&quot;</text>
             <rel relloc="8">high</rel>
             <arg end="7" f="" n="1" start="7">he's</arg>
             <arg end="11" f="" n="0" start="9">on &quot;bath salts&quot;</arg>
          </example>
          <note>HIGH-J NOTES: Added by Julia based on WordNet. (from high.03-j)</note>
+      </roleset>
+      <roleset id="high.05" name="dimension: Arg1 has a quantifiable dimension 'height'">
+         <aliases>
+            <alias pos="n">height</alias>
+            <alias pos="j">high</alias>
+         </aliases>
+         <roles>
+            <role descr="entity with a height dimension" f="SE1" n="1"/>
+            <role descr="height measurement" f="EXT" n="2"/>
+            <role descr="axis measured" f="AXS" n="3"/>
+            <role descr="height measurement" f="ANC" n="4"/>
+         </roles>
+         <usagenotes>
+            <usage resource="PropBank" version="3.4" inuse="-"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+         </usagenotes>
+         <lexlinks>
+            <lexlink class="Dimension" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+            <lexlink class="Measurable_attributes" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+         </lexlinks>
+         <example name="high-j" src="Spatial">
+            <text>The book case is 10 feet high</text>
+            <rel relloc="6">high</rel>
+            <arg end="8" f="" n="2" start="6">of 30,000 ft</arg>
+            <amr>
+            (h / high-05
+               :ARG1 (b / bookcase)
+               :ARG2 (d / distance-quantity :quant 10
+                 :unit (f / foot)))
+            </amr>
+         </example>
+         <example name="height-n" src="Spatial">
+            <text>His height is 6 foot 4 inches .</text>
+            <rel relloc="1">height</rel>
+            <arg end="0" f="" n="1" start="0">his</arg>
+            <arg end="6" f="" n="2" start="3">6 foot 4 inches</arg>
+            <amr>
+            (h / high-05
+               :ARG1 (h2 / he)
+               :ARG2 (a / and
+                  :op1 (d / distance-quantity :quant 10 :unit (f / foot))
+                  :op2 (d2 / distance-quantity :quant 4 :unit (i2 / inch))))
+            </amr>
+         </example>
+         <note>HIGH NOTES: split off from high.02 to distinguish dimension-measurement sense from location sense.</note>
       </roleset>
    </predicate>
 </frameset>

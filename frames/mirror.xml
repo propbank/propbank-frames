@@ -1,28 +1,61 @@
 <?xml version="1.0" ?>
 <frameset>
    <predicate lemma="mirror">
-      <roleset id="mirror.01" name="cast an image back, reflect">
+      <roleset id="mirror.01" name="reflect, mimic, cast an image back">
          <aliases>
             <alias pos="v">mirror</alias>
+            <alias pos="n">mirroring</alias>
          </aliases>
          <roles>
-            <role descr="thing casting a reflection" f="PPT" n="1"/>
-            <role descr="surface casting the reflection, image being reflected" f="GOL" n="2"/>
+            <role descr="external agent" f="PAG" n="0"/>
+            <role descr="the original, entity whose image is recreated" f="SE1" n="1"/>
+            <role descr="the mirror image, the reflection, the copy (usually subject)" f="SE2" n="2"/>
+            <role descr="axis/plane of symmetry (akin to the mirror's surface)" f="PLN" n="3"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="mirror-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">9</lexlink>
          </lexlinks>
-         <example name="arg2 subject" src="">
+         <example name="mirror-v: arg2 subject" src="">
             <text>Analysts said the company's troubles mirror those of the industry.</text>
             <rel relloc="5">mirror</rel>
             <arg end="4" f="" n="2" start="2">the company's troubles</arg>
             <arg end="9" f="" n="1" start="6">those of the industry.</arg>
          </example>
+         <example name="mirror-v: Arg0" src="Minecraft">
+            <text>Yeah it 's symmetrical so yeah I guess you can just mirror it on the 4th column</text>
+            <rel relloc="11">mirror</rel>
+            <arg end="8" f="" n="0" start="8">you</arg>
+            <arg end="9" f="MOD" n="m" start="9">can</arg>
+            <arg end="10" f="ADV" n="m" start="10">just</arg>
+            <arg end="12" f="" n="1" start="12">it</arg>
+            <arg end="16" f="" n="3" start="13">on the 4th column</arg>
+            <amr>
+            (c / cause-01
+               :ARG0 (s / symmetric-01
+                  :ARG1 (i2 / it)
+                  :ARG1-of (c2 / confirm-01))
+               :ARG1 (g / guess-01
+                  :ARG0 (i / i)
+                  :ARG1 (p / possible-01
+                     :ARG1 (m / mirror-01
+                        :ARG0 (y / you)
+                        :ARG1 (i3 / it
+                           :part-of i2)
+                        :ARG3 (c4 / column
+                           :ord (o / ordinal-entity :value 4
+                              :range i2)
+                           :part-of i2)
+                        :mod (j / just)))))
+            </amr>
+         </example>
+         <note>MIRROR NOTES: Roleset updated for SpatialAMR to accommodate an agent and also try to address some of the old awkwardness described in the comment below.</note>
          <note>MIRROR-V NOTES: This roleset id=&quot;mirror.02&quot; makes sense for reflect, but less so for mirror. Hmmm. (from mirror.01-v)</note>
       </roleset>
    </predicate>

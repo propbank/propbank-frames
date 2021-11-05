@@ -4,6 +4,7 @@
       <roleset id="distance.01" name="cause distance between two things">
          <aliases>
             <alias pos="v">distance</alias>
+            <alias pos="n">distancing</alias>
          </aliases>
          <roles>
             <role descr="causer of distance" f="PAG" n="0"/>
@@ -11,9 +12,11 @@
             <role descr="second thing" f="PPT" n="2"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="distance-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
@@ -35,13 +38,16 @@
          </aliases>
          <roles>
             <role descr="causer of distance" f="PAG" n="0"/>
-            <role descr="first distant thing" f="PPT" n="1"/>
-            <role descr="second thing, distant from what" f="PPT" n="2"/>
+            <role descr="first distant thing" f="SE1" n="1"/>
+            <role descr="second thing, distant from what" f="SE2" n="2"/>
+            <role descr="scale" f="SCL" n="3"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks/>
          <example name="distant-j" src="">
@@ -49,7 +55,20 @@
             <rel relloc="8">distant</rel>
             <arg end="6" f="" n="1" start="6">it</arg>
             <arg end="14" f="" n="2" start="9">from the subway station and restaurants</arg>
+            <amr>
+            (i2 / ideal :polarity -
+              :domain (l / location
+                :ARG2-of (b / be-located-at-91))
+              :ARG1-of (c / cause-01
+                :ARG0 (d / distant-02
+                  :ARG1 l
+                  :ARG2 (a / and
+                    :op1 (s / station
+                      :mod (s2 / subway))
+                    :op2 (r / restaurant :pl +)))))
+            </amr>
          </example>
+         <note>DISTANT NOTES: Arg3 added for SpatialAMR, THYME-AMR. </note>
          <note>DISTANT-J NOTES: Added by Julia based on SHARP-SRED. (from distant.01-j)</note>
       </roleset>
    </predicate>

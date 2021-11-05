@@ -1,55 +1,58 @@
 <?xml version="1.0" ?>
 <frameset>
    <predicate lemma="orient">
-      <roleset id="orient.01" name="to adjust or focus, focusing on">
+      <roleset id="orient.01" name="adjust or focus on; position so that the axes of the object have some relation to the axes of the space">
          <aliases>
-            <alias pos="n">orientation</alias>
             <alias pos="v">orient</alias>
+            <alias pos="n">orientation</alias>
             <alias pos="j">oriented</alias>
          </aliases>
          <roles>
-            <role descr="agent of focus, adjustment" f="PAG" n="0"/>
-            <role descr="entity focused, oriented" f="PPT" n="1"/>
-            <role descr="focused on, oriented towards" f="GOL" n="2"/>
-            <role descr="specific aspect of arg1 oriented" f="VSP" n="3"/>
+            <role descr="agent" f="PAG" n="0"/>
+            <role descr="entity oriented" f="SE1" n="1"/>
+            <role descr="oriented towards" f="GOL" n="2"/>
+            <role descr="specific aspect/part of arg1 adjusted in relation to arg2" f="PRT" n="3"/>
+            <role descr="orientation" f="ORT" n="4"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks/>
-         <example name="passive" src="">
+         <example name="orient-v: passive" src="">
             <text>But if his explanation of motivation is true , why is his investigation so oriented [*]as [*] to identify criminal activity [] ?</text>
             <rel relloc="14">oriented</rel>
             <arg end="13" f="ADV" n="m" start="13">so</arg>
             <arg end="12" f="" n="1" start="11">his investigation</arg>
             <arg end="20" f="PNC" n="m" start="16">[*] to identify criminal activity</arg>
          </example>
-         <example name="Adjectival usage" src="">
+         <example name="oriented-j: Adjectival usage" src="">
             <text>Patient is oriented times three.</text>
             <rel relloc="2">oriented</rel>
             <arg end="0" f="" n="1" start="0">Patient</arg>
             <arg end="4" f="ADV" n="m" start="3">times three.</arg>
          </example>
-         <example name="just arg3" src="BOLT">
+         <example name="orientation-n: just arg3" src="BOLT">
             <text>When are people going to realise that sexual orientation , skin colour and ethnicity has no bearing on what is inside the person and their personality .</text>
             <rel relloc="8">orientation</rel>
             <arg end="7" f="" n="3" start="7">sexual</arg>
          </example>
-         <example name="args 1 and 3" src="internet">
+         <example name="orientation-n: args 1 and 3" src="internet">
             <text>Avoid making your child's whole identity about his sexual orientation.</text>
             <rel relloc="9">orientation.</rel>
             <arg end="7" f="" n="1" start="7">his</arg>
             <arg end="8" f="" n="3" start="8">sexual</arg>
          </example>
-         <example name="another arg1 and 3" src="internet">
+         <example name="orientation-n: another arg1 and 3" src="internet">
             <text>A study was made of how the economic orientation of an organi- zation can influence its innovativeness.</text>
             <rel relloc="8">orientation</rel>
             <arg end="7" f="" n="3" start="7">economic</arg>
             <arg end="12" f="" n="1" start="9">of an organi- zation</arg>
          </example>
-         <example name="args 1, 2" src="internet">
+         <example name="orientation-n: args 1, 2" src="internet">
             <text>By proper orientation of the sail towards the Sun during each orbit, the orbital energy can be increased, such that the solar sail spacecraft raises its orbit.</text>
             <rel relloc="2">orientation</rel>
             <arg end="1" f="MNR" n="m" start="1">proper</arg>
@@ -57,10 +60,43 @@
             <arg end="8" f="" n="2" start="6">towards the Sun</arg>
             <arg end="11" f="TMP" n="m" start="9">during each orbit,</arg>
          </example>
+         <example name="orient-v: with Arg4" src="">
+            <text>The nail is oriented horizontally.</text>
+            <rel relloc="3">oriented</rel>
+            <arg end="1" f="" n="1" start="0">the nail</arg>
+            <arg end="4" f="" n="4" start="4">horizontally</arg>
+            <amr>
+            (o / orient-01
+               :ARG1 (n / nail)
+               :ARG4 (h / horizontal-01
+                  :ARG1 n))
+            </amr>
+         </example>
+         <example name="orient-v: with args2 and 3" src="">
+            <text>They oriented him with his back to the wall.</text>
+            <rel relloc="1">oriented</rel>
+            <arg end="0" f="" n="0" start="0">they</arg>
+            <arg end="2" f="" n="1" start="2">him</arg>
+            <arg end="5" f="" n="3" start="4">his back</arg>
+            <arg end="8" f="" n="2" start="6">to the wall</arg>
+            <amr>
+            (o / orient-01
+               :ARG0 (t / they)
+               :ARG1 (h / he)
+               :ARG2 (w / wall)
+               :ARG3 (t2 / thing
+                  :ARG1-of (b / back-03
+                     :ARG2 h
+                     :ARG3 (c / cartesian-framework-91
+                        :ARG1 h
+                        :FR (i2 / intrinsic)))))
+            </amr>
+         </example>
+         <note>ORIENT NOTES: Roleset expanded for spatialAMR to be used as a general-semantic reification of the new :orientation role. Arg4 added to accommodate this.</note>
          <note>ORIENT-V NOTES: Frames file for 'orient' based on survey of sentences in the WSJ corpus. (from orient.01-v predicate notes)</note>
          <note>ORIENTATION-N NOTES: Added by Julia based on BOLT, orient.01. No VNcls. (from orientation.01-n)</note>
          <note>ORIENTED-J NOTES: Automatically created by Julia as an alias file for unification. (from oriented.01-j)</note>
-         <note>Args 2 and 3 due to occurance with nominalization (from orientation.01-n)</note>
+         <note>Args 2 and 3 due to occurence with nominalization (from orientation.01-n)</note>
       </roleset>
    </predicate>
 </frameset>

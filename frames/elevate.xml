@@ -28,16 +28,18 @@
             </role>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="put_direction-9.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
             <lexlink class="elevate-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">10</lexlink>
             <lexlink class="put_direction-9.4" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
          </lexlinks>
-         <example name="all arguments" src="">
+         <example name="elevate-v: all arguments" src="">
             <text>The bill also elevates even minor rule infractions to felonies and provides for recovery of punitive damages in civil lawsuits and arbitration cases without any showing of willful misconduct .</text>
             <rel relloc="3">elevates</rel>
             <arg end="1" f="" n="0" start="0">The bill</arg>
@@ -45,21 +47,21 @@
             <arg end="7" f="" n="1" start="4">even minor rule infractions</arg>
             <arg end="9" f="" n="2" start="8">to felonies</arg>
          </example>
-         <example name="All Args" src="">
+         <example name="elevation-n: All Args" src="">
             <text>The officials' elevation of the disaster to a level 14 disaster predictably caused panic.</text>
             <rel relloc="2">elevation</rel>
             <arg end="1" f="" n="0" start="0">The officials'</arg>
             <arg end="5" f="" n="1" start="3">of the disaster</arg>
             <arg end="10" f="" n="2" start="6">to a level 14 disaster</arg>
          </example>
-         <example name="Args 1 and 2" src="">
+         <example name="elevate-v: Args 1 and 2" src="">
             <text>Velocities are elevated to 196 cm/sec in the left distal common or proximal external iliac artery.</text>
             <rel relloc="2">elevated</rel>
             <arg end="0" f="" n="1" start="0">Velocities</arg>
             <arg end="5" f="" n="2" start="3">to 196 cm/sec</arg>
             <arg end="15" f="LOC" n="m" start="6">in the left distal common or proximal external iliac artery.</arg>
          </example>
-         <example name="static endpoint" src="">
+         <example name="elevated-j: static endpoint" src="">
             <text>The CEA is elevated at 7.8 although patient was a long-time smoker.</text>
             <rel relloc="3">elevated</rel>
             <arg end="1" f="" n="1" start="0">The CEA</arg>
@@ -70,6 +72,46 @@
          <note>ELEVATION-N NOTES: Corresponds with elevate.01 (from elevation.01-n)</note>
          <note>ELEVATED-J NOTES: Based on Thyme and Sharp data. Comparison to elevate.01. Elevate.01 is a member of Vn class put_direction-9.4. Framed by Katie. (from elevated.01-j)</note>
          <note>In 'What is the elevation of Denver?&quot; 'elevation' is not eventive. (from elevation.01-n)</note>
+      </roleset>
+   </predicate>
+   <predicate lemma="elevation">
+      <roleset id="elevation.02" name="location: have an altitude measurement">
+         <aliases>
+            <alias pos="n">elevation</alias>
+         </aliases>
+         <roles>
+            <role descr="entity with an altitude measurement" f="SE1" n="1"/>
+            <role descr="elevation in what substance/space" f="LOC" n="2"/>
+            <role descr="elevation measurement" f="EXT" n="3"/>
+         </roles>
+         <usagenotes>
+            <usage resource="PropBank" version="3.4" inuse="-"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="elevation-n" src="Minecraft">
+            <text>place 2 more towers at the same elevation of the purple structure </text>
+            <rel relloc="7">elevation</rel>
+            <arg end="6" f="ADJ" n="m" start="6">same</arg>
+            <arg end="11" f="" n="1" start="8">of the purple structure</arg>
+            <amr>
+            (p / place-01 :mode imperative
+               :ARG0 (y / you)
+               :ARG1 (t / tower
+                 :ARG1-of (h / have-quant-91
+                   :ARG2 2
+                   :ARG3 (m / more)))
+               :ARG2 (s / space :pl +
+                 :ARG1-of (s2 / same-01
+                   :ARG2 (s3 / structure
+                     :color (p2 / purple))
+                   :ARG3 (e / elevation-02))))
+            </amr>
+         </example>
+         <note>ELEVATION NOTES: Added for SpatialAMR.</note>
       </roleset>
    </predicate>
 </frameset>

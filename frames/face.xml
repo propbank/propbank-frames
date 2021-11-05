@@ -6,25 +6,30 @@
             <alias pos="v">face</alias>
          </aliases>
          <roles>
-            <role descr="looker, facer" f="PAG" n="0">
+            <role descr="looker, facer" f="SE1" n="0">
                <rolelinks>
                   <rolelink class="confront-98" resource="VerbNet" version="verbnet3.3">agent</rolelink>
                   <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">agent</rolelink>
                   <rolelink class="confront-98" resource="VerbNet" version="verbnet3.4">agent</rolelink>
                </rolelinks>
             </role>
-            <role descr="looked at, faced" f="PPT" n="1">
+            <role descr="looked at, faced" f="SE2" n="1">
                <rolelinks>
                   <rolelink class="confront-98" resource="VerbNet" version="verbnet3.3">theme</rolelink>
                   <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">destination</rolelink>
                   <rolelink class="confront-98" resource="VerbNet" version="verbnet3.4">theme</rolelink>
                </rolelinks>
             </role>
+            <role descr="the 'face' of arg1; the part aimed at arg2 (if in addition to arg0)" f="PRT1" n="2"/>
+            <role descr="anchor; which framework is used to designate the 'face'" f="PRT1" n="3"/>
+            <role descr="the 'face' of the thing being faced" f="PRT2" n="4"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="Confronting_problem" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
@@ -42,7 +47,7 @@
             <arg end="2" f="TMP" n="m" start="2">now</arg>
             <arg end="7" f="" n="1" start="4">an additional court-ordered refund.</arg>
          </example>
-         <example name="ARG1 and ARG0" src="ontonotes mz/sinorama/10/ectb_1042">
+         <example name="face-v: ARG1 and ARG0" src="ontonotes mz/sinorama/10/ectb_1042">
             <text>This is precisely the problem now being faced by Comdek , the first company in Taiwan to produce medical instruments such as blood - oxygen monitors and ear thermometers .</text>
             <rel relloc="7">faced</rel>
             <arg end="4" f="" n="1" start="3">the problem</arg>
@@ -62,6 +67,64 @@
             <arg end="2" f="" n="0" start="0">My hotel room</arg>
             <arg end="6" f="" n="1" start="4">onto the beach.</arg>
          </example>
+         <example name="face-v: with DIR" src="Minecraft">
+            <text>Can we agree that you are facing north?</text>
+            <rel relloc="6">facing</rel>
+            <arg end="4" f="" n="0" start="4">you</arg>
+            <arg end="7" f="DIR" n="m" start="7">north</arg>
+            <amr>
+            (p / possible-01
+               :ARG1 (a / agree-01
+                  :ARG0 (w / we)
+                  :ARG1 (f / face-01
+                     :ARG0 (y / you)
+                     :direction (t / trajectory
+                        :ARG4-of (n / north-01)
+                        :anchor (c / cartesian-framework-91
+                           :ARG1 (b / build-space)
+                           :FR (a3 / ad-hoc-cardinal)))))
+               :polarity (a2 / amr-unknown))
+            </amr>
+         </example>
+         <example name="face-v: with Arg2" src="Spatial">
+            <text>Face the wall with your toes</text>
+            <rel relloc="0">face</rel>
+            <arg end="2" f="" n="1" start="1">the wall</arg>
+            <arg end="5" f="" n="2" start="3">with your toes</arg>
+            <amr>
+            (f / face-01 :mode imperative
+               :ARG0 (y / you)
+               :ARG1 (w / wall)
+               :ARG2 (t / toe :pl +
+                  :part-of y))
+            </amr>
+         </example>
+         <example name="face-v: with ARG4; spatialAMR use only" src="Minecraft">
+            <text>now let's change faces</text>
+            <amr>
+            (c / change-01 :mode imperative
+               :ARG0 (w / we)
+               :ARG1 (t / thing :pl +
+                  :ARG4-of (f / face-01
+                     :ARG0 w))
+               :time (n / now))
+            </amr>
+         </example>
+         <example name="face-v: with ARG2; spatialAMR use only" src="Minecraft">
+            <text>so now you'll copy that on the opposite face from where you are</text>
+            <amr>
+            (c / copy-01 :mode imperative
+               :ARG0 (y / you)
+               :ARG1 (t / that)
+               :ARG2 (t2 / thing
+                  :ARG2-of (f / face-01)
+                  :ARG1-of (o / opposite-01
+                     :ARG2 (s2 / space
+                        :location-of y)))
+               :time (n2 / now))
+            </amr>
+         </example>
+         <note>FACE NOTES: Args 2, 3 and 4 added for spatial AMR.</note>
          <note>FACE-V NOTES: We'll need to go back and change these from &quot;arg0-by&quot; to &quot;arg0-with&quot;at some point; the current annotator doesn't contain &quot;arg0-with&quot;. (from face.01-v)</note>
       </roleset>
    </predicate>
@@ -77,15 +140,17 @@
             <role descr="second opponent" f="PPT" n="1"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks/>
          <example name="face_off-v: active" src="">
-            <text>&quot;The Parties Face Off&quot;.</text>
-            <rel relloc="2 3">Face Off&quot;.</rel>
-            <arg end="1" f="" n="0" start="0">&quot;The Parties</arg>
+            <text>The Parties Face Off</text>
+            <rel relloc="2 3">Face Off</rel>
+            <arg end="1" f="" n="0" start="0">The Parties</arg>
          </example>
          <note>FACE_OFF-V NOTES: Verb particle construction has no entry in VN. (from face.02-v)</note>
       </roleset>
@@ -101,12 +166,16 @@
          </aliases>
          <roles>
             <role descr="Person changing mind" f="PAG" n="0"/>
-            <role descr="Regarding what issue" f="VSP" n="1"/>
+            <role descr="Regarding what issue, in what domain" f="DOM" n="1"/>
+            <role descr="original orientation" f="SRC" n="2"/>
+            <role descr="end orientation" f="GOL" n="3"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks/>
          <example name="make_about-face-l: All Arguments, in LVC" src="nouns-lv">
@@ -123,6 +192,7 @@
             <arg end="10" f="" n="0" start="10">her</arg>
             <arg end="15" f="" n="1" start="12">on credit card debt.</arg>
          </example>
+         <note>ABOUTFACE NOTES: Args 2 and 3 added during spatial AMR.</note>
          <note>ABOUT_FACE-N NOTES: Roleset based on nouns-lv task instance. Framed by Claire (from face.01-n)</note>
       </roleset>
    </predicate>
@@ -144,9 +214,11 @@
             <role descr="social group whose respect is lost" f="GOL" n="2"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="-" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
          </usagenotes>
          <lexlinks/>
          <example name="lose_face-m: active" src="">
@@ -180,9 +252,11 @@
             <role descr="event of losing face that was prevented" f="MNR" n="3"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="-" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
          </usagenotes>
          <lexlinks/>
          <example name="save_face-m: active" src="">
