@@ -30,9 +30,11 @@
             </role>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="Cause_harm" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
@@ -67,6 +69,47 @@
          </example>
          <note>PUNCH-V NOTES: Based on WSJ. Member of Vncls swat-18.2, carve-21.2-2. Updated by Julia, 10/2010. (from punch.01-v)</note>
          <note>PUNCH-N NOTES: Automatically created by Julia as an alias file for unification. (from punch.01-n)</note>
+      </roleset>
+   </predicate>
+   <predicate lemma="punch_out">
+      <roleset id="punch_out.02" name="remove">
+         <aliases>
+            <alias pos="v">punch_out</alias>
+            <alias pos="n">punching_out</alias>
+         </aliases>
+         <roles>
+            <role descr="agent" f="PAG" n="0"/>
+            <role descr="entity removed" f="PPT" n="1"/>
+            <role descr="removed from what" f="SRC" n="2"/>
+         </roles>
+         <usagenotes>
+            <usage resource="PropBank" version="3.4" inuse="-"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="punch_out-v" src="Minecraft">
+            <text>*PRO* punch out blocks from that to make an X</text>
+            <rel relloc="1 2">punch out</rel>
+            <arg end="0" f="" n="0" start="0">*PRO*</arg>
+            <arg end="3" f="" n="1" start="3">blocks</arg>
+            <arg end="5" f="" n="2" start="4">from that</arg>
+            <arg end="9" f="PRP" n="m" start="6">to make an X</arg>
+            <amr>
+            (p / punch-out-02 :mode imperative
+               :ARG0 (y / you)
+               :ARG1 (b / block :pl +)
+               :ARG2 (t / thing
+                  :mod (t3 / that))
+               :purpose (m / make-01
+                  :ARG0 y
+                  :ARG1 (t2 / thing
+                     :configuration (s / string-entity :value "X"))))
+            </amr>
+         </example>
+         <note>PUNCH OUT NOTES: Added for SpatialAMR.</note>
       </roleset>
    </predicate>
 </frameset>

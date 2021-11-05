@@ -10,9 +10,11 @@
             <role descr="thing that was wrong" f="PPT" n="1"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks/>
          <example name="right-v: domain-specific" src="">
@@ -31,9 +33,11 @@
             <role descr="suitable thing" f="PAG" n="1"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="Suitability" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
@@ -56,9 +60,11 @@
             <role descr="suited to what/whom" f="GOL" n="2"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks/>
          <example name="right-j: both args" src="internet">
@@ -69,26 +75,101 @@
          </example>
          <note>RIGHT-J NOTES: Added by Julia. (from right.03-j)</note>
       </roleset>
-      <roleset id="right.04" name="be located on the right side">
+      <roleset id="right.04" name="be located next to the right side">
          <aliases>
+            <alias pos="n">right</alias>
             <alias pos="j">right</alias>
+            <alias pos="r">right</alias>
+            <alias pos="p">right_of</alias>
+            <alias pos="r">on_the_right</alias>
+            <alias pos="r">on_the_right_side</alias>
+            <alias pos="r">on_the_right_hand_side</alias>
+            <alias pos="r">to_the_right</alias>
+            <alias pos="r">to_the_right_side</alias>
+            <alias pos="r">to_the_right_hand_side</alias>
+            <alias pos="r">rightward</alias>
+            <alias pos="p">on_the_right_of</alias>
+            <alias pos="p">on_the_right_side_of</alias>
+            <alias pos="p">on_the_right_hand_side_of</alias>
+            <alias pos="p">to_the_right_of</alias>
+            <alias pos="p">to_the_right_side_of</alias>
+            <alias pos="p">to_the_right_hand_side_of</alias>
          </aliases>
          <roles>
-            <role descr="theme, entity located on the right" f="PPT" n="1"/>
-            <role descr="to the right of" f="LOC" n="2"/>
+            <role descr="theme, entity located on the right" f="SE1" n="1"/>
+            <role descr="to the right of" f="SE2" n="2"/>
+            <role descr="anchor" f="ANC" n="3"/>
+            <role descr="axis" f="AXS" n="4"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks/>
-         <example name="right-j: Both args" src="">
+         <example name="to_the_right_of-p" src="Minecraft">
+            <text>so we are going to need blue placeholders to the left and right of the base block</text>
+            <rel relloc="8 9 10 13">to the right of</rel>
+            <arg end="16" f="" n="2" start="14">the base block</arg>
+            <amr>
+            (n / need-01
+              :ARG0 (w / we)
+              :ARG1 (t / thing :pl +
+                :ARG0-of (h / hold-01
+                  :ARG1 (p / place))
+                :color (b / blue)
+                :location (a / and
+                  :op1 (s / space
+                    :ARG1-of (l / left-20
+                      :ARG2 (b2 / block
+                        :ARG1-of (b3 / base-03
+                        :ARG3 (c / cartesian-framework-91
+                          :ARG1 (b4 / build-space))))
+                      :ARG3 (c2 / cartesian-framework-91
+                        :ARG1 (b5 / builder))))
+                  :op2 (s2 / space
+                    :ARG1-of (r / right-04
+                      :ARG2 b2
+                      :ARG3 c2)))))
+            </amr>
+         </example>
+         <example name="right-n" src="Minecraft">
+            <text>no, my right</text>
+            <rel relloc="2">right</rel>
+            <arg end="1" f="" n="3" start="1">my</arg>
+            <amr>
+            (a / and
+              :op1 (c / confirm :polarity -)
+              :op2 (r / right-04
+                :ARG3 (c2 / cartesian-framework-91
+                  :ARG1 (i / i)
+                  :FR (i2 / intrinsic))))
+            </amr>
+         </example>
+         <example name="right-r" src="">
+            <text>I should have turned right at Albuquerque.</text>
+            <rel relloc="4">right</rel>
+            <amr>
+            (o / obligate-01
+              :ARG1 (t / turn-01
+                :ARG0 (i / i)
+                :direction (t2 / trajectory
+                  :ARG4-of (r / right-04
+                    :ARG3 (c / cartesian-framework-91
+                      :ARG1 i
+                      :FR (i2 / intrinsic))))
+                :location (c2 / city :name (n / name :op1 "Albuquerque"))))
+            </amr>
+         </example>
+         <example name="right_of-p: Both args" src="THYME-Auto1">
             <text>Ostomy site is right of midline</text>
             <rel relloc="3">right</rel>
             <arg end="1" f="" n="1" start="0">Ostomy site</arg>
             <arg end="5" f="" n="2" start="4">of midline</arg>
          </example>
+         <note>RIGHT NOTES: Expanded for SpatialAMR.</note>
          <note>RIGHT-J NOTES: Based on Thyme and Sharp data. No comparison. No VN or FN classes. Framed by Katie. (from right.04-j)</note>
       </roleset>
       <roleset id="right.05" name="something due to you by law, tradition or moral principle">
@@ -101,10 +182,11 @@
             <role descr="what they have a right to" f="GOL" n="2"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
-         </usagenotes>
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>         </usagenotes>
          <lexlinks/>
          <example name="have_right-l: All args, Light Verb Construction" src="WebText">
             <text>Anonymous 6:37 , You have every right to live in the country if that 's where you wish to live .</text>
@@ -132,9 +214,11 @@
             <role descr="accurate proposition, thought, right about what" f="PPT" n="2"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="Correctness" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
@@ -167,9 +251,11 @@
             <role descr="the whole group, of which one faction is right" f="VSP" n="3"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks/>
          <example name="right-j: arg3" src="">
@@ -191,6 +277,94 @@
          <note>RIGHT-J NOTES: Added by Julia for AMR</note>
          <note>RIGHT-WING-J NOTES: Added by Julia for AMR</note>
       </roleset>
+      <roleset id="right.10" name="within the right-most portion of a larger whole">
+         <aliases>
+            <alias pos="j">right</alias>
+            <alias pos="n">right</alias>
+         </aliases>
+         <roles>
+            <role descr="entity located within the right-most portion" f="PRT" n="1"/>
+            <role descr="larger whole" f="WHL" n="2"/>
+            <role descr="anchor" f="ANC" n="3"/>
+            <role descr="axis" f="AXS" n="4"/>
+         </roles>
+         <usagenotes>
+            <usage resource="PropBank" version="3.4" inuse="-"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="right-j: both args" src="">
+            <text>I injured my right hand.</text>
+            <rel relloc="3">right</rel>
+            <arg end="4" f="" n="1" start="4">block</arg>
+            <amr>
+            (i2 / injure-01
+              :ARG0 (i / i)
+              :ARG1 (h / hand
+                :ARG1-of (r / right-10
+                  :ARG2 i
+                  :ARG3 (c / cartesian-framework-91
+                    :ARG1 i
+                    :FR (i3 / intrinsic)))))
+            </amr>
+         </example>
+         <note>RIGHT NOTES: Added for SpatialAMR.</note>
+      </roleset>
+      <roleset id="right.11" name="for rotating objects clockwise (righty-tighty, lefty-loosy)">
+         <aliases>
+            <alias pos="j">right</alias>
+            <alias pos="r">right</alias>
+            <alias pos="n">righty</alias>
+            <alias pos="r">rightward</alias>
+            <alias pos="r">to_the_right</alias>
+            <alias pos="r">toward_the_right</alias>
+         </aliases>
+         <roles>
+            <role descr="object rotating" f="SE1" n="1"/>
+            <role descr="degree of rotation" f="EXT" n="2"/>
+            <role descr="axis/point of rotation" f="AXSc" n="3"/>
+            <role descr="viewer-- this role specifically names the entity who views the rotation as clockwise" f="ANC" n="4"/>
+            <role descr="rotational path" f="AXS" n="5"/>
+         </roles>
+         <usagenotes>
+            <usage resource="PropBank" version="3.4" inuse="-"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="right-j: both args" src="Minecraft">
+            <text>we need to make a U shaped structure , but as if it were turned 90 degrees to the right and laying on its side</text>
+            <rel relloc="16 17 18">to the right</rel>
+            <amr>
+            (n / need-01
+               :ARG0 (w / we)
+               :ARG1 (m / make-01
+                  :ARG0 w
+                  :ARG1 (s / structure
+                     :ARG1-of (s2 / shape-01
+                        :ARG2 (s3 / string-entity :value "U")))
+                  :manner (a2 / and
+                     :op1 (t / turn-01
+                        :ARG1 s
+                        :extent (a / angle-quantity :quant 90
+                           :unit (d / degree))
+                        :direction (t2 / trajectory
+                           :ARG5-of (r / right-11
+                              :ARG4 (y / you))))
+                     :op2 (l / lie-07
+                        :ARG3 (o / on-04
+                           :ARG1 s2
+                           :ARG2 (s4 / side
+                              :part-of s2))))))
+            </amr>
+         </example>
+         <note>LEFT NOTES: Added for SpatialAMR. For basic instances of changing a path from forward to rightward (like 'take a right at the light'), use right-04. This roleset is for cases where an object is rotating or being rotated in such a way that if an viewer is looking straight through the axis of rotation, a point on the object would move from 'up' according the viewer's perspective to 'left' according to their perspective.</note>
+      </roleset>
    </predicate>
    <predicate lemma="righteous">
       <roleset id="righteous.07" name="morally upstanding">
@@ -202,9 +376,11 @@
             <role descr="domain of righteousness" f="VSP" n="2"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks/>
          <example name="righteous-j" src="">
@@ -228,9 +404,11 @@
             <role descr="who it is alright for" f="GOL" n="2"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="-" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+            <usage resource="PropBank" version="3.4" inuse="-"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
          </usagenotes>
          <lexlinks/>
          <example name="alright-j: args 0, 1" src="internet">

@@ -1,9 +1,10 @@
 <?xml version="1.0" ?>
 <frameset>
    <predicate lemma="top">
-      <roleset id="top.01" name="provide a top for">
+      <roleset id="top.01" name="causal: provide a top for something">
          <aliases>
             <alias pos="v">top</alias>
+            <alias pos="n">topping</alias>
          </aliases>
          <roles>
             <role descr="provider of top, agent" f="PAG" n="0">
@@ -28,11 +29,15 @@
                   <rolelink class="contiguous_location-47.8" resource="VerbNet" version="verbnet3.4">theme</rolelink>
                </rolelinks>
             </role>
+            <role descr="anchor" f="ANC" n="3"/>
+            <role descr="axis" f="AXS" n="4"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="butter-9.9" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
@@ -40,20 +45,28 @@
             <lexlink class="butter-9.9" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
             <lexlink class="contiguous_location-47.8" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
          </lexlinks>
-         <example name="top the list: Arg2 subj" src="">
+         <example name="top-v (considered inchoative here): top the list: Arg2 subj" src="">
             <text>Jaguar topped the most-active list, as its American depository receipts climbed 1 3/4 to 13 5/8 with more than 6.6 million ADRs traded.</text>
             <rel relloc="1">topped</rel>
             <arg end="0" f="" n="2" start="0">Jaguar</arg>
             <arg end="4" f="" n="1" start="2">the most-active list,</arg>
             <arg end="22" f="TMP" n="m" start="5">as its American depository receipts climbed 1 3/4 to 13 5/8 with more than 6.6 million ADRs traded.</arg>
          </example>
-         <example name="ARG0 and ARG1 and ARG2" src="ontonotes nw/wsj/18/wsj_1874">
+         <example name="top-v (considered inchoative here): ARG0 and ARG1 and ARG2" src="ontonotes nw/wsj/18/wsj_1874">
             <text>Washington , D.C. , topped the competitive slate yesterday with a sale of $ 200 million of general obligation tax revenue anticipation notes .</text>
             <rel relloc="4">topped</rel>
             <arg end="3" f="" n="0" start="0">Washington , D.C. ,</arg>
             <arg end="7" f="" n="1" start="5">the competitive slate</arg>
             <arg end="22" f="" n="2" start="9">with a sale of $ 200 million of general obligation tax revenue anticipation notes</arg>
          </example>
+         <example name="top-v" src="spatial">
+            <text>When I first saw the title in the preview , I was thinking you topped the pie with APPLE tree leaves.</text>
+            <rel relloc="14">topped</rel>
+            <arg end="13" f="" n="0" start="13">you</arg>
+            <arg end="16" f="" n="1" start="15">the pie</arg>
+            <arg end="20" f="" n="2" start="17">with APPLE tree leaves</arg>
+         </example>
+         <note>TOP NOTES: Updated for Spatial AMR (added pragmatic arg3, arg4). This sense is now meant to include only causative/inchoative verbal instances; the arg2 is becoming the top part of arg1, it is not purely stative.</note>
          <note>TOP-V NOTES: Verbnet classes contiguous_location-47.8 and butter-9.9; VN updated by Julia (from top.01-v)</note>
       </roleset>
       <roleset id="top.02" name="surpass">
@@ -73,15 +86,17 @@
             </role>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="exceed-90" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
             <lexlink class="top-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">20</lexlink>
          </lexlinks>
-         <example name="relatively simple" src="">
+         <example name="top-v: relatively simple" src="">
             <text>In savings activity, Mr. Sandler said consumer deposits have enjoyed a steady increase throughout 1989, and topped $11 billion at quarter's end for the first time in the company's history.</text>
             <rel relloc="16">topped</rel>
             <arg end="7" f="" n="0" start="6">consumer deposits</arg>
@@ -89,7 +104,7 @@
             <arg end="21" f="TMP" n="m" start="19">at quarter's end</arg>
             <arg end="29" f="TMP" n="m" start="22">for the first time in the company's history.</arg>
          </example>
-         <example name="bunch of adjuncts" src="">
+         <example name="top-v: bunch of adjuncts" src="">
             <text>But advancing issues topped decliners by 784 to 700 on the Big Board despite the late sell programs, resulting from stock-index arbitrage.</text>
             <rel relloc="3">topped</rel>
             <arg end="0" f="DIS" n="m" start="0">But</arg>
@@ -101,30 +116,125 @@
          </example>
          <note>TOP-V NOTES: Member of Vncls exceed-90. VN updated by Julia (from top.02-v)</note>
       </roleset>
+      <roleset id="top.06" name="stative/inchoative: be the top portion">
+         <aliases>
+            <alias pos="v">top</alias>
+            <alias pos="n">top</alias>
+            <alias pos="n">topping</alias>
+            <alias pos="j">top</alias>
+            <alias pos="r">at_the_top</alias>
+            <alias pos="p">at_the_top_of</alias>
+         </aliases>
+         <roles>
+            <role descr="entity that is the top" f="PRT" n="1"/>
+            <role descr="the larger whole" f="WHL" n="2"/>
+            <role descr="anchor" f="ANC" n="3"/>
+            <role descr="axis" f="AXS" n="4"/>
+         </roles>
+         <usagenotes>
+            <usage resource="PropBank" version="3.4" inuse="-"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="top-n" src="Minecraft">
+            <text>start at the top of the block tower</text>
+            <rel relloc="3">top</rel>
+            <arg end="7" f="" n="2" start="4">of the block tower</arg>
+            <amr>
+            (s / start-01 :mode imperative
+               :ARG0 (y / you)
+               :location (s2 / space
+                  :ARG1-of (t / top-06
+                     :ARG2 (t2 / tower
+                        :consist-of (b / block :pl +))
+                     :ARG3 (c / cartesian-framework-91
+                        :ARG1 (b2 / build-space)))))
+            </amr>
+         </example>
+         <example name="top-j" src="Minecraft">
+            <text>start with the top block of the tower</text>
+            <rel relloc="3">top</rel>
+            <arg end="4" f="" n="1" start="4">block</arg>
+            <arg end="7" f="" n="2" start="5">of the tower</arg>
+            <amr>
+            (s / start-01 :mode imperative
+               :ARG0 (y / you)
+               :ARG2 (b / block
+                  :ARG1-of (t / top-06
+                     :ARG2 (t2 / tower)
+                     :ARG3 (c / cartesian-framework-91
+                        :ARG1 (b2 / build-space)))))
+            </amr>
+         </example>
+         <example name="top-v" src="Spatial">
+            <text>the red block tops the tower .</text>
+            <rel relloc="3">tops</rel>
+            <arg end="2" f="" n="1" start="0">the red block</arg>
+            <arg end="5" f="" n="2" start="4">the tower</arg>
+            <amr>
+            (t / top-06
+               :ARG1 (b / block
+                  :color (r / red))
+               :ARG2 (t2 / tower)
+               :ARG3 (c / cartesian-framework-91
+                  :ARG1 (b2 / build-space)))
+            </amr>
+         </example>
+         <example name="top-n" src="Spatial">
+            <text>the red block is the top of the tower .</text>
+            <rel relloc="5">top</rel>
+            <arg end="2" f="" n="1" start="0">the red block</arg>
+            <arg end="8" f="" n="2" start="6">of the tower</arg>
+            <amr>
+            (t / top-06
+               :ARG1 (b / block
+                  :color (r / red))
+               :ARG2 (t2 / tower)
+               :ARG3 (c / cartesian-framework-91
+                  :ARG1 (b2 / build-space)))
+            </amr>
+         </example>
+         <note>TOP NOTES: Created for SpatialAMR. Some verbal instances would formerly have been tagged as arg1</note>
+      </roleset>
    </predicate>
    <predicate lemma="top_off">
       <roleset id="top_off.03" name="top off: provide with a top">
          <aliases>
             <alias pos="v">top_off</alias>
+            <alias pos="n">topping_off</alias>
          </aliases>
          <roles>
             <role descr="provider of top, agent" f="PAG" n="0"/>
-            <role descr="thing topped" f="PPT" n="1"/>
-            <role descr="top" f="MNR" n="2"/>
+            <role descr="thing topped" f="GOL" n="1"/>
+            <role descr="the topper" f="PRT" n="2"/>
+            <role descr="anchor" f="ANC" n="3"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks/>
-         <example name="'off' is redundant, really" src="">
-            <text>He has leather jackets from Turkey that-1 []-2 are lined with eel skin and topped [*-2]off with raccoon-skin collars.</text>
-            <rel relloc="14 15">topped [*-2]off</rel>
+         <example name="top_off-v" src="">
+            <text>He has leather jackets from Turkey that-1 []-2 are lined with eel skin and topped [*-2] off with raccoon-skin collars.</text>
+            <rel relloc="14 16">topped off</rel>
             <arg end="8" f="" n="1" start="7">[]-2 are</arg>
             <arg end="5" f="SLC" n="m" start="2">leather jackets from Turkey</arg>
-            <arg end="18" f="" n="2" start="16">with raccoon-skin collars.</arg>
+            <arg end="19" f="" n="2" start="17">with raccoon-skin collars.</arg>
          </example>
+         <example name="top_off-v" src="Minecraft">
+            <text>now we 'll top it off with an orange block</text>
+            <rel relloc="3 5">topped off</rel>
+            <arg end="0" f="" n="0" start="0">we</arg>
+            <arg end="4" f="" n="1" start="4">it</arg>
+            <arg end="8" f="" n="2" start="5">with an orange block</arg>
+         </example>
+         <note>TOP OFF NOTES: Updated for spatialAMR (pragmatic arg3 added). </note>
          <note>TOP_OFF-V NOTES: (from top.03-v)</note>
       </roleset>
    </predicate>
@@ -139,19 +249,21 @@
             <role descr="substance put in" f="PPT" n="2"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks/>
-         <example name="args 0, 1, MNR" src="BOLT">
+         <example name="top_up-v: args 0, 1, MNR" src="BOLT">
             <text>I have a chunk of First State Asia Pacific Leaders , but that 's 20 % in Australia , so I would prefer to ' top this up ' by also holding a fund that just concentrates on the countries above .</text>
             <rel relloc="25 27">top up</rel>
             <arg end="0" f="" n="0" start="0">I</arg>
             <arg end="26" f="" n="1" start="26">this</arg>
             <arg end="40" f="MNR" n="m" start="29">by also holding a fund that just concentrates on the countries above</arg>
          </example>
-         <example name="all args in a Shandy recipe" src="internet">
+         <example name="top_up-v: all args in a Shandy recipe" src="internet">
             <text>*PRO* Fill the glass half full with beer and top it up with lemonade.</text>
             <rel relloc="9 11">top up</rel>
             <arg end="0" f="" n="0" start="0">*PRO*</arg>
@@ -172,9 +284,11 @@
             <role descr="the upper limit" f="PPT" n="2"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="-" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
          </usagenotes>
          <lexlinks/>
          <example name="top_out-v" src="">

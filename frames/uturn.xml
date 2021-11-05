@@ -1,40 +1,79 @@
 <?xml version="1.0" ?>
 <frameset>
    <predicate lemma="uturn">
-      <roleset id="uturn.01" name="turn 180 degrees">
+      <roleset id="uturn.01" name="turn in a U-shaped trajectory such that the orientation at the end is 180 degrees from the start.">
          <aliases>
-            <alias pos="n">uturn</alias>
             <alias pos="v">uturn</alias>
+            <alias pos="v">U-turn</alias>
+            <alias pos="n">uturn</alias>
+            <alias pos="n">U-turn</alias>
+            <alias pos="n">U-ey</alias>
             <alias pos="l">make_uturn</alias>
+            <alias pos="l">make_U-turn</alias>
+            <alias pos="m">flip_up-ey</alias>
+            <alias pos="m">flip_bitch</alias>
          </aliases>
          <roles>
-            <role descr="turner" f="PAG" n="0"/>
-            <role descr="thing turned (usually a car)" f="PPT" n="1"/>
+            <role descr="Agent" f="PAG" n="0"/>
+            <role descr="vehicle mention" f="PPT" n="1"/>
+            <role descr="U-shaped path" f="AXS" n="2"/>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="-" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
-         <example name="" src="">
+         <example name="u-turn-n" src="">
             <text>My illegal u-turn was caught on camera</text>
             <rel relloc="2">u-turn</rel>
             <arg end="0" f="" n="0" start="0">My</arg>
             <arg end="1" f="MNR" n="m" start="1">illegal</arg>
+            <amr>
+            (c / catch-03
+               :ARG1 (u / uturn-01
+                  :ARG0 (i / i)
+                  :ARG1-of (l / legal-02 :polarity -))
+               :ARG2 (c2 / camera))
+            </amr>
          </example>
-         <example name="" src="">
+         <example name="u-turn-n" src="">
             <text>the van's u-turn at about seven thirty PM at the place Imette's body was found</text>
             <rel relloc="2">u-turn</rel>
             <arg end="1" f="" n="1" start="0">the van's</arg>
             <arg end="6" f="TMP" n="m" start="3">at about seven thirty</arg>
             <arg end="14" f="LOC" n="m" start="8">at the place Imette's body was found</arg>
+            <amr>
+            (h / have-03
+               :ARG0 (u / uturn-01
+                  :ARG0 (i / i)
+                  :ARG1 (v / vehicle :name (n / name :op1 "F-150")))
+               :ARG1 (t / technique
+                  :ARG1-of (p / patent-01)))
+            </amr>
          </example>
-         <example name="both args" src="">
+         <example name="U-turn-n: both args" src="">
             <text>My F50 U-turn has a patented technique.</text>
             <rel relloc="2">U-turn</rel>
             <arg end="0" f="" n="0" start="0">My</arg>
             <arg end="1" f="" n="1" start="1">F50</arg>
+            <amr>
+            (s / start-01 :mode imperative
+              :ARG0 (y / you)
+              :ARG1 u
+              :time (u / uturn-01
+                :ARG0 y)
+              :source (l / lane
+                :ARG1-of (l2 / left-24
+                  :ARG3 (c / cartesian-framework-91
+                    :ARG1 y)
+                  :ARG1-of (h / have-degree-91
+                    :ARG2 (f / far-01)
+                    :ARG3 (m / most)))))
+            </amr>
          </example>
+         <note>UTURN NOTES: Arg2 added for spatialAMR-- pragmatic role</note>
          <note>UTURN-N NOTES: Based on sentences in wsj. Relation to turn-01. No VN or FN classes. Framed by Katie. (from uturn.01-n)</note>
          <note>UTURN-V NOTES: Automatically added alias.</note>
       </roleset>

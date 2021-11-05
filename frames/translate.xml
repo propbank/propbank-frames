@@ -37,9 +37,11 @@
             </role>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="Categorization" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
@@ -50,20 +52,20 @@
             <lexlink class="translate-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">9</lexlink>
             <lexlink class="turn-26.6.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
          </lexlinks>
-         <example name="passive, unstated start state" src="">
+         <example name="translate-v: passive, unstated start state" src="">
             <text>The profit gain was made despite a weakening in the housing market, for which the company is a supplier, and a strengthening in the dollar, which lowers the value of overseas earnings when they are translated into dollars.</text>
             <rel relloc="35">translated</rel>
             <arg end="33" f="" n="1" start="33">they</arg>
             <arg end="37" f="" n="2" start="36">into dollars.</arg>
          </example>
-         <example name="ergative" src="">
+         <example name="translate-v: ergative" src="">
             <text>That gain probably translated into about 5% to 7% in dollar terms, well below recent quarters' gains of above 20%, reckons Jay Stevens of Dean Witter Reynolds.</text>
             <rel relloc="3">translated</rel>
             <arg end="1" f="" n="1" start="0">That gain</arg>
             <arg end="2" f="ADV" n="m" start="2">probably</arg>
             <arg end="19" f="" n="2" start="4">into about 5% to 7% in dollar terms, well below recent quarters' gains of above 20%,</arg>
          </example>
-         <example name="all args" src="">
+         <example name="translate-v: all args" src="">
             <text>John translated his dissertation from English into Swahili, Chinese, Russian, and Yiddish.</text>
             <rel relloc="1">translated</rel>
             <arg end="0" f="" n="0" start="0">John</arg>
@@ -71,12 +73,12 @@
             <arg end="5" f="" n="3" start="4">from English</arg>
             <arg end="11" f="" n="2" start="6">into Swahili, Chinese, Russian, and Yiddish.</arg>
          </example>
-         <example name="arg3" src="BOLT">
+         <example name="translation-n: arg3" src="BOLT">
             <text>Translation out of hype - speak : some kook made threatening noises at Brownback and got arrested . The end .</text>
             <rel relloc="0">Translation</rel>
             <arg end="5" f="" n="3" start="1">out of hype - speak</arg>
          </example>
-         <example name="args 0, 1, 2" src="internet">
+         <example name="translation-n: args 0, 1, 2" src="internet">
             <text>The Pope was so infuriated by his teachings and his translation of the Bible into English, that 44 years after Wycliffe had died, he ordered the bones to be dug-up, crushed, and scattered in the river!</text>
             <rel relloc="10">translation</rel>
             <arg end="6" f="" n="0" start="6">his</arg>
@@ -112,26 +114,72 @@
             </role>
          </roles>
          <usagenotes>
-            <usage resource="PropBank" version="3.4" inuse="+" />
-            <usage resource="AMR" version="2019" inuse="+" />
-            <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+            <usage resource="PropBank" version="3.4" inuse="+"/>
+            <usage resource="AMR" version="2019" inuse="+"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="+"/>
          </usagenotes>
          <lexlinks>
             <lexlink class="turn-26.6.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
          </lexlinks>
-         <example name="example with agent" src="">
+         <example name="translate-v: example with agent" src="">
             <text>When we translated the protein sequence we did not splice the mRNA to remove introns.</text>
             <rel relloc="2">translated</rel>
             <arg end="1" f="" n="0" start="1">we</arg>
             <arg end="5" f="" n="2" start="3">the protein sequence</arg>
          </example>
-         <example name="example with source" src="">
+         <example name="translate-v: example with source" src="">
             <text>First, the protein was translated from an mRNA rather than produced through polyprotein processing.</text>
             <rel relloc="4">translated</rel>
             <arg end="2" f="" n="2" start="1">the protein</arg>
             <arg end="7" f="" n="1" start="5">from an mRNA</arg>
          </example>
          <note>For Bio-AMR annotations.</note>
+      </roleset>
+      <roleset id="translate.03" name="move, translocate, transform spatially">
+         <aliases>
+            <alias pos="v">translate</alias>
+            <alias pos="n">translation</alias>
+         </aliases>
+         <roles>
+            <role descr="agent" f="PAG" n="0" />
+            <role descr="thing moved" f="SE1" n="1" />
+            <role descr="end location/position" f="GOL" n="2" />
+            <role descr="start location/position" f="SRC" n="3" />
+         </roles>
+         <usagenotes>
+            <usage resource="PropBank" version="3.4" inuse="-"/>
+            <usage resource="AMR" version="2019" inuse="-"/>
+            <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+            <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+            <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+         </usagenotes>
+         <lexlinks/>
+         <example name="translate-v" src="Minecraft">
+            <text>so *PRO* translate that orange rectangle away from you two and left two</text>
+            <rel relloc="2">translate</rel>
+            <arg end="0" f="DIS" n="m" start="0">so</arg>
+            <arg end="1" f="" n="0" start="1">*PRO*</arg>
+            <arg end="5" f="" n="1" start="3">that orange rectangle</arg>
+            <arg end="12" f="" n="2" start="6">away from you two and left two</arg>
+         </example>
+         <amr>
+         (t / translate-03 :mode imperative
+            :ARG0 (y / you)
+            :ARG1 (r / rectangle
+               :color (o / orange)
+               :mod (t2 / that))
+            :ARG2 (s / space
+               :ARG1-of (a / away-01
+                  :ARG2 y
+                  :quant (d / distance-quantity :quant 2))
+               :ARG1-of (l / left-20
+                  :ARG3 (c / cartesian-framework-91
+                     :ARG1 y)
+                  :quant (d2 / distance-quantity :quant 2))))
+         </amr>
+         <note>TRANSLATE NOTE: Created for Spatial AMR.</note>
       </roleset>
    </predicate>
 </frameset>
