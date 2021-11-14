@@ -3,10 +3,11 @@
    <predicate lemma="please">
       <roleset id="please.01" name="make happy, contented, satisfied, possibly smug">
          <aliases>
-            <alias pos="j">pleased</alias>
-            <alias pos="j">pleasing</alias>
             <alias pos="v">please</alias>
             <alias pos="n">pleasure</alias>
+            <alias pos="j">pleased</alias>
+            <alias pos="j">pleasing</alias>
+            <alias pos="l">pleasure</alias>
          </aliases>
          <roles>
             <role descr="agent, pleaser" f="PAG" n="0">
@@ -42,18 +43,18 @@
             <lexlink class="please-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
             <lexlink class="amuse-31.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
          </lexlinks>
-         <example name="discourse usage" src="">
+         <example name="please-v: discourse usage" src="">
             <text>Policies designed to encourage one type of investor over another are akin to placing a sign over the Big Board's door saying: ``Buyers welcome, sellers please go away!''</text>
             <rel relloc="25">please</rel>
          </example>
-         <example name="odd passive" src="">
+         <example name="pleased-j: odd passive" src="">
             <text>Mr. Beall said that he was generally pleased with the latest numbers and cited a particularly strong showing by the company's electronics segment.</text>
             <rel relloc="7">pleased</rel>
             <arg end="4" f="" n="1" start="4">he</arg>
             <arg end="6" f="MNR" n="m" start="6">generally</arg>
             <arg end="11" f="" n="0" start="8">with the latest numbers</arg>
          </example>
-         <example name="instrument or manner?" src="">
+         <example name="please-v: instrument or manner?" src="">
             <text>The company also pleased analysts by announcing four new store openings planned for fiscal 1990, ending next August.</text>
             <rel relloc="3">pleased</rel>
             <arg end="1" f="" n="0" start="0">The company</arg>
@@ -61,27 +62,27 @@
             <arg end="4" f="" n="1" start="4">analysts</arg>
             <arg end="17" f="" n="2" start="5">by announcing four new store openings planned for fiscal 1990, ending next August.</arg>
          </example>
-         <example name="ARG0 and ARG1 and ARG2" src="ontonotes pt/nt/59/nt_5905">
+         <example name="please-v: ARG0 and ARG1 and ARG2" src="ontonotes pt/nt/59/nt_5905">
             <text>You pleased yourselves with everything you wanted .</text>
             <rel relloc="1">pleased</rel>
             <arg end="0" f="" n="0" start="0">You</arg>
             <arg end="2" f="" n="1" start="2">yourselves</arg>
             <arg end="6" f="" n="2" start="3">with everything you wanted</arg>
          </example>
-         <example name="arg1" src="BOLT-1">
+         <example name="pleased-j: arg1" src="BOLT-1">
             <text>The people who rented elaborate costumes were not pleased .</text>
             <rel relloc="8">pleased</rel>
             <arg end="5" f="" n="1" start="0">The people who rented elaborate costumes</arg>
             <arg end="7" f="NEG" n="m" start="7">not</arg>
          </example>
-         <example name="Party pooper" src="internet">
+         <example name="pleased-j: Party pooper" src="internet">
             <text>Russian lawmaker 'not pleased' about UK royal birth.</text>
             <rel relloc="3">pleased'</rel>
             <arg end="1" f="" n="1" start="0">Russian lawmaker</arg>
             <arg end="2" f="NEG" n="m" start="2">'not</arg>
             <arg end="7" f="" n="0" start="4">about UK royal birth.</arg>
          </example>
-         <example name="all args" src="internet">
+         <example name="pleased-j: all args" src="internet">
             <text>Kerwin was sure Vanda would be pleased with him for serving her breakfast in bed.</text>
             <rel relloc="6">pleased</rel>
             <arg end="3" f="" n="1" start="3">Vanda</arg>
@@ -89,15 +90,29 @@
             <arg end="8" f="" n="0" start="7">with him</arg>
             <arg end="14" f="" n="2" start="9">for serving her breakfast in bed.</arg>
          </example>
-         <example name="inifinitival arg0" src="BOLT-1">
+         <example name="pleased-j: inifinitival arg0" src="BOLT-1">
             <text>America is probably a lost cause , but I 'm pleased to see we 're going Scandinavian .</text>
             <rel relloc="10">pleased</rel>
             <arg end="8" f="" n="1" start="8">I</arg>
             <arg end="16" f="" n="0" start="12">see we 're going Scandinavian</arg>
          </example>
+         <example name="have-the-pleasure-l" src="THYME">
+            <text>I had the pleasure of seeing Mrs. X .</text>
+            <rel relloc="1 2 3">had the pleasure</rel>
+            <arg end="0" f="" n="1" start="0">I</arg>
+            <arg end="7" f="" n="0" start="4">of seeing Mrs. X</arg>
+            <THYME-AMR>
+            (p / please-01
+               :ARG0 (s / see-09
+                  :ARG0 i
+                  :ARG1 (p2 / person :name (n / name :op1 "Mrs." :op2 "X")))
+               :ARG1 (i / i))
+            </THYME-AMR>
+         </example>
          <note>PLEASE-V NOTES: Discourse usage might also show traces in subject/object position,depending on which of the treebankers looked at that particularsentence. You may include them as targetless traces if they arepresent. This is pretty much adjectival. (from please.01-v)</note>
          <note>PLEASED-J NOTES: Added by Julia based on BOLT-1, please-v.01. Corresponds to VNcls amuse-31.1. (from pleased.01-j)</note>
          <note>PLEASING-J NOTES: Automatically created by Julia as an alias file for unification. (from pleasing.01-j)</note>
+         <note>HAVE-THE-PLEASURE NOTES: Added for THYME AMR.</note>
       </roleset>
    </predicate>
    <predicate lemma="pleasant">
