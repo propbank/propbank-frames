@@ -26,51 +26,61 @@
         </role>
       </roles>
       <usagenotes>
-        <usage resource="PropBank" version="1.0" inuse="+"/>
-        <usage resource="PropBank" version="2.1.5" inuse="+"/>
-        <usage resource="PropBank" version="3.1" inuse="+"/>
-        <usage resource="PropBank" version="3.4" inuse="+"/>
-        <usage resource="AMR" version="2019" inuse="+"/>
-        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
-        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
-        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
       </usagenotes>
       <lexlinks>
-        <lexlink class="Tolerating" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
-        <lexlink class="admire-31.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
-        <lexlink class="allow-64.1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+        <lexlink class="Tolerating" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="admire-31.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="allow-64.1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3" />
         <lexlink class="tolerate-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">10</lexlink>
-        <lexlink class="admire-31.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="admire-31.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
       </lexlinks>
       <example name="they pretty much all look like this" src="">
         <text>Even with mutual funds , [the little investor]-1 continues *trace*-1 to tolerate high fees , high commissions and poor performance , while index - fund managers slowly amass a better record with lower fees , lower commissions and less risk .</text>
-        <arg type="ARG0" start="?" end="?">*trace*-1</arg>
-        <arg type="ARG1" start="12" end="19">high fees , high commissions and poor performance</arg>
-        <rel relloc="11">tolerate</rel>
+        <propbank>
+          <rel relloc="11">tolerate</rel>
+          <arg type="ARG0" start="?" end="?">*trace*-1</arg>
+          <arg type="ARG1" start="12" end="19">high fees , high commissions and poor performance</arg>
+        </propbank>
       </example>
       <example name="adjectival rel: tolerant" src="BOLT-2,3">
         <text>My eldest who-1 [*-1] is especially friendly and tolerant tried to make friends with these people but in the end they all wanted something .</text>
-        <arg type="ARG0" start="?" end="?">[*-1]</arg>
-        <arg type="ARGM-EXT" start="5" end="5">especially</arg>
-        <rel relloc="8">tolerant</rel>
+        <propbank>
+          <rel relloc="8">tolerant</rel>
+          <arg type="ARG0" start="?" end="?">[*-1]</arg>
+          <arg type="ARGM-EXT" start="5" end="5">especially</arg>
+        </propbank>
       </example>
       <example name="adjectival rel: tolerated" src="medi-seedcorpus">
         <text>The procedure was well tolerated without immediate complications .</text>
-        <arg type="ARG1" start="0" end="1">The procedure</arg>
-        <arg type="ARGM-MNR" start="3" end="3">well</arg>
-        <arg type="ARGM-ADV" start="5" end="7">without immediate complications</arg>
-        <rel relloc="4">tolerated</rel>
+        <propbank>
+          <rel relloc="4">tolerated</rel>
+          <arg type="ARG1" start="0" end="1">The procedure</arg>
+          <arg type="ARGM-MNR" start="3" end="3">well</arg>
+          <arg type="ARGM-ADV" start="5" end="7">without immediate complications</arg>
+        </propbank>
       </example>
       <example name="arg 0" src="">
         <text>His tolerance only extends so far .</text>
-        <arg type="ARG0" start="0" end="0">His</arg>
-        <rel relloc="1">tolerance</rel>
+        <propbank>
+          <rel relloc="1">tolerance</rel>
+          <arg type="ARG0" start="0" end="0">His</arg>
+        </propbank>
       </example>
       <example name="Arg 1 only" src="">
         <text>But I also did a no tolerance on whining campaign and put him in a t / o chair every single time he whined .</text>
-        <arg type="ARGM-NEG" start="5" end="5">no</arg>
-        <arg type="ARG1" start="7" end="8">on whining</arg>
-        <rel relloc="6">tolerance</rel>
+        <propbank>
+          <rel relloc="6">tolerance</rel>
+          <arg type="ARGM-NEG" start="5" end="5">no</arg>
+          <arg type="ARG1" start="7" end="8">on whining</arg>
+        </propbank>
       </example>
       <note>TOLERATE-V NOTES: Frames file for 'tolerate' based on financial subcorpus; adjectival 'tolerant' based on BOLT-2,3; adjectival 'tolerated' based on medi-seedcorpus. Member of Vncls admire-31.2, allow-64. (from tolerate.01-v)</note>
       <note>TOLERANCE-N NOTES: Based on Bolt data. Comparison to tolerate.01-v. Tolerate is a member of VN classes admire-31.2 and allow-64. Tolerate is a member of FN class Tolerating. Framed by Katie. (from tolerance.01-n)</note>
@@ -84,27 +94,29 @@
         <alias pos="j">tolerable</alias>
       </aliases>
       <roles>
-        <role descr="tolerator" f="PAG" n="0"/>
-        <role descr="tolerated" f="PPT" n="1"/>
+        <role descr="tolerator" f="PAG" n="0" />
+        <role descr="tolerated" f="PPT" n="1" />
       </roles>
       <usagenotes>
-        <usage resource="PropBank" version="1.0" inuse="-"/>
-        <usage resource="PropBank" version="2.1.5" inuse="-"/>
-        <usage resource="PropBank" version="3.1" inuse="+"/>
-        <usage resource="PropBank" version="3.4" inuse="+"/>
-        <usage resource="AMR" version="2019" inuse="-"/>
-        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
-        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
-        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
       </usagenotes>
       <lexlinks>
-        <lexlink class="Desirability" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Desirability" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
       </lexlinks>
       <example name="arg1" src="BOLT-7">
         <text>Last year , the consumer price index exceeded 5 % , which-1 [*-1] was barely tolerable .</text>
-        <arg type="ARG1" start="?" end="?">[*-1]</arg>
-        <arg type="ARGM-EXT" start="14" end="14">barely</arg>
-        <rel relloc="15">tolerable</rel>
+        <propbank>
+          <rel relloc="15">tolerable</rel>
+          <arg type="ARG1" start="?" end="?">[*-1]</arg>
+          <arg type="ARGM-EXT" start="14" end="14">barely</arg>
+        </propbank>
       </example>
       <note>TOLERABLE-J NOTES: Added by Julia based on BOLT-7. (from tolerable.01-j)</note>
     </roleset>

@@ -7,57 +7,67 @@
         <alias pos="v">reschedule</alias>
       </aliases>
       <roles>
-        <role descr="planner" f="PAG" n="0"/>
-        <role descr="event" f="PPT" n="1"/>
-        <role descr="scheduled for or because of" f="PRP" n="2"/>
-        <role descr="time of event" f="TMP" n="3"/>
+        <role descr="planner" f="PAG" n="0" />
+        <role descr="event" f="PPT" n="1" />
+        <role descr="scheduled for or because of" f="PRP" n="2" />
+        <role descr="time of event" f="TMP" n="3" />
       </roles>
       <usagenotes>
-        <usage resource="PropBank" version="1.0" inuse="+"/>
-        <usage resource="PropBank" version="2.1.5" inuse="+"/>
-        <usage resource="PropBank" version="3.1" inuse="+"/>
-        <usage resource="PropBank" version="3.4" inuse="+"/>
-        <usage resource="AMR" version="2019" inuse="+"/>
-        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
-        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
-        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
       </usagenotes>
       <lexlinks>
-        <lexlink class="Change_event_time" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Change_event_time" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
         <lexlink class="reschedule-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">6</lexlink>
       </lexlinks>
       <example name="active" src="">
         <text>Nissan rescheduled a seven - yen interim dividend payment , unchanged .</text>
-        <arg type="ARG0" start="0" end="0">Nissan</arg>
-        <arg type="ARG1" start="2" end="10">a seven - yen interim dividend payment , unchanged</arg>
-        <rel relloc="1">rescheduled</rel>
+        <propbank>
+          <rel relloc="1">rescheduled</rel>
+          <arg type="ARG0" start="0" end="0">Nissan</arg>
+          <arg type="ARG1" start="2" end="10">a seven - yen interim dividend payment , unchanged</arg>
+        </propbank>
       </example>
       <example name="passivized and extracted" src="">
         <text>... [the first of five small fields]-1 rescheduled *trace*-1 to be brought into production before the end of 1990 .</text>
-        <arg type="ARG1" start="?" end="?">*trace*</arg>
-        <arg type="ARG2" start="9" end="18">to be brought into production before the end of 1990</arg>
-        <rel relloc="7">rescheduled</rel>
+        <propbank>
+          <rel relloc="7">rescheduled</rel>
+          <arg type="ARG1" start="?" end="?">*trace*</arg>
+          <arg type="ARG2" start="9" end="18">to be brought into production before the end of 1990</arg>
+        </propbank>
       </example>
       <example name="passivized, temporal" src="">
         <text>[A guild disciplinary hearing]-1 is rescheduled *trace*-1 next Monday in New York</text>
-        <arg type="ARG1" start="?" end="?">*trace*</arg>
-        <arg type="ARG3" start="7" end="8">next Monday</arg>
-        <arg type="ARGM-LOC" start="9" end="11">in New York</arg>
-        <rel relloc="5">rescheduled</rel>
+        <propbank>
+          <rel relloc="5">rescheduled</rel>
+          <arg type="ARG1" start="?" end="?">*trace*</arg>
+          <arg type="ARG3" start="7" end="8">next Monday</arg>
+          <arg type="ARGM-LOC" start="9" end="11">in New York</arg>
+        </propbank>
       </example>
       <example name="apparent temporal--but not!" src="">
         <text>... [the multilevel railcars]-1 , rescheduled *trace*-1 for delivery in 1990 ...</text>
-        <arg type="ARG1" start="?" end="?">*trace*</arg>
-        <arg type="ARG2" start="7" end="10">for delivery in 1990</arg>
-        <rel relloc="5">rescheduled</rel>
+        <propbank>
+          <rel relloc="5">rescheduled</rel>
+          <arg type="ARG1" start="?" end="?">*trace*</arg>
+          <arg type="ARG2" start="7" end="10">for delivery in 1990</arg>
+        </propbank>
       </example>
       <example name="ARG0 and ARG1 and ARG3" src="ontonotes nw/wsj/04/wsj_0469">
         <text>Despite Mr. Blaine 's protests , the judge rescheduled her case for Nov. 27 .</text>
-        <arg type="ARGM-ADV" start="0" end="4">Despite Mr. Blaine 's protests</arg>
-        <arg type="ARG0" start="6" end="7">the judge</arg>
-        <arg type="ARG1" start="9" end="10">her case</arg>
-        <arg type="ARG3" start="11" end="13">for Nov. 27</arg>
-        <rel relloc="8">rescheduled</rel>
+        <propbank>
+          <rel relloc="8">rescheduled</rel>
+          <arg type="ARGM-ADV" start="0" end="4">Despite Mr. Blaine 's protests</arg>
+          <arg type="ARG0" start="6" end="7">the judge</arg>
+          <arg type="ARG1" start="9" end="10">her case</arg>
+          <arg type="ARG3" start="11" end="13">for Nov. 27</arg>
+        </propbank>
       </example>
       <note>RESCHEDULE-V NOTES: The arg3 "time of event" is entirely separate from the time ofscheduling which will take an argM-TMP. Because the phrase "for delivery in 1990" includes an action, not justa time, it counts as an arg2 not an arg3. (from reschedule.01-v)</note>
     </roleset>

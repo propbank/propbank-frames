@@ -29,60 +29,72 @@
         </role>
       </roles>
       <usagenotes>
-        <usage resource="PropBank" version="1.0" inuse="+"/>
-        <usage resource="PropBank" version="2.1.5" inuse="+"/>
-        <usage resource="PropBank" version="3.1" inuse="+"/>
-        <usage resource="PropBank" version="3.4" inuse="+"/>
-        <usage resource="AMR" version="2019" inuse="+"/>
-        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
-        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
-        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
       </usagenotes>
       <lexlinks>
-        <lexlink class="Erasing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
-        <lexlink class="remove-10.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Erasing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="remove-10.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
         <lexlink class="delete-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
-        <lexlink class="remove-10.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="remove-10.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
       </lexlinks>
       <example name="no source" src="">
         <text>SHAREDATA Inc. said it-1 will amend a registration statement filed with the Securities and Exchange Commission *trace*-1 to delete a plan to sell 500,000 newly issued common shares .</text>
-        <arg type="ARG0" start="?" end="?">*trace*</arg>
-        <arg type="ARG1" start="19" end="27">a plan to sell 500,000 newly issued common shares</arg>
-        <rel relloc="18">delete</rel>
+        <propbank>
+          <rel relloc="18">delete</rel>
+          <arg type="ARG0" start="?" end="?">*trace*</arg>
+          <arg type="ARG1" start="19" end="27">a plan to sell 500,000 newly issued common shares</arg>
+        </propbank>
       </example>
       <example name="with source" src="">
         <text>[American Medical International Inc. , a New York hospital operator]-1 , will be deleted *trace*-1 from the index at that time .</text>
-        <arg type="ARGM-MOD" start="11" end="11">will</arg>
-        <arg type="ARG1" start="?" end="?">*trace*</arg>
-        <arg type="ARG2" start="15" end="17">from the index</arg>
-        <arg type="ARGM-TMP" start="18" end="20">at that time</arg>
-        <rel relloc="13">deleted</rel>
+        <propbank>
+          <rel relloc="13">deleted</rel>
+          <arg type="ARGM-MOD" start="11" end="11">will</arg>
+          <arg type="ARG1" start="?" end="?">*trace*</arg>
+          <arg type="ARG2" start="15" end="17">from the index</arg>
+          <arg type="ARGM-TMP" start="18" end="20">at that time</arg>
+        </propbank>
       </example>
       <example name="passive/adjectival" src="">
         <text>As the violinist tells it , his grandmotherly looking teacher `` put her hands on her hips , stomped her foot and said , ` You 've just got to get the [ expletive-1 deleted *trace*-1 ] out of there . '' '</text>
-        <arg type="ARG1" start="?" end="?">*trace*</arg>
-        <rel relloc="34">deleted</rel>
+        <propbank>
+          <rel relloc="34">deleted</rel>
+          <arg type="ARG1" start="?" end="?">*trace*</arg>
+        </propbank>
       </example>
       <example name="All args" src="">
         <text>Her deletion of the files from the computer made her look guilty .</text>
-        <arg type="ARG0" start="0" end="0">Her</arg>
-        <arg type="ARG1" start="2" end="4">of the files</arg>
-        <arg type="ARG2" start="5" end="7">from the computer</arg>
-        <rel relloc="1">deletion</rel>
+        <propbank>
+          <rel relloc="1">deletion</rel>
+          <arg type="ARG0" start="0" end="0">Her</arg>
+          <arg type="ARG1" start="2" end="4">of the files</arg>
+          <arg type="ARG2" start="5" end="7">from the computer</arg>
+        </propbank>
       </example>
       <example name="args 1 and PRP" src="BOLT">
         <text>The deleting of messages to make room for new ones takes it even further - I hope criminal prosecutions follow because this has gone way too far .</text>
-        <arg type="ARG1" start="2" end="3">of messages</arg>
-        <arg type="ARG2" start="4" end="9">to make room for new ones</arg>
-        <rel relloc="1">deleting</rel>
+        <propbank>
+          <rel relloc="1">deleting</rel>
+          <arg type="ARG1" start="2" end="3">of messages</arg>
+          <arg type="ARG2" start="4" end="9">to make room for new ones</arg>
+        </propbank>
       </example>
       <example name="reversed 1 and 2" src="internet">
         <text>The Respondent 's conduct in insisting that the laboratory technician draw an improper blood sample , and his deleting from the resulting laboratory slip the notation regarding how the sample was taken with the intention of creating false documentation of his alcohol level , constitutes conduct evidencing moral unfitness and fraud .</text>
-        <arg type="ARG0" start="17" end="17">his</arg>
-        <arg type="ARG2" start="19" end="23">from the resulting laboratory slip</arg>
-        <arg type="ARG1" start="24" end="31">the notation regarding how the sample was taken</arg>
-        <arg type="ARGM-PRP" start="32" end="42">with the intention of creating false documentation of his alcohol level</arg>
-        <rel relloc="18">deleting</rel>
+        <propbank>
+          <rel relloc="18">deleting</rel>
+          <arg type="ARG0" start="17" end="17">his</arg>
+          <arg type="ARG2" start="19" end="23">from the resulting laboratory slip</arg>
+          <arg type="ARG1" start="24" end="31">the notation regarding how the sample was taken</arg>
+          <arg type="ARGM-PRP" start="32" end="42">with the intention of creating false documentation of his alcohol level</arg>
+        </propbank>
       </example>
       <note>DELETE-V NOTES: Frames file for 'delete' based on sentences in wsj. Verbnet entry 10.1. (from delete.01-v predicate notes)</note>
       <note>DELETION-N NOTES: delete.01 (from deletion.01-n)</note>

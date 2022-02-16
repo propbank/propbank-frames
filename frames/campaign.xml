@@ -10,21 +10,21 @@
         <argalias arg="0" pos="n">campaigner</argalias>
       </aliases>
       <roles>
-        <role descr="campaigner" f="PAG" n="0"/>
-        <role descr="cause, goal" f="PPT" n="1"/>
+        <role descr="campaigner" f="PAG" n="0" />
+        <role descr="cause, goal" f="PPT" n="1" />
       </roles>
       <usagenotes>
-        <usage resource="PropBank" version="1.0" inuse="+"/>
-        <usage resource="PropBank" version="2.1.5" inuse="+"/>
-        <usage resource="PropBank" version="3.1" inuse="+"/>
-        <usage resource="PropBank" version="3.4" inuse="+"/>
-        <usage resource="AMR" version="2019" inuse="+"/>
-        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
-        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
-        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
       </usagenotes>
       <lexlinks>
-        <lexlink class="Military_operation" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Military_operation" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
         <lexlink class="campaign-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">16</lexlink>
         <lexlink class="campaign-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">53</lexlink>
         <lexlink class="campaign-n.4" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">15</lexlink>
@@ -34,33 +34,43 @@
       </lexlinks>
       <example name="positive campaign" src="">
         <text>Mr. Bush has long campaigned for passage of a bill or a constitutional amendment that would explicitly give him a line - item veto , which would enable him to kill individual items in a big spending bill without having to kill the entire bill .</text>
-        <arg type="ARG0" start="0" end="1">Mr. Bush</arg>
-        <arg type="ARGM-TMP" start="3" end="3">long</arg>
-        <arg type="ARG1" start="5" end="44">for passage of a bill or a constitutional amendment that would explicitly give him a line - item veto , which would enable him to kill individual items in a big spending bill without having to kill the entire bill</arg>
-        <rel relloc="4">campaigned</rel>
+        <propbank>
+          <rel relloc="4">campaigned</rel>
+          <arg type="ARG0" start="0" end="1">Mr. Bush</arg>
+          <arg type="ARGM-TMP" start="3" end="3">long</arg>
+          <arg type="ARG1" start="5" end="44">for passage of a bill or a constitutional amendment that would explicitly give him a line - item veto , which would enable him to kill individual items in a big spending bill without having to kill the entire bill</arg>
+        </propbank>
       </example>
       <example name="negative campaign" src="">
         <text>[The government]-1 , [*-1] campaigning against fixed brokerage commissions , promptly sued the CBOE over its minimum - fee system .</text>
-        <arg type="ARG0" start="?" end="?">[*-1]</arg>
-        <arg type="ARG1" start="5" end="8">against fixed brokerage commissions</arg>
-        <rel relloc="4">campaigning</rel>
+        <propbank>
+          <rel relloc="4">campaigning</rel>
+          <arg type="ARG0" start="?" end="?">[*-1]</arg>
+          <arg type="ARG1" start="5" end="8">against fixed brokerage commissions</arg>
+        </propbank>
       </example>
       <example name="just arg1" src="BOLT">
         <text>I believe Eastwood is speaking from the heart , that 's why I think it 's such an amazing and curious ad since it looks and feels so much like the kind of thing the Obama campaign would find favorable to them .</text>
-        <arg type="ARG1" start="35" end="35">Obama</arg>
-        <rel relloc="36">campaign</rel>
+        <propbank>
+          <rel relloc="36">campaign</rel>
+          <arg type="ARG1" start="35" end="35">Obama</arg>
+        </propbank>
       </example>
       <example name="both args" src="internet">
         <text>President Obama 's ? Campaign to Cut Waste ? Has Lackluster Prospects .</text>
-        <arg type="ARG0" start="0" end="2">President Obama 's</arg>
-        <arg type="ARG1" start="5" end="7">to Cut Waste</arg>
-        <rel relloc="4">Campaign</rel>
+        <propbank>
+          <rel relloc="4">Campaign</rel>
+          <arg type="ARG0" start="0" end="2">President Obama 's</arg>
+          <arg type="ARG1" start="5" end="7">to Cut Waste</arg>
+        </propbank>
       </example>
       <example name="args TMP, 1 (as anti-cause)" src="BOLT">
         <text>SInce much of it lies in the mountainous regions of the West and southwest , these are already the subject of the new campaign against a resurfacing TAliban .</text>
-        <arg type="ARGM-TMP" start="22" end="22">new</arg>
-        <arg type="ARG1" start="?" end="?">agains a resurfacing TAliban</arg>
-        <rel relloc="23">campaign</rel>
+        <propbank>
+          <rel relloc="23">campaign</rel>
+          <arg type="ARGM-TMP" start="22" end="22">new</arg>
+          <arg type="ARG1" start="?" end="?">agains a resurfacing TAliban</arg>
+        </propbank>
       </example>
       <note>CAMPAIGN-V NOTES: Frames file for 'campaign' based on sentences in wsj. No Verbnet entry. (from campaign.01-v predicate notes)</note>
       <note>CAMPAIGN-N NOTES: Added by Julia based on BOLT, campaign-v.01. No VNcls. (from campaign.01-n)</note>

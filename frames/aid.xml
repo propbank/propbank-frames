@@ -28,93 +28,115 @@
         </role>
       </roles>
       <usagenotes>
-        <usage resource="PropBank" version="1.0" inuse="+"/>
-        <usage resource="PropBank" version="2.1.5" inuse="+"/>
-        <usage resource="PropBank" version="3.1" inuse="+"/>
-        <usage resource="PropBank" version="3.4" inuse="+"/>
-        <usage resource="AMR" version="2019" inuse="+"/>
-        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
-        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
-        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
       </usagenotes>
       <lexlinks>
-        <lexlink class="Assistance" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
-        <lexlink class="help-72.1-1-1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+        <lexlink class="Assistance" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="help-72.1-1-1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3" />
         <lexlink class="aid-n.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">90</lexlink>
         <lexlink class="aid-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">21</lexlink>
         <lexlink class="aid-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
-        <lexlink class="help-72.1-1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="help-72.1-1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
       </lexlinks>
       <example name="with Arg2" src="">
         <text>The Fed chairman 's caution was apparent again on the Monday morning after the market 's plunge , when the central bank took only modest steps [*0*] [*T*-2] to aid the markets [*T*-1] .</text>
-        <arg type="ARGM-SLC" start="?" end="?">[*0*] -&gt; the central bank</arg>
-        <arg type="ARG0" start="?" end="?">[*T*-2] (= [*0*])</arg>
-        <arg type="ARG2" start="30" end="31">the markets</arg>
-        <rel relloc="29">aid</rel>
+        <propbank>
+          <rel relloc="29">aid</rel>
+          <arg type="ARGM-SLC" start="?" end="?">[*0*] -&gt; the central bank</arg>
+          <arg type="ARG0" start="?" end="?">[*T*-2] (= [*0*])</arg>
+          <arg type="ARG2" start="30" end="31">the markets</arg>
+        </propbank>
       </example>
       <example name="with Arg1 and Arg2" src="">
         <text>Though Spain has an excess of banks , analysts say the country still has one of the most profitable markets in Europe , which [*T*-1] will aid Banco Exterior with the tough tasks it faces ahead .</text>
-        <arg type="ARGM-SLC" start="?" end="?">which -&gt; one of the most profitable market in Europe</arg>
-        <arg type="ARG0" start="?" end="?">[*T*-1] (= which)</arg>
-        <arg type="ARGM-MOD" start="25" end="25">will</arg>
-        <arg type="ARG2" start="27" end="28">Banco Exterior</arg>
-        <arg type="ARG1" start="29" end="35">with the tough tasks it faces ahead</arg>
-        <rel relloc="26">aid</rel>
+        <propbank>
+          <rel relloc="26">aid</rel>
+          <arg type="ARGM-SLC" start="?" end="?">which -&gt; one of the most profitable market in Europe</arg>
+          <arg type="ARG0" start="?" end="?">[*T*-1] (= which)</arg>
+          <arg type="ARGM-MOD" start="25" end="25">will</arg>
+          <arg type="ARG2" start="27" end="28">Banco Exterior</arg>
+          <arg type="ARG1" start="29" end="35">with the tough tasks it faces ahead</arg>
+        </propbank>
       </example>
       <example name="with a prepositional Arg1" src="">
         <text>The House , meanwhile , approved $ 2.85 billion [*U*] [*0*] [*T*-1] to aid in the recovery from the temblor and from Hurricane Hugo as state legislators moved toward a temporary sales - tax increase .</text>
-        <arg type="ARG0" start="?" end="?">[*T*-1] (= [*0*])</arg>
-        <arg type="ARGM-SLC" start="?" end="?">[*0*] -&gt; $ 2.85 billion [*U*]</arg>
-        <arg type="ARG1" start="14" end="23">in the recovery from the temblor and from Hurricane Hugo</arg>
-        <rel relloc="13">aid</rel>
+        <propbank>
+          <rel relloc="13">aid</rel>
+          <arg type="ARG0" start="?" end="?">[*T*-1] (= [*0*])</arg>
+          <arg type="ARGM-SLC" start="?" end="?">[*0*] -&gt; $ 2.85 billion [*U*]</arg>
+          <arg type="ARG1" start="14" end="23">in the recovery from the temblor and from Hurricane Hugo</arg>
+        </propbank>
       </example>
       <example name="passive" src="">
         <text>Salomon posted an unexpectedly big gain in quarterly earnings , [*-1] aided [*-2] by its securities trading and investment banking activities .</text>
-        <arg type="ARG1" start="?" end="?">[*-2] -&gt; [*-1] - &gt; an unexpectedly big gain in quarterly earnings</arg>
-        <arg type="ARG0" start="13" end="20">by its securities trading and investment banking activities</arg>
-        <rel relloc="11">aided</rel>
+        <propbank>
+          <rel relloc="11">aided</rel>
+          <arg type="ARG1" start="?" end="?">[*-2] -&gt; [*-1] - &gt; an unexpectedly big gain in quarterly earnings</arg>
+          <arg type="ARG0" start="13" end="20">by its securities trading and investment banking activities</arg>
+        </propbank>
       </example>
       <example name="simple transitive" src="">
         <text>An increase in production at some major oil fields in the North Sea , which had been knocked out by an explosion in July 1988 , also aided results .</text>
-        <arg type="ARG0" start="0" end="24">An increase in production at some major oil fields in the North Sea , which had been knocked out by an explosion in July 1988</arg>
-        <arg type="ARGM-DIS" start="26" end="26">also</arg>
-        <arg type="ARG1" start="28" end="28">results</arg>
-        <rel relloc="27">aided</rel>
+        <propbank>
+          <rel relloc="27">aided</rel>
+          <arg type="ARG0" start="0" end="24">An increase in production at some major oil fields in the North Sea , which had been knocked out by an explosion in July 1988</arg>
+          <arg type="ARGM-DIS" start="26" end="26">also</arg>
+          <arg type="ARG1" start="28" end="28">results</arg>
+        </propbank>
       </example>
       <example name="NP only, arg 1" src="NomBank Frames">
         <text>greater economic aid and technological know - how to flow from Westto East</text>
-        <arg type="ARGM-EXT" start="0" end="0">greater</arg>
-        <arg type="ARG1" start="1" end="1">economic</arg>
-        <rel relloc="2">aid</rel>
+        <propbank>
+          <rel relloc="2">aid</rel>
+          <arg type="ARGM-EXT" start="0" end="0">greater</arg>
+          <arg type="ARG1" start="1" end="1">economic</arg>
+        </propbank>
       </example>
       <example name="NP only, args 0 &amp; 2" src="NomBank Frames">
         <text>Soviet aid to Kabul</text>
-        <arg type="ARG0" start="0" end="0">Soviet</arg>
-        <arg type="ARG2" start="2" end="3">to Kabul</arg>
-        <rel relloc="1">aid</rel>
+        <propbank>
+          <rel relloc="1">aid</rel>
+          <arg type="ARG0" start="0" end="0">Soviet</arg>
+          <arg type="ARG2" start="2" end="3">to Kabul</arg>
+        </propbank>
       </example>
       <example name="Arg 0 as &quot;of&quot; PP" src="ON sense 1">
         <text>Our garden desperately needs the aid of a knowledgeable horticulturist .</text>
-        <arg type="ARG0" start="6" end="9">of a knowledgeable horticulturist</arg>
-        <rel relloc="5">aid</rel>
+        <propbank>
+          <rel relloc="5">aid</rel>
+          <arg type="ARG0" start="6" end="9">of a knowledgeable horticulturist</arg>
+        </propbank>
       </example>
       <example name="ARG1" src="ontonotes bn/voa/01/voa_0133">
         <text>For Angola , the United Nations is appealing for $ 202 million in food aid .</text>
-        <arg type="ARG1" start="13" end="13">food</arg>
-        <rel relloc="14">aid</rel>
+        <propbank>
+          <rel relloc="14">aid</rel>
+          <arg type="ARG1" start="13" end="13">food</arg>
+        </propbank>
       </example>
       <example name="Args 0 and 2" src="ON sense 3">
         <text>Foreign aid to that region increased by twenty million dollars this year .</text>
-        <arg type="ARG0" start="0" end="0">Foreign</arg>
-        <arg type="ARG2" start="2" end="4">to that region</arg>
-        <rel relloc="1">aid</rel>
+        <propbank>
+          <rel relloc="1">aid</rel>
+          <arg type="ARG0" start="0" end="0">Foreign</arg>
+          <arg type="ARG2" start="2" end="4">to that region</arg>
+        </propbank>
       </example>
       <example name="Arg 2 and MNR" src="ON sense 3">
         <text>The U.N. is threatening to cut off financial aid to that nation but not medical aid .</text>
-        <arg type="ARGM-MNR" start="7" end="7">financial</arg>
-        <arg type="ARG2" start="9" end="11">to that nation</arg>
-      <rel relloc="8">aid</rel>
-        </example>
+        <propbank>
+          <rel relloc="8">aid</rel>
+          <arg type="ARGM-MNR" start="7" end="7">financial</arg>
+          <arg type="ARG2" start="9" end="11">to that nation</arg>
+        </propbank>
+      </example>
       <note>AID-V NOTES: frames created by Olga. Member of Vncls help-72-1. (from aid.01-v)</note>
       <note>AID-N NOTES: Roleset based on verb entry aid.01, OntoNotes grouping aid-n senses 1,2, &amp; 3; maps to VN class help-72-1. Framed by Claire. (from aid.01-n)</note>
     </roleset>

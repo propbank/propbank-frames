@@ -42,86 +42,104 @@
         </role>
       </roles>
       <usagenotes>
-        <usage resource="PropBank" version="1.0" inuse="+"/>
-        <usage resource="PropBank" version="2.1.5" inuse="+"/>
-        <usage resource="PropBank" version="3.1" inuse="+"/>
-        <usage resource="PropBank" version="3.4" inuse="+"/>
-        <usage resource="AMR" version="2019" inuse="+"/>
-        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
-        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
-        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
       </usagenotes>
       <lexlinks>
-        <lexlink class="Commerce_buy" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
-        <lexlink class="obtain-13.5.2-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
-        <lexlink class="Transaction.TransferMoney.Purchase" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
-        <lexlink class="Transaction.TransferOwnership.Purchase" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
-        <lexlink class="Transfermoney" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
-        <lexlink class="Transferownership" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="Commerce_buy" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="obtain-13.5.2-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="Transaction.TransferMoney.Purchase" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019" />
+        <lexlink class="Transaction.TransferOwnership.Purchase" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019" />
+        <lexlink class="Transfermoney" confidence="0.1" resource="ERE" src="reo-expansion" version="rich" />
+        <lexlink class="Transferownership" confidence="0.1" resource="ERE" src="reo-expansion" version="rich" />
         <lexlink class="purchase-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">145</lexlink>
         <lexlink class="purchase-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">123</lexlink>
-        <lexlink class="obtain-13.5.2-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="obtain-13.5.2-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
       </lexlinks>
       <example name="Basic transitive" src="">
         <text>They purchased $ 2.4 billion in Fannie Mae bonds</text>
-        <arg type="ARG0" start="0" end="0">They</arg>
-        <arg type="ARG1" start="2" end="8">$ 2.4 billion in Fannie Mae bonds</arg>
-        <rel relloc="1">purchased</rel>
+        <propbank>
+          <rel relloc="1">purchased</rel>
+          <arg type="ARG0" start="0" end="0">They</arg>
+          <arg type="ARG1" start="2" end="8">$ 2.4 billion in Fannie Mae bonds</arg>
+        </propbank>
       </example>
       <example name="With price (often subtle):" src="">
         <text>... most-1 purchased *trace*-1 at nominal prices ...</text>
-        <arg type="ARG1" start="?" end="?">*trace*-1</arg>
-        <arg type="ARG3" start="4" end="6">at nominal prices</arg>
-        <rel relloc="2">purchased</rel>
+        <propbank>
+          <rel relloc="2">purchased</rel>
+          <arg type="ARG1" start="?" end="?">*trace*-1</arg>
+          <arg type="ARG3" start="4" end="6">at nominal prices</arg>
+        </propbank>
       </example>
       <example name="With seller:" src="">
         <text>The company purchased a wheel - loader from Dresser .</text>
-        <arg type="ARG0" start="0" end="1">The company</arg>
-        <arg type="ARG1" start="3" end="6">a wheel - loader</arg>
-        <arg type="ARG2" start="7" end="8">from Dresser</arg>
-        <rel relloc="2">purchased</rel>
+        <propbank>
+          <rel relloc="2">purchased</rel>
+          <arg type="ARG0" start="0" end="1">The company</arg>
+          <arg type="ARG1" start="3" end="6">a wheel - loader</arg>
+          <arg type="ARG2" start="7" end="8">from Dresser</arg>
+        </propbank>
       </example>
       <example name="ARG0 and ARG1 and ARG4" src="ontonotes nw/wsj/16/wsj_1635">
         <text>But Mr. Powers has purchased asset - backed issues for individuals with tax - deferred accounts , such as retirement plans .</text>
-        <arg type="ARGM-DIS" start="0" end="0">But</arg>
-        <arg type="ARG0" start="1" end="2">Mr. Powers</arg>
-        <arg type="ARG1" start="5" end="8">asset - backed issues</arg>
-        <arg type="ARG4" start="9" end="20">for individuals with tax - deferred accounts , such as retirement plans</arg>
-        <rel relloc="4">purchased</rel>
+        <propbank>
+          <rel relloc="4">purchased</rel>
+          <arg type="ARGM-DIS" start="0" end="0">But</arg>
+          <arg type="ARG0" start="1" end="2">Mr. Powers</arg>
+          <arg type="ARG1" start="5" end="8">asset - backed issues</arg>
+          <arg type="ARG4" start="9" end="20">for individuals with tax - deferred accounts , such as retirement plans</arg>
+        </propbank>
       </example>
       <example name="With purpose clause:" src="">
         <text>The company purchased sugar on the world market to meet export commitments</text>
-        <arg type="ARG0" start="0" end="1">The company</arg>
-        <arg type="ARG1" start="3" end="3">sugar</arg>
-        <arg type="ARGM-LOC" start="4" end="7">on the world market</arg>
-        <arg type="ARGM-PRP" start="8" end="11">to meet export commitments</arg>
-        <rel relloc="2">purchased</rel>
+        <propbank>
+          <rel relloc="2">purchased</rel>
+          <arg type="ARG0" start="0" end="1">The company</arg>
+          <arg type="ARG1" start="3" end="3">sugar</arg>
+          <arg type="ARGM-LOC" start="4" end="7">on the world market</arg>
+          <arg type="ARGM-PRP" start="8" end="11">to meet export commitments</arg>
+        </propbank>
       </example>
       <example name="Lots of arguments" src="Lots of arguments">
         <text>General Electric Co. 's rail - car leasing unit completed the $ 178.5 million purchase of similar businesses from LeucadiaNational Corp. and Brae Corp. , 74%-owned by Leucadia</text>
-        <arg type="ARG3" start="11" end="13">$ 178.5 million</arg>
-        <arg type="ARG1" start="15" end="17">of similar businesses</arg>
-        <arg type="ARG2" start="?" end="?">from Leucadia National Corp. and Brae Corp. , 74%-owned by Leucadia</arg>
-        <rel relloc="14">purchase</rel>
+        <propbank>
+          <rel relloc="14">purchase</rel>
+          <arg type="ARG3" start="11" end="13">$ 178.5 million</arg>
+          <arg type="ARG1" start="15" end="17">of similar businesses</arg>
+          <arg type="ARG2" start="?" end="?">from Leucadia National Corp. and Brae Corp. , 74%-owned by Leucadia</arg>
+        </propbank>
       </example>
       <example name="NP only, with purchaser" src="NP only, with purchaser">
         <text>its $ 750 million purchase of a 15 % stake in UAL</text>
-        <arg type="ARG0" start="0" end="0">its</arg>
-        <arg type="ARG3" start="1" end="3">$ 750 million</arg>
-        <arg type="ARG1" start="5" end="11">of a 15 % stake in UAL</arg>
-        <rel relloc="4">purchase</rel>
+        <propbank>
+          <rel relloc="4">purchase</rel>
+          <arg type="ARG0" start="0" end="0">its</arg>
+          <arg type="ARG3" start="1" end="3">$ 750 million</arg>
+          <arg type="ARG1" start="5" end="11">of a 15 % stake in UAL</arg>
+        </propbank>
       </example>
       <example name="With &quot;by&quot; preposition for arg0" src="With &quot;by&quot; preposition for arg0">
         <text>The courts may rule that purchase of the smaller company by the larger is monopolistic .</text>
-        <arg type="ARG1" start="6" end="9">of the smaller company</arg>
-        <arg type="ARG0" start="10" end="12">by the larger</arg>
-        <rel relloc="5">purchase</rel>
+        <propbank>
+          <rel relloc="5">purchase</rel>
+          <arg type="ARG1" start="6" end="9">of the smaller company</arg>
+          <arg type="ARG0" start="10" end="12">by the larger</arg>
+        </propbank>
       </example>
       <example name="With beneficiary argument" src="With beneficiary argument">
         <text>Chloe was forced to ask her husband to make the $ 700 purchase for her .</text>
-        <arg type="ARG3" start="10" end="11">$ 700</arg>
-        <arg type="ARG4" start="13" end="14">for her</arg>
-        <rel relloc="12">purchase</rel>
+        <propbank>
+          <rel relloc="12">purchase</rel>
+          <arg type="ARG3" start="10" end="11">$ 700</arg>
+          <arg type="ARG4" start="13" end="14">for her</arg>
+        </propbank>
       </example>
       <note>PURCHASE-V NOTES: Based on large corpus. Member of Vncls obtain-13.5.2-1. comparison with buy. Checked by Julia, 10/2010. (from purchase.01-v)</note>
       <note>PURCHASE-N NOTES: Roleset based on verb entry purchase.01, and OntoNotes sense grouping purchase.01; maps to VN class obtain-13.5.2-1. Framed by Claire. (from purchase.01-n)</note>
