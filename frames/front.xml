@@ -33,11 +33,11 @@
           <arg end="5" start="4" type="ARG2">of house</arg>
         </propbank>
         <amr>
-            (f2 / front-01
-                :ARG1 (r / room
-                  :poss (w / we))
-                :ARG2 (h / house))
-            </amr>
+        (f2 / front-01
+            :ARG1 (r / room
+              :poss (w / we))
+            :ARG2 (h / house))
+        </amr>
       </example>
       <example name="front-n" src="Minecraft">
         <text>Remove the front block of the structure .</text>
@@ -47,11 +47,12 @@
           <arg end="6" start="4" type="ARG2">of the structure</arg>
         </propbank>
         <amr>
-            (f2 / front-01
-                :ARG1 (r / room
-                  :poss (w / we))
-                :ARG2 (h / house))
-            </amr>
+        (r / remove-01 :mode imperative
+          :ARG0 (y / you)
+          :ARG1 (b / block
+            :ARG1-of (f / front-01
+              :ARG2 (s / structure))))
+        </amr>
       </example>
       <note>FRONT NOTES: Updated for SpatialAMR. Args 1 and 2 (and name) reworded, Args 3 and 4 added as pragmatic roles.</note>
       <note>FRONT-J NOTES: Added automatically by Julia. (from front.01-j)</note>
@@ -80,33 +81,29 @@
       <lexlinks/>
       <entailments>
         <hobbsian>
-           (forall (Arg1 Arg2 Arg3 Arg4 quant)
-            (iff (ahead-02 Arg1 Arg2 Arg3 Arg4 quant)
-             (exists (f p1 p2 z1 z2)
-              (and (selfAnchoredFramework f Arg3)
-                   (externalTo Arg1 Arg2)
-                   (zAxis Arg4 f)
-                   (frontOf Arg1 Arg2 f)
-                   (atLoc Arg1 p1)
-                   (atLoc Arg2 p2)
-                   (zCoordinate z1 p1 f)
-                   (zCoordinate z2 p2 f)
-                   (lt z2 z1 Arg4)
-                   (distance quant Arg1 Arg2)))))
-           </hobbsian>
+        (forall (Arg1 Arg2 Arg3 Arg4 quant)
+          (iff (ahead-02 Arg1 Arg2 Arg3 Arg4 quant)
+            (exists (f p1 p2 z1 z2)
+            (and (selfAnchoredFramework f Arg3)
+                  (externalTo Arg1 Arg2)
+                  (zAxis Arg4 f)
+                  (frontOf Arg1 Arg2 f)
+                  (atLoc Arg1 p1)
+                  (atLoc Arg2 p2)
+                  (zCoordinate z1 p1 f)
+                  (zCoordinate z2 p2 f)
+                  (lt z2 z1 Arg4)
+                  (distance quant Arg1 Arg2)))))
+         </hobbsian>
       </entailments>
       <example name="in_front_of-p" src="Spatial">
         <text>I 'm in front of the building .</text>
-        <propbank>
-          <rel relloc="2 3">in front</rel>
-          <arg end="0" start="0" type="ARG1">I</arg>
-          <arg end="6" start="4" type="ARG2">of the building</arg>
-        </propbank>
+        <propbank/>
         <amr>
-            (f / front-03
-               :ARG1 (i / i)
-               :ARG2 (b / building))
-            </amr>
+        (f / front-03
+            :ARG1 (i / i)
+            :ARG2 (b / building))
+        </amr>
       </example>
       <note>FRONT NOTES: Added for SpatialAMR.</note>
     </roleset>
@@ -134,20 +131,15 @@
       <lexlinks/>
       <example name="in_front_of-p" src="Minecraft">
         <text>Put it in front of the chair .</text>
-        <note/>
-        <propbank>
-          <rel relloc="3">front</rel>
-          <arg end="?" start="?" type="ARG"/>
-          <arg end="?" start="?" type="ARG"/>
-        </propbank>
+        <propbank/>
         <amr>
-            (p / put-01 :mode imperative
-               :ARG0 (y / you)
-               :ARG1 (i2 / it)
-               :ARG2 (s / space
-                  :ARG1-of (f / front-03
-                     :ARG2 (c / chair))))
-            </amr>
+        (p / put-01 :mode imperative
+            :ARG0 (y / you)
+            :ARG1 (i2 / it)
+            :ARG2 (s / space
+              :ARG1-of (f / front-03
+                  :ARG2 (c / chair))))
+        </amr>
       </example>
       <note>NOTES: Added for SpatialAMR.</note>
     </roleset>

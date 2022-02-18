@@ -629,9 +629,9 @@
       </aliases>
       <roles>
         <role descr="injector" f="PAG" n="0"/>
-        <role descr="recipient of shot" f="PPT" n="1"/>
-        <role descr="substance injected" f="" n="2"/>
-        <role descr="injected for what purpose (the condition being prevented or treated)" f="" n="3"/>
+        <role descr="recipient of shot" f="GOL" n="1"/>
+        <role descr="substance injected" f="PPT" n="2"/>
+        <role descr="injected for what purpose (the condition being prevented or treated)" f="PRP" n="3"/>
       </roles>
       <usagenotes>
         <usage resource="PropBank" version="1.0" inuse="-"/>
@@ -645,27 +645,26 @@
       </usagenotes>
       <lexlinks/>
       <example name="shot-n" src="THYME">
-        <text>flu shot 2008</text>
-        <THYME-AMR>
-            (s / shot-13
-               :ARG3 (d / disease-disorder :name (n / name :op1 "flu"))
-               :time (d2 / date-entity :year 2008))
-            </THYME-AMR>
-      <propbank>
+        <text>flu shot 2020</text>
+        <propbank>
           <rel relloc="1">shot</rel>
           <arg end="0" start="0" type="ARG3">flu</arg>
-          <arg end="2" start="2" type="ARGM-TMP">2008</arg>
+          <arg end="2" start="2" type="ARGM-TMP">2020</arg>
         </propbank>
+        <amr version="THYME 1.0">
+        (s / shot-13
+            :ARG3 (d / disease-disorder :name (n / name :op1 "flu"))
+            :time (d2 / date-entity :year 2020))
+        </amr>
       </example>
       <example name="shot-n, implicit usage in THYME-AMR" src="THYME">
-        <text>Pneumovax 1996</text>
-        <THYME-AMR>
-            (s / shot-13 :implicit +
-               :ARG2 (m / medications-drugs :name (n / name :op1 "Pneumovax"))
-               :time (d / date-entity :year 1996))
-            </THYME-AMR>
-      <propbank>
-          </propbank>
+        <text>Pneumovax 2020</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+        (s / shot-13 :implicit +
+            :ARG2 (m / medications-drugs :name (n / name :op1 "Pneumovax"))
+            :time (d / date-entity :year 2020))
+        </amr>
       </example>
       <note>SHOT NOTES: Added for THYME-AMR.</note>
     </roleset>
