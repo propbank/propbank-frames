@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
 """
 Create a human-readable website listing the given frames.
-Note: Requires Python 3.10 or later
 """
 
 __author__ = "Skatje Myers"
 __license__ = "CC-BY-SA-4.0"
 
 import argparse
-import bisect
 import re
 from pathlib import Path
 from xml.etree import ElementTree as ET
@@ -218,7 +216,9 @@ def get_aliases_to_rolesets(frames):
 				if alias.text not in alias_word_to_rolesets:
 					alias_word_to_rolesets[alias.text] = [roleset]
 				else:
-					bisect.insort(alias_word_to_rolesets[alias.text], roleset, key=lambda x: x.get('id'))
+					alias_word_to_rolesets[alias.text].append(roleset)
+	for alias, rolesets in alias_word_to_rolesets.items():
+		rolesets.sort(key=lambda x: x.get('id'))
 	return alias_word_to_rolesets
 
 
@@ -324,6 +324,7 @@ def create_roleset_div(roleset, roleset_to_resource_use):
 		arg_start_to_arg = dict()
 		broken_args = list()
 		for arg in args:
+			# TODO: Multiple args may start at a given spot
 			if arg.tag == 'rel':
 				if ' ' in arg.get('relloc'):
 					split = arg.get('relloc').split(' ')
@@ -341,6 +342,8 @@ def create_roleset_div(roleset, roleset_to_resource_use):
 					broken_args.append(arg)
 				else:
 					arg_start_to_arg[int(arg.get('start'))] = [int(arg.get('end')), arg_name, arg.text]
+		if example.find('text') is None or example.find('text').text is None:
+			continue
 		tokenized = example.find('text').text.split(' ')
 		example_string = '<span>'
 		i = 0
@@ -349,7 +352,7 @@ def create_roleset_div(roleset, roleset_to_resource_use):
 				arg_text = re.sub(' ', '', arg_start_to_arg[i][2].lower())
 				example_text = ''.join(tokenized[i:arg_start_to_arg[i][0] + 1]).lower()
 				assert example_text
-				assert re.match(re.escape(example_text) + '[.?,]?', arg_text)
+				assert re.match(re.escape(example_text), arg_text)
 				example_string += '<div class="tooltip"><span style="background-color: '
 				example_string += get_arg_color(arg_start_to_arg[i][1]) + '">' + \
 								  arg_start_to_arg[i][2] + \
