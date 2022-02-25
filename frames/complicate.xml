@@ -88,25 +88,21 @@
         </propbank>
       </example>
       <example name="complication-n" src="THYME-Auto1">
-        <text>Ms . Miller was hospitalized on October 29 , 2009 , with complications of diverticulitis requiring IV antibiotics .</text>
+        <text>Patient was hospitalized on July 17 , 2008 , with complications of diverticulitis .</text>
         <propbank>
           <rel relloc="12">complications</rel>
           <arg end="14" start="13" type="ARG0">of diverticulitis</arg>
         </propbank>
         <amr>
             (h / hospitalize-01
-              :ARG1 (p / person :name (n / name :op1 "Ms." :op2 "Miller"))
-              :time (d / date-entity :month 10 :day 29 :year 2009)
+              :ARG1 (p / patient-yy)
               :ARG1-of (c / cause-01
                 :ARG0 (t / thing :pl +
                   :ARG3-of (c2 / complicate-01
-                    :ARG0 (d / disease-disorder :name (n2 / name :op1 "diverticulitis")
-                      :ARG2-of (h / have-disorder-91
-                        :ARG1 p)))
-                  :ARG0-of (r / require-01
-                    :ARG1 (m / medications-drugs :name (n3 / name :op1 "antibiotics")
-                      :path (d2 / devices :name (n4 / name :op1 "IV")))))))
-            </amr>
+                    :ARG0 (d2 / disease-disorder :name (n / name :op1 "diverticulitis")
+                      :poss p))))
+              :time (d / date-entity :month 7 :day 17 :year 2008))
+          </amr>
       </example>
       <note>COMPLICATE NOTES: Arg2 added for THYME-AMR.</note>
       <note>COMPLICATE-V NOTES: Be careful for adjectival "complicated" usages confused with verbal"complicated" usages. (from complicate.01-v)</note>
