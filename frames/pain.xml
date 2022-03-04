@@ -58,7 +58,7 @@
         <propbank>
           <rel relloc="3">pain</rel>
           <arg end="0" start="0" type="ARG0">It</arg>
-          <arg end="0" start="0" type="ARGM-NEG">It</arg>
+          <arg end="2" start="2" type="ARGM-NEG">n't</arg>
           <arg end="4" start="4" type="ARG1">me</arg>
         </propbank>
       </example>
@@ -69,16 +69,17 @@
           <arg end="7" start="7" type="ARG1">abdominal</arg>
         </propbank>
         <amr>
-            (d / deny-01
-              :ARG0 p
-              :ARG1 (o / or
-                :op1 (d3 / disease-disorder :name (n6 / name :op1 "peripheral" :op2 "neuropathy")
-                  :ARG1-of (s4 / significant-02)
-                  :ARG2-of (h2 / have-disorder-91
-                    :ARG1 p))
-                :op2 (p2 / pain-01
-                  :ARG1 (a2 / anatomical-site :name (n3 / name :op1 "abdomen")))
-            </amr>
+          (d / deny-01
+            :ARG0 (s / she)
+            :ARG1 (o / or
+              :op1 (d3 / disease-disorder :name (n6 / name :op1 "peripheral" :op2 "neuropathy")
+                :ARG1-of (s4 / significant-02)
+                :poss s)
+              :op2 (p / pain-01
+                :ARG1 s
+                :ARG2 (a2 / anatomical-site :name (n3 / name :op1 "abdomen")))
+              :mod (a / any)))
+        </amr>
       </example>
       <note>PAIN-V NOTES: Frame created by Jena. (from pain.01-v)</note>
       <note>PAINED-J NOTES: Automatically created by Julia as an alias file for unification. (from pained.01-j)</note>

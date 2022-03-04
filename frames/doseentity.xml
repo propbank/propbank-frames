@@ -24,37 +24,32 @@
       </usagenotes>
       <example name="Arg1, Arg2, Arg3, Arg4" src="THYME">
         <text>Coumadin 5 - mg tablet one - half - tablet twice a day .</text>
-        <propbank>
-          </propbank>
         <amr>
-            (t / therapy-01 :implicit +
-               :ARG2 (m / medications-drugs :name (n / name :op1 "Coumadin")
-                  :ARG1-of (d2 / dose-entity-91
-                     :ARG2 (t2 / tablet :quant "1/2")
-                     :ARG3 (m2 / mass-quantity :quant 5
-                         :unit (m3 / milligram))
-                     :ARG4 (r / rate-entity-91
-                         :ARG1 2
-                         :ARG2 (t3 / temporal-quantity :quant 1
-                             :unit (d3 / day)))))))
-            </amr>
+          (t / therapy-01 :implicit +
+            :ARG2 (m / medications-drugs :name (n / name :op1 "Coumadin")
+              :ARG1-of (d2 / dose-entity-91
+                :ARG2 (t2 / tablet :quant "1/2")
+                :ARG3 (m2 / mass-quantity :quant 5
+                  :unit (m3 / milligram))
+                :ARG4 (r / rate-entity-91
+                  :ARG1 2
+                  :ARG2 (t3 / temporal-quantity :quant 1
+                    :unit (d3 / day)))))))
+        </amr>
       </example>
       <example name="" src="THYME">
         <text>metoprolol 100 - mg twice - daily</text>
         <note>If :ARG2 isn't explicit, don't infer; we assume that the :ARG3 mass amount is what's being ingested at the given frequency, regardless of the number or mass of tablets.</note>
-        <propbank>
-          </propbank>
         <amr>
-            :op1 (m2 / medications-drugs :name (n2 / name :op1 "metoprolol")
-               :ARG1-of (d3 / dose-entity-91
-                  :ARG2 (t2 / thing :quant 1)
-                  :ARG3 (m3 / mass-quantity :quant 100
-                     :unit (m4 / milligram))
-               :ARG4 (r / rate-entity-91
-                  :ARG1 2
-                  :ARG2 (t3 / temporal-quantity :quant 1
-                     :unit (d / day)))))
-            </amr>
+          (m2 / medications-drugs :name (n2 / name :op1 "metoprolol")
+            :ARG1-of (d3 / dose-entity-91
+              :ARG3 (m3 / mass-quantity :quant 100
+                :unit (m4 / milligram))
+              :ARG4 (r / rate-entity-91
+                :ARG1 2
+                :ARG2 (t3 / temporal-quantity :quant 1
+                  :unit (d / day)))))
+        </amr>
       </example>
       <note>Added for THYME-AMR.</note>
     </roleset>
