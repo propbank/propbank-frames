@@ -9,13 +9,15 @@ __license__ = "CC-BY-SA-4.0"
 import argparse
 import re
 from pathlib import Path
-from xml.etree import ElementTree as ET
+from lxml import etree as ET
+
+from validate_frames import validate
 
 
 def main(frame_dir, website_dir):
 	# Read and extract frame info
 	frames = frame_dir.rglob('*.xml')
-	frames = {file.name: ET.parse(file) for file in frames}
+	frames = {file.name: ET.parse(str(file)) for file in frames}
 	website_title = 'PropBank Frames'
 
 	all_rolesets = get_rolesets(frames)
@@ -30,8 +32,7 @@ def main(frame_dir, website_dir):
 	# Create common HTML elements
 	## Create roleset search field
 	search_rolesets_form = ET.Element('form', attrib={'autocomplete': 'off', 'action': '{{ base_url_relative }}',
-													  'onsubmit': 'onRolesetSearch(this)', 'method': 'post',
-													  'name': 'rolesetSearch'})
+													  'method': 'post', 'name': 'rolesetSearch'})
 	div = ET.Element('div', attrib={'class': 'autocomplete', 'style': 'width:300px;'})
 	search_rolesets_form.append(div)
 	input = ET.Element('input', attrib={'id': 'searchRolesets', 'name': 'myRoleset', 'placeholder': 'Roleset ID',
@@ -41,8 +42,7 @@ def main(frame_dir, website_dir):
 
 	## Create alias search field
 	search_aliases_form = ET.Element('form', attrib={'autocomplete': 'off', 'action': '{{ base_url_relative }}',
-													 'onsubmit': 'onAliasSearch(this)', 'method': 'post',
-													 'name': 'aliasSearch'})
+													 'method': 'post', 'name': 'aliasSearch'})
 	div = ET.Element('div', attrib={'class': 'autocomplete', 'style': 'width:300px;'})
 	search_aliases_form.append(div)
 	input = ET.Element('input',
@@ -72,6 +72,8 @@ def main(frame_dir, website_dir):
 		option.text = resource.replace('_', ' ').replace('-', '.')
 		select_resource.append(option)
 	header.append(select_resource)
+
+	## TODO: Create footer
 
 	# Create index.html
 	html = ET.Element('html')
@@ -122,7 +124,7 @@ def main(frame_dir, website_dir):
 
 	body.append(ET.Element('script', attrib={'src': 'https://code.jquery.com/jquery-3.5.1.min.js'}))
 	body.append(ET.Element('script', attrib={'src': "script.js"}))
-	ET.ElementTree(html).write(Path(website_dir, 'index.html'), encoding='unicode', method='html')
+	ET.ElementTree(html).write(str(Path(website_dir, 'index.html')), method='html')
 
 	# Create roleset HTML files: abate.html, etc.
 	for frame_name, xml in frames.items():
@@ -150,7 +152,7 @@ def main(frame_dir, website_dir):
 
 		body.append(ET.Element('script', attrib={'src': 'https://code.jquery.com/jquery-3.5.1.min.js'}))
 		body.append(ET.Element('script', attrib={'src': "script.js"}))
-		ET.ElementTree(html).write(file, encoding='unicode', method='html')
+		ET.ElementTree(html).write(str(file), method='html')
 
 	##  Create alias HTML pages for searching by alias
 	for alias, rolesets in alias_word_to_rolesets.items():
@@ -176,7 +178,7 @@ def main(frame_dir, website_dir):
 		body.append(ET.Element('script', attrib={'src': "script.js"}))
 		if '/' in alias:
 			alias = re.sub('/', '-', alias)
-		ET.ElementTree(html).write(Path(website_dir, 'alias-' + alias + '.html'), encoding='unicode', method='html')
+		ET.ElementTree(html).write(str(Path(website_dir, 'alias-' + alias + '.html')), method='html')
 
 
 def get_rolesets(frames):
@@ -349,10 +351,6 @@ def create_roleset_div(roleset, roleset_to_resource_use):
 		i = 0
 		while i < len(tokenized):
 			if i in arg_start_to_arg:
-				arg_text = re.sub(' ', '', arg_start_to_arg[i][2].lower())
-				example_text = ''.join(tokenized[i:arg_start_to_arg[i][0] + 1]).lower()
-				assert example_text
-				assert re.match(re.escape(example_text), arg_text)
 				example_string += '<div class="tooltip"><span style="background-color: '
 				example_string += get_arg_color(arg_start_to_arg[i][1]) + '">' + \
 								  arg_start_to_arg[i][2] + \
@@ -376,6 +374,7 @@ def create_roleset_div(roleset, roleset_to_resource_use):
 				example_string += '<br /><span><b>' + arg.get('type') + '</b>: ' + arg.text + '</span>'
 
 		# TODO: Hide AMR examples based on usage tag
+		# TODO Use penman to prettify format, if possible.
 		amrs = example.findall('amr')
 		attrib = {'class': 'roleset resource-dependent ' + ' '.join(roleset_to_resource_use[roleset.get('id')])}
 		for amr in amrs:
@@ -492,14 +491,12 @@ def create_javascript(alias_word_to_rolesets, all_rolesets, resources, website_d
 	for roleset, pred in all_rolesets.items():
 		javascript += '\n"' + roleset + '": "' + pred + '",'
 	javascript += '\n}\n'
-	javascript += '\nfunction onRolesetSearch(form) {\n' \
-				  '    form.action = rolesetToPred[form.querySelector("#searchRolesets").value] + ".html#" + form.querySelector("#searchRolesets").value;\n}\n'
+	javascript += '\n$("form[name=rolesetSearch]").on("submit", (e) => { e.preventDefault(); window.location=rolesetToPred[$("#searchRolesets").val()] + ".html#" + $("#searchRolesets").val(); });'
 
 	## Alias search functions:
 	javascript += '\nvar aliases = ["' + '", "'.join(alias_word_to_rolesets.keys()) + '"]\n\n'
 	javascript += '\nautocomplete(document.getElementById("searchAliases"), aliases);'
-	javascript += '\nfunction onAliasSearch(form) {\n' \
-				  '    form.action = "alias-" + form.querySelector("#searchAliases").value.replace("/", "-") + ".html";\n}\n'
+	javascript += '\n$("form[name=aliasSearch]").on("submit", (e) => { e.preventDefault(); window.location="alias-" + $("#searchAliases").val().replace("/", "-") + ".html#" + $("#searchAliases").val(); });'
 
 	## Resource usage dropdown function:
 	javascript += '\nvar resources ={'
@@ -509,170 +506,166 @@ def create_javascript(alias_word_to_rolesets, all_rolesets, resources, website_d
 	javascript += '\nfunction showHideUsedElements(){\n' \
 				  '    $("select").change(function(){\n' \
 				  '        $(this).find("option:selected").each(function(){\n' \
-				  '            var optionValue = $(this).attr("value");\n' \
+				  '            var optionValue = $(this).val();\n' \
 				  '            if(optionValue == "ALL"){\n' \
 				  '                $(".resource-dependent").show();\n' \
 				  '            } else{\n' \
-				  '                $(".resource-dependent").each(\n' \
-				  '                    function(){\n' \
-				  '                       if($(this).hasClass(optionValue)){\n' \
-				  '                           $(this).show();\n' \
-				  '                       } else {$(this).hide(); }\n' \
-				  '               });\n' \
+				  '                $(".resource-dependent").filter("."+optionValue).show();\n' \
+				  '                $(".resource-dependent").filter(":not(."+optionValue+")").hide();\n' \
 				  '            }\n' \
 				  '        localStorage.setItem("usageValue", $(this).val());\n' \
 				  '        });\n' \
 				  '    }).change();\n' \
 				  '};\n' \
 				  'var usageValue = localStorage.getItem("usageValue");\n' \
-				  '    if(usageValue != null) {\n' \
-				  '        $("select").val(usageValue);\n' \
-				  '    }\n\n' \
-				  'showHideUsedElements()\n\n'
+				  'if(usageValue != null) {\n' \
+				  '    $("select").val(usageValue);\n' \
+				  '}\n\n' \
+				  'showHideUsedElements();\n\n'
 	Path(website_dir, 'script.js').write_text(javascript)
 
 
 def create_css(website_dir):
 	css_contents = '* { box-sizing: border-box; }\n' \
-						'body {\n' \
-						'  font: 16px Arial;\n' \
-						'}\n' \
-						'.roleset {\n' \
-						'  border: 1px solid #000000;\n' \
-						'  background-color: #fff7c9;\n' \
-						'  margin-bottom: 20px;\n' \
-						'  padding: 10px;\n' \
-						'}\n' \
-						'\n' \
-						'.example {\n' \
-						'  border: 1px solid #000000;\n' \
-						'  background-color: #f7fff4;\n' \
-						'  margin-bottom: 10px;\n' \
-						'  padding: 5px;\n' \
-						'}\n' \
-						'\n' \
-						'.autocomplete {\n' \
-						'  /*the container must be positioned relative:*/\n' \
-						'  position: relative;\n' \
-						'  display: inline-block;\n' \
-						'}\n' \
-						'input {\n' \
-						'  border: 1px solid transparent;\n' \
-						'  background-color: #f1f1f1;\n' \
-						'  padding: 10px;\n' \
-						'  font-size: 16px;\n' \
-						'}\n' \
-						'input[type=text] {\n' \
-						'  background-color: #f1f1f1;\n' \
-						'  width: 100%;\n' \
-						'}\n' \
-						'input[type=submit] {\n' \
-						'  background-color: DodgerBlue;\n' \
-						'  color: #fff;\n' \
-						'}\n' \
-						'.autocomplete-items {\n' \
-						'  position: absolute;\n' \
-						'  border: 1px solid #d4d4d4;\n' \
-						'  border-bottom: none;\n' \
-						'  border-top: none;\n' \
-						'  z-index: 99;\n' \
-						'  /*position the autocomplete items to be the same width as the container:*/\n' \
-						'  top: 100%;\n' \
-						'  left: 0;\n' \
-						'  right: 0;\n' \
-						'}\n' \
-						'.autocomplete-items div {\n' \
-						'  padding: 10px;\n' \
-						'  cursor: pointer;\n' \
-						'  background-color: #fff;\n' \
-						'  border-bottom: 1px solid #d4d4d4;\n' \
-						'}\n' \
-						'.autocomplete-items div:hover {\n' \
-						'  /*when hovering an item:*/\n' \
-						'  background-color: #e9e9e9;\n' \
-						'}\n' \
-						'.autocomplete-active {\n' \
-						'  /*when navigating through the items using the arrow keys:*/\n' \
-						'  background-color: DodgerBlue !important;\n' \
-						'  color: #ffffff;\n' \
-						'}\n' \
-						'\n' \
-						'/* Tooltip container */\n' \
-						'.tooltip {\n' \
-						'  position: relative;\n' \
-						'  display: inline-block;\n' \
-						'}\n' \
-						'\n' \
-						'/* Tooltip text */\n' \
-						'.tooltip .tooltiptext {\n' \
-						'  visibility: hidden;\n' \
-						'  width: 120px;\n' \
-						'  background-color: #555;\n' \
-						'  color: #fff;\n' \
-						'  text-align: center;\n' \
-						'  padding: 5px 0;\n' \
-						'  border-radius: 6px;\n' \
-						'\n' \
-						'  /* Position the tooltip text */\n' \
-						'  position: absolute;\n' \
-						'  z-index: 1;\n' \
-						'  bottom: 125%;\n' \
-						'  left: 50%;\n' \
-						'  margin-left: -60px;\n' \
-						'\n' \
-						'  /* Fade in tooltip */\n' \
-						'  opacity: 0;\n' \
-						'  transition: opacity 0.3s;\n' \
-						'}\n' \
-						'\n' \
-						'/* Tooltip arrow */\n' \
-						'.tooltip .tooltiptext::after {\n' \
-						'  content: "";\n' \
-						'  position: absolute;\n' \
-						'  top: 100%;\n' \
-						'  left: 50%;\n' \
-						'  margin-left: -5px;\n' \
-						'  border-width: 5px;\n' \
-						'  border-style: solid;\n' \
-						'  border-color: #555 transparent transparent transparent;\n' \
-						'}\n' \
-						'\n' \
-						'/* Show the tooltip text when you mouse over the tooltip container */\n' \
-						'.tooltip:hover .tooltiptext {\n' \
-						'  visibility: visible;\n' \
-						'  opacity: 1;\n' \
-						'}\n' \
-						'.header {\n' \
-						'  padding: 60px;\n' \
-						'  padding-bottom: 120px;\n' \
-						'  margin-bottom: 10px;\n' \
-						'  background: #1abc9c;\n' \
-						'}\n' \
-						'.header h1 {\n' \
-						'  text-align: center;\n' \
-						'  top: 50%;\n' \
-						'  float:left;\n' \
-						'  background: #1abc9c;\n' \
-						'  color: white;\n' \
-						'  font-size: 30px;\n' \
-						'}\n' \
-						'\n' \
-						'.alpha {\n' \
-						'  border: 1px solid #000000;\n' \
-						'  background-color: #f7fff4;\n' \
-						'  margin-bottom: 10px;\n' \
-						'  padding: 5px;\n' \
-						'}\n' \
-						'\n' \
-						'.columns {\n' \
-						'  -webkit-columns: 4;\n' \
-						'  -moz-columns: 4;\n' \
-						'  columns: 4 auto;\n' \
-						'\n' \
-						'}\n' \
-						'.columns p {\n' \
-						'  margin: 0;\n' \
-						'}'
+				   'body {\n' \
+				   '  font: 16px Arial;\n' \
+				   '}\n' \
+				   '.roleset {\n' \
+				   '  border: 1px solid #000000;\n' \
+				   '  background-color: #fff7c9;\n' \
+				   '  margin-bottom: 20px;\n' \
+				   '  padding: 10px;\n' \
+				   '}\n' \
+				   '\n' \
+				   '.example {\n' \
+				   '  border: 1px solid #000000;\n' \
+				   '  background-color: #f7fff4;\n' \
+				   '  margin-bottom: 10px;\n' \
+				   '  padding: 5px;\n' \
+				   '}\n' \
+				   '\n' \
+				   '.autocomplete {\n' \
+				   '  /*the container must be positioned relative:*/\n' \
+				   '  position: relative;\n' \
+				   '  display: inline-block;\n' \
+				   '}\n' \
+				   'input {\n' \
+				   '  border: 1px solid transparent;\n' \
+				   '  background-color: #f1f1f1;\n' \
+				   '  padding: 10px;\n' \
+				   '  font-size: 16px;\n' \
+				   '}\n' \
+				   'input[type=text] {\n' \
+				   '  background-color: #f1f1f1;\n' \
+				   '  width: 100%;\n' \
+				   '}\n' \
+				   'input[type=submit] {\n' \
+				   '  background-color: DodgerBlue;\n' \
+				   '  color: #fff;\n' \
+				   '}\n' \
+				   '.autocomplete-items {\n' \
+				   '  position: absolute;\n' \
+				   '  border: 1px solid #d4d4d4;\n' \
+				   '  border-bottom: none;\n' \
+				   '  border-top: none;\n' \
+				   '  z-index: 99;\n' \
+				   '  /*position the autocomplete items to be the same width as the container:*/\n' \
+				   '  top: 100%;\n' \
+				   '  left: 0;\n' \
+				   '  right: 0;\n' \
+				   '}\n' \
+				   '.autocomplete-items div {\n' \
+				   '  padding: 10px;\n' \
+				   '  cursor: pointer;\n' \
+				   '  background-color: #fff;\n' \
+				   '  border-bottom: 1px solid #d4d4d4;\n' \
+				   '}\n' \
+				   '.autocomplete-items div:hover {\n' \
+				   '  /*when hovering an item:*/\n' \
+				   '  background-color: #e9e9e9;\n' \
+				   '}\n' \
+				   '.autocomplete-active {\n' \
+				   '  /*when navigating through the items using the arrow keys:*/\n' \
+				   '  background-color: DodgerBlue !important;\n' \
+				   '  color: #ffffff;\n' \
+				   '}\n' \
+				   '\n' \
+				   '/* Tooltip container */\n' \
+				   '.tooltip {\n' \
+				   '  position: relative;\n' \
+				   '  display: inline-block;\n' \
+				   '}\n' \
+				   '\n' \
+				   '/* Tooltip text */\n' \
+				   '.tooltip .tooltiptext {\n' \
+				   '  visibility: hidden;\n' \
+				   '  width: 120px;\n' \
+				   '  background-color: #555;\n' \
+				   '  color: #fff;\n' \
+				   '  text-align: center;\n' \
+				   '  padding: 5px 0;\n' \
+				   '  border-radius: 6px;\n' \
+				   '\n' \
+				   '  /* Position the tooltip text */\n' \
+				   '  position: absolute;\n' \
+				   '  z-index: 1;\n' \
+				   '  bottom: 125%;\n' \
+				   '  left: 50%;\n' \
+				   '  margin-left: -60px;\n' \
+				   '\n' \
+				   '  /* Fade in tooltip */\n' \
+				   '  opacity: 0;\n' \
+				   '  transition: opacity 0.3s;\n' \
+				   '}\n' \
+				   '\n' \
+				   '/* Tooltip arrow */\n' \
+				   '.tooltip .tooltiptext::after {\n' \
+				   '  content: "";\n' \
+				   '  position: absolute;\n' \
+				   '  top: 100%;\n' \
+				   '  left: 50%;\n' \
+				   '  margin-left: -5px;\n' \
+				   '  border-width: 5px;\n' \
+				   '  border-style: solid;\n' \
+				   '  border-color: #555 transparent transparent transparent;\n' \
+				   '}\n' \
+				   '\n' \
+				   '/* Show the tooltip text when you mouse over the tooltip container */\n' \
+				   '.tooltip:hover .tooltiptext {\n' \
+				   '  visibility: visible;\n' \
+				   '  opacity: 1;\n' \
+				   '}\n' \
+				   '.header {\n' \
+				   '  padding: 60px;\n' \
+				   '  padding-bottom: 120px;\n' \
+				   '  margin-bottom: 10px;\n' \
+				   '  background: #1abc9c;\n' \
+				   '}\n' \
+				   '.header h1 {\n' \
+				   '  text-align: center;\n' \
+				   '  top: 50%;\n' \
+				   '  float:left;\n' \
+				   '  background: #1abc9c;\n' \
+				   '  color: white;\n' \
+				   '  font-size: 30px;\n' \
+				   '}\n' \
+				   '\n' \
+				   '.alpha {\n' \
+				   '  border: 1px solid #000000;\n' \
+				   '  background-color: #f7fff4;\n' \
+				   '  margin-bottom: 10px;\n' \
+				   '  padding: 5px;\n' \
+				   '}\n' \
+				   '\n' \
+				   '.columns {\n' \
+				   '  -webkit-columns: 4;\n' \
+				   '  -moz-columns: 4;\n' \
+				   '  columns: 4 auto;\n' \
+				   '\n' \
+				   '}\n' \
+				   '.columns p {\n' \
+				   '  margin: 0;\n' \
+				   '}'
 	css_file = Path(website_dir, 'style.css')
 	css_file.write_text(css_contents)
 
@@ -685,7 +678,8 @@ if __name__ == "__main__":
 	args = parser.parse_args()
 	input_frames = Path(args.input)
 	assert input_frames.exists()
-	# TODO: We should run a validation check on the input frames.
+	validate(input_frames,
+			 None)  # TODO: We should have it spit out the errors to a file, then make them accessible via HTML
 	website_dir = Path(args.output)
 	website_dir.mkdir(exist_ok=True)
 	main(input_frames, website_dir)
