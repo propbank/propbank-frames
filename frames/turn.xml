@@ -984,12 +984,12 @@
           <arg end="0" start="0" type="ARGM-DIS">Should</arg>
           <arg end="1" start="1" type="ARG0">I</arg>
         </propbank>
-        <amr>
-            (r / recommend-01
-               :polarity (a / amr-unknown)
-               :ARG1 (t / turn-around-23
-                  :ARG0 (i)))
-            </amr>
+        <amr version="2019">
+          (r / recommend-01
+              :polarity (a / amr-unknown)
+              :ARG1 (t / turn-around-23
+                :ARG0 (i)))
+        </amr>
       </example>
       <example name="turn_around-n" src="Minecraft">
         <text>The reforms turned the economy around .</text>
@@ -998,11 +998,11 @@
           <arg end="1" start="0" type="ARG0">The reforms</arg>
           <arg end="4" start="3" type="ARG1">the economy</arg>
         </propbank>
-        <amr>
-            (t / turn-around-23
-               :ARG0 (r / reform-01)
-               :ARG1 (e / economy))
-            </amr>
+        <amr version="2019">
+          (t / turn-around-23
+              :ARG0 (r / reform-01)
+              :ARG1 (e / economy))
+        </amr>
       </example>
       <note>TURN AROUND NOTES: Added for SpatialAMR.</note>
     </roleset>
@@ -1028,23 +1028,25 @@
       </usagenotes>
       <lexlinks/>
       <example name="turn_around-v" src="Spatial">
-        <text>*PRO* Turn around so I can see your whole outfit</text>
+        <text>You should turn around so I can see your whole outfit</text>
         <propbank>
-          <rel relloc="1 2">Turn around</rel>
-          <arg end="?" start="?" type="ARG0">*PRO*</arg>
-          <arg end="9" start="3" type="ARGM-PRP">so I can see your whole outfit</arg>
+          <rel relloc="2 3">turn around</rel>
+          <arg end="0" start="0" type="ARG0">You</arg>
+          <arg end="1" start="1" type="ARGM-MOD">should</arg>
+          <arg end="4" start="10" type="ARGM-PRP">so I can see your whole outfit</arg>
         </propbank>
-        <amr>
-            (t / turn-around-23 :mode imperative
-               :ARG0 (y / you)
-               :ARG1 y
-               :purpose (p / possible-01
+        <amr version="Spatial 1.0">
+          (r / recommend-01
+            :ARG1 (t / turn-around-23
+              :ARG0 (y / you)
+              :ARG1 y
+              :purpose (p / possible-01
                   :ARG1 (s / see-01
-                     :ARG0 (i / i)
-                     :ARG1 (o / outfit
+                    :ARG0 (i / i)
+                    :ARG1 (o / outfit
                         :mod (w / whole)
-                        :poss y))))
-            </amr>
+                        :poss y)))))
+        </amr>
       </example>
       <note>TURN AROUND NOTES: Added for SpatialAMR.</note>
     </roleset>
