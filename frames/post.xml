@@ -223,5 +223,62 @@
       <note>POST-V NOTES: Added by Julia for Google.</note>
       <note>POST-N NOTES: Added by Julia for Google.</note>
     </roleset>
+    <roleset id="post.05" name="occurring chronologically after, or to be in the stage following an event">
+      <aliases>
+        <alias pos="f">post</alias>
+        <alias pos="f">post-</alias>
+      </aliases>
+      <roles>
+        <role descr="thing coming after" f="PPT" n="1"/>
+        <role descr="thing coming before" f="PPT" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks />
+      <example name="post-f, both args" src="THYME">
+	      <text>She should be restarted on her Plavix postoperatively .</text>
+	      <propbank/>
+        <amr version="THYME 1.0">
+          (r / recommend-01
+            :ARG1 (r2 / restart-01
+              :ARG1 (t / therapy-01 :implicit +
+                :ARG1 (s / she)
+                :ARG2 (m / medications-drugs :name (n / name :op1 "Plavix")))
+              :ARG1-of (p / post-05
+                :ARG2 (o / operate-02
+                  :ARG1 s))))  
+        </amr>
+      </example>
+      <example name="post-f, both args" src="THYME">
+	      <text>CT scan showed postradiation changes .</text>
+	      <propbank/>
+        <amr version="THYME 1.0">
+          (s / show-01
+            :ARG0 (c / ct-01)
+            :ARG1 (c2 / change-01 :pl +
+              :ARG1-of (p / post-05
+                :ARG2 (r / radiate-02)))) 
+        </amr>
+      </example>
+      <example name="post-f, both args" src="THYME">
+	      <text>Abdomen : Postoperative .</text>
+	      <propbank/>
+        <amr version="THYME 1.0">
+          (p / post-05
+            :ARG1 (a / anatomical-site :name (n / name :op1 "abdomen"))
+            :ARG2 (o / operate-02
+              :ARG1 a))
+        </amr>
+      </example>
+      <note>NOTES: Added for THYME-AMR. A closed list of prefix frames (intra.01, peri.01, post.05, pre.01) were created to resolve temporal conflicts generated in the merged THYME AMR-THYME 2 annotations. They are to be used in tandem with frames that represent the terms' roots, but only when they convey temporal information. They should not be used for spatial senses (like "perirectal") or other non-temporal senses.</note>
+    </roleset>
   </predicate>
 </frameset>

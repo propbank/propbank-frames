@@ -469,31 +469,18 @@
               :location (h / home))
             </amr>
       </example>
-      <example name="follow_up-n" src="THYME-AMR">
-        <text>Neurosurgical follow up with Tracy Youngblood will be scheduled</text>
-        <propbank>
-          <rel relloc="1 2">follow up</rel>
-          <arg end="0" start="0" type="ARG2">Neurosurgical</arg>
-          <arg end="5" start="3" type="ARG1">with Tracy Youngblood</arg>
-        </propbank>
-        <amr>
-            (f / follow-up-03
-              :ARG1 (p / person :name (n2 / name :op1 "Tracy" :op2 "Youngblood"))
-              :ARG2 (n / neurosurgery))
-            </amr>
-      </example>
       <example name="follow-up-n" src="THYME-AMR">
-        <text>the exact date and time of Dale Liles 's follow - up appointment will be communicated to her .</text>
+        <text>the exact date and time of the patient 's follow - up appointment will be communicated to her .</text>
         <propbank>
           <rel relloc="9 10 11">follow - up</rel>
           <arg end="12" start="12" type="ARG3">appointment</arg>
         </propbank>
         <amr>
-            (a / appointment-02
-              :ARG0 (p2 / person :name (n3 / name :op1 "Dale" :op2 "Lile"))
-              :ARG3-of (f / follow-up-03
-                :ARG0 p2))
-            </amr>
+          (a / appointment-02
+            :ARG0 (p / patient-yy)
+            :ARG3-of (f / follow-up-03
+              :ARG0 p))
+        </amr>
       </example>
       <example name="follow_up-v" src="THYME-AMR">
         <text>patient should follow up with endocrinologist for refills</text>
