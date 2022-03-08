@@ -5,6 +5,8 @@
     <roleset id="heavy.01" name="having much weight">
       <aliases>
         <alias pos="j">heavy</alias>
+        <alias pos="n">heaviness</alias>
+        <alias pos="r">heavily</alias>
       </aliases>
       <roles>
         <role descr="heavy entity" f="LOC" n="1" />
@@ -38,6 +40,27 @@
           <arg type="ARG2" start="4" end="6">with unspoken knowledge</arg>
         </propbank>
       </example>
+      <example name="heaviness-n" src="THYME">
+        <text>Patient denies chest heaviness .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (d / deny-01
+            :ARG0 (p / patient-yy)
+            :ARG1 (h / heavy-01
+              :ARG1 (a / anatomical-site :name (n / name :op1 "chest")
+                :part-of p)))
+        </amr>
+      </example>
+      <example name="heavily-r" src="THYME">
+        <text>Patient snores heavily .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (s / snore-01
+            :ARG0 (p / patient-yy)
+            :manner (h / heavy-01))
+        </amr>
+      </example>
+      <note>HEAVILY-R and HEAVINESS-N NOTES: Added by Kristin based on THYME.</note>
       <note>HEAVY-J NOTES: Added by Julia based on BOLT-7. (from heavy.01-j)</note>
     </roleset>
   </predicate>
