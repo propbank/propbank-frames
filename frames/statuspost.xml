@@ -2,15 +2,15 @@
 <!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="status_post">
-    <roleset id="status-post.01" name="be in the stage following treatment">
+    <roleset id="status-post.01" name="be in the stage following an event, typically treatment">
       <aliases>
         <alias pos="p">status-post</alias>
         <alias pos="p">status_post</alias>
         <alias pos="p">s/p</alias>
       </aliases>
       <roles>
-        <role descr="thing that has been treated" f="PPT" n="1" />
-        <role descr="treatment" f="MNR" n="2" />
+        <role descr="thing in the stage following an event" f="PPT" n="1" />
+        <role descr="event (typically treatment)" f="MNR" n="2" />
       </roles>
       <usagenotes>
         <usage resource="PropBank" version="1.0" inuse="-" />
@@ -23,7 +23,7 @@
         <usage resource="AMR" version="THYME 1.0" inuse="+" />
       </usagenotes>
       <lexlinks />
-      <example name="status_post-p" src="THYME">
+      <example name="status-post-p" src="THYME">
         <text>He is also status - post a hemicolectomy .</text>
         <propbank>
           <rel relloc="3 4 5">status - post</rel>
@@ -32,11 +32,21 @@
           <arg end="7" start="6" type="ARG2">a hemicolectomy</arg>
         </propbank>
         <amr>
-        (s / status-post-01
-           :ARG1 (h / he)
-           :ARG2 (h2 / hemicolectomy-01
+          (s / status-post-01
+            :ARG1 (h / he)
+            :ARG2 (h2 / hemicolectomy-01
               :ARG2 h)
-           :mod (a / also))
+            :mod (a / also))
+        </amr>
+      </example>
+      <example name="status-post-p, rare non-treatment event as ARG2" src="THYME">
+        <text>Patient is status - post necrotic wound .</text>
+        <propbank/>
+        <amr>
+          (s / status-post-01
+            :ARG1 (p / patient-yy)
+            :ARG2 (s2 / sign-symptom :name (n / name :op1 "wound")
+              :ARG1-of (n2 / necrotize-01)))
         </amr>
       </example>
       <note>STATUS-POST NOTES: Added for THYME-AMR.</note>

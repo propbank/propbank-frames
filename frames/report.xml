@@ -185,17 +185,15 @@
           <arg end="2" start="1" type="ARG3">surgical pathology</arg>
         </propbank>
         <amr>
-            (d / describe-01
-              :ARG0 (r / report-01
-                :ARG1 a
-                :ARG3 (p / pathology-02
-                  :ARG1 (t / thing
-                    :source (s / surgery-01))
-                  :ARG2 a))
-              :ARG1 (a / adenocarcinoma-01
-                :ARG1-of (g / grade-01
-                  :ARG2 3)))
-            </amr>
+          (d / describe-01
+            :ARG0 (r / report-01
+              :ARG3 (p / pathology-02
+                :ARG1 (t / thing
+                  :source (s / surgery-01))))
+            :ARG1 (d2 / disease-disorder :name (n / name :op1 "adenocarcinoma")
+              :ARG1-of (g / grade-01
+                :ARG2 3)))
+        </amr>
       </example>
       <note>REPORT NOTES: Arg3 added for THYME-AMR (plus rolelink entries).</note>
       <note>REPORT-V NOTES: Member of Vncls say-37.7-1, consider-29.9-1, characterize-29.2-1-2. Updated by Julia, 10/2010. (from report.01-v)</note>
