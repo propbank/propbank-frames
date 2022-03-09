@@ -15,10 +15,6 @@
         <role descr="third entity" f="SE3" n="4" />
         <role descr="fourth entity" f="SE4" n="5" />
         <role descr="fifth entity" f="SE5" n="6" />
-        <role descr="fifth entity" f="SE6" n="7" />
-        <role descr="fifth entity" f="SE7" n="8" />
-        <role descr="fifth entity" f="SE8" n="9" />
-        <role descr="fifth entity" f="SE9" n="10" />
       </roles>
       <usagenotes>
         <usage resource="PropBank" version="1.0" inuse="-" />
@@ -33,41 +29,39 @@
       <lexlinks />
       <example name="spatial-sequence-91" src="Minecraft">
         <text>next row , put two purple blocks down on top of the blue blocks</text>
-        <amr>
-            (p / put-down-17 :mode imperative
-               :ARG0 (y / you)
-               :ARG1 (b / block :quant 2
-                  :color (p2 / purple))
-               :ARG2 (s / space :pl +
-                  :ARG1-of (o / on-top-03
-                     :ARG2 (b2 / block :pl +
-                        :color (b3 / blue))
-                     :ARG3 (c / cartesian-framework-91
-                        :ARG1 (b4 / build-space)))
-               :location (r / row
-                  :mod (n / next)
-                  :ARG6-of (s2 / spatial-sequence-91))))
+        <amr version="Spatial 1.0">
+          (p / put-down-17 :mode imperative
+              :ARG0 (y / you)
+              :ARG1 (b / block :quant 2
+                :color (p2 / purple))
+              :ARG2 (s / space :pl +
+                :ARG1-of (o / on-top-03
+                    :ARG2 (b2 / block :pl +
+                      :color (b3 / blue))
+                    :ARG3 (c / cartesian-framework-91
+                      :ARG1 (b4 / build-space)))
+              :location (r / row
+                :mod (n / next)
+                :ARG6-of (s2 / spatial-sequence-91))))
         </amr>
       </example>
       <example name="spatial-sequence-91" src="Minecraft">
-        <text>2nd column . purple , empty , 2 purple , empty , red</text>
-        <amr>
-            (c / column
-               :ord (o / ordinal-entity :value 2)
-               :ARG3-of (s / spatial-sequence-91)
-               :configuration (s2 / spatial-sequence-91
-                  :ARG2 (t / thing
-                     :color (p / purple))
-                  :ARG3 (t2 / thing
-                     :ARG1-of (e / empty-02))
-                  :ARG4 (t3 / thing
-                     :color (p2 / purple))
-                  :ARG5 (t4 / thing
-                     :color (p3 / purple))
-                  :ARG6 (t5 / thing
-                     :ARG1-of (e2 / empty-02))
-                  :ARG7 (t6 / thing
-                     :color (r / red))))
+        <text>2nd column . purple , empty , 2 purple , empty</text>
+        <amr version="Spatial 1.0">
+          (c / column
+              :ord (o / ordinal-entity :value 2)
+              :ARG3-of (s / spatial-sequence-91)
+              :configuration (s2 / spatial-sequence-91
+                :ARG2 (t / thing
+                    :color (p / purple))
+                :ARG3 (t2 / thing
+                    :ARG1-of (e / empty-02))
+                :ARG4 (t3 / thing
+                    :color (p2 / purple))
+                :ARG5 (t4 / thing
+                    :color (p3 / purple))
+                :ARG6 (t5 / thing
+                    :ARG1-of (e2 / empty-02))))
         </amr>
       </example>
       <note>SPATIAL SEQUENCE NOTES: this roleset may take as many numbered arguments as needed. Each item in the sequence should get its own numbered arg. </note>
@@ -82,8 +76,8 @@
         <role descr="y-axis" f="AXSy" n="3" />
         <role descr="z-axis" f="AXSz" n="4" />
         <role descr="origin" f="ORGN" n="5" />
-        <role descr="categorical FoR type" f="" n="FR" />
-        <role descr="rotation of the framework-- describes how the respective polarities of the axes are laid out in relation to each other" f="" n="rotation" />
+        <role descr="categorical FoR type" f="FOR" n="FR" />
+        <role descr="rotation of the framework-- describes how the respective polarities of the axes are laid out in relation to each other" f="ROT" n="rotation" />
       </roles>
       <usagenotes>
         <usage resource="PropBank" version="1.0" inuse="-" />
@@ -99,36 +93,36 @@
       <example name="cartesian-framework-91" src="Minecraft">
         <note>this is an example taken from the grounding Dummy AMR at the beginning of each dialogue; it does not correspond to text</note>
         <text>MISSING?</text>
-        <amr>
-            (b / build-space
-               :ARG1-of (c / cartesian-framework-91
-                  :ARG2 (x / x-axis)
-                  :ARG3 (y / y-axis)
-                  :ARG4 (z / z-axis)
-                  :rotatio (r / right-handed)
-                  :FR (a / absolute)))
+        <amr version="Spatial 1.0">
+          (b / build-space
+              :ARG1-of (c / cartesian-framework-91
+                :ARG2 (x / x-axis)
+                :ARG3 (y / y-axis)
+                :ARG4 (z / z-axis)
+                :rotatio (r / right-handed)
+                :FR (a / absolute)))
             </amr>
       </example>
       <example name="cartesian-framework-91" src="Minecraft">
         <note>this is an example taken from the grounding Dummy AMR at the beginning of each dialogue; it does not correspond to text</note>
         <text>MISSING?</text>
-        <amr>
-            (g / ground-white-square
-               :ARG1-of (c4 / cartesian-framework-91
-                 :ARG2 (x4 / x-axis)
-                 :ARG3 (y4 / y-axis)
-                 :rotation (l3 / left-handed)
-                 :FR (r2 / relative-to-builder)))
-            </amr>
+        <amr version="Spatial 1.0">
+          (g / ground-white-square
+              :ARG1-of (c4 / cartesian-framework-91
+                :ARG2 (x4 / x-axis)
+                :ARG3 (y4 / y-axis)
+                :rotation (l3 / left-handed)
+                :FR (r2 / relative-to-builder)))
+        </amr>
       </example>
       <example name="cartesian-framework-91" src="Minecraft">
         <text>purple is the origin</text>
-        <amr>
-            (o / origin
-               :domain (t / thing
-                     :color (p / purple))
-               :ARG5-of (c / cartesian-framework-91))
-            </amr>
+        <amr version="Spatial 1.0">
+          (o / origin
+              :domain (t / thing
+                    :color (p / purple))
+              :ARG5-of (c / cartesian-framework-91))
+        </amr>
       </example>
       <note>CARTESIAN FRAMEWORK NOTES: Added for SpatialAMR. Can be used for 1, 2 or 3 axis frameworks by leaving the extra axes unfilled in annotation; 
             The frame itself makes no claim about which axis corresponds to which 'direction'(although in Minecraft, the y-axis is taken as 
@@ -141,7 +135,7 @@
     <roleset id="have-anchor.91" name="reification for :anchor">
       <aliases />
       <roles>
-        <role descr="spatial relation" f="PPT" n="1" />
+        <role descr="spatial relation" f="VSP" n="1" />
         <role descr="anchor" f="ANC" n="2" />
       </roles>
       <usagenotes>
@@ -157,14 +151,14 @@
       <lexlinks />
       <example name="have-anchor-91" src="Minecraft">
         <text>from my perspective</text>
-        <amr>
-            (h / have-anchor-91
-               :ARG2 (c / cartesian-framework-91
-                  :ARG1 (c2 / composite-entity)
-                  :FR (r3 / relative-to-builder)
-                  :domain (p / perspective
-                      :poss (i / i)))))
-            </amr>
+        <amr version="Spatial 1.0">
+          (h / have-anchor-91
+              :ARG2 (c / cartesian-framework-91
+                :ARG1 (c2 / composite-entity)
+                :FR (r3 / relative-to-builder)
+                :domain (p / perspective
+                    :poss (i / i)))))
+        </amr>
       </example>
       <note>HAVE ANCHOR NOTES: Added for SpatialAMR.</note>
     </roleset>
@@ -173,7 +167,7 @@
     <roleset id="have-axis.91" name="reification for :axis">
       <aliases />
       <roles>
-        <role descr="spatial relation" f="" n="1" />
+        <role descr="spatial relation" f="VSP" n="1" />
         <role descr="axis" f="AXS" n="2" />
       </roles>
       <usagenotes>
@@ -194,7 +188,7 @@
     <roleset id="have-direction.91" name="reification for :direction">
       <aliases />
       <roles>
-        <role descr="directed thing/motion" f="" n="1" />
+        <role descr="directed thing/motion" f="VSP" n="1" />
         <role descr="trajectory" f="DIR" n="2" />
       </roles>
       <usagenotes>
@@ -210,18 +204,18 @@
       <lexlinks />
       <example name="have-direction-91" src="Minecraft">
         <text>other way , kinda to the right i guess</text>
-        <amr>
-            (h / have-direction-91
-               :ARG2 (w / way
-                  :ARG1-of (o / other-01)
-                  :ARG1-of (i2 / instead-of-91)
-                  :ARG4-of (r / right-04
-                     :ARG3 (c / cartesian-framework-91
-                        :ARG1 (b / builder))
-                     :degree (k / kind-of)
-                     :ARG1-of (g / guess-01
-                        :ARG0 (i / i)))))
-            </amr>
+        <amr version="Spatial 1.0">
+          (h / have-direction-91
+              :ARG2 (w / way
+                :ARG1-of (o / other-01)
+                :ARG1-of (i2 / instead-of-91)
+                :ARG4-of (r / right-04
+                    :ARG3 (c / cartesian-framework-91
+                      :ARG1 (b / builder))
+                    :degree (k / kind-of)
+                    :ARG1-of (g / guess-01
+                      :ARG0 (i / i)))))
+        </amr>
       </example>
       <note>HAVE DIRECTION NOTES: Added for SpatialAMR.</note>
     </roleset>
@@ -246,13 +240,13 @@
       <lexlinks />
       <example name="have-configuration-91" src="Minecraft">
         <text>this one is a giant swirl</text>
-        <amr>
-            (h / have-configuration-91
-               :ARG1 (o / one
-                  :mod (t / this))
-               :ARG2 (s / swirl
-                  :size (g / giant)))
-            </amr>
+        <amr version="Spatial 1.0">
+          (h / have-configuration-91
+              :ARG1 (o / one
+                :mod (t / this))
+              :ARG2 (s / swirl
+                :size (g / giant)))
+        </amr>
       </example>
       <note>HAVE CONFIGURATION NOTES: Added for SpatialAMR.</note>
     </roleset>
@@ -281,12 +275,12 @@
           <arg end="4" start="3" type="ARG1">this one</arg>
           <arg end="1" start="0" type="ARG2">what color</arg>
         </propbank>
-        <amr>
-            (h / have-color-91
-               :ARG1 (o / one
-                  :mod (t / this))
-               :ARG2 (a / amr-unknown))
-            </amr>
+        <amr version="Spatial 1.0">
+          (h / have-color-91
+              :ARG1 (o / one
+                :mod (t / this))
+              :ARG2 (a / amr-unknown))
+        </amr>
       </example>
       <note>HAVE COLOR NOTES: Added for SpatialAMR.</note>
     </roleset>
@@ -315,17 +309,17 @@
           <arg end="0" start="0" type="ARG1">it</arg>
           <arg end="2" start="2" type="ARG2">2x2</arg>
         </propbank>
-        <amr>
-            (a / and
-               :op1 (h / have-size-91
-                  :ARG1 (i2 / it)
-                  :ARG2 (a2 / and
-                     :op1 (d / dimension-entity :value 2)
-                     :op2 (d2 / dimension-entity :value 2)))
-               :op2 (f / flat-06
-                  :ARG1 i2
-                  :ARG2 (g / ground)))
-            </amr>
+        <amr version="Spatial 1.0">
+          (a / and
+              :op1 (h / have-size-91
+                :ARG1 (i2 / it)
+                :ARG2 (a2 / and
+                    :op1 (d / dimension-entity :value 2)
+                    :op2 (d2 / dimension-entity :value 2)))
+              :op2 (f / flat-06
+                :ARG1 i2
+                :ARG2 (g / ground)))
+        </amr>
       </example>
       <note>HAVE SIZE NOTES: Added for SpatialAMR.</note>
     </roleset>
@@ -352,26 +346,26 @@
       <lexlinks />
       <example name="relative-orientation" src="Minecraft">
         <text>so from the first green you placed add two 90 degrees to what you just made</text>
-        <amr>
-            (a / add-02 :mode imperative
-               :ARG0 (y / you)
-               :ARG1 (t / thing :quant 2)
-               :ARG2 (t3 / thing
-                  :ord (o2 / ordinal-entity :value 1)
-                  :ARG1-of (p / place-01
-                     :ARG0 y)
-                  :color (g / green))
-               :manner (o / orient-01
-                  :ARG1 (c / composite-entity
-                     :consist-of t)
-                  :ARG4 (r / relative-orientation
-                     :op1 (t2 / thing
-                        :ARG1-of (m / make-01
-                           :ARG0 y
-                              :time (j / just)))
-                     :quant (a2 / angle-quantity :quant 90
-                        :unit (d / degree)))))
-            </amr>
+        <amr version="Spatial 1.0">
+          (a / add-02 :mode imperative
+              :ARG0 (y / you)
+              :ARG1 (t / thing :quant 2)
+              :ARG2 (t3 / thing
+                :ord (o2 / ordinal-entity :value 1)
+                :ARG1-of (p / place-01
+                    :ARG0 y)
+                :color (g / green))
+              :manner (o / orient-01
+                :ARG1 (c / composite-entity
+                    :consist-of t)
+                :ARG4 (r / relative-orientation
+                    :op1 (t2 / thing
+                      :ARG1-of (m / make-01
+                          :ARG0 y
+                            :time (j / just)))
+                    :quant (a2 / angle-quantity :quant 90
+                      :unit (d / degree)))))
+        </amr>
       </example>
       <note>relative-position NOTES: general frameset added for SpatialAMR.</note>
     </roleset>
@@ -383,7 +377,7 @@
         <role descr="x-axis value" f="EXT" n="x" />
         <role descr="y-axis value" f="EXT" n="y" />
         <role descr="z-axis value" f="EXT" n="z" />
-        <role descr="the cartesian framework the coordinate belongs to" f="" n="framework" />
+        <role descr="the cartesian framework the coordinate belongs to" f="FOR" n="framework" />
       </roles>
       <usagenotes>
         <usage resource="PropBank" version="1.0" inuse="-" />
@@ -398,14 +392,14 @@
       <lexlinks />
       <example name="cartesian-coordinate-entity" src="Minecraft">
         <text>[ Builder puts down a green block at X:0 Y:1 Z:-3 ]</text>
-        <amr>
-            (p / put-down-17
-               :ARG0 (b / builder)
-               :ARG1 (b2 / block 
-                 :color (g / green))
-               :ARG2 (s / space
-                 :location (c / cartesian-coordinate-entity :x 0 :y 1 :z -3)))
-            </amr>
+        <amr version="Spatial 1.0">
+          (p / put-down-17
+              :ARG0 (b / builder)
+              :ARG1 (b2 / block 
+                :color (g / green))
+              :ARG2 (s / space
+                :location (c / cartesian-coordinate-entity :x 0 :y 1 :z -3)))
+        </amr>
       </example>
       <note>cartesian-coordinate-entity NOTES: Added for SpatialAMR.</note>
     </roleset>
@@ -415,11 +409,11 @@
       <aliases>
         <alias pos="p">by</alias>
         <alias pos="r">by</alias>
-        <alias pos="">x</alias>
+        <alias pos="x">x</alias>
       </aliases>
       <roles>
-        <role descr="value" f="" n="value" />
-        <role descr="unit" f="" n="unit" />
+        <role descr="value" f="VSP" n="value" />
+        <role descr="unit" f="VSP" n="unit" />
       </roles>
       <usagenotes>
         <usage resource="PropBank" version="1.0" inuse="-" />
@@ -438,12 +432,12 @@
           <rel relloc="7">by</rel>
           <arg end="6" start="6" type="ARGVALUE">3</arg>
         </propbank>
-        <amr>
-            (b / build-01
-               :ARG0 (w / we)
-               :ARG1 (s / square
-                  :size (d / dimension-entity :value 3)))
-            </amr>
+        <amr version="Spatial 1.0">
+          (b / build-01
+              :ARG0 (w / we)
+              :ARG1 (s / square
+                :size (d / dimension-entity :value 3)))
+        </amr>
       </example>
       <note>dimension-entity NOTES: Added for SpatialAMR.</note>
     </roleset>
@@ -452,10 +446,10 @@
     <roleset id="ordinal-entity" name="general set of roles for ordinals">
       <aliases />
       <roles>
-        <role descr="ordinal value" f="" n="value" />
-        <role descr="range" f="" n="range" />
-        <role descr="point where counting begins" f="" n="range-start" />
-        <role descr="direction of counting" f="" n="range-trajectory" />
+        <role descr="ordinal value" f="VSP" n="value" />
+        <role descr="range" f="VSP" n="range" />
+        <role descr="point where counting begins" f="VSP" n="range-start" />
+        <role descr="direction of counting" f="VSP" n="range-trajectory" />
       </roles>
       <usagenotes>
         <usage resource="PropBank" version="1.0" inuse="-" />
@@ -470,22 +464,22 @@
       <lexlinks />
       <example name="ordinal-entity" src="Minecraft">
         <text>third block away from you on the left side is actually yellow</text>
-        <amr>
-            (h / have-color-91
-               :ARG1 (b / block
-                  :ord (o / ordinal-entity :value 3
-                     :range-trajectory (t / trajectory
-                        :ARG3-of (a / away-01
-                           :ARG2 (y2 / you)))
-                     :range-start y2
-                     :range (s / side
-                        :ARG1-of (l / left-24
-                           :ARG3 (c / cartesian-framework-91
-                              :ARG1 y2)))))
-               :ARG2 (y / yellow
-                  :ARG1-of (i2 / instead-of-91))
-               :ARG1-of (a2 / actual-02))
-            </amr>
+        <amr version="Spatial 1.0">
+          (h / have-color-91
+              :ARG1 (b / block
+                :ord (o / ordinal-entity :value 3
+                    :range-trajectory (t / trajectory
+                      :ARG3-of (a / away-01
+                          :ARG2 (y2 / you)))
+                    :range-start y2
+                    :range (s / side
+                      :ARG1-of (l / left-24
+                          :ARG3 (c / cartesian-framework-91
+                            :ARG1 y2)))))
+              :ARG2 (y / yellow
+                :ARG1-of (i2 / instead-of-91))
+              :ARG1-of (a2 / actual-02))
+        </amr>
       </example>
       <note>ordinal-entity NOTES: Updated for SpatialAMR; range-start and range-trajectory added-- these should be generally useful and adopted by general AMR.</note>
     </roleset>
@@ -494,9 +488,9 @@
     <roleset id="slope-entity" name="general set of roles for slopes, with rise and run">
       <aliases />
       <roles>
-        <role descr="which axis is the numerator" f="" n="rise" />
-        <role descr="which axis is the denominatory" f="" n="run" />
-        <role descr="quantity of slope" f="" n="quant" />
+        <role descr="which axis is the numerator" f="VSP" n="rise" />
+        <role descr="which axis is the denominatory" f="VSP" n="run" />
+        <role descr="quantity of slope" f="VSP" n="quant" />
       </roles>
       <usagenotes>
         <usage resource="PropBank" version="1.0" inuse="-" />
@@ -512,15 +506,15 @@
       <example name="slope-entity" src="Minecraft">
         <note>taken from a Dummy AMR, not text</note>
         <text />
-        <amr>
-            (d / diagonal-02
-               :ARG1 z6
-               :ARG2 b
-               :ARG3 (s2 / slope-entity
-                  :rise y
-                  :run x
-                  :quant "-1"))
-            </amr>
+        <amr version="Spatial 1.0">
+          (d / diagonal-02
+              :ARG1 z6
+              :ARG2 b
+              :ARG3 (s2 / slope-entity
+                :rise y
+                :run x
+                :quant "-1"))
+        </amr>
       </example>
       <note>slope-entity NOTES: Added for SpatialAMR.</note>
     </roleset>
