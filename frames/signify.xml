@@ -81,6 +81,8 @@
       </aliases>
       <roles>
         <role descr="thing that is notable" f="PAG" n="1"/>
+        <role descr="cause or reason of notability" f="CAU" n="2"/>
+        <role descr="notable for whom or what; topic" f="GOL" n="3"/>
       </roles>
       <usagenotes>
         <usage resource="PropBank" version="1.0" inuse="-"/>
@@ -111,6 +113,29 @@
           <arg type="ARGM-CAU" start="9" end="32">for its important symbolic and traditional associations with the origins and history of Williams Air Force Base ( now Phoenix - Mesa GatewayAirport )</arg>
         </propbank>
       </example>
+      <example name="significant-j, ARGs 1 and 2" src="THYME">
+	      <text>Labs significant for microcytic anemia .</text>
+	      <propbank/>
+        <amr version="THYME 1.0">
+          (s / significant-02
+            :ARG1 (l / labs-01)
+            :ARG2 (d / disease-disorder :name (n / name :op1 "microcytic" :op2 "anemia"))) 
+        </amr>
+      </example>
+      <example name="significant-j, ARGs 1 and 3" src="internet">
+	      <text>The degradation due to wind shear was significant for three of the five subjects .</text>
+	      <propbank/>
+        <amr version="THYME 1.0">
+          (s / significant-02
+            :ARG1 (d / degrade-01
+              :ARG0 (s2 / shear-01
+                :ARG0 (w / wind)))
+            :ARG3 (s3 / subject :quant 3
+              :ARG1-of (i2 / include-91
+                :ARG2 (s4 / subject :quant 5))))
+        </amr>
+      </example>
+      <note>ARG2 and ARG3 added based on THYME.</note>
       <note>SIGNIFICANT-J NOTES: Added by Julia based on WSJ data. (from significant.02-j)</note>
     </roleset>
   </predicate>

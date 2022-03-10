@@ -67,4 +67,67 @@
       <note>CANCEROUS-J NOTES: Added automatically by Julia. (from cancerous.01-j)</note>
     </roleset>
   </predicate>
+    <predicate lemma="cancer">
+    <roleset id="cancer.03" name="group of diseases involving abnormal cell growth">
+      <aliases>
+        <alias pos="n">cancer</alias>
+      </aliases>
+      <roles>
+        <role descr="patient" f="PPT" n="1"/>
+        <role descr="primary organ" f="LOC" n="2"/>
+        <role descr="specific part of organ, if in addition to ARG2" f="LOC" n="3"/>
+        <role descr="cell location/field (e.g., squamous cell; urothelium)" f="LOC" n="4"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks />
+      <example name="cancer-n, interaction with metastastize-101" src="THYME">
+	      <text># 1 Metastatic colon cancer to the pelvis .</text>
+	      <propbank/>
+        <amr version="THYME 1.0">
+          (c / cancer-03 :li 1
+            :ARG2 (a / anatomical-site :name (n / name :op1 "colon"))
+            :ARG1-of (m / metastasize-101
+              :ARG2 (a2 / anatomical-site :name (n3 / name :op1 "pelvis"))
+              :ARG4 a)) 
+        </amr>
+      </example>
+      <example name="cancer-n, ARG2 and ARG3" src="THYME">
+	      <text>Colon cancer , cecum .</text>
+	      <propbank/>
+        <amr version="THYME 1.0">
+          (c / cancer-03
+            :ARG2 (a / anatomical-site :name (n / name :op1 "colon"))
+            :ARG3 (a2 / anatomical-site :name (n2 / name :op1 "cecum")))  
+        </amr>
+      </example>
+      <example name="cancer-n, use :location when the site mentioned isn't the primary, discernible from context" src="THYME">
+	      <text>She had cancer in one lymph node .</text>
+	      <propbank/>
+        <amr version="THYME 1.0">
+          (c / cancer-03
+            :ARG1 (s / she)
+            :location (a / anatomical-site :quant 1 :name (n / name :op1 "lymph" :op2 "node")))  
+        </amr>
+      </example>
+      <example name="cancer-n, ARG2 and ARG4" src="THYME">
+	      <text>Urothelial bladder cancer .</text>
+	      <propbank/>
+        <amr version="THYME 1.0">
+          (c2 / cancer-03
+            :ARG2 (a3 / anatomical-site :name (n3 / name :op1 "bladder"))
+            :ARG4 (a4 / anatomical-site :name (n4 / name :op1 "urothelium")))  
+        </amr>
+      </example>
+      <note>NOTES: Added for THYME-AMR.</note>
+    </roleset>
+  </predicate>
 </frameset>
