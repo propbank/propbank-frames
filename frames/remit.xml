@@ -79,10 +79,12 @@
     <roleset id="remission.02" name="abate in intensity">
       <aliases>
         <alias pos="n">remission</alias>
+        <alias pos="m">in_remission</alias>
       </aliases>
       <roles>
         <role descr="cause of remission" f="PAG" n="0"/>
         <role descr="thing abating" f="PPT" n="1"/>
+        <role descr="abating for whom; entity experiencing abatement of ARG1" f="GOL" n="2"/>
       </roles>
       <usagenotes>
         <usage resource="PropBank" version="1.0" inuse="-"/>
@@ -110,6 +112,18 @@
           <arg type="ARG1" start="9" end="10">of depression</arg>
         </propbank>
       </example>
+      <example name="in_remission-m, ARGs 1 and 2" src="">
+	      <text>She is in remission from colon cancer .</text>
+	      <propbank/>
+        <amr version="THYME 1.0">
+          (r / remission-02
+            :ARG1 (c / cancer-03
+              :ARG1 s2
+              :ARG2 (a4 / anatomical-site :name (n2 / name :op1 "colon")))
+            :ARG2 (s2 / she))
+        </amr>
+      </example>
+      <note>NOTES: ARG2, in_remission alias added for THYME-AMR.</note>
       <note>REMISSION-N NOTES: Based on Sharp data. Comparison to abate.01 and subside.01. No Vn or Fn classes. Framed by Katie. (from remission.01-n)</note>
     </roleset>
   </predicate>
