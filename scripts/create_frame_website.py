@@ -383,6 +383,8 @@ def create_roleset_div(roleset, roleset_to_resource_use):
 		tokenized = example.find('text').text.split(' ')
 		example_string = ''
 		i = 0
+		if example.get('name') == 'turn_around-v':
+			print('')
 		while i < len(tokenized):
 			if i in arg_start_to_arg:
 				example_string += '<div class="tooltip"><span style="background-color: '
@@ -629,6 +631,7 @@ def create_css(website_dir):
 				   '  padding: 10px;\n' \
 				   '  cursor: pointer;\n' \
 				   '  background-color: #fff;\n' \
+				   '  color: #000;\n' \
 				   '  border-bottom: 1px solid #d4d4d4;\n' \
 				   '}\n' \
 				   '.autocomplete-items div:hover {\n' \
