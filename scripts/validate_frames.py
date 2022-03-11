@@ -93,6 +93,7 @@ def validate(frame_dir, log_file):
 									frame_errors.append(error_text)
 
 					arg_spans = list()
+					arg_types = list()
 					for arg in pb.findall('arg'):
 						# Args should have numeric start/end tags and the correspondence in the example text (separated by whitespace)
 						# should match with the contents in the text part of the arg
@@ -109,7 +110,7 @@ def validate(frame_dir, log_file):
 						if not start or not end or not start.isdigit() or not end.isdigit() or int(start) > int(end):
 							# <arg> start/end indices must be present and valid.
 							error_text = roleset.get('id') + ': <arg> '
-							if rel_text:
+							if arg_text:
 								error_text += '"' + arg_text + '" '
 							if example.get('name'):
 								error_text += 'in example "' + example.get('name') + '" '
@@ -138,7 +139,26 @@ def validate(frame_dir, log_file):
 								frame_errors.append(error_text)
 							else:
 								arg_spans.append([int(start), int(end)])
-					# TODO: No two arguments should overlap?
+
+						if not arg.get('type', default=None):
+							# Args need a type.
+							error_text = roleset.get('id') + ': <arg> '
+							if arg_text:
+								error_text += '"' + arg_text + '" '
+							if example.get('name'):
+								error_text += 'in example "' + example.get('name') + '" '
+							error_text += ' does not have a "type".'
+							frame_errors.append(error_text)
+						else:
+							if arg.get('type') in arg_types and 'M' not in arg.get('type'):
+								error_text = roleset.get('id') + ': Example '
+								if example.get('name'):
+									error_text += example.get('name') + '" '
+								error_text += ' contains duplicate ' + arg.get('type') + 's.'
+								frame_errors.append(error_text)
+							else:
+								arg_types.append(arg.get('type'))
+					# TODO: Assert that no two arguments should overlap
 					contains_overlaps = False
 					for i in range(len(arg_spans)):
 						span = arg_spans[i]
@@ -164,7 +184,7 @@ def validate(frame_dir, log_file):
 				print('\n'.join(frame_errors))
 		else:
 			print('\033[92m' + frame_file.name)
-
+	print('\033[0m')
 	if log_file:
 		log_file.close()
 
