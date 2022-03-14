@@ -374,7 +374,7 @@ def create_roleset_div(roleset, roleset_to_resource_use):
 				arg_name = arg.get('type')
 				if not arg.get('start').isdigit() or not arg.get('end').isdigit():
 					broken_args.append(arg)
-				elif int(arg.get('start')) > int(arg.get('end').isdigit()):
+				elif int(arg.get('start')) > int(arg.get('end')):
 					broken_args.append(arg)
 				else:
 					arg_start_to_arg[int(arg.get('start'))] = [int(arg.get('end')), arg_name, arg.text]
@@ -383,8 +383,7 @@ def create_roleset_div(roleset, roleset_to_resource_use):
 		tokenized = example.find('text').text.split(' ')
 		example_string = ''
 		i = 0
-		if example.get('name') == 'turn_around-v':
-			print('')
+
 		while i < len(tokenized):
 			if i in arg_start_to_arg:
 				example_string += '<div class="tooltip"><span style="background-color: '
