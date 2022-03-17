@@ -154,6 +154,12 @@
       </example>
       <example name="low-j: both args" src="internet">
         <text>Feinberg et al . [ 27 ] found that raising and lowering the pitch of female voices by 20 Hz had a stronger effect on voices that were low in pitch before being manipulated than on voices that were average - pitched or high - pitched before manipulation .</text>
+        <propbank>
+          <rel relloc="28">low</rel>
+          <arg end="26" start="26" type="ARG1">that</arg>
+          <arg end="30" start="29" type="ARG2">in pitch</arg>
+          <arg end="33" start="31" type="ARGM-TMP">before being manipulated</arg>
+        </propbank>
         <amr version="Spatial 1.0">
           (f / find-01
             :ARG0 (a / and
@@ -199,27 +205,21 @@
                         :op1 (m3 / manipulate-01
                           :ARG1 v3))))))))
         </amr>
-        <propbank>
-          <rel relloc="28">low</rel>
-          <arg end="26" start="26" type="ARG1">that</arg>
-          <arg end="30" start="29" type="ARG2">in pitch</arg>
-          <arg end="33" start="31" type="ARGM-TMP">before being manipulated</arg>
-        </propbank>
       </example>
       <example name="low-j: both args" src="internet">
         <text>The water level is low for a June measurement</text>
-        <amr version="Spatial 1.0">
-          (l / low-04
-             :ARG1 (l2 / level
-                :mod (w / water))
-             :ARG5 (m / measure-01
-                :time (d / date-entity :month 6)))
-        </amr>
         <propbank>
           <rel relloc="4">low</rel>
           <arg end="2" start="0" type="ARG1">The water level</arg>
           <arg end="8" start="5" type="ARG5">for a June measurement</arg>
         </propbank>
+        <amr version="Spatial 1.0">
+          (l / low-04
+            :ARG1 (l2 / level
+              :mod (w / water))
+            :ARG5 (m / measure-01
+              :time (d / date-entity :month 6)))
+        </amr>
       </example>
       <note>LOW NOTES: Updated for SpatialAMR. Args 4-6 added. </note>
       <note>LOW-J NOTES: Added by Julia based on BOLT-1, comparison to high.01. Corresponds somewhat to lower-v.01. (from low.01-j)</note>
@@ -283,109 +283,109 @@
       </lexlinks>
       <example name="lower-v: just transitive" src="">
         <text>The upgrade reflected the 20 % decline in shares of the bank since the firm lowered its rating in early October , based on the belief the stock had become expensive .</text>
-        <amr>
-            (r / reflect-01
-              :ARG1 (u / upgrade-02)
-              :ARG2 (d / decline-01
-                :ARG1 (s / share-01 :pl +
-                  :ARG1 (b / bank))
-                :time (a / after
-                  :op1 (l / lower-01
-                    :ARG0 (f / firm)
-                    :ARG1 (r2 / rate-01
-                      :ARG0 f
-                      :ARG1 b)
-                    :time (e / early
-                      :op1 (d2 / date-entity :month 11))
-                    :ARG1-of (b2 / base-02
-                      :ARG0 f
-                      :ARG2 (b3 / believe-01
-                        :ARG1 (b4 / become-01
-                          :ARG1 (s2 / stock)
-                          :ARG2 (e2 / expensive))))))))
-            </amr>
-      <propbank>
+        <propbank>
           <rel relloc="15">lowered</rel>
           <arg type="ARG0" start="13" end="14">the firm</arg>
           <arg type="ARG1" start="16" end="17">its rating</arg>
           <arg type="ARGM-TMP" start="18" end="20">in early October</arg>
           <arg type="ARGM-CAU" start="22" end="30">based on the belief the stock had become expensive</arg>
         </propbank>
+        <amr version="2019">
+          (r / reflect-01
+            :ARG1 (u / upgrade-02)
+            :ARG2 (d / decline-01
+              :ARG1 (s / share-01 :pl +
+                :ARG1 (b / bank))
+              :time (a / after
+                :op1 (l / lower-01
+                  :ARG0 (f / firm)
+                  :ARG1 (r2 / rate-01
+                    :ARG0 f
+                    :ARG1 b)
+                  :time (e / early
+                    :op1 (d2 / date-entity :month 11))
+                  :ARG1-of (b2 / base-02
+                    :ARG0 f
+                    :ARG2 (b3 / believe-01
+                      :ARG1 (b4 / become-01
+                        :ARG1 (s2 / stock)
+                        :ARG2 (e2 / expensive))))))))
+        </amr>
       </example>
       <example name="lower-v: start and end points" src="">
         <text>Standard &amp; Poor 's Corp. lowered the rating on Crossland 's preferred stock to double - C from single - B - minus and placed it on CreditWatch for possible further downgrade .</text>
-        <amr>
-            (a / and
-              :op1 (l / lower-01
-                :ARG0 (c / company :name (n / name :op1 "Standard" :op2 " &amp;" :op3 "Poor's" :op4 "Corp."))
-                :ARG1 (r / rate-01
-                  :ARG0 c
-                  :ARG1 (s / stock
-                    :ARG1-of (p / prefer-01)
-                    :mod (c2 / company :name (n2 / name :op1 "Crossland")))
-                  :ARG3 (s2 / string-entity :value "B-")
-                  :ARG4 (s3 / string-entity :value "CC")))
-              :op2 (p2 / place-01
-                :ARG0 c
-                :ARG1 s
-                :ARG2 (p3 / program :name (n3 / name :op1 "CreditWatch"))
-                :purpose (p4 / possible-01
-                  :ARG1 (d / downgrade-02
-                    :ARG1 s
-                    :degree (f / further)))))
-            </amr>
-      <propbank>
+        <propbank>
           <rel relloc="5">lowered</rel>
           <arg type="ARG0" start="0" end="4">Standard &amp; Poor 's Corp.</arg>
           <arg type="ARG1" start="6" end="12">the rating on Crossland 's preferred stock</arg>
           <arg type="ARG4" start="13" end="16">to double - C</arg>
           <arg type="ARG3" start="17" end="22">from single - B - minus</arg>
         </propbank>
+        <amr version="2019">
+          (a / and
+            :op1 (l / lower-01
+              :ARG0 (c / company :name (n / name :op1 "Standard" :op2 " &amp;" :op3 "Poor's" :op4 "Corp."))
+              :ARG1 (r / rate-01
+                :ARG0 c
+                :ARG1 (s / stock
+                  :ARG1-of (p / prefer-01)
+                  :mod (c2 / company :name (n2 / name :op1 "Crossland")))
+                :ARG3 (s2 / string-entity :value "B-")
+                :ARG4 (s3 / string-entity :value "CC")))
+            :op2 (p2 / place-01
+              :ARG0 c
+              :ARG1 s
+              :ARG2 (p3 / program :name (n3 / name :op1 "CreditWatch"))
+              :purpose (p4 / possible-01
+                :ARG1 (d / downgrade-02
+                  :ARG1 s
+                  :degree (f / further)))))
+        </amr>
       </example>
       <example name="lower-v: ARG0 and ARG1 and ARG2" src="ontonotes nw/p2">
         <text>According to this plan , it was decided that Britain would use a dam in Uganda in order to lower the water level in the White Nile by seven - eighths .</text>
-        <amr>
-            (s / say-01
-              :ARG0 (p / plan-01
-                :mod (t / this))
-              :ARG1 (d / decide-01
-                :ARG1 (u / use-01
-                  :ARG0 (c / country :wiki "United_Kingdom" :name (n / name :op1 "Britain"))
-                  :ARG1 (d2 / dam
-                    :location (c2 / country :wiki "Uganda" :name (n2 / name :op1 "Uganda")))
-                  :ARG2 (l / lower-01
-                    :ARG0 c
-                    :ARG1 (l2 / level
-                      :mod (w / water)
-                      :location (r / river :name (n3 / name :op1 "White" :op2 "Nile")))
-                    :ARG2 (d3 / distance-quantity :quant "7/8")))))
-            </amr>
-      <propbank>
+        <propbank>
           <rel relloc="19">lower</rel>
           <arg end="26" start="20" type="ARG1">the water level in the White Nile</arg>
           <arg end="30" start="27" type="ARG2">by seven - eighths</arg>
         </propbank>
+        <amr version="2019">
+          (s / say-01
+            :ARG0 (p / plan-01
+              :mod (t / this))
+            :ARG1 (d / decide-01
+              :ARG1 (u / use-01
+                :ARG0 (c / country :wiki "United_Kingdom" :name (n / name :op1 "Britain"))
+                :ARG1 (d2 / dam
+                  :location (c2 / country :wiki "Uganda" :name (n2 / name :op1 "Uganda")))
+                :ARG2 (l / lower-01
+                  :ARG0 c
+                  :ARG1 (l2 / level
+                    :mod (w / water)
+                    :location (r / river :name (n3 / name :op1 "White" :op2 "Nile")))
+                  :ARG2 (d3 / distance-quantity :quant "7/8")))))
+        </amr>
       </example>
       <example name="lower-v: With Causer" src="">
         <text>Statins also lower LDL , and so people assume that the benefit of statins is due to their lowering of LDL .</text>
-        <amr>
-            (l / lower-01
-              :ARG0 (p2 / product :wiki "Statin" :name "Statin")
-              :ARG1 (p / protein :wiki "Low-density_lipoprotein" :name (n / name :op1 "LDL"))
-              :mod (a / also)
-              :ARG0-of (c / cause-01
-                :ARG1 (a2 / assume-01
-                  :ARG0 (p3 / person :pl +)
-                  :ARG1 (c2 / cause-01
-                    :ARG0 l
-                    :ARG1 (b / benefit-01
-                      :ARG0 p2)))))
-            </amr>
-      <propbank>
+        <propbank>
           <rel relloc="18">lowering</rel>
           <arg type="ARG0" start="17" end="17">their</arg>
           <arg type="ARG1" start="19" end="20">of LDL</arg>
         </propbank>
+        <amr version="2019">
+          (l / lower-01
+            :ARG0 (p2 / product :wiki "Statin" :name "Statin")
+            :ARG1 (p / protein :wiki "Low-density_lipoprotein" :name (n / name :op1 "LDL"))
+            :mod (a / also)
+            :ARG0-of (c / cause-01
+              :ARG1 (a2 / assume-01
+                :ARG0 (p3 / person :pl +)
+                :ARG1 (c2 / cause-01
+                  :ARG0 l
+                  :ARG1 (b / benefit-01
+                    :ARG0 p2)))))
+        </amr>
       </example>
       <note>LOWER-V NOTES: Frames file for 'lower' based on sentences in financial subcorpus. No access to verbnet. Comparison with 'drop' and similar verbs of incremental downward movement. (from lower.01-v predicate notes)</note>
       <note>LOWERING-N NOTES: (from lowering.01-n)</note>

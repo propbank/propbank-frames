@@ -184,7 +184,7 @@
           <rel relloc="3">report</rel>
           <arg end="2" start="1" type="ARG3">surgical pathology</arg>
         </propbank>
-        <amr>
+        <amr version="THYME 1.0">
           (d / describe-01
             :ARG0 (r / report-01
               :ARG3 (p / pathology-02
@@ -223,22 +223,22 @@
       <example name="report-v" src="THYME">
         <text>Second portion to be completed the day of procedure , 2 hours before your scheduled report time .</text>
         <amr version="THYME 1.0">
-            (c / complete-01
-               :ARG0 y
-               :ARG1 (p / portion)
-               :time (d / day
-                  :time-of (p2 / procedure-01
-                     :ARG2 y))
-               :time (b / before
-                  :op1 (t / time
-                     :time-of (r2 / report-02
-                        :ARG0 (y / you)
-                        :ARG2 p2
-                        :ARG1-of (s / schedule-01
-                           :ARG3 t)))
-                  :quant (t2 / temporal-quantity :quant 2
-                     :unit (h / hour))))
-            </amr>
+          (c / complete-01
+            :ARG0 y
+            :ARG1 (p / portion)
+            :time (d / day
+              :time-of (p2 / procedure-01
+                :ARG2 y))
+            :time (b / before
+              :op1 (t / time
+                :time-of (r2 / report-02
+                  :ARG0 (y / you)
+                  :ARG2 p2
+                  :ARG1-of (s / schedule-01
+                    :ARG3 t)))
+              :quant (t2 / temporal-quantity :quant 2
+                :unit (h / hour))))
+          </amr>
         <propbank>
           <rel relloc="15">report</rel>
           <arg end="16" start="16" type="ARGM-TMP">time</arg>
