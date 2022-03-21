@@ -9,11 +9,28 @@ def validate(frame_dir, log_file):
 	parser = ET.XMLParser(dtd_validation=False, no_network=False) # TODO: Once DTD is ready, set validation=True
 	if log_file:
 		log_file = open(log_file, 'w')
+	all_resource_versions = set()
+	found_errors = False
 	for frame_file in frame_files:
-		xml = ET.parse(str(frame_file), parser=parser)
+		try:
+			xml = ET.parse(str(frame_file), parser=parser)
+		except ET.XMLSyntaxError:
+			print('\033[91m' + frame_file.name)
+			if log_file:
+				log_file.write(frame_file.name + '\n')
+				log_file.write('XML cannot be parsed' + '\n\n')
+			else:
+				print('XML cannot be parsed\033[0m')
+			continue
 		frame_errors = list()
-		# TODO Check against DTD.
+
 		for roleset in xml.findall('predicate/roleset'):
+			# TODO: Check that we don't have duplicate <usage> tags
+			usages = roleset.findall('usagenotes/usage')
+			# TODO: verify that these all *have* resource/version attribs
+			# TODO: Verify that <amr> "type" matches with one of the versions for that roleset
+			# TODO: Verify that all numbered ARGs that show up in examples were defined in <roles>
+			resources = [u.get('resource') + ' ' + u.get('version') for u in usages]
 			for example in roleset.findall('example'):
 				amr = example.find('amr')
 				if amr is not None:
@@ -95,6 +112,7 @@ def validate(frame_dir, log_file):
 					arg_spans = list()
 					arg_types = list()
 					for arg in pb.findall('arg'):
+
 						# Args should have numeric start/end tags and the correspondence in the example text (separated by whitespace)
 						# should match with the contents in the text part of the arg
 						arg_text = arg.text
@@ -153,7 +171,7 @@ def validate(frame_dir, log_file):
 							if arg.get('type') in arg_types and 'M' not in arg.get('type'):
 								error_text = roleset.get('id') + ': Example '
 								if example.get('name'):
-									error_text += example.get('name') + '" '
+									error_text += '"' + example.get('name') + '" '
 								error_text += ' contains duplicate ' + arg.get('type') + 's.'
 								frame_errors.append(error_text)
 							else:
@@ -176,6 +194,7 @@ def validate(frame_dir, log_file):
 						error_text += ' contain overlapping start/end indices.'
 						frame_errors.append(error_text)
 		if frame_errors:
+			found_errors = True
 			print('\033[91m' + frame_file.name)
 			if log_file:
 				log_file.write(frame_file.name + '\n')
@@ -187,6 +206,7 @@ def validate(frame_dir, log_file):
 	print('\033[0m')
 	if log_file:
 		log_file.close()
+	return found_errors
 
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser()
