@@ -1,8 +1,11 @@
-from pathlib import Path
-from lxml import etree as ET
 import argparse
+import os
+from pathlib import Path
+
 import penman
+from lxml import etree as ET
 from penman import DecodeError
+
 
 def validate(frame_file, log_file):
 	parser = ET.XMLParser(dtd_validation=False, no_network=False) # TODO: Once DTD is ready, set validation=True
@@ -212,6 +215,8 @@ if __name__ == "__main__":
 	parser.add_argument("-o", "--output", action="store", dest="output", help='Validation log file (optional)', default=None)
 
 	args = parser.parse_args()
+	if args.output and Path(args.output).exists():
+		os.remove(args.output)
 	frame_files = list()
 	for filename in args.input:
 		filename = Path(filename)
