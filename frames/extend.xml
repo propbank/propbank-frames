@@ -53,23 +53,23 @@
           <arg type="ARG1" start="7" end="19">its $ 18 - a - share offer for Telerate Inc. common stock</arg>
           <arg type="ARG2" start="20" end="25">until 5 p.m. EST Nov. 9</arg>
         </propbank>
-        <amr>
-            (s / say-01
-              :ARG0 (c / company :wiki "Dow_Jones_%26_Company" :name (n / name :op1 "Dow" :op2 "Jones" :op3 " &amp;" :op4 "Co"))
-              :ARG1 (e / extend-01
+        <amr version="2019">
+          (s / say-01
+            :ARG0 (c / company :wiki "Dow_Jones_%26_Company" :name (n / name :op1 "Dow" :op2 "Jones" :op3 " &amp;" :op4 "Co"))
+            :ARG1 (e / extend-01
+              :ARG0 c
+              :ARG1 (o / offer-01
                 :ARG0 c
-                :ARG1 (o / offer-01
-                  :ARG0 c
-                  :ARG1 (s3 / stock
-                    :mod (c2 / company :wiki "Telerate" :name (n2 / name :op1 "Telerate" :op2 "Inc."))
-                    :mod (c3 / common))
-                  :ARG2 (r / rate-entity-91
-                    :ARG1 (m / monetary-quantity :quant 18
-                      :unit (d / dollar))
-                    :ARG2 (s2 / share)))
-                :ARG4 (u / until
-                  :op1 (d2 / date-entity :time "7:00" :timezone "EST" :month 11 :day 9))))
-            </amr>
+                :ARG1 (s3 / stock
+                  :mod (c2 / company :wiki "Telerate" :name (n2 / name :op1 "Telerate" :op2 "Inc."))
+                  :mod (c3 / common))
+                :ARG2 (r / rate-entity-91
+                  :ARG1 (m / monetary-quantity :quant 18
+                    :unit (d / dollar))
+                  :ARG2 (s2 / share)))
+              :ARG4 (u / until
+                :op1 (d2 / date-entity :time "7:00" :timezone "EST" :month 11 :day 9))))
+        </amr>
       </example>
       <example name="extend-v: arg2-TMP as 'to'" src="">
         <text>Institut Merieux S.A. , which offered 942 million Canadian dollars ( US$ 801.2 million ) , or C$ 37 a share for Connaught , said it would extend its bid , due to expire last Thursday , to Nov. 6 .</text>
@@ -80,38 +80,38 @@
           <arg type="ARG1" start="28" end="35">its bid , due to expire last Thursday</arg>
           <arg type="ARG2" start="37" end="39">to Nov. 6</arg>
         </propbank>
-        <amr>
-            (s / say-01
-              :ARG0 (c / company :wiki "Institut_M&#233;rieux" :name (n / name :op1 "Institut" :op2 "Merieux" :op3 "S.A.")
-                :ARG0-of (o / offer-01
-                  :ARG1 (c4 / company :wiki "Connaught_Laboratories" :name (n4 / name :op1 "Connaught"))
-                  :ARG2 (m / monetary-quantity :quant "942,000,000"
-                    :unit (d / dollar
-                      :mod (c2 / country :wiki "Canada" :name (n2 / name :op1 "Canada")))
-                    :ARG1-of (e2 / equal-01
-                      :ARG2 (o2 / or
-                        :op1 (m2 / monetary-quantity :quant "801,200,000"
-                          :unit (d2 / dollar
-                            :mod (c3 / country :wiki "United_States" :name (n3 / name :op1 "US"))))
-                        :op2 (r / rate-entity-91
-                          :ARG1 (m3 / monetary-quantity :quant 37
-                            :unit (d3 / dollar
-                            :mod c2))
-                          :ARG2 (s2 / share)))))))
-              :ARG1 (e / extend-01
+        <amr version="2019">
+          (s / say-01
+            :ARG0 (c / company :wiki "Institut_M&#233;rieux" :name (n / name :op1 "Institut" :op2 "Merieux" :op3 "S.A.")
+              :ARG0-of (o / offer-01
+                :ARG1 (c4 / company :wiki "Connaught_Laboratories" :name (n4 / name :op1 "Connaught"))
+                :ARG2 (m / monetary-quantity :quant "942,000,000"
+                  :unit (d / dollar
+                    :mod (c2 / country :wiki "Canada" :name (n2 / name :op1 "Canada")))
+                  :ARG1-of (e2 / equal-01
+                    :ARG2 (o2 / or
+                      :op1 (m2 / monetary-quantity :quant "801,200,000"
+                        :unit (d2 / dollar
+                          :mod (c3 / country :wiki "United_States" :name (n3 / name :op1 "US"))))
+                      :op2 (r / rate-entity-91
+                        :ARG1 (m3 / monetary-quantity :quant 37
+                          :unit (d3 / dollar
+                          :mod c2))
+                        :ARG2 (s2 / share)))))))
+            :ARG1 (e / extend-01
+              :ARG0 c
+              :ARG1 (b / bid-01
                 :ARG0 c
-                :ARG1 (b / bid-01
-                  :ARG0 c
-                  :ARG1 c4
-                  :ARG2 m
-                  :ARG1-of (d4 / due-03
-                    :ARG2 (e3 / expire-01
-                      :ARG1 b)
-                    :time (d5 / date-entity
-                      :mod (l / last)
-                      :weekday (t / thursday))))
-                :ARG4 (d6 / date-entity :month 11 :day 6)))
-            </amr>
+                :ARG1 c4
+                :ARG2 m
+                :ARG1-of (d4 / due-03
+                  :ARG2 (e3 / expire-01
+                    :ARG1 b)
+                  :time (d5 / date-entity
+                    :mod (l / last)
+                    :weekday (t / thursday))))
+              :ARG4 (d6 / date-entity :month 11 :day 6)))
+        </amr>
       </example>
       <example name="extend-v: with start and end points" src="">
         <text>Alpine Group Inc. revised its exchange offer for $ 43.7 million face amount of 13.5 % senior subordinated debt due 1996 and extended the offer to Oct. 27 from Oct. 12 .</text>
@@ -122,28 +122,28 @@
           <arg type="ARG4" start="25" end="27">to Oct. 27</arg>
           <arg type="ARG3" start="28" end="30">from Oct. 12</arg>
         </propbank>
-        <amr>
-            (a / and
-              :op1 (r / revise-01
-                :ARG0 (c / company :name (n / name :op1 "Alpine" :op2 "Group" :op3 "Inc."))
-                :ARG1 (o / offer-01
-                  :ARG0 c
-                  :ARG1 (e / exchange-01
-                    :ARG0 c
-                    :ARG1 (d / debt
-                      :ARG2-of (d2 / due-01
-                        :time (d3 / date-entity :year 1996))
-                      :ARG1-of (s / subordinate-01)
-                      :mod (s2 / senior)
-                      :mod (p / percentage-entity :value 13.5)
-                        :quant (m / monetary-quantity :quant 43700000
-                          :unit (d4 / dollar))))))
-              :op1 (e2 / extend-01
+        <amr version="2019">
+          (a / and
+            :op1 (r / revise-01
+              :ARG0 (c / company :name (n / name :op1 "Alpine" :op2 "Group" :op3 "Inc."))
+              :ARG1 (o / offer-01
                 :ARG0 c
-                :ARG1 o
-                :ARG3 (d6 / date-entity :month 10 :day 12)
-                :ARG4 (d5 / date-entity :month 10 :day 27)))
-            </amr>
+                :ARG1 (e / exchange-01
+                  :ARG0 c
+                  :ARG1 (d / debt
+                    :ARG2-of (d2 / due-01
+                      :time (d3 / date-entity :year 1996))
+                    :ARG1-of (s / subordinate-01)
+                    :mod (s2 / senior)
+                    :mod (p / percentage-entity :value 13.5)
+                      :quant (m / monetary-quantity :quant 43700000
+                        :unit (d4 / dollar))))))
+            :op1 (e2 / extend-01
+              :ARG0 c
+              :ARG1 o
+              :ARG3 (d6 / date-entity :month 10 :day 12)
+              :ARG4 (d5 / date-entity :month 10 :day 27)))
+        </amr>
       </example>
       <example name="extend-v: temporal EXT" src="">
         <text>After the opening was delayed 30 minutes because of the crush of sell orders , Frankfurt 's normal two - hour trading session was extended 75 minutes to handle the heavy volume .</text>
@@ -154,32 +154,32 @@
           <arg type="ARG2" start="25" end="26">75 minutes</arg>
           <arg type="ARGM-PRP" start="27" end="31">to handle the heavy volume</arg>
         </propbank>
-        <amr>
-            (e / extend-01
-              :ARG1 (s / session
-                :mod (t / trade-01)
-                :duration (t2 / temporal-quantity :quant 2
-                  :unit (h / hour))
-                :ARG1-of (n / normal-02)
-                :location (c / city :wiki "Frankfurt" :name (n2 / name :op1 "Frankfurt")))
-              :ARG2 (t3 / temporal-quantity :quant 75
-                :unit (m2 / minute))
-              :purpose (h2 / handle-01
-                :ARG1 (v / volume
-                  :ARG1-of (h3 / have-quant-91
-                    :ARG3 (h4 / heavy))))
-              :time (a / after
-                :op1 (d / delay-01
-                  :ARG1 (o / open-02
-                    :ARG1 s)
-                  :ARG2 (t4 / temporal-quantity :quant 30
-                    :unit (m / minute))
-                  :ARG1-of (c2 / cause-01
-                    :ARG0 (c3 / crush-01
-                      :ARG0 (o2 / order-01
-                        :ARG2 (s2 / sell-01))
-                      :ARG1 s)))))
-            </amr>
+        <amr version="2019">
+          (e / extend-01
+            :ARG1 (s / session
+              :mod (t / trade-01)
+              :duration (t2 / temporal-quantity :quant 2
+                :unit (h / hour))
+              :ARG1-of (n / normal-02)
+              :location (c / city :wiki "Frankfurt" :name (n2 / name :op1 "Frankfurt")))
+            :ARG2 (t3 / temporal-quantity :quant 75
+              :unit (m2 / minute))
+            :purpose (h2 / handle-01
+              :ARG1 (v / volume
+                :ARG1-of (h3 / have-quant-91
+                  :ARG3 (h4 / heavy))))
+            :time (a / after
+              :op1 (d / delay-01
+                :ARG1 (o / open-02
+                  :ARG1 s)
+                :ARG2 (t4 / temporal-quantity :quant 30
+                  :unit (m / minute))
+                :ARG1-of (c2 / cause-01
+                  :ARG0 (c3 / crush-01
+                    :ARG0 (o2 / order-01
+                      :ARG2 (s2 / sell-01))
+                    :ARG1 s)))))
+        </amr>
       </example>
       <example name="extend-v: temporal adjunct" src="">
         <text>Two rival bidders for Connaught BioSciences extended their offers to acquire the Toronto - based vaccine manufacturer Friday .</text>
@@ -189,24 +189,24 @@
           <arg type="ARG1" start="7" end="16">their offers to acquire the Toronto - based vaccine manufacturer</arg>
           <arg type="ARGM-TMP" start="17" end="17">Friday</arg>
         </propbank>
-        <amr>
-            (e / extend-01
-              :ARG0 (o / organization :quant 2
-                :ARG0-of (b / bid-01
-                  :ARG1 (c / company :wiki "Connaught_Laboratories" :name (n / name :op1 "Connaught" :op2 "BioSciences")
-                    :ARG0-of (m / manufacture-01
-                      :ARG1 (v / vaccine)))
-                  :ARG1-of (b2 / base-01
-                    :location (c2 / city :wiki "Toronto" :name (n2 / name :op1 "Toronto"))))
-                :ARG0-of (r / rival-01))
-              :ARG1 (o2 / offer-01
+        <amr version="2019">
+          (e / extend-01
+            :ARG0 (o / organization :quant 2
+              :ARG0-of (b / bid-01
+                :ARG1 (c / company :wiki "Connaught_Laboratories" :name (n / name :op1 "Connaught" :op2 "BioSciences")
+                  :ARG0-of (m / manufacture-01
+                    :ARG1 (v / vaccine)))
+                :ARG1-of (b2 / base-01
+                  :location (c2 / city :wiki "Toronto" :name (n2 / name :op1 "Toronto"))))
+              :ARG0-of (r / rival-01))
+            :ARG1 (o2 / offer-01
+              :ARG0 o
+              :ARG1 (a / acquire-01
                 :ARG0 o
-                :ARG1 (a / acquire-01
-                  :ARG0 o
-                  :ARG1 c))
-              :time (d / date-entity
-                :weekday (f / friday)))
-            </amr>
+                :ARG1 c))
+            :time (d / date-entity
+              :weekday (f / friday)))
+        </amr>
       </example>
       <example name="extension-n: Arg0, 1" src="">
         <text>The Office of the ANC Chief Whip supports President Zuma in his extension of the term of office of the Chief Justice of South Africa .</text>
@@ -215,25 +215,25 @@
           <arg type="ARG0" start="11" end="11">his</arg>
           <arg type="ARG1" start="13" end="24">of the term of office of the Chief Justice of South Africa</arg>
         </propbank>
-        <amr>
-            (s / support-01
-              :ARG0 (o / office
-                :poss (p / person
-                  :ARG0-of (h / have-org-role-91
-                    :ARG1 (p2 / political-party :wiki "African_National_Congress" :name (n / name :op1 "ANC"))
-                    :ARG2 (w / whip
-                      :mod (c / chief)))))
-              :ARG1 (e / extend-01
-                :ARG0 (p3 / person :wiki "Jacob_Zuma" :name (n2 / name :op1 "Zuma")
-                  :ARG0-of (h2 / have-org-role-91
-                    :ARG3 (p4 / president)))
-                :ARG1 (t / term
-                  :mod (o2 / office)
-                  :duration-of (h3 / have-org-role-91
-                    :ARG1 (c3 / country :wiki "South_Africa" :name (n3 / name :op1 "South" :op2 "Africa"))
-                    :ARG2 (j / justice
-                      :mod (c2 / chief))))))
-            </amr>
+        <amr version="2019">
+          (s / support-01
+            :ARG0 (o / office
+              :poss (p / person
+                :ARG0-of (h / have-org-role-91
+                  :ARG1 (p2 / political-party :wiki "African_National_Congress" :name (n / name :op1 "ANC"))
+                  :ARG2 (w / whip
+                    :mod (c / chief)))))
+            :ARG1 (e / extend-01
+              :ARG0 (p3 / person :wiki "Jacob_Zuma" :name (n2 / name :op1 "Zuma")
+                :ARG0-of (h2 / have-org-role-91
+                  :ARG3 (p4 / president)))
+              :ARG1 (t / term
+                :mod (o2 / office)
+                :duration-of (h3 / have-org-role-91
+                  :ARG1 (c3 / country :wiki "South_Africa" :name (n3 / name :op1 "South" :op2 "Africa"))
+                  :ARG2 (j / justice
+                    :mod (c2 / chief))))))
+        </amr>
       </example>
       <note>EXTENT NOTES: Arg5 added for spatialAMR (it's pragmatic). This roleset still conflates dynamic and fictive motion.</note>
       <note>EXTEND-V NOTES: Frames file for 'extend' based on sentences in financial subcorpus; adjectival 'extensive' based on BOLT-7. VN class 47.1-1. (from extend.01-v)</note>

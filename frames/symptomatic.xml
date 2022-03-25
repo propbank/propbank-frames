@@ -5,10 +5,14 @@
     <roleset id="symptomatic.01" name="presenting signs of, indicating">
       <aliases>
         <alias pos="j">symptomatic</alias>
+        <alias pos="n">symptom</alias>
+        <alias pos="n">symptomatology</alias>
       </aliases>
       <roles>
         <role descr="entity showing symptoms" f="PPT" n="0" />
         <role descr="symptoms of what" f="PPT" n="1" />
+        <role descr="the symptoms themselves" f="PRD" n="2" />
+        <role descr="topic (symptoms are relevant to what, typically a body part)" f="VSP" n="3" />
       </roles>
       <usagenotes>
         <usage resource="PropBank" version="1.0" inuse="-" />
@@ -32,6 +36,78 @@
           <arg type="ARG1" start="5" end="7">of that resistance</arg>
         </propbank>
       </example>
+      <example name="symptomatic-j, ARG0 and ARG2" src="THYME">
+	      <text>Patient has been symptomatic for about 10 months with changes to her bowel habits .</text>
+	      <propbank/>
+        <amr version="THYME 1.0">
+          (s / symptomatic-01
+            :ARG0 (p / patient-yy)
+            :ARG2 (c / change-01 :pl +
+              :ARG1 (h / habit-01
+                :ARG1 p
+                :ARG3 (a2 / anatomical-site :name (n2 / name :op1 "bowel")
+                  :part-of p)))
+            :duration (a / about
+              :op1 (t2 / temporal-quantity :quant 10
+                  :unit (m / month))))  
+        </amr>
+      </example>
+      <example name="symptom-n, ARG0 and ARG3" src="THYME">
+	      <text>He has never had any gallbladder symptoms .</text>
+	      <propbank/>
+        <amr version="THYME 1.0">
+          (s / symptomatic-01 :polarity -
+            :ARG0 (h / he)
+            :ARG3 (a / anatomical-site :name (n / name :op1 "gallbladder"))
+            :time (e / ever)
+            :mod (a2 / any))  
+        </amr>
+      </example>
+      <example name="symptom-n, ARG0 and ARG3" src="THYME">
+	      <text>He has never had any gallbladder symptoms .</text>
+	      <propbank/>
+        <amr version="THYME 1.0">
+          (s / symptomatic-01 :polarity -
+            :ARG0 (h / he)
+            :ARG3 (a / anatomical-site :name (n / name :op1 "gallbladder"))
+            :time (e / ever)
+            :mod (a2 / any))  
+        </amr>
+      </example>
+      <example name="symptomatology-n, ARG0 and ARG2" src="THYME">
+	      <text>Patient began to exhibit current symptomatology of abdominal pain , gas , and bloating .</text>
+	      <propbank/>
+        <amr version="THYME 1.0">
+          (b / begin-01
+            :ARG0 (p3 / patient-yy)
+            :ARG1 (e / exhibit-01
+              :ARG0 p3
+              :ARG1 (s2 / symptomatic-01
+                :ARG0 p3
+                :ARG2 (a / and
+                  :op1 (p / pain-01
+                    :ARG1 p3
+                    :ARG2 (a2 / anatomical-site :name (n / name :op1 "abdomen")))
+                  :op2 (g / gas-04
+                    :ARG1 p3)
+                  :op3 (b2 / bloat-01
+                    :ARG1 p3))
+                  :time (c / current)))) 
+        </amr>
+      </example>
+      <example name="symptom-n, ARG0 and ARG1" src="THYME">
+	      <text>Patient underwent EGD for GERD symptoms .</text>
+	      <propbank/>
+        <amr version="THYME 1.0">
+          (e / egd-01
+            :ARG1 (p / patient-yy)
+            :ARG1-of (c / cause-01
+              :ARG0 (s2 / symptomatic-01
+                :ARG0 p
+                :ARG1 (d / disease-disorder :name (n / name :op1 "GERD"))))) 
+        </amr>
+      </example>
+      <note>SYMPTOM-N and SYMPTOMATOLOGY-N NOTES: Added by Kristin based on THYME data, as well as ARGs 2 and 3.</note>
       <note>SYMPTOMATIC-J NOTES: Added by Julia based on BOLT-2,3, asymptomatic.01. (from symptomatic.01-j)</note>
     </roleset>
   </predicate>

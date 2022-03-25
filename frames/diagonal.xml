@@ -33,12 +33,12 @@
           <arg end="2" start="0" type="ARG1">The shuttle area</arg>
           <arg end="7" start="5" type="ARG2">from the hotel</arg>
         </propbank>
-        <amr>
-            (d / diagonal-01
-               :ARG1 (a / area
-                  :purpose (s / shuttle))
-               :ARG2 (h / hotel))
-            </amr>
+        <amr version="Spatial 1.0">
+          (d / diagonal-01
+              :ARG1 (a / area
+                :purpose (s / shuttle))
+              :ARG2 (h / hotel))
+        </amr>
       </example>
       <example name="diagonally-r" src="Minecraft">
         <text>Now put one diagonally above to the left of that orange block .</text>
@@ -47,43 +47,42 @@
           <arg end="2" start="2" type="ARG1">one</arg>
           <arg end="11" start="9" type="ARG2">that orange block</arg>
         </propbank>
-        <amr>
-            (p / put-01 :mode imperative
-                :ARG0 (y / you)
-                :ARG1 (t / thing :quant 1)
-                :ARG2 (s / space
-                  :ARG1-of (a / above-01
-                    :ARG2 b)
-                  :ARG1-of (l / left-20
-                    :ARG2 (b / block
-                      :mod (t2 / that)
-                      :color (o / orange))))
-                :time (n / now))
-            </amr>
+        <amr version="Spatial 1.0">
+          (p / put-01 :mode imperative
+              :ARG0 (y / you)
+              :ARG1 (t / thing :quant 1)
+              :ARG2 (s / space
+                :ARG1-of (a / above-01
+                  :ARG2 b)
+                :ARG1-of (l / left-20
+                  :ARG2 (b / block
+                    :mod (t2 / that)
+                    :color (o / orange))))
+              :time (n / now))
+        </amr>
       </example>
       <example name="in_a_diagonal-m" src="Minecraft">
         <text>We 'll add two more green in a diagonal going up and right .</text>
         <propbank>
           <rel relloc="6 7 8">in a diagonal</rel>
-          <arg end="3" start="3" type="ARG1">two</arg>
-          <arg end="?" start="?" type="ARG2">that orange block</arg>
+          <arg type="ARG1" start="3" end="5">two more green</arg>
         </propbank>
-        <amr>
-            (a / add-02 :mode imperative
-               :ARG0 (w / we)
-               :ARG1 (t / thing
-                  :color (g / green)
-                  :ARG1-of (h / have-quant-91
-                     :ARG2 2
-                     :ARG3 (m / more)))
-               :manner (d / diagonal-01
-                  :ARG1 t
-                  :ARG4 (t2 / trajectory
-                     :ARG1-of (g2 / go-35
-                        :direction (t3 / trajectory
-                           :ARG4-of (r / right-04)
-                           :ARG2-of (u / up-03))))))
-            </amr>
+        <amr version="Spatial 1.0">
+          (a / add-02 :mode imperative
+              :ARG0 (w / we)
+              :ARG1 (t / thing
+                :color (g / green)
+                :ARG1-of (h / have-quant-91
+                    :ARG2 2
+                    :ARG3 (m / more)))
+              :manner (d / diagonal-01
+                :ARG1 t
+                :ARG4 (t2 / trajectory
+                    :ARG1-of (g2 / go-35
+                      :direction (t3 / trajectory
+                          :ARG4-of (r / right-04)
+                          :ARG2-of (u / up-03))))))
+        </amr>
       </example>
       <note>DIAGONAL NOTES: Added for SpatialAMR.</note>
     </roleset>
@@ -115,27 +114,27 @@
           <arg end="22" start="21" type="ARG1">the other</arg>
           <arg end="29" start="25" type="ARG3">at a 45 degree angle</arg>
         </propbank>
-        <amr>
-            (a / and
-               :op1 (l / look-02
-                 :ARG0 (b / block
-                   :instrument-of (e / edit-01))
-                 :ARG1 (b2 / box
-                   :mod (m / miter)
-                   :part (s / slot :pl +)))
-               :op2 (s2 / slot :quant 1
-                 :ARG1-of (i2 / include-91
-                   :ARG2 s)
-                 :ARG1-of (v / vertical-01)
-                 :ARG1-of (a2 / across-01
-                   :ARG2 b))
-               :op3 (s3 / slot
-                 :ARG1-of (o / other-01
-                   :ARG2 s2)
-                 :ARG1-of (d / diagonal-02
-                   :ARG3 (a3 / angle-quantity :quant 45
-                     :unit (d2 / degree)))))
-            </amr>
+        <amr version="Spatial 1.0">
+          (a / and
+              :op1 (l / look-02
+                :ARG0 (b / block
+                  :instrument-of (e / edit-01))
+                :ARG1 (b2 / box
+                  :mod (m / miter)
+                  :part (s / slot :pl +)))
+              :op2 (s2 / slot :quant 1
+                :ARG1-of (i2 / include-91
+                  :ARG2 s)
+                :ARG1-of (v / vertical-01)
+                :ARG1-of (a2 / across-01
+                  :ARG2 b))
+              :op3 (s3 / slot
+                :ARG1-of (o / other-01
+                  :ARG2 s2)
+                :ARG1-of (d / diagonal-02
+                  :ARG3 (a3 / angle-quantity :quant 45
+                    :unit (d2 / degree)))))
+        </amr>
       </example>
       <note>DIAGONAL NOTES: Added for SpatialAMR.</note>
     </roleset>

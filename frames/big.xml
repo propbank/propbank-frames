@@ -22,7 +22,7 @@
         <usage resource="AMR" version="2019" inuse="-" />
         <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
         <usage resource="AMR" version="Spatial 1.0" inuse="+" />
-        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
       </usagenotes>
       <lexlinks>
         <lexlink class="Size" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
@@ -35,19 +35,19 @@
           <arg end="57" start="57" type="ARG1">he</arg>
           <arg end="63" start="60" type="ARG2">with admiration of it</arg>
         </propbank>
-        <amr>
-            (a / and
-              :op6 (s3 / sit-01
-                :ARG1 i
-                :ARG2 (s4 / space
-                      :ARG1-of (n3 / next-to-02
-                            :ARG2 (p2 / person :wiki "Thomas_Shadwell" :name (n4 / name :op1 "Shadwell")
-                                  :domain (p3 / poet)
-                                  :ARG1-of (b4 / big-01
-                                        :ARG2 (a3 / admire-01
-                                              :ARG0 p2
-                                              :ARG1 s2)))))))
-            </amr>
+        <amr version="2019">
+          (a / and
+            :op6 (s3 / sit-01
+              :ARG1 i
+              :ARG2 (s4 / space
+                :ARG1-of (n3 / next-to-02
+                  :ARG2 (p2 / person :wiki "Thomas_Shadwell" :name (n4 / name :op1 "Shadwell")
+                    :domain (p3 / poet)
+                    :ARG1-of (b4 / big-01
+                      :ARG2 (a3 / admire-01
+                        :ARG0 p2
+                        :ARG1 s2)))))))
+        </amr>
       </example>
       <example name="just arg1" src="internet">
         <text>Hurry up , the world is very big !</text>
@@ -56,14 +56,14 @@
           <arg type="ARG1" start="4" end="4">world</arg>
           <arg type="ARGM-EXT" start="6" end="6">very</arg>
         </propbank>
-        <amr>
-            (h / hurry-01 :mode imperative
-              :ARG1 (y / you)
-              :ARG1-of (c / cause-01
-                :ARG0 (b / big-01
-                  :ARG1 (w / world)
-                  :degree (v / very))))
-            </amr>
+        <amr version="2019">
+          (h / hurry-01 :mode imperative
+            :ARG1 (y / you)
+            :ARG1-of (c / cause-01
+              :ARG0 (b / big-01
+                :ARG1 (w / world)
+                :degree (v / very))))
+        </amr>
       </example>
       <example name="comparative alias" src="BOLT">
         <text>I want the surge to be BIGGER , SOONER , and to last as long as it takes to WIN .</text>
@@ -72,23 +72,23 @@
           <arg type="ARG1" start="2" end="3">the surge</arg>
           <arg type="ARGM-TMP" start="8" end="8">SOONER</arg>
         </propbank>
-        <amr>
-            (w / want-01
-              :ARG0 (i / i)
-              :ARG1 (s / surge
-                :ARG1-of (b / big-01
-                  :ARG2-of (h / have-degree-91
-                    :ARG1 s
-                    :ARG3 (m / more)))
-                :ARG1-of (s2 / soon
-                  :ARG2-of (h2 / have-degree-91
-                    :ARG1 s
-                    :ARG3 (m2 / more)))
-                :ARG1-of (l / last-01
-                  :ARG2 (t / temporal-quantity
-                    :ARG1-of (t2 / take-10
-                      :ARG0 (w2 / win))))))
-            </amr>
+        <amr version="2019">
+          (w / want-01
+            :ARG0 (i / i)
+            :ARG1 (s / surge
+              :ARG1-of (b / big-01
+                :ARG2-of (h / have-degree-91
+                  :ARG1 s
+                  :ARG3 (m / more)))
+              :ARG1-of (s2 / soon
+                :ARG2-of (h2 / have-degree-91
+                  :ARG1 s
+                  :ARG3 (m2 / more)))
+              :ARG1-of (l / last-01
+                :ARG2 (t / temporal-quantity
+                  :ARG1-of (t2 / take-10
+                    :ARG0 (w2 / win))))))
+        </amr>
       </example>
       <example name="big-j: with SCL" src="Spatial">
         <text>20 feet is big for a shark .</text>
@@ -97,12 +97,12 @@
           <arg end="1" start="0" type="ARG3">20 feet</arg>
           <arg end="6" start="4" type="ARG4">for a shark</arg>
         </propbank>
-        <amr>
-            (b / big-01
-               :ARG3 (d / distance-quantity :quant 20
-                  :unit (f / foot))
-               :ARG4 (s / shark))
-            </amr>
+        <amr version="Spatial 1.0">
+          (b / big-01
+            :ARG3 (d / distance-quantity :quant 20
+              :unit (f / foot))
+            :ARG4 (s / shark))
+        </amr>
       </example>
       <note>BIG NOTES: Args 3, 4 and 5 added for Spatial AMR.</note>
       <note>BIG-J NOTES: Added by Julia based on BOLT-1. (from big.01-j)</note>
@@ -131,8 +131,7 @@
         <text>It was big of him to help out like that .</text>
         <propbank>
           <rel relloc="2">big</rel>
-          <arg end="9" start="5" type="ARG1">to help out like that</arg>
-          <arg end="4" start="3" type="ARG1">of him</arg>
+          <arg end="9" start="3" type="ARG1">of him to help out like that</arg>
         </propbank>
       </example>
       <note>BIG-J NOTES: Added by Julia based on WordNet. (from big.02-j)</note>

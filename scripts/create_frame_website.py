@@ -9,13 +9,15 @@ __license__ = "CC-BY-SA-4.0"
 import argparse
 import re
 from pathlib import Path
-from xml.etree import ElementTree as ET
+from lxml import etree as ET
+
+from validate_frames import validate
 
 
 def main(frame_dir, website_dir):
 	# Read and extract frame info
 	frames = frame_dir.rglob('*.xml')
-	frames = {file.name: ET.parse(file) for file in frames}
+	frames = {file.name: ET.parse(str(file)) for file in frames}
 	website_title = 'PropBank Frames'
 
 	all_rolesets = get_rolesets(frames)
@@ -29,10 +31,9 @@ def main(frame_dir, website_dir):
 
 	# Create common HTML elements
 	## Create roleset search field
-	search_rolesets_form = ET.Element('form', attrib={'autocomplete': 'off', 'action': '{{ base_url_relative }}',
-													  'onsubmit': 'onRolesetSearch(this)', 'method': 'post',
-													  'name': 'rolesetSearch'})
-	div = ET.Element('div', attrib={'class': 'autocomplete', 'style': 'width:300px;'})
+	search_rolesets_form = ET.Element('form', attrib={'autocomplete': 'off',
+													  'method': 'post', 'name': 'rolesetSearch', 'style': 'margin:0 auto;width:300px'})
+	div = ET.Element('div', attrib={'class': 'autocomplete'})
 	search_rolesets_form.append(div)
 	input = ET.Element('input', attrib={'id': 'searchRolesets', 'name': 'myRoleset', 'placeholder': 'Roleset ID',
 										'type': 'text'})
@@ -40,48 +41,64 @@ def main(frame_dir, website_dir):
 	search_rolesets_form.append(ET.Element('input', attrib={'type': 'submit', 'value': 'Go'}))
 
 	## Create alias search field
-	search_aliases_form = ET.Element('form', attrib={'autocomplete': 'off', 'action': '{{ base_url_relative }}',
-													 'onsubmit': 'onAliasSearch(this)', 'method': 'post',
-													 'name': 'aliasSearch'})
-	div = ET.Element('div', attrib={'class': 'autocomplete', 'style': 'width:300px;'})
+	search_aliases_form = ET.Element('form', attrib={'autocomplete': 'off',
+													 'method': 'post', 'name': 'aliasSearch', 'style': 'float:right;'})
+	div = ET.Element('div', attrib={'class': 'autocomplete'})
 	search_aliases_form.append(div)
 	input = ET.Element('input',
 					   attrib={'id': 'searchAliases', 'name': 'myAlias', 'placeholder': 'Alias', 'type': 'text'})
 	div.append(input)
 	search_aliases_form.append(ET.Element('input', attrib={'type': 'submit', 'value': 'Search'}))
 
-	## Create header
-	header = ET.Element('div', attrib={'class': 'header'})
-	title = ET.Element('h1', attrib={'style': 'float: left;'})
-	a = ET.Element('a', attrib={'href': 'index.html', 'style': 'text-decoration:none;color:white;font-weight:bold'})
-	a.text = website_title
-	title.append(a)
-	header.append(title)
-	div = ET.Element('div', attrib={'style': 'float: right;'})
-	div.append(search_rolesets_form)
-	div.append(search_aliases_form)
-	header.append(div)
-
 	## Create resource selection dropdown
-	select_resource = ET.Element('select', attrib={'id': 'resource'})
+	select_resource = ET.Element('select', attrib={'id': 'resource', 'style': 'font-size:30px;float:left;'})
 	option = ET.Element('option', {'value': 'ALL'})
-	option.text = 'All'
+	option.text = 'All Frames'
 	select_resource.append(option)
 	for resource in resources:
 		option = ET.Element('option', {'value': resource})
 		option.text = resource.replace('_', ' ').replace('-', '.')
 		select_resource.append(option)
-	header.append(select_resource)
+
+
+	## Create sticky header
+	sticky_header = ET.Element('div', attrib={'class': 'header', 'id': 'stickyHeader'})
+	sticky_header.append(select_resource)
+	sticky_header.append(search_aliases_form)
+	sticky_header.append(search_rolesets_form)
+	# if Path(website_dir, 'frame_errors.txt').exists():
+	# 	# TODO: Add a warning about frames being invalid.
+	# 	p = ET.Element('p')
+	# 	p.text = 'Warning: Frame validation failed (<a href="frame_errors.txt>see errors</a>)'
+	# 	header.append(ET.Element('br'))
+	# 	span = ET.Element('span', attrib={'style':'font-color:red'})
+	# 	span.text = 'Warning: Frame validation failed '
+	# 	header.append(span)
+	# 	a = ET.Element('a', attrib={'href':'frame_errors.txt'})
+	# 	a.text = '(see errors)'
+	# 	header.append(a)
 
 	# Create index.html
-	html = ET.Element('html')
+	print('Creating index.html')
+	html = ET.Element('html', attrib={'lang':'en'})
 	head = ET.Element('head')
+	title = ET.Element('title')
+	title.text = website_title
+	head.append(title)
 	html.append(head)
 	head.append(ET.Element('link', attrib={'rel': "stylesheet", 'href': 'style.css'}))
 	body = ET.Element('body')
 	html.append(body)
-	body.append(header)
 
+	top = ET.Element('div', attrib={'class':'top-container'})
+	page_title = ET.Element('h1')
+	page_title.text = 'Frame Index'
+	top.append(page_title)
+	body.append(top)
+
+	body.append(sticky_header)
+
+	content = ET.Element('div', attrib={'class':'content'})
 	sorted_frames = list(frames.keys())
 	sorted_frames.sort(key=lambda x: x.upper())
 	curr_letter = sorted_frames[0][0]
@@ -90,7 +107,7 @@ def main(frame_dir, website_dir):
 	h = ET.Element('h3')
 	h.text = curr_letter.upper()
 	alpha = ET.Element('div', attrib={'class': 'alpha'})
-	body.append(alpha)
+	content.append(alpha)
 	alpha.append(h)
 	columns = ET.Element('div', attrib={'class': 'columns'})
 	alpha.append(columns)
@@ -102,7 +119,7 @@ def main(frame_dir, website_dir):
 			h = ET.Element('h3')
 			h.text = curr_letter
 			alpha = ET.Element('div', attrib={'class': 'alpha'})
-			body.append(alpha)
+			content.append(alpha)
 			alpha.append(h)
 			columns = ET.Element('div', attrib={'class': 'columns'})
 			alpha.append(columns)
@@ -119,64 +136,81 @@ def main(frame_dir, website_dir):
 			a = ET.Element('a', attrib={'href': frame_name[:-3] + 'html'})
 		p.append(a)
 		a.text = frame_name[:-4]
-
+	body.append(content)
 	body.append(ET.Element('script', attrib={'src': 'https://code.jquery.com/jquery-3.5.1.min.js'}))
 	body.append(ET.Element('script', attrib={'src': "script.js"}))
-	ET.ElementTree(html).write(Path(website_dir, 'index.html'), encoding='unicode', method='html')
+	ET.ElementTree(html).write(str(Path(website_dir, 'index.html')), method='html')
 
 	# Create roleset HTML files: abate.html, etc.
 	for frame_name, xml in frames.items():
+		print(frame_name[:-3] + 'html')
 		if frame_name.startswith('spatial-91') or frame_name.startswith('statistical-test'):
 			continue  # TODO: Make compatible with AMR weirdness
 		if frame_name[:-3] == 'index.':
 			file = Path(website_dir, 'f_' + frame_name[:-3] + 'html')
 		else:
 			file = Path(website_dir, frame_name[:-3] + 'html')
-		html = ET.Element('html')
+		html = ET.Element('html', attrib={'lang':'en'})
 		head = ET.Element('head')
+		title = ET.Element('title')
+		title.text = '"' + frame_name[:frame_name.rindex('.')] + '" Rolesets'
+		head.append(title)
 		html.append(head)
 		head.append(ET.Element('link', attrib={'rel': "stylesheet", 'href': 'style.css'}))
 		body = ET.Element('body')
 		html.append(body)
-		body.append(header)
+		top = ET.Element('div', attrib={'class': 'top-container'})
+		page_title = ET.Element('h1')
+		page_title.text = 'Rolesets - ' + frame_name[:-4]
+		top.append(page_title)
+		body.append(top)
+		body.append(sticky_header)
+		content = ET.Element('div', attrib={'class': 'content'})
 		for pred in xml.findall('predicate'):
 			pred_heading = ET.Element('h2')
 			pred_heading.text = pred.get('lemma')
-			body.append(pred_heading)
+			content.append(pred_heading)
 			rs = pred.findall('roleset')
 			for roleset in rs:
 				div = create_roleset_div(roleset, roleset_to_resource_use)
-				body.append(div)
-
+				content.append(div)
+		body.append(content)
 		body.append(ET.Element('script', attrib={'src': 'https://code.jquery.com/jquery-3.5.1.min.js'}))
 		body.append(ET.Element('script', attrib={'src': "script.js"}))
-		ET.ElementTree(html).write(file, encoding='unicode', method='html')
+		ET.ElementTree(html).write(str(file), method='html')
 
 	##  Create alias HTML pages for searching by alias
 	for alias, rolesets in alias_word_to_rolesets.items():
-		html = ET.Element('html')
+		print('alias-' + alias + '.html')
+		html = ET.Element('html', attrib={'lang':'en'})
 		head = ET.Element('head')
+		title = ET.Element('title')
+		title.text = 'Rolesets for alias "' + alias + '"'
+		head.append(title)
 		html.append(head)
 		head.append(ET.Element('link', attrib={'rel': "stylesheet", 'href': 'style.css'}))
 		body = ET.Element('body')
 		html.append(body)
-		body.append(header)
 
-		h2 = ET.Element('h2')
-		h2.text = 'Rolesets for alias "' + alias + '"'
-		body.append(h2)
+		top = ET.Element('div', attrib={'class': 'top-container'})
+		page_title = ET.Element('h1')
+		page_title.text = 'Aliases - ' + alias
+		top.append(page_title)
+		body.append(top)
+		body.append(sticky_header)
+		content = ET.Element('div', attrib={'class': 'content'})
 
 		for roleset in rolesets:
 			if roleset.get('id').startswith('statistical-test'):
 				continue  # TODO: AMR weirdness
 			div = create_roleset_div(roleset, roleset_to_resource_use)
-			body.append(div)
-
+			content.append(div)
+		body.append(content)
 		body.append(ET.Element('script', attrib={'src': 'https://code.jquery.com/jquery-3.5.1.min.js'}))
 		body.append(ET.Element('script', attrib={'src': "script.js"}))
 		if '/' in alias:
 			alias = re.sub('/', '-', alias)
-		ET.ElementTree(html).write(Path(website_dir, 'alias-' + alias + '.html'), encoding='unicode', method='html')
+		ET.ElementTree(html).write(str(Path(website_dir, 'alias-' + alias + '.html')), method='html')
 
 
 def get_rolesets(frames):
@@ -324,7 +358,7 @@ def create_roleset_div(roleset, roleset_to_resource_use):
 		arg_start_to_arg = dict()
 		broken_args = list()
 		for arg in args:
-			# TODO: Multiple args may start at a given spot
+			# TODO: Multiple args may start at a given spot?
 			if arg.tag == 'rel':
 				if ' ' in arg.get('relloc'):
 					split = arg.get('relloc').split(' ')
@@ -340,19 +374,18 @@ def create_roleset_div(roleset, roleset_to_resource_use):
 				arg_name = arg.get('type')
 				if not arg.get('start').isdigit() or not arg.get('end').isdigit():
 					broken_args.append(arg)
+				elif int(arg.get('start')) > int(arg.get('end')):
+					broken_args.append(arg)
 				else:
 					arg_start_to_arg[int(arg.get('start'))] = [int(arg.get('end')), arg_name, arg.text]
 		if example.find('text') is None or example.find('text').text is None:
 			continue
 		tokenized = example.find('text').text.split(' ')
-		example_string = '<span>'
+		example_string = ''
 		i = 0
+
 		while i < len(tokenized):
 			if i in arg_start_to_arg:
-				arg_text = re.sub(' ', '', arg_start_to_arg[i][2].lower())
-				example_text = ''.join(tokenized[i:arg_start_to_arg[i][0] + 1]).lower()
-				assert example_text
-				assert re.match(re.escape(example_text), arg_text)
 				example_string += '<div class="tooltip"><span style="background-color: '
 				example_string += get_arg_color(arg_start_to_arg[i][1]) + '">' + \
 								  arg_start_to_arg[i][2] + \
@@ -360,11 +393,10 @@ def create_roleset_div(roleset, roleset_to_resource_use):
 				i += arg_start_to_arg[i][0] + 1 - i
 			else:
 				if i == len(tokenized) - 1:
-					example_string += tokenized[i]
+					example_string += '<span>' + tokenized[i] + '</span>'
 				else:
-					example_string += tokenized[i] + ' '
+					example_string += '<span>' + tokenized[i] + ' </span>'
 				i += 1
-		example_string += '</span>'
 
 		# Print out broken_args
 		for arg in broken_args:
@@ -376,6 +408,7 @@ def create_roleset_div(roleset, roleset_to_resource_use):
 				example_string += '<br /><span><b>' + arg.get('type') + '</b>: ' + arg.text + '</span>'
 
 		# TODO: Hide AMR examples based on usage tag
+		# TODO Use penman to prettify format, if possible.
 		amrs = example.findall('amr')
 		attrib = {'class': 'roleset resource-dependent ' + ' '.join(roleset_to_resource_use[roleset.get('id')])}
 		for amr in amrs:
@@ -483,7 +516,24 @@ def create_javascript(alias_word_to_rolesets, all_rolesets, resources, website_d
 				 '\ndocument.addEventListener("click", function (e) {' \
 				 '\n    closeAllLists(e.target);' \
 				 '\n});' \
-				 '\n}\n'
+				 '\n}\n' \
+				 'window.onscroll = function() {makeSticky()};\n' \
+				 'var header = document.getElementById("stickyHeader");\n' \
+				 'var sticky = header.offsetTop;\n' \
+				 'function makeSticky() {\n' \
+				 '  if (window.pageYOffset > sticky) {\n' \
+				 '    header.classList.add("sticky");\n' \
+				 '  } else {\n' \
+				 '    header.classList.remove("sticky");\n' \
+				 '  }\n' \
+			 	'}\n' \
+				 'function offsetAnchor() {\n' \
+				 '    if(location.hash.length !== 0) {\n' \
+				 '        window.scrollTo(window.scrollX, window.scrollY - 50);\n' \
+				 '    }\n' \
+				 '}\n' \
+				 'window.addEventListener("hashchange", offsetAnchor);\n' \
+				 'window.setTimeout(offsetAnchor, 1);'
 
 	## Roleset search functions:
 	javascript += '\nvar rolesets = ["' + '", "'.join(all_rolesets.keys()) + '"]\n\n'
@@ -492,14 +542,12 @@ def create_javascript(alias_word_to_rolesets, all_rolesets, resources, website_d
 	for roleset, pred in all_rolesets.items():
 		javascript += '\n"' + roleset + '": "' + pred + '",'
 	javascript += '\n}\n'
-	javascript += '\nfunction onRolesetSearch(form) {\n' \
-				  '    form.action = rolesetToPred[form.querySelector("#searchRolesets").value] + ".html#" + form.querySelector("#searchRolesets").value;\n}\n'
+	javascript += '\n$("form[name=rolesetSearch]").on("submit", (e) => { e.preventDefault(); window.location=rolesetToPred[$("#searchRolesets").val()] + ".html#" + $("#searchRolesets").val(); });'
 
 	## Alias search functions:
 	javascript += '\nvar aliases = ["' + '", "'.join(alias_word_to_rolesets.keys()) + '"]\n\n'
 	javascript += '\nautocomplete(document.getElementById("searchAliases"), aliases);'
-	javascript += '\nfunction onAliasSearch(form) {\n' \
-				  '    form.action = "alias-" + form.querySelector("#searchAliases").value.replace("/", "-") + ".html";\n}\n'
+	javascript += '\n$("form[name=aliasSearch]").on("submit", (e) => { e.preventDefault(); window.location="alias-" + $("#searchAliases").val().replace("/", "-") + ".html#" + $("#searchAliases").val(); });'
 
 	## Resource usage dropdown function:
 	javascript += '\nvar resources ={'
@@ -509,170 +557,177 @@ def create_javascript(alias_word_to_rolesets, all_rolesets, resources, website_d
 	javascript += '\nfunction showHideUsedElements(){\n' \
 				  '    $("select").change(function(){\n' \
 				  '        $(this).find("option:selected").each(function(){\n' \
-				  '            var optionValue = $(this).attr("value");\n' \
+				  '            var optionValue = $(this).val();\n' \
 				  '            if(optionValue == "ALL"){\n' \
 				  '                $(".resource-dependent").show();\n' \
 				  '            } else{\n' \
-				  '                $(".resource-dependent").each(\n' \
-				  '                    function(){\n' \
-				  '                       if($(this).hasClass(optionValue)){\n' \
-				  '                           $(this).show();\n' \
-				  '                       } else {$(this).hide(); }\n' \
-				  '               });\n' \
+				  '                $(".resource-dependent").filter("."+optionValue).show();\n' \
+				  '                $(".resource-dependent").filter(":not(."+optionValue+")").hide();\n' \
 				  '            }\n' \
 				  '        localStorage.setItem("usageValue", $(this).val());\n' \
 				  '        });\n' \
 				  '    }).change();\n' \
 				  '};\n' \
 				  'var usageValue = localStorage.getItem("usageValue");\n' \
-				  '    if(usageValue != null) {\n' \
-				  '        $("select").val(usageValue);\n' \
-				  '    }\n\n' \
-				  'showHideUsedElements()\n\n'
+				  'if(usageValue != null) {\n' \
+				  '    $("select").val(usageValue);\n' \
+				  '}\n\n' \
+				  'showHideUsedElements();\n\n'
 	Path(website_dir, 'script.js').write_text(javascript)
 
 
 def create_css(website_dir):
 	css_contents = '* { box-sizing: border-box; }\n' \
-						'body {\n' \
-						'  font: 16px Arial;\n' \
-						'}\n' \
-						'.roleset {\n' \
-						'  border: 1px solid #000000;\n' \
-						'  background-color: #fff7c9;\n' \
-						'  margin-bottom: 20px;\n' \
-						'  padding: 10px;\n' \
-						'}\n' \
-						'\n' \
-						'.example {\n' \
-						'  border: 1px solid #000000;\n' \
-						'  background-color: #f7fff4;\n' \
-						'  margin-bottom: 10px;\n' \
-						'  padding: 5px;\n' \
-						'}\n' \
-						'\n' \
-						'.autocomplete {\n' \
-						'  /*the container must be positioned relative:*/\n' \
-						'  position: relative;\n' \
-						'  display: inline-block;\n' \
-						'}\n' \
-						'input {\n' \
-						'  border: 1px solid transparent;\n' \
-						'  background-color: #f1f1f1;\n' \
-						'  padding: 10px;\n' \
-						'  font-size: 16px;\n' \
-						'}\n' \
-						'input[type=text] {\n' \
-						'  background-color: #f1f1f1;\n' \
-						'  width: 100%;\n' \
-						'}\n' \
-						'input[type=submit] {\n' \
-						'  background-color: DodgerBlue;\n' \
-						'  color: #fff;\n' \
-						'}\n' \
-						'.autocomplete-items {\n' \
-						'  position: absolute;\n' \
-						'  border: 1px solid #d4d4d4;\n' \
-						'  border-bottom: none;\n' \
-						'  border-top: none;\n' \
-						'  z-index: 99;\n' \
-						'  /*position the autocomplete items to be the same width as the container:*/\n' \
-						'  top: 100%;\n' \
-						'  left: 0;\n' \
-						'  right: 0;\n' \
-						'}\n' \
-						'.autocomplete-items div {\n' \
-						'  padding: 10px;\n' \
-						'  cursor: pointer;\n' \
-						'  background-color: #fff;\n' \
-						'  border-bottom: 1px solid #d4d4d4;\n' \
-						'}\n' \
-						'.autocomplete-items div:hover {\n' \
-						'  /*when hovering an item:*/\n' \
-						'  background-color: #e9e9e9;\n' \
-						'}\n' \
-						'.autocomplete-active {\n' \
-						'  /*when navigating through the items using the arrow keys:*/\n' \
-						'  background-color: DodgerBlue !important;\n' \
-						'  color: #ffffff;\n' \
-						'}\n' \
-						'\n' \
-						'/* Tooltip container */\n' \
-						'.tooltip {\n' \
-						'  position: relative;\n' \
-						'  display: inline-block;\n' \
-						'}\n' \
-						'\n' \
-						'/* Tooltip text */\n' \
-						'.tooltip .tooltiptext {\n' \
-						'  visibility: hidden;\n' \
-						'  width: 120px;\n' \
-						'  background-color: #555;\n' \
-						'  color: #fff;\n' \
-						'  text-align: center;\n' \
-						'  padding: 5px 0;\n' \
-						'  border-radius: 6px;\n' \
-						'\n' \
-						'  /* Position the tooltip text */\n' \
-						'  position: absolute;\n' \
-						'  z-index: 1;\n' \
-						'  bottom: 125%;\n' \
-						'  left: 50%;\n' \
-						'  margin-left: -60px;\n' \
-						'\n' \
-						'  /* Fade in tooltip */\n' \
-						'  opacity: 0;\n' \
-						'  transition: opacity 0.3s;\n' \
-						'}\n' \
-						'\n' \
-						'/* Tooltip arrow */\n' \
-						'.tooltip .tooltiptext::after {\n' \
-						'  content: "";\n' \
-						'  position: absolute;\n' \
-						'  top: 100%;\n' \
-						'  left: 50%;\n' \
-						'  margin-left: -5px;\n' \
-						'  border-width: 5px;\n' \
-						'  border-style: solid;\n' \
-						'  border-color: #555 transparent transparent transparent;\n' \
-						'}\n' \
-						'\n' \
-						'/* Show the tooltip text when you mouse over the tooltip container */\n' \
-						'.tooltip:hover .tooltiptext {\n' \
-						'  visibility: visible;\n' \
-						'  opacity: 1;\n' \
-						'}\n' \
-						'.header {\n' \
-						'  padding: 60px;\n' \
-						'  padding-bottom: 120px;\n' \
-						'  margin-bottom: 10px;\n' \
-						'  background: #1abc9c;\n' \
-						'}\n' \
-						'.header h1 {\n' \
-						'  text-align: center;\n' \
-						'  top: 50%;\n' \
-						'  float:left;\n' \
-						'  background: #1abc9c;\n' \
-						'  color: white;\n' \
-						'  font-size: 30px;\n' \
-						'}\n' \
-						'\n' \
-						'.alpha {\n' \
-						'  border: 1px solid #000000;\n' \
-						'  background-color: #f7fff4;\n' \
-						'  margin-bottom: 10px;\n' \
-						'  padding: 5px;\n' \
-						'}\n' \
-						'\n' \
-						'.columns {\n' \
-						'  -webkit-columns: 4;\n' \
-						'  -moz-columns: 4;\n' \
-						'  columns: 4 auto;\n' \
-						'\n' \
-						'}\n' \
-						'.columns p {\n' \
-						'  margin: 0;\n' \
-						'}'
+				   '.content {\n' \
+				   '  font: 16px Arial;\n' \
+				   '  padding: 16px;\n' \
+				   '}\n' \
+				   '.roleset {\n' \
+				   '  border: 1px solid #000000;\n' \
+				   '  background-color: #fff7c9;\n' \
+				   '  margin-bottom: 20px;\n' \
+				   '  padding: 10px;\n' \
+				   '}\n' \
+				   '\n' \
+				   '.example {\n' \
+				   '  border: 1px solid #000000;\n' \
+				   '  background-color: #f7fff4;\n' \
+				   '  margin-bottom: 10px;\n' \
+				   '  padding: 5px;\n' \
+				   '}\n' \
+				   '\n' \
+				   '.autocomplete {\n' \
+				   '  /*the container must be positioned relative:*/\n' \
+				   '  position: relative;\n' \
+				   '  display: inline-block;\n' \
+				   '}\n' \
+				   'input {\n' \
+				   '  border: 1px solid transparent;\n' \
+				   '  background-color: #f1f1f1;\n' \
+				   '  padding: 10px;\n' \
+				   '  font-size: 16px;\n' \
+				   '}\n' \
+				   'input[type=text] {\n' \
+				   '  background-color: #f1f1f1;\n' \
+				   '  width: 100%;\n' \
+				   '}\n' \
+				   'input[type=submit] {\n' \
+				   '  background-color: DodgerBlue;\n' \
+				   '  color: #fff;\n' \
+				   '}\n' \
+				   '.autocomplete-items {\n' \
+				   '  position: absolute;\n' \
+				   '  border: 1px solid #d4d4d4;\n' \
+				   '  border-bottom: none;\n' \
+				   '  border-top: none;\n' \
+				   '  z-index: 99;\n' \
+				   '  /*position the autocomplete items to be the same width as the container:*/\n' \
+				   '  top: 100%;\n' \
+				   '  left: 0;\n' \
+				   '  right: 0;\n' \
+				   '}\n' \
+				   '.autocomplete-items div {\n' \
+				   '  padding: 10px;\n' \
+				   '  cursor: pointer;\n' \
+				   '  background-color: #fff;\n' \
+				   '  color: #000;\n' \
+				   '  border-bottom: 1px solid #d4d4d4;\n' \
+				   '}\n' \
+				   '.autocomplete-items div:hover {\n' \
+				   '  /*when hovering an item:*/\n' \
+				   '  background-color: #e9e9e9;\n' \
+				   '}\n' \
+				   '.autocomplete-active {\n' \
+				   '  /*when navigating through the items using the arrow keys:*/\n' \
+				   '  background-color: DodgerBlue !important;\n' \
+				   '  color: #ffffff;\n' \
+				   '}\n' \
+				   '\n' \
+				   '/* Tooltip container */\n' \
+				   '.tooltip {\n' \
+				   '  position: relative;\n' \
+				   '  display: inline-block;\n' \
+				   '}\n' \
+				   '\n' \
+				   '/* Tooltip text */\n' \
+				   '.tooltip .tooltiptext {\n' \
+				   '  visibility: hidden;\n' \
+				   '  width: 120px;\n' \
+				   '  background-color: #555;\n' \
+				   '  color: #fff;\n' \
+				   '  text-align: center;\n' \
+				   '  padding: 5px 0;\n' \
+				   '  border-radius: 6px;\n' \
+				   '\n' \
+				   '  /* Position the tooltip text */\n' \
+				   '  position: absolute;\n' \
+				   '  z-index: 1;\n' \
+				   '  bottom: 125%;\n' \
+				   '  left: 50%;\n' \
+				   '  margin-left: -60px;\n' \
+				   '\n' \
+				   '  /* Fade in tooltip */\n' \
+				   '  opacity: 0;\n' \
+				   '  transition: opacity 0.3s;\n' \
+				   '}\n' \
+				   '\n' \
+				   '/* Tooltip arrow */\n' \
+				   '.tooltip .tooltiptext::after {\n' \
+				   '  content: "";\n' \
+				   '  position: absolute;\n' \
+				   '  top: 100%;\n' \
+				   '  left: 50%;\n' \
+				   '  margin-left: -5px;\n' \
+				   '  border-width: 5px;\n' \
+				   '  border-style: solid;\n' \
+				   '  border-color: #555 transparent transparent transparent;\n' \
+				   '}\n' \
+				   '\n' \
+				   '/* Show the tooltip text when you mouse over the tooltip container */\n' \
+				   '.tooltip:hover .tooltiptext {\n' \
+				   '  visibility: visible;\n' \
+				   '  opacity: 1;\n' \
+				   '}\n' \
+				   '.alpha {\n' \
+				   '  border: 1px solid #000000;\n' \
+				   '  background-color: #f7fff4;\n' \
+				   '  margin-bottom: 10px;\n' \
+				   '  padding: 5px;\n' \
+				   '}\n' \
+				   '\n' \
+				   '.columns {\n' \
+				   '  -webkit-columns: 4;\n' \
+				   '  -moz-columns: 4;\n' \
+				   '  columns: 4 auto;\n' \
+				   '\n' \
+				   '}\n' \
+				   '.columns p {\n' \
+				   '  margin: 0;\n' \
+				   '}\n' \
+				   '.top-container {\n' \
+				   '  background-color: #f1f1f1;\n' \
+				   '  padding: 30px;\n' \
+				   '  text-align: center;\n' \
+				   '}\n' \
+				   '\n' \
+				   '.header {\n' \
+				   '  padding: 10px 16px;\n' \
+				   '  background: #555;\n' \
+				   '  color: #f1f1f1;\n' \
+				   '  z-index: 10;\n' \
+				   '}\n' \
+				   '\n' \
+				   '\n' \
+				   '.sticky {\n' \
+				   '  position: fixed;\n' \
+				   '  top: 0;\n' \
+				   '  width: 100%;\n' \
+				   '}\n' \
+				   '\n' \
+				   '.sticky + .content {\n' \
+				   '  padding-top: 102px;\n' \
+				   '}'
+
 	css_file = Path(website_dir, 'style.css')
 	css_file.write_text(css_contents)
 
@@ -685,7 +740,8 @@ if __name__ == "__main__":
 	args = parser.parse_args()
 	input_frames = Path(args.input)
 	assert input_frames.exists()
-	# TODO: We should run a validation check on the input frames.
 	website_dir = Path(args.output)
 	website_dir.mkdir(exist_ok=True)
+	validate(input_frames, Path(website_dir, 'frame_errors.txt'))  # TODO: We should have it spit out the errors to a file, then make them accessible via HTML
+	print('')
 	main(input_frames, website_dir)

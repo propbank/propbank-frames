@@ -289,7 +289,8 @@
       <example name="go-v: modal" src="modal">
         <text>I 'm going to eat lunch now .</text>
         <propbank>
-          </propbank>
+          <rel relloc="2">going</rel>
+        </propbank>
       </example>
       <note>GO-V NOTES: No VNcls. (from go.04-v)</note>
       <note>Do not tag! (leave the rel, of course). (from go.04-v)</note>
@@ -823,11 +824,11 @@
         <lexlink class="say-37.7" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
       </lexlinks>
       <example name="go-v: non-agentive speaker" src="non-agentive speaker">
-        <text>The old saying goes : ' Officials come and go , but yamen government offices in feudal China are made of iron . '</text>
+        <text>The old saying goes : ' Officials come and go , but yamen [ government offices in feudal China ] are made of iron . '</text>
         <propbank>
           <rel relloc="3">goes</rel>
           <arg type="ARG0" start="0" end="2">The old saying</arg>
-          <arg type="ARG1" start="?" end="?">" Officials come and go but yamen [ governemnt offices in feudal China are made of iron . "</arg>
+          <arg type="ARG1" start="5" end="25">' Officials come and go , but yamen [ government offices in feudal China ] are made of iron . '</arg>
         </propbank>
       </example>
       <note>GO-V NOTES: predicate added by Arrick (from go.23-v)</note>
@@ -1006,15 +1007,15 @@
           <arg end="2" start="2" type="ARGM-MOD">should</arg>
           <arg end="6" start="4" type="ARG5">on its side</arg>
         </propbank>
-        <amr>
-            (r / recommend-01
-               :ARG1 (g / go-35
-                  :ARG1 (b / block)
-                  :ARG6 (o / on-04
-                     :ARG1 b
-                     :ARG2 (s / side
-                        :part-of b))))
-            </amr>
+        <amr version="Spatial 1.0">
+          (r / recommend-01
+            :ARG1 (g / go-35
+              :ARG1 (b / block)
+              :ARG6 (o / on-04
+                :ARG1 b
+                :ARG2 (s / side
+                  :part-of b))))
+        </amr>
       </example>
       <example name="go-v: with arg3 and arg5" src="Spatial">
         <text>My battleship goes from G1 to G5 .</text>
@@ -1024,15 +1025,15 @@
           <arg end="4" start="3" type="ARG3">from G1</arg>
           <arg end="6" start="5" type="ARG4">to G5</arg>
         </propbank>
-        <amr>
-            (g / go-35
-               :ARG1 (b / battleship
-                  :poss (i / i))
-               :ARG3 (s / space
-                  :location (c / cartesian-coordinate-entity :x "G" :y 1))
-               :ARG4 (s2 / space
-                  :location (c2 / cartesian-coordinate-entity :x "G" :y 5)))
-            </amr>
+        <amr version="Spatial 1.0">
+          (g / go-35
+            :ARG1 (b / battleship
+              :poss (i / i))
+            :ARG3 (s / space
+              :location (c / cartesian-coordinate-entity :x "G" :y 1))
+            :ARG4 (s2 / space
+              :location (c2 / cartesian-coordinate-entity :x "G" :y 5)))
+        </amr>
       </example>
       <example name="go-v: with arg2" src="Minecraft">
         <text>So the red block goes there .</text>
@@ -1042,12 +1043,12 @@
           <arg end="3" start="1" type="ARG1">the red block</arg>
           <arg end="5" start="5" type="ARG2">there</arg>
         </propbank>
-        <amr>
-            (g / go-35
-               :ARG1 (b / block
-                 :color (r / red))
-               :ARG2 (t / there))
-            </amr>
+        <amr version="Spatial 1.0">
+          (g / go-35
+            :ARG1 (b / block
+              :color (r / red))
+            :ARG2 (t / there))
+        </amr>
       </example>
       <note>GO NOTES: fictive motion sense split off from go.01 for SpatialAMR.</note>
     </roleset>
@@ -1517,7 +1518,7 @@
         <usage resource="AMR" version="2019" inuse="+"/>
         <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
         <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
-        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
       </usagenotes>
       <lexlinks>
         <lexlink class="Undergoing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>

@@ -86,19 +86,19 @@
           <arg end="4" start="4" type="ARG0">you</arg>
           <arg end="7" start="7" type="ARGM-DIR">north</arg>
         </propbank>
-        <amr>
-            (p / possible-01
-               :ARG1 (a / agree-01
-                  :ARG0 (w / we)
-                  :ARG1 (f / face-01
-                     :ARG0 (y / you)
-                     :direction (t / trajectory
-                        :ARG4-of (n / north-01)
-                        :anchor (c / cartesian-framework-91
-                           :ARG1 (b / build-space)
-                           :FR (a3 / ad-hoc-cardinal)))))
-               :polarity (a2 / amr-unknown))
-            </amr>
+        <amr version="Spatial 1.0">
+          (p / possible-01
+            :ARG1 (a / agree-01
+              :ARG0 (w / we)
+              :ARG1 (f / face-01
+                :ARG0 (y / you)
+                :direction (t / trajectory
+                  :ARG4-of (n / north-01)
+                  :anchor (c / cartesian-framework-91
+                    :ARG1 (b / build-space)
+                    :FR (a3 / ad-hoc-cardinal)))))
+            :polarity (a2 / amr-unknown))
+        </amr>
       </example>
       <example name="face-v: with Arg2" src="Spatial">
         <text>Face the wall with your toes</text>
@@ -107,38 +107,38 @@
           <arg end="2" start="1" type="ARG1">the wall</arg>
           <arg end="5" start="3" type="ARG2">with your toes</arg>
         </propbank>
-        <amr>
-            (f / face-01 :mode imperative
-               :ARG0 (y / you)
-               :ARG1 (w / wall)
-               :ARG2 (t / toe :pl +
-                  :part-of y))
-            </amr>
+        <amr version="Spatial 1.0">
+          (f / face-01 :mode imperative
+            :ARG0 (y / you)
+            :ARG1 (w / wall)
+            :ARG2 (t / toe :pl +
+              :part-of y))
+        </amr>
       </example>
       <example name="face-v: with ARG4; spatialAMR use only" src="Minecraft">
         <text>now let 's change faces</text>
-        <amr>
-            (c / change-01 :mode imperative
-               :ARG0 (w / we)
-               :ARG1 (t / thing :pl +
-                  :ARG4-of (f / face-01
-                     :ARG0 w))
-               :time (n / now))
-            </amr>
+        <amr version="Spatial 1.0">
+          (c / change-01 :mode imperative
+            :ARG0 (w / we)
+            :ARG1 (t / thing :pl +
+              :ARG4-of (f / face-01
+                :ARG0 w))
+            :time (n / now))
+        </amr>
       </example>
       <example name="face-v: with ARG2; spatialAMR use only" src="Minecraft">
         <text>so now you 'll copy that on the opposite face from where you are</text>
-        <amr>
-            (c / copy-01 :mode imperative
-               :ARG0 (y / you)
-               :ARG1 (t / that)
-               :ARG2 (t2 / thing
-                  :ARG2-of (f / face-01)
-                  :ARG1-of (o / opposite-01
-                     :ARG2 (s2 / space
-                        :location-of y)))
-               :time (n2 / now))
-            </amr>
+        <amr version="Spatial 1.0">
+          (c / copy-01 :mode imperative
+            :ARG0 (y / you)
+            :ARG1 (t / that)
+            :ARG2 (t2 / thing
+              :ARG2-of (f / face-01)
+              :ARG1-of (o / opposite-01
+                :ARG2 (s2 / space
+                  :location-of y)))
+            :time (n2 / now))
+        </amr>
       </example>
       <note>FACE NOTES: Args 2, 3 and 4 added for spatial AMR.</note>
       <note>FACE-V NOTES: We'll need to go back and change these from "arg0-by" to "arg0-with"at some point; the current annotator doesn't contain "arg0-with". (from face.01-v)</note>

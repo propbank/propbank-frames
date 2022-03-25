@@ -6,6 +6,7 @@
       <aliases>
         <alias pos="v">enlarge</alias>
         <alias pos="j">enlarged</alias>
+        <alias pos="n">enlargement</alias>
       </aliases>
       <roles>
         <role descr="causer of biggenment" f="PAG" n="0">
@@ -95,14 +96,18 @@
           <arg type="ARG4" start="10" end="12">to 2 cm</arg>
         </propbank>
       </example>
-      <example name="With arg 0" src="">
-        <text>Multiple mesenteric lymph nodes are enlarged by the pathology .</text>
-        <propbank>
-          <rel relloc="5">enlarged</rel>
-          <arg type="ARG1" start="0" end="3">Multiple mesenteric lymph nodes</arg>
-          <arg type="ARG0" start="6" end="8">by the pathology</arg>
-        </propbank>
+      <example name="enlargement-n" src="THYME">
+        <text>CT shows slight enlargement of tumor .</text>
+        <amr version="THYME 1.0">
+          (s / show-01
+            :ARG0 (c / ct-01)
+            :ARG1 (e / enlarge-01
+              :ARG1 (s2 / sign-symptom :name (n / name :op1 "tumor"))
+              :ARG1-of (s3 / slight-01)))
+        </amr>
+        <propbank/>
       </example>
+      <note>ENLARGEMENT-N NOTES: Based on THYME corpus.</note>
       <note>ENLARGE-V NOTES: Preposition 'by' takes precedence over EXT tag. (from enlarge.01-v)</note>
       <note>ENLARGED-J NOTES: Based on Thyme and Sharp data. Comparison to enlarge.01. Enlarge.01 is a member of VN class other_cos-45.4. Framed by Katie. (from enlarged.01-j)</note>
     </roleset>
