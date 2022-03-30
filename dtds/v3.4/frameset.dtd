@@ -212,28 +212,26 @@ resource CDATA #REQUIRED
 -->
 
 <!-- Adding a new element to distinguish propbank example from amr example (UNVERIFIED) -->
-<!ELEMENT pb (arg|rel|note)*> 
+<!ELEMENT propbank (arg|rel|note)*>
 
-<!-- <!ELEMENT example (note?, text, (pb | amr | note)*)> -->
-<!ELEMENT example (note?, text, (arg | rel | pb | amr | note)*)>  <!-- Eventually might want to remove (arg|rel) elements which are currently kept for purposes of backward compatibility -->
+<!ELEMENT amr (#PCDATA)>
+<!ATTLIST amr
+  version CDATA #IMPLIED>
+
+<!ELEMENT example (note?, text, (propbank | amr | note)*)>
 <!ATTLIST example
   name CDATA #IMPLIED
   src  CDATA #IMPLIED>
 <!ELEMENT text (#PCDATA)>
 
-<!-- the n and f attributes corresponds to those of the roles
-     described above -->
 <!ELEMENT arg (#PCDATA)>
 <!ATTLIST arg
-  n ( 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | m | M | a | A) #REQUIRED
-  f CDATA #IMPLIED
-      start CDATA #IMPLIED
-        end CDATA #IMPLIED>
+  type ( ARG0 | ARG1 | ARG2 | ARG3 | ARG4 | ARG5 | ARG6 | ARG7 | C-ARG0 | C-ARG1 | C-ARG2 | C-ARG3 | C-ARG4 | C-ARG5 | C-ARG6 | C-ARG7 | R-ARG0 | R-ARG1 | R-ARG2 | R-ARG3 | R-ARG4 | R-ARG5 | R-ARG6 | R-ARG7 | ARGM-ADJ | ARGM-ADV | ARGM-CAU | ARGM-COM | ARGM-DIR | ARGM-DIS | ARGM-DSP | ARGM-EXT | ARGM-GOL | ARGM-LOC | ARGM-LVB | ARGM-MNR | ARGM-MOD | ARGM-NEG | ARGM-PNC | ARGM-PRD | ARGM-PRP | ARGM-PRR | ARGM-PRX | ARGM-REC | ARGM-TMP | ARGM-CXN | C-ARGM-ADJ | C-ARGM-ADV | C-ARGM-CAU | C-ARGM-COM | C-ARGM-DIR | C-ARGM-DIS | C-ARGM-DSP | C-ARGM-EXT | C-ARGM-LOC | C-ARGM-MNR | C-ARGM-MOD | C-ARGM-NEG | C-ARGM-PRP | C-ARGM-TMP | C-ARGM-CXN | R-ARGM-ADV | R-ARGM-CAU | R-ARGM-COM | R-ARGM-DIR | R-ARGM-EXT | R-ARGM-GOL | R-ARGM-LOC | R-ARGM-MNR | R-ARGM-MOD | R-ARGM-PNC | R-ARGM-PRD | R-ARGM-PRP | R-ARGM-TMP) #REQUIRED
+  start CDATA #REQUIRED
+  end CDATA #REQUIRED>
 <!-- a rel can have an "f" attribute for a single reason, so that
      auxilliary uses of the verb "have" can be marked as such.
      There should be no other "f" attributes -->
 <!ELEMENT rel (#PCDATA)>
 <!ATTLIST rel
   relloc CDATA #REQUIRED>
-
-<!ELEMENT amr (#PCDATA)>
