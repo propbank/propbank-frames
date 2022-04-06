@@ -21,16 +21,19 @@
       </usagenotes>
       <lexlinks />
       <example name="backache-n" src="">
-        <text>IRBESARTAN - Fatigue and backaches</text>
+        <text>This medication can cause fatigue and backaches</text>
         <propbank>
-          <rel relloc="4">backaches</rel>
+          <rel relloc="6">backaches</rel>
         </propbank>
         <amr version="THYME 1.0">
-          (c / cause-01
-            :ARG0 (m / medications-drugs :name (n / name :op1 "irbesartan"))
-            :ARG1 (a / and
-              :op1 (f / fatigue-01)
-              :op2 (b / backache-01 :pl +)))
+          (p / possible-01
+            :ARG1 (c / cause-01
+              :ARG0 (t / thing
+                :ARG2-of (m / medicate-01)
+                :mod (t2 / this))
+              :ARG1 (a / and
+                :op1 (f / fatigue-01)
+                :op2 (b / backache-01 :pl +))))
         </amr>
       </example>
       <note>BACKACHE NOTES: Added for THYME AMR. </note>
