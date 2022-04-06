@@ -22,18 +22,21 @@
       </usagenotes>
       <lexlinks />
       <example name="metachronous-j" src="THYME">
-        <text># 1 Metachronous colon cancer with synchronous colon lesions .</text>
+        <text>Patient presents with metachronous colon cancer with synchronous colon lesions .</text>
         <propbank>
-          <rel relloc="2">Metachronous</rel>
-          <arg end="4" start="3" type="ARG1">colon cancer</arg>
+          <rel relloc="3">metachronous</rel>
+          <arg end="5" start="4" type="ARG1">colon cancer</arg>
         </propbank>
         <amr version="THYME 1.0">
-          (c / cancer-03 :li 1 :pl +
-            :ARG2 (a / anatomical-site :primary + :name (n / name :op1 "colon"))
-            :ARG1-of (m / metachronous-01)
-            :subevent (s / sign-symptom :pl + :name (n2 / name :op1 "lesion")
-              :location a
-              :ARG1-of (s / synchronous-02)))
+          (p / present-102
+            :ARG0 (p2 / patient-yy)
+            :ARG1 (c / cancer-03 :pl +
+              :ARG1 p2
+              :ARG2 (a / anatomical-site :name (n / name :op1 "colon"))
+              :ARG1-of (m / metachronous-01)
+               :subevent (s / sign-symptom :pl + :name (n2 / name :op1 "lesion")
+                :location a
+                :ARG1-of (s2 / synchronous-02))))
         </amr>
       </example>
       <note>METACHRONOUS NOTES: Added for THYME-AMR.</note>

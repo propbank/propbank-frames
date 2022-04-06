@@ -144,26 +144,26 @@
       </usagenotes>
       <lexlinks/>
       <example name="gas-n" src="">
-        <text>She began to exhibit her current symptomatology which consists of postprandial pain , gas , as well as bloating .</text>
+        <text>Patient began to exhibit current symptomatology of abdominal pain , gas , and bloating .</text>
         <propbank>
-          <rel relloc="13">gas</rel>
+          <rel relloc="10">gas</rel>
         </propbank>
         <amr version="THYME 1.0">
           (b / begin-01
-            :ARG0 (s / she)
+            :ARG0 (p3 / patient-yy)
             :ARG1 (e / exhibit-01
-              :ARG0 s
+              :ARG0 p3
               :ARG1 (s2 / symptomatic-01
-                :ARG0 s
+                :ARG0 p3
                 :ARG2 (a / and
                   :op1 (p / pain-01
-                    :ARG1 s
-                    :ARG1-of (p2 / postprandial-01))
+                    :ARG1 p3
+                    :ARG2 (a2 / anatomical-site :name (n / name :op1 "abdomen")))
                   :op2 (g / gas-04
-                    :ARG1 s)
+                    :ARG1 p3)
                   :op3 (b2 / bloat-01
-                    :ARG1 s))
-                :time (c / current))))
+                    :ARG1 p3))
+                  :time (c / current))))
         </amr>
       </example>
       <note>GAS-V NOTES: Added for THYME-AMR. Be careful to distinguish events of experiencing gas symptoms from direct references to the actual substance. Use 'pass-01 ' + 'gas' with instances of passing gas.</note>
