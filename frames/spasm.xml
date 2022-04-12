@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
-  <predicate lemma="slight">
-    <roleset id="slight.01" name="small, little">
+  <predicate lemma="spasm">
+    <roleset id="spastic.01" name="characterized by tightness, stiffness, or spasms">
       <aliases>
-        <alias pos="j">slight</alias>
-        <alias pos="r">slightly</alias>
+        <alias pos="j">spastic</alias>
+        <alias pos="n">spasticity</alias>
       </aliases>
       <roles>
-        <role descr="slight thing" f="PPT" n="1" />
-        <role descr="aspect/domain in which arg1 is slight" f="DOM" n="2" />
+        <role descr="spastic entity" f="PPT" n="1"/>
       </roles>
       <usagenotes>
         <usage resource="PropBank" version="1.0" inuse="-" />
@@ -22,19 +21,18 @@
         <usage resource="AMR" version="THYME 1.0" inuse="+" />
       </usagenotes>
       <lexlinks />
-      <example name="slight-j" src="THYME">
-        <text>Patient 's bloodwork suggests slight anemia .</text>
-        <propbank/>
+      <example name="spasticity-n" src="THYME-colon">
+	    <text>Patient experiences intermittent spasticity in her right extremities .</text>
+	    <propbank/>
         <amr version="THYME 1.0">
-          (s / suggest-01
-            :ARG0 (b / bloodwork-01
-              :ARG1 (p / patient-yy))
-            :ARG1 (d / disease-disorder :name (n / name :op1 "anemia")
-              :ARG1-of (s2 / slight-01)
-              :poss p))
+          (s / spastic-01
+            :ARG1 (p / patient-yy)
+            :location (a / anatomical-site :pl + :name (n / name :op1 "right" :op2 "extremity")
+              :part-of p)
+             :manner (i2 / intermittent))   
         </amr>
       </example>
-      <note>SLIGHT NOTES: Added for THYME-AMR.</note>
+      <note>NOTES: Added for THYME-AMR. AMR annotators: ARG1 may be used for body parts if it is explicitly the spastic entity ("spastic right leg"); otherwise use :location to relate body parts.</note>
     </roleset>
   </predicate>
 </frameset>

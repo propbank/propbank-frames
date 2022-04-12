@@ -72,18 +72,20 @@
       </usagenotes>
       <lexlinks/>
       <example name="mechanical-j" src="THYME-AMR">
-        <text>Mechanical for now given possibility of procedure .</text>
-        <propbank>
-          <rel relloc="0">Mechanical</rel>
-          <arg end="2" start="1" type="ARGM-TMP">for now</arg>
-          <arg end="6" start="3" type="ARGM-CAU">given possibility of procedure</arg>
-        </propbank>
+        <text>Patient is scheduled for surgery tomorrow so VTE prophylaxis is mechanical at this time .</text>
+        <propbank/>
         <amr version="THYME 1.0">
-          (m / mechanical-02
-            :time (n / now)
-            :ARG1-of (c / cause-01
-              :ARG0 (p / possible-01
-                :ARG1 (p2 / procedure-01))))
+          (c / cause-01
+            :ARG0 (s / schedule-01
+              :ARG1 (p / patient-yy)
+              :ARG2 (s2 / surgery-01
+                :ARG1 p
+                :time (t / tomorrow)))
+            :ARG1 (m / mechanical-02
+              :ARG1 (p2 / prophylaxis-01
+                :ARG2 (d / disease-disorder :name (n / name :op1 "VTE")))
+              :time (t3 / time
+                :mod (t4 / this))))
         </amr>
       </example>
       <note>MECHANICAL NOTES: Added for THYME-AMR.</note>

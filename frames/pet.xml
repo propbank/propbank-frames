@@ -74,21 +74,20 @@
       </usagenotes>
       <lexlinks />
       <example name="do_PET_scan-l" src="THYME-Auto1">
-        <text>However , a recent PET scan was done which showed this was PET positive .</text>
+        <text>However , a recent PET scan was done which showed concerning results .</text>
         <propbank>
           <rel relloc="4 5">PET scan</rel>
           <arg end="0" start="0" type="ARGM-DIS">However</arg>
           <arg end="3" start="3" type="ARGM-TMP">recent</arg>
           <arg end="7" start="7" type="ARGM-LVB">done</arg>
-          <arg end="13" start="8" type="ARGM-ADV">which showed this was PET positive</arg>
+          <arg end="11" start="8" type="ARGM-ADV">which showed concerning results</arg>
         </propbank>
         <amr version="THYME 1.0">
           (c / contrast-01
             :ARG2 (p / pet-02
               :ARG0-of (s / show-01
-                :ARG1 (p2 / positive-03
-                  :ARG1 (t / this)
-                  :ARG3 p))
+                :ARG1 (r2 / result :pl +
+                  :ARG0-of (c2 / concern-01)))
               :time (r / recent)))
         </amr>
       </example>

@@ -146,27 +146,24 @@
       </usagenotes>
       <lexlinks/>
       <example name="definitive-j" src="THYME-Auto1">
-        <text>It was decided by his local oncologist that he could not tolerate additional treatment and is here for definitive surgery .</text>
+        <text>The patient cannot tolerate additional chemotherapy , so she is here for definitive surgery .</text>
         <propbank>
-          <rel relloc="18">definitive</rel>
-          <arg end="19" start="19" type="ARG1">surgery</arg>
+          <rel relloc="12">definitive</rel>
+          <arg end="13" start="13" type="ARG1">surgery</arg>
         </propbank>
         <amr version="THYME 1.0">
-          (a2 / and
-            :op1 (d / decide-01
-              :ARG0 (p / person
-                :ARG0-of (h / have-rel-role-91
-                  :ARG1 (h2 / he)
-                  :ARG2 (o / oncologist
-                    :ARG1-of (l / local-02))))
-              :ARG1 (t / tolerate-01 :polarity -
-                :ARG0 h2
-                :ARG1 (t2 / treat-03
+          (c / cause-01
+            :ARG0 (p2 / possible-01 :polarity -
+              :ARG1 (t / tolerate-01
+                :ARG0 (p / patient-yy)
+                :ARG1 (c2 / chemotherapy-01
+                  :ARG1 p
                   :ARG1-of (a / add-02))))
-            :op2 (b / be-located-at-91
-              :ARG1 h2
+            :ARG1 (b / be-located-at-91
+              :ARG1 p
               :ARG2 (h3 / here)
               :purpose (s / surgery-01
+                :ARG1 p
                 :ARG1-of (d2 / definitive-03))))
           </amr>
       </example>
