@@ -7,6 +7,7 @@ __author__ = "Skatje Myers"
 __license__ = "CC-BY-SA-4.0"
 
 import argparse
+import os
 import re
 from pathlib import Path
 from lxml import etree as ET
@@ -14,10 +15,16 @@ from lxml import etree as ET
 from validate_frames import validate
 
 
-def main(frame_dir, website_dir):
+def main(frame_dir, website_dir, found_errors):
 	# Read and extract frame info
-	frames = frame_dir.rglob('*.xml')
-	frames = {file.name: ET.parse(str(file)) for file in frames}
+	frame_files = frame_dir.rglob('*.xml')
+	frames = dict()
+	for frame_file in frame_files:
+		try:
+			xml = ET.parse(str(frame_file))
+			frames[frame_file.name] = xml
+		except Exception:
+			pass  # TODO: If the XML can't be parsed, we're just ignoring the file. Should handle this better.
 	website_title = 'PropBank Frames'
 
 	all_rolesets = get_rolesets(frames)
@@ -27,7 +34,7 @@ def main(frame_dir, website_dir):
 	alias_word_to_rolesets = get_aliases_to_rolesets(frames)
 
 	create_css(website_dir)
-	create_javascript(alias_word_to_rolesets, all_rolesets, resources, website_dir)
+	create_javascript(alias_word_to_rolesets, all_rolesets, resources, roleset_to_resource_use, website_dir)
 
 	# Create common HTML elements
 	## Create roleset search field
@@ -61,22 +68,19 @@ def main(frame_dir, website_dir):
 		select_resource.append(option)
 
 
-	## Create sticky header
-	sticky_header = ET.Element('div', attrib={'class': 'header', 'id': 'stickyHeader'})
-	sticky_header.append(select_resource)
-	sticky_header.append(search_aliases_form)
-	sticky_header.append(search_rolesets_form)
-	# if Path(website_dir, 'frame_errors.txt').exists():
-	# 	# TODO: Add a warning about frames being invalid.
-	# 	p = ET.Element('p')
-	# 	p.text = 'Warning: Frame validation failed (<a href="frame_errors.txt>see errors</a>)'
-	# 	header.append(ET.Element('br'))
-	# 	span = ET.Element('span', attrib={'style':'font-color:red'})
-	# 	span.text = 'Warning: Frame validation failed '
-	# 	header.append(span)
-	# 	a = ET.Element('a', attrib={'href':'frame_errors.txt'})
-	# 	a.text = '(see errors)'
-	# 	header.append(a)
+	## Create header menu
+	header_menu = ET.Element('div', attrib={'class': 'headerMenu'})
+	header_menu.append(select_resource)
+	header_menu.append(search_aliases_form)
+	header_menu.append(search_rolesets_form)
+	if Path(website_dir, 'frame_errors.txt').exists():
+		footer = ET.Element('div', attrib={'class': 'footer'})
+		span = ET.Element('span', attrib={'style':'color:red'})
+		span.text = 'Warning: Frame validation failed '
+		footer.append(span)
+		a = ET.Element('a', attrib={'href':'frame_errors.txt'})
+		a.text = '(see errors)'
+		footer.append(a)
 
 	# Create index.html
 	print('Creating index.html')
@@ -85,20 +89,28 @@ def main(frame_dir, website_dir):
 	title = ET.Element('title')
 	title.text = website_title
 	head.append(title)
-	html.append(head)
 	head.append(ET.Element('link', attrib={'rel': "stylesheet", 'href': 'style.css'}))
+	style = ET.Element('style')
+	style.text = '.wrapper {grid-template-areas:\n"header"\n"headerMenu"\n"content"\n"footer";\n' \
+                'grid-template-columns: 1fr;}\n'
+	head.append(style)  # Get rid of the sidebar on the index page.
+	html.append(head)
 	body = ET.Element('body')
 	html.append(body)
 
-	top = ET.Element('div', attrib={'class':'top-container'})
-	page_title = ET.Element('h1')
-	page_title.text = 'Frame Index'
-	top.append(page_title)
-	body.append(top)
+	wrapper = ET.Element('div', attrib={'class': 'wrapper'})
+	body.append(wrapper)
 
-	body.append(sticky_header)
+	header = ET.Element('div', attrib={'class': 'header'})
+	header.text = 'Frame Index'
+	wrapper.append(header)
+	wrapper.append(header_menu)
 
 	content = ET.Element('div', attrib={'class':'content'})
+	wrapper.append(content)
+	content.append(ET.Element('div', attrib={'class': 'sticky-spacer'}))
+	content_content = ET.Element('div', attrib={'class': 'sticky-content'})
+	content.append(content_content)
 	sorted_frames = list(frames.keys())
 	sorted_frames.sort(key=lambda x: x.upper())
 	curr_letter = sorted_frames[0][0]
@@ -107,7 +119,7 @@ def main(frame_dir, website_dir):
 	h = ET.Element('h3')
 	h.text = curr_letter.upper()
 	alpha = ET.Element('div', attrib={'class': 'alpha'})
-	content.append(alpha)
+	content_content.append(alpha)
 	alpha.append(h)
 	columns = ET.Element('div', attrib={'class': 'columns'})
 	alpha.append(columns)
@@ -119,7 +131,7 @@ def main(frame_dir, website_dir):
 			h = ET.Element('h3')
 			h.text = curr_letter
 			alpha = ET.Element('div', attrib={'class': 'alpha'})
-			content.append(alpha)
+			content_content.append(alpha)
 			alpha.append(h)
 			columns = ET.Element('div', attrib={'class': 'columns'})
 			alpha.append(columns)
@@ -136,7 +148,8 @@ def main(frame_dir, website_dir):
 			a = ET.Element('a', attrib={'href': frame_name[:-3] + 'html'})
 		p.append(a)
 		a.text = frame_name[:-4]
-	body.append(content)
+	if found_errors:
+		wrapper.append(footer)
 	body.append(ET.Element('script', attrib={'src': 'https://code.jquery.com/jquery-3.5.1.min.js'}))
 	body.append(ET.Element('script', attrib={'src': "script.js"}))
 	ET.ElementTree(html).write(str(Path(website_dir, 'index.html')), method='html')
@@ -159,22 +172,45 @@ def main(frame_dir, website_dir):
 		head.append(ET.Element('link', attrib={'rel': "stylesheet", 'href': 'style.css'}))
 		body = ET.Element('body')
 		html.append(body)
-		top = ET.Element('div', attrib={'class': 'top-container'})
-		page_title = ET.Element('h1')
-		page_title.text = 'Rolesets - ' + frame_name[:-4]
-		top.append(page_title)
-		body.append(top)
-		body.append(sticky_header)
+
+		wrapper = ET.Element('div', attrib={'class': 'wrapper'})
+		body.append(wrapper)
+
+		header = ET.Element('div', attrib={'class': 'header'})
+		header.text = 'Rolesets - ' + frame_name[:-4]
+		wrapper.append(header)
+
+		wrapper.append(header_menu)
+
+		sidebar = ET.Element('div', attrib={'class': 'sidebar'})
+		sidebar.append(ET.Element('div', attrib={'class': 'sticky-spacer'}))
+		sidebar_content = ET.Element('div', attrib={'class': 'sticky-content'})
+		a = ET.Element('a', attrib={'href': 'index.html'})
+		a.text = '⮪ Index'
+		sidebar_content.append(a)
+		sidebar.append(sidebar_content)
+		wrapper.append(sidebar)
+
 		content = ET.Element('div', attrib={'class': 'content'})
+		wrapper.append(content)
+		content.append(ET.Element('div', attrib={'class': 'sticky-spacer'}))
+		content_content = ET.Element('div', attrib={'class': 'sticky-content'})
+		content.append(content_content)
+
 		for pred in xml.findall('predicate'):
 			pred_heading = ET.Element('h2')
 			pred_heading.text = pred.get('lemma')
-			content.append(pred_heading)
+			content_content.append(pred_heading)
 			rs = pred.findall('roleset')
 			for roleset in rs:
 				div = create_roleset_div(roleset, roleset_to_resource_use)
-				content.append(div)
-		body.append(content)
+				content_content.append(div)
+				relevant_resources = roleset_to_resource_use[roleset.get('id')]
+				a = ET.Element('a', attrib={'href': frame_name[:-3] + 'html#' + roleset.get('id'), 'class': 'resource-dependent ' + ' '.join(relevant_resources)})
+				a.text = roleset.get('id')
+				sidebar_content.append(a)
+		if found_errors:
+			wrapper.append(footer)
 		body.append(ET.Element('script', attrib={'src': 'https://code.jquery.com/jquery-3.5.1.min.js'}))
 		body.append(ET.Element('script', attrib={'src': "script.js"}))
 		ET.ElementTree(html).write(str(file), method='html')
@@ -192,20 +228,37 @@ def main(frame_dir, website_dir):
 		body = ET.Element('body')
 		html.append(body)
 
-		top = ET.Element('div', attrib={'class': 'top-container'})
-		page_title = ET.Element('h1')
-		page_title.text = 'Aliases - ' + alias
-		top.append(page_title)
-		body.append(top)
-		body.append(sticky_header)
+		wrapper = ET.Element('div', attrib={'class': 'wrapper'})
+		body.append(wrapper)
+
+		header = ET.Element('div', attrib={'class': 'header'})
+		header.text = 'Aliases - ' + alias
+		wrapper.append(header)
+
+		wrapper.append(header_menu)
+
+		sidebar = ET.Element('div', attrib={'class': 'sidebar'})
+		sidebar.append(ET.Element('div', attrib={'class': 'sticky-spacer'}))
+		sidebar_content = ET.Element('div', attrib={'class': 'sticky-content'})
+		a = ET.Element('a', attrib={'href': 'index.html'})
+		a.text = '⮪ Index'  # TODO: What do we put in the sidebar for alias pages?
+		sidebar_content.append(a)
+		sidebar.append(sidebar_content)
+		wrapper.append(sidebar)
+
 		content = ET.Element('div', attrib={'class': 'content'})
+		wrapper.append(content)
+		content.append(ET.Element('div', attrib={'class': 'sticky-spacer'}))
+		content_content = ET.Element('div', attrib={'class': 'sticky-content'})
+		content.append(content_content)
 
 		for roleset in rolesets:
 			if roleset.get('id').startswith('statistical-test'):
 				continue  # TODO: AMR weirdness
 			div = create_roleset_div(roleset, roleset_to_resource_use)
-			content.append(div)
-		body.append(content)
+			content_content.append(div)
+		if found_errors:
+			wrapper.append(footer)
 		body.append(ET.Element('script', attrib={'src': 'https://code.jquery.com/jquery-3.5.1.min.js'}))
 		body.append(ET.Element('script', attrib={'src': "script.js"}))
 		if '/' in alias:
@@ -383,7 +436,6 @@ def create_roleset_div(roleset, roleset_to_resource_use):
 		tokenized = example.find('text').text.split(' ')
 		example_string = ''
 		i = 0
-
 		while i < len(tokenized):
 			if i in arg_start_to_arg:
 				example_string += '<div class="tooltip"><span style="background-color: '
@@ -420,7 +472,7 @@ def create_roleset_div(roleset, roleset_to_resource_use):
 	return div
 
 
-def create_javascript(alias_word_to_rolesets, all_rolesets, resources, website_dir):
+def create_javascript(alias_word_to_rolesets, all_rolesets, resources, roleset_to_resource_use, website_dir):
 	javascript = '\nfunction autocomplete(inp, arr) {' \
 				 '\n  /*the autocomplete function takes two arguments,' \
 				 '\n  the text field element and an array of possible autocompleted values:*/' \
@@ -444,6 +496,12 @@ def create_javascript(alias_word_to_rolesets, all_rolesets, resources, website_d
 				 '\n        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {' \
 				 '\n          /*create a DIV element for each matching element:*/' \
 				 '\n          b = document.createElement("DIV");' \
+				 '\n		  var currResource = $("select").find("option:selected").val();' \
+				 '\n		  if (currResource != "ALL") {' \
+				 '\n		      if ((arr[i] in roleset_to_resources && !roleset_to_resources[arr[i]].includes(currResource)) || (arr[i] in alias_to_resources && !alias_to_resources[arr[i]].includes(currResource))) {' \
+				 '\n		          continue;' \
+				 '\n		      }' \
+				 '\n		  }' \
 				 '\n          /*make the matching letters bold:*/' \
 				 '\n          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";' \
 				 '\n          b.innerHTML += arr[i].substr(val.length);' \
@@ -517,23 +575,24 @@ def create_javascript(alias_word_to_rolesets, all_rolesets, resources, website_d
 				 '\n    closeAllLists(e.target);' \
 				 '\n});' \
 				 '\n}\n' \
-				 'window.onscroll = function() {makeSticky()};\n' \
-				 'var header = document.getElementById("stickyHeader");\n' \
-				 'var sticky = header.offsetTop;\n' \
-				 'function makeSticky() {\n' \
-				 '  if (window.pageYOffset > sticky) {\n' \
-				 '    header.classList.add("sticky");\n' \
-				 '  } else {\n' \
-				 '    header.classList.remove("sticky");\n' \
-				 '  }\n' \
-			 	'}\n' \
 				 'function offsetAnchor() {\n' \
 				 '    if(location.hash.length !== 0) {\n' \
-				 '        window.scrollTo(window.scrollX, window.scrollY - 50);\n' \
+				 '        window.scrollTo(window.scrollX, window.scrollY - 100);\n' \
 				 '    }\n' \
 				 '}\n' \
 				 'window.addEventListener("hashchange", offsetAnchor);\n' \
-				 'window.setTimeout(offsetAnchor, 1);'
+				 'window.setTimeout(offsetAnchor, 1);\n'
+	## Roleset to resources:
+	javascript += '\nvar roleset_to_resources = {' + ',\n'.join(['"' + roleset + '":["' + '","'.join(resources) + '"]' for roleset, resources in roleset_to_resource_use.items()]) + '};\n'
+	## Alias to resources:
+	javascript += '\nvar alias_to_resources = {'
+	for alias, rolesets in alias_word_to_rolesets.items():
+		alias_resources = set()
+		for roleset in rolesets:
+			alias_resources.update(roleset_to_resource_use[roleset.get('id')])
+		alias_resources = list(alias_resources)
+		javascript += '"' + alias + '":["' + '","'.join(alias_resources) + '"],\n'
+	javascript += '};\n'
 
 	## Roleset search functions:
 	javascript += '\nvar rolesets = ["' + '", "'.join(all_rolesets.keys()) + '"]\n\n'
@@ -577,10 +636,128 @@ def create_javascript(alias_word_to_rolesets, all_rolesets, resources, website_d
 
 
 def create_css(website_dir):
-	css_contents = '* { box-sizing: border-box; }\n' \
+	css_contents = 'html, body { margin: 0; padding: 0 }\n' \
+				  '.wrapper {\n' \
+				  '  display: grid;\n' \
+				  '  /* Header and footer span the entire width, sidebars and content are fixed, with empty space on sides */\n' \
+				  '  grid-template-areas:\n' \
+				  '    "header header"\n' \
+				  '    "headerMenu headerMenu"\n' \
+				  '    "sidebar content"\n' \
+				  '    "footer footer";\n' \
+				  '  /* Only expand middle section vertically (content and sidebars) */\n' \
+				  '  grid-template-rows: 0fr 0fr 1fr 0fr;\n' \
+				  '  /* 100% width, but static widths for content and sidebars */\n' \
+				  '  grid-template-columns: 150px 1fr;\n' \
+				  '  /* Force grid to be at least the height of the screen */\n' \
+				  '  min-height: 100vh;\n' \
+				'}\n' \
+				   '.header {\n' \
+				   '  grid-area: header;\n' \
+				   '\n' \
+				   '  /* Stick header to top of grid */\n' \
+				   '  position: sticky;\n' \
+				   '  top: 0;\n' \
+				   '  /* Ensure header appears on top of content/sidebars */\n' \
+				   '  z-index: 1;\n' \
+				   '\n' \
+				   '  /* General appearance */\n' \
+				   '  background-color: #f1f1f1;\n' \
+				   '  text-align: center;\n' \
+				   '  font-size: 1.5rem;\n' \
+				   '  line-height: 1.5;\n' \
+				   '  padding: 1rem;\n' \
+				   '}\n' \
+				   '/* Save header height to properly set `padding-top` and `margin-top` for sticky content */\n' \
+				   ':root {\n' \
+				   '  --header-height: calc(1rem * 1.5 + 1rem * 2);\n' \
+				   '}\n' \
+				   '\n' \
+				   '.headerMenu {\n' \
+				   '  grid-area: headerMenu;\n' \
+				   '\n' \
+				   '  /* Stick header to top of grid */\n' \
+				   '  position: sticky;\n' \
+				   '  top: 0;\n' \
+				   '  /* Ensure header appears on top of content/sidebars */\n' \
+				   '  z-index: 1;\n' \
+				   '\n' \
+				   '  /* General appearance */\n' \
+				   '  background-color: #CCC;\n' \
+				   '  text-align: center;\n' \
+				   '  font-size: 1rem;\n' \
+				   '  line-height: 1.5;\n' \
+				   '  padding: 1rem;\n' \
+				   '}\n' \
+				   '/* Save header height to properly set `padding-top` and `margin-top` for sticky content */\n' \
+				   ':root {\n' \
+				   '  --headerMenu-height: calc(1rem * 1.5 + 1rem * 2 + 1rem);\n' \
+				   '}\n' \
+				   '\n' \
+				   '.sidebar {\n' \
+				   '  grid-area: sidebar;\n' \
+				   '}\n' \
+				   '\n' \
+				   '.sidebar {\n' \
+				   '  display: flex;\n' \
+				   '  flex-direction: column;\n' \
+				   '  position: sticky;\n' \
+				   '  top: 0;\n' \
+				   '  background-color: #777;\n' \
+				   '  overflow: auto;\n' \
+  				   '  max-height: 100vh;\n' \
+				   '}\n' \
+				   '.sidebar a {\n' \
+				  '  padding: 6px 6px 6px 6px;\n' \
+				  '  text-decoration: none;\n' \
+				  '  font-size: 18px;\n' \
+				  '  text-align: center;\n' \
+				  '  color: #222;\n' \
+				  '  display: block;\n' \
+				  '}\n' \
+				  '.sidebar a:hover {\n' \
+				  '  color: #f1f1f1;\n' \
+				  '}\n' \
+				   '\n' \
 				   '.content {\n' \
-				   '  font: 16px Arial;\n' \
-				   '  padding: 16px;\n' \
+				   '  grid-area: content;\n' \
+				   '  /* General appearance */\n' \
+				   '  background-color: #e3ffdc;\n' \
+				   '}\n' \
+				   '.footer {\n' \
+				   '  grid-area: footer;\n' \
+				   '\n' \
+				   '  /* Stick footer to bottom of grid */\n' \
+				   '  position: sticky;\n' \
+				   '  bottom: 0;\n' \
+				   '\n' \
+				   '  /* General appearance */\n' \
+				   '  background-color: #CCC;\n' \
+				   '  text-align: center;\n' \
+				   '  font-size: .8rem;\n' \
+				   '  line-height: 1.5;\n' \
+				   '  padding: .5rem;\n' \
+				   '}\n' \
+				   '/* Save footer height to properly set `bottom` and `min-height` for sticky content */\n' \
+				   ':root {\n' \
+				   '  --footer-height: calc(.8rem * 1.5 + .5rem * 2);\n' \
+				   '}\n' \
+				   '\n' \
+				   '.sticky-spacer {\n' \
+				   '  flex-grow: 1;\n' \
+				   '}\n' \
+				   '.sticky-content {\n' \
+				   '  position: sticky;\n' \
+				   '  bottom: var(--footer-height);\n' \
+				   '  min-height: calc(100vh - var(--footer-height));\n' \
+				   '  box-sizing: border-box;\n' \
+				   '\n' \
+				   '  --padding: 10px;\n' \
+				   '  padding:\n' \
+				   '    calc(var(--headerMenu-height) + var(--padding))\n' \
+				   '    var(--padding)\n' \
+				   '    var(--padding);\n' \
+				   '  margin-top: calc(0px - var(--headerMenu-height));\n' \
 				   '}\n' \
 				   '.roleset {\n' \
 				   '  border: 1px solid #000000;\n' \
@@ -703,30 +880,7 @@ def create_css(website_dir):
 				   '}\n' \
 				   '.columns p {\n' \
 				   '  margin: 0;\n' \
-				   '}\n' \
-				   '.top-container {\n' \
-				   '  background-color: #f1f1f1;\n' \
-				   '  padding: 30px;\n' \
-				   '  text-align: center;\n' \
-				   '}\n' \
-				   '\n' \
-				   '.header {\n' \
-				   '  padding: 10px 16px;\n' \
-				   '  background: #555;\n' \
-				   '  color: #f1f1f1;\n' \
-				   '  z-index: 10;\n' \
-				   '}\n' \
-				   '\n' \
-				   '\n' \
-				   '.sticky {\n' \
-				   '  position: fixed;\n' \
-				   '  top: 0;\n' \
-				   '  width: 100%;\n' \
-				   '}\n' \
-				   '\n' \
-				   '.sticky + .content {\n' \
-				   '  padding-top: 102px;\n' \
-				   '}'
+				   '}\n'
 
 	css_file = Path(website_dir, 'style.css')
 	css_file.write_text(css_contents)
@@ -742,6 +896,10 @@ if __name__ == "__main__":
 	assert input_frames.exists()
 	website_dir = Path(args.output)
 	website_dir.mkdir(exist_ok=True)
-	validate(input_frames, Path(website_dir, 'frame_errors.txt'))  # TODO: We should have it spit out the errors to a file, then make them accessible via HTML
-	print('')
-	main(input_frames, website_dir)
+	if Path(website_dir, 'frame_errors.txt').exists():
+		os.remove(Path(website_dir, 'frame_errors.txt'))
+	need_error_warning = False
+	for frame_file in input_frames.rglob('*.xml'):
+		found_errors = validate(frame_file, Path(website_dir, 'frame_errors.txt'))  # TODO: We should have it spit out the errors to a file, then make them accessible via HTML
+		need_error_warning = need_error_warning or found_errors
+	main(input_frames, website_dir, need_error_warning)
