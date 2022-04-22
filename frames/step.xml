@@ -71,7 +71,7 @@
         <arg f="" n="3">from devoted wife and mother</arg>
         <arg f="" n="2">to becoming a Doctor of the Church</arg>
       </example>
-      <example name="Wstep-n: ithin LVC, with action taken (arg 4)" src="nouns-lv" type="">
+      <example name="step-n: Within LVC, with action taken (arg 4)" src="nouns-lv" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>Fujitsu Ltd. 's top executive took the unusual step of publicly apologizing for his company 's making bids of just one yen for several local government projects , while computer rival NEC Corp. made a written apology for indulging in the same practice .</text>
         <arg f="" n="0">Fujitsu Ltd. 's top executive</arg>
@@ -83,27 +83,31 @@
       </example>
     </roleset>
   </predicate>
+  
   <predicate lemma="step_in">
-    <roleset id="step_in.02" name="enter">
+    <roleset id="step_in.02" name="intervene">
       <aliases>
         <alias framenet="" pos="v" verbnet="">step_in</alias>
+        <alias framenet="" pos="n" verbnet="">stepping_in</alias>
       </aliases>
       <note>STEP_IN-V NOTES: No Vncls. (from step.02-v)</note>
       <roles>
-        <role descr="entity entering" f="pag" n="1"/>
+        <role descr="entity intervening" f="pag" n="1"/>
       </roles>
       <example name="step_in-v: entry of the gladiators" src="" type="">
         <text>International Paper or Weyerhaeuser could step in . ''</text>
         <arg f="" n="1">International Paper or Weyerhaeuser</arg>
         <arg f="mod" n="m">could</arg>
-        <rel f="">[ step] [ in]</rel>
+        <rel f="">[step][in]</rel>
       </example>
     </roleset>
   </predicate>
+  
   <predicate lemma="step_up">
     <roleset id="step_up.03" name="increase incrementally">
       <aliases>
         <alias framenet="Cause_change_of_position_on_a_scale" pos="v" verbnet="">step_up</alias>
+        <alias framenet="" pos="n" verbnet="">stepping_up</alias>
       </aliases>
       <note>STEP_UP-V NOTES: No Vncls. (from step.03-v)</note>
       <roles>
@@ -118,10 +122,12 @@
       </example>
     </roleset>
   </predicate>
+  
   <predicate lemma="step_down">
     <roleset id="step_down.04" name="resign">
       <aliases>
         <alias framenet="Quitting" pos="v" verbnet="">step_down</alias>
+        <alias framenet="" pos="n" verbnet="">stepping_down</alias>
       </aliases>
       <note>STEP_DOWN-V NOTES: No Vncls. (from step.04-v)</note>
       <roles>
@@ -139,10 +145,16 @@
       </example>
     </roleset>
   </predicate>
+  
   <predicate lemma="step_aside">
     <roleset id="step_aside.05" name="resign">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">step_aside</alias>
+        <alias framenet="" pos="m" verbnet="">step_aside</alias>
+        <mwe id="step_aside">
+          <token slot="A" arg="" pos="VB*" head="" dep="">step</token>
+          <token slot="A" arg="" pos="NN*" head="" dep="">stepping</token>
+          <token slot="B" arg="" pos="JJ" head="A" dep="acomp">aside</token>
+        </mwe>
       </aliases>
       <note>STEP_ASIDE-V NOTES: No Vncls. Added by Julia based on WSJ. (from step.05-v)</note>
       <roles>
@@ -155,6 +167,77 @@
         <arg f="" n="0">he</arg>
         <rel f="">[step] [aside]</rel>
         <arg f="" n="1">from his job</arg>
+      </example>
+    </roleset>
+  </predicate>
+
+
+  <predicate lemma="in_step">
+    <roleset id="in_step.06" name="be in sync with">
+      <aliases>
+        <alias framenet="" pos="x" verbnet="">in_step</alias>
+      </aliases>
+      <roles>
+         <role descr="cause, agent" f="PAG" n="0"/>
+         <role descr="first synchronized entity" f="PPT" n="1"/>
+         <role descr="in synch with" f="COM" n="2"/>
+      </roles>
+      <example name="in_step-x: args 1 and 2 " src="" type="">
+        <text> God-1 wanted to *-1 put me in step with the people of Malawi.</text>
+        <arg f="" n="1">Me</arg>
+        <rel f="">in_step</rel>
+        <arg f="" n="2">with the people of Malawi</arg>
+      </example>
+      <example name="in_step-x: keep up with" src="" type="">
+        <text> Gasoline prices-1 rose in step with oil prices. </text>
+        <arg f="" n="1">Gasoline prices</arg>
+        <rel f="">[in],[step]</rel>
+        <arg f="" n="2">with oil prices</arg>
+      </example>
+    </roleset>
+  </predicate>
+  
+  <predicate lemma="step_back">
+    <roleset id="step_back.07" name="pause an activity, perhaps to look at the big picture">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">take_step_back</alias>
+        <alias framenet="" pos="v" verbnet="">step_back</alias>
+        <mwe id="take_step_back">
+          <token slot="A" arg="" pos="VB*" head="" dep="">take</token>
+          <token slot="B" arg="" pos="NN" head="A" dep="dobj">step</token> 
+          <token slot="C" arg="" pos="RB" head="A" dep="advmod">back</token>
+          <token slot="C" arg="" pos="RP" head="A" dep="compound:prt">back</token>
+          <token slot="C" arg="" pos="JJ" head="A" dep="acomp">back</token>
+        </mwe>
+      </aliases>
+      <mappings alias="take_step_back">
+        <source>
+            (B / step-01
+               :arg1 (n / NARG0)
+               :direction (C / back)
+               :arg3 (n2 / NARG1)) 
+        </source>
+        <target>
+            (B / pause-01
+               :arg0 (n / NARG0)
+               :arg1 (n2 / NARG1))
+        </target>
+      </mappings>
+      <roles>
+         <role descr="viewer" f="PAG" n="0"/>
+         <role descr="thing stepped back from; activity one is halting" f="PPT" n="1"/>
+         <role descr="new activity, bigger picture viewed" f="GOL" n="2"/>
+      </roles>
+      <example name="take_step_back-m: args 1 and 2 " src="" type="">
+        <text>It's amazing to take a step back and actually see the impact I can make.</text>
+        <rel f="">[take][step][back]</rel>
+      </example>
+      <example name="take_step_back-m: keep up with" src="" type="">
+        <text>  If we take a step back from EPL-related tourism, to examine tourism itself, we see that the tourism industry as a whole works on a model that downplays the monetary exchange that sits at its heart. </text>
+        <arg f="" n="0">we</arg>
+        <rel f="">[take][step][back]</rel>
+        <arg f="" n="1">from EPL-related tourism</arg>
+        <arg f="" n="2">to examine tourism itself</arg>
       </example>
     </roleset>
   </predicate>

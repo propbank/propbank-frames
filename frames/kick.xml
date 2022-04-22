@@ -3,8 +3,8 @@
   <predicate lemma="kick">
     <roleset id="kick.01" name="drive or impel with the foot">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">kick</alias>
         <alias framenet="Cause_harm" pos="v" verbnet="">kick</alias>
+        <alias framenet="" pos="n" verbnet="">kick</alias>
         <alias framenet="" pos="n" verbnet="">kicking</alias>
       </aliases>
       <note>KICK-V NOTES: Frames file for 'kick' based on sentences in financial subcorpus. Verbnet classes carry-11.4-1 hit-18.1 split-23.2 throw-17.1; other framed members include: push; hit, strike; cut, draw, pull, push, roll, slip; fire, hit, pass. Comparison with 'hit' and 'begin'. (from kick.01-v predicate notes)</note>
@@ -33,7 +33,7 @@
           <vnrole vncls="18.1-1" vntheta="instrument"/>
         </role>
       </roles>
-      <example name="not a foot" src="" type="">
+      <example name="kick-v: not a foot" src="" type="">
         <text>But [two big New York banks]-1 seem *trace*-1 to have kicked those chances away, for the moment, with the embarrassing failure of Citicorp and Chase Manhattan Corp. to deliver $7.2 billion in bank financing for a leveraged buy-out of United Airlines parent UAL Corp.</text>
         <arg f="" n="0">*trace*</arg>
         <rel f="">kicked</rel>
@@ -49,13 +49,13 @@
         <arg f="" n="1">their compulsions</arg>
       </example>
 
-      <example name="physically kick" src="" type="">
+      <example name="kick-n: physically kick" src="" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>Brandy Chastain's kick</text>
         <arg f="" n="0">Brandy Chastain's</arg>
         <rel f="">kick</rel>
       </example>
-      <example name="args 0, 1, DIR" src="internet" type="">
+      <example name="kicking-n: args 0, 1, DIR" src="internet" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>His kicking the glass out of her way still gets me like a sap.</text>
         <arg f="" n="0">his</arg>
@@ -69,22 +69,24 @@
     <roleset id="kick_in.02" name="begin">
       <aliases>
         <alias framenet="" pos="v" verbnet="">kick_in</alias>
+        <alias framenet="" pos="n" verbnet="">kicking_in</alias>
       </aliases>
       <note>KICK_IN-V NOTES: (from kick.02-v)</note>
       <roles>
         <role descr="causer of beginning" f="pag" n="0"/>
         <role descr="thing beginning" f="ppt" n="1"/>
       </roles>
-      <example name="unaccusative" src="" type="">
+      <example name="kick_in-v: unaccusative" src="" type="">
         <text>While program trades swiftly kicked in, a ``circuit breaker'' that halted trading in stock futures in Chicago made some program trading impossible.</text>
         <arg f="" n="1">program trades</arg>
         <arg f="mnr" n="m">swiftly</arg>
-        <rel f="">[ kicked] [ in]</rel>
+        <rel f="">[kicked][in]</rel>
       </example>
     </roleset>
     <roleset id="kick_in.03" name="contribute">
       <aliases>
         <alias framenet="" pos="v" verbnet="">kick_in</alias>
+        <alias framenet="" pos="n" verbnet="">kicking_in</alias>
       </aliases>
       <note>KICK_IN-V NOTES: (from kick.03-v)</note>
       <roles>
@@ -106,6 +108,7 @@
     <roleset id="kick_off.04" name="begin, inaugurate">
       <aliases>
         <alias framenet="" pos="v" verbnet="">kick_off</alias>
+        <alias framenet="" pos="n" verbnet="">kicking_off</alias>
       </aliases>
       <note>KICK_OFF-V NOTES: (from kick.04-v)</note>
       <roles>
@@ -113,15 +116,98 @@
         <role descr="theme, thing begun" f="ppt" n="1"/>
         <role descr="instrument" f="mnr" n="2"/>
       </roles>
-      <example name="all args" src="" type="">
+      <example name="kick_off-v: all args" src="" type="">
         <text>[The yearlong schedule of festivities]-1 will be kicked *trace*-1 off officially with a combination live and animation half-time special at the Super Bowl in January.</text>
         <arg f="" n="1">*trace*</arg>
         <arg f="mod" n="m">will</arg>
-        <rel f="">[ kicked] [ off]</rel>
+        <rel f="">[kicked] [off]</rel>
         <arg f="mnr" n="m">officially</arg>
         <arg f="" n="2">with a combination live and animation half-time special</arg>
         <arg f="loc" n="m">at the Super Bowl</arg>
         <arg f="tmp" n="m">in January</arg>
+      </example>
+    </roleset>
+  </predicate>
+
+  <predicate lemma="kick_bucket">
+    <roleset id="kick_bucket.05" name="die">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">kick_bucket</alias>
+        <mwe id="kick_bucket">
+           <token slot="A" arg="" pos="VB*" head="" dep="">kick</token>
+           <token slot="B" arg="" pos="NN" head="A" dep="dobj">bucket</token>
+        </mwe>
+      </aliases>
+      <mappings alias="kick_bucket">
+        <source>
+            (A / kick-01
+                :arg0 (n1 / NARG1)
+                :arg1 (B / bucket))
+        </source>
+        <target>
+            (A / die-01
+                :arg1 (n1 / NARG1))
+        </target>
+      </mappings>
+      <note>KICK_BUCKET-NOTES: Added by Julia/Tim during initial MWE framing.</note>
+      <roles>
+        <role descr="dead entity" f="ppt" n="1"/>
+      </roles>
+      <example name="kick_bucket-m: modified from pass away" src="" type="">
+        <text>but you have [unintellegible] 0 Lewis Powell was one of your sources because he kicked the bucket.</text>
+        <arg f="" n="1">he</arg>
+        <rel f="">[kicked][bucket]</rel>
+      </example>
+    </roleset>
+  </predicate>
+
+  <predicate lemma="get_kick">
+    <roleset id="get_kick.06" name="enjoy, be amused by">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">get_kick</alias>
+        <alias framenet="" pos="m" verbnet="">get_ones_kicks</alias>
+        <mwe id="get_kick">
+           <token slot="A" arg="" pos="VB*"  head="" dep="">get</token>
+           <token slot="B" arg="1" pos="NN"  head="A" dep="dobj">kick</token>
+           <token slot="B" arg="1" pos="NNS"  head="A" dep="dobj">kicks</token>
+        </mwe>
+      </aliases>
+      <mappings alias="get_kick">
+        <source>
+            (A / get-01
+                :arg0 (n / NARG0)
+                :arg1 (B / kick-01
+                    :arg0 (n2 / NARG1)
+                    :arg1 n))
+        </source>
+        <target>
+            (B / enjoy-01
+                :arg0 (n / NARG0)
+                :arg1 (n2 / NARG1))
+        </target>
+      </mappings>
+      <note>GET_KICK-M NOTES: Added by Julia/Tim during initial MWE framing.</note>
+      <roles>
+        <role descr="enjoyer" f="PPT" n="0"/>
+        <role descr="thing enjoyed" f="PAG" n="1"/>
+      </roles>
+      <example name="get_ones_kicks-m: plural kicks, no prep" src="" type="">
+        <text>JOHN MCCAIN gets his kicks by reading military history</text>
+        <arg f="" n="0">JOHN MCCAIN</arg>
+        <rel f="">[gets][kicks]</rel>
+        <arg f="" n="1">by reading military history</arg>
+      </example>
+      <example name="get_kick-m: with arg1" src="" type="">
+        <text> I get a kick out of helping people</text>
+        <arg f="" n="0">I</arg>
+        <rel f="">[get][kick]</rel>
+        <arg f="" n="1">out of helping people</arg>
+      </example>
+      <example name="get_kick-m: past tense" src="" type="">
+        <text> she wasn't the only one who got a kick out of Matt Culhane turning it into a microbrewery.</text>
+        <arg f="" n="0">one who</arg>
+        <rel f="">[got][kick]</rel>
+        <arg f="" n="1">out of Matt Culhane turning it into a microbrewery</arg>
       </example>
     </roleset>
   </predicate>

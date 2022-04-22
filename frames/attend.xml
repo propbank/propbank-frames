@@ -1,9 +1,10 @@
 <!DOCTYPE frameset SYSTEM "frameset.dtd">
 <frameset>
   <predicate lemma="attend">
-    <roleset id="attend.01" name="belong with or at, going to">
+    <roleset id="attend.01" name="go to, belong to/at">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">attend</alias>
+        <alias framenet="Attending" pos="v" verbnet="">attend</alias>
+        <alias framenet="" pos="n" verbnet="">attending</alias>
       </aliases>
       <note>ATTEND-V NOTES: Frames file for 'attend' based on sentences in financial subcorpus. (from attend.01-v)</note>
       <roles>
@@ -17,13 +18,13 @@
         <arg f="" n="1">a private English school</arg>
       </example>
 
-      <example name="intransitive" src="" type="">
+      <example name="attend-v: intransitive" src="" type="">
         <text>Some 500 investors representing investor clubs from around the U.S. were attending when the market started to slide Friday.</text>
         <arg f="" n="0">Some 500 investors representing investor clubs from around the U.S.</arg>
         <rel f="">attending</rel>
         <arg f="tmp" n="m">when the market started to slide Friday</arg>
       </example>
-      <example name="come along with" src="" type="">
+      <example name="attend-v: come along with" src="" type="">
         <text>While many problems would attend a restructuring of Columbia, investors say Mr. Spiegel is mulling such a plan to mitigate Columbia's junk problems.</text>
         <arg f="" n="0">many problems</arg>
         <arg f="mod" n="m">would</arg>
@@ -31,13 +32,14 @@
         <arg f="" n="1">a restructuring of Columbia</arg>
       </example>
     </roleset>
-    <roleset id="attend.02" name="pay close attention to, attend to">
+    <roleset id="attend.02" name="pay close attention to">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">attentive</alias>
+        <alias framenet="Perception_active Attention" pos="v" verbnet="">attend</alias>
         <alias framenet="Attention" pos="n" verbnet="">attention</alias>
-        <alias framenet="" pos="l" verbnet="">pay_attention</alias>
-        <alias framenet="" pos="v" verbnet="">attend</alias>
         <alias framenet="" pos="n" verbnet="">attending</alias>
+        <alias framenet="" pos="j" verbnet="">attentive</alias>
+        <alias framenet="" pos="j" verbnet="">attending</alias>
+        <alias framenet="" pos="l" verbnet="">pay_attention</alias>
       </aliases>
       <note>ATTEND-V NOTES: Added by Julia for unification (from attend.02-v)</note>
       <note>ATTENDING-N NOTES: Based on Thyme and Sharp data. Comparison to attention.01. Fits with VN class peer-30.3. Framed by Katie. (from attending.01-n)</note>
@@ -47,24 +49,89 @@
         <role descr="entity paying attention" f="pag" n="0"/>
         <role descr="to what" f="ppt" n="1"/>
       </roles>
-      <example name="pre-modifier" src="" type="">
+      <example name="attending-j: pre-modifier" src="" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>Attending physician</text>
         <arg f="" n="0">Attending</arg>
         <rel f="">physician</rel>
       </example>
-      <example name="just arg0" src="BOLT" type="">
+      <example name="attention-n: just arg0" src="BOLT" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>There 's a lot -- well , by linguistics standards , a lot -- of money floating around for doing exactly this , and it sounds like Mosuo is one language that might be saveable if you can bring it to the attention of the appropriate professionals .</text>
         <rel f="">attention</rel>
         <arg f="" n="0">of professionals</arg>
       </example>
-      <example name="both args" src="internet" type="">
+      <example name="attentive-j: both args" src="internet" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>He was attentive to her needs</text>
         <arg f="" n="0">He</arg>
         <rel f="">attentive</rel>
         <arg f="" n="1">to her needs</arg>
+      </example>
+      <example name="pay_attention-l" src="" type="">
+        <text>*PRO* Don't pay any attention to what they write about you. Just measure it in inches.</text>
+        <arg f="" n="0">*PRO*</arg>
+        <arg f="neg" n="m">n't</arg>
+        <arg f="lvb" n="m">pay</arg>
+        <rel f="">[attention]</rel>
+        <arg f="" n="1">to what they write about you</arg>
+      </example>
+    </roleset>
+  </predicate>
+
+  <predicate lemma="draw_attention">
+    <roleset id="draw_attention.03" name="act in a manner that causes others to pay attention">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">draw_attention</alias>
+        <alias framenet="" pos="m" verbnet="">drawing_attention</alias>
+        <mwe id="draw_attention">
+          <token slot="A" arg="2" pos="VB*" head="" dep="">draw</token>
+          <token slot="A" arg="2" pos="NN*" head="" dep="">drawing</token>
+          <token slot="B" arg="" pos="NN" head="A" dep="dobj">attention</token>
+        </mwe>
+      </aliases>
+      <mappings alias="draw_attention">
+        <source>
+            (A / draw-02
+                :arg0 (n / NARG0)
+                :arg1 (B / attend-02
+                    :arg0 (n1 / NARG1)
+                    :arg1 (n2 / NARG2)))
+        </source>
+        <target>
+            (A / highlight-01
+                :arg0 (n / NARG0)
+                :arg1 (n2 / NARG2))
+        </target> 
+      </mappings>
+      <note>DRAW_ATTENTION-M NOTES: Added by Julia/Tim in early MWE framing.</note>
+      <roles>
+        <role descr="attention-getter, entity or stimulus directing the attention of the crowd" f="PAG" n="0"/>
+        <role descr="entity who’s attention is draw" f="PPT" n="1"/>
+        <role descr="drawn or attracted to, point of interest" f="PPT" n="2"/>
+      </roles>
+      <example name="draw_attention-m" src="" type="">
+        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+        <text>Obama's attempts to draw attention to his efforts against oil market manipulation on Tuesday</text>
+        <arg f="" n="0">Obama's </arg>
+        <rel f="">[draw][attention]</rel>
+        <arg f="" n="2">to his efforts against oil market manipulation</arg>
+      </example>
+      <example name="draw_attention-m" src="" type="">
+        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+        <text>Gentlemen, could I draw your attention to the statue standing at the entrance?</text>
+        <arg f="" n="0">I</arg> 
+        <rel f="">[draw][attention]</rel>
+        <arg f="" n="1">your</arg> 
+        <arg f="" n="2">to the statue standing at the entrance?</arg>
+      </example>
+      <example name="draw_attention-m" src="" type="">
+        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+        <text>I will draw your attention to the fact that I was born in 1952.</text>
+        <arg f="" n="0">I</arg>
+        <arg f="" n="1">you</arg>
+        <rel f="">[draw][attention]</rel>
+        <arg f="" n="2">to the fact that I was born in 1952</arg>
       </example>
     </roleset>
   </predicate>

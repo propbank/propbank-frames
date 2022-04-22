@@ -10,7 +10,7 @@
         <role descr="stock broker" f="pag" n="0"/>
         <role descr="stocks" f="ppt" n="1"/>
       </roles>
-      <example name="wsj-ese strikes again!" src="" type="">
+      <example name="short-v: wsj-ese strikes again!" src="" type="">
         <inflection aspect="ns" form="gerund" person="ns" tense="ns" voice="active"/>
         <text>For example, [an investor]-1 may seek [*-1]-2 to profit during some takeover situations by [*-2] buying stock in one company involved and shorting the stock of the other.</text>
         <arg f="" n="0">[*-2]</arg>
@@ -18,37 +18,57 @@
         <arg f="" n="1">the stock of the other</arg>
       </example>
     </roleset>
+    
     <roleset id="short.02" name="short-circuit">
       <aliases>
         <alias framenet="" pos="v" verbnet="">short</alias>
+        <alias framenet="" pos="v" verbnet="">short-circuit</alias>
+        <alias framenet="" pos="m" verbnet="">short_circuit</alias>
+        <mwe id='short_circuit'>
+          <token slot="A" arg="" pos="JJ" head='B' dep="amod">short</token>
+          <token slot="B" arg="" pos="NN" head='' dep="">circuit</token>
+        </mwe>
       </aliases>
       <note>SHORT-V NOTES: Member of Vncls other_cos-45.4. Checked by Julia, 11/2010. (from short.02-v)</note>
       <roles>
         <role descr="electrician" f="pag" n="0">
           <vnrole vncls="45.4" vntheta="agent"/>
         </role>
-        <role descr="circuit, electrical appliance" f="ppt" n="1">
+        <role descr="circuit, electrical appliance, or metaphorical extension" f="ppt" n="1">
           <vnrole vncls="45.4" vntheta="patient"/>
         </role>
       </roles>
-      <example name="usually ergative" src="" type="">
+      <example name="short-v: usually ergative" src="" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>When the swaying of the building woke me up, I reasoned that a) I was in Southern California; b) the bed was moving; c) it must be a Magic Fingers bed that-1 [*T*-1] had shorted.</text>
-        <arg f="" n="1">[*T*-1] (= that)</arg>
-        <arg f="slc" n="m">that -&gt; a Magic Fingers bed</arg>
+        <arg f="" n="1">[*T*-1]</arg>
         <rel f="">shorted</rel>
       </example>
+      <example name="short-circuit-v" src="" type="">
+        <text>In test tubes, this short-circuited the molecular cascade.</text>
+        <arg f="loc" n="m">In test tubes</arg>
+        <arg f="" n="0">this</arg>
+        <rel f="">short-circuited</rel>
+        <arg f="" n="1">the molecular cascade</arg>
+      </example>
     </roleset>
+    
     <roleset id="short.03" name="short change">
       <aliases>
         <alias framenet="" pos="v" verbnet="">short</alias>
+        <alias framenet="" pos="v" verbnet="">short-change</alias>
+        <alias framenet="" pos="m" verbnet="">short_change</alias>
+        <mwe id='short_circuit'>
+          <token slot="A" arg="" pos="JJ" head='B' dep="amod">short</token>
+          <token slot="B" arg="" pos="VB*" head='' dep="">change</token>
+        </mwe>
       </aliases>
-      <note>SHORT-V NOTES: No Vncls. Updated by Julia, 11/2010. (from short.03-v)</note>
+      <note>SHORT-V NOTES: No Vncls. Updated by Julia, 11/2010. (from short.03-v) Then updated again during MWE framing.</note>
       <roles>
         <note>Not restricted to money; can be used anytime someone doesn't receiveeverything they "should" be getting. (from short.03-v)</note>
         <role descr="giver of change" f="pag" n="0"/>
         <role descr="receiver of change" f="ppt" n="1"/>
-        <role descr="explicit mention of change" f="vsp" n="2"/>
+        <role descr="amount" f="vsp" n="2"/>
       </roles>
       <example name="ARG0 and ARG1" src="ontonotes wb/eng/00/eng_0001" type="">
         <text>When the rubber studs rotted away , the motor fell on the floor , followed by a torrent of rain that shorted out everything under the dash .</text>
@@ -57,7 +77,7 @@
         <arg f="" n="1">everything under the dash</arg>
       </example>
 
-      <example name="when the 'change' is really a chicken nugget." src="internet" type="-">
+      <example name="short-v: when the 'change' is really a chicken nugget." src="internet" type="-">
         <inflection aspect="ns" form="participle" person="other" tense="past" voice="active"/>
         <text>If I worked as a grill cook at McDonald's and I shorted Bryan Mills a chicken nugget, what would happen?</text>
         <arg f="" n="0">I</arg>
@@ -65,7 +85,15 @@
         <arg f="" n="1">Bryan Mills</arg>
         <arg f="" n="2">a chicken nugget</arg>
       </example>
+      <example name="short_change-m" src="" type="">
+        <text>The girl working short changed him $2.</text>
+        <arg f="" n="0">The girl working</arg>
+        <rel f="">[short][changed]</rel>
+        <arg f="" n="1">him</arg>
+        <arg f="" n="2">$2</arg>
+      </example>
     </roleset>
+    
     <roleset id="short.05" name="crumbly due to heavy fat content (as pie crust)">
       <aliases>
         <alias framenet="" pos="j" verbnet="">short</alias>
@@ -74,13 +102,14 @@
       <roles>
         <role descr="thing with heavy fat content" f="pag" n="1"/>
       </roles>
-      <example name="the arg" src="internet" type="">
+      <example name="short-j: the arg" src="internet" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>The crust was short and crumbly, the filling achieved that perfect balance between sweetness and nuttiness, and the piece paired perfectly with a handsome glass of honeyed Geyser Peak late harvest semillon.</text>
         <arg f="" n="1">The crust</arg>
         <rel f="">short</rel>
       </example>
     </roleset>
+    
     <roleset id="short.06" name="not having enough to reach a goal">
       <aliases>
         <alias framenet="" pos="j" verbnet="">short</alias>
@@ -92,14 +121,14 @@
         <role descr="what arg1 doesn't have enough of, amount short" f="ext" n="2"/>
         <role descr="goal arg1 is short of reaching" f="gol" n="3"/>
       </roles>
-      <example name="arg2" src="BOLT-1" type="">
+      <example name="short-j: arg2" src="BOLT-1" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>Between Russia and Iran , they would have access to enormous oil reserves , from which they could , if supplies were too short , deny the U.S. Saudi Arabia comes to mind as well .</text>
         <arg f="" n="2">supplies</arg>
         <arg f="ext" n="m">too</arg>
         <rel f="">short</rel>
       </example>
-      <example name="args 1, 2" src="internet" type="">
+      <example name="short-j: args 1, 2" src="internet" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>She had a cart full of groceries and when it was time for her to pay she was short $10.</text>
         <arg f="tmp" n="m">when it was time for her to pay</arg>
@@ -107,7 +136,7 @@
         <rel f="">short</rel>
         <arg f="" n="2">$10</arg>
       </example>
-      <example name="args 1, 3" src="internet" type="">
+      <example name="short-j: args 1, 3" src="internet" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>The other day I was in post office and there was a guy who-1 [*-1] was 2 years short of the retirement and he was making 50,000$/year.</text>
         <arg f="" n="1">[*-1]</arg>
@@ -115,13 +144,21 @@
         <rel f="">short</rel>
         <arg f="" n="3">of the retirement</arg>
       </example>
-      <example name="because arg3 applies to the money frame" src="internet" type="">
+      <example name="short-j: because arg3 applies to the money frame" src="internet" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>I was $10 short of getting on the Greyhound bus.</text>
         <arg f="" n="1">I</arg>
         <arg f="" n="2">$10</arg>
         <rel f="">short</rel>
         <arg f="" n="3">of getting on the Greyhound bus</arg>
+      </example>
+      <example name="fall_short-l" src="" type="">
+        <text>Canada's Defence Spending Increased But Still Fell Short Of Alliance's Target.</text>
+        <arg f="" n="2">Canada's Defence Spending</arg>
+        <arg f="tmp" n="m">still</arg>
+        <arg f="lvb" n="m">fell</arg>
+        <rel f="">short</rel>
+        <arg f="" n="3">of Alliance's Target</arg>
       </example>
     </roleset>
     <roleset id="short.07" name="minimal length/duration">
@@ -135,21 +172,21 @@
         <role descr="entity that isn't long" f="pag" n="1"/>
         <role descr="domain in which arg1 isn't long" f="vsp" n="2"/>
       </roles>
-      <example name="both args" src="internet" type="">
+      <example name="short-j: both args" src="internet" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>he was short in stature</text>
         <arg f="" n="1">he</arg>
         <rel f="">short</rel>
         <arg f="" n="2">in stature</arg>
       </example>
-      <example name="arg1" src="internet" type="">
+      <example name="short-j: arg1" src="internet" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>There was an error posting your comment. Maybe it was too short?</text>
         <arg f="" n="1">it</arg>
         <arg f="ext" n="m">too</arg>
         <rel f="">short</rel>
       </example>
-      <example name="duration" src="internet" type="">
+      <example name="short-j: duration" src="internet" type="">
         <text>Her visit was short.</text>
         <arg f="" n="1">Her visit</arg>
         <rel f="">short</rel>
@@ -166,7 +203,7 @@
         <role descr="subject matter" f="ppt" n="1"/>
         <role descr="target of brusk behavior" f="gol" n="2"/>
       </roles>
-      <example name="all args" src="internet" type="">
+      <example name="short-j: all args" src="internet" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>Yesterday we got into an argument because I was short with him about something.</text>
         <arg f="" n="0">I</arg>
@@ -195,7 +232,7 @@
         <role descr="start point" f="dir" n="3"/>
         <role descr="end point" f="gol" n="4"/>
       </roles>
-      <example name="start and end points" src="" type="">
+      <example name="shorten-v: start and end points" src="" type="">
         <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
         <text>Mr. Krampe also said that Mercedes plans to bring out new models every year through the mid-1990s and it will shorten its product development cycle to eight years from 10 or 12 years to compete more effectively with Toyota Motor Corp.'s Lexus, Nissan Motor Co.'s Infiniti and Honda Motor Co.'s Acura luxury-car divisions.</text>
         <arg f="" n="0">it</arg>
@@ -206,7 +243,7 @@
         <arg f="" n="3">from 10 or 12 years</arg>
         <arg f="prp" n="m">to compete more effectively with Toyota Motor Corp.'s Lexus, Nissan Motor Co.'s Infiniti and Honda Motor Co.'s Acura luxury-car divisions</arg>
       </example>
-      <example name="Arg0, 1" src="" type="">
+      <example name="shorten-v: Arg0, 1" src="" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>Google has improved its shortening of URLs.</text>
         <arg f="" n="0">its</arg>

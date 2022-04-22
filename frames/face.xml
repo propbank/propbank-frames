@@ -3,7 +3,7 @@
   <predicate lemma="face">
     <roleset id="face.01" name="look across at">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">face</alias>
+        <alias framenet="Confronting_problem" pos="v" verbnet="">face</alias>
       </aliases>
       <note>FACE-V NOTES: We'll need to go back and change these from "arg0-by" to "arg0-with"at some point; the current annotator doesn't contain "arg0-with". (from face.01-v)</note>
       <roles>
@@ -16,7 +16,7 @@
           <vnrole vncls="9.8" vntheta="destination"/>
         </role>
       </roles>
-      <example name="active" src="" type="">
+      <example name="face-v: active" src="" type="">
         <text>Commonwealth Edison now faces an additional court-ordered refund.</text>
         <arg f="" n="0">Commonwealth Edison</arg>
         <arg f="tmp" n="m">now</arg>
@@ -31,14 +31,14 @@
         <arg f="" n="0">by Comdek , the first company in Taiwan to produce medical instruments such as blood - oxygen monitors and ear thermometers</arg>
       </example>
 
-      <example name="reciprocal" src="" type="">
+      <example name="face-v: reciprocal" src="" type="">
         <text>The house and the church face each other across a busy highway.</text>
         <arg f="" n="0">The house and the church</arg>
         <rel f="">face</rel>
         <arg f="rec" n="1">each other</arg>
         <arg f="loc" n="m">across a busy highway</arg>
       </example>
-      <example name="Arg1 as PP" src="" type="">
+      <example name="face-v: Arg1 as PP" src="" type="">
         <text>My hotel room faces onto the beach.</text>
         <arg f="" n="0">My hotel room</arg>
         <rel f="">faces</rel>
@@ -46,23 +46,27 @@
       </example>
     </roleset>
   </predicate>
+  
   <predicate lemma="face_off">
     <roleset id="face_off.02" name="face off: oppose, fight">
       <aliases>
         <alias framenet="" pos="v" verbnet="">face_off</alias>
+        <alias framenet="" pos="n" verbnet="">facing_off</alias>
+        <alias framenet="" pos="n" verbnet="">faceoff</alias>
       </aliases>
       <note>FACE_OFF-V NOTES: Verb particle construction has no entry in VN. (from face.02-v)</note>
       <roles>
         <role descr="first opponent" f="pag" n="0"/>
         <role descr="second opponent" f="ppt" n="1"/>
       </roles>
-      <example name="active" src="" type="">
+      <example name="face_off-v: active" src="" type="">
         <text>"The Parties Face Off".</text>
         <arg f="" n="0">The Parties</arg>
         <rel f="">face_off</rel>
       </example>
     </roleset>
   </predicate>
+  
   <predicate lemma="aboutface">
     <roleset id="aboutface.03" name="about-face, change your mind/stance completely">
       <aliases>
@@ -70,13 +74,14 @@
         <alias framenet="" pos="n" verbnet="">about_face</alias>
         <alias framenet="" pos="n" verbnet="">about-face</alias>
         <alias framenet="" pos="n" verbnet="">aboutface</alias>
+        <alias framenet="" pos="l" verbnet="">make_about-face</alias>
       </aliases>
       <note>ABOUT_FACE-N NOTES: Roleset based on nouns-lv task instance. Framed by Claire (from face.01-n)</note>
       <roles>
         <role descr="Person changing mind" f="pag" n="0"/>
         <role descr="Regarding what issue" f="vsp" n="1"/>
       </roles>
-      <example name="All Arguments, in LVC" src="nouns-lv" type="">
+      <example name="make_about-face-l: All Arguments, in LVC" src="nouns-lv" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>Kidder made an abrupt about-face on program trading yesterday, after a special meeting between the firm's president and chief executive officer.</text>
         <arg f="" n="0">Kidder</arg>
@@ -85,12 +90,73 @@
         <rel f="">[about][face]</rel>
         <arg f="" n="1">on program trading</arg>
       </example>
-      <example name="All arguments" src="web" type="">
+      <example name="about-face-n: All arguments" src="web" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
         <text>I knew that before I wrote a column disagreeing with her about-face on credit card debt.</text>
         <arg f="" n="0">her</arg>
         <rel f="">about-face</rel>
         <arg f="" n="1">on credit card debt</arg>
+      </example>
+    </roleset>
+  </predicate>
+  
+  <predicate lemma="lose_face">
+     <roleset id="lose_face.04" name="lose social status, be humiliated">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">lose_face</alias>
+        <mwe id="lose_face">
+           <token slot="A" arg="" pos="VB" head="" dep="">lose</token>
+           <token slot="B" arg="" pos="NN" head="A" dep="dobj">face</token>
+           <token slot="B" arg="" pos="NN" head="A" dep="dep">face</token>
+        </mwe>
+      </aliases>
+      <note>LOSE_FACE-M NOTES: Added by Tim/Julia during initial MWE framing.</note>
+      <roles>
+        <role descr="stimulus of humiliation, event causing a loss of face" f="pag" n="0"/>
+        <role descr="humiliated entity" f="ppt" n="1"/>
+        <role descr="social group whose respect is lost" f='gol' n='2'/>
+      </roles>
+      <example name="lose_face-m: active" src="" type="">
+        <text>That way, your child won't lose face when Mom heeds her own Call of Duty and confi scates the game in front of his friend.</text>
+        <arg f="mnr" n="m">that way</arg>
+        <arg f="" n="1">your child</arg>
+        <arg f="mod" n="m">wo</arg>
+        <arg f="neg" n="m">n't</arg>
+        <rel f="">[lose][face]</rel>
+        <arg f="" n="0">when Mom heeds her own Call of Duty and confi scates the game in front of his friend.</arg>
+      </example>
+    </roleset>
+  </predicate>
+
+  <predicate lemma="save_face">
+     <roleset id="save_face.05" name="prevent a humiation or loss of status">
+      <aliases>
+        <alias framenet="" pos="m" verbnet="">save_face</alias>
+        <mwe id="save_face">
+           <token slot="A" arg="" pos="VB" head="" dep="">save</token>
+           <token slot="B" arg="" pos="NN" head="A" dep="dobj">face</token>
+           <token slot="B" arg="" pos="NN" head="A" dep="dep">face</token>
+        </mwe>
+      </aliases>
+      <note>SAVE_FACE-M NOTES: Added by Tim/Julia during initial MWE framing.</note>
+      <roles>
+        <role descr="way of preventing the loss of face" f="pag" n="0"/>
+        <role descr="entity whose dignity is on the line" f="ppt" n="1"/>
+        <role descr="social group whose respect is not lost" f='gol' n='2'/>
+        <role descr="event of losing face that was prevented" f='mnr' n='3'/>
+      </roles>
+      <example name="save_face-m: active" src="" type="">
+        <text>After the vote, creationists tried to save face by insisting they had scored a victory.</text>
+        <arg f="tmp" n="m">After the vote</arg>
+        <arg f="" n="1">creationists</arg>
+        <rel f="">[save][face]</rel>
+        <arg f="" n="0">by insisting they had scored a victory</arg>
+      </example>
+      <example name="save_face-m: active" src="" type="">
+        <text>Hang tough, but still give Cardenas a way to save face in front of his crew.</text>
+        <arg f="" n="1">Cardenas</arg>
+        <rel f="">[save][face]</rel>
+        <arg f="" n="2">in front of his crew.</arg>
       </example>
     </roleset>
   </predicate>

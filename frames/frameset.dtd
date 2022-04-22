@@ -36,16 +36,34 @@
   and something like 47.2 means 47.2 is a levine class of this
   roleset.  The list of levine classes is space delimited
 -->
-<!ELEMENT roleset (aliases?, note*, roles, ( example | note )*)>
+<!ELEMENT roleset (aliases?, note*, mappings*, note*, roles, ( example | note )*)>
 <!ATTLIST roleset
   id   CDATA #REQUIRED
-  name CDATA #IMPLIED>
-<!ELEMENT aliases (alias*)>
+  name CDATA #REQUIRED
+  usage CDATA #IMPLIED>
+<!ELEMENT aliases (alias*, mwe*)>
 <!ELEMENT alias (#PCDATA)>
 <!ATTLIST alias
-pos (v | n | j | l) #REQUIRED
-verbnet CDATA #IMPLIED
-framenet CDATA #IMPLIED>
+pos (v | n | j | l | m | x | p) #REQUIRED
+verbnet CDATA #REQUIRED
+framenet CDATA #REQUIRED
+usage CDATA #IMPLIED>
+<!ELEMENT mwe (token*)>
+<!ATTLIST mwe id CDATA #REQUIRED>
+<!ELEMENT token (#PCDATA)>
+<!ATTLIST token
+slot (A | B | C | D | E | F | G | H | I | J | K | L | M) #REQUIRED
+head CDATA #IMPLIED
+dep CDATA #IMPLIED
+pos CDATA #IMPLIED
+arg CDATA #IMPLIED>
+
+
+<!ELEMENT mappings (source, target)>
+<!ATTLIST mappings alias CDATA #REQUIRED>
+<!ELEMENT source (#PCDATA)>
+<!ELEMENT target (#PCDATA)>
+
 <!ELEMENT roles   (note | role)*>
 <!ELEMENT role (vnrole | fnrole)* >
 <!--
@@ -89,7 +107,7 @@ framenet CDATA #IMPLIED>
   vncls CDATA #REQUIRED
   vntheta (actor| Actor| actor1| Actor1 |actor2|  Actor2| agent| Agent|
   asset| Asset| attribute| Attribute| beneficiary| Beneficiary| cause| Cause|
-  co-agent | Co-Agent | co-patient | Co-Patient | co-theme | Co-Theme | 
+  causer| Causer| co-agent | Co-Agent | co-patient | Co-Patient | co-theme | Co-Theme | 
   destination| Destination| experiencer| Experiencer| extent| Extent| 
   goal | Goal | initial_location | Initial_Location |
   instrument| Instrument| location| Location| material| Material| patient|
