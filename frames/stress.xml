@@ -1,194 +1,272 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="stress">
     <roleset id="stress.01" name="emphasize">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">stressing</alias>
-        <alias framenet="Convey_importance" pos="v" verbnet="">stress</alias>
+        <alias pos="n">stressing</alias>
+        <alias pos="v">stress</alias>
       </aliases>
+      <roles>
+        <role descr="stresser, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="butter-9.9" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="butter-9.9" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing stressed" f="GOL" n="1">
+          <rolelinks>
+            <rolelink class="butter-9.9" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="butter-9.9" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="attribute" f="PRD" n="2">
+          <rolelinks/>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Convey_importance" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="butter-9.9" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="stress-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">68</lexlink>
+        <lexlink class="butter-9.9" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="ARG0 and ARG1 and ARG2" src="ontonotes nw/p2">
+        <text>For 25 years , Xiamen has always upheld the concept of " stressing both development and preservation , with the economy and the environment both as winners , " seeking harmonious development of humanity and nature .</text>
+        <propbank>
+          <rel relloc="12">stressing</rel>
+          <arg type="ARG1" start="13" end="16">both development and preservation</arg>
+          <arg type="ARG2" start="18" end="26">with the economy and the environment both as winners</arg>
+        </propbank>
+      </example>
+      <example name="stress-v: transitive" src="">
+        <text>In Syracuse , N.Y. , DyDee Service 's new marketing push stresses environmental awareness .</text>
+        <propbank>
+          <rel relloc="11">stresses</rel>
+          <arg type="ARGM-LOC" start="0" end="3">In Syracuse , N.Y.</arg>
+          <arg type="ARG0" start="5" end="10">DyDee Service 's new marketing push</arg>
+          <arg type="ARG1" start="12" end="13">environmental awareness</arg>
+        </propbank>
+      </example>
       <note>STRESS-V NOTES: Based on WSJ. Member of VNcls butter-9.9. (from stress.01-v)</note>
       <note>STRESSING-N NOTES: stress.01 (from stressing.01-n)</note>
-      <roles>
-        <role descr="stresser, agent" f="pag" n="0">
-          <vnrole vncls="9.9" vntheta="agent"/>
-        </role>
-        <role descr="thing stressed" f="gol" n="1">
-          <vnrole vncls="9.9" vntheta="destination"/>
-        </role>
-        <role descr="attribute" f="prd" n="2"/>
-      </roles>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes nw/p2" type="">
-        <text>For 25 years , Xiamen has always upheld the concept of " stressing both development and preservation , with the economy and the environment both as winners , " seeking harmonious development of humanity and nature .</text>
-        <arg f="" n="0">[]</arg>
-        <rel f="">stressing</rel>
-        <arg f="" n="1">both development and preservation</arg>
-        <arg f="" n="2">with the economy and the environment both as winners</arg>
-      </example>
-
-      <example name="stress-v: transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>In Syracuse , N.Y. , DyDee Service 's new marketing push stresses environmental awareness .</text>
-        <arg f="loc" n="m">In Syracuse , N.Y. ,</arg>
-        <arg f="" n="0">DyDee Service 's new marketing push</arg>
-        <rel f="">stresses</rel>
-        <arg f="" n="1">environmental awareness</arg>
-      </example>
     </roleset>
     <roleset id="stress.02" name="(cause to) experience stress, anxiety inducing, experiencing stress">
       <aliases>
-        <alias framenet="Place_weight_on" pos="v" verbnet="">stress</alias>
-        <alias framenet="" pos="n" verbnet="">stress</alias>
-        <alias framenet="" pos="j" verbnet="">stressful</alias>
-        <alias framenet="" pos="j" verbnet="">stressed</alias>
+        <alias pos="v">stress</alias>
+        <alias pos="n">stress</alias>
+        <alias pos="j">stressful</alias>
+        <alias pos="j">stressed</alias>
       </aliases>
+      <roles>
+        <role descr="agent/cause of stress" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">stimulus</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity experiencing stress" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">experiencer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="instrument (if separate from arg0)" f="MNR" n="2"/>
+        <role descr="subject matter of stress (stressed about/over __)" f="VSP" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Place_weight_on" confidence="0.0" resource="FrameNet" src="manual+strict-conv" version="UNK"/>
+        <lexlink class="marvel-31.3" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+      </lexlinks>
+      <example name="ARG2" src="probably COCA (2018 example fix)">
+        <text>He also said I stressed him with the way I talk to him .</text>
+        <propbank>
+          <rel relloc="4">stressed</rel>
+          <arg type="ARG0" start="3" end="3">I</arg>
+          <arg type="ARG1" start="5" end="5">him</arg>
+          <arg type="ARG2" start="6" end="12">with the way I talk to him</arg>
+        </propbank>
+      </example>
+      <example name="ARG1 and ARG3" src="ontonotes tc/ch/00/ch_0040">
+        <text>I I feel there 's sort of a a line to cross too between really planning it out and worry and stressing over it because for a while a couple months back there I was thinking in terms of oh gosh you know can we ever afford a house</text>
+        <propbank>
+          <rel relloc="21">stressing</rel>
+          <arg type="ARGM-ADV" start="14" end="14">really</arg>
+          <arg type="ARG3" start="22" end="23">over it</arg>
+        </propbank>
+      </example>
+      <example name="stress-v: inanimate arg1" src="">
+        <text>Winter weather , especially frigid temperatures like we have had recently , stressed the machinery to the maximum .</text>
+        <propbank>
+          <rel relloc="12">stressed</rel>
+          <arg type="ARG0" start="0" end="10">Winter weather , especially frigid temperatures like we have had recently</arg>
+          <arg type="ARG1" start="13" end="14">the machinery</arg>
+          <arg type="ARGM-EXT" start="15" end="17">to the maximum</arg>
+        </propbank>
+      </example>
+      <example name="stressed-j: passive with arg3" src="">
+        <text>He was stressed about the test .</text>
+        <propbank>
+          <rel relloc="2">stressed</rel>
+          <arg type="ARG1" start="0" end="0">He</arg>
+          <arg type="ARG3" start="3" end="5">about the test</arg>
+        </propbank>
+      </example>
+      <example name="stress-v: ergative with arg3" src="">
+        <text>I I feel there 's sort of a a line to cross too between really planning it out and worry and stressing over it ...</text>
+        <propbank>
+          <rel relloc="21">stressing</rel>
+          <arg type="ARGM-ADV" start="14" end="14">really</arg>
+          <arg type="ARG3" start="22" end="23">over it</arg>
+        </propbank>
+      </example>
+      <example name="stress-v: with args 0, 1 and 3" src="">
+        <text>She never stressed him about getting married until after they had their third child .</text>
+        <propbank>
+          <rel relloc="2">stressed</rel>
+          <arg type="ARG0" start="0" end="0">She</arg>
+          <arg type="ARGM-NEG" start="1" end="1">never</arg>
+          <arg type="ARG1" start="3" end="3">him</arg>
+          <arg type="ARG3" start="4" end="6">about getting married</arg>
+          <arg type="ARGM-TMP" start="7" end="13">until after they had their third child</arg>
+        </propbank>
+      </example>
+      <example name="stressful-j" src="BOLT-4,5">
+        <text>Or we may get back together , since she told me she might feel differently in the future . -LRB- ie , want me back , after a break that 's less ' stressful ' ; not that we ever had a stressful time .. -RRB- .</text>
+        <propbank>
+          <rel relloc="33">stressful</rel>
+          <arg type="ARG0" start="29" end="29">that</arg>
+          <arg type="ARGM-EXT" start="31" end="31">less</arg>
+        </propbank>
+      </example>
       <note>STRESS-V NOTES: Added by Julia based on Call Home; adjectival 'stressful' based on BOLT-4,5. Member of VNcls marvel-31.3-2. (from stress.02-v)</note>
       <note>STRESSFUL-J NOTES: Added by Julia based on SMS. (from stressful.01-j)</note>
       <note>STRESSED-J NOTES: Added by Julia based on BOLT. (from stressed.02-j)</note>
-      <roles>
-        <role descr="agent/cause of stress" f="pag" n="0">
-          <vnrole vncls="31.3-2" vntheta="stimulus"/>
-        </role>
-        <role descr="entity experiencing stress" f="ppt" n="1">
-          <vnrole vncls="31.3-2" vntheta="experiencer"/>
-        </role>
-        <role descr="instrument (if separate from arg0)" f="mnr" n="2"/>
-        <role descr="subject matter of stress (stressed about/over __)" f="vsp" n="3"/>
-      </roles>
-      <example name="ARG2" src="probably COCA (2018 example fix)" type="">
-        <text>He also said I stressed him with the way I talk to him.</text>
-        <arg f="" n="0">I</arg>
-        <rel f="">stressed</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="" n="2">with the way I talk to him.</arg>
-      </example>
-
-      <example name="ARG1 and ARG3" src="ontonotes tc/ch/00/ch_0040" type="">
-        <text>I I feel there 's sort of a a line to cross too between really planning it out and worry and stressing over it because for a while a couple months back there I was thinking in terms of oh gosh you know can we ever afford a house</text>
-        <arg f="" n="1">[]</arg>
-        <arg f="adv" n="m">really</arg>
-        <rel f="">stressing</rel>
-        <arg f="" n="3">over it</arg>
-      </example>
-
-      <example name="stress-v: inanimate arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Winter weather, especially frigid temperatures like we have had recently, stressed the machinery to the maximum.</text>
-        <arg f="" n="0">Winter weather, especially frigid temperatures like we have had recently</arg>
-        <rel f="">stressed</rel>
-        <arg f="" n="1">the machinery</arg>
-        <arg f="ext" n="m">to the maximum</arg>
-      </example>
-      <example name="stressed-j: passive with arg3" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>He-1 was stressed [*trace*-1] about the test.</text>
-        <rel f="">stressed</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="3">about the test</arg>
-      </example>
-      <example name="stress-v: ergative with arg3" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I I feel there 's sort of a a line to cross too between *PRO* really planning it out and worry and stressing over it ...</text>
-        <arg f="" n="1">*PRO*</arg>
-        <arg f="adv" n="m">really</arg>
-        <rel f="">stressing</rel>
-        <arg f="" n="3">over it</arg>
-      </example>
-      <example name="stress-v: with args 0, 1 and 3" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>She never stressed him about getting married until after they had their third child.</text>
-        <arg f="" n="0">She</arg>
-        <arg f="neg" n="m">never</arg>
-        <rel f="">stressed</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="" n="3">about getting married</arg>
-        <arg f="tmp" n="m">until after they had their third child</arg>
-      </example>
-      <example name="stressful-j" src="BOLT-4,5" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Or we may get back together , since she told me she might feel differently in the future . -LRB- ie , want me back , after a break that-1 [*-1] 's less ' stressful ' ; not that we ever had a stressful time .. -RRB- .</text>
-        <arg f="" n="0">[*-1]</arg>
-        <arg f="ext" n="m">less</arg>
-        <rel f="">stressful</rel>
-      </example>
     </roleset>
     <roleset id="stress.04" name="physical strain">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">stress</alias>
-        <alias framenet="" pos="n" verbnet="">stress</alias>
+        <alias pos="v">stress</alias>
+        <alias pos="n">stress</alias>
       </aliases>
+      <roles>
+        <role descr="causer of strain" f="PAG" n="0"/>
+        <role descr="thing strained" f="PPT" n="1"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="stress-v" src="">
+        <text>The settlement was uneven ( differential settling ) which stressed the beams and columns designed by Datum , and resulted in cracking , spalling and breaking of the beams and columns .</text>
+        <propbank>
+          <rel relloc="9">stressed</rel>
+          <arg type="ARG0" start="8" end="8">which</arg>
+          <arg type="ARG1" start="10" end="11">the beams</arg>
+        </propbank>
+      </example>
+      <example name="stress-n" src="">
+        <text>Having periods of rest after exercise or activity involving your elbow can relieve stress on the joint ;</text>
+        <propbank>
+          <rel relloc="13">stress</rel>
+          <arg type="ARG1" start="14" end="16">on the joint</arg>
+        </propbank>
+      </example>
       <note>STRESS-V NOTES: Added by Julia.</note>
       <note>STRESS-N NOTES: Added by Julia.</note>
-      <roles>
-        <role descr="causer of strain" f="pag" n="0"/>
-        <role descr="thing strained" f="ppt" n="1"/>
-      </roles>
-      <example name="stress-v" src="" type="">
-        <text>The settlement was uneven (differential settling) which-1 *-1 stressed the beams and columns designed by Datum, and resulted in cracking, spalling and breaking of the beams and columns.</text>
-        <arg f="" n="0">*-1</arg>
-        <rel f="">stressed</rel>
-        <arg f="" n="1">the beams</arg>
-      </example>
-      <example name="stress-n" src="" type="">
-        <text>Having periods of rest after exercise or activity involving your elbow can relieve stress on the joint;</text>
-        <rel f="">stress</rel>
-        <arg f="" n="1">on the joint</arg>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="stress_out">
     <roleset id="stress_out.03" name="(cause to) experience stress (phrasal)">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">stress_out</alias>
-        <alias framenet="" pos="j" verbnet="">stressed_out</alias>
+        <alias pos="v">stress_out</alias>
+        <alias pos="j">stressed_out</alias>
       </aliases>
+      <roles>
+        <role descr="agent/cause of stress" f="PAG" n="0"/>
+        <role descr="entity experiencing stress" f="PPT" n="1"/>
+        <role descr="instrument (if separate from arg0)" f="MNR" n="2"/>
+        <role descr="subject matter of stress (stressed out about/over __)" f="VSP" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="ARG2" src="probably COCA (2018 example fix)">
+        <text>They say they 're sick of politics in general and stressed out by rifts caused by political differences .</text>
+        <propbank>
+          <rel relloc="10 12">stressed by</rel>
+          <arg type="ARG1" start="2" end="2">they</arg>
+          <arg type="ARG0" start="13" end="17">rifts caused by political differences</arg>
+        </propbank>
+      </example>
+      <example name="ARG1 and ARG3" src="ontonotes tc/ch/00/ch_0040">
+        <text>but I 'm changing my attitude to the point where I 'm not going to get stressed out about it too much .</text>
+        <propbank>
+          <rel relloc="16 17">stressed out</rel>
+          <arg type="ARG1" start="10" end="10">I</arg>
+          <arg type="ARG3" start="18" end="19">about it</arg>
+          <arg type="ARGM-EXT" start="20" end="21">too much</arg>
+        </propbank>
+      </example>
+      <example name="stress_out-v: passive with arg3" src="call home">
+        <text>but I 'm changing my attitude to the point where I 'm not going to get stressed out about it too much .</text>
+        <propbank>
+          <rel relloc="16 17">stressed out</rel>
+          <arg type="ARG1" start="10" end="10">I</arg>
+          <arg type="ARG3" start="18" end="19">about it</arg>
+          <arg type="ARGM-EXT" start="20" end="21">too much</arg>
+        </propbank>
+      </example>
+      <example name="stress_out-v: ergative with arg3" src="">
+        <text>I I feel there 's sort of a a line to cross too between really planning it out and worry and stressing out over it ...</text>
+        <propbank>
+          <rel relloc="21 22">stressing out</rel>
+          <arg type="ARGM-ADV" start="14" end="14">really</arg>
+          <arg type="ARG3" start="23" end="24">over it</arg>
+        </propbank>
+      </example>
+      <example name="stress_out-v: with args 0, 1 and 3" src="">
+        <text>I have never yelled at him or stressed him out about eating or not eating .</text>
+        <propbank>
+          <rel relloc="7 9">stressed out</rel>
+          <arg type="ARG0" start="0" end="0">I</arg>
+          <arg type="ARGM-NEG" start="2" end="2">never</arg>
+          <arg type="ARG1" start="8" end="8">him</arg>
+          <arg type="ARG3" start="10" end="14">about eating or not eating</arg>
+        </propbank>
+      </example>
       <note>STRESS_OUT-V NOTES: Added by Julia based on Call Home. See VNcls marvel-31.3-2. Basically the same as stress.02. (from stress.03-v)</note>
       <note>STRESSED_OUT-J NOTES: Automatically created by Julia as an alias file for unification. (from stressed.03-j)</note>
-      <roles>
-        <role descr="agent/cause of stress" f="pag" n="0"/>
-        <role descr="entity experiencing stress" f="ppt" n="1"/>
-        <role descr="instrument (if separate from arg0)" f="mnr" n="2"/>
-        <role descr="subject matter of stress (stressed out about/over __)" f="vsp" n="3"/>
-      </roles>
-      <example name="ARG2" src="probably COCA (2018 example fix)" type="">
-        <text>They say they-1 're sick of politics in general and stressed *trace*-1out by rifts caused by political differences.</text>
-        <rel f="">[stressed][by]</rel>
-        <arg f="" n="1">*trace*-1out</arg>
-        <arg f="" n="0">rifts caused by political differences.</arg>
-      </example>
-
-      <example name="ARG1 and ARG3" src="ontonotes tc/ch/00/ch_0040" type="">
-        <text>but I 'm changing my attitude to the point where I 'm not going to get stressed out about it too much .</text>
-        <arg f="" n="1">I</arg>
-        <rel f="">[stressed][out]</rel>
-        <arg f="" n="3">about it</arg>
-        <arg f="ext" n="m">too much</arg>
-      </example>
-
-      <example name="stress_out-v: passive with arg3" src="call home" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>but I 'm changing my attitude to the point where I-1 'm not going to get stressed *trace*-1 out about it too much .</text>
-        <rel f="">[stressed] [out]</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="3">about it</arg>
-        <arg f="ext" n="m">too much</arg>
-      </example>
-      <example name="stress_out-v: ergative with arg3" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I I feel there 's sort of a a line to cross too between *PRO* really planning it out and worry and stressing out over it ...</text>
-        <arg f="" n="1">*PRO*</arg>
-        <arg f="adv" n="m">really</arg>
-        <rel f="">[stressing] [out]</rel>
-        <arg f="" n="3">over it</arg>
-      </example>
-      <example name="stress_out-v: with args 0, 1 and 3" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I have never yelled at him or stressed him out about eating or not eating.</text>
-        <arg f="" n="0">I</arg>
-        <arg f="neg" n="m">never</arg>
-        <rel f="">[stressed] [out]</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="" n="3">about eating or not eating</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

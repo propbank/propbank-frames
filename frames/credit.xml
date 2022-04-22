@@ -1,85 +1,147 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="credit">
     <roleset id="credit.01" name="give someone credit for smth, recognition">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">credit</alias>
-        <alias framenet="" pos="v" verbnet="">credit</alias>
+        <alias pos="n">credit</alias>
+        <alias pos="v">credit</alias>
       </aliases>
-      <note>CREDIT-V NOTES: Based on WSJ. Member of VNcls fulfilling-13.4.1-1. (from credit.01-v)</note>
-      <note>CREDIT-N NOTES: Added due to expansion of Nombank. Comparison to 'credit-v'. Vn class fulfilling-13.4.1-1. No Fn class. Framed by Katie. (from credit.01-n)</note>
       <roles>
         <role descr="giver of credit" f="PAG" n="0">
-          <vnrole vncls="13.4.1-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="fulfilling-13.4.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="fulfilling-13.4.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity credited" f="GOL" n="1">
-          <vnrole vncls="13.4.1-1" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink class="fulfilling-13.4.1-1" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+            <rolelink class="fulfilling-13.4.1-1" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+          </rolelinks>
         </role>
         <role descr="credited for" f="PPT" n="2">
-          <vnrole vncls="13.4.1-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="fulfilling-13.4.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="fulfilling-13.4.1-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1063" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="fulfilling-13.4.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="credit-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+        <lexlink class="credit-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">9</lexlink>
+        <lexlink class="credit-n.4" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">10</lexlink>
+        <lexlink class="fulfilling-13.4.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="ARG0 and ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1063">
         <text>But Wang Ta - chih credits his father for instilling in him a love of literature , and encouraging him to become proficient in traditional Chinese disciplines such as painting , chess , woodwind music and martial arts .</text>
-        <arg f="dis" n="m">But</arg>
-        <arg f="" n="0">Wang Ta - chih</arg>
-        <rel f="">credits</rel>
-        <arg f="" n="1">his father</arg>
-        <arg f="" n="2">for instilling in him a love of literature , and encouraging him to become proficient in traditional Chinese disciplines such as painting , chess , woodwind music and martial arts</arg>
+        <propbank>
+          <rel relloc="5">credits</rel>
+          <arg type="ARGM-DIS" start="0" end="0">But</arg>
+          <arg type="ARG0" start="1" end="4">Wang Ta - chih</arg>
+          <arg type="ARG1" start="6" end="7">his father</arg>
+          <arg type="ARG2" start="8" end="37">for instilling in him a love of literature , and encouraging him to become proficient in traditional Chinese disciplines such as painting , chess , woodwind music and martial arts</arg>
+        </propbank>
       </example>
-
-      <example name="passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>[The 41-year-old Mr. Azoff , a former rock 'n' roll manager ,]-1 is credited [*-1]with turning around MCA 's once-moribund music division in his six years at the company .</text>
-        <rel f="">credited</rel>
-        <arg f="" n="1">[*-1]</arg>
-        <arg f="" n="2">with turning around MCA 's once-moribund music division in his six years at the company</arg>
+      <example name="passive" src="">
+        <text>The 41 - year - old Mr. Azoff , a former rock ' n ' roll manager , is credited with turning around MCA 's once - moribund music division in his six years at the company .</text>
+        <propbank>
+          <rel relloc="19">credited</rel>
+          <arg type="ARG1" start="0" end="16">The 41 - year - old Mr. Azoff , a former rock ' n ' roll manager</arg>
+          <arg type="ARG2" start="20" end="36">with turning around MCA 's once - moribund music division in his six years at the company</arg>
+        </propbank>
       </example>
-      <example name="Arg2 as a with-PP" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="present" voice="active"/>
-        <text>Ohbayashi cited industry publications crediting Howell , currently capitalized at $ 2.2 million [*U*] , with receiving orders valued at $ 225 million [*U*]in 1988 .</text>
-        <arg f="" n="0">industry publications</arg>
-        <rel f="">crediting</rel>
-        <arg f="" n="1">Howell , currently capitalized at $ 2.2 million [*U*] ,</arg>
-        <arg f="" n="2">with receiving orders valued at $ 225 million [*U*] in 1988</arg>
+      <example name="Arg2 as a with-PP" src="">
+        <text>Ohbayashi cited industry publications crediting Howell , currently capitalized at $ 2.2 million , with receiving orders valued at $ 225 million in 1988 .</text>
+        <propbank>
+          <rel relloc="4">crediting</rel>
+          <arg type="ARG0" start="2" end="3">industry publications</arg>
+          <arg type="ARG1" start="5" end="12">Howell , currently capitalized at $ 2.2 million</arg>
+          <arg type="ARG2" start="14" end="23">with receiving orders valued at $ 225 million in 1988</arg>
+        </propbank>
       </example>
-      <example name="With arg 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="With arg 1" src="">
         <text>A tax credit for employers</text>
-        <arg f="" n="2">tax</arg>
-        <rel f="">credit</rel>
-        <arg f="" n="1">for employers</arg>
+        <propbank>
+          <rel relloc="2">credit</rel>
+          <arg type="ARG2" start="1" end="1">tax</arg>
+          <arg type="ARG1" start="3" end="4">for employers</arg>
+        </propbank>
       </example>
-      <example name="Arg 2 in PP" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The Bangladesh government also deserves credit for making significant progress toward eliminating child labor in the garment industry.</text>
-        <rel f="">credit</rel>
-        <arg f="" n="2">for making significant progress toward eliminating child labor in the garment industry.</arg>
+      <example name="Arg 2 in PP" src="">
+        <text>The Bangladesh government also deserves credit for making significant progress toward eliminating child labor in the garment industry .</text>
+        <propbank>
+          <rel relloc="5">credit</rel>
+          <arg type="ARG2" start="6" end="17">for making significant progress toward eliminating child labor in the garment industry</arg>
+        </propbank>
       </example>
-      <example name="arg 2 before the rel" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="arg 2 before the rel" src="">
         <text>any financing credits</text>
-        <arg f="" n="2">financing</arg>
-        <rel f="">credits</rel>
+        <propbank>
+          <rel relloc="2">credits</rel>
+          <arg type="ARG2" start="1" end="1">financing</arg>
+        </propbank>
       </example>
+      <note>CREDIT-V NOTES: Based on WSJ. Member of VNcls fulfilling-13.4.1-1. (from credit.01-v)</note>
+      <note>CREDIT-N NOTES: Added due to expansion of Nombank. Comparison to 'credit-v'. Vn class fulfilling-13.4.1-1. No Fn class. Framed by Katie. (from credit.01-n)</note>
     </roleset>
     <roleset id="credit.02" name="to enter as a credit">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">credit</alias>
+        <alias pos="v">credit</alias>
       </aliases>
-      <note>CREDIT-V NOTES: No VNcls. (from credit.02-v)</note>
       <roles>
-        <role descr="bookkeeper, agent" f="PAG" n="0"/>
-        <role descr="amount credited" f="ppt" n="1"/>
-        <role descr="account, credited to" f="gol" n="2"/>
+        <role descr="bookkeeper, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="fulfilling-13.4.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="fulfilling-13.4.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="amount credited" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="fulfilling-13.4.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="fulfilling-13.4.1-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="account, credited to" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="fulfilling-13.4.1-1" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+            <rolelink class="fulfilling-13.4.1-1" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="with Arg1 and Arg2" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>As interest rates paid depositors were lowered , thrift withdrawals exceeded deposits by $ 5.1 billion [*U*] , not including interest-1 credited [*]-1 to accounts .</text>
-        <rel f="">credited</rel>
-        <arg f="" n="1">[*]-1</arg>
-        <arg f="" n="2">to accounts</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="fulfilling-13.4.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="with Arg1 and Arg2" src="">
+        <text>As interest rates paid depositors were lowered , thrift withdrawals exceeded deposits by $ 5.1 billion , not including interest credited to accounts .</text>
+        <propbank>
+          <rel relloc="20">credited</rel>
+          <arg type="ARG1" start="19" end="19">interest</arg>
+          <arg type="ARG2" start="21" end="22">to accounts</arg>
+        </propbank>
       </example>
+      <note>CREDIT-V NOTES: No VNcls. (from credit.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,46 +1,84 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="mulct">
     <roleset id="mulct.01" name="fine">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">mulct</alias>
+        <alias pos="v">mulct</alias>
       </aliases>
-      <note>MULCT-V NOTES: Automatically created based on framefiles: fine (54.5), fleece (10.6), edited by hwangd. Member of VNcls bill-54.5, cheat-10.6-1. (from mulct.01-v)</note>
       <roles>
         <role descr="mulcter, receiver of money" f="PAG" n="0">
-          <vnrole vncls="54.5" vntheta="Agent"/>
-          <vnrole vncls="10.6-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="bill-54.5" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="10.6-1" resource="VerbNet" version="UNK">agent</rolelink>
+            <rolelink class="bill-54.5" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="money, amount" f="ppt" n="1">
-          <vnrole vncls="54.5" vntheta="Asset"/>
-          <vnrole vncls="10.6-1" vntheta="Theme"/>
+        <role descr="money, amount" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="bill-54.5" resource="VerbNet" version="verbnet3.3">asset</rolelink>
+            <rolelink class="10.6-1" resource="VerbNet" version="UNK">theme</rolelink>
+            <rolelink class="Fining" resource="FrameNet" version="1.7">fine</rolelink>
+            <rolelink class="bill-54.5" resource="VerbNet" version="verbnet3.4">asset</rolelink>
+          </rolelinks>
         </role>
-        <role descr="fined, victim, giver of money" f="dir" n="2">
-          <vnrole vncls="54.5" vntheta="Recipient"/>
-          <vnrole vncls="10.6-1" vntheta="Source"/>
+        <role descr="fined, victim, giver of money" f="DIR" n="2">
+          <rolelinks>
+            <rolelink class="bill-54.5" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+            <rolelink class="10.6-1" resource="VerbNet" version="UNK">source</rolelink>
+            <rolelink class="bill-54.5" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="reason, cause" f="CAU" n="3"/>
+        <role descr="reason, cause" f="CAU" n="3">
+          <rolelinks>
+            <rolelink class="Fining" resource="FrameNet" version="1.7">speaker</rolelink>
+            <rolelink class="Fining" resource="FrameNet" version="1.7">reason</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="Passive" src="web usage" type="">
-        <text>[The city]-1 was mulcted *-1 several thousand dollars</text>
-        <rel f="">mulcted</rel>
-        <arg f="" n="2">*-1</arg>
-        <arg f="" n="1">several thousand dollars</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Fining" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="bill-54.5" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="10.6-1" confidence="0.0" resource="VerbNet" src="manual+strict-conv" version="UNK"/>
+        <lexlink class="bill-54.5" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="Passive" src="web usage">
+        <text>The city was mulcted several thousand dollars</text>
+        <propbank>
+          <rel relloc="3">mulcted</rel>
+          <arg type="ARG2" start="0" end="1">The city</arg>
+          <arg type="ARG1" start="4" end="6">several thousand dollars</arg>
+        </propbank>
       </example>
-      <example name="Active" src="web usage" type="">
+      <example name="Active" src="web usage">
         <text>He mulcted his people of their gold</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">mulcted</rel>
-        <arg f="" n="2">his people</arg>
-        <arg f="" n="1">of their gold</arg>
+        <propbank>
+          <rel relloc="1">mulcted</rel>
+          <arg type="ARG0" start="0" end="0">He</arg>
+          <arg type="ARG2" start="2" end="3">his people</arg>
+          <arg type="ARG1" start="4" end="6">of their gold</arg>
+        </propbank>
       </example>
-      <example name="Active" src="web usage" type="">
-        <text>He-1 was mulcted *-1 seventy pounds sterling for seizing the sloop</text>
-        <rel f="">mulcted</rel>
-        <arg f="" n="2">*-1</arg>
-        <arg f="" n="1">seventy pounds sterling</arg>
-        <arg f="" n="3">for seizing the sloop</arg>
+      <example name="Active" src="web usage">
+        <text>He was mulcted seventy pounds sterling for seizing the sloop</text>
+        <propbank>
+          <rel relloc="2">mulcted</rel>
+          <arg end="0" start="0" type="ARG2">He</arg>
+          <arg end="5" start="3" type="ARG1">seventy pounds sterling</arg>
+          <arg end="9" start="6" type="ARG3">for seizing the sloop</arg>
+        </propbank>
       </example>
+      <note>MULCT-V NOTES: Automatically created based on framefiles: fine (54.5), fleece (10.6), edited by hwangd. Member of VNcls bill-54.5, cheat-10.6-1. (from mulct.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

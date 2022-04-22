@@ -1,42 +1,75 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="maim">
     <roleset id="maim.01" name="to deprive of the use of some body part by   wounding, cripple, injured, hindered via bodily injury">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">maim</alias>
-        <alias framenet="Cause_harm" pos="j" verbnet="">maimed</alias>
+        <alias pos="v">maim</alias>
+        <alias pos="j">maimed</alias>
       </aliases>
-      <note>MAIM-V NOTES: Frames file for 'maim' based on dictionary.com Verbnet entry 44. (from maim.01-v predicate notes)</note>
-      <note>MAIMED-J NOTES: Added by Julia based on BOLT-1, maim-v.01. Corresponds to VNcls destroy-44. (from maimed.01-j)</note>
       <roles>
-        <note>If an additional instrument arg is needed, please add one in accordance with the verb frame. (from maimed.01-j)</note>
         <role descr="agent, causer" f="PAG" n="0">
-          <vnrole vncls="44" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="destroy-44" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="destroy-44" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity maimed" f="PPT" n="1">
-          <vnrole vncls="44" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink class="destroy-44" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">victim</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">body_part</rolelink>
+            <rolelink class="destroy-44" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="instrument" f="MNR" n="2">
-          <vnrole vncls="44" vntheta="Instrument"/>
+          <rolelinks>
+            <rolelink class="destroy-44" resource="VerbNet" version="verbnet3.3">instrument</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">means</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">instrument</rolelink>
+            <rolelink class="destroy-44" resource="VerbNet" version="verbnet3.4">instrument</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG2" src="probably COCA (2018 example fix)" type="">
-        <text>he ran to a person who had apprehended one of his associates, and maimed him with a knife,</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">maimed</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="" n="2">with a knife,</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Cause_harm" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="destroy-44" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="Attack" confidence="0.1" resource="ERE" src="reo-expansion" version="rich" />
+        <lexlink class="destroy-44" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="ARG2" src="probably COCA (2018 example fix)">
+        <text>he ran to a person who had apprehended one of his associates , and maimed him with a knife ,</text>
+        <propbank>
+          <rel relloc="14">maimed</rel>
+          <arg type="ARG0" start="0" end="0">he</arg>
+          <arg type="ARG1" start="15" end="15">him</arg>
+          <arg type="ARG2" start="16" end="18">with a knife</arg>
+        </propbank>
       </example>
-
-      
-      <example name="both args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Zhang Beiqi Was Maimed from Being Tortured on the "Stretching Bed" in Jilin Prison.</text>
-        <arg f="" n="1">Zhang Beiqi</arg>
-        <rel f="">Maimed</rel>
-        <arg f="" n="0">from Being Tortured on the "Stretching Bed"</arg>
-        <arg f="loc" n="m">in Jilin Prison</arg>
+      <example name="both args" src="internet">
+        <text>Zhang Beiqi Was Maimed from Being Tortured on the " Stretching Bed " in Jilin Prison .</text>
+        <propbank>
+          <rel relloc="3">Maimed</rel>
+          <arg type="ARG1" start="0" end="1">Zhang Beiqi</arg>
+          <arg type="ARG0" start="4" end="12">from Being Tortured on the " Stretching Bed "</arg>
+          <arg type="ARGM-LOC" start="13" end="15">in Jilin Prison</arg>
+        </propbank>
       </example>
+      <note>MAIM-V NOTES: Frames file for 'maim' based on dictionary.com Verbnet entry 44. (from maim.01-v predicate notes)</note>
+      <note>MAIMED-J NOTES: Added by Julia based on BOLT-1, maim-v.01. Corresponds to VNcls destroy-44. (from maimed.01-j)</note>
+      <note>If an additional instrument arg is needed, please add one in accordance with the verb frame. (from maimed.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,91 +1,152 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="terminate">
     <roleset id="terminate.01" name="end, stop">
       <aliases>
-        <alias framenet="Activity_finish Activity_stop" pos="v" verbnet="">terminate</alias>
-        <alias framenet="" pos="n" verbnet="">termination</alias>
+        <alias pos="v">terminate</alias>
+        <alias pos="n">termination</alias>
       </aliases>
+      <roles>
+        <role descr="Intentional agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="stop-55.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Activity_stop" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="Activity_finish" resource="FrameNet" version="1.7">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="Thing ending" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="stop-55.4" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Activity_stop" resource="FrameNet" version="1.7">activity</rolelink>
+            <rolelink class="Activity_finish" resource="FrameNet" version="1.7">activity</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="point at which something ends" f="TMP" n="m"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Activity_stop" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Activity_finish" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="stop-55.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="terminate-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">15</lexlink>
+      </lexlinks>
+      <example name="terminate-v: transitive" src="">
+        <text>Comprehensive Care , which terminated its agreement to merge with First Hospital , dropped 7/8 to 3 7/8 .</text>
+        <propbank>
+          <rel relloc="4">terminated</rel>
+          <arg type="ARG0" start="3" end="3">which</arg>
+          <arg type="ARG1" start="5" end="11">its agreement to merge with First Hospital</arg>
+        </propbank>
+      </example>
+      <example name="terminate-v: unaccusative" src="">
+        <text>The insurance concern said all conversion rights on the stock will terminate on Nov. 30 .</text>
+        <propbank>
+          <rel relloc="11">terminate</rel>
+          <arg type="ARG1" start="4" end="9">all conversion rights on the stock</arg>
+          <arg type="ARGM-MOD" start="10" end="10">will</arg>
+          <arg type="ARGM-TMP" start="12" end="14">on Nov. 30</arg>
+        </propbank>
+      </example>
+      <example name="termination-n: both args" src="">
+        <text>In addition to being the only foundry of this type on the west coast , this also marked the company 's termination of the crucible - steel process .</text>
+        <propbank>
+          <rel relloc="21">termination</rel>
+          <arg type="ARG0" start="19" end="19">company</arg>
+          <arg type="ARG1" start="22" end="27">of the crucible - steel process</arg>
+        </propbank>
+      </example>
       <note>TERMINATE-V NOTES: Comparison with 'end' andb'fire'. Member of Vncls stop-55.4. (from terminate.01-v)</note>
       <note>TERMINATION-N NOTES: Added by Julia based on terminate.01. Corresponds to Vncls stop-55.4. (from termination.01-n)</note>
-      <roles>
-        <note>End point might be TMP or LOC (from terminate.01-v)</note>
-        <role descr="Intentional agent" f="pag" n="0">
-          <vnrole vncls="55.4" vntheta="agent"/>
-        </role>
-        <role descr="Thing ending" f="ppt" n="1">
-          <vnrole vncls="55.4" vntheta="theme"/>
-        </role>
-        <role descr="point at which something ends" f="tmp" n="m"/>
-      </roles>
-      <example name="terminate-v: transitive" src="" type="">
-        <text>Comprehensive Care, which-1 *trace*-1 terminated its agreement to merge with First Hospital, dropped 7/8 to 3 7/8.</text>
-        <arg f="" n="0">*trace*-1 (= which)</arg>
-        <rel f="">terminated</rel>
-        <arg f="" n="1">its agreement to merge with First Hospital</arg>
-      </example>
-      <example name="terminate-v: unaccusative" src="" type="">
-        <text>The insurance concern said all conversion rights on the stock will terminate on Nov. 30.</text>
-        <arg f="" n="1">all conversion rights on the stock</arg>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">terminate</rel>
-        <arg f="tmp" n="m">on Nov. 30</arg>
-      </example>
-      <example name="termination-n: both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>In addition to being the only foundry of this type on the west coast, this also marked the company?s termination of the crucible-steel process.</text>
-        <arg f="" n="0">company's</arg>
-        <rel f="">termination</rel>
-        <arg f="" n="1">of the crucible-steel process</arg>
-      </example>
+      <note>End point might be TMP or LOC (from terminate.01-v)</note>
     </roleset>
     <roleset id="terminate.02" name="cause to cease employment, firing">
       <aliases>
-        <alias framenet="Firing Killing" pos="v" verbnet="">terminate</alias>
-        <alias framenet="Firing" pos="n" verbnet="">termination</alias>
+        <alias pos="v">terminate</alias>
+        <alias pos="n">termination</alias>
       </aliases>
-      <note>TERMINATE-V NOTES: Member of Vncls 10.10. VN, FN updated by Julia. Member of Vncls fire-10.10. (from terminate.02-v)</note>
-      <note>TERMINATION-N NOTES: Added by Julia based on terminate.02. Corresponds to Vncls fire-10.10 (from termination.02-n)</note>
       <roles>
-        <role descr="employer" f="pag" n="0">
-          <vnrole vncls="10.10" vntheta="agent"/>
+        <role descr="employer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="fire-10.10" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Killing" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="Killing" resource="FrameNet" version="1.7">killer</rolelink>
+            <rolelink class="Firing" resource="FrameNet" version="1.7">employer</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="ex-employee" f="ppt" n="1">
-          <vnrole vncls="10.10" vntheta="theme"/>
+        <role descr="ex-employee" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="fire-10.10" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Killing" resource="FrameNet" version="1.7">victim</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="job" f="prd" n="2">
-          <vnrole vncls="10.10" vntheta="attribute"/>
-          <vnrole vncls="10.10" vntheta="source"/>
+        <role descr="job" f="PRD" n="2">
+          <rolelinks>
+            <rolelink class="fire-10.10" resource="VerbNet" version="verbnet3.3">source</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">attribute</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG1" src="ontonotes bn/cnn/03/cnn_0312" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Killing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Firing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="fire-10.10" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="remove-10.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="ARG1" src="ontonotes bn/cnn/03/cnn_0312">
         <text>The pilots are calling the sdebt -- incident a misunderstanding and appealing their termination .</text>
-        <arg f="" n="1">their</arg>
-        <rel f="">termination</rel>
+        <propbank>
+          <rel relloc="13">termination</rel>
+          <arg type="ARG1" start="12" end="12">their</arg>
+        </propbank>
       </example>
-
-      <example name="termination-n: arg 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="termination-n: arg 1" src="">
         <text>the restructuring will take place over a two - year period and will principally involve the transfer and termination of employees in our U.S. operations</text>
-        <rel f="">termination</rel>
-        <arg f="" n="1">of employees in our U.S. operations</arg>
+        <propbank>
+          <rel relloc="18">termination</rel>
+          <arg type="ARG1" start="19" end="24">of employees in our U.S. operations</arg>
+        </propbank>
       </example>
-      <example name="termination-n: another arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="termination-n: another arg1" src="">
         <text>The pilots are calling the incident a misunderstanding and appealing their termination .</text>
-        <arg f="" n="1">their</arg>
-        <rel f="">termination</rel>
+        <propbank>
+          <rel relloc="11">termination</rel>
+          <arg type="ARG1" start="10" end="10">their</arg>
+        </propbank>
       </example>
-      <example name="termination-n: all args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>... claims filed by Mr. Paolino related to the Company's termination of Mr. Paolino as the Company's Chief Executive Officer on May 20...</text>
-        <arg f="" n="0">the Company's</arg>
-        <rel f="">termination</rel>
-        <arg f="" n="1">of Mr. Paolino</arg>
-        <arg f="" n="2">as the Company's Chief Executive Officer</arg>
-        <arg f="tmp" n="m">on May 20</arg>
+      <example name="termination-n: all args" src="">
+        <text>... claims filed by Mr. Paolino related to the Company 's termination of Mr. Paolino as the Company 's Chief Executive Officer on May 20 ...</text>
+        <propbank>
+          <rel relloc="11">termination</rel>
+          <arg type="ARG0" start="8" end="10">the Company 's</arg>
+          <arg type="ARG1" start="12" end="14">of Mr. Paolino</arg>
+          <arg type="ARG2" start="15" end="21">as the Company 's Chief Executive Officer</arg>
+          <arg type="ARGM-TMP" start="22" end="24">on May 20</arg>
+        </propbank>
       </example>
-      
+      <note>TERMINATE-V NOTES: Member of Vncls 10.10. VN, FN updated by Julia. Member of Vncls fire-10.10. (from terminate.02-v)</note>
+      <note>TERMINATION-N NOTES: Added by Julia based on terminate.02. Corresponds to Vncls fire-10.10 (from termination.02-n)</note>
     </roleset>
   </predicate>
 </frameset>

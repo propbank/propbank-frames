@@ -1,56 +1,85 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="ail">
     <roleset id="ail.01" name="be ill">
       <aliases>
-        <alias framenet="Perception_body" pos="v" verbnet="">ail</alias>
+        <alias pos="v">ail</alias>
       </aliases>
-      <note>AIL-V NOTES: VN updated by Julia. Member of Vncls pain-40.8.1. (from ail.01-v)</note>
       <roles>
-        <note>possibly restricted to the phrase 'what ails you'. (from ail.01-v)</note>
         <role descr="illness" f="PAG" n="0">
-          <vnrole vncls="40.8.1" vntheta="Stimulus"/>
-          <vnrole vncls="40.8.1" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink class="pain-40.8.1" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="Perception_body" resource="FrameNet" version="1.7">body_part</rolelink>
+            <rolelink class="pain-40.8.1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="sick entity" f="PPT" n="1">
-          <vnrole vncls="40.8.1" vntheta="Experiencer"/>
+          <rolelinks>
+            <rolelink class="pain-40.8.1" resource="VerbNet" version="verbnet3.3">experiencer</rolelink>
+            <rolelink class="Perception_body" resource="FrameNet" version="1.7">experiencer</rolelink>
+            <rolelink class="pain-40.8.1" resource="VerbNet" version="verbnet3.4">experiencer</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="simple object" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
-        <text>The ailing company, which has reported net losses for 16 consecutive quarters, said it won't manufacture network computer systems any more and will greatly reduce its costly direct sales force.</text>
-        <rel f="">ailing</rel>
-        <arg f="" n="1">company</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Perception_body" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Medical_conditions" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="pain-40.8.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="pain-40.8.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="simple object" src="">
+        <text>The ailing company , which has reported net losses for 16 consecutive quarters , said it wo n't manufacture network computer systems any more and will greatly reduce its costly direct sales force .</text>
+        <propbank>
+          <rel relloc="1">ailing</rel>
+          <arg type="ARG1" start="2" end="2">company</arg>
+        </propbank>
       </example>
-      <example name="complex object" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
-        <text>A group of Michigan investors has offered to buy Knight-Ridder Inc.'s ailing Detroit Free Press for $68 million but has left unclear how the offer will be financed.</text>
-        <rel f="">ailing</rel>
-        <arg f="" n="1">Detroit Free Press</arg>
+      <example name="complex object" src="">
+        <text>A group of Michigan investors has offered to buy Knight - Ridder Inc. 's ailing Detroit Free Press for $ 68 million but has left unclear how the offer will be financed .</text>
+        <propbank>
+          <rel relloc="14">ailing</rel>
+          <arg type="ARG1" start="15" end="17">Detroit Free Press</arg>
+        </propbank>
       </example>
-      <example name="ARG1" src="ontonotes nw/wsj/07/wsj_0776" type="">
+      <example name="ARG1" src="ontonotes nw/wsj/07/wsj_0776">
         <text>The surprise resignations of two top economic government officials heaped more uncertainty on London 's financial markets , which already have been laboring under worries about Britain 's ailing economy .</text>
-        <rel f="">ailing</rel>
-        <arg f="" n="1">economy</arg>
+        <propbank>
+          <rel relloc="28">ailing</rel>
+          <arg type="ARG1" start="29" end="29">economy</arg>
+        </propbank>
       </example>
-
-      <example name="both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Peter Zezel died on Tuesday from a blood disorder that-1 *trace*-1 had ailed him for years.</text>
-        <arg f="slc" n="m">that -&gt; a blood disorder</arg>
-        <arg f="" n="0">*trace*-1 (= that)</arg>
-        <rel f="">ailed</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="tmp" n="m">for years</arg>
+      <example name="both args" src="">
+        <text>Peter Zezel died on Tuesday from a blood disorder that had ailed him for years .</text>
+        <propbank>
+          <rel relloc="11">ailed</rel>
+          <arg type="R-ARG0" start="9" end="9">that</arg>
+          <arg type="ARG0" start="6" end="8">a blood disorder</arg>
+          <arg type="ARG1" start="12" end="12">him</arg>
+          <arg type="ARGM-TMP" start="13" end="14">for years</arg>
+        </propbank>
       </example>
-      <example name="patient as subject" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Looper's shoulder ailed him all season.</text>
-        <arg f="" n="0">Looper's shoulder</arg>
-        <rel f="">ailed</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="tmp" n="m">all season</arg>
+      <example name="patient as subject" src="">
+        <text>Looper 's shoulder ailed him all season .</text>
+        <propbank>
+          <rel relloc="3">ailed</rel>
+          <arg type="ARG0" start="0" end="2">Looper 's shoulder</arg>
+          <arg type="ARG1" start="4" end="4">him</arg>
+          <arg type="ARGM-TMP" start="5" end="6">all season</arg>
+        </propbank>
       </example>
+      <note>AIL-V NOTES: VN updated by Julia. Member of Vncls pain-40.8.1. (from ail.01-v)</note>
+      <note>possibly restricted to the phrase 'what ails you'. (from ail.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

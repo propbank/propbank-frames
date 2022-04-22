@@ -1,45 +1,83 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="skyrocket">
     <roleset id="skyrocket.01" name="go up very fast">
       <aliases>
-        <alias framenet="Change_position_on_a_scale" pos="v" verbnet="">skyrocket</alias>
+        <alias pos="v">skyrocket</alias>
       </aliases>
-      <note>SKYROCKET-V NOTES: Bite my butt, it is in verbnet: calibratable_cos-45.6-1. Comparison to 'rise'. (from skyrocket.01-v)</note>
       <roles>
         <role descr="Logical subject, patient, thing rising" f="PPT" n="1">
-          <vnrole vncls="45.6-1" vntheta="Patient"/>
-          <vnrole vncls="45.6-1" vntheta="Attribute"/>
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">attribute</rolelink>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">attribute</rolelink>
+          </rolelinks>
         </role>
         <role descr="EXT, amount risen" f="EXT" n="2">
-          <vnrole vncls="45.6-1" vntheta="Extent"/>
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">extent</rolelink>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">extent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="start point" f="dir" n="3"/>
-        <role descr="end point" f="gol" n="4"/>
-        <role descr="medium" f="loc" n="m"/>
+        <role descr="start point" f="DIR" n="3">
+          <rolelinks>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.3">initial_state</rolelink>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">initial_state</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="end point" f="GOL" n="4">
+          <rolelinks>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">result</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="medium" f="LOC" n="m">
+          <rolelinks />
+        </role>
       </roles>
-      <example name="ergative, no other args" src="" type="">
-        <text>Art prices are skyrocketing...</text>
-        <arg f="" n="1">Art prices</arg>
-        <rel f="">skyrocketing</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Change_position_on_a_scale" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="calibratable_cos-45.6.1-1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3" />
+        <lexlink class="skyrocket-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">6</lexlink>
+        <lexlink class="calibratable_cos-45.6.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="ergative, no other args" src="">
+        <text>Art prices are skyrocketing ...</text>
+        <propbank>
+          <rel relloc="3">skyrocketing</rel>
+          <arg type="ARG1" start="0" end="1">Art prices</arg>
+        </propbank>
       </example>
-      <example name="with EXT" src="internet" type="-">
-        <inflection aspect="perfect" form="participle" person="third" tense="present" voice="active"/>
-        <text>I also just read that the drug trafficking trade has skyrocketed 50% in the last two years in the Denver area.</text>
-        <arg f="" n="1">the drug trafficking trade</arg>
-        <rel f="">skyrocketed</rel>
-        <arg f="" n="2">50%</arg>
-        <arg f="tmp" n="m">in the last two years</arg>
-        <arg f="loc" n="m">in the Denver area</arg>
+      <example name="with EXT" src="internet">
+        <text>I also just read that the drug trafficking trade has skyrocketed 50 % in the last two years in the Denver area .</text>
+        <propbank>
+          <rel relloc="10">skyrocketed</rel>
+          <arg type="ARG1" start="5" end="8">the drug trafficking trade</arg>
+          <arg type="ARG2" start="11" end="12">50 %</arg>
+          <arg type="ARGM-TMP" start="13" end="17">in the last two years</arg>
+          <arg type="ARGM-LOC" start="18" end="21">in the Denver area</arg>
+        </propbank>
       </example>
-      <example name="with start and end points" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
-        <text>The number of pages of tax rules skyrocketed from 40500 in 1995 to 70320 in 2009.</text>
-        <arg f="" n="1">The number of pages of tax rules</arg>
-        <rel f="">skyrocketed</rel>
-        <arg f="" n="3">from 40500 in 1995</arg>
-        <arg f="" n="4">to 70320 in 2009</arg>
+      <example name="with start and end points" src="internet">
+        <text>The number of pages of tax rules skyrocketed from 40500 in 1995 to 70320 in 2009 .</text>
+        <propbank>
+          <rel relloc="7">skyrocketed</rel>
+          <arg type="ARG1" start="0" end="6">The number of pages of tax rules</arg>
+          <arg type="ARG3" start="8" end="11">from 40500 in 1995</arg>
+          <arg type="ARG4" start="12" end="15">to 70320 in 2009</arg>
+        </propbank>
       </example>
+      <note>SKYROCKET-V NOTES: Bite my butt, it is in verbnet: calibratable_cos-45.6-1. Comparison to 'rise'. (from skyrocket.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

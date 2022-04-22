@@ -1,47 +1,77 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="extort">
     <roleset id="extort.01" name="extract money from, under pressure">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">extort</alias>
-        <alias framenet="" pos="n" verbnet="">extortion</alias>
+        <alias pos="v">extort</alias>
+        <alias pos="n">extortion</alias>
+        <argalias arg="0" pos="n">extortionist</argalias>
       </aliases>
-      <note>EXTORT-V NOTES: Frames file for 'extort' based on sentences in wsj. Verbnet entry 10.5. (from extort.01-v predicate notes)</note>
-      <note>EXTORTION-N NOTES: Automatically created by Julia as an alias file for unification. (from extortion.01-n)</note>
       <roles>
         <role descr="agent, extorter" f="PAG" n="0">
-          <vnrole vncls="10.5" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="steal-10.5" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="steal-10.5" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="money" f="PPT" n="1">
-          <vnrole vncls="10.5" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="steal-10.5" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="steal-10.5" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="source" f="DIR" n="2">
-          <vnrole vncls="10.5" vntheta="Source"/>
+          <rolelinks>
+            <rolelink class="steal-10.5" resource="VerbNet" version="verbnet3.3">source</rolelink>
+            <rolelink class="steal-10.5" resource="VerbNet" version="verbnet3.4">source</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all args" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>According to testimony in a public, 80-page grand-jury report handed up to the state attorney general, Judge O'Kicki extorted cash from lawyers, muscled favorable loans from banks and bullied local businesses for more than a decade.</text>
-        <arg f="" n="0">Judge O'Kicki</arg>
-        <rel f="">extorted</rel>
-        <arg f="" n="1">cash</arg>
-        <arg f="" n="2">from lawyers</arg>
-        <arg f="TMP" n="M">for more than a decade</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Getting" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="steal-10.5" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="extort-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+        <lexlink class="steal-10.5" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="all args" src="">
+        <text>According to testimony in a public , 80 - page grand - jury report handed up to the state attorney general , Judge O'Kicki extorted cash from lawyers , muscled favorable loans from banks and bullied local businesses for more than a decade .</text>
+        <propbank>
+          <rel relloc="24">extorted</rel>
+          <arg type="ARG0" start="22" end="23">Judge O'Kicki</arg>
+          <arg type="ARG1" start="25" end="25">cash</arg>
+          <arg type="ARG2" start="26" end="27">from lawyers</arg>
+          <arg type="ARGM-TMP" start="38" end="42">for more than a decade</arg>
+        </propbank>
       </example>
-      <example name="intransitive" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="active"/>
-        <text>The judge now says it was ``unfortunate'' that he chose to write the letter but says ``there was certainly no intent *trace* to extort there.''</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">extort</rel>
+      <example name="intransitive" src="">
+        <text>The judge now says it was `` unfortunate '' that he chose to write the letter but says `` there was certainly no intent *trace* to extort there . ''</text>
+        <propbank>
+          <rel relloc="26">extort</rel>
+          <arg type="ARG0" start="?" end="?">*trace*</arg>
+        </propbank>
       </example>
-      <example name="missing arg defaults to 'money'" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="ns" voice="ns"/>
-        <text>The question is how much you get tied in with seedy characters so they can extort you.''</text>
-        <arg f="" n="0">they</arg>
-        <arg f="MOD" n="M">can</arg>
-        <rel f="">extort</rel>
-        <arg f="" n="2">you</arg>
+      <example name="missing arg defaults to 'money'" src="">
+        <text>The question is how much you get tied in with seedy characters so they can extort you . ''</text>
+        <propbank>
+          <rel relloc="15">extort</rel>
+          <arg type="ARG0" start="13" end="13">they</arg>
+          <arg type="ARGM-MOD" start="14" end="14">can</arg>
+          <arg type="ARG2" start="16" end="16">you</arg>
+        </propbank>
       </example>
+      <note>EXTORT-V NOTES: Frames file for 'extort' based on sentences in wsj. Verbnet entry 10.5. (from extort.01-v predicate notes)</note>
+      <note>EXTORTION-N NOTES: Automatically created by Julia as an alias file for unification. (from extortion.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

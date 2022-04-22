@@ -1,75 +1,118 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="balance">
     <roleset id="balance.01" name="establish a balance">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">balance</alias>
+        <alias pos="v">balance</alias>
+        <alias pos="n">balance</alias>
       </aliases>
-      <note>BALANCE-V NOTES: Frames file for 'balance' based on sentences in wsj. Verbnet entries 47.6, 45.4. (from balance.01-v predicate notes)</note>
       <roles>
-        <role descr="balancer, agent" f="pag" n="0">
-          <vnrole vncls="47.6" vntheta="agent"/>
-          <vnrole vncls="45.4" vntheta="agent"/>
+        <role descr="balancer, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="spatial_configuration-47.6" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing balanced" f="ppt" n="1">
-          <vnrole vncls="47.6" vntheta="theme"/>
-          <vnrole vncls="45.4" vntheta="patient"/>
+        <role descr="thing balanced" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="spatial_configuration-47.6" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="in comparison to" f="ppt" n="2"/>
+        <role descr="in comparison to" f="PPT" n="2">
+          <rolelinks/>
+        </role>
       </roles>
-      <example name="simple transitive" src="simple transitive" type="simple transitive">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>And even those who say some selective selling may be in order stress that [individuals]-3 need to be in the stock market *trace* to achieve their long-term investment objectives and to help *trace*-3 balance their other assets.</text>
-        <arg f="" n="0">*trace*-3</arg>
-        <rel f="">balance</rel>
-        <arg f="" n="1">their other assets</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="spatial_configuration-47.6" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="other_cos-45.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="balance-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">11</lexlink>
+        <lexlink class="balance-v.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+        <lexlink class="other_cos-45.4" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="simple transitive" src="">
+        <text>And even those who say some selective selling may be in order stress that individuals need to be in the stock market to achieve their long - term investment objectives and to help balance their other assets .</text>
+        <propbank>
+          <rel relloc="33">balance</rel>
+          <arg type="ARG0" start="14" end="14">individuals</arg>
+          <arg type="ARG1" start="34" end="36">their other assets</arg>
+        </propbank>
       </example>
-      <example name="ergative" src="ergative" type="ergative">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>To make the books balance, as is required by law, somebody invented a new budget line item that simply subtracted $45 billion.</text>
-        <arg f="" n="1">the books</arg>
-        <rel f="">balance</rel>
-        <arg f="adv" n="m">as is required by law</arg>
+      <example name="ergative" src="">
+        <text>To make the books balance , as is required by law , somebody invented a new budget line item that simply subtracted $ 45 billion .</text>
+        <propbank>
+          <rel relloc="4">balance</rel>
+          <arg type="ARG1" start="2" end="3">the books</arg>
+          <arg type="ARGM-ADV" start="6" end="10">as is required by law</arg>
+        </propbank>
       </example>
-      <example name="ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1042" type="">
+      <example name="ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1042">
         <text>Of these three , US income from selling technology is four times the amount it spends buying technology elsewhere , and it earns enough each year in patent royalties to balance its enormous deficit in manufactured goods .</text>
-        <arg f="" n="1">[]</arg>
-        <rel f="">balance</rel>
-        <arg f="" n="2">its enormous deficit in manufactured goods</arg>
+        <propbank>
+          <rel relloc="30">balance</rel>
+          <arg type="ARG2" start="31" end="36">its enormous deficit in manufactured goods</arg>
+        </propbank>
       </example>
-
-      <example name="passive with comparator" src="passive with comparator" type="passive with comparator">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>2 . In seeking approval of a TRO, the prosecutor must articulate [any anticipated impact that forfeiture and the TRO would have on innocent third parties]-2, balanced *trace*-2 against the government's need to preserve the assets.</text>
-        <rel f="">balanced</rel>
-        <arg f="" n="1">*trace*-2</arg>
-        <arg f="" n="2">against the government's need to preserve the assets</arg>
+      <example name="passive with comparator" src="">
+        <text>2 . In seeking approval of a TRO , the prosecutor must articulate any anticipated impact that forfeiture and the TRO would have on innocent third parties , balanced against the government 's need to preserve the assets .</text>
+        <propbank>
+          <rel relloc="28">balanced</rel>
+          <arg type="ARG1" start="13" end="26">any anticipated impact that forfeiture and the TRO would have on innocent third parties</arg>
+          <arg type="ARG2" start="29" end="37">against the government 's need to preserve the assets</arg>
+        </propbank>
       </example>
-      <example name="ARG0" src="ontonotes nw/wsj/04/wsj_0439" type="">
+      <example name="ARG0" src="ontonotes nw/wsj/04/wsj_0439">
         <text>Within the alliance it is supposed to act as a balancing force , guarding against excessive control by government or abuse of its economic position by business , for either could result in a deterioration of its living standards -LRB- under the new resolutions , workers councils may demand that a cooperative be closed or its prices be reduced -RRB- .</text>
-        <rel f="">balancing</rel>
-        <arg f="" n="0">force</arg>
+        <propbank>
+          <rel relloc="10">balancing</rel>
+          <arg type="ARG0" start="11" end="11">force</arg>
+        </propbank>
       </example>
-
+      <note>BALANCE-V NOTES: Frames file for 'balance' based on sentences in wsj. Verbnet entries 47.6, 45.4. (from balance.01-v predicate notes)</note>
     </roleset>
   </predicate>
   <predicate lemma="balance_out">
     <roleset id="balance_out.02" name="balance completely over time">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">balance_out</alias>
+        <alias pos="v">balance_out</alias>
       </aliases>
-      <note>BALANCE_OUT-V NOTES: Framed by Claire (from balance.02-v)</note>
       <roles>
-        <role descr="balancer, agent doing balancing" f="pag" n="0"/>
-        <role descr="focus, first thing balanced" f="ppt" n="1"/>
-        <role descr="arg1 balances out with what?  Point of comparison when separate mention" f="ppt" n="2"/>
+        <role descr="balancer, agent doing balancing" f="PAG" n="0"/>
+        <role descr="focus, first thing balanced" f="PPT" n="1"/>
+        <role descr="arg1 balances out with what?  Point of comparison when separate mention" f="PPT" n="2"/>
       </roles>
-      <example name="Arg's 0 &amp; 1 only" src="Arg's 0 &amp; 1 only" type="Arg's 0 &amp; 1 only">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Fortunately, [people's luck]-1 always tends *-1 to balance out.</text>
-        <arg f="" n="1">*-1</arg>
-        <rel f="">[balance][out]</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="Arg's 0 &amp; 1 only" src="">
+        <text>Fortunately , people 's luck always tends to balance out .</text>
+        <propbank>
+          <rel relloc="8 9">balance out</rel>
+          <arg type="ARG1" start="2" end="4">people 's luck</arg>
+        </propbank>
       </example>
+      <note>BALANCE_OUT-V NOTES: Framed by Claire (from balance.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

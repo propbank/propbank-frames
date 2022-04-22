@@ -1,211 +1,370 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="beat">
     <roleset id="beat.01" name="strike">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">beating</alias>
-        <alias framenet="" pos="v" verbnet="">beat</alias>
+        <alias pos="n">beating</alias>
+        <alias pos="v">beat</alias>
       </aliases>
-      <note>BEAT-V NOTES: Comparison with 'hit' and 'win'. beat 0.2 and beat 0.3. Based on financial subcorpus. Verbnet classes hit-18.1-1. (from beat.01-v)</note>
-      <note>BEATING-N NOTES: Roleset based on instances in BOLT P01. Based on comparison to beat-v.01, maps to VN class 18.1-1, noun has no FN frame. (from beating.01-n)</note>
       <roles>
-        <role descr="agent, hitter - animate only!" f="pag" n="0">
-          <vnrole vncls="18.1-1" vntheta="agent"/>
+        <role descr="agent, hitter - animate only!" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="hit-18.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="hit-18.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing hit" f="ppt" n="1">
-          <vnrole vncls="18.1-1" vntheta="patient"/>
+        <role descr="thing hit" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="hit-18.1-1" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">victim</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">body_part</rolelink>
+            <rolelink class="hit-18.1-1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="instrument, thing hit by or with" f="mnr" n="2">
-          <vnrole vncls="18.1-1" vntheta="instrument"/>
+        <role descr="instrument, thing hit by or with" f="MNR" n="2">
+          <rolelinks>
+            <rolelink class="hit-18.1-1" resource="VerbNet" version="verbnet3.3">instrument</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">means</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">instrument</rolelink>
+            <rolelink class="hit-18.1-1" resource="VerbNet" version="verbnet3.4">instrument</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes pt/nt/42/nt_4218" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Cause_harm" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="hit-18.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Life.Injure.InjuryCausedByViolentEvents" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Injure" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="Attack" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="beat-v.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">21</lexlink>
+        <lexlink class="beat-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">6</lexlink>
+        <lexlink class="hit-18.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="ARG0 and ARG1 and ARG2" src="ontonotes pt/nt/42/nt_4218">
         <text>They will beat him with whips and then kill him .</text>
-        <arg f="" n="0">They</arg>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">beat</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="" n="2">with whips</arg>
+        <propbank>
+          <rel relloc="2">beat</rel>
+          <arg type="ARG0" start="0" end="0">They</arg>
+          <arg type="ARGM-MOD" start="1" end="1">will</arg>
+          <arg type="ARG1" start="3" end="3">him</arg>
+          <arg type="ARG2" start="4" end="5">with whips</arg>
+        </propbank>
       </example>
-
-      <example name="All args" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Earlier this week, former Springfield cop Jeffrey Asher was convicted of assault and battery, resulting from his beating, with a flashlight, of Melvin Jones III.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">beating</rel>
-        <arg f="" n="2">with a flashlight</arg>
-        <arg f="" n="1">of Melvin Jones III</arg>
+      <example name="All args" src="web">
+        <text>Earlier this week , former Springfield cop Jeffrey Asher was convicted of assault and battery , resulting from his beating , with a flashlight , of Melvin Jones III .</text>
+        <propbank>
+          <rel relloc="19">beating</rel>
+          <arg type="ARG0" start="18" end="18">his</arg>
+          <arg type="ARG2" start="21" end="23">with a flashlight</arg>
+          <arg type="ARG1" start="25" end="28">of Melvin Jones III</arg>
+        </propbank>
       </example>
+      <note>BEAT-V NOTES: Comparison with 'hit' and 'win'. beat 0.2 and beat 0.3. Based on financial subcorpus. Verbnet classes hit-18.1-1. (from beat.01-v)</note>
+      <note>BEATING-N NOTES: Roleset based on instances in BOLT P01. Based on comparison to beat-v.01, maps to VN class 18.1-1, noun has no FN frame. (from beating.01-n)</note>
     </roleset>
     <roleset id="beat.02" name="(cause) pulsating motion that often makes sound">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">beat</alias>
-        <alias framenet="" pos="n" verbnet="">beat</alias>
+        <alias pos="v">beat</alias>
+        <alias pos="n">beat</alias>
       </aliases>
+      <roles>
+        <role descr="causer of motion" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="sound_emission-43.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="sound_emission-43.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing moving" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="sound_emission-43.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="sound_emission-43.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="direction, destination" f="DIR" n="2">
+          <rolelinks/>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Temporal_pattern" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="beat-v.11.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="sound_emission-43.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="all args, passivized" src="">
+        <text>Another proposed reform is to have program traders answer to an `` uptick rule '' a reform instituted after the Great Crash of 1929 that protects against stocks being relentlessly beaten downward by those seeking to profit from lower prices , namely short sellers .</text>
+        <propbank>
+          <rel relloc="30">beaten</rel>
+          <arg type="ARG1" start="27" end="27">stocks</arg>
+          <arg type="ARGM-MNR" start="29" end="29">relentlessly</arg>
+          <arg type="ARG2" start="31" end="31">downward</arg>
+          <arg type="ARG0" start="32" end="43">by those seeking to profit from lower prices , namely short sellers</arg>
+        </propbank>
+      </example>
+      <example name="Heart beat" src="">
+        <text>Her heart was beating against her chest .</text>
+        <propbank>
+          <rel relloc="3">beating</rel>
+          <arg type="ARG1" start="0" end="1">Her heart</arg>
+          <arg type="ARG2" start="4" end="6">against her chest</arg>
+        </propbank>
+      </example>
+      <example name="Arg 1 only" src="ON sense 2">
+        <text>He lay his head against her chest to feel the beat of her heart .</text>
+        <propbank>
+          <rel relloc="10">beat</rel>
+          <arg type="ARG1" start="11" end="13">of her heart</arg>
+        </propbank>
+      </example>
+      <example name="Args 0 &amp; 1" src="invented">
+        <text>The rock band 's incessant drum beat kept me awake all night .</text>
+        <propbank>
+          <rel relloc="6">beat</rel>
+          <arg type="ARG0" start="1" end="3">rock band 's</arg>
+          <arg type="ARGM-TMP" start="4" end="4">incessant</arg>
+          <arg type="ARG1" start="5" end="5">drum</arg>
+        </propbank>
+      </example>
+      <example name="Args 1 &amp; 2" src="ON sense 6">
+        <text>The beat of the rain against the window lulled her into sleep .</text>
+        <propbank>
+          <rel relloc="1">beat</rel>
+          <arg type="ARG1" start="2" end="4">of the rain</arg>
+          <arg type="ARG2" start="5" end="7">against the window</arg>
+        </propbank>
+      </example>
       <note>BEAT-V NOTES: I have the feeling this will always occur as "beat down(ward)". (from beat.02-v)</note>
       <note>BEAT-N NOTES: Roleset based on verb entry beat.02 (sort of), OntoNotes grouping beat-n senses 2, 4, 6; maps to VN class sound_emission-43.2. Framed by Claire. (from beat.01-n)</note>
-      <roles>
-        <note>Co-occurence of all arguments seems unlikely, usually this would be "beating" rather than "beat." (from beat.01-n)</note>
-        <role descr="causer of motion" f="pag" n="0"/>
-        <role descr="thing moving" f="ppt" n="1"/>
-        <role descr="direction, destination" f="dir" n="2"/>
-      </roles>
-      <example name="all args, passivized" src="" type="">
-        <text>Another proposed reform is to have program traders answer to an ``uptick rule'' a reform instituted after the Great Crash of 1929 that protects against [stocks]-2 being relentlessly beaten *trace*-2 downward by those seeking to profit from lower prices, namely short sellers.</text>
-        <arg f="" n="1">*trace*-2</arg>
-        <arg f="mnr" n="m">relentlessly</arg>
-        <rel f="">beaten</rel>
-        <arg f="dir" n="2">downward</arg>
-        <arg f="" n="0">by those seeking to profit from lower prices, namely short sellers</arg>
-      </example>
-      <example name="Heart beat" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Her beart was beating against her chest.</text>
-        <arg f="" n="1">Her heart</arg>
-        <rel f="">beating</rel>
-        <arg f="" n="2">against her chest</arg>
-      </example>
-      <example name="Arg 1 only" src="ON sense 2" type="">
-        <text>He lay his head against her chest to feel the beat of her heart.</text>
-        <rel f="">beat</rel>
-        <arg f="" n="1">of her heart</arg>
-      </example>
-      <example name="Args 0 &amp; 1" src="invented" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The rock band's incessant drum beat kept me awake all night.</text>
-        <arg f="" n="0">rock band's</arg>
-        <arg f="tmp" n="m">incessant</arg>
-        <arg f="" n="1">drum</arg>
-        <rel f="">beat</rel>
-      </example>
-      <example name="Args 1 &amp; 2" src="ON sense 6" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The beat of the rain against the window lulled her into sleep.</text>
-        <rel f="">beat</rel>
-        <arg f="" n="1">of the rain</arg>
-        <arg f="" n="2">against the window</arg>
-      </example>
+      <note>Co-occurence of all arguments seems unlikely, usually this would be "beating" rather than "beat." (from beat.01-n)</note>
     </roleset>
     <roleset id="beat.03" name="win over some competitor">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">beat</alias>
+        <alias pos="v">beat</alias>
       </aliases>
-      <note>BEAT-V NOTES: (from beat.03-v)</note>
       <roles>
-        <role descr="winner" f="pag" n="0"/>
-        <role descr="loser" f="ppt" n="1"/>
-        <role descr="competition" f="vsp" n="2"/>
+        <role descr="winner" f="PAG" n="0"/>
+        <role descr="loser" f="PPT" n="1"/>
+        <role descr="competition" f="VSP" n="2"/>
       </roles>
-      <example name="no stated competition" src="" type="">
-        <text>Now, after *trace* beating them, Mr. Achenbaum is joining them.</text>
-        <arg f="" n="0">*trace* -&gt; Mr. Achenbaum</arg>
-        <rel f="">beating</rel>
-        <arg f="" n="1">them</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Beat_opponent" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="beat-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">29</lexlink>
+      </lexlinks>
+      <example name="no stated competition" src="">
+        <text>Now , after beating them , Mr. Achenbaum is joining them .</text>
+        <propbank>
+          <rel relloc="3">beating</rel>
+          <arg type="ARG0" start="6" end="7">Mr. Achenbaum</arg>
+          <arg type="ARG1" start="4" end="4">them</arg>
+        </propbank>
       </example>
-      <example name="stated competition" src="" type="">
-        <text>The product isn't widely used yet, but Toshiba, which [*T-1*] has already beaten everyone else in producing the current-generation one-megabit DRAMs...</text>
-        <arg f="rcl" n="m">which -&gt; Toshiba</arg>
-        <arg f="" n="0">[*T-1*]</arg>
-        <arg f="tmp" n="m">already</arg>
-        <rel f="">beaten</rel>
-        <arg f="" n="1">everyone else</arg>
-        <arg f="" n="2">in producing the current-generation one-megabit DRAMs</arg>
+      <example name="stated competition" src="">
+        <text>The product is n't widely used yet , but Toshiba , which has already beaten everyone else in producing the current - generation one - megabit DRAMs ...</text>
+        <propbank>
+          <rel relloc="14">beaten</rel>
+          <arg type="R-ARG0" start="11" end="11">which</arg>
+          <arg type="ARG0" start="9" end="9">Toshiba</arg>
+          <arg type="ARGM-TMP" start="13" end="13">already</arg>
+          <arg type="ARG1" start="15" end="16">everyone else</arg>
+          <arg type="ARG2" start="17" end="26">in producing the current - generation one - megabit DRAMs</arg>
+        </propbank>
       </example>
+      <note>BEAT-V NOTES: (from beat.03-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="beat_out">
     <roleset id="beat_out.04" name="win over some opponent">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">beat_out</alias>
+        <alias pos="v">beat_out</alias>
       </aliases>
-      <note>BEAT_OUT-V NOTES: Same as "win" sense above. (from beat.04-v predicate notes)</note>
       <roles>
-        <role descr="winner" f="pag" n="0"/>
-        <role descr="loser" f="ppt" n="1"/>
-        <role descr="competition" f="vsp" n="2"/>
+        <role descr="winner" f="PAG" n="0"/>
+        <role descr="loser" f="PPT" n="1"/>
+        <role descr="competition" f="VSP" n="2"/>
       </roles>
-      <example name="success!" src="" type="">
-        <text>More recently, Guber Peters beat out a dozen other producers, reportedly including Robert Redford and Ted Turner, for rights to the life story of Chico Mendes, the murdered Brazilian union leader who fought developers in the Amazon rain forest.</text>
-        <arg f="tmp" n="m">More recently</arg>
-        <arg f="" n="0">Guber Peters</arg>
-        <rel f="">[ beat] [ out]</rel>
-        <arg f="" n="1">a dozen other producers, reportedly including Robert Redford and Ted Turner,</arg>
-        <arg f="" n="2">for rights to the life story of Chico Mendes, the murdered Brazilian union leader who fought developers in the Amazon rain forest</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Win_prize" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Finish_competition" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+      </lexlinks>
+      <example name="success!" src="">
+        <text>More recently , Guber Peters beat out a dozen other producers , reportedly including Robert Redford and Ted Turner , for rights to the life story of Chico Mendes , the murdered Brazilian union leader who fought developers in the Amazon rain forest .</text>
+        <propbank>
+          <rel relloc="5 6">beat out</rel>
+          <arg type="ARGM-TMP" start="0" end="1">More recently</arg>
+          <arg type="ARG0" start="3" end="4">Guber Peters</arg>
+          <arg type="ARG1" start="7" end="18">a dozen other producers , reportedly including Robert Redford and Ted Turner</arg>
+          <arg type="ARG2" start="20" end="42">for rights to the life story of Chico Mendes , the murdered Brazilian union leader who fought developers in the Amazon rain forest</arg>
+        </propbank>
       </example>
+      <note>BEAT_OUT-V NOTES: Same as "win" sense above. (from beat.04-v predicate notes)</note>
     </roleset>
   </predicate>
   <predicate lemma="beat_up">
     <roleset id="beat_up.05" name="strike repeatedly">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">beat_up</alias>
+        <alias pos="v">beat_up</alias>
       </aliases>
-      <note>BEAT_UP-V NOTES: Poor John. No corresponding VN class with verb particle construction. (from beat.05-v)</note>
       <roles>
-        <role descr="agent, hitter - animate only!" f="pag" n="0"/>
-        <role descr="thing hit" f="ppt" n="1"/>
-        <role descr="instrument, thing hit by or with" f="mnr" n="2"/>
-        <role descr="topic, reason for beating" f="vsp" n="3"/>
+        <role descr="agent, hitter - animate only!" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="Attack" resource="FrameNet" version="1.7">assailant</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing hit" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">victim</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">body_part</rolelink>
+            <rolelink class="Attack" resource="FrameNet" version="1.7">victim</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="instrument, thing hit by or with" f="MNR" n="2">
+          <rolelinks>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">means</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">instrument</rolelink>
+            <rolelink class="Attack" resource="FrameNet" version="1.7">means</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="topic, reason for beating" f="VSP" n="3"/>
       </roles>
-      <example name="ARG0 and ARG1" src="ontonotes pt/nt/44/nt_4419" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Cause_harm" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Attack" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+      </lexlinks>
+      <example name="ARG0 and ARG1" src="ontonotes pt/nt/44/nt_4419">
         <text>He beat them up and tore their clothes off .</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">[beat][up]</rel>
-        <arg f="" n="1">them</arg>
+        <propbank>
+          <rel relloc="1 3">beat up</rel>
+          <arg type="ARG0" start="0" end="0">He</arg>
+          <arg type="ARG1" start="2" end="2">them</arg>
+        </propbank>
       </example>
-
-      <example name="beat_up-v" src="" type="">
-        <text>*PRO* don't beat yourself up about feeling unmotivated to do anything at the minute.</text>
-        <arg f="neg" n="m">n't</arg>
-        <arg f="" n="0">*PRO*</arg>
-        <rel f="">[beat][up]</rel>
-        <arg f="" n="1">yourself</arg>
-        <arg f="" n="3">about feeling unmotivated to do anything at the minute</arg>
+      <example name="beat_up-v" src="">
+        <text>do n't beat yourself up about feeling unmotivated to do anything at the minute .</text>
+        <propbank>
+          <rel relloc="2 4">beat up</rel>
+          <arg type="ARGM-NEG" start="1" end="1">n't</arg>
+          <arg type="ARG1" start="3" end="3">yourself</arg>
+          <arg type="ARG3" start="5" end="13">about feeling unmotivated to do anything at the minute</arg>
+        </propbank>
       </example>
+      <note>BEAT_UP-V NOTES: Poor John. No corresponding VN class with verb particle construction. (from beat.05-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="beat_down">
     <roleset id="beat_down.06" name="thoroughly punish, put in place">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">beat_down</alias>
-        <alias framenet="" pos="n" verbnet="">beatdown</alias>
-        <alias framenet="" pos="l" verbnet="">get_beatdown</alias>
-        <alias framenet="" pos="l" verbnet="">give_beatdown</alias>
+        <alias pos="v">beat_down</alias>
+        <alias pos="n">beatdown</alias>
+        <alias pos="l">get_beatdown</alias>
+        <alias pos="l">give_beatdown</alias>
       </aliases>
-      <note>BEAT_DOWN-V, BEATDOWN-N NOTES: Added by Julia</note>
       <roles>
-        <role descr="beater" f="pag" n="0"/>
-        <role descr="victim" f="ppt" n="1"/>
-        <role descr="instrument" f="mnr" n="2"/>
-        <role descr="topic, reason for beatdown" f="vsp" n="3"/>
+        <role descr="beater" f="PAG" n="0"/>
+        <role descr="victim" f="PPT" n="1"/>
+        <role descr="instrument" f="MNR" n="2"/>
+        <role descr="topic, reason for beatdown" f="VSP" n="3"/>
       </roles>
-      <example name="beat_down-v" src="" type="">
-        <text>[NFL Baller Adam "Pac Man" Jones]-1 Calls Ludacris A "P***y" and Threatens *PRO*-1 To Beat Him Down Over Instagram Post.</text>
-        <arg f="" n="0">*PRO*-1</arg>
-        <rel f="">[beat][down]</rel>
-        <arg f="" n="1">HIM</arg>
-        <arg f="" n="3">Over Instagram Post</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="beat_down-v" src="">
+        <text>NFL Baller Adam " Pac Man " Jones Calls Ludacris A " " and Threatens To Beat Him Down Over Instagram Post .</text>
+        <propbank>
+          <rel relloc="16 18">Beat Down</rel>
+          <arg type="ARG0" start="0" end="7">NFL Baller Adam " Pac Man " Jones</arg>
+          <arg type="ARG1" start="17" end="17">Him</arg>
+          <arg type="ARG3" start="19" end="21">Over Instagram Post</arg>
+        </propbank>
       </example>
-      <example name="beatdown-n" src="" type="">
-        <text>...with Brown delivering a brutal and bloody beatdown of Rihanna as they hurtled through L.A .</text>
-        <arg f="" n="0">brutal and bloody</arg>
-        <rel f="">beatdown</rel>
-        <arg f="" n="1">of Rihanna</arg>
+      <example name="beatdown-n" src="">
+        <text>... with Brown delivering a brutal and bloody beatdown of Rihanna as they hurtled through L.A .</text>
+        <propbank>
+          <rel relloc="8">beatdown</rel>
+          <arg type="ARG0" start="5" end="7">brutal and bloody</arg>
+          <arg type="ARG1" start="9" end="10">of Rihanna</arg>
+        </propbank>
       </example>
-      <example name="get_beatdown-l" src="" type="">
-        <text>They don't say, "Well the rule is, if you run and we catch you, you get a beatdown for making us run.</text>
-        <arg f="adv" n="m">if you run and we catch you</arg>
-        <arg f="" n="1">you</arg>
-        <arg f="lvb" n="m">get</arg>
-        <rel f="">beatdown</rel>
-        <arg f="" n="3">for making us run</arg>
+      <example name="get_beatdown-l" src="">
+        <text>They do n't say , " Well the rule is , if you run and we catch you , you get a beatdown for making us run .</text>
+        <propbank>
+          <rel relloc="22">beatdown</rel>
+          <arg type="ARGM-ADV" start="11" end="17">if you run and we catch you</arg>
+          <arg type="ARG1" start="19" end="19">you</arg>
+          <arg type="ARGM-LVB" start="20" end="20">get</arg>
+          <arg type="ARG3" start="23" end="26">for making us run</arg>
+        </propbank>
       </example>
-      <example name="give_beatdown-l" src="" type="">
-        <text>I got into a fight with a drunk, gave him a beatdown in an alley, and took his watch.</text>
-        <arg f="" n="0">I</arg>
-        <arg f="lvb" n="m">gave</arg>
-        <rel f="">beatdown</rel>
-        <arg f="loc" n="m">in an alley</arg>
+      <example name="give_beatdown-l" src="">
+        <text>I got into a fight with a drunk , gave him a beatdown in an alley , and took his watch .</text>
+        <propbank>
+          <rel relloc="12">beatdown</rel>
+          <arg type="ARG0" start="0" end="0">I</arg>
+          <arg type="ARGM-LVB" start="9" end="9">gave</arg>
+          <arg type="ARGM-LOC" start="13" end="15">in an alley</arg>
+        </propbank>
       </example>
+      <note>BEAT_DOWN-V, BEATDOWN-N NOTES: Added by Julia</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,36 +1,64 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="exude">
     <roleset id="exude.01" name="ooze">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">exudative</alias>
-        <alias framenet="Emitting Emanating" pos="v" verbnet="">exude</alias>
+        <alias pos="j">exudative</alias>
+        <alias pos="v">exude</alias>
       </aliases>
-      <note>EXUDE-V NOTES: Member of VNcls substance_emission-43.4, appear-48.1.1. (from exude.01-v)</note>
-      <note>EXUDATIVE-J NOTES: Added by Julia based on medi-tmprl1to8. (from exudative.01-j)</note>
       <roles>
         <role descr="oozer" f="DIR" n="0">
-          <vnrole vncls="43.4" vntheta="Source"/>
+          <rolelinks>
+            <rolelink class="substance_emission-43.4" resource="VerbNet" version="verbnet3.3">source</rolelink>
+            <rolelink class="Emanating" resource="FrameNet" version="1.7">source</rolelink>
+            <rolelink class="Emitting" resource="FrameNet" version="1.7">source_emitter</rolelink>
+          </rolelinks>
         </role>
         <role descr="ooze" f="PPT" n="1">
-          <vnrole vncls="43.4" vntheta="Theme"/>
-          <vnrole vncls="48.1.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="substance_emission-43.4" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="appear-48.1.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Emanating" resource="FrameNet" version="1.7">emission</rolelink>
+            <rolelink class="Emitting" resource="FrameNet" version="1.7">emission</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="at least this is a nice ooze" src="" type="">
-        <text>In the interview at headquarters yesterday afternoon, both men exuded confidence and seemed to work well together.</text>
-        <arg f="loc" n="m">In the interview at headquarters yesterday afternoon</arg>
-        <arg f="" n="0">both men</arg>
-        <rel f="">exuded</rel>
-        <arg f="" n="1">confidence</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Emitting" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="Emanating" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="substance_emission-43.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="appear-48.1.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+      </lexlinks>
+      <example name="at least this is a nice ooze" src="">
+        <text>In the interview at headquarters yesterday afternoon , both men exuded confidence and seemed to work well together .</text>
+        <propbank>
+          <rel relloc="10">exuded</rel>
+          <arg type="ARGM-LOC" start="0" end="6">In the interview at headquarters yesterday afternoon</arg>
+          <arg type="ARG0" start="8" end="9">both men</arg>
+          <arg type="ARG1" start="11" end="11">confidence</arg>
+        </propbank>
       </example>
-      <example name="arg1" src="medi-tmprl" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="arg1" src="medi-tmprl">
         <text>Fluid has always been exudative and lymphocytic .</text>
-        <arg f="" n="1">Fluid</arg>
-        <arg f="tmp" n="m">always</arg>
-        <rel f="">exudative</rel>
+        <propbank>
+          <rel relloc="4">exudative</rel>
+          <arg type="ARG1" start="0" end="0">Fluid</arg>
+          <arg type="ARGM-TMP" start="2" end="2">always</arg>
+        </propbank>
       </example>
+      <note>EXUDE-V NOTES: Member of VNcls substance_emission-43.4, appear-48.1.1. (from exude.01-v)</note>
+      <note>EXUDATIVE-J NOTES: Added by Julia based on medi-tmprl1to8. (from exudative.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,47 +1,83 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="coat">
     <roleset id="coat.01" name="cover, apply something to a surface">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">coating</alias>
-        <alias framenet="" pos="v" verbnet="">coat</alias>
+        <alias pos="v">coat</alias>
+        <alias pos="n">coating</alias>
       </aliases>
-      <note>COAT-V NOTES: Frames file for 'coat' based on sentences in wsj. Verbnet entry 9.8, Framenet entries Adorning and Filling. (from coat.01-v predicate notes)</note>
-      <note>COATING-N NOTES: (from coating.01-n)</note>
       <roles>
-        <note>Never the coat itself--that's not eventive (from coating.01-n)</note>
         <role descr="entity causing covering, agent" f="PAG" n="0">
-          <vnrole vncls="9.8" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="covered" f="GOL" n="1">
-          <vnrole vncls="9.8" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+          </rolelinks>
         </role>
         <role descr="covering, coat" f="PPT" n="2">
-          <vnrole vncls="9.8" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="passive with covering" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="future" voice="passive"/>
-        <text>The carpets won't be glued down, and walls-1 will be coated [*-1] with nontoxic finishes.</text>
-        <arg f="MOD" n="M">will</arg>
-        <rel f="">coated</rel>
-        <arg f="" n="1">[*-1]</arg>
-        <arg f="" n="2">with nontoxic finishes</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Distributed_position" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="fill-9.8" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+      </lexlinks>
+      <example name="coat-v: passive with covering" src="">
+        <text>The carpets wo n't be glued down , and walls will be coated with nontoxic finishes .</text>
+        <propbank>
+          <rel relloc="12">coated</rel>
+          <arg end="10" start="10" type="ARGM-MOD">will</arg>
+          <arg end="9" start="9" type="ARG1">walls</arg>
+          <arg end="15" start="13" type="ARG2">with nontoxic finishes</arg>
+        </propbank>
       </example>
-      <example name="adjectival usage" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>He said USX also appeared to sell a richer mix of steel products, such as the more profitable pipe and galvanized coated sheet, than lower-priced structural goods.</text>
-        <rel f="">coated</rel>
-        <arg f="" n="1">sheet</arg>
+      <example name="coated-j" src="">
+        <text>He said USX also appeared to sell a richer mix of steel products , such as the more profitable pipe and galvanized coated sheet , than lower - priced structural goods .</text>
+        <propbank>
+          <rel relloc="22">coated</rel>
+          <arg end="23" start="23" type="ARG1">sheet</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1054" type="">
+      <example name="coat-v: ARG0 and ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1054">
         <text>Taking a different tack from the Japanese , who were plating CD - Rs with a thin gold layer , Ritek instead developed a cheap and high - quality process for coating them with silver or aluminum .</text>
-        <arg f="" n="0">[]</arg>
-        <rel f="">coating</rel>
-        <arg f="" n="1">them</arg>
-        <arg f="" n="2">with silver or aluminum</arg>
+        <propbank>
+          <rel relloc="31">coating</rel>
+          <arg end="32" start="32" type="ARG1">them</arg>
+          <arg end="36" start="33" type="ARG2">with silver or aluminum</arg>
+        </propbank>
       </example>
-
+      <example name="coat-v" src="THYME-AMR">
+        <text>enteric - coated tablet</text>
+        <propbank>
+          <rel relloc="2">coated</rel>
+          <arg end="0" start="0" type="ARG2">enteric</arg>
+          <arg end="3" start="3" type="ARG1">tablet</arg>
+        </propbank>
+        <amr version="THYME 1.0">
+          (t / tablet
+            :ARG1-of (c / coat-01
+              :ARG2 (t2 / thing
+                :mod (a / anatomical-site :name (n / name :op1 "enteric")))))
+        </amr>
+      </example>
+      <note>COAT-V NOTES: Frames file for 'coat' based on sentences in wsj. Verbnet entry 9.8, Framenet entries Adorning and Filling. (from coat.01-v predicate notes)</note>
+      <note>COATING-N NOTES: (from coating.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

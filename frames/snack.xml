@@ -1,35 +1,62 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="snack">
     <roleset id="snack.01" name="eat snack">
       <aliases>
-        <alias framenet="Ingestion" pos="v" verbnet="">snack</alias>
-        <alias framenet="" pos="n" verbnet="">snacking</alias>
+        <alias pos="v">snack</alias>
+        <alias pos="n">snacking</alias>
       </aliases>
-      <note>SNACK-V NOTES: Frames file for 'snack' based on sentences in ectb2, by Jena. Verbnet entry dine-39.5, comparison with 'eat'. (from snack.01-v)</note>
-      <note>SNACKING-N NOTES: snack.01 (from snacking.01-n)</note>
       <roles>
         <role descr="eater" f="PAG" n="0">
-          <vnrole vncls="39.5" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="dine-39.5" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Ingestion" resource="FrameNet" version="1.7">ingestor</rolelink>
+            <rolelink class="dine-39.5" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="food" f="PPT" n="1">
-          <vnrole vncls="39.5" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink class="dine-39.5" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="Ingestion" resource="FrameNet" version="1.7">ingestibles</rolelink>
+            <rolelink class="dine-39.5" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="" src="" type="">
-        <text>They-1 could also opt *-1 to snack on steamed buns or stuffed dumplings.</text>
-        <arg f="" n="0">*-1</arg>
-        <rel f="">snack</rel>
-        <arg f="" n="1">on steamed buns or stuffed dumplings</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Ingestion" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="dine-39.5" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="dine-39.5" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="snack-v" src="">
+        <text>They could also opt to snack on steamed buns or stuffed dumplings .</text>
+        <propbank>
+          <rel relloc="5">snack</rel>
+          <arg type="ARG0" start="0" end="0">They</arg>
+          <arg type="ARG1" start="6" end="11">on steamed buns or stuffed dumplings</arg>
+        </propbank>
       </example>
-      <example name="Arg0,1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>His snacking on multiple bags of popcorn every day left him extremely sick and short of breath, his lungs deteriorated by bronchiolitis obliterans, a potentially fatal lung disease.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">snacking</rel>
-        <arg f="" n="1">on multiple bags of popcorn</arg>
-        <arg f="tmp" n="m">every day</arg>
+      <example name="snacking-n: Arg0,1" src="">
+        <text>His snacking on multiple bags of popcorn every day left him extremely sick and short of breath , his lungs deteriorated by bronchiolitis obliterans , a potentially fatal lung disease .</text>
+        <propbank>
+          <rel relloc="1">snacking</rel>
+          <arg type="ARG0" start="18" end="18">his</arg>
+          <arg type="ARG1" start="2" end="6">on multiple bags of popcorn</arg>
+          <arg type="ARGM-TMP" start="7" end="8">every day</arg>
+        </propbank>
       </example>
+      <note>SNACK-V NOTES: Frames file for 'snack' based on sentences in ectb2, by Jena. Verbnet entry dine-39.5, comparison with 'eat'. (from snack.01-v)</note>
+      <note>SNACKING-N NOTES: snack.01 (from snacking.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

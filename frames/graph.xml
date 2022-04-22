@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
+<frameset>
+  <predicate lemma="graph">
+    <roleset id="graph.01" name="create a graph of a function">
+      <aliases>
+        <alias pos="v">graph</alias>
+        <alias pos="n">graph</alias>
+        <alias pos="n">graphing</alias>
+      </aliases>
+      <roles>
+        <role descr="agent" f="PAG" n="0" />
+        <role descr="shape/points plotted (output, the graph itself)" f="PPT" n="1" />
+        <role descr="function (input)" f="SRC" n="2" />
+        <role descr="framework graphed onto" f="GOL" n="3" />
+        <role descr="instrument" f="MNR" n="4" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks />
+      <example name="graph-v" src="Spatial">
+        <text>Determine whether the graph of y = | x | + 3 is symmetric with respect to the origin , the x - axis , or the y - axis .</text>
+        <propbank>
+          <rel relloc="3">graph</rel>
+          <arg end="11" start="4" type="ARG2">of y = | x | + 3</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (d / determine-01 :mode imperative
+            :ARG0 (y / you)
+            :ARG1 (t / truth-value
+              :polarity-of (s / symmetric-01
+                :ARG1 (t2 / thing
+                  :ARG3-of (g / graph-01
+                    :ARG1 (s2 / string-entity :value "y = |x| + 3")
+                    :ARG2 (c / cartesian-framework-91)))
+                :ARG4 (o / or
+                  :op1 (o2 / origin
+                    :ARG5-of c)
+                  :op2 (x / x-axis
+                    :ARG2-of c)
+                  :op3 (y2 / y-axis
+                    :ARG3-of c)))))
+        </amr>
+      </example>
+      <note>GRAPH NOTES: Added for SpatialAMR.</note>
+    </roleset>
+  </predicate>
+</frameset>

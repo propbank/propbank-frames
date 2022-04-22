@@ -1,76 +1,137 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="correct">
     <roleset id="correct.01" name="make right">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">correct</alias>
-        <alias framenet="" pos="n" verbnet="">correction</alias>
+        <alias pos="v">correct</alias>
+        <alias pos="n">correction</alias>
+        <alias pos="j">corrective</alias>
       </aliases>
-      <note>CORRECT-V NOTES: Member of VNcls other_cos-45.4. (from correct.01-v)</note>
-      <note>CORRECTION-N NOTES: Based on temprel data. Comparison to correct-v. Framed by Katie. (from correction.01-n)</note>
       <roles>
         <role descr="corrector" f="PAG" n="0">
-          <vnrole vncls="45.4" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="remedy-45.7" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing that was wrong" f="PPT" n="1">
-          <vnrole vncls="45.4" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="remedy-45.7" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="very straightforward" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="past" voice="active"/>
-        <text>Intel said it had corrected the problems and would start producing bugless chips next week.</text>
-        <arg f="" n="0">it</arg>
-        <rel f="">corrected</rel>
-        <arg f="" n="1">the problems</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Resolve_problem" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="other_cos-45.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="correct-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">20</lexlink>
+        <lexlink class="remedy-45.7" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="correct-v: very straightforward" src="">
+        <text>Intel said it had corrected the problems and would start producing bugless chips next week .</text>
+        <propbank>
+          <rel relloc="4">corrected</rel>
+          <arg end="2" start="2" type="ARG0">it</arg>
+          <arg end="6" start="5" type="ARG1">the problems</arg>
+        </propbank>
       </example>
-      <example name="targetless trace" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>The 1988 period was restated from net income of $8 million *trace* to correct an overstatement in the company's Boston Co. subsidiary.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">correct</rel>
-        <arg f="" n="1">an overstatement in the company's Boston Co. subsidiary</arg>
+      <example name="correct-v: targetless trace" src="">
+        <text>The 1988 period was restated from net income of $ 8 million *trace* to correct an overstatement in the company 's Boston Co. subsidiary .</text>
+        <propbank>
+          <rel relloc="14">correct</rel>
+          <arg end="?" start="?" type="ARG0">*trace*</arg>
+          <arg end="23" start="15" type="ARG1">an overstatement in the company 's Boston Co. subsidiary</arg>
+        </propbank>
       </example>
-      <example name="medical example" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="correction-n: medical example" src="">
         <text>attenuation correction</text>
-        <arg f="" n="1">attenuation</arg>
-        <rel f="">correction</rel>
+        <propbank>
+          <rel relloc="1">correction</rel>
+          <arg end="0" start="0" type="ARG1">attenuation</arg>
+        </propbank>
       </example>
-      <example name="both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="correction-n: both args" src="">
         <text>His correction of several passages</text>
-        <arg f="" n="0">His</arg>
-        <rel f="">correction</rel>
-        <arg f="" n="1">of several passages</arg>
+        <propbank>
+          <rel relloc="1">correction</rel>
+          <arg end="0" start="0" type="ARG0">His</arg>
+          <arg end="4" start="2" type="ARG1">of several passages</arg>
+        </propbank>
       </example>
+      <example name="corrective-j" src="">
+        <text>She wears corrective lenses</text>
+        <propbank>
+          <rel relloc="2">corrective</rel>
+          <arg end="3" start="3" type="ARG0">lenses</arg>
+        </propbank>
+        <amr version="THYME 1.0">
+          (w / wear-01
+            :ARG0 (s / she)
+            :ARG1 (d / devices :pl + :name (n / name :op1 "lens")
+              :ARG0-of (c / correct-01)))
+        </amr>
+      </example>
+      <note>CORRECTIVE-J NOTES: Added for THYME-AMR.</note>
+      <note>CORRECT-V NOTES: Member of VNcls other_cos-45.4. (from correct.01-v)</note>
+      <note>CORRECTION-N NOTES: Based on temprel data. Comparison to correct-v. Framed by Katie. (from correction.01-n)</note>
     </roleset>
     <roleset id="correct.02" name="right">
       <aliases>
-        <alias framenet="Correctness Suitability" pos="j" verbnet="">correct</alias>
+        <alias pos="j">correct</alias>
       </aliases>
-      <note>CORRECT-J NOTES: Added by Julia based on BOLT, relation to correct-v.01. Corresponds to VNcls other_cos-45.4. (from correct.01-j)</note>
       <roles>
-        <note>Doesn't include the verb's arg0 (from correct.01-j)</note>
-        <role descr="correct entity" f="ppt" n="1">
-          <vnrole vncls="45.5" vntheta="patient"/>
+        <role descr="correct entity" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="entity_specific_cos-45.5" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="argM-ADVs" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Suitability" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="Correctness" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="entity_specific_cos-45.5" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+      </lexlinks>
+      <example name="correct-j: argM-ADVs" src="BOLT">
         <text>You 're from the UK and England so in my opinion which ever one you choose to identify yourself as you are correct .</text>
-        <arg f="adv" n="m">so</arg>
-        <arg f="adv" n="m">in my opinion</arg>
-        <arg f="adv" n="m">which ever one you choose to identify yourself as</arg>
-        <arg f="" n="1">you</arg>
-        <rel f="">correct</rel>
+        <propbank>
+          <rel relloc="22">correct</rel>
+          <arg end="7" start="7" type="ARGM-ADV">so</arg>
+          <arg end="10" start="8" type="ARGM-ADV">in my opinion</arg>
+          <arg end="19" start="11" type="ARGM-ADV">which ever one you choose to identify yourself as</arg>
+          <arg end="0" start="0" type="ARG1">You</arg>
+        </propbank>
       </example>
-      <example name="Arg1, ADV-attributive" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Lamarck was correct about the connection between the environment and evolution.</text>
-        <arg f="" n="1">Lamarck</arg>
-        <rel f="">correct</rel>
-        <arg f="adv" n="m">about the connection between the environment and evolution</arg>
+      <example name="correct-j: Arg1, ADV-attributive" src="internet">
+        <text>Lamarck was correct about the connection between the environment and evolution .</text>
+        <propbank>
+          <rel relloc="2">correct</rel>
+          <arg end="0" start="0" type="ARG1">Lamarck</arg>
+          <arg end="10" start="3" type="ARGM-ADV">about the connection between the environment and evolution</arg>
+        </propbank>
       </example>
+      <note>CORRECT-J NOTES: Added by Julia based on BOLT, relation to correct-v.01. Corresponds to VNcls other_cos-45.4. (from correct.01-j)</note>
+      <note>Doesn't include the verb's arg0 (from correct.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

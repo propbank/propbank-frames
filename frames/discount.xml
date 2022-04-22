@@ -1,67 +1,102 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="discount">
     <roleset id="discount.01" name="reduce in price">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">discount</alias>
-        <alias framenet="" pos="n" verbnet="">discount</alias>
+        <alias pos="v">discount</alias>
+        <alias pos="n">discount</alias>
       </aliases>
+      <roles>
+        <role descr="discounter" f="PAG" n="0"/>
+        <role descr="commodity" f="PPT" n="1"/>
+        <role descr="EXT, amount of reduction" f="EXT" n="2"/>
+        <role descr="start point" f="DIR" n="3"/>
+        <role descr="end point" f="GOL" n="4"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="discount-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">20</lexlink>
+        <lexlink class="discount-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+      </lexlinks>
+      <example name="just transitive" src="">
+        <text>Anheuser - Busch Cos . said it plans to aggressively discount its major beer brands ...</text>
+        <propbank>
+          <rel relloc="10">discount</rel>
+          <arg type="ARG0" start="6" end="6">it</arg>
+          <arg type="ARGM-MNR" start="9" end="9">aggressively</arg>
+          <arg type="ARG1" start="11" end="14">its major beer brands</arg>
+        </propbank>
+      </example>
+      <example name="ARG2" src="ontonotes bn/p2">
+        <text>Considering the prices , uh , people feel that a discount of over 20,000 Yuan in this period is quite appropriate .</text>
+        <propbank>
+          <rel relloc="10">discount</rel>
+          <arg type="ARG2" start="11" end="14">of over 20,000 Yuan</arg>
+        </propbank>
+      </example>
+      <example name="with extent" src="">
+        <text>With a 20 % discount from ebay , I decided to buy</text>
+        <propbank>
+          <rel relloc="4">discount</rel>
+          <arg type="ARG2" start="2" end="3">20 %</arg>
+          <arg type="ARG0" start="5" end="6">from ebay</arg>
+        </propbank>
+      </example>
+      <example name="with arg 1, 3 and 4" src="">
+        <text>With the price discount from $ 50 to $ 27.98 , I decided to buy .</text>
+        <propbank>
+          <rel relloc="3">discount</rel>
+          <arg type="ARG1" start="2" end="2">price</arg>
+          <arg type="ARG3" start="4" end="6">from $ 50</arg>
+          <arg type="ARG4" start="7" end="9">to $ 27.98</arg>
+        </propbank>
+      </example>
       <note>DISCOUNT-V NOTES: Frames file for 'discount' based on sentences in financial subcorpus. No Verbnet entry. No comparison. (from discount.01-v predicate notes)</note>
       <note>DISCOUNT-N NOTES: Based on Bolt data. Comparison to discount.01-v. No VN class. Framed by Katie. (from discount.01-n)</note>
-      <roles>
-        <role descr="discounter" f="pag" n="0"/>
-        <role descr="commodity" f="ppt" n="1"/>
-        <role descr="EXT, amount of reduction" f="ext" n="2"/>
-        <role descr="start point" f="dir" n="3"/>
-        <role descr="end point" f="gol" n="4"/>
-      </roles>
-      <example name="just transitive" src="" type="">
-        <text>Anheuser-Busch Cos. said it-1 plans *trace*-1 to aggressively discount its major beer brands...</text>
-        <arg f="" n="0">*trace*</arg>
-        <arg f="mnr" n="m">aggressively</arg>
-        <rel f="">discount</rel>
-        <arg f="" n="1">its major beer brands</arg>
-      </example>
-      <example name="ARG2" src="ontonotes bn/p2" type="">
-        <text>Considering the prices , uh , people feel that a discount of over 20,000 Yuan in this period is quite appropriate .</text>
-        <rel f="">discount</rel>
-        <arg f="" n="2">of over 20,000 Yuan</arg>
-      </example>
-
-      <example name="with extent" src="" type="">
-        <text>With a 20% discount from ebay, I decided to buy</text>
-        <arg f="" n="2">20%</arg>
-        <rel f="">discount</rel>
-        <arg f="" n="0">from ebay</arg>
-      </example>
-      <example name="with arg 1, 3 and 4" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>With the price discount from $50 to $27.98, I decided to buy.</text>
-        <arg f="" n="1">price</arg>
-        <rel f="">discount</rel>
-        <arg f="" n="3">from $50</arg>
-        <arg f="" n="4">to $27.98</arg>
-      </example>
     </roleset>
     <roleset id="discount.02" name="identify as unimportant">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">discount</alias>
+        <alias pos="v">discount</alias>
       </aliases>
-      <note>DISCOUNT-V NOTES: Frames file for 'discount' based on sentences in financial subcorpus. No Verbnet entry. No comparison. (from discount.02-v predicate notes)</note>
       <roles>
-        <role descr="identifier" f="pag" n="0"/>
-        <role descr="unimportant thing" f="ppt" n="1"/>
-        <role descr="secondary attribute" f="prd" n="2"/>
+        <role descr="identifier" f="PAG" n="0"/>
+        <role descr="unimportant thing" f="PPT" n="1"/>
+        <role descr="secondary attribute" f="PRD" n="2"/>
       </roles>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes nw/wsj/10/wsj_1026" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="discount-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+      </lexlinks>
+      <example name="ARG0 and ARG1 and ARG2" src="ontonotes nw/wsj/10/wsj_1026">
         <text>The market quickly discounted the weekly inventory report showing a 6.3 million barrel decrease in U.S. crude oil stocks as the legacy of Hurricane Jerry .</text>
-        <arg f="" n="0">The market</arg>
-        <arg f="mnr" n="m">quickly</arg>
-        <rel f="">discounted</rel>
-        <arg f="" n="1">the weekly inventory report showing a 6.3 million barrel decrease in U.S. crude oil stocks</arg>
-        <arg f="" n="2">as the legacy of Hurricane Jerry</arg>
+        <propbank>
+          <rel relloc="3">discounted</rel>
+          <arg type="ARG0" start="0" end="1">The market</arg>
+          <arg type="ARGM-MNR" start="2" end="2">quickly</arg>
+          <arg type="ARG1" start="4" end="18">the weekly inventory report showing a 6.3 million barrel decrease in U.S. crude oil stocks</arg>
+          <arg type="ARG2" start="19" end="24">as the legacy of Hurricane Jerry</arg>
+        </propbank>
       </example>
-
+      <note>DISCOUNT-V NOTES: Frames file for 'discount' based on sentences in financial subcorpus. No Verbnet entry. No comparison. (from discount.02-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

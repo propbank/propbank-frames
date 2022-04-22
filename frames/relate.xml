@@ -1,211 +1,327 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="relate">
     <roleset id="relate.01" name="be related to, involved, connected">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">relate</alias>
-        <alias framenet="" pos="n" verbnet="">relate</alias>
-        <alias framenet="" pos="n" verbnet="">relation</alias>
-        <alias framenet="" pos="n" verbnet="">relating</alias>
-        <alias framenet="" pos="n" verbnet="">relationship</alias>
-        <alias framenet="Cognitive_connection" pos="j" verbnet="">related</alias>
-        <alias framenet="" pos="l" verbnet="">have_relationship</alias>
+        <alias pos="v">relate</alias>
+        <alias pos="n">relate</alias>
+        <alias pos="n">relation</alias>
+        <alias pos="n">relating</alias>
+        <alias pos="n">relationship</alias>
+        <alias pos="j">related</alias>
+        <alias pos="l">have_relationship</alias>
       </aliases>
+      <roles>
+        <role descr="agent, entity drawing comparison" f="PAG" n="0">
+          <rolelinks/>
+        </role>
+        <role descr="thing under consideration" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="relate-86.2-2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="relate-86.2-2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="what it's related to" f="PPT" n="2">
+          <rolelinks>
+            <rolelink class="relate-86.2-2" resource="VerbNet" version="verbnet3.4">co_theme</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Cognitive_connection" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="relate-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">33</lexlink>
+        <lexlink class="relation-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+        <lexlink class="relate-86.2-2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="relate-v: past" src="">
+        <text>... a series of initiatives related both to global warming and the plight of the African elephant</text>
+        <propbank>
+          <rel relloc="5">related</rel>
+          <arg type="ARG1" start="1" end="4">a series of initiatives</arg>
+          <arg type="ARGM-DIS" start="6" end="6">both</arg>
+          <arg type="ARG2" start="7" end="16">to global warming and the plight of the African elephant</arg>
+        </propbank>
+      </example>
+      <example name="ARG0 and ARG1 and ARG2" src="ontonotes nw/wsj/12/wsj_1203">
+        <text>Ms. Raptopoulos noted that relating economic numbers to specific market activity is tricky .</text>
+        <propbank>
+          <rel relloc="4">relating</rel>
+          <arg type="ARG1" start="5" end="6">economic numbers</arg>
+          <arg type="ARG2" start="7" end="10">to specific market activity</arg>
+        </propbank>
+      </example>
+      <example name="relating-n: progressive" src="">
+        <text>... information relating to fees from clients should be confidential .</text>
+        <propbank>
+          <rel relloc="2">relating</rel>
+          <arg type="ARG1" start="1" end="1">information</arg>
+          <arg type="ARG2" start="3" end="6">to fees from clients</arg>
+        </propbank>
+      </example>
+      <example name="relation-n: What to do when the things being compared are in the same node" src="">
+        <text>The relation between physical education and the economy</text>
+        <propbank>
+          <rel relloc="1">relation</rel>
+          <arg type="ARG1" start="2" end="7">between physical education and the economy</arg>
+        </propbank>
+      </example>
+      <example name="relation-n" src="">
+        <text>ambassadorial relations</text>
+        <propbank>
+          <rel relloc="1">relations</rel>
+          <arg type="ARG1" start="0" end="0">ambassadorial</arg>
+        </propbank>
+      </example>
+      <example name="related-j: both constituents in arg1" src="BOLT-1">
+        <text>He 's a bit aggressive , raves and rants a lot , and mixes up a lot of different political stances into one bundle when many are in no way related , but beyond that ....</text>
+        <propbank>
+          <rel relloc="30">related</rel>
+          <arg type="ARG1" start="25" end="25">many</arg>
+          <arg type="ARGM-MNR" start="27" end="29">in no way</arg>
+          <arg type="ARGM-TMP" start="24" end="24">when</arg>
+        </propbank>
+      </example>
+      <example name="related-j: args 1, 2" src="BOLT-1">
+        <text>Even if people show up who you agree with on some political issue , ask yourselves if that issue is actually related to what the protest is about .</text>
+        <propbank>
+          <rel relloc="21">related</rel>
+          <arg type="ARG1" start="17" end="18">that issue</arg>
+          <arg type="ARGM-ADV" start="20" end="20">actually</arg>
+          <arg type="ARG2" start="22" end="27">to what the protest is about</arg>
+        </propbank>
+      </example>
       <note>RELATE-V NOTES: I doubt the active will ever appear. (from relate.01-v)</note>
       <note>RELATION-N NOTES: Roleset based on relate.01. No corresponding verbnet class. Framed by Katie (from relation.02-n)</note>
       <note>RELATED-J NOTES: Added by Julia based on BOLT-1, relate-v.01. Corresponds to VNcls involve-107 (from related.01-j)</note>
-      <roles>
-        <role descr="agent, entity drawing comparison" f="pag" n="0"/>
-        <role descr="thing under consideration" f="ppt" n="1"/>
-        <role descr="what it's related to" f="ppt" n="2"/>
-      </roles>
-      <example name="relate-v: past" src="" type="">
-        <text>...a series of initiatives related both to global warming and the plight of the African elephant</text>
-        <arg f="" n="1">a series of initiatives</arg>
-        <rel f="">related</rel>
-        <arg f="dis" n="m">both</arg>
-        <arg f="" n="2">to global warming and the plight of the African elephant</arg>
-      </example>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes nw/wsj/12/wsj_1203" type="">
-        <text>Ms. Raptopoulos noted that relating economic numbers to specific market activity is tricky .</text>
-        <arg f="" n="0">[]</arg>
-        <rel f="">relating</rel>
-        <arg f="" n="1">economic numbers</arg>
-        <arg f="" n="2">to specific market activity</arg>
-      </example>
-
-      <example name="relating-n: progressive" src="" type="">
-        <text>...information relating to fees from clients should be confidential.</text>
-        <arg f="" n="1">information</arg>
-        <rel f="">relating</rel>
-        <arg f="" n="2">to fees from clients</arg>
-      </example>
-      <example name="relation-n: What to do when the things being compared are in the same node" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The relation between physical education and the economy</text>
-        <rel f="">relation</rel>
-        <arg f="" n="1">between physical education and the economy</arg>
-      </example>
-      <example name="relation-n" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>ambassadorial relations</text>
-        <arg f="" n="1">ambassadorial</arg>
-        <rel f="">relations</rel>
-      </example>
-      <example name="related-j: both constituents in arg1" src="BOLT-1" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>He 's a bit aggressive , raves and rants a lot , and mixes up a lot of different political stances into one bundle when-1 many are in no way related [*-1], but beyond that ....</text>
-        <arg f="" n="1">many</arg>
-        <arg f="mnr" n="m">in no way</arg>
-        <rel f="">related</rel>
-        <arg f="tmp" n="m">[*-1]</arg>
-      </example>
-      <example name="related-j: args 1, 2" src="BOLT-1" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Even if people show up who you agree with on some political issue , ask yourselves if that issue is actually related to what the protest is about .</text>
-        <arg f="" n="1">that issue</arg>
-        <arg f="adv" n="m">really</arg>
-        <rel f="">related</rel>
-        <arg f="" n="2">to what the protest is about</arg>
-      </example>
     </roleset>
     <roleset id="relate.02" name="say">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">relate</alias>
-        <alias framenet="" pos="n" verbnet="">relating</alias>
+        <alias pos="v">relate</alias>
+        <alias pos="n">relating</alias>
       </aliases>
-      <note>RELATE-V NOTES: Frames file for 'relate' based on survey of initial sentences of big corpus (from relate.02-v predicate notes)</note>
       <roles>
-        <role descr="Sayer" f="pag" n="0">
-          <vnrole vncls="37.7-1" vntheta="agent"/>
+        <role descr="Sayer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="say-37.7-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Statement" resource="FrameNet" version="1.7">speaker</rolelink>
+          </rolelinks>
         </role>
-        <role descr="Utterance" f="ppt" n="1">
-          <vnrole vncls="37.7-1" vntheta="topic"/>
+        <role descr="Utterance" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="say-37.7-1" resource="VerbNet" version="verbnet3.3">topic</rolelink>
+            <rolelink class="Statement" resource="FrameNet" version="1.7">message</rolelink>
+            <rolelink class="Statement" resource="FrameNet" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
-        <role descr="Hearer" f="gol" n="2">
-          <vnrole vncls="37.7-1" vntheta="recipient"/>
+        <role descr="Hearer" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="say-37.7-1" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+            <rolelink class="Statement" resource="FrameNet" version="1.7">addressee</rolelink>
+          </rolelinks>
         </role>
-        <role descr="Attributive" f="prd" n="3"/>
+        <role descr="Attributive" f="PRD" n="3"/>
       </roles>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1043" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Statement" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="say-37.7-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="relate-v.4" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">17</lexlink>
+      </lexlinks>
+      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1043">
         <text>Allen Tien , the head of Carrefour 's public affairs division in Taiwan , relates that Wal</text>
-        <arg f="" n="0">Allen Tien , the head of Carrefour 's public affairs division in Taiwan ,</arg>
-        <rel f="">relates</rel>
-        <arg f="" n="1">Wal</arg>
+        <propbank>
+          <rel relloc="14">relates</rel>
+          <arg type="ARG0" start="0" end="12">Allen Tien , the head of Carrefour 's public affairs division in Taiwan</arg>
+          <arg type="ARG1" start="16" end="16">Wal</arg>
+        </propbank>
       </example>
-
+      <note>RELATE-V NOTES: Frames file for 'relate' based on survey of initial sentences of big corpus (from relate.02-v predicate notes)</note>
     </roleset>
   </predicate>
   <predicate lemma="relation">
     <roleset id="relation.03" name="to know an entity, know/friendship">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">relation</alias>
-        <alias framenet="" pos="n" verbnet="">relationship</alias>
-        <alias framenet="" pos="l" verbnet="">have_relation</alias>
-        <alias framenet="" pos="l" verbnet="">have_relationship</alias>
+        <alias pos="n">relation</alias>
+        <alias pos="n">relationship</alias>
+        <alias pos="l">have_relation</alias>
+        <alias pos="l">have_relationship</alias>
       </aliases>
+      <roles>
+        <role descr="first party (or all parties, if together)" f="PAG" n="0"/>
+        <role descr="type of relationship/ reason to know" f="PPT" n="1"/>
+        <role descr="second party/ relations with/ beneficiary" f="COM" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="relationship-n.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">102</lexlink>
+        <lexlink class="relation-n.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">243</lexlink>
+        <lexlink class="relationship-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">12</lexlink>
+      </lexlinks>
+      <example name="relation-n: Example with arg 1 and 2" src="">
+        <text>South Korea established diplomatic relations with Hungary in February 1989</text>
+        <propbank>
+          <rel relloc="4">relations</rel>
+          <arg type="ARG1" start="3" end="3">diplomatic</arg>
+          <arg type="ARG2" start="5" end="6">with Hungary</arg>
+        </propbank>
+      </example>
+      <example name="relation-n: Example with arg 0 and 2" src="">
+        <text>our relations with Japan</text>
+        <propbank>
+          <rel relloc="1">relations</rel>
+          <arg type="ARG0" start="0" end="0">our</arg>
+          <arg type="ARG2" start="2" end="3">with Japan</arg>
+        </propbank>
+      </example>
+      <example name="relationship-n: Example with all args" src="">
+        <text>our excellent working relationship with the Drug Enforcement Administration and the Metropolitan Police Department</text>
+        <propbank>
+          <rel relloc="3">relationship</rel>
+          <arg type="ARG0" start="0" end="0">our</arg>
+          <arg type="ARGM-MNR" start="1" end="1">excellent</arg>
+          <arg type="ARG1" start="2" end="2">working</arg>
+          <arg type="ARG2" start="4" end="13">with the Drug Enforcement Administration and the Metropolitan Police Department</arg>
+        </propbank>
+      </example>
+      <example name="relationship-n: Example with args 1 and 2" src="">
+        <text>a military relationship with Moscow</text>
+        <propbank>
+          <rel relloc="2">relationship</rel>
+          <arg type="ARG1" start="1" end="1">military</arg>
+          <arg type="ARG2" start="3" end="4">with Moscow</arg>
+        </propbank>
+      </example>
+      <example name="relationship-n: Example with args 0 and 2" src="">
+        <text>His long and tortured relationship with Deep Throat</text>
+        <propbank>
+          <rel relloc="4">relationship</rel>
+          <arg type="ARG0" start="0" end="0">His</arg>
+          <arg type="ARGM-ADJ" start="1" end="3">long and tortured</arg>
+          <arg type="ARG2" start="5" end="7">with Deep Throat</arg>
+        </propbank>
+      </example>
+      <example name="relationship-n: All args" src="">
+        <text>It jeopardized her professional relationship with her boss</text>
+        <propbank>
+          <rel relloc="4">relationship</rel>
+          <arg type="ARG0" start="2" end="2">her</arg>
+          <arg type="ARG1" start="3" end="3">professional</arg>
+          <arg type="ARG2" start="5" end="7">with her boss</arg>
+        </propbank>
+      </example>
       <note>RELATION-N NOTES: No corresponding verbnet class. Framed by Katie. (from relation.01-n)</note>
       <note>RELATIONSHIP-N NOTES: No corresponding verbnet class. Framed by Katie (from relationship.01-n)</note>
-      <roles>
-        <role descr="first party (or all parties, if together)" f="pag" n="0"/>
-        <role descr="type of relationship/ reason to know" f="ppt" n="1"/>
-        <role descr="second party/ relations with/ beneficiary" f="com" n="2"/>
-      </roles>
-      <example name="relation-n: Example with arg 1 and 2" src="" type="">
-        <text>South Korea established diplomatic relations with Hungary in February 1989</text>
-        <arg f="" n="1">diplomatic</arg>
-        <rel f="">relations</rel>
-        <arg f="" n="2">with Hungary</arg>
-      </example>
-      <example name="relation-n: Example with arg 0 and 2" src="" type="">
-        <text>our relations with Japan</text>
-        <arg f="" n="0">our</arg>
-        <rel f="">relations</rel>
-        <arg f="" n="2">with Japan</arg>
-      </example>
-      <example name="relationship-n: Example with all args" src="" type="">
-        <text>our excellent working relationship with the Drug Enforcement Administration and the Metropolitan Police Department</text>
-        <arg f="" n="0">our</arg>
-        <arg f="mnr" n="m">excellent</arg>
-        <arg f="" n="1">working</arg>
-        <rel f="">relationship</rel>
-        <arg f="" n="2">with the Drug Enforcement Administration and the Metropolitan Police Department</arg>
-      </example>
-      <example name="relationship-n: Example with args 1 and 2" src="" type="">
-        <text>a military relationship with Moscow</text>
-        <arg f="" n="1">military</arg>
-        <rel f="">relationship</rel>
-        <arg f="" n="2">with Moscow</arg>
-      </example>
-      <example name="relationship-n: Example with args 0 and 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>His long and tortured relationship with Deep Throat</text>
-        <arg f="" n="0">His</arg>
-        <arg f="adj" n="m">long and tortured</arg>
-        <rel f="">relationship</rel>
-        <arg f="" n="2">with Deep Throat</arg>
-      </example>
-      <example name="relationship-n: All args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>It jeopardized her professional relationship with her boss</text>
-        <arg f="" n="0">Her</arg>
-        <arg f="" n="1">professional</arg>
-        <rel f="">relationship</rel>
-        <arg f="" n="2">with her boss</arg>
-      </example>
     </roleset>
     <roleset id="relation.04" name="having a familial relation">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">relation</alias>
-        <alias framenet="" pos="j" verbnet="">related</alias>
+        <alias pos="n">relation</alias>
+        <alias pos="j">related</alias>
       </aliases>
-      <note>RELATED-J NOTES: Added by Julia based on WordNet. (from related.02-j)</note>
       <roles>
-        <role descr="first (or all) kin" f="pag" n="1"/>
-        <role descr="second kin" f="ppt" n="2"/>
+        <role descr="first (or all) kin" f="PAG" n="1"/>
+        <role descr="second kin" f="PPT" n="2"/>
       </roles>
-      <example name="relation-n: Family relation" src="" type="">
-        <text>Ed Turner, no relation to Ted Turner -RRB-</text>
-        <arg f="" n="1">Ed Turner,</arg>
-        <arg f="neg" n="m">no</arg>
-        <rel f="">relation</rel>
-        <arg f="" n="2">to Ted Turner</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="relation-n: Family relation" src="">
+        <text>Ed Turner , no relation to Ted Turner -RRB-</text>
+        <propbank>
+          <rel relloc="4">relation</rel>
+          <arg type="ARG1" start="0" end="1">Ed Turner</arg>
+          <arg type="ARGM-NEG" start="3" end="3">no</arg>
+          <arg type="ARG2" start="5" end="7">to Ted Turner</arg>
+        </propbank>
       </example>
-      <example name="related-j: both args, MNR" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="related-j: both args, MNR" src="internet">
         <text>It turned out that she was related to him by marriage</text>
-        <arg f="" n="1">she</arg>
-        <rel f="">related</rel>
-        <arg f="" n="2">to him</arg>
-        <arg f="mnr" n="m">by marriage</arg>
+        <propbank>
+          <rel relloc="6">related</rel>
+          <arg type="ARG1" start="4" end="4">she</arg>
+          <arg type="ARG2" start="7" end="8">to him</arg>
+          <arg type="ARGM-MNR" start="9" end="10">by marriage</arg>
+        </propbank>
       </example>
+      <note>RELATED-J NOTES: Added by Julia based on WordNet. (from related.02-j)</note>
     </roleset>
   </predicate>
   <predicate lemma="relative">
     <roleset id="relative.05" name="in comparison to">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">relative</alias>
-        <alias framenet="" pos="x" verbnet="">in_relation</alias>
+        <alias pos="j">relative</alias>
+        <alias pos="x">in_relation</alias>
       </aliases>
-      <note>RELATIVE-J NOTES: (from relative.01-j)</note>
       <roles>
         <role descr="entity being compared" f="PPT" n="1"/>
         <role descr="quality" f="EXT" n="2"/>
         <role descr="point of comparison, relative to what/whom?" f="VSP" n="3"/>
       </roles>
-      <example name="relative-j: all three arguments" src="" type="">
-        <text>He is fast relative to his peers.</text>
-        <rel f="">relative</rel>
-        <arg f="" n="1">He</arg>
-        <arg f="" n="2">fast</arg>
-        <arg f="" n="3">to his peers</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="relative-j: all three arguments" src="">
+        <text>He is fast relative to his peers .</text>
+        <propbank>
+          <rel relloc="3">relative</rel>
+          <arg type="ARG1" start="0" end="0">He</arg>
+          <arg type="ARG2" start="2" end="2">fast</arg>
+          <arg type="ARG3" start="4" end="6">to his peers</arg>
+        </propbank>
       </example>
-      <example name="in_relation-x: Very common 'in relation to'" src="" type="">
+      <example name="in_relation-x: Very common 'in relation to'" src="">
         <text>low prices in relation to the company 's earnings per share</text>
-        <arg f="" n="1">low prices</arg>
-        <rel f="">[in][relation]</rel>
-        <arg f="" n="2">to the company 's earnings per share</arg>
+        <propbank>
+          <rel relloc="2 3">in relation</rel>
+          <arg type="ARG1" start="0" end="1">low prices</arg>
+          <arg type="ARG2" start="4" end="10">to the company 's earnings per share</arg>
+        </propbank>
       </example>
+      <note>RELATIVE-J NOTES: (from relative.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

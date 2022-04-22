@@ -1,42 +1,57 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="reconnect">
     <roleset id="reconnect.01" name="connect again">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">reconnect</alias>
-        <alias framenet="" pos="n" verbnet="">reconnection</alias>
+        <alias pos="v">reconnect</alias>
+        <alias pos="n">reconnection</alias>
       </aliases>
+      <roles>
+        <role descr="agent, connector" f="PAG" n="0"/>
+        <role descr="first thing being connected, focused argument" f="PPT" n="1"/>
+        <role descr="second thing arg1 is connected to" f="PPT" n="2"/>
+        <role descr="instrument, string" f="MNR" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+      </usagenotes>
+      <example name="reconnect-v: Args 0 &amp; 1 only" src="wsj-nw">
+        <text>Pacific Gas &amp; Electric can not reconnect electricity until it is certain there are no gas leaks .</text>
+        <propbank>
+          <rel relloc="6">reconnect</rel>
+          <arg type="ARG0" start="0" end="3">Pacific Gas &amp; Electric</arg>
+          <arg type="ARGM-MOD" start="4" end="4">can</arg>
+          <arg type="ARGM-NEG" start="5" end="5">not</arg>
+          <arg type="ARG1" start="7" end="7">electricity</arg>
+          <arg type="ARGM-TMP" start="8" end="16">until it is certain there are no gas leaks</arg>
+        </propbank>
+      </example>
+      <example name="reconnect-v: Connected things in separate constituents" src="web">
+        <text>He reconnected the boiler to the gas supply .</text>
+        <propbank>
+          <rel relloc="1">reconnected</rel>
+          <arg type="ARG0" start="0" end="0">He</arg>
+          <arg type="ARG1" start="2" end="3">the boiler</arg>
+          <arg type="ARG2" start="4" end="7">to the gas supply</arg>
+        </propbank>
+      </example>
+      <example name="reconnection-n" src="cleareath-biotexts">
+        <text>SPR -LRB- subtree pruning and regrafting -RRB- , TBR -LRB- tree bisection and reconnection -RRB- , Swofford and Olsen</text>
+        <propbank>
+          <rel relloc="13">reconnection</rel>
+          <arg type="ARG1" start="10" end="10">tree</arg>
+        </propbank>
+      </example>
       <note>RECONNECT-V NOTES: Roleset based on instances in wsj-nw. Framed by Claire; comparison to connect.01. (from reconnect.01-v)</note>
       <note>RECONNECTION-N NOTES: Added by Julia for clearearth-biotexts.</note>
-      <roles>
-        <role descr="agent, connector" f="pag" n="0"/>
-        <role descr="first thing being connected, focused argument" f="ppt" n="1"/>
-        <role descr="second thing arg1 is connected to" f="ppt" n="2"/>
-        <role descr="instrument, string" f="mnr" n="3"/>
-      </roles>
-      <example name="reconnect-v: Args 0 &amp; 1 only" src="wsj-nw" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Pacific Gas&amp; Electric cannot reconnect electricity until it is certain there are no gas leaks.</text>
-        <arg f="" n="0">Pacific Gas&amp; Electric</arg>
-        <arg f="mod" n="m">can</arg>
-        <arg f="neg" n="m">not</arg>
-        <rel f="">reconnect</rel>
-        <arg f="" n="1">electricity</arg>
-        <arg f="tmp" n="m">until it is certain there are no gas leaks.</arg>
-      </example>
-      <example name="reconnect-v: Connected things in separate constituents" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>He reconnected the boiler to the gas supply.</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">reconnected</rel>
-        <arg f="" n="1">the boiler</arg>
-        <arg f="" n="2">to the gas supply.</arg>
-      </example>
-      <example name="reconnection-n" src="cleareath-biotexts" type="">
-        <text>* SPR -LRB- subtree pruning and regrafting -RRB- , TBR -LRB- tree bisection and reconnection -RRB- , Swofford and Olsen </text>
-        <arg f="" n="1">tree</arg>
-        <rel f="">reconnection</rel>
-      </example>
     </roleset>
   </predicate>
 </frameset>

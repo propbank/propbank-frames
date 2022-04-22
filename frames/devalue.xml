@@ -1,51 +1,81 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="devalue">
     <roleset id="devalue.01" name="to lessen the value of">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">devalue</alias>
-        <alias framenet="" pos="n" verbnet="">devaluation</alias>
+        <alias pos="v">devalue</alias>
+        <alias pos="n">devaluation</alias>
       </aliases>
-      <note>DEVALUE-V NOTES: Frames file for 'devalue' based on survey of sentences in the WSJ corpus. (from devalue.01-v predicate notes)</note>
-      <note>DEVALUATION-N NOTES: Based on nouns-00080, relation to verb-evaluate.01. See VN class other_cos-45.4. Updated by Julia. (from devaluation.01-n)</note>
       <roles>
         <role descr="causer of lower value, agent" f="PAG" n="0">
-          <vnrole vncls="45.4" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing with lower value" f="PPT" n="1">
-          <vnrole vncls="45.4" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="original state" f="dir" n="2"/>
+        <role descr="original state" f="DIR" n="2">
+          <rolelinks/>
+        </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>China might stave off a crisis if it acts as forcefully as it did [*-1] to arrest the 1985 decline , when Beijing slammed the brakes on foreign-exchange spending and devalued the currency [*T*-2].</text>
-        <arg f="" n="0">Beijing</arg>
-        <rel f="">devalued</rel>
-        <arg f="" n="1">the currency</arg>
-        <arg f="TMP" n="M">[*T*-2]</arg>
-        <arg f="RCL" n="M">when -&gt; the 1985 decline</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="other_cos-45.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="devalue-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+        <lexlink class="other_cos-45.4" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="transitive" src="">
+        <text>China might stave off a crisis if it acts as forcefully as it did to arrest the 1985 decline , when Beijing slammed the brakes on foreign - exchange spending and devalued the currency .</text>
+        <propbank>
+          <rel relloc="31">devalued</rel>
+          <arg type="ARG0" start="21" end="21">Beijing</arg>
+          <arg type="ARG1" start="32" end="33">the currency</arg>
+          <arg type="ARGM-TMP" start="16" end="18">the 1985 decline</arg>
+          <arg type="R-ARGM-TMP" start="20" end="20">when</arg>
+        </propbank>
       </example>
-      <example name="both args" src="" type="">
-        <text>a Marxist devaluation of environmental resources, which are not produced by labor</text>
-        <arg f="" n="0">Marxist</arg>
-        <rel f="">devaluation</rel>
-        <arg f="" n="1">of environmental resources, which are not produced by labor</arg>
+      <example name="both args" src="">
+        <text>a Marxist devaluation of environmental resources , which are not produced by labor</text>
+        <propbank>
+          <rel relloc="2">devaluation</rel>
+          <arg type="ARG0" start="1" end="1">Marxist</arg>
+          <arg type="ARG1" start="3" end="12">of environmental resources , which are not produced by labor</arg>
+        </propbank>
       </example>
-      <example name="arg 2 only" src="" type="">
+      <example name="arg 2 only" src="">
         <text>a devaluation from the norm of public life today</text>
-        <rel f="">devaluation</rel>
-        <arg f="" n="2">from the norm of public life today</arg>
+        <propbank>
+          <rel relloc="1">devaluation</rel>
+          <arg type="ARG2" start="2" end="8">from the norm of public life today</arg>
+        </propbank>
       </example>
-      <example name="with arg ms" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>a 90% devaluation of the ruble against the dollar for private transactions.</text>
-        <arg f="ext" n="m">90%</arg>
-        <rel f="">devaluation</rel>
-        <arg f="" n="1">of the ruble</arg>
-        <arg f="adj" n="m">against the dollar</arg>
-        <arg f="gol" n="m">for private transactions.</arg>
+      <example name="with arg ms" src="">
+        <text>a 90 % devaluation of the ruble against the dollar for private transactions .</text>
+        <propbank>
+          <rel relloc="3">devaluation</rel>
+          <arg type="ARGM-EXT" start="1" end="2">90 %</arg>
+          <arg type="ARG1" start="4" end="6">of the ruble</arg>
+          <arg type="ARGM-ADJ" start="7" end="9">against the dollar</arg>
+          <arg type="ARGM-GOL" start="10" end="12">for private transactions</arg>
+        </propbank>
       </example>
+      <note>DEVALUE-V NOTES: Frames file for 'devalue' based on survey of sentences in the WSJ corpus. (from devalue.01-v predicate notes)</note>
+      <note>DEVALUATION-N NOTES: Based on nouns-00080, relation to verb-evaluate.01. See VN class other_cos-45.4. Updated by Julia. (from devaluation.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,90 +1,137 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="promise">
     <roleset id="promise.01" name="promise">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">promising</alias>
-        <alias framenet="" pos="n" verbnet="">promise</alias>
-        <alias framenet="" pos="l" verbnet="">make_promise</alias>
-        <alias framenet="Omen Commitment" pos="v" verbnet="">promise</alias>
+        <alias pos="j">promising</alias>
+        <alias pos="n">promise</alias>
+        <alias pos="l">make_promise</alias>
+        <alias pos="v">promise</alias>
       </aliases>
+      <roles>
+        <role descr="promiser" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Commitment" resource="FrameNet" version="1.7">speaker</rolelink>
+            <rolelink class="promise-37.13" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="person promised to" f="GOL" n="1">
+          <rolelinks>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.3">goal</rolelink>
+            <rolelink class="Commitment" resource="FrameNet" version="1.7">addressee</rolelink>
+            <rolelink class="promise-37.13" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="promised action" f="PPT" n="2">
+          <rolelinks>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Commitment" resource="FrameNet" version="1.7">topic</rolelink>
+            <rolelink class="promise-37.13" resource="VerbNet" version="verbnet3.4">topic</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Omen" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Commitment" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="future_having-13.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Contact.CommitmentPromiseExpressIntent.Broadcast" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Contact.CommitmentPromiseExpressIntent.Correspondence" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Contact.CommitmentPromiseExpressIntent.Meet" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Broadcast" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="promise-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">85</lexlink>
+        <lexlink class="promise-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">42</lexlink>
+        <lexlink class="promise-n.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+        <lexlink class="promise-37.13" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="one arg, subject control" src="">
+        <text>The revised LIN - BellSouth agreement boosts the dollar amount of the special dividend LIN promises to pay shareholders .</text>
+        <propbank>
+          <rel relloc="15">promises</rel>
+          <arg type="ARG0" start="14" end="14">LIN</arg>
+          <arg type="ARG2" start="16" end="18">to pay shareholders</arg>
+        </propbank>
+      </example>
+      <example name="one arg, full S" src="">
+        <text>The company has expressed a preference for GM over Ford because GM has promised it would keep Jaguar independent .</text>
+        <propbank>
+          <rel relloc="13">promised</rel>
+          <arg type="ARG0" start="11" end="11">GM</arg>
+          <arg type="ARG2" start="14" end="18">it would keep Jaguar independent</arg>
+        </propbank>
+      </example>
+      <example name="one arg, NP" src="">
+        <text>`` They 've been promising 13 % to 15 % growth based on the strategic moves they 've made , '' he said .</text>
+        <propbank>
+          <rel relloc="4">promising</rel>
+          <arg type="ARG0" start="1" end="1">They</arg>
+          <arg type="ARG2" start="5" end="18">13 % to 15 % growth based on the strategic moves they 've made</arg>
+        </propbank>
+      </example>
+      <example name="double NP construction" src="">
+        <text>Mr. Jones has been taking prospective suite owners onto the field during practice to let them rub elbows with players , and promises those who actually buy one of the rooms an insider 's look at the team 's strategy before game time .</text>
+        <propbank>
+          <rel relloc="22">promises</rel>
+          <arg type="ARG0" start="0" end="1">Mr. Jones</arg>
+          <arg type="ARG1" start="23" end="30">those who actually buy one of the rooms</arg>
+          <arg type="ARG2" start="31" end="42">an insider 's look at the team 's strategy before game time</arg>
+        </propbank>
+      </example>
+      <example name="ARG2 and ARG0 and ARG1" src="ontonotes pt/nt/62/nt_6202">
+        <text>And this is what the Son promised us -- eternal life .</text>
+        <propbank>
+          <rel relloc="6">promised</rel>
+          <arg type="ARG2" start="3" end="3">what</arg>
+          <arg type="ARG0" start="4" end="5">the Son</arg>
+          <arg type="ARG1" start="7" end="7">us</arg>
+        </propbank>
+      </example>
+      <example name="Adjectival rel: promising" src="BOLT-4,5">
+        <text>ECWMF has stuck to its guns for three runs on the trot now which is promising in that heights raise massively over the pole and a trough drops down east of the UK -LRB- similar to the second half of December 2010 -RRB- .</text>
+        <propbank>
+          <rel relloc="15">promising</rel>
+          <arg type="ARG0" start="13" end="13">which</arg>
+          <arg type="ARGM-MNR" start="16" end="42">in that heights raise massively over the pole and a trough drops down east of the UK -LRB- similar to the second half of December 2010 -RRB-</arg>
+        </propbank>
+      </example>
+      <example name="Example with arg 0 and 2" src="">
+        <text>Instead , the banks secured a promise from state - owned Bank of Communications that it would lend Asia Development the entire $ 55 million at maturity to finance repayment of the original borrowing .</text>
+        <propbank>
+          <rel relloc="6">promise</rel>
+          <arg type="ARG0" start="7" end="13">from state - owned Bank of Communications</arg>
+          <arg type="ARG2" start="14" end="33">that it would lend Asia Development the entire $ 55 million at maturity to finance repayment of the original borrowing</arg>
+        </propbank>
+      </example>
+      <example name="Another arg 0 and 2 example" src="">
+        <text>promises by Peugeot to open negotiations in Paris at the sametime the last man left the premises</text>
+        <propbank>
+          <rel relloc="0">promises</rel>
+          <arg type="ARG0" start="1" end="2">by Peugeot</arg>
+          <arg type="ARG2" start="3" end="16">to open negotiations in Paris at the sametime the last man left the premises</arg>
+        </propbank>
+      </example>
+      <example name="Example with arg 0 and 1" src="">
+        <text>Their promises to their sources</text>
+        <propbank>
+          <rel relloc="1">promises</rel>
+          <arg type="ARG0" start="0" end="0">Their</arg>
+          <arg type="ARG1" start="2" end="4">to their sources</arg>
+        </propbank>
+      </example>
       <note>PROMISE-V NOTES: Frames file for 'promise' based on financial subcorpus; adjectival 'promising' based on BOLT-4,5. Member of VNcls future_having-13.3, promise-37.13. (from promise.01-v)</note>
       <note>PROMISE-N NOTES: Roleset based on promise.01. Verbnet class future_having-13.3. Framed by Katie. (from promise.01-n)</note>
       <note>PROMISING-J NOTES: Automatically created by Julia as an alias file for unification. (from promising.01-j)</note>
-      <roles>
-        <role descr="promiser" f="pag" n="0">
-          <vnrole vncls="13.3" vntheta="agent"/>
-        </role>
-        <role descr="person promised to" f="gol" n="1">
-          <vnrole vncls="13.3" vntheta="goal"/>
-        </role>
-        <role descr="promised action" f="ppt" n="2">
-          <vnrole vncls="13.3" vntheta="theme"/>
-        </role>
-      </roles>
-      <example name="one arg, subject control" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>The revised LIN-BellSouth agreement boosts the dollar amount of the special dividend LIN promises to pay shareholders.</text>
-        <arg f="" n="0">LIN</arg>
-        <rel f="">promises</rel>
-        <arg f="" n="2">to pay shareholders</arg>
-      </example>
-      <example name="one arg, full S" src="" type="">
-        <inflection aspect="perfect" form="participle" person="third" tense="present" voice="active"/>
-        <text>The company has expressed a preference for GM over Ford because GM has promised it would keep Jaguar independent.</text>
-        <arg f="" n="0">GM</arg>
-        <rel f="">promised</rel>
-        <arg f="" n="2">it would keep Jaguar independent</arg>
-      </example>
-      <example name="one arg, NP" src="" type="">
-        <inflection aspect="both" form="participle" person="ns" tense="present" voice="active"/>
-        <text>``They've been promising 13% to 15% growth based on the strategic moves they've made,'' he said.</text>
-        <arg f="" n="0">They</arg>
-        <rel f="">promising</rel>
-        <arg f="" n="2">13% to 15% growth based on the strategic moves they've made</arg>
-      </example>
-      <example name="double NP construction" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>Mr. Jones has been taking prospective suite owners onto the field during practice to let them rub elbows with players, and promises those who actually buy one of the rooms an insider's look at the team's strategy before game time.</text>
-        <arg f="" n="0">Mr. Jones</arg>
-        <rel f="">promises</rel>
-        <arg f="" n="1">those who actually buy one of the rooms</arg>
-        <arg f="" n="2">an insider's look at the team's strategy before game time</arg>
-      </example>
-      <example name="ARG2 and ARG0 and ARG1" src="ontonotes pt/nt/62/nt_6202" type="">
-        <text>And this is what the Son promised us -- eternal life .</text>
-        <arg f="" n="2">what</arg>
-        <arg f="" n="0">the Son</arg>
-        <rel f="">promised</rel>
-        <arg f="" n="1">us</arg>
-      </example>
-
-      <example name="Adjectival rel: promising" src="BOLT-4,5" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>ECWMF has stuck to its guns for three runs on the trot now which-1 [*-1] is promising in that heights raise massively over the pole and a trough drops down east of the UK -LRB- similar to the second half of December 2010 -RRB- .</text>
-        <arg f="" n="0">[*-1]</arg>
-        <rel f="">promising</rel>
-        <arg f="mnr" n="m">in that heights raise massively over the pole and a trough drops down east of the UK -LRB- similar to the second half of December 2010 -RRB-</arg>
-      </example>
-      <example name="Example with arg 0 and 2" src="" type="">
-        <text>Instead , the banks secured a promise from state-owned Bank ofCommunications that it would lend Asia Development the entire $55 million at maturity to finance repayment of the originalborrowing .</text>
-        <rel f="">promise</rel>
-        <arg f="" n="0">from state-owned Bank of Communications</arg>
-        <arg f="" n="2">that it would lend Asia Development the entire $ 55 million at maturity to finance repayment of the original borrowing</arg>
-      </example>
-      <example name="Another arg 0 and 2 example" src="" type="">
-        <text>promises by Peugeot to open negotiations in Paris at the sametime the last man left the premises</text>
-        <rel f="">promises</rel>
-        <arg f="" n="0">by Peugeot</arg>
-        <arg f="" n="2">to open negotiations in Paris at the same time the last man left the premises</arg>
-      </example>
-      <example name="Example with arg 0 and 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Their promises to their sources</text>
-        <arg f="" n="0">Their</arg>
-        <rel f="">promises</rel>
-        <arg f="" n="1">to their sources</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

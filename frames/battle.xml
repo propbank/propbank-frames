@@ -1,81 +1,128 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="battle">
     <roleset id="battle.01" name="fight (with)">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">battle</alias>
-        <alias framenet="" pos="v" verbnet="">battle</alias>
+        <alias pos="n">battle</alias>
+        <alias pos="v">battle</alias>
       </aliases>
-      <note>BATTLE-V NOTES: Frames file for 'battle' based on survey of sentences in financial subcorpus. Verbnet entries battle-36.4-1, meet-36.3-2. (from battle.01-v)</note>
-      <note>BATTLE-N NOTES: Roleset based on verb entry battle.01, OntoNotes grouping battle-n senses 1, 2, 3; Maps to VN classes battle-36.4-1 and meet-36.3-2. Framed by Claire. (from battle.01-n)</note>
       <roles>
-        <role descr="combatant" f="pag" n="0">
-          <vnrole vncls="36.3-2" vntheta="agent"/>
-          <vnrole vncls="36.4-1" vntheta="agent"/>
+        <role descr="combatant" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="meet-36.3-2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="battle-36.4-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="meet-36.3-2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="battle-36.4-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="fight or other combatant, if separate" f="com" n="1">
-          <vnrole vncls="36.3-2" vntheta="co-agent"/>
-          <vnrole vncls="36.4-1" vntheta="co-agent"/>
+        <role descr="fight or other combatant, if separate" f="COM" n="1">
+          <rolelinks>
+            <rolelink class="meet-36.3-2" resource="VerbNet" version="verbnet3.3">co-agent</rolelink>
+            <rolelink class="battle-36.4-1" resource="VerbNet" version="verbnet3.3">co-agent</rolelink>
+            <rolelink class="meet-36.3-2" resource="VerbNet" version="verbnet3.4">co_agent</rolelink>
+            <rolelink class="battle-36.4-1" resource="VerbNet" version="verbnet3.4">co_agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="spoils" f="ppt" n="2">
-          <vnrole vncls="36.4-1" vntheta="topic"/>
+        <role descr="spoils" f="PPT" n="2">
+          <rolelinks>
+            <rolelink class="battle-36.4-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="battle-36.4-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="basic transitive" src="" type="">
-        <text>At Kidder, a unit of General Electric Co., and other big brokerage firms, stockbrokers battle their own firm's program traders a few floors away.</text>
-        <arg f="loc" n="m">At Kidder, a unit of General Electric Co., and other big brokerage firms</arg>
-        <arg f="" n="0">stockbrokers</arg>
-        <rel f="">battle</rel>
-        <arg f="" n="1">their own firm 's program traders a few floors away</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Hostile_encounter" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="meet-36.3-2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="battle-36.4-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Attack" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="battle-n.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">9</lexlink>
+        <lexlink class="battle-n.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">60</lexlink>
+        <lexlink class="battle-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">16</lexlink>
+        <lexlink class="battle-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">20</lexlink>
+        <lexlink class="meet-36.3-2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="battle-36.4-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="basic transitive" src="">
+        <text>At Kidder , a unit of General Electric Co. , and other big brokerage firms , stockbrokers battle their own firm 's program traders a few floors away .</text>
+        <propbank>
+          <rel relloc="17">battle</rel>
+          <arg type="ARGM-LOC" start="0" end="14">At Kidder , a unit of General Electric Co. , and other big brokerage firms</arg>
+          <arg type="ARG0" start="16" end="16">stockbrokers</arg>
+          <arg type="ARG1" start="18" end="27">their own firm 's program traders a few floors away</arg>
+        </propbank>
       </example>
-      <example name="all args" src="" type="">
-        <text>Its 6,500 workers, who [*T*] had battled Tiger's management for years over givebacks, were union members until the day of the merger, when most of their unions were automatically decertified.</text>
-        <arg f="rcl" n="m">who -&gt; Its 6,500 workers</arg>
-        <arg f="" n="0">[*T*]</arg>
-        <rel f="">battled</rel>
-        <arg f="" n="1">Tiger 's management</arg>
-        <arg f="tmp" n="m">for years</arg>
-        <arg f="" n="2">over givebacks</arg>
+      <example name="all args" src="">
+        <text>Its 6,500 workers , who had battled Tiger 's management for years over givebacks , were union members until the day of the merger , when most of their unions were automatically decertified .</text>
+        <propbank>
+          <rel relloc="6">battled</rel>
+          <arg type="R-ARG0" start="4" end="4">who</arg>
+          <arg type="ARG0" start="0" end="2">Its 6,500 workers</arg>
+          <arg type="ARG1" start="7" end="9">Tiger 's management</arg>
+          <arg type="ARGM-TMP" start="10" end="11">for years</arg>
+          <arg type="ARG2" start="12" end="13">over givebacks</arg>
+        </propbank>
       </example>
-      <example name="merged combatants" src="" type="">
-        <text>That's the view of some analysts here who argue that Britain's leading maker of luxury cars still may have two U.S. auto giants battling for it.</text>
-        <arg f="" n="0">two U.S. auto giants</arg>
-        <rel f="">battling</rel>
-        <arg f="" n="2">for it</arg>
+      <example name="merged combatants" src="">
+        <text>That 's the view of some analysts here who argue that Britain 's leading maker of luxury cars still may have two U.S. auto giants battling for it .</text>
+        <propbank>
+          <rel relloc="25">battling</rel>
+          <arg type="ARG0" start="21" end="24">two U.S. auto giants</arg>
+          <arg type="ARG2" start="26" end="27">for it</arg>
+        </propbank>
       </example>
-      <example name="NP only, all arguments" src="NomBank Frames" type="">
+      <example name="NP only, all arguments" src="NomBank Frames">
         <text>its battle with General Motors Corp. over Jaguar PLC</text>
-        <arg f="" n="0">its</arg>
-        <rel f="">battle</rel>
-        <arg f="" n="1">with General Motors Corp.</arg>
-        <arg f="" n="2">over Jaguar PLC</arg>
+        <propbank>
+          <rel relloc="1">battle</rel>
+          <arg type="ARG0" start="0" end="0">its</arg>
+          <arg type="ARG1" start="2" end="5">with General Motors Corp.</arg>
+          <arg type="ARG2" start="6" end="8">over Jaguar PLC</arg>
+        </propbank>
       </example>
-      <example name="NP only, arg2" src="NomBank Frames" type="">
+      <example name="NP only, arg2" src="NomBank Frames">
         <text>another takeover battle</text>
-        <arg f="" n="2">takeover</arg>
-        <rel f="">battle</rel>
+        <propbank>
+          <rel relloc="2">battle</rel>
+          <arg type="ARG2" start="1" end="1">takeover</arg>
+        </propbank>
       </example>
-      <example name="Args 0 &amp; 1" src="ON sense 2" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>She finally lost her battle against breast cancer.</text>
-        <arg f="" n="0">her</arg>
-        <rel f="">battle</rel>
-        <arg f="" n="1">against breast cancer</arg>
+      <example name="Args 0 &amp; 1" src="ON sense 2">
+        <text>She finally lost her battle against breast cancer .</text>
+        <propbank>
+          <rel relloc="4">battle</rel>
+          <arg type="ARG0" start="3" end="3">her</arg>
+          <arg type="ARG1" start="5" end="7">against breast cancer</arg>
+        </propbank>
       </example>
-      <example name="Arg 0, battlers in one mention" src="ON sense 3" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>That game show is a battle of wits.</text>
-        <rel f="">battle</rel>
-        <arg f="" n="0">of wits</arg>
+      <example name="Arg 0, battlers in one mention" src="ON sense 3">
+        <text>That game show is a battle of wits .</text>
+        <propbank>
+          <rel relloc="5">battle</rel>
+          <arg type="ARG0" start="6" end="7">of wits</arg>
+        </propbank>
       </example>
-      <example name="All arguments" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Mueller believes Richards edited a version of her e-mails to bolster her custody battle with Sheen.</text>
-        <arg f="" n="0">her</arg>
-        <arg f="" n="2">custody</arg>
-        <rel f="">battle</rel>
-        <arg f="" n="1">with Sheen.</arg>
+      <example name="All arguments" src="web">
+        <text>Mueller believes Richards edited a version of her e - mails to bolster her custody battle with Sheen .</text>
+        <propbank>
+          <rel relloc="15">battle</rel>
+          <arg type="ARG0" start="13" end="13">her</arg>
+          <arg type="ARG2" start="14" end="14">custody</arg>
+          <arg type="ARG1" start="16" end="17">with Sheen</arg>
+        </propbank>
       </example>
+      <note>BATTLE-V NOTES: Frames file for 'battle' based on survey of sentences in financial subcorpus. Verbnet entries battle-36.4-1, meet-36.3-2. (from battle.01-v)</note>
+      <note>BATTLE-N NOTES: Roleset based on verb entry battle.01, OntoNotes grouping battle-n senses 1, 2, 3; Maps to VN classes battle-36.4-1 and meet-36.3-2. Framed by Claire. (from battle.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

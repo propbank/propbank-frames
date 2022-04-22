@@ -1,31 +1,58 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="charter">
     <roleset id="charter.01" name="to hire or lease by charter">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">charter</alias>
+        <alias pos="v">charter</alias>
       </aliases>
-      <note>CHARTER-V NOTES: Frames file for 'charter' based on survey of sentences in the WSJ corpus. (from charter.01-v predicate notes)</note>
       <roles>
         <role descr="hirer, leaser, agent" f="PAG" n="0">
-          <vnrole vncls="13.5.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="get-13.5.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Renting" resource="FrameNet" version="1.7">recipient</rolelink>
+            <rolelink class="get-13.5.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity chartered" f="PPT" n="1">
-          <vnrole vncls="13.5.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="get-13.5.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Renting" resource="FrameNet" version="1.7">goods</rolelink>
+            <rolelink class="get-13.5.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="task" f="GOL" n="2">
-          <vnrole vncls="13.5.1" vntheta="Beneficiary"/>
+          <rolelinks>
+            <rolelink class="get-13.5.1" resource="VerbNet" version="verbnet3.3">beneficiary</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all arguments" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Since commercial airline flights were disrupted [*-1] , the company chartered three planes [*-3]to fly these executives back to the West Coast and bring along portable computers , cellular phones and some claims adjusters .</text>
-        <arg f="CAU" n="M">Since commercial airline flights were disrupted [*-1]</arg>
-        <arg f="" n="0">the company</arg>
-        <rel f="">chartered</rel>
-        <arg f="" n="1">three planes</arg>
-        <arg f="" n="2">[*-3] to fly these executives back to the West Coast and bring along portable computers , cellular phones and some claims adjusters</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Renting" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="get-13.5.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="get-13.5.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="all arguments" src="">
+        <text>Since commercial airline flights were disrupted , the company chartered three planes to fly these executives back to the West Coast and bring along portable computers , cellular phones and some claims adjusters .</text>
+        <propbank>
+          <rel relloc="9">chartered</rel>
+          <arg type="ARGM-CAU" start="0" end="5">Since commercial airline flights were disrupted</arg>
+          <arg type="ARG0" start="7" end="8">the company</arg>
+          <arg type="ARG1" start="10" end="11">three planes</arg>
+          <arg type="ARG2" start="12" end="32">to fly these executives back to the West Coast and bring along portable computers , cellular phones and some claims adjusters</arg>
+        </propbank>
       </example>
+      <note>CHARTER-V NOTES: Frames file for 'charter' based on survey of sentences in the WSJ corpus. (from charter.01-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

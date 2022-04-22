@@ -1,61 +1,103 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="request">
     <roleset id="request.01" name="ask a favor, ask a request">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">request</alias>
-        <alias framenet="Request" pos="v" verbnet="">request</alias>
-        <alias framenet="" pos="l" verbnet="">make_request</alias>
+        <alias pos="n">request</alias>
+        <alias pos="v">request</alias>
+        <alias pos="l">make_request</alias>
       </aliases>
-      <note>REQUEST-V NOTES: Comparison with 'ask'. Member of Vncls beg-58.2. Updated by Julia, 10/2010. (from request.01-v)</note>
-      <note>REQUEST-N NOTES: Roleset based on request.01. No corresponding verbnet class. Framed by Katie. (from request.01-n)</note>
       <roles>
-        <note>Actually two slightly different senses of 'request', but taking thesame PAS. (from request.01-v)</note>
         <role descr="asker" f="PAG" n="0">
-          <vnrole vncls="58.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="beg-58.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="beg-58.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="favor" f="PPT" n="1">
-          <vnrole vncls="58.2" vntheta="Topic"/>
+          <rolelinks>
+            <rolelink class="beg-58.2" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="beg-58.2" resource="VerbNet" version="verbnet3.4">result</rolelink>
+          </rolelinks>
         </role>
         <role descr="hearer" f="GOL" n="2">
-          <vnrole vncls="58.2" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink class="beg-58.2" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="beg-58.2" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="no hearer" src="" type="">
-        <text>Timex had requested duty-free treatment for many types of watches, covered by 58 different U.S. tariff classifications.</text>
-        <arg f="" n="0">Timex</arg>
-        <rel f="">requested</rel>
-        <arg f="" n="1">duty-free treatment for many types of watches, covered by 58 different U.S. tariff classifications</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Request" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="beg-58.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="Contact.CommandOrder.Broadcast" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019" />
+        <lexlink class="Contact.CommandOrder.Correspondence" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019" />
+        <lexlink class="Contact.CommandOrder.Meet" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019" />
+        <lexlink class="Correspondence" confidence="0.1" resource="ERE" src="reo-expansion" version="rich" />
+        <lexlink class="Broadcast" confidence="0.1" resource="ERE" src="reo-expansion" version="rich" />
+        <lexlink class="request-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">62</lexlink>
+        <lexlink class="request-n.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">27</lexlink>
+        <lexlink class="request-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">17</lexlink>
+        <lexlink class="beg-58.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="no hearer" src="">
+        <text>Timex had requested duty - free treatment for many types of watches , covered by 58 different U.S. tariff classifications .</text>
+        <propbank>
+          <rel relloc="2">requested</rel>
+          <arg type="ARG0" start="0" end="0">Timex</arg>
+          <arg type="ARG1" start="3" end="19">duty - free treatment for many types of watches , covered by 58 different U.S. tariff classifications</arg>
+        </propbank>
       </example>
-      <example name="with hearer/granter, and stupid broken arg" src="" type="">
-        <text>Emerson Electric Co. and Robert Bosch G.m.b.H. said the Federal Trade Commission has requested additional information from the two companies about their announced intention to acquire Vermont American Corp. for $40 a share, or about $440 million.</text>
-        <arg f="" n="0">the Federal Trade Commission</arg>
-        <rel f="">requested</rel>
-        <arg f="" n="1">additional information</arg>
-        <arg f="" n="2">from the two companies</arg>
-        <arg f="prd" n="m">about their announced intention to acquire Vermont American Corp. for $40 a share, or about $440 million</arg>
+      <example name="with hearer/granter, and stupid broken arg" src="">
+        <text>Emerson Electric Co. and Robert Bosch G.m.b . H. said the Federal Trade Commission has requested additional information from the two companies about their announced intention to acquire Vermont American Corp. for $ 40 a share , or about $ 440 million .</text>
+        <propbank>
+          <rel relloc="15">requested</rel>
+          <arg type="ARG0" start="10" end="13">the Federal Trade Commission</arg>
+          <arg type="ARG1" start="16" end="17">additional information</arg>
+          <arg type="ARG2" start="18" end="21">from the two companies</arg>
+          <arg type="ARGM-PRD" start="22" end="41">about their announced intention to acquire Vermont American Corp. for $ 40 a share , or about $ 440 million</arg>
+        </propbank>
       </example>
-      <example name="use gol for beneficiary of the request" src="" type="">
+      <example name="use gol for beneficiary of the request" src="">
         <text>a $ 7.4 million State Department request for the 1992 Expo in Seville , Spain ,</text>
-        <arg f="" n="1">$ 7.4 million</arg>
-        <arg f="" n="0">State Department</arg>
-        <rel f="">request</rel>
-        <arg f="gol" n="m">for the 1992 Expo in Seville , Spain</arg>
+        <propbank>
+          <rel relloc="6">request</rel>
+          <arg type="ARG1" start="1" end="3">$ 7.4 million</arg>
+          <arg type="ARG0" start="4" end="5">State Department</arg>
+          <arg type="ARGM-GOL" start="7" end="14">for the 1992 Expo in Seville , Spain</arg>
+        </propbank>
       </example>
-      <example name="Another arg 0, 1, and gol example" src="" type="">
+      <example name="Another arg 0, 1, and gol example" src="">
         <text>a $ 20 million Bush request for his state</text>
-        <arg f="" n="1">$ 20 million</arg>
-        <arg f="" n="0">Bush</arg>
-        <rel f="">request</rel>
-        <arg f="gol" n="m">for his state</arg>
+        <propbank>
+          <rel relloc="5">request</rel>
+          <arg type="ARG1" start="1" end="3">$ 20 million</arg>
+          <arg type="ARG0" start="4" end="4">Bush</arg>
+          <arg type="ARGM-GOL" start="6" end="8">for his state</arg>
+        </propbank>
       </example>
-      <example name="Example with args 0 and 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Louis Libby's request of congress</text>
-        <arg f="" n="0">Louis Libby's</arg>
-        <rel f="">request</rel>
-        <arg f="" n="2">of congress</arg>
+      <example name="Example with args 0 and 2" src="">
+        <text>Louis Libby 's request of congress</text>
+        <propbank>
+          <rel relloc="3">request</rel>
+          <arg type="ARG0" start="0" end="2">Louis Libby 's</arg>
+          <arg type="ARG2" start="4" end="5">of congress</arg>
+        </propbank>
       </example>
+      <note>REQUEST-V NOTES: Comparison with 'ask'. Member of Vncls beg-58.2. Updated by Julia, 10/2010. (from request.01-v)</note>
+      <note>REQUEST-N NOTES: Roleset based on request.01. No corresponding verbnet class. Framed by Katie. (from request.01-n)</note>
+      <note>Actually two slightly different senses of 'request', but taking thesame PAS. (from request.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

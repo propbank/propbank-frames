@@ -1,49 +1,93 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="discuss">
     <roleset id="discuss.01" name="talk about">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">discussion</alias>
-        <alias framenet="Discussion Topic Speak_on_topic" pos="v" verbnet="">discuss</alias>
-	<alias framenet="" pos="l" verbnet="">have_discussion</alias>
+        <alias pos="n">discussion</alias>
+        <alias pos="v">discuss</alias>
+        <alias pos="l">have_discussion</alias>
       </aliases>
+      <roles>
+        <role descr="discussant" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="Speak_on_topic" resource="FrameNet" version="1.7">speaker</rolelink>
+            <rolelink class="Discussion" resource="FrameNet" version="1.7">interlocutor_1</rolelink>
+            <rolelink class="chit_chat-37.6-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="topic" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="Speak_on_topic" resource="FrameNet" version="1.7">topic</rolelink>
+            <rolelink class="Discussion" resource="FrameNet" version="1.7">topic</rolelink>
+            <rolelink class="chit_chat-37.6-1" resource="VerbNet" version="verbnet3.4">topic</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="conversation partner, if explicit" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="Speak_on_topic" resource="FrameNet" version="1.7">audience</rolelink>
+            <rolelink class="chit_chat-37.6-1" resource="VerbNet" version="verbnet3.4">co_agent</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Speak_on_topic" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Topic" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Discussion" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Contact.Discussion.Correspondence" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Contact.Discussion.Meet" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Correspondence" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="Meet" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="discuss-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">187</lexlink>
+        <lexlink class="chit_chat-37.6-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="plain ol' transitive" src="">
+        <text>He declined to discuss other terms of the issue .</text>
+        <propbank>
+          <rel relloc="3">discuss</rel>
+          <arg type="ARG0" start="0" end="0">He</arg>
+          <arg type="ARG1" start="4" end="8">other terms of the issue</arg>
+        </propbank>
+      </example>
+      <example name="ARG0 and ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1018">
+        <text>Lucia Lee , a young office worker who regularly discusses social trends with webfriends on her own website , says that modern males no longer have that rough - tough character ; guys like Hsieh Ting - feng and Chen Hsiao - tung , who never have a hair out of place , are very popular male idols these days .</text>
+        <propbank>
+          <rel relloc="9">discusses</rel>
+          <arg type="ARG0" start="3" end="6">a young office worker</arg>
+          <arg type="ARGM-ADV" start="8" end="8">regularly</arg>
+          <arg type="ARG1" start="10" end="11">social trends</arg>
+          <arg type="ARG2" start="12" end="17">with webfriends on her own website</arg>
+        </propbank>
+      </example>
+      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1075">
+        <text>For example , divide a large class into groups to discuss what they would buy with NT$ 100 .</text>
+        <propbank>
+          <rel relloc="10">discuss</rel>
+          <arg type="ARG0" start="8" end="8">groups</arg>
+          <arg type="ARG1" start="11" end="17">what they would buy with NT$ 100</arg>
+        </propbank>
+      </example>
+      <example name="All args" src="">
+        <text>Meg 's discussion of bluegrass with Spiderman ended in shouting .</text>
+        <propbank>
+          <rel relloc="2">discussion</rel>
+          <arg type="ARG0" start="0" end="1">Meg 's</arg>
+          <arg type="ARG1" start="3" end="4">of bluegrass</arg>
+          <arg type="ARG2" start="5" end="6">with Spiderman</arg>
+        </propbank>
+      </example>
       <note>DISCUSS-V NOTES: No VNcls. Comparison with other verbs-of-talking. (from discuss.01-v)</note>
       <note>DISCUSSION-N NOTES: Corresponds with discuss.01. Framed by anwen april 2011 (from discussion.01-n)</note>
-      <roles>
-        <role descr="discussant" f="pag" n="0"/>
-        <role descr="topic" f="ppt" n="1"/>
-        <role descr="conversation partner, if explicit" f="gol" n="2"/>
-      </roles>
-      <example name="plain ol' transitive" src="" type="">
-        <text>He-1 declined *trace*-1 to discuss other terms of the issue.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">discuss</rel>
-        <arg f="" n="1">other terms of the issue</arg>
-      </example>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1018" type="">
-        <text>Lucia Lee , a young office worker who regularly discusses social trends with webfriends on her own website , says that modern males no longer have that rough - tough character ; guys like Hsieh Ting - feng and Chen Hsiao - tung , who never have a hair out of place , are very popular male idols these days .</text>
-        <arg f="" n="0">[who][a young office worker]</arg>
-        <arg f="adv" n="m">regularly</arg>
-        <rel f="">discusses</rel>
-        <arg f="" n="1">social trends</arg>
-        <arg f="" n="2">with webfriends on her own website</arg>
-      </example>
-
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1075" type="">
-        <text>For example , divide a large class into groups to discuss what they would buy with NT$ 100 .</text>
-        <arg f="" n="0">groups</arg>
-        <rel f="">discuss</rel>
-        <arg f="" n="1">what they would buy with NT$ 100</arg>
-      </example>
-
-      <example name="All args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Meg's discussion of bluegrass with Spiderman ended in shouting.</text>
-        <arg f="" n="0">Meg's</arg>
-        <rel f="">discussion</rel>
-        <arg f="" n="1">of bluegrass</arg>
-        <arg f="" n="2">with Spiderman</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

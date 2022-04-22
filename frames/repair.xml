@@ -1,52 +1,83 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="repair">
     <roleset id="repair.01" name="to restore after damage or injury">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">repair</alias>
-        <alias framenet="" pos="n" verbnet="">repair</alias>
+        <alias pos="v">repair</alias>
+        <alias pos="n">repair</alias>
       </aliases>
+      <roles>
+        <role descr="repairer, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="remedy-45.7" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="remedy-45.7" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity repaired" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="remedy-45.7" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="remedy-45.7" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="repair-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">36</lexlink>
+        <lexlink class="repair-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">25</lexlink>
+        <lexlink class="remedy-45.7" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="repair-v: transitive" src="">
+        <text>It refinanced the judge 's loan , lowered its interest rate and accepted a trade - in that had n't originally been part of the deal -- a beat up 1981 Chevy Citation the dealer had to repair before it could be resold .</text>
+        <propbank>
+          <rel relloc="37">repair</rel>
+          <arg type="ARG0" start="33" end="34">the dealer</arg>
+          <arg type="ARG1" start="27" end="32">a beat up 1981 Chevy Citation</arg>
+          <arg type="ARGM-TMP" start="38" end="42">before it could be resold</arg>
+        </propbank>
+      </example>
+      <example name="repair-v: passive" src="">
+        <text>The Belgian computer system finally was repaired on Tuesday of this week , with the aid of Toronto Stock Exchange officials who developed the system .</text>
+        <propbank>
+          <rel relloc="6">repaired</rel>
+          <arg type="ARGM-TMP" start="4" end="4">finally</arg>
+          <arg type="ARG1" start="0" end="3">The Belgian computer system</arg>
+          <arg type="ARGM-TMP" start="7" end="11">on Tuesday of this week</arg>
+          <arg type="ARGM-COM" start="13" end="24">with the aid of Toronto Stock Exchange officials who developed the system</arg>
+        </propbank>
+      </example>
+      <example name="repair-v: unspecified subject" src="">
+        <text>Engineers say it will take at least eight months to repair the Embarcadero structure .</text>
+        <propbank>
+          <rel relloc="10">repair</rel>
+          <arg type="ARG1" start="11" end="13">the Embarcadero structure</arg>
+        </propbank>
+      </example>
+      <example name="repairs-n: arg 1 only" src="">
+        <text>repairs to gas and electric power systems</text>
+        <propbank>
+          <rel relloc="0">repairs</rel>
+          <arg type="ARG1" start="1" end="6">to gas and electric power systems</arg>
+        </propbank>
+      </example>
+      <example name="repair-n: arg 1 as a modifier" src="">
+        <text>highway repair</text>
+        <propbank>
+          <rel relloc="1">repair</rel>
+          <arg type="ARG1" start="0" end="0">highway</arg>
+        </propbank>
+      </example>
       <note>REPAIR-V NOTES: No Vncls. FN not applicable to this sense. Checked by Julia, 10/2010. (from repair.01-v)</note>
       <note>REPAIR-N NOTES: Based on sentences in nouns-00040. Comparison to repair.01-v. No VN class. Framed by Katie. (from repair.01-n)</note>
-      <roles>
-        <role descr="repairer, agent" f="PAG" n="0"/>
-        <role descr="entity repaired" f="PPT" n="1"/>
-      </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="active"/>
-        <text>It refinanced the judge 's loan , lowered its interest rate and accepted a trade-in that had n't originally been part of the deal -- a beat up 1981 Chevy Citation [0]-1 [the dealer]-2 had [*-2] to repair [*T*-1] before it could be resold [*-140] .</text>
-        <arg f="" n="0">[*-2]</arg>
-        <rel f="">repair</rel>
-        <arg f="" n="1">[*T*-1] (= [0])</arg>
-        <arg f="slc" n="m">[0] -&gt; a beat up 1981 Chevy Citation</arg>
-        <arg f="tmp" n="m">before it could be resold [*-140]</arg>
-      </example>
-      <example name="passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="past" voice="passive"/>
-        <text>[The Belgian computer system]-2 finally was repaired [*-2]on Tuesday of this week , with the aid of Toronto Stock Exchange officials who [*T*-1] developed the system .</text>
-        <arg f="tmp" n="m">finally</arg>
-        <rel f="">repaired</rel>
-        <arg f="" n="1">[*-2]</arg>
-        <arg f="tmp" n="m">on Tuesday of this week</arg>
-        <arg f="com" n="m">with the aid of Toronto Stock Exchange officials who [*T*-1] developed the system</arg>
-      </example>
-      <example name="unspecified subject" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="active"/>
-        <text>Engineers say it will take at least eight months [*] to repair the Embarcadero structure .</text>
-        <arg f="" n="0">[*]</arg>
-        <rel f="">repair</rel>
-        <arg f="" n="1">the Embarcadero structure</arg>
-      </example>
-      <example name="arg 1 only" src="" type="">
-        <text>repairs to gas and electric power systems</text>
-        <rel f="">repairs</rel>
-        <arg f="" n="1">to gas and electric power systems</arg>
-      </example>
-      <example name="arg 1 as a modifier" src="" type="">
-        <text>highway repair</text>
-        <arg f="" n="1">highway</arg>
-        <rel f="">repair</rel>
-      </example>
     </roleset>
   </predicate>
 </frameset>

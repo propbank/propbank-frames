@@ -1,75 +1,119 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="color">
     <roleset id="color.01" name="(cause to) have some color, adding color to">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">coloring</alias>
-        <alias framenet="" pos="v" verbnet="">color</alias>
-        <alias framenet="" pos="n" verbnet="">coloration</alias>
+        <alias pos="v">color</alias>
+        <alias pos="n">coloring</alias>
+        <alias pos="n">coloration</alias>
+        <alias pos="j">colored</alias>
       </aliases>
+      <roles>
+        <role descr="causer of coloration" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="coloring-24" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="coloring-24" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing with color" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="coloring-24" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="coloring-24" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="the color itself" f="PRD" n="2">
+          <rolelinks>
+            <rolelink class="coloring-24" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="coloring-24" resource="VerbNet" version="verbnet3.4">result</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="coloring-24" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="color-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="coloring-24" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="color-v: agentive, no color" src="">
+        <text>Officials from both nations say the U.S. public 's skittishness about Japanese investment could color a second round of bilateral economic talks scheduled for next week in Washington .</text>
+        <propbank>
+          <rel relloc="14">color</rel>
+          <arg end="12" start="5" type="ARG0">the U.S. public 's skittishness about Japanese investment</arg>
+          <arg end="13" start="13" type="ARGM-MOD">could</arg>
+          <arg end="27" start="15" type="ARG1">a second round of bilateral economic talks scheduled for next week in Washington</arg>
+        </propbank>
+      </example>
+      <example name="color-v: agentive, with color" src="">
+        <text>John colored all his Easter eggs jet black .</text>
+        <propbank>
+          <rel relloc="1">colored</rel>
+          <arg end="0" start="0" type="ARG0">John</arg>
+          <arg end="5" start="2" type="ARG1">all his Easter eggs</arg>
+          <arg end="7" start="6" type="ARG2">jet black</arg>
+        </propbank>
+      </example>
+      <example name="colored-j" src="">
+        <text>All of John 's Easter eggs are colored jet black .</text>
+        <propbank>
+          <rel relloc="7">colored</rel>
+          <arg end="5" start="0" type="ARG1">All of John 's Easter eggs</arg>
+          <arg end="9" start="8" type="ARG2">jet black</arg>
+        </propbank>
+      </example>
+      <example name="coloring-n: all args" src="google books">
+        <text>Would you object to his coloring it yellow then ?</text>
+        <propbank>
+          <rel relloc="5">coloring</rel>
+          <arg end="4" start="4" type="ARG0">his</arg>
+          <arg end="6" start="6" type="ARG1">it</arg>
+          <arg end="7" start="7" type="ARG2">yellow</arg>
+        </propbank>
+      </example>
       <note>COLOR-V NOTES: Frames file for 'color' based on sentences in wsj. Verbnet entry 24. (from color.01-v predicate notes)</note>
       <note>COLORATION-N NOTES: (from coloration.01-n)</note>
       <note>COLORING-N NOTES: Added by Julia based on BOLT. Corresponds to VNcls coloring-24. (from coloring.01-n)</note>
-      <roles>
-        <role descr="causer of coloration" f="pag" n="0">
-          <vnrole vncls="24" vntheta="agent"/>
-        </role>
-        <role descr="thing with color" f="ppt" n="1">
-          <vnrole vncls="24" vntheta="patient"/>
-        </role>
-        <role descr="the color itself" f="prd" n="2"/>
-      </roles>
-      <example name="agentive, no color" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>Officials from both nations say the U.S. public's skittishness about Japanese investment could color a second round of bilateral economic talks scheduled for next week in Washington.</text>
-        <arg f="" n="0">the U.S. public's skittishness about Japanese investment</arg>
-        <arg f="mod" n="m">could</arg>
-        <rel f="">color</rel>
-        <arg f="" n="1">a second round of bilateral economic talks scheduled for next week in Washington</arg>
-      </example>
-      <example name="agentive, with color" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>John colored all his Easter eggs jet black.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">colored</rel>
-        <arg f="" n="1">all his Easter eggs</arg>
-        <arg f="" n="2">jet black</arg>
-      </example>
-      <example name="passive, with color" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>All of John's Easter eggs are colored jet black.</text>
-        <arg f="" n="1">All of John's Easter eggs</arg>
-        <rel f="">colored</rel>
-        <arg f="" n="2">jet black</arg>
-      </example>
-      <example name="all args" src="google books" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Would you object to his coloring it yellow then?</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">coloring</rel>
-        <arg f="" n="1">it</arg>
-        <arg f="" n="2">yellow</arg>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="color_in">
     <roleset id="color_in.02" name="color completely inside the lines">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">color_in</alias>
+        <alias pos="v">color_in</alias>
       </aliases>
-      <note>COLOR_IN-V NOTES: (from color.02-v)</note>
       <roles>
-        <role descr="colorer" f="pag" n="0"/>
-        <role descr="image/surface colored in" f="gol" n="1"/>
-        <role descr="the color" f="ppt" n="2"/>
+        <role descr="colorer" f="PAG" n="0" />
+        <role descr="image/surface colored in" f="GOL" n="1" />
+        <role descr="the color" f="PPT" n="2" />
       </roles>
-      <example name="args 0, 1" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Folks will be lined up outside the polling places , just waiting *PRO*-2 to color in the dot next to ANY Democrat that goes up against these baboons !</text>
-        <arg f="" n="0">*PRO*-2</arg>
-        <rel f="">[color] [in]</rel>
-        <arg f="" n="1">the dot next to ANY Democrat that goes up against these baboons</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks />
+      <example name="color_in-v: args 0, 1" src="BOLT">
+        <text>Folks will be lined up outside the polling places , just waiting to color in the dot next to ANY Democrat that goes up against these baboons !</text>
+        <propbank>
+          <rel relloc="13 14">color in</rel>
+          <arg end="0" start="0" type="ARG0">Folks</arg>
+          <arg end="26" start="15" type="ARG1">the dot next to ANY Democrat that goes up against these baboons</arg>
+        </propbank>
       </example>
+      <note>COLOR_IN-V NOTES: (from color.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

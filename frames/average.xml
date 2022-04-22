@@ -1,125 +1,192 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="average">
     <roleset id="average.01" name="to amount to or come to an average, compute an average, calculating/finding/creating a mean, median or mode, computed mean">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">averaging</alias>
-        <alias framenet="" pos="v" verbnet="">average</alias>
-      <alias framenet="" pos="n" verbnet="">average</alias>
-</aliases>
-      
-      
+        <alias pos="n">averaging</alias>
+        <alias pos="v">average</alias>
+        <alias pos="n">average</alias>
+      </aliases>
       <roles>
-        <role descr="agent, person computing the average" f="pag" n="0">
-          <vnrole vncls="108-3" vntheta="agent"/>
+        <role descr="agent, person computing the average" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="multiply-108-3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="multiply-108-3" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="average(d) entity" f="ppt" n="1">
-          <vnrole vncls="108-3" vntheta="theme"/>
+        <role descr="average(d) entity" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="multiply-108-3" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="multiply-108-3" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="numerical value of the average (or whatever final form it takes)" f="vsp" n="2"/>
-        <role descr="scale" f="vsp" n="3"/>
+        <role descr="numerical value of the average (or whatever final form it takes)" f="VSP" n="2">
+          <rolelinks/>
+        </role>
+        <role descr="scale" f="VSP" n="3">
+          <rolelinks>
+            <rolelink class="multiply-108-3" resource="VerbNet" version="verbnet3.4">co_theme</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="average-v: non-agentive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Frequency" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Part_inner_outer" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="multiply-108-3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="average-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">31</lexlink>
+        <lexlink class="multiply-108-3" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="average-v: non-agentive" src="">
         <text>In October , the busiest month of the year so far , daily volume averaged roughly 145 million shares .</text>
-        <arg f="tmp" n="m">In October , the busiest month of the year so far ,</arg>
-        <arg f="" n="1">daily volume</arg>
-        <rel f="">averaged</rel>
-        <arg f="" n="2">roughly 145 million shares</arg>
+        <propbank>
+          <rel relloc="14">averaged</rel>
+          <arg type="ARGM-TMP" start="0" end="10">In October , the busiest month of the year so far</arg>
+          <arg type="ARG1" start="12" end="13">daily volume</arg>
+          <arg type="ARG2" start="15" end="18">roughly 145 million shares</arg>
+        </propbank>
       </example>
-      <example name="average-v: with Arg3" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="active"/>
-        <text>The Manhattan U.S. attorney 's office stressed [criminal cases]*-1 from 1980 to 1987 , [*-1]averaging 43 for every 100,000 adults .</text>
-        <arg f="" n="1">[*-1]</arg>
-        <rel f="">averaging</rel>
-        <arg f="" n="2">43</arg>
-        <arg f="" n="3">for every 100,000 adults</arg>
+      <example name="average-v: with Arg3" src="">
+        <text>The Manhattan U.S. attorney 's office stressed criminal cases from 1980 to 1987 , averaging 43 for every 100,000 adults .</text>
+        <propbank>
+          <rel relloc="14">averaging</rel>
+          <arg type="ARG1" start="7" end="8">criminal cases</arg>
+          <arg type="ARG2" start="15" end="15">43</arg>
+          <arg type="ARG3" start="16" end="19">for every 100,000 adults</arg>
+        </propbank>
       </example>
-      <example name="average-v: agentive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <example name="average-v: agentive" src="">
         <text>On the civil side , the Manhattan prosecutor filed an average of only 11 cases for every 100,000 adults during the same period ; the San Francisco U.S. attorney averaged 79 .</text>
-        <arg f="" n="1">the San Francisco U.S. attorney</arg>
-        <rel f="">averaged</rel>
-        <arg f="" n="2">79</arg>
+        <propbank>
+          <rel relloc="29">averaged</rel>
+          <arg type="ARG1" start="24" end="28">the San Francisco U.S. attorney</arg>
+          <arg type="ARG2" start="30" end="30">79</arg>
+        </propbank>
       </example>
-      <example name="average-v: transitive" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="active"/>
-        <text>That is in part because of the effect of [*]-2 having [*-2]to average the number of shares outstanding , she said [0] [*T*-1] .</text>
-        <arg f="" n="0">[*-2]</arg>
-        <rel f="">average</rel>
-        <arg f="" n="1">the number of shares outstanding</arg>
+      <example name="average-v: transitive" src="">
+        <text>That is in part because of the effect of [*]-2 having [*-2] to average the number of shares outstanding , she said [*0*] [*T*-1] .</text>
+        <propbank>
+          <rel relloc="13">average</rel>
+          <arg type="ARG0" start="?" end="?">[*-2]</arg>
+          <arg type="ARG1" start="14" end="18">the number of shares outstanding</arg>
+        </propbank>
       </example>
-      <example name="averaging-n: financial strategy. Arg1" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="averaging-n: financial strategy. Arg1" src="BOLT">
         <text>Read up on Pound Cost Averaging .</text>
-        <arg f="" n="1">Pound Cost</arg>
-        <rel f="">Averaging</rel>
+        <propbank>
+          <rel relloc="5">Averaging</rel>
+          <arg type="ARG1" start="3" end="4">Pound Cost</arg>
+        </propbank>
       </example>
-    <note>AVERAGE-V NOTES: Frames file for 'average' based on WSJ. Member of Vncls multiply-108-3. (from average.01-v)
-
+      <note>AVERAGE-V NOTES: Frames file for 'average' based on WSJ. Member of Vncls multiply-108-3. (from average.01-v)
 AVERAGING-N NOTES: Added by Julia based on BOLT, average.01. Corresponds to VNcls multiply-108-3. (from averaging.01-n)</note>
-</roleset>
+    </roleset>
     <roleset id="average.03" name="having a normal skill level">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">average</alias>
+        <alias pos="j">average</alias>
       </aliases>
-      
       <roles>
-        <role descr="moderately skilled entity" f="pag" n="1"/>
-        <role descr="skill" f="ppt" n="2"/>
+        <role descr="moderately skilled entity" f="PAG" n="1"/>
+        <role descr="skill" f="PPT" n="2"/>
       </roles>
-      <example name="average-j: both args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The first is a master a gaming, the latter is average at doing all things.</text>
-        <arg f="" n="1">the latter</arg>
-        <rel f="">average</rel>
-        <arg f="" n="2">at doing all things</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="average-j: both args" src="internet">
+        <text>The first is a master a gaming , the latter is average at doing all things .</text>
+        <propbank>
+          <rel relloc="11">average</rel>
+          <arg type="ARG1" start="8" end="9">the latter</arg>
+          <arg type="ARG2" start="12" end="15">at doing all things</arg>
+        </propbank>
       </example>
-    <note>AVERAGE-J NOTES: Added by Julia. (from average.02-j)</note>
-</roleset>
+      <note>AVERAGE-J NOTES: Added by Julia. (from average.02-j)</note>
+    </roleset>
     <roleset id="average.04" name="normal, in the range of mean, meadian or mode">
       <aliases>
-        <alias framenet="Desirability Typicality" pos="j" verbnet="">average</alias>
+        <alias pos="j">average</alias>
       </aliases>
-      
       <roles>
-        <role descr="agent of computation" f="pag" n="0"/>
-        <role descr="average entity" f="ppt" n="1"/>
-        <role descr="numerical value" f="vsp" n="2"/>
-        <role descr="scale" f="vsp" n="3"/>
+        <role descr="agent of computation" f="PAG" n="0"/>
+        <role descr="average entity" f="PPT" n="1"/>
+        <role descr="numerical value" f="VSP" n="2"/>
+        <role descr="scale" f="VSP" n="3"/>
       </roles>
-      <example name="average-j:  arg1" src="BOLT-7" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Desirability" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Typicality" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+      </lexlinks>
+      <example name="average-j:  arg1" src="BOLT-7">
         <text>By the time we get them , their effect and value will only be average .</text>
-        <arg f="tmp" n="m">By the time we get them</arg>
-        <arg f="" n="1">their effect and value</arg>
-        <arg f="mod" n="m">will</arg>
-        <arg f="adv" n="m">only</arg>
-        <rel f="">average</rel>
+        <propbank>
+          <rel relloc="14">average</rel>
+          <arg type="ARGM-TMP" start="0" end="5">By the time we get them</arg>
+          <arg type="ARG1" start="7" end="10">their effect and value</arg>
+          <arg type="ARGM-MOD" start="11" end="11">will</arg>
+          <arg type="ARGM-ADV" start="12" end="12">only</arg>
+        </propbank>
       </example>
-    <note>AVERAGE-J NOTES: Added by Julia based on average-v.01. (from average.01-j)</note>
-</roleset>
+      <note>AVERAGE-J NOTES: Added by Julia based on average-v.01. (from average.01-j)</note>
+    </roleset>
   </predicate>
   <predicate lemma="averaging">
     <roleset id="averaging.02" name="experiencing or having an average">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">averaging</alias>
+        <alias pos="n">averaging</alias>
       </aliases>
-      
       <roles>
-        <role descr="entity having the average" f="ppt" n="0"/>
-        <role descr="value, average" f="ext" n="1"/>
-        <role descr="domain of the average" f="vsp" n="2"/>
+        <role descr="entity having the average" f="PPT" n="0"/>
+        <role descr="value, average" f="EXT" n="1"/>
+        <role descr="domain of the average" f="VSP" n="2"/>
       </roles>
-      <example name="averaging-n: all args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+      </usagenotes>
+      <example name="averaging-n: all args" src="">
         <text>his averaging a 220 at bowling</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">averaging</rel>
-        <arg f="" n="1">a 220</arg>
-        <arg f="" n="2">at bowling</arg>
+        <propbank>
+          <rel relloc="1">averaging</rel>
+          <arg type="ARG0" start="0" end="0">his</arg>
+          <arg type="ARG1" start="2" end="3">a 220</arg>
+          <arg type="ARG2" start="4" end="5">at bowling</arg>
+        </propbank>
       </example>
-    <note>AVERAGING-N NOTES: Added by Julia. No VNcls. (from averaging.02-n)</note>
-</roleset>
+      <note>AVERAGING-N NOTES: Added by Julia. No VNcls. (from averaging.02-n)</note>
+    </roleset>
   </predicate>
 </frameset>

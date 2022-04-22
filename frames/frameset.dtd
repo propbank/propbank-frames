@@ -36,36 +36,46 @@
   and something like 47.2 means 47.2 is a levine class of this
   roleset.  The list of levine classes is space delimited
 -->
-<!ELEMENT roleset (aliases?, note*, mappings*, note*, roles, ( example | note )*)>
+<!ELEMENT roleset (aliases?, note*, roles, usagenotes*, ( lexlinks | example | note )*)>
 <!ATTLIST roleset
   id   CDATA #REQUIRED
-  name CDATA #REQUIRED
-  usage CDATA #IMPLIED>
-<!ELEMENT aliases (alias*, mwe*)>
+  name CDATA #IMPLIED>
+<!ELEMENT aliases (alias | argalias| mwp-descriptions)*>
 <!ELEMENT alias (#PCDATA)>
 <!ATTLIST alias
-pos (v | n | j | l | m | x | p) #REQUIRED
-verbnet CDATA #REQUIRED
-framenet CDATA #REQUIRED
-usage CDATA #IMPLIED>
-<!ELEMENT mwe (token*)>
-<!ATTLIST mwe id CDATA #REQUIRED>
+pos (v | n | j | l | x| m) #REQUIRED>
+
+<!ELEMENT argalias (#PCDATA)>
+<!ATTLIST argalias
+pos (v | n | j | l) #REQUIRED
+arg CDATA #REQUIRED>
+
+
+<!--
+ Multi-word predications added
+-->
+<!ELEMENT mwp-descriptions (syntaxdesc | mapping)*>
+<!ATTLIST mwp-descriptions
+id CDATA #REQUIRED>
+
+<!ELEMENT syntaxdesc (token)*>
+<!ATTLIST syntaxdesc
+slots CDATA #REQUIRED>
+
 <!ELEMENT token (#PCDATA)>
 <!ATTLIST token
-slot (A | B | C | D | E | F | G | H | I | J | K | L | M) #REQUIRED
-head CDATA #IMPLIED
-dep CDATA #IMPLIED
-pos CDATA #IMPLIED
-arg CDATA #IMPLIED>
+slot CDATA #REQUIRED
+pos CDATA #REQUIRED
+arg CDATA #REQUIRED
+head CDATA #REQUIRED
+dep CDATA #REQUIRED >
 
-
-<!ELEMENT mappings (source, target)>
-<!ATTLIST mappings alias CDATA #REQUIRED>
+<!ELEMENT mapping (source | target)*>
 <!ELEMENT source (#PCDATA)>
 <!ELEMENT target (#PCDATA)>
 
 <!ELEMENT roles   (note | role)*>
-<!ELEMENT role (vnrole | fnrole)* >
+<!ELEMENT role (rolelinks)* >
 <!--
   roles have a number (or an "M" associated
   with them, for common adjuncts that don't qualify for number argument status). 
@@ -99,26 +109,33 @@ arg CDATA #IMPLIED>
 
 -->
 <!ATTLIST role
-  n ( 0 | 1 | 2 | 3 | 4 | 5 | 6 | m | M ) #REQUIRED
-  f ( PAG | PPT | GOL | CXN | VSP | COM | ADJ | CAU | PRP | MNR | EXT | LOC | DIR | ADV | TMP | adv | tmp | pag | ppt | gol | vsp | com | adj | cau | prp | rec | mnr | ext | loc | dir | prd | PRD ) #REQUIRED
+  n ( 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | m | M ) #REQUIRED
+  f ( PAG | PPT | GOL | CXN | VSP | COM | ADJ | CAU | PRP | MNR | EXT | LOC | REC | DIR | ADV | TMP | adv | tmp | pag | ppt | gol | vsp | com | adj | cau | prp | rec | mnr | ext | loc | dir | prd | PRD ) #REQUIRED
   descr CDATA #REQUIRED>
-<!ELEMENT vnrole EMPTY>
-<!ATTLIST vnrole
-  vncls CDATA #REQUIRED
-  vntheta (actor| Actor| actor1| Actor1 |actor2|  Actor2| agent| Agent|
-  asset| Asset| attribute| Attribute| beneficiary| Beneficiary| cause| Cause|
-  causer| Causer| co-agent | Co-Agent | co-patient | Co-Patient | co-theme | Co-Theme | 
-  destination| Destination| experiencer| Experiencer| extent| Extent| 
-  goal | Goal | initial_location | Initial_Location |
-  instrument| Instrument| location| Location| material| Material| patient|
-  Patient| patient1| Patient1| patient2| Patient2| pivot | Pivot | 
-  predicate| Predicate| product| Product| recipient| Recipient| reflexive | Reflexive | result | Result |
-  source| Source| stimulus| Stimulus| theme| Theme|theme1| Theme1| theme2| Theme2| time| Time| topic|
-  Topic| Trajectory | trajectory | proposition| Proposition| value| Value | unspecified) #REQUIRED>
-<!ELEMENT fnrole EMPTY>
-<!ATTLIST fnrole
-frame CDATA #REQUIRED
-fe CDATA #REQUIRED>
+
+<!ELEMENT rolelinks (rolelink)*>
+<!ELEMENT rolelink (#PCDATA)>
+<!ATTLIST rolelink
+resource CDATA #REQUIRED
+    class CDATA #REQUIRED
+    version CDATA #REQUIRED>
+
+
+<!ELEMENT usagenotes (usage)*>
+<!ELEMENT usage EMPTY>
+<!ATTLIST usage
+  resource CDATA #REQUIRED
+  version CDATA #REQUIRED
+    inuse  CDATA #REQUIRED>
+
+<!ELEMENT lexlinks (lexlink)*>
+<!ELEMENT lexlink (#PCDATA)>
+<!ATTLIST lexlink
+  resource CDATA #REQUIRED
+  version CDATA #REQUIRED
+    class  CDATA #REQUIRED
+        confidence  CDATA #REQUIRED
+            src  CDATA #REQUIRED>
 <!--
   examples may contain inflectional information and notes notes
   After that, they contain the text of an example followed by
@@ -127,28 +144,24 @@ fe CDATA #REQUIRED>
   The src attribute is for automatically retrieved examples
   and refers to a roleset identifier.
 -->
-<!ELEMENT example (inflection?, note?, text, (arg | rel | note)*)>
+
+<!ELEMENT example (note?, text, (arg | rel | note)*)>
 <!ATTLIST example
   name CDATA #IMPLIED
-  type CDATA #IMPLIED
   src  CDATA #IMPLIED>
 <!ELEMENT text (#PCDATA)>
-<!ELEMENT inflection EMPTY>
-<!ATTLIST inflection
-  person (third | other | ns) "ns"
-  tense  (present | past | future | ns) "ns"
-  aspect (perfect | progressive | both | ns) "ns"
-  voice  (active | passive | ns) "ns"
-  form   (infinitive | gerund | participle | full | ns) "ns">
+
 <!-- the n and f attributes corresponds to those of the roles
      described above -->
 <!ELEMENT arg (#PCDATA)>
 <!ATTLIST arg
-  n ( 0 | 1 | 2 | 3 | 4 | 5 | 6 | m | M | a | A) #REQUIRED
-  f CDATA #IMPLIED>
+  n ( 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | m | M | a | A) #REQUIRED
+  f CDATA #IMPLIED
+      start CDATA #IMPLIED
+        end CDATA #IMPLIED>
 <!-- a rel can have an "f" attribute for a single reason, so that
      auxilliary uses of the verb "have" can be marked as such.
      There should be no other "f" attributes -->
 <!ELEMENT rel (#PCDATA)>
 <!ATTLIST rel
-  f CDATA #IMPLIED>
+  relloc CDATA #REQUIRED>

@@ -1,54 +1,86 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="quarrel">
     <roleset id="quarrel.01" name="disagree">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">quarreling</alias>
-        <alias framenet="Quarreling" pos="v" verbnet="">quarrel</alias>
-        <alias framenet="" pos="l" verbnet="">have_quarrel</alias>
+        <alias pos="n">quarreling</alias>
+        <alias pos="v">quarrel</alias>
+        <alias pos="l">have_quarrel</alias>
       </aliases>
-      <note>QUARREL-V NOTES: Frames file for 'quarrel' based on automatic expansion through verbnet and WSJ; nominal 'quarreling' based on BOLT-6. (from quarrel.01-v)</note>
-      <note>QUARRELING-N NOTES: Automatically created by Julia as an alias file for unification. (from quarreling.01-n)</note>
       <roles>
-        <role descr="a person engaged in a quarrel" f="pag" n="0">
-          <vnrole vncls="36.4" vntheta="agent"/>
+        <role descr="a person engaged in a quarrel" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="battle-36.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Quarreling" resource="FrameNet" version="1.7">arguer1</rolelink>
+            <rolelink class="battle-36.4" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="other person quarreling" f="COM" n="1">
-          <vnrole vncls="36.4" vntheta="co-agent"/>
+          <rolelinks>
+            <rolelink class="battle-36.4" resource="VerbNet" version="verbnet3.3">co-agent</rolelink>
+            <rolelink class="Quarreling" resource="FrameNet" version="1.7">arguer2</rolelink>
+            <rolelink class="battle-36.4" resource="VerbNet" version="verbnet3.4">co_agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="topic" f="ppt" n="2">
-          <vnrole vncls="36.4" vntheta="theme"/>
+        <role descr="topic" f="PPT" n="2">
+          <rolelinks>
+            <rolelink class="battle-36.4" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Quarreling" resource="FrameNet" version="1.7">issue</rolelink>
+            <rolelink class="battle-36.4" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="Arg2 as  with-PP" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>Even some takeover-stock traders said [0] they could n't quarrel with the board 's logic .</text>
-        <arg f="" n="0">they</arg>
-        <rel f="">quarrel</rel>
-        <arg f="" n="2">with the board 's logic</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Quarreling" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="battle-36.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="battle-36.4" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="Arg2 as  with-PP" src="">
+        <text>Even some takeover - stock traders said they could n't quarrel with the board 's logic .</text>
+        <propbank>
+          <rel relloc="10">quarrel</rel>
+          <arg type="ARG0" start="7" end="7">they</arg>
+          <arg type="ARG2" start="11" end="15">with the board 's logic</arg>
+        </propbank>
       </example>
-      <example name="Arg2  as over-PP" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="present" voice="active"/>
-        <text>After years of [*]-1 quarreling over Bonn 's `` Ostpolitik '' , [West Germany and the U.S.]-1 appear [*-1] to have shifted onto a united course in Eastern Europe .</text>
-        <rel f="">quarreling</rel>
-        <arg f="" n="2">over Bonn 's `` Ostpolitik ''</arg>
-        <arg f="" n="0">[*]</arg>
+      <example name="Arg2  as over-PP" src="">
+        <text>After years of quarreling over Bonn 's `` Ostpolitik '' , West Germany and the U.S. appear to have shifted onto a united course in Eastern Europe .</text>
+        <propbank>
+          <rel relloc="3">quarreling</rel>
+          <arg type="ARG2" start="4" end="9">over Bonn 's `` Ostpolitik ''</arg>
+          <arg type="ARG0" start="11" end="15">West Germany and the U.S.</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG1" src="ontonotes wb/a2e/00/a2e_0015" type="">
+      <example name="ARG0 and ARG1" src="ontonotes wb/a2e/00/a2e_0015">
         <text>But the captain insisted on his position and quarreled with me and put me into detention .</text>
-        <arg f="dis" n="m">But</arg>
-        <arg f="" n="0">the captain</arg>
-        <rel f="">quarreled</rel>
-        <arg f="" n="1">with me</arg>
+        <propbank>
+          <rel relloc="8">quarreled</rel>
+          <arg type="ARGM-DIS" start="0" end="0">But</arg>
+          <arg type="ARG0" start="1" end="2">the captain</arg>
+          <arg type="ARG1" start="9" end="10">with me</arg>
+        </propbank>
       </example>
-
-      <example name="nominal rel: quarreling" src="BOLT-6" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Paul called the Corinthians worldly because of their quarreling over whom they were following.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">quarreling</rel>
-        <arg f="" n="2">over whom they were following</arg>
+      <example name="nominal rel: quarreling" src="BOLT-6">
+        <text>Paul called the Corinthians worldly because of their quarreling over whom they were following .</text>
+        <propbank>
+          <rel relloc="8">quarreling</rel>
+          <arg type="ARG0" start="7" end="7">their</arg>
+          <arg type="ARG2" start="9" end="13">over whom they were following</arg>
+        </propbank>
       </example>
+      <note>QUARREL-V NOTES: Frames file for 'quarrel' based on automatic expansion through verbnet and WSJ; nominal 'quarreling' based on BOLT-6. (from quarrel.01-v)</note>
+      <note>QUARRELING-N NOTES: Automatically created by Julia as an alias file for unification. (from quarreling.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

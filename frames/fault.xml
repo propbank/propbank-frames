@@ -1,90 +1,132 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="fault">
     <roleset id="fault.01" name="assign culpability">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">fault</alias>
-        <alias framenet="Judgement" pos="n" verbnet="">fault</alias>
-        <alias framenet="" pos="j" verbnet="">faulty</alias>
+        <alias pos="v">fault</alias>
+        <alias pos="n">fault</alias>
+        <alias pos="j">faulty</alias>
       </aliases>
+      <roles>
+        <role descr="blamer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity blamed" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="blamed for what?" f="PRD" n="2">
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">attribute</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Judgement" confidence="0.0" resource="FrameNet" src="manual+strict-conv" version="UNK" />
+        <lexlink class="judgment-33.1-1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3" />
+      </lexlinks>
+      <example name="fault-v: active, no grounds" src="">
+        <text>And some investors fault Mr. Spiegel 's life style ; he earns millions of dollars a year and flies around in Columbia 's jetplanes .</text>
+        <propbank>
+          <rel relloc="3">fault</rel>
+          <arg type="ARGM-DIS" start="0" end="0">And</arg>
+          <arg type="ARG0" start="1" end="2">some investors</arg>
+          <arg type="ARG1" start="4" end="8">Mr. Spiegel 's life style</arg>
+        </propbank>
+      </example>
+      <example name="ARG0 and ARG1 and ARG2" src="ontonotes wb/eng/00/eng_0003">
+        <text>I do n't fault the landowners for trying .</text>
+        <propbank>
+          <rel relloc="3">fault</rel>
+          <arg type="ARG0" start="0" end="0">I</arg>
+          <arg type="ARGM-NEG" start="2" end="2">n't</arg>
+          <arg type="ARG1" start="4" end="5">the landowners</arg>
+          <arg type="ARG2" start="6" end="7">for trying</arg>
+        </propbank>
+      </example>
+      <example name="fault-n: args 1 and 2" src="">
+        <text>basically , it is their fault they ca n't attract new employees</text>
+        <propbank>
+          <rel relloc="5">fault</rel>
+          <arg type="ARG1" start="4" end="4">their</arg>
+          <arg type="ARG2" start="6" end="11">they ca n't attract new employees</arg>
+        </propbank>
+      </example>
+      <example name="fault-n: arg 1 only" src="">
+        <text>The fault of congress</text>
+        <propbank>
+          <rel relloc="1">fault</rel>
+          <arg type="ARG1" start="2" end="3">of congress</arg>
+        </propbank>
+      </example>
+      <example name="faulty-j" src="BOLT-7">
+        <text>he was faulty of fornication</text>
+        <propbank>
+          <rel relloc="2">faulty</rel>
+          <arg type="ARG1" start="0" end="0">he</arg>
+          <arg type="ARG2" start="3" end="4">of fornication</arg>
+        </propbank>
+      </example>
       <note>FAULTY-J NOTES: Added by Julia based on fault-v.01. (from faulty.01-j)</note>
       <note>FAULT-V NOTES: Frames file for 'fault' based on sentences in financial subcorpus. No access to verbnet. Comparison with 'blame'.(from fault.01-v predicate notes)</note>
       <note>FAULT-N NOTES: Based on sentences in nouns-00040. Comparison tofault.01-v. VN class judgement-33. FN class judgement. Framed by Katie. (from fault.01-n)</note>
-      <roles>
-        <role descr="blamer" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
-        </role>
-        <role descr="entity blamed" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
-        </role>
-        <role descr="blamed for what?" f="PRD" n="2">
-          <vnrole vncls="33" vntheta="Attribute"/>
-        </role>
-      </roles>
-      <example name="fault-v: active, no grounds" src="" type="">
-        <text>And some investors fault Mr. Spiegel's life style; he earns millions of dollars a year and flies around in Columbia's jetplanes.</text>
-        <arg f="dis" n="m">And</arg>
-        <arg f="" n="0">some investors</arg>
-        <rel f="">fault</rel>
-        <arg f="" n="1">Mr. Spiegel's life style</arg>
-      </example>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes wb/eng/00/eng_0003" type="">
-        <text>I do n't fault the landowners for trying .</text>
-        <arg f="" n="0">I</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">fault</rel>
-        <arg f="" n="1">the landowners</arg>
-        <arg f="" n="2">for trying</arg>
-      </example>
-
-      <example name="fault-n: args 1 and 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>basically, it is their fault they can't attract new employees</text>
-        <arg f="" n="1">their</arg>
-        <rel f="">fault</rel>
-        <arg f="" n="2">they can't attract new employees</arg>
-      </example>
-      <example name="fault-n: arg 1 only" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The fault of congress</text>
-        <rel f="">fault</rel>
-        <arg f="" n="1">of congress</arg>
-      </example>
-      <example name="faulty-j" src="BOLT-7" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>he was faulty of fornication</text>
-        <arg f="" n="1">he</arg>
-        <rel f="">faulty</rel>
-        <arg f="" n="2">of fornication</arg>
-      </example>
     </roleset>
     <roleset id="fault.02" name="functioning improperly, flawed">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">fault</alias>
-        <alias framenet="" pos="j" verbnet="">faulty</alias>
-        <alias framenet="" pos="n" verbnet="">fault</alias>
+        <alias pos="v">fault</alias>
+        <alias pos="j">faulty</alias>
+        <alias pos="n">fault</alias>
       </aliases>
-      <note>FAULTY-J NOTES: Added by Julia based on BOLT-7. (from faulty.02-j)</note>
       <roles>
-        <role descr="flawed thing" f="ppt" n="1"/>
-        <role descr="specific aspect of arg1 that is flawed" f="vsp" n="2"/>
+        <role descr="flawed thing" f="PPT" n="1" />
+        <role descr="specific aspect of arg1 that is flawed" f="VSP" n="2" />
       </roles>
-      <example name="faulty-j: arg1" src="BOLT-7" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Posted on : 2012-01-24 12:04:57 Author : Xinhuaizhen The Spring Festival gala has been held for 30 years . After 30 years ofaccumulation , the Spring Festival gala has already become a brand, a brand of joy . = It brings about anticipation and a pastime topeople every year . However , taking a sweeping view of this year's Spring Festival gala , it was faulty in terms of format orcontents .</text>
-        <arg f="" n="1">it</arg>
-        <rel f="">faulty</rel>
-        <arg f="" n="2">in terms of format or contents</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Render_nonfunctional" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+      </lexlinks>
+      <example name="faulty-j: arg1" src="BOLT-7">
+        <text>Posted on : 2012-01-24 12:04:57 Author : Xinhuaizhen The Spring Festival gala has been held for 30 years . After 30 years ofaccumulation , the Spring Festival gala has already become a brand , a brand of joy . = It brings about anticipation and a pastime topeople every year . However , taking a sweeping view of this year 's Spring Festival gala , it was faulty in terms of format or contents .</text>
+        <propbank>
+          <rel relloc="67">faulty</rel>
+          <arg type="ARG1" start="65" end="65">it</arg>
+          <arg type="ARG2" start="68" end="73">in terms of format or contents</arg>
+        </propbank>
       </example>
-      <example name="fault-v" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Found that the the circuit faulted several times on initial power up until the capacitor was charged.</text>
-        <arg f="" n="1">the circuit</arg>
-        <rel f="">faulted</rel>
-        <arg f="tmp" n="m">several times</arg>
-        <arg f="tmp" n="m">on initial power up</arg>
-        <arg f="tmp" n="m">until the capacitor was charged</arg>
+      <example name="fault-v" src="">
+        <text>Found that the the circuit faulted several times on initial power up until the capacitor was charged .</text>
+        <propbank>
+          <rel relloc="5">faulted</rel>
+          <arg type="ARG1" start="3" end="4">the circuit</arg>
+          <arg type="ARGM-TMP" start="6" end="7">several times</arg>
+          <arg type="ARGM-TMP" start="8" end="11">on initial power up</arg>
+          <arg type="ARGM-TMP" start="12" end="16">until the capacitor was charged</arg>
+        </propbank>
       </example>
+      <note>FAULTY-J NOTES: Added by Julia based on BOLT-7. (from faulty.02-j)</note>
     </roleset>
   </predicate>
 </frameset>

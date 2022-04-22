@@ -1,163 +1,359 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="face">
     <roleset id="face.01" name="look across at">
       <aliases>
-        <alias framenet="Confronting_problem" pos="v" verbnet="">face</alias>
+        <alias pos="v">face</alias>
       </aliases>
-      <note>FACE-V NOTES: We'll need to go back and change these from "arg0-by" to "arg0-with"at some point; the current annotator doesn't contain "arg0-with". (from face.01-v)</note>
       <roles>
-        <role descr="looker, facer" f="pag" n="0">
-          <vnrole vncls="98" vntheta="agent"/>
-          <vnrole vncls="9.8" vntheta="agent"/>
+        <role descr="looker, facer" f="SE1" n="0">
+          <rolelinks>
+            <rolelink class="confront-98" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="confront-98" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="looked at, faced" f="ppt" n="1">
-          <vnrole vncls="98" vntheta="theme"/>
-          <vnrole vncls="9.8" vntheta="destination"/>
+        <role descr="looked at, faced" f="SE2" n="1">
+          <rolelinks>
+            <rolelink class="confront-98" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="confront-98" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
+        <role descr="the 'face' of arg1; the part aimed at arg2 (if in addition to arg0)" f="PRT1" n="2" />
+        <role descr="anchor; which framework is used to designate the 'face'" f="PRT1" n="3" />
+        <role descr="the 'face' of the thing being faced" f="PRT2" n="4" />
       </roles>
-      <example name="face-v: active" src="" type="">
-        <text>Commonwealth Edison now faces an additional court-ordered refund.</text>
-        <arg f="" n="0">Commonwealth Edison</arg>
-        <arg f="tmp" n="m">now</arg>
-        <rel f="">faces</rel>
-        <arg f="" n="1">an additional court-ordered refund</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Confronting_problem" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="confront-98" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="fill-9.8" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="face-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">296</lexlink>
+        <lexlink class="face-v.4" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">10</lexlink>
+        <lexlink class="face-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">12</lexlink>
+        <lexlink class="confront-98" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="face-v: active" src="">
+        <text>Commonwealth Edison now faces an additional court - ordered refund .</text>
+        <propbank>
+          <rel relloc="3">faces</rel>
+          <arg type="ARG0" start="0" end="1">Commonwealth Edison</arg>
+          <arg type="ARGM-TMP" start="2" end="2">now</arg>
+          <arg type="ARG1" start="4" end="9">an additional court - ordered refund</arg>
+        </propbank>
       </example>
-      <example name="ARG1 and ARG0" src="ontonotes mz/sinorama/10/ectb_1042" type="">
+      <example name="face-v: ARG1 and ARG0" src="ontonotes mz/sinorama/10/ectb_1042">
         <text>This is precisely the problem now being faced by Comdek , the first company in Taiwan to produce medical instruments such as blood - oxygen monitors and ear thermometers .</text>
-        <arg f="" n="1">the problem</arg>
-        <arg f="tmp" n="m">now</arg>
-        <rel f="">faced</rel>
-        <arg f="" n="0">by Comdek , the first company in Taiwan to produce medical instruments such as blood - oxygen monitors and ear thermometers</arg>
+        <propbank>
+          <rel relloc="7">faced</rel>
+          <arg end="4" start="3" type="ARG1">the problem</arg>
+          <arg end="5" start="5" type="ARGM-TMP">now</arg>
+          <arg end="28" start="8" type="ARG0">by Comdek , the first company in Taiwan to produce medical instruments such as blood - oxygen monitors and ear thermometers</arg>
+        </propbank>
       </example>
-
-      <example name="face-v: reciprocal" src="" type="">
-        <text>The house and the church face each other across a busy highway.</text>
-        <arg f="" n="0">The house and the church</arg>
-        <rel f="">face</rel>
-        <arg f="rec" n="1">each other</arg>
-        <arg f="loc" n="m">across a busy highway</arg>
+      <example name="face-v: reciprocal" src="">
+        <text>The house and the church face each other across a busy highway .</text>
+        <propbank>
+          <rel relloc="5">face</rel>
+          <arg type="ARG0" start="0" end="4">The house and the church</arg>
+          <arg type="ARG1" start="6" end="7">each other</arg>
+          <arg type="ARGM-LOC" start="8" end="11">across a busy highway</arg>
+        </propbank>
       </example>
-      <example name="face-v: Arg1 as PP" src="" type="">
-        <text>My hotel room faces onto the beach.</text>
-        <arg f="" n="0">My hotel room</arg>
-        <rel f="">faces</rel>
-        <arg f="" n="1">onto the beach</arg>
+      <example name="face-v: Arg1 as PP" src="">
+        <text>My hotel room faces onto the beach .</text>
+        <propbank>
+          <rel relloc="3">faces</rel>
+          <arg type="ARG0" start="0" end="2">My hotel room</arg>
+          <arg type="ARG1" start="4" end="6">onto the beach</arg>
+        </propbank>
       </example>
+      <example name="face-v: with DIR" src="Minecraft">
+        <text>Can we agree that you are facing north ?</text>
+        <propbank>
+          <rel relloc="6">facing</rel>
+          <arg end="4" start="4" type="ARG0">you</arg>
+          <arg end="7" start="7" type="ARGM-DIR">north</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (p / possible-01
+            :ARG1 (a / agree-01
+              :ARG0 (w / we)
+              :ARG1 (f / face-01
+                :ARG0 (y / you)
+                :direction (t / trajectory
+                  :ARG4-of (n / north-01)
+                  :anchor (c / cartesian-framework-91
+                    :ARG1 (b / build-space)
+                    :FR (a3 / ad-hoc-cardinal)))))
+            :polarity (a2 / amr-unknown))
+        </amr>
+      </example>
+      <example name="face-v: with Arg2" src="Spatial">
+        <text>Face the wall with your toes</text>
+        <propbank>
+          <rel relloc="0">Face</rel>
+          <arg end="2" start="1" type="ARG1">the wall</arg>
+          <arg end="5" start="3" type="ARG2">with your toes</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (f / face-01 :mode imperative
+            :ARG0 (y / you)
+            :ARG1 (w / wall)
+            :ARG2 (t / toe :pl +
+              :part-of y))
+        </amr>
+      </example>
+      <example name="face-v: with ARG4; spatialAMR use only" src="Minecraft">
+        <text>now let 's change faces</text>
+        <amr version="Spatial 1.0">
+          (c / change-01 :mode imperative
+            :ARG0 (w / we)
+            :ARG1 (t / thing :pl +
+              :ARG4-of (f / face-01
+                :ARG0 w))
+            :time (n / now))
+        </amr>
+      </example>
+      <example name="face-v: with ARG2; spatialAMR use only" src="Minecraft">
+        <text>so now you 'll copy that on the opposite face from where you are</text>
+        <amr version="Spatial 1.0">
+          (c / copy-01 :mode imperative
+            :ARG0 (y / you)
+            :ARG1 (t / that)
+            :ARG2 (t2 / thing
+              :ARG2-of (f / face-01)
+              :ARG1-of (o / opposite-01
+                :ARG2 (s2 / space
+                  :location-of y)))
+            :time (n2 / now))
+        </amr>
+      </example>
+      <note>FACE NOTES: Args 2, 3 and 4 added for spatial AMR.</note>
+      <note>FACE-V NOTES: We'll need to go back and change these from "arg0-by" to "arg0-with"at some point; the current annotator doesn't contain "arg0-with". (from face.01-v)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="face_off">
     <roleset id="face_off.02" name="face off: oppose, fight">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">face_off</alias>
-        <alias framenet="" pos="n" verbnet="">facing_off</alias>
-        <alias framenet="" pos="n" verbnet="">faceoff</alias>
+        <alias pos="v">face_off</alias>
+        <alias pos="n">facing_off</alias>
+        <alias pos="n">faceoff</alias>
       </aliases>
-      <note>FACE_OFF-V NOTES: Verb particle construction has no entry in VN. (from face.02-v)</note>
       <roles>
-        <role descr="first opponent" f="pag" n="0"/>
-        <role descr="second opponent" f="ppt" n="1"/>
+        <role descr="first opponent" f="PAG" n="0" />
+        <role descr="second opponent" f="PPT" n="1" />
       </roles>
-      <example name="face_off-v: active" src="" type="">
-        <text>"The Parties Face Off".</text>
-        <arg f="" n="0">The Parties</arg>
-        <rel f="">face_off</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks />
+      <example name="face_off-v: active" src="">
+        <text>" The Parties Face Off " .</text>
+        <propbank>
+          <rel relloc="3 4">Face Off</rel>
+          <arg type="ARG0" start="1" end="2">The Parties</arg>
+        </propbank>
       </example>
+      <note>FACE_OFF-V NOTES: Verb particle construction has no entry in VN. (from face.02-v)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="aboutface">
     <roleset id="aboutface.03" name="about-face, change your mind/stance completely">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">about_face</alias>
-        <alias framenet="" pos="n" verbnet="">about_face</alias>
-        <alias framenet="" pos="n" verbnet="">about-face</alias>
-        <alias framenet="" pos="n" verbnet="">aboutface</alias>
-        <alias framenet="" pos="l" verbnet="">make_about-face</alias>
+        <alias pos="v">about_face</alias>
+        <alias pos="n">about_face</alias>
+        <alias pos="n">about-face</alias>
+        <alias pos="n">aboutface</alias>
+        <alias pos="l">make_about-face</alias>
       </aliases>
+      <roles>
+        <role descr="Person changing mind" f="PAG" n="0" />
+        <role descr="Regarding what issue, in what domain" f="DOM" n="1" />
+        <role descr="original orientation" f="SRC" n="2" />
+        <role descr="end orientation" f="GOL" n="3" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks />
+      <example name="make_about-face-l: All Arguments, in LVC" src="nouns-lv">
+        <text>Kidder made an abrupt about - face on program trading yesterday , after a special meeting between the firm 's president and chief executive officer .</text>
+        <propbank>
+          <rel relloc="4 6">about face</rel>
+          <arg type="ARG0" start="0" end="0">Kidder</arg>
+          <arg type="ARGM-LVB" start="1" end="1">made</arg>
+          <arg type="ARGM-MNR" start="3" end="3">abrupt</arg>
+          <arg type="ARG1" start="7" end="9">on program trading</arg>
+        </propbank>
+      </example>
+      <example name="about-face-n: All arguments" src="web">
+        <text>I knew that before I wrote a column disagreeing with her about - face on credit card debt .</text>
+        <propbank>
+          <rel relloc="11 12 13">about - face</rel>
+          <arg type="ARG0" start="10" end="10">her</arg>
+          <arg type="ARG1" start="14" end="17">on credit card debt</arg>
+        </propbank>
+      </example>
+      <note>ABOUTFACE NOTES: Args 2 and 3 added during spatial AMR.</note>
       <note>ABOUT_FACE-N NOTES: Roleset based on nouns-lv task instance. Framed by Claire (from face.01-n)</note>
-      <roles>
-        <role descr="Person changing mind" f="pag" n="0"/>
-        <role descr="Regarding what issue" f="vsp" n="1"/>
-      </roles>
-      <example name="make_about-face-l: All Arguments, in LVC" src="nouns-lv" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Kidder made an abrupt about-face on program trading yesterday, after a special meeting between the firm's president and chief executive officer.</text>
-        <arg f="" n="0">Kidder</arg>
-        <arg f="lvb" n="m">made</arg>
-        <arg f="mnr" n="m">abrupt</arg>
-        <rel f="">[about][face]</rel>
-        <arg f="" n="1">on program trading</arg>
-      </example>
-      <example name="about-face-n: All arguments" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I knew that before I wrote a column disagreeing with her about-face on credit card debt.</text>
-        <arg f="" n="0">her</arg>
-        <rel f="">about-face</rel>
-        <arg f="" n="1">on credit card debt</arg>
-      </example>
     </roleset>
   </predicate>
-  
   <predicate lemma="lose_face">
-     <roleset id="lose_face.04" name="lose social status, be humiliated">
+    <roleset id="lose_face.04" name="lose social status, be humiliated">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">lose_face</alias>
-        <mwe id="lose_face">
-           <token slot="A" arg="" pos="VB" head="" dep="">lose</token>
-           <token slot="B" arg="" pos="NN" head="A" dep="dobj">face</token>
-           <token slot="B" arg="" pos="NN" head="A" dep="dep">face</token>
-        </mwe>
+        <alias pos="m">lose_face</alias>
+        <mwp-descriptions id="lose_face">
+          <syntaxdesc slots="B A">
+            <token arg="" dep="" head="" pos="VB" slot="A">lose</token>
+            <token arg="" dep="dobj" head="A" pos="NN" slot="B">face</token>
+            <token arg="" dep="dep" head="A" pos="NN" slot="B">face</token>
+          </syntaxdesc>
+        </mwp-descriptions>
       </aliases>
-      <note>LOSE_FACE-M NOTES: Added by Tim/Julia during initial MWE framing.</note>
       <roles>
-        <role descr="stimulus of humiliation, event causing a loss of face" f="pag" n="0"/>
-        <role descr="humiliated entity" f="ppt" n="1"/>
-        <role descr="social group whose respect is lost" f='gol' n='2'/>
+        <role descr="stimulus of humiliation, event causing a loss of face" f="PAG" n="0" />
+        <role descr="humiliated entity" f="PPT" n="1" />
+        <role descr="social group whose respect is lost" f="GOL" n="2" />
       </roles>
-      <example name="lose_face-m: active" src="" type="">
-        <text>That way, your child won't lose face when Mom heeds her own Call of Duty and confi scates the game in front of his friend.</text>
-        <arg f="mnr" n="m">that way</arg>
-        <arg f="" n="1">your child</arg>
-        <arg f="mod" n="m">wo</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">[lose][face]</rel>
-        <arg f="" n="0">when Mom heeds her own Call of Duty and confi scates the game in front of his friend.</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks />
+      <example name="lose_face-m: active" src="">
+        <text>That way , your child wo n't lose face when Mom heeds her own Call of Duty and confi scates the game in front of his friend .</text>
+        <propbank>
+          <rel relloc="7 8">lose face</rel>
+          <arg type="ARGM-MNR" start="0" end="1">That way</arg>
+          <arg type="ARG1" start="3" end="4">your child</arg>
+          <arg type="ARGM-MOD" start="5" end="5">wo</arg>
+          <arg type="ARGM-NEG" start="6" end="6">n't</arg>
+          <arg type="ARG0" start="9" end="26">when Mom heeds her own Call of Duty and confi scates the game in front of his friend</arg>
+        </propbank>
       </example>
+      <note>LOSE_FACE-M NOTES: Added by Tim/Julia during initial MWE framing.</note>
     </roleset>
   </predicate>
-
   <predicate lemma="save_face">
-     <roleset id="save_face.05" name="prevent a humiation or loss of status">
+    <roleset id="save_face.05" name="prevent a humiation or loss of status">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">save_face</alias>
-        <mwe id="save_face">
-           <token slot="A" arg="" pos="VB" head="" dep="">save</token>
-           <token slot="B" arg="" pos="NN" head="A" dep="dobj">face</token>
-           <token slot="B" arg="" pos="NN" head="A" dep="dep">face</token>
-        </mwe>
+        <alias pos="m">save_face</alias>
+        <mwp-descriptions id="save_face">
+          <syntaxdesc slots="B A">
+            <token arg="" dep="" head="" pos="VB" slot="A">save</token>
+            <token arg="" dep="dobj" head="A" pos="NN" slot="B">face</token>
+            <token arg="" dep="dep" head="A" pos="NN" slot="B">face</token>
+          </syntaxdesc>
+        </mwp-descriptions>
       </aliases>
-      <note>SAVE_FACE-M NOTES: Added by Tim/Julia during initial MWE framing.</note>
       <roles>
-        <role descr="way of preventing the loss of face" f="pag" n="0"/>
-        <role descr="entity whose dignity is on the line" f="ppt" n="1"/>
-        <role descr="social group whose respect is not lost" f='gol' n='2'/>
-        <role descr="event of losing face that was prevented" f='mnr' n='3'/>
+        <role descr="way of preventing the loss of face" f="PAG" n="0" />
+        <role descr="entity whose dignity is on the line" f="PPT" n="1" />
+        <role descr="social group whose respect is not lost" f="GOL" n="2" />
+        <role descr="event of losing face that was prevented" f="MNR" n="3" />
       </roles>
-      <example name="save_face-m: active" src="" type="">
-        <text>After the vote, creationists tried to save face by insisting they had scored a victory.</text>
-        <arg f="tmp" n="m">After the vote</arg>
-        <arg f="" n="1">creationists</arg>
-        <rel f="">[save][face]</rel>
-        <arg f="" n="0">by insisting they had scored a victory</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks />
+      <example name="save_face-m: active" src="">
+        <text>After the vote , creationists tried to save face by insisting they had scored a victory .</text>
+        <propbank>
+          <rel relloc="7 8">save face</rel>
+          <arg type="ARGM-TMP" start="0" end="2">After the vote</arg>
+          <arg type="ARG1" start="4" end="4">creationists</arg>
+          <arg type="ARG0" start="9" end="15">by insisting they had scored a victory</arg>
+        </propbank>
       </example>
-      <example name="save_face-m: active" src="" type="">
-        <text>Hang tough, but still give Cardenas a way to save face in front of his crew.</text>
-        <arg f="" n="1">Cardenas</arg>
-        <rel f="">[save][face]</rel>
-        <arg f="" n="2">in front of his crew.</arg>
+      <example name="save_face-m: active" src="">
+        <text>Hang tough , but still give Cardenas a way to save face in front of his crew .</text>
+        <propbank>
+          <rel relloc="10 11">save face</rel>
+          <arg type="ARG1" start="6" end="6">Cardenas</arg>
+          <arg type="ARG2" start="12" end="16">in front of his crew</arg>
+        </propbank>
       </example>
+      <note>SAVE_FACE-M NOTES: Added by Tim/Julia during initial MWE framing.</note>
+    </roleset>
+  </predicate>
+  <predicate lemma="face-down">
+    <roleset id="face-down.06" name="be oriented with the face pointing down in some framework">
+      <aliases>
+        <alias pos="j">face-down</alias>
+        <alias pos="j">downward</alias>
+      </aliases>
+      <roles>
+        <role descr="face-down thing" f="SE1" n="1" />
+        <role descr="axis" f="AXS" n="2" />
+        <role descr="face-anchor (which framework's 'front' is being referenced as pointing down)" f="ANC1" n="3" />
+        <role descr="down-anchor (which framework's 'down' is being referenced)" f="ANC2" n="4" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks />
+      <example name="downward-j" src="Minecraft">
+        <text>ok now build a 8x7 red downward L</text>
+        <propbank>
+          <rel relloc="6">downward</rel>
+          <arg end="7" start="7" type="ARG1">L</arg>
+        </propbank>
+      </example>
+      <example name="face-down-j" src="internet">
+        <text>there was a little dead bird face - down in the snow</text>
+        <propbank>
+          <rel relloc="6 7 8">face - down</rel>
+          <arg end="5" start="2" type="ARG1">a little dead bird</arg>
+          <arg end="11" start="9" type="ARGM-LOC">in the snow</arg>
+        </propbank>
+      </example>
+      <note>FACE-DOWN NOTES: Added for SpatialAMR.</note>
     </roleset>
   </predicate>
 </frameset>

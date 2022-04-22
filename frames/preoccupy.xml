@@ -1,47 +1,74 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="preoccupy">
     <roleset id="preoccupy.01" name="demand full attention">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">preoccupy</alias>
-        <alias framenet="" pos="n" verbnet="">preoccupation</alias>
+        <alias pos="v">preoccupy</alias>
+        <alias pos="n">preoccupation</alias>
       </aliases>
+      <roles>
+        <role descr="causer of preoccupation" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.3">stimulus</rolelink>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.4">stimulus</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="preoccupied entity" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.3">experiencer</rolelink>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.4">experiencer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="focus of attention" f="GOL" n="2">
+          <rolelinks/>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="amuse-31.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="preoccupy-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="amuse-31.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="usually passive" src="">
+        <text>Worst of all , Nissan was preoccupied with management infighting , cronyism and corporate rigidity .</text>
+        <propbank>
+          <rel relloc="6">preoccupied</rel>
+          <arg type="ARGM-DIS" start="0" end="2">Worst of all</arg>
+          <arg type="ARG1" start="4" end="4">Nissan</arg>
+          <arg type="ARG2" start="7" end="14">with management infighting , cronyism and corporate rigidity</arg>
+        </propbank>
+      </example>
+      <example name="occasionally active" src="">
+        <text>Foreign exchange dealers said that the currency market has begun to distance itself from the volatile stock exchange , which has preoccupied the market since Oct. 13 , when the Dow Jones Industrial Average plunged more than 190 points .</text>
+        <propbank>
+          <rel relloc="21">preoccupied</rel>
+          <arg type="ARG0" start="14" end="17">the volatile stock exchange</arg>
+          <arg type="R-ARG0" start="19" end="19">which</arg>
+          <arg type="ARG1" start="22" end="23">the market</arg>
+          <arg type="ARGM-TMP" start="24" end="38">since Oct. 13 , when the Dow Jones Industrial Average plunged more than 190 points</arg>
+        </propbank>
+      </example>
+      <example name="Arg1,2" src="">
+        <text>At last the Archbishop of Canterbury is moving out of his preoccupation with papalizing the Anglicans and being a voice for the poor .</text>
+        <propbank>
+          <rel relloc="11">preoccupation</rel>
+          <arg type="ARG1" start="10" end="10">his</arg>
+          <arg type="ARG2" start="12" end="15">with papalizing the Anglicans</arg>
+        </propbank>
+      </example>
       <note>PREOCCUPY-V NOTES: Frames file for 'preoccupy' based on sentences in wsj. Verbnet entry 31.1 (from preoccupy.01-v predicate notes)</note>
       <note>PREOCCUPATION-N NOTES: preoccupy.01 (from preoccupation.01-n)</note>
-      <roles>
-        <note>To my ear, args 0 and 2 cannot cooccur, but the prepositional usage ofarg2 does imply that the two are separate arguments. (from preoccupy.01-v)</note>
-        <role descr="causer of preoccupation" f="pag" n="0">
-          <vnrole vncls="31.1" vntheta="stimulus"/>
-        </role>
-        <role descr="preoccupied entity" f="ppt" n="1">
-          <vnrole vncls="31.1" vntheta="experiencer"/>
-        </role>
-        <role descr="focus of attention" f="gol" n="2"/>
-      </roles>
-      <example name="usually passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>Worst of all, Nissan-1 was preoccupied *trace*-1 with management infighting, cronyism and corporate rigidity.</text>
-        <arg f="dis" n="m">Worst of all</arg>
-        <rel f="">preoccupied</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="2">with management infighting, cronyism and corporate rigidity</arg>
-      </example>
-      <example name="occasionally active" src="" type="">
-        <inflection aspect="perfect" form="participle" person="third" tense="present" voice="ns"/>
-        <text>Foreign exchange dealers said that the currency market has begun to distance itself from the volatile stock exchange, which *trace* has preoccupied the market since Oct. 13, when the Dow Jones Industrial Average plunged more than 190 points.</text>
-        <arg f="" n="0">*trace*</arg>
-        <arg f="rcl" n="m">which -&gt; the volatile stock exchange</arg>
-        <rel f="">preoccupied</rel>
-        <arg f="" n="1">the market</arg>
-        <arg f="tmp" n="m">since Oct. 13, when the Dow Jones Industrial Average plunged more than 190 points</arg>
-      </example>
-      <example name="Arg1,2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>At last the Archbishop of Canterbury is moving out of his preoccupation with papalizing the Anglicans and being a voice for the poor.</text>
-        <arg f="" n="1">his</arg>
-        <rel f="">preoccupation</rel>
-        <arg f="" n="2">with papalizing the Anglicans</arg>
-      </example>
+      <note>To my ear, args 0 and 2 cannot cooccur, but the prepositional usage ofarg2 does imply that the two are separate arguments. (from preoccupy.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

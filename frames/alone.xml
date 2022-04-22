@@ -1,69 +1,99 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="alone">
     <roleset id="alone.01" name="isolated, unaccompanied, unique">
       <aliases>
-        <alias framenet="Accompaniment" pos="j" verbnet="">alone</alias>
+        <alias pos="j">alone</alias>
       </aliases>
-      <note>ALONE-J NOTES: Added by Julia based on BOLT-4,5. (from alone.01-j)</note>
       <roles>
-        <role descr="loner" f="pag" n="1"/>
-        <role descr="domain in which arg1 is unique" f="ppt" n="2"/>
+        <role descr="loner" f="PAG" n="1"/>
+        <role descr="domain in which arg1 is unique" f="PPT" n="2"/>
       </roles>
-      <example name="alone-j: both args" src="BOLT-4,5" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Accompaniment" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+      </lexlinks>
+      <example name="alone-j: both args" src="BOLT-4,5">
         <text>It 's frustrating , you 're not alone in feeling the way you do .</text>
-        <arg f="" n="1">you</arg>
-        <arg f="neg" n="m">not</arg>
-        <rel f="">alone</rel>
-        <arg f="" n="2">in feeling the way you do</arg>
+        <propbank>
+          <rel relloc="7">alone</rel>
+          <arg type="ARG1" start="4" end="4">you</arg>
+          <arg type="ARGM-NEG" start="6" end="6">not</arg>
+          <arg type="ARG2" start="8" end="13">in feeling the way you do</arg>
+        </propbank>
       </example>
+      <note>ALONE-J NOTES: Added by Julia based on BOLT-4,5. (from alone.01-j)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="leave_alone">
     <roleset id="leave_alone.02" name="stop bothering">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">leave_alone</alias>
-        <alias framenet="" pos="m" verbnet="">leaving_alone</alias>
-        <mwe id="leave_alone">
-           <token slot="A" arg="" pos="VB" head="" dep="">leave</token>
-           <token slot="A" arg="" pos="NN" head="" dep="">leaving</token>
-           <token slot="B" arg="" pos="JJ" head="A" dep="xcomp">alone</token>
-           <token slot="B" arg="" pos="RB" head="A" dep="advmod">alone</token>
-        </mwe>
-      </aliases>
-      <mappings alias="leave_alone">
-        <source>
-            (A / leave-14 
+        <alias pos="m">leave_alone</alias>
+        <mwp-descriptions id="leave_alone">
+          <syntaxdesc slots="B A">
+            <token arg="" dep="" head="" pos="VB" slot="A">leave</token>
+            <token arg="" dep="" head="" pos="NN" slot="A">leaving</token>
+            <token arg="" dep="xcomp" head="A" pos="JJ" slot="B">alone</token>
+            <token arg="" dep="advmod" head="A" pos="RB" slot="B">alone</token>
+          </syntaxdesc>
+          <mapping>
+            <source>
+            (A / leave-14
                 :arg0 (n / NARG0)
                 :arg1 (B / alone-01
                     :arg1 (n1 / NARG1)))
         </source>
-        <target>
+            <target>
             (A / bother-01 :polarity -
                 :arg0 (n / NARG0)
                 :arg1 (n1 / NARG1))
         </target>
-      </mappings>
-      <note>LEAVE_ALONE-M NOTES: Added by Julia and Tim.</note>
+          </mapping>
+        </mwp-descriptions>
+        <alias pos="m">leaving_alone</alias>
+      </aliases>
       <roles>
-        <role descr="bothersome entity" f="pag" n="0"/>
-        <role descr="entity who doesn't want to be bothered" f="ppt" n="1"/>
+        <role descr="bothersome entity" f="PAG" n="0"/>
+        <role descr="entity who doesn't want to be bothered" f="PPT" n="1"/>
       </roles>
-      <example name="leave_alone-m" src="" type="">
-        <text>Now *PRO* go away then, and leave me alone. I don't want any more of your meretricious persiflage.</text>
-        <arg f="dis" n="m">Now</arg>
-        <arg f="" n="0">*PRO*</arg>
-        <rel f="">[leave][alone]</rel>
-        <arg f="" n="1">me</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="leave_alone-m" src="">
+        <text>Now *PRO* go away then , and leave me alone . I do n't want any more of your meretricious persiflage .</text>
+        <propbank>
+          <rel relloc="7 9">leave alone</rel>
+          <arg type="ARGM-DIS" start="0" end="0">Now</arg>
+          <arg type="ARG0" start="?" end="?">*PRO*</arg>
+          <arg type="ARG1" start="8" end="8">me</arg>
+        </propbank>
       </example>
-      <example name="leave_alone-m" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Leave the Marines alone.</text>
-        <rel f="">[leave][alone]</rel>
-        <arg f="" n="1">the Marines</arg>
+      <example name="leave_alone-m" src="">
+        <text>Leave the Marines alone .</text>
+        <propbank>
+          <rel relloc="0 3">Leave alone</rel>
+          <arg type="ARG1" start="1" end="2">the Marines</arg>
+        </propbank>
       </example>
+      <note>LEAVE_ALONE-M NOTES: Added by Julia and Tim.</note>
     </roleset>
   </predicate>
 </frameset>

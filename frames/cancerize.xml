@@ -1,40 +1,129 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="cancerize">
     <roleset id="cancerize.01" name="becoming cancerous">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">cancerization</alias>
-        <alias framenet="" pos="v" verbnet="">cancerize</alias>
+        <alias pos="n">cancerization</alias>
+        <alias pos="v">cancerize</alias>
       </aliases>
-      <note>CANCERIZATION-N NOTES: (from cancerization.01-n)</note>
-      <note>CANCERIZE-V NOTES: Automatically added alias.</note>
       <roles>
         <role descr="entity becoming cancerous" f="PPT" n="1">
-          <vnrole vncls="45.4" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="Arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="other_cos-45.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+      </lexlinks>
+      <example name="cancerization-n: Arg1" src="">
         <text>stroboscopy in laryngeal keratosis and its cancerization</text>
-        <arg f="" n="1">its</arg>
-        <rel f="">cancerization</rel>
+        <propbank>
+          <rel relloc="6">cancerization</rel>
+          <arg end="5" start="5" type="ARG1">its</arg>
+        </propbank>
       </example>
+      <note>CANCERIZATION-N NOTES: (from cancerization.01-n)</note>
+      <note>CANCERIZE-V NOTES: Automatically added alias.</note>
     </roleset>
   </predicate>
   <predicate lemma="cancerous">
     <roleset id="cancerous.02" name="having cancer">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">cancerous</alias>
+        <alias pos="j">cancerous</alias>
       </aliases>
-      <note>CANCEROUS-J NOTES: Added automatically by Julia. (from cancerous.01-j)</note>
       <roles>
-        <role descr="cancerous entity" f="ppt" n="1"/>
+        <role descr="cancerous entity" f="PPT" n="1" />
       </roles>
-      <example name="arg1" src="" type="">
-        <text>needle aspiration biopsy (FNA) will tell if the nodule is cancerous or benign.</text>
-        <arg f="" n="1">the nodule</arg>
-        <rel f="">cancerous</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks />
+      <example name="arg1" src="">
+        <text>needle aspiration biopsy ( FNA ) will tell if the nodule is cancerous or benign .</text>
+        <propbank>
+          <rel relloc="12">cancerous</rel>
+          <arg type="ARG1" start="9" end="10">the nodule</arg>
+        </propbank>
       </example>
+      <note>CANCEROUS-J NOTES: Added automatically by Julia. (from cancerous.01-j)</note>
+    </roleset>
+  </predicate>
+    <predicate lemma="cancer">
+    <roleset id="cancer.03" name="group of diseases involving abnormal cell growth">
+      <aliases>
+        <alias pos="n">cancer</alias>
+      </aliases>
+      <roles>
+        <role descr="patient" f="PPT" n="1"/>
+        <role descr="primary organ" f="LOC" n="2"/>
+        <role descr="specific part of organ, if in addition to ARG2" f="LOC" n="3"/>
+        <role descr="cell location/field (e.g., squamous cell; urothelium)" f="LOC" n="4"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks />
+      <example name="cancer-n, interaction with metastastize-101" src="THYME">
+        <text># 1 Metastatic colon cancer to the pelvis .</text>
+        <amr version="THYME 1.0">
+          (c / cancer-03 :li 1
+            :ARG2 (a / anatomical-site :name (n / name :op1 "colon"))
+            :ARG1-of (m / metastasize-101
+              :ARG2 (a2 / anatomical-site :name (n3 / name :op1 "pelvis"))
+              :ARG4 a)) 
+        </amr>
+      </example>
+      <example name="cancer-n, ARG2 and ARG3" src="THYME">
+        <text>Colon cancer , cecum .</text>
+        <amr version="THYME 1.0">
+          (c / cancer-03
+            :ARG2 (a / anatomical-site :name (n / name :op1 "colon"))
+            :ARG3 (a2 / anatomical-site :name (n2 / name :op1 "cecum")))  
+        </amr>
+      </example>
+      <example name="cancer-n, use :location when the site mentioned isn't the primary, discernible from context" src="THYME">
+        <text>She had cancer in one lymph node .</text>
+        <amr version="THYME 1.0">
+          (c / cancer-03
+            :ARG1 (s / she)
+            :location (a / anatomical-site :quant 1 :name (n / name :op1 "lymph" :op2 "node")))
+        </amr>
+      </example>
+      <example name="cancer-n, ARG2 and ARG4" src="THYME">
+        <text>Urothelial bladder cancer .</text>
+        <amr version="THYME 1.0">
+          (c2 / cancer-03
+            :ARG2 (a3 / anatomical-site :name (n3 / name :op1 "bladder"))
+            :ARG4 (a4 / anatomical-site :name (n4 / name :op1 "urothelium")))
+        </amr>
+      </example>
+      <note>NOTES: Added for THYME-AMR.</note>
     </roleset>
   </predicate>
 </frameset>

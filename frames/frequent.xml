@@ -1,40 +1,85 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="frequent">
-    <roleset id="frequent.01" name="to pay frequent visits to">
+    <roleset id="frequent.01" name="pay frequent visits to">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">frequent</alias>
+        <alias pos="v">frequent</alias>
       </aliases>
-      <note>FREQUENT-V NOTES: Frames file for 'frequent' based on survey of sentences in the WSJ corpus. (from frequent.01-v predicate notes)</note>
       <roles>
         <role descr="visitor, agent" f="PAG" n="0"/>
         <role descr="place visited" f="PPT" n="1"/>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>The former $ 3 million-a-year [*U*] lobbyist now frequents shelters for the homeless and devotes a third of his time [*-1]counseling other recovering alcoholics .</text>
-        <arg f="" n="0">The former $ 3 million-a-year [*U*] lobbyist</arg>
-        <arg f="TMP" n="M">now</arg>
-        <rel f="">frequents</rel>
-        <arg f="" n="1">shelters for the homeless</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="frequent-v: transitive" src="">
+        <text>The former $ 3 million - a - year lobbyist now frequents shelters for the homeless and devotes a third of his time counseling other recovering alcoholics .</text>
+        <propbank>
+          <rel relloc="11">frequents</rel>
+          <arg end="9" start="1" type="ARG0">former $ 3 million - a - year lobbyist</arg>
+          <arg end="10" start="10" type="ARGM-TMP">now</arg>
+          <arg end="15" start="12" type="ARG1">shelters for the homeless</arg>
+        </propbank>
       </example>
+      <note>FREQUENT-V NOTES: Frames file for 'frequent' based on survey of sentences in the WSJ corpus. (from frequent.01-v predicate notes)</note>
     </roleset>
     <roleset id="frequent.02" name="occurring often">
       <aliases>
-        <alias framenet="Frequency Condition_Symptom_Relation" pos="j" verbnet="">frequent</alias>
+        <alias pos="n">frequency</alias>
+        <alias pos="j">frequent</alias>
       </aliases>
-      <note>FREQUENT-J NOTES: Added by Julia based on BOLT. (from frequent.01-j)</note>
       <roles>
-        <role descr="thing that occurs often" f="ppt" n="1"/>
+        <role descr="thing that occurs often" f="PPT" n="1"/>
       </roles>
-      <example name="arg1" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Condition_symptom_relation" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Frequency" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+      </lexlinks>
+      <example name="frequent-j: arg1" src="BOLT">
         <text>Not sure i s call it lonely but solitary . I 'm a freak . Do n't really get lonely per se . I do know that when I study on my own it s pretty frequent that it comes up in clinic and it pays dividends</text>
-        <arg f="tmp" n="m">when I study on my own</arg>
-        <arg f="adv" n="m">pretty</arg>
-        <rel f="">frequent</rel>
-        <arg f="" n="1">that it comes up in clinic and pays dividends</arg>
+        <propbank>
+          <rel relloc="36">frequent</rel>
+          <arg end="32" start="27" type="ARGM-TMP">when I study on my own</arg>
+          <arg end="35" start="35" type="ARGM-ADV">pretty</arg>
+          <arg end="46" start="38" type="ARG1">it comes up in clinic and it pays dividends</arg>
+        </propbank>
       </example>
+      <example name="frequency-n" src="THYME-Auto1">
+        <text>Patient reports symptoms of prostatism with frequency and urgency .</text>
+        <propbank>
+          <rel relloc="6">frequency</rel>
+        </propbank>
+        <amr version="THYME 1.0">
+          (r / report-01
+            :ARG0 (p / patient-yy)
+            :ARG1 (s / symptomatic-01
+              :ARG0 p
+              :ARG1 (d / disease-disorder :name (n2 / name :op1 "prostatism")
+              :ARG2 (a / and
+                :op1 (f / frequent-02)
+                :op2 (u / urgent-01)))))
+        </amr>
+      </example>
+      <note>FREQUENT-J NOTES: Added by Julia based on BOLT. (from frequent.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

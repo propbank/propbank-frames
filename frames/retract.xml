@@ -1,53 +1,78 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="retract">
     <roleset id="retract.01" name="to take back">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">retracting</alias>
-        <alias framenet="" pos="n" verbnet="">retraction</alias>
-        <alias framenet="" pos="v" verbnet="">retract</alias>
+        <alias pos="n">retracting</alias>
+        <alias pos="n">retraction</alias>
+        <alias pos="v">retract</alias>
       </aliases>
+      <roles>
+        <role descr="taker back, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing retracted" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="remove-10.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="remove-10.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="transitive" src="">
+        <text>When the pilots refused , the company retracted it .</text>
+        <propbank>
+          <rel relloc="7">retracted</rel>
+          <arg type="ARGM-TMP" start="0" end="3">When the pilots refused</arg>
+          <arg type="ARG0" start="5" end="6">the company</arg>
+          <arg type="ARG1" start="8" end="8">it</arg>
+        </propbank>
+      </example>
+      <example name="Arg0,1" src="">
+        <text>His retraction of the libel came too late .</text>
+        <propbank>
+          <rel relloc="1">retraction</rel>
+          <arg type="ARG0" start="0" end="0">His</arg>
+          <arg type="ARG1" start="2" end="4">of the libel</arg>
+        </propbank>
+      </example>
+      <example name="Arg0,1, metaphorical" src="">
+        <text>I am going to Beauchamp , in whose journal the paragraph appears , and I shall insist on his retracting the assertion before two witnesses .</text>
+        <propbank>
+          <rel relloc="19">retracting</rel>
+          <arg type="ARG0" start="18" end="18">his</arg>
+          <arg type="ARG1" start="20" end="21">the assertion</arg>
+          <arg type="ARGM-LOC" start="22" end="24">before two witnesses</arg>
+        </propbank>
+      </example>
+      <example name="Arg1, concrete/physical" src="">
+        <text>The locks hold the gear in the desired position , and the safety switch prevents accidental retracting of the gear when the aircraft is resting on its wheels .</text>
+        <propbank>
+          <rel relloc="16">retracting</rel>
+          <arg type="ARGM-ADJ" start="15" end="15">accidental</arg>
+          <arg type="ARG1" start="17" end="19">of the gear</arg>
+        </propbank>
+      </example>
       <note>RETRACT-V NOTES: Corresponds to VN Class remove-10.1. (from retract.01-v)</note>
       <note>RETRACTION-N NOTES: (from retraction.01-n)</note>
       <note>RETRACTING-N NOTES: retract.01 (from retracting.01-n)</note>
-      <roles>
-        <role descr="taker back, agent" f="PAG" n="0">
-          <vnrole vncls="10.1" vntheta="Agent"/>
-        </role>
-        <role descr="thing retracted" f="PPT" n="1">
-          <vnrole vncls="10.1" vntheta="Theme"/>
-        </role>
-      </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>When the pilots refused [*T*-1] , the company retracted it .</text>
-        <arg f="tmp" n="m">When the pilots refused [*T*-1]</arg>
-        <arg f="" n="0">the company</arg>
-        <rel f="">retracted</rel>
-        <arg f="" n="1">it</arg>
-      </example>
-      <example name="Arg0,1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>His retraction of the libel came too late.</text>
-        <arg f="" n="0">His</arg>
-        <rel f="">retraction</rel>
-        <arg f="" n="1">of the libel</arg>
-      </example>
-      <example name="Arg0,1, metaphorical" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I am going to Beauchamp, in whose journal the paragraph appears, and I shall insist on his retracting the assertion before two witnesses.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">retracting</rel>
-        <arg f="" n="1">the assertion</arg>
-        <arg f="loc" n="m">before two witnesses</arg>
-      </example>
-      <example name="Arg1, concrete/physical" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The locks hold the gear in the desired position, and the safety switch prevents accidental retracting of the gear when the aircraft is resting on its wheels.</text>
-        <arg f="adj" n="m">accidental</arg>
-        <rel f="">retracting</rel>
-        <arg f="" n="1">of the gear</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

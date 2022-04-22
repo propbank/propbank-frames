@@ -1,40 +1,91 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="uturn">
-    <roleset id="uturn.01" name="turn 180 degrees">
+    <roleset id="uturn.01" name="turn in a U-shaped trajectory such that the orientation at the end is 180 degrees from the start.">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">uturn</alias>
-        <alias framenet="" pos="v" verbnet="">uturn</alias>
-        <alias framenet="" pos="l" verbnet="">make_uturn</alias>
+        <alias pos="v">uturn</alias>
+        <alias pos="v">U-turn</alias>
+        <alias pos="n">uturn</alias>
+        <alias pos="n">U-turn</alias>
+        <alias pos="n">U-ey</alias>
+        <alias pos="l">make_uturn</alias>
+        <alias pos="l">make_U-turn</alias>
+        <alias pos="m">flip_up-ey</alias>
+        <alias pos="m">flip_bitch</alias>
       </aliases>
+      <roles>
+        <role descr="Agent" f="PAG" n="0" />
+        <role descr="vehicle mention" f="PPT" n="1" />
+        <role descr="U-shaped path" f="AXS" n="2" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <example name="u-turn-n" src="">
+        <text>My illegal u - turn was caught on camera</text>
+        <propbank>
+          <rel relloc="2 3 4">u - turn</rel>
+          <arg end="0" start="0" type="ARG0">My</arg>
+          <arg end="1" start="1" type="ARGM-MNR">illegal</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (c / catch-03
+            :ARG1 (u / uturn-01
+              :ARG0 (i / i)
+              :ARG1-of (l / legal-02 :polarity -))
+            :ARG2 (c2 / camera))
+        </amr>
+      </example>
+      <example name="u-turn-n" src="">
+        <text>the van 's u - turn at about seven thirty PM at the place Imette 's body was found</text>
+        <propbank>
+          <rel relloc="3 4 5">u - turn</rel>
+          <arg end="2" start="0" type="ARG1">the van 's</arg>
+          <arg end="9" start="6" type="ARGM-TMP">at about seven thirty</arg>
+          <arg end="18" start="11" type="ARGM-LOC">at the place Imette 's body was found</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (h / have-03
+            :ARG0 (u / uturn-01
+              :ARG0 (i / i)
+              :ARG1 (v / vehicle :name (n / name :op1 "F-150")))
+            :ARG1 (t / technique
+              :ARG1-of (p / patent-01)))
+        </amr>
+      </example>
+      <example name="U-turn-n: both args" src="">
+        <text>My F50 U - turn has a patented technique .</text>
+        <propbank>
+          <rel relloc="2 3 4">U - turn</rel>
+          <arg end="0" start="0" type="ARG0">My</arg>
+          <arg end="1" start="1" type="ARG1">F50</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (s / start-01 :mode imperative
+            :ARG0 (y / you)
+            :ARG1 u
+            :time (u / uturn-01
+              :ARG0 y)
+            :source (l / lane
+              :ARG1-of (l2 / left-24
+                :ARG3 (c / cartesian-framework-91
+                  :ARG1 y)
+                :ARG1-of (h / have-degree-91
+                  :ARG2 (f / far-01)
+                  :ARG3 (m / most)))))
+        </amr>
+      </example>
+      <note>UTURN NOTES: Arg2 added for spatialAMR-- pragmatic role</note>
       <note>UTURN-N NOTES: Based on sentences in wsj. Relation to turn-01. No VN or FN classes. Framed by Katie. (from uturn.01-n)</note>
       <note>UTURN-V NOTES: Automatically added alias.</note>
-      <roles>
-        <role descr="turner" f="pag" n="0"/>
-        <role descr="thing turned (usually a car)" f="ppt" n="1"/>
-      </roles>
-      <example name="" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>My illegal u-turn was caught on camera</text>
-        <arg f="" n="0">my</arg>
-        <arg f="mnr" n="m">illegal</arg>
-        <rel f="">u-turn</rel>
-      </example>
-      <example name="" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>the van's u-turn at about seven thirty PM at the place Imette's body was found</text>
-        <arg f="" n="1">the van's</arg>
-        <rel f="">u-turn</rel>
-        <arg f="tmp" n="m">at about seven thirty</arg>
-        <arg f="loc" n="m">at the place Imette's body was found.</arg>
-      </example>
-      <example name="both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>My F-150 U-turn has a patented technique.</text>
-        <arg f="" n="0">My</arg>
-        <arg f="" n="1">F-150</arg>
-        <rel f="">u-turn</rel>
-      </example>
     </roleset>
   </predicate>
 </frameset>

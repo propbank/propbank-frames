@@ -1,85 +1,126 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="splice">
     <roleset id="splice.01" name="join or weave together">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">splice</alias>
-        <alias framenet="" pos="n" verbnet="">splicing</alias>
+        <alias pos="v">splice</alias>
+        <alias pos="n">splicing</alias>
       </aliases>
-      <note>SPLICE-V NOTES: Roleset by Katie based on internet search. Based on parallel expansion of verbnet, propbank, and sense groupings. VN class shake-22.3-2-1. (from splice.01-v)</note>
-      <note>SPLICING-N NOTES: Added by Julia for clearearth-biotexts.</note>
       <roles>
         <role descr="Splicer" f="PAG" n="0">
-          <vnrole vncls="22.3-2-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="shake-22.3-2-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="shake-22.3-2-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="First entity joined together (or all entities)" f="PPT" n="1">
-          <vnrole vncls="22.3-2-1" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink class="shake-22.3-2-1" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="shake-22.3-2-1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="second entity joined together" f="PPT" n="2">
-          <vnrole vncls="22.3-2-1" vntheta="co-patient"/>
+          <rolelinks>
+            <rolelink class="shake-22.3-2-1" resource="VerbNet" version="verbnet3.3">co-patient</rolelink>
+            <rolelink class="shake-22.3-2-1" resource="VerbNet" version="verbnet3.4">co_patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="splice-v: with all arguements" src="Example with all arguements" type="Example with all arguements">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>[Pro] Splice the red wire with the black one.</text>
-        <arg f="" n="0">[Pro]</arg>
-        <rel f="">splice</rel>
-        <arg f="" n="1">the red wire</arg>
-        <arg f="" n="2">with the black one.</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="shake-22.3-2-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="shake-22.3-2-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="splice-v: with all arguments" src="">
+        <text>Splice the red wire with the black one .</text>
+        <propbank>
+          <rel relloc="0">Splice</rel>
+          <arg type="ARG1" start="1" end="3">the red wire</arg>
+          <arg type="ARG2" start="4" end="7">with the black one</arg>
+        </propbank>
       </example>
-      <example name="splice-v: gene splicing" src="gene splicing example" type="gene splicing example">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>They spliced the genes in the lab.</text>
-        <arg f="" n="0">They</arg>
-        <rel f="">spliced</rel>
-        <arg f="" n="1">the genes</arg>
-        <arg f="loc" n="m">in the lab.</arg>
+      <example name="splice-v: gene splicing" src="">
+        <text>They spliced the genes in the lab .</text>
+        <propbank>
+          <rel relloc="1">spliced</rel>
+          <arg type="ARG0" start="0" end="0">They</arg>
+          <arg type="ARG1" start="2" end="3">the genes</arg>
+          <arg type="ARGM-LOC" start="4" end="6">in the lab</arg>
+        </propbank>
       </example>
-      <example name="splice-v: Imperative with no oblique" src="Imperative with no oblique" type="Imperative with no oblique">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>[Pro] Splice the wires.</text>
-        <arg f="" n="0">[Pro]</arg>
-        <rel f="">splice</rel>
-        <arg f="" n="1">the wires.</arg>
+      <example name="splice-v: Imperative with no oblique" src="">
+        <text>Splice the wires .</text>
+        <propbank>
+          <rel relloc="0">Splice</rel>
+          <arg type="ARG1" start="1" end="2">the wires</arg>
+        </propbank>
       </example>
-      <example name="splicing-n" src="" type="">
-        <text>The Chlamydomonas version is more complex : it crosses the membrane twice rather than once , contains additional domains and undergoes alternative splicing . </text>
-        <arg f="mnr" n="m">alternative</arg>
-        <rel f="">splicing</rel>
+      <example name="splicing-n" src="">
+        <text>The Chlamydomonas version is more complex : it crosses the membrane twice rather than once , contains additional domains and undergoes alternative splicing .</text>
+        <propbank>
+          <rel relloc="22">splicing</rel>
+          <arg type="ARGM-MNR" start="21" end="21">alternative</arg>
+        </propbank>
       </example>
+      <note>SPLICE-V NOTES: Roleset by Katie based on internet search. Based on parallel expansion of verbnet, propbank, and sense groupings. VN class shake-22.3-2-1. (from splice.01-v)</note>
+      <note>SPLICING-N NOTES: Added by Julia for clearearth-biotexts.</note>
     </roleset>
     <roleset id="splice.02" name="perform a merriage ceremony.">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">splice</alias>
-        <alias framenet="" pos="n" verbnet="">splicing</alias>
+        <alias pos="v">splice</alias>
+        <alias pos="n">splicing</alias>
       </aliases>
-      <note>SPLICE-V NOTES: Roleset by Katie based on internet search, parallel expansion of verbnet, propbank, and sense groupings. No vn or fn entries. (from splice.02-v)</note>
       <roles>
         <role descr="Minister" f="PAG" n="0"/>
-        <role descr="Party married" f="ppt" n="1"/>
+        <role descr="Party married" f="PPT" n="1"/>
       </roles>
-      <example name="splice-v: example with temporal" src="example with temporal" type="example with temporal">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>We were spliced the following week.</text>
-        <arg f="" n="1">We</arg>
-        <rel f="">spliced</rel>
-        <arg f="tmp" n="m">the following week.</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="splice-v: example with temporal" src="">
+        <text>We were spliced the following week .</text>
+        <propbank>
+          <rel relloc="2">spliced</rel>
+          <arg type="ARG1" start="0" end="0">We</arg>
+          <arg type="ARGM-TMP" start="3" end="5">the following week</arg>
+        </propbank>
       </example>
-      <example name="splice-v: Example with locative" src="Example with locative" type="Example with locative">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="splice-v: Example with locative" src="">
         <text>The couple got spliced on Hawaii</text>
-        <arg f="" n="1">The couple</arg>
-        <rel f="">spliced</rel>
-        <arg f="loc" n="m">on Hawaii</arg>
+        <propbank>
+          <rel relloc="3">spliced</rel>
+          <arg type="ARG1" start="0" end="1">The couple</arg>
+          <arg type="ARGM-LOC" start="4" end="5">on Hawaii</arg>
+        </propbank>
       </example>
-      <example name="splice-v: Another temporal example, this time with an agent" src="Another temporal example, this time with an agent" type="Another temporal example, this time with an agent">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The minister spliced us on Saturday.</text>
-        <arg f="" n="0">The minister</arg>
-        <rel f="">spliced</rel>
-        <arg f="" n="1">us</arg>
-        <arg f="tmp" n="m">on Saturday.</arg>
+      <example name="splice-v: Another temporal example, this time with an agent" src="">
+        <text>The minister spliced us on Saturday .</text>
+        <propbank>
+          <rel relloc="2">spliced</rel>
+          <arg type="ARG0" start="0" end="1">The minister</arg>
+          <arg type="ARG1" start="3" end="3">us</arg>
+          <arg type="ARGM-TMP" start="4" end="5">on Saturday</arg>
+        </propbank>
       </example>
+      <note>SPLICE-V NOTES: Roleset by Katie based on internet search, parallel expansion of verbnet, propbank, and sense groupings. No vn or fn entries. (from splice.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

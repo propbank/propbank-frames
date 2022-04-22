@@ -1,107 +1,158 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="visit">
     <roleset id="visit.01" name="visit, meet with, see, travel to see">
       <aliases>
-        <alias framenet="visiting arriving" pos="n" verbnet="">visit</alias>
-        <alias framenet="" pos="n" verbnet="">visiting</alias>
-        <alias framenet="" pos="n" verbnet="">visit</alias>
-        <alias framenet="Visiting Arriving" pos="v" verbnet="">visit</alias>
+        <alias pos="n">visit</alias>
+        <alias pos="n">visiting</alias>
+        <alias pos="n">visit</alias>
+        <alias pos="v">visit</alias>
+        <argalias arg="0" pos="n">visitor</argalias>
       </aliases>
+      <roles>
+        <role descr="visitor" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="meet-36.3-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="meet-36.3-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="visited" f="COM" n="1">
+          <rolelinks>
+            <rolelink class="meet-36.3-1" resource="VerbNet" version="verbnet3.3">co-agent</rolelink>
+            <rolelink class="meet-36.3-1" resource="VerbNet" version="verbnet3.4">co_agent</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Visiting" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Arriving" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="meet-36.3-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Contact.Discussion.Correspondence" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Contact.Discussion.Meet" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Transportperson" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="Meet" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="visit-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">186</lexlink>
+        <lexlink class="visit-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="meet-36.3-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="visit-v: non-personal party" src="meet.03">
+        <text>Argentine negotiator Carlos Carballo will visit with banks this week .</text>
+        <propbank>
+          <rel relloc="5">visit</rel>
+          <arg type="ARG0" start="0" end="3">Argentine negotiator Carlos Carballo</arg>
+          <arg type="ARGM-MOD" start="4" end="4">will</arg>
+          <arg type="ARG1" start="6" end="7">with banks</arg>
+          <arg type="ARGM-TMP" start="8" end="9">this week</arg>
+        </propbank>
+      </example>
+      <example name="visit-v: usually visit a place?" src="">
+        <text>Three Soviet government officials -- the ministers of railroads , of foreign economic relations and of heavy - machine building -- will visit Tehran next month for talks , Iran 's official news agency reported .</text>
+        <propbank>
+          <rel relloc="22">visit</rel>
+          <arg type="ARG0" start="0" end="20">Three Soviet government officials -- the ministers of railroads , of foreign economic relations and of heavy - machine building --</arg>
+          <arg type="ARGM-MOD" start="21" end="21">will</arg>
+          <arg type="ARG1" start="23" end="23">Tehran</arg>
+          <arg type="ARGM-TMP" start="24" end="25">next month</arg>
+          <arg type="ARGM-PRP" start="26" end="27">for talks</arg>
+        </propbank>
+      </example>
+      <example name="visit-v: all parties in arg0" src="meet.03">
+        <text>The economic and foreign ministers of 12 Asian and Pacific nations will visit in Australia next week to discuss the price of beans .</text>
+        <propbank>
+          <rel relloc="12">visit</rel>
+          <arg type="ARG0" start="0" end="10">The economic and foreign ministers of 12 Asian and Pacific nations</arg>
+          <arg type="ARGM-MOD" start="11" end="11">will</arg>
+          <arg type="ARGM-LOC" start="13" end="14">in Australia</arg>
+          <arg type="ARGM-TMP" start="15" end="16">next week</arg>
+          <arg type="ARGM-PRP" start="17" end="22">to discuss the price of beans</arg>
+        </propbank>
+      </example>
+      <example name="visit-n: Tricky, but meeting with people rather than seeing a place." src="">
+        <text>Many are far enough from residential areas to pass public muster , yet close enough to permit family visits .</text>
+        <propbank>
+          <rel relloc="18">visits</rel>
+          <arg type="ARG1" start="17" end="17">family</arg>
+        </propbank>
+      </example>
+      <example name="visit-n: Common" src="">
+        <text>During his visit with Barack Obama ,</text>
+        <propbank>
+          <rel relloc="2">visit</rel>
+          <arg type="ARG0" start="1" end="1">his</arg>
+          <arg type="ARG1" start="3" end="5">with Barack Obama</arg>
+        </propbank>
+      </example>
+      <example name="visit-n: Both args" src="">
+        <text>On the fourth day of his visit to China ,</text>
+        <propbank>
+          <rel relloc="6">visit</rel>
+          <arg type="ARG0" start="5" end="5">his</arg>
+          <arg type="ARG1" start="7" end="8">to China</arg>
+        </propbank>
+      </example>
+      <example name="visit-n: With arg ms" src="">
+        <text>a three - day official visit to Helsinki</text>
+        <propbank>
+          <rel relloc="5">visit</rel>
+          <arg type="ARGM-TMP" start="1" end="3">three - day</arg>
+          <arg type="ARGM-ADV" start="4" end="4">official</arg>
+          <arg type="ARG1" start="6" end="7">to Helsinki</arg>
+        </propbank>
+      </example>
+      <example name="visit-n" src="">
+        <text>Now he is mounting the steps of a stucco building in a nearby village , on a visit to the Communist administrator , the " naczelnik "</text>
+        <propbank>
+          <rel relloc="17">visit</rel>
+          <arg type="ARG1" start="18" end="26">to the Communist administrator , the " naczelnik "</arg>
+        </propbank>
+      </example>
       <note>VISIT-V NOTES: Member of Vncls meet-36.3-1. Frames file for 'visit' based on sentences in financial subcorpus andautomatic expansion via verbnet. (from visit.01-v)</note>
       <note>VISIT-N NOTES: Added due to nombank additions. VN class meet-36.3-1. Comparison with visit.01. No VN class. Created by Katie. (from visit.01-n)</note>
       <note>VISIT-N NOTES: Added due to expansion of nombank. No VN class. FN classes visiting and arriving. Comparison to verb-travel.01 (from visit.02-n)</note>
       <note>VISITING-N NOTES: Added by Julia based on BOLT. (from visiting.01-n)</note>
-      <roles>
-        <role descr="visitor" f="pag" n="0">
-          <vnrole vncls="36.3-1" vntheta="agent"/>
-        </role>
-        <role descr="visited" f="com" n="1">
-          <vnrole vncls="36.3-1" vntheta="co-agent"/>
-        </role>
-      </roles>
-      <example name="non-personal party" src="meet.03" type="">
-        <text>Argentine negotiator Carlos Carballo will visit with banks this week.</text>
-        <arg f="" n="0">Argentine negotiator Carlos Carballo</arg>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">visit</rel>
-        <arg f="" n="1">with banks</arg>
-        <arg f="tmp" n="m">this week</arg>
-      </example>
-      <example name="usually visit a place?" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>Three Soviet government officials -- the ministers of railroads, of foreign economic relations and of heavy-machine building -- will visit Tehran next month for talks, Iran's official news agency reported.</text>
-        <arg f="" n="0">Three Soviet government officials -- the ministers of railroads, of foreign economic relations and of heavy-machine building --</arg>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">visit</rel>
-        <arg f="" n="1">Tehran</arg>
-        <arg f="tmp" n="m">next month</arg>
-        <arg f="prp" n="m">for talks</arg>
-      </example>
-      <example name="all parties in arg0" src="meet.03" type="">
-        <text>The economic and foreign ministers of 12 Asian and Pacific nations will visit in Australia next week to discuss the price of beans.</text>
-        <arg f="" n="0">The economic and foreign ministers of 12 Asian and Pacific nations</arg>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">visit</rel>
-        <arg f="loc" n="m">in Australia</arg>
-        <arg f="tmp" n="m">next week</arg>
-        <arg f="prp" n="m">to discuss the price of beans</arg>
-      </example>
-      <example name="Tricky, but meeting with people rather than seeing a place." src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Many are far enough from residential areas to pass public muster, yet close enough to permit family visits.</text>
-        <arg f="" n="1">family</arg>
-        <rel f="">visits.</rel>
-      </example>
-      <example name="Common" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>During his visit with Barack Obama,</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">visit</rel>
-        <arg f="" n="1">with Barack Obama,</arg>
-      </example>
-      <example name="Both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>On the fourth day of his visit to China,</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">visit</rel>
-        <arg f="" n="1">to China,</arg>
-      </example>
-      <example name="With arg ms" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>a three-day official visit to Helsinki</text>
-        <arg f="tmp" n="m">three-day</arg>
-        <arg f="adv" n="m">official</arg>
-        <rel f="">visit</rel>
-        <arg f="" n="1">to Helsinki</arg>
-      </example>
-      <example name="" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Now he is mounting the steps of a stucco building in a nearby village, on a visit to the Communist administrator, the "naczelnik"</text>
-        <rel f="">visit</rel>
-        <arg f="" n="1">to the Communist administrator, the "naczelnik"</arg>
-      </example>
     </roleset>
     <roleset id="visit.02" name="chat">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">visit</alias>
+        <alias pos="v">visit</alias>
       </aliases>
-      <note>VISIT-V NOTES: Added by Julia based on SMS. (from visit.02-v)</note>
       <roles>
-        <role descr="first talker" f="pag" n="0"/>
-        <role descr="second talker" f="com" n="1"/>
-        <role descr="subject matter" f="ppt" n="2"/>
+        <role descr="first talker" f="PAG" n="0"/>
+        <role descr="second talker" f="COM" n="1"/>
+        <role descr="subject matter" f="PPT" n="2"/>
       </roles>
-      <example name="arg0" src="sms" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <example name="visit-v: arg0" src="sms">
         <text>No , we 're going to be in Wilmington first and then planning to stop in center city on the way back . We can hang out for a while until you guys are free and then just visit for a little bit ?</text>
-        <arg f="" n="0">We</arg>
-        <arg f="mod" n="m">can</arg>
-        <arg f="tmp" n="m">then</arg>
-        <arg f="adv" n="m">just</arg>
-        <rel f="">visit</rel>
-        <arg f="tmp" n="m">for a bit</arg>
+        <propbank>
+          <rel relloc="38">visit</rel>
+          <arg type="ARG0" start="23" end="23">We</arg>
+          <arg type="ARGM-MOD" start="24" end="24">can</arg>
+          <arg type="ARGM-TMP" start="36" end="36">then</arg>
+          <arg type="ARGM-ADV" start="37" end="37">just</arg>
+          <arg type="ARGM-TMP" start="39" end="42">for a little bit</arg>
+        </propbank>
       </example>
+      <note>VISIT-V NOTES: Added by Julia based on SMS. (from visit.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

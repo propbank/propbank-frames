@@ -1,47 +1,79 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="obliterate">
     <roleset id="obliterate.01" name="destroy">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">obliteration</alias>
-        <alias framenet="" pos="v" verbnet="">obliterate</alias>
+        <alias pos="n">obliteration</alias>
+        <alias pos="v">obliterate</alias>
       </aliases>
-      <note>OBLITERATE-V NOTES: Verbnet predicts an instrumental subject. They also bring thedistinction between agent and instrument down to intentionality, whichwe've been trying to avoid. If you feel you can consistently makethat decision, go ahead; otherwise only use arg2 when there is also anarg0. (from obliterate.01-v)</note>
-      <note>OBLITERATION-N NOTES: obliterate.01 (from obliteration.01-n)</note>
       <roles>
         <role descr="destroyer" f="PAG" n="0">
-          <vnrole vncls="44" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="destroy-44" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Destroying" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="Destroying" resource="FrameNet" version="1.7">destroyer</rolelink>
+            <rolelink class="destroy-44" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing destroyed" f="PPT" n="1">
-          <vnrole vncls="44" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink class="destroy-44" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="Destroying" resource="FrameNet" version="1.7">undergoer</rolelink>
+            <rolelink class="destroy-44" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="instrument of destruction" f="MNR" n="2">
-          <vnrole vncls="44" vntheta="Instrument"/>
+          <rolelinks>
+            <rolelink class="destroy-44" resource="VerbNet" version="verbnet3.3">instrument</rolelink>
+            <rolelink class="destroy-44" resource="VerbNet" version="verbnet3.4">instrument</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="no instrument" src="" type="">
-        <text>Program traders argue that a reinstatement of the rule would obliterate the ``pricing efficiency'' of the futures and stock markets.</text>
-        <arg f="" n="0">a reinstatement of the rule</arg>
-        <arg f="mod" n="m">would</arg>
-        <rel f="">obliterate</rel>
-        <arg f="" n="1">the ``pricing efficiency'' of the futures and stock markets</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Destroying" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="destroy-44" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="destroy-44" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="no instrument" src="">
+        <text>Program traders argue that a reinstatement of the rule would obliterate the `` pricing efficiency '' of the futures and stock markets .</text>
+        <propbank>
+          <rel relloc="10">obliterate</rel>
+          <arg type="ARG0" start="4" end="8">a reinstatement of the rule</arg>
+          <arg type="ARGM-MOD" start="9" end="9">would</arg>
+          <arg type="ARG1" start="11" end="21">the `` pricing efficiency '' of the futures and stock markets</arg>
+        </propbank>
       </example>
-      <example name="ARG2" src="probably COCA (2018 example fix)" type="">
-        <text>In October 2006 two middle-aged guys from the less than aptly named town of Peacehaven came along in the night and obliterated it with black paint.</text>
-        <arg f="tmp" n="m">In October 2006</arg>
-        <arg f="" n="0">two middle-aged guys from the less than aptly named town of Peacehaven</arg>
-        <rel f="">obliterated</rel>
-        <arg f="" n="1">it</arg>
-        <arg f="" n="2">with black paint.</arg>
+      <example name="ARG2" src="probably COCA (2018 example fix)">
+        <text>In October 2006 two middle - aged guys from the less than aptly named town of Peacehaven came along in the night and obliterated it with black paint .</text>
+        <propbank>
+          <rel relloc="23">obliterated</rel>
+          <arg type="ARGM-TMP" start="0" end="2">In October 2006</arg>
+          <arg type="ARG0" start="3" end="16">two middle - aged guys from the less than aptly named town of Peacehaven</arg>
+          <arg type="ARG1" start="24" end="24">it</arg>
+          <arg type="ARG2" start="25" end="27">with black paint</arg>
+        </propbank>
       </example>
-
-      <example name="Arg0,1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Although sympathetic to their destitution, Atwood is appalled at their obliteration of a site's archaeological value.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">obliteration</rel>
-        <arg f="" n="1">of a site's archaeological value</arg>
+      <example name="Arg0,1" src="">
+        <text>Although sympathetic to their destitution , Atwood is appalled at their obliteration of a site 's archaeological value .</text>
+        <propbank>
+          <rel relloc="11">obliteration</rel>
+          <arg type="ARG0" start="10" end="10">their</arg>
+          <arg type="ARG1" start="12" end="17">of a site 's archaeological value</arg>
+        </propbank>
       </example>
+      <note>OBLITERATE-V NOTES: Verbnet predicts an instrumental subject. They also bring thedistinction between agent and instrument down to intentionality, whichwe've been trying to avoid. If you feel you can consistently makethat decision, go ahead; otherwise only use arg2 when there is also anarg0. (from obliterate.01-v)</note>
+      <note>OBLITERATION-N NOTES: obliterate.01 (from obliteration.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

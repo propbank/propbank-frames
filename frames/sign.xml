@@ -1,272 +1,458 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="sign">
     <roleset id="sign.01" name="affix a signature">
       <aliases>
-        <alias framenet="Sign_agreement Text_creation" pos="v" verbnet="">sign</alias>
-        <alias framenet="" pos="n" verbnet="">signing</alias>
+        <alias pos="v">sign</alias>
+        <alias pos="n">signing</alias>
       </aliases>
-      <note>SIGN-V NOTES: Frames file for 'sign' based on big corpus. Comparison with 'write'. Member of VNcls image_impression-25.1. (from sign.01-v)</note>
-      <note>SIGNING-N NOTES: Automatically created by Julia as an alias file for unification. (from signing.01-n)</note>
       <roles>
-        <role descr="signer" f="pag" n="0">
-          <vnrole vncls="25.1" vntheta="agent"/>
+        <role descr="signer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="image_impression-25.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="image_impression-25.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="document" f="gol" n="1">
-          <vnrole vncls="25.1" vntheta="destination"/>
+        <role descr="document" f="GOL" n="1">
+          <rolelinks>
+            <rolelink class="image_impression-25.1" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="image_impression-25.1" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
         </role>
-        <role descr="signature" f="ppt" n="2">
-          <vnrole vncls="25.1" vntheta="theme"/>
+        <role descr="signature" f="PPT" n="2">
+          <rolelinks>
+            <rolelink class="image_impression-25.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="image_impression-25.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG1 and ARG0" src="ontonotes mz/sinorama/10/ectb_1039" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Text_creation" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Sign_agreement" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="image_impression-25.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="sign-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">39</lexlink>
+        <lexlink class="sign-v.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">10</lexlink>
+        <lexlink class="image_impression-25.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="ARG1 and ARG0" src="ontonotes mz/sinorama/10/ectb_1039">
         <text>On November 24 the New Party , which had already pulled out of the Advisory Group , published an article in the press signed by leading members such as Yu Mu - ming and Chen Kui - miao , in which they called on the government to take the constitution as its starting point for breaking the " one China " deadlock .</text>
-        <arg f="" n="1">an article in the press</arg>
-        <rel f="">signed</rel>
-        <arg f="" n="0">by leading members such as Yu Mu - ming and Chen Kui - miao</arg>
+        <propbank>
+          <rel relloc="23">signed</rel>
+          <arg type="ARG1" start="18" end="22">an article in the press</arg>
+          <arg type="ARG0" start="24" end="37">by leading members such as Yu Mu - ming and Chen Kui - miao</arg>
+        </propbank>
       </example>
-
-      <example name="sign-v: with explicit signature" src="" type="">
-        <text>One writer signed his letter as "Red blooded, balanced male".</text>
-        <arg f="" n="0">One writer</arg>
-        <rel f="">signed</rel>
-        <arg f="" n="1">his letter</arg>
-        <arg f="" n="2">as "Red blooded, balanced male"</arg>
+      <example name="sign-v: with explicit signature" src="">
+        <text>One writer signed his letter as " Red blooded , balanced male " .</text>
+        <propbank>
+          <rel relloc="2">signed</rel>
+          <arg type="ARG0" start="0" end="1">One writer</arg>
+          <arg type="ARG1" start="3" end="4">his letter</arg>
+          <arg type="ARG2" start="5" end="12">as " Red blooded , balanced male "</arg>
+        </propbank>
       </example>
+      <note>SIGN-V NOTES: Frames file for 'sign' based on big corpus. Comparison with 'write'. Member of VNcls image_impression-25.1. (from sign.01-v)</note>
+      <note>SIGNING-N NOTES: Automatically created by Julia as an alias file for unification. (from signing.01-n)</note>
     </roleset>
     <roleset id="sign.02" name="enter into an agreement">
       <aliases>
-        <alias framenet="Sign_agreement" pos="v" verbnet="">sign</alias>
-        <alias framenet="" pos="n" verbnet="">signing</alias>
+        <alias pos="v">sign</alias>
+        <alias pos="n">signing</alias>
+        <argalias arg="0" pos="n">signatory</argalias>
       </aliases>
+      <roles>
+        <role descr="signer, agreer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="agreement" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="co-signer" f="COM" n="2">
+          <rolelinks/>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Sign_agreement" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="hire-13.5.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="sign-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">95</lexlink>
+        <lexlink class="hire-13.5.3" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="sign-v: agreement" src="">
+        <text>First Constitution has signed a merger agreement with WFRR LP and GHKM Corp.</text>
+        <propbank>
+          <rel relloc="3">signed</rel>
+          <arg type="ARG0" start="0" end="1">First Constitution</arg>
+          <arg type="ARG1" start="4" end="6">a merger agreement</arg>
+          <arg type="ARG2" start="7" end="12">with WFRR LP and GHKM Corp.</arg>
+        </propbank>
+      </example>
+      <example name="sign-v: no co-signer" src="">
+        <text>An ultimatum : either sign new long - term commitments to buy future episodes , or do n't .</text>
+        <propbank>
+          <rel relloc="4">sign</rel>
+          <arg type="ARG1" start="5" end="13">new long - term commitments to buy future episodes</arg>
+        </propbank>
+      </example>
+      <example name="sign-v: ARG0 and ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1022">
+        <text>In 1986 , Palau , like many former American - controlled trust territories , signed a " Compact of Free Association " with the US .</text>
+        <propbank>
+          <rel relloc="14">signed</rel>
+          <arg type="ARGM-TMP" start="0" end="1">In 1986</arg>
+          <arg type="ARG0" start="3" end="12">Palau , like many former American - controlled trust territories</arg>
+          <arg type="ARG1" start="15" end="20">a " Compact of Free Association</arg>
+          <arg type="ARG2" start="22" end="24">with the US</arg>
+        </propbank>
+      </example>
+      <example name="signing-n" src="BOLT-7">
+        <text>When Ma Ying - jeou resumed its " reign " four years ago , he worked actively to make up for the time squandered by the DPP , and the signing of the Economic Cooperation Framework Agreement -LRB- ECFA -RRB- was the biggest highlight .</text>
+        <propbank>
+          <rel relloc="30">signing</rel>
+          <arg type="ARG1" start="31" end="39">of the Economic Cooperation Framework Agreement -LRB- ECFA -RRB-</arg>
+        </propbank>
+      </example>
       <note>SIGN-V NOTES: These two senses would be easy to merge, since the assumption is that anyagreement is based upon a signature on a piece of paper. Nominal 'signing' based on BOLT-7. VN class hire-13.5.3, but this only fits certain instances listed under this roleset. (from sign.02-v)</note>
       <note>SIGNING-N NOTES: Automatically created by Julia as an alias file for unification. (from signing.02-n)</note>
-      <roles>
-        <role descr="signer, agreer" f="pag" n="0">
-          <vnrole vncls="13.5.3" vntheta="agent"/>
-        </role>
-        <role descr="agreement" f="ppt" n="1">
-          <vnrole vncls="13.5.3" vntheta="theme"/>
-        </role>
-        <role descr="co-signer" f="com" n="2"/>
-      </roles>
-      <example name="sign-v: agreement" src="" type="">
-        <text>First Constitution has signed a merger agreement with WFRR LP and GHKM Corp.</text>
-        <arg f="" n="0">First Constitution</arg>
-        <rel f="">signed</rel>
-        <arg f="" n="1">a merger agreement</arg>
-        <arg f="" n="2">with WFRR LP and GHKM Corp.</arg>
-      </example>
-      <example name="sign-v: no co-signer" src="" type="">
-        <text>An ultimatum: *trace* either sign new long-term commitments to buy future episodes, or don't.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">sign</rel>
-        <arg f="" n="1">new long-term commitments to buy future episodes</arg>
-      </example>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1022" type="">
-        <text>In 1986 , Palau , like many former American - controlled trust territories , signed a " Compact of Free Association " with the US .</text>
-        <arg f="tmp" n="m">In 1986</arg>
-        <arg f="" n="0">Palau , like many former American - controlled trust territories</arg>
-        <rel f="">signed</rel>
-        <arg f="" n="1">a " Compact of Free Association</arg>
-        <arg f="" n="2">with the US</arg>
-      </example>
-
-      <example name="signing-n" src="BOLT-7" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>When Ma Ying - jeou resumed its " reign " four years ago , he worked actively to make up for the time squandered by the DPP , and the signing of the Economic Cooperation Framework Agreement -LRB- ECFA -RRB- was the biggest highlight .</text>
-        <rel f="">signing</rel>
-        <arg f="" n="1">of the Economic Cooperation Framework Agreement -LRB- ECFA -RRB-</arg>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="sign_up">
     <roleset id="sign_up.03" name="sign up: enroll, enter">
       <aliases>
-        <alias framenet="Becoming_a_member" pos="v" verbnet="">sign_up</alias>
-        <alias framenet="" pos="n" verbnet="">signing_up</alias>
+        <alias pos="v">sign_up</alias>
+        <alias pos="n">signing_up</alias>
       </aliases>
-      <note>SIGN_UP-V NOTES: Member of VNcls hire-13.5.3. Updated by Julia, 11/2010. (from sign.03-v)</note>
-      <note>SIGNING_UP-N NOTES: Automatically created by Julia as an alias file for unification. (from signing.03-n)</note>
       <roles>
-        <role descr="signer, enroller" f="pag" n="0">
-          <vnrole vncls="13.5.3" vntheta="agent"/>
+        <role descr="signer, enroller" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="patient enrolled" f="ppt" n="1">
-          <vnrole vncls="13.5.3" vntheta="theme"/>
+        <role descr="patient enrolled" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="co-signer" f="com" n="2"/>
-        <role descr="signed up for" f="prd" n="3">
-          <vnrole vncls="13.5.3" vntheta="attribute"/>
+        <role descr="co-signer" f="COM" n="2">
+          <rolelinks/>
+        </role>
+        <role descr="signed up for" f="PRD" n="3">
+          <rolelinks>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.3">attribute</rolelink>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.4">attribute</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="sign_up-v: non-agentive" src="" type="">
-        <text>Only four securtities firms have signed up with the Bog Board to buy and sellESPs as market makers.</text>
-        <arg f="" n="1">Only four secrurities firms</arg>
-        <rel f="">signed up</rel>
-        <arg f="" n="2">with the Big Board</arg>
-        <arg f="" n="3">to buy and sell ESPs as market makers</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Becoming_a_member" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="hire-13.5.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="sign-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+        <lexlink class="hire-13.5.3" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="sign_up-v: non-agentive" src="">
+        <text>Only four securtities firms have signed up with the Bog Board to buy and sellESPs as market makers .</text>
+        <propbank>
+          <rel relloc="5 6">signed up</rel>
+          <arg type="ARG1" start="0" end="3">Only four securtities firms</arg>
+          <arg type="ARG2" start="7" end="10">with the Bog Board</arg>
+          <arg type="ARG3" start="11" end="17">to buy and sellESPs as market makers</arg>
+        </propbank>
       </example>
-      <example name="sign_up-v: agentive" src="" type="">
-        <text>Whittle said its field staff signed up the 500 schools in 238 school districts.</text>
-        <arg f="" n="0">its field staff</arg>
-        <rel f="">signed up</rel>
-        <arg f="" n="1">the 500 schools in 238 school districts</arg>
+      <example name="sign_up-v: agentive" src="">
+        <text>Whittle said its field staff signed up the 500 schools in 238 school districts .</text>
+        <propbank>
+          <rel relloc="5 6">signed up</rel>
+          <arg type="ARG0" start="2" end="4">its field staff</arg>
+          <arg type="ARG1" start="7" end="13">the 500 schools in 238 school districts</arg>
+        </propbank>
       </example>
+      <note>SIGN_UP-V NOTES: Member of VNcls hire-13.5.3. Updated by Julia, 11/2010. (from sign.03-v)</note>
+      <note>SIGNING_UP-N NOTES: Automatically created by Julia as an alias file for unification. (from signing.03-n)</note>
     </roleset>
   </predicate>
   <predicate lemma="sign_on">
     <roleset id="sign_on.04" name="sign on: become associated with">
       <aliases>
-        <alias framenet="Get_a_job" pos="v" verbnet="">sign_on</alias>
-        <alias framenet="" pos="n" verbnet="">signing_on</alias>
+        <alias pos="v">sign_on</alias>
+        <alias pos="n">signing_on</alias>
       </aliases>
+      <roles>
+        <role descr="signer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="Get_a_job" resource="FrameNet" version="1.7">employee</rolelink>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity associated with" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="Get_a_job" resource="FrameNet" version="1.7">employer</rolelink>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Get_a_job" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="hire-13.5.3" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="sign_on-v: unnamed arg1" src="">
+        <text>Mr. Lorenzo , 49 years old , is reclaiming the job that was his before Mr. Corr signed on .</text>
+        <propbank>
+          <rel relloc="17 18">signed on</rel>
+          <arg type="ARG0" start="15" end="16">Mr. Corr</arg>
+        </propbank>
+      </example>
+      <example name="sign_on-v: with arg1" src="">
+        <text>If it finds one of those passwords , Mr. Alexander said , the worm will do such things as change users ' passwords to a series of random numbers , preventing them from signing on to the network .</text>
+        <propbank>
+          <rel relloc="33 34">signing on</rel>
+          <arg type="ARG0" start="31" end="31">them</arg>
+          <arg type="ARG1" start="35" end="37">to the network</arg>
+        </propbank>
+      </example>
       <note>SIGN_ON-V NOTES: Member of Vncls hire-13.5.3, but this roleset is incompatible with the VN structure, where agent is boss and signed-on is employee, and it's opposite here. Updated by Julia, 11/2010. (from sign.04-v)</note>
       <note>SIGNING_ON-N NOTES: Automatically created by Julia as an alias file for unification. (from signing.04-n)</note>
-      <roles>
-        <role descr="signer" f="pag" n="0"/>
-        <role descr="entity associated with" f="ppt" n="1"/>
-      </roles>
-      <example name="sign_on-v: unnamed arg1" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Mr. Lorenzo, 49 years old, is reclaiming the job that was his before Mr. Corr signed on.</text>
-        <arg f="" n="0">Mr. Corr</arg>
-        <rel f="">signed on</rel>
-      </example>
-      <example name="sign_on-v: with arg1" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="ns" voice="ns"/>
-        <text>If it finds one of those passwords, Mr. Alexander said, the worm will do such things as change users' passwords to a series of random numbers, preventing them-1 from [*]-1 signing on to the network.</text>
-        <arg f="" n="0">[*]</arg>
-        <rel f="">signing on</rel>
-        <arg f="" n="1">to the network</arg>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="sign_off">
     <roleset id="sign_off.05" name="sign_off: give stamp of approval">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">sign_off</alias>
-        <alias framenet="" pos="n" verbnet="">signing_off</alias>
+        <alias pos="v">sign_off</alias>
+        <alias pos="n">signing_off</alias>
       </aliases>
+      <roles>
+        <role descr="signer" f="PAG" n="0"/>
+        <role descr="entity being given stamp of approval" f="PPT" n="1"/>
+        <role descr="for what, second part of arg1" f="PRD" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <example name="sign_off-v: all args" src="BOLT">
+        <text>A new ' govt backed ' review has concluded that GP 's should be stripped of the power to sign patients off on long term sick .</text>
+        <propbank>
+          <rel relloc="19 21">sign off</rel>
+          <arg type="ARG0" start="10" end="10">GP</arg>
+          <arg type="ARG1" start="20" end="20">patients</arg>
+          <arg type="ARG2" start="22" end="25">on long term sick</arg>
+        </propbank>
+      </example>
+      <example name="sign_off-v: Args 0, 1" src="internet">
+        <text>The publisher signed off on the book and sent it to be printed .</text>
+        <propbank>
+          <rel relloc="2 3">signed off</rel>
+          <arg type="ARG0" start="0" end="1">The publisher</arg>
+          <arg type="ARG1" start="4" end="6">on the book</arg>
+        </propbank>
+      </example>
       <note>SIGN_OFF-V NOTES: Added by Julia based on BOLT. No VNcls. (from sign.05-v)</note>
       <note>SIGNING_OFF-N NOTES: Automatically created by Julia as an alias file for unification. (from signing.05-n)</note>
-      <roles>
-        <role descr="signer" f="pag" n="0"/>
-        <role descr="entity being given stamp of approval" f="ppt" n="1"/>
-        <role descr="for what, second part of arg1" f="prd" n="2"/>
-      </roles>
-      <example name="sign_off-v: all args" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>A new ' govt backed ' review has concluded that GP's should be stripped of the power *PRO* to sign patients off on long term sick .</text>
-        <arg f="" n="0">*PRO*, *link -&gt; [GP's]</arg>
-        <rel f="">[sign] [off]</rel>
-        <arg f="" n="1">patients</arg>
-        <arg f="" n="2">on long term sick</arg>
-      </example>
-      <example name="sign_off-v: Args 0, 1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The publisher signed off on the book and sent it to be printed.</text>
-        <arg f="" n="0">The publisher</arg>
-        <rel f="">[signed] [off]</rel>
-        <arg f="" n="1">on the book</arg>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="sign_in">
     <roleset id="sign_in.06" name="check in">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">sign_in</alias>
-        <alias framenet="" pos="n" verbnet="">signing_in</alias>
+        <alias pos="v">sign_in</alias>
+        <alias pos="n">signing_in</alias>
       </aliases>
+      <roles>
+        <role descr="Agent, causer of check in" f="PAG" n="0"/>
+        <role descr="entity being checked in" f="PPT" n="1"/>
+        <role descr="checked in to" f="LOC" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="sign_in-v: parental arg 0" src="">
+        <text>John signed his daughter in at day care before rushing of to work .</text>
+        <propbank>
+          <rel relloc="1 4">signed in</rel>
+          <arg type="ARG0" start="0" end="0">John</arg>
+          <arg type="ARG1" start="2" end="3">his daughter</arg>
+          <arg type="ARG2" start="5" end="7">at day care</arg>
+          <arg type="ARGM-TMP" start="8" end="12">before rushing of to work</arg>
+        </propbank>
+      </example>
+      <example name="sign_in-v: guard at the door as arg 0" src="">
+        <text>Dori will sign you in</text>
+        <propbank>
+          <rel relloc="2 4">sign in</rel>
+          <arg type="ARG0" start="0" end="0">Dori</arg>
+          <arg type="ARGM-MOD" start="1" end="1">will</arg>
+          <arg type="ARG1" start="3" end="3">you</arg>
+        </propbank>
+      </example>
       <note>SIGN_IN-V NOTES: Based on Bolt SMS data. No comparison. No VN or FN classes. Framed by Katie. (from sign.06-v)</note>
       <note>SIGNING_IN-N NOTES: Automatically created by Julia as an alias file for unification. (from signing.06-n)</note>
-      <roles>
-        <role descr="Agent, causer of check in" f="pag" n="0"/>
-        <role descr="entity being checked in" f="ppt" n="1"/>
-        <role descr="checked in to" f="loc" n="2"/>
-      </roles>
-      <example name="sign_in-v: parental arg 0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>John signed his daughter in at day care before rushing of to work.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">[signed] [in]</rel>
-        <arg f="" n="1">his daughter</arg>
-        <arg f="" n="2">at day care</arg>
-        <arg f="tmp" n="m">before rushing of to work</arg>
-      </example>
-      <example name="sign_in-v: guard at the door as arg 0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Dori will sign you in</text>
-        <arg f="" n="0">Dori</arg>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">[sign] [in]</rel>
-        <arg f="" n="1">you</arg>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="signal">
     <roleset id="signal.07" name="show, cause to see, communicate by signaling, message">
       <aliases>
-        <alias framenet="Communication Gesture" pos="v" verbnet="">signal</alias>
-        <alias framenet="Gesture" pos="n" verbnet="">signal</alias>
-        <alias framenet="" pos="n" verbnet="">sign</alias>
+        <alias pos="v">signal</alias>
+        <alias pos="n">signal</alias>
+        <alias pos="n">sign</alias>
       </aliases>
+      <roles>
+        <role descr="shower" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="instr_communication-37.4.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Gesture" resource="FrameNet" version="1.7">communicator</rolelink>
+            <rolelink class="Communication" resource="FrameNet" version="1.7">communicator</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing seen/shown" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="instr_communication-37.4.1" resource="VerbNet" version="verbnet3.3">topic</rolelink>
+            <rolelink class="Gesture" resource="FrameNet" version="1.7">message</rolelink>
+            <rolelink class="Communication" resource="FrameNet" version="1.7">message</rolelink>
+            <rolelink class="Communication" resource="FrameNet" version="1.7">topic</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="seer" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="instr_communication-37.4.1" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+            <rolelink class="Gesture" resource="FrameNet" version="1.7">addressee</rolelink>
+            <rolelink class="Communication" resource="FrameNet" version="1.7">addressee</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="subject-matter of the signals (what they relate to)" f="VSP" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Gesture" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Communication" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="instr_communication-37.4.1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+        <lexlink class="signal-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">20</lexlink>
+        <lexlink class="signal-n.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">21</lexlink>
+        <lexlink class="signal-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="signal-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">36</lexlink>
+      </lexlinks>
+      <example name="signal-v: no seer, nominal thing seen" src="">
+        <text>I would be very surprised if his departure signals any change in strategy or change in profit expectations . ''</text>
+        <propbank>
+          <rel relloc="8">signals</rel>
+          <arg type="ARG0" start="6" end="7">his departure</arg>
+          <arg type="ARG1" start="9" end="17">any change in strategy or change in profit expectations</arg>
+        </propbank>
+      </example>
+      <example name="signal-v: with seer, sentential thing seen" src="">
+        <text>Moreover , some analysts said they expect a foreign paper company with deeper pockets than Georgia - Pacific to end up acquiring Nekoosa , signaling to the rest of the industry that hostile bids are unproductive .</text>
+        <propbank>
+          <rel relloc="24">signaling</rel>
+          <arg type="ARG0" start="7" end="22">a foreign paper company with deeper pockets than Georgia - Pacific to end up acquiring Nekoosa</arg>
+          <arg type="ARG2" start="25" end="30">to the rest of the industry</arg>
+          <arg type="ARG1" start="31" end="35">that hostile bids are unproductive</arg>
+        </propbank>
+      </example>
+      <example name="signal-v: different kind of seer" src="">
+        <text>Mr. Simmons said the results signal a turnaround for the maker of wire and wire products , which has struggled to remain competitive in the face of lower - priced , imported steel .</text>
+        <propbank>
+          <rel relloc="5">signal</rel>
+          <arg type="ARG0" start="3" end="4">the results</arg>
+          <arg type="ARG1" start="6" end="7">a turnaround</arg>
+          <arg type="ARG2" start="8" end="32">for the maker of wire and wire products , which has struggled to remain competitive in the face of lower - priced , imported steel</arg>
+        </propbank>
+      </example>
+      <example name="sign-n: args 0 and 2" src="">
+        <text>His signs to the people</text>
+        <propbank>
+          <rel relloc="1">signs</rel>
+          <arg type="ARG0" start="0" end="0">His</arg>
+          <arg type="ARG2" start="2" end="4">to the people</arg>
+        </propbank>
+      </example>
+      <example name="signal-n: autogen1" src="">
+        <text>their signal to the world that now is the time to get tough onprices</text>
+        <propbank>
+          <rel relloc="1">signal</rel>
+          <arg type="ARG0" start="0" end="0">their</arg>
+          <arg type="ARG2" start="2" end="4">to the world</arg>
+          <arg type="ARG1" start="5" end="13">that now is the time to get tough onprices</arg>
+        </propbank>
+      </example>
+      <example name="signal-n: arg3" src="">
+        <text>It has sent mixed signals about its willingness to take part in the exchange - rate mechanism of the European Monetary System</text>
+        <propbank>
+          <rel relloc="4">signals</rel>
+          <arg type="ARG1" start="3" end="3">mixed</arg>
+          <arg type="ARG3" start="5" end="21">about its willingness to take part in the exchange - rate mechanism of the European Monetary System</arg>
+        </propbank>
+      </example>
       <note>SIGNAL-V NOTES: Comparison to 'show'. Member of VNcls instr_communication-37.4. (from signal.01-v)</note>
       <note>SIGN-N NOTES: Based on sentences in New Testiment. No comparison. No VN class. Framed by Katie. (from sign.01-n)</note>
       <note>SIGNAL-N NOTES: Added by Julia based on signal-n.01. Corresponds to VNcls instr_communication-37.4. (from signal.01-n)</note>
-      <roles>
-        <note>arg3 added based on presence in corpus. (from signal.01-n)</note>
-        <role descr="shower" f="PAG" n="0">
-          <vnrole vncls="37.4" vntheta="Agent"/>
-        </role>
-        <role descr="thing seen/shown" f="PPT" n="1">
-          <vnrole vncls="37.4" vntheta="Topic"/>
-        </role>
-        <role descr="seer" f="GOL" n="2">
-          <vnrole vncls="37.4" vntheta="Recipient"/>
-        </role>
-        <role descr="subject-matter of the signals (what they relate to)" f="vsp" n="3"/>
-      </roles>
-      <example name="signal-v: no seer, nominal thing seen" src="" type="">
-        <text>I would be very surprised if his departure signals any change in strategy or change in profit expectations.''</text>
-        <arg f="" n="0">his departure</arg>
-        <rel f="">signals</rel>
-        <arg f="" n="1">any change in strategy or change in profit expectations</arg>
-      </example>
-      <example name="signal-v: with seer, sentential thing seen" src="" type="">
-        <text>Moreover, some analysts said they expect a foreign paper company with deeper pockets than Georgia-Pacific to end up acquiring Nekoosa, *trace* signaling to the rest of the industry that hostile bids are unproductive.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">signaling</rel>
-        <arg f="" n="2">to the rest of the industry</arg>
-        <arg f="" n="1">that hostile bids are unproductive</arg>
-      </example>
-      <example name="signal-v: different kind of seer" src="" type="">
-        <text>Mr. Simmons said the results signal a turnaround for the maker of wire and wire products, which has struggled to remain competitive in the face of lower-priced, imported steel.</text>
-        <arg f="" n="0">the results</arg>
-        <rel f="">signal</rel>
-        <arg f="" n="1">a turnaround</arg>
-        <arg f="" n="2">for the maker of wire and wire products, which has struggled to remain competitive in the face of lower-priced, imported steel</arg>
-      </example>
-      <example name="sign-n: args 0 and 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>His signs to the people</text>
-        <arg f="" n="0">His</arg>
-        <rel f="">signs</rel>
-        <arg f="" n="2">to the people</arg>
-      </example>
-      <example name="signal-n: autogen1" src="" type="">
-        <text>their signal to the world that now is the time to get tough onprices</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">signal</rel>
-        <arg f="" n="2">to the world</arg>
-        <arg f="" n="1">that now is the time to get tough on prices</arg>
-      </example>
-      <example name="signal-n: arg3" src="" type="">
-        <text>It has sent mixed signals about its willingness to take part in the exchange - rate mechanism of the European Monetary System</text>
-        <arg f="" n="1">mixed</arg>
-        <rel f="">signals</rel>
-        <arg f="" n="3">about its willingness to take part in the exchange-rate mechanism of the European Monetary System</arg>
-      </example>
+      <note>arg3 added based on presence in corpus. (from signal.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

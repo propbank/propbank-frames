@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
+<frameset>
+  <predicate lemma="ajcc-entity">
+    <roleset id="ajcc-entity.91" name="represents AJCC staging components. See more here:&#10;https://www.cancerstaging.org/references-tools/Pages/What-is-Cancer-Staging.aspx">
+      <aliases />
+      <roles>
+        <role descr="entity being staged" f="PPT" n="1" />
+        <role descr="overall (numerical) stage" f="VSP" n="2" />
+        <role descr="primary tumor stage (T) " f="VSP" n="3" />
+        <role descr="lymph node stage (N)" f="VSP" n="4" />
+        <role descr="metastasis stage (M) " f="VSP" n="5" />
+        <role descr="other attributes (See Notes column)" f="VSP" n="6" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks />
+      <example name="ajcc" src="Auto1">
+        <text>This mass represents a stage I colon cancer with T2 , N0 , M0 .</text>
+        <amr version="THYME 1.0">
+          (r / represent-01
+            :ARG0 (s2 / sign-symptom :name (n2 / name :op1 "mass")
+              :mod (t / this))
+            :ARG1 (c / cancer-03
+              :ARG2 (a / anatomical-site :name (n / name :op1 "colon"))
+              :ARG1-of (s / stage-02
+                :ARG2 (a2 / ajcc-entity-91
+                  :ARG1 c
+                  :ARG2 1
+                  :ARG3 (t2 / tumor-stage-entity :value "T2")
+                  :ARG4 (l / lymph-stage-entity :value "N0")
+                  :ARG5 (m / mets-stage-entity :value "M0")))))
+        </amr>
+      </example>
+      <note>AJCC NOTES: Added for THYME-AMR.</note>
+    </roleset>
+  </predicate>
+</frameset>

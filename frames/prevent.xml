@@ -1,61 +1,111 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="prevent">
     <roleset id="prevent.01" name="stop, prevent, stopping in advance">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">prevention</alias>
-        <alias framenet="Preventing_or_letting" pos="v" verbnet="">prevent</alias>
+        <alias pos="v">prevent</alias>
+        <alias pos="n">prevention</alias>
+        <alias pos="v">preventive</alias>
+        <alias pos="v">preventative</alias>
       </aliases>
+      <roles>
+        <role descr="Agent, intentional/animate" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="67" resource="VerbNet" version="UNK">agent</rolelink>
+            <rolelink class="forbid-64.4-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="Theme (action or object being prevented)" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="67" resource="VerbNet" version="UNK">theme</rolelink>
+            <rolelink class="forbid-64.4-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="secondary predication or action" f="PPT" n="2">
+          <rolelinks>
+            <rolelink class="67" resource="VerbNet" version="UNK">theme</rolelink>
+            <rolelink class="forbid-64.4-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="instrument" f="MNR" n="3">
+          <rolelinks/>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Preventing_or_letting" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="67" confidence="0.0" resource="VerbNet" src="manual+strict-conv" version="UNK"/>
+        <lexlink class="prevent-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">156</lexlink>
+        <lexlink class="forbid-64.4-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="prevent-v: simple transitive" src="">
+        <text>She wanted to prevent the damage to self - esteem that her low - ability students would suffer from doing badly on the test .</text>
+        <propbank>
+          <rel relloc="3">prevent</rel>
+          <arg end="0" start="0" type="ARG0">She</arg>
+          <arg end="23" start="4" type="ARG1">the damage to self - esteem that her low - ability students would suffer from doing badly on the test</arg>
+        </propbank>
+      </example>
+      <example name="prevent-v: secondary predicate" src="">
+        <text>Lawyers seek to prevent the client from committing a criminal act .</text>
+        <propbank>
+          <rel relloc="3">prevent</rel>
+          <arg end="0" start="0" type="ARG0">Lawyers</arg>
+          <arg end="5" start="4" type="ARG1">the client</arg>
+          <arg end="10" start="7" type="ARG2">committing a criminal act</arg>
+        </propbank>
+      </example>
+      <example name="prevent-v: with instrument" src="">
+        <text>We could prevent many of these fatalities with minimum roof - crush standards .</text>
+        <propbank>
+          <rel relloc="2">prevent</rel>
+          <arg end="0" start="0" type="ARG0">We</arg>
+          <arg end="1" start="1" type="ARGM-MOD">could</arg>
+          <arg end="6" start="3" type="ARG1">many of these fatalities</arg>
+          <arg end="12" start="7" type="ARG3">with minimum roof - crush standards</arg>
+        </propbank>
+      </example>
+      <example name="prevent-v: instrument as subject" src="WSJ">
+        <text>Steel jackets of a type that may have prevented collapse of the columns of a 1.5 - mile stretch of the Nimitz Freeway had been installed on at least a small test section of the double - decker highway</text>
+        <propbank>
+          <rel relloc="8">prevented</rel>
+          <arg end="1" start="0" type="ARG3">Steel jackets</arg>
+          <arg end="6" start="6" type="ARGM-MOD">may</arg>
+          <arg end="22" start="9" type="ARG1">collapse of the columns of a 1.5 - mile stretch of the Nimitz Freeway</arg>
+        </propbank>
+      </example>
+      <example name="prevention-n: Instrument (Arg3) as Subject" src="">
+        <text>Among those projects is green teas and their prevention of liver cancer .</text>
+        <propbank>
+          <rel relloc="8">prevention</rel>
+          <arg end="7" start="7" type="ARG3">their</arg>
+          <arg end="11" start="9" type="ARG1">of liver cancer</arg>
+        </propbank>
+      </example>
+      <example name="preventive-j" src="THYME">
+        <text>PREVENTIVE HEALTH - MAINTENANCE</text>
+        <amr version="THYME 1.0">
+          (m / maintain-01
+             :ARG1 (h / health)
+             :purpose (p / prevent-01))
+        </amr>
+        <propbank>
+          <rel relloc="0">PREVENTIVE</rel>
+          <arg end="3" start="1" type="ARGM-MNR">HEALTH - MAINTENANCE</arg>
+        </propbank>
+      </example>
       <note>PREVENT-V NOTES: Note that the instrument can appear in subject position as well("Minumum roof-crush standards could prevent many of thesefatalities.") This means there is a de facto intentionality oranimacy criterion for agenthood. (from prevent.01-v)</note>
       <note>PREVENTION-N NOTES: prevent.01 (from prevention.01-n)</note>
-      <roles>
-        <role descr="Agent, intentional/animate" f="pag" n="0">
-          <vnrole vncls="67" vntheta="agent"/>
-        </role>
-        <role descr="Theme (action or object being prevented)" f="ppt" n="1">
-          <vnrole vncls="67" vntheta="theme"/>
-        </role>
-        <role descr="secondary predication or action" f="ppt" n="2">
-          <vnrole vncls="67" vntheta="theme"/>
-        </role>
-        <role descr="instrument" f="mnr" n="3"/>
-      </roles>
-      <example name="simple transitive" src="" type="">
-        <text>She-1 wanted *trace*-1 to prevent the damage to self-esteem that her low-ability students would suffer from doing badly on the test.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">prevent</rel>
-        <arg f="" n="1">the damage to self-esteem that her low-ability students would suffer from doing badly on the test</arg>
-      </example>
-      <example name="secondary predicate" src="" type="">
-        <text>Lawyers-1 seek *trace*-1 to prevent the client from *trace*-2 committing a criminal act.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">prevent</rel>
-        <arg f="" n="1">the client</arg>
-        <arg f="from" n="2">*trace*-2 committing a criminal act.</arg>
-      </example>
-      <example name="with instrument" src="" type="">
-        <text>We could prevent many of these fatalities with minimum roof-crush standards.</text>
-        <arg f="" n="0">We</arg>
-        <arg f="mod" n="m">could</arg>
-        <rel f="">prevent</rel>
-        <arg f="" n="1">many of these fatalities</arg>
-        <arg f="" n="3">with minimum roof-crush standards.</arg>
-      </example>
-      <example name="instrument as subject" src="WSJ" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="ns"/>
-        <text>Steel jackets of a type that-1 *trace*-1may have prevented collapse of the columns of a 1.5-mile stretch of the Nimitz Freeway had been installed on at least a small test section of the double - decker highway</text>
-        <arg f="" n="3">*trace*-1: that (steel jackets)</arg>
-        <arg f="mod" n="m">may</arg>
-        <rel f="">prevented</rel>
-        <arg f="" n="1">collapse of the columns of a 1.5-mile stretch of the Nimitz Freeway</arg>
-      </example>
-      <example name="Instrument (Arg3) as Subject" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Among those projects is green teas and their prevention of liver cancer.</text>
-        <arg f="" n="3">their</arg>
-        <rel f="">prevention</rel>
-        <arg f="" n="1">of liver cancer</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

@@ -1,54 +1,86 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="fascinate">
     <roleset id="fascinate.01" name="fascinate">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">fascinating</alias>
-        <alias framenet="Experiencer_obj Mental_stimulus_exp_focus" pos="v" verbnet="">fascinate</alias>
-        <alias framenet="" pos="n" verbnet="">fascination</alias>
+        <alias pos="j">fascinating</alias>
+        <alias pos="v">fascinate</alias>
+        <alias pos="n">fascination</alias>
       </aliases>
+      <roles>
+        <role descr="Stimulus of fascination" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.3">stimulus</rolelink>
+            <rolelink class="Experiencer_obj" resource="FrameNet" version="1.7">stimulus</rolelink>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.4">stimulus</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="fascinated entity" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.3">experiencer</rolelink>
+            <rolelink class="Experiencer_obj" resource="FrameNet" version="1.7">experiencer</rolelink>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.4">experiencer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="instrument, if separate from arg0" f="MNR" n="2">
+          <rolelinks/>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Experiencer_obj" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Mental_stimulus_exp_focus" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="amuse-31.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="fascinate-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="amuse-31.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="passive" src="">
+        <text>And , since the public has always been fascinated by gossip and voyeurism , reporters and editors will strain for creative angles to justify the inclusion of collateral facts about private lives including sexual activities and domestic relationships , activities of family members , and all matters about mental and physical health .</text>
+        <propbank>
+          <rel relloc="8">fascinated</rel>
+          <arg type="ARGM-TMP" start="6" end="6">always</arg>
+          <arg type="ARG1" start="3" end="4">the public</arg>
+          <arg type="ARG0" start="9" end="12">by gossip and voyeurism</arg>
+        </propbank>
+      </example>
+      <example name="with instrument" src="">
+        <text>John fascinated Mary with his tales of adventure in the Great White North .</text>
+        <propbank>
+          <rel relloc="1">fascinated</rel>
+          <arg type="ARG0" start="0" end="0">John</arg>
+          <arg type="ARG1" start="2" end="2">Mary</arg>
+          <arg type="ARG2" start="3" end="12">with his tales of adventure in the Great White North</arg>
+        </propbank>
+      </example>
+      <example name="Adjective example: fascinating" src="BOLT 2,3">
+        <text>The color theory is so fascinating to me .</text>
+        <propbank>
+          <rel relloc="5">fascinating</rel>
+          <arg type="ARG0" start="0" end="2">The color theory</arg>
+          <arg type="ARGM-EXT" start="4" end="4">so</arg>
+          <arg type="ARG1" start="6" end="7">to me</arg>
+        </propbank>
+      </example>
+      <example name="nominal rel: fascination" src="BOLT-7">
+        <text>. The Spring Festival gala should be human performances . Joy will be brought to the audiences by means of human performances . The audiences can also enjoy the fascination of the Chinese culture .</text>
+        <propbank>
+          <rel relloc="29">fascination</rel>
+          <arg type="ARG0" start="30" end="33">of the Chinese culture</arg>
+        </propbank>
+      </example>
       <note>FASCINATE-V NOTES: Frames file for 'fascinate' based on wsj; nominal 'fascination' based on BOLT-7. Member of VNcls amuse-31.1. (from fascinate.01-v)</note>
       <note>FASCINATION-N NOTES: Automatically created by Julia as an alias file for unification. (from fascination.01-n)</note>
       <note>FASCINATING-J NOTES: Automatically created by Julia as an alias file for unification. (from fascinating.01-j)</note>
-      <roles>
-        <role descr="Stimulus of fascination" f="pag" n="0">
-          <vnrole vncls="31.1" vntheta="stimulus"/>
-        </role>
-        <role descr="fascinated entity" f="ppt" n="1">
-          <vnrole vncls="31.1" vntheta="experiencer"/>
-        </role>
-        <role descr="instrument, if separate from arg0" f="mnr" n="2"/>
-      </roles>
-      <example name="passive" src="" type="">
-        <inflection aspect="perfect" form="participle" person="third" tense="present" voice="passive"/>
-        <text>And, since [the public]-1 has always been fascinated *trace*-1 by gossip and voyeurism, reporters and editors will strain for creative angles to justify the inclusion of collateral facts about private lives including sexual activities and domestic relationships, activities of family members, and all matters about mental and physical health.</text>
-        <arg f="tmp" n="m">always</arg>
-        <rel f="">fascinated</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="0">by gossip and voyeurism</arg>
-      </example>
-      <example name="with instrument" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>John fascinated Mary with his tales of adventure in the Great White North.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">fascinated</rel>
-        <arg f="" n="1">Mary</arg>
-        <arg f="" n="2">with his tales of adventure in the Great White North</arg>
-      </example>
-      <example name="Adjective example: fascinating" src="BOLT 2,3" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The color theory is so fascinating to me.</text>
-        <arg f="" n="0">The color theory</arg>
-        <arg f="ext" n="m">so</arg>
-        <rel f="">fascinating</rel>
-        <arg f="" n="1">to me</arg>
-      </example>
-      <example name="nominal rel: fascination" src="BOLT-7" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>. The Spring Festival gala should be human performances . Joy will be brought to the audiences by means of human performances . The audiences can also enjoy the fascination of the Chinese culture .</text>
-        <rel f="">fascination</rel>
-        <arg f="" n="0">of the Chinese culture</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

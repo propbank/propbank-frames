@@ -1,90 +1,172 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="execute">
     <roleset id="execute.01" name="kill">
       <aliases>
-        <alias framenet="execution" pos="n" verbnet="">execution</alias>
-        <alias framenet="" pos="v" verbnet="">execute</alias>
+        <alias pos="n">execution</alias>
+        <alias pos="v">execute</alias>
       </aliases>
-      <note>EXECUTE-V NOTES: This sentence is beautifully ambiguous, but I've chosen thisinterpretation. (from execute.01-v)</note>
-      <note>EXECUTION-N NOTES: Based on sentences in nouns-00040. Comparison to 'execute.01' Vn class murder-42.1. Fn class execution. Framed by Katie. (from execution.01-n)</note>
       <roles>
-        <role descr="killer" f="pag" n="0">
-          <vnrole vncls="42.1" vntheta="agent"/>
+        <role descr="killer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="murder-42.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Execution" resource="FrameNet" version="1.7">executioner</rolelink>
+            <rolelink class="murder-42.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="corpse" f="ppt" n="1">
-          <vnrole vncls="42.1" vntheta="patient"/>
+        <role descr="corpse" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="murder-42.1" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="Execution" resource="FrameNet" version="1.7">executed</rolelink>
+            <rolelink class="murder-42.1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="instrument" f="mnr" n="2">
-          <vnrole vncls="42.1" vntheta="instrument"/>
+        <role descr="instrument" f="MNR" n="2">
+          <rolelinks>
+            <rolelink class="murder-42.1" resource="VerbNet" version="verbnet3.3">instrument</rolelink>
+            <rolelink class="Execution" resource="FrameNet" version="1.7">means</rolelink>
+            <rolelink class="Execution" resource="FrameNet" version="1.7">instrument</rolelink>
+            <rolelink class="murder-42.1" resource="VerbNet" version="verbnet3.4">instrument</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG2" src="probably COCA (2018 example fix)" type="">
-        <text>The damned soldiers from the barracks shot him in the legs then executed him with a bullet in the head.</text>
-        <arg f="" n="0">The damned soldiers from the barracks</arg>
-        <rel f="">executed</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="" n="2">with a bullet in the head.</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Execution" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="murder-42.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="Justice.JudicialConsequences.Execute" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019" />
+        <lexlink class="Life.Die.DeathCausedByViolentEvents" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019" />
+        <lexlink class="Life.Die.NonviolentDeath" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019" />
+        <lexlink class="Die" confidence="0.1" resource="ERE" src="reo-expansion" version="rich" />
+        <lexlink class="Execute" confidence="0.1" resource="ERE" src="reo-expansion" version="rich" />
+        <lexlink class="execute-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">25</lexlink>
+        <lexlink class="execution-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">8</lexlink>
+        <lexlink class="execution-n.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+        <lexlink class="murder-42.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="ARG2" src="probably COCA (2018 example fix)">
+        <text>The damned soldiers from the barracks shot him in the legs then executed him with a bullet in the head .</text>
+        <propbank>
+          <rel relloc="12">executed</rel>
+          <arg type="ARG0" start="0" end="5">The damned soldiers from the barracks</arg>
+          <arg type="ARG1" start="13" end="13">him</arg>
+          <arg type="ARG2" start="14" end="19">with a bullet in the head</arg>
+        </propbank>
       </example>
-
-      <example name="Arg 1 only" src="" type="">
-        <text>the execution of mass-murderer Ted Bundy</text>
-        <rel f="">execution</rel>
-        <arg f="" n="1">of mass-murderer Ted Bundy</arg>
+      <example name="Arg 1 only" src="">
+        <text>the execution of mass - murderer Ted Bundy</text>
+        <propbank>
+          <rel relloc="1">execution</rel>
+          <arg type="ARG1" start="2" end="7">of mass - murderer Ted Bundy</arg>
+        </propbank>
       </example>
-      <example name="Arg 0" src="" type="">
+      <example name="Arg 0" src="">
         <text>The last federal execution before the Supreme Court 's 1972 ruling banning the death penalty</text>
-        <arg f="" n="0">federal</arg>
-        <rel f="">execution</rel>
-        <arg f="tmp" n="m">before the Supreme Court 's 1972 ruling banning the death penalty</arg>
+        <propbank>
+          <rel relloc="3">execution</rel>
+          <arg type="ARG0" start="2" end="2">federal</arg>
+          <arg type="ARGM-TMP" start="4" end="14">before the Supreme Court 's 1972 ruling banning the death penalty</arg>
+        </propbank>
       </example>
-      <example name="One more arg 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="One more arg 1" src="">
         <text>The execution of six British commandos in WWII</text>
-        <rel f="">execution</rel>
-        <arg f="" n="1">of six British commandos</arg>
-        <arg f="tmp" n="m">in WWII</arg>
+        <propbank>
+          <rel relloc="1">execution</rel>
+          <arg type="ARG1" start="2" end="5">of six British commandos</arg>
+          <arg type="ARGM-TMP" start="6" end="7">in WWII</arg>
+        </propbank>
       </example>
+      <note>EXECUTE-V NOTES: This sentence is beautifully ambiguous, but I've chosen thisinterpretation. (from execute.01-v)</note>
+      <note>EXECUTION-N NOTES: Based on sentences in nouns-00040. Comparison to 'execute.01' Vn class murder-42.1. Fn class execution. Framed by Katie. (from execution.01-n)</note>
     </roleset>
     <roleset id="execute.02" name="enact">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">execute</alias>
-        <alias framenet="" pos="n" verbnet="">execution</alias>
+        <alias pos="v">execute</alias>
+        <alias pos="n">execution</alias>
       </aliases>
+      <roles>
+        <role descr="agent, doer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="Intentionally_act" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="murder-42.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing done" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="murder-42.1" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="murder-42.1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="benefactive, done for or about" f="GOL" n="2">
+          <rolelinks />
+        </role>
+        <role descr="instrumental" f="MNR" n="3">
+          <rolelinks>
+            <rolelink class="Intentionally_act" resource="FrameNet" version="1.7">means</rolelink>
+            <rolelink class="murder-42.1" resource="VerbNet" version="verbnet3.4">instrument</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Intentionally_act" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="execute-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">30</lexlink>
+        <lexlink class="murder-42.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="with benefactive" src="">
+        <text>Mr. Allen 's Pittsburgh firm , Advanced Investment Management Inc. , executes program trades for institutions .</text>
+        <propbank>
+          <rel relloc="11">executes</rel>
+          <arg type="ARG0" start="0" end="9">Mr. Allen 's Pittsburgh firm , Advanced Investment Management Inc.</arg>
+          <arg type="ARG1" start="12" end="13">program trades</arg>
+          <arg type="ARG2" start="14" end="15">for institutions</arg>
+        </propbank>
+      </example>
+      <example name="Args 0 and 1" src="">
+        <text>the president 's execution of the law</text>
+        <propbank>
+          <rel relloc="3">execution</rel>
+          <arg type="ARG0" start="0" end="2">the president 's</arg>
+          <arg type="ARG1" start="4" end="6">of the law</arg>
+        </propbank>
+      </example>
+      <example name="arg 1 only" src="">
+        <text>The day - to - day execution of policies</text>
+        <propbank>
+          <rel relloc="6">execution</rel>
+          <arg type="ARGM-MNR" start="1" end="5">day - to - day</arg>
+          <arg type="ARG1" start="7" end="8">of policies</arg>
+        </propbank>
+      </example>
+      <example name="Args 0 in a PP" src="">
+        <text>The execution of contracts by foreign investment enterprises</text>
+        <propbank>
+          <rel relloc="1">execution</rel>
+          <arg type="ARG1" start="2" end="3">of contracts</arg>
+          <arg type="ARG0" start="4" end="7">by foreign investment enterprises</arg>
+        </propbank>
+      </example>
       <note>EXECUTE-V NOTES: Frames file for 'execute' based on sentences in financial subcorpus. Verbnet class murder-42.1, other framed members include kill. That's only one of two senses. Comparison with kill and do. (from execute.02-v predicate notes)</note>
       <note>EXECUTION-N NOTES: Based on sentences in nouns-00040. Comparison to 'execute.02' No VN or FN classes. Framed by Katie. (from execution.02-n)</note>
-      <roles>
-        <role descr="agent, doer" f="pag" n="0"/>
-        <role descr="thing done" f="ppt" n="1"/>
-        <role descr="benefactive, done for or about" f="gol" n="2"/>
-        <role descr="instrumental" f="mnr" n="3"/>
-      </roles>
-      <example name="with benefactive" src="" type="">
-        <text>Mr. Allen's Pittsburgh firm, Advanced Investment Management Inc., executes program trades for institutions.</text>
-        <arg f="" n="0">Mr. Allen's Pittsburgh firm, Advanced Investment Management Inc.,</arg>
-        <rel f="">executes</rel>
-        <arg f="" n="1">program trades</arg>
-        <arg f="" n="2">for institutions</arg>
-      </example>
-      <example name="Args 0 and 1" src="" type="">
-        <text>the president 's execution of the law</text>
-        <arg f="" n="0">the president 's</arg>
-        <rel f="">execution</rel>
-        <arg f="" n="1">of the law</arg>
-      </example>
-      <example name="arg 1 only" src="" type="">
-        <text>The day-to-day execution of policies</text>
-        <arg f="mnr" n="m">day-to-day</arg>
-        <rel f="">execution</rel>
-        <arg f="" n="1">of policies</arg>
-      </example>
-      <example name="Args 0 in a PP" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The execution of contracts by foreign investment enterprises</text>
-        <rel f="">execution</rel>
-        <arg f="" n="1">of contracts</arg>
-        <arg f="" n="0">by foreign investment enterprises</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

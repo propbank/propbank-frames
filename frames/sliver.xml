@@ -1,44 +1,80 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="sliver">
     <roleset id="sliver.01" name="produce slivers">
       <aliases>
-        <alias framenet="" pos="v" verbnet="break-45.1 split-23.2">sliver</alias>
+        <alias pos="v">sliver</alias>
       </aliases>
-      <note>SLIVER-V NOTES: cf. produce, etc. (from sliver.01-v)</note>
       <roles>
         <role descr="agent, slicer" f="PAG" n="0">
-          <vnrole vncls="45.1" vntheta="agent"/>
-          <vnrole vncls="23.2" vntheta="agent"/>
+          <rolelinks>
+            <rolelink class="break-45.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="split-23.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Cause_to_fragment" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="Cause_to_fragment" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="split-23.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="break-45.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="patient, thing sliced up" f="PPT" n="1">
-          <vnrole vncls="45.1" vntheta="patient"/>
-          <vnrole vncls="23.2" vntheta="patient"/>
+          <rolelinks>
+            <rolelink class="break-45.1" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="split-23.2" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="Cause_to_fragment" resource="FrameNet" version="1.7">whole_patient</rolelink>
+            <rolelink class="Cause_to_fragment" resource="FrameNet" version="1.7">whole_patient</rolelink>
+            <rolelink class="split-23.2" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+            <rolelink class="break-45.1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="source material, what arg1 is sliced off of" f="DIR" n="2">
-          <vnrole vncls="23.2" vntheta="co-patient"/>
+          <rolelinks>
+            <rolelink class="split-23.2" resource="VerbNet" version="verbnet3.3">co-patient</rolelink>
+            <rolelink class="split-23.2" resource="VerbNet" version="verbnet3.4">co_patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="awkward adjectival" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>A major difference is that a snapped wooden pencil will have a slivered break while a plastic model will break cleanly.</text>
-        <rel f="">slivered</rel>
-        <arg f="" n="1">break</arg>
-      </example>
-      <example name="ARG0" src="ontonotes nw/wsj/17/wsj_1772" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Cause_to_fragment" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="break-45.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="split-23.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="split-23.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+        <lexlink class="break-45.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="awkward adjectival" src="">
         <text>A major difference is that a snapped wooden pencil will have a slivered break while a plastic model will break cleanly .</text>
-        <rel f="">slivered</rel>
-        <arg f="" n="0">break</arg>
+        <propbank>
+          <rel relloc="12">slivered</rel>
+          <arg type="ARG1" start="13" end="13">break</arg>
+        </propbank>
       </example>
-
-      <example name="all arguments" src="web" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>She slivered the white citrus pith off the fruit.</text>
-        <arg f="" n="0">She</arg>
-        <rel f="">slivered</rel>
-        <arg f="" n="1">the white citrus pith</arg>
-        <arg f="" n="2">off the fruit</arg>
+      <example name="ARG0" src="ontonotes nw/wsj/17/wsj_1772">
+        <text>A major difference is that a snapped wooden pencil will have a slivered break while a plastic model will break cleanly .</text>
+        <propbank>
+          <rel relloc="12">slivered</rel>
+          <arg type="ARG0" start="13" end="13">break</arg>
+        </propbank>
       </example>
+      <example name="all arguments" src="web">
+        <text>She slivered the white citrus pith off the fruit .</text>
+        <propbank>
+          <rel relloc="1">slivered</rel>
+          <arg type="ARG0" start="0" end="0">She</arg>
+          <arg type="ARG1" start="2" end="5">the white citrus pith</arg>
+          <arg type="ARG2" start="6" end="8">off the fruit</arg>
+        </propbank>
+      </example>
+      <note>SLIVER-V NOTES: cf. produce, etc. (from sliver.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

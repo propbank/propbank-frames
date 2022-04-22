@@ -1,73 +1,136 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="illustrate">
     <roleset id="illustrate.01" name="explain, explain visually, metaphorically, or with examples">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">illustrate</alias>
-        <alias framenet="" pos="n" verbnet="">illustration</alias>
+        <alias pos="v">illustrate</alias>
+        <alias pos="n">illustration</alias>
       </aliases>
-      <note>ILLUSTRATE-V NOTES: Frames file for 'illustrate' based on sentences in financial subcorpusand automatic expansion via verbnet. (from illustrate.01-v predicate notes)</note>
-      <note>ILLUSTRATION-N NOTES: Based on sentences in nouns-00040. Comparison to illustrate.01. Vn class transfer_mesg-37.1.1. Framed by Katie. (from illustration.01-n)</note>
       <roles>
         <role descr="illustrator" f="PAG" n="0">
-          <vnrole vncls="25.3" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="illustrate-25.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="illustrate-25.3" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="transfer_mesg-37.1.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="item being explained" f="PPT" n="1">
-          <vnrole vncls="25.3" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="illustrate-25.3" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="illustrate-25.3" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+            <rolelink class="transfer_mesg-37.1.1" resource="VerbNet" version="verbnet3.4">topic</rolelink>
+          </rolelinks>
         </role>
-        <role descr="explained to" f="gol" n="2"/>
+        <role descr="explained to" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="illustrate-25.3" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+            <rolelink class="transfer_mesg-37.1.1" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="basic transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>But GM's results also illustrate the increasing diversity of its operations.</text>
-        <arg f="dis" n="m">But</arg>
-        <arg f="" n="0">GM's results</arg>
-        <arg f="dis" n="m">also</arg>
-        <rel f="">illustrate</rel>
-        <arg f="" n="1">the increasing diversity of its operations</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Evidence" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="illustrate-25.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="illustrate-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">26</lexlink>
+        <lexlink class="illustration-n.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+        <lexlink class="illustrate-25.3" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="transfer_mesg-37.1.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="basic transitive" src="">
+        <text>But GM 's results also illustrate the increasing diversity of its operations .</text>
+        <propbank>
+          <rel relloc="5">illustrate</rel>
+          <arg type="ARGM-DIS" start="0" end="0">But</arg>
+          <arg type="ARG0" start="1" end="3">GM 's results</arg>
+          <arg type="ARGM-DIS" start="4" end="4">also</arg>
+          <arg type="ARG1" start="6" end="11">the increasing diversity of its operations</arg>
+        </propbank>
       </example>
-      <example name="ARG2" src="probably COCA (2018 example fix)" type="">
-        <text>A panic had come since Mr. Semple had died, which-1 *trace*-1 had illustrated to him very clearly what an uncertain thing the brokerage business was.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">illustrated</rel>
-        <arg f="" n="2">to him</arg>
-        <arg f="mnr" n="m">him very</arg>
-        <arg f="" n="1">what an uncertain thing the brokerage business was.</arg>
+      <example name="ARG2" src="probably COCA (2018 example fix)">
+        <text>A panic had come since Mr. Semple had died , which had illustrated to him very clearly what an uncertain thing the brokerage business was .</text>
+        <propbank>
+          <rel relloc="12">illustrated</rel>
+          <arg type="ARG0" start="10" end="10">which</arg>
+          <arg type="ARG2" start="13" end="14">to him</arg>
+          <arg type="ARGM-MNR" start="14" end="15">him very</arg>
+          <arg type="ARG1" start="17" end="24">what an uncertain thing the brokerage business was</arg>
+        </propbank>
       </example>
-
-      <example name="args 0 and 1" src="" type="">
+      <example name="args 0 and 1" src="">
         <text>the Equitable 's policy illustration</text>
-        <arg f="" n="0">the Equitable 's</arg>
-        <arg f="" n="1">policy</arg>
-        <rel f="">illustration</rel>
+        <propbank>
+          <rel relloc="4">illustration</rel>
+          <arg type="ARG0" start="0" end="2">the Equitable 's</arg>
+          <arg type="ARG1" start="3" end="3">policy</arg>
+        </propbank>
       </example>
-      <example name="arg 1 only" src="" type="">
-        <text>an illustration of Cheng's whole approach</text>
-        <rel f="">illustrations</rel>
-        <arg f="" n="1">of Cheng's whole approach</arg>
+      <example name="arg 1 only" src="">
+        <text>an illustration of Cheng 's whole approach</text>
+        <propbank>
+          <rel relloc="1">illustration</rel>
+          <arg type="ARG1" start="2" end="6">of Cheng 's whole approach</arg>
+        </propbank>
       </example>
+      <note>ILLUSTRATE-V NOTES: Frames file for 'illustrate' based on sentences in financial subcorpusand automatic expansion via verbnet. (from illustrate.01-v predicate notes)</note>
+      <note>ILLUSTRATION-N NOTES: Based on sentences in nouns-00040. Comparison to illustrate.01. Vn class transfer_mesg-37.1.1. Framed by Katie. (from illustration.01-n)</note>
     </roleset>
     <roleset id="illustrate.02" name="draw, paint, make a picture">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">illustrate</alias>
+        <alias pos="v">illustrate</alias>
       </aliases>
-      <note>ILLUSTRATE-V NOTES: Frames file for 'illustrate' based on sentences in financial subcorpusand automatic expansion via verbnet. (from illustrate.02-v predicate notes)</note>
       <roles>
         <role descr="artist" f="PAG" n="0">
-          <vnrole vncls="25.3" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="illustrate-25.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="illustrate-25.3" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="art" f="PPT" n="1">
-          <vnrole vncls="25.3" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="illustrate-25.3" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="illustrate-25.3" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="benefactive" f="gol" n="2"/>
+        <role descr="benefactive" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="illustrate-25.3" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="ARG0 and ARG1 and ARG2" src="probably COCA (2018 example fix)" type="">
-        <text>Jeremy Kyle illustrates for the New York Times 'Roots' remake.</text>
-        <arg f="" n="0">Jeremy Kyle</arg>
-        <rel f="">illustrates</rel>
-        <arg f="" n="2">for the New York Times 'Roots' remake.</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="illustrate-25.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="illustrate-25.3" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="ARG0 and ARG1 and ARG2" src="probably COCA (2018 example fix)">
+        <text>Jeremy Kyle illustrates for the New York Times ' Roots ' remake .</text>
+        <propbank>
+          <rel relloc="2">illustrates</rel>
+          <arg type="ARG0" start="0" end="1">Jeremy Kyle</arg>
+          <arg type="ARG2" start="3" end="11">for the New York Times ' Roots ' remake</arg>
+        </propbank>
       </example>
-
+      <note>ILLUSTRATE-V NOTES: Frames file for 'illustrate' based on sentences in financial subcorpusand automatic expansion via verbnet. (from illustrate.02-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

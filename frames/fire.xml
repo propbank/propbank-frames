@@ -1,226 +1,362 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="fire">
     <roleset id="fire.01" name="fire a gun">
       <aliases>
-        <alias framenet="Use_firearm Shoot_projectiles" pos="v" verbnet="">fire</alias>
-        <alias framenet="Use_firearm Shoot_projectiles" pos="n" verbnet="">fire</alias>
+        <alias pos="v">fire</alias>
+        <alias pos="n">fire</alias>
       </aliases>
-      <note>FIRE-V NOTES: Based on financial subcorpus. Member of VNcls throw-17.1-1. (from fire.01-v)</note>
-      <note>FIRE-N NOTES: Updated by Julia. Member of Vncls throw-17.1-1. (from fire.01-n)</note>
       <roles>
         <role descr="shooter" f="PAG" n="0">
-          <vnrole vncls="17.1-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="throw-17.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="throw-17.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="gun/projectile" f="PPT" n="1">
-          <vnrole vncls="17.1-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="throw-17.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="throw-17.1-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="fire-v: metaphorical" src="" type="">
-        <text>With three minutes left on the clock, Mr. Aikman takes the snap, steps back and fires a 21-yard pass -- straight into the hands of an Atlanta defensive back.</text>
-        <arg f="tmp" n="m">With three minutes left on the clock</arg>
-        <arg f="" n="0">Mr. Aikman</arg>
-        <rel f="">fires</rel>
-        <arg f="" n="1">a 21-yard pass</arg>
-        <arg f="gol" n="m">straight into the hands of an Atlanta defensive back</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Use_firearm" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Shoot_projectiles" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="throw-17.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Conflict.Attack.FirearmAttack" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Attack" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="fire-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">50</lexlink>
+        <lexlink class="fire-n.4" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">33</lexlink>
+        <lexlink class="fire-n.5" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">6</lexlink>
+        <lexlink class="throw-17.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="fire-v: metaphorical" src="">
+        <text>With three minutes left on the clock , Mr. Aikman takes the snap , steps back and fires a 21 - yard pass -- straight into the hands of an Atlanta defensive back .</text>
+        <propbank>
+          <rel relloc="17">fires</rel>
+          <arg type="ARGM-TMP" start="0" end="6">With three minutes left on the clock</arg>
+          <arg type="ARG0" start="8" end="9">Mr. Aikman</arg>
+          <arg type="ARG1" start="18" end="22">a 21 - yard pass</arg>
+          <arg type="ARGM-GOL" start="24" end="32">straight into the hands of an Atlanta defensive back</arg>
+        </propbank>
       </example>
-      <example name="fire-v: literal with GOL" src="training tasks" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
+      <example name="fire-v: literal with GOL" src="training tasks">
         <text>The helicopters reportedly fired missiles at offices of Palestinian leader Yasser Arafat 's ` Fatah movement ' .</text>
-        <arg f="" n="0">The helicopters</arg>
-        <arg f="adv" n="m">reportedly</arg>
-        <rel f="">fired</rel>
-        <arg f="" n="1">missiles</arg>
-        <arg f="gol" n="m">at offices of Palestinian leader Yasser Arafat's 'Fatah movement'</arg>
+        <propbank>
+          <rel relloc="3">fired</rel>
+          <arg type="ARG0" start="0" end="1">The helicopters</arg>
+          <arg type="ARGM-ADV" start="2" end="2">reportedly</arg>
+          <arg type="ARG1" start="4" end="4">missiles</arg>
+          <arg type="ARGM-GOL" start="5" end="16">at offices of Palestinian leader Yasser Arafat 's ` Fatah movement '</arg>
+        </propbank>
       </example>
-      <example name="fire-n: with arg0" src="" type="">
+      <example name="fire-n: with arg0" src="">
         <text>He is under intense fire from other Palestinian groups</text>
-        <arg f="mnr" n="m">intense</arg>
-        <rel f="">fire</rel>
-        <arg f="" n="0">from the other Palestinian</arg>
+        <propbank>
+          <rel relloc="4">fire</rel>
+          <arg type="ARGM-MNR" start="3" end="3">intense</arg>
+          <arg type="ARG0" start="5" end="8">from other Palestinian groups</arg>
+        </propbank>
       </example>
-      <example name="fire-n: with DIR" src="" type="">
+      <example name="fire-n: with DIR" src="">
         <text>cross fire</text>
-        <arg f="dir" n="m">cross</arg>
-        <rel f="">fire</rel>
+        <propbank>
+          <rel relloc="1">fire</rel>
+          <arg type="ARGM-DIR" start="0" end="0">cross</arg>
+        </propbank>
       </example>
-      <example name="fire-n: with arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="fire-n: with arg1" src="">
         <text>machine gun and tracer fire</text>
-        <arg f="" n="1">machine gun and tracer</arg>
-        <rel f="">fire</rel>
+        <propbank>
+          <rel relloc="4">fire</rel>
+          <arg type="ARG1" start="0" end="3">machine gun and tracer</arg>
+        </propbank>
       </example>
-      <example name="fire-n: with arg0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="fire-n: with arg0" src="">
         <text>sniper fire</text>
-        <arg f="" n="0">sniper</arg>
-        <rel f="">fire</rel>
+        <propbank>
+          <rel relloc="1">fire</rel>
+          <arg type="ARG0" start="0" end="0">sniper</arg>
+        </propbank>
       </example>
+      <note>FIRE-V NOTES: Based on financial subcorpus. Member of VNcls throw-17.1-1. (from fire.01-v)</note>
+      <note>FIRE-N NOTES: Updated by Julia. Member of Vncls throw-17.1-1. (from fire.01-n)</note>
     </roleset>
-    
     <roleset id="fire.02" name="cause to cease employment">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">firing</alias>
-        <alias framenet="Firing" pos="v" verbnet="">fire</alias>
+        <alias pos="n">firing</alias>
+        <alias pos="v">fire</alias>
       </aliases>
-      <note>FIRE-V NOTES: Member of VNcls fire-10.10. (from fire.02-v)</note>
-      <note>FIRING-N NOTES: Automatically created by Julia as an alias file for unification. (from firing.02-n)</note>
       <roles>
         <role descr="employer" f="PAG" n="0">
-          <vnrole vncls="10.10" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="fire-10.10" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Firing" resource="FrameNet" version="1.7">employer</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="ex-employee" f="PPT" n="1">
-          <vnrole vncls="10.10" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="fire-10.10" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="job" f="DIR" n="2">
-          <vnrole vncls="10.10" vntheta="Source"/>
+          <rolelinks>
+            <rolelink class="fire-10.10" resource="VerbNet" version="verbnet3.3">source</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">initial_location</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="fire-v: most commonly passive" src="" type="">
-        <text>But people familiar with the agenda of the board's meeting last week in London said [Mr. McGovern]-1 was fired *trace*-1.</text>
-        <rel f="">fired</rel>
-        <arg f="" n="1">*trace*-1</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Firing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="fire-10.10" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Personnel.EndPosition.FiringLayoff" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Endposition" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="fire-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">17</lexlink>
+        <lexlink class="remove-10.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="fire-v: most commonly passive" src="">
+        <text>But people familiar with the agenda of the board 's meeting last week in London said Mr. McGovern was fired .</text>
+        <propbank>
+          <rel relloc="19">fired</rel>
+          <arg type="ARG1" start="16" end="17">Mr. McGovern</arg>
+        </propbank>
       </example>
-      <example name="fire-v: passive with agent" src="" type="">
-        <text>The last time Columbia Pictures was looking for a studio chief, they note, Warner released producer David Puttnam from his contract, then took him back after he-1 was subsequently fired *trace*-1 by his bosses at Columbia.</text>
-        <arg f="tmp" n="m">subsequently</arg>
-        <rel f="">fired</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="0">by his bosses at Columbia</arg>
+      <example name="fire-v: passive with agent" src="">
+        <text>The last time Columbia Pictures was looking for a studio chief , they note , Warner released producer David Puttnam from his contract , then took him back after he was subsequently fired by his bosses at Columbia .</text>
+        <propbank>
+          <rel relloc="32">fired</rel>
+          <arg type="ARGM-TMP" start="31" end="31">subsequently</arg>
+          <arg type="ARG1" start="29" end="29">he</arg>
+          <arg type="ARG0" start="33" end="37">by his bosses at Columbia</arg>
+        </propbank>
       </example>
-      <example name="ARG1 and ARG2" src="ontonotes bn/cnn/00/cnn_0010" type="">
+      <example name="ARG1 and ARG2" src="ontonotes bn/cnn/00/cnn_0010">
         <text>He was fired from his job teaching law in 1974 for his opposition to the policies of the Tito government .</text>
-        <arg f="" n="1">He</arg>
-        <rel f="">fired</rel>
-        <arg f="" n="2">from his job teaching law</arg>
-        <arg f="tmp" n="m">in 1974</arg>
-        <arg f="prp" n="m">for his opposition to the policies of the Tito government</arg>
+        <propbank>
+          <rel relloc="2">fired</rel>
+          <arg type="ARG1" start="0" end="0">He</arg>
+          <arg type="ARG2" start="3" end="7">from his job teaching law</arg>
+          <arg type="ARGM-TMP" start="8" end="9">in 1974</arg>
+          <arg type="ARGM-PRP" start="10" end="19">for his opposition to the policies of the Tito government</arg>
+        </propbank>
       </example>
-
+      <note>FIRE-V NOTES: Member of VNcls fire-10.10. (from fire.02-v)</note>
+      <note>FIRING-N NOTES: Automatically created by Julia as an alias file for unification. (from firing.02-n)</note>
     </roleset>
-    
     <roleset id="fire.03" name="cause to burn or bake">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">fire</alias>
+        <alias pos="v">fire</alias>
       </aliases>
-      <note>FIRE-V NOTES: No VNcls. (from fire.03-v)</note>
       <roles>
-        <role descr="baker, agent" f="pag" n="0"/>
-        <role descr="thing burning or baking" f="ppt" n="1"/>
+        <role descr="baker, agent" f="PAG" n="0"/>
+        <role descr="thing burning or baking" f="PPT" n="1"/>
       </roles>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1064" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="fire-v.6" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">6</lexlink>
+      </lexlinks>
+      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1064">
         <text>Cheng Yung - gwo 's dream is to sit at home around a fire with a few friends , firing pots and drinking wine .</text>
-        <arg f="" n="0">[]</arg>
-        <rel f="">firing</rel>
-        <arg f="" n="1">pots</arg>
+        <propbank>
+          <rel relloc="19">firing</rel>
+          <arg type="ARG1" start="20" end="20">pots</arg>
+        </propbank>
       </example>
-
+      <note>FIRE-V NOTES: No VNcls. (from fire.03-v)</note>
     </roleset>
-    
     <roleset id="fire.04" name="fuel or ignite">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">fire</alias>
+        <alias pos="v">fire</alias>
       </aliases>
-      <note>FIRE-V NOTES: Frame edited by Arrick. No VNcls. (from fire.04-v)</note>
       <roles>
         <role descr="ignitor, agent" f="PAG" n="0"/>
-        <role descr="thing ignited" f="ppt" n="1"/>
+        <role descr="thing ignited" f="PPT" n="1"/>
       </roles>
-      <example name="fire-v: non-agentive manner" src="" type="">
-        <text>Instead, they were model steam engines fired * by alcohol lamps which *T* were hand built, wheel by wheel, panel by panel, by Lin himself, some based * on his own designs, others scale models.</text>
-        <rel f="">fired</rel>
-        <arg f="" n="1">* ,&amp; link - &gt; model steam engines</arg>
-        <arg f="mnr" n="m">by alcohol lamps</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="fire-v: non-agentive manner" src="">
+        <text>Instead , they were model steam engines fired by alcohol lamps which were hand built , wheel by wheel , panel by panel , by Lin himself , some based on his own designs , others scale models .</text>
+        <propbank>
+          <rel relloc="7">fired</rel>
+          <arg type="ARG1" start="4" end="6">model steam engines</arg>
+          <arg type="ARGM-MNR" start="8" end="10">by alcohol lamps</arg>
+        </propbank>
       </example>
+      <note>FIRE-V NOTES: Frame edited by Arrick. No VNcls. (from fire.04-v)</note>
     </roleset>
-    
     <roleset id="fire.05" name="natural disaster: fire in a forest or other habitat">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">fire</alias>
-        <alias framenet="" pos="n" verbnet="">forest_fire</alias>
+        <alias pos="n">fire</alias>
+        <alias pos="n">forest_fire</alias>
       </aliases>
-      <note>FIRE-N NOTES: Added by Julia in a Natural Disaster roleset endeavor. Comparion to wildfire, brushfire, bushfire. (from fire.02-n)</note>
       <roles>
-        <note>The "VSP" function tags on 'death/injury toll' and 'damages/cost' correspond to the RED cause relation.</note>
-        <role descr="habitat burned" f="ppt" n="1"/>
-        <role descr="size/acre count" f="ext" n="2"/>
-        <role descr="death/injury toll" f="vsp" n="3"/>
-        <role descr="damages/cost" f="vsp" n="4"/>
+        <role descr="habitat burned" f="PPT" n="1"/>
+        <role descr="size/acre count" f="EXT" n="2"/>
+        <role descr="death/injury toll" f="VSP" n="3"/>
+        <role descr="damages/cost" f="VSP" n="4"/>
       </roles>
-      <example name="forest_fire-n: args 1, 2" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>There is a 200-acre forest fire burning in Wirt County not yet under control.</text>
-        <arg f="" n="2">200-acre</arg>
-        <rel f="">[forest][fire]</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+      </usagenotes>
+      <example name="forest_fire-n: args 1, 2" src="internet">
+        <text>There is a 200 - acre forest fire burning in Wirt County not yet under control .</text>
+        <propbank>
+          <rel relloc="6 7">forest fire</rel>
+          <arg type="ARG2" start="3" end="5">200 - acre</arg>
+        </propbank>
       </example>
+      <note>FIRE-N NOTES: Added by Julia in a Natural Disaster roleset endeavor. Comparion to wildfire, brushfire, bushfire. (from fire.02-n)</note>
+      <note>The "VSP" function tags on 'death/injury toll' and 'damages/cost' correspond to the RED cause relation.</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="fiery">
     <roleset id="fiery.06" name="impassioned, fervent">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">fiery</alias>
+        <alias pos="j">fiery</alias>
       </aliases>
-      <note>FIERY-J NOTES: Roleset based on instances in BOLT P01, parts 2,3. Framed by Claire. (from fiery.01-j)</note>
       <roles>
-        <role descr="stimulus, impassioned about what?" f="pag" n="0"/>
-        <role descr="experiencer, impassioned person." f="ppt" n="1"/>
+        <role descr="stimulus, impassioned about what?" f="PAG" n="0"/>
+        <role descr="experiencer, impassioned person." f="PPT" n="1"/>
       </roles>
-      <example name="fiery-j: Single argument" src="BOLT P01, parts 2,3." type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <example name="fiery-j: Single argument" src="BOLT P01, parts 2,3.">
         <text>Newt 's was fiery and disgruntled .</text>
-        <arg f="" n="1">Newt's</arg>
-        <rel f="">fiery</rel>
+        <propbank>
+          <rel relloc="3">fiery</rel>
+          <arg type="ARG1" start="0" end="1">Newt 's</arg>
+        </propbank>
       </example>
-      <example name="fiery-j: All args" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>She wears a funky, self-aware outfit, she's fiery about political causes and she constantly argues with her parents even though she still mooches off them.</text>
-        <arg f="" n="1">she's</arg>
-        <rel f="">fiery</rel>
-        <arg f="" n="0">about political causes</arg>
+      <example name="fiery-j: All args" src="web">
+        <text>She wears a funky , self - aware outfit , she 's fiery about political causes and she constantly argues with her parents even though she still mooches off them .</text>
+        <propbank>
+          <rel relloc="12">fiery</rel>
+          <arg type="ARG1" start="10" end="11">she 's</arg>
+          <arg type="ARG0" start="13" end="15">about political causes</arg>
+        </propbank>
       </example>
+      <note>FIERY-J NOTES: Roleset based on instances in BOLT P01, parts 2,3. Framed by Claire. (from fiery.01-j)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="open_fire">
     <roleset id="open_fire.07" name="start to shoot (at a target)">
       <aliases>
-        <alias framenet="" pos="l" verbnet="">open_fire</alias>
+        <alias pos="l">open_fire</alias>
       </aliases>
-      <note>OPEN_FIRE-M NOTES: Added by Julia during initial MWE framing.</note>
       <roles>
-        <role descr="shooter" f="pag" n="0"/>
-        <role descr="target" f="ppt" n="1"/>
+        <role descr="shooter" f="PAG" n="0"/>
+        <role descr="target" f="PPT" n="1"/>
         <role descr="gun/weapon" f="MNR" n="2"/>
       </roles>
-      <example name="open_fire-l" src="" type="">
-        <text>A bank customer in Warren acted within his rights when he opened fire on a bank robber on Monday afternoon, sending him to the hospital</text>
-        <arg f="" n="0">he</arg>
-        <arg f="lvb" n="m">opened</arg>
-        <rel f="">[fire]</rel>
-        <arg f="" n="1"> on a bank robber</arg>
-        <arg f="tmp" n="m">on Monday afternoon</arg>
-        <arg f="adv" n="m">sending him to the hospital</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <example name="open_fire-l" src="">
+        <text>A bank customer in Warren acted within his rights when he opened fire on a bank robber on Monday afternoon , sending him to the hospital</text>
+        <propbank>
+          <rel relloc="12">fire</rel>
+          <arg type="ARG0" start="10" end="10">he</arg>
+          <arg type="ARGM-LVB" start="11" end="11">opened</arg>
+          <arg type="ARG1" start="13" end="16">on a bank robber</arg>
+          <arg type="ARGM-TMP" start="17" end="19">on Monday afternoon</arg>
+          <arg type="ARGM-ADV" start="21" end="25">sending him to the hospital</arg>
+        </propbank>
       </example>
+      <note>OPEN_FIRE-M NOTES: Added by Julia during initial MWE framing.</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="on_fire">
     <roleset id="on_fire.08" name="aflame">
       <aliases>
-        <alias framenet="" pos="x" verbnet="">on_fire</alias>
+        <alias pos="x">on_fire</alias>
       </aliases>
-      <note>ON_FIRE-X NOTES: Added by Julia during initial MWE framing</note>
       <roles>
-        <role descr="burning thing" f="pag" n="1"/>
-        <role descr="mention of the (possibly metaphorical) flame" f="ppt" n="2"/>
+        <role descr="burning thing" f="PAG" n="1"/>
+        <role descr="mention of the (possibly metaphorical) flame" f="PPT" n="2"/>
       </roles>
-      <example name="on_fire-x" src="" type="">
-        <text>This bed is on fire with passionate love.</text>
-        <arg f="" n="1">This bed</arg>
-        <rel f="">[on][fire]</rel>
-        <arg f="" n="2">with passionate love</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <example name="on_fire-x" src="">
+        <text>This bed is on fire with passionate love .</text>
+        <propbank>
+          <rel relloc="3 4">on fire</rel>
+          <arg type="ARG1" start="0" end="1">This bed</arg>
+          <arg type="ARG2" start="5" end="7">with passionate love</arg>
+        </propbank>
       </example>
+      <note>ON_FIRE-X NOTES: Added by Julia during initial MWE framing</note>
     </roleset>
   </predicate>
 </frameset>

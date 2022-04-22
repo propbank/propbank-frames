@@ -1,71 +1,120 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="hunt">
     <roleset id="hunt.01" name="to pursue, search for">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">hunt</alias>
-        <alias framenet="" pos="n" verbnet="">hunting</alias>
+        <alias pos="v">hunt</alias>
+        <alias pos="n">hunting</alias>
+        <argalias arg="0" pos="n">hunter</argalias>
       </aliases>
-      <note>HUNT-V NOTES: Frames file for 'hunt' based on survey of sentences in the WSJ corpus. (from hunt.01-v predicate notes)</note>
-      <note>HUNTING-N NOTES: Based on sentences in nouns-00040. Comparison to hunt.01-v. VN class hunt-35.1. Framed by Katie. (from hunting.01-n)</note>
       <roles>
         <role descr="hunter" f="PAG" n="0">
-          <vnrole vncls="35.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="hunt-35.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Seeking" resource="FrameNet" version="1.7">cognizer_agent</rolelink>
+            <rolelink class="hunt-35.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity hunted for" f="PPT" n="1">
-          <vnrole vncls="35.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="hunt-35.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Seeking" resource="FrameNet" version="1.7">sought_entity</rolelink>
+            <rolelink class="hunt-35.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="hunt-v: transitive" src="" type="">
-        <inflection aspect="perfect" form="participle" person="third" tense="present" voice="active"/>
-        <text>Mrs. Gorman took advantage of low prices after the 1987 crash [*-1] to buy stocks and has hunted for other bargains since the Oct. 13 plunge .</text>
-        <arg f="" n="0">Mrs. Gorman</arg>
-        <rel f="">hunted</rel>
-        <arg f="" n="1">for other bargains</arg>
-        <arg f="TMP" n="M">since the Oct. 13 plunge</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Seeking" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Hunting" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="hunt-35.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="hunt-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+        <lexlink class="hunting-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+        <lexlink class="hunting-n.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">6</lexlink>
+        <lexlink class="hunt-35.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="hunt-v: transitive" src="">
+        <text>Mrs. Gorman took advantage of low prices after the 1987 crash to buy stocks and has hunted for other bargains since the Oct. 13 plunge .</text>
+        <propbank>
+          <rel relloc="16">hunted</rel>
+          <arg type="ARG0" start="0" end="1">Mrs. Gorman</arg>
+          <arg type="ARG1" start="17" end="19">for other bargains</arg>
+          <arg type="ARGM-TMP" start="20" end="24">since the Oct. 13 plunge</arg>
+        </propbank>
       </example>
-      <example name="hunting-n: Both args" src="" type="">
-        <text>bargain-hunting by institutions</text>
-        <arg f="" n="1">bargain</arg>
-        <rel f="">hunting</rel>
-        <arg f="" n="0">by institutions</arg>
+      <example name="hunting-n: Both args" src="">
+        <text>bargain - hunting by institutions</text>
+        <propbank>
+          <rel relloc="2">hunting</rel>
+          <arg type="ARG1" start="0" end="0">bargain</arg>
+          <arg type="ARG0" start="3" end="4">by institutions</arg>
+        </propbank>
       </example>
-      <example name="hunting-n: Arg 1 only" src="" type="">
+      <example name="hunting-n: Arg 1 only" src="">
         <text>fox hunting</text>
-        <arg f="" n="1">fox</arg>
-        <rel f="">hunting</rel>
+        <propbank>
+          <rel relloc="1">hunting</rel>
+          <arg type="ARG1" start="0" end="0">fox</arg>
+        </propbank>
       </example>
-      <example name="hunting-n: Another arg 1 only" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>medium-size game hunting</text>
-        <arg f="" n="1">medium-size game</arg>
-        <rel f="">hunting</rel>
+      <example name="hunting-n: Another arg 1 only" src="">
+        <text>medium - size game hunting</text>
+        <propbank>
+          <rel relloc="4">hunting</rel>
+          <arg type="ARG1" start="0" end="3">medium - size game</arg>
+        </propbank>
       </example>
-      <example name="hunting-n: argM-PRP" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="hunting-n: argM-PRP" src="">
         <text>He also said that taking into account the commercial hunting , the gorillas might face extinction very soon .</text>
-        <arg f="prp" n="m">commercial</arg>
-        <rel f="">hunting</rel>
+        <propbank>
+          <rel relloc="9">hunting</rel>
+          <arg type="ARGM-PRP" start="8" end="8">commercial</arg>
+        </propbank>
       </example>
+      <note>HUNT-V NOTES: Frames file for 'hunt' based on survey of sentences in the WSJ corpus. (from hunt.01-v predicate notes)</note>
+      <note>HUNTING-N NOTES: Based on sentences in nouns-00040. Comparison to hunt.01-v. VN class hunt-35.1. Framed by Katie. (from hunting.01-n)</note>
     </roleset>
   </predicate>
   <predicate lemma="hunt_down">
     <roleset id="hunt_down.02" name="look for until found">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">hunt_down</alias>
-        <alias framenet="" pos="n" verbnet="">hunting_down</alias>
+        <alias pos="v">hunt_down</alias>
+        <alias pos="n">hunting_down</alias>
       </aliases>
-      <note>HUNT_DOWN-V NOTES:Added by Julia for Lorelei.</note>
       <roles>
         <role descr="hunter" f="PAG" n="0"/>
         <role descr="entity hunted for" f="PPT" n="1"/>
       </roles>
-      <example name="hunt_down-v" src="" type="">
-        <text>The World 's Jeb Sharp has been hunting down clues to the foreign policy of the incoming administration . </text>
-        <arg f="" n="0">The World's Jeb Sharp</arg>
-        <rel f="">[hunting][down]</rel>
-        <arg f="" n="1">clues to the foreign policy of the incoming administration</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="hunt_down-v" src="">
+        <text>The World 's Jeb Sharp has been hunting down clues to the foreign policy of the incoming administration .</text>
+        <propbank>
+          <rel relloc="7 8">hunting down</rel>
+          <arg type="ARG0" start="0" end="4">The World 's Jeb Sharp</arg>
+          <arg type="ARG1" start="9" end="17">clues to the foreign policy of the incoming administration</arg>
+        </propbank>
       </example>
+      <note>HUNT_DOWN-V NOTES:Added by Julia for Lorelei.</note>
     </roleset>
   </predicate>
 </frameset>

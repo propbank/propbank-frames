@@ -1,47 +1,80 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="abstract">
     <roleset id="abstract.01" name="to draw or take away">
       <aliases>
-        <alias framenet="Theft" pos="v" verbnet="10.1">abstract</alias>
-        <alias framenet="Theft" pos="n" verbnet="">abstraction</alias>
+        <alias pos="v">abstract</alias>
+        <alias pos="n">abstraction</alias>
       </aliases>
-      <note>ABSTRACT-V NOTES: Verbnet entry 10.1. No FNcls. (from abstract.01-v)</note>
-      <note>ABSTRACTION-N NOTES: (from abstraction.01-n)</note>
       <roles>
         <role descr="entity abstracting" f="PAG" n="0">
-          <vnrole vncls="10.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Theft" resource="FrameNet" version="1.7">perpetrator</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing being abstracted" f="PPT" n="1">
-          <vnrole vncls="10.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Theft" resource="FrameNet" version="1.7">victim</rolelink>
+            <rolelink class="Theft" resource="FrameNet" version="1.7">goods</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="abstracted from" f="DIR" n="2">
-          <vnrole vncls="10.1" vntheta="Source"/>
+          <rolelinks>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.3">source</rolelink>
+            <rolelink class="Theft" resource="FrameNet" version="1.7">source</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">initial_location</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG0" src="probably COCA (2018 example fix)" type="">
-        <text>In working up this study, he abstracted numerous pages from the original typed Narrative-Commentary and considerably altered their chronological order to fit the new central theme.</text>
-        <arg f="adv" n="m">In working up this study,</arg>
-        <arg f="" n="0">he</arg>
-        <rel f="">abstracted</rel>
-        <arg f="" n="1">numerous pages</arg>
-        <arg f="" n="2">from the original typed Narrative-Commentary</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Theft" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="remove-10.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="remove-10.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="ARG0" src="probably COCA (2018 example fix)">
+        <text>In working up this study , he abstracted numerous pages from the original typed Narrative - Commentary and considerably altered their chronological order to fit the new central theme .</text>
+        <propbank>
+          <rel relloc="7">abstracted</rel>
+          <arg type="ARGM-ADV" start="0" end="4">In working up this study</arg>
+          <arg type="ARG0" start="6" end="6">he</arg>
+          <arg type="ARG1" start="8" end="9">numerous pages</arg>
+          <arg type="ARG2" start="10" end="16">from the original typed Narrative - Commentary</arg>
+        </propbank>
       </example>
-
-      <example name="abstract-v: passive" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="present" voice="active"/>
-        <text>Anti-transcendent skepticism holds that thought-1 can not be abstracted *trace*-1 away from some natural or material preconditions</text>
-        <arg f="mod" n="m">can</arg>
-        <arg f="neg" n="m">not</arg>
-        <rel f="">abstracted</rel>
-        <arg f="" n="1">*trace*-1 (= thought)</arg>
-        <arg f="" n="2">away from some natural or material preconditions</arg>
+      <example name="abstract-v: passive" src="internet">
+        <text>Anti - transcendent skepticism holds that thought can not be abstracted away from some natural or material preconditions</text>
+        <propbank>
+          <rel relloc="10">abstracted</rel>
+          <arg type="ARGM-MOD" start="7" end="7">can</arg>
+          <arg type="ARGM-NEG" start="8" end="8">not</arg>
+          <arg type="ARG1" start="6" end="6">thought</arg>
+          <arg type="ARG2" start="11" end="17">away from some natural or material preconditions</arg>
+        </propbank>
       </example>
-      <example name="abstraction-n" src="" type="">
-        <text>One Cuil = One level of abstraction away from the reality of a situation.</text>
-        <rel f="">abstraction</rel>
-        <arg f="" n="2">away from the reality of a situation</arg>
+      <example name="abstraction-n" src="">
+        <text>One Cuil = One level of abstraction away from the reality of a situation .</text>
+        <propbank>
+          <rel relloc="6">abstraction</rel>
+          <arg type="ARG2" start="7" end="13">away from the reality of a situation</arg>
+        </propbank>
       </example>
+      <note>ABSTRACT-V NOTES: Verbnet entry 10.1. No FNcls. (from abstract.01-v)</note>
+      <note>ABSTRACTION-N NOTES: (from abstraction.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

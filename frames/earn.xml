@@ -1,55 +1,92 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="earn">
     <roleset id="earn.01" name="wages">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">earn</alias>
+        <alias pos="v">earn</alias>
       </aliases>
-      <note>EARN-V NOTES: Arg3 could also be used for"on holdings of $16 million"whenreporting dividend yield and such. (from earn.01-v)</note>
       <roles>
         <role descr="earner" f="PAG" n="0">
-          <vnrole vncls="13.5.1-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="get-13.5.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="get-13.5.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="wages" f="PPT" n="1">
-          <vnrole vncls="13.5.1-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="get-13.5.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="get-13.5.1-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="benefactive" f="GOL" n="2">
-          <vnrole vncls="13.5.1-1" vntheta="Beneficiary"/>
+          <rolelinks>
+            <rolelink class="get-13.5.1-1" resource="VerbNet" version="verbnet3.3">beneficiary</rolelink>
+            <rolelink class="get-13.5.1-1" resource="VerbNet" version="verbnet3.4">beneficiary</rolelink>
+          </rolelinks>
         </role>
         <role descr="source" f="DIR" n="3">
-          <vnrole vncls="13.5.1-1" vntheta="Source"/>
+          <rolelinks>
+            <rolelink class="get-13.5.1-1" resource="VerbNet" version="verbnet3.3">source</rolelink>
+            <rolelink class="get-13.5.1-1" resource="VerbNet" version="verbnet3.4">source</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="it's a living" src="" type="">
-        <text>Composer Marc Marder earns his living *trace* playing the double bass in classical music ensembles.</text>
-        <arg f="" n="0">Composer Marc Marder</arg>
-        <rel f="">earns</rel>
-        <arg f="" n="1">his living</arg>
-        <arg f="MNR" n="m">*trace* playing the double bass in classical music ensembles.</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="get-13.5.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="earn-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">28</lexlink>
+        <lexlink class="earn-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">62</lexlink>
+        <lexlink class="get-13.5.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="it's a living" src="">
+        <text>Composer Marc Marder earns his living playing the double bass in classical music ensembles .</text>
+        <propbank>
+          <rel relloc="3">earns</rel>
+          <arg type="ARG0" start="0" end="2">Composer Marc Marder</arg>
+          <arg type="ARG1" start="4" end="5">his living</arg>
+          <arg type="ARGM-MNR" start="6" end="13">playing the double bass in classical music ensembles</arg>
+        </propbank>
       </example>
-      <example name="dividends" src="" type="">
-        <text>In fiscal 1988 the company earned $17.3 million on revenue of $352.9 million.</text>
-        <arg f="TMP" n="m">In fiscal 1988</arg>
-        <arg f="" n="0">the company</arg>
-        <rel f="">earned</rel>
-        <arg f="" n="1">$17.3 million</arg>
-        <arg f="PRD" n="m">on revenue of $352.9 million.</arg>
+      <example name="dividends" src="">
+        <text>In fiscal 1988 the company earned $ 17.3 million on revenue of $ 352.9 million .</text>
+        <propbank>
+          <rel relloc="5">earned</rel>
+          <arg type="ARGM-TMP" start="0" end="2">In fiscal 1988</arg>
+          <arg type="ARG0" start="3" end="4">the company</arg>
+          <arg type="ARG1" start="6" end="8">$ 17.3 million</arg>
+          <arg type="ARGM-PRD" start="9" end="14">on revenue of $ 352.9 million</arg>
+        </propbank>
       </example>
-      <example name="benefactive" src="" type="">
-        <text>...a relationship with the government that *trace* has earned the Mitsubishi group the dubious moniker of"seisho".</text>
-        <arg f="" n="0">*trace*</arg>
-        <arg f="RCL" n="M">that=a relationship</arg>
-        <rel f="">earned</rel>
-        <arg f="" n="2">the Mitsubishi group</arg>
-        <arg f="" n="1">the dubious moniker of"seisho"</arg>
+      <example name="benefactive" src="">
+        <text>... a relationship with the government that has earned the Mitsubishi group the dubious moniker of " seisho " .</text>
+        <propbank>
+          <rel relloc="8">earned</rel>
+          <arg type="ARG0" start="1" end="2">a relationship</arg>
+          <arg type="R-ARG0" start="6" end="6">that</arg>
+          <arg type="ARG2" start="9" end="11">the Mitsubishi group</arg>
+          <arg type="ARG1" start="12" end="18">the dubious moniker of " seisho "</arg>
+        </propbank>
       </example>
-      <example name="with source" src="" type="">
-        <text>[Xerox Corp.'s third-quarter net income]-1 grew 6.2% on 7.3% higher revenue, *trace*-1 earning mixed reviews from Wall Street analysts.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">earning</rel>
-        <arg f="" n="1">mixed reviews</arg>
-        <arg f="" n="3">from Wall Street analysts</arg>
+      <example name="with source" src="">
+        <text>Xerox Corp. 's third - quarter net income grew 6.2 % on 7.3 % higher revenue , earning mixed reviews from Wall Street analysts .</text>
+        <propbank>
+          <rel relloc="17">earning</rel>
+          <arg type="ARG0" start="0" end="7">Xerox Corp. 's third - quarter net income</arg>
+          <arg type="ARG1" start="18" end="19">mixed reviews</arg>
+          <arg type="ARG3" start="20" end="23">from Wall Street analysts</arg>
+        </propbank>
       </example>
+      <note>EARN-V NOTES: Arg3 could also be used for"on holdings of $16 million"whenreporting dividend yield and such. (from earn.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

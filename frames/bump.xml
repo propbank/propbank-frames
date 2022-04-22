@@ -1,116 +1,189 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="bump">
     <roleset id="bump.01" name="hit gently">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">bump</alias>
+        <alias pos="v">bump</alias>
       </aliases>
-      <note>BUMP-V NOTES: Frames file for 'bump' based on sentences in wsj and automaticexpansion via verbnet. (from bump.01-v predicate notes)</note>
       <roles>
-        <role descr="agent, hitter - animate only!" f="pag" n="0">
-          <vnrole vncls="18.1-1" vntheta="agent"/>
+        <role descr="agent, hitter - animate only!" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="hit-18.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="hit-18.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing hit" f="ppt" n="1">
-          <vnrole vncls="18.1-1" vntheta="patient"/>
-          <vnrole vncls="18.4-1" vntheta="theme"/>
+        <role descr="thing hit" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="hit-18.1-1" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="bump-18.4-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="hit-18.1-1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+            <rolelink class="bump-18.4-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="instrument, thing hit by or with" f="mnr" n="2">
-          <vnrole vncls="18.1-1" vntheta="instrument"/>
-          <vnrole vncls="18.4-1" vntheta="location"/>
+        <role descr="instrument, thing hit by or with" f="MNR" n="2">
+          <rolelinks>
+            <rolelink class="hit-18.1-1" resource="VerbNet" version="verbnet3.3">instrument</rolelink>
+            <rolelink class="bump-18.4-1" resource="VerbNet" version="verbnet3.3">location</rolelink>
+            <rolelink class="hit-18.1-1" resource="VerbNet" version="verbnet3.4">instrument</rolelink>
+            <rolelink class="bump-18.4-1" resource="VerbNet" version="verbnet3.4">location</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="instrumental subject" src="strike.01" type="">
-        <text>Sentiment was helped by the small gain made by New York stocks Wednesday despite anxiety over possible effects of the major earthquake that *trace* bumped northern California Tuesday.</text>
-        <arg f="rcl" n="m">that -&gt; the major earthquake</arg>
-        <arg f="" n="2">*trace*</arg>
-        <rel f="">bumped</rel>
-        <arg f="" n="1">northern California</arg>
-        <arg f="tmp" n="m">Tuesday</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="hit-18.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="bump-18.4-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="bump-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+        <lexlink class="bump-18.4-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="hit-18.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="instrumental subject" src="strike.01">
+        <text>Sentiment was helped by the small gain made by New York stocks Wednesday despite anxiety over possible effects of the major earthquake that bumped northern California Tuesday .</text>
+        <propbank>
+          <rel relloc="23">bumped</rel>
+          <arg type="R-ARG2" start="22" end="22">that</arg>
+          <arg type="ARG2" start="19" end="21">the major earthquake</arg>
+          <arg type="ARG1" start="24" end="25">northern California</arg>
+          <arg type="ARGM-TMP" start="26" end="26">Tuesday</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1001" type="">
+      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1001">
         <text>You bump into the same people all the time in Macau , and if you 're too strict about factions , you only make things difficult for yourself .</text>
-        <arg f="" n="0">You</arg>
-        <rel f="">bump</rel>
-        <arg f="" n="1">into the same people</arg>
-        <arg f="tmp" n="m">all the time</arg>
-        <arg f="loc" n="m">in Macau</arg>
+        <propbank>
+          <rel relloc="1">bump</rel>
+          <arg type="ARG0" start="0" end="0">You</arg>
+          <arg type="ARG1" start="2" end="5">into the same people</arg>
+          <arg type="ARGM-TMP" start="6" end="8">all the time</arg>
+          <arg type="ARGM-LOC" start="9" end="10">in Macau</arg>
+        </propbank>
       </example>
-
+      <note>BUMP-V NOTES: Frames file for 'bump' based on sentences in wsj and automatic expansion via verbnet. (from bump.01-v predicate notes)</note>
     </roleset>
     <roleset id="bump.02" name="move slightly">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">bump</alias>
+        <alias pos="v">bump</alias>
       </aliases>
-      <note>BUMP-V NOTES: Frames file for 'bump' based on sentences in wsj and automaticexpansion via verbnet. (from bump.02-v predicate notes)</note>
       <roles>
-        <role descr="causer of motion" f="pag" n="0"/>
-        <role descr="entity in motion" f="ppt" n="1"/>
-        <role descr="EXT" f="ext" n="2"/>
-        <role descr="start point" f="dir" n="3"/>
-        <role descr="end point" f="loc" n="4"/>
-        <role descr="direction" f="vsp" n="5"/>
+        <role descr="causer of motion" f="PAG" n="0"/>
+        <role descr="entity in motion" f="PPT" n="1"/>
+        <role descr="EXT" f="EXT" n="2"/>
+        <role descr="start point" f="DIR" n="3"/>
+        <role descr="end point" f="LOC" n="4"/>
+        <role descr="direction" f="VSP" n="5"/>
       </roles>
-      <example name="direction and end point" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>Conceivably, in a scaled-back buy-out, [they]-2 could be bumped *trace*-2 back to coach seats for life.</text>
-        <arg f="dis" n="m">Conceivably</arg>
-        <arg f="loc" n="m">in a scaled-back buy-out</arg>
-        <arg f="mod" n="m">could</arg>
-        <rel f="">bumped</rel>
-        <arg f="" n="1">*trace*-2</arg>
-        <arg f="dir" n="5">back</arg>
-        <arg f="" n="4">to coach seats for life</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Impact" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+      </lexlinks>
+      <example name="direction and end point" src="">
+        <text>Conceivably , in a scaled - back buy - out , they could be bumped back to coach seats for life .</text>
+        <propbank>
+          <rel relloc="14">bumped</rel>
+          <arg type="ARGM-DIS" start="0" end="0">Conceivably</arg>
+          <arg type="ARGM-LOC" start="2" end="9">in a scaled - back buy - out</arg>
+          <arg type="ARGM-MOD" start="12" end="12">could</arg>
+          <arg type="ARG1" start="11" end="11">they</arg>
+          <arg type="ARG5" start="15" end="15">back</arg>
+          <arg type="ARG4" start="16" end="20">to coach seats for life</arg>
+        </propbank>
       </example>
-      <example name="agent and direction" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Yesterday, when similar securities rebounded, it bumped the valuation up again.</text>
-        <arg f="tmp" n="m">Yesterday, when similar securities rebounded,</arg>
-        <arg f="" n="0">it</arg>
-        <rel f="">bumped</rel>
-        <arg f="" n="1">the valuation</arg>
-        <arg f="dir" n="5">up</arg>
-        <arg f="dis" n="m">again</arg>
+      <example name="agent and direction" src="">
+        <text>Yesterday , when similar securities rebounded , it bumped the valuation up again .</text>
+        <propbank>
+          <rel relloc="8">bumped</rel>
+          <arg type="ARGM-TMP" start="0" end="5">Yesterday , when similar securities rebounded</arg>
+          <arg type="ARG0" start="7" end="7">it</arg>
+          <arg type="ARG1" start="9" end="10">the valuation</arg>
+          <arg type="ARG5" start="11" end="11">up</arg>
+          <arg type="ARGM-DIS" start="12" end="12">again</arg>
+        </propbank>
       </example>
+      <note>BUMP-V NOTES: Frames file for 'bump' based on sentences in wsj and automatic expansion via verbnet. (from bump.02-v predicate notes)</note>
     </roleset>
   </predicate>
   <predicate lemma="bump_up">
     <roleset id="bump_up.03" name="collide">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">bump_up</alias>
+        <alias pos="v">bump_up</alias>
       </aliases>
-      <note>BUMP_UP-V NOTES: (from bump.03-v)</note>
       <roles>
-        <role descr="one thing in collision" f="ppt" n="1"/>
-        <role descr="the other (usually prepositional)" f="com" n="2"/>
+        <role descr="one thing in collision" f="PPT" n="1"/>
+        <role descr="the other (usually prepositional)" f="COM" n="2"/>
       </roles>
-      <example name="different bump up" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>Mr. Maynard isn't [the first entrepreneur]-1 *trace* *trace*-1 to bump up against entrenched interests.</text>
-        <arg f="" n="1">*trace*-1</arg>
-        <rel f="">[ bump] [ up]</rel>
-        <arg f="" n="2">against entrenched interests</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="different bump up" src="">
+        <text>Mr. Maynard is n't the first entrepreneur to bump up against entrenched interests .</text>
+        <propbank>
+          <rel relloc="8 9">bump up</rel>
+          <arg type="ARG1" start="4" end="6">the first entrepreneur</arg>
+          <arg type="ARG2" start="10" end="12">against entrenched interests</arg>
+        </propbank>
       </example>
+      <note>BUMP_UP-V NOTES: (from bump.03-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="bump_off">
     <roleset id="bump_off.04" name="assassinate">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">bump_off</alias>
+        <alias pos="v">bump_off</alias>
       </aliases>
-      <note>BUMP_OFF-V NOTES: Added by Julia based on Brown corpus. Comparison to assassinate (from bump.04-v)</note>
       <roles>
-        <role descr="hit man" f="pag" n="0"/>
-        <role descr="unlucky person" f="ppt" n="1"/>
+        <role descr="hit man" f="PAG" n="0"/>
+        <role descr="unlucky person" f="PPT" n="1"/>
       </roles>
-      <example name="those lazy Reactionaries" src="Brown" type="-">
-        <inflection aspect="ns" form="full" person="third" tense="past" voice="active"/>
-        <text>[Why]-1 did n't the damn Reactionaries bump him off *-1? ?</text>
-        <arg f="neg" n="m">n't</arg>
-        <arg f="" n="0">the damn Reactionaries</arg>
-        <rel f="">[bump] [off]</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="cau" n="m">*-1: [why]</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Killing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+      </lexlinks>
+      <example name="those lazy Reactionaries" src="Brown">
+        <text>Why did n't the damn Reactionaries bump him off ? ?</text>
+        <propbank>
+          <rel relloc="6 8">bump off</rel>
+          <arg type="ARGM-NEG" start="2" end="2">n't</arg>
+          <arg type="ARG0" start="3" end="5">the damn Reactionaries</arg>
+          <arg type="ARG1" start="7" end="7">him</arg>
+          <arg type="ARGM-CAU" start="0" end="0">Why</arg>
+        </propbank>
       </example>
+      <note>BUMP_OFF-V NOTES: Added by Julia based on Brown corpus. Comparison to assassinate (from bump.04-v)</note>
     </roleset>
   </predicate>
 </frameset>

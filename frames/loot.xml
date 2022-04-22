@@ -1,60 +1,81 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="loot">
     <roleset id="loot.01" name="pillage, etc.">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">loot</alias>
-        <alias framenet="" pos="n" verbnet="">looting</alias>
+        <alias pos="v">loot</alias>
+        <alias pos="n">looting</alias>
       </aliases>
+      <roles>
+        <role descr="looter" f="PAG" n="0"/>
+        <role descr="ill-gotten goods" f="PPT" n="1"/>
+        <role descr="source" f="DIR" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Theft" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Transportartifact" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+      </lexlinks>
+      <example name="intransitive" src="">
+        <text>I 'm surprised he did n't advocate letting people loot , since that behavior can also be foreseen in a disaster and `` every individual has an incentive to alter the distribution of income in his favor . ''</text>
+        <propbank>
+          <rel relloc="9">loot</rel>
+          <arg type="ARG0" start="8" end="8">people</arg>
+        </propbank>
+      </example>
+      <example name="all args" src="">
+        <text>John looted fifteen pieces of chocolate cake from the fridge .</text>
+        <propbank>
+          <rel relloc="1">looted</rel>
+          <arg type="ARG0" start="0" end="0">John</arg>
+          <arg type="ARG1" start="2" end="6">fifteen pieces of chocolate cake</arg>
+          <arg type="ARG2" start="7" end="9">from the fridge</arg>
+        </propbank>
+      </example>
+      <example name="all args, different order" src="">
+        <text>John looted the fridge of fifteen pieces of chocolate cake .</text>
+        <propbank>
+          <rel relloc="1">looted</rel>
+          <arg type="ARG0" start="0" end="0">John</arg>
+          <arg type="ARG2" start="2" end="3">the fridge</arg>
+          <arg type="ARG1" start="4" end="9">of fifteen pieces of chocolate cake</arg>
+        </propbank>
+      </example>
+      <example name="MNR" src="BOLT">
+        <text>Twitter is going mental with reports of bomb threats , mass looting , fires etc .</text>
+        <propbank>
+          <rel relloc="11">looting</rel>
+          <arg type="ARGM-MNR" start="10" end="10">mass</arg>
+        </propbank>
+      </example>
+      <example name="Args 0 and 1" src="internet">
+        <text>They brag over their looting of a grave , and removal of an almost 100 year old skeleton .</text>
+        <propbank>
+          <rel relloc="4">looting</rel>
+          <arg type="ARG0" start="3" end="3">their</arg>
+          <arg type="ARG1" start="11" end="17">of an almost 100 year old skeleton</arg>
+        </propbank>
+      </example>
+      <example name="Args 0 and 2" src="internet">
+        <text>We do not want to wake up in 2013 and blame ourselves that we remained silent for the NPP to sneak back again to continue their looting of this country .</text>
+        <propbank>
+          <rel relloc="26">looting</rel>
+          <arg type="ARG0" start="25" end="25">their</arg>
+          <arg type="ARG2" start="27" end="29">of this country</arg>
+        </propbank>
+      </example>
       <note>LOOT-V NOTES: Frames file for 'loot' based on sentences in wsj. No Verbnet entry. (from loot.01-v predicate notes)</note>
       <note>LOOTING-N NOTES: Added by Julia based on BOLT, loot-v.01. (from looting.01-n)</note>
-      <roles>
-        <role descr="looter" f="pag" n="0"/>
-        <role descr="ill-gotten goods" f="ppt" n="1"/>
-        <role descr="source" f="dir" n="2"/>
-      </roles>
-      <example name="intransitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>I'm surprised he did n't advocate [*-2] letting people loot, since that behavior can also be foreseen in a disaster and ``every individual has an incentive to alter the distribution of income in his favor.''</text>
-        <arg f="" n="0">people</arg>
-        <rel f="">loot</rel>
-      </example>
-      <example name="all args" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>John looted fifteen pieces of chocolate cake from the fridge.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">looted</rel>
-        <arg f="" n="1">fifteen pieces of chocolate cake</arg>
-        <arg f="" n="2">from the fridge</arg>
-      </example>
-      <example name="all args, different order" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>John looted the fridge of fifteen pieces of chocolate cake.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">looted</rel>
-        <arg f="" n="2">the fridge</arg>
-        <arg f="" n="1">of fifteen pieces of chocolate cake</arg>
-      </example>
-      <example name="MNR" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Twitter is going mental with reports of bomb threats , mass looting , fires etc .</text>
-        <arg f="mnr" n="m">mass</arg>
-        <rel f="">lootin</rel>
-      </example>
-      <example name="Args 0 and 1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>They brag over their looting of a grave, and removal of an almost 100 year old skeleton.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">looting</rel>
-        <arg f="" n="1">of an almost 100 year old skeleton</arg>
-      </example>
-      <example name="Args 0 and 2" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>We do not want to wake up in 2013 and blame ourselves that we remained silent for the NPP to sneak back again to continue their looting of this country.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">looting</rel>
-        <arg f="" n="2">of this country</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

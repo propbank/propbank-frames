@@ -1,62 +1,122 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="classify">
     <roleset id="classify.01" name="assign a label or attribute">
       <aliases>
-        <alias framenet="Categorization" pos="v" verbnet="">classify</alias>
-        <alias framenet="" pos="n" verbnet="">classification</alias>
+        <alias pos="v">classify</alias>
+        <alias pos="n">classification</alias>
       </aliases>
-      <note>CLASSIFY-V NOTES: Comparison with define. Member of VNcls characterize-29.2, classify-29.10. Updated by Julia, 112010. (from classify.01-v)</note>
-      <note>CLASSIFICATION-N NOTES: Corresponds to classify.01. Framed by anwen april 2011 (from classification.01-n)</note>
       <roles>
         <role descr="describer" f="PAG" n="0">
-          <vnrole vncls="29.2" vntheta="Agent"/>
-          <vnrole vncls="29.10" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="characterize-29.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="classify-29.10" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Categorization" resource="FrameNet" version="1.7">cognizer</rolelink>
+            <rolelink class="classify-29.10" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="characterize-29.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing defined" f="PPT" n="1">
-          <vnrole vncls="29.2" vntheta="Theme"/>
-          <vnrole vncls="29.10" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="characterize-29.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="classify-29.10" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Categorization" resource="FrameNet" version="1.7">item</rolelink>
+            <rolelink class="classify-29.10" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+            <rolelink class="characterize-29.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="secondary attribute, described-as, definition" f="prd" n="2">
-          <vnrole vncls="29.2" vntheta="Attribute"/>
-          <vnrole vncls="29.10" vntheta="Goal"/>
+        <role descr="secondary attribute, described-as, definition" f="PRD" n="2">
+          <rolelinks>
+            <rolelink class="characterize-29.2" resource="VerbNet" version="verbnet3.3">attribute</rolelink>
+            <rolelink class="classify-29.10" resource="VerbNet" version="verbnet3.3">goal</rolelink>
+            <rolelink class="Categorization" resource="FrameNet" version="1.7">category</rolelink>
+            <rolelink class="classify-29.10" resource="VerbNet" version="verbnet3.4">goal</rolelink>
+            <rolelink class="characterize-29.2" resource="VerbNet" version="verbnet3.4">attribute</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="classify-v: typical usage" src="" type="">
-        <text>Her recent report classifies the stock as a ``hold.''</text>
-        <arg f="" n="0">Her recent report</arg>
-        <rel f="">classifies</rel>
-        <arg f="" n="1">the stock</arg>
-        <arg f="" n="2">as a ``hold</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Categorization" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="characterize-29.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="classify-29.10" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="classify-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">6</lexlink>
+        <lexlink class="characterize-29.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+        <lexlink class="classify-29.10" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="classify-v: typical usage" src="">
+        <text>Her recent report classifies the stock as a `` hold . ''</text>
+        <propbank>
+          <rel relloc="3">classifies</rel>
+          <arg type="ARG0" start="0" end="2">Her recent report</arg>
+          <arg type="ARG1" start="4" end="5">the stock</arg>
+          <arg type="ARG2" start="6" end="9">as a `` hold</arg>
+        </propbank>
       </example>
-      <example name="classification-n: Arg0 and 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Linneaus' classification of fish was controversial in his day.</text>
-        <arg f="" n="0">Linneaus'</arg>
-        <rel f="">classification</rel>
-        <arg f="" n="1">of fish</arg>
+      <example name="classification-n: Arg0 and 1" src="">
+        <text>Linneaus ' classification of fish was controversial in his day .</text>
+        <propbank>
+          <rel relloc="2">classification</rel>
+          <arg type="ARG0" start="0" end="1">Linneaus '</arg>
+          <arg type="ARG1" start="3" end="4">of fish</arg>
+        </propbank>
       </example>
+      <note>CLASSIFY-V NOTES: Comparison with define. Member of VNcls characterize-29.2, classify-29.10. Updated by Julia, 112010. (from classify.01-v)</note>
+      <note>CLASSIFICATION-N NOTES: Corresponds to classify.01. Framed by anwen april 2011 (from classification.01-n)</note>
     </roleset>
     <roleset id="classify.02" name="make/keep secret">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">classify</alias>
+        <alias pos="v">classify</alias>
       </aliases>
-      <note>CLASSIFY-V NOTES: Member of VNcls characterize-29.2. (from classify.02-v)</note>
       <roles>
         <role descr="secret-keeper" f="PAG" n="0">
-          <vnrole vncls="29.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="characterize-29.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="characterize-29.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="secret" f="PPT" n="1">
-          <vnrole vncls="29.2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="characterize-29.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="characterize-29.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="classify-v: in honor of the FBI goons" src="" type="">
-        <text>The government classified John's dissertation on the clandestine uses of corn kernels as both top-secret and pop-secret.</text>
-        <arg f="" n="0">The government</arg>
-        <rel f="">classified</rel>
-        <arg f="" n="1">John's dissertation on the clandestine uses of corn kernels</arg>
-        <arg f="prd" n="m">as both top-secret and pop-secret</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Assessing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="characterize-29.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="characterize-29.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="classify-v: in honor of the FBI goons" src="">
+        <text>The government classified John 's dissertation on the clandestine uses of corn kernels as both top - secret and pop - secret .</text>
+        <propbank>
+          <rel relloc="2">classified</rel>
+          <arg type="ARG0" start="0" end="1">The government</arg>
+          <arg type="ARG1" start="3" end="12">John 's dissertation on the clandestine uses of corn kernels</arg>
+          <arg type="ARGM-PRD" start="13" end="21">as both top - secret and pop - secret</arg>
+        </propbank>
       </example>
+      <note>CLASSIFY-V NOTES: Member of VNcls characterize-29.2. (from classify.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

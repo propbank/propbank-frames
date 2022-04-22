@@ -1,28 +1,67 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="heavy">
     <roleset id="heavy.01" name="having much weight">
       <aliases>
-        <alias framenet="Measurable_attributes" pos="j" verbnet="">heavy</alias>
+        <alias pos="j">heavy</alias>
+        <alias pos="n">heaviness</alias>
+        <alias pos="r">heavily</alias>
       </aliases>
-      <note>HEAVY-J NOTES: Added by Julia based on BOLT-7. (from heavy.01-j)</note>
       <roles>
-        <role descr="heavy entity" f="loc" n="1"/>
-        <role descr="specific substance (may be abstract) weighing arg1 down" f="ppt" n="2"/>
+        <role descr="heavy entity" f="LOC" n="1" />
+        <role descr="specific substance (may be abstract) weighing arg1 down" f="PPT" n="2" />
       </roles>
-      <example name="arg1" src="BOLT-7" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Measurable_attributes" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+      </lexlinks>
+      <example name="arg1" src="BOLT-7">
         <text>The lively , hustling and bustling 2012 Taiwan " General Election " has already dropped the curtain . As Ma Ying - jeou said in his victory acceptance speech , " It is enough for us to rejoice for one night , and we need to be as as we were four years ago , for we still have a lot of work to do " . Yes , the future is a long ways away , the road ahead is very long , and the responsibility is heavy .</text>
-        <arg f="" n="1">the responsibility</arg>
-        <rel f="">heavy</rel>
+        <propbank>
+          <rel relloc="88">heavy</rel>
+          <arg type="ARG1" start="85" end="86">the responsibility</arg>
+        </propbank>
       </example>
-      <example name="both args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The air was heavy with unspoken knowledge.</text>
-        <arg f="" n="1">the air</arg>
-        <rel f="">heavy</rel>
-        <arg f="" n="2">with unspoken knowledge</arg>
+      <example name="both args" src="internet">
+        <text>The air was heavy with unspoken knowledge .</text>
+        <propbank>
+          <rel relloc="3">heavy</rel>
+          <arg type="ARG1" start="0" end="1">The air</arg>
+          <arg type="ARG2" start="4" end="6">with unspoken knowledge</arg>
+        </propbank>
       </example>
+      <example name="heaviness-n" src="THYME">
+        <text>Patient denies chest heaviness .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (d / deny-01
+            :ARG0 (p / patient-yy)
+            :ARG1 (h / heavy-01
+              :ARG1 (a / anatomical-site :name (n / name :op1 "chest")
+                :part-of p)))
+        </amr>
+      </example>
+      <example name="heavily-r" src="THYME">
+        <text>Patient snores heavily .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (s / snore-01
+            :ARG0 (p / patient-yy)
+            :manner (h / heavy-01))
+        </amr>
+      </example>
+      <note>HEAVILY-R and HEAVINESS-N NOTES: Added by Kristin based on THYME.</note>
+      <note>HEAVY-J NOTES: Added by Julia based on BOLT-7. (from heavy.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

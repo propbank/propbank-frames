@@ -1,90 +1,143 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="broaden">
     <roleset id="broaden.01" name="(cause to) become   broader, wider">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">broaden</alias>
-        <alias framenet="" pos="n" verbnet="">broadening</alias>
+        <alias pos="v">broaden</alias>
+        <alias pos="n">broadening</alias>
       </aliases>
+      <roles>
+        <role descr="agent, causing broadening" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing broadening" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="EXT, amount broadened by" f="EXT" n="2">
+          <rolelinks/>
+        </role>
+        <role descr="start point" f="DIR" n="3">
+          <rolelinks/>
+        </role>
+        <role descr="end point" f="GOL" n="4">
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">result</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="other_cos-45.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="broaden-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">15</lexlink>
+        <lexlink class="other_cos-45.4" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="just transitive" src="">
+        <text>Mr. Schwarz says the competition `` broadens the base of opportunity for us . ''</text>
+        <propbank>
+          <rel relloc="6">broadens</rel>
+          <arg type="ARG0" start="3" end="4">the competition</arg>
+          <arg type="ARG1" start="7" end="12">the base of opportunity for us</arg>
+        </propbank>
+      </example>
+      <example name="ergative, start and end points" src="widen.01">
+        <text>As a result , the group 's third - quarter loss broadened to $ 9.8 million from the second quarter 's $ 3.6 million .</text>
+        <propbank>
+          <rel relloc="11">broadened</rel>
+          <arg type="ARGM-CAU" start="0" end="2">As a result</arg>
+          <arg type="ARG1" start="4" end="10">the group 's third - quarter loss</arg>
+          <arg type="ARG4" start="12" end="15">to $ 9.8 million</arg>
+          <arg type="ARG3" start="16" end="23">from the second quarter 's $ 3.6 million</arg>
+        </propbank>
+      </example>
+      <example name="ergative, with EXT" src="widen.01">
+        <text>The uncertainty was multiplied by the persistent strength of the dollar , traders said , and by the U.S. trade deficit , which broadened by 31 % in August from the previous month .</text>
+        <propbank>
+          <rel relloc="23">broadened</rel>
+          <arg type="R-ARG1" start="22" end="22">which</arg>
+          <arg type="ARG1" start="17" end="20">the U.S. trade deficit</arg>
+          <arg type="ARG2" start="24" end="26">by 31 %</arg>
+          <arg type="ARGM-TMP" start="27" end="28">in August</arg>
+          <arg type="ARG3" start="29" end="32">from the previous month</arg>
+        </propbank>
+      </example>
       <note>BROADEN-V NOTES: Frames file for 'broaden' based on sentences in financial subcorpusand automatic expansion via verbnet. Comparison with 'narrow' and'widen'. (from broaden.01-v predicate notes)</note>
       <note>BROADENING-N NOTES: (from broadening.01-n)</note>
-      <roles>
-        <role descr="agent, causing broadening" f="pag" n="0">
-          <vnrole vncls="45.4" vntheta="agent"/>
-        </role>
-        <role descr="thing broadening" f="ppt" n="1">
-          <vnrole vncls="45.4" vntheta="patient"/>
-        </role>
-        <role descr="EXT, amount broadened by" f="ext" n="2"/>
-        <role descr="start point" f="dir" n="3"/>
-        <role descr="end point" f="gol" n="4"/>
-      </roles>
-      <example name="just transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>Mr. Schwarz says the competition ``broadens the base of opportunity for us.''</text>
-        <arg f="" n="0">the competition</arg>
-        <rel f="">broadens</rel>
-        <arg f="" n="1">the base of opportunity for us</arg>
-      </example>
-      <example name="ergative, start and end points" src="widen.01" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>As a result, the group's third-quarter loss broadened to $9.8 million from the second quarter's $3.6 million.</text>
-        <arg f="cau" n="m">As a result</arg>
-        <arg f="" n="1">the group's third-quarter loss</arg>
-        <rel f="">broadened</rel>
-        <arg f="" n="4">to $9.8 million</arg>
-        <arg f="" n="3">from the second quarter's $3.6 million</arg>
-      </example>
-      <example name="ergative, with EXT" src="widen.01" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>The uncertainty was multiplied by the persistent strength of the dollar, traders said, and by the U.S. trade deficit, which [*T*] broadened by 31% in August from the previous month.</text>
-        <arg f="rcl" n="m">which -&gt; the U.S. trade deficit</arg>
-        <arg f="" n="1">[*T*]</arg>
-        <rel f="">broadened</rel>
-        <arg f="" n="2">by 31%</arg>
-        <arg f="tmp" n="m">in August</arg>
-        <arg f="" n="3">from the previous month</arg>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="broad">
     <roleset id="broad.02" name="spanning a wide range">
       <aliases>
-        <alias framenet="Dimension Diversity Measurable_attributes" pos="j" verbnet="">broad</alias>
-        <alias framenet="" pos="j" verbnet="">broader</alias>
+        <alias pos="j">broad</alias>
+        <alias pos="j">broader</alias>
       </aliases>
+      <roles>
+        <role descr="broad thing" f="PPT" n="1"/>
+        <role descr="specific aspect of arg1 that is broad (if in addition)" f="VSP" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Diversity" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Dimension" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Measurable_attributes" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+      </lexlinks>
+      <example name="lexical comparative" src="BOLT-6">
+        <text>Even if history repeats itself , Crack Shortbread still does not believe that China has any shortcut to take in the Sino - Russian relations and affairs , or *PRO* to be broader , in the military development and the affairs of Central Asia .</text>
+        <propbank>
+          <rel relloc="32">broader</rel>
+          <arg type="ARG1" start="?" end="?">*PRO*</arg>
+        </propbank>
+      </example>
+      <example name="physical attribute" src="internet">
+        <text>His shoulders were broad , his forearms were nearly as large as his upper arms and he had a thick neck , a barrel chest and a huge frame .</text>
+        <propbank>
+          <rel relloc="3">broad</rel>
+          <arg type="ARG1" start="0" end="1">His shoulders</arg>
+        </propbank>
+      </example>
+      <example name="arg1" src="internet">
+        <text>Despite the lack of geographic coverage , the range of topics was broad</text>
+        <propbank>
+          <rel relloc="12">broad</rel>
+          <arg type="ARGM-ADV" start="0" end="5">Despite the lack of geographic coverage</arg>
+          <arg type="ARG1" start="7" end="10">the range of topics</arg>
+        </propbank>
+      </example>
+      <example name="both args" src="internet">
+        <text>the HOA 's suit was broad in its allegations and did assert fault on the part of , among others , " engineers .</text>
+        <propbank>
+          <rel relloc="5">broad</rel>
+          <arg type="ARG1" start="0" end="3">the HOA 's suit</arg>
+          <arg type="ARG2" start="6" end="22">in its allegations and did assert fault on the part of , among others , " engineers</arg>
+        </propbank>
+      </example>
       <note>BROAD-J NOTES: Added by Julia based on BOLT-6. Relation to broaden.01 (from broad.01-j)</note>
       <note>BROADER-J NOTES: Automatically created by Julia as an alias file for unification. (from broader.01-j)</note>
-      <roles>
-        <role descr="broad thing" f="ppt" n="1"/>
-        <role descr="specific aspect of arg1 that is broad (if in addition)" f="vsp" n="2"/>
-      </roles>
-      <example name="lexical comparative" src="BOLT-6" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Even if history repeats itself , Crack Shortbread still does not believe that China has any shortcut to take in the Sino - Russian relations and affairs , or *PRO* to be broader , in the military development and the affairs of Central Asia .</text>
-        <arg f="" n="1">*PRO*</arg>
-        <rel f="">broader</rel>
-      </example>
-      <example name="physical attribute" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>His shoulders were broad, his forearms were nearly as large as his upper arms and he had a thick neck, a barrel chest and a huge frame.</text>
-        <arg f="" n="1">His shoulders</arg>
-        <rel f="">broad</rel>
-      </example>
-      <example name="arg1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Despite the lack of geographic coverage, the range of topics was broad</text>
-        <arg f="adv" n="m">Despite the lack of geographic coverage</arg>
-        <arg f="" n="1">the range of topics</arg>
-        <rel f="">broad</rel>
-      </example>
-      <example name="both args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>the HOA's suit was broad in its allegations and did assert fault on the part of, among others, "engineers.</text>
-        <arg f="" n="1">the HOA's suit</arg>
-        <rel f="">broad</rel>
-        <arg f="" n="2">in its allegations and did assert fault on the part of, among others, "engineers.</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

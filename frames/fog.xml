@@ -1,69 +1,113 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="fog">
     <roleset id="fog.01" name="cause to be covered with fog">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">fog</alias>
+        <alias pos="v">fog</alias>
       </aliases>
-      <note>FOG-V NOTES: Frames file for 'fog' based on sentences in wsj. Verbnet entry 57 'weather phenomena' which is just plain wrong. (from fog.01-v predicate notes)</note>
       <roles>
-        <role descr="causer of fog" f="PAG" n="0"/>
+        <role descr="causer of fog" f="PAG" n="0">
+          <rolelinks/>
+        </role>
         <role descr="thing covered with fog" f="PPT" n="1">
-          <vnrole vncls="57" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="weather-57" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="weather-57" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="one example is enough" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>Though it's probably safe to assume that the majority of financial planners are honest and even reasonably competent, the fact remains that, as one wag puts it, ``anybody who [*T*-1] can fog a mirror'' can call himself a financial planner.</text>
-        <arg f="" n="0">[*T*-1]</arg>
-        <arg f="RCL" n="M">who -&gt; anybody</arg>
-        <arg f="MOD" n="M">can</arg>
-        <rel f="">fog</rel>
-        <arg f="" n="1">a mirror</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="weather-57" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="weather-57" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="one example is enough" src="">
+        <text>Though it 's probably safe to assume that the majority of financial planners are honest and even reasonably competent , the fact remains that , as one wag puts it , `` anybody who can fog a mirror '' can call himself a financial planner .</text>
+        <propbank>
+          <rel relloc="35">fog</rel>
+          <arg type="ARG0" start="32" end="32">anybody</arg>
+          <arg type="R-ARG0" start="33" end="33">who</arg>
+          <arg type="ARGM-MOD" start="34" end="34">can</arg>
+          <arg type="ARG1" start="36" end="37">a mirror</arg>
+        </propbank>
       </example>
+      <note>FOG-V NOTES: Frames file for 'fog' based on sentences in wsj. Verbnet entry 57 'weather phenomena' which is just plain wrong. (from fog.01-v predicate notes)</note>
     </roleset>
   </predicate>
   <predicate lemma="foggy">
     <roleset id="foggy.02" name="weather condition">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">foggy</alias>
+        <alias pos="j">foggy</alias>
       </aliases>
-      <note>FOGGY-J NOTES: Added by Julia based on BOLT-7. (from foggy.01-j)</note>
       <roles>
-        <note>DON"T tag empty it. (from foggy.01-j)</note>
-        <role descr="explicit location that is foggy (copular subject, not empty 'it')" f="loc" n="1"/>
+        <role descr="explicit location that is foggy (copular subject, not empty 'it')" f="LOC" n="1"/>
       </roles>
-      <example name="arg1" src="BOLT-7" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <example name="arg1" src="BOLT-7">
         <text>In Beijing city , the sky is foggy .</text>
-        <arg f="loc" n="m">in Beijing city</arg>
-        <arg f="" n="1">the sky</arg>
-        <rel f="">foggy</rel>
+        <propbank>
+          <rel relloc="7">foggy</rel>
+          <arg type="ARGM-LOC" start="0" end="2">In Beijing city</arg>
+          <arg type="ARG1" start="4" end="5">the sky</arg>
+        </propbank>
       </example>
-      <example name="Empty it! Do not tag!" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Let me know if it's foggy in your neck of the woods.</text>
-        <rel f="">foggy</rel>
-        <arg f="loc" n="m">in your neck of the woods</arg>
+      <example name="Empty it! Do not tag!" src="internet">
+        <text>Let me know if it 's foggy in your neck of the woods .</text>
+        <propbank>
+          <rel relloc="6">foggy</rel>
+          <arg type="ARGM-LOC" start="7" end="12">in your neck of the woods</arg>
+        </propbank>
       </example>
+      <note>FOGGY-J NOTES: Added by Julia based on BOLT-7. (from foggy.01-j)</note>
+      <note>DON"T tag empty it. (from foggy.01-j)</note>
     </roleset>
     <roleset id="foggy.03" name="poor mental clarity, understanding">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">foggy</alias>
+        <alias pos="j">foggy</alias>
       </aliases>
-      <note>FOGGY-J NOTES: Added by Julia (from foggy.02-j)</note>
       <roles>
-        <role descr="entity with poor mental clarity/understanding" f="pag" n="1"/>
-        <role descr="thing poorly understood/remembered" f="ppt" n="2"/>
+        <role descr="entity with poor mental clarity/understanding" f="PAG" n="1"/>
+        <role descr="thing poorly understood/remembered" f="PPT" n="2"/>
       </roles>
-      <example name="both args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>If you are still foggy about Cloud Technology, don't feel too badly.</text>
-        <arg f="" n="1">you</arg>
-        <arg f="tmp" n="m">still</arg>
-        <rel f="">foggy</rel>
-        <arg f="" n="2">about Cloud Technology</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <example name="both args" src="internet">
+        <text>If you are still foggy about Cloud Technology , do n't feel too badly .</text>
+        <propbank>
+          <rel relloc="4">foggy</rel>
+          <arg type="ARG1" start="1" end="1">you</arg>
+          <arg type="ARGM-TMP" start="3" end="3">still</arg>
+          <arg type="ARG2" start="5" end="7">about Cloud Technology</arg>
+        </propbank>
       </example>
+      <note>FOGGY-J NOTES: Added by Julia (from foggy.02-j)</note>
     </roleset>
   </predicate>
 </frameset>

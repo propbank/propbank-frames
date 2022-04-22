@@ -1,31 +1,60 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="slosh">
     <roleset id="slosh.01" name="to spill or splash">
       <aliases>
-        <alias framenet="Self_motion" pos="v" verbnet="">slosh</alias>
+        <alias pos="v">slosh</alias>
       </aliases>
-      <note>SLOSH-V NOTES: Member of VNcls pour-9.5. (from slosh.01-v)</note>
       <roles>
         <role descr="spiller" f="PAG" n="0">
-          <vnrole vncls="9.5" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="pour-9.5" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="pour-9.5" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="substance" f="PPT" n="1">
-          <vnrole vncls="9.5" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="pour-9.5" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Self_motion" resource="FrameNet" version="1.7">self_mover</rolelink>
+            <rolelink class="pour-9.5" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="destination" f="GOL" n="2">
-          <vnrole vncls="9.5" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink class="pour-9.5" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="Self_motion" resource="FrameNet" version="1.7">goal</rolelink>
+            <rolelink class="Self_motion" resource="FrameNet" version="1.7">path</rolelink>
+            <rolelink class="pour-9.5" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="non-agentive" src="" type="">
-        <inflection aspect="progressive" form="infinitive" person="ns" tense="ns" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Self_motion" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="pour-9.5" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="pour-9.5" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="non-agentive" src="">
         <text>Calculating that excess polyethylene would soon be sloshing around the world , other buyers then bet that prices had peaked and so began to draw down inventories rather than order new product .</text>
-        <arg f="" n="1">excess polyethylene</arg>
-        <arg f="mod" n="m">would</arg>
-        <arg f="tmp" n="m">soon</arg>
-        <rel f="">sloshing</rel>
-        <arg f="" n="2">around the world</arg>
+        <propbank>
+          <rel relloc="7">sloshing</rel>
+          <arg type="ARG1" start="2" end="3">excess polyethylene</arg>
+          <arg type="ARGM-MOD" start="4" end="4">would</arg>
+          <arg type="ARGM-TMP" start="5" end="5">soon</arg>
+          <arg type="ARG2" start="8" end="10">around the world</arg>
+        </propbank>
       </example>
+      <note>SLOSH-V NOTES: Member of VNcls pour-9.5. (from slosh.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,151 +1,215 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="offer">
     <roleset id="offer.01" name="transaction, proposal">
       <aliases>
-        <alias framenet="offering" pos="n" verbnet="">offering</alias>
-        <alias framenet="" pos="n" verbnet="">offer</alias>
-        <alias framenet="" pos="v" verbnet="">offer</alias>
-        <alias framenet="" pos="l" verbnet="">make_offer</alias>
+        <alias pos="n">offering</alias>
+        <alias pos="n">offer</alias>
+        <alias pos="v">offer</alias>
+        <alias pos="l">make_offer</alias>
       </aliases>
+      <roles>
+        <role descr="entity offering" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="reflexive_appearance-48.1.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="commodity" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="reflexive_appearance-48.1.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="price" f="VSP" n="2">
+          <rolelinks/>
+        </role>
+        <role descr="benefactive or entity offered to" f="GOL" n="3">
+          <rolelinks>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.3">goal</rolelink>
+            <rolelink class="reflexive_appearance-48.1.2" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Offering" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="future_having-13.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="offer-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">185</lexlink>
+        <lexlink class="offer-v.5" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">8</lexlink>
+        <lexlink class="offer-v.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">68</lexlink>
+        <lexlink class="offer-v.4" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">16</lexlink>
+        <lexlink class="offer-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">9</lexlink>
+        <lexlink class="offering-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">75</lexlink>
+        <lexlink class="offering-n.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="reflexive_appearance-48.1.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="ditransitive" src="">
+        <text>A solicitous Christian chauffeur offers the hero God 's phone number .</text>
+        <propbank>
+          <rel relloc="4">offers</rel>
+          <arg type="ARG0" start="0" end="3">A solicitous Christian chauffeur</arg>
+          <arg type="ARG3" start="5" end="6">the hero</arg>
+          <arg type="ARG1" start="7" end="10">God 's phone number</arg>
+        </propbank>
+      </example>
+      <example name="PP benefactive" src="">
+        <text>A solicitous Christian chauffeur offers God 's phone number to the hero .</text>
+        <propbank>
+          <rel relloc="4">offers</rel>
+          <arg type="ARG0" start="0" end="3">A solicitous Christian chauffeur</arg>
+          <arg type="ARG1" start="5" end="8">God 's phone number</arg>
+          <arg type="ARG3" start="9" end="11">to the hero</arg>
+        </propbank>
+      </example>
+      <example name="cash as direct object" src="">
+        <text>Temple offered $ 50 million for Sea Containers</text>
+        <propbank>
+          <rel relloc="1">offered</rel>
+          <arg type="ARG0" start="0" end="0">Temple</arg>
+          <arg type="ARG2" start="2" end="4">$ 50 million</arg>
+          <arg type="ARG1" start="5" end="7">for Sea Containers</arg>
+        </propbank>
+      </example>
+      <example name="commodity as direct object" src="">
+        <text>Coche - Dury offered its 1987 Corton - Charlemagne for $ 155 .</text>
+        <propbank>
+          <rel relloc="3">offered</rel>
+          <arg type="ARG0" start="0" end="2">Coche - Dury</arg>
+          <arg type="ARG1" start="4" end="8">its 1987 Corton - Charlemagne</arg>
+          <arg type="ARG2" start="9" end="11">for $ 155</arg>
+        </propbank>
+      </example>
+      <example name="for-phrase as price" src="">
+        <text>The company offers a word - processing package for $ 100 .</text>
+        <propbank>
+          <rel relloc="2">offers</rel>
+          <arg type="ARG0" start="0" end="1">The company</arg>
+          <arg type="ARG1" start="3" end="7">a word - processing package</arg>
+          <arg type="ARG2" start="8" end="10">for $ 100</arg>
+        </propbank>
+      </example>
+      <example name="for-phrase included in commodity" src="">
+        <text>The company offers a word - processing package for personal computers .</text>
+        <propbank>
+          <rel relloc="2">offers</rel>
+          <arg type="ARG0" start="0" end="1">The company</arg>
+          <arg type="ARG1" start="3" end="10">a word - processing package for personal computers</arg>
+        </propbank>
+      </example>
+      <example name="arg1 as infinitive" src="">
+        <text>New England Electric offered $ 2 billion to acquire PS of New Hampshire .</text>
+        <propbank>
+          <rel relloc="3">offered</rel>
+          <arg type="ARG0" start="0" end="2">New England Electric</arg>
+          <arg type="ARG2" start="4" end="6">$ 2 billion</arg>
+          <arg type="ARG1" start="7" end="12">to acquire PS of New Hampshire</arg>
+        </propbank>
+      </example>
+      <example name="contrasting with above" src="">
+        <text>New England Electric offered $ 2 billion for PS of New Hampshire .</text>
+        <propbank>
+          <rel relloc="3">offered</rel>
+          <arg type="ARG0" start="0" end="2">New England Electric</arg>
+          <arg type="ARG2" start="4" end="6">$ 2 billion</arg>
+          <arg type="ARG1" start="7" end="11">for PS of New Hampshire</arg>
+        </propbank>
+      </example>
+      <example name="another arg1 as infinitive" src="">
+        <text>Fujitsu essentially offered to do it for free .</text>
+        <propbank>
+          <rel relloc="2">offered</rel>
+          <arg type="ARG0" start="0" end="0">Fujitsu</arg>
+          <arg type="ARGM-ADV" start="1" end="1">essentially</arg>
+          <arg type="ARG1" start="3" end="7">to do it for free</arg>
+        </propbank>
+      </example>
+      <example name="ARG0 and ARG1 and ARG3" src="ontonotes mz/sinorama/10/ectb_1001">
+        <text>Explains Wong Hon Keong : " Macau offers visa - free access to residents of over 40 countries with which it has consular relations , but Taiwan is the only place for which it provides visa - free access without there being diplomatic ties . "</text>
+        <propbank>
+          <rel relloc="7">offers</rel>
+          <arg type="ARG0" start="6" end="6">Macau</arg>
+          <arg type="ARG1" start="8" end="11">visa - free access</arg>
+          <arg type="ARG3" start="12" end="23">to residents of over 40 countries with which it has consular relations</arg>
+        </propbank>
+      </example>
+      <example name="Arg 1 (most common)" src="">
+        <text>An offering of common shares</text>
+        <propbank>
+          <rel relloc="1">offering</rel>
+          <arg type="ARG1" start="2" end="4">of common shares</arg>
+        </propbank>
+      </example>
+      <example name="With a benefactive" src="">
+        <text>The proposed initial public offering of common stock of RMI Titanium Co.</text>
+        <propbank>
+          <rel relloc="4">offering</rel>
+          <arg type="ARGM-TMP" start="2" end="2">initial</arg>
+          <arg type="ARG3" start="3" end="3">public</arg>
+          <arg type="ARG1" start="5" end="11">of common stock of RMI Titanium Co.</arg>
+        </propbank>
+      </example>
+      <example name="With Price" src="">
+        <text>a $ 1.6 billion offering for TW Food Services Inc.</text>
+        <propbank>
+          <rel relloc="4">offering</rel>
+          <arg type="ARG2" start="0" end="3">a $ 1.6 billion</arg>
+          <arg type="ARG1" start="5" end="9">for TW Food Services Inc.</arg>
+        </propbank>
+      </example>
+      <example name="Arg 1 before the noun (Be careful, this can be confused with arg 0 and benefactive. Read the sentence for context clues!)" src="">
+        <text>Also , the TW offering includes interest - deferred and pay - in - kind securities , which are currently unpopular .</text>
+        <propbank>
+          <rel relloc="4">offering</rel>
+          <arg type="ARG1" start="3" end="3">TW</arg>
+        </propbank>
+      </example>
+      <example name="And finally, an arg 0" src="">
+        <text>The offerings by exxon Capital Corp , Xerox Corp , and Citicorp</text>
+        <propbank>
+          <rel relloc="1">offerings</rel>
+          <arg type="ARG0" start="2" end="11">by exxon Capital Corp , Xerox Corp , and Citicorp</arg>
+        </propbank>
+      </example>
+      <example name="Within LVC" src="nouns-lv">
+        <text>The rights plan would be triggered if a person or group acquires 20 % or more of the common shares outstanding without making an offer to all shareholders .</text>
+        <propbank>
+          <rel relloc="24">offer</rel>
+          <arg type="ARG0" start="7" end="10">a person or group</arg>
+          <arg type="ARGM-LVB" start="22" end="22">making</arg>
+          <arg type="ARG3" start="25" end="27">to all shareholders</arg>
+        </propbank>
+      </example>
+      <example name="Args 0 &amp; 1" src="web">
+        <text>She began writing the book when Y &amp; R turned down her offer to write for the show .</text>
+        <propbank>
+          <rel relloc="12">offer</rel>
+          <arg type="ARG0" start="11" end="11">her</arg>
+          <arg type="ARG1" start="13" end="17">to write for the show</arg>
+        </propbank>
+      </example>
+      <example name="Args 1, 2" src="">
+        <text>Pierce backed off , however , and instead renewed the offer to buy the island for $ 130 million .</text>
+        <propbank>
+          <rel relloc="10">offer</rel>
+          <arg type="ARG1" start="11" end="14">to buy the island</arg>
+          <arg type="ARG2" start="15" end="18">for $ 130 million</arg>
+        </propbank>
+      </example>
       <note>OFFER-V NOTES: equally:Careful with "for" phrases:Theoretically also with benefactive (but I doubt we'll see any): (from offer.01-v)</note>
       <note>OFFERING-N NOTES: Added due to expansion of Nombank. Comparison to 'offer.01'. Vn class future_having-13.3 and reflexive_appearance-48.1.2. Fn class offering. Framed by Katie. (from offering.01-n)</note>
       <note>OFFER-N NOTES: Based on verb entry offer.01. Corresponds to VN Classes future_having-13.3, reflexive_appearance-48.1.2. (from offer.01-n)</note>
-      <roles>
-        <note>This actually conflates two senses, the "buy" sense and the	"sell" sense.  In the "buy" sense you offer cash for some	commodity; in the "sell" sense you offer some commodity and	hope to get some cash for it.  Thus the "direct object" will	vary between Arg1 and Arg2. (from offer.01-v)</note>
-        <role descr="entity offering" f="pag" n="0">
-          <vnrole vncls="13.3" vntheta="agent"/>
-        </role>
-        <role descr="commodity" f="ppt" n="1">
-          <vnrole vncls="13.3" vntheta="theme"/>
-        </role>
-        <role descr="price" f="vsp" n="2"/>
-        <role descr="benefactive or entity offered to" f="gol" n="3">
-          <vnrole vncls="13.3" vntheta="goal"/>
-        </role>
-      </roles>
-      <example name="ditransitive" src="" type="">
-        <text>A solicitous Christian chauffeur offers the hero God's phone number.</text>
-        <arg f="" n="0">A solicitous Christian chauffeur</arg>
-        <rel f="">offers</rel>
-        <arg f="" n="3">the hero</arg>
-        <arg f="" n="1">God's phone number</arg>
-      </example>
-      <example name="PP benefactive" src="" type="">
-        <text>A solicitous Christian chauffeur offers God's phone number to the hero.</text>
-        <arg f="" n="0">A solicitous Christian chauffeur</arg>
-        <rel f="">offers</rel>
-        <arg f="" n="1">God's phone number</arg>
-        <arg f="" n="3">to the hero</arg>
-      </example>
-      <example name="cash as direct object" src="" type="">
-        <text>Temple offered $50 million for Sea Containers</text>
-        <arg f="" n="0">Temple</arg>
-        <rel f="">offered</rel>
-        <arg f="" n="2">$50 million</arg>
-        <arg f="" n="1">for Sea Containers</arg>
-      </example>
-      <example name="commodity as direct object" src="" type="">
-        <text>Coche-Dury offered its 1987 Corton-Charlemagne for $155.</text>
-        <arg f="" n="0">Coche-Dury</arg>
-        <rel f="">offered</rel>
-        <arg f="" n="1">its 1987 Corton-Charlemagne</arg>
-        <arg f="" n="2">for $155</arg>
-      </example>
-      <example name="for-phrase as price" src="" type="">
-        <text>The company offers a word-processing package for $100.</text>
-        <arg f="" n="0">The company</arg>
-        <rel f="">offers</rel>
-        <arg f="" n="1">a word-processing package</arg>
-        <arg f="" n="2">for $100</arg>
-      </example>
-      <example name="for-phrase included in commodity" src="" type="">
-        <text>The company offers a word-processing package for personal computers.</text>
-        <arg f="" n="0">The company</arg>
-        <rel f="">offers</rel>
-        <arg f="" n="1">a word-processing package for personal computers</arg>
-      </example>
-      <example name="arg1 as infinitive" src="" type="">
-        <text>New England Electric offered $2 billion to acquire PS of New Hampshire.</text>
-        <arg f="" n="0">New England Electric</arg>
-        <rel f="">offered</rel>
-        <arg f="" n="2">$2 billion</arg>
-        <arg f="" n="1">to acquire PS of New Hampshire</arg>
-      </example>
-      <example name="contrasting with above" src="" type="">
-        <text>New England Electric offered $2 billion for PS of New Hampshire.</text>
-        <arg f="" n="0">New England Electric</arg>
-        <rel f="">offered</rel>
-        <arg f="" n="2">$2 billion</arg>
-        <arg f="" n="1">for PS of New Hampshire</arg>
-      </example>
-      <example name="another arg1 as infinitive" src="" type="">
-        <text>Fujitsu essentially offered *trace* to do it for free.</text>
-        <arg f="" n="0">Fujitsu</arg>
-        <arg f="adv" n="m">essentially</arg>
-        <rel f="">offered</rel>
-        <arg f="" n="1">*trace* to do it for free.</arg>
-      </example>
-      <example name="ARG0 and ARG1 and ARG3" src="ontonotes mz/sinorama/10/ectb_1001" type="">
-        <text>Explains Wong Hon Keong : " Macau offers visa - free access to residents of over 40 countries with which it has consular relations , but Taiwan is the only place for which it provides visa - free access without there being diplomatic ties . "</text>
-        <arg f="" n="0">Macau</arg>
-        <rel f="">offers</rel>
-        <arg f="" n="1">visa - free access</arg>
-        <arg f="" n="3">to residents of over 40 countries with which it has consular relations</arg>
-      </example>
-
-      <example name="Arg 1 (most common)" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>An offering of common shares</text>
-        <rel f="">offering</rel>
-        <arg f="" n="1">of common shares</arg>
-      </example>
-      <example name="With a benefactive" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The proposed initial public offering of common stock of RMI Titanium Co.</text>
-        <arg f="tmp" n="m">intial</arg>
-        <arg f="" n="3">public</arg>
-        <rel f="">offering</rel>
-        <arg f="" n="1">of common stock of RMI Titanium Co.</arg>
-      </example>
-      <example name="With Price" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>a $1.6 billion offering for TW Food Services Inc.</text>
-        <arg f="" n="2">a $1.6 billion</arg>
-        <rel f="">offering</rel>
-        <arg f="" n="1">for TW Food Services Inc.</arg>
-      </example>
-      <example name="Arg 1 before the noun (Be careful, this can be confused with arg 0 and benefactive. Read the sentence for context clues!)" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Also, the TW offering includes interest-deferred and pay-in-kind securities, which are currently unpopular.</text>
-        <arg f="" n="1">TW</arg>
-        <rel f="">offering</rel>
-      </example>
-      <example name="And finally, an arg 0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The offerings by exxon Capital Corp, Xerox Corp, and Citicorp</text>
-        <rel f="">offerings</rel>
-        <arg f="" n="0">by exxon Capital Corp, Xerox Corp, and Citicorp</arg>
-      </example>
-      <example name="Within LVC" src="nouns-lv" type="">
-        <text>The rights plan would be triggered if [a person or group]-2 acquires 20 % or more of the common shares outstanding without *PRO*-2 making an offer to all shareholders .</text>
-        <arg f="" n="0">*PRO*-2</arg>
-        <arg f="lvb" n="m">making</arg>
-        <rel f="">offer</rel>
-        <arg f="" n="3">to all shareholders</arg>
-      </example>
-      <example name="Args 0 &amp; 1" src="web" type="">
-        <text>She began writing the book when Y&amp; R turned down her offer to write for the show.</text>
-        <arg f="" n="0">her</arg>
-        <rel f="">offer</rel>
-        <arg f="" n="1">to write for the show</arg>
-      </example>
-      <example name="Args 1, 2" src="" type="">
-        <text>Pierce backed off, however, and instead renewed the offer to buy the island for $130 million.</text>
-        <rel f="">offer</rel>
-        <arg f="" n="1">to buy the island</arg>
-        <arg f="" n="2">for $130 million</arg>
-      </example>
+      <note>This actually conflates two senses, the "buy" sense and the	"sell" sense.  In the "buy" sense you offer cash for some	commodity; in the "sell" sense you offer some commodity and	hope to get some cash for it.  Thus the "direct object" will	vary between Arg1 and Arg2. (from offer.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

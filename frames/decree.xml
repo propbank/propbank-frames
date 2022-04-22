@@ -1,40 +1,62 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="decree">
     <roleset id="decree.01" name="to issue or demand  by decree">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">decree</alias>
+        <alias pos="v">decree</alias>
       </aliases>
-      <note>DECREE-V NOTES: Frames file for 'decree' based on survey of sentences in the WSJ corpus. (from decree.01-v predicate notes)</note>
       <roles>
-        <role descr="ruler, issuer of decree" f="pag" n="0">
-          <vnrole vncls="29.3" vntheta="agent"/>
+        <role descr="ruler, issuer of decree" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="dub-29.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="entity decreed" f="ppt" n="1">
-          <vnrole vncls="29.3" vntheta="theme"/>
+        <role descr="entity decreed" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="dub-29.3" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Legal_rulings" resource="FrameNet" version="1.7">defendant</rolelink>
+          </rolelinks>
         </role>
-        <role descr="listener" f="gol" n="2"/>
+        <role descr="listener" f="GOL" n="2"/>
       </roles>
-      <example name="transitive" src="transitive" type="transitive">
-        <inflection aspect="perfect" form="participle" person="third" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Legal_rulings" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="dub-29.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+      </lexlinks>
+      <example name="transitive" src="">
         <text>( Within her garden , she has decreed a waterfall , a rill , ponds and other costly , trivial waterworks beside the Hudson . )</text>
-        <arg f="loc" n="m">Within her garden</arg>
-        <arg f="" n="0">she</arg>
-        <rel f="">decreed</rel>
-        <arg f="" n="1">a waterfall , a rill , ponds and other costly , trivial waterworks</arg>
-        <arg f="loc" n="m">beside the Hudson</arg>
+        <propbank>
+          <rel relloc="7">decreed</rel>
+          <arg type="ARGM-LOC" start="1" end="3">Within her garden</arg>
+          <arg type="ARG0" start="5" end="5">she</arg>
+          <arg type="ARG1" start="8" end="20">a waterfall , a rill , ponds and other costly , trivial waterworks</arg>
+          <arg type="ARGM-LOC" start="21" end="23">beside the Hudson</arg>
+        </propbank>
       </example>
-      <example name="With arg 2, listener" src="With arg 2, listener" type="With arg 2, listener">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>This is because those [for whom]-2 [a happy ending]-1 has already been decreed *-1 *T*-2 by God in the written book.</text>
-        <arg f="tmp" n="m">already</arg>
-        <rel f="">decreed</rel>
-        <arg f="" n="1">*-1</arg>
-        <arg f="" n="2">*T*-2</arg>
-        <arg f="slc" n="m">for whom --&gt; *those</arg>
-        <arg f="" n="0">by God</arg>
-        <arg f="loc" n="m">in the written book</arg>
+      <example name="With arg 2, listener" src="">
+        <text>This is because those for whom a happy ending has already been decreed by God in the written book .</text>
+        <propbank>
+          <rel relloc="12">decreed</rel>
+          <arg type="ARGM-TMP" start="10" end="10">already</arg>
+          <arg type="ARG1" start="6" end="8">a happy ending</arg>
+          <arg type="ARG2" start="3" end="3">those</arg>
+          <arg type="R-ARG2" start="4" end="5">for whom</arg>
+          <arg type="ARG0" start="13" end="14">by God</arg>
+          <arg type="ARGM-LOC" start="15" end="18">in the written book</arg>
+        </propbank>
       </example>
+      <note>DECREE-V NOTES: Frames file for 'decree' based on survey of sentences in the WSJ corpus. (from decree.01-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

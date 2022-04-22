@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
+<frameset>
+  <predicate lemma="ileostomy">
+    <roleset id="ileostomy.01" name="surgery that diverts part of the ileum to an artificial opening in the abdominal wall">
+      <aliases>
+        <alias pos="j">ileostomy</alias>
+      </aliases>
+      <roles>
+        <role descr="agent" f="PAG" n="0" />
+        <role descr="patient" f="PPT" n="1" />
+        <role descr="product/result" f="PRD" n="2" />
+        <role descr="which part(s) of the ileum is used" f="MNR" n="3" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks />
+      <example name="ileostomy-n" src="THYME">
+        <text>Mrs. X underwent an end ileostomy for a rectal cancer .</text>
+        <propbank>
+          <rel relloc="5">ileostomy</rel>
+          <arg end="4" start="4" type="ARG2">end</arg>
+          <arg end="9" start="6" type="ARGM-CAU">for a rectal cancer</arg>
+        </propbank>
+        <amr version="THYME 1.0">
+          (i2 / ileostomy-01
+            :ARG1 (p / person :name (n / name :op1 "Mrs." :op2 "X"))
+            :ARG2 (a2 / anatomical-site :name (n3 / name :op1 "end"))
+            :ARG1-of (c / cause-01
+              :ARG0 (c2 / cancer-03
+                :ARG1 p
+                :ARG2 (a / anatomical-site :primary + :name (n2 / name :op1 "rectum")))))
+        </amr>
+      </example>
+      <note>ILEOSTOMY NOTES: Added for THYME-AMR.</note>
+    </roleset>
+  </predicate>
+</frameset>

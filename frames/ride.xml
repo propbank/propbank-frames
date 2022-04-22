@@ -1,95 +1,159 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="ride">
     <roleset id="ride.01" name="as a horse">
       <aliases>
-        <alias framenet="Ride_vehicle" pos="n" verbnet="">ride</alias>
-        <alias framenet="" pos="l" verbnet="">take_ride</alias>
-        <alias framenet="Ride_vehicle" pos="n" verbnet="">riding</alias>
-        <alias framenet="" pos="v" verbnet="">ride</alias>
+        <alias pos="n">ride</alias>
+        <alias pos="l">take_ride</alias>
+        <alias pos="n">riding</alias>
+        <alias pos="v">ride</alias>
       </aliases>
-      <note>RIDE-V NOTES: Frames file for 'ride' based on sentences in financial subcorpus. Verbnet class nonvehicle-51.4.2, no other framed members. No comparison. (from ride.01-v predicate notes)</note>
-      <note>RIDE-N NOTES: Added by Julia based on ride-v.01. Corresponds to VNcls nonvehicle-51.4.2. (from ride.01-n)</note>
       <roles>
-        <role descr="rider" f="pag" n="0">
-          <vnrole vncls="51.4.2" vntheta="agent"/>
+        <role descr="rider" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="nonvehicle-51.4.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Ride_vehicle" resource="FrameNet" version="1.7">vehicle</rolelink>
+            <rolelink class="nonvehicle-51.4.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="steed" f="ppt" n="1">
-          <vnrole vncls="51.4.2" vntheta="theme"/>
+        <role descr="steed" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="nonvehicle-51.4.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Ride_vehicle" resource="FrameNet" version="1.7">theme</rolelink>
+            <rolelink class="nonvehicle-51.4.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="whee!" src="" type="">
-        <text>One big technology issue, Novell, rode the roller coaster.</text>
-        <arg f="" n="0">One big technology issue, Novell,</arg>
-        <rel f="">rode</rel>
-        <arg f="" n="1">the roller coaster</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Ride_vehicle" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="nonvehicle-51.4.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Transportperson" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="ride-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">11</lexlink>
+        <lexlink class="ride-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">15</lexlink>
+        <lexlink class="ride-v.4" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="ride-v.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+        <lexlink class="ride-n.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+        <lexlink class="nonvehicle-51.4.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="whee!" src="">
+        <text>One big technology issue , Novell , rode the roller coaster .</text>
+        <propbank>
+          <rel relloc="7">rode</rel>
+          <arg type="ARG0" start="0" end="5">One big technology issue , Novell</arg>
+          <arg type="ARG1" start="8" end="10">the roller coaster</arg>
+        </propbank>
       </example>
-      <example name="autogen1" src="" type="">
-        <text>the stock market 's roller-coaster ride</text>
-        <arg f="" n="0">the stock market 's</arg>
-        <arg f="" n="1">roller-coaster</arg>
-        <rel f="">ride</rel>
+      <example name="autogen1" src="">
+        <text>the stock market 's roller - coaster ride</text>
+        <propbank>
+          <rel relloc="7">ride</rel>
+          <arg type="ARG0" start="0" end="3">the stock market 's</arg>
+          <arg type="ARG1" start="4" end="6">roller - coaster</arg>
+        </propbank>
       </example>
-      <example name="arg1 and GOL" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Even if these super-microbes had existed on Mars , the possibility that they hitched a ride to Earth on meteorites is not very great either .</text>
-        <rel f="">ride</rel>
-        <arg f="gol" n="m">to earth</arg>
-        <arg f="" n="1">on meteorites</arg>
+      <example name="arg1 and GOL" src="">
+        <text>Even if these super - microbes had existed on Mars , the possibility that they hitched a ride to Earth on meteorites is not very great either .</text>
+        <propbank>
+          <rel relloc="17">ride</rel>
+          <arg type="ARGM-GOL" start="18" end="19">to Earth</arg>
+          <arg type="ARG1" start="20" end="21">on meteorites</arg>
+        </propbank>
       </example>
-      <example name="light verb" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="light verb" src="">
         <text>During Winter Carnival week , for example , visitors at Sunday River in Maine can take a hot - air balloon ride .</text>
-        <arg f="" n="0">visitors at Sunday River in Maine</arg>
-        <arg f="mod" n="m">can</arg>
-        <arg f="lvb" n="m">take</arg>
-        <arg f="" n="1">hot-air ballon</arg>
-        <rel f="">ride</rel>
+        <propbank>
+          <rel relloc="21">ride</rel>
+          <arg type="ARG0" start="8" end="13">visitors at Sunday River in Maine</arg>
+          <arg type="ARGM-MOD" start="14" end="14">can</arg>
+          <arg type="ARGM-LVB" start="15" end="15">take</arg>
+          <arg type="ARG1" start="17" end="20">hot - air balloon</arg>
+        </propbank>
       </example>
+      <note>RIDE-V NOTES: Frames file for 'ride' based on sentences in financial subcorpus. Verbnet class nonvehicle-51.4.2, no other framed members. No comparison. (from ride.01-v predicate notes)</note>
+      <note>RIDE-N NOTES: Added by Julia based on ride-v.01. Corresponds to VNcls nonvehicle-51.4.2. (from ride.01-n)</note>
     </roleset>
   </predicate>
   <predicate lemma="ride_out">
     <roleset id="ride_out.02" name="endure, persevere through">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">ride_out</alias>
+        <alias pos="v">ride_out</alias>
       </aliases>
-      <note>RIDE_OUT-V NOTES: (from ride.02-v)</note>
       <roles>
-        <role descr="rider" f="pag" n="0"/>
-        <role descr="the storm" f="ppt" n="1"/>
+        <role descr="rider" f="PAG" n="0"/>
+        <role descr="the storm" f="PPT" n="1"/>
       </roles>
-      <example name="endure" src="" type="">
-        <text>Small investors matched their big institutional brethren in anxiety over the weekend, but most seemed to be taking a philosophical approach and said they-1 were resigned *trace*-1 to *trace*-1 riding out the latest storm in the stock market.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">[ riding] [ out]</rel>
-        <arg f="" n="1">the latest storm in the stock market</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="ride-v.5" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+      </lexlinks>
+      <example name="endure" src="">
+        <text>Small investors matched their big institutional brethren in anxiety over the weekend , but most seemed to be taking a philosophical approach and said they were resigned to riding out the latest storm in the stock market .</text>
+        <propbank>
+          <rel relloc="28 29">riding out</rel>
+          <arg type="ARG0" start="24" end="24">they</arg>
+          <arg type="ARG1" start="30" end="36">the latest storm in the stock market</arg>
+        </propbank>
       </example>
+      <note>RIDE_OUT-V NOTES: (from ride.02-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="ride_up">
     <roleset id="ride_up.03" name="to inch up, like clothing">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">ride_up</alias>
+        <alias pos="v">ride_up</alias>
       </aliases>
-      <note>RIDE_UP-V NOTES: Roleset based on instances in wsj-nw. Framed by Claire. (from ride.03-v)</note>
       <roles>
-        <role descr="thing inching up, clothes" f="ppt" n="1"/>
-        <role descr="thing that arg1 is inching up, body in ill-fitting clothes" f="gol" n="2"/>
+        <role descr="thing inching up, clothes" f="PPT" n="1"/>
+        <role descr="thing that arg1 is inching up, body in ill-fitting clothes" f="GOL" n="2"/>
       </roles>
-      <example name="Arg1, prepositional arg2" src="wsj-nw" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="Arg1, prepositional arg2" src="wsj-nw">
         <text>Carl Barrett of Mobile , Ala. , was raking some sycamore leaves , but the rake kept riding up over the piles .</text>
-        <arg f="" n="1">the rake</arg>
-        <rel f="">[riding][up]</rel>
-        <arg f="" n="2">over the piles</arg>
+        <propbank>
+          <rel relloc="17 18">riding up</rel>
+          <arg type="ARG1" start="14" end="15">the rake</arg>
+          <arg type="ARG2" start="19" end="21">over the piles</arg>
+        </propbank>
       </example>
-      <example name="The usage I hear most...arg2 as NP object" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>That bikini is cute from the front, but the thing was riding up her butt and looked ridiculous from behind.</text>
-        <arg f="" n="1">the thing</arg>
-        <rel f="">[riding][up]</rel>
-        <arg f="" n="2">her butt</arg>
+      <example name="The usage I hear most...arg2 as NP object" src="web">
+        <text>That bikini is cute from the front , but the thing was riding up her butt and looked ridiculous from behind .</text>
+        <propbank>
+          <rel relloc="12 13">riding up</rel>
+          <arg type="ARG1" start="9" end="10">the thing</arg>
+          <arg type="ARG2" start="14" end="15">her butt</arg>
+        </propbank>
       </example>
+      <note>RIDE_UP-V NOTES: Roleset based on instances in wsj-nw. Framed by Claire. (from ride.03-v)</note>
     </roleset>
   </predicate>
 </frameset>

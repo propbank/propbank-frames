@@ -1,39 +1,75 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="tram">
     <roleset id="tram.01" name="tram">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">tram</alias>
+        <alias pos="v">tram</alias>
       </aliases>
-      <note>TRAM-V NOTES: Member of VNcls vehicle-51.4.1. Checked by Julia, 11/2010. (from tram.01-v)</note>
       <roles>
         <role descr="agent, driver" f="PAG" n="0">
-          <vnrole vncls="51.4.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="vehicle-51.4.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="vehicle-51.4.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="tram riders" f="PPT" n="1">
-          <vnrole vncls="51.4.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="vehicle-51.4.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="vehicle-51.4.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="start point" f="DIR" n="2"/>
-        <role descr="destination" f="GOL" n="3"/>
+        <role descr="start point" f="DIR" n="2">
+          <rolelinks>
+            <rolelink class="vehicle-51.4.1" resource="VerbNet" version="verbnet3.4">initial_location</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="destination" f="GOL" n="3">
+          <rolelinks>
+            <rolelink class="vehicle-51.4.1" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
+        </role>
         <role descr="path" f="LOC" n="4">
-          <vnrole vncls="51.4.1" vntheta="Location"/>
+          <rolelinks>
+            <rolelink class="vehicle-51.4.1" resource="VerbNet" version="verbnet3.3">trajectory</rolelink>
+            <rolelink class="vehicle-51.4.1" resource="VerbNet" version="verbnet3.4">trajectory</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="from Google" src="web usage" type="">
-        <text>We trammed to the Gulhane tram stop, then walked northwest towards Topkapi.</text>
-        <arg f="" n="1">We</arg>
-        <rel f="">trammed</rel>
-        <arg f="" n="3">to the Gulhane tram stop</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Motion" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="vehicle-51.4.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="vehicle-51.4.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="from Google" src="web usage">
+        <text>We trammed to the Gulhane tram stop , then walked northwest towards Topkapi .</text>
+        <propbank>
+          <rel relloc="1">trammed</rel>
+          <arg type="ARG1" start="0" end="0">We</arg>
+          <arg type="ARG3" start="2" end="6">to the Gulhane tram stop</arg>
+        </propbank>
       </example>
-      <example name="with agent" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
-        <text>They trammed in big trays of crisp, fried chicken and wrestled with whole cargoes of potato salad, baked salmon, homemade cake and ice cream so long as the appetites of the old folks lasted.</text>
-        <arg f="" n="0">They</arg>
-        <rel f="">trammed</rel>
-        <arg f="dir" n="m">in</arg>
-        <arg f="" n="1">big trays of crisp, fried chicken</arg>
-        <arg f="tmp" n="m">so long as the appetites of the old folks lasted</arg>
+      <example name="with agent" src="internet">
+        <text>They trammed in big trays of crisp , fried chicken and wrestled with whole cargoes of potato salad , baked salmon , homemade cake and ice cream so long as the appetites of the old folks lasted .</text>
+        <propbank>
+          <rel relloc="1">trammed</rel>
+          <arg type="ARG0" start="0" end="0">They</arg>
+          <arg type="ARGM-DIR" start="2" end="2">in</arg>
+          <arg type="ARG1" start="3" end="9">big trays of crisp , fried chicken</arg>
+          <arg type="ARGM-TMP" start="27" end="36">so long as the appetites of the old folks lasted</arg>
+        </propbank>
       </example>
+      <note>TRAM-V NOTES: Member of VNcls vehicle-51.4.1. Checked by Julia, 11/2010. (from tram.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

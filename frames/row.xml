@@ -1,46 +1,80 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="row">
     <roleset id="row.01" name="make a boat go">
       <aliases>
-        <alias framenet="Operate_vehicle Bringing" pos="v" verbnet="">row</alias>
-        <alias framenet="" pos="n" verbnet="">rowing</alias>
+        <alias pos="v">row</alias>
+        <alias pos="n">rowing</alias>
       </aliases>
-      <note>ROW-V NOTES: Frames file for 'row' based on sentences in wsj. Verbnet entries 51.4.2 and 11.5, Framenet entries Transportation and Conversation. The latter is incorrect; it applies only to the nominal 'row' (pron "RAU"). (from row.01-v predicate notes)</note>
-      <note>ROWING-N NOTES: row.01 (from rowing.01-n)</note>
       <roles>
         <role descr="rower" f="PAG" n="0">
-          <vnrole vncls="11.5" vntheta="Agent"/>
-          <vnrole vncls="51.4.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="drive-11.5" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="nonvehicle-51.4.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Operate_vehicle" resource="FrameNet" version="1.7">driver</rolelink>
+            <rolelink class="Bringing" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="drive-11.5" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="nonvehicle-51.4.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="boat" f="PPT" n="1">
-          <vnrole vncls="11.5" vntheta="Theme"/>
-          <vnrole vncls="51.4.2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="drive-11.5" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="nonvehicle-51.4.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Operate_vehicle" resource="FrameNet" version="1.7">vehicle</rolelink>
+            <rolelink class="Bringing" resource="FrameNet" version="1.7">theme</rolelink>
+            <rolelink class="drive-11.5" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+            <rolelink class="nonvehicle-51.4.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="intransitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>*trace*-1 A San Francisco lawyer, Mr. Panelli-1 rowed religiously when he first got the machine, but, he complains, it left grease marks on his carpet, ``and it was boring.</text>
-        <arg f="prd" n="m">*trace* A San Francisco lawyer</arg>
-        <arg f="" n="0">Mr. Panelli</arg>
-        <rel f="">rowed</rel>
-        <arg f="mnr" n="m">religiously</arg>
-        <arg f="tmp" n="m">when he first got the machine</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Bringing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Operate_vehicle" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="drive-11.5" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="nonvehicle-51.4.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="drive-11.5" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="nonvehicle-51.4.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="intransitive" src="">
+        <text>A San Francisco lawyer , Mr. Panelli rowed religiously when he first got the machine , but , he complains , it left grease marks on his carpet , `` and it was boring .</text>
+        <propbank>
+          <rel relloc="7">rowed</rel>
+          <arg type="ARGM-PRD" start="0" end="3">A San Francisco lawyer</arg>
+          <arg type="ARG0" start="5" end="6">Mr. Panelli</arg>
+          <arg type="ARGM-MNR" start="8" end="8">religiously</arg>
+          <arg type="ARGM-TMP" start="9" end="14">when he first got the machine</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG1" src="ontonotes pt/nt/41/nt_4106" type="">
+      <example name="ARG0 and ARG1" src="ontonotes pt/nt/41/nt_4106">
         <text>And he saw the followers working hard to row the boat .</text>
-        <arg f="" n="0">the followers</arg>
-        <rel f="">row</rel>
-        <arg f="" n="1">the boat</arg>
+        <propbank>
+          <rel relloc="8">row</rel>
+          <arg type="ARG0" start="3" end="4">the followers</arg>
+          <arg type="ARG1" start="9" end="10">the boat</arg>
+        </propbank>
       </example>
-
-      <example name="Arg0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>They say boldness favours the brave and this proved true for Oliver of his rowing the Atlantic Ocean.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">rowing</rel>
-        <arg f="dir" n="m">the Atlantic Ocean</arg>
+      <example name="Arg0" src="">
+        <text>They say boldness favours the brave and this proved true for Oliver of his rowing the Atlantic Ocean .</text>
+        <propbank>
+          <rel relloc="14">rowing</rel>
+          <arg type="ARG0" start="13" end="13">his</arg>
+          <arg type="ARGM-DIR" start="15" end="17">the Atlantic Ocean</arg>
+        </propbank>
       </example>
+      <note>ROW-V NOTES: Frames file for 'row' based on sentences in wsj. Verbnet entries 51.4.2 and 11.5, Framenet entries Transportation and Conversation. The latter is incorrect; it applies only to the nominal 'row' (pron "RAU"). (from row.01-v predicate notes)</note>
+      <note>ROWING-N NOTES: row.01 (from rowing.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

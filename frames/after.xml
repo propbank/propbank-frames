@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
+<frameset>
+  <predicate lemma="after">
+    <roleset id="after.01" name="spatial: behind, following in a sequence">
+      <aliases>
+        <alias pos="p">after</alias>
+        <alias pos="r">after</alias>
+      </aliases>
+      <roles>
+        <role descr="entity coming after" f="SE1" n="1" />
+        <role descr="after what" f="SE2" n="2" />
+        <role descr="anchor" f="ANC" n="3" />
+        <role descr="axis" f="AXS" n="4" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks />
+      <entailments>
+        <hobbsian>
+          (forall (Arg1 Arg2 Arg3 Arg4 quant)
+            (iff (after-01 Arg1 Arg2 Arg3 Arg4 quant)
+              (exists (f p1 p2 z1 z2)
+                (and (selfAnchoredFramework f Arg3)
+                  (externalTo Arg1 Arg2)
+                  (zAxis Arg4 f)
+                  (frontOf Arg2 Arg1 f)
+                  (atLoc Arg1 p1)(atLoc Arg2 p2)
+                  (zCoordinate z1 p1 f)(zCoordinate z2 p2 f)
+                  (lt z1 z2 Arg4)
+                  (distance quant Arg1 Arg2)))))
+        </hobbsian>
+      </entailments>
+      <example name="after-p" src="Minecraft">
+        <text>Leave 2 spaces . After those , put a block .</text>
+        <propbank>
+          <rel relloc="4">After</rel>
+          <arg end="5" start="5" type="ARG2">those</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (m / multi-sentence
+            :snt1 (l / leave-14 :mode imperative
+              :ARG0 (y / you)
+              :ARG1 (s / space :quant 2))
+            :snt2 (p / put-01 :mode imperative
+              :ARG0 (y2 / you)
+              :ARG1 (b / block)
+              :ARG2 (s2 / space
+                :ARG1-of (a / after-01
+                  :ARG2 (t / thing :pl +
+                    :mod (t2 / that))
+                  :ARG3 (m2 / motion-sequence)))))
+        </amr>
+      </example>
+      <note>AFTER NOTES: Added for SpatialAMR.</note>
+    </roleset>
+  </predicate>
+</frameset>

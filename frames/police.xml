@@ -1,36 +1,60 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="police">
     <roleset id="police.01" name="monitor, watch, serve as   police for, enforcing the law">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">policing</alias>
-        <alias framenet="" pos="v" verbnet="">police</alias>
+        <alias pos="n">policing</alias>
+        <alias pos="v">police</alias>
       </aliases>
-      <note>POLICE-V NOTES: Frames file for 'police' based on sentences in wsj and automaticexpansion via verbnet. (from police.01-v predicate notes)</note>
-      <note>POLICING-N NOTES: Added by Julia based on BOLT, police-v.01. Corresponds to VNcls captain-29.8-1. (from policing.01-n)</note>
       <roles>
         <role descr="police" f="PAG" n="0">
-          <vnrole vncls="29.8-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="captain-29.8-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="captain-29.8-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing or place being monitored" f="GOL" n="1">
-          <vnrole vncls="29.8-1" vntheta="Beneficiary"/>
+          <rolelinks>
+            <rolelink class="captain-29.8-1" resource="VerbNet" version="verbnet3.3">beneficiary</rolelink>
+            <rolelink class="captain-29.8-1" resource="VerbNet" version="verbnet3.4">beneficiary</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="pretty simple, really" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>``We can't police the many organizations that have sprung up in the last few years using part of our name.</text>
-        <arg f="" n="0">We</arg>
-        <arg f="NEG" n="M">n't</arg>
-        <rel f="">police</rel>
-        <arg f="" n="1">the many organizations that have sprung up in the last few years using part of our name</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Patrolling" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="captain-29.8-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="captain-29.8-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="pretty simple, really" src="">
+        <text>`` We ca n't police the many organizations that have sprung up in the last few years using part of our name .</text>
+        <propbank>
+          <rel relloc="4">police</rel>
+          <arg type="ARG0" start="1" end="1">We</arg>
+          <arg type="ARGM-NEG" start="3" end="3">n't</arg>
+          <arg type="ARG1" start="5" end="21">the many organizations that have sprung up in the last few years using part of our name</arg>
+        </propbank>
       </example>
-      <example name="intransitive" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Governments must compel private companies to aid them in their policing, the cost of which is unknown...</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">policing</rel>
-        <arg f="adj" n="m">the cost of which is unknown</arg>
+      <example name="intransitive" src="internet">
+        <text>Governments must compel private companies to aid them in their policing , the cost of which is unknown ...</text>
+        <propbank>
+          <rel relloc="10">policing</rel>
+          <arg type="ARG0" start="9" end="9">their</arg>
+          <arg type="ARGM-ADJ" start="12" end="17">the cost of which is unknown</arg>
+        </propbank>
       </example>
+      <note>POLICE-V NOTES: Frames file for 'police' based on sentences in wsj and automaticexpansion via verbnet. (from police.01-v predicate notes)</note>
+      <note>POLICING-N NOTES: Added by Julia based on BOLT, police-v.01. Corresponds to VNcls captain-29.8-1. (from policing.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

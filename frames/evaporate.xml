@@ -1,42 +1,70 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="evaporate">
     <roleset id="evaporate.01" name="change from liquid to vapor">
       <aliases>
-        <alias framenet="Change_of_phase" pos="n" verbnet="">evaporation</alias>
-        <alias framenet="" pos="v" verbnet="">evaporate</alias>
+        <alias pos="n">evaporation</alias>
+        <alias pos="v">evaporate</alias>
       </aliases>
-      <note>EVAPORATE-V NOTES: Frames file for 'evaporate' based on sentences in wsj and automaticexpansion via verbnet. (from evaporate.01-v predicate notes)</note>
-      <note>EVAPORATION-N NOTES: Added by Julia based on BOLT-5, evaporate.01. Corresponds to VNcls other_cos-45.4. (from evaporation.01-n)</note>
       <roles>
         <role descr="heat source" f="PAG" n="0">
-          <vnrole vncls="45.4" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="liquid, now vapor" f="PPT" n="1">
-          <vnrole vncls="45.4" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="Change_of_phase" resource="FrameNet" version="1.7">undergoer</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ergative" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Analysts were disappointed that the enthusiasm investors showed for stocks in the wake of Georgia-Pacific's $3.18 billion bid for Great Northern Nekoosa evaporated so quickly.</text>
-        <arg f="" n="1">the enthusiasm investors showed for stocks in the wake of Georgia-Pacific's $3.18 billion bid for Great Northern Nekoosa</arg>
-        <rel f="">evaporated</rel>
-        <arg f="MNR" n="M">so quickly</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Change_of_phase" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="other_cos-45.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="evaporate-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">6</lexlink>
+        <lexlink class="evaporate-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+        <lexlink class="other_cos-45.4" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="ergative" src="">
+        <text>Analysts were disappointed that the enthusiasm investors showed for stocks in the wake of Georgia - Pacific 's $ 3.18 billion bid for Great Northern Nekoosa evaporated so quickly .</text>
+        <propbank>
+          <rel relloc="26">evaporated</rel>
+          <arg type="ARG1" start="4" end="25">the enthusiasm investors showed for stocks in the wake of Georgia - Pacific 's $ 3.18 billion bid for Great Northern Nekoosa</arg>
+          <arg type="ARGM-MNR" start="27" end="28">so quickly</arg>
+        </propbank>
       </example>
-      <example name="ARG1" src="ontonotes mz/sinorama/10/ectb_1075" type="">
+      <example name="ARG1" src="ontonotes mz/sinorama/10/ectb_1075">
         <text>Some have been learning English since very young and find class too easy , and so when the lesson starts their enthusiasm evaporates .</text>
-        <arg f="tmp" n="m">when the lesson starts</arg>
-        <arg f="" n="1">their enthusiasm</arg>
-        <rel f="">evaporates</rel>
+        <propbank>
+          <rel relloc="22">evaporates</rel>
+          <arg type="ARGM-TMP" start="16" end="19">when the lesson starts</arg>
+          <arg type="ARG1" start="20" end="21">their enthusiasm</arg>
+        </propbank>
       </example>
-
-      <example name="both args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>This completely natural product contains only the naturally occurring mineral salts left after the sun's evaporation of sea water.</text>
-        <arg f="" n="0">the sun's</arg>
-        <rel f="">evaporation</rel>
-        <arg f="" n="1">of sea water</arg>
+      <example name="both args" src="internet">
+        <text>This completely natural product contains only the naturally occurring mineral salts left after the sun 's evaporation of sea water .</text>
+        <propbank>
+          <rel relloc="16">evaporation</rel>
+          <arg type="ARG0" start="13" end="15">the sun 's</arg>
+          <arg type="ARG1" start="17" end="19">of sea water</arg>
+        </propbank>
       </example>
+      <note>EVAPORATE-V NOTES: Frames file for 'evaporate' based on sentences in wsj and automaticexpansion via verbnet. (from evaporate.01-v predicate notes)</note>
+      <note>EVAPORATION-N NOTES: Added by Julia based on BOLT-5, evaporate.01. Corresponds to VNcls other_cos-45.4. (from evaporation.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,84 +1,146 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="excuse">
     <roleset id="excuse.01" name="relieve of guilt">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">excuse</alias>
+        <alias pos="v">excuse</alias>
       </aliases>
-      <note>EXCUSE-V NOTES: This actually is rather different than pardon, so perhaps thedifferent classes are appropriate. (from excuse.01-v)</note>
       <roles>
         <role descr="excuser" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Forgiveness" resource="FrameNet" version="1.7">judge</rolelink>
+          </rolelinks>
         </role>
         <role descr="excused" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Forgiveness" resource="FrameNet" version="1.7">evaluee</rolelink>
+          </rolelinks>
         </role>
         <role descr="crime" f="PRD" n="2">
-          <vnrole vncls="33" vntheta="Attribute"/>
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">attribute</rolelink>
+            <rolelink class="Forgiveness" resource="FrameNet" version="1.7">offense</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all args" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>Courts have ruled that taxpayers must submit to TCMP audits, but the IRS will excuse from the fullscale rigors anyone who was audited without change for either 1986 or 1987.</text>
-        <arg f="" n="0">the IRS</arg>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">excuse</rel>
-        <arg f="" n="2">from the fullscale rigors</arg>
-        <arg f="" n="1">anyone who was audited without change for either 1986 or 1987</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Forgiveness" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="judgment-33.1-1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+        <lexlink class="excuse-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">9</lexlink>
+        <lexlink class="excuse-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+      </lexlinks>
+      <example name="all args" src="">
+        <text>Courts have ruled that taxpayers must submit to TCMP audits , but the IRS will excuse from the fullscale rigors anyone who was audited without change for either 1986 or 1987 .</text>
+        <propbank>
+          <rel relloc="15">excuse</rel>
+          <arg type="ARG0" start="12" end="13">the IRS</arg>
+          <arg type="ARGM-MOD" start="14" end="14">will</arg>
+          <arg type="ARG2" start="16" end="19">from the fullscale rigors</arg>
+          <arg type="ARG1" start="20" end="30">anyone who was audited without change for either 1986 or 1987</arg>
+        </propbank>
       </example>
-      <example name="missing excused" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>A GOP Senate fund-raising letter from Sen. Burns of Montana is made to appear personally written, and its opening line is, ``Please *trace* excuse my handwriting.''</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">excuse</rel>
-        <arg f="" n="2">my handwriting</arg>
+      <example name="missing excused" src="">
+        <text>A GOP Senate fund - raising letter from Sen. Burns of Montana is made to appear personally written , and its opening line is , `` Please *trace* excuse my handwriting . ''</text>
+        <propbank>
+          <rel relloc="28">excuse</rel>
+          <arg type="ARG0" start="?" end="?">*trace*</arg>
+          <arg type="ARG2" start="29" end="30">my handwriting</arg>
+        </propbank>
       </example>
-      <example name="missing agent" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="past" voice="passive"/>
-        <text>In other earthquake-related news, [Hambrecht&amp; Quist's OTC market makers]-1 were excused *trace*-1 from trading yesterday and its positions were frozen for the day by the National Association of Securities Dealers.</text>
-        <arg f="loc" n="m">In other earthquake-related news</arg>
-        <rel f="">excused</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="2">from trading</arg>
-        <arg f="tmp" n="m">yesterday</arg>
+      <example name="missing agent" src="">
+        <text>In other earthquake - related news , Hambrecht &amp; Quist 's OTC market makers were excused from trading yesterday and its positions were frozen for the day by the National Association of Securities Dealers .</text>
+        <propbank>
+          <rel relloc="15">excused</rel>
+          <arg type="ARGM-LOC" start="0" end="5">In other earthquake - related news</arg>
+          <arg type="ARG1" start="7" end="13">Hambrecht &amp; Quist 's OTC market makers</arg>
+          <arg type="ARG2" start="16" end="17">from trading</arg>
+          <arg type="ARGM-TMP" start="18" end="18">yesterday</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG1" src="ontonotes pt/nt/42/nt_4214" type="">
+      <example name="ARG0 and ARG1" src="ontonotes pt/nt/42/nt_4214">
         <text>Please excuse me . '</text>
-        <arg f="dis" n="m">Please</arg>
-        <arg f="" n="0">[]</arg>
-        <rel f="">excuse</rel>
-        <arg f="" n="1">me</arg>
+        <propbank>
+          <rel relloc="1">excuse</rel>
+          <arg type="ARGM-DIS" start="0" end="0">Please</arg>
+          <arg type="ARG1" start="2" end="2">me</arg>
+        </propbank>
       </example>
-
+      <note>EXCUSE-V NOTES: This actually is rather different than pardon, so perhaps thedifferent classes are appropriate. (from excuse.01-v)</note>
     </roleset>
     <roleset id="excuse.02" name="explanation offered to obtain foregiveness, justify">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">excuse</alias>
-        <alias framenet="" pos="l" verbnet="">make_excuse</alias>
+        <alias pos="n">excuse</alias>
+        <alias pos="l">make_excuse</alias>
       </aliases>
-      <note>EXCUSE-N NOTES: Roleset based on instances in BOLT p01, part 4. This is etymologically, but no longer syntactically related to the verb excuse.01. WordSketch provides no indication that "excuse" is ever used in the sense expressed by verb excuse: to relieve from responsibility, etc. (from excuse.01-n)</note>
       <roles>
-        <role descr="person offering excuse" f="pag" n="0"/>
-        <role descr="excuse for what? wrongdoing" f="ppt" n="1"/>
-        <role descr="mention of excuse itself" f="mnr" n="2"/>
-        <role descr="listener, excuse made to whom?" f="gol" n="3"/>
+        <role descr="person offering excuse" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="excuse for what? wrongdoing" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">attribute</rolelink>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.4">attribute</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="mention of excuse itself" f="MNR" n="2">
+          <rolelinks/>
+        </role>
+        <role descr="listener, excuse made to whom?" f="GOL" n="3">
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="Args 1, 2 within LVC" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I also have to wonder about the excuse *ICH*-3 made for the Dems voting for this [that they had to do it to look strong on security]-3.</text>
-        <rel f="">excuse</rel>
-        <arg f="lvb" n="m">made</arg>
-        <arg f="" n="1">for the Dems voting for this</arg>
-        <arg f="" n="2">*ICH*-3 ([that they had to do it to look strong on security]-3.)</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="excuse-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">24</lexlink>
+        <lexlink class="judgment-33.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="Args 1, 2 within LVC" src="">
+        <text>I also have to wonder about the excuse made for the Dems voting for this that they had to do it to look strong on security .</text>
+        <propbank>
+          <rel relloc="7">excuse</rel>
+          <arg type="ARGM-LVB" start="8" end="8">made</arg>
+          <arg type="ARG1" start="9" end="14">for the Dems voting for this</arg>
+          <arg type="ARG2" start="15" end="25">that they had to do it to look strong on security</arg>
+        </propbank>
       </example>
-      <example name="Nominal, Args 0, 1, 3" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I spoke with one of the women he had an affair with and his excuse to her for why he couldn't visit her was that his dad had died and he had to go to his funeral.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">excuse</rel>
-        <arg f="" n="3">to her</arg>
-        <arg f="" n="1">for why he couldn't visit her</arg>
+      <example name="Nominal, Args 0, 1, 3" src="web">
+        <text>I spoke with one of the women he had an affair with and his excuse to her for why he could n't visit her was that his dad had died and he had to go to his funeral .</text>
+        <propbank>
+          <rel relloc="14">excuse</rel>
+          <arg type="ARG0" start="13" end="13">his</arg>
+          <arg type="ARG3" start="15" end="16">to her</arg>
+          <arg type="ARG1" start="17" end="23">for why he could n't visit her</arg>
+        </propbank>
       </example>
+      <note>EXCUSE-N NOTES: Roleset based on instances in BOLT p01, part 4. This is etymologically, but no longer syntactically related to the verb excuse.01. WordSketch provides no indication that "excuse" is ever used in the sense expressed by verb excuse: to relieve from responsibility, etc. (from excuse.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,47 +1,80 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="bribe">
     <roleset id="bribe.01" name="to make illegal payments in exchange for favors">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">bribe</alias>
+        <alias pos="v">bribe</alias>
       </aliases>
-      <note>BRIBE-V NOTES: Roleset corresponds to VN class force-59-1. (from bribe.01-v)</note>
       <roles>
-        <role descr="briber, agent" f="pag" n="0">
-          <vnrole vncls="59-1" vntheta="agent"/>
+        <role descr="briber, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="compel-59.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="person  bribed" f="ppt" n="1">
-          <vnrole vncls="59-1" vntheta="patient"/>
+        <role descr="person  bribed" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="compel-59.1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="favor" f="prd" n="2">
-          <vnrole vncls="59-1" vntheta="result"/>
+        <role descr="favor" f="PRD" n="2">
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="compel-59.1" resource="VerbNet" version="verbnet3.4">predicate</rolelink>
+          </rolelinks>
         </role>
-        <role descr="amount exchanged" f="vsp" n="3"/>
+        <role descr="amount exchanged" f="VSP" n="3">
+          <rolelinks/>
+        </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="present" voice="active"/>
-        <text>[*-1] Starting with Congressman Mario Biaggi ( now serving a jail sentence ) , [the company]-1 began a career of *trace*-1 bribing federal , state and local public officials and those close to public officials , right up to [*RNR*-2] and including [*RNR*-2] E. Robert Wallach , close friend and adviser to former Attorney General Ed Meese .</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">bribing</rel>
-        <arg f="" n="1">federal , state and local public officials</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Commerce_pay" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="compel-59.1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+        <lexlink class="Transfermoney" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="bribe-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">12</lexlink>
+        <lexlink class="compel-59.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="transitive" src="">
+        <text>Starting with Congressman Mario Biaggi ( now serving a jail sentence ) , the company began a career of bribing federal , state and local public officials and those close to public officials , right up to and including E. Robert Wallach , close friend and adviser to former Attorney General Ed Meese .</text>
+        <propbank>
+          <rel relloc="19">bribing</rel>
+          <arg type="ARG0" start="13" end="14">the company</arg>
+          <arg type="ARG1" start="20" end="26">federal , state and local public officials</arg>
+        </propbank>
       </example>
-      <example name="all arguments" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Arthur Klein , president of Young&amp; Rubicam 's New York office , stepped down `` temporarily '' in the wake of charges [*ICH*-2] by a federal grand jury in New Haven , Conn. , that he , the agency and another top executive bribed Jamaican tourist officials [*-1] to win its account in 1981 .</text>
-        <arg f="" n="0">he , the agency and another top executive</arg>
-        <rel f="">bribed</rel>
-        <arg f="" n="1">Jamaican tourist officials</arg>
-        <arg f="" n="2">[*-1] to win its account</arg>
-        <arg f="tmp" n="m">in 1981</arg>
+      <example name="all arguments" src="">
+        <text>Arthur Klein , president of Young &amp; Rubicam 's New York office , stepped down `` temporarily '' in the wake of charges by a federal grand jury in New Haven , Conn. , that he , the agency and another top executive bribed Jamaican tourist officials to win its account in 1981 .</text>
+        <propbank>
+          <rel relloc="43">bribed</rel>
+          <arg type="ARG0" start="35" end="42">he , the agency and another top executive</arg>
+          <arg type="ARG1" start="44" end="46">Jamaican tourist officials</arg>
+          <arg type="ARG2" start="47" end="50">to win its account</arg>
+          <arg type="ARGM-TMP" start="51" end="52">in 1981</arg>
+        </propbank>
       </example>
-      <example name="with ammount" src="" type="">
-        <text>I bribed the super $500 for keeping quiet about the dogs</text>
-        <arg f="" n="0">I</arg>
-        <rel f="">bribed</rel>
-        <arg f="" n="1">the super</arg>
-        <arg f="" n="2">for keeping quiet about the dogs</arg>
-        <arg f="" n="3">$500</arg>
+      <example name="with ammount" src="">
+        <text>I bribed the super $ 500 for keeping quiet about the dogs</text>
+        <propbank>
+          <rel relloc="1">bribed</rel>
+          <arg type="ARG0" start="0" end="0">I</arg>
+          <arg type="ARG1" start="2" end="3">the super</arg>
+          <arg type="ARG2" start="6" end="11">for keeping quiet about the dogs</arg>
+          <arg type="ARG3" start="4" end="5">$ 500</arg>
+        </propbank>
       </example>
+      <note>BRIBE-V NOTES: Roleset corresponds to VN class force-59-1. (from bribe.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

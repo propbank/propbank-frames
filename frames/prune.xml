@@ -1,57 +1,94 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="prune">
     <roleset id="prune.01" name="remove branches">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">prune</alias>
-        <alias framenet="" pos="n" verbnet="">pruning</alias>
+        <alias pos="v">prune</alias>
+        <alias pos="n">pruning</alias>
       </aliases>
-      <note>PRUNE-V NOTES: Based on WSJ. Member of Vncls carve-21.2-2, wipe_manner-10.4.1-1. (from prune.01-v)</note>
-      <note>PRUNING-N NOTES: Added by Julia for Clearearth-biotexts.</note>
       <roles>
         <role descr="remover, agent" f="PAG" n="0">
-          <vnrole vncls="10.4.1-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="wipe_manner-10.4.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="wipe_manner-10.4.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="carve-21.2-2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="branches" f="ppt" n="1">
-          <vnrole vncls="10.4.1-1" vntheta="Theme"/>
-          <vnrole vncls="21.2-2" vntheta="Patient"/>
+        <role descr="branches" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="wipe_manner-10.4.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="carve-21.2-2" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="wipe_manner-10.4.1-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+            <rolelink class="carve-21.2-2" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="whole plant" f="DIR" n="2">
-          <vnrole vncls="10.4.1-1" vntheta="Source"/>
+          <rolelinks>
+            <rolelink class="wipe_manner-10.4.1-1" resource="VerbNet" version="verbnet3.3">source</rolelink>
+            <rolelink class="wipe_manner-10.4.1-1" resource="VerbNet" version="verbnet3.4">source</rolelink>
+          </rolelinks>
         </role>
         <role descr="instrument, pruning shears" f="MNR" n="3">
-          <vnrole vncls="21.2-2" vntheta="Instrument"/>
+          <rolelinks>
+            <rolelink class="carve-21.2-2" resource="VerbNet" version="verbnet3.3">instrument</rolelink>
+            <rolelink class="carve-21.2-2" resource="VerbNet" version="verbnet3.4">instrument</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="prune-v: usual usage" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>``We-1 aren't inclined [*-1] to prune stock portfolios now,'' says Steven G. Einhorn, chairman of the investment policy committee of Goldman, Sachs&amp; Co.</text>
-        <arg f="" n="0">[*-1]</arg>
-        <rel f="">prune</rel>
-        <arg f="" n="2">stock portfolios</arg>
-        <arg f="tmp" n="m">now</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Removing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="wipe_manner-10.4.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="carve-21.2-2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="wipe_manner-10.4.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="carve-21.2-2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="prune-v: usual usage" src="">
+        <text>`` We are n't inclined to prune stock portfolios now , '' says Steven G. Einhorn , chairman of the investment policy committee of Goldman , Sachs &amp; Co.</text>
+        <propbank>
+          <rel relloc="6">prune</rel>
+          <arg type="ARG0" start="1" end="1">We</arg>
+          <arg type="ARG2" start="7" end="8">stock portfolios</arg>
+          <arg type="ARGM-TMP" start="9" end="9">now</arg>
+        </propbank>
       </example>
-      <example name="ARG1" src="probably COCA (2018 example fix)" type="">
-        <text>Once she pruned it of the telescreen circuit and slipped it out of the massive frontage of cabinets, it was surprisingly small and light, hardly bearing down on her shoulder when she slung it accordion-wise .</text>
-        <arg f="" n="0">she</arg>
-        <rel f="">pruned</rel>
-        <arg f="" n="2">it</arg>
-        <arg f="" n="1">of the telescreen circuit</arg>
+      <example name="ARG1" src="probably COCA (2018 example fix)">
+        <text>Once she pruned it of the telescreen circuit and slipped it out of the massive frontage of cabinets , it was surprisingly small and light , hardly bearing down on her shoulder when she slung it accordion - wise .</text>
+        <propbank>
+          <rel relloc="2">pruned</rel>
+          <arg type="ARG0" start="1" end="1">she</arg>
+          <arg type="ARG2" start="3" end="3">it</arg>
+          <arg type="ARG1" start="4" end="7">of the telescreen circuit</arg>
+        </propbank>
       </example>
-
-      <example name="ARG3" src="probably COCA (2018 example fix)" type="">
-        <text>her father pruned them with shears.</text>
-        <arg f="" n="0">her father</arg>
-        <rel f="">pruned</rel>
-        <arg f="" n="2">them</arg>
-        <arg f="" n="3">with shears.</arg>
+      <example name="ARG3" src="probably COCA (2018 example fix)">
+        <text>her father pruned them with shears .</text>
+        <propbank>
+          <rel relloc="2">pruned</rel>
+          <arg type="ARG0" start="0" end="1">her father</arg>
+          <arg type="ARG2" start="3" end="3">them</arg>
+          <arg type="ARG3" start="4" end="5">with shears</arg>
+        </propbank>
       </example>
-
-      <example name="pruning-n" src="" type="">
-        <text>* SPR -LRB- subtree pruning and regrafting -RRB- , TBR -LRB- tree bisection and reconnection -RRB- , Swofford and Olsen </text>
-        <arg f="" n="2">subtree</arg>
-        <rel f="">pruning</rel>
+      <example name="pruning-n" src="">
+        <text>SPR -LRB- subtree pruning and regrafting -RRB- , TBR -LRB- tree bisection and reconnection -RRB- , Swofford and Olsen</text>
+        <propbank>
+          <rel relloc="3">pruning</rel>
+          <arg type="ARG2" start="2" end="2">subtree</arg>
+        </propbank>
       </example>
+      <note>PRUNE-V NOTES: Based on WSJ. Member of Vncls carve-21.2-2, wipe_manner-10.4.1-1. (from prune.01-v)</note>
+      <note>PRUNING-N NOTES: Added by Julia for Clearearth-biotexts.</note>
     </roleset>
   </predicate>
 </frameset>

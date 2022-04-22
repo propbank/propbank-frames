@@ -1,70 +1,121 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="anticipate">
     <roleset id="anticipate.01" name="expect">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">anticipation</alias>
-        <alias framenet="Expectation" pos="v" verbnet="">anticipate</alias>
+        <alias pos="n">anticipation</alias>
+        <alias pos="v">anticipate</alias>
       </aliases>
+      <roles>
+        <role descr="anticipater" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="conjecture-29.5-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="conjecture-29.5-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing anticipated" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="conjecture-29.5-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="conjecture-29.5-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Expectation" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="anticipate-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">50</lexlink>
+        <lexlink class="conjecture-29.5-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="active, light S as object" src="">
+        <text>The documents also said that Cray Computer anticipates needing perhaps another $ 120 million in financing beginning next September .</text>
+        <propbank>
+          <rel relloc="7">anticipates</rel>
+          <arg type="ARG0" start="5" end="6">Cray Computer</arg>
+          <arg type="ARG1" start="8" end="18">needing perhaps another $ 120 million in financing beginning next September</arg>
+        </propbank>
+      </example>
+      <example name="active, SBAR as object" src="">
+        <text>But speculators , anticipating that Connecticut will approve a law permitting such interstate banking soon , immediately bid up shares of Connecticut banks on the news .</text>
+        <propbank>
+          <rel relloc="3">anticipating</rel>
+          <arg type="ARG0" start="1" end="1">speculators</arg>
+          <arg type="ARG1" start="4" end="14">that Connecticut will approve a law permitting such interstate banking soon</arg>
+        </propbank>
+      </example>
+      <example name="passivized with extraction" src="">
+        <text>John is anticipated to win the Nobel Prize .</text>
+        <propbank>
+          <rel relloc="2">anticipated</rel>
+          <arg type="ARG1" start="3" end="7">to win the Nobel Prize</arg>
+        </propbank>
+      </example>
+      <example name="with comparative" src="">
+        <text>`` This is all emotion right now , and when emotion starts to run , it can run further than anyone anticipates , '' he said .</text>
+        <propbank>
+          <rel relloc="21">anticipates</rel>
+          <arg type="ARG0" start="20" end="20">anyone</arg>
+        </propbank>
+      </example>
+      <example name="arg 1" src="">
+        <text>gleeful anticipation of getting a share of this market</text>
+        <propbank>
+          <rel relloc="1">anticipation</rel>
+          <arg type="ARGM-MNR" start="0" end="0">gleeful</arg>
+          <arg type="ARG1" start="2" end="8">of getting a share of this market</arg>
+        </propbank>
+      </example>
+      <example name="Both args" src="">
+        <text>His anticipation of the blow saved it from doing serious damage</text>
+        <propbank>
+          <rel relloc="1">anticipation</rel>
+          <arg type="ARG0" start="0" end="0">His</arg>
+          <arg type="ARG1" start="2" end="4">of the blow</arg>
+        </propbank>
+      </example>
       <note>ANTICIPATE-V NOTES: No verbnet entry. Comparison with 'expect' (from anticipate.01-v)</note>
       <note>ANTICIPATION-N NOTES: Added due to expansion of Nombank. Comparison to 'anticipate.01' No Vn or Fn classes. Framed by Katie. (from anticipation.01-n)</note>
-      <roles>
-        <note>Sometimes also with an empty Arg1 (trace only) (from anticipate.01-v)</note>
-        <role descr="anticipater" f="PAG" n="0"/>
-        <role descr="thing anticipated" f="PPT" n="1"/>
-      </roles>
-      <example name="active, light S as object" src="" type="">
-        <text>The documents also said that Cray Computer anticipates *trace* needing perhaps another $120 million in financing beginning next September.</text>
-        <arg f="" n="0">Cray Computer</arg>
-        <rel f="">anticipates</rel>
-        <arg f="" n="1">*trace* needing perhaps another $120 million in financing beginning next September.</arg>
-      </example>
-      <example name="active, SBAR as object" src="" type="">
-        <text>But [speculators]-2, *trace*-2 anticipating that Connecticut will approve a law permitting such interstate banking soon, immediately bid up shares of Connecticut banks on the news.</text>
-        <arg f="" n="0">*trace*-2</arg>
-        <rel f="">anticipating</rel>
-        <arg f="" n="1">that Connecticut will approve a law permitting such interstate banking soon</arg>
-      </example>
-      <example name="passivized with extraction" src="" type="">
-        <text>John is anticipated *trace* to win the Nobel Prize.</text>
-        <rel f="">anticipated</rel>
-        <arg f="" n="1">*trace* to win the Nobel Prize</arg>
-      </example>
-      <example name="with comparative" src="" type="">
-        <text>``This is all emotion right now, and when emotion starts to run, it can run further than anyone anticipates,'' he said.</text>
-        <arg f="" n="0">anyone</arg>
-        <rel f="">anticipates</rel>
-      </example>
-      <example name="arg 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>gleeful anticipation of getting a share of this market</text>
-        <arg f="mnr" n="m">gleeful</arg>
-        <rel f="">anticipation</rel>
-        <arg f="" n="1">of getting a share of this market.</arg>
-      </example>
-      <example name="Both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>His anticipation of the blow saved it from doing serious damage</text>
-        <arg f="" n="0">His</arg>
-        <rel f="">anticipation</rel>
-        <arg f="" n="1">of the blow</arg>
-      </example>
+      <note>Sometimes also with an empty Arg1 (trace only) (from anticipate.01-v)</note>
     </roleset>
     <roleset id="anticipate.02" name="come before">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">anticipate</alias>
+        <alias pos="v">anticipate</alias>
       </aliases>
-      <note>ANTICIPATE-V NOTES: These two senses are very close in meaning, but fortunately theframing is the same. (from anticipate.02-v)</note>
       <roles>
         <role descr="thing coming before" f="PAG" n="0"/>
         <role descr="thing coming after" f="PPT" n="1"/>
       </roles>
-      <example name="active" src="" type="">
-        <text>The downgrade anticipates completion of the IMA Holdings acquisition today, Moody's said.</text>
-        <arg f="" n="0">The downgrade</arg>
-        <rel f="">anticipates</rel>
-        <arg f="" n="1">completion of the IMA Holdings acquisition today</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Predate" confidence="0.0" resource="FrameNet" src="manual+strict-conv" version="UNK"/>
+      </lexlinks>
+      <example name="active" src="">
+        <text>The downgrade anticipates completion of the IMA Holdings acquisition today , Moody 's said .</text>
+        <propbank>
+          <rel relloc="2">anticipates</rel>
+          <arg type="ARG0" start="0" end="1">The downgrade</arg>
+          <arg type="ARG1" start="3" end="9">completion of the IMA Holdings acquisition today</arg>
+        </propbank>
       </example>
+      <note>ANTICIPATE-V NOTES: These two senses are very close in meaning, but fortunately theframing is the same. (from anticipate.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

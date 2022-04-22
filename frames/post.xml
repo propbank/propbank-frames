@@ -1,124 +1,294 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="post">
     <roleset id="post.01" name="cf report, put up for public view">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">posting</alias>
-        <alias framenet="" pos="v" verbnet="">post</alias>
-        <alias framenet="" pos="n" verbnet="">post</alias>
+        <alias pos="n">posting</alias>
+        <alias pos="v">post</alias>
+        <alias pos="n">post</alias>
       </aliases>
+      <roles>
+        <role descr="poster" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Sending" resource="FrameNet" version="1.7">sender</rolelink>
+            <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="posted" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Sending" resource="FrameNet" version="1.7">theme</rolelink>
+            <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="posted-to" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="Sending" resource="FrameNet" version="1.7">goal</rolelink>
+            <rolelink class="Sending" resource="FrameNet" version="1.7">recipient</rolelink>
+            <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Sending" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="send-11.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="post-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+        <lexlink class="post-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">111</lexlink>
+        <lexlink class="send-11.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="Arg0 rel Arg1" src="">
+        <text>Cray posted a profit of $ 5.9 million .</text>
+        <propbank>
+          <rel relloc="1">posted</rel>
+          <arg type="ARG0" start="0" end="0">Cray</arg>
+          <arg type="ARG1" start="2" end="7">a profit of $ 5.9 million</arg>
+        </propbank>
+      </example>
+      <example name="ARG0 and ARG2" src="ontonotes mz/sinorama/10/ectb_1038">
+        <text>Back when the Internet in Taiwan mainly meant college students posting on bulletin boards and fooling around with Mosaic , a 23 - year - old graduate student at National Chengchi University named Heidi Hsueh and a graduate student at National Taiwan University named Lawrence Ho decided to form an Internet company together .</text>
+        <propbank>
+          <rel relloc="10">posting</rel>
+          <arg type="ARG0" start="8" end="9">college students</arg>
+          <arg type="ARG2" start="11" end="13">on bulletin boards</arg>
+        </propbank>
+      </example>
+      <example name="all args" src="web">
+        <text>A few days ago I saw her post to Facebook that her ex ( who left her for another girl and had a baby by her during this ) was saying her baby ...</text>
+        <propbank>
+          <rel relloc="7">post</rel>
+          <arg type="ARG0" start="6" end="6">her</arg>
+          <arg type="ARG2" start="8" end="9">to Facebook</arg>
+          <arg type="ARG1" start="10" end="33">that her ex ( who left her for another girl and had a baby by her during this ) was saying her baby ...</arg>
+        </propbank>
+      </example>
+      <example name="all args" src="internet">
+        <text>I 'm a little dismayed at the comment made about Peter Torks ' cancer and his posting it on Facebook .</text>
+        <propbank>
+          <rel relloc="16">posting</rel>
+          <arg type="ARG0" start="15" end="15">his</arg>
+          <arg type="ARG1" start="17" end="17">it</arg>
+          <arg type="ARG2" start="18" end="19">on Facebook</arg>
+        </propbank>
+      </example>
+      <example name="reporting: args 0, 1" src="internet">
+        <text>What does their posting a profit have to do with the writers strike ?</text>
+        <propbank>
+          <rel relloc="3">posting</rel>
+          <arg type="ARG0" start="2" end="2">their</arg>
+          <arg type="ARG1" start="4" end="5">a profit</arg>
+        </propbank>
+      </example>
       <note>POST-V NOTES: Frames file for 'post' based on survey of initial sentences of big corpusand comparison with 'report' (from post.01-v)</note>
       <note>POST-N NOTES: Roleset based on instances in BOLT P01. Comparison to verb entry post.01, which maps to VN class 11.1; no relevant FN frame. (from post.01-n)</note>
       <note>POSTING-N NOTES: Added by Julia based on BOLT, post.01. No VNcls. (from posting.01-n)</note>
-      <roles>
-        <role descr="poster" f="pag" n="0">
-          <vnrole vncls="11.1" vntheta="agent"/>
-        </role>
-        <role descr="posted" f="ppt" n="1">
-          <vnrole vncls="11.1" vntheta="theme"/>
-        </role>
-        <role descr="posted-to" f="gol" n="2">
-          <vnrole vncls="11.1" vntheta="destination"/>
-        </role>
-      </roles>
-      <example name="Arg0 rel Arg1" src="" type="">
-        <text>Cray posted a profit of $5.9 million.</text>
-        <arg f="" n="0">Cray</arg>
-        <rel f="">posted</rel>
-        <arg f="" n="1">a profit of $5.9 million</arg>
-      </example>
-      <example name="ARG0 and ARG2" src="ontonotes mz/sinorama/10/ectb_1038" type="">
-        <text>Back when the Internet in Taiwan mainly meant college students posting on bulletin boards and fooling around with Mosaic , a 23 - year - old graduate student at National Chengchi University named Heidi Hsueh and a graduate student at National Taiwan University named Lawrence Ho decided to form an Internet company together .</text>
-        <arg f="" n="0">college students</arg>
-        <rel f="">posting</rel>
-        <arg f="" n="2">on bulletin boards</arg>
-      </example>
-
-      <example name="all args" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>A few days ago I saw her post to Facebook that her ex (who left her for another girl and had a baby by her during this) was saying her baby...</text>
-        <arg f="" n="0">her</arg>
-        <rel f="">post</rel>
-        <arg f="" n="2">to Facebook</arg>
-        <arg f="" n="1">that her ex...was saying...</arg>
-      </example>
-      <example name="all args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I'm a little dismayed at the comment made about Peter Torks' cancer and his posting it on Facebook.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">posting</rel>
-        <arg f="" n="1">it</arg>
-        <arg f="" n="2">on Facebook</arg>
-      </example>
-      <example name="reporting: args 0, 1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>What does their posting a profit have to do with the writers strike?</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">posting</rel>
-        <arg f="" n="1">a profit</arg>
-      </example>
     </roleset>
     <roleset id="post.02" name="tell someone news as it comes in">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">post</alias>
+        <alias pos="v">post</alias>
       </aliases>
-      <note>POST-V NOTES: Based on BOLT SMS data. Comparison to update.02. Update.02 is a member of VN class tell-37.2. Framed by Katie. (from post.02-v)</note>
       <roles>
-        <role descr="teller" f="pag" n="0"/>
-        <role descr="hearer" f="gol" n="1"/>
-        <role descr="news" f="ppt" n="2"/>
+        <role descr="teller" f="PAG" n="0"/>
+        <role descr="hearer" f="GOL" n="1"/>
+        <role descr="news" f="PPT" n="2"/>
       </roles>
-      <example name="annotate the lower node" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Please, keep us PRO-2 posted *-2.</text>
-        <rel f="">posted</rel>
-        <arg f="" n="1">*-2</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Sending" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+      </lexlinks>
+      <example name="annotate the lower node" src="">
+        <text>Please , keep us posted .</text>
+        <propbank>
+          <rel relloc="4">posted</rel>
+          <arg type="ARG1" start="3" end="3">us</arg>
+        </propbank>
       </example>
+      <note>POST-V NOTES: Based on BOLT SMS data. Comparison to update.02. Update.02 is a member of VN class tell-37.2. Framed by Katie. (from post.02-v)</note>
     </roleset>
     <roleset id="post.03" name="assign to a post, station somewhere">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">post</alias>
+        <alias pos="v">post</alias>
       </aliases>
-      <note>POST-V NOTES: Added by Julia for Google.</note>
       <roles>
-        <role descr="assigning entity" f="pag" n="0"/>
-        <role descr="entity given a station" f="ppt" n="1"/>
-        <role descr="the station, post" f="gol" n="2"/>
+        <role descr="assigning entity" f="PAG" n="0"/>
+        <role descr="entity given a station" f="PPT" n="1"/>
+        <role descr="the station, post" f="GOL" n="2"/>
       </roles>
-      <example name="name-v" src="" type="">
-        <text>Lincoln appointed Fremont major general to rank from May 14, 1861, and initially posted him in command of the Department of the West</text>
-        <arg f="" n="0">Lincoln</arg>
-        <arg f="tmp" n="m">initially</arg>
-        <rel f="">posted</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="" n="2">in command of the Department of the West</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="name-v" src="">
+        <text>Lincoln appointed Fremont major general to rank from May 14 , 1861 , and initially posted him in command of the Department of the West</text>
+        <propbank>
+          <rel relloc="15">posted</rel>
+          <arg type="ARG0" start="0" end="0">Lincoln</arg>
+          <arg type="ARGM-TMP" start="14" end="14">initially</arg>
+          <arg type="ARG1" start="16" end="16">him</arg>
+          <arg type="ARG2" start="17" end="24">in command of the Department of the West</arg>
+        </propbank>
       </example>
+      <note>POST-V NOTES: Added by Julia for Google.</note>
     </roleset>
     <roleset id="post.04" name="send via the postal service">
       <aliases>
-        <alias framenet="Sending" pos="v" verbnet="">post</alias>
-        <alias framenet="" pos="n" verbnet="">post</alias>
+        <alias pos="v">post</alias>
+        <alias pos="n">post</alias>
       </aliases>
+      <roles>
+        <role descr="sender" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="Sending" resource="FrameNet" version="1.7">sender</rolelink>
+            <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="sent (mail, etc)" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="Sending" resource="FrameNet" version="1.7">goal</rolelink>
+            <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="mail service used" f="MNR" n="2">
+          <rolelinks/>
+        </role>
+        <role descr="recipient" f="GOL" n="3">
+          <rolelinks>
+            <rolelink class="Sending" resource="FrameNet" version="1.7">recipient</rolelink>
+            <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Communication_means" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Sending" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Contact.PublicStatementInPerson.Broadcast" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Correspondence" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="Broadcast" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="send-11.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="post-v" src="">
+        <text>Yes - if you posted it with USPS , it would be handled by Royal Mail here in the UK .</text>
+        <propbank>
+          <rel relloc="4">posted</rel>
+          <arg type="ARG0" start="3" end="3">you</arg>
+          <arg type="ARG1" start="5" end="5">it</arg>
+          <arg type="ARG2" start="6" end="7">with USPS</arg>
+        </propbank>
+      </example>
+      <example name="post-n" src="">
+        <text>Parcel post is a postal service for mail that is too heavy for normal letter post .</text>
+        <propbank>
+          <rel relloc="1">post</rel>
+          <arg type="ARG1" start="0" end="0">Parcel</arg>
+        </propbank>
+      </example>
       <note>POST-V NOTES: Added by Julia for Google.</note>
       <note>POST-N NOTES: Added by Julia for Google.</note>
+    </roleset>
+    <roleset id="post.05" name="occurring chronologically after, or to be in the stage following an event">
+      <aliases>
+        <alias pos="f">post</alias>
+        <alias pos="f">post-</alias>
+      </aliases>
       <roles>
-        <role descr="sender" f="pag" n="0"/>
-        <role descr="sent (mail, etc)" f="ppt" n="1"/>
-        <role descr="mail service used" f="mnr" n="2"/>
-        <role descr="recipient" f="gol" n="3"/>
+        <role descr="thing coming after" f="PPT" n="1"/>
+        <role descr="thing coming before" f="PPT" n="2"/>
       </roles>
-      <example name="post-v" src="" type="">
-        <text>Yes - if you posted it with USPS, it would be handled by Royal Mail here in the UK.</text>
-        <arg f="" n="0">you</arg>
-        <rel f="">posted</rel>
-        <arg f="" n="1">it</arg>
-        <arg f="" n="2">with USPS</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks />
+      <example name="post-f, both args" src="THYME">
+	      <text>She should be restarted on her Plavix postoperatively .</text>
+	      <propbank/>
+        <amr version="THYME 1.0">
+          (r / recommend-01
+            :ARG1 (r2 / restart-01
+              :ARG1 (t / therapy-01 :implicit +
+                :ARG1 (s / she)
+                :ARG2 (m / medications-drugs :name (n / name :op1 "Plavix")))
+              :ARG1-of (p / post-05
+                :ARG2 (o / operate-02
+                  :ARG1 s))))  
+        </amr>
       </example>
-      <example name="post-n" src="" type="">
-        <text>Parcel post is a postal service for mail that is too heavy for normal letter post.</text>
-        <arg f="" n="1">Parcel</arg>
-        <rel f="">post</rel>
+      <example name="post-f, both args" src="THYME">
+	      <text>CT scan showed postradiation changes .</text>
+	      <propbank/>
+        <amr version="THYME 1.0">
+          (s / show-01
+            :ARG0 (c / ct-01)
+            :ARG1 (c2 / change-01 :pl +
+              :ARG1-of (p / post-05
+                :ARG2 (r / radiate-02)))) 
+        </amr>
       </example>
+      <example name="post-f, both args" src="THYME">
+	      <text>Abdomen : Postoperative .</text>
+	      <propbank/>
+        <amr version="THYME 1.0">
+          (p / post-05
+            :ARG1 (a / anatomical-site :name (n / name :op1 "abdomen"))
+            :ARG2 (o / operate-02
+              :ARG1 a))
+        </amr>
+      </example>
+      <example name="post-f, both args" src="THYME">
+	      <text>Patient is postmenopausal .</text>
+	      <propbank/>
+        <amr version="THYME 1.0">
+          (p / post-05
+            :ARG1 (p2 / patient-yy)
+            :ARG2 (m / menopause-01
+              :ARG1 p2))
+        </amr>
+      </example>
+      <note>NOTES: Added for THYME-AMR. A closed list of prefix frames (intra.01, peri.01, post.05, pre.01) were created to resolve temporal conflicts generated in the merged THYME AMR-THYME 2 annotations. They are to be used in tandem with frames that represent the terms' roots, but only when they convey temporal information. They should not be used for spatial senses (like "perirectal") or other non-temporal senses.</note>
     </roleset>
   </predicate>
 </frameset>

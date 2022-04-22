@@ -1,59 +1,98 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="stare">
     <roleset id="stare.01" name="look intently, gazing fixedly">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">stare</alias>
-        <alias framenet="" pos="n" verbnet="">staring</alias>
+        <alias pos="v">stare</alias>
+        <alias pos="n">staring</alias>
       </aliases>
-      <note>STARE-V NOTES: Frames file for 'stare' based on sentences in wsj. Verbnet entry peer-30.3, Framenet entry Perception_active. (from stare.01-v)</note>
-      <note>STARING-N NOTES: Added by Julia based on BOLT. (from staring.01-n)</note>
       <roles>
-        <role descr="looker" f="pag" n="0">
-          <vnrole vncls="30.3" vntheta="experiencer"/>
+        <role descr="looker" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="peer-30.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Perception_active" resource="FrameNet" version="1.7">perceiver_agentive</rolelink>
+            <rolelink class="peer-30.3" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="looked at" f="ppt" n="1">
-          <vnrole vncls="30.3" vntheta="stimulus"/>
+        <role descr="looked at" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="peer-30.3" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Perception_active" resource="FrameNet" version="1.7">phenomenon</rolelink>
+            <rolelink class="peer-30.3" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="I know the feeling" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>Totally absorbed, the ringers stare straight ahead, using peripheral vision (they call it ``rope-sight'') to watch the other ropes and thus time their pulls.</text>
-        <arg f="adv" n="m">Totally absorbed</arg>
-        <arg f="" n="0">the ringers</arg>
-        <rel f="">stare</rel>
-        <arg f="dir" n="m">straight ahead</arg>
-        <arg f="adv" n="m">using peripheral vision (they call it ``rope-sight'') to watch the other ropes and thus time their pulls</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Perception_active" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="peer-30.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="stare-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">11</lexlink>
+        <lexlink class="peer-30.3" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="I know the feeling" src="">
+        <text>Totally absorbed , the ringers stare straight ahead , using peripheral vision ( they call it `` rope - sight '' ) to watch the other ropes and thus time their pulls .</text>
+        <propbank>
+          <rel relloc="5">stare</rel>
+          <arg type="ARGM-ADV" start="0" end="1">Totally absorbed</arg>
+          <arg type="ARG0" start="3" end="4">the ringers</arg>
+          <arg type="ARGM-DIR" start="6" end="7">straight ahead</arg>
+          <arg type="ARGM-ADV" start="9" end="31">using peripheral vision ( they call it `` rope - sight '' ) to watch the other ropes and thus time their pulls</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1028" type="">
+      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1028">
         <text>At that time , great opportunities for making money stared one right in the face .</text>
-        <arg f="tmp" n="m">At that time</arg>
-        <arg f="" n="0">great opportunities for making money</arg>
-        <rel f="">stared</rel>
-        <arg f="" n="1">one</arg>
-        <arg f="dir" n="m">right in the face</arg>
+        <propbank>
+          <rel relloc="9">stared</rel>
+          <arg type="ARGM-TMP" start="0" end="2">At that time</arg>
+          <arg type="ARG0" start="4" end="8">great opportunities for making money</arg>
+          <arg type="ARG1" start="10" end="10">one</arg>
+          <arg type="ARGM-DIR" start="11" end="14">right in the face</arg>
+        </propbank>
       </example>
-
+      <note>STARE-V NOTES: Frames file for 'stare' based on sentences in wsj. Verbnet entry peer-30.3, Framenet entry Perception_active. (from stare.01-v)</note>
+      <note>STARING-N NOTES: Added by Julia based on BOLT. (from staring.01-n)</note>
     </roleset>
   </predicate>
   <predicate lemma="stare_down">
     <roleset id="stare_down.02" name="intimidate by staring">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">stare_down</alias>
+        <alias pos="v">stare_down</alias>
       </aliases>
-      <note>STARE_DOWN-V NOTES: (from stare.02-v)</note>
       <roles>
-        <role descr="intimidator" f="pag" n="0"/>
-        <role descr="intimidated" f="ppt" n="1"/>
+        <role descr="intimidator" f="PAG" n="0" />
+        <role descr="intimidated" f="PPT" n="1" />
       </roles>
-      <example name="ay batta batta" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>The tension mounted as Ralph Branca, again on the mound, stared down the batter.</text>
-        <arg f="" n="0">Ralph Branca</arg>
-        <arg f="loc" n="m">again on the mound</arg>
-        <rel f="">[ stared] [ down]</rel>
-        <arg f="" n="1">the batter</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks />
+      <example name="ay batta batta" src="">
+        <text>The tension mounted as Ralph Branca , again on the mound , stared down the batter .</text>
+        <propbank>
+          <rel relloc="12 13">stared down</rel>
+          <arg type="ARG0" start="4" end="5">Ralph Branca</arg>
+          <arg type="ARGM-LOC" start="7" end="10">again on the mound</arg>
+          <arg type="ARG1" start="14" end="15">the batter</arg>
+        </propbank>
       </example>
+      <note>STARE_DOWN-V NOTES: (from stare.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

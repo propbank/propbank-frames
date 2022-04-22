@@ -1,49 +1,73 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="resist">
     <roleset id="resist.01" name="resist">
       <aliases>
-        <alias framenet="Repel" pos="v" verbnet="">resist</alias>
-        <alias framenet="" pos="n" verbnet="">resistance</alias>
-        <alias framenet="" pos="j" verbnet="">resistant</alias>
+        <alias pos="v">resist</alias>
+        <alias pos="n">resistance</alias>
+        <alias pos="j">resistant</alias>
       </aliases>
+      <roles>
+        <role descr="resister" f="PAG" n="0"/>
+        <role descr="thing resisted" f="PPT" n="1"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Repel" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="resistance-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">32</lexlink>
+        <lexlink class="resist-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">34</lexlink>
+        <lexlink class="resist-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+      </lexlinks>
+      <example name="resist-v: resistance is futile" src="">
+        <text>Stocks such as Hershey Foods Corp. , Wal - Mart Stores Inc. , American International Group Inc. and Federal National Mortgage Association became such bargains that he could n't resist them , he says .</text>
+        <propbank>
+          <rel relloc="29">resist</rel>
+          <arg type="ARG0" start="26" end="26">he</arg>
+          <arg type="ARGM-MOD" start="27" end="27">could</arg>
+          <arg type="ARGM-NEG" start="28" end="28">n't</arg>
+          <arg type="ARG1" start="30" end="30">them</arg>
+        </propbank>
+      </example>
+      <example name="resistant-j" src="BOLT-4,5">
+        <text>Still , I think that Tokyo is more earthquake - resistant today than it was in 1923 .</text>
+        <propbank>
+          <rel relloc="10">resistant</rel>
+          <arg type="ARG0" start="5" end="5">Tokyo</arg>
+          <arg type="ARGM-CXN" start="7" end="7">more</arg>
+          <arg type="ARG1" start="8" end="8">earthquake</arg>
+          <arg type="ARGM-TMP" start="11" end="11">today</arg>
+          <arg type="C-ARGM-CXN" start="12" end="16">than it was in 1923</arg>
+        </propbank>
+      </example>
+      <example name="resistance-n: Example with both args" src="">
+        <text>the government 's resistance to fundamental change</text>
+        <propbank>
+          <rel relloc="3">resistance</rel>
+          <arg type="ARG0" start="0" end="2">the government 's</arg>
+          <arg type="ARG1" start="4" end="6">to fundamental change</arg>
+        </propbank>
+      </example>
+      <example name="resistance-n: Another example with both args" src="">
+        <text>his resistance to the language</text>
+        <propbank>
+          <rel relloc="1">resistance</rel>
+          <arg type="ARG0" start="0" end="0">his</arg>
+          <arg type="ARG1" start="2" end="4">to the language</arg>
+        </propbank>
+      </example>
       <note>RESIST-V NOTES: Frames file for 'resist' based on financial subcorpus; adjectival 'resistant' based on BOLT-4,5. No Verbnet entry. (from resist.01-v)</note>
       <note>RESISTANCE-N NOTES: Roleset based on resist.01. No corresponding verbnet class. Framed by Katie. (from resistance.01-n)</note>
       <note>RESISTANT-J NOTES: Automatically created by Julia as an alias file for unification. (from resistant.01-j)</note>
-      <roles>
-        <role descr="resister" f="pag" n="0"/>
-        <role descr="thing resisted" f="ppt" n="1"/>
-      </roles>
-      <example name="resist-v: resistance is futile" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>Stocks such as Hershey Foods Corp., Wal-Mart Stores Inc., American International Group Inc. and Federal National Mortgage Association became such bargains that he couldn't resist them, he says.</text>
-        <arg f="" n="0">he</arg>
-        <arg f="mod" n="m">could</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">resist</rel>
-        <arg f="" n="1">them</arg>
-      </example>
-      <example name="resistant-j" src="BOLT-4,5" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Still , I think that Tokyo is more earthquake - resistant today than it was in 1923 .</text>
-        <arg f="" n="0">Tokyo</arg>
-        <arg f="cxn" n="m">[more][than it was in 1923]</arg>
-        <arg f="" n="1">earthquake</arg>
-        <rel f="">resistant</rel>
-        <arg f="tmp" n="m">today</arg>
-      </example>
-      <example name="resistance-n: Example with both args" src="" type="">
-        <text>the government 's resistance to fundamental change</text>
-        <arg f="" n="0">the government 's</arg>
-        <rel f="">resistance</rel>
-        <arg f="" n="1">to fundamental change</arg>
-      </example>
-      <example name="resistance-n: Another example with both args" src="" type="">
-        <text>his resistance to the language</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">resistance</rel>
-        <arg f="" n="1">to the language</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

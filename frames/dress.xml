@@ -1,129 +1,195 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="dress">
     <roleset id="dress.01" name="to put on clothes, decorate, covering, wearing clothes">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">dressing</alias>
-        <alias framenet="" pos="v" verbnet="">dress</alias>
-        <alias framenet="" pos="j" verbnet="">dressed</alias>
-        <alias framenet="" pos="l" verbnet="">get_dressed</alias>
+        <alias pos="n">dressing</alias>
+        <alias pos="v">dress</alias>
+        <alias pos="j">dressed</alias>
+        <alias pos="l">get_dressed</alias>
       </aliases>
+      <roles>
+        <role descr="person putting on clothes" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="dress-41.1.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="dress-41.1.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="person wearing clothes" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="dress-41.1.1" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="dress-41.1.1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="attribute" f="PRD" n="2">
+          <rolelinks>
+            <rolelink class="dress-41.1.1" resource="VerbNet" version="verbnet3.4">nm</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="dress-41.1.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="dress-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">25</lexlink>
+        <lexlink class="dress-41.1.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="intransitive" src="">
+        <text>`` If I go in there as I normally dress , they 'd ask , ` Who is this hippie ? ' ''</text>
+        <propbank>
+          <rel relloc="9">dress</rel>
+          <arg type="ARG0" start="7" end="7">I</arg>
+          <arg type="ARGM-MNR" start="8" end="8">normally</arg>
+        </propbank>
+      </example>
+      <example name="passive, with Arg2-in" src="">
+        <text>Kelly Siegler , an assistant district attorney who was in the courtroom , disputed suggestions the action was sexist , saying she had seen Judge Hancock turn away male defendants dressed in shorts , tank tops or muscle shirts `` many times . ''</text>
+        <propbank>
+          <rel relloc="30">dressed</rel>
+          <arg type="ARG1" start="28" end="29">male defendants</arg>
+          <arg type="ARG2" start="31" end="38">in shorts , tank tops or muscle shirts</arg>
+          <arg type="ARGM-TMP" start="40" end="41">many times</arg>
+        </propbank>
+      </example>
+      <example name="with Arg2-as" src="">
+        <text>Richard Chamberlain dresses as a `` Mainland haole , '' tucking in a Hawaiian shirt and rolling up its long sleeves .</text>
+        <propbank>
+          <rel relloc="2">dresses</rel>
+          <arg type="ARG0" start="0" end="1">Richard Chamberlain</arg>
+          <arg type="ARG2" start="3" end="7">as a `` Mainland haole</arg>
+          <arg type="ARGM-ADV" start="10" end="20">tucking in a Hawaiian shirt and rolling up its long sleeves</arg>
+        </propbank>
+      </example>
+      <example name="with manner" src="">
+        <text>`` For women , dressing for success in a real structured way is over . ''</text>
+        <propbank>
+          <rel relloc="4">dressing</rel>
+          <arg type="ARG0" start="2" end="2">women</arg>
+          <arg type="ARGM-PNC" start="5" end="6">for success</arg>
+          <arg type="ARGM-MNR" start="7" end="11">in a real structured way</arg>
+        </propbank>
+      </example>
+      <example name="All args" src="">
+        <text>The nurse 's dressing of her foot wounds with gauze only took a few minutes .</text>
+        <propbank>
+          <rel relloc="3">dressing</rel>
+          <arg type="ARG0" start="0" end="2">The nurse 's</arg>
+          <arg type="ARG1" start="4" end="7">of her foot wounds</arg>
+          <arg type="ARG2" start="8" end="9">with gauze</arg>
+        </propbank>
+      </example>
+      <example name="LVC" src="SMS">
+        <text>Yup , *PRO* getting dressed , give me just one minute</text>
+        <propbank>
+          <rel relloc="4">dressed</rel>
+          <arg type="ARGM-DIS" start="0" end="0">Yup</arg>
+          <arg type="ARG0" start="?" end="?">*PRO*</arg>
+          <arg type="ARGM-LVB" start="3" end="3">getting</arg>
+        </propbank>
+      </example>
+      <example name="as opposed to arg1 with the standard copula" src="-">
+        <text>He is dressed .</text>
+        <propbank>
+          <rel relloc="2">dressed</rel>
+          <arg type="ARG1" start="0" end="0">He</arg>
+        </propbank>
+      </example>
       <note>DRESS-V NOTES: Frames file for 'dress' based on survey of sentences in the WSJ corpus. (from dress.01-v predicate notes)</note>
       <note>DRESSING-N NOTES: dress.01 (from dressing.01-n)</note>
       <note>DRESSED-J NOTES: Added by Julia based on SMS. (from dressed.01-j)</note>
-      <roles>
-        <role descr="person putting on clothes" f="PAG" n="0">
-          <vnrole vncls="41.1.1" vntheta="Agent"/>
-        </role>
-        <role descr="person wearing clothes" f="PPT" n="1">
-          <vnrole vncls="41.1.1" vntheta="Patient"/>
-        </role>
-        <role descr="attribute" f="prd" n="2"/>
-      </roles>
-      <example name="intransitive" src="intransitive" type="intransitive">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>`` If I go in there as I normally dress , they 'd ask , ` Who [*T*-1] is this hippie ? ' ''</text>
-        <arg f="" n="0">I</arg>
-        <arg f="mnr" n="m">normally</arg>
-        <rel f="">dress</rel>
-      </example>
-      <example name="passive, with Arg2-in" src="passive, with Arg2-in" type="passive, with Arg2-in">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>Kelly Siegler , an assistant district attorney who [*T*-1] was in the courtroom , disputed suggestions [0]the action was sexist , [*-2] saying [0] she had seen Judge Hancock turn away [male defendants]-1 dressed [*] -1 in shorts , tank tops or muscle shirts `` many times . ''</text>
-        <rel f="">dressed</rel>
-        <arg f="" n="1">[*]</arg>
-        <arg f="" n="2">in shorts , tank tops or muscle shirts</arg>
-        <arg f="tmp" n="m">many times</arg>
-      </example>
-      <example name="with Arg2-as" src="with Arg2-as" type="with Arg2-as">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>Richard Chamberlain dresses as a `` Mainland haole , '' [*-1] tucking in a Hawaiian shirt and rolling up its long sleeves .</text>
-        <arg f="" n="0">Richard Chamberlain</arg>
-        <rel f="">dresses</rel>
-        <arg f="" n="2">as a `` Mainland haole</arg>
-        <arg f="adv" n="m">[*-1] tucking in a Hawaiian shirt and rolling up its long sleeves</arg>
-      </example>
-      <example name="with manner" src="with manner" type="with manner">
-        <inflection aspect="ns" form="gerund" person="ns" tense="present" voice="active"/>
-        <text>`` For women-1 , [*-1] dressing for success in a real structured way is over . ''</text>
-        <arg f="" n="0">[*-1]</arg>
-        <rel f="">dressing</rel>
-        <arg f="pnc" n="m">for success</arg>
-        <arg f="mnr" n="m">in a real structured way</arg>
-      </example>
-      <example name="All args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The nurse's dressing of her foot wounds with gauze only took a few minutes.</text>
-        <arg f="" n="0">The nurse's</arg>
-        <rel f="">dressing</rel>
-        <arg f="" n="1">of her foot wounds</arg>
-        <arg f="" n="2">with gauze</arg>
-      </example>
-      <example name="LVC" src="SMS" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Yup , *PRO* getting dressed , give me just one minute</text>
-        <arg f="dis" n="m">Yp</arg>
-        <arg f="" n="0">*PRO*</arg>
-        <arg f="lvb" n="m">getting</arg>
-        <rel f="">dressed</rel>
-      </example>
-      <example name="as opposed to arg1 with the standard copula" src="-" type="-">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>He is dressed.</text>
-        <arg f="" n="1">He</arg>
-        <rel f="">dressed</rel>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="dress_up">
     <roleset id="dress_up.02" name="to put on or wear formal or fancy clothes, to decorate, wearing formal clothes/adornments">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">dress_up</alias>
-        <alias framenet="" pos="j" verbnet="">dressed_up</alias>
-        <alias framenet="" pos="l" verbnet="">get_dressed_up</alias>
+        <alias pos="v">dress_up</alias>
+        <alias pos="j">dressed_up</alias>
+        <alias pos="l">get_dressed_up</alias>
       </aliases>
-      <note>DRESS_UP-V NOTES: (from dress.02-v)</note>
-      <note>DRESSED_UP-J NOTES: Added by Julia based on SMS. (from dressed.02-j)</note>
       <roles>
         <role descr="entity putting on clothes" f="PAG" n="0">
-          <vnrole vncls="41.3.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="dressing_well-41.3.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity dressed up, decorated, wearing clothes" f="PPT" n="1">
-          <vnrole vncls="41.3.2" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink class="dressing_well-41.3.2" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="clothing itself or attribute; dressed up as what?" f="prd" n="2"/>
+        <role descr="clothing itself or attribute; dressed up as what?" f="PRD" n="2"/>
       </roles>
-      <example name="transitive" src="transitive" type="transitive">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>The three-page Crown Royal ad features a black-and-white shot of a boring holiday party -- and a set of colorful stickers with which readers can dress it up [*T*-1] .</text>
-        <arg f="" n="0">readers</arg>
-        <arg f="mod" n="m">can</arg>
-        <rel f="">[ dress] [ up]</rel>
-        <arg f="" n="1">it</arg>
-        <arg f="mnr" n="m">[*T*-1]</arg>
-        <arg f="rcl" n="m">with which -&gt; colorful stickers</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="dressing_well-41.3.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="dress-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+      </lexlinks>
+      <example name="transitive" src="">
+        <text>The three - page Crown Royal ad features a black - and - white shot of a boring holiday party -- and a set of colorful stickers with which readers can dress it up .</text>
+        <propbank>
+          <rel relloc="31 33">dress up</rel>
+          <arg type="ARG0" start="29" end="29">readers</arg>
+          <arg type="ARGM-MOD" start="30" end="30">can</arg>
+          <arg type="ARG1" start="32" end="32">it</arg>
+          <arg type="ARGM-MNR" start="25" end="26">colorful stickers</arg>
+          <arg type="R-ARGM-MNR" start="27" end="28">with which</arg>
+        </propbank>
       </example>
+      <note>DRESS_UP-V NOTES: (from dress.02-v)</note>
+      <note>DRESSED_UP-J NOTES: Added by Julia based on SMS. (from dressed.02-j)</note>
     </roleset>
   </predicate>
   <predicate lemma="dress_down">
     <roleset id="dress_down.03" name="to censure severely or angrily">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">dress_down</alias>
+        <alias pos="v">dress_down</alias>
       </aliases>
-      <note>DRESS_DOWN-V NOTES: (from dress.03-v)</note>
       <roles>
         <role descr="angry entity, agent" f="PAG" n="0"/>
         <role descr="entity dressed down" f="PPT" n="1"/>
-        <role descr="dress down for" f="cau" n="2"/>
+        <role descr="dress down for" f="CAU" n="2"/>
       </roles>
-      <example name="all arguments" src="all arguments" type="all arguments">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>When a large group of pilots once signed petitions opposing work-rule and compensation changes [*T*-1] , he called a meeting in a company hangar and dressed them down for [*-2]challenging his authority .</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">[ dressed] [ down]</rel>
-        <arg f="" n="1">them</arg>
-        <arg f="" n="2">for [*-2] challenging his authority</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Judgment_direct_address" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+      </lexlinks>
+      <example name="all arguments" src="">
+        <text>When a large group of pilots once signed petitions opposing work - rule and compensation changes , he called a meeting in a company hangar and dressed them down for challenging his authority .</text>
+        <propbank>
+          <rel relloc="26 28">dressed down</rel>
+          <arg type="ARG0" start="17" end="17">he</arg>
+          <arg type="ARG1" start="27" end="27">them</arg>
+          <arg type="ARG2" start="29" end="32">for challenging his authority</arg>
+        </propbank>
       </example>
+      <note>DRESS_DOWN-V NOTES: (from dress.03-v)</note>
     </roleset>
   </predicate>
 </frameset>

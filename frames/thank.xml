@@ -1,86 +1,132 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="thank">
     <roleset id="thank.01" name="thank">
       <aliases>
-        <alias framenet="Judgment_direct_address" pos="v" verbnet="">thank</alias>
-        <alias framenet="judgment_direct_address" pos="n" verbnet="">thanks</alias>
+        <alias pos="v">thank</alias>
+        <alias pos="n">thanks</alias>
       </aliases>
-      <note>THANK-V NOTES: F'thank' based on wsj and automaticexpansion via verbnet; 'thankful' based on BOLT-1. Member of Vncls judgement-33. (from thank.01-v)</note>
-      <note>THANKS-N NOTES: Added due to expansion of Nombank. Comparison to 'thank'. Vn class judgement-33. Fn class judgment_direct_address. Framed by Katie. (from thanks.01-n)</note>
       <roles>
-        <note>Lots of times Arg 0 and Arg 1 are in a VOC node. If this happens, DO NOT MARK as arg0/1. Mark as arg m-dis. (from thanks.01-n)</note>
-        <role descr="thanker" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+        <role descr="thanker" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Judgment_direct_address" resource="FrameNet" version="1.7">communicator</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thanked" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+        <role descr="thanked" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Judgment_direct_address" resource="FrameNet" version="1.7">addressee</rolelink>
+            <rolelink class="Judgment_direct_address" resource="FrameNet" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
-        <role descr="for what?" f="cau" n="2">
-          <vnrole vncls="33" vntheta="attribute"/>
+        <role descr="for what?" f="CAU" n="2">
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">attribute</rolelink>
+            <rolelink class="Judgment_direct_address" resource="FrameNet" version="1.7">reason</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="thank-v: nice easy transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>``We will support it, we will thank him, and we will augment it where appropriate,'' said Rep. Vic Fazio D., Calif.</text>
-        <arg f="" n="0">we</arg>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">thank</rel>
-        <arg f="" n="1">him</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Judgment_direct_address" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="judgment-33.1-1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+        <lexlink class="Broadcast" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="thank-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">213</lexlink>
+        <lexlink class="thanks-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">94</lexlink>
+        <lexlink class="thanks-n.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+      </lexlinks>
+      <example name="thank-v: nice easy transitive" src="">
+        <text>`` We will support it , we will thank him , and we will augment it where appropriate , '' said Rep. Vic Fazio D. , Calif.</text>
+        <propbank>
+          <rel relloc="8">thank</rel>
+          <arg type="ARG0" start="6" end="6">we</arg>
+          <arg type="ARGM-MOD" start="7" end="7">will</arg>
+          <arg type="ARG1" start="9" end="9">him</arg>
+        </propbank>
       </example>
-      <example name="thank-v: with arg2" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>In 1986, Stamford officials thanked Mr. Hoelzer for taking care of the mural -- and demanded he return it as soon as possible.</text>
-        <arg f="tmp" n="m">In 1986</arg>
-        <arg f="" n="0">Stamford officials</arg>
-        <rel f="">thanked</rel>
-        <arg f="" n="1">Mr. Hoelzer</arg>
-        <arg f="" n="2">for taking care of the mural</arg>
+      <example name="thank-v: with arg2" src="">
+        <text>In 1986 , Stamford officials thanked Mr. Hoelzer for taking care of the mural -- and demanded he return it as soon as possible .</text>
+        <propbank>
+          <rel relloc="5">thanked</rel>
+          <arg type="ARGM-TMP" start="0" end="1">In 1986</arg>
+          <arg type="ARG0" start="3" end="4">Stamford officials</arg>
+          <arg type="ARG1" start="6" end="7">Mr. Hoelzer</arg>
+          <arg type="ARG2" start="8" end="13">for taking care of the mural</arg>
+        </propbank>
       </example>
-      <example name="thank-v: sentential arg2" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="ns" voice="ns"/>
-        <text>``*trace* Thank God we have some deal on the table,'' said Stewart Gilchrist, a director at Scottish Amicable Investment Managers, which intends to vote its roughly 1% stake in favor of the restructuring.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">Thank</rel>
-        <arg f="" n="1">God</arg>
-        <arg f="" n="2">we have some deal on the table</arg>
+      <example name="thank-v: sentential arg2" src="">
+        <text>`` Thank God we have some deal on the table , '' said Stewart Gilchrist , a director at Scottish Amicable Investment Managers , which intends to vote its roughly 1 % stake in favor of the restructuring .</text>
+        <propbank>
+          <rel relloc="1">Thank</rel>
+          <arg type="ARG1" start="2" end="2">God</arg>
+          <arg type="ARG2" start="3" end="9">we have some deal on the table</arg>
+        </propbank>
       </example>
-      <example name="thank-v: Be VERY CAREFUL! Most args that seem like arg 1 are in VOC nodes. These MUST be discourse!" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Thanks for spending time with us tonight doctor.</text>
-        <rel f="">Thanks</rel>
-        <arg f="" n="2">for spending time with us tonight</arg>
-        <arg f="dis" n="m">doctor.</arg>
+      <example name="thank-v: Be VERY CAREFUL! Most args that seem like arg 1 are in VOC nodes. These MUST be discourse!" src="">
+        <text>Thanks for spending time with us tonight doctor .</text>
+        <propbank>
+          <rel relloc="0">Thanks</rel>
+          <arg type="ARG2" start="1" end="6">for spending time with us tonight</arg>
+          <arg type="ARGM-DIS" start="7" end="7">doctor</arg>
+        </propbank>
       </example>
-      <example name="thank-v: Dis and and 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="thank-v: Dis and and 2" src="">
         <text>Dr. Sanjay Gupto thanks for the update</text>
-        <arg f="dis" n="m">Dr. Sanjay Gupto</arg>
-        <rel f="">thanks</rel>
-        <arg f="" n="2">for the update</arg>
+        <propbank>
+          <rel relloc="3">thanks</rel>
+          <arg type="ARGM-DIS" start="0" end="2">Dr. Sanjay Gupto</arg>
+          <arg type="ARG2" start="4" end="6">for the update</arg>
+        </propbank>
       </example>
+      <note>THANK-V NOTES: F'thank' based on wsj and automaticexpansion via verbnet; 'thankful' based on BOLT-1. Member of Vncls judgement-33. (from thank.01-v)</note>
+      <note>THANKS-N NOTES: Added due to expansion of Nombank. Comparison to 'thank'. Vn class judgement-33. Fn class judgment_direct_address. Framed by Katie. (from thanks.01-n)</note>
+      <note>Lots of times Arg 0 and Arg 1 are in a VOC node. If this happens, DO NOT MARK as arg0/1. Mark as arg m-dis. (from thanks.01-n)</note>
     </roleset>
   </predicate>
   <predicate lemma="thankful">
     <roleset id="thankful.02" name="thank">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">thankful</alias>
+        <alias pos="j">thankful</alias>
       </aliases>
-      <note>THANKFUL-J NOTES: Automatically created by Julia as an alias file for unification. (from thankful.01-j)</note>
       <roles>
-        <role descr="thanker" f="pag" n="0"/>
-        <role descr="thanked" f="ppt" n="1"/>
-        <role descr="for what?" f="cau" n="2"/>
+        <role descr="thanker" f="PAG" n="0"/>
+        <role descr="thanked" f="PPT" n="1"/>
+        <role descr="for what?" f="CAU" n="2"/>
       </roles>
-      <example name="thankful-j" src="BOLT-1" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="thankful-j" src="BOLT-1">
         <text>Humanity can indeed be thankful for that , that we only go through stages of insanity , and have the chance of overcoming that .</text>
-        <arg f="" n="0">Humanity</arg>
-        <arg f="mod" n="m">can</arg>
-        <arg f="adv" n="m">indeed</arg>
-        <rel f="">thankful</rel>
-        <arg f="" n="2">[for that] *link -&gt; [that we only go through stages of insanity, and have the chance of overcoming that</arg>
+        <propbank>
+          <rel relloc="4">thankful</rel>
+          <arg type="ARG0" start="0" end="0">Humanity</arg>
+          <arg type="ARGM-MOD" start="1" end="1">can</arg>
+          <arg type="ARGM-ADV" start="2" end="2">indeed</arg>
+          <arg type="ARG2" start="8" end="23">that we only go through stages of insanity , and have the chance of overcoming that</arg>
+          <arg type="R-ARG2" start="5" end="6">for that</arg>
+        </propbank>
       </example>
+      <note>THANKFUL-J NOTES: Automatically created by Julia as an alias file for unification. (from thankful.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

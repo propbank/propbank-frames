@@ -1,82 +1,124 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="warn">
     <roleset id="warn.01" name="give a warning">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">warn</alias>
-        <alias framenet="" pos="n" verbnet="">warning</alias>
+        <alias pos="v">warn</alias>
+        <alias pos="n">warning</alias>
       </aliases>
-      <note>WARN-V NOTES: Frames file for 'warn' based on sentences in financial subcorpus. Comparison with 'advise'. Member of Vncls advise-37.9-1. (from warn.01-v)</note>
-      <note>WARNING-N NOTES: Added due to expansion of Nombank. Comparison to 'warn.01'. Vn class advise-37.9-1. No Fn class. Framed by Katie. (from warning.01-n)</note>
       <roles>
-        <note>Args 1 and 2 are reversed from 'advise' but follow the pattern of'say' etc. (from warn.01-v)</note>
         <role descr="entity giving warning" f="PAG" n="0">
-          <vnrole vncls="37.9-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="advise-37.9-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="advise-37.9-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="warning, impelled action" f="PPT" n="1">
-          <vnrole vncls="37.9-1" vntheta="Topic"/>
+          <rolelinks>
+            <rolelink class="advise-37.9-1" resource="VerbNet" version="verbnet3.3">topic</rolelink>
+            <rolelink class="advise-37.9-1" resource="VerbNet" version="verbnet3.4">topic</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity getting warning, impelled agent" f="GOL" n="2">
-          <vnrole vncls="37.9-1" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink class="advise-37.9-1" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+            <rolelink class="advise-37.9-1" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="just the warning" src="" type="">
-        <text>[Two antitrust agencies may face further cutbacks because of a complicated new funding device,]-1 some Democrats in Congress are warning *trace*-1.</text>
-        <arg f="" n="0">some Democrats in Congress</arg>
-        <rel f="">warning</rel>
-        <arg f="" n="1">*trace*</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Warning" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Judgment_direct_address" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="advise-37.9-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Broadcast" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="warning-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">34</lexlink>
+        <lexlink class="warn-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">134</lexlink>
+        <lexlink class="advise-37.9-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="just the warning" src="">
+        <text>Two antitrust agencies may face further cutbacks because of a complicated new funding device , some Democrats in Congress are warning .</text>
+        <propbank>
+          <rel relloc="20">warning</rel>
+          <arg type="ARG0" start="15" end="18">some Democrats in Congress</arg>
+          <arg type="ARG1" start="0" end="13">Two antitrust agencies may face further cutbacks because of a complicated new funding device</arg>
+        </propbank>
       </example>
-      <example name="with entity warned" src="" type="">
-        <text>The issue has come to a boil in Newark, N.J., where federal prosecutors have warned lawyers for Eddie Antar that if the founder and former chairman of Crazy Eddie Inc. is indicted, the government may move to seize the money that Mr. Antar is using to pay legal fees.</text>
-        <arg f="" n="0">federal prosecutors</arg>
-        <rel f="">warned</rel>
-        <arg f="" n="2">lawyers for Eddie Antar</arg>
-        <arg f="" n="1">that if the founder and former chairman of Crazy Eddie Inc. is indicted, the government may move to seize the money that Mr. Antar is using to pay legal fees</arg>
+      <example name="with entity warned" src="">
+        <text>The issue has come to a boil in Newark , N.J. , where federal prosecutors have warned lawyers for Eddie Antar that if the founder and former chairman of Crazy Eddie Inc. is indicted , the government may move to seize the money that Mr. Antar is using to pay legal fees .</text>
+        <propbank>
+          <rel relloc="16">warned</rel>
+          <arg type="ARG0" start="13" end="14">federal prosecutors</arg>
+          <arg type="ARG2" start="17" end="20">lawyers for Eddie Antar</arg>
+          <arg type="ARG1" start="21" end="51">that if the founder and former chairman of Crazy Eddie Inc. is indicted , the government may move to seize the money that Mr. Antar is using to pay legal fees</arg>
+        </propbank>
       </example>
-      <example name="warning as PP" src="" type="">
-        <text>Bay Financial Corp., Boston, which *trace* has been reporting big losses and warning of a possible bankruptcy-law filing, said it was sued by a holder.</text>
-        <arg f="slc" n="m">which -&gt; Bay Financial Corp.</arg>
-        <arg f="" n="0">*trace* (= which)</arg>
-        <rel f="">warning</rel>
-        <arg f="" n="1">of a possible bankruptcy-law filing</arg>
+      <example name="warning as PP" src="">
+        <text>Bay Financial Corp. , Boston , which has been reporting big losses and warning of a possible bankruptcy - law filing , said it was sued by a holder .</text>
+        <propbank>
+          <rel relloc="13">warning</rel>
+          <arg type="R-ARG0" start="6" end="6">which</arg>
+          <arg type="ARG0" start="0" end="2">Bay Financial Corp.</arg>
+          <arg type="ARG1" start="14" end="20">of a possible bankruptcy - law filing</arg>
+        </propbank>
       </example>
-      <example name="warning as infinitive" src="" type="">
-        <text>Mr. Thompson projected that [Anheuser]-1's statement of intent could simply be a means of *trace*-1 warning competitors to ease up on price-cutting or face a costly and fruitless battle.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">warning</rel>
-        <arg f="" n="2">competitors</arg>
-        <arg f="" n="1">to ease up on price-cutting or face a costly and fruitless battle</arg>
+      <example name="warning as infinitive" src="">
+        <text>Mr. Thompson projected that Anheuser 's statement of intent could simply be a means of warning competitors to ease up on price - cutting or face a costly and fruitless battle .</text>
+        <propbank>
+          <rel relloc="15">warning</rel>
+          <arg type="ARG0" start="4" end="4">Anheuser</arg>
+          <arg type="ARG2" start="16" end="16">competitors</arg>
+          <arg type="ARG1" start="17" end="30">to ease up on price - cutting or face a costly and fruitless battle</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG2" src="ontonotes mz/sinorama/10/ectb_1064" type="">
+      <example name="ARG0 and ARG2" src="ontonotes mz/sinorama/10/ectb_1064">
         <text>Beside a road in Emei Rural Township in Hsinchu , the kind of narrow , winding mountain road where you need to beep your horn continually to warn possible oncoming cars around the corner , in the home that he and his wife Shen Tung - ching built with their own hands , just next to a pond surrounded by all kinds of large trees , Cheng Yung - gwo dreams of himself sitting with a group of friends and colleagues around a fire , " alternately firing pottery and drinking wine . "</text>
-        <arg f="loc" n="m">[where][narrow , winding mountain road]</arg>
-        <arg f="" n="0">you</arg>
-        <rel f="">warn</rel>
-        <arg f="" n="2">possible oncoming cars around the corner</arg>
+        <propbank>
+          <rel relloc="27">warn</rel>
+          <arg type="R-ARGM-LOC" start="18" end="18">where</arg>
+          <arg type="ARG0" start="19" end="19">you</arg>
+          <arg type="ARG2" start="28" end="33">possible oncoming cars around the corner</arg>
+          <arg type="ARGM-LOC" start="13" end="17">narrow , winding mountain road</arg>
+        </propbank>
       </example>
-
-      <example name="With an about phrase as arg 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="With an about phrase as arg 1" src="">
         <text>A warning to American tourists about a rogue elephant charging visitors</text>
-        <rel f="">warning</rel>
-        <arg f="" n="2">to American tourists</arg>
-        <arg f="" n="1">about a rogue elephant charging visitors</arg>
+        <propbank>
+          <rel relloc="1">warning</rel>
+          <arg type="ARG2" start="2" end="4">to American tourists</arg>
+          <arg type="ARG1" start="5" end="10">about a rogue elephant charging visitors</arg>
+        </propbank>
       </example>
-      <example name="Arg 1 as actual thing your warned about" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="Arg 1 as actual thing your warned about" src="">
         <text>the imminent earthquake warning</text>
-        <arg f="tmp" n="m">imminent</arg>
-        <arg f="" n="1">earthquake</arg>
-        <rel f="">warning</rel>
+        <propbank>
+          <rel relloc="3">warning</rel>
+          <arg type="ARGM-TMP" start="1" end="1">imminent</arg>
+          <arg type="ARG1" start="2" end="2">earthquake</arg>
+        </propbank>
       </example>
-      <example name="Arg 0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>war hero Dwight Eisenhower's suprising warning about the influence of the pentagon</text>
-        <arg f="" n="0">war hero Dwight Eisenhower's</arg>
-        <arg f="adj" n="m">suprise</arg>
-        <rel f="">warning</rel>
-        <arg f="" n="1">about the influence of the pentagon</arg>
+      <example name="Arg 0" src="">
+        <text>war hero Dwight Eisenhower 's suprising warning about the influence of the pentagon</text>
+        <propbank>
+          <rel relloc="6">warning</rel>
+          <arg type="ARG0" start="0" end="4">war hero Dwight Eisenhower 's</arg>
+          <arg type="ARGM-ADJ" start="5" end="5">suprising</arg>
+          <arg type="ARG1" start="7" end="12">about the influence of the pentagon</arg>
+        </propbank>
       </example>
+      <note>WARN-V NOTES: Frames file for 'warn' based on sentences in financial subcorpus. Comparison with 'advise'. Member of Vncls advise-37.9-1. (from warn.01-v)</note>
+      <note>WARNING-N NOTES: Added due to expansion of Nombank. Comparison to 'warn.01'. Vn class advise-37.9-1. No Fn class. Framed by Katie. (from warning.01-n)</note>
+      <note>Args 1 and 2 are reversed from 'advise' but follow the pattern of'say' etc. (from warn.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,34 +1,58 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="persecute">
     <roleset id="persecute.01" name="to oppress or harass">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">persecution</alias>
-        <alias framenet="" pos="v" verbnet="">persecute</alias>
+        <alias pos="n">persecution</alias>
+        <alias pos="v">persecute</alias>
       </aliases>
-      <note>PERSECUTE-V NOTES: Frames file for 'persecute' based on survey of sentences in the WSJ corpus. (from persecute.01-v predicate notes)</note>
-      <note>PERSECUTION-N NOTES: Based on ontonotes nouns. Comparison to persecute.01. Persecute.01 is a member of VN class judgement-33. Framed by Katie. (from persecution.01-n)</note>
       <roles>
         <role descr="persecutor" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="prosecute-33.2-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="prosecute-33.2-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="persecutee" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="prosecute-33.2-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="prosecute-33.2-1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>Soviet police clashed with demonstrators in Moscow following a candlelight vigil around the KGB 's Lubyanka headquarters in memory of those-1 persecuted [*]-1 under Stalin .</text>
-        <rel f="">persecuted</rel>
-        <arg f="" n="1">[*]</arg>
-        <arg f="TMP" n="M">under Stalin</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="prosecute-33.2-1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+        <lexlink class="prosecute-33.2-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="passive" src="">
+        <text>Soviet police clashed with demonstrators in Moscow following a candlelight vigil around the KGB 's Lubyanka headquarters in memory of those persecuted under Stalin .</text>
+        <propbank>
+          <rel relloc="21">persecuted</rel>
+          <arg type="ARG1" start="20" end="20">those</arg>
+          <arg type="ARGM-TMP" start="22" end="23">under Stalin</arg>
+        </propbank>
       </example>
-      <example name="with oppressor" src="" type="">
-        <text>The KMT's political persecution</text>
-        <arg f="" n="0">KML's</arg>
-        <arg f="mnr" n="m">political</arg>
-        <rel f="">persecution</rel>
+      <example name="with oppressor" src="">
+        <text>The KMT 's political persecution</text>
+        <propbank>
+          <rel relloc="4">persecution</rel>
+          <arg type="ARG0" start="0" end="1">The KMT</arg>
+          <arg type="ARGM-MNR" start="3" end="3">political</arg>
+        </propbank>
       </example>
+      <note>PERSECUTE-V NOTES: Frames file for 'persecute' based on survey of sentences in the WSJ corpus. (from persecute.01-v predicate notes)</note>
+      <note>PERSECUTION-N NOTES: Based on ontonotes nouns. Comparison to persecute.01. Persecute.01 is a member of VN class judgement-33. Framed by Katie. (from persecution.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

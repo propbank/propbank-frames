@@ -1,37 +1,68 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="sail">
     <roleset id="sail.01" name="to move along, navigate, using the wind to drive a boat">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">sailing</alias>
-        <alias framenet="Ride_vehicle Self_motion Operate_vehicle" pos="v" verbnet="">sail</alias>
+        <alias pos="n">sailing</alias>
+        <alias pos="v">sail</alias>
+        <argalias arg="0" pos="n">sailor</argalias>
       </aliases>
-      <note>SAIL-V NOTES: Member of VNcls nonvehicle-51.4.2. (from sail.01-v)</note>
-      <note>SAILING-N NOTES: Added by Julia based on BOLT. (from sailing.01-n)</note>
       <roles>
         <role descr="entity sailing" f="PAG" n="0">
-          <vnrole vncls="51.4.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="nonvehicle-51.4.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Operate_vehicle" resource="FrameNet" version="1.7">driver</rolelink>
+            <rolelink class="Ride_vehicle" resource="FrameNet" version="1.7">vehicle</rolelink>
+          </rolelinks>
         </role>
         <role descr="vessel" f="PPT" n="1">
-          <vnrole vncls="51.4.2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="nonvehicle-51.4.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Operate_vehicle" resource="FrameNet" version="1.7">vehicle</rolelink>
+            <rolelink class="Ride_vehicle" resource="FrameNet" version="1.7">theme</rolelink>
+            <rolelink class="Self_motion" resource="FrameNet" version="1.7">self_mover</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="with direction" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>The pitch sailed toward Bobby Thomson high and inside and then , with a crack of the bat , was sent [*-1] rocketing back into the lower leftfield stands .</text>
-        <arg f="" n="0">The pitch</arg>
-        <rel f="">sailed</rel>
-        <arg f="dir" n="m">toward Bobby Thomson</arg>
-        <arg f="mnr" n="m">high and inside</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Operate_vehicle" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Self_motion" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Ride_vehicle" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="nonvehicle-51.4.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Transportperson" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="sail-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+      </lexlinks>
+      <example name="sail-v: with direction" src="">
+        <text>The pitch sailed toward Bobby Thomson high and inside and then , with a crack of the bat , was sent rocketing back into the lower leftfield stands .</text>
+        <propbank>
+          <rel relloc="2">sailed</rel>
+          <arg type="ARG0" start="0" end="1">The pitch</arg>
+          <arg type="ARGM-DIR" start="3" end="5">toward Bobby Thomson</arg>
+          <arg type="ARGM-MNR" start="6" end="8">high and inside</arg>
+        </propbank>
       </example>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="present" voice="active"/>
-        <text>The split comes in the midst of a court battle over whether [the San Diego Yacht Club]-1 should be allowed [*-1]-1 to keep the international trophy for [*]-1 sailing a catamaran against the New Zealand challengers ' 90-foot monohull .</text>
-        <arg f="" n="0">[*]</arg>
-        <rel f="">sailing</rel>
-        <arg f="" n="1">a catamaran</arg>
-        <arg f="mnr" n="m">against the New Zealand challengers ' 90-foot monohull</arg>
+      <example name="sail-v: transitive" src="">
+        <text>The split comes in the midst of a court battle over whether the San Diego Yacht Club should be allowed to keep the international trophy for sailing a catamaran against the New Zealand challengers ' 90 - foot monohull .</text>
+        <propbank>
+          <rel relloc="26">sailing</rel>
+          <arg type="ARG0" start="12" end="16">the San Diego Yacht Club</arg>
+          <arg type="ARG1" start="27" end="28">a catamaran</arg>
+          <arg type="ARGM-MNR" start="29" end="38">against the New Zealand challengers ' 90 - foot monohull</arg>
+        </propbank>
       </example>
+      <note>SAIL-V NOTES: Member of VNcls nonvehicle-51.4.2. (from sail.01-v)</note>
+      <note>SAILING-N NOTES: Added by Julia based on BOLT. (from sailing.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

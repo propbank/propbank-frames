@@ -1,28 +1,53 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="breakfast">
     <roleset id="breakfast.01" name="eat breakfast">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">breakfast</alias>
-        <alias framenet="" pos="l" verbnet="">have_breakfast</alias>
+        <alias pos="v">breakfast</alias>
+        <alias pos="l">have_breakfast</alias>
       </aliases>
-      
       <roles>
-        <role descr="eater" f="pag" n="0">
-          <vnrole vncls="39.5" vntheta="agent"/>
+        <role descr="eater" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="dine-39.5" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Ingestion" resource="FrameNet" version="1.7">ingestor</rolelink>
+            <rolelink class="dine-39.5" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="food" f="ppt" n="1">
-          <vnrole vncls="39.5" vntheta="patient"/>
+        <role descr="food" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="dine-39.5" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="Ingestion" resource="FrameNet" version="1.7">ingestibles</rolelink>
+            <rolelink class="dine-39.5" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="" src="" type="">
-        <text>[Travelling salesmen]-3 were already up and about, [*-3]breakfasting on steaming-hot dumplings before * setting off for their next destination.</text>
-        <arg f="" n="0">[*-3]</arg>
-        <rel f="">breakfasting</rel>
-        <arg f="" n="1">on steaming-hot dumplings</arg>
-        <arg f="tmp" n="m">before * setting off for their next destination</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Ingestion" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="dine-39.5" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="dine-39.5" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="breakfast-v" src="">
+        <text>Travelling salesmen were already up and about , breakfasting on steaming - hot dumplings before setting off for their next destination .</text>
+        <propbank>
+          <rel relloc="8">breakfasting</rel>
+          <arg type="ARG0" start="0" end="1">Travelling salesmen</arg>
+          <arg type="ARG1" start="9" end="13">on steaming - hot dumplings</arg>
+          <arg type="ARGM-TMP" start="14" end="20">before setting off for their next destination</arg>
+        </propbank>
       </example>
-    <note>BREAKFAST-V NOTES: created by Jena (from breakfast.01-v)</note>
-</roleset>
+      <note>BREAKFAST-V NOTES: created by Jena (from breakfast.01-v)</note>
+    </roleset>
   </predicate>
 </frameset>

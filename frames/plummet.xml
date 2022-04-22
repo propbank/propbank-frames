@@ -1,47 +1,86 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="plummet">
     <roleset id="plummet.01" name="fall dramatically">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">plummet</alias>
+        <alias pos="v">plummet</alias>
       </aliases>
-      <note>PLUMMET-V NOTES: Frames file for 'plummet' based on sentences in financial subcorpus. Verbnet entry 45.6, other framed members include decrease and increase, among many others. Framenet entries Scalar Position 2, Path Shape. Comparison with 'plunge'. (from plummet.01-v predicate notes)</note>
       <roles>
         <role descr="Logical subject, patient, thing falling" f="PPT" n="1">
-          <vnrole vncls="45.6-1" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="EXT, amount fallen" f="EXT" n="2">
-          <vnrole vncls="45.6-1" vntheta="Extent"/>
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">extent</rolelink>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">extent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="start point" f="dir" n="3"/>
-        <role descr="end point, end state of arg1" f="gol" n="4"/>
-        <role descr="medium" f="loc" n="m"/>
+        <role descr="start point" f="DIR" n="3">
+          <rolelinks>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.3">initial_state</rolelink>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">initial_state</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="end point, end state of arg1" f="GOL" n="4">
+          <rolelinks>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">result</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="medium" f="LOC" n="m">
+          <rolelinks />
+        </role>
       </roles>
-      <example name="all args" src="" type="">
-        <inflection aspect="perfect" form="participle" person="third" tense="present" voice="active"/>
-        <text>...UAL stock has plummeted by 41% to 168 1/2 from 285 1/4.</text>
-        <arg f="" n="1">UAL stock</arg>
-        <rel f="">plummeted</rel>
-        <arg f="" n="2">by 41%</arg>
-        <arg f="" n="4">to 168 1/2</arg>
-        <arg f="" n="3">from 285 1/4</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Motion_directional" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="Change_position_on_a_scale" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="calibratable_cos-45.6.1-1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3" />
+        <lexlink class="plummet-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">34</lexlink>
+        <lexlink class="calibratable_cos-45.6.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="all args" src="">
+        <text>... UAL stock has plummeted by 41 % to 168 1/2 from 285 1/4 .</text>
+        <propbank>
+          <rel relloc="4">plummeted</rel>
+          <arg type="ARG1" start="1" end="2">UAL stock</arg>
+          <arg type="ARG2" start="5" end="7">by 41 %</arg>
+          <arg type="ARG4" start="8" end="10">to 168 1/2</arg>
+          <arg type="ARG3" start="11" end="13">from 285 1/4</arg>
+        </propbank>
       </example>
-      <example name="with medium" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>UAL ... reversed course and plummeted in off-exchange trading after the 5:09 p.m. EDT announcement.</text>
-        <arg f="" n="1">UAL</arg>
-        <rel f="">plummeted</rel>
-        <arg f="loc" n="m">in off-exchange trading</arg>
-        <arg f="tmp" n="m">after the 5:09 p.m. EDT announcement</arg>
+      <example name="with medium" src="">
+        <text>UAL ... reversed course and plummeted in off - exchange trading after the 5:09 p.m. EDT announcement .</text>
+        <propbank>
+          <rel relloc="5">plummeted</rel>
+          <arg type="ARG1" start="0" end="0">UAL</arg>
+          <arg type="ARGM-LOC" start="6" end="10">in off - exchange trading</arg>
+          <arg type="ARGM-TMP" start="11" end="16">after the 5:09 p.m. EDT announcement</arg>
+        </propbank>
       </example>
-      <example name="ARG1 and ARG4" src="ontonotes bn/p2" type="">
+      <example name="ARG1 and ARG4" src="ontonotes bn/p2">
         <text>The tour bus they were in accidentally rolled over as it was traveling through Meili County in Tainan and plummeted into a mountain gorge more than twenty meters deep .</text>
-        <arg f="" n="1">The tour bus</arg>
-        <arg f="mnr" n="m">accidentally</arg>
-        <rel f="">plummeted</rel>
-        <arg f="" n="4">into a mountain gorge more than twenty meters deep</arg>
+        <propbank>
+          <rel relloc="19">plummeted</rel>
+          <arg type="ARG1" start="0" end="2">The tour bus</arg>
+          <arg type="ARGM-MNR" start="6" end="6">accidentally</arg>
+          <arg type="ARG4" start="20" end="28">into a mountain gorge more than twenty meters deep</arg>
+        </propbank>
       </example>
-
+      <note>PLUMMET-V NOTES: Frames file for 'plummet' based on sentences in financial subcorpus. Verbnet entry 45.6, other framed members include decrease and increase, among many others. Framenet entries Scalar Position 2, Path Shape. Comparison with 'plunge'. (from plummet.01-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

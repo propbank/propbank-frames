@@ -1,45 +1,77 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="fasten">
     <roleset id="fasten.01" name="connect">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">fasten</alias>
+        <alias pos="v">fasten</alias>
       </aliases>
-      <note>FASTEN-V NOTES: Frames file for 'fasten' based on sentences in wsj. Verbnet entry 22.3, Framenet entry Attaching, Inchoative attaching, and Closure. (from fasten.01-v predicate notes)</note>
       <roles>
-        <role descr="causer of connection, agent" f="pag" n="0">
-          <vnrole vncls="22.3-2-1" vntheta="agent"/>
+        <role descr="causer of connection, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="shake-22.3-2-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="shake-22.3-2-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="first (or all) thing(s) fastened (together)" f="ppt" n="1">
-          <vnrole vncls="22.3-2-1" vntheta="patient"/>
+        <role descr="first (or all) thing(s) fastened (together)" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="shake-22.3-2-1" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="shake-22.3-2-1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="additional thing(s), destination" f="ppt" n="2">
-          <vnrole vncls="22.3-2-1" vntheta="co-patient"/>
+        <role descr="additional thing(s), destination" f="PPT" n="2">
+          <rolelinks>
+            <rolelink class="shake-22.3-2-1" resource="VerbNet" version="verbnet3.3">co-patient</rolelink>
+            <rolelink class="shake-22.3-2-1" resource="VerbNet" version="verbnet3.4">co_patient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="fastener" f="mnr" n="3"/>
+        <role descr="fastener" f="MNR" n="3">
+          <rolelinks />
+        </role>
       </roles>
-      <example name="inchoative separated args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Mr. Rahn was pointing out an elephant rumbling through Wall Street while conventional wisdom had fastened on the UAL flea.</text>
-        <arg f="" n="1">conventional wisdom</arg>
-        <rel f="">fastened</rel>
-        <arg f="" n="2">on the UAL flea</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Attaching" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="Closure" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="Becoming_attached" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="shake-22.3-2-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="shake-22.3-2-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="inchoative separated args" src="">
+        <text>Mr. Rahn was pointing out an elephant rumbling through Wall Street while conventional wisdom had fastened on the UAL flea .</text>
+        <propbank>
+          <rel relloc="15">fastened</rel>
+          <arg type="ARG1" start="12" end="13">conventional wisdom</arg>
+          <arg type="ARG2" start="16" end="19">on the UAL flea</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1068" type="">
+      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1068">
         <text>For the last two years Hsiang Chi - tai has been plagued with capsulitis in her shoulder , and one morning when she could n't manage to fasten her bra before setting off for work , she woke up her son , a university student , to help her .</text>
-        <arg f="" n="0">she</arg>
-        <rel f="">fasten</rel>
-        <arg f="" n="1">her bra</arg>
-        <arg f="tmp" n="m">before setting off for work</arg>
+        <propbank>
+          <rel relloc="27">fasten</rel>
+          <arg type="ARG0" start="22" end="22">she</arg>
+          <arg type="ARG1" start="28" end="29">her bra</arg>
+          <arg type="ARGM-TMP" start="30" end="34">before setting off for work</arg>
+        </propbank>
       </example>
-
-      <example name="fastener as subject" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>15 heavy-duty staples fastened the sheaf of delicate antique papers.</text>
-        <arg f="" n="3">15 heavy-duty staples</arg>
-        <rel f="">fastened</rel>
-        <arg f="" n="1">the sheaf of delicate antique papers</arg>
+      <example name="fastener as subject" src="">
+        <text>15 heavy - duty staples fastened the sheaf of delicate antique papers .</text>
+        <propbank>
+          <rel relloc="5">fastened</rel>
+          <arg type="ARG3" start="0" end="4">15 heavy - duty staples</arg>
+          <arg type="ARG1" start="6" end="11">the sheaf of delicate antique papers</arg>
+        </propbank>
       </example>
+      <note>FASTEN-V NOTES: Frames file for 'fasten' based on sentences in wsj. Verbnet entry 22.3, Framenet entry Attaching, Inchoative attaching, and Closure. (from fasten.01-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

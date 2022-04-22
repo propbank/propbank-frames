@@ -1,60 +1,91 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="mine">
     <roleset id="mine.01" name="extract (ore or minerals) from the earth">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">mine</alias>
-        <alias framenet="" pos="n" verbnet="">mining</alias>
+        <alias pos="v">mine</alias>
+        <alias pos="n">mining</alias>
+        <argalias arg="0" pos="n">miner</argalias>
       </aliases>
-      <note>MINE-V NOTES: Frames file for 'mine' based on survey of sentences in the WSJ corpus. (from mine.01-v predicate notes)</note>
-      <note>MINING-N NOTES: Updated by Julia based on mine-v.01. Corresponds to VNcls mine-10.9, hunt-35.1. (from mining.01-n)</note>
       <roles>
         <role descr="miner, agent" f="PAG" n="0">
-          <vnrole vncls="10.9" vntheta="Agent"/>
-          <vnrole vncls="35.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="mine-10.9" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="hunt-35.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="mine-10.9" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="hunt-35.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing extracted" f="PPT" n="1">
-          <vnrole vncls="10.9" vntheta="Theme"/>
-          <vnrole vncls="35.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="mine-10.9" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="hunt-35.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="mine-10.9" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+            <rolelink class="hunt-35.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>Gold-oriented funds , for instance , which [*T*-1] invest in companies that [*T*-2]mine and process the precious metal , posted an average decline of 1.15 % .</text>
-        <arg f="" n="0">[*T*-2]</arg>
-        <arg f="RCL" n="M">that -&gt; companies</arg>
-        <rel f="">mine</rel>
-        <arg f="" n="1">the precious metal</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Mining" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="mine-10.9" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="hunt-35.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="mine-10.9" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="hunt-35.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="transitive" src="">
+        <text>Gold - oriented funds , for instance , which invest in companies that mine and process the precious metal , posted an average decline of 1.15 % .</text>
+        <propbank>
+          <rel relloc="13">mine</rel>
+          <arg type="ARG0" start="11" end="11">companies</arg>
+          <arg type="R-ARG0" start="12" end="12">that</arg>
+          <arg type="ARG1" start="16" end="18">the precious metal</arg>
+        </propbank>
       </example>
-      <example name="no subject antecedent" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="present" voice="active"/>
-        <text>Westmoreland 's strategy is [*] to retain and expand its core business of [*]mining and selling low-sulphur coal in the Appalachia region .</text>
-        <arg f="" n="0">[*]</arg>
-        <rel f="">mining</rel>
-        <arg f="" n="1">low-sulphur coal</arg>
-        <arg f="LOC" n="M">in the Appalachia region</arg>
+      <example name="no subject antecedent" src="">
+        <text>Westmoreland 's strategy is to retain and expand its core business of mining and selling low - sulphur coal in the Appalachia region .</text>
+        <propbank>
+          <rel relloc="12">mining</rel>
+          <arg type="ARG1" start="15" end="18">low - sulphur coal</arg>
+          <arg type="ARGM-LOC" start="19" end="22">in the Appalachia region</arg>
+        </propbank>
       </example>
-      <example name="arg1 and LOC" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="arg1 and LOC" src="">
         <text>Early this century , diamond mining in the magnificent dunes where the Namib Desert meets the Atlantic Ocean was a day at the beac</text>
-        <arg f="" n="1">diamond</arg>
-        <rel f="">mining</rel>
-        <arg f="loc" n="m">in the magnificent dunes where the Namib Desert meets the Atlantic Ocean</arg>
+        <propbank>
+          <rel relloc="5">mining</rel>
+          <arg type="ARG1" start="4" end="4">diamond</arg>
+          <arg type="ARGM-LOC" start="6" end="17">in the magnificent dunes where the Namib Desert meets the Atlantic Ocean</arg>
+        </propbank>
       </example>
-      <example name="arg0 and LOC" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Their mining of the entrances to the Norwegian Sea,</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">mining</rel>
-        <arg f="loc" n="m">of the entrances to the Norwegian Sea</arg>
+      <example name="arg0 and LOC" src="">
+        <text>Their mining of the entrances to the Norwegian Sea ,</text>
+        <propbank>
+          <rel relloc="1">mining</rel>
+          <arg type="ARG0" start="0" end="0">Their</arg>
+          <arg type="ARGM-LOC" start="2" end="8">of the entrances to the Norwegian Sea</arg>
+        </propbank>
       </example>
-      <example name="args 0 and 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Paradoxically, they considered platinum as a nuisance for their mining of gold.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">mining</rel>
-        <arg f="" n="1">of gold</arg>
+      <example name="args 0 and 1" src="">
+        <text>Paradoxically , they considered platinum as a nuisance for their mining of gold .</text>
+        <propbank>
+          <rel relloc="10">mining</rel>
+          <arg type="ARG0" start="9" end="9">their</arg>
+          <arg type="ARG1" start="11" end="12">of gold</arg>
+        </propbank>
       </example>
+      <note>MINE-V NOTES: Frames file for 'mine' based on survey of sentences in the WSJ corpus. (from mine.01-v predicate notes)</note>
+      <note>MINING-N NOTES: Updated by Julia based on mine-v.01. Corresponds to VNcls mine-10.9, hunt-35.1. (from mining.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

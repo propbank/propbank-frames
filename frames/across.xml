@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
+<frameset>
+  <predicate lemma="across">
+    <roleset id="across.01" name="relevant axis of a first entity is roughly perpendicular to and is horizontally spanning relevant axis of a second entity">
+      <aliases>
+        <alias pos="p">across</alias>
+      </aliases>
+      <roles>
+        <role descr="spanning entity" f="SE1" n="1">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Distributed_position" version="1.7">Theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity spanned" f="SE2" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Distributed_position" version="1.7">Location</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="spanning axis of arg1" f="AXS1" n="3" />
+        <role descr="spanned axis of arg2" f="AXS2" n="4" />
+        <role descr="anchor; in which framework does the horizontal nature of the 'acrossness' hold" f="ANC" n="5" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Distributed_position" version="1.7" confidence="0.5" src="manual" />
+      </lexlinks>
+      <example name="across-p" src="Minecraft">
+        <text>We need another row of purple blocks that is 9 long so that it lays across the green and red , on top of them</text>
+        <propbank>
+          <rel relloc="15">across</rel>
+          <arg end="13" start="13" type="ARG1">it</arg>
+          <arg end="19" start="16" type="ARG2">the green and red</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (n / need-01
+            :ARG0 (w / we)
+            :ARG1 (b3 / be-destined-for-91
+              :ARG1 (r / row
+                :mod (a / another
+                  :mod (y / yet))
+                :consist-of (b / block :pl +
+                  :color (p / purple))
+                :ARG1-of (l / long-03
+                  :ARG2 (d / distance-quantity :quant 9)))
+              :manner (l2 / lie-07
+                :ARG1 r
+                :ARG2 (s / space :pl +
+                  :ARG1-of (o / on-top-03
+                    :ARG2 a4
+                    :ARG3 (c / cartesian-framework-91
+                      :ARG1 (b2 / build-space))))
+                :manner (a2 / across-01
+                  :ARG1 r
+                  :ARG2 (a4 / and
+                    :op1 (t / thing
+                      :color (r2 / red))
+                    :op2 (t2 / thing
+                      :color (g / green)))
+                  :ARG4 c))))
+        </amr>
+      </example>
+      <note>ACROSS NOTES: Added for Spatial AMR</note>
+    </roleset>
+    <roleset id="across.02" name="on the other side of some boundary, in relation to an entity">
+      <aliases>
+        <alias pos="p">across</alias>
+        <alias pos="r">across</alias>
+      </aliases>
+      <roles>
+        <role descr="entity on one side" f="SE1" n="1" />
+        <role descr="boundary axis" f="AXSp" n="2" />
+        <role descr="entity on the other side" f="SE2" n="3" />
+        <role descr="axis arg1 and arg3 exist on, roughly perpendicular to arg2" f="AXS" n="4" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks />
+      <example name="across-p" src="Spatial">
+        <text>The church is across the street from the school</text>
+        <propbank>
+          <rel relloc="3">across</rel>
+          <arg end="1" start="0" type="ARG1">The church</arg>
+          <arg end="5" start="4" type="ARG2">the street</arg>
+          <arg end="8" start="6" type="ARG3">from the school</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (a / across-02
+            :ARG1 (c / church)
+            :ARG2 (s / street))
+            :ARG3 (s2 / school))
+        </amr>
+      </example>
+      <example name="across-r" src="Minecraft">
+        <text>it should be directly across from the orange piece , that side .</text>
+        <propbank>
+          <rel relloc="4">across</rel>
+          <arg end="0" start="0" type="ARG1">it</arg>
+          <arg end="1" start="1" type="ARGM-MOD">should</arg>
+          <arg end="3" start="3" type="ARGM-ADV">directly</arg>
+          <arg end="8" start="5" type="ARG3">from the orange piece</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (r / recommend-01
+            :ARG1 (b2 / be-destined-for-91
+              :ARG1 (i2 / it)
+              :ARG2 (s2 / space
+                :ARG1-of (a / across-02
+                  :ARG3 (p / piece
+                    :color (o / orange))
+                  :ARG1-of (d / direct-02))
+                :location (s / side
+                  :mod (t / that)))))
+        </amr>
+      </example>
+      <note>ACROSS NOTES: Added for Spatial AMR</note>
+    </roleset>
+    <roleset id="across.03" name="dimension measurement">
+      <aliases>
+        <alias pos="r">across</alias>
+      </aliases>
+      <roles>
+        <role descr="entity measured" f="SE1" n="1">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Dimension" version="1.7">object</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="measurement" f="EXT" n="2">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Dimension" version="1.7">measurement</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="dimension measured" f="AXSc" n="3">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Dimension" version="1.7">dimension</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="anchor; in which framework does the horizontal nature of the 'acrossness' hold" f="ANC" n="4" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink resource="FrameNet" class="Dimension" version="1.7" confidence="0.5" src="manual" />
+      </lexlinks>
+      <example name="across-r" src="Spatial">
+        <text>The canyon is 500 feet across at its narrowest point</text>
+        <propbank>
+          <rel relloc="5">across</rel>
+          <arg end="1" start="0" type="ARG1">The canyon</arg>
+          <arg end="4" start="3" type="ARG2">500 feet</arg>
+          <arg end="9" start="6" type="ARG3">at its narrowest point</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (a / across-03
+            :ARG1 (c / canyon)
+            :ARG2 (d / distance-quantity :unit foot :quant 500)
+            :ARG3 (p / point
+              :ARG1-of (h / have-degree-91
+                :ARG2 (n / narrow-02
+                  :ARG1 p)
+                :ARG3 (m / most))))
+        </amr>
+      </example>
+      <example name="across-r" src="Minecraft">
+        <text>3 across , right ?</text>
+        <propbank>
+          <rel relloc="1">across</rel>
+          <arg end="0" start="0" type="ARG2">3</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (a / across-03
+            :ARG2 (d / distance-quantity :quant 3)
+            :ARG1-of (r / request-confirmation-91))
+        </amr>
+      </example>
+      <note>ACROSS NOTES: Added for Spatial AMR</note>
+    </roleset>
+    <roleset id="across.04" name="horizontal orientation, direction">
+      <aliases>
+        <alias pos="r">across</alias>
+        <alias pos="j">across</alias>
+      </aliases>
+      <roles>
+        <role descr="sideways thing" f="SE1" n="1" />
+        <role descr="to the side of what" f="SE2" n="2" />
+        <role descr="anchor; the framework in which the horizontality holds" f="ANC" n="3" />
+        <role descr="axis" f="AXS" n="4" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks />
+      <example name="across-r: to the side" src="Minecraft">
+        <text>okay and then put a block across for each</text>
+        <propbank>
+          <rel relloc="6">across</rel>
+          <arg end="5" start="4" type="ARG1">a block</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (a / and
+            :op1 (o / okay-04)
+            :op2 (p / put-01 :mode imperative
+              :ARG0 (y / you)
+              :ARG1 (b / block :pl +)
+              :ARG2 (s / space :pl +
+                :ARG1-of (a2 / across-04
+                  :ARG3 (c / cartesian-framework-91
+                    :ARG1 (b3 / build-space))))
+              :time (t2 / then)
+              :frequency (r / rate-entity-91
+                :ARG1 (b2 / block :quant 1
+                  :ARG1-of (i2 / include-91
+                    :ARG2 b))
+                :ARG2 (t / thing
+                  :mod (e / each)))))
+        </amr>
+      </example>
+      <example name="across-j: horizontal" src="Minecraft">
+        <text>can you make it across</text>
+        <propbank>
+          <rel relloc="4">across</rel>
+          <arg end="3" start="3" type="ARG1">it</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (m / make-02 :mode imperative :polite +
+            :ARG0 (y / you)
+            :ARG1 (a / across-04
+              :ARG1 (i2 / it)
+              :ARG3 (c / cartesian-framework-91
+                :ARG1 y)))
+        </amr>
+      </example>
+      <note>ACROSS NOTES: Added for Spatial AMR</note>
+    </roleset>
+  </predicate>
+</frameset>

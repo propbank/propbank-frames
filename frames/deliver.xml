@@ -1,144 +1,210 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="deliver">
     <roleset id="deliver.01" name="give, send">
       <aliases>
-        <alias framenet="Delivery" pos="v" verbnet="">deliver</alias>
-        <alias framenet="Delivery" pos="n" verbnet="">delivery</alias>
+        <alias pos="v">deliver</alias>
+        <alias pos="n">delivery</alias>
       </aliases>
-      <note>DELIVER-V NOTES: Frame for deliver.01 based on sentences in wsj and automatic expansion via verbnet (from deliver.01-v)</note>
-      <note>DELIVERY-N NOTES: Updated by Julia. Member of Vncls send-11.1. (from delivery.01-n)</note>
       <roles>
-        <role descr="sender" f="pag" n="0">
-          <vnrole vncls="11.1" vntheta="agent"/>
+        <role descr="sender" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="sent" f="ppt" n="1">
-          <vnrole vncls="11.1" vntheta="theme"/>
+        <role descr="sent" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="sent-to" f="gol" n="2">
-          <vnrole vncls="11.1" vntheta="destination"/>
+        <role descr="sent-to" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="straight transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>The two units are Prentice Hall Information Services, which publishes tax, financial planning and business law information, among other services, and Prentice Hall Information Network, which *trace* electronically delivers tax information.</text>
-        <arg f="" n="0">*trace*</arg>
-        <arg f="rcl" n="m">which -&gt; Prentice Hall Information Network</arg>
-        <arg f="mnr" n="m">electronically</arg>
-        <rel f="">delivers</rel>
-        <arg f="" n="1">tax information</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Delivery" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="send-11.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Transportartifact" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="deliver-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">52</lexlink>
+        <lexlink class="deliver-v.5" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">32</lexlink>
+        <lexlink class="delivery-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">33</lexlink>
+        <lexlink class="deliver-v.4" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+        <lexlink class="send-11.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="straight transitive" src="">
+        <text>The two units are Prentice Hall Information Services , which publishes tax , financial planning and business law information , among other services , and Prentice Hall Information Network , which electronically delivers tax information .</text>
+        <propbank>
+          <rel relloc="32">delivers</rel>
+          <arg type="ARG0" start="25" end="28">Prentice Hall Information Network</arg>
+          <arg type="R-ARG0" start="30" end="30">which</arg>
+          <arg type="ARGM-MNR" start="31" end="31">electronically</arg>
+          <arg type="ARG1" start="33" end="34">tax information</arg>
+        </propbank>
       </example>
-      <example name="passive, with recipient" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>Two of the 757-200s are new aircraft *trace* *trace*-1 to be delivered *trace*-1 to American Trans Air, the main subsidiary of Amtran Inc., in December 1991 and January 1992.</text>
-        <rel f="">delivered</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="rcl" n="m">*trace* -&gt; new aircraft</arg>
-        <arg f="" n="2">to American Trans Air, the main subsidiary of Amtran Inc.,</arg>
-        <arg f="tmp" n="m">in December 1991 and January 1992</arg>
+      <example name="passive, with recipient" src="">
+        <text>Two of the 757 - 200s are new aircraft to be delivered to American Trans Air , the main subsidiary of Amtran Inc. , in December 1991 and January 1992 .</text>
+        <propbank>
+          <rel relloc="11">delivered</rel>
+          <arg type="ARG1" start="7" end="8">new aircraft</arg>
+          <arg type="ARG2" start="12" end="22">to American Trans Air , the main subsidiary of Amtran Inc.</arg>
+          <arg type="ARGM-TMP" start="24" end="29">in December 1991 and January 1992</arg>
+        </propbank>
       </example>
-      <example name="prepositional arg1" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>The city's Department of Consumer Affairs charged [Newmark&amp; Lewis Inc.]-1 with *trace*-1 failing *trace*-1 to deliver on its promise of lowering prices.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">deliver</rel>
-        <arg f="" n="1">on its promise of lowering prices</arg>
+      <example name="prepositional arg1" src="">
+        <text>The city 's Department of Consumer Affairs charged Newmark &amp; Lewis Inc. with failing to deliver on its promise of lowering prices .</text>
+        <propbank>
+          <rel relloc="15">deliver</rel>
+          <arg type="ARG0" start="8" end="11">Newmark &amp; Lewis Inc.</arg>
+          <arg type="ARG1" start="16" end="21">on its promise of lowering prices</arg>
+        </propbank>
       </example>
-      <example name="ditransitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>The voters delivered Mr. Gonzalez a third mandate for his successes.</text>
-        <arg f="" n="0">The voters</arg>
-        <rel f="">delivered</rel>
-        <arg f="" n="2">Mr. Gonzalez</arg>
-        <arg f="" n="1">a third mandate for his successes</arg>
+      <example name="ditransitive" src="">
+        <text>The voters delivered Mr. Gonzalez a third mandate for his successes .</text>
+        <propbank>
+          <rel relloc="2">delivered</rel>
+          <arg type="ARG0" start="0" end="1">The voters</arg>
+          <arg type="ARG2" start="3" end="4">Mr. Gonzalez</arg>
+          <arg type="ARG1" start="5" end="10">a third mandate for his successes</arg>
+        </propbank>
       </example>
-      <example name="just arg1" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="passive"/>
-        <text>[The first five leased units]-1 were *trace*-1 to be delivered *trace*-1 in 1991.</text>
-        <rel f="">delivered</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="tmp" n="m">in 1991</arg>
+      <example name="just arg1" src="">
+        <text>The first five leased units were to be delivered in 1991 .</text>
+        <propbank>
+          <rel relloc="8">delivered</rel>
+          <arg type="ARG1" start="0" end="4">The first five leased units</arg>
+          <arg type="ARGM-TMP" start="9" end="10">in 1991</arg>
+        </propbank>
       </example>
-      <example name="intransitive!" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>Here she delivers, especially during her enthusiastically awful rendition of the ``Candy Man,'' which she sings while prancing around in a little cotton candy pink angora sweater that couldn't be more perfect.</text>
-        <arg f="loc" n="m">Here</arg>
-        <arg f="" n="0">she</arg>
-        <rel f="">delivers</rel>
-        <arg f="tmp" n="m">especially during her enthusiastically awful rendition of the ``Candy Man,'' which she sings while prancing around in a little cotton candy pink angora sweater that couldn't be more perfect</arg>
+      <example name="intransitive!" src="">
+        <text>Here she delivers , especially during her enthusiastically awful rendition of the `` Candy Man , '' which she sings while prancing around in a little cotton candy pink angora sweater that could n't be more perfect .</text>
+        <propbank>
+          <rel relloc="2">delivers</rel>
+          <arg type="ARGM-LOC" start="0" end="0">Here</arg>
+          <arg type="ARG0" start="1" end="1">she</arg>
+          <arg type="ARGM-TMP" start="4" end="36">especially during her enthusiastically awful rendition of the `` Candy Man , '' which she sings while prancing around in a little cotton candy pink angora sweater that could n't be more perfect</arg>
+        </propbank>
       </example>
-      <example name="with some TMPs" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="with some TMPs" src="">
         <text>Today 's final fuel delivery</text>
-        <arg f="tmp" n="m">Today's</arg>
-        <arg f="tmp" n="m">final</arg>
-        <arg f="" n="1">fuel</arg>
-        <rel f="">delivery</rel>
+        <propbank>
+          <rel relloc="4">delivery</rel>
+          <arg type="ARGM-TMP" start="0" end="1">Today 's</arg>
+          <arg type="ARGM-TMP" start="2" end="2">final</arg>
+          <arg type="ARG1" start="3" end="3">fuel</arg>
+        </propbank>
       </example>
-      <example name="Oddly, LOC, not recipient" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="Oddly, LOC, not recipient" src="">
         <text>gene delivery in monkeys .</text>
-        <arg f="" n="1">gene</arg>
-        <rel f="">delivery</rel>
-        <arg f="loc" n="m">in Monkeys</arg>
+        <propbank>
+          <rel relloc="1">delivery</rel>
+          <arg type="ARG1" start="0" end="0">gene</arg>
+          <arg type="ARGM-LOC" start="2" end="3">in monkeys</arg>
+        </propbank>
       </example>
-      <example name="jeans, monkeys, recipient not LOC. All args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Zookeepers' jeans deliveries to monkeys</text>
-        <arg f="" n="0">Zookeepers'</arg>
-        <arg f="" n="1">jeans</arg>
-        <rel f="">deliveries</rel>
-        <arg f="" n="2">to monkeys</arg>
+      <example name="jeans, monkeys, recipient not LOC. All args" src="">
+        <text>Zookeepers ' jeans deliveries to monkeys</text>
+        <propbank>
+          <rel relloc="3">deliveries</rel>
+          <arg type="ARG0" start="0" end="1">Zookeepers '</arg>
+          <arg type="ARG1" start="2" end="2">jeans</arg>
+          <arg type="ARG2" start="4" end="5">to monkeys</arg>
+        </propbank>
       </example>
-      <example name="Args 1 &amp; 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="Args 1 &amp; 2" src="">
         <text>the delivery of pay - TV networks to cable subscribers</text>
-        <rel f="">delivery</rel>
-        <arg f="" n="1">of pay - TV networks</arg>
-        <arg f="" n="2">to cable subscribers</arg>
+        <propbank>
+          <rel relloc="1">delivery</rel>
+          <arg type="ARG1" start="2" end="6">of pay - TV networks</arg>
+          <arg type="ARG2" start="7" end="9">to cable subscribers</arg>
+        </propbank>
       </example>
+      <note>DELIVER-V NOTES: Frame for deliver.01 based on sentences in wsj and automatic expansion via verbnet (from deliver.01-v)</note>
+      <note>DELIVERY-N NOTES: Updated by Julia. Member of Vncls send-11.1. (from delivery.01-n)</note>
     </roleset>
     <roleset id="deliver.101" name="give birth, assist in giving birth, giving birth or assisting in giving birth">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">deliver</alias>
-        <alias framenet="" pos="n" verbnet="">delivery</alias>
+        <alias pos="v">deliver</alias>
+        <alias pos="n">delivery</alias>
       </aliases>
+      <roles>
+        <role descr="Person delivering baby" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="birth-28.2-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="birth-28.2-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="Baby" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="birth-28.2-1" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="birth-28.2-1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="birth-28.2-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="Mother as Arg0" src="">
+        <text>Maggie delivered a healthy baby boy yesterday .</text>
+        <propbank>
+          <rel relloc="1">delivered</rel>
+          <arg type="ARG0" start="0" end="0">Maggie</arg>
+          <arg type="ARG1" start="2" end="5">a healthy baby boy</arg>
+          <arg type="ARGM-TMP" start="6" end="6">yesterday</arg>
+        </propbank>
+      </example>
+      <example name="Doctor as Arg0" src="">
+        <text>Dr. Brenda delivered 50 babies last week .</text>
+        <propbank>
+          <rel relloc="2">delivered</rel>
+          <arg type="ARG0" start="0" end="1">Dr. Brenda</arg>
+          <arg type="ARG1" start="3" end="4">50 babies</arg>
+          <arg type="ARGM-TMP" start="5" end="6">last week</arg>
+        </propbank>
+      </example>
+      <example name="Mother as Arg0" src="">
+        <text>Maggie 's delivery of baby Cooper went smoothly .</text>
+        <propbank>
+          <rel relloc="2">delivery</rel>
+          <arg type="ARG0" start="0" end="1">Maggie 's</arg>
+          <arg type="ARG1" start="3" end="5">of baby Cooper</arg>
+        </propbank>
+      </example>
+      <example name="Doctor as Arg0" src="">
+        <text>Dr. Brenda 's delivery of Mrs. Jacobs ' twins went smoothly .</text>
+        <propbank>
+          <rel relloc="3">delivery</rel>
+          <arg type="ARG0" start="0" end="2">Dr. Brenda 's</arg>
+          <arg type="ARG1" start="4" end="8">of Mrs. Jacobs ' twins</arg>
+        </propbank>
+      </example>
       <note>DELIVER-V NOTES: Frame based on data in Clinical Notes corpus. Framed by Anwen March 2011. (from deliver.101-v)</note>
       <note>DELIVERY-N NOTES: (from delivery.101-n)</note>
-      <roles>
-        <role descr="Person delivering baby" f="pag" n="0"/>
-        <role descr="Baby" f="ppt" n="1"/>
-      </roles>
-      <example name="Mother as Arg0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Maggie delivered a healthy baby boy yesterday.</text>
-        <arg f="" n="0">Maggie</arg>
-        <rel f="">delivered</rel>
-        <arg f="" n="1">a healthy baby boy</arg>
-        <arg f="tmp" n="m">yesterday</arg>
-      </example>
-      <example name="Doctor as Arg0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Dr.Brenda delivered 50 babies last week.</text>
-        <arg f="" n="0">Dr.Brenda</arg>
-        <rel f="">delivered</rel>
-        <arg f="" n="1">50 babies</arg>
-        <arg f="tmp" n="m">last week</arg>
-      </example>
-      <example name="Mother as Arg0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Maggie's delivery of baby Cooper went smoothly.</text>
-        <arg f="" n="0">Maggie's</arg>
-        <rel f="">delivery</rel>
-        <arg f="" n="1">of baby Cooper</arg>
-      </example>
-      <example name="Doctor as Arg0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Dr. Brenda's delivery of the Mrs.Jacobs' twins went smoothly.</text>
-        <arg f="" n="0">Dr. Brenda's</arg>
-        <rel f="">delivery</rel>
-        <arg f="" n="1">of Mrs.Jacobs'</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

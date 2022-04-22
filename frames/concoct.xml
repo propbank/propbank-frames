@@ -1,48 +1,88 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="concoct">
     <roleset id="concoct.01" name="create something complicated">
       <aliases>
-        <alias framenet="Invention Cooking_creation" pos="v" verbnet="">concoct</alias>
+        <alias pos="v">concoct</alias>
       </aliases>
-      <note>CONCOCT-V NOTES: Based on sentences in wsj. Member of VNcls create-26.4. (from concoct.01-v)</note>
       <roles>
-        <note>Higher numbered args suggested by inclusion in 'create' class. (from concoct.01-v)</note>
-        <role descr="creator" f="pag" n="0">
-          <vnrole vncls="26.4" vntheta="agent"/>
+        <role descr="creator" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="create-26.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Cooking_creation" resource="FrameNet" version="1.7">cook</rolelink>
+            <rolelink class="create-26.4" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing created" f="prd" n="1">
-          <vnrole vncls="26.4" vntheta="result"/>
+        <role descr="thing created" f="PRD" n="1">
+          <rolelinks>
+            <rolelink class="create-26.4" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="Cooking_creation" resource="FrameNet" version="1.7">produced_food</rolelink>
+            <rolelink class="create-26.4" resource="VerbNet" version="verbnet3.4">result</rolelink>
+          </rolelinks>
         </role>
-        <role descr="source" f="vsp" n="2">
-          <vnrole vncls="26.4" vntheta="material"/>
+        <role descr="source" f="VSP" n="2">
+          <rolelinks>
+            <rolelink class="create-26.4" resource="VerbNet" version="verbnet3.3">material</rolelink>
+            <rolelink class="Cooking_creation" resource="FrameNet" version="1.7">ingredients</rolelink>
+            <rolelink class="create-26.4" resource="VerbNet" version="verbnet3.4">material</rolelink>
+          </rolelinks>
         </role>
-        <role descr="benefactive" f="gol" n="3">
-          <vnrole vncls="26.4" vntheta="beneficiary"/>
+        <role descr="benefactive" f="GOL" n="3">
+          <rolelinks>
+            <rolelink class="create-26.4" resource="VerbNet" version="verbnet3.3">beneficiary</rolelink>
+            <rolelink class="create-26.4" resource="VerbNet" version="verbnet3.4">beneficiary</rolelink>
+          </rolelinks>
         </role>
-        <role descr="attribute, secondary predication" f="prd" n="4"/>
+        <role descr="attribute, secondary predication" f="PRD" n="4">
+          <rolelinks>
+            <rolelink class="create-26.4" resource="VerbNet" version="verbnet3.3">attribute</rolelink>
+            <rolelink class="create-26.4" resource="VerbNet" version="verbnet3.4">attribute</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="active" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Cooking_creation" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Invention" confidence="0.0" resource="FrameNet" src="manual+strict-conv" version="UNK"/>
+        <lexlink class="create-26.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="create-26.4" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="active" src="">
         <text>Goya Concocts a Milk For Hispanic Tastes</text>
-        <arg f="" n="0">Goya</arg>
-        <rel f="">Concocts</rel>
-        <arg f="" n="1">a Milk For Hispanic Tastes</arg>
+        <propbank>
+          <rel relloc="1">Concocts</rel>
+          <arg type="ARG0" start="0" end="0">Goya</arg>
+          <arg type="ARG1" start="2" end="6">a Milk For Hispanic Tastes</arg>
+        </propbank>
       </example>
-      <example name="passive" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>Embedded in [the ``budget'']-1 being concocted *trace*-1 by the House-Senate conference committee is something that looks, smells and waddles like a duck.</text>
-        <rel f="">concocted</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="0">by the House-Senate conference committee</arg>
+      <example name="passive" src="">
+        <text>Embedded in the `` budget '' being concocted by the House - Senate conference committee is something that looks , smells and waddles like a duck .</text>
+        <propbank>
+          <rel relloc="7">concocted</rel>
+          <arg type="ARG1" start="2" end="5">the `` budget ''</arg>
+          <arg type="ARG0" start="8" end="14">by the House - Senate conference committee</arg>
+        </propbank>
       </example>
-      <example name="with material" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="passive"/>
-        <text>Zydeco is [a bubbling, melodic gumbo]-1 concocted *trace*-1 from Cajun Acadian music, Afro-Caribbean rhythms and melodies, and blues.</text>
-        <rel f="">concocted</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="2">from Cajun Acadian music, Afro-Caribbean rhythms and melodies, and blues</arg>
+      <example name="with material" src="internet">
+        <text>Zydeco is a bubbling , melodic gumbo concocted from Cajun Acadian music , Afro - Caribbean rhythms and melodies , and blues .</text>
+        <propbank>
+          <rel relloc="7">concocted</rel>
+          <arg type="ARG1" start="2" end="6">a bubbling , melodic gumbo</arg>
+          <arg type="ARG2" start="8" end="21">from Cajun Acadian music , Afro - Caribbean rhythms and melodies , and blues</arg>
+        </propbank>
       </example>
+      <note>CONCOCT-V NOTES: Based on sentences in wsj. Member of VNcls create-26.4. (from concoct.01-v)</note>
+      <note>Higher numbered args suggested by inclusion in 'create' class. (from concoct.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

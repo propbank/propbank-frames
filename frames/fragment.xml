@@ -1,39 +1,68 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="fragment">
     <roleset id="fragment.01" name="(cause to) be in many small pieces">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">fragmentation</alias>
-        <alias framenet="" pos="v" verbnet="">fragment</alias>
+        <alias pos="n">fragmentation</alias>
+        <alias pos="v">fragment</alias>
       </aliases>
+      <roles>
+        <role descr="causer, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="break-45.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="break-45.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="fragmented thing" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="break-45.1" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="break-45.1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Cause_to_fragment" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Breaking_apart" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="break-45.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="agentive" src="">
+        <text>`` Niche - itis fragments our advertising dollars , '' said Mr. Lauder .</text>
+        <propbank>
+          <rel relloc="4">fragments</rel>
+          <arg type="ARG0" start="1" end="3">Niche - itis</arg>
+          <arg type="ARG1" start="5" end="7">our advertising dollars</arg>
+        </propbank>
+      </example>
+      <example name="passive" src="">
+        <text>The market for system - management software for Digital 's hardware is fragmented enough that a giant such as Computer Associates should do well there .</text>
+        <propbank>
+          <rel relloc="12">fragmented</rel>
+          <arg type="ARG1" start="0" end="10">The market for system - management software for Digital 's hardware</arg>
+          <arg type="ARGM-EXT" start="13" end="24">enough that a giant such as Computer Associates should do well there</arg>
+        </propbank>
+      </example>
+      <example name="Use PRD for end state" src="">
+        <text>It is his fragmentation of the canvas into many smaller canvases that distinguishes his work .</text>
+        <propbank>
+          <rel relloc="3">fragmentation</rel>
+          <arg type="ARG0" start="2" end="2">his</arg>
+          <arg type="ARG1" start="4" end="6">of the canvas</arg>
+          <arg type="ARGM-PRD" start="7" end="10">into many smaller canvases</arg>
+        </propbank>
+      </example>
       <note>FRAGMENT-V NOTES: Frames file for 'fragment' based on sentences in wsj. No Verbnet entry. (from fragment.01-v predicate notes)</note>
       <note>FRAGMENTATION-N NOTES: (from fragmentation.01-n)</note>
-      <roles>
-        <role descr="causer, agent" f="PAG" n="0"/>
-        <role descr="fragmented thing" f="PPT" n="1"/>
-      </roles>
-      <example name="agentive" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>``Niche-itis fragments our advertising dollars,'' said Mr. Lauder.</text>
-        <arg f="" n="0">Niche-itis</arg>
-        <rel f="">fragments</rel>
-        <arg f="" n="1">our advertising dollars</arg>
-      </example>
-      <example name="passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="third" tense="present" voice="passive"/>
-        <text>[The market for system-management software for Digital's hardware]-1 is fragmented [*-1]enough that a giant such as Computer Associates should do well there.</text>
-        <rel f="">fragmented</rel>
-        <arg f="" n="1">[*-1]</arg>
-        <arg f="EXT" n="M">enough that a giant such as Computer Associates should do well there</arg>
-      </example>
-      <example name="Use PRD for end state" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>It is his fragmentation of the canvas into many smaller canvases that distinguishes his work.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">fragmentation</rel>
-        <arg f="" n="1">of the canvas</arg>
-        <arg f="prd" n="m">into many smaller canvases</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

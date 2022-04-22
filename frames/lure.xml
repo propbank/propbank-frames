@@ -1,43 +1,79 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="lure">
     <roleset id="lure.01" name="attract, draw near">
       <aliases>
-        <alias framenet="Manipulate_into_doing" pos="v" verbnet="">lure</alias>
+        <alias pos="v">lure</alias>
       </aliases>
-      <note>LURE-V NOTES: Based on financial subcorpus, comparison with 'attract'. Member of Vncls force-59-1. (from lure.01-v)</note>
       <roles>
         <role descr="attractor" f="PAG" n="0">
-          <vnrole vncls="59-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="lure-59.3" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing attracted" f="PPT" n="1">
-          <vnrole vncls="59-1" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="lure-59.3" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing attracted to, if separate from attractor,   or lured from" f="dir" n="2"/>
-        <role descr="instrument, if separate from attractor" f="mnr" n="3"/>
+        <role descr="thing attracted to, if separate from attractor,   or lured from" f="DIR" n="2">
+          <rolelinks>
+            <rolelink class="lure-59.3" resource="VerbNet" version="verbnet3.3">predicate</rolelink>
+            <rolelink class="lure-59.3" resource="VerbNet" version="verbnet3.4">predicate</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="instrument, if separate from attractor" f="MNR" n="3">
+          <rolelinks/>
+        </role>
       </roles>
-      <example name="basic transitive" src="" type="">
-        <text>They-1 are still trying *trace*-1 to lure back small investors spooked by the 1987 stock-market crash and the market's swings since then.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">lure</rel>
-        <arg f="dir" n="m">back</arg>
-        <arg f="" n="1">small investors spooked by the 1987 stock-market crash and the market's swings since then</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Manipulate_into_doing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="lure-59.3" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+        <lexlink class="lure-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+        <lexlink class="lure-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">16</lexlink>
+        <lexlink class="lure-59.3" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="basic transitive" src="">
+        <text>They are still trying to lure back small investors spooked by the 1987 stock - market crash and the market 's swings since then .</text>
+        <propbank>
+          <rel relloc="5">lure</rel>
+          <arg type="ARG0" start="0" end="0">They</arg>
+          <arg type="ARGM-DIR" start="6" end="6">back</arg>
+          <arg type="ARG1" start="7" end="23">small investors spooked by the 1987 stock - market crash and the market 's swings since then</arg>
+        </propbank>
       </example>
-      <example name="lured from" src="" type="">
-        <text>United-1 paid him a $375,000 bonus *trace*-1 to lure him away from American Airlines.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">lure</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="" n="2">away from American Airlines</arg>
+      <example name="lured from" src="">
+        <text>United paid him a $ 375,000 bonus to lure him away from American Airlines .</text>
+        <propbank>
+          <rel relloc="8">lure</rel>
+          <arg type="ARG0" start="0" end="0">United</arg>
+          <arg type="ARG1" start="9" end="9">him</arg>
+          <arg type="ARG2" start="10" end="13">away from American Airlines</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG1 and ARG3" src="ontonotes nw/wsj/20/wsj_2055" type="">
+      <example name="ARG0 and ARG1 and ARG3" src="ontonotes nw/wsj/20/wsj_2055">
         <text>Christie 's will soon have a sale of Dada and Symbolist art while Sotheby 's is luring collectors with sales of Swiss , German , Spanish , Australian and Canadian paintings .</text>
-        <arg f="" n="0">Sotheby 's</arg>
-        <rel f="">luring</rel>
-        <arg f="" n="1">collectors</arg>
-        <arg f="" n="3">with sales of Swiss , German , Spanish , Australian and Canadian paintings</arg>
+        <propbank>
+          <rel relloc="16">luring</rel>
+          <arg type="ARG0" start="13" end="14">Sotheby 's</arg>
+          <arg type="ARG1" start="17" end="17">collectors</arg>
+          <arg type="ARG3" start="18" end="30">with sales of Swiss , German , Spanish , Australian and Canadian paintings</arg>
+        </propbank>
       </example>
-
+      <note>LURE-V NOTES: Based on financial subcorpus, comparison with 'attract'. Member of Vncls force-59-1. (from lure.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

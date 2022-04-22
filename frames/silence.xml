@@ -1,75 +1,132 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="silence">
     <roleset id="silence.01" name="to make silent">
       <aliases>
-        <alias framenet="Become_silent Silencing Killing" pos="v" verbnet="">silence</alias>
-        <alias framenet="" pos="n" verbnet="">silencing</alias>
+        <alias pos="v">silence</alias>
+        <alias pos="n">silencing</alias>
       </aliases>
-      <note>SILENCE-V NOTES: Based on WSJ. Member of Vncls other_cos-45.4, subjugate-42.3. Updated by Julia, 11/2010. (from silence.01-v)</note>
-      <note>SILENCING-N NOTES: Added for clearearth biotexts.</note>
       <roles>
         <role descr="agent/cause of silence" f="PAG" n="0">
-          <vnrole vncls="45.4" vntheta="Agent"/>
-          <vnrole vncls="42.3" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="subjugate-42.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Silencing" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="Killing" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="Killing" resource="FrameNet" version="1.7">killer</rolelink>
+            <rolelink class="subjugate-42.3" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="remedy-45.7" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="entity silenced" f="ppt" n="1">
-          <vnrole vncls="45.4" vntheta="Patient"/>
-          <vnrole vncls="42.3" vntheta="Patient"/>
+        <role descr="entity silenced" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="subjugate-42.3" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="Become_silent" resource="FrameNet" version="UNK">expressor</rolelink>
+            <rolelink class="Become_silent" resource="FrameNet" version="UNK">speaker</rolelink>
+            <rolelink class="Silencing" resource="FrameNet" version="1.7">speaker</rolelink>
+            <rolelink class="Silencing" resource="FrameNet" version="1.7">expressor</rolelink>
+            <rolelink class="Killing" resource="FrameNet" version="1.7">victim</rolelink>
+            <rolelink class="subjugate-42.3" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+            <rolelink class="remedy-45.7" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="silence-v: passive" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>In the past 10 years [about 50 journalists]-1 have been silenced [*-1]forever , murdered [*-1] .</text>
-        <arg f="tmp" n="m">In the past 10 years</arg>
-        <rel f="">silenced</rel>
-        <arg f="" n="1">[*-1]</arg>
-        <arg f="tmp" n="m">forever</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Killing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Silencing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Become_silent" confidence="0.0" resource="FrameNet" src="manual+strict-conv" version="UNK"/>
+        <lexlink class="other_cos-45.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="subjugate-42.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="silence-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="remedy-45.7" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="subjugate-42.3" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="silence-v: passive" src="">
+        <text>In the past 10 years about 50 journalists have been silenced forever , murdered .</text>
+        <propbank>
+          <rel relloc="10">silenced</rel>
+          <arg type="ARGM-TMP" start="0" end="4">In the past 10 years</arg>
+          <arg type="ARG1" start="5" end="7">about 50 journalists</arg>
+          <arg type="ARGM-TMP" start="11" end="11">forever</arg>
+        </propbank>
       </example>
-      <example name="silence-v: cause as arg1" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
-        <text>Her look silenced him as severely as a muzzle.</text>
-        <arg f="" n="0">Her look</arg>
-        <rel f="">silenced</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="mnr" n="m">as severely as a muzzle</arg>
+      <example name="silence-v: cause as arg1" src="internet">
+        <text>Her look silenced him as severely as a muzzle .</text>
+        <propbank>
+          <rel relloc="2">silenced</rel>
+          <arg type="ARG0" start="0" end="1">Her look</arg>
+          <arg type="ARG1" start="3" end="3">him</arg>
+          <arg type="ARGM-MNR" start="4" end="8">as severely as a muzzle</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG1" src="ontonotes bn/pri/00/pri_0074" type="">
+      <example name="ARG0 and ARG1" src="ontonotes bn/pri/00/pri_0074">
         <text>We will not use the security forces of our country to silence critics or neutralize opponents .</text>
-        <arg f="" n="0">We</arg>
-        <rel f="">silence</rel>
-        <arg f="" n="1">critics</arg>
+        <propbank>
+          <rel relloc="11">silence</rel>
+          <arg type="ARG0" start="0" end="0">We</arg>
+          <arg type="ARG1" start="12" end="12">critics</arg>
+        </propbank>
       </example>
-
-      <example name="silencing-n" src="" type="">
-        <text>DNA methylation marking chromatin , self - sustaining metabolic loops , gene silencing by RNA interference and the three - dimensional conformation of proteins -LRB- such as prions -RRB- are areas where epigenetic inheritance systems have been discovered at the organismic level . </text>
-        <arg f="" n="1">gene</arg>
-        <rel f="">silencing</rel>
-        <arg f="" n="0">by RNA interference</arg>
+      <example name="silencing-n" src="">
+        <text>DNA methylation marking chromatin , self - sustaining metabolic loops , gene silencing by RNA interference and the three - dimensional conformation of proteins -LRB- such as prions -RRB- are areas where epigenetic inheritance systems have been discovered at the organismic level .</text>
+        <propbank>
+          <rel relloc="12">silencing</rel>
+          <arg type="ARG1" start="11" end="11">gene</arg>
+          <arg type="ARG0" start="13" end="15">by RNA interference</arg>
+        </propbank>
       </example>
+      <note>SILENCE-V NOTES: Based on WSJ. Member of Vncls other_cos-45.4, subjugate-42.3. Updated by Julia, 11/2010. (from silence.01-v)</note>
+      <note>SILENCING-N NOTES: Added for clearearth biotexts.</note>
     </roleset>
     <roleset id="silence.02" name="lack of sound">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">silence</alias>
-        <alias framenet="" pos="j" verbnet="">silent</alias>
+        <alias pos="n">silence</alias>
+        <alias pos="j">silent</alias>
       </aliases>
-      <note>SILENCE-N, SILENT-J NOTES: Added by Julia during clearearth-biotexts framing.</note>
       <roles>
-        <role descr="silent entity" f="pag" n="1"/>
-        <role descr="subject matter not spoken of" f="ppt" n="2"/>
+        <role descr="silent entity" f="PAG" n="1"/>
+        <role descr="subject matter not spoken of" f="PPT" n="2"/>
       </roles>
-      <example name="silence-n" src="internet" type="">
-        <text>Angelina Jolie has broken her silence on her split with Brad Pitt, following his first public appearance since the divorce proceedings began.</text>
-        <arg f="" n="1">her</arg>
-        <rel f="">silence</rel>
-        <arg f="" n="2">on her split with Brad Pitt</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="silence-n" src="internet">
+        <text>Angelina Jolie has broken her silence on her split with Brad Pitt , following his first public appearance since the divorce proceedings began .</text>
+        <propbank>
+          <rel relloc="5">silence</rel>
+          <arg type="ARG1" start="4" end="4">her</arg>
+          <arg type="ARG2" start="6" end="11">on her split with Brad Pitt</arg>
+        </propbank>
       </example>
-      <example name="silent-j" src="internet" type="">
-        <text>That statement was silent on the question of whether Gingrich deliberately misled the committee or skirted tax law.</text>
-        <arg f="" n="1">That statement</arg>
-        <rel f="">silent</rel>
-        <arg f="" n="2">on the question of whether Gingrich deliberately misled the committee or skirted tax law</arg>
+      <example name="silent-j" src="internet">
+        <text>That statement was silent on the question of whether Gingrich deliberately misled the committee or skirted tax law .</text>
+        <propbank>
+          <rel relloc="3">silent</rel>
+          <arg type="ARG1" start="0" end="1">That statement</arg>
+          <arg type="ARG2" start="4" end="17">on the question of whether Gingrich deliberately misled the committee or skirted tax law</arg>
+        </propbank>
       </example>
+      <note>SILENCE-N, SILENT-J NOTES: Added by Julia during clearearth-biotexts framing.</note>
     </roleset>
   </predicate>
 </frameset>

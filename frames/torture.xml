@@ -1,75 +1,112 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="torture">
     <roleset id="torture.01" name="torture, event of torturing">
       <aliases>
-        <alias framenet="Cause_harm" pos="v" verbnet="">torture</alias>
-        <alias framenet="" pos="n" verbnet="">torture</alias>
+        <alias pos="v">torture</alias>
+        <alias pos="n">torture</alias>
       </aliases>
-      <note>TORTURE-V NOTES: VN class amuse-31.1. Updated by Julia, 10/2010. (from torture.01-v)</note>
-      <note>TORTURE-N NOTES: Added by Julia based on torture-v.01. Corresponds to VN class amuse-31.1. (from torture.01-n)</note>
       <roles>
-        <role descr="torturer" f="pag" n="0">
-          <vnrole vncls="31.1" vntheta="stimulus"/>
+        <role descr="torturer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.3">stimulus</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.4">stimulus</rolelink>
+          </rolelinks>
         </role>
-        <role descr="entity being tortured" f="ppt" n="1">
-          <vnrole vncls="31.1" vntheta="experiencer"/>
+        <role descr="entity being tortured" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.3">experiencer</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">victim</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">body_part</rolelink>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.4">experiencer</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="just transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>The Barre dictatorship simply is limited in the amount of people [0]-1 it can torture and kill *trace*-1.</text>
-        <arg f="" n="0">it</arg>
-        <arg f="mod" n="m">can</arg>
-        <rel f="">torture</rel>
-        <arg f="" n="1">*trace*-1 (= [0])</arg>
-        <arg f="slc" n="m">[0] -&gt; people</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Cause_harm" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="amuse-31.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Life.Injure.InjuryCausedByViolentEvents" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Injure" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="Attack" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="torture-n.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">30</lexlink>
+        <lexlink class="torture-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">10</lexlink>
+        <lexlink class="amuse-31.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="just transitive" src="">
+        <text>The Barre dictatorship simply is limited in the amount of people it can torture and kill .</text>
+        <propbank>
+          <rel relloc="13">torture</rel>
+          <arg type="ARG0" start="11" end="11">it</arg>
+          <arg type="ARGM-MOD" start="12" end="12">can</arg>
+          <arg type="ARG1" start="10" end="10">people</arg>
+          </propbank>
       </example>
-      <example name="ARG1 and ARG0" src="ontonotes bn/cnn/03/cnn_0339" type="">
+      <example name="ARG1 and ARG0" src="ontonotes bn/cnn/03/cnn_0339">
         <text>It hurts to think of how many wonderful people in Iraq at the academic community , lawyers , human rights activists , civilians , intellectuals , people -- would now be alive , who have been horribly murdered and tortured and reduced to misery since by a half application of violence through sanctions and overflights .</text>
-        <arg f="" n="1">who</arg>
-        <arg f="mnr" n="m">horribly</arg>
-        <rel f="">tortured</rel>
-        <arg f="" n="0">by a half application of violence through sanctions and overflights</arg>
+        <propbank>
+          <rel relloc="39">tortured</rel>
+          <arg type="ARG1" start="33" end="33">who</arg>
+          <arg type="ARGM-MNR" start="36" end="36">horribly</arg>
+          <arg type="ARG0" start="45" end="54">by a half application of violence through sanctions and overflights</arg>
+        </propbank>
       </example>
-
-      <example name="with CAU" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="with CAU" src="">
         <text>The former shows that intellectuals in Taiwan need no longer fear torture and imprisonment for their beliefs .</text>
-        <rel f="">torture</rel>
-        <arg f="cau" n="m">for their beliefs</arg>
+        <propbank>
+          <rel relloc="11">torture</rel>
+          <arg type="ARGM-CAU" start="14" end="16">for their beliefs</arg>
+        </propbank>
       </example>
-      <example name="args 0 and 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Hospitalised MDC youths narrate their torture at he hands of hired Zanu PF thugs.</text>
-        <arg f="" n="1">their</arg>
-        <rel f="">torture</rel>
-        <arg f="" n="0">at the hands of hired Zany PF thugs</arg>
+      <example name="args 0 and 1" src="">
+        <text>Hospitalised MDC youths narrate their torture at he hands of hired Zanu PF thugs .</text>
+        <propbank>
+          <rel relloc="5">torture</rel>
+          <arg type="ARG1" start="4" end="4">their</arg>
+          <arg type="ARG0" start="6" end="13">at he hands of hired Zanu PF thugs</arg>
+        </propbank>
       </example>
-      <example name="both args, different syntactic arrangment" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>In 1997 the German murderers Ernst Dieter Korzen and Stefan Michael Mahn recorded their torture of two prostitutes whom they had kidnapped.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">torture</rel>
-        <arg f="" n="1">of two prostitutes whom they had kidnapped</arg>
+      <example name="both args, different syntactic arrangment" src="">
+        <text>In 1997 the German murderers Ernst Dieter Korzen and Stefan Michael Mahn recorded their torture of two prostitutes whom they had kidnapped .</text>
+        <propbank>
+          <rel relloc="14">torture</rel>
+          <arg type="ARG0" start="13" end="13">their</arg>
+          <arg type="ARG1" start="15" end="21">of two prostitutes whom they had kidnapped</arg>
+        </propbank>
       </example>
-      <example name="with MNR" src="internet" type="-">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>You recount the torture of prisoners with electricity by Seattle police in the 1920's.</text>
-        <rel f="">torture</rel>
-        <arg f="" n="1">of prisoners</arg>
-        <arg f="mnr" n="m">with electricity</arg>
-        <arg f="" n="0">by Seattle police</arg>
-        <arg f="tmp" n="m">in the 1920's</arg>
+      <example name="with MNR" src="internet">
+        <text>You recount the torture of prisoners with electricity by Seattle police in the 1920 's .</text>
+        <propbank>
+          <rel relloc="3">torture</rel>
+          <arg type="ARG1" start="4" end="5">of prisoners</arg>
+          <arg type="ARGM-MNR" start="6" end="7">with electricity</arg>
+          <arg type="ARG0" start="8" end="10">by Seattle police</arg>
+          <arg type="ARGM-TMP" start="11" end="14">in the 1920 's</arg>
+        </propbank>
       </example>
-      <example name="with MNR" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>are you saying we shouldn't have prosecuted Japanese soldiers for the water torture of our own soldiers in WWII?</text>
-        <arg f="mnr" n="m">water</arg>
-        <rel f="">torture</rel>
-        <arg f="" n="1">of our own soldiers</arg>
-        <arg f="tmp" n="m">in WWII</arg>
+      <example name="with MNR" src="">
+        <text>are you saying we should n't have prosecuted Japanese soldiers for the water torture of our own soldiers in WWII ?</text>
+        <propbank>
+          <rel relloc="13">torture</rel>
+          <arg type="ARGM-MNR" start="12" end="12">water</arg>
+          <arg type="ARG1" start="14" end="17">of our own soldiers</arg>
+          <arg type="ARGM-TMP" start="18" end="19">in WWII</arg>
+        </propbank>
       </example>
+      <note>TORTURE-V NOTES: VN class amuse-31.1. Updated by Julia, 10/2010. (from torture.01-v)</note>
+      <note>TORTURE-N NOTES: Added by Julia based on torture-v.01. Corresponds to VN class amuse-31.1. (from torture.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

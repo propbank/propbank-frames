@@ -1,47 +1,73 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="exhaust">
     <roleset id="exhaust.01" name="cause to become used up, tired">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">exhaustion</alias>
-        <alias framenet="" pos="v" verbnet="">exhaust</alias>
-        <alias framenet="" pos="j" verbnet="">exhausting</alias>
-        <alias framenet="" pos="j" verbnet="">exhausted</alias>
+        <alias pos="n">exhaustion</alias>
+        <alias pos="v">exhaust</alias>
+        <alias pos="j">exhausting</alias>
+        <alias pos="j">exhausted</alias>
       </aliases>
+      <roles>
+        <role descr="agent/cause of depletion" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.3">stimulus</rolelink>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.4">stimulus</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity exhausted, depleted" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.3">experiencer</rolelink>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.4">experiencer</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Expend_resource" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="amuse-31.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="exhaust-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">12</lexlink>
+        <lexlink class="amuse-31.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="use up, no instrument" src="">
+        <text>But increasing volatility in the sector has exhausted investors who try to follow its dips and swings .</text>
+        <propbank>
+          <rel relloc="7">exhausted</rel>
+          <arg type="ARGM-DIS" start="0" end="0">But</arg>
+          <arg type="ARG0" start="1" end="5">increasing volatility in the sector</arg>
+          <arg type="ARG1" start="8" end="16">investors who try to follow its dips and swings</arg>
+        </propbank>
+      </example>
+      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1052">
+        <text>Last year Acer Peripherals invested in a combination website and magazine , but they exhausted their capital within three months .</text>
+        <propbank>
+          <rel relloc="14">exhausted</rel>
+          <arg type="ARG0" start="13" end="13">they</arg>
+          <arg type="ARG1" start="15" end="16">their capital</arg>
+          <arg type="ARGM-TMP" start="17" end="19">within three months</arg>
+        </propbank>
+      </example>
+      <example name="nominal rel: exhaustion" src="BOLT-7">
+        <text>You can say " eat or to not eat " . You can also say " to eat fast or to eat slowly " . However , you can not say " eat , to not eat , to eat fast " because this violates the principle of classification of logic , the principle of exhaustion of classification of logic , and the principle that different types of things can not be compared of logic .</text>
+        <propbank>
+          <rel relloc="55">exhaustion</rel>
+          <arg type="ARG1" start="56" end="59">of classification of logic</arg>
+        </propbank>
+      </example>
       <note>EXHAUST-V NOTES: Frames file for 'exhaust' based on financial subcorpus; nominal 'exhaustion' based on BOLT-7. Member of VNcls amuse-31.1. (from exhaust.01-v)</note>
       <note>EXHAUSTING-J NOTES: Added by Julia based on BOLT. (from exhausting.01-j)</note>
       <note>EXHAUSTED-J NOTES: Added by Julia based on SMS. (from exhausted.01-j)</note>
       <note>EXHAUSTION-N NOTES: Automatically created by Julia as an alias file for unification. (from exhaustion.01-n)</note>
-      <roles>
-        <role descr="agent/cause of depletion" f="pag" n="0">
-          <vnrole vncls="31.1" vntheta="stimulus"/>
-        </role>
-        <role descr="entity exhausted, depleted" f="ppt" n="1">
-          <vnrole vncls="31.1" vntheta="experiencer"/>
-        </role>
-      </roles>
-      <example name="use up, no instrument" src="" type="">
-        <text>But increasing volatility in the sector has exhausted investors who try to follow its dips and swings.</text>
-        <arg f="dis" n="m">But</arg>
-        <arg f="" n="0">increasing volatility in the sector</arg>
-        <rel f="">exhausted</rel>
-        <arg f="" n="1">investors who try to follow its dips and swings</arg>
-      </example>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1052" type="">
-        <text>Last year Acer Peripherals invested in a combination website and magazine , but they exhausted their capital within three months .</text>
-        <arg f="" n="0">they</arg>
-        <rel f="">exhausted</rel>
-        <arg f="" n="1">their capital</arg>
-        <arg f="tmp" n="m">within three months</arg>
-      </example>
-
-      
-      <example name="nominal rel: exhaustion" src="BOLT-7" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>You can say " eat or to not eat " . You can also say " to eat fast or to eat slowly " . However , you can not say " eat , to not eat , to eat fast " because this violates the principle of classification of logic , the principle of exhaustion of classification of logic , and the principle that different types of things can not be compared of logic .</text>
-        <rel f="">exhaustion</rel>
-        <arg f="" n="1">of classification of logic</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

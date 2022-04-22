@@ -1,686 +1,1142 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="make">
     <roleset id="make.01" name="create">
       <aliases>
-        <alias framenet="Manufacturing" pos="v" verbnet="">make</alias>
-        <alias framenet="" pos="n" verbnet="">make</alias>
-        <alias framenet="" pos="n" verbnet="">making</alias>
+        <alias pos="v">make</alias>
+        <alias pos="n">make</alias>
+        <alias pos="n">making</alias>
+        <argalias arg="0" pos="n">maker</argalias>
       </aliases>
+      <roles>
+        <role descr="creator" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="build-26.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="build-26.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="creation" f="PRD" n="1">
+          <rolelinks>
+            <rolelink class="build-26.1-1" resource="VerbNet" version="verbnet3.3">product</rolelink>
+            <rolelink class="build-26.1-1" resource="VerbNet" version="verbnet3.4">product</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="created-from, thing changed" f="VSP" n="2">
+          <rolelinks>
+            <rolelink class="build-26.1-1" resource="VerbNet" version="verbnet3.3">material</rolelink>
+            <rolelink class="build-26.1-1" resource="VerbNet" version="verbnet3.4">material</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="benefactive" f="GOL" n="3">
+          <rolelinks>
+            <rolelink class="build-26.1-1" resource="VerbNet" version="verbnet3.3">beneficiary</rolelink>
+            <rolelink class="build-26.1-1" resource="VerbNet" version="verbnet3.4">beneficiary</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Manufacturing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="build-26.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Manufacture.Artifact.CreateManufacture" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="make-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">326</lexlink>
+        <lexlink class="make-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">78</lexlink>
+        <lexlink class="make-v.5" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">12</lexlink>
+        <lexlink class="make-v.6" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">14</lexlink>
+        <lexlink class="make-v.16" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">27</lexlink>
+        <lexlink class="make-v.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">26</lexlink>
+        <lexlink class="make-v.7" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">17</lexlink>
+        <lexlink class="make-v.15" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">15</lexlink>
+        <lexlink class="make-v.9" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+        <lexlink class="build-26.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="make-v: basic transitive" src="">
+        <text>Loews Corp makes Kent cigarettes .</text>
+        <propbank>
+          <rel relloc="2">makes</rel>
+          <arg type="ARG0" start="0" end="1">Loews Corp</arg>
+          <arg type="ARG1" start="3" end="4">Kent cigarettes</arg>
+        </propbank>
+      </example>
+      <example name="make-v: passive, source as of-phrase" src="">
+        <text>Those chips are made of gallium arsenide .</text>
+        <propbank>
+          <rel relloc="3">made</rel>
+          <arg type="ARG1" start="0" end="1">Those chips</arg>
+          <arg type="ARG2" start="4" end="6">of gallium arsenide</arg>
+        </propbank>
+      </example>
+      <example name="make-v: mincemeat pie" src="">
+        <text>But the surprisingly durable seven - year economic expansion has made mincemeat of more than one forecast .</text>
+        <propbank>
+          <rel relloc="10">made</rel>
+          <arg type="ARGM-DIS" start="0" end="0">But</arg>
+          <arg type="ARG0" start="1" end="8">the surprisingly durable seven - year economic expansion</arg>
+          <arg type="ARG1" start="11" end="11">mincemeat</arg>
+          <arg type="ARG2" start="12" end="16">of more than one forecast</arg>
+        </propbank>
+      </example>
+      <example name="making-n: Arg 1 only" src="">
+        <text>the making of an engine disk</text>
+        <propbank>
+          <rel relloc="1">making</rel>
+          <arg type="ARG1" start="2" end="5">of an engine disk</arg>
+        </propbank>
+      </example>
+      <example name="making-n: arg 0 (because arg 1 is outside the span)" src="">
+        <text>a wooden block of his making</text>
+        <propbank>
+          <rel relloc="5">making</rel>
+          <arg type="ARG0" start="4" end="4">his</arg>
+        </propbank>
+      </example>
+      <example name="making-n: args 0 and 1" src="">
+        <text>the image making of the cosmetic trades</text>
+        <propbank>
+          <rel relloc="2">making</rel>
+          <arg type="ARG1" start="1" end="1">image</arg>
+          <arg type="ARG0" start="3" end="6">of the cosmetic trades</arg>
+        </propbank>
+      </example>
+      <example name="making-n: arg 1" src="">
+        <text>He plays an active role in policy making .</text>
+        <propbank>
+          <rel relloc="7">making</rel>
+          <arg type="ARG1" start="6" end="6">policy</arg>
+        </propbank>
+      </example>
       <note>MAKE-V NOTES: (from make.01-v)</note>
       <note>MAKING-N NOTES: Based on sentences in nouns-00060. Comparison to 'make-n' and 'make.01-v'. VN class build-26.1-1. Framed by Katie. (from making.01-n)</note>
       <note>MAKE-N NOTES: Added due to expansion of Nombank. Comparison to 'make.01'. VN class build-26.1-1. Framed by Katie. (from make.01-n)</note>
-      <roles>
-        <note>This usage is extremely rare, if it exists at all. Given that there is now a separate roleset for 'making', all such instances should appear under that lemma. (from make.01-n)</note>
-        <role descr="creator" f="pag" n="0">
-          <vnrole vncls="26.1-1" vntheta="agent"/>
-        </role>
-        <role descr="creation" f="prd" n="1">
-          <vnrole vncls="26.1-1" vntheta="product"/>
-        </role>
-        <role descr="created-from, thing changed" f="vsp" n="2">
-          <vnrole vncls="26.1-1" vntheta="material"/>
-        </role>
-        <role descr="benefactive" f="gol" n="3">
-          <vnrole vncls="26.1-1" vntheta="beneficiary"/>
-        </role>
-      </roles>
-      <example name="make-v: basic transitive" src="" type="">
-        <text>Loews Corp makes Kent cigarettes.</text>
-        <arg f="" n="0">Loews Corp</arg>
-        <rel f="">makes</rel>
-        <arg f="" n="1">Kent cigarettes</arg>
-      </example>
-      <example name="make-v: passive, source as of-phrase" src="" type="">
-        <text>[Those chips]-1 are made *trace*-1 of gallium arsenide.</text>
-        <rel f="">made</rel>
-        <arg f="" n="1">*trace* (= those chips)</arg>
-        <arg f="" n="2">of gallium arsenide</arg>
-      </example>
-      <example name="make-v: mincemeat pie" src="" type="">
-        <inflection aspect="perfect" form="participle" person="third" tense="present" voice="active"/>
-        <text>But the surprisingly durable seven-year economic expansion has made mincemeat of more than one forecast.</text>
-        <arg f="dis" n="m">But</arg>
-        <arg f="" n="0">the surprisingly durable seven-year economic expansion</arg>
-        <rel f="">made</rel>
-        <arg f="" n="1">mincemeat</arg>
-        <arg f="" n="2">of more than one forecast</arg>
-      </example>
-      <example name="making-n: Arg 1 only" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>the making of an engine disk</text>
-        <rel f="">making</rel>
-        <arg f="" n="1">of an engine disk</arg>
-      </example>
-      <example name="making-n: arg 0 (because arg 1 is outside the span)" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>a wooden block of his making</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">making</rel>
-      </example>
-      <example name="making-n: args 0 and 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>the image making of the cosmetic trades</text>
-        <arg f="" n="1">image</arg>
-        <rel f="">making</rel>
-        <arg f="" n="0">of the cosmetic trades</arg>
-      </example>
-      <example name="making-n: arg 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>He plays an active role in policy making.</text>
-        <arg f="" n="1">policy</arg>
-        <rel f="">making</rel>
-      </example>
+      <note>This usage is extremely rare, if it exists at all. Given that there is now a separate roleset for 'making', all such instances should appear under that lemma. (from make.01-n)</note>
     </roleset>
     <roleset id="make.02" name="cause (to be)">
       <aliases>
-        <alias framenet="Cause_change Causation" pos="v" verbnet="">make</alias>
+        <alias pos="v">make</alias>
       </aliases>
-      <note>MAKE-V NOTES: (from make.02-v)</note>
       <roles>
-        <role descr="impeller to action" f="pag" n="0">
-          <vnrole vncls="29.3" vntheta="agent"/>
+        <role descr="impeller to action" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="dub-29.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="render-29.90-1" resource="VerbNet" version="verbnet3.4">causer</rolelink>
+          </rolelinks>
         </role>
-        <role descr="impelled action/ predication" f="prd" n="1">
-          <vnrole vncls="29.3" vntheta="theme"/>
-          <vnrole vncls="29.3" vntheta="result"/>
+        <role descr="impelled action/ predication" f="PRD" n="1">
+          <rolelinks>
+            <rolelink class="dub-29.3" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="render-29.90-1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1057" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Cause_change" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Causation" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="dub-29.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Attack" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="make-v.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">525</lexlink>
+        <lexlink class="make-v.4" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">107</lexlink>
+        <lexlink class="make-v.16" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">18</lexlink>
+        <lexlink class="make-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">6</lexlink>
+        <lexlink class="make-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">10</lexlink>
+        <lexlink class="make-v.15" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">14</lexlink>
+        <lexlink class="make-v.8" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="make-v.6" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="render-29.90-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1057">
         <text>This name has made the spotted leopard a common motif for costume jewelry .</text>
-        <arg f="" n="0">This name</arg>
-        <rel f="">made</rel>
-        <arg f="" n="1">the spotted leopard a common motif for costume jewelry</arg>
+        <propbank>
+          <rel relloc="3">made</rel>
+          <arg type="ARG0" start="0" end="1">This name</arg>
+          <arg type="ARG1" start="4" end="12">the spotted leopard a common motif for costume jewelry</arg>
+        </propbank>
       </example>
-
-      <example name="make-v: nominal small clause" src="" type="">
-        <text>Financial problems make them unattractive takeover targets.</text>
-        <arg f="" n="0">Financial problems</arg>
-        <rel f="">make</rel>
-        <arg f="" n="1">them unattractive takeover targets</arg>
+      <example name="make-v: nominal small clause" src="">
+        <text>Financial problems make them unattractive takeover targets .</text>
+        <propbank>
+          <rel relloc="2">make</rel>
+          <arg type="ARG0" start="0" end="1">Financial problems</arg>
+          <arg type="ARG1" start="3" end="6">them unattractive takeover targets</arg>
+        </propbank>
       </example>
-      <example name="make-v: adjectival small clause" src="" type="">
-        <text>Asian nations' memories make them fearful of Japanese economic hegemony.</text>
-        <arg f="" n="0">Asian nations' memories</arg>
-        <rel f="">make</rel>
-        <arg f="" n="1">them fearful of Japanese economic hegemony</arg>
+      <example name="make-v: adjectival small clause" src="">
+        <text>Asian nations ' memories make them fearful of Japanese economic hegemony .</text>
+        <propbank>
+          <rel relloc="4">make</rel>
+          <arg type="ARG0" start="0" end="3">Asian nations ' memories</arg>
+          <arg type="ARG1" start="5" end="10">them fearful of Japanese economic hegemony</arg>
+        </propbank>
       </example>
-      <example name="make-v: with tough-movement" src="" type="">
-        <text>SC Law makes it a crime to breach test security.</text>
-        <arg f="" n="0">SC Law</arg>
-        <rel f="">makes</rel>
-        <arg f="" n="1">it a crime to breach test security</arg>
+      <example name="make-v: with tough-movement" src="">
+        <text>SC Law makes it a crime to breach test security .</text>
+        <propbank>
+          <rel relloc="2">makes</rel>
+          <arg type="ARG0" start="0" end="1">SC Law</arg>
+          <arg type="ARG1" start="3" end="9">it a crime to breach test security</arg>
+        </propbank>
       </example>
-      <example name="make-v: cause to be" src="" type="">
-        <inflection aspect="perfect" form="participle" person="third" tense="present" voice="active"/>
-        <text>For Zel Herring, owner and a cook at the Sandhills Luncheon Cafe, a tin building in midtown, all this has made for a very goodyear.</text>
-        <arg f="adv" n="m">For Zel Herring, owner and a cook at the Sandhills Luncheon Cafe, a tin building in midtown</arg>
-        <arg f="" n="0">all this</arg>
-        <rel f="">made</rel>
-        <arg f="" n="1">for a very good year</arg>
+      <example name="make-v: cause to be" src="">
+        <text>For Zel Herring , owner and a cook at the Sandhills Luncheon Cafe , a tin building in midtown , all this has made for a very good year .</text>
+        <propbank>
+          <rel relloc="23">made</rel>
+          <arg type="ARGM-ADV" start="0" end="18">For Zel Herring , owner and a cook at the Sandhills Luncheon Cafe , a tin building in midtown</arg>
+          <arg type="ARG0" start="20" end="21">all this</arg>
+          <arg type="ARG1" start="24" end="28">for a very good year</arg>
+        </propbank>
       </example>
-      <example name="make-v: make sure" src="training tasks" type="-">
-        <inflection aspect="ns" form="infinitive" person="other" tense="future" voice="active"/>
-        <text>We will do everything we-1 can *PRO*-1 to make sure that he shows up at his court date there .</text>
-        <arg f="" n="0">*PRO*-1 (= we)</arg>
-        <rel f="">make</rel>
-        <arg f="" n="1">sure that he shows up at his court date there.</arg>
+      <example name="make-v: make sure" src="training tasks">
+        <text>We will do everything we can to make sure that he shows up at his court date there .</text>
+        <propbank>
+          <rel relloc="7">make</rel>
+          <arg type="ARG0" start="4" end="4">we</arg>
+          <arg type="ARG1" start="8" end="17">sure that he shows up at his court date there</arg>
+        </propbank>
       </example>
+      <note>MAKE-V NOTES: (from make.02-v)</note>
     </roleset>
     <roleset id="make.05" name="earn cash or wages, earning">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">make</alias>
-        <alias framenet="" pos="n" verbnet="">making</alias>
+        <alias pos="v">make</alias>
+        <alias pos="n">making</alias>
       </aliases>
+      <roles>
+        <role descr="earner" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="obtain-13.5.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="wages" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="obtain-13.5.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="job" f="DIR" n="2">
+          <rolelinks>
+            <rolelink class="obtain-13.5.2" resource="VerbNet" version="verbnet3.4">source</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="make-v.7" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">97</lexlink>
+        <lexlink class="make-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+        <lexlink class="obtain-13.5.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="make-v: make a quick buck" src="">
+        <text>If Bill Gates made a nickel every time Windows crashed ... oh wait , he does .</text>
+        <propbank>
+          <rel relloc="3">made</rel>
+          <arg type="ARG0" start="1" end="2">Bill Gates</arg>
+          <arg type="ARG1" start="4" end="5">a nickel</arg>
+          <arg type="ARGM-TMP" start="6" end="9">every time Windows crashed</arg>
+        </propbank>
+      </example>
+      <example name="make-v: job as for-phrase" src="">
+        <text>Judy Rodin makes way too much money for what she does .</text>
+        <propbank>
+          <rel relloc="2">makes</rel>
+          <arg type="ARG0" start="0" end="1">Judy Rodin</arg>
+          <arg type="ARG1" start="3" end="6">way too much money</arg>
+          <arg type="ARG2" start="7" end="10">for what she does</arg>
+        </propbank>
+      </example>
+      <example name="make-v: job as as-phrase" src="">
+        <text>Judy Rodin makes way too much money as Penn 's president .</text>
+        <propbank>
+          <rel relloc="2">makes</rel>
+          <arg type="ARG0" start="0" end="1">Judy Rodin</arg>
+          <arg type="ARG1" start="3" end="6">way too much money</arg>
+          <arg type="ARG2" start="7" end="10">as Penn 's president</arg>
+        </propbank>
+      </example>
+      <example name="make-v: All args" src="">
+        <text>I do n't see anything wrong with this speech and his making a living doing what he 's doing here or going after the audience he has here in this video .</text>
+        <propbank>
+          <rel relloc="11">making</rel>
+          <arg type="ARG0" start="10" end="10">his</arg>
+          <arg type="ARG1" start="12" end="13">a living</arg>
+          <arg type="ARG2" start="14" end="19">doing what he 's doing here</arg>
+        </propbank>
+      </example>
       <note>MAKE-V NOTES: (from make.05-v)</note>
       <note>MAKING-N NOTES: Added by Julia based on make-v.05. No corresponding VNcls. (from making.03-n)</note>
-      <roles>
-        <role descr="earner" f="pag" n="0"/>
-        <role descr="wages" f="ppt" n="1"/>
-        <role descr="job" f="dir" n="2"/>
-      </roles>
-      <example name="make-v: make a quick buck" src="" type="">
-        <text>If Bill Gates made a nickel every time Windows crashed...oh wait, he does.</text>
-        <arg f="" n="0">Bill Gates</arg>
-        <rel f="">made</rel>
-        <arg f="" n="1">a nickel</arg>
-        <arg f="tmp" n="m">every time Windows crashed</arg>
-      </example>
-      <example name="make-v: job as for-phrase" src="" type="">
-        <text>Judy Rodin makes way too much money for what she does.</text>
-        <arg f="" n="0">Judy Rodin</arg>
-        <rel f="">makes</rel>
-        <arg f="" n="1">way too much money</arg>
-        <arg f="" n="2">for what she does</arg>
-      </example>
-      <example name="make-v: job as as-phrase" src="" type="">
-        <text>Judy Rodin makes way too much money as Penn's president.</text>
-        <arg f="" n="0">Judy Rodin</arg>
-        <rel f="">makes</rel>
-        <arg f="" n="1">way too much money</arg>
-        <arg f="" n="2">as Penn's president</arg>
-      </example>
-      <example name="make-v: All args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I don't see anything wrong with this speech and his making a living doing what he's doing here or going after the audience he has here in this video.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">making</rel>
-        <arg f="" n="1">a living</arg>
-        <arg f="" n="2">doing what he's doing here</arg>
-      </example>
     </roleset>
     <roleset id="make.06" name="achieve being, seem">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">make</alias>
+        <alias pos="v">make</alias>
       </aliases>
-      <note>MAKE-V NOTES: (from make.06-v)</note>
       <roles>
-        <role descr="thing seeming" f="ppt" n="1"/>
-        <role descr="attribute of arg1" f="prd" n="2"/>
+        <role descr="thing seeming" f="PPT" n="1"/>
+        <role descr="attribute of arg1" f="PRD" n="2"/>
       </roles>
-      <example name="make-v: take that, eh?" src="" type="">
-        <text>Americans make better fishermen.</text>
-        <arg f="" n="1">Americans</arg>
-        <rel f="">make</rel>
-        <arg f="" n="2">better fishermen</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <example name="make-v: take that, eh?" src="">
+        <text>Americans make better fishermen .</text>
+        <propbank>
+          <rel relloc="1">make</rel>
+          <arg type="ARG1" start="0" end="0">Americans</arg>
+          <arg type="ARG2" start="2" end="3">better fishermen</arg>
+        </propbank>
       </example>
+      <note>MAKE-V NOTES: (from make.06-v)</note>
     </roleset>
     <roleset id="make.18" name="arrive at, achieve">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">make</alias>
+        <alias pos="v">make</alias>
       </aliases>
-      <note>MAKE-V NOTES: (from make.18-v)</note>
       <roles>
-        <role descr="achiever, agent" f="pag" n="0">
-          <vnrole vncls="51.8" vntheta="agent"/>
+        <role descr="achiever, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="reach-51.8" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="reach-51.8" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="goal" f="gol" n="1">
-          <vnrole vncls="51.8" vntheta="destination"/>
+        <role descr="goal" f="GOL" n="1">
+          <rolelinks>
+            <rolelink class="reach-51.8" resource="VerbNet" version="verbnet3.3">goal</rolelink>
+            <rolelink class="reach-51.8" resource="VerbNet" version="verbnet3.4">goal</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="make-v" src="" type="">
-        <text>*PRO*-2 Overcome *-1 by hunger pains Sellers-2 would eat massive amounts of food and then throw it up *PRO*-2 to make weight.</text>
-        <arg f="" n="0">*PRO*-2 (= Sellers)</arg>
-        <rel f="">make</rel>
-        <arg f="" n="1">weight</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="reach-51.8" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="make-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+        <lexlink class="make-v.8" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">8</lexlink>
+        <lexlink class="reach-51.8" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="make-v" src="">
+        <text>Overcome by hunger pains Sellers would eat massive amounts of food and then throw it up to make weight .</text>
+        <propbank>
+          <rel relloc="17">make</rel>
+          <arg type="ARG0" start="4" end="4">Sellers</arg>
+          <arg type="ARG1" start="18" end="18">weight</arg>
+        </propbank>
       </example>
-      <example name="make-v" src="" type="">
-        <text>Some other stories making headlines right now.</text>
-        <arg f="" n="0">Some other stories</arg>
-        <rel f="">making</rel>
-        <arg f="" n="1">headlines</arg>
-        <arg f="tmp" n="m">right now</arg>
+      <example name="make-v" src="">
+        <text>Some other stories making headlines right now .</text>
+        <propbank>
+          <rel relloc="3">making</rel>
+          <arg type="ARG0" start="0" end="2">Some other stories</arg>
+          <arg type="ARG1" start="4" end="4">headlines</arg>
+          <arg type="ARGM-TMP" start="5" end="6">right now</arg>
+        </propbank>
       </example>
-      <example name="make-v" src="" type="">
-        <text>We made the finish line!</text>
-        <arg f="" n="0">We</arg>
-        <rel f="">made</rel>
-        <arg f="" n="1">the finish line</arg>
+      <example name="make-v" src="">
+        <text>We made the finish line !</text>
+        <propbank>
+          <rel relloc="1">made</rel>
+          <arg type="ARG0" start="0" end="0">We</arg>
+          <arg type="ARG1" start="2" end="4">the finish line</arg>
+        </propbank>
       </example>
+      <note>MAKE-V NOTES: (from make.18-v)</note>
     </roleset>
     <roleset id="make.19" name="&quot;way&quot; construction: make one's way, travel">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">make</alias>
+        <alias pos="v">make</alias>
       </aliases>
-      <note>MAKE-V NOTES: Doesn't fit with any other sense, unavoidable, although it seems inappropriate to have a roleset/sense for a construction that is productive with many verbs: She danced/wiggled/laughed/cheated her way... (from make.19-v)</note>
       <roles>
-        <role descr="traveler" f="pag" n="0"/>
-        <role descr="his/her/their/etc way" f="ppt" n="1"/>
-        <role descr="to where? destination" f="gol" n="2"/>
+        <role descr="traveler" f="PAG" n="0"/>
+        <role descr="his/her/their/etc way" f="PPT" n="1"/>
+        <role descr="to where? destination" f="GOL" n="2"/>
       </roles>
-      <example name="make-v: All arguments" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Hundreds of Californians made their way to their computers after the quake , and checked in with each other on electronic bulletin boards , which link computers CB-radio-style , via phone lines .</text>
-        <arg f="" n="0">Hundreds of Californians</arg>
-        <rel f="">made</rel>
-        <arg f="" n="1">their way</arg>
-        <arg f="" n="2">to their computers</arg>
-        <arg f="tmp" n="m">after the quake</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="make-v.9" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+      </lexlinks>
+      <example name="make-v: All arguments" src="">
+        <text>Hundreds of Californians made their way to their computers after the quake , and checked in with each other on electronic bulletin boards , which link computers CB - radio - style , via phone lines .</text>
+        <propbank>
+          <rel relloc="3">made</rel>
+          <arg type="ARG0" start="0" end="2">Hundreds of Californians</arg>
+          <arg type="ARG1" start="4" end="5">their way</arg>
+          <arg type="ARG2" start="6" end="8">to their computers</arg>
+          <arg type="ARGM-TMP" start="9" end="11">after the quake</arg>
+        </propbank>
       </example>
+      <note>MAKE-V NOTES: Doesn't fit with any other sense, unavoidable, although it seems inappropriate to have a roleset/sense for a construction that is productive with many verbs: She danced/wiggled/laughed/cheated her way... (from make.19-v)</note>
     </roleset>
     <roleset id="make.27" name="interpret, have an understanding of">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">make</alias>
+        <alias pos="v">make</alias>
       </aliases>
-      <note>MAKE-V NOTES: Added by Julia for AMR.</note>
       <roles>
-        <role descr="understander" f="pag" n="0"/>
-        <role descr="the understanding arg has; interpretation" f="ppt" n="1"/>
-        <role descr="interpretation of what" f="mnr" n="2"/>
+        <role descr="understander" f="PAG" n="0"/>
+        <role descr="the understanding arg has; interpretation" f="PPT" n="1"/>
+        <role descr="interpretation of what" f="MNR" n="2"/>
       </roles>
-      <example name="make-v" src="" type="">
-        <text>*PRO* Make of it what you will, won't hurt me none.</text>
-        <arg f="" n="0">*PRO*</arg>
-        <rel f="">make</rel>
-        <arg f="" n="2">of it</arg>
-        <arg f="" n="1">what you will</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="make-v" src="">
+        <text>*PRO* Make of it what you will , wo n't hurt me none .</text>
+        <propbank>
+          <rel relloc="1">Make</rel>
+          <arg type="ARG0" start="?" end="?">*PRO*</arg>
+          <arg type="ARG2" start="2" end="3">of it</arg>
+          <arg type="ARG1" start="4" end="6">what you will</arg>
+        </propbank>
       </example>
+      <note>MAKE-V NOTES: Added by Julia for AMR.</note>
     </roleset>
     <roleset id="make.LV" name="light verb">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">make</alias>
+        <alias pos="v">make</alias>
       </aliases>
-      <note>MAKE-V NOTES: The original light verb frames make.03 and make.04 have been collapsed into this frame. (from make.LV-v). Combines with: decision, comment, cut, choice,determination, distinction, etc.</note>
       <roles/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="make-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">537</lexlink>
+        <lexlink class="make-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">72</lexlink>
+        <lexlink class="make-v.16" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">10</lexlink>
+        <lexlink class="make-v.9" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+        <lexlink class="make-v.15" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+        <lexlink class="make-v.7" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+      </lexlinks>
+      <note>MAKE-V NOTES: The original light verb frames make.03 and make.04 have been collapsed into this frame. (from make.LV-v). Combines with: decision, comment, cut, choice,determination, distinction, etc.</note>
     </roleset>
   </predicate>
   <predicate lemma="make_up">
     <roleset id="make_up.07" name="comprise, build, structure">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">make_up</alias>
-        <alias framenet="" pos="n" verbnet="">make_up</alias>
+        <alias pos="v">make_up</alias>
+        <alias pos="n">make_up</alias>
       </aliases>
-      <note>MAKE_UP-V NOTES: (from make.07-v)</note>
-      <note>MAKE_UP-N NOTES: Added by Julia based on more-nouns, make_up-v.07. Corresponds to VNcls build-26.1. (from make.02-n)</note>
       <roles>
-        <role descr="components" f="vsp" n="0">
-          <vnrole vncls="26.1-1" vntheta="material"/>
+        <role descr="components" f="VSP" n="0">
+          <rolelinks>
+            <rolelink class="build-26.1-1" resource="VerbNet" version="verbnet3.3">material</rolelink>
+            <rolelink class="comprise-107.2-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="whole" f="prd" n="1">
-          <vnrole vncls="26.1-1" vntheta="product"/>
+        <role descr="whole" f="PRD" n="1">
+          <rolelinks>
+            <rolelink class="build-26.1-1" resource="VerbNet" version="verbnet3.3">product</rolelink>
+            <rolelink class="comprise-107.2-1" resource="VerbNet" version="verbnet3.4">pivot</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="make_up-v: passivized" src="" type="">
-        <text>[40% of the homeless population]-1 is made *trace*-1 up of women and children.</text>
-        <arg f="" n="1">*trace*-1 (= 40% of the homeless population)</arg>
-        <rel f="">[made] [up]</rel>
-        <arg f="" n="0">of women and children</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="build-26.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="make-v.6" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">25</lexlink>
+        <lexlink class="comprise-107.2-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="make_up-v: passivized" src="">
+        <text>40 % of the homeless population is made up of women and children .</text>
+        <propbank>
+          <rel relloc="7 8">made up</rel>
+          <arg type="ARG1" start="0" end="5">40 % of the homeless population</arg>
+          <arg type="ARG0" start="9" end="12">of women and children</arg>
+        </propbank>
       </example>
-      <example name="make_up-v: corresponding active" src="" type="">
-        <text>Women and children make up 40% of the homeless population</text>
-        <arg f="" n="0">Women and children</arg>
-        <rel f="">[make] [up]</rel>
-        <arg f="" n="1">40% of the homeless population</arg>
+      <example name="make_up-v: corresponding active" src="">
+        <text>Women and children make up 40 % of the homeless population</text>
+        <propbank>
+          <rel relloc="3 4">make up</rel>
+          <arg type="ARG0" start="0" end="2">Women and children</arg>
+          <arg type="ARG1" start="5" end="10">40 % of the homeless population</arg>
+        </propbank>
       </example>
-      <example name="make_up-v: args 1&amp;2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="make_up-v: args 1 &amp;2" src="">
         <text>Scientists have suspected there must be something different about the genetic make - up of diabetics who develop complications ;</text>
-        <arg f="" n="0">the genetic</arg>
-        <rel f="">[make] [up]</rel>
-        <arg f="" n="1">of diabetics who develop complication</arg>
+        <propbank>
+          <rel relloc="11 12 13">make - up</rel>
+          <arg type="ARG0" start="9" end="10">the genetic</arg>
+          <arg type="ARG1" start="14" end="18">of diabetics who develop complications</arg>
+        </propbank>
       </example>
+      <note>MAKE_UP-V NOTES: (from make.07-v)</note>
+      <note>MAKE_UP-N NOTES: Added by Julia based on more-nouns, make_up-v.07. Corresponds to VNcls build-26.1. (from make.02-n)</note>
     </roleset>
     <roleset id="make_up.08" name="compose, set into place">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">make_up</alias>
+        <alias pos="v">make_up</alias>
       </aliases>
-      <note>MAKE_UP-V NOTES: (from make.08-v)</note>
       <roles>
-        <role descr="composer" f="pag" n="0">
-          <vnrole vncls="26.1-1" vntheta="agent"/>
+        <role descr="composer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="build-26.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing composed" f="prd" n="1">
-          <vnrole vncls="26.1-1" vntheta="product"/>
+        <role descr="thing composed" f="PRD" n="1">
+          <rolelinks>
+            <rolelink class="build-26.1-1" resource="VerbNet" version="verbnet3.3">product</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="make_up-v: basic transitive" src="" type="">
-        <text>*trace* Make up your own mind on the issue.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">[Make] [up]</rel>
-        <arg f="" n="1">your own mind</arg>
-        <arg f="loc" n="m">on the issue</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="build-26.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+      </lexlinks>
+      <example name="make_up-v: basic transitive" src="">
+        <text>*trace* Make up your own mind on the issue .</text>
+        <propbank>
+          <rel relloc="1 2">Make up</rel>
+          <arg type="ARG0" start="?" end="?">*trace*</arg>
+          <arg type="ARG1" start="3" end="5">your own mind</arg>
+          <arg type="ARGM-LOC" start="6" end="8">on the issue</arg>
+        </propbank>
       </example>
+      <note>MAKE_UP-V NOTES: (from make.08-v)</note>
     </roleset>
     <roleset id="make_up.09" name="reconcile">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">make_up</alias>
+        <alias pos="v">make_up</alias>
       </aliases>
-      <note>MAKE_UP-V NOTES: (from make.09-v)</note>
       <roles>
-        <role descr="one person" f="pag" n="0"/>
-        <role descr="the other" f="ppt" n="1"/>
+        <role descr="one person" f="PAG" n="0"/>
+        <role descr="the other" f="PPT" n="1"/>
       </roles>
-      
-      <example name="ARG0 and ARG1" src="probably COCA (2018 example fix)" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <example name="ARG0 and ARG1" src="probably COCA (2018 example fix)">
         <text>I was surprised that Sharon had made up with him</text>
-        <arg f="" n="0">Sharon</arg>
-        <rel f="">made up</rel>
-        <arg f="" n="1">with him</arg>
+        <propbank>
+          <rel relloc="6 7">made up</rel>
+          <arg type="ARG0" start="4" end="4">Sharon</arg>
+          <arg type="ARG1" start="8" end="9">with him</arg>
+        </propbank>
       </example>
-
+      <note>MAKE_UP-V NOTES: (from make.09-v)</note>
     </roleset>
     <roleset id="make_up.10" name="create">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">make_up</alias>
+        <alias pos="v">make_up</alias>
       </aliases>
-      <note>MAKE_UP-V NOTES: (from make.10-v)</note>
       <roles>
-        <role descr="creator" f="pag" n="0">
-          <vnrole vncls="26.1-1" vntheta="agent"/>
+        <role descr="creator" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="build-26.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="creation" f="prd" n="1">
-          <vnrole vncls="26.1-1" vntheta="product"/>
+        <role descr="creation" f="PRD" n="1">
+          <rolelinks>
+            <rolelink class="build-26.1-1" resource="VerbNet" version="verbnet3.3">product</rolelink>
+          </rolelinks>
         </role>
-        <role descr="created-from, thing changed" f="vsp" n="2">
-          <vnrole vncls="26.1-1" vntheta="material"/>
+        <role descr="created-from, thing changed" f="VSP" n="2">
+          <rolelinks>
+            <rolelink class="build-26.1-1" resource="VerbNet" version="verbnet3.3">material</rolelink>
+          </rolelinks>
         </role>
-        <role descr="benefactive" f="gol" n="3">
-          <vnrole vncls="26.1-1" vntheta="beneficiary"/>
+        <role descr="benefactive" f="GOL" n="3">
+          <rolelinks>
+            <rolelink class="build-26.1-1" resource="VerbNet" version="verbnet3.3">beneficiary</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1057" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="build-26.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="make-v.12" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="make-v.11" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+        <lexlink class="make-v.17.9" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+      </lexlinks>
+      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1057">
         <text>The Chinese folk charms of financial good fortune have a great variety of origins , an abundance that is due in large part to the Chinese people 's virtuosity at making things up as they go along .</text>
-        <arg f="" n="0">[]</arg>
-        <rel f="">[making][up]</rel>
-        <arg f="" n="1">things</arg>
-        <arg f="tmp" n="m">as they go along</arg>
+        <propbank>
+          <rel relloc="30 32">making up</rel>
+          <arg type="ARG1" start="31" end="31">things</arg>
+          <arg type="ARGM-TMP" start="33" end="36">as they go along</arg>
+        </propbank>
       </example>
-
+      <note>MAKE_UP-V NOTES: (from make.10-v)</note>
     </roleset>
     <roleset id="make_up.11" name="catch up, do at a later date after having missed">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">make_up</alias>
+        <alias pos="v">make_up</alias>
       </aliases>
-      <note>MAKE_UP-V NOTES: (from make.11-v)</note>
       <roles>
-        <role descr="entity which is behind in something (eg payments)" f="pag" n="1"/>
-        <role descr="the something" f="ppt" n="2"/>
+        <role descr="entity which is behind in something (eg payments)" f="PAG" n="1"/>
+        <role descr="the something" f="PPT" n="2"/>
       </roles>
-      <example name="ARG1 and ARG2" src="ontonotes bn/voa/02/voa_0207" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <example name="ARG1 and ARG2" src="ontonotes bn/voa/02/voa_0207">
         <text>In Cuba though , where President Castro had his country sit out last year 's revelry , they 'll be making up for it as major festivities are set .</text>
-        <arg f="loc" n="m">[In Cuba][where President Castro had his country sit out last year 's revelry]</arg>
-        <arg f="adv" n="m">though</arg>
-        <arg f="" n="1">they</arg>
-        <arg f="mod" n="m">'ll</arg>
-        <rel f="">[making][up]</rel>
-        <arg f="" n="2">for it</arg>
-        <arg f="adv" n="m">as major festivities are set</arg>
+        <propbank>
+          <rel relloc="20 21">making up</rel>
+          <arg type="ARGM-LOC" start="0" end="1">In Cuba</arg>
+          <arg type="ARGM-ADV" start="2" end="2">though</arg>
+          <arg type="ARG1" start="17" end="17">they</arg>
+          <arg type="ARGM-MOD" start="18" end="18">'ll</arg>
+          <arg type="ARG2" start="22" end="23">for it</arg>
+          <arg type="ARGM-ADV" start="24" end="28">as major festivities are set</arg>
+          <arg type="C-ARGM-LOC" start="4" end="15">where President Castro had his country sit out last year 's revelry</arg>
+        </propbank>
       </example>
-
+      <note>MAKE_UP-V NOTES: (from make.11-v)</note>
     </roleset>
     <roleset id="make_up.16" name="compensate (for)">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">make_up</alias>
+        <alias pos="v">make_up</alias>
       </aliases>
-      <note>MAKE_UP-V NOTES: (from make.16-v)</note>
       <roles>
-        <role descr="compensator, agent" f="pag" n="0"/>
-        <role descr="shortcoming" f="ppt" n="1"/>
-        <role descr="means of repairing shortcoming" f="vsp" n="2"/>
+        <role descr="compensator, agent" f="PAG" n="0"/>
+        <role descr="shortcoming" f="PPT" n="1"/>
+        <role descr="means of repairing shortcoming" f="VSP" n="2"/>
       </roles>
-      <example name="make_up-v: instrumental agent" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="ns" voice="active"/>
-        <text>Some Democrats, led by Rep. Jack Brooks (D., Texas), unsuccessfully opposed the measure because they fear that the feesmay not fully make up for the budget cuts.</text>
-        <arg f="" n="2">the fees</arg>
-        <arg f="mod" n="m">may</arg>
-        <arg f="neg" n="m">not</arg>
-        <arg f="ext" n="m">fully</arg>
-        <rel f="">[make] [up]</rel>
-        <arg f="" n="1">for the budget cuts</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="make-v.16" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">8</lexlink>
+      </lexlinks>
+      <example name="make_up-v: instrumental agent" src="">
+        <text>Some Democrats , led by Rep. Jack Brooks ( D. , Texas ) , unsuccessfully opposed the measure because they fear that the fees may not fully make up for the budget cuts .</text>
+        <propbank>
+          <rel relloc="27 28">make up</rel>
+          <arg type="ARG2" start="22" end="23">the fees</arg>
+          <arg type="ARGM-MOD" start="24" end="24">may</arg>
+          <arg type="ARGM-NEG" start="25" end="25">not</arg>
+          <arg type="ARGM-EXT" start="26" end="26">fully</arg>
+          <arg type="ARG1" start="29" end="32">for the budget cuts</arg>
+        </propbank>
       </example>
+      <note>MAKE_UP-V NOTES: (from make.16-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="make_out">
     <roleset id="make_out.12" name="discern">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">make_out</alias>
+        <alias pos="v">make_out</alias>
       </aliases>
-      <note>MAKE_OUT-V NOTES: (from make.12-v)</note>
       <roles>
-        <note>(I haven't actually seen any of these in WSJ, but who knows?) (from make.12-v)</note>
-        <role descr="discerner, viewer, agent" f="ppt" n="0">
-          <vnrole vncls="30.2" vntheta="experiencer"/>
+        <role descr="discerner, viewer, agent" f="PPT" n="0">
+          <rolelinks>
+            <rolelink class="sight-30.2" resource="VerbNet" version="verbnet3.3">experiencer</rolelink>
+            <rolelink class="sight-30.2" resource="VerbNet" version="verbnet3.4">experiencer</rolelink>
+          </rolelinks>
         </role>
-        <role descr="patient, thing discerned" f="pag" n="1">
-          <vnrole vncls="30.2" vntheta="stimulus"/>
+        <role descr="patient, thing discerned" f="PAG" n="1">
+          <rolelinks>
+            <rolelink class="sight-30.2" resource="VerbNet" version="verbnet3.3">stimulus</rolelink>
+            <rolelink class="sight-30.2" resource="VerbNet" version="verbnet3.4">stimulus</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="make_out-v: typical usage?" src="" type="">
-        <text>I can't make out the handwriting on this letter.</text>
-        <arg f="" n="0">I</arg>
-        <arg f="mod" n="m">ca</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">[make] [out]</rel>
-        <arg f="" n="1">the handwriting</arg>
-        <arg f="loc" n="m">on this letter</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="sight-30.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="sight-30.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="make_out-v: typical usage?" src="">
+        <text>I ca n't make out the handwriting on this letter .</text>
+        <propbank>
+          <rel relloc="3 4">make out</rel>
+          <arg type="ARG0" start="0" end="0">I</arg>
+          <arg type="ARGM-MOD" start="1" end="1">ca</arg>
+          <arg type="ARGM-NEG" start="2" end="2">n't</arg>
+          <arg type="ARG1" start="5" end="6">the handwriting</arg>
+          <arg type="ARGM-LOC" start="7" end="9">on this letter</arg>
+        </propbank>
       </example>
+      <note>MAKE_OUT-V NOTES: (from make.12-v)</note>
+      <note>(I haven't actually seen any of these in WSJ, but who knows?) (from make.12-v)</note>
     </roleset>
     <roleset id="make_out.13" name="write">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">make_out</alias>
+        <alias pos="v">make_out</alias>
       </aliases>
-      <note>MAKE_OUT-V NOTES: (from make.13-v)</note>
       <roles>
-        <role descr="writer" f="pag" n="0"/>
-        <role descr="thing written" f="ppt" n="1"/>
-        <role descr="written to" f="gol" n="2"/>
+        <role descr="writer" f="PAG" n="0"/>
+        <role descr="thing written" f="PPT" n="1"/>
+        <role descr="written to" f="GOL" n="2"/>
       </roles>
-      <example name="make_out-v: Imperative" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Please *PRO* make out the check to "AT&amp; T"</text>
-        <arg f="dis" n="m">Please</arg>
-        <arg f="" n="0">*PRO*</arg>
-        <rel f="">[make] [out]</rel>
-        <arg f="" n="1">the check</arg>
-        <arg f="" n="2">to "AT&amp; T"</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <example name="make_out-v: Imperative" src="">
+        <text>Please *PRO* make out the check to " AT &amp; T "</text>
+        <propbank>
+          <rel relloc="2 3">make out</rel>
+          <arg type="ARGM-DIS" start="0" end="0">Please</arg>
+          <arg type="ARG0" start="?" end="?">*PRO*</arg>
+          <arg type="ARG1" start="4" end="5">the check</arg>
+          <arg type="ARG2" start="6" end="11">to " AT &amp; T "</arg>
+        </propbank>
       </example>
+      <note>MAKE_OUT-V NOTES: (from make.13-v)</note>
     </roleset>
     <roleset id="make_out.15" name="proceed, meet with (success)">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">make_out</alias>
+        <alias pos="v">make_out</alias>
       </aliases>
-      <note>MAKE_OUT-V NOTES: (from make.15-v)</note>
       <roles>
-        <role descr="topic" f="ppt" n="1"/>
+        <role descr="topic" f="PPT" n="1"/>
       </roles>
-      <example name="make_out-v: getting by" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>At his new job, as partner in charge of federal litigation in the Sacramento office of Orrick, Herrington&amp; Sutcliffe, he will make out much better.</text>
-        <arg f="loc" n="m">At his new job, as partner in charge of federal litigation in the Sacramento office of Orrick, Herrington&amp; Sutcliffe,</arg>
-        <arg f="" n="1">he</arg>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">[make] [out]</rel>
-        <arg f="mnr" n="m">much better</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <example name="make_out-v: getting by" src="">
+        <text>At his new job , as partner in charge of federal litigation in the Sacramento office of Orrick , Herrington &amp; Sutcliffe , he will make out much better .</text>
+        <propbank>
+          <rel relloc="25 26">make out</rel>
+          <arg type="ARGM-LOC" start="0" end="21">At his new job , as partner in charge of federal litigation in the Sacramento office of Orrick , Herrington &amp; Sutcliffe</arg>
+          <arg type="ARG1" start="23" end="23">he</arg>
+          <arg type="ARGM-MOD" start="24" end="24">will</arg>
+          <arg type="ARGM-MNR" start="27" end="28">much better</arg>
+        </propbank>
       </example>
+      <note>MAKE_OUT-V NOTES: (from make.15-v)</note>
     </roleset>
     <roleset id="make_out.23" name="describe, make it seem like">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">make_out</alias>
+        <alias pos="v">make_out</alias>
       </aliases>
-      <note>MAKE_OUT-V NOTES: Added by Julia based on BOLT. See VNcls characterize-29.2. Comparison to 'describe'. (from make.23-v)</note>
       <roles>
-        <role descr="describer" f="pag" n="0"/>
-        <role descr="thing described" f="ppt" n="1"/>
-        <role descr="secondary attribute; what arg1 is made to seem like" f="prd" n="2"/>
+        <role descr="describer" f="PAG" n="0"/>
+        <role descr="thing described" f="PPT" n="1"/>
+        <role descr="secondary attribute; what arg1 is made to seem like" f="PRD" n="2"/>
       </roles>
-      <example name="make_out-v: All args. Arg2= like" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>You make it out like hampering a nation s development is somthing new !</text>
-        <arg f="" n="0">You</arg>
-        <rel f="">[make] [out]</rel>
-        <arg f="" n="1">it</arg>
-        <arg f="" n="2">like hampering a nation's development is something new</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <example name="make_out-v: All args. Arg2= like" src="BOLT">
+        <text>You make it out like hampering a nation 's development is somthing new !</text>
+        <propbank>
+          <rel relloc="1 3">make out</rel>
+          <arg type="ARG0" start="0" end="0">You</arg>
+          <arg type="ARG1" start="2" end="2">it</arg>
+          <arg type="ARG2" start="4" end="12">like hampering a nation 's development is somthing new</arg>
+        </propbank>
       </example>
-      <example name="make_out-v: All args" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="make_out-v: All args" src="BOLT">
         <text>But an agressive opposition , along with a biased press and press with an agenda make them out to be a lot worse than they are .</text>
-        <arg f="dis" n="m">But</arg>
-        <arg f="" n="0">an agressive opposition, along with a biased press and press with an agenda</arg>
-        <rel f="">[make] [out]</rel>
-        <arg f="" n="1">them</arg>
-        <arg f="" n="2">to be a lot worse than they are</arg>
+        <propbank>
+          <rel relloc="15 17">make out</rel>
+          <arg type="ARGM-DIS" start="0" end="0">But</arg>
+          <arg type="ARG0" start="1" end="14">an agressive opposition , along with a biased press and press with an agenda</arg>
+          <arg type="ARG1" start="16" end="16">them</arg>
+          <arg type="ARG2" start="18" end="25">to be a lot worse than they are</arg>
+        </propbank>
       </example>
-      <example name="make_out-v: Arg1 as sentential complement" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The University made out [0] it was much better than it seems .</text>
-        <arg f="" n="0">The University</arg>
-        <rel f="">[made] [out]</rel>
-        <arg f="" n="1">[0] it was much better than it seems.</arg>
+      <example name="make_out-v: Arg1 as sentential complement" src="BOLT">
+        <text>The University made out it was much better than it seems .</text>
+        <propbank>
+          <rel relloc="2 3">made out</rel>
+          <arg type="ARG0" start="0" end="1">The University</arg>
+          <arg type="ARG1" start="4" end="10">it was much better than it seems</arg>
+        </propbank>
       </example>
+      <note>MAKE_OUT-V NOTES: Added by Julia based on BOLT. See VNcls characterize-29.2. Comparison to 'describe'. (from make.23-v)</note>
     </roleset>
     <roleset id="make_out.26" name="french kiss">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">make_out</alias>
+        <alias pos="v">make_out</alias>
       </aliases>
-      <note>MAKE_OUT-V NOTES: Based on Bolt SMS data. Comparison with kiss.01, but minus the arg 2 for secondary predication (*I made out with him goodbye). No VN or FN classes. Framed by Katie. (from make.26-v)</note>
       <roles>
-        <role descr="kisser" f="pag" n="0"/>
-        <role descr="kissed" f="ppt" n="1"/>
+        <role descr="kisser" f="PAG" n="0"/>
+        <role descr="kissed" f="PPT" n="1"/>
       </roles>
-      <example name="make_out-v: When both participants are in one arg, use arg 0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>We was just making out!</text>
-        <arg f="" n="0">We</arg>
-        <arg f="adv" n="m">just</arg>
-        <rel f="">[making] [out]</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="make_out-v: When both participants are in one arg, use arg 0" src="">
+        <text>We was just making out !</text>
+        <propbank>
+          <rel relloc="3 4">making out</rel>
+          <arg type="ARG0" start="0" end="0">We</arg>
+          <arg type="ARGM-ADV" start="2" end="2">just</arg>
+        </propbank>
       </example>
-      <example name="ARG1" src="probably COCA (2018 example fix)" type="">
-        <text>I made out with 10 strangers to find love.</text>
-        <arg f="" n="0">I</arg>
-        <rel f="">made out</rel>
-        <arg f="" n="1">with 10 strangers</arg>
-        <arg f="prp" n="m">to find love.</arg>
+      <example name="ARG1" src="probably COCA (2018 example fix)">
+        <text>I made out with 10 strangers to find love .</text>
+        <propbank>
+          <rel relloc="1 2">made out</rel>
+          <arg type="ARG0" start="0" end="0">I</arg>
+          <arg type="ARG1" start="3" end="5">with 10 strangers</arg>
+          <arg type="ARGM-PRP" start="6" end="8">to find love</arg>
+        </propbank>
       </example>
-
+      <note>MAKE_OUT-V NOTES: Based on Bolt SMS data. Comparison with kiss.01, but minus the arg 2 for secondary predication (*I made out with him goodbye). No VN or FN classes. Framed by Katie. (from make.26-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="make_it">
     <roleset id="make_it.14" name="achieve or arrive at">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">make_it</alias>
-        <mwe id="make_it">
-          <token slot="A" arg="" pos="VB*" head="" dep="">make</token>
-          <token slot="B" arg="" pos="PRP" head="A" dep="dobj">it</token>
-        </mwe>
+        <alias pos="m">make_it</alias>
+        <mwp-descriptions id="make_it">
+          <syntaxdesc slots="B A">
+            <token arg="" dep="" head="" pos="VB*" slot="A">make</token>
+            <token arg="" dep="dobj" head="A" pos="PRP" slot="B">it</token>
+          </syntaxdesc>
+        </mwp-descriptions>
       </aliases>
-      <note>MAKE_IT-V NOTES: (from make.14-v)</note>
       <roles>
-        <role descr="traveller" f="pag" n="0"/>
-        <role descr="destination" f="ppt" n="1"/>
+        <role descr="traveller" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="escape-51.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="escape-51.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="destination" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="escape-51.1" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="escape-51.1" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="make_it-v: without destination" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="ns" voice="active"/>
-        <text>The governor couldn't make it, so the lieutenant governor welcomed the special guests.</text>
-        <arg f="" n="0">The governor</arg>
-        <arg f="mod" n="m">could</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">[make] [it]</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="make-v.8" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">21</lexlink>
+        <lexlink class="escape-51.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="make_it-v: without destination" src="">
+        <text>The governor could n't make it , so the lieutenant governor welcomed the special guests .</text>
+        <propbank>
+          <rel relloc="4 5">make it</rel>
+          <arg type="ARG0" start="0" end="1">The governor</arg>
+          <arg type="ARGM-MOD" start="2" end="2">could</arg>
+          <arg type="ARGM-NEG" start="3" end="3">n't</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1040" type="">
+      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1040">
         <text>Meanwhile , the ROC table tennis team twice made it to the finals , but fell just short of the gold each time .</text>
-        <arg f="tmp" n="m">Meanwhile</arg>
-        <arg f="" n="0">the ROC table tennis team</arg>
-        <arg f="adv" n="m">twice</arg>
-        <rel f="">[made][it]</rel>
-        <arg f="" n="1">to the finals</arg>
+        <propbank>
+          <rel relloc="8 9">made it</rel>
+          <arg type="ARGM-TMP" start="0" end="0">Meanwhile</arg>
+          <arg type="ARG0" start="2" end="6">the ROC table tennis team</arg>
+          <arg type="ARGM-ADV" start="7" end="7">twice</arg>
+          <arg type="ARG1" start="10" end="12">to the finals</arg>
+        </propbank>
       </example>
-
-      <example name="make_it-v: if I can make it there, I'll make it anywhere" src="" type="">
-        <inflection aspect="progressive" form="gerund" person="third" tense="present" voice="active"/>
-        <text>Mike Huber, a roustabout, is even making it in his new career as an entrepreneur.</text>
-        <arg f="" n="0">Mike Huber , a roustabout ,</arg>
-        <arg f="adv" n="m">even</arg>
-        <rel f="">[making][it]</rel>
-        <arg f="loc" n="m">in his new career as an entrepreneur</arg>
+      <example name="make_it-v: if I can make it there, I'll make it anywhere" src="">
+        <text>Mike Huber , a roustabout , is even making it in his new career as an entrepreneur .</text>
+        <propbank>
+          <rel relloc="8 9">making it</rel>
+          <arg type="ARG0" start="0" end="4">Mike Huber , a roustabout</arg>
+          <arg type="ARGM-ADV" start="7" end="7">even</arg>
+          <arg type="ARGM-LOC" start="10" end="16">in his new career as an entrepreneur</arg>
+        </propbank>
       </example>
+      <note>MAKE_IT-V NOTES: (from make.14-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="make_off">
     <roleset id="make_off.17" name="escape (with)">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">make_off</alias>
+        <alias pos="v">make_off</alias>
       </aliases>
-      <note>MAKE_OFF-V NOTES: (from make.17-v)</note>
       <roles>
-        <role descr="escaper" f="pag" n="0"/>
-        <role descr="luggage" f="ppt" n="1"/>
+        <role descr="escaper" f="PAG" n="0"/>
+        <role descr="luggage" f="PPT" n="1"/>
       </roles>
-      <example name="make_off-v: bank robbers" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>When he initially refused, he says, they stabbed him in the back and made off with $2,000 and 280 blank tickets.</text>
-        <arg f="tmp" n="m">When he initially refused</arg>
-        <arg f="" n="0">they</arg>
-        <rel f="">[made] [off]</rel>
-        <arg f="" n="1">with $2,000 and 280 blank tickets</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Departing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+      </lexlinks>
+      <example name="make_off-v: bank robbers" src="">
+        <text>When he initially refused , he says , they stabbed him in the back and made off with $ 2,000 and 280 blank tickets .</text>
+        <propbank>
+          <rel relloc="15 16">made off</rel>
+          <arg type="ARGM-TMP" start="0" end="3">When he initially refused</arg>
+          <arg type="ARG0" start="8" end="8">they</arg>
+          <arg type="ARG1" start="17" end="23">with $ 2,000 and 280 blank tickets</arg>
+        </propbank>
       </example>
+      <note>MAKE_OFF-V NOTES: (from make.17-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="make_over">
     <roleset id="make_over.22" name="rework or revamp, renovate">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">make_over</alias>
-        <alias framenet="" pos="n" verbnet="">make_over</alias>
+        <alias pos="v">make_over</alias>
+        <alias pos="n">make_over</alias>
       </aliases>
+      <roles>
+        <role descr="agent, one doing the makeover" f="PAG" n="0"/>
+        <role descr="patient, one being made over" f="PPT" n="1"/>
+        <role descr="instrument of making over" f="MNR" n="2"/>
+        <role descr="end state, made over into what?" f="PRD" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="make_over-v: from a google search" src="">
+        <text>The following year , Clarence Rowland , then managing the Sox , made him over into an outfielder and farmed him out to the Milwaukee American Association Club .</text>
+        <propbank>
+          <rel relloc="12 14">made over</rel>
+          <arg type="ARGM-TMP" start="0" end="2">The following year</arg>
+          <arg type="ARG0" start="4" end="10">Clarence Rowland , then managing the Sox</arg>
+          <arg type="ARG1" start="13" end="13">him</arg>
+          <arg type="ARG3" start="15" end="17">into an outfielder</arg>
+        </propbank>
+      </example>
+      <example name="make_over-n: args 0 and 1" src="">
+        <text>She professionally and diligently executed her make over of my home through the use of additional furnishings and accessories which she provided .</text>
+        <propbank>
+          <rel relloc="6 7">make over</rel>
+          <arg type="ARG0" start="5" end="5">her</arg>
+          <arg type="ARG1" start="8" end="10">of my home</arg>
+        </propbank>
+      </example>
+      <example name="make_over-n: Oooh La La!" src="">
+        <text>August was especially special because of two things : First , Clinton Street would get her make - over of fresh tar and pea gravel in early August ( maybe late July ) .</text>
+        <propbank>
+          <rel relloc="16 18">make over</rel>
+          <arg type="ARG1" start="15" end="15">her</arg>
+          <arg type="ARG2" start="19" end="24">of fresh tar and pea gravel</arg>
+        </propbank>
+      </example>
+      <example name="make_over-n: another args1 and 2" src="">
+        <text>The bride to be had a 5 star service and she loved her make - over of sultry orange russet tones to complement her skin tone .</text>
+        <propbank>
+          <rel relloc="13 15">make over</rel>
+          <arg type="ARG1" start="12" end="12">her</arg>
+          <arg type="ARG2" start="16" end="25">of sultry orange russet tones to complement her skin tone</arg>
+        </propbank>
+      </example>
       <note>MAKE_OVER-V NOTES: (from make.22-v)</note>
       <note>MAKE_OVER-N NOTES: Added by Julia based on more-nouns. No corresponding VNcls. (from make.03-n)</note>
-      <roles>
-        <role descr="agent, one doing the makeover" f="pag" n="0"/>
-        <role descr="patient, one being made over" f="ppt" n="1"/>
-        <role descr="instrument of making over" f="mnr" n="2"/>
-        <role descr="end state, made over into what?" f="prd" n="3"/>
-      </roles>
-      <example name="make_over-v: from a google search" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The following year, Clarence Rowland, then managing the Sox, made him over into an outfielder and farmed him out to the Milwaukee American Association Club.</text>
-        <arg f="tmp" n="m">The following year</arg>
-        <arg f="" n="0">Clarence Rowland, then managing the Sox</arg>
-        <rel f="">[made] [over]</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="" n="3">into an outfielder</arg>
-      </example>
-      <example name="make_over-n: args 0 and 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>She professionally and diligently executed her make over of my home through the use of additional furnishings and accessories which she provided.</text>
-        <arg f="" n="0">her</arg>
-        <rel f="">[make] [over]</rel>
-        <arg f="" n="1">of my home</arg>
-      </example>
-      <example name="make_over-n: Oooh La La!" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>August was especially special because of two things: First, Clinton Street would get her make-over of fresh tar and pea gravel in early August (maybe late July).</text>
-        <arg f="" n="1">her</arg>
-        <rel f="">[make] [over]</rel>
-        <arg f="" n="2">of fresh tar and pea gravel</arg>
-      </example>
-      <example name="make_over-n: another args1 and 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The bride to be had a 5 star service and she loved her make-over of sultry orange russet tones to complement her skin tone.</text>
-        <arg f="" n="1">her</arg>
-        <rel f="">[make] [over]</rel>
-        <arg f="" n="2">of sultry orange russet tones to complement her skin tone</arg>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="making">
     <roleset id="making.03" name="nominal version of light verb">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">making</alias>
+        <alias pos="n">making</alias>
       </aliases>
-      <note>MAKING-N NOTES: Roleset based on usages in nouns-00060 project. No relevant VN cls. Framed by Claire (from making.02-n)</note>
       <roles>
-        <note>This roleset should only be used for cases where 'making' acts as a light verb and the object of 'making' is also an eventive, predicating noun.  Use argMs for all other arguments-- these cannot be predicted because they are related to the true predicate rather than 'making'. (from making.02-n)</note>
-        <role descr="maker, subject of light verbish noun" f="pag" n="0"/>
-        <role descr="true noun predicate" f="ppt" n="1"/>
+        <role descr="maker, subject of light verbish noun" f="PAG" n="0"/>
+        <role descr="true noun predicate" f="PPT" n="1"/>
       </roles>
-      <example name="making-n: True predicate only - decision making" src="00060" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="making-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+      </lexlinks>
+      <example name="making-n: True predicate only - decision making" src="00060">
         <text>The key to the creation of the `` organic '' state lay in the formation of `` natural '' groups that would undertake the role of decision - making .</text>
-        <arg f="" n="1">decision</arg>
-        <rel f="">making</rel>
+        <propbank>
+          <rel relloc="28">making</rel>
+          <arg type="ARG1" start="26" end="26">decision</arg>
+        </propbank>
       </example>
-      <example name="making-n: With argMs - decision making" src="00060" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="making-n: With argMs - decision making" src="00060">
         <text>Still , case - by - case retrospective decision making of this sort is vulnerable to the tunnel vision caused by a fixation on ad hoc -LRB- and usually sleazy -RRB- examples .</text>
-        <arg f="mnr" n="m">case-by-case</arg>
-        <arg f="mnr" n="m">retrospective</arg>
-        <arg f="" n="1">decision</arg>
-        <rel f="">making</rel>
-        <arg f="adj" n="m">of this sort.</arg>
+        <propbank>
+          <rel relloc="9">making</rel>
+          <arg type="ARGM-MNR" start="2" end="6">case - by - case</arg>
+          <arg type="ARGM-MNR" start="7" end="7">retrospective</arg>
+          <arg type="ARG1" start="8" end="8">decision</arg>
+          <arg type="ARGM-ADJ" start="10" end="12">of this sort</arg>
+        </propbank>
       </example>
-      <example name="making-n: With argMs plan-making" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Strategic spatial plan-making is thus a process through which knowledge and value, rules and procedures are actively mobilized.</text>
-        <arg f="mnr" n="m">strategic</arg>
-        <arg f="adj" n="m">spatial</arg>
-        <arg f="" n="1">plan</arg>
-        <rel f="">making</rel>
+      <example name="making-n: With argMs plan-making" src="web">
+        <text>Strategic spatial plan - making is thus a process through which knowledge and value , rules and procedures are actively mobilized .</text>
+        <propbank>
+          <rel relloc="4">making</rel>
+          <arg type="ARGM-MNR" start="0" end="0">Strategic</arg>
+          <arg type="ARGM-ADJ" start="1" end="1">spatial</arg>
+          <arg type="ARG1" start="2" end="2">plan</arg>
+        </propbank>
       </example>
-      <example name="making-n: True predicate only - offer making" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The basic principle behind offer making is to try to get a better deal.</text>
-        <arg f="" n="1">offer</arg>
-        <rel f="">making</rel>
+      <example name="making-n: True predicate only - offer making" src="web">
+        <text>The basic principle behind offer making is to try to get a better deal .</text>
+        <propbank>
+          <rel relloc="5">making</rel>
+          <arg type="ARG1" start="4" end="4">offer</arg>
+        </propbank>
       </example>
+      <note>MAKING-N NOTES: Roleset based on usages in nouns-00060 project. No relevant VN cls. Framed by Claire (from making.02-n)</note>
+      <note>This roleset should only be used for cases where 'making' acts as a light verb and the object of 'making' is also an eventive, predicating noun.  Use argMs for all other arguments-- these cannot be predicted because they are related to the true predicate rather than 'making'. (from making.02-n)</note>
     </roleset>
   </predicate>
 </frameset>

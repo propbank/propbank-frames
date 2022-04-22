@@ -1,51 +1,71 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="relocate">
     <roleset id="relocate.01" name="to change residence, move from one place to another">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">relocation</alias>
-        <alias framenet="" pos="v" verbnet="">relocate</alias>
+        <alias pos="n">relocation</alias>
+        <alias pos="v">relocate</alias>
       </aliases>
+      <roles>
+        <role descr="agent, causer" f="PAG" n="0"/>
+        <role descr="entity relocated" f="PPT" n="1"/>
+        <role descr="destination" f="GOL" n="2"/>
+        <role descr="source" f="DIR" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Transfer" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Transportperson" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="relocate-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">6</lexlink>
+      </lexlinks>
+      <example name="relocate-v: all arguments" src="">
+        <text>Kerr - McGee Corp. said it will spend $ 42 million to purchase land and relocate its ammonium perchlorate storage facility to Clark County , Nev. , from Henderson , Nev .</text>
+        <propbank>
+          <rel relloc="15">relocate</rel>
+          <arg type="ARG0" start="5" end="5">it</arg>
+          <arg type="ARG1" start="16" end="20">its ammonium perchlorate storage facility</arg>
+          <arg type="ARG2" start="21" end="25">to Clark County , Nev.</arg>
+          <arg type="ARG3" start="27" end="30">from Henderson , Nev</arg>
+        </propbank>
+      </example>
+      <example name="relocate-v: intransitive" src="">
+        <text>Tuesday 's earthquake will depress local real - estate values in the short term and force companies to reconsider expanding in or relocating to the Bay Area and California , real - estate and relocation specialists said .</text>
+        <propbank>
+          <rel relloc="22">relocating</rel>
+          <arg type="ARG1" start="16" end="16">companies</arg>
+          <arg type="ARG2" start="23" end="28">to the Bay Area and California</arg>
+        </propbank>
+      </example>
+      <example name="relocation-n: medical example" src="">
+        <text>left THA relocation under conscious sedation 4/10/00</text>
+        <propbank>
+          <rel relloc="2">relocation</rel>
+          <arg type="ARG1" start="0" end="1">left THA</arg>
+          <arg type="ARGM-MNR" start="3" end="5">under conscious sedation</arg>
+          <arg type="ARGM-TMP" start="6" end="6">4/10/00</arg>
+        </propbank>
+      </example>
+      <example name="relocation-n: Why args 2 and 3 may seem backwards" src="">
+        <text>His relocation to Nevada from LA took place in 2006 .</text>
+        <propbank>
+          <rel relloc="1">relocation</rel>
+          <arg type="ARG0" start="0" end="0">His</arg>
+          <arg type="ARG2" start="2" end="3">to Nevada</arg>
+          <arg type="ARG3" start="4" end="5">from LA</arg>
+        </propbank>
+      </example>
       <note>RELOCATE-V NOTES: Frames file for 'relocate' based on survey of sentences in the WSJ corpus. Comparison with 'send', 'transfer'. (from relocate.01-v predicate notes)</note>
       <note>RELOCATION-N NOTES: Based on Temprel data. Comparison to relocate.01. No VN class. Framed by Katie (from relocation.01-n)</note>
-      <roles>
-        <role descr="agent, causer" f="pag" n="0"/>
-        <role descr="entity relocated" f="ppt" n="1"/>
-        <role descr="destination" f="gol" n="2"/>
-        <role descr="source" f="dir" n="3"/>
-      </roles>
-      <example name="all arguments" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="active"/>
-        <text>Kerr-McGee Corp. said [0] it-1 will spend $ 42 million [*U*][*-1] to purchase land and relocate its ammonium perchlorate storage facility to Clark County , Nev. , from Henderson , Nev .</text>
-        <arg f="" n="0">[*-1]</arg>
-        <rel f="">relocate</rel>
-        <arg f="" n="1">its ammonium perchlorate storage facility</arg>
-        <arg f="" n="2">to Clark County , Nev. ,</arg>
-        <arg f="" n="3">from Henderson , Nev</arg>
-      </example>
-      <example name="intransitive" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="ns" voice="active"/>
-        <text>Tuesday 's earthquake will depress local real-estate values in the short term and force companies-1 to reconsider [*-1] expanding in [*RNR*-2]or relocating to [*RNR*-2] [the Bay Area and California] -2 , real-estate and relocation specialists said [0] [*T*-3] .</text>
-        <arg f="" n="1">[*-1]</arg>
-        <rel f="">relocating</rel>
-        <arg f="" n="2">to [*RNR*-2]</arg>
-      </example>
-      <example name="medical example" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>left THA relocation under conscious sedation 4/10/00</text>
-        <arg f="" n="1">left THA</arg>
-        <rel f="">relocation</rel>
-        <arg f="mnr" n="m">under conscious sedation</arg>
-        <arg f="tmp" n="m">4/10/99</arg>
-      </example>
-      <example name="Why args 2 and 3 may seem backwards" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>His relocation to Nevada from LA took place in 2006.</text>
-        <arg f="" n="0">His</arg>
-        <rel f="">relocation</rel>
-        <arg f="" n="2">to Nevada</arg>
-        <arg f="" n="3">From LA</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

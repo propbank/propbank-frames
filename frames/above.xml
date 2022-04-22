@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
+<frameset>
+  <predicate lemma="above">
+    <roleset id="above.01" name="higher on the vertical axis of a framework">
+      <aliases>
+        <alias pos="p">above</alias>
+      </aliases>
+      <roles>
+        <role descr="entity above" f="SE1" n="1" />
+        <role descr="above what" f="SE2" n="2" />
+        <role descr="anchor framework" f="ANC" n="3" />
+        <role descr="axis" f="AXS" n="4" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks />
+      <entailments>
+        <hobbsian>
+         (forall (Arg1 Arg2 Arg3 Arg4 quant)
+            (iff (above-01 Arg1 Arg2 Arg3 Arg4)
+               (exists (f)
+                  (and (selfAnchoredFramework f Arg3)
+                       (externalTo Arg1 Arg2)
+                       (yAxis Arg4 f)
+                       (above Arg1 Arg2 f)
+                       (atLoc Arg1 p1)(atLoc Arg2 p2)
+                       (zCoordinate z1 p1 f)(zCoordinate z2 p2 f)
+                       (lt z2 z1 Arg4)
+                       (distance quant Arg1 Arg2)))))
+         </hobbsian>
+      </entailments>
+      <example src="" name="above-p, geocentric">
+        <text>The umbrella is above the doll .</text>
+        <propbank>
+          <rel relloc="3">above</rel>
+          <arg start="0" end="1" type="ARG1">The umbrella</arg>
+          <arg start="4" end="5" type="ARG2">the doll</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (a / above-01
+            :ARG1 (u / umbrella)
+            :ARG2 (d / doll)
+            :ARG3 (c / cartesian-framework-91
+              :ARG1 (e / environment)))
+        </amr>
+      </example>
+      <example src="" name="above-p, intrinsic">
+        <text>The umbrella is above the doll .</text>
+        <propbank>
+          <rel relloc="3">above</rel>
+          <arg start="0" end="1" type="ARG1">The umbrella</arg>
+          <arg start="4" end="5" type="ARG2">the doll</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (a / above-01
+            :ARG1 (u / umbrella)
+            :ARG2 (d / doll)
+            :ARG3 (c/ cartesian-framework-91
+              :ARG1 d
+              :FR (i2 / intrinsic)))
+        </amr>
+      </example>
+      <note>ABOVE NOTES: Added for SpatialAMR</note>
+    </roleset>
+  </predicate>
+</frameset>

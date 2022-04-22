@@ -1,62 +1,106 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="admire">
     <roleset id="admire.01" name="admire">
       <aliases>
-        <alias framenet="Judgment Perception_active" pos="v" verbnet="">admire</alias>
-        <alias framenet="" pos="n" verbnet="">admiration</alias>
+        <alias pos="v">admire</alias>
+        <alias pos="n">admiration</alias>
+        <argalias arg="0" pos="n">admirer</argalias>
       </aliases>
-      <note>ADMIRE-V NOTES: Frames file for 'admire' based on wsj; nominal 'admiration' based on BOLT-7. Member of Vncls admire-31.2 (from admire.01-v)</note>
-      <note>ADMIRATION-N NOTES: Automatically created by Julia as an alias file for unification. (from admiration.01-n)</note>
       <roles>
-        <role descr="admirer" f="ppt" n="0">
-          <vnrole vncls="31.2" vntheta="experiencer"/>
+        <role descr="admirer" f="PPT" n="0">
+          <rolelinks>
+            <rolelink class="admire-31.2" resource="VerbNet" version="verbnet3.3">experiencer</rolelink>
+            <rolelink class="Judgment" resource="FrameNet" version="1.7">cognizer</rolelink>
+            <rolelink class="admire-31.2" resource="VerbNet" version="verbnet3.4">experiencer</rolelink>
+          </rolelinks>
         </role>
-        <role descr="admired" f="pag" n="1">
-          <vnrole vncls="31.2" vntheta="stimulus"/>
+        <role descr="admired" f="PAG" n="1">
+          <rolelinks>
+            <rolelink class="admire-31.2" resource="VerbNet" version="verbnet3.3">stimulus</rolelink>
+            <rolelink class="Judgment" resource="FrameNet" version="1.7">evaluee</rolelink>
+            <rolelink class="admire-31.2" resource="VerbNet" version="verbnet3.4">stimulus</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="admire-v: transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Mr. Lieber, the actor who plays Mr. Hoffman, says he was concerned at first that the script would ``misrepresent an astute political mind, one that-1 I admired *trace*-1,'' but that his concerns were allayed.</text>
-        <arg f="" n="0">I</arg>
-        <rel f="">admired</rel>
-        <arg f="" n="1">*trace*-1 (= that)</arg>
-        <arg f="slc" n="m">that -&gt; one</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Judgment" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Perception_active" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="admire-31.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="admire-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">16</lexlink>
+        <lexlink class="admire-31.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="admire-v: transitive" src="">
+        <text>Mr. Lieber , the actor who plays Mr. Hoffman , says he was concerned at first that the script would `` misrepresent an astute political mind , one that I admired , '' but that his concerns were allayed .</text>
+        <propbank>
+          <rel relloc="30">admired</rel>
+          <arg type="ARG0" start="29" end="29">I</arg>
+          <arg type="ARG1" start="27" end="27">one</arg>
+          <arg type="R-ARG1" start="28" end="28">that</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1018" type="">
+      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1018">
         <text>Social change is permitting women to devote more attention to admiring male beauty , and it also is allowing men to enjoy beautifying themselves .</text>
-        <arg f="" n="0">women</arg>
-        <rel f="">admiring</rel>
-        <arg f="" n="1">male beauty</arg>
+        <propbank>
+          <rel relloc="10">admiring</rel>
+          <arg type="ARG0" start="4" end="4">women</arg>
+          <arg type="ARG1" start="11" end="12">male beauty</arg>
+        </propbank>
       </example>
-
-      <example name="admiration-n" src="BOLT-7" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="admiration-n" src="BOLT-7">
         <text>But one only has to compare the per capita incomes of residents of Beijing and Shanghai with those of New York and Tokyo residents to see how huge the gap is and realize that this " envy " is meaningless self - admiration .</text>
-        <arg f="adj" n="m">meaningless</arg>
-        <arg f="" n="1">self</arg>
-        <rel f="">admiration</rel>
+        <propbank>
+          <rel relloc="42">admiration</rel>
+          <arg type="ARGM-ADJ" start="39" end="39">meaningless</arg>
+          <arg type="ARG1" start="40" end="40">self</arg>
+        </propbank>
       </example>
+      <note>ADMIRE-V NOTES: Frames file for 'admire' based on wsj; nominal 'admiration' based on BOLT-7. Member of Vncls admire-31.2 (from admire.01-v)</note>
+      <note>ADMIRATION-N NOTES: Automatically created by Julia as an alias file for unification. (from admiration.01-n)</note>
     </roleset>
   </predicate>
   <predicate lemma="admirable">
     <roleset id="admirable.02" name="worthy of admiring">
       <aliases>
-        <alias framenet="Praiseworthiness" pos="j" verbnet="">admirable</alias>
+        <alias pos="j">admirable</alias>
       </aliases>
-      <note>ADMIRABLE-J NOTES: Added by Julia based on BOLT-7. (from admirable.01-j)</note>
       <roles>
-        <role descr="admirer" f="pag" n="0"/>
-        <role descr="target of admiration" f="ppt" n="1"/>
+        <role descr="admirer" f="PAG" n="0"/>
+        <role descr="target of admiration" f="PPT" n="1"/>
       </roles>
-      <example name="admireable-j: arg1" src="BOLT-7" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>They are really good at finding loopholes , which-1 [*-1] is indeed admirable !</text>
-        <arg f="" n="1">[*-1]</arg>
-        <arg f="adv" n="m">indeed</arg>
-        <rel f="">admirable</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Praiseworthiness" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+      </lexlinks>
+      <example name="admireable-j: arg1" src="BOLT-7">
+        <text>They are really good at finding loopholes , which is indeed admirable !</text>
+        <propbank>
+          <rel relloc="11">admirable</rel>
+          <arg type="ARG1" start="8" end="8">which</arg>
+          <arg type="ARGM-ADV" start="10" end="10">indeed</arg>
+        </propbank>
       </example>
+      <note>ADMIRABLE-J NOTES: Added by Julia based on BOLT-7. (from admirable.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

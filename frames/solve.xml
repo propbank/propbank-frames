@@ -1,61 +1,91 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="solve">
     <roleset id="solve.01" name="to find a solution to, solving">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">solving</alias>
-        <alias framenet="" pos="n" verbnet="">solution</alias>
-        <alias framenet="Resolve_problem" pos="v" verbnet="">solve</alias>
+        <alias pos="n">solving</alias>
+        <alias pos="n">solution</alias>
+        <alias pos="v">solve</alias>
       </aliases>
+      <roles>
+        <role descr="solver" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="discover-84" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="discover-84" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="the problem" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="discover-84" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="discover-84" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="manner, the solution itself" f="MNR" n="2">
+          <rolelinks/>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Resolve_problem" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="discover-84" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="solve-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">18</lexlink>
+        <lexlink class="solve-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">55</lexlink>
+        <lexlink class="discover-84" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="solve-v: inanimate agent" src="">
+        <text>Mr. van Dover added that researchers are trying to determine precisely what crystal changes solved the problem .</text>
+        <propbank>
+          <rel relloc="14">solved</rel>
+          <arg type="ARG0" start="11" end="13">what crystal changes</arg>
+          <arg type="ARG1" start="15" end="16">the problem</arg>
+        </propbank>
+      </example>
+      <example name="solve-v: all arguments" src="">
+        <text>Much the same thing happened with busted S &amp; Ls , a problem Congress just `` solved '' with a $ 166 billion bailout .</text>
+        <propbank>
+          <rel relloc="16">solved</rel>
+          <arg type="ARG0" start="13" end="13">Congress</arg>
+          <arg type="ARGM-TMP" start="14" end="14">just</arg>
+          <arg type="ARG1" start="11" end="12">a problem</arg>
+          <arg type="ARG2" start="18" end="23">with a $ 166 billion bailout</arg>
+        </propbank>
+      </example>
+      <example name="solving-n: Arg0,1" src="">
+        <text>Tilson was a go - getting young man whose skill at finding clues and trace references did n't result in his solving the murders , being always outflanked by Burke 's cool intuition .</text>
+        <propbank>
+          <rel relloc="21">solving</rel>
+          <arg type="ARG0" start="20" end="20">his</arg>
+          <arg type="ARG1" start="22" end="23">the murders</arg>
+        </propbank>
+      </example>
+      <example name="solution-n: arg 1 and MNR" src="BOLT">
+        <text>My take it on this is that it 's a very poor solution to the catch - 22 situation hitting most young job - seekers , but that it 's better than the future jobs fund and / or doing nothing .</text>
+        <propbank>
+          <rel relloc="12">solution</rel>
+          <arg type="ARGM-MNR" start="10" end="11">very poor</arg>
+          <arg type="ARG1" start="13" end="24">to the catch - 22 situation hitting most young job - seekers</arg>
+        </propbank>
+      </example>
+      <example name="solution-n: arg 0" src="BOLT">
+        <text>Once again the Republican solution is a geriatric nut , only this time it 's a relgious fanatic instead of senile warmonger .</text>
+        <propbank>
+          <rel relloc="4">solution</rel>
+          <arg type="ARG0" start="3" end="3">Republican</arg>
+        </propbank>
+      </example>
       <note>SOLVE-V NOTES: Based on sentences in WSJ. Member of VNcls discover-84. (from solve.01-v)</note>
       <note>SOLVING-N NOTES: solve.01 (from solving.01-n)</note>
       <note>SOLUTION-N NOTES: Added by Julia based on BOLT, somewhat on solve.01. No corresponding VNcls. (from solution.01-n)</note>
-      <roles>
-        <role descr="solver" f="pag" n="0">
-          <vnrole vncls="84" vntheta="agent"/>
-        </role>
-        <role descr="the problem" f="ppt" n="1">
-          <vnrole vncls="84" vntheta="theme"/>
-        </role>
-        <role descr="manner, the solution itself" f="mnr" n="2"/>
-      </roles>
-      <example name="solve-v: inanimate agent" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Mr. van Dover added that researchers are trying to determine precisely [what crystal changes]-1 [*T*-1]solved the problem .</text>
-        <arg f="" n="0">[*T*-1]</arg>
-        <rel f="">solved</rel>
-        <arg f="" n="1">the problem</arg>
-      </example>
-      <example name="solve-v: all arguments" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Much the same thing happened with busted S&amp; Ls , a problem [0]-1 Congress just `` solved '' [*T*-1] with a $ 166 billion [*U*] bailout .</text>
-        <arg f="" n="0">Congress</arg>
-        <arg f="tmp" n="m">just</arg>
-        <rel f="">solved</rel>
-        <arg f="" n="1">[*T*-1] (= [0])</arg>
-        <arg f="slc" n="m">[0] -&gt; a problem</arg>
-        <arg f="" n="2">with a $ 166 billion [*U*] bailout</arg>
-      </example>
-      <example name="solving-n: Arg0,1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Tilson was a go-getting young man whose skill at finding clues and trace references didn't result in his solving the murders, being always outflanked by Burke's cool intuition.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">solving</rel>
-        <arg f="" n="1">the murders</arg>
-      </example>
-      <example name="solution-n: arg 1 and MNR" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>My take it on this is that it 's a very poor solution to the catch - 22 situation hitting most young job - seekers , but that it 's better than the future jobs fund and / or doing nothing .</text>
-        <arg f="mnr" n="m">very poor</arg>
-        <rel f="">solution</rel>
-        <arg f="" n="1">to the catch - 22 situation hitting most young job - seekers</arg>
-      </example>
-      <example name="solution-n: arg 0" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Once again the Republican solution is a geriatric nut , only this time it 's a relgious fanatic instead of senile warmonger .</text>
-        <arg f="" n="0">Republican</arg>
-        <rel f="">solution</rel>
-      </example>
     </roleset>
   </predicate>
 </frameset>

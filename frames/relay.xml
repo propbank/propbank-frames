@@ -1,76 +1,119 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="relay">
     <roleset id="relay.01" name="send along, transmit">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">relay</alias>
-        <alias framenet="" pos="v" verbnet="">relay</alias>
+        <alias pos="n">relay</alias>
+        <alias pos="v">relay</alias>
       </aliases>
-      <note>RELAY-V NOTES: VN class instr_communication-37.4, transfer_mesg-37.1.1. (from relay.01-v)</note>
-      <note>RELAY-N NOTES: Based on ontonotes nouns. Comparison to relay.01-v. VN classes instr_communication-37.4 and transer_mesg-37.1.1. No FN class. Framed by Katie. (from relay.02-n)</note>
       <roles>
         <role descr="sender, agent" f="PAG" n="0">
-          <vnrole vncls="37.4" vntheta="Agent"/>
-          <vnrole vncls="37.1.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="instr_communication-37.4.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="transfer_mesg-37.1.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="transfer_mesg-37.1.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing sent" f="PPT" n="1">
-          <vnrole vncls="37.4" vntheta="Topic"/>
-          <vnrole vncls="37.1.1" vntheta="Topic"/>
+          <rolelinks>
+            <rolelink class="instr_communication-37.4.1" resource="VerbNet" version="verbnet3.3">topic</rolelink>
+            <rolelink class="transfer_mesg-37.1.1" resource="VerbNet" version="verbnet3.3">topic</rolelink>
+            <rolelink class="transfer_mesg-37.1.1" resource="VerbNet" version="verbnet3.4">topic</rolelink>
+          </rolelinks>
         </role>
         <role descr="sent to" f="GOL" n="2">
-          <vnrole vncls="37.4" vntheta="Recipient"/>
-          <vnrole vncls="37.1.1" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink class="instr_communication-37.4.1" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+            <rolelink class="transfer_mesg-37.1.1" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+            <rolelink class="transfer_mesg-37.1.1" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all args" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Col. North conveyed the request to his superiors and to Assistant Secretary of State Elliot Abrams, who [*T*-1] relayed it to Secretary of State George Shultz.</text>
-        <arg f="" n="0">[*T*-1]</arg>
-        <arg f="rcl" n="m">who -&gt; Assistant Secretary of State Elliot Abrams</arg>
-        <rel f="">relayed</rel>
-        <arg f="" n="1">it</arg>
-        <arg f="" n="2">to Secretary of State George Shultz</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="instr_communication-37.4.1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+        <lexlink class="transfer_mesg-37.1.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="relay-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">9</lexlink>
+        <lexlink class="transfer_mesg-37.1.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="all args" src="">
+        <text>Col . North conveyed the request to his superiors and to Assistant Secretary of State Elliot Abrams , who relayed it to Secretary of State George Shultz .</text>
+        <propbank>
+          <rel relloc="19">relayed</rel>
+          <arg type="ARG0" start="11" end="16">Assistant Secretary of State Elliot Abrams</arg>
+          <arg type="R-ARG0" start="18" end="18">who</arg>
+          <arg type="ARG1" start="20" end="20">it</arg>
+          <arg type="ARG2" start="21" end="26">to Secretary of State George Shultz</arg>
+        </propbank>
       </example>
-      <example name="no destination" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Luis Carlos, knowing that helping the Americans could advance the career of any Panamanian officer, relayed Tony's reports on the leftist tendencies he observed among his fellow students and, more important, among his officers and instructors.</text>
-        <arg f="" n="0">Luis Carlos</arg>
-        <arg f="adv" n="m">knowing that helping the Americans could advance the career of any Panamanian officer</arg>
-        <rel f="">relayed</rel>
-        <arg f="" n="1">Tony's reports on the leftist tendencies he observed among his fellow students and, more important, among his officers and instructors</arg>
+      <example name="no destination" src="">
+        <text>Luis Carlos , knowing that helping the Americans could advance the career of any Panamanian officer , relayed Tony 's reports on the leftist tendencies he observed among his fellow students and , more important , among his officers and instructors .</text>
+        <propbank>
+          <rel relloc="17">relayed</rel>
+          <arg type="ARG0" start="0" end="1">Luis Carlos</arg>
+          <arg type="ARGM-ADV" start="3" end="15">knowing that helping the Americans could advance the career of any Panamanian officer</arg>
+          <arg type="ARG1" start="18" end="40">Tony 's reports on the leftist tendencies he observed among his fellow students and , more important , among his officers and instructors</arg>
+        </propbank>
       </example>
-      <example name="relay an unspecified message" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="relay an unspecified message" src="">
         <text>The relay of information via the internet</text>
-        <rel f="">relay</rel>
-        <arg f="" n="1">of information</arg>
-        <arg f="mnr" n="m">via the internet</arg>
+        <propbank>
+          <rel relloc="1">relay</rel>
+          <arg type="ARG1" start="2" end="3">of information</arg>
+          <arg type="ARGM-MNR" start="4" end="6">via the internet</arg>
+        </propbank>
       </example>
+      <note>RELAY-V NOTES: VN class instr_communication-37.4, transfer_mesg-37.1.1. (from relay.01-v)</note>
+      <note>RELAY-N NOTES: Based on ontonotes nouns. Comparison to relay.01-v. VN classes instr_communication-37.4 and transer_mesg-37.1.1. No FN class. Framed by Katie. (from relay.02-n)</note>
     </roleset>
     <roleset id="relay.02" name="relay race">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">relay</alias>
+        <alias pos="n">relay</alias>
       </aliases>
-      <note>RELAY-N NOTES: Based on ontonotes nouns. Framed by Katie. (from relay.01-n)</note>
       <roles>
-        <role descr="baton carrier, current racer" f="pag" n="0"/>
-        <role descr="opponent" f="ppt" n="1"/>
-        <role descr="baton; item passed off" f="mnr" n="2"/>
-        <role descr="domain, type of race" f="vsp" n="3"/>
+        <role descr="baton carrier, current racer" f="PAG" n="0"/>
+        <role descr="opponent" f="PPT" n="1"/>
+        <role descr="baton; item passed off" f="MNR" n="2"/>
+        <role descr="domain, type of race" f="VSP" n="3"/>
       </roles>
-      <example name="Arg 3 as the domain rather than type" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="Arg 3 as the domain rather than type" src="">
         <text>The Beijing Olympics torch relay</text>
-        <arg f="" n="3">Beijing Olympics</arg>
-        <arg f="" n="2">torch</arg>
-        <rel f="">relay</rel>
+        <propbank>
+          <rel relloc="4">relay</rel>
+          <arg type="ARG3" start="1" end="2">Beijing Olympics</arg>
+          <arg type="ARG2" start="3" end="3">torch</arg>
+        </propbank>
       </example>
-      <example name="arg 3 as type, with only one racer mentioned" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="arg 3 as type, with only one racer mentioned" src="">
         <text>The 4 by 400 relay anchored by Usain Bolt</text>
-        <arg f="" n="3">The 4 by 400</arg>
-        <rel f="">relay</rel>
-        <arg f="" n="0">anchored by Usain Bolt</arg>
+        <propbank>
+          <rel relloc="4">relay</rel>
+          <arg type="ARG3" start="0" end="3">The 4 by 400</arg>
+          <arg type="ARG0" start="5" end="8">anchored by Usain Bolt</arg>
+        </propbank>
       </example>
+      <note>RELAY-N NOTES: Based on ontonotes nouns. Framed by Katie. (from relay.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

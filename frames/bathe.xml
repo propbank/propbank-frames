@@ -1,69 +1,100 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="bathe">
     <roleset id="bathe.01" name="have a bath, giving or having a bath">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">bathing</alias>
-        <alias framenet="" pos="v" verbnet="">bathe</alias>
-        <alias framenet="" pos="n" verbnet="">bath</alias>
-        <alias framenet="" pos="l" verbnet="">take_bath</alias>
+        <alias pos="n">bathing</alias>
+        <alias pos="v">bathe</alias>
+        <alias pos="n">bath</alias>
+        <alias pos="l">take_bath</alias>
       </aliases>
+      <roles>
+        <role descr="Agent of bathing" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="dress-41.1.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Grooming" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="dress-41.1.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="Thing washed, dirt, patient" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="dress-41.1.1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="Liquid bathed in" f="MNR" n="2">
+          <rolelinks/>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Grooming" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="fill-9.8" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="dress-41.1.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="dress-41.1.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="with liquid" src="">
+        <text>As warmer temperatures were encountered Ann and Harriet were introduced to the pleasures of bathing daily in salt water .</text>
+        <propbank>
+          <rel relloc="14">bathing</rel>
+          <arg type="ARG0" start="5" end="7">Ann and Harriet</arg>
+          <arg type="ARGM-TMP" start="15" end="15">daily</arg>
+          <arg type="ARG2" start="16" end="18">in salt water</arg>
+        </propbank>
+      </example>
+      <example name="intransitive" src="">
+        <text>Heat during the Atlanta campaign , coupled with unsuitable clothing , caused individual irritation that was compounded by a lack of opportunity to bathe and shift into clean clothing .</text>
+        <propbank>
+          <rel relloc="23">bathe</rel>
+        </propbank>
+      </example>
+      <example name="pseudopassive" src="">
+        <text>... so that the whole place was bathed in the maximum of light without any point admitting even so much as a crack of glare .</text>
+        <propbank>
+          <rel relloc="7">bathed</rel>
+          <arg type="ARG0" start="3" end="5">the whole place</arg>
+          <arg type="ARG2" start="8" end="12">in the maximum of light</arg>
+        </propbank>
+      </example>
+      <example name="Arg0, 1" src="">
+        <text>The nurse continued his bathing of the patient 's wounds .</text>
+        <propbank>
+          <rel relloc="4">bathing</rel>
+          <arg type="ARG0" start="3" end="3">his</arg>
+          <arg type="ARG1" start="5" end="9">of the patient 's wounds</arg>
+        </propbank>
+      </example>
+      <example name="Within LVC" src="">
+        <text>I more often buy aromatic oils and use them at home - *PRO* take a fragrant bath or heat the oil to diffuse the fragrance .</text>
+        <propbank>
+          <rel relloc="16">bath</rel>
+          <arg type="ARG0" start="?" end="?">*PRO*</arg>
+          <arg type="ARGM-LVB" start="13" end="13">take</arg>
+          <arg type="ARGM-ADV" start="15" end="15">fragrant</arg>
+        </propbank>
+      </example>
+      <example name="All Arguments" src="web">
+        <text>Leave her in her bath of tears .</text>
+        <propbank>
+          <rel relloc="4">bath</rel>
+          <arg type="ARG0" start="3" end="3">her</arg>
+          <arg type="ARG2" start="5" end="6">of tears</arg>
+        </propbank>
+      </example>
       <note>BATHE-V NOTES: Frames file for 'bathe' based on sentences in brown. Verbnet entry (from bathe.01-v predicate notes)</note>
       <note>BATHING-N NOTES: bathe.01/wash.01 (from bathing.01-n)</note>
       <note>BATH-N NOTES: Based on verb entry bathe.01; corresponds to VN classes dress-41.1.1 and fill-9.8. (from bath.01-n)</note>
-      <roles>
-        <role descr="Agent of bathing" f="pag" n="0">
-          <vnrole vncls="9.8" vntheta="agent"/>
-          <vnrole vncls="41.1.1" vntheta="agent"/>
-        </role>
-        <role descr="Thing washed, dirt, patient" f="ppt" n="1">
-          <vnrole vncls="9.8" vntheta="theme"/>
-        </role>
-        <role descr="Liquid bathed in" f="mnr" n="2"/>
-      </roles>
-      <example name="with liquid" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="ns" voice="ns"/>
-        <text>As warmer temperatures were encountered [Ann and Harriet]-1 were introduced to the pleasures of *trace*-1 bathing daily in salt water.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">bathing</rel>
-        <arg f="TMP" n="m">daily</arg>
-        <arg f="" n="2">in salt water</arg>
-      </example>
-      <example name="intransitive" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="active"/>
-        <text>Heat during the Atlanta campaign, coupled with unsuitable clothing, caused individual irritation that was compounded by a lack of opportunity *trace* to bath and shift into clean clothing.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">bathe</rel>
-      </example>
-      <example name="pseudopassive" src="" type="">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="passive"/>
-        <text>...so that the whole place was bathed in the maximum of light without any point admitting even so much as a crack of glare.</text>
-        <arg f="" n="0">the whole place</arg>
-        <rel f="">bathed</rel>
-        <arg f="" n="2">in the maximum of light</arg>
-      </example>
-      <example name="Arg0, 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The nurse continued his bathing of the patient's wounds.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">bathing</rel>
-        <arg f="" n="1">of the patient's wounds</arg>
-      </example>
-      <example name="Within LVC" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="ns" voice="ns"/>
-        <text>I more often buy aromatic oils and use them at home - *PRO* take a fragrant bath or heat the oil to diffuse the fragrance .</text>
-        <arg f="" n="0">*PRO*</arg>
-        <arg f="lvb" n="m">take</arg>
-        <arg f="adv" n="m">fragrant</arg>
-        <rel f="">bath</rel>
-      </example>
-      <example name="All Arguments" src="web" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="active"/>
-        <text>Leave her in her bath of tears.</text>
-        <arg f="" n="0">her</arg>
-        <rel f="">bath</rel>
-        <arg f="" n="2">of tears</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

@@ -1,62 +1,90 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="hint">
     <roleset id="hint.01" name="say, giving a clue, suggesting">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">hint</alias>
-        <alias framenet="" pos="v" verbnet="">hint</alias>
+        <alias pos="n">hint</alias>
+        <alias pos="v">hint</alias>
       </aliases>
-      <note>HINT-V NOTES: Frames file for 'hint' based on sentences in financial subcorpus. No Verbnet entry. Comparison with 'suggest'. (from hint.01-v predicate notes)</note>
-      <note>HINT-N NOTES: Added by Julia based on BOLT, hint-v.01. Corresponds to VNcls say-37.7-2. (from hint.01-n)</note>
       <roles>
         <role descr="Sayer" f="PAG" n="0">
-          <vnrole vncls="37.7-2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="Utterance (hint)" f="PPT" n="1">
-          <vnrole vncls="37.7-2" vntheta="Topic"/>
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">topic</rolelink>
+          </rolelinks>
         </role>
         <role descr="Hearer" f="GOL" n="2">
-          <vnrole vncls="37.7-2" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="sentential hint" src="" type="">
-        <text>Miniscribe reported a negative net worth and hinted it may file for Chapter 11.</text>
-        <arg f="" n="0">Miniscribe</arg>
-        <rel f="">hinted</rel>
-        <arg f="" n="1">it may file for Chapter 11</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="say-37.7-1-2" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+        <lexlink class="hint-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">16</lexlink>
+      </lexlinks>
+      <example name="sentential hint" src="">
+        <text>Miniscribe reported a negative net worth and hinted it may file for Chapter 11 .</text>
+        <propbank>
+          <rel relloc="7">hinted</rel>
+          <arg type="ARG0" start="0" end="0">Miniscribe</arg>
+          <arg type="ARG1" start="8" end="13">it may file for Chapter 11</arg>
+        </propbank>
       </example>
-      <example name="hint at NP" src="" type="">
-        <text>Mr. Ridley hinted at this motive in answering questions from members of Parliament after his announcement.</text>
-        <arg f="" n="0">Mr. Ridley</arg>
-        <rel f="">hinted</rel>
-        <arg f="" n="1">at this motive</arg>
-        <arg f="adv" n="m">in answering questions from members of Parliament after his announcement</arg>
+      <example name="hint at NP" src="">
+        <text>Mr. Ridley hinted at this motive in answering questions from members of Parliament after his announcement .</text>
+        <propbank>
+          <rel relloc="2">hinted</rel>
+          <arg type="ARG0" start="0" end="1">Mr. Ridley</arg>
+          <arg type="ARG1" start="3" end="5">at this motive</arg>
+          <arg type="ARGM-ADV" start="6" end="15">in answering questions from members of Parliament after his announcement</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG2 and ARG1" src="ontonotes mz/sinorama/10/ectb_1068" type="">
+      <example name="ARG0 and ARG2 and ARG1" src="ontonotes mz/sinorama/10/ectb_1068">
         <text>Mrs. Wei has hinted a few times to her husband that she should just stay at home and concentrate on looking after the children .</text>
-        <arg f="" n="0">Mrs. Wei</arg>
-        <rel f="">hinted</rel>
-        <arg f="tmp" n="m">a few times</arg>
-        <arg f="" n="2">to her husband</arg>
-        <arg f="" n="1">that she should just stay at home and concentrate on looking after the children</arg>
+        <propbank>
+          <rel relloc="3">hinted</rel>
+          <arg type="ARG0" start="0" end="1">Mrs. Wei</arg>
+          <arg type="ARGM-TMP" start="4" end="6">a few times</arg>
+          <arg type="ARG2" start="7" end="9">to her husband</arg>
+          <arg type="ARG1" start="10" end="23">that she should just stay at home and concentrate on looking after the children</arg>
+        </propbank>
       </example>
-
-      <example name="all args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>His hint to the mayor, that he would do well to qualify himself for his office by taking the sacramental test, did not help his cause.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">hint</rel>
-        <arg f="" n="2">to the mayor</arg>
-        <arg f="" n="1">that he would do well to qualify himself for his office by taking the sacramental test</arg>
+      <example name="all args" src="internet">
+        <text>His hint to the mayor , that he would do well to qualify himself for his office by taking the sacramental test , did not help his cause .</text>
+        <propbank>
+          <rel relloc="1">hint</rel>
+          <arg type="ARG0" start="0" end="0">His</arg>
+          <arg type="ARG2" start="2" end="4">to the mayor</arg>
+          <arg type="ARG1" start="6" end="21">that he would do well to qualify himself for his office by taking the sacramental test</arg>
+        </propbank>
       </example>
-      <example name="Light Verb: make" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>It sounds like he's making hints that he likes you.</text>
-        <arg f="" n="0">he</arg>
-        <arg f="lvb" n="m">making</arg>
-        <rel f="">hints</rel>
-        <arg f="" n="1">that he likes you</arg>
+      <example name="Light Verb: make" src="internet">
+        <text>It sounds like he 's making hints that he likes you .</text>
+        <propbank>
+          <rel relloc="6">hints</rel>
+          <arg type="ARG0" start="3" end="3">he</arg>
+          <arg type="ARGM-LVB" start="5" end="5">making</arg>
+          <arg type="ARG1" start="7" end="10">that he likes you</arg>
+        </propbank>
       </example>
+      <note>HINT-V NOTES: Frames file for 'hint' based on sentences in financial subcorpus. No Verbnet entry. Comparison with 'suggest'. (from hint.01-v predicate notes)</note>
+      <note>HINT-N NOTES: Added by Julia based on BOLT, hint-v.01. Corresponds to VNcls say-37.7-2. (from hint.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

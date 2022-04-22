@@ -1,32 +1,65 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="berate">
     <roleset id="berate.01" name="yell at">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">berate</alias>
+        <alias pos="v">berate</alias>
       </aliases>
-      <note>BERATE-V NOTES: Frames file for 'berate' based on sentences in wsj. No Verbnet entry, Framenet entry Judgement. (from berate.01-v predicate notes)</note>
       <roles>
-        <role descr="yeller" f="pag" n="0"/>
-        <role descr="yelled at" f="gol" n="1"/>
-        <role descr="cause" f="ppt" n="2"/>
+        <role descr="yeller" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="Judgment_direct_address" resource="FrameNet" version="1.7">communicator</rolelink>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="yelled at" f="GOL" n="1">
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="cause" f="PPT" n="2">
+          <rolelinks>
+            <rolelink class="Judgment_direct_address" resource="FrameNet" version="1.7">addressee</rolelink>
+            <rolelink class="Judgment_direct_address" resource="FrameNet" version="1.7">topic</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="just transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>At his first Chicago press conference, he berated the reporters.</text>
-        <arg f="loc" n="m">At his first Chicago press conference</arg>
-        <arg f="" n="0">he</arg>
-        <rel f="">berated</rel>
-        <arg f="" n="1">the reporters</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Judgment_direct_address" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="Correspondence" confidence="0.1" resource="ERE" src="reo-expansion" version="rich" />
+        <lexlink class="judgment-33.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="just transitive" src="">
+        <text>At his first Chicago press conference , he berated the reporters .</text>
+        <propbank>
+          <rel relloc="8">berated</rel>
+          <arg type="ARGM-LOC" start="0" end="5">At his first Chicago press conference</arg>
+          <arg type="ARG0" start="7" end="7">he</arg>
+          <arg type="ARG1" start="9" end="10">the reporters</arg>
+        </propbank>
       </example>
-      <example name="ARG2" src="probably COCA (2018 example fix)" type="">
-        <text>Havencourt underwent a wrathful moment in which he called Dorn a born tramp, and berated him for having no respectable business with telephone or cable connections.</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">berated</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="cau" n="m">for having no respectable business with telephone or cable connections.</arg>
+      <example name="ARG2" src="probably COCA (2018 example fix)">
+        <text>Havencourt underwent a wrathful moment in which he called Dorn a born tramp , and berated him for having no respectable business with telephone or cable connections .</text>
+        <propbank>
+          <rel relloc="15">berated</rel>
+          <arg type="ARG0" start="7" end="7">he</arg>
+          <arg type="ARG1" start="16" end="16">him</arg>
+          <arg type="ARGM-CAU" start="17" end="26">for having no respectable business with telephone or cable connections</arg>
+        </propbank>
       </example>
-
+      <note>BERATE-V NOTES: Frames file for 'berate' based on sentences in wsj. No Verbnet entry, Framenet entry Judgement. (from berate.01-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

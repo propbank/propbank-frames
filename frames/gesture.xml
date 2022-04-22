@@ -1,58 +1,96 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="gesture">
     <roleset id="gesture.01" name="body language">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">gesture</alias>
-        <alias framenet="" pos="n" verbnet="">gesture</alias>
+        <alias pos="v">gesture</alias>
+        <alias pos="n">gesture</alias>
       </aliases>
-      <note>GESTURE-V NOTES: Frames file for 'gesture' based on sentences in wsj. No Verbnet entry, Framenet entry Gesture. Who'd'a thunk? (from gesture.01-v predicate notes)</note>
-      <note>GESTURE-N NOTES: Based on sentences in nouns-00040. Comparison to gesture.01-v and nombank's gesture-n. VN class wink-40.3.1-1. Framed by Katie. (from gesture.01-n)</note>
       <roles>
         <role descr="agent" f="PAG" n="0">
-          <vnrole vncls="40.3.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="wink-40.3.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Gesture" resource="FrameNet" version="1.7">communicator</rolelink>
+            <rolelink class="wink-40.3.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="theme" f="ppt" n="1"/>
+        <role descr="theme" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="wink-40.3.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="wink-40.3.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
         <role descr="hearer" f="GOL" n="2">
-          <vnrole vncls="40.3.1" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink class="wink-40.3.1" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+            <rolelink class="Gesture" resource="FrameNet" version="1.7">addressee</rolelink>
+            <rolelink class="wink-40.3.1" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="intransitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Silences were lengthy -- nobody moved or gestured.</text>
-        <arg f="" n="0">nobody</arg>
-        <rel f="">gestured</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Gesture" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="wink-40.3.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="gesture-n.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+        <lexlink class="wink-40.3.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="intransitive" src="">
+        <text>Silences were lengthy -- nobody moved or gestured .</text>
+        <propbank>
+          <rel relloc="7">gestured</rel>
+          <arg type="ARG0" start="4" end="4">nobody</arg>
+        </propbank>
       </example>
-      <example name="ARG0" src="ontonotes mz/sinorama/10/ectb_1027" type="">
+      <example name="ARG0" src="ontonotes mz/sinorama/10/ectb_1027">
         <text>But in spite of my resolution , within ten minutes , with Martine gesturing and Chien - chien sobbing , I was hustled out the door .</text>
-        <arg f="" n="0">Martine</arg>
-        <rel f="">gesturing</rel>
+        <propbank>
+          <rel relloc="13">gesturing</rel>
+          <arg type="ARG0" start="12" end="12">Martine</arg>
+        </propbank>
       </example>
-
-      <example name="Example of a gesticular &quot;theme&quot;" src="" type="">
+      <example name="Example of a gesticular &quot;theme&quot;" src="">
         <text>whack , whack , whack his hand made vigorous spanking gestures</text>
-        <arg f="mnr" n="m">vigorous</arg>
-        <arg f="" n="1">spanking</arg>
-        <rel f="">gestures</rel>
+        <propbank>
+          <rel relloc="10">gestures</rel>
+          <arg type="ARGM-MNR" start="8" end="8">vigorous</arg>
+          <arg type="ARG1" start="9" end="9">spanking</arg>
+        </propbank>
       </example>
-      <example name="With gesture-er" src="" type="">
+      <example name="With gesture-er" src="">
         <text>Barbara Bush 's gestures</text>
-        <arg f="" n="0">Barbara Bush 's</arg>
-        <rel f="">gestures</rel>
+        <propbank>
+          <rel relloc="3">gestures</rel>
+          <arg type="ARG0" start="0" end="2">Barbara Bush 's</arg>
+        </propbank>
       </example>
-      <example name="Another example of theme" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="Another example of theme" src="">
         <text>A gesture of reconciliation</text>
-        <rel f="">gesture</rel>
-        <arg f="" n="1">of reconciliation</arg>
+        <propbank>
+          <rel relloc="1">gesture</rel>
+          <arg type="ARG1" start="2" end="3">of reconciliation</arg>
+        </propbank>
       </example>
-      <example name="And finally, gestured to" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="And finally, gestured to" src="">
         <text>A comforting gesture to the various countries and cities crying for help</text>
-        <arg f="mnr" n="m">comforting</arg>
-        <rel f="">gesture</rel>
-        <arg f="" n="2">to the various countries and cities crying for help</arg>
+        <propbank>
+          <rel relloc="2">gesture</rel>
+          <arg type="ARGM-MNR" start="1" end="1">comforting</arg>
+          <arg type="ARG2" start="3" end="11">to the various countries and cities crying for help</arg>
+        </propbank>
       </example>
+      <note>GESTURE-V NOTES: Frames file for 'gesture' based on sentences in wsj. No Verbnet entry, Framenet entry Gesture. Who'd'a thunk? (from gesture.01-v predicate notes)</note>
+      <note>GESTURE-N NOTES: Based on sentences in nouns-00040. Comparison to gesture.01-v and nombank's gesture-n. VN class wink-40.3.1-1. Framed by Katie. (from gesture.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

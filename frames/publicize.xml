@@ -1,62 +1,106 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="publicize">
     <roleset id="publicize.01" name="make widely-known">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">publicize</alias>
-        <alias framenet="" pos="j" verbnet="">publicized</alias>
+        <alias pos="v">publicize</alias>
+        <alias pos="j">publicized</alias>
       </aliases>
+      <roles>
+        <role descr="publicist" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="remedy-45.7" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="topic" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="remedy-45.7" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="secondary predication" f="PRD" n="2">
+          <rolelinks/>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Publishing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="other_cos-45.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="publicize-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">16</lexlink>
+        <lexlink class="remedy-45.7" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="publicize-v: active" src="">
+        <text>Dealers say the firm apparently has wanted to publicize its recent buying and subsequent selling of 30 - year bonds by using Cantor Fitzgerald Securities Corp. as a broker .</text>
+        <propbank>
+          <rel relloc="8">publicize</rel>
+          <arg type="ARG0" start="2" end="3">the firm</arg>
+          <arg type="ARG1" start="9" end="19">its recent buying and subsequent selling of 30 - year bonds</arg>
+          <arg type="ARGM-MNR" start="20" end="28">by using Cantor Fitzgerald Securities Corp. as a broker</arg>
+        </propbank>
+      </example>
+      <example name="publicize-v: passive with attribute" src="">
+        <text>Still , scientists breathed a collective sigh of relief about the finding , because it demonstrates how to overcome the `` flux pinning '' problem that earlier this year was widely publicized as undercutting new superconductors ' potential .</text>
+        <propbank>
+          <rel relloc="31">publicized</rel>
+          <arg type="ARGM-TMP" start="26" end="28">earlier this year</arg>
+          <arg type="ARGM-MNR" start="30" end="30">widely</arg>
+          <arg type="ARG1" start="19" end="24">the `` flux pinning '' problem</arg>
+          <arg type="R-ARG1" start="25" end="25">that</arg>
+          <arg type="ARG2" start="32" end="37">as undercutting new superconductors ' potential</arg>
+        </propbank>
+      </example>
+      <example name="publicized-j" src="BOLT-4,5">
+        <text>I do n't think it 's fair that cases are so publicized , and should only be so open if the defendant does n't mind .</text>
+        <propbank>
+          <rel relloc="11">publicized</rel>
+          <arg type="ARG1" start="8" end="8">cases</arg>
+          <arg type="ARGM-EXT" start="10" end="10">so</arg>
+        </propbank>
+      </example>
       <note>PUBLICIZE-V NOTES: 'Publicize' based on wsj; adjectival 'publicized' based on BOLT-4,5. Member of Vncls other_cos-45.4. (from publicize.01-v)</note>
       <note>PUBLICIZED-J NOTES: Automatically created by Julia as an alias file for unification. (from publicized.01-j)</note>
-      <roles>
-        <role descr="publicist" f="pag" n="0">
-          <vnrole vncls="45.4" vntheta="agent"/>
-        </role>
-        <role descr="topic" f="ppt" n="1">
-          <vnrole vncls="45.4" vntheta="patient"/>
-        </role>
-        <role descr="secondary predication" f="prd" n="2"/>
-      </roles>
-      <example name="publicize-v: active" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>Dealers say [the firm]-1 apparently has wanted *trace*-1 to publicize its recent buying and subsequent selling of 30-year bonds by using Cantor Fitzgerald Securities Corp. as a broker.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">publicize</rel>
-        <arg f="" n="1">its recent buying and subsequent selling of 30-year bonds</arg>
-        <arg f="mnr" n="m">by using Cantor Fitzgerald Securities Corp. as a broker</arg>
-      </example>
-      <example name="publicize-v: passive with attribute" src="" type="">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="passive"/>
-        <text>Still, scientists breathed a collective sigh of relief about the finding, because it demonstrates how to overcome the ``flux pinning'' problem that-1 [*trace*-1]-2 earlier this year was widely publicized *trace*-2 as undercutting new superconductors' potential.</text>
-        <arg f="tmp" n="m">earlier this year</arg>
-        <arg f="mnr" n="m">widely</arg>
-        <rel f="">publicized</rel>
-        <arg f="" n="1">*trace*-2 (= *trace*-1 = that)</arg>
-        <arg f="slc" n="m">that -&gt; the ``flux pinning'' problem</arg>
-        <arg f="" n="2">as undercutting new superconductors' potential</arg>
-      </example>
-      <example name="publicized-j" src="BOLT-4,5" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I do n't think it 's fair that cases are so publicized , and should only be so open if the defendant does n't mind .</text>
-        <arg f="" n="1">cases</arg>
-        <arg f="ext" n="m">so</arg>
-        <rel f="">publicized</rel>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="public">
     <roleset id="public.02" name="open/visible to general people">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">public</alias>
+        <alias pos="j">public</alias>
       </aliases>
-      <note>PUBLIC-J NOTES: Added automatically by Julia. (from public.01-j)</note>
       <roles>
-        <role descr="public entity" f="ppt" n="1"/>
-        <role descr="audience arg1 is available to" f="gol" n="2"/>
+        <role descr="public entity" f="PPT" n="1"/>
+        <role descr="audience arg1 is available to" f="GOL" n="2"/>
       </roles>
-      <example name="public-j" src="" type="">
-        <text>It was explained that when the first letter was capitalized, the identifier was public to any piece of code that wanted to use it.</text>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="public-j" src="">
+        <text>It was explained that when the first letter was capitalized , the identifier was public to any piece of code that wanted to use it .</text>
+        <propbank>
+          <rel relloc="14">public</rel>
+          <arg type="ARG1" start="11" end="12">the identifier</arg>
+          <arg type="ARG2" start="15" end="24">to any piece of code that wanted to use it</arg>
+        </propbank>
       </example>
+      <note>PUBLIC-J NOTES: Added automatically by Julia. (from public.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

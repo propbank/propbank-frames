@@ -1,53 +1,96 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="commission">
     <roleset id="commission.01" name="to grant a commission, authorize, hiring by commission">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">commission</alias>
-        <alias framenet="" pos="n" verbnet="">commissioning</alias>
+        <alias pos="v">commission</alias>
+        <alias pos="n">commissioning</alias>
       </aliases>
-      <note>COMMISSION-V NOTES: Frames file for 'commission' based on survey of sentences in the WSJ corpus. (from commission.01-v predicate notes)</note>
-      <note>COMMISSIONING-N NOTES: Added by Julia based on BOLT, commision-n.01. Corresponds to VNcls force-59. (from commissioning.01-n)</note>
       <roles>
         <role descr="granter, agent" f="PAG" n="0">
-          <vnrole vncls="59" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="59" resource="VerbNet" version="UNK">agent</rolelink>
+            <rolelink class="Employing" resource="FrameNet" version="1.7">employer</rolelink>
+            <rolelink class="Hiring" resource="FrameNet" version="1.7">employer</rolelink>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="order-58.3-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="task" f="PRD" n="1">
-          <vnrole vncls="59" vntheta="Result"/>
+          <rolelinks>
+            <rolelink class="59" resource="VerbNet" version="UNK">result</rolelink>
+            <rolelink class="Employing" resource="FrameNet" version="1.7">field</rolelink>
+            <rolelink class="Employing" resource="FrameNet" version="1.7">position</rolelink>
+            <rolelink class="Employing" resource="FrameNet" version="1.7">task</rolelink>
+            <rolelink class="Hiring" resource="FrameNet" version="1.7">task</rolelink>
+            <rolelink class="Hiring" resource="FrameNet" version="1.7">position</rolelink>
+            <rolelink class="order-58.3-1" resource="VerbNet" version="verbnet3.4">result</rolelink>
+          </rolelinks>
         </role>
         <role descr="recepient" f="PPT" n="2">
-          <vnrole vncls="59" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink class="59" resource="VerbNet" version="UNK">patient</rolelink>
+            <rolelink class="Employing" resource="FrameNet" version="1.7">employee</rolelink>
+            <rolelink class="Hiring" resource="FrameNet" version="1.7">employee</rolelink>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+            <rolelink class="order-58.3-1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>[*-1] To find out why , the group recently commissioned a study of the past 20 years of bowling-related research .</text>
-        <arg f="" n="0">the group</arg>
-        <arg f="TMP" n="M">recently</arg>
-        <rel f="">commissioned</rel>
-        <arg f="" n="1">a study of the past 20 years of bowling-related research</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Employing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Hiring" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="59" confidence="0.0" resource="VerbNet" src="manual+strict-conv" version="UNK"/>
+        <lexlink class="commission-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+        <lexlink class="hire-13.5.3" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="order-58.3-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="transitive" src="">
+        <text>To find out why , the group recently commissioned a study of the past 20 years of bowling - related research .</text>
+        <propbank>
+          <rel relloc="8">commissioned</rel>
+          <arg type="ARG0" start="5" end="6">the group</arg>
+          <arg type="ARGM-TMP" start="7" end="7">recently</arg>
+          <arg type="ARG1" start="9" end="20">a study of the past 20 years of bowling - related research</arg>
+        </propbank>
       </example>
-      <example name="all arguments" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="ns" voice="active"/>
-        <text>And she further stunned her listeners by [*-2] revealing her secret garden design method : [*]Commissioning a friend to spend `` five or six thousand dollars ... on books that I ultimately cut up [*T*-1] . ''</text>
-        <arg f="" n="0">[*]</arg>
-        <rel f="">Commissioning</rel>
-        <arg f="" n="2">a friend</arg>
-        <arg f="" n="1">to spend `` five or six thousand dollars ... on books that I ultimately cut up [*T*-1]</arg>
+      <example name="all arguments" src="">
+        <text>And she further stunned her listeners by [*-2] revealing her secret garden design method : [*] Commissioning a friend to spend `` five or six thousand dollars ... on books that I ultimately cut up [*T*-1] . ''</text>
+        <propbank>
+          <rel relloc="16">Commissioning</rel>
+          <arg type="ARG0" start="?" end="?">[*]</arg>
+          <arg type="ARG2" start="17" end="18">a friend</arg>
+          <arg type="ARG1" start="19" end="34">to spend `` five or six thousand dollars ... on books that I ultimately cut up</arg>
+        </propbank>
       </example>
-      <example name="no args" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="no args" src="BOLT">
         <text>Special occasions such as keel laying , ship christening , and commissioning ceremonies deal with shipbuilding , no ceremonies for scrapping .</text>
-        <rel f="">commissioning</rel>
+        <propbank>
+          <rel relloc="11">commissioning</rel>
+        </propbank>
       </example>
-      <example name="All args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The search for a theatrical home took up most of the company's energy, through the Blackfriars financial fiasco, in the bitter battles with Giles Allen over their lease (which resulted in pulling down the Theatre), and through their commissioning of Peter Street to build a new theater in Southwark, the Globe.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">commissioning</rel>
-        <arg f="" n="2">of Peter Street</arg>
-        <arg f="" n="1">to build a new theater in Southwark, the Globe</arg>
+      <example name="All args" src="internet">
+        <text>The search for a theatrical home took up most of the company 's energy , through the Blackfriars financial fiasco , in the bitter battles with Giles Allen over their lease ( which resulted in pulling down the Theatre ) , and through their commissioning of Peter Street to build a new theater in Southwark , the Globe .</text>
+        <propbank>
+          <rel relloc="44">commissioning</rel>
+          <arg type="ARG0" start="43" end="43">their</arg>
+          <arg type="ARG2" start="45" end="47">of Peter Street</arg>
+          <arg type="ARG1" start="48" end="57">to build a new theater in Southwark , the Globe</arg>
+        </propbank>
       </example>
+      <note>COMMISSION-V NOTES: Frames file for 'commission' based on survey of sentences in the WSJ corpus. (from commission.01-v predicate notes)</note>
+      <note>COMMISSIONING-N NOTES: Added by Julia based on BOLT, commision-n.01. Corresponds to VNcls force-59. (from commissioning.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

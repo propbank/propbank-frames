@@ -1,53 +1,88 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="vow">
     <roleset id="vow.01" name="to promise">
       <aliases>
-        <alias framenet="Commitment" pos="v" verbnet="">vow</alias>
-        <alias framenet="Commitment" pos="n" verbnet="">vow</alias>
-        <alias framenet="" pos="l" verbnet="">make_vow</alias>
+        <alias pos="v">vow</alias>
+        <alias pos="n">vow</alias>
+        <alias pos="l">make_vow</alias>
       </aliases>
+      <roles>
+        <role descr="promiser, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="Commitment" resource="FrameNet" version="1.7">speaker</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="promised action" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="Commitment" resource="FrameNet" version="1.7">topic</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="promised to whom?" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="Commitment" resource="FrameNet" version="1.7">addressee</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Commitment" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Contact.CommitmentPromiseExpressIntent.Broadcast" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Contact.CommitmentPromiseExpressIntent.Correspondence" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Contact.CommitmentPromiseExpressIntent.Meet" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Broadcast" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="vow-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">38</lexlink>
+      </lexlinks>
+      <example name="transitive" src="">
+        <text>Also in Beirut , a Moslem group vowed to kill Americans if the U.S. implements a policy to seize suspects abroad .</text>
+        <propbank>
+          <rel relloc="7">vowed</rel>
+          <arg type="ARGM-DIS" start="0" end="0">Also</arg>
+          <arg type="ARGM-LOC" start="1" end="2">in Beirut</arg>
+          <arg type="ARG0" start="4" end="6">a Moslem group</arg>
+          <arg type="ARG1" start="8" end="20">to kill Americans if the U.S. implements a policy to seize suspects abroad</arg>
+        </propbank>
+      </example>
+      <example name="extracted Arg1" src="">
+        <text>`` I 'm not going to look stupid , '' vows former Pittsburgh Pirate second baseman Rennie Stennett , sweat dotting his brow as he prepares for some practice swings .</text>
+        <propbank>
+          <rel relloc="10">vows</rel>
+          <arg type="ARG1" start="0" end="9">`` I 'm not going to look stupid , ''</arg>
+          <arg type="ARG0" start="11" end="17">former Pittsburgh Pirate second baseman Rennie Stennett</arg>
+          <arg type="ARGM-ADV" start="19" end="29">sweat dotting his brow as he prepares for some practice swings</arg>
+        </propbank>
+      </example>
+      <example name="Within LVC; args 0 &amp; 1" src="nouns-lv">
+        <text>In the first " human rights wedding ceremony , " 36 couples took vows to respect each other 's human rights , creating the first " human rights families . "</text>
+        <propbank>
+          <rel relloc="13">vows</rel>
+          <arg type="ARGM-LOC" start="0" end="7">In the first " human rights wedding ceremony</arg>
+          <arg type="ARG0" start="10" end="11">36 couples</arg>
+          <arg type="ARGM-LVB" start="12" end="12">took</arg>
+          <arg type="ARG1" start="14" end="20">to respect each other 's human rights</arg>
+          <arg type="ARGM-ADV" start="22" end="30">creating the first " human rights families . "</arg>
+        </propbank>
+      </example>
+      <example name="With arg 2" src="web">
+        <text>The bride actually sung her vows to her groom at the altar during the ceremony .</text>
+        <propbank>
+          <rel relloc="5">vows</rel>
+          <arg type="ARG0" start="4" end="4">her</arg>
+          <arg type="ARG2" start="6" end="8">to her groom</arg>
+        </propbank>
+      </example>
       <note>VOW-V NOTES: Frames file for 'vow' based on survey of sentences in the WSJ corpus. Comparison with 'promise'. (from vow.01-v predicate notes)</note>
       <note>VOW-N NOTES: Based on verb entry vow.01; no corresponding VN class. (from vow.01-n)</note>
-      <roles>
-        <role descr="promiser, agent" f="pag" n="0"/>
-        <role descr="promised action" f="ppt" n="1"/>
-        <role descr="promised to whom?" f="gol" n="2"/>
-      </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Also in Beirut , a Moslem group vowed [*-1] to kill Americans if the U.S. implements a policy [0][*T*-2] to seize suspects abroad .</text>
-        <arg f="dis" n="m">Also</arg>
-        <arg f="loc" n="m">in Beirut</arg>
-        <arg f="" n="0">a Moslem group</arg>
-        <rel f="">vowed</rel>
-        <arg f="" n="1">[*-1] to kill Americans if the U.S. implements a policy [0][*T*-2] to seize suspects abroad</arg>
-      </example>
-      <example name="extracted Arg1" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>[`` I 'm not going [*-1] to look stupid , '']-2 vows [*T*-2] former Pittsburgh Pirate second baseman Rennie Stennett , sweat dotting his brow as he prepares for some practice swings .</text>
-        <rel f="">vows</rel>
-        <arg f="" n="1">[*T*-2]</arg>
-        <arg f="" n="0">former Pittsburgh Pirate second baseman Rennie Stennett</arg>
-        <arg f="adv" n="m">sweat dotting his brow as he prepares for some practice swings</arg>
-      </example>
-      <example name="Within LVC; args 0 &amp; 1" src="nouns-lv" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>In the first " human rights wedding ceremony , " 36 couples took vows to respect each other 's human rights , creating the first " human rights families . "</text>
-        <arg f="loc" n="m">In the first " human rights wedding ceremony</arg>
-        <arg f="" n="0">36 couples</arg>
-        <arg f="lvb" n="m">took</arg>
-        <rel f="">vows</rel>
-        <arg f="" n="1">to respect each other 's human rights</arg>
-        <arg f="adv" n="m">creating the first " human rights families . "</arg>
-      </example>
-      <example name="With arg 2" src="web" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>The bride actually sung her vows to her groom at the altar during the ceremony.</text>
-        <arg f="" n="0">her</arg>
-        <rel f="">vows</rel>
-        <arg f="" n="2">to her groom</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

@@ -1,30 +1,69 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="little">
     <roleset id="little.01" name="small, not much">
       <aliases>
-        <alias framenet="Size" pos="j" verbnet="">little</alias>
+        <alias pos="j">little</alias>
       </aliases>
-      <note>LITTLE-J NOTES: Added by Julia based on BOLT-6, comparison to 'small.01'. (from little.01-j)</note>
       <roles>
-        <role descr="little thing" f="ppt" n="1"/>
-        <role descr="aspect/domain, if in addition" f="vsp" n="2"/>
+        <role descr="little thing" f="PPT" n="1"/>
+        <role descr="specific aspect of arg1 that is little" f="DOM" n="2"/>
+        <role descr="scale" f="SCL" n="3"/>
+        <role descr="size measurement" f="EXT" n="4"/>
       </roles>
-      <example name="not much" src="BOLT-6" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Size" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+      </lexlinks>
+      <example name="little-j: not much" src="BOLT-6">
         <text>Our work is so busy that other expenses should be relatively little .</text>
-        <arg f="" n="1">other expenses</arg>
-        <arg f="mod" n="m">should</arg>
-        <arg f="ext" n="m">relatively</arg>
-        <rel f="">little</rel>
+        <propbank>
+          <rel relloc="11">little</rel>
+          <arg end="7" start="6" type="ARG1">other expenses</arg>
+          <arg end="8" start="8" type="ARGM-MOD">should</arg>
+          <arg end="10" start="10" type="ARGM-EXT">relatively</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (k / know-01
+            :ARG0 (w / world)
+            :ARG1 (l / little-01 :polarity -
+              :ARG1 (i / i)
+              :ARG2 (i2 / intellect))
+            :time (s / someday)
+            :concession (l2 / little-01
+              :ARG1 i
+              :ARG2 (b / body)))
+        </amr>
       </example>
-      <example name="both args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>And he sought to see Jesus who he was: and he could not for the crowd, because he was little in stature.</text>
-        <arg f="" n="1">he</arg>
-        <rel f="">little</rel>
-        <arg f="" n="2">in stature</arg>
+      <example name="little-j: both args" src="internet">
+        <text>And he sought to see Jesus who he was : and he could not for the crowd , because he was little in stature .</text>
+        <propbank>
+          <rel relloc="21">little</rel>
+          <arg end="19" start="19" type="ARG1">he</arg>
+          <arg end="23" start="22" type="ARG2">in stature</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (l / little-01
+            :ARG3 (p / person
+              :ARG0-of (p2 / play-01
+                :ARG1 (b / basketball)
+                :manner (p3 / professional)))
+            :ARG4 (d / distance-quantity :quant 5
+              :unit (f / foot)))
+        </amr>
       </example>
+      <note>LITTLE NOTES: Args 3 and 4 added for SpatialAMR.</note>
+      <note>LITTLE-J NOTES: Added by Julia based on BOLT-6, comparison to 'small.01'. (from little.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

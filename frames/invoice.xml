@@ -1,31 +1,60 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="invoice">
     <roleset id="invoice.01" name="invoice">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">invoice</alias>
+        <alias pos="v">invoice</alias>
       </aliases>
-      <note>INVOICE-V NOTES: Edited by hwangd (from invoice.01-v)</note>
       <roles>
         <role descr="invoicer, one who bills" f="PAG" n="0">
-          <vnrole vncls="54.5" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="bill-54.5" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="bill-54.5" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="money, amount" f="VSP" n="1">
-          <vnrole vncls="54.5" vntheta="Asset"/>
+          <rolelinks>
+            <rolelink class="bill-54.5" resource="VerbNet" version="verbnet3.3">asset</rolelink>
+            <rolelink class="bill-54.5" resource="VerbNet" version="verbnet3.4">asset</rolelink>
+          </rolelinks>
         </role>
         <role descr="invoiced, one who gets billed" f="GOL" n="2">
-          <vnrole vncls="54.5" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink class="bill-54.5" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+            <rolelink class="bill-54.5" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="cause" f="CAU" n="3"/>
+        <role descr="cause" f="CAU" n="3">
+          <rolelinks />
+        </role>
       </roles>
-      <example name="All args" src="web usage" type="">
-        <text>He invoiced them 495 pounds for the use of his work.</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">invoiced</rel>
-        <arg f="" n="2">them</arg>
-        <arg f="" n="1">495 pounds</arg>
-        <arg f="" n="3">for the use of his work</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Billing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="bill-54.5" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="bill-54.5" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="All args" src="web usage">
+        <text>He invoiced them 495 pounds for the use of his work .</text>
+        <propbank>
+          <rel relloc="1">invoiced</rel>
+          <arg type="ARG0" start="0" end="0">He</arg>
+          <arg type="ARG2" start="2" end="2">them</arg>
+          <arg type="ARG1" start="3" end="4">495 pounds</arg>
+          <arg type="ARG3" start="5" end="10">for the use of his work</arg>
+        </propbank>
       </example>
+      <note>INVOICE-V NOTES: Edited by hwangd (from invoice.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

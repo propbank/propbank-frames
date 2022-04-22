@@ -1,74 +1,131 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="bond">
     <roleset id="bond.01" name="attach, as with glue">
       <aliases>
-        <alias framenet="" pos="v" verbnet="shake-22.3-2-1 tape-22.4">bond</alias>
-        <alias framenet="bail_decision" pos="n" verbnet="">bond</alias>
-        <alias framenet="" pos="n" verbnet="">bonding</alias>
+        <alias pos="v">bond</alias>
+        <alias pos="n">bond</alias>
+        <alias pos="n">bonding</alias>
       </aliases>
-      <note>BOND-V NOTES: Frames file for 'bond' based on sentences in wsj. Verbnet entry 22.3. (from bond.01-v predicate notes)</note>
-      <note>BOND-N NOTES: Based on sentences in nouns-9998. Comparison to bond.01-v. VN class shake-22.3-2-1. Framed by Katie. (from bond.01-n)</note>
       <roles>
         <role descr="attacher, agent" f="PAG" n="0">
-          <vnrole vncls="22.3-2-1" vntheta="Agent"/>
-          <vnrole vncls="22.4" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="shake-22.3-2-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="tape-22.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="shake-22.3-2-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="tape-22.4" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="focus of attachment" f="PPT" n="1">
-          <vnrole vncls="22.3-2-1" vntheta="Patient"/>
-          <vnrole vncls="22.4" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink class="shake-22.3-2-1" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="tape-22.4" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="shake-22.3-2-1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+            <rolelink class="tape-22.4" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing bonded to" f="PPT" n="2">
-          <vnrole vncls="22.3-2-1" vntheta="Co-Patient"/>
-          <vnrole vncls="22.4" vntheta="Co-Patient"/>
+          <rolelinks>
+            <rolelink class="shake-22.3-2-1" resource="VerbNet" version="verbnet3.3">co-patient</rolelink>
+            <rolelink class="tape-22.4" resource="VerbNet" version="verbnet3.3">co-patient</rolelink>
+            <rolelink class="shake-22.3-2-1" resource="VerbNet" version="verbnet3.4">co_patient</rolelink>
+            <rolelink class="tape-22.4" resource="VerbNet" version="verbnet3.4">co_patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="instrument of bonding, glue" f="MNR" n="3">
-          <vnrole vncls="22.4" vntheta="Instrument"/>
+          <rolelinks>
+            <rolelink class="tape-22.4" resource="VerbNet" version="verbnet3.3">instrument</rolelink>
+            <rolelink class="tape-22.4" resource="VerbNet" version="verbnet3.4">instrument</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1001" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Bail_decision" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="shake-22.3-2-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="tape-22.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="bond-n.4" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="tape-22.4" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+        <lexlink class="shake-22.3-2-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1001">
         <text>The presence of mainland China is what bonds Taiwan and Macau , yet it is also what keeps them apart .</text>
-        <arg f="" n="0">what</arg>
-        <rel f="">bonds</rel>
-        <arg f="" n="1">Taiwan and Macau</arg>
+        <propbank>
+          <rel relloc="7">bonds</rel>
+          <arg type="ARG0" start="6" end="6">what</arg>
+          <arg type="ARG1" start="8" end="10">Taiwan and Macau</arg>
+        </propbank>
       </example>
-
-      <example name="with colonial glue" src="" type="">
+      <example name="with colonial glue" src="">
         <text>the country 's colonial bonds to the U.S.</text>
-        <arg f="" n="1">the country's</arg>
-        <arg f="" n="3">colonial</arg>
-        <rel f="">bonds</rel>
-        <arg f="" n="2">to the U.S.</arg>
+        <propbank>
+          <rel relloc="4">bonds</rel>
+          <arg type="ARG1" start="0" end="2">the country 's</arg>
+          <arg type="ARG3" start="3" end="3">colonial</arg>
+          <arg type="ARG2" start="5" end="7">to the U.S.</arg>
+        </propbank>
       </example>
-      <example name="args 1 and 3" src="" type="">
-        <text>"Too often, advertising imagery hasn't done a good job of forging an emotional bond between a brand and the consumer."</text>
-        <arg f="" n="3">emotional</arg>
-        <rel f="">bond</rel>
-        <arg f="" n="1">between a brand and the consumer</arg>
+      <example name="args 1 and 3" src="">
+        <text>" Too often , advertising imagery has n't done a good job of forging an emotional bond between a brand and the consumer . "</text>
+        <propbank>
+          <rel relloc="16">bond</rel>
+          <arg type="ARG3" start="15" end="15">emotional</arg>
+          <arg type="ARG1" start="17" end="22">between a brand and the consumer</arg>
+        </propbank>
       </example>
-      <example name="If the bonded items appear together, use arg 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="If the bonded items appear together, use arg 1" src="">
         <text>the bond between males and females</text>
-        <rel f="">bond</rel>
-        <arg f="" n="1">between males and females</arg>
+        <propbank>
+          <rel relloc="1">bond</rel>
+          <arg type="ARG1" start="2" end="5">between males and females</arg>
+        </propbank>
       </example>
+      <note>BOND-V NOTES: Frames file for 'bond' based on sentences in wsj. Verbnet entry 22.3. (from bond.01-v predicate notes)</note>
+      <note>BOND-N NOTES: Based on sentences in nouns-9998. Comparison to bond.01-v. VN class shake-22.3-2-1. Framed by Katie. (from bond.01-n)</note>
     </roleset>
     <roleset id="bond.02" name="secure with financial bond">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">bond</alias>
+        <alias pos="v">bond</alias>
       </aliases>
-      <note>BOND-V NOTES: Takes additional args? (from bond.02-v)</note>
       <roles>
         <role descr="secured item" f="PPT" n="1">
-          <vnrole vncls="22.3-2-1" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink class="shake-22.3-2-1" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="adjectival" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>The air-waybill number was changed en route, and paper work showing that the crates had cleared customs was misplaced, so it was a week before three of the four crates could be located in a bonded warehouse and the Gauguin discovered missing.</text>
-        <rel f="">bonded</rel>
-        <arg f="" n="1">warehouse</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="shake-22.3-2-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="shake-22.3-2-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="adjectival" src="">
+        <text>The air - waybill number was changed en route , and paper work showing that the crates had cleared customs was misplaced , so it was a week before three of the four crates could be located in a bonded warehouse and the Gauguin discovered missing .</text>
+        <propbank>
+          <rel relloc="39">bonded</rel>
+          <arg type="ARG1" start="40" end="40">warehouse</arg>
+        </propbank>
       </example>
+      <note>BOND-V NOTES: Takes additional args? (from bond.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,79 +1,116 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="combust">
     <roleset id="combust.01" name="cause to burn">
       <aliases>
-        <alias framenet="setting_fire" pos="v" verbnet="">combust</alias>
-        <alias framenet="" pos="n" verbnet="">combustion</alias>
+        <alias pos="v">combust</alias>
+        <alias pos="n">combustion</alias>
       </aliases>
-      <note>COMBUST-V NOTES: Roleset by Julia based on internet search. Member of Vncls other_cos-45.4. Comparison to ?ignite?, 'burn'. (from combust.01-v)</note>
-      <note>COMBUSTION-N NOTES: Based on ontonotes nouns. Comparison to combust.01. Combust.01 is a member of VN class other_cos-45.4 and FN classsetting_fire. Framed by Katie. (from combustion.01-n)</note>
       <roles>
-        <note>end state annotated as ArgM-PRD (from combust.01-v)</note>
         <role descr="agent/cause of combustion" f="PAG" n="0">
-          <vnrole vncls="45.4" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Setting_fire" resource="FrameNet" version="1.7">kindler</rolelink>
+            <rolelink class="Setting_fire" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing combusting" f="PPT" n="1">
-          <vnrole vncls="45.4" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="Setting_fire" resource="FrameNet" version="1.7">flame</rolelink>
+            <rolelink class="Setting_fire" resource="FrameNet" version="1.7">flammables</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="instrument" f="MNR" n="2">
-          <vnrole vncls="45.4" vntheta="Instrument"/>
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">instrument</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">instrument</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="Chuck Norris as agent" src="Chuck Norris as agent" type="Chuck Norris as agent">
-        <inflection aspect="ns" form="full" person="third" tense="past" voice="active"/>
-        <text>One time this guy looked him in his eyes and Chuck Norris spontaneously combusted him.</text>
-        <arg f="" n="0">Chuck Norris</arg>
-        <arg f="mnr" n="m">spontaneously</arg>
-        <rel f="">combusted</rel>
-        <arg f="" n="1">him</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Setting_fire" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="other_cos-45.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="other_cos-45.4" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="Chuck Norris as agent" src="">
+        <text>One time this guy looked him in his eyes and Chuck Norris spontaneously combusted him .</text>
+        <propbank>
+          <rel relloc="13">combusted</rel>
+          <arg type="ARG0" start="10" end="11">Chuck Norris</arg>
+          <arg type="ARGM-MNR" start="12" end="12">spontaneously</arg>
+          <arg type="ARG1" start="14" end="14">him</arg>
+        </propbank>
       </example>
-      <example name="Passive with instrument" src="Passive with instrument" type="Passive with instrument">
-        <inflection aspect="ns" form="participle" person="third" tense="present" voice="passive"/>
-        <text>[Most fossil fuels]-1 are combusted *trace*-1 with ambient air.</text>
-        <rel f="">combusted</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="2">with ambient air</arg>
+      <example name="Passive with instrument" src="">
+        <text>Most fossil fuels are combusted with ambient air .</text>
+        <propbank>
+          <rel relloc="4">combusted</rel>
+          <arg type="ARG1" start="0" end="2">Most fossil fuels</arg>
+          <arg type="ARG2" start="5" end="7">with ambient air</arg>
+        </propbank>
       </example>
-      <example name="Intransitive with predication" src="Intransitive with predication" type="Intransitive with predication">
-        <inflection aspect="ns" form="full" person="third" tense="past" voice="active"/>
-        <text>She combusted into a ball of light, lightning bright.</text>
-        <arg f="" n="1">She</arg>
-        <rel f="">combusted</rel>
-        <arg f="prd" n="m">into a ball of light, lightning bright.</arg>
+      <example name="Intransitive with predication" src="">
+        <text>She combusted into a ball of light , lightning bright .</text>
+        <propbank>
+          <rel relloc="1">combusted</rel>
+          <arg type="ARG1" start="0" end="0">She</arg>
+          <arg type="ARGM-PRD" start="2" end="9">into a ball of light , lightning bright</arg>
+        </propbank>
       </example>
-      <example name="Metaphorical use with predication" src="Metaphorical use with predication" type="Metaphorical use with predication">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>Poverty, crime and segregation can combust into the kind of violence that erupted in Benton Harbor.</text>
-        <arg f="" n="1">Poverty, crime and segregation</arg>
-        <arg f="mod" n="m">can</arg>
-        <rel f="">combust</rel>
-        <arg f="prd" n="m">into the kind of violence that erupted in Benton Harbor.</arg>
+      <example name="Metaphorical use with predication" src="">
+        <text>Poverty , crime and segregation can combust into the kind of violence that erupted in Benton Harbor .</text>
+        <propbank>
+          <rel relloc="6">combust</rel>
+          <arg type="ARG1" start="0" end="4">Poverty , crime and segregation</arg>
+          <arg type="ARGM-MOD" start="5" end="5">can</arg>
+          <arg type="ARGM-PRD" start="7" end="16">into the kind of violence that erupted in Benton Harbor</arg>
+        </propbank>
       </example>
-      <example name="Emotion as Cause" src="Emotion as Cause" type="Emotion as Cause">
-        <inflection aspect="perfect" form="participle" person="third" tense="present" voice="active"/>
-        <text>This driver's rage has combusted him into flames.</text>
-        <arg f="" n="0">This driver's rage</arg>
-        <rel f="">combusted</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="prd" n="m">into flames</arg>
+      <example name="Emotion as Cause" src="">
+        <text>This driver 's rage has combusted him into flames .</text>
+        <propbank>
+          <rel relloc="5">combusted</rel>
+          <arg type="ARG0" start="0" end="3">This driver 's rage</arg>
+          <arg type="ARG1" start="6" end="6">him</arg>
+          <arg type="ARGM-PRD" start="7" end="8">into flames</arg>
+        </propbank>
       </example>
-      <example name="With cause" src="With cause" type="With cause">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
-        <text>If this were the old firestone, all the sea air would have combusted it long ago.</text>
-        <arg f="adv" n="m">If this were the old firestone</arg>
-        <arg f="" n="0">all the sea air</arg>
-        <arg f="mod" n="m">would</arg>
-        <rel f="">combusted</rel>
-        <arg f="" n="1">it</arg>
-        <arg f="tmp" n="m">long ago</arg>
+      <example name="With cause" src="">
+        <text>If this were the old firestone , all the sea air would have combusted it long ago .</text>
+        <propbank>
+          <rel relloc="13">combusted</rel>
+          <arg type="ARGM-ADV" start="0" end="5">If this were the old firestone</arg>
+          <arg type="ARG0" start="7" end="10">all the sea air</arg>
+          <arg type="ARGM-MOD" start="11" end="11">would</arg>
+          <arg type="ARG1" start="14" end="14">it</arg>
+          <arg type="ARGM-TMP" start="15" end="16">long ago</arg>
+        </propbank>
       </example>
-      <example name="Remeber that verbs and verb phrases are tagged as PRD during noun annotation!" src="" type="">
+      <example name="Remeber that verbs and verb phrases are tagged as PRD during noun annotation!" src="">
         <text>increased combustion of fossil fuels</text>
-        <arg f="prd" n="m">increased</arg>
-        <rel f="">combustion</rel>
-        <arg f="" n="1">of fosssil fuels</arg>
+        <propbank>
+          <rel relloc="1">combustion</rel>
+          <arg type="ARGM-PRD" start="0" end="0">increased</arg>
+          <arg type="ARG1" start="2" end="4">of fossil fuels</arg>
+        </propbank>
       </example>
+      <note>COMBUST-V NOTES: Roleset by Julia based on internet search. Member of Vncls other_cos-45.4. Comparison to ?ignite?, 'burn'. (from combust.01-v)</note>
+      <note>COMBUSTION-N NOTES: Based on ontonotes nouns. Comparison to combust.01. Combust.01 is a member of VN class other_cos-45.4 and FN classsetting_fire. Framed by Katie. (from combustion.01-n)</note>
+      <note>end state annotated as ArgM-PRD (from combust.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

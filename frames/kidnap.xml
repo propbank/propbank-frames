@@ -1,30 +1,58 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="kidnap">
     <roleset id="kidnap.01" name="to seize and detain unlawfully">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">kidnap</alias>
-        <alias framenet="" pos="n" verbnet="">kidnapping</alias>
+        <alias pos="v">kidnap</alias>
+        <alias pos="n">kidnapping</alias>
+        <argalias arg="0" pos="n">kidnapper</argalias>
       </aliases>
-      <note>KIDNAP-V NOTES: Frames file for 'kidnap' based on survey of sentences in the WSJ corpus. (from kidnap.01-v predicate notes)</note>
       <roles>
         <role descr="kidnapper, agent" f="PAG" n="0">
-          <vnrole vncls="10.5" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="steal-10.5" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Kidnapping" resource="FrameNet" version="1.7">perpetrator</rolelink>
+            <rolelink class="steal-10.5" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="person kidnapped" f="PPT" n="1">
-          <vnrole vncls="10.5" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="steal-10.5" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Kidnapping" resource="FrameNet" version="1.7">victim</rolelink>
+            <rolelink class="steal-10.5" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>Again , you have [*-1] to ask the obvious question : Why would intelligent beings kidnap seven Soviet mailmen [*T*-2]?</text>
-        <arg f="MOD" n="M">would</arg>
-        <arg f="" n="0">intelligent beings</arg>
-        <rel f="">kidnap</rel>
-        <arg f="" n="1">seven Soviet mailmen</arg>
-        <arg f="PNC" n="M">[*T*-2]</arg>
-        <arg f="RCL" n="M">Why</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Kidnapping" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="steal-10.5" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Transportperson" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="Attack" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="kidnap-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">16</lexlink>
+        <lexlink class="steal-10.5" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="transitive" src="">
+        <text>Again , you have to ask the obvious question : Why would intelligent beings kidnap seven Soviet mailmen ?</text>
+        <propbank>
+          <rel relloc="14">kidnap</rel>
+          <arg type="ARGM-MOD" start="11" end="11">would</arg>
+          <arg type="ARG0" start="12" end="13">intelligent beings</arg>
+          <arg type="ARG1" start="15" end="17">seven Soviet mailmen</arg>
+          <arg type="ARGM-PNC" start="10" end="10">Why</arg>
+        </propbank>
       </example>
+      <note>KIDNAP-V NOTES: Frames file for 'kidnap' based on survey of sentences in the WSJ corpus. (from kidnap.01-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

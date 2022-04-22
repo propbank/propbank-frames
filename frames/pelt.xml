@@ -1,41 +1,81 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="pelt">
     <roleset id="pelt.01" name="hit,throw">
       <aliases>
-        <alias framenet="Cause_harm Mass_motion" pos="v" verbnet="">pelt</alias>
+        <alias pos="v">pelt</alias>
       </aliases>
-      <note>PELT-V NOTES: Automatically created based on framefiles: buffet (17.2), fog (57), hand-checked by Kevin. Member of VNcls pelt-17.2, weather-57. (from pelt.01-v)</note>
       <roles>
         <role descr="pelter, thrower, agent" f="PAG" n="0">
-          <vnrole vncls="17.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="pelt-17.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="pelt-17.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing(s) thrown, theme" f="ppt" n="1">
-          <vnrole vncls="17.2" vntheta="Theme"/>
-          <vnrole vncls="57" vntheta="Theme"/>
+        <role descr="thing(s) thrown, theme" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="pelt-17.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="weather-57" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">victim</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">body_part</rolelink>
+            <rolelink class="pelt-17.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+            <rolelink class="weather-57" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="pelted, victim, destination" f="GOL" n="2">
-          <vnrole vncls="17.2" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink class="pelt-17.2" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="Cause_harm" resource="FrameNet" version="1.7">place</rolelink>
+            <rolelink class="pelt-17.2" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="regular usage" src="web usage" type="">
-        <text>She pelted him with a snowball.</text>
-        <arg f="" n="0">She</arg>
-        <rel f="">pelted</rel>
-        <arg f="" n="2">him</arg>
-        <arg f="" n="1">with a snowball</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Cause_harm" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="Mass_motion" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="pelt-17.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="weather-57" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="weather-57" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+        <lexlink class="pelt-17.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="regular usage" src="web usage">
+        <text>She pelted him with a snowball .</text>
+        <propbank>
+          <rel relloc="1">pelted</rel>
+          <arg type="ARG0" start="0" end="0">She</arg>
+          <arg type="ARG2" start="2" end="2">him</arg>
+          <arg type="ARG1" start="3" end="5">with a snowball</arg>
+        </propbank>
       </example>
-      <example name="No Arg2" src="web usage" type="">
-        <text>Snow and hail pelted the riders.</text>
-        <arg f="" n="0">Snow and hail</arg>
-        <rel f="">pelted</rel>
-        <arg f="" n="2">the riders</arg>
+      <example name="No Arg2" src="web usage">
+        <text>Snow and hail pelted the riders .</text>
+        <propbank>
+          <rel relloc="3">pelted</rel>
+          <arg type="ARG0" start="0" end="2">Snow and hail</arg>
+          <arg type="ARG2" start="4" end="5">the riders</arg>
+        </propbank>
       </example>
-      <example name="Expletive" src="web usage" type="">
-        <text>It's pelting with rain.</text>
-        <rel f="">pelting</rel>
-        <arg f="" n="1">with rain</arg>
+      <example name="Expletive" src="web usage">
+        <text>It 's pelting with rain .</text>
+        <propbank>
+          <rel relloc="2">pelting</rel>
+          <arg type="ARG1" start="3" end="4">with rain</arg>
+        </propbank>
       </example>
+      <note>PELT-V NOTES: Automatically created based on framefiles: buffet (17.2), fog (57), hand-checked by Kevin. Member of VNcls pelt-17.2, weather-57. (from pelt.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

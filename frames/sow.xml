@@ -1,37 +1,66 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="sow">
     <roleset id="sow.01" name="to scatter seed for growing">
       <aliases>
-        <alias framenet="Placing Filling" pos="v" verbnet="">sow</alias>
-        <alias framenet="" pos="n" verbnet="">sowing</alias>
+        <alias pos="v">sow</alias>
+        <alias pos="n">sowing</alias>
       </aliases>
-      <note>SOW-V NOTES: Based on WSJ. Member of VNcls spray-9.7-1. (from sow.01-v)</note>
       <roles>
         <role descr="farmer, sower" f="PAG" n="0">
-          <vnrole vncls="9.7-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="spray-9.7-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Placing" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="Placing" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="spray-9.7-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="seed, entity sowed" f="PPT" n="1">
-          <vnrole vncls="9.7-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="spray-9.7-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Placing" resource="FrameNet" version="1.7">theme</rolelink>
+            <rolelink class="spray-9.7-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="sow-v: transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>They sow a row of male-fertile plants [*ICH*-1] nearby , [which then pollinate the male-sterile plants]-1 .</text>
-        <arg f="" n="0">They</arg>
-        <rel f="">sow</rel>
-        <arg f="" n="1">a row of male-fertile plants [*ICH*-1]</arg>
-        <arg f="loc" n="m">nearby</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Filling" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Placing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="spray-9.7-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="sow-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="spray-9.7-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="sow-v: transitive" src="">
+        <text>They sow a row of male - fertile plants nearby , which then pollinate the male - sterile plants .</text>
+        <propbank>
+          <rel relloc="1">sow</rel>
+          <arg type="ARG0" start="0" end="0">They</arg>
+          <arg type="ARG1" start="2" end="8">a row of male - fertile plants</arg>
+          <arg type="ARGM-LOC" start="9" end="9">nearby</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1003" type="">
+      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1003">
         <text>For the last decade , the CTI has been working hand in hand with the industry , quietly sowing the seeds of research and development in many places .</text>
-        <arg f="" n="0">the CTI</arg>
-        <arg f="mnr" n="m">quietly</arg>
-        <rel f="">sowing</rel>
-        <arg f="" n="1">the seeds of research and development</arg>
-        <arg f="loc" n="m">in many places</arg>
+        <propbank>
+          <rel relloc="18">sowing</rel>
+          <arg type="ARG0" start="5" end="6">the CTI</arg>
+          <arg type="ARGM-MNR" start="17" end="17">quietly</arg>
+          <arg type="ARG1" start="19" end="24">the seeds of research and development</arg>
+          <arg type="ARGM-LOC" start="25" end="27">in many places</arg>
+        </propbank>
       </example>
-
+      <note>SOW-V NOTES: Based on WSJ. Member of VNcls spray-9.7-1. (from sow.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

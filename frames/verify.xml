@@ -1,42 +1,76 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="verify">
     <roleset id="verify.01" name="determine truth of a proposition">
       <aliases>
-        <alias framenet="Verification Evidence" pos="v" verbnet="">verify</alias>
-        <alias framenet="" pos="n" verbnet="">verification</alias>
+        <alias pos="v">verify</alias>
+        <alias pos="n">verification</alias>
       </aliases>
-      <note>VERIFY-V NOTES: VN updated by Julia, 10/2010. Member of Vncls indicate-78-1-1, patent-101, transfer_mesg-37.1.1. (from verify.01-v)</note>
-      <note>VERIFICATION-N NOTES: verify.01 (from verification.01-n)</note>
       <roles>
-        <note>Recipient role expected. (from verify.01-v)</note>
         <role descr="verifier" f="PAG" n="0">
-          <vnrole vncls="78-1-1" vntheta="Cause"/>
-          <vnrole vncls="101" vntheta="Agent"/>
-          <vnrole vncls="37.1.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="indicate-78-1-1" resource="VerbNet" version="verbnet3.3">cause</rolelink>
+            <rolelink class="patent-101" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="transfer_mesg-37.1.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="transfer_mesg-37.1.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="indicate-78-1-1" resource="VerbNet" version="verbnet3.4">pivot</rolelink>
+            <rolelink class="patent-101" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="verified" f="PPT" n="1">
-          <vnrole vncls="78-1-1" vntheta="Topic"/>
-          <vnrole vncls="101" vntheta="Theme"/>
-          <vnrole vncls="37.1.1" vntheta="Topic"/>
+          <rolelinks>
+            <rolelink class="indicate-78-1-1" resource="VerbNet" version="verbnet3.3">topic</rolelink>
+            <rolelink class="patent-101" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="transfer_mesg-37.1.1" resource="VerbNet" version="verbnet3.3">topic</rolelink>
+            <rolelink class="transfer_mesg-37.1.1" resource="VerbNet" version="verbnet3.4">topic</rolelink>
+            <rolelink class="indicate-78-1-1" resource="VerbNet" version="verbnet3.4">topic</rolelink>
+            <rolelink class="patent-101" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG1 and ARG0" src="ontonotes bn/cnn/02/cnn_0275" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Verification" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Evidence" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="indicate-78-1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="patent-101" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="transfer_mesg-37.1.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="verify-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">11</lexlink>
+        <lexlink class="patent-101" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="indicate-78-1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="transfer_mesg-37.1.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="ARG1 and ARG0" src="ontonotes bn/cnn/02/cnn_0275">
         <text>They can not be verified by CNN .</text>
-        <arg f="" n="1">They</arg>
-        <arg f="mod" n="m">can</arg>
-        <arg f="neg" n="m">not</arg>
-        <rel f="">verified</rel>
-        <arg f="" n="0">by CNN</arg>
+        <propbank>
+          <rel relloc="4">verified</rel>
+          <arg type="ARG1" start="0" end="0">They</arg>
+          <arg type="ARGM-MOD" start="1" end="1">can</arg>
+          <arg type="ARGM-NEG" start="2" end="2">not</arg>
+          <arg type="ARG0" start="5" end="6">by CNN</arg>
+        </propbank>
       </example>
-
-      <example name="bogus parse" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="active"/>
-        <text>Merrill Lynch&amp; Co. and Shearson Lehman Hutton Inc. say [they]-1 use voice-activated systems *trace*-1 to record and verify orders between salesmen and traders.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">verify</rel>
-        <arg f="" n="1">orders between salesmen and traders</arg>
+      <example name="bogus parse" src="">
+        <text>Merrill Lynch &amp; Co. and Shearson Lehman Hutton Inc. say they use voice - activated systems to record and verify orders between salesmen and traders .</text>
+        <propbank>
+          <rel relloc="19">verify</rel>
+          <arg type="ARG0" start="10" end="10">they</arg>
+          <arg type="ARG1" start="20" end="24">orders between salesmen and traders</arg>
+        </propbank>
       </example>
+      <note>VERIFY-V NOTES: VN updated by Julia, 10/2010. Member of Vncls indicate-78-1-1, patent-101, transfer_mesg-37.1.1. (from verify.01-v)</note>
+      <note>VERIFICATION-N NOTES: verify.01 (from verification.01-n)</note>
+      <note>Recipient role expected. (from verify.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

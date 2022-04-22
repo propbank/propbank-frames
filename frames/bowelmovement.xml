@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
+<frameset>
+  <predicate lemma="bm">
+    <roleset id="bm.01" name="defecate">
+      <aliases>
+        <alias pos="n">bm</alias>
+        <alias pos="n">BM</alias>
+        <alias pos="m">have_bowel_movement</alias>
+        <alias pos="m">move_bowels</alias>
+        <alias pos="m">get_bowel_movement</alias>
+      </aliases>
+      <roles>
+        <role descr="defacator" f="PAG" n="0" />
+        <role descr="artifact (waste entity)" f="PPT" n="1" />
+        <role descr="frequency" f="VSP" n="2" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks />
+      <example name="have_bowel_movement-l" src="Auto1">
+        <text>He has five bowel movements a day which are small and formed .</text>
+        <propbank>
+          <rel relloc="3 4">bowel movements</rel>
+          <arg end="0" start="0" type="ARG0">He</arg>
+          <arg end="1" start="1" type="ARGM-LVB">has</arg>
+          <arg end="2" start="2" type="ARGM-EXT">five</arg>
+          <arg end="6" start="5" type="ARGM-TMP">a day</arg>
+          <arg end="11" start="7" type="ARGM-ADJ">which are small and formed</arg>
+        </propbank>
+        <amr version="THYME 1.0">
+          (b / bm-01
+            :ARG0 (h / he)
+            :ARG1 (a / anatomical-site :name (n / name :op1 "bowel" :op2 "movement")
+              :ARG1-of (s / small-01)
+              :ARG1-of (f / form-01))
+            :ARG2 (r / rate-entity-91
+              :ARG1 5
+              :ARG2 (t / temporal-quantity :quant 1
+                :unit (d / day))))
+        </amr>
+      </example>
+      <note>BOWEL MOVEMENT NOTES: Added for THYME-AMR.</note>
+    </roleset>
+  </predicate>
+</frameset>

@@ -1,159 +1,219 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="bite">
     <roleset id="bite.01" name="to cut or tear with or as if with the teeth, nom/partitive-quant">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">bite</alias>
-        <alias framenet="" pos="v" verbnet="">bite</alias>
-        <alias framenet="" pos="n" verbnet="">biting</alias>
+        <alias pos="n">bite</alias>
+        <alias pos="v">bite</alias>
+        <alias pos="n">biting</alias>
       </aliases>
-      <note>BITE-V NOTES: Frames file for 'bite' based on survey of sentences in the WSJ corpus. (from bite.01-v predicate notes)</note>
-      <note>BITE-N NOTES: Roleset based on verb entry bite.01, OntoNotes grouping bite-n senses 3, 5, 6, 8; maps to VN classes hurt-40.8.3-2 (membership in this class seems very dubious to me...) and swat-18.2. Framed by Claire. (from bite.01-n)</note>
       <roles>
         <role descr="biter, agent" f="PAG" n="0">
-          <vnrole vncls="18.2" vntheta="Agent"/>
-          <vnrole vncls="40.8.3-2" vntheta="Experiencer"/>
+          <rolelinks>
+            <rolelink class="swat-18.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="hurt-40.8.3-2" resource="VerbNet" version="verbnet3.3">experiencer</rolelink>
+            <rolelink class="swat-18.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="hurt-40.8.3-2" resource="VerbNet" version="verbnet3.4">experiencer</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity bitten" f="PPT" n="1">
-          <vnrole vncls="18.2" vntheta="Patient"/>
-          <vnrole vncls="40.8.3-2" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink class="swat-18.2" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="hurt-40.8.3-2" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="swat-18.2" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+            <rolelink class="hurt-40.8.3-2" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="bite-v: arbitrary subject" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="present" voice="active"/>
-        <text>Says [*ICH*-1] another lawyer : `` The practice of law is a matter of [*]biting one 's lip when you live in a small community [*T*-2] .</text>
-        <arg f="" n="0">[*]</arg>
-        <rel f="">biting</rel>
-        <arg f="" n="1">one 's lip</arg>
-        <arg f="tmp" n="m">when you live in a small community [*T*-2]</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="swat-18.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="hurt-40.8.3-2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="bite-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+        <lexlink class="swat-18.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="hurt-40.8.3-2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="bite-v: arbitrary subject" src="">
+        <text>Says another lawyer : `` The practice of law is a matter of biting one 's lip when you live in a small community .</text>
+        <propbank>
+          <rel relloc="13">biting</rel>
+          <arg type="ARG1" start="14" end="16">one 's lip</arg>
+          <arg type="ARGM-TMP" start="17" end="23">when you live in a small community</arg>
+        </propbank>
       </example>
-      <example name="bite-v: transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
+      <example name="bite-v: transitive" src="">
         <text>He bites it , scowls and throws it down . ``</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">bites</rel>
-        <arg f="" n="1">it</arg>
+        <propbank>
+          <rel relloc="1">bites</rel>
+          <arg type="ARG0" start="0" end="0">He</arg>
+          <arg type="ARG1" start="2" end="2">it</arg>
+        </propbank>
       </example>
-      <example name="bite-v: intransitive" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
+      <example name="bite-v: intransitive" src="">
         <text>Not surprisingly , he sometimes bites .</text>
-        <arg f="adv" n="m">Not surprisingly</arg>
-        <arg f="" n="0">he</arg>
-        <arg f="tmp" n="m">sometimes</arg>
-        <rel f="">bites</rel>
+        <propbank>
+          <rel relloc="5">bites</rel>
+          <arg type="ARGM-ADV" start="0" end="1">Not surprisingly</arg>
+          <arg type="ARG0" start="3" end="3">he</arg>
+          <arg type="ARGM-TMP" start="4" end="4">sometimes</arg>
+        </propbank>
       </example>
-      <example name="bite-v: passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>When it comes to money [*T*-1] : Once [*-3]bitten [*-2] , [*] 2,000 times shy .</text>
-        <arg f="tmp" n="m">Once</arg>
-        <rel f="">bitten</rel>
-        <arg f="" n="1">[*-3]</arg>
+      <example name="bite-v: passive" src="">
+        <text>When it comes to money : Once bitten , 2,000 times shy .</text>
+        <propbank>
+          <rel relloc="7">bitten</rel>
+          <arg type="ARGM-TMP" start="6" end="6">Once</arg>
+        </propbank>
       </example>
-      <example name="ARG1" src="ontonotes tc/ch/00/ch_0036" type="">
+      <example name="ARG1" src="ontonotes tc/ch/00/ch_0036">
         <text>The little kindergarteners were all bitten when they sat down on the floor .</text>
-        <arg f="" n="1">The little kindergarteners</arg>
-        <rel f="">bitten</rel>
-        <arg f="tmp" n="m">when they sat down on the floor</arg>
+        <propbank>
+          <rel relloc="5">bitten</rel>
+          <arg type="ARG1" start="0" end="2">The little kindergarteners</arg>
+          <arg type="ARGM-TMP" start="6" end="12">when they sat down on the floor</arg>
+        </propbank>
       </example>
-
-      <example name="bite-n: Arg 1 only, with &quot;on&quot; PP" src="ON sense 5" type="">
-        <text>The fisherman felt a bite on his line.</text>
-        <rel f="">bite</rel>
-        <arg f="" n="1">on his line</arg>
+      <example name="bite-n: Arg 1 only, with &quot;on&quot; PP" src="ON sense 5">
+        <text>The fisherman felt a bite on his line .</text>
+        <propbank>
+          <rel relloc="4">bite</rel>
+          <arg type="ARG1" start="5" end="7">on his line</arg>
+        </propbank>
       </example>
-      <example name="ARG0" src="ontonotes mz/sinorama/10/ectb_1057" type="">
+      <example name="ARG0" src="ontonotes mz/sinorama/10/ectb_1057">
         <text>When his teacher saw the coin , he could n't help but bite .</text>
-        <arg f="tmp" n="m">When his teacher saw the coin</arg>
-        <arg f="" n="0">he</arg>
-        <arg f="mod" n="m">could</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">bite</rel>
+        <propbank>
+          <rel relloc="12">bite</rel>
+          <arg type="ARGM-TMP" start="0" end="5">When his teacher saw the coin</arg>
+          <arg type="ARG0" start="7" end="7">he</arg>
+          <arg type="ARGM-MOD" start="8" end="8">could</arg>
+          <arg type="ARGM-NEG" start="9" end="9">n't</arg>
+        </propbank>
       </example>
-
-      <example name="bite-n: Arg 0 as possessor" src="ON sense 8" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>That dog's bark is worse than his bite.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">bite</rel>
+      <example name="bite-n: Arg 0 as possessor" src="ON sense 8">
+        <text>That dog 's bark is worse than his bite .</text>
+        <propbank>
+          <rel relloc="8">bite</rel>
+          <arg type="ARG0" start="7" end="7">his</arg>
+        </propbank>
       </example>
-      <example name="bite-n: Metaphorical bite, all arguments" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Pattinson enjoys his bite of 'Twilight' fame.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">bite</rel>
-        <arg f="" n="1">of 'Twilight' fame</arg>
+      <example name="bite-n: Metaphorical bite, all arguments" src="web">
+        <text>Pattinson enjoys his bite of ' Twilight ' fame .</text>
+        <propbank>
+          <rel relloc="3">bite</rel>
+          <arg type="ARG0" start="2" end="2">his</arg>
+          <arg type="ARG1" start="4" end="8">of ' Twilight ' fame</arg>
+        </propbank>
       </example>
+      <note>BITE-V NOTES: Frames file for 'bite' based on survey of sentences in the WSJ corpus. (from bite.01-v predicate notes)</note>
+      <note>BITE-N NOTES: Roleset based on verb entry bite.01, OntoNotes grouping bite-n senses 3, 5, 6, 8; maps to VN classes hurt-40.8.3-2 (membership in this class seems very dubious to me...) and swat-18.2. Framed by Claire. (from bite.01-n)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="bite_dust">
     <roleset id="bite_dust.02" name="die, fall out of competition">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">bite_dust</alias>
-         <mwe id="bite_dust">
-              <token slot="A" arg="" pos="VB*" head="" dep="">bite</token>
-              <token slot="B" arg="" pos="NN" head="A" dep="dobj">dust</token>
-         </mwe>
-      </aliases>
-      <mappings alias="bite_dust">
-        <source>
+        <alias pos="m">bite_dust</alias>
+        <mwp-descriptions id="bite_dust">
+          <syntaxdesc slots="B A">
+            <token arg="" dep="" head="" pos="VB*" slot="A">bite</token>
+            <token arg="" dep="dobj" head="A" pos="NN" slot="B">dust</token>
+          </syntaxdesc>
+          <mapping>
+            <source>
             (A / bite-01
                 :arg0 (n / NARG0)
                 :arg1 (B / dust))
         </source>
-        <target>
+            <target>
             (A / die-01
                 :arg1 (n1 / NARG1))
         </target>
-      </mappings>
-      <note>BITE_DUST-M NOTES: Added by Julia.</note>
+          </mapping>
+        </mwp-descriptions>
+      </aliases>
       <roles>
-        <role descr="entity dying, failing" f="ppt" n="1"/>
+        <role descr="entity dying, failing" f="PPT" n="1"/>
       </roles>
-      <example name="bite_dust-m" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+      </usagenotes>
+      <example name="bite_dust-m" src="">
         <text>Earlier this week , Stimulus beneficiary Evergreen Energy bit the dust .</text>
-        <arg f="tmp" n="m">Earlier this week</arg>
-        <arg f="" n="1">Stimulus beneficiary Evergreen Energy</arg>
-        <rel f="">[bit][dust]</rel>
+        <propbank>
+          <rel relloc="8 10">bit dust</rel>
+          <arg type="ARGM-TMP" start="0" end="2">Earlier this week</arg>
+          <arg type="ARG1" start="4" end="7">Stimulus beneficiary Evergreen Energy</arg>
+        </propbank>
       </example>
+      <note>BITE_DUST-M NOTES: Added by Julia.</note>
     </roleset>
   </predicate>
-
   <predicate lemma="bite_bullet">
     <roleset id="bite_bullet.03" name="decide to do something difficult to get it over with">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">bite_bullet</alias>
-         <mwe id="bite_bullet">
-              <token slot="A" arg="" pos="VB*" head="" dep="">bite</token>
-              <token slot="B" arg="" pos="NN" head="A" dep="dobj">bullet</token>
-         </mwe>
-      </aliases>
-      <mappings alias="bite_bullet">
-        <source>
+        <alias pos="m">bite_bullet</alias>
+        <mwp-descriptions id="bite_bullet">
+          <syntaxdesc slots="B A">
+            <token arg="" dep="" head="" pos="VB*" slot="A">bite</token>
+            <token arg="" dep="dobj" head="A" pos="NN" slot="B">bullet</token>
+          </syntaxdesc>
+          <mapping>
+            <source>
             (A / bite-01
                 :arg0 (n / NARG0)
                 :arg1 (B / bullet))
         </source>
-        <target>
+            <target>
             (A / do-02
                 :arg0 (n / NARG0)
                 :arg1 (n1 / NARG1
                     :arg1-of (d / dread-01
                           :arg0 n)))
         </target>
-      </mappings>
-      <note>BITE_BULLET-M NOTES: Added by Julia during MWE framing.</note>
+          </mapping>
+        </mwp-descriptions>
+      </aliases>
       <roles>
-        <role descr="doer" f="pag" n="0"/>
-        <role descr="difficult, dreaded thing" f="ppt" n="1"/>
+        <role descr="doer" f="PAG" n="0"/>
+        <role descr="difficult, dreaded thing" f="PPT" n="1"/>
       </roles>
-      <example name="bite_bullet-m" src="" type="">
-        <text>PERA pension board must bite the bullet on needed reform.</text>
-        <arg f="" n="0">PERA pension board</arg>
-        <arg f="mod" n="m">must</arg>
-        <rel f="">[bite][bullet]</rel>
-        <arg f="" n="1">on needed reform</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+      </usagenotes>
+      <example name="bite_bullet-m" src="">
+        <text>PERA pension board must bite the bullet on needed reform .</text>
+        <propbank>
+          <rel relloc="4 6">bite bullet</rel>
+          <arg type="ARG0" start="0" end="2">PERA pension board</arg>
+          <arg type="ARGM-MOD" start="3" end="3">must</arg>
+          <arg type="ARG1" start="7" end="9">on needed reform</arg>
+        </propbank>
       </example>
+      <note>BITE_BULLET-M NOTES: Added by Julia during MWE framing.</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,49 +1,76 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="distend">
     <roleset id="distend.01" name="expand">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">distension</alias>
-        <alias framenet="" pos="j" verbnet="">distended</alias>
-        <alias framenet="" pos="v" verbnet="">distend</alias>
-        <alias framenet="" pos="n" verbnet="">distention</alias>
+        <alias pos="v">distend</alias>
+        <alias pos="n">distention</alias>
+        <alias pos="n">distension</alias>
+        <alias pos="j">distended</alias>
       </aliases>
+      <roles>
+        <role descr="expander" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="bend-45.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="bend-45.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="distended thing" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="bend-45.2" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="bend-45.2" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="bend-45.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="bend-45.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="distend-v: Transitive" src="web usage">
+        <text>The gas distended the animal 's body .</text>
+        <propbank>
+          <rel relloc="2">distended</rel>
+          <arg type="ARG0" start="0" end="1">The gas</arg>
+          <arg type="ARG1" start="3" end="6">the animal 's body</arg>
+        </propbank>
+      </example>
+      <example name="distend-v: Intransitive" src="web usage">
+        <text>The animal 's body distended .</text>
+        <propbank>
+          <rel relloc="4">distended</rel>
+          <arg type="ARG1" start="0" end="3">The animal 's body</arg>
+        </propbank>
+      </example>
+      <example name="distension-n: Both args" src="">
+        <text>The gases ' distension of the body made identification nearly impossible .</text>
+        <propbank>
+          <rel relloc="3">distension</rel>
+          <arg type="ARG0" start="0" end="2">The gases '</arg>
+          <arg type="ARG1" start="4" end="6">of the body</arg>
+        </propbank>
+      </example>
+      <example name="distended-j" src="">
+        <text>The gallbladder is distended .</text>
+        <propbank>
+          <rel relloc="3">distended</rel>
+          <arg type="ARG1" start="0" end="1">The gallbladder</arg>
+        </propbank>
+      </example>
       <note>DISTEND-V NOTES: Automatically created based on 'furrow' (45.2), 'expand' (45.4). Edited by hwangd. Member of VNcls bend-45.2. (from distend.01-v)</note>
       <note>DISTENSION-N NOTES: Corresponds with distend.01. Framed by anwen april 2011 (from distension.01-n)</note>
       <note>DISTENTION-N NOTES: variation of distension-n (from distention.01-n)</note>
       <note>DISTENDED-J NOTES: Based on Thyme and Sharp data. Comparison to distend.01. Distend.01 is a member of VN class bend-45.2. Framed by Katie. (from distended.01-j)</note>
-      <roles>
-        <role descr="expander" f="pag" n="0">
-          <vnrole vncls="45.2" vntheta="agent"/>
-        </role>
-        <role descr="distended thing" f="ppt" n="1">
-          <vnrole vncls="45.2" vntheta="patient"/>
-        </role>
-      </roles>
-      <example name="Transitive" src="web usage" type="">
-        <text>The gas distended the animal's body.</text>
-        <arg f="" n="0">The gas</arg>
-        <rel f="">distended</rel>
-        <arg f="" n="1">the animals body</arg>
-      </example>
-      <example name="Intransitive" src="web usage" type="">
-        <text>The animal's body distended.</text>
-        <arg f="" n="1">The animal's body</arg>
-        <rel f="">distended</rel>
-      </example>
-      <example name="Both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The gases' distension of the body made identification nearly impossible.</text>
-        <arg f="" n="0">The gases'</arg>
-        <rel f="">distension</rel>
-        <arg f="" n="1">of the body</arg>
-      </example>
-      <example name="" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The gallbladder is distended.</text>
-        <arg f="" n="1">The gallbladder</arg>
-        <rel f="">distended</rel>
-      </example>
     </roleset>
   </predicate>
 </frameset>

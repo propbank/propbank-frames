@@ -1,45 +1,76 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="achieve">
     <roleset id="achieve.01" name="accomplish">
       <aliases>
-        <alias framenet="Accomplishment" pos="v" verbnet="55.2">achieve</alias>
-        <alias framenet="Accomplishment" pos="n" verbnet="">achievement</alias>
+        <alias pos="v">achieve</alias>
+        <alias pos="n">achievement</alias>
       </aliases>
-      <note>ACHIEVE-V NOTES: Based on sentences in financial subcorpus. Member of VN class complete-55.2 Comparison with 'get' and 'win'. (from achieve.01-v)</note>
-      <note>ACHIEVEMENT-N NOTES: Roleset based on verb entry achieve.01, OntoNotes achievement-n grouping senses 1&amp; 2; Framed by Claire. (from achievement.01-n)</note>
       <roles>
         <role descr="achiever" f="PAG" n="0">
-          <vnrole vncls="55.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="complete-55.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="complete-55.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing achieved, gotten, accomplished" f="PPT" n="1">
-          <vnrole vncls="55.2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="complete-55.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="complete-55.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="achieve-v: typical usage" src="" type="">
-        <text>[The company]-1 expects *trace*-1 to achieve the 20 % increase in full-year earnings per share, as it projected in the spring, the spokesman said.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">achieve</rel>
-        <arg f="" n="1">the 20 % increase in full-year earnings per share</arg>
-        <arg f="adv" n="m">as it projected in the spring</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Accomplishment" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="complete-55.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="achieve-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">160</lexlink>
+        <lexlink class="complete-55.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="achieve-v: typical usage" src="">
+        <text>The company expects to achieve the 20 % increase in full - year earnings per share , as it projected in the spring , the spokesman said .</text>
+        <propbank>
+          <rel relloc="4">achieve</rel>
+          <arg type="ARG0" start="0" end="1">The company</arg>
+          <arg type="ARG1" start="5" end="15">the 20 % increase in full - year earnings per share</arg>
+          <arg type="ARGM-ADV" start="17" end="22">as it projected in the spring</arg>
+        </propbank>
       </example>
-      <example name="achieve-v: instrument as manner" src="" type="">
-        <text>He said the improvement was a result of [cost savings]-1 achieved *trace*-1 by consolidating manufacturing operations, blending two sales organizations and focusing more carefully the company's promotional activities.</text>
-        <rel f="">achieved</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="mnr" n="m">by consolidating manufacturing operations, blending two sales organizations and focusing more carefully the company's promotional activities</arg>
+      <example name="achieve-v: instrument as manner" src="">
+        <text>He said the improvement was a result of cost savings achieved by consolidating manufacturing operations , blending two sales organizations and focusing more carefully the company 's promotional activities .</text>
+        <propbank>
+          <rel relloc="10">achieved</rel>
+          <arg type="ARG1" start="8" end="9">cost savings</arg>
+          <arg type="ARGM-MNR" start="11" end="28">by consolidating manufacturing operations , blending two sales organizations and focusing more carefully the company 's promotional activities</arg>
+        </propbank>
       </example>
-      <example name="achievement-n: Arg 1 only" src="NomBank Frames" type="">
-        <text>And the Fed has at most very limited ability to contribute to theachievement of other objectives by means other than bystabilizing the price level .</text>
-        <rel f="">achievement</rel>
-        <arg f="" n="1">of other objectives</arg>
+      <example name="achievement-n: Arg 1 only" src="NomBank Frames">
+        <text>And the Fed has at most very limited ability to contribute to the achievement of other objectives by means other than by stabilizing the price level .</text>
+        <propbank>
+          <rel relloc="13">achievement</rel>
+          <arg type="ARG1" start="14" end="16">of other objectives</arg>
+        </propbank>
       </example>
-      <example name="achievement-n: All arguments" src="web" type="">
-        <text>His achievement of winning back-to-back European Cups is considered to be one of the greatest in football.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">achievement</rel>
-        <arg f="" n="1">of winning back-to-back European Cups</arg>
+      <example name="achievement-n: All arguments" src="web">
+        <text>His achievement of winning back - to - back European Cups is considered to be one of the greatest in football .</text>
+        <propbank>
+          <rel relloc="1">achievement</rel>
+          <arg type="ARG0" start="0" end="0">His</arg>
+          <arg type="ARG1" start="2" end="10">of winning back - to - back European Cups</arg>
+        </propbank>
       </example>
+      <note>ACHIEVE-V NOTES: Based on sentences in financial subcorpus. Member of VN class complete-55.2 Comparison with 'get' and 'win'. (from achieve.01-v)</note>
+      <note>ACHIEVEMENT-N NOTES: Roleset based on verb entry achieve.01, OntoNotes achievement-n grouping senses 1 &amp; 2; Framed by Claire. (from achievement.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

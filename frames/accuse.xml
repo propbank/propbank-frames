@@ -1,51 +1,103 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="accuse">
     <roleset id="accuse.01" name="charge with wrongdoing, blame">
       <aliases>
-        <alias framenet="Judgment Judgment_communication Notification_of_charges" pos="v" verbnet="81">accuse</alias>
-        <alias framenet="" pos="n" verbnet="">accusation</alias>
-        <alias framenet="" pos="n" verbnet="">accusal</alias>
-        <alias framenet="" pos="l" verbnet="">make_accusation</alias>
+        <alias pos="v">accuse</alias>
+        <alias pos="n">accusation</alias>
+        <alias pos="n">accusal</alias>
+        <alias pos="l">make_accusation</alias>
       </aliases>
-      <note>ACCUSE-V NOTES: Member of VNcls suspect-81. (from accuse.01-v)</note>
-      <note>ACCUSATION-N NOTES: Roleset based on verb entry accuse.01, OntoNotes grouping accusation-n senses 1&amp; 2; VN class suspect-81. Framed by Claire. (from accusation.01-n)</note>
       <roles>
         <role descr="accuser" f="PAG" n="0">
-          <vnrole vncls="81" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="suspect-81" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Notification_of_charges" resource="FrameNet" version="1.7">arraign_authority</rolelink>
+            <rolelink class="Judgment" resource="FrameNet" version="1.7">cognizer</rolelink>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">communicator</rolelink>
+            <rolelink class="suspect-81" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="accused" f="PPT" n="1">
-          <vnrole vncls="81" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="suspect-81" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Notification_of_charges" resource="FrameNet" version="1.7">accused</rolelink>
+            <rolelink class="Judgment" resource="FrameNet" version="1.7">evaluee</rolelink>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">addressee</rolelink>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">evaluee</rolelink>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">topic</rolelink>
+            <rolelink class="suspect-81" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="crime" f="PRD" n="2">
-          <vnrole vncls="81" vntheta="Attribute"/>
+          <rolelinks>
+            <rolelink class="suspect-81" resource="VerbNet" version="verbnet3.3">attribute</rolelink>
+            <rolelink class="Notification_of_charges" resource="FrameNet" version="1.7">charges</rolelink>
+            <rolelink class="Judgment" resource="FrameNet" version="1.7">reason</rolelink>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">topic</rolelink>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">reason</rolelink>
+            <rolelink class="suspect-81" resource="VerbNet" version="verbnet3.4">attribute</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="accuse-v: really simple" src="" type="">
-        <text>He accused Dow Jones of ``using unfair means to obtain the stock at an unfair price.''</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">accused</rel>
-        <arg f="" n="1">Dow Jones</arg>
-        <arg f="" n="2">of using unfair means to obtain the stock at an unfair price</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Judgment" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Judgment_communication" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Notification_of_charges" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="suspect-81" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Justice.InitiateJudicialProcess.ChargeIndict" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Correspondence" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="Broadcast" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="Chargeindict" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="accuse-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">150</lexlink>
+        <lexlink class="accusation-n.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">13</lexlink>
+        <lexlink class="accusation-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+        <lexlink class="suspect-81" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="accuse-v: really simple" src="">
+        <text>He accused Dow Jones of `` using unfair means to obtain the stock at an unfair price . ''</text>
+        <propbank>
+          <rel relloc="1">accused</rel>
+          <arg type="ARG0" start="0" end="0">He</arg>
+          <arg type="ARG1" start="2" end="3">Dow Jones</arg>
+          <arg type="ARG2" start="4" end="18">of `` using unfair means to obtain the stock at an unfair price . ''</arg>
+        </propbank>
       </example>
-      <example name="accusation-n: Arg 2 only" src="NomBank frames" type="">
-        <text>The two sides in the legal battle have hurled accusations ofduplicity at each other for weeks</text>
-        <rel f="">accusations</rel>
-        <arg f="" n="2">of duplicity</arg>
+      <example name="accusation-n: Arg 2 only" src="NomBank frames">
+        <text>The two sides in the legal battle have hurled accusations of duplicity at each other for weeks</text>
+        <propbank>
+          <rel relloc="9">accusations</rel>
+          <arg type="ARG2" start="10" end="11">of duplicity</arg>
+        </propbank>
       </example>
-      <example name="unk" src="ontonotes mz/sinorama/10/ectb_1053" type="">
+      <example name="unk" src="ontonotes mz/sinorama/10/ectb_1053">
         <text>The legal code of the Qing dynasty -LRB- 1644 - 1911 -RRB- stated that where parents brought charges against their offspring , the accused were automatically considered guilty and there was no need for a formal trial .</text>
-        <rel f="">accused</rel>
+        <propbank>
+          <rel relloc="23">accused</rel>
+        </propbank>
       </example>
-
-      <example name="ARG0 and ARG1" src="ontonotes pt/nt/45/nt_4508" type="">
+      <example name="ARG0 and ARG1" src="ontonotes pt/nt/45/nt_4508">
         <text>Who can accuse the people God has chosen ?</text>
-        <arg f="" n="0">Who</arg>
-        <arg f="mod" n="m">can</arg>
-        <rel f="">accuse</rel>
-        <arg f="" n="1">the people God has chosen</arg>
+        <propbank>
+          <rel relloc="2">accuse</rel>
+          <arg type="ARG0" start="0" end="0">Who</arg>
+          <arg type="ARGM-MOD" start="1" end="1">can</arg>
+          <arg type="ARG1" start="3" end="7">the people God has chosen</arg>
+        </propbank>
       </example>
-
+      <note>ACCUSE-V NOTES: Member of VNcls suspect-81. (from accuse.01-v)</note>
+      <note>ACCUSATION-N NOTES: Roleset based on verb entry accuse.01, OntoNotes grouping accusation-n senses 1 &amp; 2; VN class suspect-81. Framed by Claire. (from accusation.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

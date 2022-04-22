@@ -1,58 +1,99 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="inject">
     <roleset id="inject.01" name="put or reput x into y, putting x into y with a syringe">
       <aliases>
-        <alias framenet="Placing Filling Ingest_substance" pos="v" verbnet="">inject</alias>
-        <alias framenet="" pos="n" verbnet="">reinjection</alias>
-        <alias framenet="" pos="n" verbnet="">injection</alias>
+        <alias pos="v">inject</alias>
+        <alias pos="n">reinjection</alias>
+        <alias pos="n">injection</alias>
       </aliases>
+      <roles>
+        <role descr="injector" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Filling" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="Placing" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="Placing" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="stuff being put in" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Filling" resource="FrameNet" version="1.7">theme</rolelink>
+            <rolelink class="Placing" resource="FrameNet" version="1.7">theme</rolelink>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="injected into what?" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="Filling" resource="FrameNet" version="1.7">goal</rolelink>
+            <rolelink class="Placing" resource="FrameNet" version="1.7">goal</rolelink>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Filling" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Placing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Ingest_substance" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="fill-9.8" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="inject-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">9</lexlink>
+        <lexlink class="inject-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">6</lexlink>
+        <lexlink class="fill-9.8" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="inject into" src="">
+        <text>Analysts have estimated that Pinnacle West may have to inject between $ 300 million and $ 400 million into the MeraBank unit before turning the thrift over to federal regulators .</text>
+        <propbank>
+          <rel relloc="9">inject</rel>
+          <arg type="ARG0" start="4" end="5">Pinnacle West</arg>
+          <arg type="ARG1" start="10" end="17">between $ 300 million and $ 400 million</arg>
+          <arg type="ARG2" start="18" end="21">into the MeraBank unit</arg>
+          <arg type="ARGM-TMP" start="22" end="29">before turning the thrift over to federal regulators</arg>
+        </propbank>
+      </example>
+      <example name="ARG0 and ARG1 and ARG2" src="ontonotes bn/voa/00/voa_0061">
+        <text>When they injected the altered virus into brains of aging animals with early Parkinson 's it conveyed the attached GDNF gene efficiently , causing dopamine cells to produce the rescue protein on site .</text>
+        <propbank>
+          <rel relloc="2">injected</rel>
+          <arg type="ARGM-TMP" start="0" end="0">When</arg>
+          <arg type="ARG0" start="1" end="1">they</arg>
+          <arg type="ARG1" start="3" end="5">the altered virus</arg>
+          <arg type="ARG2" start="6" end="14">into brains of aging animals with early Parkinson 's</arg>
+        </propbank>
+      </example>
+      <example name="Arg1 and Arg2" src="">
+        <text>The injection of chicken breasts with saline solution gives them a plump appearance .</text>
+        <propbank>
+          <rel relloc="1">injection</rel>
+          <arg type="ARG2" start="2" end="4">of chicken breasts</arg>
+          <arg type="ARG1" start="5" end="7">with saline solution</arg>
+        </propbank>
+      </example>
+      <example name="metaphorical" src="">
+        <text>The producer 's re - injection of Anya 's voice into the mix creates even more exciting layers in the music .</text>
+        <propbank>
+          <rel relloc="3 4 5">re - injection</rel>
+          <arg type="ARG0" start="0" end="2">The producer 's</arg>
+          <arg type="ARG1" start="6" end="9">of Anya 's voice</arg>
+          <arg type="ARG2" start="10" end="12">into the mix</arg>
+        </propbank>
+      </example>
       <note>INJECT-V NOTES: Member of Vncls fill-9.8. Checked by Julia, 10/2010. (from inject.01-v)</note>
       <note>INJECTION-N NOTES: ~inject.01 (from injection.01-n)</note>
       <note>REINJECTION-N NOTES: ~inject.01 (from reinjection.01-n)</note>
-      <roles>
-        <role descr="injector" f="PAG" n="0">
-          <vnrole vncls="9.8" vntheta="Agent"/>
-        </role>
-        <role descr="stuff being put in" f="PPT" n="1">
-          <vnrole vncls="9.8" vntheta="Theme"/>
-        </role>
-        <role descr="injected into what?" f="GOL" n="2">
-          <vnrole vncls="9.8" vntheta="Destination"/>
-        </role>
-      </roles>
-      <example name="inject into" src="" type="">
-        <text>Analysts have estimated that [Pinnacle West]-1 may have *trace*-1 to inject between $300 million and $400 million into the MeraBank unit before turning the thrift over to federal regulators.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">inject</rel>
-        <arg f="" n="1">between $300 million and $400 million</arg>
-        <arg f="" n="2">into the MeraBank unit</arg>
-        <arg f="tmp" n="m">before turning the thrift over to federal regulators</arg>
-      </example>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes bn/voa/00/voa_0061" type="">
-        <text>When they injected the altered virus into brains of aging animals with early Parkinson 's it conveyed the attached GDNF gene efficiently , causing dopamine cells to produce the rescue protein on site .</text>
-        <arg f="tmp" n="m">When</arg>
-        <arg f="" n="0">they</arg>
-        <rel f="">injected</rel>
-        <arg f="" n="1">the altered virus</arg>
-        <arg f="" n="2">into brains of aging animals with early Parkinson 's</arg>
-      </example>
-
-      <example name="Arg1 and Arg2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The injection of chicken breasts with saline solution gives them a plump appearance.</text>
-        <rel f="">injection</rel>
-        <arg f="" n="2">of chicken breasts</arg>
-        <arg f="" n="1">with saline solution</arg>
-      </example>
-      <example name="metaphorical" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The producer's re-injection of Anya's voice into the mix creates even more exciting layers in the music.</text>
-        <arg f="" n="0">The producer's</arg>
-        <rel f="">re-injection</rel>
-        <arg f="" n="1">of Anya's voice</arg>
-        <arg f="" n="2">into the mix</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

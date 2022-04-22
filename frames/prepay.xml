@@ -1,56 +1,76 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="prepay">
     <roleset id="prepay.01" name="pay in advance">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">prepay</alias>
-        <alias framenet="" pos="n" verbnet="">prepayment</alias>
+        <alias pos="v">prepay</alias>
+        <alias pos="n">prepayment</alias>
       </aliases>
+      <roles>
+        <role descr="payer or buyer" f="PAG" n="0"/>
+        <role descr="thing paid for (often debt)" f="PPT" n="1"/>
+        <role descr="seller or person being paid" f="GOL" n="2"/>
+        <role descr="price paid" f="VSP" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="prepay-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+      </lexlinks>
+      <example name="single arg" src="">
+        <text>Since most mortgages can be prepaid or refinanced at any time , issuers of mortgage securities retain the right to buy back their bonds before maturity .</text>
+        <propbank>
+          <rel relloc="5">prepaid</rel>
+          <arg type="ARG1" start="1" end="2">most mortgages</arg>
+          <arg type="ARGM-TMP" start="8" end="10">at any time</arg>
+        </propbank>
+      </example>
+      <example name="with price and seller" src="">
+        <text>Weirton , of Weirton , W. Va. , said $ 60.3 million of the proceeds were used to prepay the remaining amounts on the note outstanding to National Intergroup Inc. , the parent of National Steel .</text>
+        <propbank>
+          <rel relloc="18">prepay</rel>
+          <arg type="ARG3" start="9" end="14">$ 60.3 million of the proceeds</arg>
+          <arg type="ARG1" start="19" end="25">the remaining amounts on the note outstanding</arg>
+          <arg type="ARG2" start="26" end="35">to National Intergroup Inc. , the parent of National Steel</arg>
+        </propbank>
+      </example>
+      <example name="with agent and price" src="">
+        <text>MEDUSA Corp. said it voluntarily prepaid $ 7 million on its original $ 75 million term loan , bringing the total debt reduction for the year to $ 18 million .</text>
+        <propbank>
+          <rel relloc="5">prepaid</rel>
+          <arg type="ARG0" start="3" end="3">it</arg>
+          <arg type="ARGM-MNR" start="4" end="4">voluntarily</arg>
+          <arg type="ARG3" start="6" end="8">$ 7 million</arg>
+          <arg type="ARG1" start="9" end="16">on its original $ 75 million term loan</arg>
+          <arg type="ARGM-ADV" start="18" end="29">bringing the total debt reduction for the year to $ 18 million</arg>
+        </propbank>
+      </example>
+      <example name="be careful: this is not arg 1" src="">
+        <text>There could be fairly heavy prepayments on the premium securities</text>
+        <propbank>
+          <rel relloc="5">prepayments</rel>
+          <arg type="ARGM-ADJ" start="3" end="4">fairly heavy</arg>
+          <arg type="ARG1" start="6" end="9">on the premium securities</arg>
+        </propbank>
+      </example>
+      <example name="This is arg1" src="">
+        <text>a prepayment of 160 % of the PSA model</text>
+        <propbank>
+          <rel relloc="1">prepayment</rel>
+          <arg type="ARG1" start="2" end="8">of 160 % of the PSA model</arg>
+        </propbank>
+      </example>
       <note>PREPAY-V NOTES: Frames file for 'prepay' based on sentences in wsj. No Verbnet entry. (from prepay.01-v predicate notes)</note>
       <note>PREPAYMENT-N NOTES: Based on ontonotes nouns. Comparison to pay.01 and payment.01. Pay.01 is a member of VN class pay-68 and FN class ommerce_pay. Framed by Katie. (from prepayment.01-n)</note>
-      <roles>
-        <role descr="payer or buyer" f="pag" n="0"/>
-        <role descr="thing paid for (often debt)" f="ppt" n="1"/>
-        <role descr="seller or person being paid" f="gol" n="2"/>
-        <role descr="price paid" f="vsp" n="3"/>
-      </roles>
-      <example name="single arg" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>Since [most mortgages]-1 can be prepaid or refinanced *trace*-1 at any time, issuers of mortgage securities retain the right to buy back their bonds before maturity.</text>
-        <rel f="">prepaid</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="tmp" n="m">at any time</arg>
-      </example>
-      <example name="with price and seller" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="active"/>
-        <text>Weirton, of Weirton, W. Va., said [$60.3 million of the proceeds]-1 were used *trace*-1 *trace*-1 to prepay the remaining amounts on the note outstanding to National Intergroup Inc., the parent of National Steel.</text>
-        <arg f="" n="3">*trace*</arg>
-        <rel f="">prepay</rel>
-        <arg f="" n="1">the remaining amounts on the note outstanding</arg>
-        <arg f="" n="2">to National Intergroup Inc., the parent of National Steel</arg>
-      </example>
-      <example name="with agent and price" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>MEDUSA Corp. said it voluntarily prepaid $7 million on its original $75 million term loan, bringing the total debt reduction for the year to $18 million.</text>
-        <arg f="" n="0">it</arg>
-        <arg f="mnr" n="m">voluntarily</arg>
-        <rel f="">prepaid</rel>
-        <arg f="" n="3">$ 7 million</arg>
-        <arg f="" n="1">on its original $75 million term loan</arg>
-        <arg f="adv" n="m">bringing the total debt reduction for the year to $18 million</arg>
-      </example>
-      <example name="be careful: this is not arg 1" src="" type="">
-        <text>There could be fairly heavy prepayments on the premium securities</text>
-        <arg f="adj" n="m">fairly heavy</arg>
-        <rel f="">prepayments</rel>
-        <arg f="" n="1">on the premium securities</arg>
-      </example>
-      <example name="This is arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>a prepayment of 160% of the PSA model</text>
-        <rel f="">prepayment</rel>
-        <arg f="" n="1">of 160% of the PSA model</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

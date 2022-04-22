@@ -1,36 +1,65 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="crawl">
     <roleset id="crawl.01" name="to  advance slowly">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">crawl</alias>
+        <alias pos="v">crawl</alias>
       </aliases>
-      <note>CRAWL-V NOTES: Frames file for 'crawl' based on survey of sentences in the WSJ corpus. (from crawl.01-v predicate notes)</note>
       <roles>
         <role descr="agent, entity crawling" f="PPT" n="0">
-          <vnrole vncls="47.7" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="meander-47.7" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Self_motion" resource="FrameNet" version="1.7">self_mover</rolelink>
+            <rolelink class="meander-47.7" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="direction" f="LOC" n="1">
-          <vnrole vncls="47.7" vntheta="Location"/>
+          <rolelinks>
+            <rolelink class="meander-47.7" resource="VerbNet" version="verbnet3.3">location</rolelink>
+            <rolelink class="Self_motion" resource="FrameNet" version="1.7">goal</rolelink>
+            <rolelink class="Self_motion" resource="FrameNet" version="1.7">area</rolelink>
+            <rolelink class="Self_motion" resource="FrameNet" version="1.7">path</rolelink>
+            <rolelink class="meander-47.7" resource="VerbNet" version="verbnet3.4">location</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG0 and ARG1" src="ontonotes bn/cnn/02/cnn_0219" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Self_motion" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="meander-47.7" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="crawl-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">10</lexlink>
+        <lexlink class="meander-47.7" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="ARG0 and ARG1" src="ontonotes bn/cnn/02/cnn_0219">
         <text>She does n't mind them crawling around underneath her .</text>
-        <arg f="" n="0">them</arg>
-        <rel f="">crawling</rel>
-        <arg f="" n="1">around</arg>
-        <arg f="loc" n="m">underneath her</arg>
+        <propbank>
+          <rel relloc="5">crawling</rel>
+          <arg type="ARG0" start="4" end="4">them</arg>
+          <arg type="ARG1" start="6" end="6">around</arg>
+          <arg type="ARGM-LOC" start="7" end="8">underneath her</arg>
+        </propbank>
       </example>
-
-      <example name="prepositional Arg1" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>Colleagues today recall with some humor how meetings would crawl into the early morning hours [*T*-1] as Mr. Dinkins would march his staff out of board meetings and into his private office [*-2]to discuss , en masse , certain controversial proposals .</text>
-        <arg f="" n="0">meetings</arg>
-        <arg f="MOD" n="M">would</arg>
-        <rel f="">crawl</rel>
-        <arg f="" n="1">into the early morning hours</arg>
-        <arg f="ADV" n="M">as Mr. Dinkins would march his staff out of board meetings and into his private office [*-2] to discuss , en masse , certain controversial proposals</arg>
+      <example name="prepositional Arg1" src="">
+        <text>Colleagues today recall with some humor how meetings would crawl into the early morning hours as Mr. Dinkins would march his staff out of board meetings and into his private office to discuss , en masse , certain controversial proposals .</text>
+        <propbank>
+          <rel relloc="9">crawl</rel>
+          <arg type="ARG0" start="7" end="7">meetings</arg>
+          <arg type="ARGM-MOD" start="8" end="8">would</arg>
+          <arg type="ARG1" start="10" end="14">into the early morning hours</arg>
+          <arg type="ARGM-ADV" start="15" end="39">as Mr. Dinkins would march his staff out of board meetings and into his private office to discuss , en masse , certain controversial proposals</arg>
+        </propbank>
       </example>
+      <note>CRAWL-V NOTES: Frames file for 'crawl' based on survey of sentences in the WSJ corpus. (from crawl.01-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

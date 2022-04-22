@@ -1,64 +1,104 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="depend">
     <roleset id="depend.01" name="rely">
       <aliases>
-        <alias framenet="Reliance Contingency Contingency" pos="v"
-        verbnet="">depend</alias>
-        <alias framenet="" pos="n" verbnet="">dependency</alias>
-        <alias framenet="Contingency" pos="j" verbnet="">dependent</alias>
+        <alias pos="v">depend</alias>
+        <alias pos="n">dependency</alias>
+        <alias pos="j">dependent</alias>
       </aliases>
+      <roles>
+        <role descr="depender" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="rely-70" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Reliance" resource="FrameNet" version="1.7">protagonist</rolelink>
+            <rolelink class="rely-70" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="depended on" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="rely-70" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Reliance" resource="FrameNet" version="1.7">means</rolelink>
+            <rolelink class="Reliance" resource="FrameNet" version="1.7">instrument</rolelink>
+            <rolelink class="Reliance" resource="FrameNet" version="1.7">intermediary</rolelink>
+            <rolelink class="Reliance" resource="FrameNet" version="1.7">benefit</rolelink>
+            <rolelink class="Reliance" resource="FrameNet" version="1.7">purpose</rolelink>
+            <rolelink class="rely-70" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Contingency" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Reliance" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="rely-70" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="depend-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">46</lexlink>
+        <lexlink class="depend-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">22</lexlink>
+        <lexlink class="rely-70" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="transitive" src="">
+        <text>The survival of spinoff Cray Computer Corp. as a fledgling in the supercomputer business appears to depend heavily on the creativity -- and longevity -- of its chairman and chief designer , Seymour Cray .</text>
+        <propbank>
+          <rel relloc="16">depend</rel>
+          <arg type="ARG0" start="0" end="13">The survival of spinoff Cray Computer Corp. as a fledgling in the supercomputer business</arg>
+          <arg type="ARGM-MNR" start="17" end="17">heavily</arg>
+          <arg type="ARG1" start="18" end="33">on the creativity -- and longevity -- of its chairman and chief designer , Seymour Cray</arg>
+        </propbank>
+      </example>
+      <example name="discourse-level event" src="">
+        <text>*trace* Depending upon how many warrants and options are exercised prior to completion of the transaction , Heritage would issue between 1.8 million and 2.35 million preferred shares , a Heritage spokesman estimated .</text>
+        <propbank>
+          <rel relloc="1">Depending</rel>
+          <arg type="ARG0" start="?" end="?">*trace*</arg>
+          <arg type="ARG1" start="2" end="15">upon how many warrants and options are exercised prior to completion of the transaction</arg>
+        </propbank>
+      </example>
+      <example name="without trace, even" src="">
+        <text>The agreement also provides for potential payments of additional proceeds to National Aluminum over the next two years , depending on the plant 's shipping levels .</text>
+        <propbank>
+          <rel relloc="19">depending</rel>
+          <arg type="ARG1" start="20" end="25">on the plant 's shipping levels</arg>
+        </propbank>
+      </example>
+      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1053">
+        <text>But when we start out from the notion of rights , and support those rights with legal guarantees , we find it is better to have guaranteed rights than to depend on everyone fulfilling their obligations .</text>
+        <propbank>
+          <rel relloc="30">depend</rel>
+          <arg type="ARG1" start="31" end="35">on everyone fulfilling their obligations</arg>
+        </propbank>
+      </example>
+      <example name="Both args, misspelled" src="BOLT P01, parts 2,3">
+        <text>I see equality as a goal to strive for , although in effect , it is somewhat arbitrary , dependant on the whims of changing times .</text>
+        <propbank>
+          <rel relloc="19">dependant</rel>
+          <arg type="ARGM-ADV" start="11" end="12">in effect</arg>
+          <arg type="ARG0" start="14" end="14">it</arg>
+          <arg type="ARG1" start="20" end="25">on the whims of changing times</arg>
+        </propbank>
+      </example>
+      <example name="Noun: Arg0" src="cryo">
+        <text>Dependencies of surface rms height .</text>
+        <propbank>
+          <rel relloc="0">Dependencies</rel>
+          <arg type="ARG0" start="2" end="4">surface rms height</arg>
+        </propbank>
+      </example>
       <note>DEPEND-V NOTES: Member of VNcls rely-70. (from depend.01-v)</note>
       <note>DEPENDENT-J NOTES: Roleset based on instances in BOLT P01,
       parts 2,3. Framed by Claire. Member of VNcls rely-70. (from
       dependent.01-j)</note>
       <note>DEPENDENCY-N NOTES: based on cryo data. Framed by Meredith. No
-      VN/FN classes.</note> 
-      <roles>
-        <role descr="depender" f="PAG" n="0">
-          <vnrole vncls="70" vntheta="Agent"/>
-        </role>
-        <role descr="depended on" f="PPT" n="1">
-          <vnrole vncls="70" vntheta="Theme"/>
-        </role>
-      </roles>
-      <example name="transitive" src="" type="">
-        <text>[The survival of spinoff Cray Computer Corp. as a fledgling in the supercomputer business]-1 appears *trace*-1 to depend heavily on the creativity -- and longevity -- of its chairman and chief designer, Seymour Cray.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">depend</rel>
-        <arg f="mnr" n="m">heavily</arg>
-        <arg f="" n="1">on the creativity -- and longevity -- of its chairman and chief designer, Seymour Cray.</arg>
-      </example>
-      <example name="discourse-level event" src="" type="">
-        <text>*trace* Depending upon how many warrants and options are exercised prior to completion of the transaction, Heritage would issue between 1.8 million and 2.35 million preferred shares, a Heritage spokesman estimated.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">Depending</rel>
-        <arg f="" n="1">upon how many warrants and options are exercised prior to completion of the transaction</arg>
-      </example>
-      <example name="without trace, even" src="" type="">
-        <text>The agreement also provides for potential payments of additional proceeds to National Aluminum over the next two years, depending on the plant's shipping levels.</text>
-        <rel f="">depending</rel>
-        <arg f="" n="1">on the plant's shipping levels</arg>
-      </example>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1053" type="">
-        <text>But when we start out from the notion of rights , and support those rights with legal guarantees , we find it is better to have guaranteed rights than to depend on everyone fulfilling their obligations .</text>
-        <arg f="" n="0">[]</arg>
-        <rel f="">depend</rel>
-        <arg f="" n="1">on everyone fulfilling their obligations</arg>
-      </example>
-
-      <example name="Both args, misspelled" src="BOLT P01, parts 2,3" type="">
-        <text>I see equality as a goal to strive for , although in effect , it is somewhat arbitrary , dependant on the whims of changing times .</text>
-        <arg f="adv" n="m">in effect</arg>
-        <arg f="" n="0">it</arg>
-        <rel f="">dependant</rel>
-        <arg f="" n="1">on the whims of changing times</arg>
-      </example>
-      <example name="Noun: Arg0" src="cryo" type="">
-        <text>Dependencies of surface rms height.</text>
-        <rel f="">dependencies</rel>
-        <arg f="" n="0">surface rms height</arg>
-      </example>
+      VN/FN classes.</note>
     </roleset>
   </predicate>
 </frameset>

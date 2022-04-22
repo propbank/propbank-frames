@@ -1,61 +1,95 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="starve">
     <roleset id="starve.01" name="to suffer or cause to suffer  from deprivation or hunger">
       <aliases>
-        <alias framenet="Death Killing Prevent_or_allow_possession Prevent_from_having" pos="v" verbnet="">starve</alias>
-        <alias framenet="" pos="n" verbnet="">starvation</alias>
-        <alias framenet="" pos="j" verbnet="">starving</alias>
+        <alias pos="v">starve</alias>
+        <alias pos="n">starvation</alias>
+        <alias pos="j">starving</alias>
       </aliases>
+      <roles>
+        <role descr="cause of starvation" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="suffocate-40.7" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Death" resource="FrameNet" version="1.7">explanation</rolelink>
+            <rolelink class="Death" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="Killing" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="Killing" resource="FrameNet" version="1.7">killer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity starving" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="suffocate-40.7" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Death" resource="FrameNet" version="1.7">protagonist</rolelink>
+            <rolelink class="Killing" resource="FrameNet" version="1.7">victim</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="food/nutrient (etc) arg1 is starving for" f="VSP" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Killing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Death" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Prevent_or_allow_possession" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Prevent_from_having" confidence="0.0" resource="FrameNet" src="manual+strict-conv" version="UNK"/>
+        <lexlink class="suffocate-40.7" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="starve-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">8</lexlink>
+        <lexlink class="starve-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+      </lexlinks>
+      <example name="starve-v: passive" src="">
+        <text>He could do more to cut public subsidies and transfers , thus making funds available for public services starved of money for six years .</text>
+        <propbank>
+          <rel relloc="18">starved</rel>
+          <arg type="ARG1" start="16" end="17">public services</arg>
+          <arg type="ARG2" start="19" end="20">of money</arg>
+          <arg type="ARGM-TMP" start="21" end="23">for six years</arg>
+        </propbank>
+      </example>
+      <example name="starve-v: intransitive" src="">
+        <text>Mr. Kaplan , author of `` Surrender or Starve : The Wars Behind the Famine '' ( Westview Press , 1988 ) , lives in Lisbon .</text>
+        <propbank>
+          <rel relloc="8">Starve</rel>
+          </propbank>
+      </example>
+      <example name="ARG0 and ARG1" src="ontonotes nw/wsj/11/wsj_1146">
+        <text>By starving the peasant , the Communists have starved Poland .</text>
+        <propbank>
+          <rel relloc="8">starved</rel>
+          <arg type="ARGM-MNR" start="0" end="3">By starving the peasant</arg>
+          <arg type="ARG0" start="5" end="6">the Communists</arg>
+          <arg type="ARG1" start="9" end="9">Poland</arg>
+        </propbank>
+      </example>
+      <example name="starving-j" src="">
+        <text>`` We are starving for all the news , '' says Mr. Deak , the student .</text>
+        <propbank>
+          <rel relloc="3">starving</rel>
+          <arg end="1" start="1" type="ARG1">We</arg>
+          <arg end="7" start="4" type="ARG2">for all the news</arg>
+        </propbank>
+      </example>
+      <example name="starving-j" src="BOLT-4,5">
+        <text>Oh and btw , a few years ago I was in a town near my home city in India with my family for qurbani - and literally the people there were starving and malnourished beyond belief .</text>
+        <propbank>
+          <rel relloc="31">starving</rel>
+          <arg type="ARGM-ADV" start="26" end="26">literally</arg>
+          <arg type="ARG1" start="27" end="29">the people there</arg>
+          <arg type="ARGM-EXT" start="34" end="35">beyond belief</arg>
+        </propbank>
+      </example>
       <note>STARVE-V NOTES: Frames file for 'starve' based on WSJ; adjectival 'starving' based on BOLT-4,5. Member of VN class suffocate-40.7. (from starve.01-v)</note>
       <note>STARVATION-N NOTES: starve.01 (from starvation.01-n)</note>
       <note>STARVING-J NOTES: Automatically created by Julia as an alias file for unification. (from starving.01-j)</note>
-      <roles>
-        <role descr="cause of starvation" f="pag" n="0">
-          <vnrole vncls="40.7" vntheta="agent"/>
-        </role>
-        <role descr="entity starving" f="ppt" n="1">
-          <vnrole vncls="40.7" vntheta="theme"/>
-        </role>
-        <role descr="food/nutrient (etc) arg1 is starving for" f="vsp" n="2"/>
-      </roles>
-      <example name="starve-v: passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>He could do more [*-1] to cut public subsidies and transfers , thus [*-1]making funds available for [public services]-1 starved [*] -1 of money for six years .</text>
-        <rel f="">starved</rel>
-        <arg f="" n="1">[*]</arg>
-        <arg f="" n="2">of money</arg>
-        <arg f="tmp" n="m">for six years</arg>
-      </example>
-      <example name="starve-v: intransitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>Mr. Kaplan , author of `` [*] Surrender or Starve : The Wars Behind the Famine '' ( Westview Press , 1988 ) , lives in Lisbon .</text>
-        <arg f="" n="1">[*]</arg>
-        <rel f="">Starve</rel>
-      </example>
-      <example name="ARG0 and ARG1" src="ontonotes nw/wsj/11/wsj_1146" type="">
-        <text>By starving the peasant , the Communists have starved Poland .</text>
-        <arg f="mnr" n="m">By starving the peasant</arg>
-        <arg f="" n="0">the Communists</arg>
-        <rel f="">starved</rel>
-        <arg f="" n="1">Poland</arg>
-      </example>
-
-      <example name="starving-j" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="present" voice="active"/>
-        <text>`` We are starving for all the news , '' says [*T*-1] Mr. Deak , the student .</text>
-        <arg f="" n="1">We</arg>
-        <rel f="">starving</rel>
-        <arg f="" n="2">for all the news</arg>
-      </example>
-      <example name="starving-j" src="BOLT-4,5" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Oh and btw , a few years ago I was in a town near my home city in India with my family for qurbani - and literally the people there were starving and malnourished beyond belief .</text>
-        <arg f="adv" n="m">literally</arg>
-        <arg f="" n="1">the people there</arg>
-        <rel f="">starving</rel>
-        <arg f="ext" n="m">beyond belief</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

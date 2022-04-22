@@ -1,94 +1,138 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="addict">
     <roleset id="addict.01" name="cause a dependency, as to a drug">
       <aliases>
-        <alias framenet="Addiction" pos="v" verbnet="96">addict</alias>
-        <alias framenet="Addiction" pos="n" verbnet="">addiction</alias>
-        <alias framenet="Addiction" pos="j" verbnet="">addicted</alias>
+        <alias pos="v">addict</alias>
+        <alias pos="n">addiction</alias>
+        <alias pos="j">addicted</alias>
       </aliases>
+      <roles>
+        <role descr="outside causer of addiction" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="addict-96" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="addict-96" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="addicted entity" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="addict-96" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="addict-96" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="drug etc." f="VSP" n="2">
+          <rolelinks>
+            <rolelink class="addict-96" resource="VerbNet" version="verbnet3.3">stimulus</rolelink>
+            <rolelink class="addict-96" resource="VerbNet" version="verbnet3.4">stimulus</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Addiction" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="addict-96" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="addict-96" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="addict-v: basic passive" src="">
+        <text>The efforts to get to the people who are addicted , try to rehabilitate them ; ...</text>
+        <propbank>
+          <rel relloc="9">addicted</rel>
+          <arg type="ARG1" start="7" end="7">who</arg>
+        </propbank>
+      </example>
+      <example name="ARG0 and ARG2 and ARG1" src="ontonotes bc/p2">
+        <text>Nearly , nearly 10 million children with Internet addiction quit school and stay at home .</text>
+        <propbank>
+          <rel relloc="8">addiction</rel>
+          <arg type="ARG0" start="0" end="0">Nearly</arg>
+          <arg type="ARG2" start="7" end="7">Internet</arg>
+          <arg type="ARG1" start="9" end="10">quit school</arg>
+        </propbank>
+      </example>
+      <example name="addiction-n: Arg1 and Arg2" src="">
+        <text>Will not prescribe hydrocodone due to the patient 's pain killer addiction .</text>
+        <propbank>
+          <rel relloc="11">addiction</rel>
+          <arg type="ARG1" start="6" end="8">the patient 's</arg>
+          <arg type="ARG2" start="9" end="10">pain killer</arg>
+        </propbank>
+      </example>
+      <example name="addicted-j: : nice small clause" src="">
+        <text>When you do that you wipe out the criminal incentives , including , I might say , the incentive that the drug pushers have to go around and get kids addicted , so that they create a market for themselves .</text>
+        <propbank>
+          <rel relloc="30">addicted</rel>
+          <arg type="ARG1" start="29" end="29">kids</arg>
+        </propbank>
+      </example>
+      <example name="addicted-j: Sad, real example" src="BOLT P01, parts 2,3">
+        <text>hello , i am a 12 year old girl -LRB- 13 in two days -RRB- who is addicted to self harming .</text>
+        <propbank>
+          <rel relloc="17">addicted</rel>
+          <arg type="ARG1" start="15" end="15">who</arg>
+          <arg type="ARG2" start="18" end="20">to self harming</arg>
+        </propbank>
+      </example>
+      <example name="addicted-j: Args 1, 2" src="web">
+        <text>She was addicted to it by the end of her hospitalization and continued to take it .</text>
+        <propbank>
+          <rel relloc="2">addicted</rel>
+          <arg type="ARG1" start="0" end="0">She</arg>
+          <arg type="ARG2" start="3" end="4">to it</arg>
+          <arg type="ARGM-TMP" start="5" end="10">by the end of her hospitalization</arg>
+        </propbank>
+      </example>
       <note>ADDICT-V NOTES: Member of VNcls addict-96. (from addict.01-v)</note>
       <note>ADDICTION-N NOTES: Roleset based on verb entry addict.01. Framed by Anwen Feb 2011 (from addiction.01-n)</note>
       <note>ADDICTED-J NOTES: Adjective based on WSJ, BOLT-4,5. Corresponds to VNcls addict-96. (from addicted.01-j)</note>
-      <roles>
-        <note>The causer role is rare with the verb, and doesn't seem grammatical with the adjective, but is there for symmetry in case it can occur. (from addicted.01-j)</note>
-        <role descr="outside causer of addiction" f="PAG" n="0">
-          <vnrole vncls="96" vntheta="Agent"/>
-        </role>
-        <role descr="addicted entity" f="PPT" n="1">
-          <vnrole vncls="96" vntheta="Patient"/>
-        </role>
-        <role descr="drug etc." f="VSP" n="2">
-          <vnrole vncls="96" vntheta="Stimulus"/>
-        </role>
-      </roles>
-      <example name="addict-v: basic passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>The efforts to get to the people who [*T*-3] are addicted, try to rehabilitate them;...</text>
-        <rel f="">addicted</rel>
-        <arg f="" n="1">[*T*-3] (= who)</arg>
-      </example>
-      <example name="ARG0 and ARG2 and ARG1" src="ontonotes bc/p2" type="">
-        <text>Nearly , nearly 10 million children with Internet addiction quit school and stay at home .</text>
-        <arg f="" n="0">Nearly ,</arg>
-        <arg f="" n="2">Internet</arg>
-        <rel f="">addiction</rel>
-        <arg f="" n="1">quit school</arg>
-      </example>
-
-      <example name="addiction-n: Arg1 and Arg2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Will not prescribe hydrocodone due to the patient's pain killer addiction.</text>
-        <arg f="" n="1">the patient's</arg>
-        <arg f="" n="2">pain killer</arg>
-        <rel f="">addiction</rel>
-      </example>
-      <example name="addicted-j: : nice small clause" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>When you do that you wipe out the criminal incentives, including, I might say, the incentive that the drug pushers have to go around and get kids-1 addicted *trace*-1, so that they create a market for themselves.</text>
-        <rel f="">addicted</rel>
-        <arg f="" n="1">*trace*-1 (= kids)</arg>
-      </example>
-      <example name="addicted-j: Sad, real example" src="BOLT P01, parts 2,3" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>hello , i am a 12 year old girl -LRB- 13 in two days -RRB- who-1 *T*-1 is addicted to self harming.</text>
-        <arg f="" n="1">*T*-1</arg>
-        <rel f="">addicted</rel>
-        <arg f="" n="2">to self harming</arg>
-      </example>
-      <example name="addicted-j: Args 1, 2" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>She was addicted to it by the end of her hospitalization and continued to take it.</text>
-        <arg f="" n="1">She</arg>
-        <rel f="">addicted</rel>
-        <arg f="" n="2">to it</arg>
-        <arg f="tmp" n="m">by the end of her hospitalization</arg>
-      </example>
+      <note>The causer role is rare with the verb, and doesn't seem grammatical with the adjective, but is there for symmetry in case it can occur. (from addicted.01-j)</note>
     </roleset>
   </predicate>
   <predicate lemma="addictive">
     <roleset id="addictive.02" name="causing addiction">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">addictive</alias>
+        <alias pos="j">addictive</alias>
       </aliases>
-      <note>ADDICTIVE-J NOTES: Roleset based on P01, parts 2,3. Framed by Claire. (from addictive.01-j)</note>
       <roles>
-        <role descr="addictive substance" f="pag" n="0"/>
-        <role descr="addictive to whom? addicted entity" f="ppt" n="1"/>
+        <role descr="addictive substance" f="PAG" n="0"/>
+        <role descr="addictive to whom? addicted entity" f="PPT" n="1"/>
       </roles>
-      <example name="addictive-j: Arg 0 only" src="BOLT P01, parts 2,3" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Self harming is addictive , but you can overcome it.</text>
-        <arg f="" n="0">Self harming</arg>
-        <rel f="">addictive</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="addictive-j: Arg 0 only" src="BOLT P01, parts 2,3">
+        <text>Self harming is addictive , but you can overcome it .</text>
+        <propbank>
+          <rel relloc="3">addictive</rel>
+          <arg type="ARG0" start="0" end="1">Self harming</arg>
+        </propbank>
       </example>
-      <example name="addictive-j: Both args" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Everything is addictive to me but tattoos are addictive to all.</text>
-        <arg f="" n="0">Everything</arg>
-        <rel f="">addictive</rel>
-        <arg f="" n="1">to me</arg>
+      <example name="addictive-j: Both args" src="web">
+        <text>Everything is addictive to me but tattoos are addictive to all .</text>
+        <propbank>
+          <rel relloc="2">addictive</rel>
+          <arg type="ARG0" start="0" end="0">Everything</arg>
+          <arg type="ARG1" start="3" end="4">to me</arg>
+        </propbank>
       </example>
+      <note>ADDICTIVE-J NOTES: Roleset based on P01, parts 2,3. Framed by Claire. (from addictive.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

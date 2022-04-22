@@ -1,91 +1,131 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="grant">
     <roleset id="grant.01" name="request, giving, often in answer to a request">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">grant</alias>
-        <alias framenet="" pos="n" verbnet="">grant</alias>
-        <alias framenet="" pos="n" verbnet="">granting</alias>
+        <alias pos="v">grant</alias>
+        <alias pos="n">grant</alias>
+        <alias pos="n">granting</alias>
       </aliases>
-      <note>GRANT-V NOTES: Frames file for 'grant' based on sentences in financial subcorpus. Verbnet class "future-having-13.3"; framed members include issue leave yield. Comparison with 'deny' and 'allow'. (from grant.01-v predicate notes)</note>
-      <note>GRANT-N NOTES: Added by Julia based on WN sense #2, #3, grant-v.01. Corresponds to VNcls future_having-13.3. (from grant.01-n)</note>
       <roles>
-        <note>Watch out for non-events. If you can't replace 'grant' with 'granting' without changing the meaning, it's probaly not an event. (from grant.01-n)</note>
-        <role descr="granter" f="pag" n="0">
-          <vnrole vncls="29.5-2" vntheta="agent"/>
-          <vnrole vncls="13.3" vntheta="agent"/>
+        <role descr="granter" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="conjecture-29.5-2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Giving" resource="FrameNet" version="1.7">donor</rolelink>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing granted" f="ppt" n="1">
-          <vnrole vncls="29.5-2" vntheta="predicate"/>
-          <vnrole vncls="13.3" vntheta="theme"/>
+        <role descr="thing granted" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="conjecture-29.5-2" resource="VerbNet" version="verbnet3.3">predicate</rolelink>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Giving" resource="FrameNet" version="1.7">theme</rolelink>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="benefactive, granted-to" f="gol" n="2">
-          <vnrole vncls="29.5-2" vntheta="theme"/>
-          <vnrole vncls="13.3" vntheta="goal"/>
+        <role descr="benefactive, granted-to" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="conjecture-29.5-2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.3">goal</rolelink>
+            <rolelink class="Giving" resource="FrameNet" version="1.7">recipient</rolelink>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.4">goal</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="grant-v: no benefactive" src="" type="">
-        <text>The White House said [Mr. Bush]-1 decided *trace*-1 to grant duty-free status for 18 categories, but turned down such treatment for other types of watches ``because of the potential for material injury to watch producers located in the U.S. and the Virgin Islands.''</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">grant</rel>
-        <arg f="" n="1">duty-free status for 18 categories</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Giving" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="conjecture-29.5-2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="future_having-13.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Transaction.Transaction.GiftGrantProvideAid" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Transaction.TransferMoney.GiftGrantProvideAid" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Transaction.TransferOwnership.GiftGrantProvideAid" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Transfermoney" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="grant-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">59</lexlink>
+        <lexlink class="grant-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">20</lexlink>
+        <lexlink class="future_having-13.3" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="grant-v: no benefactive" src="">
+        <text>The White House said Mr. Bush decided to grant duty - free status for 18 categories , but turned down such treatment for other types of watches `` because of the potential for material injury to watch producers located in the U.S. and the Virgin Islands . ''</text>
+        <propbank>
+          <rel relloc="8">grant</rel>
+          <arg type="ARG0" start="4" end="5">Mr. Bush</arg>
+          <arg type="ARG1" start="9" end="15">duty - free status for 18 categories</arg>
+        </propbank>
       </example>
-      <example name="grant-v: passivized, with benefactive, benefactive fronted" src="" type="">
-        <text>That settlement represented the first time shareholders-1 were granted *trace*-1 a major payment in a greenmail case.</text>
-        <rel f="">granted</rel>
-        <arg f="" n="2">*trace*</arg>
-        <arg f="" n="1">a major payment</arg>
-        <arg f="loc" n="m">in a greenmail case</arg>
+      <example name="grant-v: passivized, with benefactive, benefactive fronted" src="">
+        <text>That settlement represented the first time shareholders were granted a major payment in a greenmail case .</text>
+        <propbank>
+          <rel relloc="8">granted</rel>
+          <arg type="ARG2" start="6" end="6">shareholders</arg>
+          <arg type="ARG1" start="9" end="11">a major payment</arg>
+          <arg type="ARGM-LOC" start="12" end="15">in a greenmail case</arg>
+        </propbank>
       </example>
-      <example name="ARG2 and ARG1" src="ontonotes mz/sinorama/10/ectb_1030" type="">
+      <example name="ARG2 and ARG1" src="ontonotes mz/sinorama/10/ectb_1030">
         <text>Gambian President Yahya Jameh declared his support for admission of the ROC to the United Nations , and as a gesture of goodwill declared that all holders of ROC passports would henceforth automatically be granted 90 - day landing visas upon arrival in Gambia .</text>
-        <arg f="" n="2">all holders of ROC passports</arg>
-        <arg f="mod" n="m">would</arg>
-        <arg f="tmp" n="m">henceforth</arg>
-        <arg f="mnr" n="m">automatically</arg>
-        <rel f="">granted</rel>
-        <arg f="" n="1">90 - day landing visas</arg>
-        <arg f="tmp" n="m">upon arrival in Gambia</arg>
+        <propbank>
+          <rel relloc="34">granted</rel>
+          <arg type="ARG2" start="25" end="29">all holders of ROC passports</arg>
+          <arg type="ARGM-MOD" start="30" end="30">would</arg>
+          <arg type="ARGM-TMP" start="31" end="31">henceforth</arg>
+          <arg type="ARGM-MNR" start="32" end="32">automatically</arg>
+          <arg type="ARG1" start="35" end="39">90 - day landing visas</arg>
+          <arg type="ARGM-TMP" start="40" end="43">upon arrival in Gambia</arg>
+        </propbank>
       </example>
-
-      <example name="grant-n: Not eventive. Call it .YY!" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="grant-n: Not eventive. Call it .YY!" src="BOLT">
         <text>This coming from someone that footed their own college tuition , No mommy and daddy allowences , no grants or anything else .</text>
+        <propbank>
+          </propbank>
       </example>
-      <example name="grant-n: All args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Mr. Weeding suggested whether it would not save time and trouble, to limit the motion to the production of such papers as came to hand aftert their grant of ?60,000 to the Noble Marquess.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">grant</rel>
-        <arg f="" n="1">of ?60,000</arg>
-        <arg f="" n="2">to the Noble Marquess</arg>
+      <example name="grant-n: All args" src="internet">
+        <text>Mr. Weeding suggested whether it would not save time and trouble , to limit the motion to the production of such papers as came to hand aftert their grant of ? 60,000 to the Noble Marquess .</text>
+        <propbank>
+          <rel relloc="28">grant</rel>
+          <arg type="ARG0" start="27" end="27">their</arg>
+          <arg type="ARG1" start="29" end="31">of ? 60,000</arg>
+          <arg type="ARG2" start="32" end="35">to the Noble Marquess</arg>
+        </propbank>
       </example>
+      <note>GRANT-V NOTES: Frames file for 'grant' based on sentences in financial subcorpus. Verbnet class "future-having-13.3"; framed members include issue leave yield. Comparison with 'deny' and 'allow'. (from grant.01-v predicate notes)</note>
+      <note>GRANT-N NOTES: Added by Julia based on WN sense #2, #3, grant-v.01. Corresponds to VNcls future_having-13.3. (from grant.01-n)</note>
+      <note>Watch out for non-events. If you can't replace 'grant' with 'granting' without changing the meaning, it's probaly not an event. (from grant.01-n)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="take_for_granted">
     <roleset id="take_for_granted.02" name="assume something as given, fail to appreciate something">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">take_for_granted</alias> 
-        <alias framenet="" pos="m" verbnet="">take_as_granted</alias>      
-        <mwe id="take_for_granted">
-          <token slot="A" arg="" pos="IN" head="B" dep="case">take</token>
-          <token slot="B" arg="" pos="IN" head="C" dep="case">for</token> 
-          <token slot="B" arg="" pos="IN" head="C" dep="case">as</token> 
-          <token slot="C" arg="" pos="VBN" head="A" dep="acomp">granted</token>
-          <token slot="C" arg="" pos="JJ" head="A" dep="acomp">granted</token>
-        </mwe>
-      </aliases>      
-      <mappings alias="take_for_granted">
-        <source>
+        <alias pos="m">take_for_granted</alias>
+        <mwp-descriptions id="take_for_granted">
+          <syntaxdesc slots="B C A">
+            <token arg="" dep="case" head="B" pos="IN" slot="A">take</token>
+            <token arg="" dep="case" head="C" pos="IN" slot="B">for</token>
+            <token arg="" dep="case" head="C" pos="IN" slot="B">as</token>
+            <token arg="" dep="acomp" head="A" pos="VBN" slot="C">granted</token>
+            <token arg="" dep="acomp" head="A" pos="JJ" slot="C">granted</token>
+          </syntaxdesc>
+          <mapping>
+            <source>
             (A / take-04
                 :arg0 (n / NARG0)
                 :arg1 (n1 / NARG1)
                 :arg2 (C / grant-01
                     :arg1 (n1)))
         </source>
-        <target>
-            (A / assume-02 
+            <target>
+            (A / assume-02
                 :arg0 (n / NARG0)
                 :arg1 (o / or
                     :op1 (t / true-01
@@ -93,25 +133,43 @@
                     :op2 (g / give-01
                         :arg1 (n1)))))
         </target>
-      </mappings>
-      <note>TAKE_FOR_GRANTED NOTES: </note>
+          </mapping>
+        </mwp-descriptions>
+        <alias pos="m">take_as_granted</alias>
+      </aliases>
       <roles>
-        <role descr="entity taking for granted" f="pag" n="0"/>
-        <role descr="thing assumed to be granted" f="ppt" n="1"/>
+        <role descr="entity taking for granted" f="PAG" n="0"/>
+        <role descr="thing assumed to be granted" f="PPT" n="1"/>
       </roles>
-      <example name="take_for_granted-m" src="" type="">
-        <text>We take it for granted that this world existed before we did and will continue to exist until after our death.</text>
-        <arg f="" n="0">We</arg>
-        <rel f="">[take][for][granted]</rel>
-        <arg f="" n="1">that this world existed before we did and will continue to exist until after our death</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="take_for_granted-m" src="">
+        <text>We take it for granted that this world existed before we did and will continue to exist until after our death .</text>
+        <propbank>
+          <rel relloc="1 3 4">take for granted</rel>
+          <arg type="ARG0" start="0" end="0">We</arg>
+          <arg type="ARG1" start="5" end="20">that this world existed before we did and will continue to exist until after our death</arg>
+        </propbank>
       </example>
-      <example name="take_for_granted-m" src="" type="">
-        <text>A woman name Jessica is showing Jason attention and love but his girlfriend Monica is taking him for granted by not honoring him.</text>
-        <arg f="" n="0">his girlfriend Monica</arg>
-        <rel f="">[taking][for][granted]</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="mnr" n="m">by not honoring him</arg>
+      <example name="take_for_granted-m" src="">
+        <text>A woman name Jessica is showing Jason attention and love but his girlfriend Monica is taking him for granted by not honoring him .</text>
+        <propbank>
+          <rel relloc="15 17 18">taking for granted</rel>
+          <arg type="ARG0" start="11" end="13">his girlfriend Monica</arg>
+          <arg type="ARG1" start="16" end="16">him</arg>
+          <arg type="ARGM-MNR" start="19" end="22">by not honoring him</arg>
+        </propbank>
       </example>
+      <note>TAKE_FOR_GRANTED NOTES: </note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,94 +1,143 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="transform">
     <roleset id="transform.01" name="change, cause a change in state">
       <aliases>
-        <alias framenet="Cause_change Undergo_change" pos="n" verbnet="">transformation</alias>
-        <alias framenet="Cause_change" pos="v" verbnet="">transform</alias>
+        <alias pos="n">transformation</alias>
+        <alias pos="v">transform</alias>
       </aliases>
-      <note>TRANSFORM-V NOTES: Based on big corpus. Member of Vncls turn-26.6.1. comparison with 'change'. (from transform.01-v)</note>
-      <note>TRANSFORMATION-N NOTES: Added by Julia based on transform-v.01. Corresponds to VNcls turn-26.6.1. (from transformation.01-n)</note>
       <roles>
-        <note>"Start state" and "thing changing" are usually the same, but there canbe cases where they are separate.  Reserve use of Arg3 for these cases. (from transform.01-v)</note>
         <role descr="causer of transformation" f="PAG" n="0">
-          <vnrole vncls="26.6.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="turn-26.6.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Undergo_change" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="turn-26.6.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing changing" f="PPT" n="1">
-          <vnrole vncls="26.6.1" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink class="turn-26.6.1" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="Undergo_change" resource="FrameNet" version="1.7">entity</rolelink>
+            <rolelink class="turn-26.6.1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="end state" f="PRD" n="2">
-          <vnrole vncls="26.6.1" vntheta="Result"/>
+          <rolelinks>
+            <rolelink class="turn-26.6.1" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="Undergo_change" resource="FrameNet" version="1.7">final_category</rolelink>
+            <rolelink class="turn-26.6.1" resource="VerbNet" version="verbnet3.4">result</rolelink>
+          </rolelinks>
         </role>
         <role descr="start state" f="VSP" n="3">
-          <vnrole vncls="26.6.1" vntheta="Material"/>
+          <rolelinks>
+            <rolelink class="turn-26.6.1" resource="VerbNet" version="verbnet3.3">initial_state</rolelink>
+            <rolelink class="Undergo_change" resource="FrameNet" version="1.7">initial_category</rolelink>
+            <rolelink class="turn-26.6.1" resource="VerbNet" version="verbnet3.4">initial_state</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="agentive" src="" type="">
-        <text>The commercial transformed the dynamics of the campaign.</text>
-        <arg f="" n="0">The commercial</arg>
-        <rel f="">transformed</rel>
-        <arg f="" n="1">the dynamics of the campaign</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Cause_change" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Undergo_change" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="turn-26.6.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="transform-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">47</lexlink>
+        <lexlink class="transformation-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">27</lexlink>
+        <lexlink class="turn-26.6.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="agentive" src="">
+        <text>The commercial transformed the dynamics of the campaign .</text>
+        <propbank>
+          <rel relloc="2">transformed</rel>
+          <arg type="ARG0" start="0" end="1">The commercial</arg>
+          <arg type="ARG1" start="3" end="7">the dynamics of the campaign</arg>
+        </propbank>
       </example>
-      <example name="ergative" src="" type="">
-        <text>...customers whose addresses have transformed during the past 3 1/2 years.</text>
-        <arg f="" n="1">whose addresses</arg>
-        <rel f="">transformed</rel>
-        <arg f="tmp" n="m">during the past 3 1/2 years</arg>
+      <example name="ergative" src="">
+        <text>... customers whose addresses have transformed during the past 3 1/2 years .</text>
+        <propbank>
+          <rel relloc="5">transformed</rel>
+          <arg type="ARG1" start="2" end="3">whose addresses</arg>
+          <arg type="ARGM-TMP" start="6" end="11">during the past 3 1/2 years</arg>
+        </propbank>
       </example>
-      <example name="passive" src="" type="">
-        <text>...[the areas]-1 that can be most easily transformed *trace*-1</text>
-        <arg f="mod" n="m">can</arg>
-        <arg f="mnr" n="m">most easily</arg>
-        <rel f="">transformed</rel>
-        <arg f="" n="1">*trace*</arg>
+      <example name="passive" src="">
+        <text>... the areas that can be most easily transformed</text>
+        <propbank>
+          <rel relloc="8">transformed</rel>
+          <arg type="ARGM-MOD" start="4" end="4">can</arg>
+          <arg type="ARGM-MNR" start="6" end="7">most easily</arg>
+          <arg type="ARG1" start="1" end="2">the areas</arg>
+        </propbank>
       </example>
-      <example name="with end state" src="" type="">
-        <text>...erasures transformed wrong answers to right ones on a statewide test.</text>
-        <arg f="" n="0">erasures</arg>
-        <rel f="">transformed</rel>
-        <arg f="" n="1">wrong answers</arg>
-        <arg f="" n="2">to right ones</arg>
-        <arg f="loc" n="m">on a statewide test</arg>
+      <example name="with end state" src="">
+        <text>... erasures transformed wrong answers to right ones on a statewide test .</text>
+        <propbank>
+          <rel relloc="2">transformed</rel>
+          <arg type="ARG0" start="1" end="1">erasures</arg>
+          <arg type="ARG1" start="3" end="4">wrong answers</arg>
+          <arg type="ARG2" start="5" end="7">to right ones</arg>
+          <arg type="ARGM-LOC" start="8" end="11">on a statewide test</arg>
+        </propbank>
       </example>
-      <example name="explicit start state" src="" type="">
-        <text>Customers transform from borrowers to savers/investors.</text>
-        <arg f="" n="1">Customers</arg>
-        <rel f="">transform</rel>
-        <arg f="" n="3">from borrowers</arg>
-        <arg f="" n="2">to savers/investors</arg>
+      <example name="explicit start state" src="">
+        <text>Customers transform from borrowers to savers / investors .</text>
+        <propbank>
+          <rel relloc="1">transform</rel>
+          <arg type="ARG1" start="0" end="0">Customers</arg>
+          <arg type="ARG3" start="2" end="3">from borrowers</arg>
+          <arg type="ARG2" start="4" end="7">to savers / investors</arg>
+        </propbank>
       </example>
-      <example name="args 1 and 3" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="args 1 and 3" src="">
         <text>Two weeks in hospital and Ali is recovering fast , happily watching Tom and Jerry on his mini television , his transformation from the pain - wracked boy who left Baghdad .</text>
-        <arg f="" n="1">his</arg>
-        <rel f="">transformation</rel>
-        <arg f="" n="3">from the pain-wracked boy who left Baghdad</arg>
+        <propbank>
+          <rel relloc="21">transformation</rel>
+          <arg type="ARG1" start="20" end="20">his</arg>
+          <arg type="ARG3" start="22" end="30">from the pain - wracked boy who left Baghdad</arg>
+        </propbank>
       </example>
-      <example name="Lots of argMs" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="Lots of argMs" src="">
         <text>But in the face of today 's dramatic global economic transformation , there is no choice but to try to turn knowledge into profit .</text>
-        <arg f="tmp" n="m">today's</arg>
-        <arg f="adj" n="m">dramatic</arg>
-        <arg f="loc" n="m">global</arg>
-        <arg f="" n="1">economic</arg>
-        <rel f="">transformation</rel>
+        <propbank>
+          <rel relloc="10">transformation</rel>
+          <arg type="ARGM-TMP" start="5" end="6">today 's</arg>
+          <arg type="ARGM-ADJ" start="7" end="7">dramatic</arg>
+          <arg type="ARGM-LOC" start="8" end="8">global</arg>
+          <arg type="ARG1" start="9" end="9">economic</arg>
+        </propbank>
       </example>
-      <example name="with arg 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="with arg 2" src="">
         <text>The rapid transformation of important scientific and technological achievements into real productivity is the outstanding feature of this open zone .</text>
-        <arg f="mnr" n="m">rapid</arg>
-        <rel f="">transformation</rel>
-        <arg f="" n="1">of important scientific and technological achievments</arg>
-        <arg f="" n="2">into real productivity</arg>
+        <propbank>
+          <rel relloc="2">transformation</rel>
+          <arg type="ARGM-MNR" start="1" end="1">rapid</arg>
+          <arg type="ARG1" start="3" end="8">of important scientific and technological achievements</arg>
+          <arg type="ARG2" start="9" end="11">into real productivity</arg>
+        </propbank>
       </example>
-      <example name="with arg0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The Levi-Larson brand of irreverence doesn't always enthrall me, but their tranformation of Dickens' tale into a night in a phantasmagorical Hard Rock Cafe is irresistible.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">transformation</rel>
-        <arg f="" n="1">of Dickens' tale</arg>
-        <arg f="" n="2">into a night in a phantasmagorical Hard Rock Cafe</arg>
+      <example name="with arg0" src="">
+        <text>The Levi - Larson brand of irreverence does n't always enthrall me , but their transformation of Dickens ' tale into a night in a phantasmagorical Hard Rock Cafe is irresistible .</text>
+        <propbank>
+          <rel relloc="15">transformation</rel>
+          <arg type="ARG0" start="14" end="14">their</arg>
+          <arg type="ARG1" start="16" end="19">of Dickens ' tale</arg>
+          <arg type="ARG2" start="20" end="28">into a night in a phantasmagorical Hard Rock Cafe</arg>
+        </propbank>
       </example>
+      <note>TRANSFORM-V NOTES: Based on big corpus. Member of Vncls turn-26.6.1. comparison with 'change'. (from transform.01-v)</note>
+      <note>TRANSFORMATION-N NOTES: Added by Julia based on transform-v.01. Corresponds to VNcls turn-26.6.1. (from transformation.01-n)</note>
+      <note>"Start state" and "thing changing" are usually the same, but there canbe cases where they are separate.  Reserve use of Arg3 for these cases. (from transform.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

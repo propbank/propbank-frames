@@ -1,117 +1,217 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="gross">
     <roleset id="gross.01" name="earn profits">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">gross</alias>
+        <alias pos="v">gross</alias>
+        <alias pos="j">grossing</alias>
       </aliases>
-      <note>GROSS-V NOTES: Frames file for 'gross' based on sentences in wsj. No Verbnet entry. (from gross.01-v)</note>
       <roles>
-        <role descr="earner" f="pag" n="0"/>
-        <role descr="gross profits (not net)" f="ppt" n="1"/>
+        <role descr="earner" f="PAG" n="0"/>
+        <role descr="gross profits (not net)" f="PPT" n="1"/>
       </roles>
-      <example name="in a noun phrase" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
-        <text>``Batman'' alone has racked up more than $247 million in box-office receipts to date, making it Warner Bros.' largest grossing film ever.</text>
-        <arg f="mnr" n="m">largest</arg>
-        <rel f="">grossing</rel>
-        <arg f="" n="1">film</arg>
-        <arg f="tmp" n="m">ever</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="grossing-j" src="">
+        <text>`` Batman '' alone has racked up more than $ 247 million in box - office receipts to date , making it Warner Bros. ' largest grossing film ever .</text>
+        <propbank>
+          <rel relloc="26">grossing</rel>
+          <arg end="25" start="25" type="ARGM-MNR">largest</arg>
+          <arg end="27" start="27" type="ARG1">film</arg>
+          <arg end="28" start="28" type="ARGM-TMP">ever</arg>
+        </propbank>
       </example>
+      <note>GROSS-V NOTES: Frames file for 'gross' based on sentences in wsj. No Verbnet entry. (from gross.01-v)</note>
     </roleset>
     <roleset id="gross.02" name="examine or study for tissue changes as a whole and without the use of an aid (ie a microscope)">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">gross</alias>
+        <alias pos="v">gross</alias>
+        <alias pos="j">gross</alias>
+        <alias pos="r">grossly</alias>
+        <alias pos="n">gross_examination</alias>
       </aliases>
-      <note>GROSS-V NOTES: Based on temprel medical data. No comparison. No VN or FN classes. Framed by Katie. (from gross.02-v)</note>
       <roles>
-        <role descr="Doctor/ pathologist" f="pag" n="0"/>
-        <role descr="tissue studied" f="ppt" n="1"/>
+        <role descr="Doctor/ pathologist" f="PAG" n="0"/>
+        <role descr="tissue studied" f="LOC" n="1"/>
+        <role descr="visible thing; thing seen on exam" f="PPT" n="2"/>
       </roles>
-      <example name="Normal example" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>[PRO-1*] grossed [*-1]by VAILLANCOURT</text>
-        <rel f="">grossed</rel>
-        <arg f="" n="1">[*-1]</arg>
-        <arg f="" n="0">by VAILLANCOURT</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="gross-v: Normal example" src="">
+        <text>grossed by VAILLANCOURT</text>
+        <propbank>
+          <rel relloc="0">grossed</rel>
+          <arg end="2" start="2" type="ARG0">VAILLANCOURT</arg>
+        </propbank>
       </example>
-      <example name="With arg 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="gross-v: With arg 1" src="">
         <text>Tissues grossed by BALDERAS</text>
-        <arg f="" n="1">tissues</arg>
-        <rel f="">grossed</rel>
-        <arg f="" n="0">by BALDERAS</arg>
+        <propbank>
+          <rel relloc="1">grossed</rel>
+          <arg end="0" start="0" type="ARG1">Tissues</arg>
+          <arg end="3" start="2" type="ARG0">by BALDERAS</arg>
+        </propbank>
       </example>
+      <example name="gross-j" src="THYME-AMR">
+        <text>Gross Description</text>
+        <propbank>
+          <rel relloc="0">Gross</rel>
+        </propbank>
+        <amr version="THYME 1.0">
+          (d / describe-01
+            :ARG1 (g / gross-02))
+        </amr>
+      </example>
+      <example name="grossly-r" src="THYME-AMR">
+        <text># 1 endometrial cancer ... grossly resected</text>
+        <propbank>
+          <rel relloc="5">grossly</rel>
+        </propbank>
+        <amr version="THYME 1.0">
+          (c / cancer-03 :li 1
+            :ARG2 (a / anatomical-site :name (n / name :op1 "endometrium"))
+            :ARG1-of (r2 / resect-01)
+            :ARG2-of (g2 / gross-02))
+        </amr>
+      </example>
+      <note>GROSS NOTES: Arg2-'visible thing' added for THYME, 2021</note>
+      <note>GROSS-V NOTES: Based on temprel medical data. No comparison. No VN or FN classes. Framed by Katie. (from gross.02-v)</note>
     </roleset>
     <roleset id="gross.03" name="complete, before deductions (financial sense)">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">gross</alias>
+        <alias pos="j">gross</alias>
       </aliases>
-      <note>GROSS-J NOTES: (from gross.03-j)</note>
       <roles>
-        <role descr="Income, thing that is complete" f="ppt" n="1"/>
+        <role descr="Income, thing that is complete" f="PPT" n="1"/>
       </roles>
-      <example name="Single arg" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Simply enter the Net amount in the white box above, select whether the amount is Gross, Net. 25, or the GST, and the calculator works out the rest.</text>
-        <arg f="" n="1">the amount</arg>
-        <rel f="">gross</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <example name="gross-j: Single arg" src="web">
+        <text>Simply enter the Net amount in the white box above , select whether the amount is Gross , Net . 25 , or the GST , and the calculator works out the rest .</text>
+        <propbank>
+          <rel relloc="16">Gross</rel>
+          <arg end="14" start="13" type="ARG1">the amount</arg>
+        </propbank>
       </example>
+      <note>GROSS-J NOTES: (from gross.03-j)</note>
     </roleset>
     <roleset id="gross.04" name="visible to the naked eye; be able to see without a microscope">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">gross</alias>
+        <alias pos="j">gross</alias>
       </aliases>
-      <note>GROSS-J NOTES: Based on Thyme and Sharp data. Framed by Katie. (from gross.04-j)</note>
       <roles>
-        <role descr="viewer" f="pag" n="0"/>
-        <role descr="thing viewed" f="ppt" n="1"/>
+        <role descr="viewer" f="PAG" n="0"/>
+        <role descr="thing viewed" f="PPT" n="1"/>
       </roles>
-      <example name="look at pathology with the naked eye" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="gross-j: look at pathology with the naked eye" src="">
         <text>gross pathology</text>
-        <rel f="">gross</rel>
-        <arg f="" n="1">pathology</arg>
+        <propbank>
+          <rel relloc="0">gross</rel>
+          <arg end="1" start="1" type="ARG1">pathology</arg>
+        </propbank>
       </example>
+      <note>GROSS-J NOTES: Based on Thyme and Sharp data. Framed by Katie. (from gross.04-j)</note>
     </roleset>
     <roleset id="gross.05" name="disgusting, crude">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">gross</alias>
+        <alias pos="j">gross</alias>
       </aliases>
-      <note>GROSS-J NOTES: Roleset based on instances in BOLT P01, parts 2,3. Framed by Claire. (from gross.01-j)</note>
       <roles>
-        <role descr="disgusting thing" f="ppt" n="1"/>
-        <role descr="perceiver of grossness, gross to whom?" f="gol" n="2"/>
+        <role descr="disgusting thing" f="PPT" n="1"/>
+        <role descr="perceiver of grossness, gross to whom?" f="GOL" n="2"/>
       </roles>
-      <example name="Practically incomprehensible ambergris example. Look it up." src="BOLT P01, parts 2,3" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="gross-j: Practically incomprehensible ambergris example. Look it up." src="BOLT P01, parts 2,3">
         <text>The stuff the eject is fould and gross , but after it floats in the sun , on the ocean , for many years , it becomes ambergris - worth a small fortune too .....</text>
-        <arg f="" n="1">The stuff the eject</arg>
-        <rel f="">gross</rel>
+        <propbank>
+          <rel relloc="7">gross</rel>
+          <arg end="3" start="0" type="ARG1">The stuff the eject</arg>
+        </propbank>
       </example>
-      <example name="All args" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>This place is so gross to me.</text>
-        <arg f="" n="1">This place</arg>
-        <rel f="">gross</rel>
-        <arg f="" n="2">to me</arg>
+      <example name="gross-j: All args" src="web">
+        <text>This place is so gross to me .</text>
+        <propbank>
+          <rel relloc="4">gross</rel>
+          <arg end="1" start="0" type="ARG1">This place</arg>
+          <arg end="6" start="5" type="ARG2">to me</arg>
+        </propbank>
       </example>
+      <note>GROSS-J NOTES: Roleset based on instances in BOLT P01, parts 2,3. Framed by Claire. (from gross.01-j)</note>
     </roleset>
     <roleset id="gross.06" name="conspicuous, flagrant">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">gross</alias>
+        <alias pos="j">gross</alias>
       </aliases>
-      <note>GROSS-J NOTES: Roleset based on instances in BOLT P01, parts 2,3. Framed by Claire. (from gross.02-j)</note>
       <roles>
-        <note>May require concatenation if action is flagrant thing, and agent of action is separated from action itself. (from gross.02-j)</note>
-        <role descr="Flagrant thing" f="ppt" n="1"/>
+        <role descr="Flagrant thing" f="PPT" n="1"/>
       </roles>
-      <example name="Single arg" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The injustice was gross.</text>
-        <arg f="" n="1">The injustice</arg>
-        <rel f="">gross</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <example name="gross-j: Single arg" src="web">
+        <text>The injustice was gross .</text>
+        <propbank>
+          <rel relloc="3">gross</rel>
+          <arg end="1" start="0" type="ARG1">The injustice</arg>
+        </propbank>
       </example>
+      <note>GROSS-J NOTES: Roleset based on instances in BOLT P01, parts 2,3. Framed by Claire. (from gross.02-j)</note>
+      <note>May require concatenation if action is flagrant thing, and agent of action is separated from action itself. (from gross.02-j)</note>
     </roleset>
   </predicate>
 </frameset>

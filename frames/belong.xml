@@ -1,51 +1,85 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="belong">
     <roleset id="belong.01" name="be owned by">
       <aliases>
-        <alias framenet="Possession" pos="v" verbnet="">belong</alias>
-        <alias framenet="" pos="n" verbnet="">belonging</alias>
+        <alias pos="v">belong</alias>
+        <alias pos="n">belonging</alias>
       </aliases>
+      <roles>
+        <role descr="possession" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="attend-107.4-2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="attend-107.4-2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="owner or group" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="attend-107.4-2" resource="VerbNet" version="verbnet3.3">goal</rolelink>
+            <rolelink class="attend-107.4-2" resource="VerbNet" version="verbnet3.4">goal</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Possession" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="belong-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">38</lexlink>
+        <lexlink class="belong-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">24</lexlink>
+        <lexlink class="attend-107.4-2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="belong-v: belong with" src="">
+        <text>Even some members of the Old Guard , despite their current advantage , seem to be conceding that the future belongs with the New Guard .</text>
+        <propbank>
+          <rel relloc="20">belongs</rel>
+          <arg type="ARG0" start="18" end="19">the future</arg>
+          <arg type="ARG1" start="21" end="24">with the New Guard</arg>
+        </propbank>
+      </example>
+      <example name="belong-v: belong on, less obvious group" src="">
+        <text>You are so damn dumb that you do n't belong on Wall Street .</text>
+        <propbank>
+          <rel relloc="9">belong</rel>
+          <arg type="ARG0" start="6" end="6">you</arg>
+          <arg type="ARGM-NEG" start="8" end="8">n't</arg>
+          <arg type="ARG1" start="10" end="12">on Wall Street</arg>
+        </propbank>
+      </example>
+      <example name="belong-v: belong to" src="">
+        <text>This beat - up teddy bear belongs to John .</text>
+        <propbank>
+          <rel relloc="6">belongs</rel>
+          <arg type="ARG0" start="0" end="5">This beat - up teddy bear</arg>
+          <arg type="ARG1" start="7" end="8">to John</arg>
+        </propbank>
+      </example>
+      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1053">
+        <text>Neighboring places heavily influenced by " Asian values , " such as Japan , Korea and Hong Kong , have a strong sense of how important it is to belong to " the educated class , " just as we do here .</text>
+        <propbank>
+          <rel relloc="29">belong</rel>
+          <arg type="ARG1" start="30" end="34">to " the educated class</arg>
+          <arg type="ARGM-MNR" start="37" end="41">just as we do here</arg>
+        </propbank>
+      </example>
+      <example name="belonging-n" src="internet">
+        <text>His perception of his belonging to Poland is different to his parents ' perceptions .</text>
+        <propbank>
+          <rel relloc="4">belonging</rel>
+          <arg type="ARG0" start="3" end="3">his</arg>
+          <arg type="ARG1" start="5" end="6">to Poland</arg>
+        </propbank>
+      </example>
       <note>BELONG-V NOTES: Frames file for 'belong' based on financial subcorpus; nominal 'belonging' based on BOLT-7. No verbnet entry. Comparison with 'own' and 'include'. (from belong.01-v)</note>
       <note>BELONGING-N NOTES: Automatically created by Julia as an alias file for unification. (from belonging.01-n)</note>
-      <roles>
-        <role descr="possession" f="pag" n="0"/>
-        <role descr="owner or group" f="ppt" n="1"/>
-      </roles>
-      <example name="belong-v: belong with" src="" type="">
-        <text>Even some members of the Old Guard, despite their current advantage, seem to be conceding that the future belongs with the New Guard.</text>
-        <arg f="" n="0">the future</arg>
-        <rel f="">belongs</rel>
-        <arg f="" n="1">with the New Guard</arg>
-      </example>
-      <example name="belong-v: belong on, less obvious group" src="" type="">
-        <text>You are so damn dumb that you don't belong on Wall Street.</text>
-        <arg f="" n="0">you</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">belong</rel>
-        <arg f="" n="1">on Wall Street</arg>
-      </example>
-      <example name="belong-v: belong to" src="" type="">
-        <text>This beat-up teddy bear belongs to John.</text>
-        <arg f="" n="0">This beat-up teddy bear</arg>
-        <rel f="">belongs</rel>
-        <arg f="" n="1">to John</arg>
-      </example>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1053" type="">
-        <text>Neighboring places heavily influenced by " Asian values , " such as Japan , Korea and Hong Kong , have a strong sense of how important it is to belong to " the educated class , " just as we do here .</text>
-        <arg f="" n="0">[]</arg>
-        <rel f="">belong</rel>
-        <arg f="" n="1">to " the educated class</arg>
-        <arg f="mnr" n="m">just as we do here</arg>
-      </example>
-
-      <example name="belonging-n" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>His perception of his belonging to Poland is different to his parents' perceptions.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">belonging</rel>
-        <arg f="" n="1">to Poland</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

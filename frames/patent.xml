@@ -1,77 +1,120 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="patent">
     <roleset id="patent.01" name="to obtain a patent for">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">patent</alias>
-        <alias framenet="" pos="n" verbnet="">patent</alias>
+        <alias pos="v">patent</alias>
+        <alias pos="n">patent</alias>
       </aliases>
+      <roles>
+        <role descr="holder of patent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="patent-101" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="patent-101" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="invention" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="patent-101" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="patent-101" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="inventor, if separate from arg0" f="COM" n="2">
+          <rolelinks />
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="patent-101" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="patent-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">20</lexlink>
+        <lexlink class="patent-101" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="ARG0 and ARG1" src="ontonotes nw/wsj/04/wsj_0405">
+        <text>Kawasaki Steel Corp. bought a Soviet steel - casting patent two years ago and has jointly developed the system with the Soviets .</text>
+        <propbank>
+          <rel relloc="9">patent</rel>
+          <arg type="ARG0" start="5" end="5">Soviet</arg>
+          <arg type="ARG1" start="6" end="8">steel - casting</arg>
+        </propbank>
+      </example>
+      <example name="autogen1" src="">
+        <text>a Soviet steel - casting patent</text>
+        <propbank>
+          <rel relloc="5">patent</rel>
+          <arg type="ARG0" start="1" end="1">Soviet</arg>
+          <arg type="ARG1" start="2" end="4">steel - casting</arg>
+        </propbank>
+      </example>
+      <example name="autogen2" src="">
+        <text>a patent on an oil drilling bit seal</text>
+        <propbank>
+          <rel relloc="1">patent</rel>
+          <arg type="ARG1" start="2" end="7">on an oil drilling bit seal</arg>
+        </propbank>
+      </example>
+      <example name="another with both args" src="">
+        <text>Thomas Edison 's microphone patent</text>
+        <propbank>
+          <rel relloc="4">patent</rel>
+          <arg type="ARG0" start="0" end="2">Thomas Edison 's</arg>
+          <arg type="ARG1" start="3" end="3">microphone</arg>
+        </propbank>
+      </example>
+      <example name="with args 0 &amp; 2" src="">
+        <text>Western Union 's Edison patent</text>
+        <propbank>
+          <rel relloc="4">patent</rel>
+          <arg type="ARG0" start="0" end="2">Western Union 's</arg>
+          <arg type="ARG2" start="3" end="3">Edison</arg>
+        </propbank>
+      </example>
+      <example name="weird one with LOC and arg0" src="">
+        <text>MedChem Products Inc. said a U.S. District Court in Boston ruled that a challenge by MedChem to the validity of a U.S. patent held by Pharmacia Inc. was `` without merit . ''</text>
+        <propbank>
+          <rel relloc="22">patent</rel>
+          <arg type="ARGM-LOC" start="21" end="21">U.S.</arg>
+          <arg type="ARG0" start="23" end="26">held by Pharmacia Inc.</arg>
+        </propbank>
+      </example>
       <note>PATENT-V NOTES: VN updated by Julia. Member of Vncls patent-101. (from patent.01-v)</note>
       <note>PATENT-N NOTES: Updated by Julia. Member of Vncls patent-101. (from patent.01-n)</note>
-      <roles>
-        <role descr="holder of patent" f="pag" n="0">
-          <vnrole vncls="101" vntheta="agent"/>
-        </role>
-        <role descr="invention" f="ppt" n="1">
-          <vnrole vncls="101" vntheta="theme"/>
-        </role>
-        <role descr="inventor, if separate from arg0" f="com" n="2"/>
-      </roles>
-      <example name="ARG0 and ARG1" src="ontonotes nw/wsj/04/wsj_0405" type="">
-        <text>Kawasaki Steel Corp. bought a Soviet steel - casting patent two years ago and has jointly developed the system with the Soviets .</text>
-        <arg f="" n="0">Soviet</arg>
-        <arg f="" n="1">steel - casting</arg>
-        <rel f="">patent</rel>
-      </example>
-
-      <example name="autogen1" src="" type="">
-        <text>a Soviet steel-casting patent</text>
-        <arg f="" n="0">Soviet</arg>
-        <arg f="" n="1">steel-casting</arg>
-        <rel f="">patent</rel>
-      </example>
-      <example name="autogen2" src="" type="">
-        <text>a patent on an oil drilling bit seal</text>
-        <rel f="">patent</rel>
-        <arg f="" n="1">on an oil drilling bit seal</arg>
-      </example>
-      <example name="another with both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Thomas Edison 's microphone patent</text>
-        <arg f="" n="0">Thomas Edison's</arg>
-        <arg f="" n="1">microphone</arg>
-        <rel f="">patent</rel>
-      </example>
-      <example name="with args 0 &amp; 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Western Union 's Edison patent</text>
-        <arg f="" n="0">Western Union's</arg>
-        <arg f="" n="2">Edison</arg>
-        <rel f="">patent</rel>
-      </example>
-      <example name="weird one with LOC and arg0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>MedChem Products Inc. said a U.S. District Court in Boston ruled that a challenge by MedChem to the validity of a U.S. patent held by Pharmacia Inc. was `` without merit . ''</text>
-        <arg f="loc" n="m">U.S.</arg>
-        <rel f="">patent</rel>
-        <arg f="" n="0">held by Pharmacia Inc.</arg>
-      </example>
     </roleset>
     <roleset id="patent.02" name="be free or clear of, open">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">patent</alias>
+        <alias pos="j">patent</alias>
       </aliases>
-      <note>PATENT-J NOTES: Based on Thyme and Sharp data. Comparison to clear.01 but ungrammatical with an agent or debris. No Vn class. Framed by Katie. (from patent.01-j)</note>
       <roles>
-        <role descr="entity that is free of debris" f="ppt" n="1"/>
+        <role descr="entity that is free of debris" f="PPT" n="1" />
       </roles>
-      <example name="only arg" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The anterior tibial artery is widely patent.</text>
-        <arg f="" n="1">The anterior tibial artery</arg>
-        <arg f="ext" n="m">widely</arg>
-        <rel f="">patent</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <example name="only arg" src="">
+        <text>The anterior tibial artery is widely patent .</text>
+        <propbank>
+          <rel relloc="6">patent</rel>
+          <arg type="ARG1" start="0" end="3">The anterior tibial artery</arg>
+          <arg type="ARGM-EXT" start="5" end="5">widely</arg>
+        </propbank>
       </example>
+      <note>PATENT-J NOTES: Based on Thyme and Sharp data. Comparison to clear.01 but ungrammatical with an agent or debris. No Vn class. Framed by Katie. (from patent.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

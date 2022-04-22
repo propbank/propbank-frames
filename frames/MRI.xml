@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
+<frameset>
+  <predicate lemma="MRI">
+    <roleset id="mri.01" name="use magnetic resonance imaging">
+      <aliases>
+        <alias pos="v">MRI</alias>
+        <alias pos="n">MRI</alias>
+        <alias pos="n">MRI_imaging</alias>
+        <alias pos="n">magnetic_resonance_imaging</alias>
+      </aliases>
+      <roles>
+        <role descr="performer" f="PAG" n="0" />
+        <role descr="entity scanned" f="PPT" n="1" />
+        <role descr="more specific entity scanned, if in addition to ARG1" f="LOC" n="2" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks />
+      <example name="MRI" src="THYME">
+        <text>MRI of the pelvis identifying a rectal mass</text>
+        <propbank>
+          <rel relloc="0">MRI</rel>
+          <arg end="3" start="1" type="ARG2">of the pelvis</arg>
+        </propbank>
+        <amr version="THYME 1.0">
+          (i2 / identify-01
+            :ARG0 (m / mri-01
+              :ARG2 (a / anatomical-site :name (n / name :op1 "pelvis")))
+             :ARG1 (s / sign-symptom :name (n2 / name :op1 "mass")
+              :location (a2 / anatomical-site :name (n3 / name :op1 "rectum"))))
+        </amr>
+      </example>
+      <note>MRI NOTES: Added for THYME-AMR.</note>
+    </roleset>
+  </predicate>
+</frameset>

@@ -1,112 +1,161 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="decide">
     <roleset id="decide.01" name="decide">
       <aliases>
-        <alias framenet="Choosing Deciding" pos="n" verbnet="">decision</alias>
-        <alias framenet="Choosing Deciding" pos="v" verbnet="">decide</alias>
-        <alias framenet="" pos="l" verbnet="">make_decision</alias>
+        <alias pos="n">decision</alias>
+        <alias pos="v">decide</alias>
+        <alias pos="l">make_decision</alias>
       </aliases>
+      <roles>
+        <role descr="decider" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="get-13.5.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Choosing" resource="FrameNet" version="1.7">cognizer</rolelink>
+            <rolelink class="Deciding" resource="FrameNet" version="1.7">cognizer</rolelink>
+            <rolelink class="settle-36.1.2-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="the decision itself" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="get-13.5.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Choosing" resource="FrameNet" version="1.7">chosen</rolelink>
+            <rolelink class="settle-36.1.2-1" resource="VerbNet" version="verbnet3.4">topic</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="beneficiary" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="get-13.5.1" resource="VerbNet" version="verbnet3.3">beneficiary</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="subject-matter of decision" f="VSP" n="3">
+          <rolelinks/>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Choosing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Deciding" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="get-13.5.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="decide-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">216</lexlink>
+        <lexlink class="decision-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">209</lexlink>
+        <lexlink class="decision-n.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+        <lexlink class="decide-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">10</lexlink>
+        <lexlink class="settle-36.1.2-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="decide a predicate" src="">
+        <text>The city decided to treat its guests more like royalty or rock stars than factory owners .</text>
+        <propbank>
+          <rel relloc="2">decided</rel>
+          <arg type="ARG0" start="0" end="1">The city</arg>
+          <arg type="ARG1" start="3" end="15">to treat its guests more like royalty or rock stars than factory owners</arg>
+        </propbank>
+      </example>
+      <example name="ARG0 and ARG2" src="ontonotes mz/sinorama/10/ectb_1053">
+        <text>However , the Western educational model , in which children are shown respect and allowed to decide and choose for themselves , is not without drawbacks .</text>
+        <propbank>
+          <rel relloc="16">decide</rel>
+          <arg type="ARG0" start="9" end="9">children</arg>
+          <arg type="ARG2" start="19" end="20">for themselves</arg>
+        </propbank>
+      </example>
+      <example name="decide a sentence" src="">
+        <text>A good number decide ( that ) it 's not worth it .</text>
+        <propbank>
+          <rel relloc="3">decide</rel>
+          <arg type="ARG0" start="0" end="2">A good number</arg>
+          <arg type="ARG1" start="4" end="11">( that ) it 's not worth it</arg>
+        </propbank>
+      </example>
+      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1043">
+        <text>She had thought that these stores were only crowded on the weekends , but on a rainy weekday in November she decided she did n't feel like cooking and went to buy some prepared foods at the RT - Mart 's deli department .</text>
+        <propbank>
+          <rel relloc="21">decided</rel>
+          <arg type="ARGM-TMP" start="14" end="19">on a rainy weekday in November</arg>
+          <arg type="ARG0" start="20" end="20">she</arg>
+          <arg type="ARG1" start="22" end="42">she did n't feel like cooking and went to buy some prepared foods at the RT - Mart 's deli department</arg>
+        </propbank>
+      </example>
+      <example name="arg0 + arg3" src="internet">
+        <text>In fact , even a rule that simply decided the game with a coin toss would not be unfair .</text>
+        <propbank>
+          <rel relloc="8">decided</rel>
+          <arg type="ARG0" start="6" end="6">that</arg>
+          <arg type="ARGM-ADV" start="7" end="7">simply</arg>
+          <arg type="ARG1" start="9" end="10">the game</arg>
+          <arg type="ARGM-MNR" start="11" end="14">with a coin toss</arg>
+        </propbank>
+      </example>
+      <example name="autogen1" src="">
+        <text>the Senate decision to postpone action on capital gains</text>
+        <propbank>
+          <rel relloc="2">decision</rel>
+          <arg type="ARG0" start="1" end="1">Senate</arg>
+          <arg type="ARG1" start="3" end="8">to postpone action on capital gains</arg>
+        </propbank>
+      </example>
+      <example name="with args 1 and 3" src="">
+        <text>a decision of yes on each of those questions</text>
+        <propbank>
+          <rel relloc="1">decision</rel>
+          <arg type="ARG1" start="2" end="3">of yes</arg>
+          <arg type="ARG3" start="4" end="8">on each of those questions</arg>
+        </propbank>
+      </example>
+      <example name="Light Verb!" src="">
+        <text>Brett Favre says he has n't made a decision about returning for the 2010 season .</text>
+        <propbank>
+          <rel relloc="8">decision</rel>
+          <arg type="ARG0" start="3" end="3">he</arg>
+          <arg type="ARGM-NEG" start="5" end="5">n't</arg>
+          <arg type="ARGM-LVB" start="6" end="6">made</arg>
+          <arg type="ARG3" start="9" end="14">about returning for the 2010 season</arg>
+        </propbank>
+      </example>
+      <example name="with just arg3" src="">
+        <text>the Guantanamo decision</text>
+        <propbank>
+          <rel relloc="2">decision</rel>
+          <arg type="ARG3" start="1" end="1">Guantanamo</arg>
+        </propbank>
+      </example>
+      <example name="just arg3" src="">
+        <text>a decision on what , if any punishment he will face in the wake of that incident Tuesday night</text>
+        <propbank>
+          <rel relloc="1">decision</rel>
+          <arg type="ARG3" start="2" end="18">on what , if any punishment he will face in the wake of that incident Tuesday night</arg>
+        </propbank>
+      </example>
+      <example name="args0 &amp; 3" src="">
+        <text>the Fed decision on interest rates .</text>
+        <propbank>
+          <rel relloc="2">decision</rel>
+          <arg type="ARG0" start="1" end="1">Fed</arg>
+          <arg type="ARG3" start="3" end="5">on interest rates</arg>
+        </propbank>
+      </example>
+      <example name="with some argms" src="">
+        <text>cooperating with the outside to explore and develop petroleum and natural gas resources is an important strategic decision for energy</text>
+        <propbank>
+          <rel relloc="17">decision</rel>
+          <arg type="ARGM-ADJ" start="15" end="15">important</arg>
+          <arg type="ARGM-PRP" start="16" end="16">strategic</arg>
+          <arg type="ARG3" start="18" end="19">for energy</arg>
+        </propbank>
+      </example>
       <note>DECIDE-V NOTES: No VNcls. Maybe these last two should be regarded as a separate sense/roleset;they essentially mean "cause an unstated entity to make a decision".They're also different in that they take a straight nominal "decision". (from decide.01-v)</note>
       <note>DECISION-N NOTES: Updated by Julia. No Vncls. *Lots of .LV instances: "make a decision", even a "take a decision". Watch out, and see examples. (from decision.01-n)</note>
-      <roles>
-        <note>This frame varies from the frame for 'decide' in that arg3, instrument, has been replaced with arg3, subject matter of decision. No examples of instruments with the nominalization were found even in internet searches, and subject-matter of the decision was seen in the corpus. (from decision.01-n)</note>
-        <role descr="decider" f="pag" n="0">
-          <vnrole vncls="13.5.1" vntheta="agent"/>
-        </role>
-        <role descr="the decision itself" f="ppt" n="1">
-          <vnrole vncls="13.5.1" vntheta="theme"/>
-        </role>
-        <role descr="beneficiary" f="gol" n="2">
-          <vnrole vncls="13.5.1" vntheta="beneficiary"/>
-        </role>
-        <role descr="subject-matter of decision" f="vsp" n="3"/>
-      </roles>
-      <example name="decide a predicate" src="" type="">
-        <text>The city decided *trace* to treat its guests more like royalty or rock stars than factory owners.</text>
-        <arg f="" n="0">The city</arg>
-        <rel f="">decided</rel>
-        <arg f="" n="1">*trace* to treat its guests more like royalty or rock stars than factory owners</arg>
-      </example>
-      <example name="ARG0 and ARG2" src="ontonotes mz/sinorama/10/ectb_1053" type="">
-        <text>However , the Western educational model , in which children are shown respect and allowed to decide and choose for themselves , is not without drawbacks .</text>
-        <arg f="" n="0">children</arg>
-        <rel f="">decide</rel>
-        <arg f="" n="2">for themselves</arg>
-      </example>
-
-      
-      <example name="decide a sentence" src="" type="">
-        <text>A good number decide (that) it's not worth it.</text>
-        <arg f="" n="0">A good number</arg>
-        <rel f="">decide</rel>
-        <arg f="" n="1">(that) it's not worth it</arg>
-      </example>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1043" type="">
-        <text>She had thought that these stores were only crowded on the weekends , but on a rainy weekday in November she decided she did n't feel like cooking and went to buy some prepared foods at the RT - Mart 's deli department .</text>
-        <arg f="tmp" n="m">on a rainy weekday in November</arg>
-        <arg f="" n="0">she</arg>
-        <rel f="">decided</rel>
-        <arg f="" n="1">she did n't feel like cooking and went to buy some prepared foods at the RT - Mart 's deli department</arg>
-      </example>
-
-      <example name="arg0 + arg3" src="internet" type="-">
-        <text>In fact, even a rule that-1 *T*-1 simply decided the game with a coin toss would not be unfair.</text>
-        <arg f="" n="0">*T*-1</arg>
-        <arg f="adv" n="m">simply</arg>
-        <rel f="">decided</rel>
-        <arg f="" n="1">the game</arg>
-        <arg f="mnr" n="m">with a coin toss</arg>
-      </example>
-      <example name="autogen1" src="" type="">
-        <text>the Senate decision to postpone action on capital gains</text>
-        <arg f="" n="0">Senate</arg>
-        <rel f="">decision</rel>
-        <arg f="" n="1">to postpone action on capital gains</arg>
-      </example>
-      <example name="with args 1 and 3" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>a decision of yes on each of those questions</text>
-        <rel f="">decision</rel>
-        <arg f="" n="1">of yes</arg>
-        <arg f="" n="3">on each of those questions</arg>
-      </example>
-      <example name="Light Verb!" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Brett Favre says he has n't made a decision about returning for the 2010 season.</text>
-        <arg f="" n="0">he</arg>
-        <arg f="neg" n="m">n't</arg>
-        <arg f="lvb" n="m">made</arg>
-        <rel f="">decision</rel>
-        <arg f="" n="3">about returning for the 2010 season</arg>
-      </example>
-      <example name="with just arg3" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>the Guantanamo decision</text>
-        <arg f="" n="3">Guantanamo</arg>
-        <rel f="">decision</rel>
-      </example>
-      <example name="just arg3" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>a decision on what , if any punishment he will face in the wake of that incident Tuesday night</text>
-        <rel f="">decision</rel>
-        <arg f="" n="3">on what , if any punishment he will face in the wake of that incident Tuesday night</arg>
-      </example>
-      <example name="args0 &amp; 3" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>the Fed decision on interest rates .</text>
-        <arg f="" n="0">Fed</arg>
-        <rel f="">decision</rel>
-        <arg f="" n="3">on interest rates</arg>
-      </example>
-      <example name="with some argms" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>cooperating with the outside to explore and develop petroleum and natural gas resources is an important strategic decision for energy</text>
-        <arg f="adj" n="m">important</arg>
-        <arg f="prp" n="m">strategic</arg>
-        <rel f="">decision</rel>
-        <arg f="" n="3">for energy</arg>
-      </example>
+      <note>This frame varies from the frame for 'decide' in that arg3, instrument, has been replaced with arg3, subject matter of decision. No examples of instruments with the nominalization were found even in internet searches, and subject-matter of the decision was seen in the corpus. (from decision.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

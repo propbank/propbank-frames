@@ -1,58 +1,86 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="coerce">
     <roleset id="coerce.01" name="to persuade">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">coercion</alias>
-        <alias framenet="" pos="j" verbnet="">coercive</alias>
-        <alias framenet="" pos="v" verbnet="">coerce</alias>
+        <alias pos="n">coercion</alias>
+        <alias pos="j">coercive</alias>
+        <alias pos="v">coerce</alias>
       </aliases>
+      <roles>
+        <role descr="persuasive entity, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="lure-59.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="lure-59.3" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="impelled person" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="lure-59.3" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="lure-59.3" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="action or Result" f="PRD" n="2">
+          <rolelinks>
+            <rolelink class="lure-59.3" resource="VerbNet" version="verbnet3.3">predicate</rolelink>
+            <rolelink class="lure-59.3" resource="VerbNet" version="verbnet3.4">predicate</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="lure-59.3" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+        <lexlink class="lure-59.3" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="all arguments" src="">
+        <text>Beijing lawmakers have called for jails to be built to house prostitutes and for severe punishment , including the death sentence , for anyone who induces or coerces women into prostitution .</text>
+        <propbank>
+          <rel relloc="27">coerces</rel>
+          <arg type="ARG0" start="23" end="23">anyone</arg>
+          <arg type="R-ARG0" start="24" end="24">who</arg>
+          <arg type="ARG1" start="28" end="28">women</arg>
+          <arg type="ARG2" start="29" end="30">into prostitution</arg>
+        </propbank>
+      </example>
+      <example name="Adjectival rel: coercive" src="BOLT-6">
+        <text>While applauding the provision , we should also be aware that the specific contents of the provision still do n't have a binding effect in a strict sense on the expected results , and some articles are still not coercive enough .</text>
+        <propbank>
+          <rel relloc="39">coercive</rel>
+          <arg type="ARG0" start="34" end="35">some articles</arg>
+          <arg type="ARGM-TMP" start="37" end="37">still</arg>
+          <arg type="ARGM-NEG" start="38" end="38">not</arg>
+          <arg type="ARGM-EXT" start="40" end="40">enough</arg>
+        </propbank>
+      </example>
+      <example name="tricky arg0 and arg2" src="BOLT">
+        <text>Neither the private coercion of capitalism , nor the state coercion of socialism is found in a communist society .</text>
+        <propbank>
+          <rel relloc="3">coercion</rel>
+          <arg type="ARG0" start="2" end="2">private</arg>
+          <arg type="ARG2" start="4" end="5">of capitalism</arg>
+        </propbank>
+      </example>
+      <example name="with arg1" src="internet">
+        <text>Indigenous women 's narratives also tell of their coercion into various forms of unpaid or low - paid labor ...</text>
+        <propbank>
+          <rel relloc="8">coercion</rel>
+          <arg type="ARG1" start="7" end="7">their</arg>
+          <arg type="ARG2" start="9" end="18">into various forms of unpaid or low - paid labor</arg>
+        </propbank>
+      </example>
       <note>COERCE-V NOTES: Based on WSJ; adjectival 'coercive' based on BOLT-6. Comparison with 'induce'. (from coerce.01-v)</note>
       <note>COERCION-N NOTES: Added by Julia based on BOLT, coerce.01. Corresponds to VNcls force-59. (from coercion.01-n)</note>
       <note>COERCIVE-J NOTES: Automatically created by Julia as an alias file for unification. (from coercive.01-j)</note>
-      <roles>
-        <role descr="persuasive entity, agent" f="pag" n="0">
-          <vnrole vncls="59" vntheta="agent"/>
-        </role>
-        <role descr="impelled person" f="ppt" n="1">
-          <vnrole vncls="59" vntheta="patient"/>
-        </role>
-        <role descr="action or Result" f="prd" n="2">
-          <vnrole vncls="59" vntheta="result"/>
-        </role>
-      </roles>
-      <example name="all arguments" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>Beijing lawmakers have called for jails to be built [*-3] [*-1]to house prostitutes and for severe punishment , including the death sentence , for anyone who [*T*-2] induces or coerces women into prostitution .</text>
-        <arg f="" n="0">[*T*-2]</arg>
-        <arg f="rcl" n="m">who -&gt; anyone</arg>
-        <rel f="">coerces</rel>
-        <arg f="" n="1">women</arg>
-        <arg f="" n="2">into prostitution</arg>
-      </example>
-      <example name="Adjectival rel: coercive" src="BOLT-6" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>While applauding the provision , we should also be aware that the specific contents of the provision still do n't have a binding effect in a strict sense on the expected results , and some articles are still not coercive enough .</text>
-        <arg f="" n="0">some articles</arg>
-        <arg f="tmp" n="m">still</arg>
-        <arg f="neg" n="m">not</arg>
-        <rel f="">coercive</rel>
-        <arg f="ext" n="m">enough</arg>
-      </example>
-      <example name="tricky arg0 and arg2" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Neither the private coercion of capitalism , nor the state coercion of socialism is found in a communist society .</text>
-        <arg f="" n="0">private</arg>
-        <rel f="">coercion</rel>
-        <arg f="" n="2">of capitalism</arg>
-      </example>
-      <example name="with arg1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Indigenous women's narratives also tell of their coercion into various forms of unpaid or low-paid labor...</text>
-        <arg f="" n="1">their</arg>
-        <rel f="">coercion</rel>
-        <arg f="" n="2">into various forms of unpaid or low-paid labor</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

@@ -1,41 +1,74 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="suture">
     <roleset id="suture.01" name="surgically stitch">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">suturing</alias>
-        <alias framenet="" pos="v" verbnet="">suture</alias>
+        <alias pos="n">suturing</alias>
+        <alias pos="v">suture</alias>
       </aliases>
+      <roles>
+        <role descr="Agent, surgeon" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="tape-22.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="tape-22.4" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="Entity sutured" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="tape-22.4" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="tape-22.4" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="Instrument" f="MNR" n="2">
+          <rolelinks>
+            <rolelink class="tape-22.4" resource="VerbNet" version="verbnet3.3">instrument</rolelink>
+            <rolelink class="tape-22.4" resource="VerbNet" version="verbnet3.4">instrument</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="Attribute of Arg1, end state (shut, together)" f="PRD" n="3">
+          <rolelinks>
+            <rolelink class="tape-22.4" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="tape-22.4" resource="VerbNet" version="verbnet3.4">result</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="tape-22.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="tape-22.4" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="suture-v" src="">
+        <text>Removing the retractors he pulled the skin down and sutured it shut with a much thicker thread .</text>
+        <propbank>
+          <rel relloc="9">sutured</rel>
+          <arg type="ARGM-ADV" start="0" end="2">Removing the retractors</arg>
+          <arg type="ARG0" start="3" end="3">he</arg>
+          <arg type="ARG1" start="10" end="10">it</arg>
+          <arg type="ARG3" start="11" end="11">shut</arg>
+          <arg type="ARG2" start="12" end="16">with a much thicker thread</arg>
+        </propbank>
+      </example>
+      <example name="suturing-n" src="">
+        <text>I would do a suturing , I would take care of sports injuries . I would help someone manage their diabetes or their cholesterol . You know , general medical practice .</text>
+        <propbank>
+          <rel relloc="4">suturing</rel>
+          <arg type="ARG0" start="0" end="0">I</arg>
+          <arg type="ARGM-MOD" start="1" end="1">would</arg>
+          <arg type="ARGM-LVB" start="2" end="2">do</arg>
+        </propbank>
+      </example>
       <note>SUTURE-V NOTES: (from suture.01-v)</note>
       <note>SUTURING-N NOTES: Comparison to sew.01 (from suturing.01-n)</note>
-      <roles>
-        <role descr="Agent, surgeon" f="pag" n="0">
-          <vnrole vncls="22.4" vntheta="agent"/>
-        </role>
-        <role descr="Entity sutured" f="ppt" n="1">
-          <vnrole vncls="22.4" vntheta="patient"/>
-        </role>
-        <role descr="Instrument" f="mnr" n="2">
-          <vnrole vncls="22.4" vntheta="instrument"/>
-        </role>
-        <role descr="Attribute of Arg1, end state (shut, together)" f="prd" n="3"/>
-      </roles>
-      <example name="suture-v" src="" type="">
-        <text>Removing the retractors he pulled the skin down and sutured it shut with a much thicker thread. </text>
-        <arg f="adv" n="m">Removing the retractors</arg>
-        <arg f="" n="0">he</arg>
-        <rel f="">sutured</rel>
-        <arg f="" n="1">it</arg>
-        <arg f="" n="3">shut</arg>
-        <arg f="" n="2">with a much thicker thread</arg>
-      </example>
-      <example name="suturing-n" src="" type="">
-        <text>I would do a suturing, I would take care of sports injuries. I would help someone manage their diabetes or their cholesterol. You know, general medical practice.</text>
-        <arg f="" n="0">I</arg>
-        <arg f="mod" n="m">would</arg>
-        <arg f="lvb" n="m">do</arg>
-        <rel f="">suturing</rel>
-      </example>
     </roleset>
   </predicate>
 </frameset>

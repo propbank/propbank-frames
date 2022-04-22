@@ -1,117 +1,192 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="smoke">
     <roleset id="smoke.01" name="emit smoke, inhaling, event where smoking occurs">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">smoke</alias>
-        <alias framenet="" pos="n" verbnet="">smoking</alias>
-        <alias framenet="" pos="n" verbnet="">smoke</alias>
+        <alias pos="v">smoke</alias>
+        <alias pos="n">smoking</alias>
+        <alias pos="n">smoke</alias>
       </aliases>
+      <roles>
+        <role descr="causer of smoke emission" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="eat-39.1-3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="destroy-44" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="substance smoking" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="eat-39.1-3" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="destroy-44" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="smoke-n.5" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">11</lexlink>
+        <lexlink class="destroy-44" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="rather metaphorical" src="">
+        <text>He smoked Toronto in the playoffs with six hits , seven walks and eight stolen bases in 22 at bats , and continued that by going 3-for-3 at the plate Sunday , along with walking , stealing a base and scoring a run .</text>
+        <propbank>
+          <rel relloc="1">smoked</rel>
+          <arg type="ARG0" start="0" end="0">He</arg>
+          <arg type="ARG1" start="2" end="2">Toronto</arg>
+          <arg type="ARGM-TMP" start="3" end="5">in the playoffs</arg>
+          <arg type="ARGM-MNR" start="6" end="19">with six hits , seven walks and eight stolen bases in 22 at bats</arg>
+        </propbank>
+      </example>
+      <example name="ARG1" src="ontonotes bn/cnn/03/cnn_0369">
+        <text>Moving ahead now to a developing story , the hunt for so-called smoking gun , meant to prove that Iraq was developing weapons of mass destruction .</text>
+        <propbank>
+          <rel relloc="12">smoking</rel>
+          <arg type="ARG1" start="13" end="13">gun</arg>
+        </propbank>
+      </example>
+      <example name="Both args" src="">
+        <text>He claimed to have no recollection of stealing a car or evading the police and blames his smoking of crack .</text>
+        <propbank>
+          <rel relloc="17">smoking</rel>
+          <arg type="ARG0" start="16" end="16">his</arg>
+          <arg type="ARG1" start="18" end="19">of crack</arg>
+        </propbank>
+      </example>
+      <example name="NP only" src="">
+        <text>tobacco smoke</text>
+        <propbank>
+          <rel relloc="1">smoke</rel>
+          <arg type="ARG1" start="0" end="0">tobacco</arg>
+        </propbank>
+      </example>
+      <example name="With temporal, quitting! LVC" src="">
+        <text>Her son has n't had a smoke in six months .</text>
+        <propbank>
+          <rel relloc="6">smoke</rel>
+          <arg type="ARG0" start="0" end="1">Her son</arg>
+          <arg type="ARGM-NEG" start="3" end="3">n't</arg>
+          <arg type="ARGM-LVB" start="4" end="4">had</arg>
+          <arg type="ARGM-TMP" start="7" end="9">in six months</arg>
+        </propbank>
+      </example>
+      <example name="With arg1 as &quot;of&quot; prep, LVC" src="">
+        <text>We had a smoke of somebody 's pinched tobacco .</text>
+        <propbank>
+          <rel relloc="3">smoke</rel>
+          <arg type="ARG0" start="0" end="0">We</arg>
+          <arg type="ARGM-LVB" start="1" end="1">had</arg>
+          <arg type="ARG1" start="4" end="8">of somebody 's pinched tobacco</arg>
+        </propbank>
+      </example>
+      <example name="drinking and smoking, there was probably some rock and roll" src="">
+        <text>If I had n't have had anything to drink the other night , I most probably would n't have had a smoke of that cigarette .</text>
+        <propbank>
+          <rel relloc="21">smoke</rel>
+          <arg type="ARGM-ADV" start="0" end="11">If I had n't have had anything to drink the other night</arg>
+          <arg type="ARG0" start="13" end="13">I</arg>
+          <arg type="ARGM-ADV" start="14" end="15">most probably</arg>
+          <arg type="ARGM-MOD" start="16" end="16">would</arg>
+          <arg type="ARGM-NEG" start="17" end="17">n't</arg>
+          <arg type="ARGM-LVB" start="19" end="19">had</arg>
+          <arg type="ARG1" start="22" end="24">of that cigarette</arg>
+        </propbank>
+      </example>
       <note>SMOKE-V NOTES: Member of VNcls entity_specific_modes_being-47.2. (from smoke.01-v)</note>
       <note>SMOKING-N NOTES: ~smoke.01 (from smoking.01-n)</note>
       <note>SMOKE-N NOTES: Roleset based on verb entry smoke.01, OntoNotes sense grouping smoke.05; maps to VN class entity_specific_modes_being-47.2. Framed by Claire (from smoke.01-n)</note>
-      <roles>
-        <role descr="causer of smoke emission" f="pag" n="0"/>
-        <role descr="substance smoking" f="ppt" n="1"/>
-      </roles>
-      <example name="rather metaphorical" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>He smoked Toronto in the playoffs with six hits, seven walks and eight stolen bases in 22 at bats, and continued that by going 3-for-3 at the plate Sunday, along with walking, stealing a base and scoring a run.</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">smoked</rel>
-        <arg f="" n="1">Toronto</arg>
-        <arg f="tmp" n="m">in the playoffs</arg>
-        <arg f="mnr" n="m">with six hits, seven walks and eight stolen bases in 22 at bats</arg>
-      </example>
-      <example name="ARG1" src="ontonotes bn/cnn/03/cnn_0369" type="">
-        <text>Moving ahead now to a developing story , the hunt for so - called smoking gun , meant to prove that Iraq was developing weapons of mass destruction .</text>
-        <rel f="">smoking</rel>
-        <arg f="" n="1">gun</arg>
-      </example>
-
-      <example name="Both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>He claimed to have no recollection of stealing a car or evading the police and blames his smoking of crack.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">smoking</rel>
-        <arg f="" n="1">of crack</arg>
-      </example>
-      <example name="NP only" src="NP only" type="NP only">
-        <text>tobacco smoke</text>
-        <arg f="" n="1">tobacco</arg>
-        <rel f="">smoke</rel>
-      </example>
-      <example name="With temporal, quitting! LVC" src="" type="">
-        <text>Her son hasn't had a smoke in six months.</text>
-        <arg f="" n="0">Her son</arg>
-        <arg f="neg" n="m">n't</arg>
-        <arg f="lvb" n="m">had</arg>
-        <rel f="">smoke</rel>
-        <arg f="tmp" n="m">in six months.</arg>
-      </example>
-      <example name="With arg1 as &quot;of&quot; prep, LVC" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>We had a smoke of somebody's pinched tobacco.</text>
-        <arg f="" n="0">We</arg>
-        <arg f="lvb" n="m">had</arg>
-        <rel f="">smoke</rel>
-        <arg f="" n="1">of somebody's pinched tobacco.</arg>
-      </example>
-      <example name="drinking and smoking, there was probably some rock and roll" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>If I hadn't have had anything to drink the other night, I most probably wouldn't have had a smoke of that cigarette.</text>
-        <arg f="adv" n="m">If I hadn't have had anything to drink the other night,</arg>
-        <arg f="" n="0">I</arg>
-        <arg f="adv" n="m">most probably</arg>
-        <arg f="mod" n="m">would</arg>
-        <arg f="neg" n="m">n't</arg>
-        <arg f="lvb" n="m">had</arg>
-        <rel f="">smoke</rel>
-        <arg f="" n="1">of that cigarette.</arg>
-      </example>
     </roleset>
     <roleset id="smoke.02" name="smoke cigarettes">
       <aliases>
-        <alias framenet="Ingest_substance" pos="v" verbnet="">smoke</alias>
+        <alias pos="v">smoke</alias>
+        <argalias arg="0" pos="n">smoker</argalias>
       </aliases>
-      <note>SMOKE-V NOTES: No VNcls. (from smoke.02-v)</note>
       <roles>
-        <role descr="smoker" f="PAG" n="0"/>
-        <role descr="cigarettes (etc)" f="PPT" n="1"/>
+        <role descr="smoker" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="eat-39.1-3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="cigarettes (etc)" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="eat-39.1-3" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>Indeed, RJR Nabisco is currently under fire for having sent 80-second videotapes touting its Now brand to consumers who-1 *trace*-1 smoke American Brands' Carltons.</text>
-        <arg f="" n="0">*trace*-1 (= who)</arg>
-        <arg f="slc" n="m">who -&gt; consumers</arg>
-        <rel f="">smoke</rel>
-        <arg f="" n="1">American Brands ' Carltons</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Ingest_substance" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="smoke-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">14</lexlink>
+      </lexlinks>
+      <example name="transitive" src="">
+        <text>Indeed , RJR Nabisco is currently under fire for having sent 80 - second videotapes touting its Now brand to consumers who smoke American Brands ' Carltons .</text>
+        <propbank>
+          <rel relloc="22">smoke</rel>
+          <arg type="ARG0" start="20" end="20">consumers</arg>
+          <arg type="R-ARG0" start="21" end="21">who</arg>
+          <arg type="ARG1" start="23" end="26">American Brands ' Carltons</arg>
+        </propbank>
       </example>
-      <example name="intransitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>While nearly equal percentages of black and white women currently smoke, in both sexes more whites have given up smoking than blacks.</text>
-        <arg f="" n="0">nearly equal percentages of black and white women</arg>
-        <arg f="tmp" n="m">currently</arg>
-        <rel f="">smoke</rel>
+      <example name="intransitive" src="">
+        <text>While nearly equal percentages of black and white women currently smoke , in both sexes more whites have given up smoking than blacks .</text>
+        <propbank>
+          <rel relloc="10">smoke</rel>
+          <arg type="ARG0" start="1" end="8">nearly equal percentages of black and white women</arg>
+          <arg type="ARGM-TMP" start="9" end="9">currently</arg>
+        </propbank>
       </example>
+      <note>SMOKE-V NOTES: No VNcls. (from smoke.02-v)</note>
     </roleset>
     <roleset id="smoke.03" name="imbue smoky flavor">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">smoke</alias>
+        <alias pos="v">smoke</alias>
       </aliases>
-      <note>SMOKE-V NOTES: No VNcls. (from smoke.03-v)</note>
       <roles>
-        <role descr="smoker" f="PAG" n="0"/>
+        <role descr="smoker" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="eat-39.1-3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
         <role descr="thing acquiring smoky flavor" f="PPT" n="1"/>
       </roles>
-      <example name="smoked meat" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>A law went on the books in January that let him smoke bacon without breeding pigs.</text>
-        <arg f="" n="0">him</arg>
-        <rel f="">smoke</rel>
-        <arg f="" n="1">bacon</arg>
-        <arg f="adv" n="m">without breeding pigs</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="smoked meat" src="">
+        <text>A law went on the books in January that let him smoke bacon without breeding pigs .</text>
+        <propbank>
+          <rel relloc="11">smoke</rel>
+          <arg type="ARG0" start="10" end="10">him</arg>
+          <arg type="ARG1" start="12" end="12">bacon</arg>
+          <arg type="ARGM-ADV" start="13" end="15">without breeding pigs</arg>
+        </propbank>
       </example>
+      <note>SMOKE-V NOTES: No VNcls. (from smoke.03-v)</note>
     </roleset>
   </predicate>
 </frameset>

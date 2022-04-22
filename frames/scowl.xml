@@ -1,45 +1,74 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="scowl">
     <roleset id="scowl.01" name="dirty look">
       <aliases>
-        <alias framenet="Making_faces" pos="v" verbnet="">scowl</alias>
+        <alias pos="v">scowl</alias>
       </aliases>
-      <note>SCOWL-V NOTES: Member of Vncls nonverbal_expression-40.2. Updated by Julia, 11/2010. (from scowl.01-v)</note>
       <roles>
         <role descr="scowler" f="PAG" n="0">
-          <vnrole vncls="40.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="nonverbal_expression-40.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Making_faces" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="nonverbal_expression-40.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="cognate object (very rare)" f="PPT" n="1">
-          <vnrole vncls="40.2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="nonverbal_expression-40.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="nonverbal_expression-40.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="reason" f="CAU" n="2">
-          <vnrole vncls="40.2" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink class="nonverbal_expression-40.2" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+            <rolelink class="nonverbal_expression-40.2" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="fun with anaphora" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>He bites it, scowls and throws it down.``</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">scowls</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Making_faces" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="nonverbal_expression-40.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="nonverbal_expression-40.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="fun with anaphora" src="">
+        <text>He bites it , scowls and throws it down . ``</text>
+        <propbank>
+          <rel relloc="4">scowls</rel>
+          <arg type="ARG0" start="0" end="0">He</arg>
+        </propbank>
       </example>
-      <example name="ARG2" src="probably COCA (2018 example fix)" type="">
-        <text>She scowled at his statement, admitting inwardly that that was probably the reason she got a headache every time she spoke to someone about childcare or daycare.</text>
-        <arg f="" n="0">She</arg>
-        <rel f="">scowled</rel>
-        <arg f="" n="2">at his statement,</arg>
-        <arg f="adv" n="m">admitting inwardly that that was probably the reason she got a headache every time she spoke to someone about childcare or daycare.</arg>
+      <example name="ARG2" src="probably COCA (2018 example fix)">
+        <text>She scowled at his statement , admitting inwardly that that was probably the reason she got a headache every time she spoke to someone about childcare or daycare .</text>
+        <propbank>
+          <rel relloc="1">scowled</rel>
+          <arg type="ARG0" start="0" end="0">She</arg>
+          <arg type="ARG2" start="2" end="4">at his statement</arg>
+          <arg type="ARGM-ADV" start="6" end="27">admitting inwardly that that was probably the reason she got a headache every time she spoke to someone about childcare or daycare</arg>
+        </propbank>
       </example>
-
-      <example name="with arg1, and GOL (not arg2, as this is recipient, not cause)" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
-        <text>?The only reason this alligator is here is because you have left him no other place to go. He is here because of you! Because of you encroaching on his habitat! You?re a plague! A plague!? Upon saying this I spit a mouthful and scowled a thunderstorm at all the kids.</text>
-        <arg f="tmp" n="m">Upon saying this</arg>
-        <arg f="" n="0">I</arg>
-        <rel f="">scowled</rel>
-        <arg f="" n="1">a thunderstorm</arg>
-        <arg f="gol" n="m">at all the kids</arg>
+      <example name="with arg1, and GOL (not arg2, as this is recipient, not cause)" src="internet">
+        <text>? The only reason this alligator is here is because you have left him no other place to go . He is here because of you ! Because of you encroaching on his habitat ! You?re a plague ! A plague ! ? Upon saying this I spit a mouthful and scowled a thunderstorm at all the kids .</text>
+        <propbank>
+          <rel relloc="51">scowled</rel>
+          <arg type="ARGM-TMP" start="43" end="45">Upon saying this</arg>
+          <arg type="ARG0" start="46" end="46">I</arg>
+          <arg type="ARG1" start="52" end="53">a thunderstorm</arg>
+          <arg type="ARGM-GOL" start="54" end="57">at all the kids</arg>
+        </propbank>
       </example>
+      <note>SCOWL-V NOTES: Member of Vncls nonverbal_expression-40.2. Updated by Julia, 11/2010. (from scowl.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

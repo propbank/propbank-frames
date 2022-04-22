@@ -1,67 +1,93 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="interrupt">
     <roleset id="interrupt.01" name="to break up">
       <aliases>
-        <alias framenet="interrupt_process" pos="n" verbnet="">interruption</alias>
-        <alias framenet="" pos="v" verbnet="">interrupt</alias>
+        <alias pos="n">interruption</alias>
+        <alias pos="v">interrupt</alias>
       </aliases>
+      <roles>
+        <role descr="interrupter" f="PAG" n="0"/>
+        <role descr="thing interrupted" f="PPT" n="1"/>
+        <role descr="utterance" f="VSP" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Interrupt_process" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="interrupt-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">8</lexlink>
+        <lexlink class="interruption-n.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="interrupt-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+      </lexlinks>
+      <example name="transitive" src="">
+        <text>The slip has come despite high - profile ads created by Wells Rich , including one picturing a young man clad only in pajama bottoms interrupting a festive brunch .</text>
+        <propbank>
+          <rel relloc="25">interrupting</rel>
+          <arg type="ARG0" start="17" end="24">a young man clad only in pajama bottoms</arg>
+          <arg type="ARG1" start="26" end="28">a festive brunch</arg>
+        </propbank>
+      </example>
+      <example name="with manner" src="internet">
+        <text>Theodore Roosevelt 's son Quentin once interrupted him by dropping snakes on Dad 's desk !</text>
+        <propbank>
+          <rel relloc="6">interrupted</rel>
+          <arg type="ARG0" start="0" end="4">Theodore Roosevelt 's son Quentin</arg>
+          <arg type="ARGM-TMP" start="5" end="5">once</arg>
+          <arg type="ARG1" start="7" end="7">him</arg>
+          <arg type="ARGM-MNR" start="8" end="15">by dropping snakes on Dad 's desk !</arg>
+        </propbank>
+      </example>
+      <example name="all args" src="internet">
+        <text>And as Dr. Puri tried to argue his point he interrupted him : " Let me die . Please . Out of charity . "</text>
+        <propbank>
+          <rel relloc="10">interrupted</rel>
+          <arg type="ARGM-DIS" start="0" end="0">And</arg>
+          <arg type="ARGM-TMP" start="1" end="8">as Dr. Puri tried to argue his point</arg>
+          <arg type="ARG0" start="9" end="9">he</arg>
+          <arg type="ARG1" start="11" end="11">him</arg>
+          <arg type="ARG2" start="13" end="24">" Let me die . Please . Out of charity . "</arg>
+        </propbank>
+      </example>
+      <example name="Args 0 and 2" src="Brown">
+        <text>He interrupted , `` Please do n't judge all poets '' .</text>
+        <propbank>
+          <rel relloc="1">interrupted</rel>
+          <arg type="ARG0" start="0" end="0">He</arg>
+          <arg type="ARG2" start="3" end="10">`` Please do n't judge all poets ''</arg>
+        </propbank>
+      </example>
+      <example name="Arg 1 in a PP" src="">
+        <text>an interruption of trading</text>
+        <propbank>
+          <rel relloc="1">interruption</rel>
+          <arg type="ARG1" start="2" end="3">of trading</arg>
+        </propbank>
+      </example>
+      <example name="Arg 1 as a modifier" src="">
+        <text>business interruption insurance</text>
+        <propbank>
+          <rel relloc="1">interruption</rel>
+          <arg type="ARG1" start="0" end="0">business</arg>
+        </propbank>
+      </example>
+      <example name="Arg 0" src="">
+        <text>an interruption from a veteran White House correspondent</text>
+        <propbank>
+          <rel relloc="1">interruption</rel>
+          <arg type="ARG0" start="2" end="7">from a veteran White House correspondent</arg>
+        </propbank>
+      </example>
       <note>INTERRUPT-V NOTES: Updated by Julia. No Vncls. No Comparison (from interrupt.01-v)</note>
       <note>INTERRUPTION-N NOTES: Based on sentences in nouns-00040. Comparison to interrupt.01. No VN class. FN class interrupt_process. Framed by Katie. (from interruption.01-n)</note>
-      <roles>
-        <role descr="interrupter" f="pag" n="0"/>
-        <role descr="thing interrupted" f="ppt" n="1"/>
-        <role descr="utterance" f="vsp" n="2"/>
-      </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="active"/>
-        <text>The slip has come despite high-profile ads created by Wells Rich , including one picturing a young man clad only in pajama bottoms interrupting a festive brunch .</text>
-        <arg f="" n="0">a young man clad only in pajama bottoms</arg>
-        <rel f="">interrupting</rel>
-        <arg f="" n="1">a festive brunch</arg>
-      </example>
-      <example name="with manner" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
-        <text>Theodore Roosevelt's son Quentin once interrupted him by dropping snakes on Dad's desk!</text>
-        <arg f="" n="0">Theodore Roosevelt's son Quentin</arg>
-        <arg f="tmp" n="m">once</arg>
-        <rel f="">interrupted</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="mnr" n="m">by dropping snakes on Dad's desk!</arg>
-      </example>
-      <example name="all args" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
-        <text>And as Dr. Puri tried to argue his point he interrupted him : "Let me die. Please. Out of charity."</text>
-        <arg f="dis" n="m">And</arg>
-        <arg f="tmp" n="m">as Dr. Puri tried to argue his point</arg>
-        <arg f="" n="0">he</arg>
-        <rel f="">interrupted</rel>
-        <arg f="" n="1">him</arg>
-        <arg f="" n="2">"Let me die. Please. Out of charity. "</arg>
-      </example>
-      <example name="Args 0 and 2" src="Brown" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
-        <text>He interrupted , `` Please do n't judge all poets '' .</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">interrupted</rel>
-        <arg f="" n="2">"Please don't judge all poets".</arg>
-      </example>
-      <example name="Arg 1 in a PP" src="" type="">
-        <text>an interruption of trading</text>
-        <rel f="">interruption</rel>
-        <arg f="" n="1">of trading</arg>
-      </example>
-      <example name="Arg 1 as a modifier" src="" type="">
-        <text>business interruption insurance</text>
-        <arg f="" n="1">business</arg>
-        <rel f="">interruption</rel>
-      </example>
-      <example name="Arg 0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>an interruption from a veteran White House correspondent</text>
-        <rel f="">interruption</rel>
-        <arg f="" n="0">from a veteran White House correspondent</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

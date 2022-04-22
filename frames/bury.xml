@@ -1,42 +1,72 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="bury">
     <roleset id="bury.01" name="put in the ground">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">bury</alias>
-        <alias framenet="" pos="n" verbnet="">burial</alias>
+        <alias pos="v">bury</alias>
+        <alias pos="n">burial</alias>
       </aliases>
-      <note>BURY-V NOTES: The arg2 is troubling--it really should be just an ArgM-LOC, exceptfor the 'buried in debt' example. (from bury.01-v)</note>
       <roles>
         <role descr="burier" f="PAG" n="0">
-          <vnrole vncls="9.1-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="put-9.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="put-9.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="buried" f="PPT" n="1">
-          <vnrole vncls="9.1-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="put-9.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="put-9.1-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="ground (usually understood)" f="GOL" n="2">
-          <vnrole vncls="9.1-1" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink class="put-9.1-1" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="put-9.1-1" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="metaphorical ground must be stated" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>Hitachi Zosen Corp., [a shipbuilder]-3 buried *trace*-3 in debt just a few years ago, will build a machinery plant, its first expansion in 14 years.</text>
-        <rel f="">buried</rel>
-        <arg f="" n="1">*trace*-3</arg>
-        <arg f="in" n="2">debt</arg>
-        <arg f="TMP" n="M">just a few years ago</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Burying" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="put-9.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="bury-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">24</lexlink>
+        <lexlink class="bury-v.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="bury-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+        <lexlink class="put-9.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="metaphorical ground must be stated" src="">
+        <text>Hitachi Zosen Corp. , a shipbuilder buried in debt just a few years ago , will build a machinery plant , its first expansion in 14 years .</text>
+        <propbank>
+          <rel relloc="6">buried</rel>
+          <arg type="ARG1" start="4" end="5">a shipbuilder</arg>
+          <arg type="ARG2" start="8" end="8">debt</arg>
+          <arg type="ARGM-TMP" start="9" end="13">just a few years ago</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1063" type="">
+      <example name="ARG0 and ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1063">
         <text>At an age when other children were still busy at their games , Wang used to bury himself among books , for hours on end , in the family library .</text>
-        <arg f="tmp" n="m">At an age when other children were still busy at their games</arg>
-        <arg f="" n="0">Wang</arg>
-        <rel f="">bury</rel>
-        <arg f="" n="1">himself</arg>
-        <arg f="" n="2">among books</arg>
-        <arg f="tmp" n="m">for hours on end</arg>
-        <arg f="loc" n="m">in the family library</arg>
+        <propbank>
+          <rel relloc="16">bury</rel>
+          <arg type="ARGM-TMP" start="0" end="11">At an age when other children were still busy at their games</arg>
+          <arg type="ARG0" start="13" end="13">Wang</arg>
+          <arg type="ARG1" start="17" end="17">himself</arg>
+          <arg type="ARG2" start="18" end="19">among books</arg>
+          <arg type="ARGM-TMP" start="21" end="24">for hours on end</arg>
+          <arg type="ARGM-LOC" start="26" end="29">in the family library</arg>
+        </propbank>
       </example>
-
+      <note>BURY-V NOTES: The arg2 is troubling--it really should be just an ArgM-LOC, exceptfor the 'buried in debt' example. (from bury.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,128 +1,227 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="gain">
     <roleset id="gain.01" name="increase, rise">
       <aliases>
-        <alias framenet="Change_position_on_a_scale" pos="v" verbnet="">gain</alias>
-        <alias framenet="" pos="n" verbnet="">gain</alias>
+        <alias pos="v">gain</alias>
+        <alias pos="n">gain</alias>
       </aliases>
+      <roles>
+        <role descr="Logical subject, patient, thing rising" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="EXT, amount risen" f="EXT" n="2">
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">extent</rolelink>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">extent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="start point" f="DIR" n="3">
+          <rolelinks>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.3">initial_state</rolelink>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">initial_state</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="end point" f="GOL" n="4">
+          <rolelinks>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">result</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="specific aspect of arg1 gaining" f="LOC" n="5">
+          <rolelinks>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.3">attribute</rolelink>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">attribute</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Change_position_on_a_scale" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="calibratable_cos-45.6.1-1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3" />
+        <lexlink class="gain-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">22</lexlink>
+        <lexlink class="calibratable_cos-45.6.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="with EXT and end point" src="">
+        <text>The Nasdaq 100 index gained 1.39 to 446.62 on heavy volume .</text>
+        <propbank>
+          <rel relloc="4">gained</rel>
+          <arg type="ARG1" start="0" end="3">The Nasdaq 100 index</arg>
+          <arg type="ARG2" start="5" end="5">1.39</arg>
+          <arg type="ARG4" start="6" end="7">to 446.62</arg>
+          <arg type="ARGM-LOC" start="8" end="10">on heavy volume</arg>
+        </propbank>
+      </example>
+      <example name="all args!" src="">
+        <text>Revenue gained 13 % to $ 77 million from $ 68.5 million .</text>
+        <propbank>
+          <rel relloc="1">gained</rel>
+          <arg type="ARG1" start="0" end="0">Revenue</arg>
+          <arg type="ARG2" start="2" end="3">13 %</arg>
+          <arg type="ARG4" start="4" end="7">to $ 77 million</arg>
+          <arg type="ARG3" start="8" end="11">from $ 68.5 million</arg>
+        </propbank>
+      </example>
+      <example name="arg2 as manner" src="">
+        <text>Bond prices and the dollar both gained modestly .</text>
+        <propbank>
+          <rel relloc="6">gained</rel>
+          <arg type="ARG1" start="0" end="5">Bond prices and the dollar both</arg>
+          <arg type="ARG2" start="7" end="7">modestly</arg>
+        </propbank>
+      </example>
+      <example name="Arg 1 only" src="web">
+        <text>Stocks are holding on to their gains in late trading , with all three major indexes up more than 1 % in late trading .</text>
+        <propbank>
+          <rel relloc="6">gains</rel>
+          <arg type="ARG1" start="5" end="5">their</arg>
+        </propbank>
+      </example>
+      <example name="Args 3 &amp; 4" src="web">
+        <text>This has been accomplished by reducing the taxable amount of the gain from 75 % to 37 - 1/2 % .</text>
+        <propbank>
+          <rel relloc="11">gain</rel>
+          <arg type="ARG3" start="12" end="14">from 75 %</arg>
+          <arg type="ARG4" start="15" end="19">to 37 - 1/2 %</arg>
+        </propbank>
+      </example>
+      <example name="With attribute" src="web">
+        <text>... stocks trading at multiyear lows such as WorldCom ( WCOM ) , which has retraced its gains in price all the way back to February 1998 .</text>
+        <propbank>
+          <rel relloc="17">gains</rel>
+          <arg type="ARG1" start="16" end="16">its</arg>
+          <arg type="ARG5" start="18" end="19">in price</arg>
+        </propbank>
+      </example>
       <note>GAIN-V NOTES: Let's use EXT for numericals only, otherwise Arg2-MNR: (from gain.01-v)</note>
       <note>GAIN-N NOTES: Based on verb entry gain.01; corresponds to VN class calibratable_cos-45.6-1. (from gain.01-n)</note>
-      <roles>
-        <role descr="Logical subject, patient, thing rising" f="ppt" n="1">
-          <vnrole vncls="45.6-1" vntheta="patient"/>
-        </role>
-        <role descr="EXT, amount risen" f="ext" n="2">
-          <vnrole vncls="45.6-1" vntheta="extent"/>
-        </role>
-        <role descr="start point" f="dir" n="3"/>
-        <role descr="end point" f="gol" n="4"/>
-        <role descr="specific aspect of arg1 gaining" f="loc" n="5"/>
-      </roles>
-      <example name="with EXT and end point" src="" type="">
-        <text>The Nasdaq 100 index gained 1.39 to 446.62 on heavy volume.</text>
-        <arg f="" n="1">The Nasdaq 100 index</arg>
-        <rel f="">gained</rel>
-        <arg f="" n="2">1.39</arg>
-        <arg f="" n="4">to 446.62</arg>
-        <arg f="loc" n="m">on heavy volume</arg>
-      </example>
-      <example name="all args!" src="" type="">
-        <text>Revenue gained 13% to $77 million from $68.5 million.</text>
-        <arg f="" n="1">Revenue</arg>
-        <rel f="">gained</rel>
-        <arg f="" n="2">13%</arg>
-        <arg f="" n="4">to $77million</arg>
-        <arg f="" n="3">from $68.5 million</arg>
-      </example>
-      <example name="arg2 as manner" src="" type="">
-        <text>Bond prices and the dollar both gained modestly.</text>
-        <arg f="" n="1">Bond prices and the dollar both</arg>
-        <rel f="">gained</rel>
-        <arg f="" n="2">modestly</arg>
-      </example>
-      <example name="Arg 1 only" src="web" type="">
-        <text>Stocks are holding on to their gains in late trading, with all three major indexes up more than 1% in late trading.</text>
-        <arg f="" n="1">their</arg>
-        <rel f="">gains</rel>
-      </example>
-      <example name="Args 3 &amp; 4" src="web" type="">
-        <text>This has been accomplished by reducing the taxable amount of the gain from 75% to 37-1/2%.</text>
-        <rel f="">gain</rel>
-        <arg f="" n="3">from 75%</arg>
-        <arg f="" n="4">to 37-1/2%</arg>
-      </example>
-      <example name="With attribute" src="web" type="">
-        <text>...stocks trading at multiyear lows such as WorldCom (WCOM), which has retraced its gains in price all the way back to February 1998.</text>
-        <arg f="" n="1">its</arg>
-        <rel f="">gains</rel>
-        <arg f="" n="5">in price</arg>
-      </example>
     </roleset>
     <roleset id="gain.02" name="acquire">
       <aliases>
-        <alias framenet="Getting" pos="v" verbnet="">gain</alias>
-        <alias framenet="" pos="n" verbnet="">gain</alias>
+        <alias pos="v">gain</alias>
+        <alias pos="n">gain</alias>
       </aliases>
-      <note>GAIN-V NOTES: (from gain.02-v)</note>
-      <note>GAIN-N NOTES: Roleset based on verb entry gain.02; corresponds to VN class get-13.5.1-1. (from gain.02-n)</note>
       <roles>
-        <role descr="agent, entity acquiring something" f="pag" n="0">
-          <vnrole vncls="13.5.1-1" vntheta="agent"/>
+        <role descr="agent, entity acquiring something" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="get-13.5.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Getting" resource="FrameNet" version="1.7">recipient</rolelink>
+            <rolelink class="get-13.5.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing acquired" f="ppt" n="1">
-          <vnrole vncls="13.5.1-1" vntheta="theme"/>
+        <role descr="thing acquired" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="get-13.5.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Getting" resource="FrameNet" version="1.7">theme</rolelink>
+            <rolelink class="get-13.5.1-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="source, gained from" f="dir" n="2">
-          <vnrole vncls="13.5.1-1" vntheta="source"/>
+        <role descr="source, gained from" f="DIR" n="2">
+          <rolelinks>
+            <rolelink class="get-13.5.1-1" resource="VerbNet" version="verbnet3.3">source</rolelink>
+            <rolelink class="Getting" resource="FrameNet" version="1.7">source</rolelink>
+            <rolelink class="get-13.5.1-1" resource="VerbNet" version="verbnet3.4">source</rolelink>
+          </rolelinks>
         </role>
-        <role descr="benefactive, gained for" f="gol" n="3">
-          <vnrole vncls="13.5.1-1" vntheta="beneficiary"/>
+        <role descr="benefactive, gained for" f="GOL" n="3">
+          <rolelinks>
+            <rolelink class="get-13.5.1-1" resource="VerbNet" version="verbnet3.3">beneficiary</rolelink>
+            <rolelink class="Getting" resource="FrameNet" version="1.7">beneficiary</rolelink>
+            <rolelink class="get-13.5.1-1" resource="VerbNet" version="verbnet3.4">beneficiary</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="just transitive" src="" type="">
-        <text>The company could gain millions of dollars if the deal goes through.</text>
-        <arg f="" n="0">The company</arg>
-        <arg f="mod" n="m">could</arg>
-        <rel f="">gain</rel>
-        <arg f="" n="1">millions of dollars</arg>
-        <arg f="adv" n="m">if the deal goes though</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Getting" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="get-13.5.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="Transaction.TransferMoney.Purchase" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019" />
+        <lexlink class="Transaction.TransferOwnership.Purchase" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019" />
+        <lexlink class="Transfermoney" confidence="0.1" resource="ERE" src="reo-expansion" version="rich" />
+        <lexlink class="Transferownership" confidence="0.1" resource="ERE" src="reo-expansion" version="rich" />
+        <lexlink class="gain-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">79</lexlink>
+        <lexlink class="gain-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">8</lexlink>
+        <lexlink class="get-13.5.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="just transitive" src="">
+        <text>The company could gain millions of dollars if the deal goes through .</text>
+        <propbank>
+          <rel relloc="3">gain</rel>
+          <arg type="ARG0" start="0" end="1">The company</arg>
+          <arg type="ARGM-MOD" start="2" end="2">could</arg>
+          <arg type="ARG1" start="4" end="6">millions of dollars</arg>
+          <arg type="ARGM-ADV" start="7" end="11">if the deal goes through</arg>
+        </propbank>
       </example>
-      <example name="another transitive" src="" type="">
-        <text>Both contracts have gained a following since the 1987 global market crash.</text>
-        <arg f="" n="0">Both contracts</arg>
-        <rel f="">gained</rel>
-        <arg f="" n="1">a following</arg>
-        <arg f="tmp" n="m">since the 1987 global market crash</arg>
+      <example name="another transitive" src="">
+        <text>Both contracts have gained a following since the 1987 global market crash .</text>
+        <propbank>
+          <rel relloc="3">gained</rel>
+          <arg type="ARG0" start="0" end="1">Both contracts</arg>
+          <arg type="ARG1" start="4" end="5">a following</arg>
+          <arg type="ARGM-TMP" start="6" end="11">since the 1987 global market crash</arg>
+        </propbank>
       </example>
-      <example name="with benefactive" src="" type="">
-        <text>...the unsuccessful effort *trace* to gain bank loans for the labor management group.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">gain</rel>
-        <arg f="" n="1">bank loans</arg>
-        <arg f="" n="3">for the labor management group.</arg>
+      <example name="with benefactive" src="">
+        <text>... the unsuccessful effort *trace* to gain bank loans for the labor management group .</text>
+        <propbank>
+          <rel relloc="6">gain</rel>
+          <arg type="ARG0" start="?" end="?">*trace*</arg>
+          <arg type="ARG1" start="7" end="8">bank loans</arg>
+          <arg type="ARG3" start="9" end="13">for the labor management group</arg>
+        </propbank>
       </example>
-      <example name="with source" src="" type="">
+      <example name="with source" src="">
         <text>Both companies would gain technological knowledge through the sale of GenProbe</text>
-        <arg f="" n="0">Both companies</arg>
-        <arg f="mod" n="m">would</arg>
-        <rel f="">gain</rel>
-        <arg f="" n="1">technological knowledge</arg>
-        <arg f="" n="2">through the sale of GenProbe</arg>
+        <propbank>
+          <rel relloc="3">gain</rel>
+          <arg type="ARG0" start="0" end="1">Both companies</arg>
+          <arg type="ARGM-MOD" start="2" end="2">would</arg>
+          <arg type="ARG1" start="4" end="5">technological knowledge</arg>
+          <arg type="ARG2" start="6" end="10">through the sale of GenProbe</arg>
+        </propbank>
       </example>
-      <example name="Args 0 &amp; 1" src="web" type="">
-        <text>As shown 'weak ties' provide photographic inspiration for Flickr's users and prove valuable in their gaining of recognition and exposure.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">gaining</rel>
-        <arg f="" n="1">of recognition and exposure</arg>
+      <example name="Args 0 &amp; 1" src="web">
+        <text>As shown ' weak ties ' provide photographic inspiration for Flickr 's users and prove valuable in their gaining of recognition and exposure .</text>
+        <propbank>
+          <rel relloc="18">gaining</rel>
+          <arg type="ARG0" start="17" end="17">their</arg>
+          <arg type="ARG1" start="19" end="22">of recognition and exposure</arg>
+        </propbank>
       </example>
-      <example name="With source" src="" type="">
-        <text>Also, the mangaka admitted to his gaining of illegal profits from the work, and paid back a portion of his sales.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">gaining</rel>
-        <arg f="" n="1">of illegal profits</arg>
-        <arg f="" n="2">from the work</arg>
+      <example name="With source" src="">
+        <text>Also , the mangaka admitted to his gaining of illegal profits from the work , and paid back a portion of his sales .</text>
+        <propbank>
+          <rel relloc="7">gaining</rel>
+          <arg type="ARG0" start="6" end="6">his</arg>
+          <arg type="ARG1" start="8" end="10">of illegal profits</arg>
+          <arg type="ARG2" start="11" end="13">from the work</arg>
+        </propbank>
       </example>
+      <note>GAIN-V NOTES: (from gain.02-v)</note>
+      <note>GAIN-N NOTES: Roleset based on verb entry gain.02; corresponds to VN class get-13.5.1-1. (from gain.02-n)</note>
     </roleset>
   </predicate>
 </frameset>

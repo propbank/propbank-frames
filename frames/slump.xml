@@ -1,47 +1,84 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="slump">
     <roleset id="slump.01" name="decline">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">slump</alias>
+        <alias pos="v">slump</alias>
       </aliases>
-      <note>SLUMP-V NOTES: Comparison to fall etc. Member of VNcls spatial_configuration-47.6, assuming_position-50. (from slump.01-v)</note>
       <roles>
         <role descr="is an agent possible?" f="PAG" n="0">
-          <vnrole vncls="47.6" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="spatial_configuration-47.6" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing slumping" f="PPT" n="1">
-          <vnrole vncls="47.6" vntheta="Theme"/>
-          <vnrole vncls="50" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="spatial_configuration-47.6" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="assuming_position-50" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="spatial_configuration-47.6" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+            <rolelink class="assuming_position-50" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="EXT" f="ext" n="2"/>
-        <role descr="start point" f="dir" n="3"/>
-        <role descr="end point" f="gol" n="4"/>
+        <role descr="EXT" f="EXT" n="2">
+          <rolelinks />
+        </role>
+        <role descr="start point" f="DIR" n="3">
+          <rolelinks />
+        </role>
+        <role descr="end point" f="GOL" n="4">
+          <rolelinks>
+            <rolelink class="spatial_configuration-47.6" resource="VerbNet" version="verbnet3.3">location</rolelink>
+            <rolelink class="spatial_configuration-47.6" resource="VerbNet" version="verbnet3.4">location</rolelink>
+            <rolelink class="assuming_position-50" resource="VerbNet" version="verbnet3.4">location</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="didn't believe me, did you?" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>In the auto sector, Bayerische Motoren Werke plunged 14.5 marks to 529 marks ($288), Daimler-Benz dropped 10.5 to 700, and Volkswagen slumped 9 to 435.5.</text>
-        <arg f="loc" n="m">In the auto sector</arg>
-        <arg f="" n="1">Volkswagen</arg>
-        <rel f="">slumped</rel>
-        <arg f="" n="2">9</arg>
-        <arg f="" n="4">to 435.5</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="spatial_configuration-47.6" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="assuming_position-50" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="slump-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">11</lexlink>
+        <lexlink class="assuming_position-50" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+        <lexlink class="spatial_configuration-47.6" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="didn't believe me, did you?" src="">
+        <text>In the auto sector , Bayerische Motoren Werke plunged 14.5 marks to 529 marks ( $ 288 ) , Daimler - Benz dropped 10.5 to 700 , and Volkswagen slumped 9 to 435.5 .</text>
+        <propbank>
+          <rel relloc="29">slumped</rel>
+          <arg type="ARGM-LOC" start="0" end="3">In the auto sector</arg>
+          <arg type="ARG1" start="28" end="28">Volkswagen</arg>
+          <arg type="ARG2" start="30" end="30">9</arg>
+          <arg type="ARG4" start="31" end="32">to 435.5</arg>
+        </propbank>
       </example>
-      <example name="ARG1" src="ontonotes mz/sinorama/10/ectb_1057" type="">
+      <example name="ARG1" src="ontonotes mz/sinorama/10/ectb_1057">
         <text>While the hot sales of money charms are no doubt partly attributable to the enterprising efforts of dealers and retailers , the slumping economy and growing number of fortunetellers have also played a part in the boom .</text>
-        <rel f="">slumping</rel>
-        <arg f="" n="1">economy</arg>
+        <propbank>
+          <rel relloc="22">slumping</rel>
+          <arg type="ARG1" start="23" end="23">economy</arg>
+        </propbank>
       </example>
-
-      <example name="with agent" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
+      <example name="with agent" src="internet">
         <text>He slumped the box down before me</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">slumped</rel>
-        <arg f="" n="1">the box</arg>
-        <arg f="dir" n="m">down</arg>
-        <arg f="loc" n="m">before me</arg>
+        <propbank>
+          <rel relloc="1">slumped</rel>
+          <arg type="ARG0" start="0" end="0">He</arg>
+          <arg type="ARG1" start="2" end="3">the box</arg>
+          <arg type="ARGM-DIR" start="4" end="4">down</arg>
+          <arg type="ARGM-LOC" start="5" end="6">before me</arg>
+        </propbank>
       </example>
+      <note>SLUMP-V NOTES: Comparison to fall etc. Member of VNcls spatial_configuration-47.6, assuming_position-50. (from slump.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,97 +1,159 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="possess">
     <roleset id="possess.01" name="have, own">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">possession</alias>
-        <alias framenet="Possession" pos="v" verbnet="">possess</alias>
+        <alias pos="n">possession</alias>
+        <alias pos="v">possess</alias>
       </aliases>
+      <roles>
+        <role descr="possessor" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="own-100.1" resource="VerbNet" version="verbnet3.4">pivot</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="possession" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="own-100.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Possession" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="possession-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">10</lexlink>
+        <lexlink class="possess-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">49</lexlink>
+        <lexlink class="own-100.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="straight transitive" src="">
+        <text>But Mr. Hahn rose swiftly through the ranks , demonstrating a raw intelligence that he says he knew he possessed early on .</text>
+        <propbank>
+          <rel relloc="19">possessed</rel>
+          <arg type="ARG0" start="18" end="18">he</arg>
+          <arg type="ARG1" start="10" end="12">a raw intelligence</arg>
+          <arg type="R-ARG1" start="13" end="13">that</arg>
+        </propbank>
+      </example>
+      <example name="prepositional variant" src="">
+        <text>His answer is one `` possessed of a dignity in keeping with his position . ''</text>
+        <propbank>
+          <rel relloc="5">possessed</rel>
+          <arg type="ARG0" start="3" end="3">one</arg>
+          <arg type="ARG1" start="6" end="13">of a dignity in keeping with his position</arg>
+        </propbank>
+      </example>
+      <example name="not sure if this is the same roleset" src="">
+        <text>John is possessed by evil spirits . Mostly tequila .</text>
+        <propbank>
+          <rel relloc="2">possessed</rel>
+          <arg type="ARG1" start="0" end="0">John</arg>
+          <arg type="ARG0" start="3" end="5">by evil spirits</arg>
+        </propbank>
+      </example>
+      <example name="All arguments" src="nouns 0080">
+        <text>Iran , which was implicitly reminded not to interfere in the affairs of Iraq , was explicitly mentioned with the expression of Gulf concerns for its possession of nuclear programs .</text>
+        <propbank>
+          <rel relloc="26">possession</rel>
+          <arg type="ARG0" start="25" end="25">its</arg>
+          <arg type="ARG1" start="27" end="29">of nuclear programs</arg>
+        </propbank>
+      </example>
+      <example name="Arg0 only, as question word" src="nouns 0080">
+        <text>... after the arrest of the first person in whose possession were ten pills of the same kind that were seized ...</text>
+        <propbank>
+          <rel relloc="10">possession</rel>
+          <arg type="ARG0" start="9" end="9">whose</arg>
+        </propbank>
+      </example>
       <note>POSSESS-V NOTES: Frames file for 'possess' based on sentences in wsj. No Verbnet entry (!!!!), Framenet entry Possession. (from possess.01-v predicate notes)</note>
       <note>POSSESSION-N NOTES: Roleset based on verb possess.01, VN class own-100. Framed by Claire. (from possession.01-n)</note>
-      <roles>
-        <role descr="possessor" f="PAG" n="0"/>
-        <role descr="possession" f="PPT" n="1"/>
-      </roles>
-      <example name="straight transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>But Mr. Hahn rose swiftly through the ranks, demonstrating a raw intelligence that he says he knew he possessed *trace* early on.</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">possessed</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="RCL" n="M">that -&gt; a raw intelligence</arg>
-      </example>
-      <example name="prepositional variant" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>His answer is one-1 ``possessed *trace*-1 of a dignity in keeping with his position.''</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">possessed</rel>
-        <arg f="" n="1">of a dignity in keeping with his position</arg>
-      </example>
-      <example name="not sure if this is the same roleset" src="" type="">
-        <inflection aspect="ns" form="participle" person="third" tense="present" voice="passive"/>
-        <text>John-1 is possessed *trace*-1 by evil spirits. Mostly tequila.</text>
-        <arg f="" n="1">*trace*</arg>
-        <rel f="">possessed</rel>
-        <arg f="" n="0">by evil spirits</arg>
-      </example>
-      <example name="All arguments" src="nouns 0080" type="">
-        <text>Iran , which was implicitly reminded not to interfere in the affairs of Iraq , was explicitly mentioned with the expression of Gulf concerns for its possession of nuclear programs .</text>
-        <arg f="" n="0">its</arg>
-        <rel f="">possession</rel>
-        <arg f="" n="1">of nuclear programs</arg>
-      </example>
-      <example name="Arg0 only, as question word" src="nouns 0080" type="">
-        <text>...after the arrest of the first person in whose possession were ten pills of the same kind that were seized...</text>
-        <arg f="" n="0">whose</arg>
-        <rel f="">possession</rel>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="possessive">
     <roleset id="possessive.02" name="expressing the genitive. linguistics and grammar">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">possessive</alias>
+        <alias pos="j">possessive</alias>
       </aliases>
-      <note>POSSESSIVE-J NOTES: Added by Julia based on WordNet. (from possessive.02-j)</note>
       <roles>
-        <role descr="token expressing the genitive" f="ppt" n="1"/>
+        <role descr="token expressing the genitive" f="PPT" n="1"/>
       </roles>
-      <example name="standard" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>In this verse the word Vishnur is in the partitive case whereas in others the case ending is possessive.</text>
-        <arg f="loc" n="m">in others</arg>
-        <arg f="" n="1">the case ending</arg>
-        <rel f="">possessive</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <example name="standard" src="internet">
+        <text>In this verse the word Vishnur is in the partitive case whereas in others the case ending is possessive .</text>
+        <propbank>
+          <rel relloc="18">possessive</rel>
+          <arg type="ARGM-LOC" start="12" end="13">in others</arg>
+          <arg type="ARG1" start="14" end="16">the case ending</arg>
+        </propbank>
       </example>
+      <note>POSSESSIVE-J NOTES: Added by Julia based on WordNet. (from possessive.02-j)</note>
     </roleset>
     <roleset id="possessive.03" name="having ownership, perhaps stingily and greedily">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">possessive</alias>
+        <alias pos="j">possessive</alias>
       </aliases>
-      <note>POSSESSIVE-J NOTES: Added by Julia based on BOLT-1, possess.01, possession-n.01. Corresponds to VNcls own-100. (from possessive.01-j)</note>
       <roles>
-        <role descr="owner" f="pag" n="0">
-          <vnrole vncls="100" vntheta="pivot"/>
+        <role descr="owner" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="100" resource="VerbNet" version="UNK">pivot</rolelink>
+          </rolelinks>
         </role>
-        <role descr="possession" f="ppt" n="1">
-          <vnrole vncls="100" vntheta="theme"/>
+        <role descr="possession" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="100" resource="VerbNet" version="UNK">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="arg0" src="BOLT-1" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>He is very possesive and controlling but he has no right to be as we are not together .</text>
-        <arg f="" n="0">He</arg>
-        <arg f="ext" n="m">very</arg>
-        <rel f="">possessive</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="100" confidence="0.0" resource="VerbNet" src="manual+strict-conv" version="UNK"/>
+      </lexlinks>
+      <example name="arg0" src="BOLT-1">
+        <text>He is very possessive and controlling but he has no right to be as we are not together .</text>
+        <propbank>
+          <rel relloc="3">possessive</rel>
+          <arg type="ARG0" start="0" end="0">He</arg>
+          <arg type="ARGM-EXT" start="2" end="2">very</arg>
+        </propbank>
       </example>
-      <example name="The very dickens." src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Laurie was possessive of her room as only an eleven-year-old girl can be, and she gave Brian the very dickens for coming in without knocking</text>
-        <arg f="" n="0">Laurie</arg>
-        <rel f="">possessive</rel>
-        <arg f="" n="1">of her room</arg>
-        <arg f="mnr" n="m">as only an eleven-year-old girl can be</arg>
+      <example name="The very dickens." src="internet">
+        <text>Laurie was possessive of her room as only an eleven - year - old girl can be , and she gave Brian the very dickens for coming in without knocking</text>
+        <propbank>
+          <rel relloc="2">possessive</rel>
+          <arg type="ARG0" start="0" end="0">Laurie</arg>
+          <arg type="ARG1" start="3" end="5">of her room</arg>
+          <arg type="ARGM-MNR" start="6" end="16">as only an eleven - year - old girl can be</arg>
+        </propbank>
       </example>
+      <note>POSSESSIVE-J NOTES: Added by Julia based on BOLT-1, possess.01, possession-n.01. Corresponds to VNcls own-100. (from possessive.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,38 +1,74 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="scald">
     <roleset id="scald.01" name="burn with hot liquid">
       <aliases>
-        <alias framenet="Apply_heat" pos="v" verbnet="">scald</alias>
+        <alias pos="v">scald</alias>
       </aliases>
-      <note>SCALD-V NOTES: Comparison to 'burn'. Framed by Neville. Member of Vncls cooking-45.3, hurt-40.8.3-2. Updated by Julia, 11/2010. (from scald.01-v)</note>
       <roles>
-        <role descr="agent, scalder" f="pag" n="0">
-          <vnrole vncls="45.3" vntheta="Agent"/>
-          <vnrole vncls="40.8.3-2" vntheta="Experiencer"/>
+        <role descr="agent, scalder" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="cooking-45.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="hurt-40.8.3-2" resource="VerbNet" version="verbnet3.3">experiencer</rolelink>
+            <rolelink class="Apply_heat" resource="FrameNet" version="1.7">cook</rolelink>
+            <rolelink class="hurt-40.8.3-2" resource="VerbNet" version="verbnet3.4">experiencer</rolelink>
+            <rolelink class="cooking-45.3" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="patient, thing scalded" f="PPT" n="1">
-          <vnrole vncls="45.3" vntheta="Patient"/>
-          <vnrole vncls="40.8.3-2" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink class="cooking-45.3" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="hurt-40.8.3-2" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="Apply_heat" resource="FrameNet" version="1.7">food</rolelink>
+            <rolelink class="hurt-40.8.3-2" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+            <rolelink class="cooking-45.3" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="instrument (i.e. hot water, oil, latex)" f="MNR" n="2">
-          <vnrole vncls="45.3" vntheta="Instrument"/>
+          <rolelinks>
+            <rolelink class="cooking-45.3" resource="VerbNet" version="verbnet3.3">instrument</rolelink>
+            <rolelink class="Apply_heat" resource="FrameNet" version="1.7">heating_instrument</rolelink>
+            <rolelink class="cooking-45.3" resource="VerbNet" version="verbnet3.4">instrument</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="passive, theme only" src="" type="">
-        <text>Amazing girls still extended tiny hands into the hot springs [*-55] to testthe temperature , but strangely cried out with sharp sounds on [*]-56 being scalded [*-56] .</text>
-        <rel f="">scalded</rel>
-        <arg f="" n="1">[*-56]</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Apply_heat" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="cooking-45.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="hurt-40.8.3-2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="scald-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+        <lexlink class="cooking-45.3" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+        <lexlink class="hurt-40.8.3-2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="scald-v: passive, theme only" src="">
+        <text>Amazing girls still extended tiny hands into the hot springs to test the temperature , but strangely cried out with sharp sounds on being scalded .</text>
+        <propbank>
+          <rel relloc="24">scalded</rel>
+          <arg type="ARG1" start="0" end="1">Amazing girls</arg>
+        </propbank>
       </example>
-      <example name="all args" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
-        <text>Bob Feller scalded himself with 200-degree water after he lost control of the hose in a whirlpool.</text>
-        <arg f="" n="0">Bob Feller</arg>
-        <rel f="">scalded</rel>
-        <arg f="" n="1">himself</arg>
-        <arg f="" n="2">with 200-degree water</arg>
-        <arg f="tmp" n="m">after he lost control of the hose in a whirlpool</arg>
+      <example name="scald-v: all args" src="internet">
+        <text>Bob Feller scalded himself with 200 - degree water after he lost control of the hose in a whirlpool .</text>
+        <propbank>
+          <rel relloc="2">scalded</rel>
+          <arg type="ARG0" start="0" end="1">Bob Feller</arg>
+          <arg type="ARG1" start="3" end="3">himself</arg>
+          <arg type="ARG2" start="4" end="8">with 200 - degree water</arg>
+          <arg type="ARGM-TMP" start="9" end="18">after he lost control of the hose in a whirlpool</arg>
+        </propbank>
       </example>
+      <note>SCALD-V NOTES: Comparison to 'burn'. Framed by Neville. Member of Vncls cooking-45.3, hurt-40.8.3-2. Updated by Julia, 11/2010. (from scald.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

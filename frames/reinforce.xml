@@ -1,45 +1,81 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="reinforce">
     <roleset id="reinforce.01" name="to strengthen">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">reinforce</alias>
-        <alias framenet="" pos="n" verbnet="">reinforcement</alias>
+        <alias pos="v">reinforce</alias>
+        <alias pos="n">reinforcement</alias>
       </aliases>
+      <roles>
+        <role descr="strengthener" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="support-15.3-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="support-15.3-1" resource="VerbNet" version="verbnet3.4">pivot</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing reinforced" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="support-15.3-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="support-15.3-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="instrument" f="MNR" n="2">
+          <rolelinks>
+            <rolelink class="support-15.3-1" resource="VerbNet" version="verbnet3.3">instrument</rolelink>
+            <rolelink class="support-15.3-1" resource="VerbNet" version="verbnet3.4">instrument</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Cause_change_of_strength" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="reinforce-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">29</lexlink>
+        <lexlink class="support-15.3-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="reinforce-v: with instrument" src="">
+        <text>Although the polyester and rayon markets remain mostly bleak , Akzo has high hopes for some emerging fiber businesses , such carbon fibers and aramid , extremely strong fibers used to reinforce tires and metals and to make such products as bullet - proof vests .</text>
+        <propbank>
+          <rel relloc="31">reinforce</rel>
+          <arg type="ARG2" start="26" end="28">extremely strong fibers</arg>
+          <arg type="ARG1" start="32" end="34">tires and metals</arg>
+        </propbank>
+      </example>
+      <example name="reinforce-v: inanimate causer" src="">
+        <text>Graham Beale , manager of foreign - exchange operations at Hong Kong &amp; Shanghai Banking Corp. in New York , added that Mrs. Thatcher 's comments reinforced the market 's growing confidence about sterling and compounded the unit 's later decline .</text>
+        <propbank>
+          <rel relloc="26">reinforced</rel>
+          <arg type="ARG0" start="22" end="25">Mrs. Thatcher 's comments</arg>
+          <arg type="ARG1" start="27" end="33">the market 's growing confidence about sterling</arg>
+        </propbank>
+      </example>
+      <example name="reinforce-v: unspecified subject" src="">
+        <text>`` The only response to the challenge being presented to us by the East , '' Mr. Mitterrand told the European Parliament in Strasbourg yesterday , `` is to reinforce and accelerate the union and cohesion of the European Community . ''</text>
+        <propbank>
+          <rel relloc="29">reinforce</rel>
+          <arg type="ARG0" start="10" end="10">us</arg>
+          <arg type="ARG1" start="32" end="39">the union and cohesion of the European Community</arg>
+        </propbank>
+      </example>
+      <example name="reinforcemen-n: args 0 and 1" src="">
+        <text>Reinforcement of instructions by Dr. Sfdskl .</text>
+        <propbank>
+          <rel relloc="0">Reinforcement</rel>
+          <arg type="ARG1" start="1" end="2">of instructions</arg>
+          <arg type="ARG0" start="3" end="5">by Dr. Sfdskl</arg>
+        </propbank>
+      </example>
       <note>REINFORCE-V NOTES: Frames file for 'reinforce' based on survey of sentences in the WSJ corpus. (from reinforce.01-v predicate notes)</note>
       <note>REINFORCEMENT-N NOTES: Based on Thyme and Sharp data. Comparison to reinforce.01. No VN class. Framed by Katie. (from reinforcement.01-n)</note>
-      <roles>
-        <role descr="strengthener" f="pag" n="0"/>
-        <role descr="thing reinforced" f="ppt" n="1"/>
-        <role descr="instrument" f="mnr" n="2"/>
-      </roles>
-      <example name="with instrument" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>Although the polyester and rayon markets remain mostly bleak , Akzo has high hopes for some emerging fiber businesses , such carbon fibers and aramid , [extremely strong fibers]-1 used [*]-1 [*-1] to reinforce tires and metals and to make such products as bullet-proof vests .</text>
-        <arg f="" n="2">[*-1]</arg>
-        <rel f="">reinforce</rel>
-        <arg f="" n="1">tires and metals</arg>
-      </example>
-      <example name="inanimate causer" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Graham Beale , manager of foreign-exchange operations at Hong Kong&amp; Shanghai Banking Corp. in New York , added that Mrs. Thatcher 's comments reinforced the market 's growing confidence about sterling and compounded the unit 's later decline .</text>
-        <arg f="" n="0">Mrs. Thatcher 's comments</arg>
-        <rel f="">reinforced</rel>
-        <arg f="" n="1">the market 's growing confidence about sterling</arg>
-      </example>
-      <example name="unspecified subject" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>`` The only response to the challenge being presented [*] to us by the East , '' Mr. Mitterrand told [*T*-1]the European Parliament in Strasbourg yesterday , `` is [*] to reinforce and accelerate the union and cohesion of the European Community . ''</text>
-        <arg f="" n="0">[*]</arg>
-        <rel f="">reinforce</rel>
-        <arg f="" n="1">the union and cohesion of the European Community</arg>
-      </example>
-      <example name="args 0 and 1" src="" type="">
-        <text>Reinforcement of instructions by Dr. Sfdskl.</text>
-        <rel f="">Reinforcement</rel>
-        <arg f="" n="1">of instructions</arg>
-        <arg f="" n="0">by Dr. Sfdskl.</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

@@ -1,59 +1,101 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="steer">
     <roleset id="steer.01" name="provide direction">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">steering</alias>
-        <alias framenet="" pos="v" verbnet="">steer</alias>
+        <alias pos="n">steering</alias>
+        <alias pos="v">steer</alias>
       </aliases>
-      <note>STEER-V NOTES: Frames file for 'steer' based on sentences in financial subcorpus. No Framenet entry. Comparison with direct. Corresponds to VN class accompany-51.7. (from steer.01-v)</note>
-      <note>STEERING-N NOTES: (from steering.01-n)</note>
       <roles>
         <role descr="steerer" f="PAG" n="0">
-          <vnrole vncls="51.7" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="accompany-51.7" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="accompany-51.7" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing steered" f="PPT" n="1">
-          <vnrole vncls="51.7" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="accompany-51.7" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="accompany-51.7" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="direction, steered towards" f="GOL" n="2">
-          <vnrole vncls="51.7" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink class="accompany-51.7" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="accompany-51.7" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all args" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Southern's Gulf Power unit may plead guilty this week to charges it illegally steered company money to politicians through third parties.</text>
-        <arg f="" n="0">it</arg>
-        <arg f="mnr" n="m">illegally</arg>
-        <rel f="">steered</rel>
-        <arg f="" n="1">company money</arg>
-        <arg f="" n="2">to politicians</arg>
-        <arg f="mnr" n="m">through third parties</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="accompany-51.7" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="steer-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">10</lexlink>
+        <lexlink class="accompany-51.7" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="all args" src="">
+        <text>Southern 's Gulf Power unit may plead guilty this week to charges it illegally steered company money to politicians through third parties .</text>
+        <propbank>
+          <rel relloc="14">steered</rel>
+          <arg type="ARG0" start="12" end="12">it</arg>
+          <arg type="ARGM-MNR" start="13" end="13">illegally</arg>
+          <arg type="ARG1" start="15" end="16">company money</arg>
+          <arg type="ARG2" start="17" end="18">to politicians</arg>
+          <arg type="ARGM-MNR" start="19" end="21">through third parties</arg>
+        </propbank>
       </example>
+      <note>STEER-V NOTES: Frames file for 'steer' based on sentences in financial subcorpus. No Framenet entry. Comparison with direct. Corresponds to VN class accompany-51.7. (from steer.01-v)</note>
+      <note>STEERING-N NOTES: (from steering.01-n)</note>
     </roleset>
   </predicate>
   <predicate lemma="steer_clear">
     <roleset id="steer_clear.02" name="avoid">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">steer_clear</alias>
-        <mwe id="steer_clear">
-          <token slot="A" arg="" pos="VB*" head="" dep="">steer</token>
-          <token slot="B" arg="" pos="JJ" head="A" dep="acomp">clear</token>
-          <token slot="B" arg="" pos="RB" head="A" dep="advmod">clear</token>
-        </mwe>
+        <alias pos="m">steer_clear</alias>
+        <mwp-descriptions id="steer_clear">
+          <syntaxdesc slots="B A">
+            <token arg="" dep="" head="" pos="VB*" slot="A">steer</token>
+            <token arg="" dep="acomp" head="A" pos="JJ" slot="B">clear</token>
+            <token arg="" dep="advmod" head="A" pos="RB" slot="B">clear</token>
+          </syntaxdesc>
+        </mwp-descriptions>
       </aliases>
-      <note>STEER_CLEAR-V NOTES: (from steer.02-v)</note>
       <roles>
-        <role descr="avoider" f="PAG" n="0"/>
-        <role descr="avoided" f="PPT" n="1"/>
+        <role descr="avoider" f="PAG" n="0" />
+        <role descr="avoided" f="PPT" n="1" />
       </roles>
-      <example name="beware of dog" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>As a result, Japanese investors steered clear of the mortgage securities.</text>
-        <arg f="cau" n="m">As a result</arg>
-        <arg f="" n="0">Japanese investors</arg>
-        <rel f="">steered clear</rel>
-        <arg f="" n="1">of the mortgage securities</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="steer-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+      </lexlinks>
+      <example name="beware of dog" src="">
+        <text>As a result , Japanese investors steered clear of the mortgage securities .</text>
+        <propbank>
+          <rel relloc="6 7">steered clear</rel>
+          <arg type="ARGM-CAU" start="0" end="2">As a result</arg>
+          <arg type="ARG0" start="4" end="5">Japanese investors</arg>
+          <arg type="ARG1" start="8" end="11">of the mortgage securities</arg>
+        </propbank>
       </example>
+      <note>STEER_CLEAR-V NOTES: (from steer.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

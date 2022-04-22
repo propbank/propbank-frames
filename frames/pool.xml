@@ -1,66 +1,105 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="pool">
     <roleset id="pool.01" name="collect together">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">pooling</alias>
-        <alias framenet="" pos="v" verbnet="">pool</alias>
+        <alias pos="n">pooling</alias>
+        <alias pos="v">pool</alias>
       </aliases>
+      <roles>
+        <role descr="collector(s), agent(s)" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="mix-22.1-2-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="mix-22.1-2-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing collected" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="mix-22.1-2-1" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="mix-22.1-2-1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="secondary attribute of arg1" f="GOL" n="2">
+          <rolelinks/>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="mix-22.1-2-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="mix-22.1-2-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="active" src="">
+        <text>If the three companies pool their air - freight businesses , their clout would be considerable .</text>
+        <propbank>
+          <rel relloc="4">pool</rel>
+          <arg type="ARG0" start="1" end="3">the three companies</arg>
+          <arg type="ARG1" start="5" end="9">their air - freight businesses</arg>
+        </propbank>
+      </example>
+      <example name="passive" src="">
+        <text>An increasing number of big Japanese investors are buying up U.S. home mortgages that have been pooled and packaged for sale as interest - bearing instruments known as mortgage - backed securities .</text>
+        <propbank>
+          <rel relloc="16">pooled</rel>
+          <arg type="ARG1" start="10" end="12">U.S. home mortgages</arg>
+          <arg type="R-ARG1" start="13" end="13">that</arg>
+        </propbank>
+      </example>
+      <example name="passive with secondary attribute" src="">
+        <text>The agency 's first strips issue , collateralized by Freddie Mac 8 % securities pooled into a single security called a Giant , will be divided into interest - only and principal - only securities .</text>
+        <propbank>
+          <rel relloc="14">pooled</rel>
+          <arg type="ARG1" start="9" end="13">Freddie Mac 8 % securities</arg>
+          <arg type="ARG2" start="15" end="21">into a single security called a Giant</arg>
+        </propbank>
+      </example>
+      <example name="Arg0,1" src="">
+        <text>The FTC announced charges against Summit Technology for their pooling of patents related to photorefractive keratectomy .</text>
+        <propbank>
+          <rel relloc="9">pooling</rel>
+          <arg type="ARG0" start="8" end="8">their</arg>
+          <arg type="ARG1" start="10" end="15">of patents related to photorefractive keratectomy</arg>
+        </propbank>
+      </example>
       <note>POOL-V NOTES: Frames file for 'pool' based on sentences in wsj. Verbnet entry 22.1-2. (from pool.01-v predicate notes)</note>
       <note>POOLING-N NOTES: (from pooling.01-n)</note>
-      <roles>
-        <role descr="collector(s), agent(s)" f="pag" n="0">
-          <vnrole vncls="22.1-2-1" vntheta="agent"/>
-        </role>
-        <role descr="thing collected" f="ppt" n="1">
-          <vnrole vncls="22.1-2-1" vntheta="patient"/>
-        </role>
-        <role descr="secondary attribute of arg1" f="gol" n="2"/>
-      </roles>
-      <example name="active" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>If the three companies pool their air-freight businesses, their clout would be considerable.</text>
-        <arg f="" n="0">the three companies</arg>
-        <rel f="">pool</rel>
-        <arg f="" n="1">their air-freight businesses</arg>
-      </example>
-      <example name="passive" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>An increasing number of big Japanese investors are buying up U.S. home mortgages that *trace*-1 have been pooled *trace*-1 and packaged for sale as interest-bearing instruments known as mortgage-backed securities.</text>
-        <rel f="">pooled</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="rcl" n="m">that -&gt; U.S. home mortgages</arg>
-      </example>
-      <example name="passive with secondary attribute" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>The agency's first strips issue, collateralized by [Freddie Mac 8% securities]-1 pooled *trace*-1 into a single security called a Giant, will be divided into interest-only and principal-only securities.</text>
-        <rel f="">pooled</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="2">into a single security called a Giant</arg>
-      </example>
-      <example name="Arg0,1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The FTC announced charges against Summit Technology for their pooling of patents related to photorefractive keratectomy.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">pooling</rel>
-        <arg f="" n="1">of patents related to photorefractive keratectomy</arg>
-      </example>
     </roleset>
     <roleset id="pool.02" name="form a puddle">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">pool</alias>
+        <alias pos="v">pool</alias>
       </aliases>
-      <note>POOL-V NOTES: Frames file for 'pool' based on sentences in wsj. Verbnet entry 22.1-2. (from pool.02-v predicate notes)</note>
       <roles>
-        <role descr="thing forming a puddle" f="ppt" n="1"/>
+        <role descr="thing forming a puddle" f="PPT" n="1"/>
       </roles>
-      <example name="ouch" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>John's hot spilled coffee pooled in his lap.</text>
-        <arg f="" n="1">John's hot spilled coffee</arg>
-        <rel f="">pooled</rel>
-        <arg f="loc" n="m">in his lap</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="ouch" src="">
+        <text>John 's hot spilled coffee pooled in his lap .</text>
+        <propbank>
+          <rel relloc="5">pooled</rel>
+          <arg type="ARG1" start="0" end="4">John 's hot spilled coffee</arg>
+          <arg type="ARGM-LOC" start="6" end="8">in his lap</arg>
+        </propbank>
       </example>
+      <note>POOL-V NOTES: Frames file for 'pool' based on sentences in wsj. Verbnet entry 22.1-2. (from pool.02-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

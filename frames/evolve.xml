@@ -1,92 +1,139 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="evolve">
     <roleset id="evolve.01" name="change form">
       <aliases>
-        <alias framenet="" pos="v" verbnet="48.1.1, 26.2.1">evolve</alias>
-        <alias framenet="" pos="n" verbnet="">evolution</alias>
+        <alias pos="v">evolve</alias>
+        <alias pos="n">evolution</alias>
       </aliases>
+      <roles>
+        <role descr="thing changing" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="appear-48.1.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="grow-26.2.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="grow-26.2.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="end state" f="PRD" n="2">
+          <rolelinks>
+            <rolelink class="grow-26.2.1" resource="VerbNet" version="verbnet3.3">product</rolelink>
+            <rolelink class="grow-26.2.1" resource="VerbNet" version="verbnet3.4">product</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="start state" f="VSP" n="3">
+          <rolelinks>
+            <rolelink class="grow-26.2.1" resource="VerbNet" version="verbnet3.3">material</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="appear-48.1.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="grow-26.2.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="evolve-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">9</lexlink>
+        <lexlink class="evolve-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="grow-26.2.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="evolve-v: end state only" src="">
+        <text>Pitney Bowes acquired the core of what *trace* evolved into Wheeler Group in 1979 by buying Dictaphone Corp.</text>
+        <propbank>
+          <rel relloc="8">evolved</rel>
+          <arg type="ARG1" start="?" end="?">*trace*</arg>
+          <arg type="ARG2" start="9" end="11">into Wheeler Group</arg>
+        </propbank>
+      </example>
+      <example name="ARG1 and ARG3 and ARG2" src="ontonotes nw/p2">
+        <text>Through 25 years of development , Xiamen Special Economic Zone has evolved from the previously isolated coastal defense outpost to a frontline of reform and opening - up .</text>
+        <propbank>
+          <rel relloc="11">evolved</rel>
+          <arg type="ARGM-TMP" start="0" end="4">Through 25 years of development</arg>
+          <arg type="ARG1" start="6" end="9">Xiamen Special Economic Zone</arg>
+          <arg type="ARG3" start="12" end="18">from the previously isolated coastal defense outpost</arg>
+          <arg type="ARG2" start="19" end="27">to a frontline of reform and opening - up</arg>
+        </propbank>
+      </example>
+      <example name="evolution-n: arg1" src="BOLT">
+        <text>They have taken individualism to a degree that it goes against the evolution of one of the most social animals in the world , the human being .</text>
+        <propbank>
+          <rel relloc="12">evolution</rel>
+          <arg type="ARG1" start="13" end="26">of one of the most social animals in the world , the human being</arg>
+        </propbank>
+      </example>
+      <example name="evolution-n: all args" src="internet">
+        <text>Concept of the Buddha , Its evolution from early Buddhism to the trikaya theory .</text>
+        <propbank>
+          <rel relloc="6">evolution</rel>
+          <arg type="ARG1" start="5" end="5">Its</arg>
+          <arg type="ARG3" start="7" end="9">from early Buddhism</arg>
+          <arg type="ARG2" start="10" end="13">to the trikaya theory</arg>
+        </propbank>
+      </example>
       <note>EVOLVE-V NOTES: The framing for the related verbs 'develop' 'grow' and 'change' arewildly dissimilar. Yuck. (from evolve.01-v)</note>
       <note>EVOLUTION-N NOTES: Added by Julia based on BOLT, evolve.01. Corresponds to VNcls grow-26.2, appear-48.1.1 (from evolution.01-n)</note>
-      <roles>
-        <role descr="thing changing" f="ppt" n="1">
-          <vnrole vncls="48.1.1" vntheta="theme"/>
-          <vnrole vncls="26.2.1" vntheta="agent"/>
-        </role>
-        <role descr="end state" f="prd" n="2">
-          <vnrole vncls="26.2.1" vntheta="product"/>
-        </role>
-        <role descr="start state" f="vsp" n="3">
-          <vnrole vncls="26.2.1" vntheta="material"/>
-        </role>
-      </roles>
-      <example name="evolve-v: end state only" src="" type="">
-        <text>Pitney Bowes acquired the core of what *trace* evolved into Wheeler Group in 1979 by buying Dictaphone Corp.</text>
-        <arg f="" n="1">*trace*</arg>
-        <rel f="">evolved</rel>
-        <arg f="" n="2">into Wheeler Group</arg>
-      </example>
-      <example name="ARG1 and ARG3 and ARG2" src="ontonotes nw/p2" type="">
-        <text>Through 25 years of development , Xiamen Special Economic Zone has evolved from the previously isolated coastal defense outpost to a frontline of reform and opening - up .</text>
-        <arg f="tmp" n="m">Through 25 years of development</arg>
-        <arg f="" n="1">Xiamen Special Economic Zone</arg>
-        <rel f="">evolved</rel>
-        <arg f="" n="3">from the previously isolated coastal defense outpost</arg>
-        <arg f="" n="2">to a frontline of reform and opening - up</arg>
-      </example>
-
-      <example name="evolution-n: arg1" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>They have taken individualism to a degree that it goes against the evolution of one of the most social animals in the world , the human being .</text>
-        <rel f="">evolution</rel>
-        <arg f="" n="1">of one of the most social animals in the world, the human being</arg>
-      </example>
-      <example name="evolution-n: all args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Concept of the Buddha, Its evolution from early Buddhism to the trikaya theory.</text>
-        <arg f="" n="1">its</arg>
-        <rel f="">evolution</rel>
-        <arg f="" n="3">from early Buddhism</arg>
-        <arg f="" n="2">to the trikaya theory</arg>
-      </example>
     </roleset>
-    
     <roleset id="evolve.02" name="acquire characteristics through evolution">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">evolve</alias>
-        <alias framenet="" pos="n" verbnet="">evolution</alias>
+        <alias pos="v">evolve</alias>
+        <alias pos="n">evolution</alias>
       </aliases>
+      <roles>
+        <role descr="agent, causing the evolutionary change" f="PAG" n="0"/>
+        <role descr="thing acquring" f="PAG" n="1"/>
+        <role descr="characteristics acquired" f="PPT" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Coming_to_be" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+      </lexlinks>
+      <example name="evolve-v: darwin was right!" src="">
+        <text>These trade - offs would evolve priorities by revealing when the cost of the B-2 became prohibitive .</text>
+        <propbank>
+          <rel relloc="5">evolve</rel>
+          <arg type="ARG1" start="0" end="3">These trade - offs</arg>
+          <arg type="ARGM-MOD" start="4" end="4">would</arg>
+          <arg type="ARG2" start="6" end="6">priorities</arg>
+          <arg type="ARGM-MNR" start="7" end="16">by revealing when the cost of the B-2 became prohibitive</arg>
+        </propbank>
+      </example>
+      <example name="evolve-v: With scientist as ArgA, secondary agent" src="">
+        <text>At age fourteen , Dan was learning to evolve RNA molecules to bind arbitrary ligands .</text>
+        <propbank>
+          <rel relloc="8">evolve</rel>
+          <arg type="ARG0" start="4" end="4">Dan</arg>
+          <arg type="ARG1" start="9" end="10">RNA molecules</arg>
+          <arg type="ARG2" start="11" end="14">to bind arbitrary ligands</arg>
+        </propbank>
+      </example>
+      <example name="evolution-n: args 1 and 2" src="">
+        <text>Furthermore , by means of the perturbative calculation , the non - locality and its evolution of two kinds of entangled coherent states in a thermal reservoir are discussed .</text>
+        <propbank>
+          <rel relloc="15">evolution</rel>
+          <arg type="ARG1" start="14" end="14">its</arg>
+          <arg type="ARG2" start="16" end="26">of two kinds of entangled coherent states in a thermal reservoir</arg>
+        </propbank>
+      </example>
       <note>EVOLVE-V NOTES: Frames file for 'evolve' based on sentences in financial subcorpus. Verbnet class grow-26.2, other framed members include 'develop' and 'grow'. Comparison with 'change'. (from evolve.02-v predicate notes)</note>
       <note>EVOLUTION-N NOTES: Added by Julia based on evolve.02. Corresponds to VNcls appear-48.1.1. (from evolution.02-n)</note>
-      <roles>
-        <note>args moved up by one so that argA in the verb frame is Arg0 here, and so on. The entity undergoing the evolutionary change should not by nature be agentive, which makes it a poor candidate for arg0. (from evolution.02-n)</note>
-        <role descr="agent, causing the evolutionary change" f="pag" n="0"/>
-        <role descr="thing acquring" f="pag" n="1"/>
-        <role descr="characteristics acquired" f="ppt" n="2"/>
-      </roles>
-      <example name="evolve-v: darwin was right!" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>These trade-offs would evolve priorities by revealing when the cost of the B-2 became prohibitive.</text>
-        <arg f="" n="1">These trade-offs</arg>
-        <arg f="mod" n="m">would</arg>
-        <rel f="">evolve</rel>
-        <arg f="" n="2">priorities</arg>
-        <arg f="mnr" n="m">by revealing when the cost of the B-2 became prohibitive</arg>
-      </example>
-      <example name="evolve-v: With scientist as ArgA, secondary agent" src="" type="">
-        <text>At age fourteen, Dan-3 was learning *PRO*-3 to evolve RNA molecules to bindarbitrary ligands.</text>
-        <arg f="" n="0">*PRO*-3</arg>
-        <rel f="">evolve</rel>
-        <arg f="" n="1">RNA molecules</arg>
-        <arg f="" n="2">to bind arbitrary ligands</arg>
-      </example>
-      <example name="evolution-n: args 1 and 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Furthermore, by means of the perturbative calculation, the non-locality and its evolution of two kinds of entangled coherent states in a thermal reservoir are discussed.</text>
-        <arg f="" n="1">its</arg>
-        <rel f="">evolution</rel>
-        <arg f="" n="2">of two kinds of entangled coherent states in a thermal reservoir</arg>
-      </example>
+      <note>args moved up by one so that argA in the verb frame is Arg0 here, and so on. The entity undergoing the evolutionary change should not by nature be agentive, which makes it a poor candidate for arg0. (from evolution.02-n)</note>
     </roleset>
   </predicate>
 </frameset>

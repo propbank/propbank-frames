@@ -1,40 +1,67 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="sequester">
     <roleset id="sequester.01" name="to isolate, isolating">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">sequester</alias>
-        <alias framenet="" pos="n" verbnet="">sequestering</alias>
+        <alias pos="v">sequester</alias>
+        <alias pos="n">sequestering</alias>
       </aliases>
-      <note>SEQUESTER-V NOTES: Member of Vncls concealment-16, steal-10.5. (from sequester.01-v)</note>
-      <note>SEQUESTERING-N NOTES: Added by Julia based on BOLT, sequester.01. Corresponds to Vncls concealment-16, steal-10.5. (from sequestering.01-n)</note>
       <roles>
         <role descr="cause of isolation" f="PAG" n="0">
-          <vnrole vncls="16" vntheta="Agent"/>
-          <vnrole vncls="10.5" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="concealment-16" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="steal-10.5" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="steal-10.5" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="concealment-16" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity sequestered" f="PPT" n="1">
-          <vnrole vncls="16" vntheta="Patient"/>
-          <vnrole vncls="10.5" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="concealment-16" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="steal-10.5" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="steal-10.5" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+            <rolelink class="concealment-16" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="active"/>
-        <text>Credit Agricole asked [a Milan court]-1 [*-1]to sequester the Nuovo Banco shares , the Italian news agency ANSA reported [0] [*T*-2] .</text>
-        <arg f="" n="0">[*-1]</arg>
-        <rel f="">sequester</rel>
-        <arg f="" n="1">the Nuovo Banco shares</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="concealment-16" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="steal-10.5" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="steal-10.5" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="concealment-16" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="transitive" src="">
+        <text>Credit Agricole asked a Milan court to sequester the Nuovo Banco shares , the Italian news agency ANSA reported .</text>
+        <propbank>
+          <rel relloc="7">sequester</rel>
+          <arg type="ARG0" start="3" end="5">a Milan court</arg>
+          <arg type="ARG1" start="8" end="11">the Nuovo Banco shares</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG1" src="ontonotes nw/wsj/03/wsj_0312" type="">
+      <example name="ARG0 and ARG1" src="ontonotes nw/wsj/03/wsj_0312">
         <text>At times I sequester my mind When I must think with precision , Detached from all other thoughts While trying to reach a decision .</text>
-        <arg f="tmp" n="m">At times</arg>
-        <arg f="" n="0">I</arg>
-        <rel f="">sequester</rel>
-        <arg f="" n="1">my mind</arg>
-        <arg f="tmp" n="m">When I must think with precision</arg>
-        <arg f="prd" n="m">Detached from all other thoughts While trying to reach a decision</arg>
+        <propbank>
+          <rel relloc="3">sequester</rel>
+          <arg type="ARGM-TMP" start="0" end="1">At times</arg>
+          <arg type="ARG0" start="2" end="2">I</arg>
+          <arg type="ARG1" start="4" end="5">my mind</arg>
+          <arg type="ARGM-TMP" start="6" end="11">When I must think with precision</arg>
+          <arg type="ARGM-PRD" start="13" end="23">Detached from all other thoughts While trying to reach a decision</arg>
+        </propbank>
       </example>
-
+      <note>SEQUESTER-V NOTES: Member of Vncls concealment-16, steal-10.5. (from sequester.01-v)</note>
+      <note>SEQUESTERING-N NOTES: Added by Julia based on BOLT, sequester.01. Corresponds to Vncls concealment-16, steal-10.5. (from sequestering.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

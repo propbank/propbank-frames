@@ -1,49 +1,79 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="transmit">
     <roleset id="transmit.01" name="send (electronically), send or pass on">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">transmit</alias>
-        <alias framenet="" pos="n" verbnet="">transmission</alias>
+        <alias pos="v">transmit</alias>
+        <alias pos="n">transmission</alias>
       </aliases>
-      <note>TRANSMIT-V NOTES: Member of Vncls send-11.1-1. Checked by Julia, 11/2010. (from transmit.01-v)</note>
-      <note>TRANSMISSION-N NOTES: ~transmit.01 (from transmission.01-n)</note>
       <roles>
         <role descr="sender" f="PAG" n="0">
-          <vnrole vncls="11.1-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="send-11.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="send-11.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="sent" f="PPT" n="1">
-          <vnrole vncls="11.1-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="send-11.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="send-11.1-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="sent-to" f="GOL" n="2">
-          <vnrole vncls="11.1-1" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink class="send-11.1-1" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="send-11.1-1" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>Already entered in the Big Board's computers and transmitted *trace*-1 to their post were [sell orders for 65,000 UAL shares]-1.</text>
-        <arg f="tmp" n="m">Already</arg>
-        <rel f="">transmitted</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="2">to their post</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Communication" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Transfer" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="send-11.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="transmit-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">9</lexlink>
+        <lexlink class="send-11.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="passive" src="">
+        <text>Already entered in the Big Board 's computers and transmitted to their post were sell orders for 65,000 UAL shares .</text>
+        <propbank>
+          <rel relloc="9">transmitted</rel>
+          <arg type="ARGM-TMP" start="0" end="0">Already</arg>
+          <arg type="ARG1" start="14" end="19">sell orders for 65,000 UAL shares</arg>
+          <arg type="ARG2" start="10" end="12">to their post</arg>
+        </propbank>
       </example>
-      <example name="Medical: 'sending' pathogens" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>[Influenza virus]-1 can be directly transmitted *-1 from pigs to people.</text>
-        <arg f="mod" n="m">can</arg>
-        <arg f="mnr" n="m">directly</arg>
-        <rel f="">transmitted</rel>
-        <arg f="" n="1">*-1</arg>
-        <arg f="" n="0">from pigs</arg>
-        <arg f="" n="2">to people</arg>
+      <example name="Medical: 'sending' pathogens" src="">
+        <text>Influenza virus can be directly transmitted from pigs to people .</text>
+        <propbank>
+          <rel relloc="5">transmitted</rel>
+          <arg type="ARGM-MOD" start="2" end="2">can</arg>
+          <arg type="ARGM-MNR" start="4" end="4">directly</arg>
+          <arg type="ARG1" start="0" end="1">Influenza virus</arg>
+          <arg type="ARG0" start="6" end="7">from pigs</arg>
+          <arg type="ARG2" start="8" end="9">to people</arg>
+        </propbank>
       </example>
-      <example name="Arg0,1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>What does novocain do to neurons and their transmission of impulses?</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">transmission</rel>
-        <arg f="" n="1">of impulses</arg>
+      <example name="Arg0,1" src="">
+        <text>What does novocain do to neurons and their transmission of impulses ?</text>
+        <propbank>
+          <rel relloc="8">transmission</rel>
+          <arg type="ARG0" start="7" end="7">their</arg>
+          <arg type="ARG1" start="9" end="10">of impulses</arg>
+        </propbank>
       </example>
+      <note>TRANSMIT-V NOTES: Member of Vncls send-11.1-1. Checked by Julia, 11/2010. (from transmit.01-v)</note>
+      <note>TRANSMISSION-N NOTES: ~transmit.01 (from transmission.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

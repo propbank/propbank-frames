@@ -1,75 +1,128 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="commend">
     <roleset id="commend.01" name="give praise">
       <aliases>
-        <alias framenet="Judgment_communication Praiseworthiness" pos="v" verbnet="">commend</alias>
-        <alias framenet="" pos="n" verbnet="">commendation</alias>
+        <alias pos="v">commend</alias>
+        <alias pos="n">commendation</alias>
       </aliases>
+      <roles>
+        <role descr="entity giving praise" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">communicator</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity being praised" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">addressee</rolelink>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">evaluee</rolelink>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">topic</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="praised for what (if in addition to arg1)" f="CAU" n="2">
+          <rolelinks>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">reason</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Judgment_communication" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Praiseworthiness" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="judgment-33.1-1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+        <lexlink class="commend-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">6</lexlink>
+      </lexlinks>
+      <example name="commend-v: just transitive" src="">
+        <text>National leaders stopped by his stand to commend his achievements .</text>
+        <propbank>
+          <rel relloc="7">commend</rel>
+          <arg type="ARG0" start="0" end="1">National leaders</arg>
+          <arg type="ARG1" start="8" end="9">his achievements</arg>
+        </propbank>
+      </example>
+      <example name="commend-v: with grounds as gerund" src="criticize.01">
+        <text>The internal investigation also commended MiniScribe 's auditors , Coopers &amp; Lybrand , for allegedly ignoring numerous red flags .</text>
+        <propbank>
+          <rel relloc="4">commended</rel>
+          <arg type="ARG0" start="0" end="2">The internal investigation</arg>
+          <arg type="ARGM-DIS" start="3" end="3">also</arg>
+          <arg type="ARG1" start="5" end="11">MiniScribe 's auditors , Coopers &amp; Lybrand</arg>
+          <arg type="ARG2" start="13" end="18">for allegedly ignoring numerous red flags</arg>
+        </propbank>
+      </example>
+      <example name="commend-v: with grounds as full clause" src="criticize.01">
+        <text>A Poquet spokesman , for example , commends the Atari Portfolio because it requires three batteries while the Poquet needs only two .</text>
+        <propbank>
+          <rel relloc="7">commends</rel>
+          <arg type="ARG0" start="0" end="2">A Poquet spokesman</arg>
+          <arg type="ARGM-DIS" start="4" end="5">for example</arg>
+          <arg type="ARG1" start="8" end="10">the Atari Portfolio</arg>
+          <arg type="ARG2" start="11" end="21">because it requires three batteries while the Poquet needs only two</arg>
+        </propbank>
+      </example>
+      <example name="commendation-n" src="BOLT-6">
+        <text>To err is human . We should give him a chance , a chance of turning over a new leaf , and the commendation for bravely acting for justice is also an encouragement to him . We ca n't deny a person 's whole life just because of one thing .</text>
+        <propbank>
+          <rel relloc="23">commendation</rel>
+          <arg type="ARG2" start="24" end="28">for bravely acting for justice</arg>
+        </propbank>
+      </example>
       <note>COMMEND-V NOTES: Based on wsj and automatic expansion via verbnet; adjectival 'commendable' based on BOLT-4,5; nominal 'commendation' based on BOLT-6. Member of VNcls judgement-33. (from commend.01-v)</note>
       <note>COMMENDATION-N NOTES: Automatically created by Julia as an alias file for unification. (from commendation.01-n)</note>
-      <roles>
-        <role descr="entity giving praise" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
-        </role>
-        <role descr="entity being praised" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
-        </role>
-        <role descr="praised for what (if in addition to arg1)" f="cau" n="2"/>
-      </roles>
-      <example name="commend-v: just transitive" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>[National leaders]-1 stopped by his stand *trace*-1 to commend his achievements.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">commend</rel>
-        <arg f="" n="1">his achievements</arg>
-      </example>
-      <example name="commend-v: with grounds as gerund" src="criticize.01" type="">
-        <text>The internal investigation also commended MiniScribe's auditors, Coopers&amp; Lybrand, for allegedly ignoring numerous red flags.</text>
-        <arg f="" n="0">The internal investigation</arg>
-        <arg f="dis" n="m">also</arg>
-        <rel f="">commended</rel>
-        <arg f="" n="1">MiniScribe's auditors, Coopers&amp; Lybrand,</arg>
-        <arg f="" n="2">for allegedly ignoring numerous red flags</arg>
-      </example>
-      <example name="commend-v: with grounds as full clause" src="criticize.01" type="">
-        <text>A Poquet spokesman, for example, commends the Atari Portfolio because it requires three batteries while the Poquet needs only two.</text>
-        <arg f="" n="0">A Poquet spokesman</arg>
-        <arg f="dis" n="m">for example</arg>
-        <rel f="">commends</rel>
-        <arg f="" n="1">the Atari Portfolio</arg>
-        <arg f="" n="2">because it requires three batteries while the Poquet needs only two</arg>
-      </example>
-      <example name="commendation-n" src="BOLT-6" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>To err is human . We should give him a chance , a chance of turning over a new leaf , and the commendation for bravely acting for justice is also an encouragement to him . We ca n't deny a person 's whole life just because of one thing .</text>
-        <rel f="">commendation</rel>
-        <arg f="" n="2">for bravely acting for justice</arg>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="commendable">
     <roleset id="commendable.02" name="give praise">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">commendable</alias>
+        <alias pos="j">commendable</alias>
       </aliases>
-      <note>COMMENDABLE-J NOTES: Automatically created by Julia for unification as an alias file. (from commendable.01-j)</note>
       <roles>
-        <role descr="entity giving praise" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+        <role descr="entity giving praise" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="entity being praised" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+        <role descr="entity being praised" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="praised for what (if in addition to arg1)" f="cau" n="2"/>
+        <role descr="praised for what (if in addition to arg1)" f="CAU" n="2"/>
       </roles>
-      <example name="commendable-j" src="BOLT-4,5" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="judgment-33.1-1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+      </lexlinks>
+      <example name="commendable-j" src="BOLT-4,5">
         <text>It goes without saying that his bravery is truly commendable .</text>
-        <arg f="" n="1">his bravery</arg>
-        <arg f="adv" n="m">truly</arg>
-        <rel f="">commendable</rel>
+        <propbank>
+          <rel relloc="9">commendable</rel>
+          <arg type="ARG1" start="5" end="6">his bravery</arg>
+          <arg type="ARGM-ADV" start="8" end="8">truly</arg>
+        </propbank>
       </example>
+      <note>COMMENDABLE-J NOTES: Automatically created by Julia for unification as an alias file. (from commendable.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,64 +1,133 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="cite">
     <roleset id="cite.01" name="refer to">
       <aliases>
-        <alias framenet="Adducing" pos="v" verbnet="">cite</alias>
-        <alias framenet="" pos="n" verbnet="">citation</alias>
+        <alias pos="v">cite</alias>
+        <alias pos="n">citation</alias>
       </aliases>
+      <roles>
+        <role descr="citer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing cited" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="secondary attribute, cited-as" f="PRD" n="2">
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">attribute</rolelink>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.4">attribute</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Adducing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="cite-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">102</lexlink>
+        <lexlink class="cite-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+        <lexlink class="judgment-33.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="cite-v: transitive agentive" src="">
+        <text>They cite a lack of imbalances that provide early warning signals of a downturn .</text>
+        <propbank>
+          <rel relloc="1">cite</rel>
+          <arg type="ARG0" start="0" end="0">They</arg>
+          <arg type="ARG1" start="2" end="13">a lack of imbalances that provide early warning signals of a downturn</arg>
+        </propbank>
+      </example>
+      <example name="cite-v: with attribute" src="">
+        <text>He cites the recent deal between Mitsubishi Estate Co and the Rockefeller Group as evidence .</text>
+        <propbank>
+          <rel relloc="1">cites</rel>
+          <arg type="ARG0" start="0" end="0">He</arg>
+          <arg type="ARG1" start="2" end="12">the recent deal between Mitsubishi Estate Co and the Rockefeller Group</arg>
+          <arg type="ARG2" start="13" end="14">as evidence</arg>
+        </propbank>
+      </example>
+      <example name="citation-n" src="">
+        <text>Scalia was correct in his citation of writer 's work .</text>
+        <propbank>
+          <rel relloc="5">citation</rel>
+          <arg type="ARG0" start="4" end="4">his</arg>
+          <arg type="ARG1" start="6" end="9">of writer 's work</arg>
+        </propbank>
+      </example>
       <note>CITE-V NOTES: No VNcls. (from cite.01-v)</note>
       <note>CITATION-N NOTES: (from citation.01-n)</note>
-      <roles>
-        <role descr="citer" f="PAG" n="0"/>
-        <role descr="thing cited" f="PPT" n="1"/>
-        <role descr="secondary attribute, cited-as" f="prd" n="2"/>
-      </roles>
-      <example name="cite-v: transitive agentive" src="" type="">
-        <text>They cite a lack of imbalances that provide early warning signals of a downturn.</text>
-        <arg f="" n="0">They</arg>
-        <rel f="">cite</rel>
-        <arg f="" n="1">a lack of imbalances that provide early warning signals of a downturn.</arg>
-      </example>
-      <example name="cite-v: with attribute" src="" type="">
-        <text>He cites the recent deal between Mitsubishi Estate Co and the Rockefeller Group as evidence.</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">cites</rel>
-        <arg f="" n="1">the recent deal between Mitsubishi Estate Co and the Rockefeller Group</arg>
-        <arg f="" n="2">as evidence</arg>
-      </example>
-      <example name="citation-n" src="" type="">
-        <text>Scalia was correct in his citation of writer's work. </text>
-        <arg f="" n="0">his</arg>
-        <rel f="">citation</rel>
-        <arg f="" n="1">of the writer's work</arg>
-      </example>
     </roleset>
     <roleset id="cite.02" name="give legal summons, ticket">
       <aliases>
-        <alias framenet="Judgment_communication" pos="v" verbnet="">cite</alias>
-        <alias framenet="" pos="n" verbnet="">citation</alias>
+        <alias pos="v">cite</alias>
+        <alias pos="n">citation</alias>
       </aliases>
-      <note>CITE-V NOTES: No VNcls. (from cite.02-v)</note>
       <roles>
-        <note>These two senses can be difficult to distinguish, especially if it's acriminal misdeed that's being referred to.  If you really can't tell, try to default to the"refer" sense, since that's less specific. (from cite.02-v)</note>
-        <role descr="giver of ticket" f="PAG" n="0"/>
-        <role descr="entity receiving citation" f="PPT" n="1"/>
-        <role descr="criminal misdeed" f="cau" n="2"/>
+        <role descr="giver of ticket" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">communicator</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity receiving citation" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">addressee</rolelink>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">evaluee</rolelink>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">topic</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="criminal misdeed" f="CAU" n="2">
+          <rolelinks>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">reason</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="cite-v: bummer dude" src="" type="">
-        <text>The Labor Department cited USX Corp for numerous health and safety violations at two Pennsylvania plants.</text>
-        <arg f="" n="0">The Labor Department</arg>
-        <rel f="">cited</rel>
-        <arg f="" n="1">USX Corp</arg>
-        <arg f="" n="2">for numerous health and safety violations at two Pennsylvania plants.</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Judgment_communication" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+      </lexlinks>
+      <example name="cite-v: bummer dude" src="">
+        <text>The Labor Department cited USX Corp for numerous health and safety violations at two Pennsylvania plants .</text>
+        <propbank>
+          <rel relloc="3">cited</rel>
+          <arg type="ARG0" start="0" end="2">The Labor Department</arg>
+          <arg type="ARG1" start="4" end="5">USX Corp</arg>
+          <arg type="ARG2" start="6" end="15">for numerous health and safety violations at two Pennsylvania plants</arg>
+        </propbank>
       </example>
-      <example name="citation-n" src="" type="">
-        <text>My 13-year-old son got a citation for riding his bicycle without a helmet.</text>
-        <arg f="" n="1">My 13-year-old son</arg>
-        <arg f="lvb" n="m">got</arg>
-        <rel f="">citation</rel>
-        <arg f="" n="2">for riding his bicycle without a helmet</arg>
+      <example name="citation-n" src="">
+        <text>My 13 - year - old son got a citation for riding his bicycle without a helmet .</text>
+        <propbank>
+          <rel relloc="9">citation</rel>
+          <arg type="ARG1" start="0" end="6">My 13 - year - old son</arg>
+          <arg type="ARGM-LVB" start="7" end="7">got</arg>
+          <arg type="ARG2" start="10" end="16">for riding his bicycle without a helmet</arg>
+        </propbank>
       </example>
+      <note>CITE-V NOTES: No VNcls. (from cite.02-v)</note>
+      <note>These two senses can be difficult to distinguish, especially if it's acriminal misdeed that's being referred to.  If you really can't tell, try to default to the"refer" sense, since that's less specific. (from cite.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

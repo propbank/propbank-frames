@@ -1,27 +1,49 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="debug">
     <roleset id="debug.01" name="remove faults from">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">debug</alias>
+        <alias pos="v">debug</alias>
       </aliases>
-      <note>DEBUG-V NOTES: Framed by Neville. (from debug.01-v)</note>
       <roles>
         <role descr="debugger" f="PAG" n="0">
-          <vnrole vncls="10.8" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="debone-10.8" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="debone-10.8" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="software, machine" f="DIR" n="1">
-          <vnrole vncls="10.8" vntheta="Source"/>
+          <rolelinks>
+            <rolelink class="debone-10.8" resource="VerbNet" version="verbnet3.3">source</rolelink>
+            <rolelink class="debone-10.8" resource="VerbNet" version="verbnet3.4">source</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG1 and ARG0" src="ontonotes nw/xinhua/00/chtb_0041" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="debone-10.8" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="debone-10.8" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="ARG1 and ARG0" src="ontonotes nw/xinhua/00/chtb_0041">
         <text>The production line newly put into operation this time was self - designed , self - developed , and self - debugged by the company .</text>
-        <arg f="" n="1">The production line newly put into operation this time</arg>
-        <arg f="mnr" n="m">self</arg>
-        <rel f="">debugged</rel>
-        <arg f="" n="0">by the company</arg>
+        <propbank>
+          <rel relloc="21">debugged</rel>
+          <arg type="ARG1" start="0" end="8">The production line newly put into operation this time</arg>
+          <arg type="ARGM-MNR" start="19" end="19">self</arg>
+          <arg type="ARG0" start="22" end="24">by the company</arg>
+        </propbank>
       </example>
-
+      <note>DEBUG-V NOTES: Framed by Neville. (from debug.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

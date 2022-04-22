@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
+<frameset>
+  <predicate lemma="foreign">
+    <roleset id="foreign.01" name="from outside the group, set">
+      <aliases>
+        <alias pos="j">foreign</alias>
+      </aliases>
+      <roles>
+        <role descr="foreign entity" f="PPT" n="1" />
+        <role descr="foreign to what (group/set not part of)" f="VSP" n="2" />
+        <role descr="perceiver (if separate from arg2)" f="GOL" n="3" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <example name="foreign-j" src="THYME">
+        <text>There is a prominent foreign body reaction within the small - bowel .</text>
+        <propbank>
+          <rel relloc="4">foreign</rel>
+          <arg type="ARG1" start="5" end="5">body</arg>
+        </propbank>
+        <amr version="THYME 1.0">
+          (r / react-01
+            :ARG1 (b / body
+              :ARG1-of (f / foreign-01))
+            :location (a / anatomical-site :name (n / name :op1 "small" :op2 "bowel"))
+            :degree (p / prominent)) 
+        </amr>
+      </example>
+      <example name="foreign-j" src="THYME">
+        <text>I suppose this all feels pretty foreign to you .</text>
+        <propbank>
+          <rel relloc="6">foreign</rel>
+          <arg type="ARG1" start="2" end="3">this all</arg>
+          <arg type="ARGM-EXT" start="5" end="5">pretty</arg>
+        </propbank>
+        <amr version="THYME 1.0">
+          (s / suppose-01
+            :ARG0 (i / i)
+            :ARG1 (f / feel-01
+              :ARG0 (y / you)
+              :ARG1 (f2 / foreign-01
+                :ARG1 (t / this
+                  :mod (a / all))
+                :ARG3 y
+                :degree (p / pretty))))
+        </amr>
+      </example>
+      <note>FOREIGN-J: Added for THYME AMR.</note>
+    </roleset>
+  </predicate>
+</frameset>

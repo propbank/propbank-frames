@@ -1,70 +1,105 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="leak">
     <roleset id="leak.01" name="leak, let forth water sparingly, letting water through accidentally or because of damage, let forth">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">leak</alias>
-        <alias framenet="" pos="n" verbnet="">leak</alias>
-        <alias framenet="" pos="n" verbnet="">leakage</alias>
-        <alias framenet="" pos="n" verbnet="">leaking</alias>
+        <alias pos="v">leak</alias>
+        <alias pos="n">leak</alias>
+        <alias pos="n">leakage</alias>
+        <alias pos="n">leaking</alias>
+        <argalias arg="0" pos="n">leaker</argalias>
       </aliases>
+      <roles>
+        <role descr="thing leaking" f="DIR" n="0">
+          <rolelinks>
+            <rolelink class="substance_emission-43.4" resource="VerbNet" version="verbnet3.3">source</rolelink>
+            <rolelink class="Fluidic_motion" resource="FrameNet" version="1.7">source</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="substance leaked" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="substance_emission-43.4" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Fluidic_motion" resource="FrameNet" version="1.7">fluid</rolelink>
+            <rolelink class="Reveal_secret" resource="FrameNet" version="1.7">information</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Fluidic_motion" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Reveal_secret" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="substance_emission-43.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Broadcast" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="leak-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">25</lexlink>
+        <lexlink class="leak-n.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">25</lexlink>
+        <lexlink class="leak-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+      </lexlinks>
+      <example name="intransitived" src="">
+        <text>At stake was an $ 80,000 settlement involving who should pay what share of cleanup costs at the site of a former gas station , where underground fuel tanks had leaked and contaminated the soil .</text>
+        <propbank>
+          <rel relloc="30">leaked</rel>
+          <arg type="ARG0" start="26" end="28">underground fuel tanks</arg>
+        </propbank>
+      </example>
+      <example name="transitive" src="">
+        <text>He is also accused of lying under oath and of leaking information obtained from a wiretap he supervised .</text>
+        <propbank>
+          <rel relloc="10">leaking</rel>
+          <arg type="ARG0" start="0" end="0">He</arg>
+          <arg type="ARG1" start="11" end="17">information obtained from a wiretap he supervised</arg>
+        </propbank>
+      </example>
+      <example name="Arg0,1" src="">
+        <text>The roof 's leaking water all winter lead to a massive mold infestation above the garage come spring .</text>
+        <propbank>
+          <rel relloc="3">leaking</rel>
+          <arg type="ARG0" start="0" end="2">The roof 's</arg>
+          <arg type="ARG1" start="4" end="4">water</arg>
+          <arg type="ARGM-TMP" start="5" end="6">all winter</arg>
+        </propbank>
+      </example>
+      <example name="arg 1" src="">
+        <text>national security leaks</text>
+        <propbank>
+          <rel relloc="2">leaks</rel>
+          <arg type="ARG1" start="0" end="1">national security</arg>
+        </propbank>
+      </example>
+      <example name="arg 0" src="">
+        <text>The CIA leak</text>
+        <propbank>
+          <rel relloc="2">leak</rel>
+          <arg type="ARG0" start="1" end="1">CIA</arg>
+        </propbank>
+      </example>
+      <example name="gol for leaked to" src="">
+        <text>the leaks to The New York Times</text>
+        <propbank>
+          <rel relloc="1">leaks</rel>
+          <arg type="ARGM-GOL" start="2" end="6">to The New York Times</arg>
+        </propbank>
+      </example>
+      <example name="non-information leak with gol for end point" src="">
+        <text>radioactive leaks into the ocean</text>
+        <propbank>
+          <rel relloc="1">leaks</rel>
+          <arg type="ARG1" start="0" end="0">radioactive</arg>
+          <arg type="ARGM-GOL" start="2" end="4">into the ocean</arg>
+        </propbank>
+      </example>
       <note>LEAK-V NOTES: Frames file for 'leak' based on sentences in financial subcorpus. Verbnet entry 43.4, other framed members include exude. Comparison with exude. (from leak.01-v predicate notes)</note>
       <note>LEAKING-N NOTES: (from leaking.01-n)</note>
       <note>LEAK-N NOTES: Based on sentences in nouns-00040. Comparison to leak.01-v. VN class say-37.7 and substance_emission-43.4. Framed by Katie. (from leak.01-n)</note>
-      <roles>
-        <role descr="thing leaking" f="DIR" n="0">
-          <vnrole vncls="43.4" vntheta="Source"/>
-        </role>
-        <role descr="substance leaked" f="PPT" n="1">
-          <vnrole vncls="43.4" vntheta="Theme"/>
-        </role>
-      </roles>
-      <example name="intransitived" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="past" voice="active"/>
-        <text>At stake was an $80,000 settlement involving who should pay what share of cleanup costs at the site of a former gas station, where underground fuel tanks had leaked and contaminated the soil.</text>
-        <arg f="" n="0">underground fuel tanks</arg>
-        <rel f="">leaked</rel>
-      </example>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="ns" voice="ns"/>
-        <text>He-1 is also accused of lying under oath and of *trace*-1 leaking information obtained from a wiretap he supervised.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">leaking</rel>
-        <arg f="" n="1">information obtained from a wiretap he supervised</arg>
-      </example>
-      <example name="Arg0,1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The roof's leaking water all winter lead to a massive mold infestation above the garage come spring.</text>
-        <arg f="" n="0">The roof's</arg>
-        <rel f="">leaking</rel>
-        <arg f="" n="1">water</arg>
-        <arg f="tmp" n="m">all winter</arg>
-      </example>
-      <example name="arg 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>national security leaks</text>
-        <arg f="" n="1">national security</arg>
-        <rel f="">leaks</rel>
-      </example>
-      <example name="arg 0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The CIA leak</text>
-        <arg f="" n="0">CIA</arg>
-        <rel f="">leak</rel>
-      </example>
-      <example name="gol for leaked to" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>the leaks to The New York Times</text>
-        <rel f="">leaks</rel>
-        <arg f="gol" n="m">to The New York Times</arg>
-      </example>
-      <example name="non-information leak with gol for end point" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>radioactive leaks into the ocean</text>
-        <arg f="" n="1">radioactive</arg>
-        <rel f="">leaks</rel>
-        <arg f="gol" n="m">into the ocean</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

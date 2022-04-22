@@ -1,88 +1,133 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="breathe">
     <roleset id="breathe.01" name="inhale and exhale air">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">breathing</alias>
-        <alias framenet="breathing" pos="n" verbnet="">breath</alias>
-        <alias framenet="" pos="v" verbnet="">breathe</alias>
-        <alias framenet="" pos="l" verbnet="">take_breath</alias>
+        <alias pos="n">breathing</alias>
+        <alias pos="n">breath</alias>
+        <alias pos="v">breathe</alias>
+        <alias pos="l">take_breath</alias>
       </aliases>
+      <roles>
+        <role descr="breather" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="breathe-40.1.2-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="breathe-40.1.2-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="air, we hope" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="breathe-40.1.2-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="breathe-40.1.2-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="direction" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="breathe-40.1.2-1" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="breathe-40.1.2-1" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Breathing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="breathe-40.1.2-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="breathe-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">10</lexlink>
+        <lexlink class="breath-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+        <lexlink class="breathe-v.7" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="breathe-40.1.2-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="intransitive with direction" src="">
+        <text>With Mr. Icahn breathing down his neck , however , Mr. Corry may have little choice but to sell at a weak price , even if it means losing some steel - related tax - loss carryforwards .</text>
+        <propbank>
+          <rel relloc="3">breathing</rel>
+          <arg type="ARG0" start="1" end="2">Mr. Icahn</arg>
+          <arg type="ARG2" start="4" end="6">down his neck</arg>
+        </propbank>
+      </example>
+      <example name="ARG0 and ARG1" src="ontonotes bn/cnn/00/cnn_0012">
+        <text>I think we feel real good , and , you know , after that Anaheim series , I think this whole team took a deep breath of relief and said , Okay , we 're finally in , Let 's go out and do our thing .</text>
+        <propbank>
+          <rel relloc="25">breath</rel>
+          <arg type="ARG0" start="19" end="21">this whole team</arg>
+          <arg type="ARGM-LVB" start="22" end="22">took</arg>
+          <arg type="ARGM-MNR" start="24" end="24">deep</arg>
+          <arg type="ARG1" start="26" end="27">of relief</arg>
+        </propbank>
+      </example>
+      <example name="different direction" src="">
+        <text>Breathe in , breathe out .</text>
+        <propbank>
+          <rel relloc="0">Breathe</rel>
+          <arg type="ARG2" start="1" end="1">in</arg>
+        </propbank>
+      </example>
+      <example name="Arg 0" src="">
+        <text>He catches his breath</text>
+        <propbank>
+          <rel relloc="3">breath</rel>
+          <arg type="ARG0" start="2" end="2">his</arg>
+        </propbank>
+      </example>
+      <example name="both args" src="">
+        <text>his first breath of relief</text>
+        <propbank>
+          <rel relloc="2">breath</rel>
+          <arg type="ARG0" start="0" end="0">his</arg>
+          <arg type="ARGM-TMP" start="1" end="1">first</arg>
+          <arg type="ARG1" start="3" end="4">of relief</arg>
+        </propbank>
+      </example>
+      <example name="Arg0" src="">
+        <text>Mrs. Marple 's breathing was inhibited by her pneumonia .</text>
+        <propbank>
+          <rel relloc="3">breathing</rel>
+          <arg type="ARG0" start="0" end="2">Mrs. Marple 's</arg>
+        </propbank>
+      </example>
       <note>BREATHE-V NOTES: Be careful to distinguish prepositional phrases describing the airargument from PP-LOCs: John tried to breathe under water.similarly breathe out. (from breathe.01-v)</note>
       <note>BREATH-N NOTES: Added due to expansion of Nombank. Comparison to 'breathe.01'. Vn classesbreathe-40.1.2-1 and entity_specific_modes_beign-47.2. FN class breathing. Framed by Katie. (from breath.01-n)</note>
       <note>BREATHING-N NOTES: Corresponds with breathe.01. Framed by anwen april 2011 (from breathing.01-n)</note>
-      <roles>
-        <role descr="breather" f="pag" n="0">
-          <vnrole vncls="40.1.2-1" vntheta="agent"/>
-        </role>
-        <role descr="air, we hope" f="ppt" n="1">
-          <vnrole vncls="40.1.2-1" vntheta="theme"/>
-        </role>
-        <role descr="direction" f="gol" n="2">
-          <vnrole vncls="40.1.2-1" vntheta="destination"/>
-        </role>
-      </roles>
-      <example name="intransitive with direction" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
-        <text>With Mr. Icahn breathing down his neck, however, Mr. Corry may have little choice but to sell at a weak price, even if it means losing some steel-related tax-loss carryforwards.</text>
-        <arg f="" n="0">Mr. Icahn</arg>
-        <rel f="">breathing</rel>
-        <arg f="" n="2">down his neck</arg>
-      </example>
-      
-      <example name="ARG0 and ARG1" src="ontonotes bn/cnn/00/cnn_0012" type="">
-        <text>I think we feel real good , and , you know , after that Anaheim series , I think this whole team took a deep breath of relief and said , Okay , we 're finally in , Let 's go out and do our thing .</text>
-        <arg f="" n="0">this whole team</arg>
-        <arg f="lvb" n="m">took</arg>
-        <arg f="mnr" n="m">deep</arg>
-        <rel f="">breath</rel>
-        <arg f="" n="1">of relief</arg>
-      </example>
-
-      <example name="different direction" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="ns" voice="active"/>
-        <text>*trace* Breathe in, *trace* breathe out.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">breathe</rel>
-        <arg f="" n="2">in</arg>
-      </example>
-      <example name="Arg 0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>He catches his breath</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">breath</rel>
-      </example>
-      <example name="both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>his first breath of relief</text>
-        <arg f="" n="0">his</arg>
-        <arg f="tmp" n="m">first</arg>
-        <rel f="">breath</rel>
-        <arg f="" n="1">of relief</arg>
-      </example>
-      <example name="Arg0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Mrs. Marple's breathing was inhibited by her pneumonia.</text>
-        <arg f="" n="0">Mrs. Marple's</arg>
-        <rel f="">breathing</rel>
-      </example>
     </roleset>
     <roleset id="breathe.02" name="say in a breathy manner">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">breathe</alias>
+        <alias pos="v">breathe</alias>
       </aliases>
-      <note>BREATHE-V NOTES: Frames file for 'breathe' based on sentences in financial subcorpusand automatic expansion via verbnet, even though the predicted framesare irrelevant. (from breathe.02-v predicate notes)</note>
       <roles>
-        <role descr="speaker" f="pag" n="0"/>
-        <role descr="utterance breathed" f="ppt" n="1"/>
-        <role descr="listener" f="gol" n="2"/>
+        <role descr="speaker" f="PAG" n="0"/>
+        <role descr="utterance breathed" f="PPT" n="1"/>
+        <role descr="listener" f="GOL" n="2"/>
       </roles>
-      <example name="Quote" src="" type="">
-        <text>["You are Hurt!"]-1 she breathed *T*-1.</text>
-        <arg f="" n="0">she</arg>
-        <rel f="">breathed</rel>
-        <arg f="" n="1">*T*-1</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="Quote" src="">
+        <text>" You are Hurt ! " she breathed .</text>
+        <propbank>
+          <rel relloc="7">breathed</rel>
+          <arg type="ARG0" start="6" end="6">she</arg>
+          <arg type="ARG1" start="0" end="5">" You are Hurt ! "</arg>
+        </propbank>
       </example>
+      <note>BREATHE-V NOTES: Frames file for 'breathe' based on sentences in financial subcorpusand automatic expansion via verbnet, even though the predicted framesare irrelevant. (from breathe.02-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

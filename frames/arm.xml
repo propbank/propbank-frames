@@ -1,77 +1,142 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="arm">
     <roleset id="arm.01" name="to equip or provide">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">arm</alias>
+        <alias pos="v">arm</alias>
       </aliases>
-      <note>ARM-V NOTES: Based on WSJ. Member of Vncls equip-13.4.2-1. (from arm.01-v)</note>
       <roles>
-        <role descr="equiper, provider, agent" f="pag" n="0">
-          <vnrole vncls="13.4.2-1" vntheta="Agent"/>
+        <role descr="equiper, provider, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="equip-13.4.2-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Supply" resource="FrameNet" version="1.7">recipient</rolelink>
+            <rolelink class="Supply" resource="FrameNet" version="1.7">theme</rolelink>
+            <rolelink class="Giving" resource="FrameNet" version="1.7">recipient</rolelink>
+            <rolelink class="Giving" resource="FrameNet" version="1.7">donor</rolelink>
+            <rolelink class="Giving" resource="FrameNet" version="1.7">theme</rolelink>
+            <rolelink class="equip-13.4.2-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="entity armed" f="gol" n="1">
-          <vnrole vncls="13.4.2-1" vntheta="Recipient"/>
+        <role descr="entity armed" f="GOL" n="1">
+          <rolelinks>
+            <rolelink class="equip-13.4.2-1" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+            <rolelink class="equip-13.4.2-1" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="equipment" f="ppt" n="2">
-          <vnrole vncls="13.4.2-1" vntheta="Theme"/>
+        <role descr="equipment" f="PPT" n="2">
+          <rolelinks>
+            <rolelink class="equip-13.4.2-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="equip-13.4.2-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>[*-1] Armed [*-2]with this shared understanding and requisite background information , [each department]*-2 developed its specialized contribution to the proposal , [*-1] submitting data and cost estimates on a closely managed schedule .</text>
-        <rel f="">Armed</rel>
-        <arg f="" n="1">[*-2]</arg>
-        <arg f="" n="2">with this shared understanding and requisite background information</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Supply" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Giving" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="equip-13.4.2-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Movement.TransportArtifact.SendSupplyExport" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Transaction.Transaction.GiftGrantProvideAid" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Transaction.TransferMoney.GiftGrantProvideAid" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Transaction.TransferOwnership.GiftGrantProvideAid" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Transferownership" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="Transportartifact" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="arm-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">12</lexlink>
+        <lexlink class="equip-13.4.2-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="passive" src="">
+        <text>Armed with this shared understanding and requisite background information , each department developed its specialized contribution to the proposal , submitting data and cost estimates on a closely managed schedule .</text>
+        <propbank>
+          <rel relloc="0">Armed</rel>
+          <arg type="ARG1" start="10" end="11">each department</arg>
+          <arg type="ARG2" start="1" end="8">with this shared understanding and requisite background information</arg>
+        </propbank>
       </example>
-      <example name="transitive with purpose" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Thus [*-3] armed [*-2]for massive matching of documents by computer , [they]*-2 single out high-income groups , [*-3] looking primarily for people who [*T*-1] have n't filed New York income-tax returns .</text>
-        <arg f="mnr" n="m">Thus</arg>
-        <rel f="">armed</rel>
-        <arg f="" n="1">[*-2]</arg>
-        <arg f="prp" n="m">for massive matching of documents by computer</arg>
+      <example name="transitive with purpose" src="">
+        <text>Thus armed for massive matching of documents by computer , they single out high - income groups , looking primarily for people who have n't filed New York income - tax returns .</text>
+        <propbank>
+          <rel relloc="1">armed</rel>
+          <arg type="ARGM-MNR" start="0" end="0">Thus</arg>
+          <arg type="ARG1" start="10" end="10">they</arg>
+          <arg type="ARGM-PRP" start="2" end="8">for massive matching of documents by computer</arg>
+        </propbank>
       </example>
+      <note>ARM-V NOTES: Based on WSJ. Member of Vncls equip-13.4.2-1. (from arm.01-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="arm_up">
     <roleset id="arm_up.02" name="arm_up">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">arm_up</alias>
+        <alias pos="v">arm_up</alias>
       </aliases>
-      <note>ARM_UP-V NOTES: Added by Julia based on BOLT. Comparison to arm.01. (from arm.02-v)</note>
       <roles>
         <role descr="equiper, provider, agent" f="PAG" n="0"/>
-        <role descr="entity armed" f="gol" n="1"/>
-        <role descr="equipment" f="ppt" n="2"/>
+        <role descr="entity armed" f="GOL" n="1"/>
+        <role descr="equipment" f="PPT" n="2"/>
       </roles>
-      <example name="ergative" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="ergative" src="">
         <text>I support Saudis arming up though , as I do for all Muslim nations , weapons may be useful in future .</text>
-        <arg f="" n="1">Saudis</arg>
-        <rel f="">[arming] [up]</rel>
+        <propbank>
+          <rel relloc="3 4">arming up</rel>
+          <arg type="ARG1" start="2" end="2">Saudis</arg>
+        </propbank>
       </example>
+      <note>ARM_UP-V NOTES: Added by Julia based on BOLT. Comparison to arm.01. (from arm.02-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="stiff_arm">
     <roleset id="stiff_arm.03" name="deflect an opponent using straight, stiff arms (maybe metaphorical)">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">stiff_arm</alias>
-        <alias framenet="" pos="v" verbnet="">stiff-arm</alias>
+        <alias pos="v">stiff_arm</alias>
+        <alias pos="v">stiff-arm</alias>
       </aliases>
-      <note>STIFF_ARM-V NOTES: Added by Julia. </note>
       <roles>
-        <role descr="deflector" f="pag" n="0"/>
-        <role descr="opponent" f="ppt" n="1"/>
-        <role descr="subject matter" f="vsp" n="2"/>
+        <role descr="deflector" f="PAG" n="0"/>
+        <role descr="opponent" f="PPT" n="1"/>
+        <role descr="subject matter" f="VSP" n="2"/>
       </roles>
-      <example name="stiff_arm-v" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="stiff_arm-v" src="">
         <text>If Megawati does stiff - arm the United States on the weapons issue , it is unlikely relations with Washington will be permanently damaged .</text>
-        <arg f="" n="0">Megawati</arg>
-        <rel f="">(stiff)(arm)</rel>
-        <arg f="" n="1">the United States</arg>
-        <arg f="" n="2">on the weapons issue</arg>
+        <propbank>
+          <rel relloc="3 4 5">stiff - arm</rel>
+          <arg type="ARG0" start="1" end="1">Megawati</arg>
+          <arg type="ARG1" start="6" end="8">the United States</arg>
+          <arg type="ARG2" start="9" end="12">on the weapons issue</arg>
+        </propbank>
       </example>
+      <note>STIFF_ARM-V NOTES: Added by Julia. </note>
     </roleset>
   </predicate>
 </frameset>

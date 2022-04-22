@@ -1,45 +1,75 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="escalate">
     <roleset id="escalate.01" name="(cause to) become higher, (causing to) become higher or more intense">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">escalate</alias>
-        <alias framenet="Change_position_on_a_scale" pos="n" verbnet="">escalation</alias>
+        <alias pos="v">escalate</alias>
+        <alias pos="n">escalation</alias>
       </aliases>
+      <roles>
+        <role descr="causer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing becoming higher" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Change_position_on_a_scale" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="escalate-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">8</lexlink>
+        <lexlink class="other_cos-45.4" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="agentive" src="">
+        <text>Analysts said they expect McCaw to escalate the bidding again .</text>
+        <propbank>
+          <rel relloc="6">escalate</rel>
+          <arg type="ARG0" start="4" end="4">McCaw</arg>
+          <arg type="ARG1" start="7" end="8">the bidding</arg>
+          <arg type="ARGM-TMP" start="9" end="9">again</arg>
+        </propbank>
+      </example>
+      <example name="ergative" src="">
+        <text>... reminiscent of those during the 1987 crash -- that as stock prices plummeted and trading activity escalated , some phone calls to market makers in over - the - counter stocks went unanswered .</text>
+        <propbank>
+          <rel relloc="17">escalated</rel>
+          <arg type="ARG1" start="15" end="16">trading activity</arg>
+        </propbank>
+      </example>
+      <example name="with ADJ" src="BOLT">
+        <text>it would quite an amazing escalation if Israel used nuclear bombs on Iran .</text>
+        <propbank>
+          <rel relloc="5">escalation</rel>
+          <arg type="ARGM-ADJ" start="4" end="4">amazing</arg>
+        </propbank>
+      </example>
+      <example name="both args" src="internet">
+        <text>U.S. Commerce Secretary Gary Locke issued the following statement on Iceland?s decision to resume international trade in fin whale meat , and its escalation of commercial whaling outside of the control of the International Whaling Commission ( IWC ) .</text>
+        <propbank>
+          <rel relloc="23">escalation</rel>
+          <arg type="ARG0" start="22" end="22">its</arg>
+          <arg type="ARG1" start="24" end="26">of commercial whaling</arg>
+          <arg type="ARGM-LOC" start="27" end="38">outside of the control of the International Whaling Commission ( IWC )</arg>
+        </propbank>
+      </example>
       <note>ESCALATE-V NOTES: I'm really hoping this doesn't fall into the quantifiable-motion class. (from escalate.01-v)</note>
       <note>ESCALATION-N NOTES: Added by Julia based on BOLT, escalate-v.01. No Vncls. (from escalation.01-n)</note>
-      <roles>
-        <role descr="causer" f="PAG" n="0"/>
-        <role descr="thing becoming higher" f="PPT" n="1"/>
-      </roles>
-      <example name="agentive" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>Analysts said they expect McCaw to escalate the bidding again.</text>
-        <arg f="" n="0">McCaw</arg>
-        <rel f="">escalate</rel>
-        <arg f="" n="1">the bidding</arg>
-        <arg f="TMP" n="M">again</arg>
-      </example>
-      <example name="ergative" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>...reminiscent of those during the 1987 crash -- that as stock prices plummeted and trading activity escalated, some phone calls to market makers in over-the-counter stocks went unanswered.</text>
-        <arg f="" n="1">trading activity</arg>
-        <rel f="">escalated</rel>
-      </example>
-      <example name="with ADJ" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>it would quite an amazing escalation if Israel used nuclear bombs on Iran .</text>
-        <arg f="adj" n="m">amazing</arg>
-        <rel f="">escalation</rel>
-      </example>
-      <example name="both args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>U.S. Commerce Secretary Gary Locke issued the following statement on Iceland?s decision to resume international trade in fin whale meat, and its escalation of commercial whaling outside of the control of the International Whaling Commission (IWC).</text>
-        <arg f="" n="0">its</arg>
-        <rel f="">escalation</rel>
-        <arg f="" n="1">of commercial whaling</arg>
-        <arg f="loc" n="m">outside of the control of the international Whaling Commission (IWC)</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

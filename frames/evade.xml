@@ -1,40 +1,72 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="evade">
     <roleset id="evade.01" name="stay away from, avoiding, dodging">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">evade</alias>
-        <alias framenet="Avoiding Evading" pos="n" verbnet="">evasion</alias>
+        <alias pos="v">evade</alias>
+        <alias pos="n">evasion</alias>
       </aliases>
-      <note>EVADE-V NOTES: Etymologically, 'evade' and 'avoid' are not related at all. 'Avoid'comes from"to make empty"while 'evade' is 'to go out'. Interestingconvergence, though. (from evade.01-v)</note>
-      <note>EVASION-N NOTES: Added by Julia based on BOLT-5, evade.01. Corresponds to VNcls avoid-52. (from evasion.01-n)</note>
       <roles>
         <role descr="avoider" f="PAG" n="0">
-          <vnrole vncls="52" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="avoid-52" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Avoiding" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="Evading" resource="FrameNet" version="1.7">evader</rolelink>
+            <rolelink class="avoid-52" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing avoided" f="PPT" n="1">
-          <vnrole vncls="52" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="avoid-52" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Avoiding" resource="FrameNet" version="1.7">undesirable_situation</rolelink>
+            <rolelink class="Evading" resource="FrameNet" version="1.7">pursuer</rolelink>
+            <rolelink class="avoid-52" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <text>The company is the subject of a federal grand jury investigation into whether [its officials and its utility subsidiaries]-1 conspired *trace*-1 to cover up their accounting for spare parts *trace*-1 to evade federal income taxes.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">evade</rel>
-        <arg f="" n="1">federal income taxes</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Avoiding" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Evading" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="avoid-52" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="avoid-52" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="transitive" src="">
+        <text>The company is the subject of a federal grand jury investigation into whether its officials and its utility subsidiaries conspired to cover up their accounting for spare parts to evade federal income taxes .</text>
+        <propbank>
+          <rel relloc="29">evade</rel>
+          <arg type="ARG0" start="13" end="18">its officials and its utility subsidiaries</arg>
+          <arg type="ARG1" start="30" end="32">federal income taxes</arg>
+        </propbank>
       </example>
-      <example name="oddly intransitive" src="" type="">
+      <example name="oddly intransitive" src="">
         <text>He evades and ducks .</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">evades</rel>
+        <propbank>
+          <rel relloc="1">evades</rel>
+          <arg type="ARG0" start="0" end="0">He</arg>
+        </propbank>
       </example>
-      <example name="both args" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I 'd like to know how much it costs to keep every single library open for a year , compared to how much is claimed unnecessarily by MP's , tax evasion by FSTE 100 companies amd QUANGO's to name a few .</text>
-        <arg f="adj" n="m">MP's</arg>
-        <arg f="" n="1">tax</arg>
-        <rel f="">evasion</rel>
-        <arg f="" n="0">by FSTE 100 companies amd QUANGO's</arg>
+      <example name="both args" src="BOLT">
+        <text>I 'd like to know how much it costs to keep every single library open for a year , compared to how much is claimed unnecessarily by MP 's , tax evasion by FSTE 100 companies amd QUANGO 's to name a few .</text>
+        <propbank>
+          <rel relloc="31">evasion</rel>
+          <arg type="ARGM-ADJ" start="27" end="28">MP 's</arg>
+          <arg type="ARG1" start="30" end="30">tax</arg>
+          <arg type="ARG0" start="32" end="38">by FSTE 100 companies amd QUANGO 's</arg>
+        </propbank>
       </example>
+      <note>EVADE-V NOTES: Etymologically, 'evade' and 'avoid' are not related at all. 'Avoid'comes from"to make empty"while 'evade' is 'to go out'. Interestingconvergence, though. (from evade.01-v)</note>
+      <note>EVASION-N NOTES: Added by Julia based on BOLT-5, evade.01. Corresponds to VNcls avoid-52. (from evasion.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

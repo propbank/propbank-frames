@@ -1,35 +1,59 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="abdicate">
     <roleset id="abdicate.01" name="to relinquish (power or responsibility)">
       <aliases>
-        <alias framenet="" pos="v" verbnet="10.11-2">abdicate</alias>
-        <alias framenet="" pos="n" verbnet="">abdication</alias>
+        <alias pos="v">abdicate</alias>
+        <alias pos="n">abdication</alias>
       </aliases>
-      <note>ABDICATE-V NOTES: Member of Vncls resign-10.11-2. No Framenet. (from abdicate.01-v)</note>
-      <note>ABDICATION-N NOTES: Added by Julia for Questionbank. (from abdication.01-n)</note>
       <roles>
         <role descr="abdicator, agent" f="PAG" n="0">
-          <vnrole vncls="10.11-2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="resign-10.11-2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Surrendering_possession" resource="FrameNet" version="1.7">recipient</rolelink>
+            <rolelink class="Surrendering_possession" resource="FrameNet" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="responsibility" f="DIR" n="1">
-          <vnrole vncls="10.11-2" vntheta="Source"/>
+          <rolelinks>
+            <rolelink class="resign-10.11-2" resource="VerbNet" version="verbnet3.3">source</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="abdicate-v: transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>By [*-1] ignoring costs , U.S. strategists abdicate their responsibility for hard decisions .</text>
-        <arg f="mnr" n="m">By [*-1] ignoring costs</arg>
-        <arg f="" n="0">U.S. strategists</arg>
-        <rel f="">abdicate</rel>
-        <arg f="" n="1">their responsibility for hard decisions</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Abandonment" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Surrendering_possession" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="resign-10.11-2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+      </lexlinks>
+      <example name="abdicate-v: transitive" src="">
+        <text>By ignoring costs , U.S. strategists abdicate their responsibility for hard decisions .</text>
+        <propbank>
+          <rel relloc="6">abdicate</rel>
+          <arg type="ARGM-MNR" start="0" end="2">By ignoring costs</arg>
+          <arg type="ARG0" start="4" end="5">U.S. strategists</arg>
+          <arg type="ARG1" start="7" end="11">their responsibility for hard decisions</arg>
+        </propbank>
       </example>
-      <example name="abdication-n: arg0" src="questionbank" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="abdication-n: arg0" src="questionbank">
         <text>Which Bourbon king was restored to the French throne during Napoleon 's abdication ?</text>
-        <arg f="" n="0">Napoleon's</arg>
-        <rel f="">abdication</rel>
+        <propbank>
+          <rel relloc="12">abdication</rel>
+          <arg type="ARG0" start="10" end="11">Napoleon 's</arg>
+        </propbank>
       </example>
+      <note>ABDICATE-V NOTES: Member of Vncls resign-10.11-2. No Framenet. (from abdicate.01-v)</note>
+      <note>ABDICATION-N NOTES: Added by Julia for Questionbank. (from abdication.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

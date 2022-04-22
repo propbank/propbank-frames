@@ -1,53 +1,73 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="diffuse">
     <roleset id="diffuse.01" name="spread thinly, dispersing or spreading thinly">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">diffuse</alias>
-        <alias framenet="" pos="j" verbnet="">diffuse</alias>
-        <alias framenet="" pos="n" verbnet="">diffusion</alias>
+        <alias pos="v">diffuse</alias>
+        <alias pos="n">diffusion</alias>
+        <alias pos="j">diffuse</alias>
+        <alias pos="j">diffusely</alias>
       </aliases>
+      <roles>
+        <role descr="agent or cause" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Dispersal" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="Dispersal" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="theme, thing diffused" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="Dispersal" resource="FrameNet" version="1.7">individuals</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Dispersal" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="other_cos-45.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="other_cos-45.4" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="diffuse-v: unaccusative" src="">
+        <text>We waited with baited breath for the gas to diffuse .</text>
+        <propbank>
+          <rel relloc="9">diffuse</rel>
+          <arg type="ARG1" start="6" end="7">the gas</arg>
+        </propbank>
+      </example>
+      <example name="diffusion-n: metaphorical (concept)" src="">
+        <text>The four main elements in the diffusion of new ideas are : the innovation , communication channels , time , and the social system .</text>
+        <propbank>
+          <rel relloc="6">diffusion</rel>
+          <arg type="ARG1" start="7" end="9">of new ideas</arg>
+        </propbank>
+      </example>
+      <example name="diffusely-j: arg 1" src="">
+        <text>The SFA is diffusely ectatic .</text>
+        <propbank>
+          <rel relloc="3">diffusely</rel>
+          <arg end="1" start="0" type="ARG1">The SFA</arg>
+          <arg end="4" start="4" type="ARGM-ADV">ectatic</arg>
+        </propbank>
+      </example>
+      <note>DIFFUSE NOTES: diffusely-02 merged into this roleset and deleted during THYME-AMR framing.</note>
       <note>DIFFUSE-V NOTES: Framed by Neville. (from diffuse.01-v)</note>
       <note>DIFFUSION-N NOTES: diffuse.01 (from diffusion.01-n)</note>
       <note>DIFFUSE-J NOTES: Added by Julia based on SHARP-SRED (from diffuse.01-j)</note>
-      <roles>
-        <role descr="agent or cause" f="PAG" n="0">
-          <vnrole vncls="45.4" vntheta="Agent"/>
-        </role>
-        <role descr="theme, thing diffused" f="PPT" n="1">
-          <vnrole vncls="45.4" vntheta="Patient"/>
-        </role>
-      </roles>
-      <example name="diffuse-v: unaccusative" src="" type="">
-        <text>We waited with baited breath for the gas to diffuse.</text>
-        <rel f="">diffused</rel>
-        <arg f="" n="1">the gas</arg>
-      </example>
-      <example name="diffusion-n: metaphorical (concept)" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The four main elements in the diffusion of new ideas are: the innovation, communication channels, time, and the social system.</text>
-        <rel f="">diffusion</rel>
-        <arg f="" n="1">of new ideas</arg>
-      </example>
-    </roleset>
-  </predicate>
-  <predicate lemma="diffusely">
-    <roleset id="diffusely.02" name="spread thinly">
-      <aliases>
-        <alias framenet="" pos="j" verbnet="">diffusely</alias>
-      </aliases>
       <note>DIFFUSELY-J NOTES: Comparison with diffuse.01-j and diffuse.01-v. (from diffusely.01-j)</note>
-      <roles>
-        <role descr="agent/cause" f="pag" n="0"/>
-        <role descr="theme, thin thing" f="ppt" n="1"/>
-      </roles>
-      <example name="diffusely-j: arg 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The SFA is diffusely ectatic.</text>
-        <arg f="" n="1">The SFA</arg>
-        <rel f="">diffusely</rel>
-        <arg f="adv" n="m">ectatic.</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

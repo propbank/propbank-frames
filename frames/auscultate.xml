@@ -1,30 +1,57 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="auscultate">
-    <roleset id="auscultate.01" name="listen to internal organs, listening to internal organs using stethoscope">
+    <roleset id="auscultate.01" name="listen to internal organs using a stethoscope">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">auscultation</alias>
-        <alias framenet="" pos="v" verbnet="">auscultate</alias>
+        <alias pos="v">auscultate</alias>
+        <alias pos="n">auscultation</alias>
       </aliases>
+      <roles>
+        <role descr="listener" f="PAG" n="0"/>
+        <role descr="listened to (sound/organ/patient)" f="PPT" n="1"/>
+        <role descr="results (what the auscultation demonstrates)" f="PRD" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="auscultate-v: arg 1 only" src="">
+        <text>No murmers , gallops or extra sounds auscultated .</text>
+        <propbank>
+          <rel relloc="7">auscultated</rel>
+          <arg end="6" start="0" type="ARG1">No murmers , gallops or extra sounds</arg>
+        </propbank>
+      </example>
+      <example name="auscultation-n: all args" src="">
+        <text>A 23 year - old , healthy Caucasian male was referred for an echocardiogram by his primary care physician who suspected the presence of a prolapsing mitral valve , based on his auscultation of a midsystolic click .</text>
+        <propbank>
+          <rel relloc="32">auscultation</rel>
+          <arg end="31" start="31" type="ARG0">his</arg>
+          <arg end="36" start="33" type="ARG1">of a midsystolic click</arg>
+        </propbank>
+      </example>
+      <example name="auscultation-n" src="THYME-Auto1">
+        <text>Lungs : Clear to auscultation</text>
+        <propbank>
+          <rel relloc="4">auscultation</rel>
+        </propbank>
+        <amr version="THYME 1.0">
+          (c / clear-08
+            :ARG1 (a / anatomical-site :pl + :name (n / name :op1 "lung"))
+            :ARG2-of (a2 / auscultate-01
+              :ARG1 a))
+        </amr>
+      </example>
       <note>AUSCULTATE-V NOTES: Based on temprel and stratified data. Comparison to auscultation. No VN or FN classes. Framed by Katie. (from auscultate.01-v)</note>
       <note>AUSCULTATION-N NOTES: (from auscultation.01-n)</note>
-      <roles>
-        <role descr="listener" f="pag" n="0"/>
-        <role descr="listened to (sound/organ/patient)" f="ppt" n="1"/>
-      </roles>
-      <example name="arg 1 only" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>[No murmers, gallops or extra sounds -1] auscultated [*-1].</text>
-        <rel f="">auscultated</rel>
-        <arg f="" n="1">[*-1].</arg>
-      </example>
-      <example name="All args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>A 23 year-old, healthy Caucasian male was referred for an echocardiogram by his primary care physician who suspected the presence of a prolapsing mitral valve, based on his auscultation of a midsystolic click.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">auscultation</rel>
-        <arg f="" n="1">of a mid-systolic click</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

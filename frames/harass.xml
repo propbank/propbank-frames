@@ -1,77 +1,133 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="harass">
     <roleset id="harass.01" name="bother">
       <aliases>
-        <alias framenet="Experiencer_obj" pos="v" verbnet="">harass</alias>
-        <alias framenet="" pos="n" verbnet="">harassment</alias>
+        <alias pos="v">harass</alias>
+        <alias pos="n">harassment</alias>
       </aliases>
-      <note>HARASS-V NOTES: Based on WSJ. Member of VNcls amuse-31.1 (from harass.01-v)</note>
-      <note>HARASSMENT-N NOTES: Added by Julia based on BOLT, harass.01, WN sense #2. Corresponds to VNcls amuse-31.1. (from harassment.01-n)</note>
       <roles>
         <role descr="botherer, causer of annoyance" f="PAG" n="0">
-          <vnrole vncls="31.1" vntheta="Stimulus"/>
+          <rolelinks>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.3">stimulus</rolelink>
+            <rolelink class="Experiencer_obj" resource="FrameNet" version="1.7">stimulus</rolelink>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.4">stimulus</rolelink>
+          </rolelinks>
         </role>
         <role descr="harassed" f="PPT" n="1">
-          <vnrole vncls="31.1" vntheta="Experiencer"/>
+          <rolelinks>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.3">experiencer</rolelink>
+            <rolelink class="Experiencer_obj" resource="FrameNet" version="1.7">experiencer</rolelink>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.4">experiencer</rolelink>
+          </rolelinks>
         </role>
-        <role descr="instrument, if separate from arg0" f="mnr" n="2"/>
+        <role descr="instrument, if separate from arg0" f="MNR" n="2">
+          <rolelinks/>
+        </role>
       </roles>
-      <example name="typical usage" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>Moreover, [police and soldiers]-1 continue *trace*-1 to harass Americans, who have filed several protests with the Foreign Ministry in the past week.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">harass</rel>
-        <arg f="" n="1">Americans, who have filed several protests with the Foreign Ministry in the past week</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Experiencer_obj" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="amuse-31.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="harass-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+        <lexlink class="amuse-31.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="typical usage" src="">
+        <text>Moreover , police and soldiers continue to harass Americans , who have filed several protests with the Foreign Ministry in the past week .</text>
+        <propbank>
+          <rel relloc="7">harass</rel>
+          <arg type="ARG0" start="2" end="4">police and soldiers</arg>
+          <arg type="ARG1" start="8" end="22">Americans , who have filed several protests with the Foreign Ministry in the past week</arg>
+        </propbank>
       </example>
-      <example name="with instrument" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>John harassed Mary with constant requests for chocolate ice cream.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">harassed</rel>
-        <arg f="" n="1">Mary</arg>
-        <arg f="" n="2">with constant requests for chocolate ice cream</arg>
+      <example name="with instrument" src="">
+        <text>John harassed Mary with constant requests for chocolate ice cream .</text>
+        <propbank>
+          <rel relloc="1">harassed</rel>
+          <arg type="ARG0" start="0" end="0">John</arg>
+          <arg type="ARG1" start="2" end="2">Mary</arg>
+          <arg type="ARG2" start="3" end="9">with constant requests for chocolate ice cream</arg>
+        </propbank>
       </example>
-      <example name="args 0,1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Why did the british step up their harassment of US shipping?</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">harassment</rel>
-        <arg f="" n="1">of US shipping</arg>
+      <example name="args 0,1" src="internet">
+        <text>Why did the british step up their harassment of US shipping ?</text>
+        <propbank>
+          <rel relloc="7">harassment</rel>
+          <arg type="ARG0" start="6" end="6">their</arg>
+          <arg type="ARG1" start="8" end="10">of US shipping</arg>
+        </propbank>
       </example>
-      <example name="arg 1, PRD" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="arg 1, PRD" src="BOLT">
         <text>7 Increased harassment of Mexican Americans : Show me your papers</text>
-        <arg f="prd" n="m">increased</arg>
-        <rel f="">harassment</rel>
-        <arg f="" n="1">of Mexican Americans</arg>
+        <propbank>
+          <rel relloc="2">harassment</rel>
+          <arg type="ARGM-PRD" start="1" end="1">Increased</arg>
+          <arg type="ARG1" start="3" end="5">of Mexican Americans</arg>
+        </propbank>
       </example>
+      <note>HARASS-V NOTES: Based on WSJ. Member of VNcls amuse-31.1 (from harass.01-v)</note>
+      <note>HARASSMENT-N NOTES: Added by Julia based on BOLT, harass.01, WN sense #2. Corresponds to VNcls amuse-31.1. (from harassment.01-n)</note>
     </roleset>
     <roleset id="harass.02" name="cause an action">
       <aliases>
-        <alias framenet="Manipulate_into_doing" pos="v" verbnet="">harass</alias>
+        <alias pos="v">harass</alias>
       </aliases>
-      <note>HARASS-V NOTES: Based on WSJ. Member of VNcls force-59-1. (from harass.02-v)</note>
       <roles>
         <role descr="causal agent, harasser" f="PAG" n="0">
-          <vnrole vncls="59-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="bully-59.5" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="impelled agent" f="PPT" n="1">
-          <vnrole vncls="59-1" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="bully-59.5" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="impelled action" f="PRD" n="2">
-          <vnrole vncls="59-1" vntheta="Result"/>
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="bully-59.5" resource="VerbNet" version="verbnet3.4">result</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all args" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>John finally harassed Mary into giving him some ice cream.</text>
-        <arg f="" n="0">John</arg>
-        <arg f="tmp" n="m">finally</arg>
-        <rel f="">harassed</rel>
-        <arg f="" n="1">Mary</arg>
-        <arg f="" n="2">into giving him some ice cream</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Manipulate_into_doing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="bully-59.5" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+        <lexlink class="bully-59.5" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="all args" src="">
+        <text>John finally harassed Mary into giving him some ice cream .</text>
+        <propbank>
+          <rel relloc="2">harassed</rel>
+          <arg type="ARG0" start="0" end="0">John</arg>
+          <arg type="ARGM-TMP" start="1" end="1">finally</arg>
+          <arg type="ARG1" start="3" end="3">Mary</arg>
+          <arg type="ARG2" start="4" end="9">into giving him some ice cream</arg>
+        </propbank>
       </example>
+      <note>HARASS-V NOTES: Based on WSJ. Member of VNcls force-59-1. (from harass.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

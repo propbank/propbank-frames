@@ -1,138 +1,235 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="name">
     <roleset id="name.01" name="call, giving a name">
       <aliases>
-        <alias framenet="Name_conferral" pos="v" verbnet="">name</alias>
-        <alias framenet="" pos="n" verbnet="">naming</alias>
+        <alias pos="v">name</alias>
+        <alias pos="n">naming</alias>
       </aliases>
-      <note>NAME-V NOTES: Based on big corpus, comparison to 'call'. Member of VNcls dub-29.3. (from name.01-v)</note>
-      <note>NAMING-N NOTES: name.01 (from naming.01-n)</note>
       <roles>
-        <note>Essentially equivalent to 'call-v.02', but 'name' Arg2 is 'call' Arg3. (from name.01-v)</note>
-        <role descr="namer" f="pag" n="0">
-          <vnrole vncls="29.3" vntheta="agent"/>
+        <role descr="namer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="dub-29.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Name_conferral" resource="FrameNet" version="1.7">speaker</rolelink>
+          </rolelinks>
         </role>
-        <role descr="named" f="ppt" n="1">
-          <vnrole vncls="29.3" vntheta="theme"/>
+        <role descr="named" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="dub-29.3" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Name_conferral" resource="FrameNet" version="1.7">entity</rolelink>
+          </rolelinks>
         </role>
-        <role descr="name of arg1" f="prd" n="2">
-          <vnrole vncls="29.3" vntheta="result"/>
+        <role descr="name of arg1" f="PRD" n="2">
+          <rolelinks>
+            <rolelink class="dub-29.3" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="Name_conferral" resource="FrameNet" version="1.7">name</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="passivized" src="passivized" type="passivized">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>[The issue]-1, formally named *trace*-1 MNB Home Equity Loan Asset Backed Certificates, Series 1989, will represent interest in a trust fund...</text>
-        <arg f="mnr" n="m">formally</arg>
-        <rel f="">named</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="2">MNB Home Equity Loan Asset Backed Certificates, Series 1989,</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Name_conferral" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="dub-29.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="name-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">24</lexlink>
+        <lexlink class="name-v.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">78</lexlink>
+        <lexlink class="name-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">26</lexlink>
+      </lexlinks>
+      <example name="passivized" src="">
+        <text>The issue , formally named MNB Home Equity Loan Asset Backed Certificates , Series 1989 , will represent interest in a trust fund ...</text>
+        <propbank>
+          <rel relloc="4">named</rel>
+          <arg end="3" start="3" type="ARGM-MNR">formally</arg>
+          <arg end="1" start="0" type="ARG1">The issue</arg>
+          <arg end="14" start="5" type="ARG2">MNB Home Equity Loan Asset Backed Certificates , Series 1989</arg>
+        </propbank>
       </example>
-      <example name="name as AS" src="name as AS" type="name as AS">
-        <text>Polls named Tatsunori Hara as the male symbol of Japan.</text>
-        <arg f="" n="0">Polls</arg>
-        <rel f="">named</rel>
-        <arg f="" n="1">Tatsunori Hara</arg>
-        <arg f="" n="2">as the male symbol of Japan</arg>
+      <example name="name as AS" src="">
+        <text>Polls named Tatsunori Hara as the male symbol of Japan .</text>
+        <propbank>
+          <rel relloc="1">named</rel>
+          <arg type="ARG0" start="0" end="0">Polls</arg>
+          <arg type="ARG1" start="2" end="3">Tatsunori Hara</arg>
+          <arg type="ARG2" start="4" end="9">as the male symbol of Japan</arg>
+        </propbank>
       </example>
-      <example name="no name mentioned" src="no name mentioned" type="no name mentioned">
-        <text>...the man, whom-1 it did not name *trace*-1</text>
-        <arg f="" n="0">it</arg>
-        <arg f="neg" n="m">did not</arg>
-        <rel f="">name</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="slc" n="m">whom -&gt; the man</arg>
+      <example name="no name mentioned" src="">
+        <text>... the man , whom it did not name</text>
+        <propbank>
+          <rel relloc="8">name</rel>
+          <arg type="ARG0" start="5" end="5">it</arg>
+          <arg type="ARGM-NEG" start="7" end="7">not</arg>
+          <arg type="ARG1" start="1" end="2">the man</arg>
+          <arg type="R-ARG1" start="4" end="4">whom</arg>
+        </propbank>
       </example>
-      <example name="name as infinitive" src="name as infinitive" type="name as infinitive">
-        <text>Lee Karns named James Nichol to succeed him.</text>
-        <arg f="" n="0">Lee Karns</arg>
-        <rel f="">named</rel>
-        <arg f="" n="1">James Nichol</arg>
-        <arg f="" n="2">to succeed him</arg>
+      <example name="name as infinitive" src="">
+        <text>Lee Karns named James Nichol to succeed him .</text>
+        <propbank>
+          <rel relloc="2">named</rel>
+          <arg type="ARG0" start="0" end="1">Lee Karns</arg>
+          <arg type="ARG1" start="3" end="4">James Nichol</arg>
+          <arg type="ARG2" start="5" end="7">to succeed him</arg>
+        </propbank>
       </example>
-      <example name="passivized" src="passivized" type="passivized">
-        <text>[Both these candidates]-1 are named *trace*-1 Rudolph Giuliani.</text>
-        <rel f="">named</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="2">Rudolph Giuliani</arg>
+      <example name="passivized" src="">
+        <text>Both these candidates are named Rudolph Giuliani .</text>
+        <propbank>
+          <rel relloc="4">named</rel>
+          <arg end="2" start="0" type="ARG1">Both these candidates</arg>
+          <arg end="6" start="5" type="ARG2">Rudolph Giuliani</arg>
+        </propbank>
       </example>
-      <example name="name only" src="name only" type="name only">
-        <text>[No successor]-1 was named *trace*-1</text>
-        <rel f="">named</rel>
-        <arg f="" n="2">*trace*-1</arg>
+      <example name="name only" src="">
+        <text>No successor was named</text>
+        <propbank>
+          <rel relloc="3">named</rel>
+          <arg type="ARG2" start="0" end="1">No successor</arg>
+        </propbank>
       </example>
-      <example name="ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1057" type="">
+      <example name="ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1057">
         <text>According to legend , a Daoist master named Liu Hai and a three - legged golden toad scattered gold coins across the land .</text>
-        <arg f="" n="1">a Daoist master</arg>
-        <rel f="">named</rel>
-        <arg f="" n="2">Liu Hai</arg>
+        <propbank>
+          <rel relloc="7">named</rel>
+          <arg type="ARG1" start="4" end="6">a Daoist master</arg>
+          <arg type="ARG2" start="8" end="9">Liu Hai</arg>
+        </propbank>
       </example>
-
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes pt/nt/44/nt_4401" type="">
+      <example name="ARG0 and ARG1 and ARG2" src="ontonotes pt/nt/44/nt_4401">
         <text>That is why they named that field Akeldama , which in their language means `` field of blood . '' -RRB-</text>
-        <arg f="cau" n="m">why</arg>
-        <arg f="" n="0">they</arg>
-        <rel f="">named</rel>
-        <arg f="" n="1">that field</arg>
-        <arg f="" n="2">Akeldama , which in their language means `` field of blood</arg>
+        <propbank>
+          <rel relloc="4">named</rel>
+          <arg type="ARGM-CAU" start="2" end="2">why</arg>
+          <arg type="ARG0" start="3" end="3">they</arg>
+          <arg type="ARG1" start="5" end="6">that field</arg>
+          <arg type="ARG2" start="7" end="17">Akeldama , which in their language means `` field of blood</arg>
+        </propbank>
       </example>
-
-      <example name="Arg0,1,2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>A last source says that it was because Aina found rest in the area, which occasioned his naming the area as 'Isin.'</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">naming</rel>
-        <arg f="" n="1">the area</arg>
-        <arg f="" n="2">as 'Isin'</arg>
+      <example name="Arg0,1,2" src="">
+        <text>A last source says that it was because Aina found rest in the area , which occasioned his naming the area as ' Isin . '</text>
+        <propbank>
+          <rel relloc="18">naming</rel>
+          <arg type="ARG0" start="17" end="17">his</arg>
+          <arg type="ARG1" start="19" end="20">the area</arg>
+          <arg type="ARG2" start="21" end="25">as ' Isin . '</arg>
+        </propbank>
       </example>
+      <note>NAME-V NOTES: Based on big corpus, comparison to 'call'. Member of VNcls dub-29.3. (from name.01-v)</note>
+      <note>NAMING-N NOTES: name.01 (from naming.01-n)</note>
+      <note>Essentially equivalent to 'call-v.02', but 'name' Arg2 is 'call' Arg3. (from name.01-v)</note>
     </roleset>
     <roleset id="name.02" name="give someone else's name">
       <aliases>
-        <alias framenet="Name_conferral" pos="v" verbnet="">name</alias>
+        <alias pos="v">name</alias>
       </aliases>
-      <note>NAME-V NOTES: Very similar to name.01, and only to be used when there is an 'after' present. Member of VNcls dub-29.3. (from name.02-v)</note>
       <roles>
-        <role descr="namer" f="pag" n="0">
-          <vnrole vncls="29.3" vntheta="agent"/>
+        <role descr="namer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="dub-29.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Name_conferral" resource="FrameNet" version="1.7">speaker</rolelink>
+          </rolelinks>
         </role>
-        <role descr="named" f="ppt" n="1">
-          <vnrole vncls="29.3" vntheta="theme"/>
+        <role descr="named" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="dub-29.3" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Name_conferral" resource="FrameNet" version="1.7">entity</rolelink>
+          </rolelinks>
         </role>
-        <role descr="named after, namesake" f="prd" n="2">
-          <vnrole vncls="29.3" vntheta="result"/>
+        <role descr="named after, namesake" f="PRD" n="2">
+          <rolelinks>
+            <rolelink class="dub-29.3" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="Name_conferral" resource="FrameNet" version="1.7">name</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ozone hole" src="ozone hole" type="ozone hole">
-        <inflection aspect="ns" form="full" person="ns" tense="ns" voice="passive"/>
-        <text>As an employee of a major refrigerator and freezer manufacturer, I have been heavily involved in dealing with the political manifestations of [the Rowland-Molina theory]-1 (named [*]-1 after the researchers who found in 1974 that chlorofluorocarbons contributed to the depletion of ozone in the earth's atmosphere) and the Montreal Protocol.</text>
-        <rel f="">named</rel>
-        <arg f="" n="1">[*]</arg>
-        <arg f="" n="2">after the researchers who found in 1974 that chlorofluorocarbons contributed to the depletion of ozone in the earth's atmosphere</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Name_conferral" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="dub-29.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="name-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">6</lexlink>
+      </lexlinks>
+      <example name="ozone hole" src="">
+        <text>As an employee of a major refrigerator and freezer manufacturer , I have been heavily involved in dealing with the political manifestations of the Rowland - Molina theory ( named after the researchers who found in 1974 that chlorofluorocarbons contributed to the depletion of ozone in the earth 's atmosphere ) and the Montreal Protocol .</text>
+        <propbank>
+          <rel relloc="29">named</rel>
+          <arg type="ARG1" start="23" end="27">the Rowland - Molina theory</arg>
+          <arg type="ARG2" start="30" end="49">after the researchers who found in 1974 that chlorofluorocarbons contributed to the depletion of ozone in the earth 's atmosphere</arg>
+        </propbank>
       </example>
+      <note>NAME-V NOTES: Very similar to name.01, and only to be used when there is an 'after' present. Member of VNcls dub-29.3. (from name.02-v)</note>
     </roleset>
     <roleset id="name.03" name="to appoint to  an office, assign a role">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">name</alias>
+        <alias pos="v">name</alias>
       </aliases>
-      <note>NAME-V NOTES: Roleset for 'name' appoint sense based on instances in Webtext 2.5, section 76-199. VerbNet class appoint-29.1. Comparison to 'appoint.' Framed by Claire (from name.03-v)</note>
       <roles>
-        <role descr="Person appointing another" f="pag" n="0">
-          <vnrole vncls="29.1" vntheta="agent"/>
+        <role descr="Person appointing another" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="appoint-29.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Appointing" resource="FrameNet" version="1.7">selector</rolelink>
+            <rolelink class="appoint-29.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="Person named, appointed" f="ppt" n="1">
-          <vnrole vncls="29.1" vntheta="theme"/>
+        <role descr="Person named, appointed" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="appoint-29.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Appointing" resource="FrameNet" version="1.7">official</rolelink>
+            <rolelink class="appoint-29.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="Office/Job Arg 1 is appointed to" f="prd" n="2">
-          <vnrole vncls="29.1" vntheta="result"/>
+        <role descr="Office/Job Arg 1 is appointed to" f="PRD" n="2">
+          <rolelinks>
+            <rolelink class="appoint-29.1" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="Appointing" resource="FrameNet" version="1.7">role</rolelink>
+            <rolelink class="appoint-29.1" resource="VerbNet" version="verbnet3.4">result</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="Job with 'to' preposition" src="Job with 'to' preposition" type="Job with 'to' preposition">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>*PRO*-1 Having campaigned for the new president and been named *-1 to his transition team , [Rumsfeld]-1 told his Searle sales force , according to later testimony , that `` he would call in all his markers and that no matter what , he would see to it that aspartame would be approved *-3 . ''</text>
-        <rel f="">named</rel>
-        <arg f="" n="1">*-1</arg>
-        <arg f="" n="2">to his transition team</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Appointing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Adducing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="appoint-29.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Personnel.StartPosition.Hiring" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Startposition" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="appoint-29.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="Job with 'to' preposition" src="">
+        <text>Having campaigned for the new president and been named to his transition team , Rumsfeld told his Searle sales force , according to later testimony , that `` he would call in all his markers and that no matter what , he would see to it that aspartame would be approved . ''</text>
+        <propbank>
+          <rel relloc="8">named</rel>
+          <arg type="ARG1" start="14" end="14">Rumsfeld</arg>
+          <arg type="ARG2" start="9" end="12">to his transition team</arg>
+        </propbank>
       </example>
+      <note>NAME-V NOTES: Roleset for 'name' appoint sense based on instances in Webtext 2.5, section 76-199. VerbNet class appoint-29.1. Comparison to 'appoint.' Framed by Claire (from name.03-v)</note>
     </roleset>
   </predicate>
 </frameset>

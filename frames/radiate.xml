@@ -1,54 +1,117 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="radiate">
     <roleset id="radiate.01" name="emit or project">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">radiate</alias>
-        <alias framenet="" pos="n" verbnet="">radiation</alias>
+        <alias pos="v">radiate</alias>
+        <alias pos="n">radiation</alias>
       </aliases>
-      <note>RADIATE-V NOTES: Frames file for 'radiate' based on sentences in ectb english corpus. Based on VerbNet substance_emission-43.4 (from radiate.01-v predicate notes)</note>
-      <note>RADIATION-N NOTES: ~radiate.01 (from radiation.01-n)</note>
       <roles>
         <role descr="entity emitting" f="DIR" n="0">
-          <vnrole vncls="43.4" vntheta="Source"/>
+          <rolelinks>
+            <rolelink class="substance_emission-43.4" resource="VerbNet" version="verbnet3.3">source</rolelink>
+            <rolelink class="Emitting" resource="FrameNet" version="1.7">source_emitter</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing emitted" f="PPT" n="1">
-          <vnrole vncls="43.4" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="substance_emission-43.4" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Emitting" resource="FrameNet" version="1.7">emission</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="radiate-v: transitive" src="" type="">
-        <text>Today, with democracy, prosperity, and a high level of education, the people of Taiwan radiate an inner sense of confidence.</text>
-        <arg f="TMP" n="M">Today</arg>
-        <arg f="ADV" n="M">with democracy, prosperity, and a high level of education</arg>
-        <arg f="" n="0">the people of Taiwan</arg>
-        <rel f="">radiate</rel>
-        <arg f="" n="1">an inner sense of confidence</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Emitting" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="substance_emission-43.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+      </lexlinks>
+      <example name="radiate-v: transitive" src="">
+        <text>Today , with democracy , prosperity , and a high level of education , the people of Taiwan radiate an inner sense of confidence .</text>
+        <propbank>
+          <rel relloc="18">radiate</rel>
+          <arg type="ARGM-TMP" start="0" end="0">Today</arg>
+          <arg type="ARGM-ADV" start="2" end="12">with democracy , prosperity , and a high level of education</arg>
+          <arg type="ARG0" start="14" end="17">the people of Taiwan</arg>
+          <arg type="ARG1" start="19" end="23">an inner sense of confidence</arg>
+        </propbank>
       </example>
-      <example name="radiation-n" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>It does not seem likely that enough matter of this kind can enter the sun to account for its radiation of heat.</text>
-        <arg f="" n="0">its</arg>
-        <rel f="">radiation</rel>
-        <arg f="" n="1">of heat</arg>
+      <example name="radiation-n" src="">
+        <text>It does not seem likely that enough matter of this kind can enter the sun to account for its radiation of heat .</text>
+        <propbank>
+          <rel relloc="19">radiation</rel>
+          <arg type="ARG0" start="18" end="18">its</arg>
+          <arg type="ARG1" start="20" end="21">of heat</arg>
+        </propbank>
       </example>
+      <note>RADIATE-V NOTES: Frames file for 'radiate' based on sentences in ectb english corpus. Based on VerbNet substance_emission-43.4 (from radiate.01-v predicate notes)</note>
+      <note>RADIATION-N NOTES: ~radiate.01 (from radiation.01-n)</note>
     </roleset>
     <roleset id="radiate.02" name="hit with radiation; irradiate">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">radiate</alias>
-        <alias framenet="" pos="n" verbnet="">radiation</alias>
+        <alias pos="v">radiate</alias>
+        <alias pos="n">radiation</alias>
       </aliases>
-      <note>RADIATE-V, RADIATION-N NOTES: Added by Julia.</note>
       <roles>
-        <role descr="agent/causer" f="pag" n="0"/>
-        <role descr="entity hit with radiation" f="gol" n="1"/>
-        <role descr="the radiation" f="ppt" n="2"/>
+        <role descr="agent/causer" f="PAG" n="0">
+          <rolelinks/>
+        </role>
+        <role descr="entity hit with radiation" f="GOL" n="1">
+          <rolelinks/>
+        </role>
+        <role descr="the radiation" f="PPT" n="2">
+          <rolelinks>
+            <rolelink class="substance_emission-43.4-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="substance_emission-43.4-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="more specific destination, if in addition to arg1" f="LOC" n="3"/>
       </roles>
-      <example name="radiation-n" src="" type="">
-        <text>They radiated the tumor in the spine and so far they feel they have killed it. </text>
-        <arg f="" n="0">they</arg>
-        <rel f="">radiated</rel>
-        <arg f="" n="1">the tumor in the spine</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="substance_emission-43.4-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="radiation-n" src="">
+        <text>They radiated the tumor in the spine and so far they feel they have killed it .</text>
+        <propbank>
+          <rel relloc="1">radiated</rel>
+          <arg type="ARG0" start="0" end="0">They</arg>
+          <arg type="ARG1" start="2" end="6">the tumor in the spine</arg>
+        </propbank>
       </example>
+      <example name="radiation-n" src="">
+        <text>He had already had radiation therapy to the pelvis for a previous cancer .</text>
+        <amr version="THYME 1.0">
+          (t / therapy-01
+            :ARG1 (h / he)
+            :ARG2 (r / radiate-02
+              :ARG1 h
+              :ARG3 (a2 / anatomical-site :name (n / name :op1 "pelvis")))
+            :ARG3 (c / cancer-03
+              :ARG1 h
+              :mod (p / previous))
+            :mod (a / already))
+        </amr>
+      </example>
+      <note>RADIATE-V, RADIATION-N NOTES: Added by Julia.</note>
     </roleset>
   </predicate>
 </frameset>

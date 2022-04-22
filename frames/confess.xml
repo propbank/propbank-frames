@@ -1,57 +1,90 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="confess">
     <roleset id="confess.01" name="mode of speaking">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">confession</alias>
-        <alias framenet="" pos="l" verbnet="">make_confession</alias>
-        <alias framenet="" pos="v" verbnet="">confess</alias>
+        <alias pos="n">confession</alias>
+        <alias pos="l">make_confession</alias>
+        <alias pos="v">confess</alias>
       </aliases>
-      <note>CONFESS-V NOTES: Frames file for 'confess' based on sentences in wsj. Verbnet entries say-37.7-1, confess-37.10. (from confess.01-v predicate notes)</note>
-      <note>CONFESSION-N NOTES: Roleset based on verb entry confess.01. Corresponds to VN classes confess-37.10 and say-37.7-1. (from confession.01-n)</note>
       <roles>
-        <role descr="speaker" f="pag" n="0">
-          <vnrole vncls="37.10" vntheta="agent"/>
-          <vnrole vncls="37.7-1" vntheta="agent"/>
+        <role descr="speaker" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="confess-37.10" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="say-37.7-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Reveal_secret" resource="FrameNet" version="1.7">speaker</rolelink>
+          </rolelinks>
         </role>
-        <role descr="utterance" f="ppt" n="1">
-          <vnrole vncls="37.10" vntheta="topic"/>
-          <vnrole vncls="37.7-1" vntheta="topic"/>
+        <role descr="utterance" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="confess-37.10" resource="VerbNet" version="verbnet3.3">topic</rolelink>
+            <rolelink class="say-37.7-1" resource="VerbNet" version="verbnet3.3">topic</rolelink>
+            <rolelink class="Reveal_secret" resource="FrameNet" version="1.7">topic</rolelink>
+            <rolelink class="Reveal_secret" resource="FrameNet" version="1.7">information</rolelink>
+          </rolelinks>
         </role>
-        <role descr="hearer" f="gol" n="2">
-          <vnrole vncls="37.10" vntheta="recipient"/>
-          <vnrole vncls="37.7-1" vntheta="recipient"/>
+        <role descr="hearer" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="confess-37.10" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+            <rolelink class="say-37.7-1" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+            <rolelink class="Reveal_secret" resource="FrameNet" version="1.7">addressee</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="standard" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>''Mr. Sohmer confesses that it was partly in response to such attitudes that he is now ``a dweller on one of the two islands off the coast of America.''</text>
-        <arg f="" n="0">Mr. Sohmer</arg>
-        <rel f="">confesses</rel>
-        <arg f="" n="1">that it was partly in response to such attitudes that he is now ``a dweller on one of the two islands off the coast of America</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Reveal_secret" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="confess-37.10" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="say-37.7-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Broadcast" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="confess-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+        <lexlink class="confess-v.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">10</lexlink>
+      </lexlinks>
+      <example name="standard" src="">
+        <text>'' Mr. Sohmer confesses that it was partly in response to such attitudes that he is now `` a dweller on one of the two islands off the coast of America . ''</text>
+        <propbank>
+          <rel relloc="3">confesses</rel>
+          <arg type="ARG0" start="1" end="2">Mr. Sohmer</arg>
+          <arg type="ARG1" start="4" end="30">that it was partly in response to such attitudes that he is now `` a dweller on one of the two islands off the coast of America</arg>
+        </propbank>
       </example>
-      <example name="inverted" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>[``When I saw the Lexus sales projections, I got worried,'']-1 confesses *trace*-1 Takashi Oka, who led the Infiniti development team.</text>
-        <rel f="">confesses</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="0">Takashi Oka, who led the Infiniti development team</arg>
+      <example name="inverted" src="">
+        <text>` ` When I saw the Lexus sales projections , I got worried , '' confesses Takashi Oka , who led the Infiniti development team .</text>
+        <propbank>
+          <rel relloc="15">confesses</rel>
+          <arg type="ARG1" start="0" end="14">` ` When I saw the Lexus sales projections , I got worried , ''</arg>
+          <arg type="ARG0" start="16" end="24">Takashi Oka , who led the Infiniti development team</arg>
+        </propbank>
       </example>
-      <example name="prepositional utterance" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>During time off, Mr. Roman tends to his garden; Mr. Phillips confesses to a fondness for, among other things, fast cars and planes.</text>
-        <arg f="" n="0">Mr. Phillips</arg>
-        <rel f="">confesses</rel>
-        <arg f="" n="1">to a fondness for, among other things, fast cars and planes</arg>
+      <example name="prepositional utterance" src="">
+        <text>During time off , Mr. Roman tends to his garden ; Mr. Phillips confesses to a fondness for , among other things , fast cars and planes .</text>
+        <propbank>
+          <rel relloc="13">confesses</rel>
+          <arg type="ARG0" start="11" end="12">Mr. Phillips</arg>
+          <arg type="ARG1" start="14" end="26">to a fondness for , among other things , fast cars and planes</arg>
+        </propbank>
       </example>
-      <example name="All arguments" src="web" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>Anyone who has seen this film will remember Judy Garland's countless declarations that she wants to go home again and particularly her confession to Glinda that "if I ever go looking for my heart's desire again, I won't look any further than my own backyard; because if it isn't there, I never really lost it to begin with!"</text>
-        <arg f="" n="0">her</arg>
-        <rel f="">confession</rel>
-        <arg f="" n="2">to Glinda</arg>
-        <arg f="" n="1">that "if I ever go looking..."</arg>
+      <example name="All arguments" src="web">
+        <text>Anyone who has seen this film will remember Judy Garland 's countless declarations that she wants to go home again and particularly her confession to Glinda that " if I ever go looking for my heart 's desire again , I wo n't look any further than my own backyard ; because if it is n't there , I never really lost it to begin with ! "</text>
+        <propbank>
+          <rel relloc="23">confession</rel>
+          <arg type="ARG0" start="22" end="22">her</arg>
+          <arg type="ARG2" start="24" end="25">to Glinda</arg>
+          <arg type="ARG1" start="26" end="67">that " if I ever go looking for my heart 's desire again , I wo n't look any further than my own backyard ; because if it is n't there , I never really lost it to begin with ! "</arg>
+        </propbank>
       </example>
+      <note>CONFESS-V NOTES: Frames file for 'confess' based on sentences in wsj. Verbnet entries say-37.7-1, confess-37.10. (from confess.01-v predicate notes)</note>
+      <note>CONFESSION-N NOTES: Roleset based on verb entry confess.01. Corresponds to VN classes confess-37.10 and say-37.7-1. (from confession.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

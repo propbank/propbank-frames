@@ -1,90 +1,210 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="translate">
     <roleset id="translate.01" name="change (language)">
       <aliases>
-        <alias framenet="Translating" pos="n" verbnet="">translation</alias>
-        <alias framenet="Translating Translating Be_translation_equivalent Categorization" pos="v" verbnet="">translate</alias>
+        <alias pos="n">translation</alias>
+        <alias pos="v">translate</alias>
+        <argalias arg="0" pos="n">translator</argalias>
       </aliases>
-      <note>TRANSLATE-V NOTES: Comparison with 'change'. Member of Vncls turn-26.6.1. Updated by Julia. (from translate.01-v)</note>
-      <note>TRANSLATION-N NOTES: Added by Julia based on BOLT, translate.01. Corresponds to VNcls turn-26.6.1. (from translation.01-n)</note>
       <roles>
         <role descr="causer of transformation" f="PAG" n="0">
-          <vnrole vncls="26.6.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="turn-26.6.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Categorization" resource="FrameNet" version="1.7">cognizer</rolelink>
+            <rolelink class="turn-26.6.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing changing" f="PPT" n="1">
-          <vnrole vncls="26.6.1" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink class="turn-26.6.1" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="Categorization" resource="FrameNet" version="1.7">item</rolelink>
+            <rolelink class="turn-26.6.1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="end state" f="PRD" n="2">
-          <vnrole vncls="26.6.1" vntheta="Result"/>
+          <rolelinks>
+            <rolelink class="turn-26.6.1" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="Categorization" resource="FrameNet" version="1.7">category</rolelink>
+            <rolelink class="turn-26.6.1" resource="VerbNet" version="verbnet3.4">result</rolelink>
+          </rolelinks>
         </role>
         <role descr="start state" f="VSP" n="3">
-          <vnrole vncls="26.6.1" vntheta="Material"/>
+          <rolelinks>
+            <rolelink class="turn-26.6.1" resource="VerbNet" version="verbnet3.3">initial_state</rolelink>
+            <rolelink class="turn-26.6.1" resource="VerbNet" version="verbnet3.4">initial_state</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="passive, unstated start state" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>The profit gain was made despite a weakening in the housing market, for which the company is a supplier, and a strengthening in the dollar, which lowers the value of overseas earnings when [they]-1 are translated *trace*-1 into dollars.</text>
-        <rel f="">translated</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="" n="2">into dollars</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Categorization" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Translating" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Be_translation_equivalent" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="turn-26.6.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="translate-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">9</lexlink>
+        <lexlink class="translate-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">9</lexlink>
+        <lexlink class="turn-26.6.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="translate-v: passive, unstated start state" src="">
+        <text>The profit gain was made despite a weakening in the housing market , for which the company is a supplier , and a strengthening in the dollar , which lowers the value of overseas earnings when they are translated into dollars .</text>
+        <propbank>
+          <rel relloc="38">translated</rel>
+          <arg end="36" start="36" type="ARG1">they</arg>
+          <arg end="40" start="39" type="ARG2">into dollars</arg>
+        </propbank>
       </example>
-      <example name="ergative" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>That gain probably translated into about 5% to 7% in dollar terms, well below recent quarters' gains of above 20%, reckons Jay Stevens of Dean Witter Reynolds.</text>
-        <arg f="" n="1">That gain</arg>
-        <arg f="adv" n="m">probably</arg>
-        <rel f="">translated</rel>
-        <arg f="" n="2">into about 5 % to 7 % in dollar terms , well below recent quarters ' gains of above 20 %</arg>
+      <example name="translate-v: ergative" src="">
+        <text>That gain probably translated into about 5 % to 7 % in dollar terms , well below recent quarters ' gains of above 20 % , reckons Jay Stevens of Dean Witter Reynolds .</text>
+        <propbank>
+          <rel relloc="3">translated</rel>
+          <arg end="1" start="0" type="ARG1">That gain</arg>
+          <arg end="2" start="2" type="ARGM-ADV">probably</arg>
+          <arg end="24" start="4" type="ARG2">into about 5 % to 7 % in dollar terms , well below recent quarters ' gains of above 20 %</arg>
+        </propbank>
       </example>
-      <example name="all args" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>John translated his dissertation from English into Swahili, Chinese, Russian, and Yiddish.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">translated</rel>
-        <arg f="" n="1">his dissertation</arg>
-        <arg f="" n="3">from English</arg>
-        <arg f="" n="2">into Swahili, Chinese, Russian, and Yiddish.</arg>
+      <example name="translate-v: all args" src="">
+        <text>John translated his dissertation from English into Swahili , Chinese , Russian , and Yiddish .</text>
+        <propbank>
+          <rel relloc="1">translated</rel>
+          <arg end="0" start="0" type="ARG0">John</arg>
+          <arg end="3" start="2" type="ARG1">his dissertation</arg>
+          <arg end="5" start="4" type="ARG3">from English</arg>
+          <arg end="14" start="6" type="ARG2">into Swahili , Chinese , Russian , and Yiddish</arg>
+        </propbank>
       </example>
-      <example name="arg3" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="translation-n: arg3" src="BOLT">
         <text>Translation out of hype - speak : some kook made threatening noises at Brownback and got arrested . The end .</text>
-        <rel f="">translation</rel>
-        <arg f="" n="3">out of hype - speak</arg>
+        <propbank>
+          <rel relloc="0">Translation</rel>
+          <arg end="5" start="1" type="ARG3">out of hype - speak</arg>
+        </propbank>
       </example>
-      <example name="args 0, 1, 2" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The Pope was so infuriated by his teachings and his translation of the Bible into English, that 44 years after Wycliffe had died, he ordered the bones to be dug-up, crushed, and scattered in the river!</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">translation</rel>
-        <arg f="" n="1">of the Bibile</arg>
-        <arg f="" n="2">into English</arg>
+      <example name="translation-n: args 0, 1, 2" src="internet">
+        <text>The Pope was so infuriated by his teachings and his translation of the Bible into English , that 44 years after Wycliffe had died , he ordered the bones to be dug - up , crushed , and scattered in the river !</text>
+        <propbank>
+          <rel relloc="10">translation</rel>
+          <arg end="9" start="9" type="ARG0">his</arg>
+          <arg end="13" start="11" type="ARG1">of the Bible</arg>
+          <arg end="15" start="14" type="ARG2">into English</arg>
+        </propbank>
       </example>
+      <note>TRANSLATE-V NOTES: Comparison with 'change'. Member of Vncls turn-26.6.1. Updated by Julia. (from translate.01-v)</note>
+      <note>TRANSLATION-N NOTES: Added by Julia based on BOLT, translate.01. Corresponds to VNcls turn-26.6.1. (from translation.01-n)</note>
     </roleset>
     <roleset id="translate.02" name="biology: mRNA to protein">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">translate</alias>
-        <alias framenet="" pos="n" verbnet="">translation</alias>
+        <alias pos="v">translate</alias>
+        <alias pos="n">translation</alias>
       </aliases>
       <roles>
-        <role descr="intentional agent of translation (e.g. scientist)" f="PAG" n="0" />
-        <role descr="thing translated (messenger RNA)" f="PPT" n="1" />
-        <role descr="product of translation (protein)" f="PRD" n="2" />
-        <note>For Bio-AMR annotations.</note>
+        <role descr="intentional agent of translation (e.g. scientist)" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="turn-26.6.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="turn-26.6.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing translated (messenger RNA)" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="turn-26.6.1" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="turn-26.6.1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="product of translation (protein)" f="PRD" n="2">
+          <rolelinks>
+            <rolelink class="turn-26.6.1" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="turn-26.6.1" resource="VerbNet" version="verbnet3.4">result</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="example with agent" src="" type="">
-        <text>When we translated the protein sequence we did not splice the mRNA to remove introns.</text>
-        <arg f="" n="0">we</arg>
-        <rel f="">translated</rel>        
-        <arg f="" n="2">the protein sequence</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="turn-26.6.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="translate-v: example with agent" src="">
+        <text>When we translated the protein sequence we did not splice the mRNA to remove introns .</text>
+        <propbank>
+          <rel relloc="2">translated</rel>
+          <arg end="1" start="1" type="ARG0">we</arg>
+          <arg end="5" start="3" type="ARG2">the protein sequence</arg>
+        </propbank>
       </example>
-      <example name="example with source" src="" type="">
-        <text>First, the protein was translated from an mRNA rather than produced through polyprotein processing.</text>
-        <arg f="" n="2">the protein</arg>        
-        <rel f="">translated</rel>
-        <arg f="" n="1">from an mRNA</arg>        
+      <example name="translate-v: example with source" src="">
+        <text>First , the protein was translated from an mRNA rather than produced through polyprotein processing .</text>
+        <propbank>
+          <rel relloc="5">translated</rel>
+          <arg end="3" start="2" type="ARG2">the protein</arg>
+          <arg end="8" start="6" type="ARG1">from an mRNA</arg>
+        </propbank>
       </example>
+      <note>For Bio-AMR annotations.</note>
     </roleset>
-
+    <roleset id="translate.03" name="move, translocate, transform spatially">
+      <aliases>
+        <alias pos="v">translate</alias>
+        <alias pos="n">translation</alias>
+      </aliases>
+      <roles>
+        <role descr="agent" f="PAG" n="0"/>
+        <role descr="thing moved" f="SE1" n="1"/>
+        <role descr="end location/position" f="GOL" n="2"/>
+        <role descr="start location/position" f="SRC" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="-"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="translate-v" src="Minecraft">
+        <text>so translate that orange rectangle away from you two and left two</text>
+        <propbank>
+          <rel relloc="1">translate</rel>
+          <arg end="0" start="0" type="ARGM-DIS">so</arg>
+          <arg end="4" start="2" type="ARG1">that orange rectangle</arg>
+          <arg end="11" start="5" type="ARG2">away from you two and left two</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+         (t / translate-03 :mode imperative
+            :ARG0 (y / you)
+            :ARG1 (r / rectangle
+               :color (o / orange)
+               :mod (t2 / that))
+            :ARG2 (s / space
+               :ARG1-of (a / away-01
+                  :ARG2 y
+                  :quant (d / distance-quantity :quant 2))
+               :ARG1-of (l / left-20
+                  :ARG3 (c / cartesian-framework-91
+                     :ARG1 y)
+                  :quant (d2 / distance-quantity :quant 2))))
+        </amr>
+      </example>
+      <note>TRANSLATE NOTE: Created for Spatial AMR.</note>
+    </roleset>
   </predicate>
 </frameset>

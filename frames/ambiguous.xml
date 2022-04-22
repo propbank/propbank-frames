@@ -1,38 +1,105 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="ambiguous">
     <roleset id="ambiguous.01" name="unclear as to meaning, unspecific">
       <aliases>
-        <alias framenet="Linguistic_meaning" pos="j" verbnet="">ambiguous</alias>
+        <alias pos="j">ambiguous</alias>
       </aliases>
-      <note>AMBIGUOUS-J NOTES: Added by Julia based on BOLT-6 (from ambiguous.01-j)</note>
       <roles>
-        <role descr="agent of evasive, ambiguous action" f="pag" n="0"/>
-        <role descr="ambiuous action, thing" f="ppt" n="1"/>
-        <role descr="target of ambiguous behavior" f="gol" n="2"/>
+        <role descr="agent of ambiguous behavior" f="PAG" n="0" />
+        <role descr="ambiuous action, thing" f="PPT" n="1">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Linguistic_meaning" version="1.7">form</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="perceiver of ambiguity" f="GOL" n="2" />
+        <role descr="first interpretation" f="VSP" n="3">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Linguistic_meaning" version="1.7">meaning</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="second interpretation(s)" f="VSP" n="4">
+          <rolelinks>
+            <rolelink resource="FrameNet" class="Linguistic_meaning" version="1.7">meaning</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="arg0, PRP" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>But other fans were convinced he was being ambiguous to trick his followers.</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">ambiguous</rel>
-        <arg f="prp" n="m">to trick his followers</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Linguistic_meaning" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+      </lexlinks>
+      <example name="ambiguous-j: arg0, PRP" src="internet">
+        <text>But other fans were convinced he was being ambiguous to trick his followers .</text>
+        <propbank>
+          <rel relloc="8">ambiguous</rel>
+          <arg end="5" start="5" type="ARG0">he</arg>
+          <arg end="12" start="9" type="ARGM-PRP">to trick his followers</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (c / contrast-01
+            :ARG2 (c2 / convince-01
+              :ARG1 (f / fan :pl +
+                :ARG1-of (o / other-01))
+              :ARG2 (a / ambiguous-01
+                :ARG0 (h / he)
+                :purpose (t / trick-01
+                  :ARG0 h
+                  :ARG1 (p / person :pl +
+                    :ARG0-of (f2 / follow-02
+                      :ARG1 h))))))
+        </amr>
       </example>
-      <example name="args 0, 1" src="BOLT-6" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>However , with regards to the facts that Vice-Mayor Gao Yong and another six people approved the construction of residential buildings for the County Public Health Bureau without authorization or any examination and approval on the use of land , and in violation of the overall planning for urban construction , the statement in the document was vague and ambiguous . It seemed to be trying to cover it up .</text>
-        <arg f="dis" n="m">However</arg>
-        <arg f="ppt" n="1">with regards to the facts that Vice-Mayor Gao Yong and another six people approved the construction of residential buildings for the County Public Health Bureau without authorization or any examination and approval on the use of land , and in violation of the overall planning for urban construction</arg>
-        <arg f="" n="0">the statement in the document</arg>
-        <rel f="">ambiguous</rel>
+      <example name="ambiguous-j: args 0, 1" src="BOLT-6">
+        <text>However , with regards to the facts that Vice - Mayor Gao Yong and another six people approved the construction of residential buildings for the County Public Health Bureau without authorization or any examination and approval on the use of land , and in violation of the overall planning for urban construction , the statement in the document was vague and ambiguous . It seemed to be trying to cover it up .</text>
+        <propbank>
+          <rel relloc="61">ambiguous</rel>
+          <arg end="0" start="0" type="ARGM-DIS">However</arg>
+          <arg end="51" start="2" type="ARG1">with regards to the facts that Vice - Mayor Gao Yong and another six people approved the construction of residential buildings for the County Public Health Bureau without authorization or any examination and approval on the use of land , and in violation of the overall planning for urban construction</arg>
+          <arg end="57" start="53" type="ARG0">the statement in the document</arg>
+        </propbank>
       </example>
-      <example name="args 0, 1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>the Council was being ambiguous as to how much evidence was ?enough? and what evidence it had that the redundant loop was actually needed.</text>
-        <arg f="" n="0">the Council</arg>
-        <rel f="">ambiguous</rel>
-        <arg f="" n="1">as to how much evidence was ?enough? and what evidence it had that the redundant loop was actually needed</arg>
+      <example name="ambiguous-j: args 0, 1" src="internet">
+        <text>the Council was being ambiguous as to how much evidence was ? enough ? and what evidence it had that the redundant loop was actually needed .</text>
+        <propbank>
+          <rel relloc="4">ambiguous</rel>
+          <arg end="1" start="0" type="ARG0">the Council</arg>
+          <arg end="25" start="5" type="ARG1">as to how much evidence was ? enough ? and what evidence it had that the redundant loop was actually needed</arg>
+        </propbank>
       </example>
+      <example name="ambiguous-j: arg3, arg4" src="internet">
+        <text>In the old form , " the article " was ambiguous between the article algebraic notation and the article that called this template .</text>
+        <propbank>
+          <rel relloc="10">ambiguous</rel>
+          <arg end="3" start="0" type="ARGM-LOC">In the old form</arg>
+          <arg end="8" start="5" type="ARG1">" the article "</arg>
+          <arg end="22" start="11" type="ARG3">between the article algebraic notation and the article that called this template</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (a / ambiguous-01
+            :ARG1 (s / string-entity :value "the article")
+            :ARG3 (a2 / article
+              :mod (n / notation
+                :mod (a3 / algebra)))
+            :ARG4 (a4 / article
+              :ARG0-of (c / call-02
+                :ARG1 (t / template
+                  :mod (t2 / this))))
+            :location (f / form
+              :mod (o / old)))
+        </amr>
+      </example>
+      <note>AMBIGUOUS NOTES: Updated for SpatialAMR. </note>
+      <note>AMBIGUOUS-J NOTES: Added by Julia based on BOLT-6 (from ambiguous.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

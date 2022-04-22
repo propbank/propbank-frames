@@ -1,70 +1,114 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="convict">
     <roleset id="convict.01" name="to find or prove guilty of an offense or crime, finding guilty of a crime">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">convict</alias>
-        <alias framenet="Verdict" pos="n" verbnet="">conviction</alias>
+        <alias pos="v">convict</alias>
+        <alias pos="n">conviction</alias>
       </aliases>
+      <roles>
+        <role descr="judge, jury, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="Verdict" resource="FrameNet" version="1.7">judge</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="person convicted" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="Verdict" resource="FrameNet" version="1.7">defendant</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="convicted of" f="CAU" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Verdict" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Justice.JudicialConsequences.Convict" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Convict" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="convict-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">66</lexlink>
+        <lexlink class="conviction-n.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">25</lexlink>
+      </lexlinks>
+      <example name="all arguments" src="">
+        <text>Despite the strong evidence against Mrs. Yeargin , popular sentiment was so strong in her favor , Mrs. Ward says , that `` I 'm afraid a jury would n't have convicted her .</text>
+        <propbank>
+          <rel relloc="31">convicted</rel>
+          <arg type="ARG0" start="26" end="27">a jury</arg>
+          <arg type="ARGM-MOD" start="28" end="28">would</arg>
+          <arg type="ARGM-NEG" start="29" end="29">n't</arg>
+          <arg type="ARG1" start="32" end="32">her</arg>
+        </propbank>
+      </example>
+      <example name="passive" src="">
+        <text>He was convicted of charging interest rates much higher than what the law permitted , and attempting to evade income taxes by using a double accounting system .</text>
+        <propbank>
+          <rel relloc="2">convicted</rel>
+          <arg type="ARG1" start="0" end="0">He</arg>
+          <arg type="ARG2" start="3" end="26">of charging interest rates much higher than what the law permitted , and attempting to evade income taxes by using a double accounting system</arg>
+        </propbank>
+      </example>
+      <example name="All args" src="internet">
+        <text>Supreme Court upheld their conviction of him for graft .</text>
+        <propbank>
+          <rel relloc="4">conviction</rel>
+          <arg type="ARG0" start="3" end="3">their</arg>
+          <arg type="ARG1" start="5" end="6">of him</arg>
+          <arg type="ARG2" start="7" end="8">for graft</arg>
+        </propbank>
+      </example>
       <note>CONVICT-V NOTES: Frames file for 'convict' based on survey of sentences in the WSJ corpus. (from convict.01-v predicate notes)</note>
       <note>CONVICTION-N NOTES: Added by Julia based on BOLT. No corresponding VNcls. (from conviction.01-n)</note>
-      <roles>
-        <role descr="judge, jury, agent" f="pag" n="0"/>
-        <role descr="person convicted" f="ppt" n="1"/>
-        <role descr="convicted of" f="cau" n="2"/>
-      </roles>
-      <example name="all arguments" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="present" voice="active"/>
-        <text>Despite the strong evidence against Mrs. Yeargin , popular sentiment [*ICH*-1] was so strong [*ICH*-3]in her favor , Mrs. Ward says [0] [*T*-2] , that `` I 'm afraid [0] a jury would n't have convicted her .</text>
-        <arg f="" n="0">a jury</arg>
-        <arg f="mod" n="m">would</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">convicted</rel>
-        <arg f="" n="1">her</arg>
-      </example>
-      <example name="passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="past" voice="passive"/>
-        <text>He-1 was convicted [*-1] of [*-2]charging interest rates much higher than what the law permitted [*T*-3] , and attempting [*-4] to evade income taxes by [*-5] using a double accounting system .</text>
-        <rel f="">convicted</rel>
-        <arg f="" n="1">[*-1]</arg>
-        <arg f="" n="2">of [*-2] charging interest rates much higher than what the law permitted [*T*-3], and attempting [*-4] to evade income taxes by [*-5] using a double accounting system</arg>
-      </example>
-      <example name="All args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Supreme Court upheld their conviction of him for graft.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">conviction</rel>
-        <arg f="" n="1">of him</arg>
-        <arg f="" n="2">for graft</arg>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="conviction">
     <roleset id="conviction.02" name="belief">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">conviction</alias>
+        <alias pos="n">conviction</alias>
       </aliases>
-      <note>CONVICTION-N NOTES: Roleset based on instances in BOLT P01. Loose comparison to verb entry believe.01. No appropriate VN, FN mapping. (from conviction.02-n)</note>
       <roles>
-        <note>No realizations seen with combination of Args1 and 2, but seems possible. (from conviction.02-n)</note>
-        <role descr="Believer, person who holds a conviction/belief" f="pag" n="0"/>
-        <role descr="Thing believed, conviction itself" f="ppt" n="1"/>
-        <role descr="Attributive, what is the domain/subject matter of the conviction?" f="vsp" n="2"/>
+        <role descr="Believer, person who holds a conviction/belief" f="PAG" n="0"/>
+        <role descr="Thing believed, conviction itself" f="PPT" n="1"/>
+        <role descr="Attributive, what is the domain/subject matter of the conviction?" f="VSP" n="2"/>
       </roles>
-      <example name="Args 0 and 2 only" src="BOLT P01" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="conviction-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+      </lexlinks>
+      <example name="Args 0 and 2 only" src="BOLT P01">
         <text>I convinced her , but my conviction on this is shallow .</text>
-        <arg f="" n="0">my</arg>
-        <rel f="">conviction</rel>
-        <arg f="" n="2">on this</arg>
+        <propbank>
+          <rel relloc="6">conviction</rel>
+          <arg type="ARG0" start="5" end="5">my</arg>
+          <arg type="ARG2" start="7" end="8">on this</arg>
+        </propbank>
       </example>
-      <example name="Headline-ease, args 0 and 1" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Mother of slain teen won't rest on her conviction that the killer's punishment didn't fit the crime.</text>
-        <arg f="" n="0">her</arg>
-        <rel f="">conviction</rel>
-        <arg f="" n="1">that the killer's punishment didn't fit the crime</arg>
+      <example name="Headline-ease, args 0 and 1" src="web">
+        <text>Mother of slain teen wo n't rest on her conviction that the killer 's punishment did n't fit the crime .</text>
+        <propbank>
+          <rel relloc="9">conviction</rel>
+          <arg type="ARG0" start="8" end="8">her</arg>
+          <arg type="ARG1" start="10" end="19">that the killer 's punishment did n't fit the crime</arg>
+        </propbank>
       </example>
+      <note>CONVICTION-N NOTES: Roleset based on instances in BOLT P01. Loose comparison to verb entry believe.01. No appropriate VN, FN mapping. (from conviction.02-n)</note>
+      <note>No realizations seen with combination of Args1 and 2, but seems possible. (from conviction.02-n)</note>
     </roleset>
   </predicate>
 </frameset>

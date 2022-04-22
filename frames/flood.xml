@@ -1,67 +1,115 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="flood">
     <roleset id="flood.01" name="cover with a liquid, to fill with an excess, filling past capacity with liquid">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">flood</alias>
-        <alias framenet="" pos="n" verbnet="">flood</alias>
-        <alias framenet="" pos="n" verbnet="">flooding</alias>
+        <alias pos="v">flood</alias>
+        <alias pos="n">flood</alias>
+        <alias pos="n">flooding</alias>
       </aliases>
+      <roles>
+        <role descr="causer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Filling" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="Filling" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="location flooded" f="GOL" n="1">
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Filling" resource="FrameNet" version="1.7">goal</rolelink>
+            <rolelink class="Filling" resource="FrameNet" version="1.7">theme</rolelink>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="liquid" f="PPT" n="2">
+          <rolelinks>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">instrument</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Filling" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Mass_motion" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="other_cos-45.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="fill-9.8" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="flood-n.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+        <lexlink class="flood-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">6</lexlink>
+        <lexlink class="flood-v.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">11</lexlink>
+        <lexlink class="fill-9.8" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="other_cos-45.4" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="flood-v: all arguments" src="">
+        <text>When Mrs. Thatcher cut the top tax rate to 40 % , Mr. Lawson flooded the country with money to prevent the pound from rising against the mark .</text>
+        <propbank>
+          <rel relloc="14">flooded</rel>
+          <arg type="ARGM-TMP" start="0" end="10">When Mrs. Thatcher cut the top tax rate to 40 %</arg>
+          <arg type="ARG0" start="12" end="13">Mr. Lawson</arg>
+          <arg type="ARG1" start="15" end="16">the country</arg>
+          <arg type="ARG2" start="17" end="18">with money</arg>
+          <arg type="ARGM-PNC" start="19" end="27">to prevent the pound from rising against the mark</arg>
+        </propbank>
+      </example>
+      <example name="flood-v: passive" src="">
+        <text>In 1984 , the Costa Rican government requested help to establish a radio station in the northern part of the country , flooded by airwaves of Sandinista propaganda .</text>
+        <propbank>
+          <rel relloc="22">flooded</rel>
+          <arg type="ARG1" start="15" end="17">the northern part</arg>
+          <arg type="ARG2" start="23" end="27">by airwaves of Sandinista propaganda</arg>
+        </propbank>
+      </example>
+      <example name="flood-n: arg 1" src="">
+        <text>a flood of selling by other investors</text>
+        <propbank>
+          <rel relloc="1">flood</rel>
+          <arg type="ARG2" start="2" end="6">of selling by other investors</arg>
+        </propbank>
+      </example>
+      <example name="flood-n: arg 1 before the noun" src="">
+        <text>the selling flood</text>
+        <propbank>
+          <rel relloc="2">flood</rel>
+          <arg type="ARG2" start="1" end="1">selling</arg>
+        </propbank>
+      </example>
+      <example name="flood-n: finding more than arg 1 may be rare" src="">
+        <text>a flood of new supply</text>
+        <propbank>
+          <rel relloc="1">flood</rel>
+          <arg type="ARG2" start="2" end="4">of new supply</arg>
+        </propbank>
+      </example>
+      <example name="flooding-n: Args 1, 2" src="internet">
+        <text>It is often necessary to raise mounds or dykes along the course of rivers to keep them within their channels , and prevent their flooding the lands which lie near them , when the waters rise above their usual level .</text>
+        <propbank>
+          <rel relloc="24">flooding</rel>
+          <arg type="ARG1" start="23" end="23">their</arg>
+          <arg type="ARG2" start="25" end="30">the lands which lie near them</arg>
+          <arg type="ARGM-TMP" start="32" end="39">when the waters rise above their usual level</arg>
+        </propbank>
+      </example>
       <note>FLOOD-V NOTES: Frames file for 'flood' based on survey of sentences in the WSJ corpus. (from flood.01-v)</note>
       <note>FLOOD-N NOTES: Based on sentences in nouns-00040. Comparison to flood.01-V. See Vn clases fill-9.8 and other_cos-45.4. Framed by Katie. (from flood.01-n)</note>
       <note>FLOODING-N NOTES: Added by Julia based on BOLT, flood-v.01. Corresponds to VNcls fill-9.8, other_cos-45.4. (from flooding.01-n)</note>
-      <roles>
-        <role descr="causer" f="pag" n="0">
-          <vnrole vncls="45.4" vntheta="agent"/>
-          <vnrole vncls="9.8" vntheta="agent"/>
-        </role>
-        <role descr="location flooded" f="gol" n="1">
-          <vnrole vncls="45.4" vntheta="patient"/>
-          <vnrole vncls="9.8" vntheta="theme"/>
-        </role>
-        <role descr="liquid" f="ppt" n="2"/>
-      </roles>
-      <example name="flood-v: all arguments" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>When Mrs. Thatcher cut the top tax rate to 40 % [*T*-1] , Mr. Lawson flooded the country with money [*-2]to prevent the pound from [*-3] rising against the mark .</text>
-        <arg f="tmp" n="m">When Mrs. Thatcher cut the top tax rate to 40 % [*T*-1]</arg>
-        <arg f="" n="0">Mr. Lawson</arg>
-        <rel f="">flooded</rel>
-        <arg f="" n="1">the country</arg>
-        <arg f="" n="2">with money</arg>
-        <arg f="pnc" n="m">[*-2] to prevent the pound from [*-3]rising against the mark</arg>
-      </example>
-      <example name="flood-v: passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>In 1984 , the Costa Rican government requested help [*] to establish a radio station in [the northern part]-1 of the country , flooded [*]-1 by airwaves of Sandinista propaganda .</text>
-        <rel f="">flooded</rel>
-        <arg f="" n="1">[*]</arg>
-        <arg f="" n="2">by airwaves of Sandinista propaganda</arg>
-      </example>
-      <example name="flood-n: arg 1" src="" type="">
-        <text>a flood of selling by other investors</text>
-        <rel f="">flood</rel>
-        <arg f="" n="2">of selling by other investors</arg>
-      </example>
-      <example name="flood-n: arg 1 before the noun" src="" type="">
-        <text>the selling flood</text>
-        <arg f="" n="2">selling</arg>
-        <rel f="">flood</rel>
-      </example>
-      <example name="flood-n: finding more than arg 1 may be rare" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>a flood of new supply</text>
-        <rel f="">flood</rel>
-        <arg f="" n="2">of new supply</arg>
-      </example>
-      <example name="flooding-n: Args 1, 2" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>It is often necessary to raise mounds or dykes along the course of rivers to keep them within their channels, and prevent their flooding the lands which lie near them, when the waters rise above their usual level.</text>
-        <arg f="" n="1">their</arg>
-        <rel f="">flooding</rel>
-        <arg f="" n="2">the lands which lie near them</arg>
-        <arg f="tmp" n="m">when the waters rise above their usual level</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

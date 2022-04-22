@@ -1,22 +1,50 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="incontinent">
     <roleset id="incontinent.01" name="unable to control flow of bodily waste">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">incontinent</alias>
+        <alias pos="n">incontinence</alias>
+        <alias pos="j">incontinent</alias>
       </aliases>
-      <note>INCONTINENT-J NOTES: Added by Julia based on medi-tmprl1to8. (from incontinent.01-j)</note>
       <roles>
-        <role descr="incontinent one" f="pag" n="1"/>
-        <role descr="bodily waste not contained" f="ppt" n="2"/>
+        <role descr="incontinent one" f="PAG" n="1" />
+        <role descr="bodily waste not contained" f="PPT" n="2" />
       </roles>
-      <example name="both args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>A resident who-1 *-1 is incontinent of urine has an increased risk of developing. (A) dementia. (B) urinary tract infections.</text>
-        <arg f="" n="1">*-1</arg>
-        <rel f="">incontinent</rel>
-        <arg f="" n="2">of urine</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks />
+      <example name="incontinent-j: both args" src="internet">
+        <text>A resident who is incontinent of urine has an increased risk of developing . ( A ) dementia . ( B ) urinary tract infections .</text>
+        <propbank>
+          <rel relloc="4">incontinent</rel>
+          <arg end="2" start="2" type="ARG1">who</arg>
+          <arg end="6" start="5" type="ARG2">of urine</arg>
+        </propbank>
       </example>
+      <example name="incontinence-n" src="THYME">
+        <text>She denies fecal incontinence</text>
+        <propbank>
+          <rel relloc="3">incontinence</rel>
+          <arg end="2" start="2" type="ARG2">fecal</arg>
+        </propbank>
+        <amr version="THYME 1.0">
+          (d / deny-01
+            :ARG0 (s / she)
+            :ARG1 (i2 / incontinent-01
+              :ARG1 s
+              :ARG2 (a / anatomical-site :name (n / name :op1 "feces"))))
+        </amr>
+      </example>
+      <note>INCONTINENT NOTES: Added by Julia based on medi-tmprl1to8. (from incontinent.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

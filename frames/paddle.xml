@@ -1,37 +1,75 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="paddle">
     <roleset id="paddle.01" name="propel with a paddle">
       <aliases>
-        <alias framenet="Operate_Vehicle" pos="v" verbnet="">paddle</alias>
+        <alias pos="v">paddle</alias>
       </aliases>
-      <note>PADDLE-V NOTES: Roleset by Julia based on internet search. Member of Vncls drive-11.5, nonvehicle-51.4.2. Comparison to ?row?. (from paddle.01-v)</note>
       <roles>
         <role descr="person doing the paddling" f="PAG" n="0">
-          <vnrole vncls="11.5" vntheta="Agent"/>
-          <vnrole vncls="51.4.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="drive-11.5" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="nonvehicle-51.4.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Operate_vehicle" resource="FrameNet" version="1.7">driver</rolelink>
+            <rolelink class="drive-11.5" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="nonvehicle-51.4.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing being paddled" f="ppt" n="1">
-          <vnrole vncls="11.5" vntheta="Theme"/>
-          <vnrole vncls="51.4.2" vntheta="Theme"/>
+        <role descr="thing being paddled" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="drive-11.5" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="nonvehicle-51.4.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Operate_vehicle" resource="FrameNet" version="1.7">vehicle</rolelink>
+            <rolelink class="drive-11.5" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+            <rolelink class="nonvehicle-51.4.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="source" f="DIR" n="2">
-          <vnrole vncls="11.5" vntheta="Initial_Location"/>
+          <rolelinks>
+            <rolelink class="drive-11.5" resource="VerbNet" version="verbnet3.3">initial_location</rolelink>
+            <rolelink class="drive-11.5" resource="VerbNet" version="verbnet3.4">initial_location</rolelink>
+          </rolelinks>
         </role>
-        <role descr="destination/location" f="loc" n="3">
-          <vnrole vncls="11.5" vntheta="Destination"/>
-          <vnrole vncls="51.4.2" vntheta="Location"/>
+        <role descr="destination/location" f="LOC" n="3">
+          <rolelinks>
+            <rolelink class="drive-11.5" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="nonvehicle-51.4.2" resource="VerbNet" version="verbnet3.3">location</rolelink>
+            <rolelink class="Operate_vehicle" resource="FrameNet" version="1.7">area</rolelink>
+            <rolelink class="Operate_vehicle" resource="FrameNet" version="1.7">goal</rolelink>
+            <rolelink class="drive-11.5" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+            <rolelink class="nonvehicle-51.4.2" resource="VerbNet" version="verbnet3.4">location</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="All args" src="internet" type="-">
-        <inflection aspect="ns" form="full" person="third" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Operate_vehicle" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="drive-11.5" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="nonvehicle-51.4.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="drive-11.5" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+        <lexlink class="nonvehicle-51.4.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="All args" src="internet">
         <text>The brothers Archibald paddled their boat from the Puerua stream to Raitangata</text>
-        <arg f="" n="0">The brothers Archibald</arg>
-        <rel f="">paddled</rel>
-        <arg f="" n="1">their boat</arg>
-        <arg f="" n="2">from the Puerua stream</arg>
-        <arg f="" n="3">to Raitangata</arg>
+        <propbank>
+          <rel relloc="3">paddled</rel>
+          <arg type="ARG0" start="0" end="2">The brothers Archibald</arg>
+          <arg type="ARG1" start="4" end="5">their boat</arg>
+          <arg type="ARG2" start="6" end="9">from the Puerua stream</arg>
+          <arg type="ARG3" start="10" end="11">to Raitangata</arg>
+        </propbank>
       </example>
+      <note>PADDLE-V NOTES: Roleset by Julia based on internet search. Member of Vncls drive-11.5, nonvehicle-51.4.2. Comparison to ?row?. (from paddle.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

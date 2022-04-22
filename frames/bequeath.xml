@@ -1,32 +1,59 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="bequeath">
     <roleset id="bequeath.01" name="to leave by will, hand down">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">bequeath</alias>
-        <alias framenet="" pos="n" verbnet="">bequest</alias>
-
+        <alias pos="v">bequeath</alias>
+        <alias pos="n">bequest</alias>
       </aliases>
-      <note>BEQUEATH-V NOTES: Frames file for 'bequeath' based on survey of sentences in the WSJ corpus. (from bequeath.01-v predicate notes)</note>
       <roles>
         <role descr="giver, agent" f="PAG" n="0">
-          <vnrole vncls="13.3" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Giving" resource="FrameNet" version="1.7">recipient</rolelink>
+            <rolelink class="Giving" resource="FrameNet" version="1.7">donor</rolelink>
+            <rolelink class="Giving" resource="FrameNet" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity bequeathed" f="PPT" n="1">
-          <vnrole vncls="13.3" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Giving" resource="FrameNet" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="recipient" f="GOL" n="2">
-          <vnrole vncls="13.3" vntheta="Goal"/>
+          <rolelinks>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.3">goal</rolelink>
+            <rolelink class="Giving" resource="FrameNet" version="1.7">recipient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all arguments" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Mr. Hubbard , who [*T*-1] died in 1986 , bequeathed the copyrights on his writings to his church , which [*T*-2]licensed them to New Era Publications , a Danish corporation .</text>
-        <arg f="" n="0">Mr. Hubbard , who [*T*-1] died in 1986 ,</arg>
-        <rel f="">bequeathed</rel>
-        <arg f="" n="1">the copyrights on his writings</arg>
-        <arg f="to" n="2">his church , which [*T*-2] licensed them to New Era Publications , a Danish corporation</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Giving" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Inheritance_cu" confidence="0.0" resource="FrameNet" src="manual+strict-conv" version="UNK"/>
+        <lexlink class="future_having-13.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+      </lexlinks>
+      <example name="all arguments" src="">
+        <text>Mr. Hubbard , who died in 1986 , bequeathed the copyrights on his writings to his church , which licensed them to New Era Publications , a Danish corporation .</text>
+        <propbank>
+          <rel relloc="8">bequeathed</rel>
+          <arg type="ARG0" start="0" end="6">Mr. Hubbard , who died in 1986</arg>
+          <arg type="ARG1" start="9" end="13">the copyrights on his writings</arg>
+          <arg type="ARG2" start="15" end="28">his church , which licensed them to New Era Publications , a Danish corporation</arg>
+        </propbank>
       </example>
+      <note>BEQUEATH-V NOTES: Frames file for 'bequeath' based on survey of sentences in the WSJ corpus. (from bequeath.01-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

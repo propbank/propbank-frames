@@ -1,60 +1,97 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="implement">
     <roleset id="implement.01" name="bring about">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">implement</alias>
-        <alias framenet="" pos="n" verbnet="">implementation</alias>
+        <alias pos="v">implement</alias>
+        <alias pos="n">implementation</alias>
       </aliases>
-      <note>IMPLEMENT-V NOTES: subject traces seem unusually tricky for this verb. Dunno why. (from implement.01-v)</note>
-      <note>IMPLEMENTATION-N NOTES: Roleset based on verb entry implement.01, OntoNotes sense grouping implementation.01; maps to VN entry establish-55.5-1. Framed by Claire. (from implementation.01-n)</note>
       <roles>
         <role descr="implementer" f="PAG" n="0">
-          <vnrole vncls="55.5-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="establish-55.5-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="establish-55.5-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing implemented" f="PPT" n="1">
-          <vnrole vncls="55.5-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="establish-55.5-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="establish-55.5-1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="instrument" f="MNR" n="2">
-          <vnrole vncls="55.5-1" vntheta="Instrument"/>
+          <rolelinks>
+            <rolelink class="establish-55.5-1" resource="VerbNet" version="verbnet3.3">instrument</rolelink>
+            <rolelink class="establish-55.5-1" resource="VerbNet" version="verbnet3.4">instrument</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="active" src="" type="">
-        <text>The results underscore Sears-1' difficulties in *trace*-1 implementing the ``everyday low pricing'' strategy that it adopted in March as part of a broad attempt to revive its retailing business.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">implementing</rel>
-        <arg f="" n="1">the ``everyday low pricing'' strategy that it adopted in March as part of a broad attempt to revive its retailing business</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Execute_plan" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="establish-55.5-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="implement-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">184</lexlink>
+        <lexlink class="implementation-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">28</lexlink>
+        <lexlink class="establish-55.5-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="active" src="">
+        <text>The results underscore Sears ' difficulties in implementing the `` everyday low pricing '' strategy that it adopted in March as part of a broad attempt to revive its retailing business .</text>
+        <propbank>
+          <rel relloc="7">implementing</rel>
+          <arg type="ARG0" start="3" end="3">Sears</arg>
+          <arg type="ARG1" start="8" end="30">the `` everyday low pricing '' strategy that it adopted in March as part of a broad attempt to revive its retailing business</arg>
+        </propbank>
       </example>
-      <example name="passive" src="" type="">
-        <text>All arguments against program trading, even those pressed without fact, conclude with three expected results after ``reforms-1'' are implemented *trace*-1: [etc]</text>
-        <rel f="">implemented</rel>
-        <arg f="" n="1">*trace*</arg>
+      <example name="passive" src="">
+        <text>All arguments against program trading , even those pressed without fact , conclude with three expected results after `` reforms '' are implemented : [ etc ]</text>
+        <propbank>
+          <rel relloc="22">implemented</rel>
+          <arg type="ARG1" start="19" end="19">reforms</arg>
+        </propbank>
       </example>
-      <example name="NP only" src="NP only" type="NP only">
+      <example name="NP only" src="">
         <text>the plan 's implementation</text>
-        <arg f="" n="1">the plan 's</arg>
-        <rel f="">implementation</rel>
+        <propbank>
+          <rel relloc="3">implementation</rel>
+          <arg type="ARG1" start="0" end="2">the plan 's</arg>
+        </propbank>
       </example>
-      <example name="Prepositional arg1" src="Prepositional arg1" type="Prepositional arg1">
-        <text>The agency was created for the implementation of the policy.</text>
-        <rel f="">implementation</rel>
-        <arg f="" n="1">of the policy</arg>
+      <example name="Prepositional arg1" src="">
+        <text>The agency was created for the implementation of the policy .</text>
+        <propbank>
+          <rel relloc="6">implementation</rel>
+          <arg type="ARG1" start="7" end="9">of the policy</arg>
+        </propbank>
       </example>
-      <example name="Implementer and implemented" src="Implementer and implemented" type="Implementer and implemented">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Anderson has impressed us with her implementation of state-of- the-art information technology.</text>
-        <arg f="" n="0">her</arg>
-        <rel f="">implementation</rel>
-        <arg f="" n="1">of state-of-the-art information technology</arg>
+      <example name="Implementer and implemented" src="">
+        <text>Anderson has impressed us with her implementation of state - of- the - art information technology .</text>
+        <propbank>
+          <rel relloc="6">implementation</rel>
+          <arg type="ARG0" start="5" end="5">her</arg>
+          <arg type="ARG1" start="7" end="15">of state - of- the - art information technology</arg>
+        </propbank>
       </example>
-      <example name="All arguments" src="All arguments" type="All arguments">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>His implementation of statistical analysis with the Japanese Candlestick methodology has produced some unique successful trading programs.</text>
-        <arg f="" n="0">His</arg>
-        <rel f="">implementation</rel>
-        <arg f="" n="1">of statistical analysis</arg>
-        <arg f="" n="2">with the Japanese Candlestick methodology</arg>
+      <example name="All arguments" src="">
+        <text>His implementation of statistical analysis with the Japanese Candlestick methodology has produced some unique successful trading programs .</text>
+        <propbank>
+          <rel relloc="1">implementation</rel>
+          <arg type="ARG0" start="0" end="0">His</arg>
+          <arg type="ARG1" start="2" end="4">of statistical analysis</arg>
+          <arg type="ARG2" start="5" end="9">with the Japanese Candlestick methodology</arg>
+        </propbank>
       </example>
+      <note>IMPLEMENT-V NOTES: subject traces seem unusually tricky for this verb. Dunno why. (from implement.01-v)</note>
+      <note>IMPLEMENTATION-N NOTES: Roleset based on verb entry implement.01, OntoNotes sense grouping implementation.01; maps to VN entry establish-55.5-1. Framed by Claire. (from implementation.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

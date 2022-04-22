@@ -1,60 +1,134 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="elevate">
     <roleset id="elevate.01" name="to raise or lift">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">elevate</alias>
-        <alias framenet="" pos="n" verbnet="">elevation</alias>
-        <alias framenet="" pos="j" verbnet="">elevated</alias>
+        <alias pos="v">elevate</alias>
+        <alias pos="n">elevation</alias>
+        <alias pos="j">elevated</alias>
       </aliases>
+      <roles>
+        <role descr="causer of upward motion, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="put_direction-9.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="put_direction-9.4" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity elevated" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="put_direction-9.4" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="put_direction-9.4" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="endpoint" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="put_direction-9.4" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="put_direction-9.4" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="put_direction-9.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="elevate-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">10</lexlink>
+        <lexlink class="put_direction-9.4" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="elevate-v: all arguments" src="">
+        <text>The bill also elevates even minor rule infractions to felonies and provides for recovery of punitive damages in civil lawsuits and arbitration cases without any showing of willful misconduct .</text>
+        <propbank>
+          <rel relloc="3">elevates</rel>
+          <arg end="1" start="0" type="ARG0">The bill</arg>
+          <arg end="2" start="2" type="ARGM-DIS">also</arg>
+          <arg end="7" start="4" type="ARG1">even minor rule infractions</arg>
+          <arg end="9" start="8" type="ARG2">to felonies</arg>
+        </propbank>
+      </example>
+      <example name="elevation-n: All Args" src="">
+        <text>The officials ' elevation of the disaster to a level 14 disaster predictably caused panic .</text>
+        <propbank>
+          <rel relloc="3">elevation</rel>
+          <arg end="2" start="0" type="ARG0">The officials '</arg>
+          <arg end="6" start="4" type="ARG1">of the disaster</arg>
+          <arg end="11" start="7" type="ARG2">to a level 14 disaster</arg>
+        </propbank>
+      </example>
+      <example name="elevate-v: Args 1 and 2" src="">
+        <text>Velocities are elevated to 196 cm / sec in the left distal common or proximal external iliac artery .</text>
+        <propbank>
+          <rel relloc="2">elevated</rel>
+          <arg end="0" start="0" type="ARG1">Velocities</arg>
+          <arg end="7" start="3" type="ARG2">to 196 cm / sec</arg>
+          <arg end="17" start="8" type="ARGM-LOC">in the left distal common or proximal external iliac artery</arg>
+        </propbank>
+      </example>
+      <example name="elevated-j: static endpoint" src="">
+        <text>The CEA is elevated at 7.8 although patient was a long - time smoker .</text>
+        <propbank>
+          <rel relloc="3">elevated</rel>
+          <arg end="1" start="0" type="ARG1">The CEA</arg>
+          <arg end="5" start="4" type="ARG2">at 7.8</arg>
+          <arg end="13" start="6" type="ARGM-ADV">although patient was a long - time smoker</arg>
+        </propbank>
+      </example>
       <note>ELEVATE-V NOTES: Frames file for 'elevate' based on survey of sentences in the WSJ corpus. (from elevate.01-v predicate notes)</note>
       <note>ELEVATION-N NOTES: Corresponds with elevate.01 (from elevation.01-n)</note>
       <note>ELEVATED-J NOTES: Based on Thyme and Sharp data. Comparison to elevate.01. Elevate.01 is a member of Vn class put_direction-9.4. Framed by Katie. (from elevated.01-j)</note>
+      <note>In 'What is the elevation of Denver?" 'elevation' is not eventive. (from elevation.01-n)</note>
+    </roleset>
+  </predicate>
+  <predicate lemma="elevation">
+    <roleset id="elevation.02" name="location: have an altitude measurement">
+      <aliases>
+        <alias pos="n">elevation</alias>
+      </aliases>
       <roles>
-        <note>In 'What is the elevation of Denver?" 'elevation' is not eventive. (from elevation.01-n)</note>
-        <role descr="causer of upward motion, agent" f="PAG" n="0">
-          <vnrole vncls="9.4" vntheta="Agent"/>
-        </role>
-        <role descr="entity elevated" f="PPT" n="1">
-          <vnrole vncls="9.4" vntheta="Theme"/>
-        </role>
-        <role descr="endpoint" f="GOL" n="2">
-          <vnrole vncls="9.4" vntheta="Destination"/>
-        </role>
+        <role descr="entity with an altitude measurement" f="SE1" n="1" />
+        <role descr="elevation in what substance/space" f="LOC" n="2" />
+        <role descr="elevation measurement" f="EXT" n="3" />
       </roles>
-      <example name="all arguments" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>The bill also elevates even minor rule infractions to felonies and provides for recovery of punitive damages in civil lawsuits and arbitration cases without any showing of willful misconduct .</text>
-        <arg f="" n="0">The bill</arg>
-        <arg f="DIS" n="M">also</arg>
-        <rel f="">elevates</rel>
-        <arg f="" n="1">even minor rule infractions</arg>
-        <arg f="" n="2">to felonies</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks />
+      <example name="elevation-n" src="Minecraft">
+        <text>place 2 more towers at the same elevation of the purple structure</text>
+        <propbank>
+          <rel relloc="7">elevation</rel>
+          <arg end="6" start="6" type="ARGM-ADJ">same</arg>
+          <arg end="11" start="8" type="ARG1">of the purple structure</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (p / place-01 :mode imperative
+            :ARG0 (y / you)
+            :ARG1 (t / tower
+              :ARG1-of (h / have-quant-91
+                :ARG2 2
+                :ARG3 (m / more)))
+            :ARG2 (s / space :pl +
+              :ARG1-of (s2 / same-01
+                :ARG2 (s3 / structure
+                  :color (p2 / purple))
+                :ARG3 (e / elevation-02))))
+        </amr>
       </example>
-      <example name="All Args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The officials' elevation of the disaster to a level 14 disaster predictably caused panic.</text>
-        <arg f="" n="0">The officials'</arg>
-        <rel f="">elevation</rel>
-        <arg f="" n="1">of the disaster</arg>
-        <arg f="" n="2">to a level 14 disaster</arg>
-      </example>
-      <example name="Args 1 and 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Velocities are elevated to 196 cm/sec in the left distal common or proximal external iliac artery.</text>
-        <arg f="" n="1">Velocities</arg>
-        <rel f="">elevated</rel>
-        <arg f="" n="2">to 196 cm/sec</arg>
-        <arg f="loc" n="m">in the left distal common or proximal external iliac artery.</arg>
-      </example>
-      <example name="static endpoint" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The CEA is elevated at 7.8 although patient was a long-time smoker.</text>
-        <arg f="" n="1">The CEA</arg>
-        <rel f="">elevated</rel>
-        <arg f="" n="2">at 7.8</arg>
-        <arg f="adv" n="m">although the patient was a long-time smoker.</arg>
-      </example>
+      <note>ELEVATION NOTES: Added for SpatialAMR.</note>
     </roleset>
   </predicate>
 </frameset>

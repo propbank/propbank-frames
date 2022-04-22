@@ -1,58 +1,124 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="ahead">
     <roleset id="ahead.01" name="proceding faster than designated schedule">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">ahead</alias>
+        <alias pos="j">ahead</alias>
       </aliases>
-      <note>AHEAD-J NOTES: Added by Julia.</note>
       <roles>
-        <role descr="entity/accomplishment ahead of schedule" f="pag" n="1"/>
-        <role descr="by how much" f="ext" n="2"/>
-        <role descr="schedule, goal" f="ppt" n="3"/>
+        <role descr="entity/accomplishment ahead of schedule" f="PAG" n="1" />
+        <role descr="by how much" f="EXT" n="2" />
+        <role descr="schedule, goal" f="PPT" n="3" />
       </roles>
-      <example name="ahead-j" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+      </usagenotes>
+      <example name="ahead-j" src="">
         <text>The goal was reached nearly a year ahead of schedule</text>
-        <arg f="" n="2">a year</arg>
-        <rel f="">ahead</rel>
-        <arg f="" n="3">of schedule</arg>
+        <propbank>
+          <rel relloc="7">ahead</rel>
+          <arg type="ARG2" start="5" end="6">a year</arg>
+          <arg type="ARG3" start="8" end="9">of schedule</arg>
+        </propbank>
       </example>
+      <note>AHEAD-J NOTES: Added by Julia.</note>
     </roleset>
     <roleset id="ahead.02" name="be spatially in front of">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">ahead</alias>
+        <alias pos="r">ahead</alias>
+        <alias pos="p">ahead_of</alias>
       </aliases>
-      <note>AHEAD-J NOTES: Added by Julia.</note>
       <roles>
-        <role descr="entity in the front" f="pag" n="1"/>
-        <role descr="entity in the back" f="ppt" n="2"/>
+        <role descr="entity ahead" f="SE1" n="1" />
+        <role descr="entity behind" f="SE2" n="2" />
+        <role descr="anchor" f="ANC" n="3" />
+        <role descr="axis" f="AXS" n="4" />
       </roles>
-      <example name="ahead-j" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks />
+      <entailments>
+        <hobbsian>
+          (forall (Arg1 Arg2 Arg3 Arg4 Arg5)
+          (iff (ahead-02 Arg1 Arg2 Arg3 Arg4 Arg5)
+            (exists (f p1 p2 z1 z2)
+            (and (selfAnchoredFramework f Arg4)
+                (externalTo Arg1 Arg2)
+                (zAxis Arg5 f)
+                (frontOf Arg1 Arg2 f)
+                (atLoc Arg1 p1)
+                (atLoc Arg2 p2)
+                (zCoordinate z1 p1 f)
+                (zCoordinate z2 p2 f)
+                (lt z2 z1 Arg5)
+                (distance Arg3 Arg1 Arg2)))))
+        </hobbsian>
+      </entailments>
+      <example name="ahead_of-p" src="Spatial">
         <text>the driveway is ahead of us</text>
-        <arg f="" n="1">the driveway</arg>
-        <rel f="">ahead</rel>
-        <arg f="" n="2">of us</arg>
+        <propbank>
+          <rel relloc="3 4">ahead of</rel>
+          <arg end="1" start="0" type="ARG1">the driveway</arg>
+          <arg end="5" start="5" type="ARG2">us</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (a / ahead-02
+            :ARG1 (d / driveway)
+            :ARG2 (w / we)
+            :ARG3 (c / cartesian-framework-91
+              :ARG1 w
+              :FR (i2 / intrinsic)))
+        </amr>
       </example>
+      <note>AHEAD NOTES: Updated for SpatialAMR. Args 3 and 4 added as pragmatic roles.</note>
     </roleset>
     <roleset id="ahead.03" name="be winning">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">ahead</alias>
+        <alias pos="j">ahead</alias>
       </aliases>
-      <note>AHEAD-J NOTES: Added by Julia.</note>
       <roles>
-        <role descr="entity winning" f="pag" n="1"/>
-        <role descr="entity losing" f="ppt" n="2"/>
-        <role descr="by how much" f="ext" n="3"/>
-        <role descr="competition" f="vsp" n="4"/>
+        <role descr="entity winning" f="PAG" n="1" />
+        <role descr="entity losing" f="PPT" n="2" />
+        <role descr="by how much" f="EXT" n="3" />
+        <role descr="competition" f="VSP" n="4" />
       </roles>
-      <example name="ahead-j" src="" type="">
-        <text>Pitt is ahead 3-2 in the all-time series with the last two games decided by a combined five points. </text>
-        <arg f="" n="1">Pitt</arg>
-        <rel f="">ahead</rel>
-        <arg f="" n="3">3-2</arg>
-        <arg f="" n="4">in the all-time series</arg>
-        <arg f="adv" n="m">with the last two games decided by a combined five points</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+      </usagenotes>
+      <example name="ahead-j" src="">
+        <text>Pitt is ahead 3 - 2 in the all - time series with the last two games decided by a combined five points .</text>
+        <propbank>
+          <rel relloc="2">ahead</rel>
+          <arg type="ARG1" start="0" end="0">Pitt</arg>
+          <arg type="ARG3" start="3" end="5">3 - 2</arg>
+          <arg type="ARG4" start="6" end="11">in the all - time series</arg>
+          <arg type="ARGM-ADV" start="12" end="22">with the last two games decided by a combined five points</arg>
+        </propbank>
       </example>
+      <note>AHEAD-J NOTES: Added by Julia.</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,30 +1,72 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="oust">
     <roleset id="oust.01" name="cause to cease employment">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">oust</alias>
-        <alias framenet="" pos="n" verbnet="">ousting</alias>
+        <alias pos="v">oust</alias>
+        <alias pos="n">ousting</alias>
+        <alias pos="n">ouster</alias>
       </aliases>
-      <note>OUST-V NOTES: extrapolate passives, forms without job from here. (from oust.01-v)</note>
       <roles>
         <role descr="employer" f="PAG" n="0">
-          <vnrole vncls="10.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Change_of_leadership" resource="FrameNet" version="1.7">selector</rolelink>
+            <rolelink class="Removing" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="Removing" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="ex-employee" f="PPT" n="1">
-          <vnrole vncls="10.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Change_of_leadership" resource="FrameNet" version="1.7">old_order</rolelink>
+            <rolelink class="Change_of_leadership" resource="FrameNet" version="1.7">new_leader</rolelink>
+            <rolelink class="Change_of_leadership" resource="FrameNet" version="1.7">old_leader</rolelink>
+            <rolelink class="Removing" resource="FrameNet" version="1.7">theme</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="job" f="DIR" n="2">
-          <vnrole vncls="10.1" vntheta="Source"/>
+          <rolelinks>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.3">source</rolelink>
+            <rolelink class="Change_of_leadership" resource="FrameNet" version="1.7">role</rolelink>
+            <rolelink class="Removing" resource="FrameNet" version="1.7">source</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">initial_location</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all args" src="" type="">
-        <text>[Mr. Ackerman]-1 already is seeking *trace*-1 to oust Mr. Edelman as chairman of Datapoint Corp., an Intelogic affiliate.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">oust</rel>
-        <arg f="" n="1">Mr. Edelman</arg>
-        <arg f="" n="2">as chairman of Datapoint Corp., an Intelogic affiliate</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Removing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Change_of_leadership" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="remove-10.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Personnel.EndPosition.FiringLayoff" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Endposition" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="Attack" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="oust-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">23</lexlink>
+        <lexlink class="remove-10.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="all args" src="">
+        <text>Mr. Ackerman already is seeking to oust Mr. Edelman as chairman of Datapoint Corp. , an Intelogic affiliate .</text>
+        <propbank>
+          <rel relloc="6">oust</rel>
+          <arg type="ARG0" start="0" end="1">Mr. Ackerman</arg>
+          <arg type="ARG1" start="7" end="8">Mr. Edelman</arg>
+          <arg type="ARG2" start="9" end="17">as chairman of Datapoint Corp. , an Intelogic affiliate</arg>
+        </propbank>
       </example>
+      <note>OUST-V NOTES: extrapolate passives, forms without job from here. (from oust.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

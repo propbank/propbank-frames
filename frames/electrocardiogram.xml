@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
+<frameset>
+  <predicate lemma="electrocardiogram">
+    <roleset id="electrocardiogram.01" name="measures the electrical activity of the heart">
+      <aliases>
+        <alias pos="n">EKG</alias>
+        <alias pos="n">ECG</alias>
+        <alias pos="n">electrocardiogram</alias>
+      </aliases>
+      <roles>
+        <role descr="tester" f="PAG" n="0" />
+        <role descr="patient" f="PPT" n="1" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks />
+      <example name="electrocardiogram-n" src="THYME">
+        <text>PACs and PVCs noted on pre - op ECG .</text>
+        <propbank>
+          <rel relloc="8">ECG</rel>
+          <arg end="7" start="5" type="ARGM-TMP">pre - op</arg>
+        </propbank>
+        <amr version="THYME 1.0">
+          (n / note-01
+            :ARG1 (a / and
+              :op1 (d / disease-disorder :pl + :name (n2 / name :op1 "PAC"))
+              :op2 (d2 / disease-disorder :pl + :name (n3 / name :op1 "PVC")))
+            :instrument (e / electrocardiogram-01
+              :ARG1-of (p / preop-01)))
+        </amr>
+      </example>
+      <note>ELECTROCARDIOGRAM NOTES: Added for THYME-AMR.</note>
+    </roleset>
+  </predicate>
+</frameset>

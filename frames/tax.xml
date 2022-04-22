@@ -1,138 +1,208 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="tax">
     <roleset id="tax.01" name="government charging money, tax, duty">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">taxation</alias>
-        <alias framenet="" pos="v" verbnet="">tax</alias>
-        <alias framenet="" pos="n" verbnet="">tariff</alias>
+        <alias pos="n">taxation</alias>
+        <alias pos="v">tax</alias>
+        <alias pos="n">tariff</alias>
       </aliases>
+      <roles>
+        <role descr="taxer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="bill-54.5" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="bill-54.5" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="amount of tax" f="VSP" n="1">
+          <rolelinks>
+            <rolelink class="bill-54.5" resource="VerbNet" version="verbnet3.3">asset</rolelink>
+            <rolelink class="bill-54.5" resource="VerbNet" version="verbnet3.4">asset</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="taxpayer" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="bill-54.5" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+            <rolelink class="bill-54.5" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="commodity" f="CAU" n="3">
+          <rolelinks/>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Taxation_cu" confidence="0.0" resource="FrameNet" src="manual+strict-conv" version="UNK"/>
+        <lexlink class="bill-54.5" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Transfermoney" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="tax-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">16</lexlink>
+        <lexlink class="bill-54.5" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="tax-v: just commodity" src="">
+        <text>The securities - turnover tax has been long criticized by the West German financial community because it tends to drive securities trading and other banking activities out of Frankfurt into rival financial centers , especially London , where trading transactions is n't taxed .</text>
+        <propbank>
+          <rel relloc="42">taxed</rel>
+          <arg type="ARGM-NEG" start="41" end="41">n't</arg>
+          <arg type="ARG3" start="38" end="39">trading transactions</arg>
+          <arg type="ARGM-LOC" start="34" end="35">especially London</arg>
+          <arg type="R-ARGM-LOC" start="37" end="37">where</arg>
+        </propbank>
+      </example>
+      <example name="tax-v: just taxpayer" src="">
+        <text>Congress still is struggling to dismantle the unpopular Catastrophic Care Act of 1988 , which boosted benefits for the elderly and taxed them to pay for the new coverage .</text>
+        <propbank>
+          <rel relloc="21">taxed</rel>
+          <arg type="ARG0" start="6" end="10">the unpopular Catastrophic Care Act</arg>
+          <arg type="R-ARG0" start="14" end="14">which</arg>
+          <arg type="ARG2" start="22" end="22">them</arg>
+          <arg type="ARGM-PRP" start="23" end="28">to pay for the new coverage</arg>
+        </propbank>
+      </example>
+      <example name="tax-v: taxpayer and commodity" src="">
+        <text>Well , notes IRS private ruling 8934014 , `` a fundamental principle '' is that income must be taxed to whoever earns it .</text>
+        <propbank>
+          <rel relloc="18">taxed</rel>
+          <arg type="ARGM-MOD" start="16" end="16">must</arg>
+          <arg type="ARG3" start="15" end="15">income</arg>
+          <arg type="ARG2" start="19" end="22">to whoever earns it</arg>
+        </propbank>
+      </example>
+      <example name="tax-v: same args, inverted syntax" src="">
+        <text>Currently , even though the issuer does n't pay tax , the debt holder is taxed on the accrued interest .</text>
+        <propbank>
+          <rel relloc="15">taxed</rel>
+          <arg type="ARGM-TMP" start="0" end="0">Currently</arg>
+          <arg type="ARGM-ADV" start="2" end="9">even though the issuer does n't pay tax</arg>
+          <arg type="ARG2" start="11" end="13">the debt holder</arg>
+          <arg type="ARG3" start="16" end="19">on the accrued interest</arg>
+        </propbank>
+      </example>
+      <example name="taxation-n: just arg3" src="">
+        <text>the state taxation department ... was continuously revising and improving the policies , laws and regulations on the taxation of cooperation with the outside in exploring and developing petroleum ,</text>
+        <propbank>
+          <rel relloc="18">taxation</rel>
+          <arg type="ARG3" start="19" end="28">of cooperation with the outside in exploring and developing petroleum</arg>
+        </propbank>
+      </example>
+      <example name="taxation-n: args 0, 2 and 3" src="">
+        <text>The federal taxation of smokers for children 's healthcare is illegal under the constitution because children do n't smoke .</text>
+        <propbank>
+          <rel relloc="2">taxation</rel>
+          <arg type="ARG0" start="1" end="1">federal</arg>
+          <arg type="ARG2" start="3" end="4">of smokers</arg>
+          <arg type="ARG3" start="5" end="8">for children 's healthcare</arg>
+        </propbank>
+      </example>
+      <example name="taxation-n: with arg1" src="">
+        <text>This new regime foresees a minimum taxation of 1 % in 2003 and 2004 ,</text>
+        <propbank>
+          <rel relloc="6">taxation</rel>
+          <arg type="ARGM-EXT" start="5" end="5">minimum</arg>
+          <arg type="ARG1" start="7" end="9">of 1 %</arg>
+          <arg type="ARGM-TMP" start="10" end="13">in 2003 and 2004</arg>
+        </propbank>
+      </example>
+      <example name="tariffs-n: args 0, 3" src="internet">
+        <text>The result is a 40 % cut in their tariffs on industrial products , ...</text>
+        <propbank>
+          <rel relloc="9">tariffs</rel>
+          <arg type="ARG0" start="8" end="8">their</arg>
+          <arg type="ARG3" start="10" end="12">on industrial products</arg>
+        </propbank>
+      </example>
       <note>TAX-V NOTES: Member of Vncls bill-54.5. (from tax.01-v)</note>
       <note>TAXATION-N NOTES: Added by Julia based on tax-v.01. Corresponds to VNcls bill-54.5. (from taxation.01-n)</note>
       <note>TARIFF-N NOTES: Based on Bolt data. Comparison to tax.01. Tax is a member of VN class bill-54.5. No FN class. Framed by Katie. (from tariff.01-n)</note>
-      <roles>
-        <note>Arg1 doesn't seem to occur.  The arguments and their numbering aresuggested by comparison with 'bill' and 'charge'. (from tax.01-v)</note>
-        <role descr="taxer" f="pag" n="0">
-          <vnrole vncls="54.5" vntheta="Agent"/>
-        </role>
-        <role descr="amount of tax" f="vsp" n="1">
-          <vnrole vncls="54.5" vntheta="Asset"/>
-        </role>
-        <role descr="taxpayer" f="gol" n="2">
-          <vnrole vncls="54.5" vntheta="Recipient"/>
-        </role>
-        <role descr="commodity" f="cau" n="3"/>
-      </roles>
-      <example name="just commodity" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>The securities-turnover tax has been long criticized by the West German financial community because it tends to drive securities trading and other banking activities out of Frankfurt into rival financial centers, especially London, where-2 [trading transactions]-1 isn't taxed *trace*-1 *trace*-2.</text>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">taxed</rel>
-        <arg f="" n="3">*trace*-1 (= trading transaction)</arg>
-        <arg f="loc" n="m">*trace*-2 (= where)</arg>
-        <arg f="slc" n="m">where -&gt; especially London</arg>
-      </example>
-      <example name="just taxpayer" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Congress still is struggling to dismantle the unpopular Catastrophic Care Act of 1988, which-1 *trace*-1 boosted benefits for the elderly and *trace* taxed them to pay for the new coverage.</text>
-        <arg f="" n="0">*trace*-1 (= which)</arg>
-        <arg f="slc" n="m">which -&gt; the unpopular Catastrophic Care Act</arg>
-        <rel f="">taxed</rel>
-        <arg f="" n="2">them</arg>
-        <arg f="prp" n="m">to pay for the new coverage</arg>
-      </example>
-      <example name="taxpayer and commodity" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>Well, notes IRS private ruling 8934014, ``a fundamental principle'' is that [income]-1 must be taxed *trace*-1 to whoever earns it.</text>
-        <arg f="mod" n="m">must</arg>
-        <rel f="">taxed</rel>
-        <arg f="" n="3">*trace*-1 (= income)</arg>
-        <arg f="" n="2">to whoever earns it</arg>
-      </example>
-      <example name="same args, inverted syntax" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>Currently, even though the issuer doesn't pay tax, [the debt holder]-1 is taxed *trace*-1 on the accrued interest.</text>
-        <arg f="tmp" n="m">Currently</arg>
-        <arg f="adv" n="m">even though the issuer doesn't pay tax</arg>
-        <rel f="">taxed</rel>
-        <arg f="" n="2">*trace*-1 (= the debt holder)</arg>
-        <arg f="" n="3">on the accrued interest</arg>
-      </example>
-      <example name="just arg3" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>the state taxation department... was continuously revising and improving the policies , laws and regulations on the taxation of cooperation with the outside in exploring and developing petroleum ,</text>
-        <rel f="">taxation</rel>
-        <arg f="" n="3">of cooperation with the outside in exploring and developing petroleum</arg>
-      </example>
-      <example name="args 0, 2 and 3" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The federal taxation of smokers for children's healthcare is illegal under the constitution because children don't smoke.</text>
-        <arg f="" n="0">federal</arg>
-        <rel f="">taxation</rel>
-        <arg f="" n="2">of smokers</arg>
-        <arg f="" n="3">for children's healthcare</arg>
-      </example>
-      <example name="with arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>This new regime foresees a minimum taxation of 1% in 2003 and 2004,</text>
-        <arg f="ext" n="m">minimum</arg>
-        <rel f="">taxation</rel>
-        <arg f="" n="1">of 1%</arg>
-        <arg f="tmp" n="m">in 2003 and 2004</arg>
-      </example>
-      <example name="args 0, 3" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The result is a 40% cut in their tariffs on industrial products, ...</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">tariffs</rel>
-        <arg f="" n="3">on industrial products</arg>
-      </example>
+      <note>Arg1 doesn't seem to occur.  The arguments and their numbering aresuggested by comparison with 'bill' and 'charge'. (from tax.01-v)</note>
     </roleset>
     <roleset id="tax.03" name="resultative construction">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">tax</alias>
+        <alias pos="v">tax</alias>
       </aliases>
-      <note>TAX-V NOTES: Roleset based on instances in BOLT part 1. Framed by Claire. (from tax.03-v)</note>
       <roles>
-        <role descr="taxer" f="pag" n="0"/>
-        <role descr="thing changing state" f="ppt" n="1"/>
-        <role descr="new state caused by taxing" f="prd" n="2"/>
+        <role descr="taxer" f="PAG" n="0"/>
+        <role descr="thing changing state" f="PPT" n="1"/>
+        <role descr="new state caused by taxing" f="PRD" n="2"/>
       </roles>
-      <example name="tax brains out" src="BOLT part 1" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I 'm in favor of feeding , clothing , and giving shelter to the poor . I 'm against all the gov't institutions that-2 *T*-2 tax our brains out and who inefficiently attempt to provide some of these things .</text>
-        <arg f="" n="0">*T*-2</arg>
-        <arg f="slc" n="m">that * --&gt; all the gov't institutions</arg>
-        <rel f="">tax</rel>
-        <arg f="" n="1">our brains</arg>
-        <arg f="" n="2">out</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="tax-v: tax brains out" src="BOLT part 1">
+        <text>I 'm in favor of feeding , clothing , and giving shelter to the poor . I 'm against all the gov't institutions that tax our brains out and who inefficiently attempt to provide some of these things .</text>
+        <propbank>
+          <rel relloc="24">tax</rel>
+          <arg type="ARG0" start="19" end="22">all the gov't institutions</arg>
+          <arg type="R-ARG0" start="23" end="23">that</arg>
+          <arg type="ARG1" start="25" end="26">our brains</arg>
+          <arg type="ARG2" start="27" end="27">out</arg>
+        </propbank>
       </example>
+      <note>TAX-V NOTES: Roleset based on instances in BOLT part 1. Framed by Claire. (from tax.03-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="tax_away">
     <roleset id="tax_away.02" name="government charging money">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">tax_away</alias>
+        <alias pos="v">tax_away</alias>
       </aliases>
-      <note>TAX_AWAY-V NOTES: Frameset created by Jena (from tax.02-v)</note>
       <roles>
-        <role descr="taxer" f="pag" n="0">
-          <vnrole vncls="54.5" vntheta="Agent"/>
+        <role descr="taxer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="bill-54.5" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="amount of tax" f="vsp" n="1">
-          <vnrole vncls="54.5" vntheta="Asset"/>
+        <role descr="amount of tax" f="VSP" n="1">
+          <rolelinks>
+            <rolelink class="bill-54.5" resource="VerbNet" version="verbnet3.3">asset</rolelink>
+          </rolelinks>
         </role>
-        <role descr="taxpayer" f="gol" n="2">
-          <vnrole vncls="54.5" vntheta="Recipient"/>
+        <role descr="taxpayer" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="bill-54.5" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="commodity" f="cau" n="3"/>
+        <role descr="commodity" f="CAU" n="3"/>
       </roles>
-      <example name="" src="" type="">
-        <text>Why-1 *PRO* bother if [the profits]-2 will be taxed *-2 away [*T*]-1 ?</text>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">taxed away</rel>
-        <arg f="" n="3">*-2</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="bill-54.5" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+      </lexlinks>
+      <example name="tax_away-v" src="">
+        <text>Why bother if the profits will be taxed away ?</text>
+        <propbank>
+          <rel relloc="7 8">taxed away</rel>
+          <arg type="ARGM-MOD" start="5" end="5">will</arg>
+          <arg type="ARG3" start="3" end="4">the profits</arg>
+        </propbank>
       </example>
+      <note>TAX_AWAY-V NOTES: Frameset created by Jena (from tax.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,55 +1,91 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="omit">
     <roleset id="omit.01" name="leave out (of)">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">omission</alias>
-        <alias framenet="" pos="v" verbnet="">omit</alias>
+        <alias pos="n">omission</alias>
+        <alias pos="v">omit</alias>
       </aliases>
-      <note>OMIT-V NOTES: Based on WSJ, automatic expansion via verbnet. Member of VNcls remove-10.1, neglect-75-1. (from omit.01-v)</note>
-      <note>OMISSION-N NOTES: Based on sentences in Temprel data. Comparison to omit.01. Omit.01 is a member of VN classes remove-10.1 and neglect-75-1. Framed by Katie. (from omission.01-n)</note>
       <roles>
         <role descr="omitter" f="PAG" n="0">
-          <vnrole vncls="10.1" vntheta="Agent"/>
-          <vnrole vncls="75-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="neglect-75.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="exclude-107.3" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing left out" f="ppt" n="1">
-          <vnrole vncls="10.1" vntheta="Theme"/>
-          <vnrole vncls="75-1" vntheta="Theme"/>
+        <role descr="thing left out" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+            <rolelink class="neglect-75.1-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+            <rolelink class="exclude-107.3" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="left out of what" f="DIR" n="2">
-          <vnrole vncls="10.1" vntheta="Source"/>
+          <rolelinks>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.3">source</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">initial_location</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Hudson General, which provides maintenance, fueling and other services to airlines and airports, reported a loss for its most recent fiscal year and last month omitted the semiannual dividend on its common shares.</text>
-        <arg f="" n="0">Hudson General, which provides maintenance, fueling and other services to airlines and airports,</arg>
-        <arg f="tmp" n="m">last month</arg>
-        <rel f="">omitted</rel>
-        <arg f="" n="1">the semiannual dividend on its common shares</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="remove-10.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="neglect-75.1-1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+        <lexlink class="omit-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">19</lexlink>
+        <lexlink class="remove-10.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="neglect-75.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="exclude-107.3" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="transitive" src="">
+        <text>Hudson General , which provides maintenance , fueling and other services to airlines and airports , reported a loss for its most recent fiscal year and last month omitted the semiannual dividend on its common shares .</text>
+        <propbank>
+          <rel relloc="28">omitted</rel>
+          <arg type="ARG0" start="0" end="14">Hudson General , which provides maintenance , fueling and other services to airlines and airports</arg>
+          <arg type="ARGM-TMP" start="26" end="27">last month</arg>
+          <arg type="ARG1" start="29" end="35">the semiannual dividend on its common shares</arg>
+        </propbank>
       </example>
-      <example name="frequently passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>[Estimated and actual results involving losses]-1 are omitted *trace*-1.</text>
-        <rel f="">omitted</rel>
-        <arg f="" n="1">*trace*</arg>
+      <example name="frequently passive" src="">
+        <text>Estimated and actual results involving losses are omitted .</text>
+        <propbank>
+          <rel relloc="7">omitted</rel>
+          <arg type="ARG1" start="0" end="5">Estimated and actual results involving losses</arg>
+        </propbank>
       </example>
-      <example name="with source" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>He plans to tell clients to pay certain fees directly to the foundation instead of to him; he would omit those fees from income reported on his return.</text>
-        <arg f="" n="0">he</arg>
-        <arg f="mod" n="m">would</arg>
-        <rel f="">omit</rel>
-        <arg f="" n="1">those fees</arg>
-        <arg f="" n="2">from income reported on his return</arg>
+      <example name="with source" src="">
+        <text>He plans to tell clients to pay certain fees directly to the foundation instead of to him ; he would omit those fees from income reported on his return .</text>
+        <propbank>
+          <rel relloc="20">omit</rel>
+          <arg type="ARG0" start="18" end="18">he</arg>
+          <arg type="ARGM-MOD" start="19" end="19">would</arg>
+          <arg type="ARG1" start="21" end="22">those fees</arg>
+          <arg type="ARG2" start="23" end="28">from income reported on his return</arg>
+        </propbank>
       </example>
-      <example name="With arg 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Folfox plus Avastin with omission of 5-FU bolus</text>
-        <rel f="">omission</rel>
-        <arg f="" n="1">of 5-FU bolus</arg>
+      <example name="With arg 1" src="">
+        <text>Folfox plus Avastin with omission of 5 - FU bolus</text>
+        <propbank>
+          <rel relloc="4">omission</rel>
+          <arg type="ARG1" start="5" end="9">of 5 - FU bolus</arg>
+        </propbank>
       </example>
+      <note>OMIT-V NOTES: Based on WSJ, automatic expansion via verbnet. Member of VNcls remove-10.1, neglect-75-1. (from omit.01-v)</note>
+      <note>OMISSION-N NOTES: Based on sentences in Temprel data. Comparison to omit.01. Omit.01 is a member of VN classes remove-10.1 and neglect-75-1. Framed by Katie. (from omission.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

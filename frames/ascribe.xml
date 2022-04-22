@@ -1,32 +1,58 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="ascribe">
     <roleset id="ascribe.01" name="assign attribute">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">ascribe</alias>
+        <alias pos="v">ascribe</alias>
       </aliases>
-      <note>ASCRIBE-V NOTES: Frames file for 'ascribe' based on sentences in wsj. No Verbnet entry. (from ascribe.01-v predicate notes)</note>
       <roles>
-        <role descr="assigner" f="pag" n="0"/>
-        <role descr="thing assigned (attribute)" f="ppt" n="1"/>
-        <role descr="assigned to" f="gol" n="2"/>
+        <role descr="assigner" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">communicator</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing assigned (attribute)" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">addressee</rolelink>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">evaluee</rolelink>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">topic</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="assigned to" f="GOL" n="2"/>
       </roles>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1006" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Judgment_communication" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+      </lexlinks>
+      <example name="ARG0 and ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1006">
         <text>Ko Yu - fen ascribes the success of the daughter - in - law series to several factors :</text>
-        <arg f="" n="0">Ko Yu - fen</arg>
-        <rel f="">ascribes</rel>
-        <arg f="" n="1">the success of the daughter - in - law series</arg>
-        <arg f="" n="2">to several factors</arg>
+        <propbank>
+          <rel relloc="4">ascribes</rel>
+          <arg type="ARG0" start="0" end="3">Ko Yu - fen</arg>
+          <arg type="ARG1" start="5" end="14">the success of the daughter - in - law series</arg>
+          <arg type="ARG2" start="15" end="17">to several factors</arg>
+        </propbank>
       </example>
-
-      <example name="passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>As a public figure, Mr. Masson had to prove malice and, as proof of malice, Mr. Masson contended that [defamatory quotations]-2 ascribed *trace*-2 to him by Ms. Malcolm were in fact fabricated.</text>
-        <rel f="">ascribed</rel>
-        <arg f="" n="1">*trace*-2</arg>
-        <arg f="" n="2">to him</arg>
-        <arg f="" n="0">by Ms. Malcolm</arg>
+      <example name="passive" src="">
+        <text>As a public figure , Mr. Masson had to prove malice and , as proof of malice , Mr. Masson contended that defamatory quotations ascribed to him by Ms. Malcolm were in fact fabricated .</text>
+        <propbank>
+          <rel relloc="24">ascribed</rel>
+          <arg type="ARG1" start="22" end="23">defamatory quotations</arg>
+          <arg type="ARG2" start="25" end="26">to him</arg>
+          <arg type="ARG0" start="27" end="29">by Ms. Malcolm</arg>
+        </propbank>
       </example>
+      <note>ASCRIBE-V NOTES: Frames file for 'ascribe' based on sentences in wsj. No Verbnet entry. (from ascribe.01-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

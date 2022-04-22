@@ -1,85 +1,132 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="recommend">
     <roleset id="recommend.01" name="recommend, endorsing">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">recommendation</alias>
-        <alias framenet="" pos="v" verbnet="">recommend</alias>
+        <alias pos="n">recommendation</alias>
+        <alias pos="v">recommend</alias>
       </aliases>
-      
-      
       <roles>
-        <role descr="Recommender" f="pag" n="0">
-<vnrole vncls="37.7-1-1-1" vntheta="agent"/>
-</role>
-        <role descr="recommendation" f="ppt" n="1">
-<vnrole vncls="37.7-1-1-1" vntheta="theme"/>
-</role>
-        <role descr="Recommended to" f="gol" n="2">
-<vnrole vncls="37.7-1-1-1" vntheta="recipient"/>
-</role>
-        <role descr="Secondary attribute (recommended as...)" f="prd" n="3"/>
-        <role descr="subject matter of recommendation (if unclear what the recommendation is)" f="vsp" n="4"/>
+        <role descr="Recommender" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="say-37.7-1-1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="say-37.7-1-1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="reflexive_appearance-48.1.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="recommendation" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="say-37.7-1-1-1" resource="VerbNet" version="verbnet3.3">topic</rolelink>
+            <rolelink class="say-37.7-1-1-1" resource="VerbNet" version="verbnet3.4">topic</rolelink>
+            <rolelink class="reflexive_appearance-48.1.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="Recommended to" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="say-37.7-1-1-1" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+            <rolelink class="say-37.7-1-1-1" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+            <rolelink class="reflexive_appearance-48.1.2" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="Secondary attribute (recommended as...)" f="PRD" n="3">
+          <rolelinks/>
+        </role>
+        <role descr="subject matter of recommendation (if unclear what the recommendation is)" f="VSP" n="4">
+          <rolelinks/>
+        </role>
       </roles>
-      <example name="recommended an S" src="" type="">
-        <text>An advisory committee of the Food and Drug Administration recommended that the agency approve Eminase, the company's heart drug.</text>
-        <arg f="" n="0">An advisory committee of the Food and Drug Administration</arg>
-        <rel f="">recommended</rel>
-        <arg f="" n="1">that the agency approve Eminase, the company's heart drug</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Attempt_suasion" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="say-37.7-1-1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Contact.RequestAdvise.Broadcast" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Contact.RequestAdvise.Correspondence" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Contact.RequestAdvise.Meet" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Broadcast" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="recommend-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">75</lexlink>
+        <lexlink class="say-37.7-1-1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="reflexive_appearance-48.1.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="recommended an S" src="">
+        <text>An advisory committee of the Food and Drug Administration recommended that the agency approve Eminase , the company 's heart drug .</text>
+        <propbank>
+          <rel relloc="9">recommended</rel>
+          <arg type="ARG0" start="0" end="8">An advisory committee of the Food and Drug Administration</arg>
+          <arg type="ARG1" start="10" end="20">that the agency approve Eminase , the company 's heart drug</arg>
+        </propbank>
       </example>
-      <example name="recommend an NP" src="" type="">
-        <text>The university had sought an injunction blocking [Connaught's board]-1 from *trace*-1 recommending or supporting an offer for the company by Merieux.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">recommending</rel>
-        <arg f="" n="1">an offer for the company by Merieux</arg>
+      <example name="recommend an NP" src="">
+        <text>The university had sought an injunction blocking Connaught 's board from recommending or supporting an offer for the company by Merieux .</text>
+        <propbank>
+          <rel relloc="11">recommending</rel>
+          <arg type="ARG0" start="7" end="9">Connaught 's board</arg>
+          <arg type="ARG1" start="14" end="20">an offer for the company by Merieux</arg>
+        </propbank>
       </example>
-      <example name="recommended to" src="" type="">
-        <text>CMS ENERGY Corp. said management would recommend to its board today that its common stock dividend be reinstated at a ``modest level'' later this year.</text>
-        <arg f="" n="0">management</arg>
-        <arg f="mod" n="m">would</arg>
-        <rel f="">recommend</rel>
-        <arg f="" n="2">to its board</arg>
-        <arg f="tmp" n="m">today</arg>
-        <arg f="" n="1">that its common stock dividend be reinstated at a ``modest level'' later this year</arg>
+      <example name="recommended to" src="">
+        <text>CMS ENERGY Corp. said management would recommend to its board today that its common stock dividend be reinstated at a `` modest level '' later this year .</text>
+        <propbank>
+          <rel relloc="6">recommend</rel>
+          <arg type="ARG0" start="4" end="4">management</arg>
+          <arg type="ARGM-MOD" start="5" end="5">would</arg>
+          <arg type="ARG2" start="7" end="9">to its board</arg>
+          <arg type="ARGM-TMP" start="10" end="10">today</arg>
+          <arg type="ARG1" start="11" end="26">that its common stock dividend be reinstated at a `` modest level '' later this year</arg>
+        </propbank>
       </example>
-      <example name="recommend as" src="" type="">
-        <text>...at the brokerage firm of Salomon Brothers Inc., which-1 *trace*-1 had recommended the stock as a good buy.</text>
-        <arg f="" n="0">*trace*-1 (= which)</arg>
-        <arg f="slc" n="m">which -&gt; Salomon Brothers Inc.</arg>
-        <rel f="">recommended</rel>
-        <arg f="" n="1">the stock</arg>
-        <arg f="" n="3">as a good buy</arg>
+      <example name="recommend as" src="">
+        <text>... at the brokerage firm of Salomon Brothers Inc. , which had recommended the stock as a good buy .</text>
+        <propbank>
+          <rel relloc="12">recommended</rel>
+          <arg type="ARG0" start="6" end="8">Salomon Brothers Inc.</arg>
+          <arg type="R-ARG0" start="10" end="10">which</arg>
+          <arg type="ARG1" start="13" end="14">the stock</arg>
+          <arg type="ARG3" start="15" end="18">as a good buy</arg>
+        </propbank>
       </example>
-      <example name="Arg0, 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Solzhenitsyn's recommendation of a constitutional monarchy was ignored, and he dies not exactly forgotten, but with a much diminished presence.</text>
-        <arg f="" n="0">Solzhenitsyn's</arg>
-        <rel f="">recommendation</rel>
-        <arg f="" n="1">of a constitutional monarchy</arg>
+      <example name="Arg0, 1" src="">
+        <text>Solzhenitsyn 's recommendation of a constitutional monarchy was ignored , and he dies not exactly forgotten , but with a much diminished presence .</text>
+        <propbank>
+          <rel relloc="2">recommendation</rel>
+          <arg type="ARG0" start="0" end="1">Solzhenitsyn 's</arg>
+          <arg type="ARG1" start="3" end="6">of a constitutional monarchy</arg>
+        </propbank>
       </example>
-      <example name="just arg4" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="just arg4" src="BOLT">
         <text>The IPCC has published documentation and recommendations about global warming at regular intervals and it was not until one of their more recent publications that they completely overturned their previous data showing global warming to be natural in favor of new data that showed global warming to be human caused .</text>
-        <rel f="">recommendations</rel>
-        <arg f="" n="4">about global warming</arg>
+        <propbank>
+          <rel relloc="6">recommendations</rel>
+          <arg type="ARG4" start="7" end="9">about global warming</arg>
+        </propbank>
       </example>
-      <example name="with arg3" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Congressman Michael McCaul (R-TX) released the following statement after the House Republican Conference ratified his recommendation as Chairman of the House Committee on Homeland Security for the 113th Congress:</text>
-        <arg f="" n="1">his</arg>
-        <rel f="">recommendation</rel>
-        <arg f="" n="3">as Chairman of the House Committee on Homeland Security for the 113th Congress</arg>
+      <example name="with arg3" src="internet">
+        <text>Congressman Michael McCaul ( R - TX ) released the following statement after the House Republican Conference ratified his recommendation as Chairman of the House Committee on Homeland Security for the 113th Congress :</text>
+        <propbank>
+          <rel relloc="19">recommendation</rel>
+          <arg type="ARG1" start="18" end="18">his</arg>
+          <arg type="ARG3" start="20" end="32">as Chairman of the House Committee on Homeland Security for the 113th Congress</arg>
+        </propbank>
       </example>
-      <example name="When the treatment is not specified" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="When the treatment is not specified" src="">
         <text>Treatment recommendations for resected sigmoid colon cancer now with local recurrence</text>
-        <arg f="" n="4">Treatment</arg>
-        <rel f="">recommendations</rel>
-        <arg f="prp" n="m">for a resected sigmoid colon cancer now with local recurrence</arg>
+        <propbank>
+          <rel relloc="1">recommendations</rel>
+          <arg type="ARG4" start="0" end="0">Treatment</arg>
+          <arg type="ARGM-PRP" start="2" end="10">for resected sigmoid colon cancer now with local recurrence</arg>
+        </propbank>
       </example>
-    <note>RECOMMEND-V NOTES: Comparison with 'refer'. Member of Vncls reflexive_appearance-48.1.2, judgement-33, say-37.7-1-1 (from recommend.01-v)
-
+      <note>RECOMMEND-V NOTES: Comparison with 'refer'. Member of Vncls reflexive_appearance-48.1.2, judgement-33, say-37.7-1-1 (from recommend.01-v)
 RECOMMENDATION-N NOTES: ~recommend.01 (from recommendation.01-n)</note>
-</roleset>
+    </roleset>
   </predicate>
 </frameset>

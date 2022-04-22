@@ -1,65 +1,107 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="boost">
     <roleset id="boost.01" name="push upwards">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">boost</alias>
-        <alias framenet="" pos="n" verbnet="">boost</alias>
+        <alias pos="v">boost</alias>
+        <alias pos="n">boost</alias>
+        <argalias arg="0" pos="n">booster</argalias>
       </aliases>
-      <note>BOOST-V NOTES: For usage of the other numbered arguments refer to 'raise' (from boost.01-v)</note>
-      <note>BOOST-N NOTES: Roleset based on verb entry boost.01, OntoNotes grouping boost-n senses 2&amp; 3; maps to VN class promote-102. (from boost.01-n)</note>
       <roles>
-        <role descr="causer of upward motion, Agent" f="pag" n="0">
-          <vnrole vncls="102" vntheta="agent"/>
+        <role descr="causer of upward motion, Agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="promote-102" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="promote-102" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="Logical subject, thing moving upward" f="ppt" n="1">
-          <vnrole vncls="102" vntheta="theme"/>
+        <role descr="Logical subject, thing moving upward" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="promote-102" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="promote-102" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="EXT, amount risen" f="ext" n="2"/>
-        <role descr="start point" f="dir" n="3"/>
-        <role descr="end point" f="gol" n="4"/>
-        <role descr="Medium" f="loc" n="m"/>
+        <role descr="EXT, amount risen" f="EXT" n="2">
+          <rolelinks/>
+        </role>
+        <role descr="start point" f="DIR" n="3">
+          <rolelinks/>
+        </role>
+        <role descr="end point" f="GOL" n="4">
+          <rolelinks/>
+        </role>
+        <role descr="Medium" f="LOC" n="m">
+          <rolelinks/>
+        </role>
       </roles>
-      <example name="simple transitive" src="" type="">
-        <text>It is currently waiving management fees, which [*T*] boosts its yield.</text>
-        <arg f="rcl" n="m">which -&gt; waiving management fees</arg>
-        <arg f="" n="0">[*T*]</arg>
-        <rel f="">boosts</rel>
-        <arg f="" n="1">its yield</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="promote-102" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="boost-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">102</lexlink>
+        <lexlink class="boost-n.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+        <lexlink class="promote-102" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="simple transitive" src="">
+        <text>It is currently waiving management fees , which boosts its yield .</text>
+        <propbank>
+          <rel relloc="8">boosts</rel>
+          <arg type="R-ARG0" start="7" end="7">which</arg>
+          <arg type="ARG0" start="3" end="5">waiving management fees</arg>
+          <arg type="ARG1" start="9" end="10">its yield</arg>
+        </propbank>
       </example>
-      <example name="with end point" src="" type="">
-        <text>Such devices have boosted Japanese investment in mortgage-backed securities to more than 1% of the $900 billion in such instruments outstanding.</text>
-        <arg f="" n="0">Such devices</arg>
-        <rel f="">boosted</rel>
-        <arg f="" n="1">Japanese investment in mortgage-backed securities</arg>
-        <arg f="" n="4">to more than 1% of the $900 billion in such instruments outstanding.</arg>
+      <example name="with end point" src="">
+        <text>Such devices have boosted Japanese investment in mortgage - backed securities to more than 1 % of the $ 900 billion in such instruments outstanding .</text>
+        <propbank>
+          <rel relloc="3">boosted</rel>
+          <arg type="ARG0" start="0" end="1">Such devices</arg>
+          <arg type="ARG1" start="4" end="10">Japanese investment in mortgage - backed securities</arg>
+          <arg type="ARG4" start="11" end="24">to more than 1 % of the $ 900 billion in such instruments outstanding</arg>
+        </propbank>
       </example>
-      <example name="Arg 0 &amp; TMP" src="NomBank Frames" type="">
-        <text>The bond market got an early boost from the opening-hour sell-offin stocks .</text>
-        <arg f="tmp" n="m">early</arg>
-        <rel f="">boost</rel>
-        <arg f="" n="0">from the opening-hour sell-off in stocks</arg>
+      <example name="Arg 0 &amp; TMP" src="NomBank Frames">
+        <text>The bond market got an early boost from the opening - hour sell - off in stocks .</text>
+        <propbank>
+          <rel relloc="6">boost</rel>
+          <arg type="ARGM-TMP" start="5" end="5">early</arg>
+          <arg type="ARG0" start="7" end="16">from the opening - hour sell - off in stocks</arg>
+        </propbank>
       </example>
-      <example name="NP only, Args 1 &amp; 2" src="NomBank Frames" type="">
+      <example name="NP only, Args 1 &amp; 2" src="NomBank Frames">
         <text>a 3 % wage boost</text>
-        <arg f="" n="2">3 %</arg>
-        <arg f="" n="1">wage</arg>
-        <rel f="">boost</rel>
+        <propbank>
+          <rel relloc="4">boost</rel>
+          <arg type="ARG2" start="1" end="2">3 %</arg>
+          <arg type="ARG1" start="3" end="3">wage</arg>
+        </propbank>
       </example>
-      <example name="Arg 1, 3, 4" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Then, just to make sure the union got off with a bang, it upped the boost of the motor from 1.4 to 1.6bar.</text>
-        <rel f="">boost</rel>
-        <arg f="" n="3">from 1.4</arg>
-        <arg f="" n="4">to 1.6 bar</arg>
+      <example name="Arg 1, 3, 4" src="web">
+        <text>Then , just to make sure the union got off with a bang , it upped the boost of the motor from 1.4 to 1.6 bar .</text>
+        <propbank>
+          <rel relloc="17">boost</rel>
+          <arg type="ARG3" start="21" end="22">from 1.4</arg>
+          <arg type="ARG4" start="23" end="25">to 1.6 bar</arg>
+        </propbank>
       </example>
-      <example name="Args 0 &amp; 1" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Sweet potatoes, known for their boost of vitamin A and C, are nutritious veggies,</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">boost</rel>
-        <arg f="" n="1">of vitamin A and C</arg>
+      <example name="Args 0 &amp; 1" src="web">
+        <text>Sweet potatoes , known for their boost of vitamin A and C , are nutritious veggies ,</text>
+        <propbank>
+          <rel relloc="6">boost</rel>
+          <arg type="ARG0" start="5" end="5">their</arg>
+          <arg type="ARG1" start="7" end="11">of vitamin A and C</arg>
+        </propbank>
       </example>
+      <note>BOOST-V NOTES: For usage of the other numbered arguments refer to 'raise' (from boost.01-v)</note>
+      <note>BOOST-N NOTES: Roleset based on verb entry boost.01, OntoNotes grouping boost-n senses 2 &amp; 3; maps to VN class promote-102. (from boost.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

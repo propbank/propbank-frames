@@ -1,27 +1,55 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="decapitate">
     <roleset id="decapitate.01" name="remove the head">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">decapitate</alias>
+        <alias pos="v">decapitate</alias>
       </aliases>
-      <note>DECAPITATE-V NOTES: VerbNet class poison-42.2. I think I'd prefer poisoning, thanks. (from decapitate.01-v)</note>
       <roles>
-        <role descr="agent" f="pag" n="0">
-          <vnrole vncls="42.2" vntheta="agent"/>
+        <role descr="agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="poison-42.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Killing" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="Killing" resource="FrameNet" version="1.7">killer</rolelink>
+            <rolelink class="poison-42.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="entity now without a head" f="ppt" n="1">
-          <vnrole vncls="42.2" vntheta="patient"/>
+        <role descr="entity now without a head" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="poison-42.2" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="Killing" resource="FrameNet" version="1.7">victim</rolelink>
+            <rolelink class="poison-42.2" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Thugs decapitated a swan at a Hampshire pond.</text>
-        <arg f="" n="0">Thugs</arg>
-        <rel f="">decapitated</rel>
-        <arg f="" n="1">a swan</arg>
-        <arg f="loc" n="m">at a Hampshire pond</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Killing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="poison-42.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="Life.Die.DeathCausedByViolentEvents" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019" />
+        <lexlink class="Die" confidence="0.1" resource="ERE" src="reo-expansion" version="rich" />
+        <lexlink class="poison-42.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="decapitate-v" src="">
+        <text>Thugs decapitated a swan at a Hampshire pond .</text>
+        <propbank>
+          <rel relloc="1">decapitated</rel>
+          <arg type="ARG0" start="0" end="0">Thugs</arg>
+          <arg type="ARG1" start="2" end="3">a swan</arg>
+          <arg type="ARGM-LOC" start="4" end="7">at a Hampshire pond</arg>
+        </propbank>
       </example>
+      <note>DECAPITATE-V NOTES: VerbNet class poison-42.2. I think I'd prefer poisoning, thanks. (from decapitate.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

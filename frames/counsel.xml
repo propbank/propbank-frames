@@ -1,56 +1,88 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="counsel">
     <roleset id="counsel.01" name="to advise">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">counseling</alias>
-        <alias framenet="" pos="v" verbnet="">counsel</alias>
+        <alias pos="n">counseling</alias>
+        <alias pos="v">counsel</alias>
       </aliases>
-      <note>COUNSEL-V NOTES: Based on WSJ. Member of VNcls advise-37.9-1. (from counsel.01-v)</note>
-      <note>COUNSELING-N NOTES: Corresponds with counsel.01. Framed by anwen april 2011 (from counseling.01-n)</note>
       <roles>
         <role descr="advisor" f="PAG" n="0">
-          <vnrole vncls="37.9-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="advise-37.9-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="advise-37.9-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity advised" f="GOL" n="1">
-          <vnrole vncls="37.9-1" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink class="advise-37.9-1" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+            <rolelink class="advise-37.9-1" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+          </rolelinks>
         </role>
         <role descr="advice" f="PPT" n="2">
-          <vnrole vncls="37.9-1" vntheta="Topic"/>
+          <rolelinks>
+            <rolelink class="advise-37.9-1" resource="VerbNet" version="verbnet3.3">topic</rolelink>
+            <rolelink class="advise-37.9-1" resource="VerbNet" version="verbnet3.4">topic</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="active"/>
-        <text>[The former $ 3 million-a-year lobbyist]-1 now frequents shelters for the homeless and devotes a third of his time [*-1]counseling other recovering alcoholics .</text>
-        <arg f="" n="0">[*-1]</arg>
-        <rel f="">counseling</rel>
-        <arg f="" n="1">other recovering alcoholics</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Discussion" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="advise-37.9-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Meet" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="counsel-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+        <lexlink class="counsel-n.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">10</lexlink>
+        <lexlink class="advise-37.9-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="transitive" src="">
+        <text>The former $ 3 million - a - year lobbyist now frequents shelters for the homeless and devotes a third of his time counseling other recovering alcoholics .</text>
+        <propbank>
+          <rel relloc="23">counseling</rel>
+          <arg type="ARG0" start="0" end="9">The former $ 3 million - a - year lobbyist</arg>
+          <arg type="ARG1" start="24" end="26">other recovering alcoholics</arg>
+        </propbank>
       </example>
-      <example name="all arguments" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>Computer Sciences would n't disclose the proposed purchase price for Cleveland Consulting , which [*T*-1] counsels companies on logistics and supply .</text>
-        <arg f="" n="0">[*T*-1] (= which)</arg>
-        <arg f="slc" n="m">which -&gt; Cleveland Consulting</arg>
-        <rel f="">counsels</rel>
-        <arg f="" n="1">companies</arg>
-        <arg f="" n="2">on logistics and supply</arg>
+      <example name="all arguments" src="">
+        <text>Computer Sciences would n't disclose the proposed purchase price for Cleveland Consulting , which counsels companies on logistics and supply .</text>
+        <propbank>
+          <rel relloc="14">counsels</rel>
+          <arg type="ARG0" start="10" end="11">Cleveland Consulting</arg>
+          <arg type="R-ARG0" start="13" end="13">which</arg>
+          <arg type="ARG1" start="15" end="15">companies</arg>
+          <arg type="ARG2" start="16" end="19">on logistics and supply</arg>
+        </propbank>
       </example>
-      <example name="with Arg2" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
+      <example name="with Arg2" src="">
         <text>Underneath the headline `` Diversification , '' it counsels , `` Based on the events of the past week , all investors need to know their portfolios are balanced to help protect them against the market 's volatility . ''</text>
-        <arg f="adv" n="m">Underneath the headline `` Diversification</arg>
-        <arg f="" n="0">it</arg>
-        <rel f="">counsels</rel>
-        <arg f="" n="2">"Based on the events of the past week , all investors need to know their portfolios are balanced to help protect them against the market 's volatility"</arg>
+        <propbank>
+          <rel relloc="8">counsels</rel>
+          <arg type="ARGM-ADV" start="0" end="4">Underneath the headline `` Diversification</arg>
+          <arg type="ARG0" start="7" end="7">it</arg>
+          <arg type="ARG2" start="10" end="39">`` Based on the events of the past week , all investors need to know their portfolios are balanced to help protect them against the market 's volatility . ''</arg>
+        </propbank>
       </example>
-      <example name="All args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Dr. Bobert's counseling of Patient Z on the best course of treatment was not well received, and the patient remained confused.</text>
-        <arg f="" n="0">Dr. Bobert's</arg>
-        <rel f="">counseling</rel>
-        <arg f="" n="1">of Patient Z</arg>
-        <arg f="" n="2">on the best course of treatment</arg>
+      <example name="All args" src="">
+        <text>Dr. Bobert 's counseling of Patient Z on the best course of treatment was not well received , and the patient remained confused .</text>
+        <propbank>
+          <rel relloc="3">counseling</rel>
+          <arg type="ARG0" start="0" end="2">Dr. Bobert 's</arg>
+          <arg type="ARG1" start="4" end="6">of Patient Z</arg>
+          <arg type="ARG2" start="7" end="12">on the best course of treatment</arg>
+        </propbank>
       </example>
+      <note>COUNSEL-V NOTES: Based on WSJ. Member of VNcls advise-37.9-1. (from counsel.01-v)</note>
+      <note>COUNSELING-N NOTES: Corresponds with counsel.01. Framed by anwen april 2011 (from counseling.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

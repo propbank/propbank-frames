@@ -1,23 +1,50 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="problematic">
-    <roleset id="problematic.01" name="causing problems">
+    <roleset id="problematic.01" name="constituting a problem">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">problematic</alias>
+        <alias pos="n">problem</alias>
+        <alias pos="j">problematic</alias>
       </aliases>
-      <note>PROBLEMATIC-J NOTES: Added by Julia based on BOLT-4,5. (from problematic.01-j)</note>
       <roles>
-        <role descr="causer of problems" f="pag" n="0"/>
-        <role descr="the problem (problematic of)" f="ppt" n="1"/>
-        <role descr="sufferer of problems" f="gol" n="2"/>
+        <role descr="problematic entity/situation" f="PAG" n="0" />
+        <role descr="further description of the nature of the problem" f="PPT" n="1" />
+        <role descr="problematic for whom, entity suffering due to problem" f="GOL" n="2" />
       </roles>
-      <example name="args 0, 1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>This approach is problematic of the solutions' inherent performance limitations and scalability bottlenecks.</text>
-        <arg f="" n="0">This approach</arg>
-        <rel f="">problematic</rel>
-        <arg f="" n="1">of the solutions' inherent performance limitations and scalability bottlenecks</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks />
+      <example name="problematic-j: args 0, 1" src="internet">
+        <text>This approach is problematic of the solutions ' inherent performance limitations and scalability bottlenecks .</text>
+        <propbank>
+          <rel relloc="3">problematic</rel>
+          <arg end="1" start="0" type="ARG0">This approach</arg>
+          <arg end="13" start="4" type="ARG1">of the solutions ' inherent performance limitations and scalability bottlenecks</arg>
+        </propbank>
       </example>
+      <example name="problem-n" src="THYME-Auto1">
+        <text>She is having problems with her colostomy bag .</text>
+        <propbank>
+          <rel relloc="3">problems</rel>
+          <arg end="7" start="4" type="ARG0">with her colostomy bag</arg>
+        </propbank>
+        <amr version="THYME 1.0">
+          (p / problematic-01
+            :ARG0 (d / devices :name (n / name :op1 "colostomy" :op2 "bag")
+              :poss s)
+            :ARG2 (s / she))
+        </amr>
+      </example>
+      <note>PROBLEMATIC-J NOTES: Added by Julia based on BOLT-4,5. (from problematic.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

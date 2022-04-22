@@ -1,57 +1,122 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="repay">
     <roleset id="repay.01" name="pay back">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">repay</alias>
+        <alias pos="v">repay</alias>
+        <alias pos="n">repayment</alias>
+        <alias pos="n">repayments</alias>
+        <alias pos="l">make_repayment</alias>
+        <alias pos="l">make_repayments</alias>
       </aliases>
-      <note>REPAY-V NOTES: Comparison with 'pay'. Member of Vncls pay-68, judgement-33. Updated by Julia, 10/2010. (from repay.01-v)</note>
       <roles>
         <role descr="payer or buyer" f="PAG" n="0">
-          <vnrole vncls="68-1" vntheta="Agent"/>
-          <vnrole vncls="33" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="pay-68-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="33" resource="VerbNet" version="UNK">agent</rolelink>
+            <rolelink class="equip-13.4.2-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="pay-68-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing bought or paid for" f="PPT" n="1">
-          <vnrole vncls="68-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="pay-68-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="equip-13.4.2-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+            <rolelink class="pay-68-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="seller or person being paid" f="PPT" n="2">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="33" resource="VerbNet" version="UNK">theme</rolelink>
+            <rolelink class="equip-13.4.2-1" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+            <rolelink class="pay-68-1" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+          </rolelinks>
         </role>
         <role descr="price paid" f="VSP" n="3">
-          <vnrole vncls="68-1" vntheta="Asset"/>
+          <rolelinks>
+            <rolelink class="pay-68-1" resource="VerbNet" version="verbnet3.3">asset</rolelink>
+            <rolelink class="pay-68-1" resource="VerbNet" version="verbnet3.4">asset</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive--note the arg3!" src="" type="">
-        <text>In all, [the company]-1 hopes *trace*-1 to repay $45 million in debt through the sales, which will completely discharge its secured debt, the company said.</text>
-        <arg f="" n="0">*trace*-1</arg>
-        <rel f="">repay</rel>
-        <arg f="" n="3">$ 45 million in debt</arg>
-        <arg f="mnr" n="m">through the sales, which will completely discharge its secured debt</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Repayment" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="pay-68-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="33" confidence="0.0" resource="VerbNet" src="manual+strict-conv" version="UNK"/>
+        <lexlink class="repay-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">21</lexlink>
+        <lexlink class="equip-13.4.2-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="pay-68-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="repay-v: transitive--note the arg3!" src="">
+        <text>In all , the company hopes to repay $ 45 million in debt through the sales , which will completely discharge its secured debt , the company said .</text>
+        <propbank>
+          <rel relloc="7">repay</rel>
+          <arg type="ARG0" start="3" end="4">the company</arg>
+          <arg type="ARG3" start="8" end="12">$ 45 million in debt</arg>
+          <arg type="ARGM-MNR" start="13" end="23">through the sales , which will completely discharge its secured debt</arg>
+        </propbank>
       </example>
-      <example name="args 1 2 3" src="" type="">
-        <text>The merger agreement says [the buy-out group]-1 is entitled [*trace*-1]-2 to be repaid *trace*-2 $26.7 million in fees for its investment bankers, Lazard Freres &amp; Co. and Salomon Brothers Inc., and its law firm, Paul Weiss Rifkind Wharton &amp; Garrison.</text>
-        <rel f="">repaid</rel>
-        <arg f="" n="2">*trace*-2</arg>
-        <arg f="" n="3">$ 26.7 million in fees</arg>
-        <arg f="" n="1">for its investment bankers, Lazard Freres&amp; Co. and Salomon Brothers Inc., and its law firm, Paul Weiss Rifkind Wharton &amp; Garrison</arg>
+      <example name="repay-v: args 1 2 3" src="">
+        <text>The merger agreement says the buy - out group is entitled to be repaid $ 26.7 million in fees for its investment bankers , Lazard Freres &amp; Co. and Salomon Brothers Inc. , and its law firm , Paul Weiss Rifkind Wharton &amp; Garrison .</text>
+        <propbank>
+          <rel relloc="13">repaid</rel>
+          <arg type="ARG2" start="4" end="8">the buy - out group</arg>
+          <arg type="ARG3" start="14" end="18">$ 26.7 million in fees</arg>
+          <arg type="ARG1" start="19" end="43">for its investment bankers , Lazard Freres &amp; Co. and Salomon Brothers Inc. , and its law firm , Paul Weiss Rifkind Wharton &amp; Garrison</arg>
+        </propbank>
       </example>
-      <example name="price as subject" src="" type="">
-        <text>The buy-out group is also entitled to $16 million [0]-1 *trace*-1 to repay a fund created by the pilots union for an employee stock ownership plan.</text>
-        <arg f="" n="3">*trace*-1 (= [0])</arg>
-        <arg f="slc" n="m">[0] -&gt; $16 million</arg>
-        <rel f="">repay</rel>
-        <arg f="" n="2">a fund created by the pilots union for an employee stock ownership plan</arg>
+      <example name="repay-v: price as subject" src="">
+        <text>The buy - out group is also entitled to $ 16 million to repay a fund created by the pilots union for an employee stock ownership plan .</text>
+        <propbank>
+          <rel relloc="13">repay</rel>
+          <arg type="ARG3" start="9" end="11">$ 16 million</arg>
+          <arg type="ARG2" start="14" end="26">a fund created by the pilots union for an employee stock ownership plan</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG2" src="ontonotes mz/sinorama/10/ectb_1007" type="">
+      <example name="repay-v: ARG0 and ARG2" src="ontonotes mz/sinorama/10/ectb_1007">
         <text>He thought that we had n't properly repaid him once we had grown up , and felt quite bitter about it .</text>
-        <arg f="" n="0">we</arg>
-        <arg f="neg" n="m">n't</arg>
-        <arg f="mnr" n="m">properly</arg>
-        <rel f="">repaid</rel>
-        <arg f="" n="2">him</arg>
-        <arg f="tmp" n="m">once we had grown up</arg>
+        <propbank>
+          <rel relloc="7">repaid</rel>
+          <arg type="ARG0" start="3" end="3">we</arg>
+          <arg type="ARGM-NEG" start="5" end="5">n't</arg>
+          <arg type="ARGM-MNR" start="6" end="6">properly</arg>
+          <arg type="ARG2" start="8" end="8">him</arg>
+          <arg type="ARGM-TMP" start="9" end="13">once we had grown up</arg>
+        </propbank>
       </example>
-
+      <example name="repayment-n: All arguments" src="web">
+        <text>He conditioned it upon his repayment of $ 13795 to Mr. Crisman , Jr. for the expenses he incurred as guardian .</text>
+        <propbank>
+          <rel relloc="5">repayment</rel>
+          <arg type="ARG0" start="4" end="4">his</arg>
+          <arg type="ARG1" start="6" end="8">of $ 13795</arg>
+          <arg type="ARG2" start="9" end="13">to Mr. Crisman , Jr.</arg>
+          <arg type="ARG3" start="14" end="20">for the expenses he incurred as guardian</arg>
+        </propbank>
+      </example>
+      <example name="make_repayments-l: Within LVC" src="wsj">
+        <text>The agreement calls for South African debtors to make repayments in eight installments , starting in December of next year .</text>
+        <propbank>
+          <rel relloc="9">repayments</rel>
+          <arg type="ARG0" start="4" end="6">South African debtors</arg>
+          <arg type="ARGM-LVB" start="8" end="8">make</arg>
+          <arg type="ARGM-MNR" start="10" end="12">in eight installments</arg>
+          <arg type="ARGM-TMP" start="14" end="19">starting in December of next year</arg>
+        </propbank>
+      </example>
+      <note>REPAY-V NOTES: Comparison with 'pay'. Member of Vncls pay-68, judgement-33. Updated by Julia, 10/2010. (from repay.01-v)</note>
+      <note>REPAYMENT-N NOTES: Based on noun entry payment.01. Corresponds to VN class pay-68. Framed by Claire. (from repayment.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

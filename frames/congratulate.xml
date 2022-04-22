@@ -1,44 +1,76 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="congratulate">
     <roleset id="congratulate.01" name="to express acknowledgement as for the achievement of another">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">congratulate</alias>
-        <alias framenet="" pos="n" verbnet="">congratulation</alias>
+        <alias pos="v">congratulate</alias>
+        <alias pos="n">congratulation</alias>
       </aliases>
-      <note>CONGRATULATE-V NOTES: Frames file for 'congratulate' based on survey of sentences in the WSJ corpus. (from congratulate.01-v predicate notes)</note>
-      <note>CONGRATULATION-N NOTES: Based on Bolt data. Comparison to congratulate.01. Congratulate.01 is a member of VN class judgement-33. Framed by Katie. (from congratulation.01-n)</note>
       <roles>
         <role descr="expresser, agent" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Judgment_direct_address" resource="FrameNet" version="1.7">communicator</rolelink>
+          </rolelinks>
         </role>
         <role descr="person congratulated" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Judgment_direct_address" resource="FrameNet" version="1.7">addressee</rolelink>
+            <rolelink class="Judgment_direct_address" resource="FrameNet" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
         <role descr="achievement" f="PRD" n="2">
-          <vnrole vncls="33" vntheta="Attribute"/>
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">attribute</rolelink>
+            <rolelink class="Judgment_direct_address" resource="FrameNet" version="1.7">reason</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Mr. Guber , in his affidavit , says that when he advised Warner President Terry Semel of the Sony offer at lunch on Sept. 25 [*T*-3] , Mr. Semel `` hugged and congratulated me , and expressed joy that we had finally realized our long-term ambition of [*]running [*RNR*-1] and having an equity position in [*RNR*-1] a major entertainment company . ''</text>
-        <arg f="" n="0">Mr. Semel</arg>
-        <rel f="">congratulated</rel>
-        <arg f="" n="1">me</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Judgment_direct_address" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="judgment-33.1-1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+        <lexlink class="Correspondence" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="Broadcast" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="congratulate-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">22</lexlink>
+      </lexlinks>
+      <example name="transitive" src="">
+        <text>Mr. Guber , in his affidavit , says that when he advised Warner President Terry Semel of the Sony offer at lunch on Sept. 25 , Mr. Semel `` hugged and congratulated me , and expressed joy that we had finally realized our long - term ambition of running and having an equity position in a major entertainment company . ''</text>
+        <propbank>
+          <rel relloc="31">congratulated</rel>
+          <arg type="ARG0" start="26" end="27">Mr. Semel</arg>
+          <arg type="ARG1" start="32" end="32">me</arg>
+        </propbank>
       </example>
-      <example name="all arguments" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="present" voice="active"/>
-        <text>Industry observers have congratulated Mr. Lang on what some call [*T*-1] his `` courageous '' handling of Ms. , but his track record in magazine publishing in general has gotten mixed reviews .</text>
-        <arg f="" n="0">Industry observers</arg>
-        <rel f="">congratulated</rel>
-        <arg f="" n="1">Mr. Lang</arg>
-        <arg f="" n="2">on what some call [*T*-1] his `` courageous '' handling of Ms.</arg>
+      <example name="all arguments" src="">
+        <text>Industry observers have congratulated Mr. Lang on what some call his `` courageous '' handling of Ms. , but his track record in magazine publishing in general has gotten mixed reviews .</text>
+        <propbank>
+          <rel relloc="3">congratulated</rel>
+          <arg type="ARG0" start="0" end="1">Industry observers</arg>
+          <arg type="ARG1" start="4" end="5">Mr. Lang</arg>
+          <arg type="ARG2" start="6" end="16">on what some call his `` courageous '' handling of Ms.</arg>
+        </propbank>
       </example>
-      <example name="arg 0" src="" type="">
+      <example name="arg 0" src="">
         <text>The minister sends his congratulations</text>
-        <arg f="" n="0">His</arg>
-        <rel f="">congratulations</rel>
+        <propbank>
+          <rel relloc="4">congratulations</rel>
+          <arg type="ARG0" start="3" end="3">his</arg>
+        </propbank>
       </example>
+      <note>CONGRATULATE-V NOTES: Frames file for 'congratulate' based on survey of sentences in the WSJ corpus. (from congratulate.01-v predicate notes)</note>
+      <note>CONGRATULATION-N NOTES: Based on Bolt data. Comparison to congratulate.01. Congratulate.01 is a member of VN class judgement-33. Framed by Katie. (from congratulation.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

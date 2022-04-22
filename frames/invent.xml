@@ -1,44 +1,77 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="invent">
     <roleset id="invent.01" name="create">
       <aliases>
-        <alias framenet="Achieving_first Coming_up_with" pos="v" verbnet="">invent</alias>
-        <alias framenet="Achieving_first" pos="n" verbnet="">invention</alias>
+        <alias pos="v">invent</alias>
+        <alias pos="n">invention</alias>
+        <argalias arg="0" pos="n">inventor</argalias>
       </aliases>
-      <note>INVENT-V NOTES: Frames file for 'invent' based on sentences in wsj. Verbnet entry 26.4. (from invent.01-v)</note>
-      <note>INVENTION-N NOTES: Added by Julia based on BOLT, invent.01. Corresponds to VNcls create-26.4, preparing-26.3-1. (from invention.01-n)</note>
       <roles>
-        <role descr="creator" f="pag" n="0">
-          <vnrole vncls="26.4" vntheta="agent"/>
-          <vnrole vncls="26.3-1" vntheta="agent"/>
+        <role descr="creator" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="create-26.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="preparing-26.3-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Achieving_first" resource="FrameNet" version="1.7">cognizer</rolelink>
+            <rolelink class="Coming_up_with" resource="FrameNet" version="1.7">cognizer</rolelink>
+            <rolelink class="preparing-26.3-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing created" f="ppt" n="1">
-          <vnrole vncls="26.4" vntheta="result"/>
+        <role descr="thing created" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="create-26.4" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="Achieving_first" resource="FrameNet" version="1.7">new_idea</rolelink>
+            <rolelink class="Coming_up_with" resource="FrameNet" version="1.7">idea</rolelink>
+            <rolelink class="preparing-26.3-1" resource="VerbNet" version="verbnet3.4">product</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="obligatory bell-ringing example" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Change-ringing, a mind-boggling exercise *trace* the English invented *trace* 380 years ago, requires physical dexterity -- some bells weigh more than a ton -- combined with intense mental concentration.</text>
-        <arg f="" n="0">the English</arg>
-        <rel f="">invented</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="rcl" n="m">*trace* -&gt; a mind-boggling exercise</arg>
-        <arg f="tmp" n="m">380 years ago</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Coming_up_with" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Achieving_first" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="create-26.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="preparing-26.3-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="invent-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+        <lexlink class="invent-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">15</lexlink>
+        <lexlink class="preparing-26.3-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="obligatory bell-ringing example" src="">
+        <text>Change - ringing , a mind - boggling exercise the English invented 380 years ago , requires physical dexterity -- some bells weigh more than a ton -- combined with intense mental concentration .</text>
+        <propbank>
+          <rel relloc="11">invented</rel>
+          <arg type="ARG0" start="9" end="10">the English</arg>
+          <arg type="ARG1" start="4" end="8">a mind - boggling exercise</arg>
+          <arg type="ARGM-TMP" start="12" end="14">380 years ago</arg>
+        </propbank>
       </example>
-      <example name="arg0" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="arg0" src="BOLT">
         <text>That 's an invention of the blog reprinting this .</text>
-        <rel f="">invention</rel>
-        <arg f="" n="0">of the blog reprinting this</arg>
+        <propbank>
+          <rel relloc="3">invention</rel>
+          <arg type="ARG0" start="4" end="8">of the blog reprinting this</arg>
+        </propbank>
       </example>
-      <example name="both args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>His invention of an iron furnace stove allowed people to warm their homes less dangerously and with less wood.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">invention</rel>
-        <arg f="" n="1">of an iron furnace stove</arg>
+      <example name="both args" src="internet">
+        <text>His invention of an iron furnace stove allowed people to warm their homes less dangerously and with less wood .</text>
+        <propbank>
+          <rel relloc="1">invention</rel>
+          <arg type="ARG0" start="0" end="0">His</arg>
+          <arg type="ARG1" start="2" end="6">of an iron furnace stove</arg>
+        </propbank>
       </example>
+      <note>INVENT-V NOTES: Frames file for 'invent' based on sentences in wsj. Verbnet entry 26.4. (from invent.01-v)</note>
+      <note>INVENTION-N NOTES: Added by Julia based on BOLT, invent.01. Corresponds to VNcls create-26.4, preparing-26.3-1. (from invention.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

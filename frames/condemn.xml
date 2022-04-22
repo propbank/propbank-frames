@@ -1,73 +1,120 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="condemn">
     <roleset id="condemn.01" name="express strong disapproval of">
       <aliases>
-        <alias framenet="Judgment_communication" pos="v" verbnet="">condemn</alias>
-        <alias framenet="" pos="n" verbnet="">condemnation</alias>
+        <alias pos="v">condemn</alias>
+        <alias pos="n">condemnation</alias>
       </aliases>
-      <note>CONDEMN-V NOTES: Member of VNcls judgement-33, suspect-81. (from condemn.01-v)</note>
       <roles>
         <role descr="condemner" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
-          <vnrole vncls="81" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="suspect-81" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">communicator</rolelink>
+            <rolelink class="suspect-81" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="condemned" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
-          <vnrole vncls="81" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="suspect-81" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">addressee</rolelink>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">evaluee</rolelink>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">topic</rolelink>
+            <rolelink class="suspect-81" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="grounds for condemnation, condemned as" f="cau" n="2">
-          <vnrole vncls="81" vntheta="Attribute"/>
+        <role descr="grounds for condemnation, condemned as" f="CAU" n="2">
+          <rolelinks>
+            <rolelink class="suspect-81" resource="VerbNet" version="verbnet3.3">attribute</rolelink>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">topic</rolelink>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">reason</rolelink>
+            <rolelink class="suspect-81" resource="VerbNet" version="verbnet3.4">attribute</rolelink>
+          </rolelinks>
         </role>
-        <role descr="destination" f="gol" n="3"/>
+        <role descr="destination" f="GOL" n="3">
+          <rolelinks>
+            <rolelink class="Judgment_communication" resource="FrameNet" version="1.7">medium</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="straight transitive" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="past" voice="active"/>
-        <text>The two, Szeto Wah and Martin Lee, were deemed unfit because they had condemned China's crackdown on its pro-democracy movement.</text>
-        <arg f="" n="0">they</arg>
-        <rel f="">condemned</rel>
-        <arg f="" n="1">China's crackdown on its pro-democracy movement</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Judgment_communication" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="judgment-33.1-1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+        <lexlink class="suspect-81" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Broadcast" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="condemn-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">33</lexlink>
+        <lexlink class="condemn-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+        <lexlink class="suspect-81" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="straight transitive" src="">
+        <text>The two , Szeto Wah and Martin Lee , were deemed unfit because they had condemned China 's crackdown on its pro - democracy movement .</text>
+        <propbank>
+          <rel relloc="15">condemned</rel>
+          <arg type="ARG0" start="13" end="13">they</arg>
+          <arg type="ARG1" start="16" end="24">China 's crackdown on its pro - democracy movement</arg>
+        </propbank>
       </example>
-      <example name="condemn as" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>A White House spokesman condemned the truce suspension as ``deplorable'' but brushed off talk of renewing military funding for the insurgents.</text>
-        <arg f="" n="0">A White House spokesman</arg>
-        <rel f="">condemned</rel>
-        <arg f="" n="1">the truce suspension</arg>
-        <arg f="" n="2">as deplorable</arg>
+      <example name="condemn as" src="">
+        <text>A White House spokesman condemned the truce suspension as `` deplorable '' but brushed off talk of renewing military funding for the insurgents .</text>
+        <propbank>
+          <rel relloc="4">condemned</rel>
+          <arg type="ARG0" start="0" end="3">A White House spokesman</arg>
+          <arg type="ARG1" start="5" end="7">the truce suspension</arg>
+          <arg type="ARG2" start="8" end="11">as `` deplorable ''</arg>
+        </propbank>
       </example>
-      <example name="condemn to" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>For instance, juries-1 would have *trace*-1 to consider specific ``aggravating'' and ``mitigating'' factors before *trace*-1 deciding whether *trace*-1 to condemn someone to death.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">condemn</rel>
-        <arg f="" n="1">someone</arg>
-        <arg f="" n="3">to death</arg>
+      <example name="condemn to" src="">
+        <text>For instance , juries would have to consider specific `` aggravating '' and `` mitigating '' factors before deciding whether to condemn someone to death .</text>
+        <propbank>
+          <rel relloc="21">condemn</rel>
+          <arg type="ARG0" start="3" end="3">juries</arg>
+          <arg type="ARG1" start="22" end="22">someone</arg>
+          <arg type="ARG3" start="23" end="24">to death</arg>
+        </propbank>
       </example>
-      <example name="with grounds as gerund" src="criticize.01" type="">
-        <text>The internal investigation also condemned MiniScribe's auditors, Coopers&amp; Lybrand, for allegedly ignoring numerous red flags.</text>
-        <arg f="" n="0">The internal investigation</arg>
-        <arg f="dis" n="m">also</arg>
-        <rel f="">condemned</rel>
-        <arg f="" n="1">MiniScribe's auditors, Coopers&amp; Lybrand,</arg>
-        <arg f="" n="2">for allegedly ignoring numerous red flags</arg>
+      <example name="with grounds as gerund" src="criticize.01">
+        <text>The internal investigation also condemned MiniScribe 's auditors , Coopers &amp; Lybrand , for allegedly ignoring numerous red flags .</text>
+        <propbank>
+          <rel relloc="4">condemned</rel>
+          <arg type="ARG0" start="0" end="2">The internal investigation</arg>
+          <arg type="ARGM-DIS" start="3" end="3">also</arg>
+          <arg type="ARG1" start="5" end="11">MiniScribe 's auditors , Coopers &amp; Lybrand</arg>
+          <arg type="ARG2" start="13" end="18">for allegedly ignoring numerous red flags</arg>
+        </propbank>
       </example>
-      <example name="with grounds as full clause" src="criticize.01" type="">
-        <text>A Poquet spokesman, for example, condemns the Atari Portfolio because it requires three batteries while the Poquet needs only two.</text>
-        <arg f="" n="0">A Poquet spokesman</arg>
-        <arg f="dis" n="m">for example</arg>
-        <rel f="">condemns</rel>
-        <arg f="" n="1">the Atari Portfolio</arg>
-        <arg f="" n="2">because it requires three batteries while the Poquet needs only two</arg>
+      <example name="with grounds as full clause" src="criticize.01">
+        <text>A Poquet spokesman , for example , condemns the Atari Portfolio because it requires three batteries while the Poquet needs only two .</text>
+        <propbank>
+          <rel relloc="7">condemns</rel>
+          <arg type="ARG0" start="0" end="2">A Poquet spokesman</arg>
+          <arg type="ARGM-DIS" start="4" end="5">for example</arg>
+          <arg type="ARG1" start="8" end="10">the Atari Portfolio</arg>
+          <arg type="ARG2" start="11" end="21">because it requires three batteries while the Poquet needs only two</arg>
+        </propbank>
       </example>
-      <example name="ARG1 and ARG3" src="ontonotes mz/sinorama/10/ectb_1070" type="">
+      <example name="ARG1 and ARG3" src="ontonotes mz/sinorama/10/ectb_1070">
         <text>The false cypresses , which had conversed with the clouds for a million years , were identified as top - grade timber , and were thus condemned to an inexorable fate .</text>
-        <arg f="" n="1">The false cypresses , which had conversed with the clouds for a million years</arg>
-        <arg f="cau" n="m">thus</arg>
-        <rel f="">condemned</rel>
-        <arg f="" n="3">to an inexorable fate</arg>
+        <propbank>
+          <rel relloc="26">condemned</rel>
+          <arg type="ARG1" start="0" end="13">The false cypresses , which had conversed with the clouds for a million years</arg>
+          <arg type="ARGM-CAU" start="25" end="25">thus</arg>
+          <arg type="ARG3" start="27" end="30">to an inexorable fate</arg>
+        </propbank>
       </example>
-
+      <note>CONDEMN-V NOTES: Member of VNcls judgement-33, suspect-81. (from condemn.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

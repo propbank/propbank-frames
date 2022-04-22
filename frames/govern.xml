@@ -1,55 +1,76 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="govern">
     <roleset id="govern.01" name="to control or influence, governing, leading">
       <aliases>
-        <alias framenet="Leadership" pos="v" verbnet="">govern</alias>
-        <alias framenet="" pos="n" verbnet="">governance</alias>
+        <alias pos="v">govern</alias>
+        <alias pos="n">governance</alias>
       </aliases>
+      <roles>
+        <role descr="governor" f="PAG" n="0"/>
+        <role descr="governed" f="PPT" n="1"/>
+        <role descr="specific domain, aspect of arg1 being governed" f="VSP" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Leadership" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="govern-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">25</lexlink>
+        <lexlink class="govern-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">21</lexlink>
+      </lexlinks>
+      <example name="transitive" src="">
+        <text>For years , a strict regimen governed the staff meetings at Nissan Motor Co. 's technical center in Tokyo 's western suburbs .</text>
+        <propbank>
+          <rel relloc="6">governed</rel>
+          <arg type="ARGM-TMP" start="0" end="1">For years</arg>
+          <arg type="ARG0" start="3" end="5">a strict regimen</arg>
+          <arg type="ARG1" start="7" end="21">the staff meetings at Nissan Motor Co. 's technical center in Tokyo 's western suburbs</arg>
+        </propbank>
+      </example>
+      <example name="intransitive" src="">
+        <text>Such a policy implies that only a black politician can speak for a black person , and that only a white politician can govern on behalf of a white one .</text>
+        <propbank>
+          <rel relloc="23">govern</rel>
+          <arg type="ARG0" start="18" end="21">only a white politician</arg>
+          <arg type="ARGM-MOD" start="22" end="22">can</arg>
+          <arg type="ARGM-GOL" start="24" end="29">on behalf of a white one</arg>
+        </propbank>
+      </example>
+      <example name="passive" src="">
+        <text>Study after study -- the most recent from the Brookings Institution -- tells us that the best schools are those that [*T*-1]-2 are free of outside interference and are governed [*-2] by a powerful head .</text>
+        <propbank>
+          <rel relloc="29">governed</rel>
+          <arg type="ARG1" start="?" end="?">[*-2]</arg>
+          <arg type="ARG0" start="31" end="34">by a powerful head</arg>
+        </propbank>
+      </example>
+      <example name="args 1, 2" src="internet">
+        <text>The G3 have the capacity to exert economic governance over ? financial markets but choose not to for reasons of ideology and economic interest .</text>
+        <propbank>
+          <rel relloc="8">governance</rel>
+          <arg type="ARG2" start="7" end="7">economic</arg>
+          <arg type="ARG1" start="9" end="12">over ? financial markets</arg>
+        </propbank>
+      </example>
+      <example name="args 0 and 1" src="internet">
+        <text>Board members for the Morris Jeff Community School spent much of their Dec. 11 meeting shoring up ways they hope to strengthen their governance over the 275 - student campus .</text>
+        <propbank>
+          <rel relloc="23">governance</rel>
+          <arg type="ARG0" start="22" end="22">their</arg>
+          <arg type="ARG1" start="24" end="29">over the 275 - student campus</arg>
+        </propbank>
+      </example>
       <note>GOVERN-V NOTES: Frames file for 'govern' based on WSJ. (from govern.01-v)</note>
       <note>GOVERNANCE-N NOTES: Added by Julia based on BOLT, govern.01, WN sense #2. (from governance.01-n)</note>
-      <roles>
-        <role descr="governor" f="pag" n="0"/>
-        <role descr="governed" f="ppt" n="1"/>
-        <role descr="specific domain, aspect of arg1 being governed" f="vsp" n="2"/>
-      </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>For years , a strict regimen governed the staff meetings at Nissan Motor Co. 's technical center in Tokyo 's western suburbs .</text>
-        <arg f="tmp" n="m">For years</arg>
-        <arg f="" n="0">a strict regimen</arg>
-        <rel f="">governed</rel>
-        <arg f="" n="1">the staff meetings at Nissan Motor Co. 's technical center in Tokyo 's western suburbs</arg>
-      </example>
-      <example name="intransitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>Such a policy implies that only a black politician can speak for a black person , and that only a white politician can govern on behalf of a white one .</text>
-        <arg f="" n="0">only a white politician</arg>
-        <arg f="mod" n="m">can</arg>
-        <rel f="">govern</rel>
-        <arg f="gol" n="m">on behalf of a white one</arg>
-      </example>
-      <example name="passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>Study after study -- the most recent from the Brookings Institution -- tells us that the best schools are those that [*T*-1]-2 are free of outside interference and are governed [*-2]by a powerful head .</text>
-        <rel f="">governed</rel>
-        <arg f="" n="1">[*-2]</arg>
-        <arg f="" n="0">by a powerful head</arg>
-      </example>
-      <example name="args 1, 2" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The G3 have the capacity to exert economic governance over ? financial markets but choose not to for reasons of ideology and economic interest.</text>
-        <arg f="" n="2">economic</arg>
-        <rel f="">governance</rel>
-        <arg f="" n="1">over financial markets</arg>
-      </example>
-      <example name="args 0 and 1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Board members for the Morris Jeff Community School spent much of their Dec. 11 meeting shoring up ways they hope to strengthen their governance over the 275-student campus.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">governance</rel>
-        <arg f="" n="1">over the 275-student campus</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

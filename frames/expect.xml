@@ -1,67 +1,111 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="expect">
     <roleset id="expect.01" name="look forward to, anticipate, anticipating (not thing antipated), in expectation">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">expectation</alias>
-        <alias framenet="" pos="l" verbnet="">have_expectation</alias>
-        <alias framenet="Expectation Opinion" pos="v" verbnet="">expect</alias>
-        <alias framenet="" pos="j" verbnet="">expectative</alias>
+        <alias pos="n">expectation</alias>
+        <alias pos="l">have_expectation</alias>
+        <alias pos="v">expect</alias>
+        <alias pos="j">expectative</alias>
       </aliases>
+      <roles>
+        <role descr="expecter" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="wish-62" resource="VerbNet" version="verbnet3.3">experiencer</rolelink>
+            <rolelink class="conjecture-29.5-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Expectation" resource="FrameNet" version="1.7">cognizer</rolelink>
+            <rolelink class="conjecture-29.5-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="wish-62" resource="VerbNet" version="verbnet3.4">experiencer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing expected" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="wish-62" resource="VerbNet" version="verbnet3.3">stimulus</rolelink>
+            <rolelink class="conjecture-29.5-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Expectation" resource="FrameNet" version="1.7">phenomenon</rolelink>
+            <rolelink class="Expectation" resource="FrameNet" version="1.7">topic</rolelink>
+            <rolelink class="conjecture-29.5-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+            <rolelink class="wish-62" resource="VerbNet" version="verbnet3.4">stimulus</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Opinion" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Expectation" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="wish-62" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="conjecture-29.5-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="expect-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">492</lexlink>
+        <lexlink class="expect-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">22</lexlink>
+        <lexlink class="expectation-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">41</lexlink>
+        <lexlink class="wish-62" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="conjecture-29.5-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="nominal arg1" src="">
+        <text>Portfolio managers expect further declines in interest rates .</text>
+        <propbank>
+          <rel relloc="2">expect</rel>
+          <arg type="ARG0" start="0" end="1">Portfolio managers</arg>
+          <arg type="ARG1" start="3" end="7">further declines in interest rates</arg>
+        </propbank>
+      </example>
+      <example name="sentential arg1" src="">
+        <text>The company expects to obtain regulatory approval .</text>
+        <propbank>
+          <rel relloc="2">expects</rel>
+          <arg type="ARG0" start="0" end="1">The company</arg>
+          <arg type="ARG1" start="3" end="6">to obtain regulatory approval</arg>
+        </propbank>
+      </example>
+      <example name="passivised" src="">
+        <text>Regulatory approval is expected soon by everyone</text>
+        <propbank>
+          <rel relloc="3">expected</rel>
+          <arg type="ARG1" start="0" end="1">Regulatory approval</arg>
+          <arg type="ARGM-TMP" start="4" end="4">soon</arg>
+          <arg type="ARG0" start="5" end="6">by everyone</arg>
+        </propbank>
+      </example>
+      <example name="passivised with extraction, use concatenation" src="">
+        <text>The Senate is n't expected to act until next week .</text>
+        <propbank>
+          <rel relloc="4">expected</rel>
+          <arg type="ARGM-NEG" start="3" end="3">n't</arg>
+          <arg type="ARG1" start="0" end="1">The Senate</arg>
+          <arg type="ARGM-TMP" start="7" end="9">until next week</arg>
+          <arg type="C-ARG1" start="5" end="6">to act</arg>
+        </propbank>
+      </example>
+      <example name="ARG1" src="ontonotes mz/sinorama/10/ectb_1057">
+        <text>Since fish tanks help you change your fate when something bad is expected , and otherwise help to attract money , they are perennial hot sellers .</text>
+        <propbank>
+          <rel relloc="12">expected</rel>
+          <arg type="ARGM-TMP" start="8" end="8">when</arg>
+          <arg type="ARG1" start="9" end="10">something bad</arg>
+        </propbank>
+      </example>
+      <example name="Arg0, 1" src="">
+        <text>Thus , the subjects in the expect - to - like condition first saw three cartoons that confirmed their expectation that the cartoons would be funny .</text>
+        <propbank>
+          <rel relloc="19">expectation</rel>
+          <arg type="ARG0" start="18" end="18">their</arg>
+          <arg type="ARG1" start="20" end="25">that the cartoons would be funny</arg>
+        </propbank>
+      </example>
       <note>EXPECT-V NOTES: Updated by Julia. Member of Vncls wish-62 and conjecture-29.5-1. (from expect.01-v)</note>
       <note>EXPECTATION-N NOTES: expect.01 (from expectation.01-n)</note>
       <note>EXPECTATIVE-J NOTES: Added by Julia based on SHARP. (from expectative.01-j)</note>
-      <roles>
-        <note>If you want to make the rel your Arg1, you're not looking at an eventive usage. (from expectation.01-n)</note>
-        <role descr="expecter" f="pag" n="0">
-          <vnrole vncls="62" vntheta="Experiencer"/>
-          <vnrole vncls="29.5-1" vntheta="Agent"/>
-        </role>
-        <role descr="thing expected" f="PPT" n="1">
-          <vnrole vncls="62" vntheta="Theme"/>
-          <vnrole vncls="29.5-1" vntheta="Theme"/>
-        </role>
-      </roles>
-      <example name="nominal arg1" src="" type="">
-        <text>Portfolio managers expect further declines in interest rates.</text>
-        <arg f="" n="0">Portfolio managers</arg>
-        <rel f="">expect</rel>
-        <arg f="" n="1">further declines in interest rates</arg>
-      </example>
-      <example name="sentential arg1" src="" type="">
-        <text>The company expects *trace* to obtain regulatory approval.</text>
-        <arg f="" n="0">[The company]-1</arg>
-        <rel f="">expects</rel>
-        <arg f="" n="1">*-1 to obtain regulatory approval</arg>
-      </example>
-      <example name="passivised" src="" type="">
-        <text>[Regulatory approval]-1 is expected *-1 soon by everyone</text>
-        <rel f="">expected</rel>
-        <arg f="" n="1">*-1</arg>
-        <arg f="tmp" n="m">soon</arg>
-        <arg f="" n="0">by everyone</arg>
-      </example>
-      <example name="passivised with extraction, use concatenation" src="" type="">
-        <text>[The Senate]-1 isn't expected *-1 to act until next week.</text>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">expected</rel>
-        <arg f="" n="1">[[The Senate]-1], [*-1 to act]</arg>
-        <arg f="tmp" n="m">until next week</arg>
-      </example>
-      <example name="ARG1" src="ontonotes mz/sinorama/10/ectb_1057" type="">
-        <text>Since fish tanks help you change your fate when something bad is expected , and otherwise help to attract money , they are perennial hot sellers .</text>
-        <arg f="tmp" n="m">when</arg>
-        <arg f="" n="1">something bad</arg>
-        <rel f="">expected</rel>
-      </example>
-
-      <example name="Arg0, 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Thus, the subjects in the expect-to-like condition first saw three cartoons that confirmed their expectation that the cartoons would be funny.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">expectation</rel>
-        <arg f="" n="1">that the cartoons would be funny</arg>
-      </example>
+      <note>If you want to make the rel your Arg1, you're not looking at an eventive usage. (from expectation.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

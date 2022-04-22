@@ -1,102 +1,204 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="cap">
     <roleset id="cap.01" name="put the top on">
       <aliases>
-        <alias framenet="Closure" pos="v" verbnet="">cap</alias>
-        <alias framenet="closure" pos="n" verbnet="">cap</alias>
+        <alias pos="v">cap</alias>
+        <alias pos="n">cap</alias>
       </aliases>
-      <note>CAP-V NOTES: Frames file for 'cap' based on sentences in financial subcorpus. Verbnet entries 9.9 and 47.8, other framed members include label, contain, dominate, miss, surround, and top. Framenet class Closure. Comparison with top and end. (from cap.01-v predicate notes)</note>
-      <note>CAP-N NOTES: Added due to expansion of Nombank. Comparison to cap.01-v. VN classes butter-9.9. FN class closure. Framed by Katie. (from cap.01-n)</note>
       <roles>
         <role descr="agent; one putting the top on" f="PAG" n="0">
-          <vnrole vncls="9.9" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="butter-9.9" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="butter-9.9" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing topped" f="GOL" n="1">
-          <vnrole vncls="9.9" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink class="butter-9.9" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="butter-9.9" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+            <rolelink class="contiguous_location-47.8" resource="VerbNet" version="verbnet3.4">co_theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="top" f="PPT" n="2">
-          <vnrole vncls="9.9" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="butter-9.9" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="butter-9.9" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+            <rolelink class="contiguous_location-47.8" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="attribute of arg1 actually receiving a cap" f="vsp" n="3"/>
+        <role descr="attribute of arg1 actually receiving a cap" f="VSP" n="3">
+          <rolelinks/>
+        </role>
       </roles>
-      <example name="unk" src="ontonotes bn/voa/01/voa_0179" type="">
-        <text>Last week federal regulators imposed a so - called soft cap on California , which requires power firms to justify prices above 150 dollars per megawatt hour .</text>
-        <arg f="prd" n="m">so - called</arg>
-        <arg f="adj" n="m">soft</arg>
-        <rel f="">cap</rel>
-        <arg f="adj" n="m">which requires power firms to justify prices above 150 dollars per megawatt hour</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Closure" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="butter-9.9" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="cap-n.5" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">15</lexlink>
+        <lexlink class="butter-9.9" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="contiguous_location-47.8" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="cap-n" src="ontonotes bn/voa/01/voa_0179">
+        <text>Last week federal regulators imposed a so-called soft cap on California , which requires power firms to justify prices above 150 dollars per megawatt hour .</text>
+        <propbank>
+          <rel relloc="8">cap</rel>
+          <arg end="6" start="6" type="ARGM-PRD">so-called</arg>
+          <arg end="7" start="7" type="ARGM-ADJ">soft</arg>
+          <arg end="24" start="12" type="ARGM-ADJ">which requires power firms to justify prices above 150 dollars per megawatt hour</arg>
+        </propbank>
       </example>
-
-      <example name="instrumental subject, passive too" src="" type="">
-        <inflection aspect="ns" form="participle" person="third" tense="present" voice="passive"/>
-        <text>The bottle of ketchup is capped *trace* by a wad of tinfoil.</text>
-        <rel f="">The bottle of ketchup</rel>
-        <arg f="" n="1">capped</arg>
-        <arg f="" n="2">by a wad of tinfoil</arg>
+      <example name="cap-v: instrumental subject, passive too" src="">
+        <text>The bottle of ketchup is capped by a wad of tinfoil .</text>
+        <propbank>
+          <rel relloc="0 1 2 3">The bottle of ketchup</rel>
+          <arg end="5" start="5" type="ARG1">capped</arg>
+          <arg end="10" start="6" type="ARG2">by a wad of tinfoil</arg>
+        </propbank>
       </example>
-      <example name="population cap" src="training tasks" type="-">
-        <inflection aspect="ns" form="infinitive" person="third" tense="future" voice="active"/>
-        <text>Beijing-1 hopes *PRO*-1 to cap its population at 1.6 billion by the year 2050 .</text>
-        <arg f="" n="0">*PRO*-1 (= Beijing)</arg>
-        <rel f="">cap</rel>
-        <arg f="" n="1">its population</arg>
-        <arg f="" n="2">at 1.6 billion</arg>
-        <arg f="tmp" n="m">by the year 2050</arg>
+      <example name="cap-v: population cap" src="training tasks">
+        <text>Beijing hopes to cap its population at 1.6 billion by the year 2050 .</text>
+        <propbank>
+          <rel relloc="3">cap</rel>
+          <arg end="0" start="0" type="ARG0">Beijing</arg>
+          <arg end="5" start="4" type="ARG1">its population</arg>
+          <arg end="8" start="6" type="ARG2">at 1.6 billion</arg>
+          <arg end="12" start="9" type="ARGM-TMP">by the year 2050</arg>
+        </propbank>
       </example>
-      <example name="Arg 1 only" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>A price cap will solve the problem.</text>
-        <arg f="" n="1">price</arg>
-        <rel f="">cap</rel>
+      <example name="cap-n: Arg 1 only" src="">
+        <text>A price cap will solve the problem .</text>
+        <propbank>
+          <rel relloc="2">cap</rel>
+          <arg end="1" start="1" type="ARG1">price</arg>
+        </propbank>
       </example>
-      <example name="Arg 1 as a PP" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>A cap on utilities' sulfur-dioxide emissions</text>
-        <rel f="">cap</rel>
-        <arg f="" n="1">on utilities' sulfur-dioxide emissions</arg>
+      <example name="cap-n: Arg 1 as a PP" src="">
+        <text>A cap on utilities ' sulfur - dioxide emissions</text>
+        <propbank>
+          <rel relloc="1">cap</rel>
+          <arg end="8" start="2" type="ARG1">on utilities ' sulfur - dioxide emissions</arg>
+        </propbank>
       </example>
-      <example name="With arg 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>A cap of $1.6 billion on future spending</text>
-        <rel f="">cap</rel>
-        <arg f="" n="2">of $1.6 billion</arg>
-        <arg f="" n="1">on future spending</arg>
+      <example name="cap-n: With arg 2" src="">
+        <text>A cap of $ 1.6 billion on future spending</text>
+        <propbank>
+          <rel relloc="1">cap</rel>
+          <arg end="5" start="2" type="ARG2">of $ 1.6 billion</arg>
+          <arg end="8" start="6" type="ARG1">on future spending</arg>
+        </propbank>
       </example>
-      <example name="args 1 and 3" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="cap-n: args 1 and 3" src="">
         <text>Energy Secretary Bill Richardson suggested a new price cap for electricity throughout the western states .</text>
-        <arg f="tmp" n="m">new</arg>
-        <arg f="" n="3">price</arg>
-        <rel f="">cap</rel>
-        <arg f="" n="1">for electricity</arg>
-        <arg f="loc" n="m">throughout the western states</arg>
+        <propbank>
+          <rel relloc="8">cap</rel>
+          <arg end="6" start="6" type="ARGM-TMP">new</arg>
+          <arg end="7" start="7" type="ARG3">price</arg>
+          <arg end="10" start="9" type="ARG1">for electricity</arg>
+          <arg end="14" start="11" type="ARGM-LOC">throughout the western states</arg>
+        </propbank>
       </example>
+      <note>CAP-V NOTES: Frames file for 'cap' based on sentences in financial subcorpus. Verbnet entries 9.9 and 47.8, other framed members include label, contain, dominate, miss, surround, and top. Framenet class Closure. Comparison with top and end. (from cap.01-v predicate notes)</note>
+      <note>CAP-N NOTES: Added due to expansion of Nombank. Comparison to cap.01-v. VN classes butter-9.9. FN class closure. Framed by Katie. (from cap.01-n)</note>
     </roleset>
     <roleset id="cap.02" name="bring to an end">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">cap</alias>
+        <alias pos="v">cap</alias>
+        <alias pos="n">capping</alias>
       </aliases>
-      <note>CAP-V NOTES: These two rolesets could perhaps be merged, since the latter islargely a metaphorical extension of the former. (from cap.02-v)</note>
       <roles>
-        <role descr="causer of ending, agent" f="pag" n="0"/>
-        <role descr="Thing ending" f="ppt" n="1"/>
-        <role descr="Explicit instrument, thing ended with" f="mnr" n="2"/>
+        <role descr="causer of ending, agent" f="PAG" n="0"/>
+        <role descr="Thing ending" f="PPT" n="1"/>
+        <role descr="Explicit instrument, thing ended with" f="MNR" n="2"/>
       </roles>
-      <example name="instrumental subject" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>The offer capped a week of rumors that Georgia-Pacific , an Atlanta-based forest-products company , was considering making a bid for Nekoosa, a paper-products concern based in Norwalk, Conn.</text>
-        <arg f="" n="0">The offer</arg>
-        <rel f="">capped</rel>
-        <arg f="" n="1">a week of rumors that Georgia-Pacific, an Atlanta-based forest-products company, was considering making a bid for Nekoosa, a paper-products concern based in Norwalk, Conn</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="cap-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+        <lexlink class="cap-v.4" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+      </lexlinks>
+      <example name="cap-v: instrumental subject" src="">
+        <text>The offer capped a week of rumors that Georgia - Pacific , an Atlanta - based forest - products company , was considering making a bid for Nekoosa , a paper - products concern based in Norwalk , Conn.</text>
+        <propbank>
+          <rel relloc="2">capped</rel>
+          <arg end="1" start="0" type="ARG0">The offer</arg>
+          <arg end="38" start="4" type="ARG1">week of rumors that Georgia - Pacific , an Atlanta - based forest - products company , was considering making a bid for Nekoosa , a paper - products concern based in Norwalk , Conn.</arg>
+        </propbank>
       </example>
-      <example name="ARG2 and ARG1" src="ontonotes nw/wsj/07/wsj_0726" type="">
+      <example name="cap-v: ARG2 and ARG1" src="ontonotes nw/wsj/07/wsj_0726">
         <text>The arrests capped a four - month investigation by the Internal Revenue Service , the U.S. Attorney 's office and a Security Pacific internal investigation team .</text>
-        <arg f="" n="2">The arrests</arg>
-        <rel f="">capped</rel>
-        <arg f="" n="1">a four - month investigation by the Internal Revenue Service , the U.S. Attorney 's office and a Security Pacific internal investigation team</arg>
+        <propbank>
+          <rel relloc="2">capped</rel>
+          <arg end="1" start="0" type="ARG2">The arrests</arg>
+          <arg end="25" start="3" type="ARG1">a four - month investigation by the Internal Revenue Service , the U.S. Attorney 's office and a Security Pacific internal investigation team</arg>
+        </propbank>
       </example>
-
+      <note>CAP-V NOTES: These two rolesets could perhaps be merged, since the latter islargely a metaphorical extension of the former. (from cap.02-v)</note>
+    </roleset>
+  </predicate>
+  <predicate lemma="cap">
+    <roleset id="cap.03" name="put a cap on">
+      <aliases>
+        <alias pos="v">cap_off</alias>
+        <alias pos="n">capping_off</alias>
+        <alias pos="j">capped_off</alias>
+      </aliases>
+      <roles>
+        <role descr="agent" f="PAG" n="0"/>
+        <role descr="thing capped" f="GOL" n="1"/>
+        <role descr="cap" f="PRT" n="2"/>
+        <role descr="apect of ARG1 being capped" f="DOM" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="-"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="cap-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+        <lexlink class="cap-v.4" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+      </lexlinks>
+      <example name="cap_off-v" src="Minecraft">
+        <text>Now cap off the pi with 5 purple bricks .</text>
+        <propbank>
+          <rel relloc="1 2">cap off</rel>
+          <arg end="4" start="3" type="ARG1">the pi</arg>
+          <arg end="8" start="5" type="ARG2">with 5 purple bricks</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (c / cap-off-03 :mode imperative
+            :ARG0 (y / you)
+            :ARG1 (t / thing
+              :configuration (s / string-entity :value "&#960;"))
+            :ARG2 (b / brick :quant 5
+              :color (p / purple))
+            :time (n / now))
+        </amr>
+      </example>
+      <note>CAP NOTES: Added for SpatialAMR.</note>
     </roleset>
   </predicate>
 </frameset>

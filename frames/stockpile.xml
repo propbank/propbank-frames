@@ -1,37 +1,65 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="stockpile">
     <roleset id="stockpile.01" name="store">
       <aliases>
-        <alias framenet="Amassing" pos="v" verbnet="">stockpile</alias>
+        <alias pos="v">stockpile</alias>
       </aliases>
-      <note>STOCKPILE-V NOTES: Based on expansion of 'stock' frames. Member of Vncls keep-15.2. Updated by Julia, 11/2010. (from stockpile.01-v)</note>
       <roles>
         <role descr="agent, storer" f="PAG" n="0">
-          <vnrole vncls="15.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="keep-15.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Amassing" resource="FrameNet" version="1.7">recipient</rolelink>
+            <rolelink class="keep-15.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="commodity" f="PPT" n="1">
-          <vnrole vncls="15.2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="keep-15.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Amassing" resource="FrameNet" version="1.7">mass_theme</rolelink>
+            <rolelink class="keep-15.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="location or destination" f="LOC" n="2">
-          <vnrole vncls="15.2" vntheta="Location"/>
+          <rolelinks>
+            <rolelink class="keep-15.2" resource="VerbNet" version="verbnet3.3">location</rolelink>
+            <rolelink class="keep-15.2" resource="VerbNet" version="verbnet3.4">location</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes nw/wsj/06/wsj_0618" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Amassing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="keep-15.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="keep-15.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="ARG0 and ARG1 and ARG2" src="ontonotes nw/wsj/06/wsj_0618">
         <text>The head of the nation 's largest car - dealers group is telling dealers to `` just say no '' when auto makers pressure them to stockpile cars on their lots .</text>
-        <arg f="" n="0">them</arg>
-        <rel f="">stockpile</rel>
-        <arg f="" n="1">cars</arg>
-        <arg f="" n="2">on their lots</arg>
+        <propbank>
+          <rel relloc="26">stockpile</rel>
+          <arg type="ARG0" start="24" end="24">them</arg>
+          <arg type="ARG1" start="27" end="27">cars</arg>
+          <arg type="ARG2" start="28" end="30">on their lots</arg>
+        </propbank>
       </example>
-
-      <example name="ARG0 and ARG1" src="ontonotes bc/cnn/00/cnn_0000" type="">
+      <example name="ARG0 and ARG1" src="ontonotes bc/cnn/00/cnn_0000">
         <text>It includes stockpiling enough vaccine to protect twenty million people /.</text>
-        <arg f="" n="0">[]</arg>
-        <rel f="">stockpiling</rel>
-        <arg f="" n="1">enough vaccine to protect twenty million people</arg>
+        <propbank>
+          <rel relloc="2">stockpiling</rel>
+          <arg type="ARG1" start="3" end="9">enough vaccine to protect twenty million people</arg>
+        </propbank>
       </example>
-
+      <note>STOCKPILE-V NOTES: Based on expansion of 'stock' frames. Member of Vncls keep-15.2. Updated by Julia, 11/2010. (from stockpile.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,50 +1,83 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="mask">
     <roleset id="mask.01" name="cover up (with a mask)">
       <aliases>
-        <alias framenet="Eclipse Hiding_objects" pos="v" verbnet="">mask</alias>
-        <alias framenet="" pos="n" verbnet="">masking</alias>
-        <alias framenet="Eclipse Wearing" pos="j" verbnet="">masked</alias>
+        <alias pos="v">mask</alias>
+        <alias pos="n">masking</alias>
+        <alias pos="j">masked</alias>
       </aliases>
-      <note>MASK-V NOTES: Frames file for 'mask' based on sentences in wsj and automaticexpansion via verbnet. (from mask.01-v predicate notes)</note>
       <roles>
         <role descr="coverer" f="PAG" n="0">
-          <vnrole vncls="9.8" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing covered" f="GOL" n="1">
-          <vnrole vncls="9.8" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
         </role>
         <role descr="instrument, mask" f="PPT" n="2">
-          <vnrole vncls="9.8" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="mask-v: instrumental subject" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Analysts said the results were as expected, but several added that the earnings masked underlying weaknesses in several businesses.</text>
-        <arg f="" n="2">the earnings</arg>
-        <rel f="">masked</rel>
-        <arg f="" n="1">underlying weaknesses in several businesses</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Hiding_objects" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Eclipse" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Wearing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="fill-9.8" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="mask-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+        <lexlink class="fill-9.8" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="mask-v: instrumental subject" src="">
+        <text>Analysts said the results were as expected , but several added that the earnings masked underlying weaknesses in several businesses .</text>
+        <propbank>
+          <rel relloc="14">masked</rel>
+          <arg type="ARG2" start="12" end="13">the earnings</arg>
+          <arg type="ARG1" start="15" end="19">underlying weaknesses in several businesses</arg>
+        </propbank>
       </example>
-      <example name="mask-v: passive with instrument" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>Real estate analyst Lloyd Lynford says [the Northeast's distress]-1 is masked *trace*-1 by relatively low vacancy rates.</text>
-        <rel f="">masked</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="2">by relatively low vacancy rates</arg>
+      <example name="mask-v: passive with instrument" src="">
+        <text>Real estate analyst Lloyd Lynford says the Northeast 's distress is masked by relatively low vacancy rates .</text>
+        <propbank>
+          <rel relloc="11">masked</rel>
+          <arg type="ARG1" start="6" end="9">the Northeast 's distress</arg>
+          <arg type="ARG2" start="12" end="16">by relatively low vacancy rates</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG1" src="ontonotes bn/cnn/03/cnn_0383" type="">
+      <example name="ARG0 and ARG1" src="ontonotes bn/cnn/03/cnn_0383">
         <text>They hollow out the bat and stick the cork in there to mask the hollow sound .</text>
-        <arg f="" n="0">They</arg>
-        <rel f="">mask</rel>
-        <arg f="" n="1">the hollow sound</arg>
+        <propbank>
+          <rel relloc="12">mask</rel>
+          <arg type="ARG0" start="0" end="0">They</arg>
+          <arg type="ARG1" start="13" end="15">the hollow sound</arg>
+        </propbank>
       </example>
-
-      <example name="masking-n" src="" type="">
-        <text>Diploid having two copies of every gene within an organism , it is believed that `` the masking of deleterious alleles favors the evolution of a dominant diploid phase in organisms that alternate between haploid and diploid phases '' where recombination occurs freely . </text>
-        <rel f="">masking</rel>
-        <arg f="" n="1">of deleterious alleles</arg>
+      <example name="masking-n" src="">
+        <text>Diploid having two copies of every gene within an organism , it is believed that `` the masking of deleterious alleles favors the evolution of a dominant diploid phase in organisms that alternate between haploid and diploid phases '' where recombination occurs freely .</text>
+        <propbank>
+          <rel relloc="17">masking</rel>
+          <arg type="ARG1" start="18" end="20">of deleterious alleles</arg>
+        </propbank>
       </example>
+      <note>MASK-V NOTES: Frames file for 'mask' based on sentences in wsj and automaticexpansion via verbnet. (from mask.01-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,37 +1,63 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="inhibit">
     <roleset id="inhibit.01" name="to restrain, suppress">
       <aliases>
-        <alias framenet="Hindering" pos="v" verbnet="">inhibit</alias>
-        <alias framenet="" pos="n" verbnet="">inhibition</alias>
+        <alias pos="v">inhibit</alias>
+        <alias pos="n">inhibition</alias>
+        <argalias arg="0" pos="n">inhibitor</argalias>
       </aliases>
-      <note>INHIBIT-V NOTES: Member of Vncls forbid-67. Checked by Julia, 10/2010. (from inhibit.01-v)</note>
-      <note>INHIBITION-N NOTES: ~inhibit.01 (from inhibition.01-n)</note>
       <roles>
         <role descr="inhibitor" f="PAG" n="0">
-          <vnrole vncls="67" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="67" resource="VerbNet" version="UNK">agent</rolelink>
+            <rolelink class="forbid-64.4-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity inhibited" f="PPT" n="1">
-          <vnrole vncls="67" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="67" resource="VerbNet" version="UNK">theme</rolelink>
+            <rolelink class="forbid-64.4-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Hindering" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="67" confidence="0.0" resource="VerbNet" src="manual+strict-conv" version="UNK" />
+        <lexlink class="inhibit-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">11</lexlink>
+        <lexlink class="forbid-64.4-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="inhibit-v: transitive" src="">
         <text>Corporate lawyers said the new fees would n't inhibit many mergers or other transactions .</text>
-        <arg f="" n="0">the new fees</arg>
-        <arg f="mod" n="m">would</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">inhibit</rel>
-        <arg f="" n="1">many mergers or other transactions</arg>
+        <propbank>
+          <rel relloc="8">inhibit</rel>
+          <arg type="ARG0" start="3" end="5">the new fees</arg>
+          <arg type="ARGM-MOD" start="6" end="6">would</arg>
+          <arg type="ARGM-NEG" start="7" end="7">n't</arg>
+          <arg type="ARG1" start="9" end="13">many mergers or other transactions</arg>
+        </propbank>
       </example>
-      <example name="" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Josephine's paper on calosporide derivatives and their inhibition of fungal spore germination was a fascinating read.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">inhibition</rel>
-        <arg f="" n="1">of fungal spore germinations</arg>
+      <example name="inhibition-n" src="">
+        <text>Josephine 's paper on calosporide derivatives and their inhibition of fungal spore germination was a fascinating read .</text>
+        <propbank>
+          <rel relloc="8">inhibition</rel>
+          <arg type="ARG0" start="7" end="7">their</arg>
+          <arg type="ARG1" start="9" end="12">of fungal spore germination</arg>
+        </propbank>
       </example>
+      <note>INHIBIT-V NOTES: Member of Vncls forbid-67. Checked by Julia, 10/2010. (from inhibit.01-v)</note>
+      <note>INHIBITION-N NOTES: ~inhibit.01 (from inhibition.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

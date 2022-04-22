@@ -1,76 +1,117 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="convert">
     <roleset id="convert.01" name="transform">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">convert</alias>
-        <alias framenet="cause_change" pos="n" verbnet="">conversion</alias>
+        <alias pos="v">convert</alias>
+        <alias pos="n">conversion</alias>
       </aliases>
-      <note>CONVERT-V NOTES: Frames file for 'convert' based on sentences in financial subcorpus. (from convert.01-v predicate notes)</note>
-      <note>CONVERSION-N NOTES: Added due to expansion of Nombank. Comparison to 'convert'. Vn classes convert-26.6.2-1 and turn-26.6.1-1.Fn class cause_change. Framed by Katie. (from conversion.01-n)</note>
       <roles>
-        <role descr="causer of transformation" f="pag" n="0">
-          <vnrole vncls="26.6.2-1" vntheta="agent"/>
-          <vnrole vncls="26.6.1-1" vntheta="agent"/>
+        <role descr="causer of transformation" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="convert-26.6.2-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="turn-26.6.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="turn-26.6.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing changing" f="ppt" n="1">
-          <vnrole vncls="26.6.2-1" vntheta="patient"/>
-          <vnrole vncls="26.6.1-1" vntheta="patient"/>
+        <role descr="thing changing" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="convert-26.6.2-1" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="turn-26.6.1-1" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="turn-26.6.1-1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="end state" f="prd" n="2">
-          <vnrole vncls="26.6.2-1" vntheta="goal"/>
-          <vnrole vncls="26.6.1-1" vntheta="result"/>
+        <role descr="end state" f="PRD" n="2">
+          <rolelinks>
+            <rolelink class="convert-26.6.2-1" resource="VerbNet" version="verbnet3.3">goal</rolelink>
+            <rolelink class="turn-26.6.1-1" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="turn-26.6.1-1" resource="VerbNet" version="verbnet3.4">result</rolelink>
+          </rolelinks>
         </role>
-        <role descr="start state" f="vsp" n="3">
-          <vnrole vncls="26.6.2-1" vntheta="source"/>
-          <vnrole vncls="26.6.1-1" vntheta="material"/>
+        <role descr="start state" f="VSP" n="3">
+          <rolelinks>
+            <rolelink class="convert-26.6.2-1" resource="VerbNet" version="verbnet3.3">source</rolelink>
+            <rolelink class="turn-26.6.1-1" resource="VerbNet" version="verbnet3.3">initial_state</rolelink>
+            <rolelink class="turn-26.6.1-1" resource="VerbNet" version="verbnet3.4">initial_state</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="typically transitive" src="" type="">
-        <text>Related to that decision, the company said it was converting its Santa Clara, Calif., factory to a research and development facility.</text>
-        <arg f="" n="0">it</arg>
-        <rel f="">converting</rel>
-        <arg f="" n="1">its Santa Clara , Calif. , factory</arg>
-        <arg f="" n="2">to a research and development facility</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Cause_change" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="convert-26.6.2-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="turn-26.6.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="convert-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">11</lexlink>
+        <lexlink class="convert-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">47</lexlink>
+        <lexlink class="conversion-n.7" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+        <lexlink class="turn-26.6.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="typically transitive" src="">
+        <text>Related to that decision , the company said it was converting its Santa Clara , Calif. , factory to a research and development facility .</text>
+        <propbank>
+          <rel relloc="10">converting</rel>
+          <arg type="ARG0" start="8" end="8">it</arg>
+          <arg type="ARG1" start="11" end="17">its Santa Clara , Calif. , factory</arg>
+          <arg type="ARG2" start="18" end="23">to a research and development facility</arg>
+        </propbank>
       </example>
-      <example name="explicit start state" src="" type="">
-        <text>In late September, IBM began shipping a plug-in card that converts its PS/2 model 70-A21 from a 80386 machine to an 80486 machine.</text>
-        <arg f="" n="0">*trace*</arg>
-        <arg f="rcl" n="m">that -&gt; a plug-in card</arg>
-        <rel f="">converts</rel>
-        <arg f="" n="1">its PS/2 model 70-A21</arg>
-        <arg f="" n="3">from a 80386 machine</arg>
-        <arg f="" n="2">to an 80486 machine</arg>
+      <example name="explicit start state" src="">
+        <text>In late September , IBM began shipping a plug - in card that converts its PS/2 model 70 - A21 from a 80386 machine to an 80486 machine .</text>
+        <propbank>
+          <rel relloc="13">converts</rel>
+          <arg type="ARG0" start="7" end="11">a plug - in card</arg>
+          <arg type="R-ARG0" start="12" end="12">that</arg>
+          <arg type="ARG1" start="14" end="19">its PS/2 model 70 - A21</arg>
+          <arg type="ARG3" start="20" end="23">from a 80386 machine</arg>
+          <arg type="ARG2" start="24" end="27">to an 80486 machine</arg>
+        </propbank>
       </example>
-      <example name="odd ergative usage" src="" type="">
-        <text>Convertible capital appreciation bonds with a final stated maturity of Nov. 15, 2014, convert Nov. 15, 1999.</text>
-        <arg f="" n="1">Convertible capital appreciation bonds with a final stated maturity of Nov. 15, 2014,</arg>
-        <rel f="">convert</rel>
-        <arg f="tmp" n="m">Nov. 15 , 1999</arg>
+      <example name="odd ergative usage" src="">
+        <text>Convertible capital appreciation bonds with a final stated maturity of Nov. 15 , 2014 , convert Nov. 15 , 1999 .</text>
+        <propbank>
+          <rel relloc="15">convert</rel>
+          <arg type="ARG1" start="0" end="13">Convertible capital appreciation bonds with a final stated maturity of Nov. 15 , 2014</arg>
+          <arg type="ARGM-TMP" start="16" end="19">Nov. 15 , 1999</arg>
+        </propbank>
       </example>
-      <example name="args 1 and 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The conversion of short-term claims inside the net to long-term loans outside the net.</text>
-        <rel f="">converstion</rel>
-        <arg f="" n="1">of short-term claims inside the net</arg>
-        <arg f="" n="2">to long-term loans outside the net</arg>
+      <example name="args 1 and 2" src="">
+        <text>The conversion of short - term claims inside the net to long - term loans outside the net .</text>
+        <propbank>
+          <rel relloc="1">conversion</rel>
+          <arg type="ARG1" start="2" end="9">of short - term claims inside the net</arg>
+          <arg type="ARG2" start="10" end="17">to long - term loans outside the net</arg>
+        </propbank>
       </example>
-      <example name="All args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Their publication converstion from traditional format to tabloid format.</text>
-        <arg f="" n="0">Their</arg>
-        <arg f="" n="1">publication</arg>
-        <rel f="">converstion</rel>
-        <arg f="" n="3">from traditional format</arg>
-        <arg f="" n="2">to tabloid format.</arg>
+      <example name="All args" src="">
+        <text>Their publication converstion from traditional format to tabloid format .</text>
+        <propbank>
+          <rel relloc="2">converstion</rel>
+          <arg type="ARG0" start="0" end="0">Their</arg>
+          <arg type="ARG1" start="1" end="1">publication</arg>
+          <arg type="ARG3" start="3" end="5">from traditional format</arg>
+          <arg type="ARG2" start="6" end="8">to tabloid format</arg>
+        </propbank>
       </example>
-      <example name="arg 1 and 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="arg 1 and 2" src="">
         <text>His conversion to Buddhism</text>
-        <arg f="" n="1">His</arg>
-        <rel f="">conversion</rel>
-        <arg f="" n="2">to Buddhism</arg>
+        <propbank>
+          <rel relloc="1">conversion</rel>
+          <arg type="ARG1" start="0" end="0">His</arg>
+          <arg type="ARG2" start="2" end="3">to Buddhism</arg>
+        </propbank>
       </example>
+      <note>CONVERT-V NOTES: Frames file for 'convert' based on sentences in financial subcorpus. (from convert.01-v predicate notes)</note>
+      <note>CONVERSION-N NOTES: Added due to expansion of Nombank. Comparison to 'convert'. Vn classes convert-26.6.2-1 and turn-26.6.1-1.Fn class cause_change. Framed by Katie. (from conversion.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,53 +1,82 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="staff">
     <roleset id="staff.01" name="provide manpower">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">staff</alias>
+        <alias pos="v">staff</alias>
       </aliases>
-      <note>STAFF-V NOTES: VERY IMPORTANT to distinguish between the staff working and the entitywhich causes those staff to work! Be very careful! (from staff.01-v)</note>
       <roles>
         <role descr="agentive staffer, employment agency" f="PAG" n="0">
-          <vnrole vncls="9.8" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="workplace" f="GOL" n="1">
-          <vnrole vncls="9.8" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
         </role>
         <role descr="staff, workers" f="PPT" n="2">
-          <vnrole vncls="9.8" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all args" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>To help residents in Northern California rebuild, FEMA-1 intends to set up 17 disaster assistance offices in the earthquake area in the next several days and *trace*-1 to staff them with 400 to 500 workers from various agencies, said Robert Volland, chief of the agency's individual assistance division.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">staff</rel>
-        <arg f="" n="1">them</arg>
-        <arg f="" n="2">with 400 to 500 workers from various agencies</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Working_a_post" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="fill-9.8" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="staff-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+        <lexlink class="fill-9.8" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="all args" src="">
+        <text>To help residents in Northern California rebuild , FEMA intends to set up 17 disaster assistance offices in the earthquake area in the next several days and to staff them with 400 to 500 workers from various agencies , said Robert Volland , chief of the agency 's individual assistance division .</text>
+        <propbank>
+          <rel relloc="28">staff</rel>
+          <arg type="ARG0" start="8" end="8">FEMA</arg>
+          <arg type="ARG1" start="29" end="29">them</arg>
+          <arg type="ARG2" start="30" end="37">with 400 to 500 workers from various agencies</arg>
+        </propbank>
       </example>
-      <example name="active, worker in subject pos" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>To the extent we lack manpower-1 *trace*-1 *trace*-1 to staff menial jobs in hospitals, ...</text>
-        <arg f="" n="2">*trace*</arg>
-        <rel f="">staff</rel>
-        <arg f="" n="1">menial jobs in hospitals</arg>
+      <example name="active, worker in subject pos" src="">
+        <text>To the extent we lack manpower to staff menial jobs in hospitals , ...</text>
+        <propbank>
+          <rel relloc="7">staff</rel>
+          <arg type="ARG2" start="5" end="5">manpower</arg>
+          <arg type="ARG1" start="8" end="11">menial jobs in hospitals</arg>
+        </propbank>
       </example>
-      <example name="passive, worker in demoted subject pos" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="future" voice="passive"/>
-        <text>[The Sidley-Ashurst venture]-1 will also be staffed *trace*-1 by another Sidley partner specializing in corporate law, a partner from Ashurst concentrating on acquisitions and a Japanese attorney.</text>
-        <arg f="MOD" n="M">will</arg>
-        <arg f="DIS" n="M">also</arg>
-        <rel f="">staffed</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="2">by another Sidley partner specializing in corporate law, a partner from Ashurst concentrating on acquisitions and a Japanese attorney</arg>
+      <example name="passive, worker in demoted subject pos" src="">
+        <text>The Sidley - Ashurst venture will also be staffed by another Sidley partner specializing in corporate law , a partner from Ashurst concentrating on acquisitions and a Japanese attorney .</text>
+        <propbank>
+          <rel relloc="8">staffed</rel>
+          <arg type="ARGM-MOD" start="5" end="5">will</arg>
+          <arg type="ARGM-DIS" start="6" end="6">also</arg>
+          <arg type="ARG1" start="0" end="4">The Sidley - Ashurst venture</arg>
+          <arg type="ARG2" start="9" end="28">by another Sidley partner specializing in corporate law , a partner from Ashurst concentrating on acquisitions and a Japanese attorney</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG1" src="ontonotes wb/eng/00/eng_0006" type="">
+      <example name="ARG0 and ARG1" src="ontonotes wb/eng/00/eng_0006">
         <text>Got to staff all those toll booths .</text>
-        <arg f="" n="0">[]</arg>
-        <rel f="">staff</rel>
-        <arg f="" n="1">all those toll booths</arg>
+        <propbank>
+          <rel relloc="2">staff</rel>
+          <arg type="ARG1" start="3" end="6">all those toll booths</arg>
+        </propbank>
       </example>
-
+      <note>STAFF-V NOTES: VERY IMPORTANT to distinguish between the staff working and the entitywhich causes those staff to work! Be very careful! (from staff.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

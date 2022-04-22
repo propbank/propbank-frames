@@ -1,27 +1,57 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="episode">
     <roleset id="episode.01" name="an instance of a larger set of occurrances">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">episode</alias>
-        <alias framenet="" pos="j" verbnet="">episodic</alias>
-        <alias framenet="" pos="l" verbnet="">have_episode</alias>
+        <alias pos="n">episode</alias>
+        <alias pos="j">episodic</alias>
+        <alias pos="l">have_episode</alias>
       </aliases>
-      <note>EPISODE-N NOTES: Added by Julia for earthquakes.</note>
       <roles>
-        <role descr="entity experiencing the episode" f="pag" n="0"/>
-        <role descr="occurrance" f="ppt" n="1"/>
+        <role descr="entity experiencing the episode" f="PAG" n="0" />
+        <role descr="type" f="PPT" n="1" />
       </roles>
-      <example name="have_episode-l" src="" type="">
-        <text>My daughter, 22 years, just had another episode of heart palpitations which landed her in the emergency department as she was not able to stop them herself.</text>
-        <arg f="" n="0">My daughter, 22 years</arg>
-        <arg f="adv" n="m">just</arg>
-        <arg f="lvb" n="m">had</arg>
-        <arg f="adv" n="m">another</arg>
-        <rel f="">episode</rel>
-        <arg f="" n="1">of heart palpitations</arg>
-        <arg f="adj" n="m">which landed her in the emergency department as she was not able to stop them herself</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks />
+      <example name="have_episode-l" src="">
+        <text>My daughter , 22 years , just had another episode of heart palpitations which landed her in the emergency department as she was not able to stop them herself .</text>
+        <propbank>
+          <rel relloc="9">episode</rel>
+          <arg type="ARG0" start="0" end="4">My daughter , 22 years</arg>
+          <arg type="ARGM-ADV" start="6" end="6">just</arg>
+          <arg type="ARGM-LVB" start="7" end="7">had</arg>
+          <arg type="ARGM-ADV" start="8" end="8">another</arg>
+          <arg type="ARG1" start="10" end="12">of heart palpitations</arg>
+          <arg type="ARGM-ADJ" start="13" end="28">which landed her in the emergency department as she was not able to stop them herself</arg>
+        </propbank>
       </example>
+      <example name="have_episode-l" src="">
+        <text>The patient had an episode of colonic obstruction .</text>
+        <propbank>
+          <rel relloc="4">episode</rel>
+          <arg type="ARG0" start="0" end="1">The patient</arg>
+          <arg type="ARGM-LVB" start="2" end="2">had</arg>
+          <arg type="ARG1" start="5" end="7">of colonic obstruction</arg>
+        </propbank>
+        <amr version="THYME 1.0">
+          (e / episode-01
+            :ARG0 (p / patient-yy)
+            :ARG1 (o / obstruct-01
+              :ARG1 (a / anatomical-site :name (n2 / name :op1 "colon")
+                :part-of p)))
+        </amr>
+      </example>
+      <note>EPISODE-N NOTES: Added by Julia for earthquakes.</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,78 +1,139 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="profit">
     <roleset id="profit.01" name="make money from, wages">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">profit</alias>
-        <alias framenet="" pos="l" verbnet="">make_profit</alias>
-        <alias framenet="" pos="v" verbnet="">profit</alias>
+        <alias pos="n">profit</alias>
+        <alias pos="l">make_profit</alias>
+        <alias pos="v">profit</alias>
       </aliases>
+      <roles>
+        <role descr="entity making money" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="benefit-72.2" resource="VerbNet" version="verbnet3.3">beneficiary</rolelink>
+            <rolelink class="benefit-72.2" resource="VerbNet" version="verbnet3.4">beneficiary</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="source" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="benefit-72.2" resource="VerbNet" version="verbnet3.3">causer</rolelink>
+            <rolelink class="benefit-72.2" resource="VerbNet" version="verbnet3.4">causer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="the profit itself, amount" f="PPT" n="2">
+          <rolelinks/>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Earnings_and_losses" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Transfermoney" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="Transferownership" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="profit-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">305</lexlink>
+        <lexlink class="profit-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">24</lexlink>
+        <lexlink class="benefit-72.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="profit-v: transitive, typical" src="">
+        <text>... protects against stocks being relentlessly beaten downward by those seeking to profit from lower prices .</text>
+        <propbank>
+          <rel relloc="12">profit</rel>
+          <arg type="ARG0" start="9" end="9">those</arg>
+          <arg type="ARG1" start="13" end="15">from lower prices</arg>
+        </propbank>
+      </example>
+      <example name="profit-n: NP only" src="">
+        <text>group net profit of $ 2.5 billion on revenue of $ 125.1 billion</text>
+        <propbank>
+          <rel relloc="2">profit</rel>
+          <arg type="ARG0" start="0" end="0">group</arg>
+          <arg type="ARG2" start="3" end="6">of $ 2.5 billion</arg>
+          <arg type="ARG1" start="7" end="12">on revenue of $ 125.1 billion</arg>
+        </propbank>
+      </example>
+      <example name="profit-n: With manner only" src="">
+        <text>These investors are looking for a quick profit .</text>
+        <propbank>
+          <rel relloc="7">profit</rel>
+          <arg type="ARGM-MNR" start="6" end="6">quick</arg>
+        </propbank>
+      </example>
+      <example name="profit-n: preposition for source argument" src="">
+        <text>George only made a twenty dollar profit each year on his crafts .</text>
+        <propbank>
+          <rel relloc="6">profit</rel>
+          <arg type="ARG2" start="4" end="5">twenty dollar</arg>
+          <arg type="ARGM-TMP" start="7" end="8">each year</arg>
+          <arg type="ARG1" start="9" end="11">on his crafts</arg>
+        </propbank>
+      </example>
+      <example name="profit-n: Metaphorical profit, with source only" src="">
+        <text>I hope there is some profit in your seeing this play .</text>
+        <propbank>
+          <rel relloc="5">profit</rel>
+          <arg type="ARG2" start="4" end="4">some</arg>
+          <arg type="ARG1" start="6" end="10">in your seeing this play</arg>
+        </propbank>
+      </example>
+      <example name="profit-n: Source with &quot;of&quot; preposition" src="">
+        <text>What 's the profit of visiting the doctor if you wo n't take his advice .</text>
+        <propbank>
+          <rel relloc="3">profit</rel>
+          <arg type="ARG1" start="4" end="7">of visiting the doctor</arg>
+        </propbank>
+      </example>
       <note>PROFIT-V NOTES: Frames file for 'profit' based on sentences in financial subcorpus. No verbnet entry. No comparison. (from profit.01-v)</note>
       <note>PROFIT-N NOTES: Roleset based on verb entry profit.01 and OntoNotes sense groupings profit.01, profit.02; no mappings to VN. Framed by Claire (from profit.01-n)</note>
-      <roles>
-        <note>Use ARGM-GOL for beneficiary of profit when present. (from profit.01-n)</note>
-        <role descr="entity making money" f="pag" n="0"/>
-        <role descr="source" f="ppt" n="1"/>
-        <role descr="the profit itself, amount" f="ppt" n="2"/>
-      </roles>
-      <example name="profit-v: transitive, typical" src="" type="">
-        <text>...protects against stocks being relentlessly beaten downward by those-1 seeking *trace*-1 to profit from lower prices.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">profit</rel>
-        <arg f="" n="1">from lower prices</arg>
-      </example>
-      <example name="profit-n: NP only" src="NP only" type="NP only">
-        <text>group net profit of $ 2.5 billion on revenue of $ 125.1 billion</text>
-        <arg f="" n="0">group</arg>
-        <rel f="">profit</rel>
-        <arg f="" n="2">of $ 2.5 billion</arg>
-        <arg f="" n="1">on revenue of $ 125.1 billion</arg>
-      </example>
-      <example name="profit-n: With manner only" src="With manner only" type="With manner only">
-        <text>These investors are looking for a quick profit.</text>
-        <arg f="mnr" n="m">quick</arg>
-        <rel f="">profit</rel>
-      </example>
-      <example name="profit-n: preposition for source argument" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>George only made a twenty dollar profit each year on his crafts.</text>
-        <arg f="" n="2">twenty dollar</arg>
-        <rel f="">profit</rel>
-        <arg f="tmp" n="m">each year</arg>
-        <arg f="" n="1">on his crafts</arg>
-      </example>
-      <example name="profit-n: Metaphorical profit, with source only" src="Metaphorical profit, with source only" type="Metaphorical profit, with source only">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I hope there is some profit in your seeing this play.</text>
-        <arg f="" n="2">some</arg>
-        <rel f="">profit</rel>
-        <arg f="" n="1">in your seeing this play</arg>
-      </example>
-      <example name="profit-n: Source with &quot;of&quot; preposition" src="Source with &quot;of&quot; preposition" type="Source with &quot;of&quot; preposition">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>What's the profit of visiting the doctor if you won't take his advice.</text>
-        <rel f="">profit</rel>
-        <arg f="" n="1">of visiting the doctor</arg>
-      </example>
+      <note>Use ARGM-GOL for beneficiary of profit when present. (from profit.01-n)</note>
     </roleset>
   </predicate>
   <predicate lemma="profitable">
     <roleset id="profitable.02" name="producing a profit">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">profitable</alias>
+        <alias pos="j">profitable</alias>
       </aliases>
-      <note>PROFITABLE-J NOTES: Automatically created by Julia for unification as an alias file. (from profitable.01-j)</note>
       <roles>
-        <role descr="entity making money" f="pag" n="0"/>
-        <role descr="source" f="ppt" n="1"/>
-        <role descr="the profit itself, amount" f="ppt" n="2"/>
+        <role descr="entity making money" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="benefit-72.2" resource="VerbNet" version="verbnet3.3">beneficiary</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="source" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="benefit-72.2" resource="VerbNet" version="verbnet3.3">causer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="the profit itself, amount" f="PPT" n="2"/>
       </roles>
-      <example name="profitable-j" src="" type="">
-        <text>weed management is profitable for irrigated rice farmers in Sahelian West Africa.</text>
-        <arg f="" n="1">weed management</arg>
-        <rel f="">profitable</rel>
-        <arg f="" n="0">for irrigated rice farmers in Sahelian West Africa</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="profitable-j" src="">
+        <text>weed management is profitable for irrigated rice farmers in Sahelian West Africa .</text>
+        <propbank>
+          <rel relloc="3">profitable</rel>
+          <arg type="ARG1" start="0" end="1">weed management</arg>
+          <arg type="ARG0" start="4" end="11">for irrigated rice farmers in Sahelian West Africa</arg>
+        </propbank>
       </example>
+      <note>PROFITABLE-J NOTES: Automatically created by Julia for unification as an alias file. (from profitable.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

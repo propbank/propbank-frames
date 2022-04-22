@@ -1,99 +1,151 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="predate">
     <roleset id="predate.01" name="come before, temporally">
       <aliases>
-        <alias framenet="Relative_time" pos="v" verbnet="">predate</alias>
+        <alias pos="v">predate</alias>
       </aliases>
-      <note>PREDATE-V NOTES: Roleset based on internet search and WSJ. Member of Vncls contiguous_location-47.8. Comparison to ?precede?. Updated by Julia. (from predate.01-v)</note>
       <roles>
-        <role descr="thing coming before" f="ppt" n="1">
-          <vnrole vncls="47.8" vntheta="theme"/>
+        <role descr="thing coming before" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="contiguous_location-47.8" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="contiguous_location-47.8" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing coming after" f="ppt" n="2">
-          <vnrole vncls="47.8" vntheta="co-theme"/>
+        <role descr="thing coming after" f="PPT" n="2">
+          <rolelinks>
+            <rolelink class="contiguous_location-47.8" resource="VerbNet" version="verbnet3.3">co-theme</rolelink>
+            <rolelink class="contiguous_location-47.8" resource="VerbNet" version="verbnet3.4">co_theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG1 and ARG2" src="ontonotes nw/wsj/16/wsj_1689" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Relative_time" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="contiguous_location-47.8" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="contiguous_location-47.8" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="ARG1 and ARG2" src="ontonotes nw/wsj/16/wsj_1689">
         <text>John C. Burton , an accounting professor at Columbia University 's Graduate School of Business , said `` there 's a lot of emotion involved in the name of an accounting firm with a long history and with roots in England , where accounting predates the U.S. . ''</text>
-        <arg f="loc" n="m">[where][England]</arg>
-        <arg f="" n="1">accounting</arg>
-        <rel f="">predates</rel>
-        <arg f="" n="2">the U.S.</arg>
+        <propbank>
+          <rel relloc="44">predates</rel>
+          <arg type="R-ARGM-LOC" start="42" end="42">where</arg>
+          <arg type="ARG1" start="43" end="43">accounting</arg>
+          <arg type="ARG2" start="45" end="46">the U.S.</arg>
+          <arg type="ARGM-LOC" start="40" end="40">England</arg>
+        </propbank>
       </example>
-
-      <example name="predate-v: with extent" src="with extent" type="with extent">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="passive"/>
-        <text>[Edison's first sound recordings]-1 were predated *trace*-1 by 20 years.</text>
-        <rel f="">predated</rel>
-        <arg f="" n="2">*trace*-1</arg>
-        <arg f="ext" n="m">by 20 years</arg>
+      <example name="predate-v: with extent" src="">
+        <text>Edison 's first sound recordings were predated by 20 years .</text>
+        <propbank>
+          <rel relloc="6">predated</rel>
+          <arg type="ARG2" start="0" end="4">Edison 's first sound recordings</arg>
+          <arg type="ARGM-EXT" start="7" end="9">by 20 years</arg>
+        </propbank>
       </example>
+      <note>PREDATE-V NOTES: Roleset based on internet search and WSJ. Member of Vncls contiguous_location-47.8. Comparison to ?precede?. Updated by Julia. (from predate.01-v)</note>
     </roleset>
     <roleset id="predate.02" name="be a predator of">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">predate</alias>
-        <alias framenet="" pos="n" verbnet="">predation</alias>
+        <alias pos="v">predate</alias>
+        <alias pos="n">predation</alias>
       </aliases>
+      <roles>
+        <role descr="predator" f="PAG" n="0"/>
+        <role descr="prey" f="PPT" n="1"/>
+        <role descr="source" f="DIR" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="predate-v: Intransitive" src="">
+        <text>It is hoped that the stock of trout will predate sufficiently to minimise the problem .</text>
+        <propbank>
+          <rel relloc="9">predate</rel>
+          <arg type="ARG0" start="4" end="7">the stock of trout</arg>
+          <arg type="ARGM-MOD" start="8" end="8">will</arg>
+          <arg type="ARGM-MNR" start="10" end="14">sufficiently to minimise the problem</arg>
+        </propbank>
+      </example>
+      <example name="predate-v: All args" src="">
+        <text>Both species predate fish from pound nets .</text>
+        <propbank>
+          <rel relloc="2">predate</rel>
+          <arg type="ARG0" start="0" end="1">Both species</arg>
+          <arg type="ARG1" start="3" end="3">fish</arg>
+          <arg type="ARG2" start="4" end="6">from pound nets</arg>
+        </propbank>
+      </example>
+      <example name="predation-n" src="">
+        <text>Influence of nest site selection on predation of flatback sea turtle ( Natator depressus ) eggs by varanid lizards in Northern Australia .</text>
+        <propbank>
+          <rel relloc="6">predation</rel>
+          <arg type="ARG1" start="7" end="15">of flatback sea turtle ( Natator depressus ) eggs</arg>
+          <arg type="ARG0" start="16" end="18">by varanid lizards</arg>
+          <arg type="ARGM-LOC" start="19" end="21">in Northern Australia</arg>
+        </propbank>
+      </example>
       <note>PREDATE-V NOTES: Roleset by Julia based on internet search. Member of Vncls eat-39.1-1. (from predate.02-v)</note>
       <note>PREDATION-N NOTES: Added by Julia for clearearth-biotexts.</note>
-      <roles>
-        <note>Arg2 'source' added based on Vncls-- rarely seen (from predate.02-v)</note>
-        <role descr="predator" f="pag" n="0"/>
-        <role descr="prey" f="ppt" n="1"/>
-        <role descr="source" f="dir" n="2"/>
-      </roles>
-      <example name="predate-v: Intransitive" src="Intransitive" type="Intransitive">
-        <inflection aspect="ns" form="participle" person="third" tense="future" voice="active"/>
-        <text>It is hoped that the stock of trout will predate sufficiently to minimise the problem.</text>
-        <arg f="" n="0">the stock of trout</arg>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">predate</rel>
-        <arg f="mnr" n="m">sufficiently to minimise the problem</arg>
-      </example>
-      <example name="predate-v: All args" src="All args" type="All args">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>Both species predate fish from pound nets.</text>
-        <arg f="" n="0">Both species</arg>
-        <rel f="">predate</rel>
-        <arg f="" n="1">fish</arg>
-        <arg f="" n="2">from pound nets.</arg>
-      </example>
-      <example name="predation-n" src="" type="">
-        <text>Influence of nest site selection on predation of flatback sea turtle (Natator depressus) eggs by varanid lizards in Northern Australia.</text>
-        <rel f="">predation</rel>
-        <arg f="" n="1">of flatback sea turtle (Natator depressus) eggs</arg>
-        <arg f="" n="0">by varanid lizards</arg>
-        <arg f="loc" n="m">in North Australia</arg>
-      </example>
+      <note>Arg2 'source' added based on Vncls-- rarely seen (from predate.02-v)</note>
     </roleset>
     <roleset id="predate.03" name="mark with a previous date">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">predate</alias>
+        <alias pos="v">predate</alias>
       </aliases>
-      <note>PREDATE-V NOTES: Roleset by Julia based on internet search. No Vncls. Comparison to ?overestimate?. (from predate.03-v)</note>
       <roles>
         <role descr="agent-- entity assigning a date" f="PAG" n="0"/>
-        <role descr="thing assigned a date" f="ppt" n="1"/>
-        <role descr="date assigned, value or extent" f="ext" n="2"/>
+        <role descr="thing assigned a date" f="PPT" n="1"/>
+        <role descr="date assigned, value or extent" f="EXT" n="2"/>
       </roles>
-      <example name="predate-v: with Arg2 date" src="with Arg2 date" type="with Arg2 date">
-        <inflection aspect="ns" form="full" person="third" tense="past" voice="active"/>
-        <text>Like Dickinson, he predated his choices back to 1924.</text>
-        <arg f="mnr" n="m">Like Dickinson,</arg>
-        <arg f="" n="0">he</arg>
-        <rel f="">predated</rel>
-        <arg f="" n="1">his choices</arg>
-        <arg f="" n="2">back to 1924.</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <example name="predate-v: with Arg2 date" src="">
+        <text>Like Dickinson , he predated his choices back to 1924 .</text>
+        <propbank>
+          <rel relloc="4">predated</rel>
+          <arg type="ARGM-MNR" start="0" end="1">Like Dickinson</arg>
+          <arg type="ARG0" start="3" end="3">he</arg>
+          <arg type="ARG1" start="5" end="6">his choices</arg>
+          <arg type="ARG2" start="7" end="9">back to 1924</arg>
+        </propbank>
       </example>
-      <example name="predate-v: with Arg2 extent" src="with Arg2 extent" type="with Arg2 extent">
-        <inflection aspect="ns" form="full" person="third" tense="past" voice="active"/>
-        <text>He predated the check by three days.</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">predated</rel>
-        <arg f="" n="1">the check</arg>
-        <arg f="" n="2">by three days.</arg>
+      <example name="predate-v: with Arg2 extent" src="">
+        <text>He predated the check by three days .</text>
+        <propbank>
+          <rel relloc="1">predated</rel>
+          <arg type="ARG0" start="0" end="0">He</arg>
+          <arg type="ARG1" start="2" end="3">the check</arg>
+          <arg type="ARG2" start="4" end="6">by three days</arg>
+        </propbank>
       </example>
+      <note>PREDATE-V NOTES: Roleset by Julia based on internet search. No Vncls. Comparison to ?overestimate?. (from predate.03-v)</note>
     </roleset>
   </predicate>
 </frameset>

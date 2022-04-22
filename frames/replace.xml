@@ -1,69 +1,109 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="replace">
     <roleset id="replace.01" name="substitute">
       <aliases>
-        <alias framenet="Take_place_of Replacing" pos="n" verbnet="">replacement</alias>
-        <alias framenet="" pos="j" verbnet="">replaced</alias>
-        <alias framenet="Replacing Take_place_of" pos="v" verbnet="">replace</alias>
+        <alias pos="n">replacement</alias>
+        <alias pos="j">replaced</alias>
+        <alias pos="v">replace</alias>
       </aliases>
+      <roles>
+        <role descr="replacer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="substitute-13.6.2-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Replacing" resource="FrameNet" version="1.7">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="old thing" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="substitute-13.6.2-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Replacing" resource="FrameNet" version="1.7">old</rolelink>
+            <rolelink class="substitute-13.6.2-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="new thing" f="PPT" n="2">
+          <rolelinks>
+            <rolelink class="substitute-13.6.2-1" resource="VerbNet" version="verbnet3.3">co-theme</rolelink>
+            <rolelink class="Replacing" resource="FrameNet" version="1.7">new</rolelink>
+            <rolelink class="substitute-13.6.2-1" resource="VerbNet" version="verbnet3.4">co_theme</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Replacing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="Take_place_of" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="substitute-13.6.2-1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3" />
+        <lexlink class="replace-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">104</lexlink>
+        <lexlink class="replacement-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="substitute-13.6.2-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="all args" src="">
+        <text>To profit from an index - arbitrage opportunity , someone who owns the S &amp; P 500 widget in New York must sell it and replace it with a cheaper S &amp; P 500 widget in Chicago .</text>
+        <propbank>
+          <rel relloc="25">replace</rel>
+          <arg type="ARGM-PRP" start="0" end="7">To profit from an index - arbitrage opportunity</arg>
+          <arg type="ARG0" start="9" end="20">someone who owns the S &amp; P 500 widget in New York</arg>
+          <arg type="ARGM-MOD" start="21" end="21">must</arg>
+          <arg type="ARG1" start="26" end="26">it</arg>
+          <arg type="ARG2" start="27" end="36">with a cheaper S &amp; P 500 widget in Chicago</arg>
+        </propbank>
+      </example>
+      <example name="new thing in subject position" src="">
+        <text>Mr. Steinberg , he suggested , could replace British Airways PLC , which has withdrawn from the buy - out group .</text>
+        <propbank>
+          <rel relloc="7">replace</rel>
+          <arg type="ARG2" start="0" end="1">Mr. Steinberg</arg>
+          <arg type="ARGM-MOD" start="6" end="6">could</arg>
+          <arg type="ARG1" start="8" end="20">British Airways PLC , which has withdrawn from the buy - out group</arg>
+        </propbank>
+      </example>
+      <example name="no new thing" src="">
+        <text>Continental Air replaced its top executive for the sixth time in as many years .</text>
+        <propbank>
+          <rel relloc="2">replaced</rel>
+          <arg type="ARG0" start="0" end="1">Continental Air</arg>
+          <arg type="ARG1" start="3" end="5">its top executive</arg>
+          <arg type="ARGM-TMP" start="6" end="13">for the sixth time in as many years</arg>
+        </propbank>
+      </example>
+      <example name="args 1 and 2" src="">
+        <text>its replacement by a Western - style Socialist Party</text>
+        <propbank>
+          <rel relloc="1">replacement</rel>
+          <arg type="ARG1" start="0" end="0">its</arg>
+          <arg type="ARG2" start="2" end="8">by a Western - style Socialist Party</arg>
+        </propbank>
+      </example>
+      <example name="just arg1" src="">
+        <text>Nearly one third of those surveyed had surgery at least once since retiring , mostly on knees with knee replacement a common option .</text>
+        <propbank>
+          <rel relloc="19">replacement</rel>
+          <arg type="ARG1" start="18" end="18">knee</arg>
+        </propbank>
+      </example>
+      <example name="all args" src="">
+        <text>More recently , he has been widely protested for his replacement of reimbursement for transportation and healthcare costs by cash</text>
+        <propbank>
+          <rel relloc="10">replacement</rel>
+          <arg type="ARG0" start="9" end="9">his</arg>
+          <arg type="ARG1" start="11" end="17">of reimbursement for transportation and healthcare costs</arg>
+          <arg type="ARG2" start="18" end="19">by cash</arg>
+        </propbank>
+      </example>
       <note>REPLACE-V NOTES: Member of Vncls exchange-13.6. (from replace.01-v)</note>
       <note>REPLACEMENT-N NOTES: Added by Julia based on replace-v.01. Corresponds to VNcls exchange-13.6. (from replacement.01-n)</note>
       <note>REPLACED-J NOTES: Automatically created by Julia as an alias file for unification. (from replaced.01-j)</note>
-      <roles>
-        <role descr="replacer" f="PAG" n="0">
-          <vnrole vncls="13.6" vntheta="Agent"/>
-        </role>
-        <role descr="old thing" f="PPT" n="1">
-          <vnrole vncls="13.6" vntheta="Theme"/>
-        </role>
-        <role descr="new thing" f="PPT" n="2">
-          <vnrole vncls="13.6" vntheta="co-theme"/>
-        </role>
-      </roles>
-      <example name="all args" src="" type="">
-        <text>To profit from an index-arbitrage opportunity, someone who owns the S&amp; P 500 widget in New York must sell it and replace it with a cheaper S &amp; P 500 widget in Chicago.</text>
-        <arg f="prp" n="m">To profit from an index-arbitrage opportunity</arg>
-        <arg f="" n="0">someone who owns the S&amp; P 500 widget in New York</arg>
-        <arg f="mod" n="m">must</arg>
-        <rel f="">replace</rel>
-        <arg f="" n="1">it</arg>
-        <arg f="" n="2">with a cheaper S&amp; P 500 widget in Chicago</arg>
-      </example>
-      <example name="new thing in subject position" src="" type="">
-        <text>Mr. Steinberg, he suggested, could replace British Airways PLC, which has withdrawn from the buy-out group.</text>
-        <arg f="" n="2">Mr. Steinberg</arg>
-        <arg f="mod" n="m">could</arg>
-        <rel f="">replace</rel>
-        <arg f="" n="1">British Airways PLC, which has withdrawn from the buy-out group</arg>
-      </example>
-      <example name="no new thing" src="" type="">
-        <text>Continental Air replaced its top executive for the sixth time in as many years.</text>
-        <arg f="" n="0">Continental Air</arg>
-        <rel f="">replaced</rel>
-        <arg f="" n="1">its top executive</arg>
-        <arg f="tmp" n="m">for the sixth time in as many years</arg>
-      </example>
-      <example name="args 1 and 2" src="" type="">
-        <text>its replacement by a Western-style Socialist Party</text>
-        <arg f="" n="1">its</arg>
-        <rel f="">replacement</rel>
-        <arg f="" n="2">by a Western-style Socialist Party</arg>
-      </example>
-      <example name="just arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Nearly one third of those surveyed had surgery at least once since retiring , mostly on knees with knee replacement a common option .</text>
-        <arg f="" n="1">knee</arg>
-        <rel f="">replacement</rel>
-      </example>
-      <example name="all args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>More recently, he has been widely protested for his replacement of reimbursement for transportation and healthcare costs by cash</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">replacement</rel>
-        <arg f="" n="1">of reimbursement for transportation and healthcare costs</arg>
-        <arg f="" n="2">by cash</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

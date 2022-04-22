@@ -1,42 +1,76 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="listen">
     <roleset id="listen.01" name="attend to a sound">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">listen</alias>
-        <alias framenet="" pos="n" verbnet="">listening</alias>
+        <alias pos="v">listen</alias>
+        <alias pos="n">listening</alias>
       </aliases>
-      <note>LISTEN-V NOTES: Frames file for 'listen' based on sentences in financial subcorpus. Verbnet entries 30.3 35.5, no other framed members. (?) Comparison to 'hear'. (from listen.01-v predicate notes)</note>
-      <note>LISTENING-N NOTES: listen.01 (from listening.01-n)</note>
       <roles>
-        <role descr="listener" f="pag" n="0">
-          <vnrole vncls="30.3" vntheta="experiencer"/>
-          <vnrole vncls="35.5" vntheta="agent"/>
+        <role descr="listener" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="peer-30.3" resource="VerbNet" version="verbnet3.3">experiencer</rolelink>
+            <rolelink class="rummage-35.5" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Perception_active" resource="FrameNet" version="1.7">perceiver_agentive</rolelink>
+            <rolelink class="peer-30.3" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="rummage-35.5" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="sound or speaker" f="ppt" n="1">
-          <vnrole vncls="30.3" vntheta="stimulus"/>
-          <vnrole vncls="35.5" vntheta="theme"/>
+        <role descr="sound or speaker" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="peer-30.3" resource="VerbNet" version="verbnet3.3">stimulus</rolelink>
+            <rolelink class="rummage-35.5" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Perception_active" resource="FrameNet" version="1.7">phenomenon</rolelink>
+            <rolelink class="peer-30.3" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+            <rolelink class="rummage-35.5" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <text>``We watch the same indicators and listen to the same prognosticators.''</text>
-        <arg f="" n="0">We</arg>
-        <rel f="">listen</rel>
-        <arg f="" n="1">to the same prognosticators</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Perception_active" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="peer-30.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="rummage-35.5" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="listen-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">100</lexlink>
+        <lexlink class="rummage-35.5" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+        <lexlink class="peer-30.3" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="transitive" src="">
+        <text>`` We watch the same indicators and listen to the same prognosticators . ''</text>
+        <propbank>
+          <rel relloc="7">listen</rel>
+          <arg type="ARG0" start="1" end="1">We</arg>
+          <arg type="ARG1" start="8" end="11">to the same prognosticators</arg>
+        </propbank>
       </example>
-      <example name="intransitive" src="" type="">
-        <text>Willliam Greaney said that the influence of the appeals court in New York ``will make insurers sit up and listen.''</text>
-        <arg f="" n="0">insurers</arg>
-        <rel f="">listen</rel>
+      <example name="intransitive" src="">
+        <text>Willliam Greaney said that the influence of the appeals court in New York `` will make insurers sit up and listen . ''</text>
+        <propbank>
+          <rel relloc="20">listen</rel>
+          <arg type="ARG0" start="16" end="16">insurers</arg>
+        </propbank>
       </example>
-      <example name="Arg0,1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>His listening to loud music all night drove me crazy.</text>
-        <arg f="" n="0">His</arg>
-        <rel f="">listening</rel>
-        <arg f="" n="1">to loud music</arg>
-        <arg f="tmp" n="m">all night</arg>
+      <example name="Arg0,1" src="">
+        <text>His listening to loud music all night drove me crazy .</text>
+        <propbank>
+          <rel relloc="1">listening</rel>
+          <arg type="ARG0" start="0" end="0">His</arg>
+          <arg type="ARG1" start="2" end="4">to loud music</arg>
+          <arg type="ARGM-TMP" start="5" end="6">all night</arg>
+        </propbank>
       </example>
+      <note>LISTEN-V NOTES: Frames file for 'listen' based on sentences in financial subcorpus. Verbnet entries 30.3 35.5, no other framed members. (?) Comparison to 'hear'. (from listen.01-v predicate notes)</note>
+      <note>LISTENING-N NOTES: listen.01 (from listening.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

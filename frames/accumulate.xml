@@ -1,45 +1,83 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="accumulate">
     <roleset id="accumulate.01" name="amass">
       <aliases>
-        <alias framenet="Amassing" pos="v" verbnet="47.5.2 13.5.2">accumulate</alias>
-        <alias framenet="" pos="n" verbnet="">accumulation</alias>
+        <alias pos="v">accumulate</alias>
+        <alias pos="n">accumulation</alias>
       </aliases>
-      <note>ACCUMULATE-V NOTES: Member of Vncls herd-47.5.2, obtain-13.5.2. (from accumulate.01-v)</note>
-      <note>ACCUMULATION-N NOTES: From accumulate.01 (from accumulation.01-n)</note>
       <roles>
         <role descr="entity accumulating something" f="PAG" n="0">
-          <vnrole vncls="13.5.2" vntheta="Agent"/>
-          <vnrole vncls="47.5.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="obtain-13.5.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="herd-47.5.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Amassing" resource="FrameNet" version="1.7">recipient</rolelink>
+            <rolelink class="obtain-13.5.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="herd-47.5.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing/stuff accumulated" f="PPT" n="1">
-          <vnrole vncls="13.5.2" vntheta="Theme"/>
-          <vnrole vncls="47.5.2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="obtain-13.5.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="herd-47.5.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Amassing" resource="FrameNet" version="1.7">mass_theme</rolelink>
+            <rolelink class="obtain-13.5.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+            <rolelink class="herd-47.5.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="price" f="vsp" n="3"/>
+        <role descr="price" f="VSP" n="3">
+          <rolelinks/>
+        </role>
       </roles>
-      <example name="accumulate-v: just transitive" src="" type="">
-        <text>[Pennzoil]-1 is rumored *trace*-1 to be accumulating a stake in Chevron in order to push for a revamping of the company.</text>
-        <arg f="" n="0">*trace*-l (= Pennzoil)</arg>
-        <rel f="">accumulating</rel>
-        <arg f="" n="1">a stake in Chevron</arg>
-        <arg f="prp" n="m">in order to push for a revamping of the company</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Amassing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="obtain-13.5.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="herd-47.5.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="accumulation-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+        <lexlink class="accumulate-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+        <lexlink class="accumulate-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">9</lexlink>
+        <lexlink class="obtain-13.5.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="herd-47.5.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="accumulate-v: just transitive" src="">
+        <text>Pennzoil is rumored to be accumulating a stake in Chevron in order to push for a revamping of the company .</text>
+        <propbank>
+          <rel relloc="5">accumulating</rel>
+          <arg type="ARG0" start="0" end="0">Pennzoil</arg>
+          <arg type="ARG1" start="6" end="9">a stake in Chevron</arg>
+          <arg type="ARGM-PRP" start="10" end="19">in order to push for a revamping of the company</arg>
+        </propbank>
       </example>
-      <example name="accumulate-v: perhaps with price" src="" type="">
-        <text>John accumulated a gigantic pile of old tires for a dollar each.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">accumulated</rel>
-        <arg f="" n="1">a gigantic pile of old tires</arg>
-        <arg f="" n="3">for a dollar each</arg>
+      <example name="accumulate-v: perhaps with price" src="">
+        <text>John accumulated a gigantic pile of old tires for a dollar each .</text>
+        <propbank>
+          <rel relloc="1">accumulated</rel>
+          <arg type="ARG0" start="0" end="0">John</arg>
+          <arg type="ARG1" start="2" end="7">a gigantic pile of old tires</arg>
+          <arg type="ARG3" start="8" end="11">for a dollar each</arg>
+        </propbank>
       </example>
-      <example name="accumulation-n: Both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Growth in the amount of his private capital permits him to live more and more luxuriously and at the same time increase his accumulation of capital by increasing the proportion of surplus value used for accumulation.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">accumulation</rel>
-        <arg f="" n="1">of capital</arg>
+      <example name="accumulation-n: Both args" src="">
+        <text>Growth in the amount of his private capital permits him to live more and more luxuriously and at the same time increase his accumulation of capital by increasing the proportion of surplus value used for accumulation .</text>
+        <propbank>
+          <rel relloc="23">accumulation</rel>
+          <arg type="ARG0" start="22" end="22">his</arg>
+          <arg type="ARG1" start="24" end="25">of capital</arg>
+        </propbank>
       </example>
+      <note>ACCUMULATE-V NOTES: Member of Vncls herd-47.5.2, obtain-13.5.2. (from accumulate.01-v)</note>
+      <note>ACCUMULATION-N NOTES: From accumulate.01 (from accumulation.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

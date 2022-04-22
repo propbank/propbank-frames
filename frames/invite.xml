@@ -1,59 +1,108 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="invite">
     <roleset id="invite.01" name="invite, summon, request to do or attend">
       <aliases>
-        <alias framenet="Request" pos="v" verbnet="">invite</alias>
-        <alias framenet="" pos="j" verbnet="">invited</alias>
-        <alias framenet="" pos="n" verbnet="">invitation</alias>
+        <alias pos="v">invite</alias>
+        <alias pos="j">invited</alias>
+        <alias pos="n">invitation</alias>
       </aliases>
+      <roles>
+        <role descr="inviter" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="60" resource="VerbNet" version="UNK">agent</rolelink>
+            <rolelink class="promote-102" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Request" resource="FrameNet" version="1.7">speaker</rolelink>
+            <rolelink class="urge-58.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="promote-102" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="invited" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="60" resource="VerbNet" version="UNK">recipient</rolelink>
+            <rolelink class="promote-102" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Request" resource="FrameNet" version="1.7">addressee</rolelink>
+            <rolelink class="urge-58.1-1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+            <rolelink class="promote-102" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="invited-to" f="PPT" n="2">
+          <rolelinks>
+            <rolelink class="60" resource="VerbNet" version="UNK">topic</rolelink>
+            <rolelink class="Request" resource="FrameNet" version="1.7">message</rolelink>
+            <rolelink class="urge-58.1-1" resource="VerbNet" version="verbnet3.4">result</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Request" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="60" confidence="0.0" resource="VerbNet" src="manual+strict-conv" version="UNK" />
+        <lexlink class="promote-102" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="Contact.CommandOrder.Broadcast" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019" />
+        <lexlink class="Contact.CommandOrder.Correspondence" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019" />
+        <lexlink class="Contact.CommandOrder.Meet" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019" />
+        <lexlink class="Correspondence" confidence="0.1" resource="ERE" src="reo-expansion" version="rich" />
+        <lexlink class="Broadcast" confidence="0.1" resource="ERE" src="reo-expansion" version="rich" />
+        <lexlink class="invite-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">70</lexlink>
+        <lexlink class="invite-v.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">17</lexlink>
+        <lexlink class="invite-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="invitation-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">30</lexlink>
+        <lexlink class="urge-58.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+        <lexlink class="promote-102" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="typical usage" src="">
+        <text>He pampers them ; he invites them to fabulous parties ; he strokes them .</text>
+        <propbank>
+          <rel relloc="5">invites</rel>
+          <arg type="ARG0" start="4" end="4">he</arg>
+          <arg type="ARG1" start="6" end="6">them</arg>
+          <arg type="ARG2" start="7" end="9">to fabulous parties</arg>
+        </propbank>
+      </example>
+      <example name="just arg0" src="">
+        <text>they were in this country at the invitation of President Reagan</text>
+        <propbank>
+          <rel relloc="7">invitation</rel>
+          <arg type="ARG0" start="8" end="10">of President Reagan</arg>
+        </propbank>
+      </example>
+      <example name="just arg2-destination" src="">
+        <text>invitations to the best parties</text>
+        <propbank>
+          <rel relloc="0">invitations</rel>
+          <arg type="ARG2" start="1" end="4">to the best parties</arg>
+        </propbank>
+      </example>
+      <example name="args 0 and 2-proposition" src="">
+        <text>IBM , which said Motorola is paying just a nominal fee to cover the 21 - month agreement , acknowledged some companies had turned down its invitation to join in .</text>
+        <propbank>
+          <rel relloc="26">invitation</rel>
+          <arg type="ARG0" start="25" end="25">its</arg>
+          <arg type="ARG2" start="27" end="29">to join in</arg>
+        </propbank>
+      </example>
+      <example name="args 1 and 2" src="">
+        <text>Digits got its invitation to attend an " invitation - only event " to " come see what 2011 will be the year of , "</text>
+        <propbank>
+          <rel relloc="3">invitation</rel>
+          <arg type="ARG1" start="2" end="2">its</arg>
+          <arg type="ARG2" start="4" end="25">to attend an " invitation - only event " to " come see what 2011 will be the year of , "</arg>
+        </propbank>
+      </example>
       <note>INVITE-V NOTES: Member of Vncls addict-96, order-60, promote-102. Checked by Julia, 10/2010. (from invite.01-v)</note>
       <note>INVITATION-N NOTES: Added by Julia based on invite-v.01. Corresponds to Vncls addict-96, order-60, promote-102. (from invitation.01-n)</note>
       <note>INVITED-J NOTES: Automatically created by Julia as an alias file for unification. (from invited.01-j)</note>
-      <roles>
-        <role descr="inviter" f="pag" n="0">
-          <vnrole vncls="60" vntheta="agent"/>
-          <vnrole vncls="102" vntheta="agent"/>
-        </role>
-        <role descr="invited" f="ppt" n="1">
-          <vnrole vncls="60" vntheta="recipient"/>
-          <vnrole vncls="102" vntheta="theme"/>
-        </role>
-        <role descr="invited-to" f="ppt" n="2">
-          <vnrole vncls="60" vntheta="topic"/>
-        </role>
-      </roles>
-      <example name="typical usage" src="" type="">
-        <text>He pampers them; he invites them to fabulous parties; he strokes them.</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">invites</rel>
-        <arg f="" n="1">them</arg>
-        <arg f="" n="2">to fabulous parties</arg>
-      </example>
-      <example name="just arg0" src="" type="">
-        <text>they were in this country at the invitation of President Reagan</text>
-        <rel f="">invitation</rel>
-        <arg f="" n="0">of President Reagan</arg>
-      </example>
-      <example name="just arg2-destination" src="" type="">
-        <text>invitations to the best parties</text>
-        <rel f="">invitations</rel>
-        <arg f="" n="2">to the best parties</arg>
-      </example>
-      <example name="args 0 and 2-proposition" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>IBM , which said Motorola is paying just a nominal fee to cover the 21 - month agreement , acknowledged some companies had turned down its invitation to join in .</text>
-        <arg f="" n="0">its</arg>
-        <rel f="">invitation</rel>
-        <arg f="" n="2">to join in</arg>
-      </example>
-      <example name="args 1 and 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Digits got its invitation to attend an "invitation-only event" to "come see what 2011 will be the year of,"</text>
-        <arg f="" n="1">its</arg>
-        <rel f="">invitation</rel>
-        <arg f="" n="2">to attend an "invitation-only event" to "come see what 2011 will be the year of,"</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

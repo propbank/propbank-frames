@@ -1,160 +1,246 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="vote">
     <roleset id="vote.01" name="cast a ballot">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">vote</alias>
-        <alias framenet="" pos="n" verbnet="">voting</alias>
-        <alias framenet="" pos="n" verbnet="">vote</alias>
+        <alias pos="v">vote</alias>
+        <alias pos="n">voting</alias>
+        <alias pos="n">vote</alias>
+        <argalias arg="0" pos="n">voter</argalias>
       </aliases>
+      <roles>
+        <role descr="voter" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="dub-29.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="candidate or ballot issue" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="dub-29.3" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="numerical count of vote, margin, down/up" f="PRD" n="2">
+          <rolelinks>
+            <rolelink class="dub-29.3" resource="VerbNet" version="verbnet3.3">result</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="electorate for whom arg0 is a proxy voter" f="GOL" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Choosing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="dub-29.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="vote-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">140</lexlink>
+        <lexlink class="vote-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">203</lexlink>
+      </lexlinks>
+      <example name="vote-v: vote on an issue" src="">
+        <text>NRM said it expects unitholders to vote on the restructuring at a meeting Dec. 15 .</text>
+        <propbank>
+          <rel relloc="6">vote</rel>
+          <arg type="ARG0" start="4" end="4">unitholders</arg>
+          <arg type="ARG1" start="7" end="9">on the restructuring</arg>
+          <arg type="ARGM-LOC" start="10" end="14">at a meeting Dec. 15</arg>
+        </propbank>
+      </example>
+      <example name="vote-v: vote for a candidate" src="">
+        <text>`` I guess we 'll reluctantly go ahead and do it , vote for Dinkins , '' says Richard Wade , a politically active professor who supported Richard Ravitch , an also - ran in the Democratic primary .</text>
+        <propbank>
+          <rel relloc="12">vote</rel>
+          <arg type="ARG0" start="3" end="3">we</arg>
+          <arg type="ARGM-MOD" start="4" end="4">'ll</arg>
+          <arg type="ARG1" start="13" end="14">for Dinkins</arg>
+        </propbank>
+      </example>
+      <example name="vote-v: arg1 as infinitive" src="">
+        <text>Nekoosa 's poison pill allows shareholders to vote to rescind it ...</text>
+        <propbank>
+          <rel relloc="7">vote</rel>
+          <arg type="ARG0" start="5" end="5">shareholders</arg>
+          <arg type="ARG1" start="8" end="10">to rescind it</arg>
+        </propbank>
+      </example>
+      <example name="vote-v: voting shares" src="">
+        <text>The statement emphasized that holders representing 75 % of the shares voting at a special shareholders ' meeting must agree to lift the takeover restrictions .</text>
+        <propbank>
+          <rel relloc="11">voting</rel>
+          <arg type="ARG0" start="9" end="10">the shares</arg>
+          <arg type="ARGM-LOC" start="12" end="17">at a special shareholders ' meeting</arg>
+        </propbank>
+      </example>
+      <example name="vote-v: proxy voting" src="">
+        <text>`` Thank God we have some deal on the table , '' said Stewart Gilchrist , a director at Scottish Amicable Investment Managers , which intends to vote its roughly 1 % stake in favor of the restructuring .</text>
+        <propbank>
+          <rel relloc="27">vote</rel>
+          <arg type="R-ARG0" start="24" end="24">which</arg>
+          <arg type="ARG3" start="28" end="32">its roughly 1 % stake</arg>
+          <arg type="ARG1" start="33" end="37">in favor of the restructuring</arg>
+          <arg type="ARG0" start="19" end="22">Scottish Amicable Investment Managers</arg>
+        </propbank>
+      </example>
+      <example name="vote-v: with outcome of vote" src="">
+        <text>The Peugeot metalworkers began filing out of the shop , which makes auto parts , at the plant in Mulhouse after voting 589 to 193 to abandon the occupation .</text>
+        <propbank>
+          <rel relloc="21">voting</rel>
+          <arg type="ARG0" start="0" end="2">The Peugeot metalworkers</arg>
+          <arg type="ARG2" start="22" end="24">589 to 193</arg>
+          <arg type="ARG1" start="25" end="28">to abandon the occupation</arg>
+        </propbank>
+      </example>
+      <example name="vote-n: Voters and voted-on" src="">
+        <text>The union vote to reject the proposed pact was 230 - 215 .</text>
+        <propbank>
+          <rel relloc="2">vote</rel>
+          <arg type="ARG0" start="1" end="1">union</arg>
+          <arg type="ARG1" start="3" end="7">to reject the proposed pact</arg>
+        </propbank>
+      </example>
+      <example name="vote-n: Interesting arg 2" src="">
+        <text>He had enough votes to block the maneuver on procedural grounds , perhaps as soon as today</text>
+        <propbank>
+          <rel relloc="3">votes</rel>
+          <arg type="ARG2" start="2" end="2">enough</arg>
+          <arg type="ARG1" start="4" end="10">to block the maneuver on procedural grounds</arg>
+        </propbank>
+      </example>
+      <example name="vote-n: With locative" src="">
+        <text>They will put this question to a vote in the Senate .</text>
+        <propbank>
+          <rel relloc="7">vote</rel>
+          <arg type="ARGM-LOC" start="8" end="10">in the Senate</arg>
+        </propbank>
+      </example>
+      <example name="vote-v: ARG1 and ARG0" src="ontonotes mz/sinorama/10/ectb_1028">
+        <text>It is said that the two biggest causes of family arguments this year have been differences over who to vote for in the presidential election , and over what stocks to buy .</text>
+        <propbank>
+          <rel relloc="19">vote</rel>
+          <arg type="R-ARG1" start="17" end="17">who</arg>
+          <arg type="ARGM-LOC" start="21" end="24">in the presidential election</arg>
+          <arg type="ARG1" start="20" end="20">for</arg>
+        </propbank>
+      </example>
+      <example name="vote-n: With manner of voting" src="">
+        <text>They held a straw vote over who should go and fetch the Chinese takeout .</text>
+        <propbank>
+          <rel relloc="4">vote</rel>
+          <arg type="ARGM-MNR" start="3" end="3">straw</arg>
+          <arg type="ARG1" start="5" end="13">over who should go and fetch the Chinese takeout</arg>
+        </propbank>
+      </example>
+      <example name="voting-n: TMP" src="BOLT">
+        <text>Romney could be left hobbling after Super Tuesday and early voting has already started .</text>
+        <propbank>
+          <rel relloc="10">voting</rel>
+          <arg type="ARGM-TMP" start="9" end="9">early</arg>
+        </propbank>
+      </example>
+      <example name="voting-n: args 0 and 1" src="internet">
+        <text>She said his voting for the bill amounted to a " conflict of interest . "</text>
+        <propbank>
+          <rel relloc="3">voting</rel>
+          <arg type="ARG0" start="2" end="2">his</arg>
+          <arg type="ARG1" start="4" end="6">for the bill</arg>
+        </propbank>
+      </example>
       <note>VOTE-V NOTES: VerbNet class dub-29.3. (from vote.01-v)</note>
       <note>VOTE-N NOTES: Roleset based on verb entry vote.01, OntoNotes sense grouping vote.01; maps to VN class dub-29.3. Framed by Claire. (from vote.01-n)</note>
       <note>VOTING-N NOTES: Added by Julia based on BOLT, vote-v.01, vote-n.01. Corresponds to VNcls dub-29.3. (from voting.01-n)</note>
-      <roles>
-        <role descr="voter" f="pag" n="0">
-          <vnrole vncls="29.3" vntheta="agent"/>
-        </role>
-        <role descr="candidate or ballot issue" f="ppt" n="1">
-          <vnrole vncls="29.3" vntheta="theme"/>
-        </role>
-        <role descr="numerical count of vote, margin, down/up" f="prd" n="2">
-          <vnrole vncls="29.3" vntheta="result"/>
-        </role>
-        <role descr="electorate for whom arg0 is a proxy voter" f="gol" n="3"/>
-      </roles>
-      <example name="vote on an issue" src="" type="">
-        <text>NRM said it expects unitholders to vote on the restructuring at a meeting Dec. 15.</text>
-        <arg f="" n="0">unitholders</arg>
-        <rel f="">vote</rel>
-        <arg f="" n="1">on the restructuring</arg>
-        <arg f="loc" n="m">at a meeting Dec. 15</arg>
-      </example>
-      <example name="vote for a candidate" src="" type="">
-        <text>``I guess we'll reluctantly go ahead and do it, vote for Dinkins,'' says Richard Wade, a politically active professor who supported Richard Ravitch, an also-ran in the Democratic primary.</text>
-        <arg f="" n="0">we</arg>
-        <arg f="mod" n="m">'ll</arg>
-        <rel f="">vote</rel>
-        <arg f="" n="1">for Dinkins</arg>
-      </example>
-      <example name="arg1 as infinitive" src="" type="">
-        <text>Nekoosa's poison pill allows shareholders to vote to rescind it...</text>
-        <arg f="" n="0">shareholders</arg>
-        <rel f="">vote</rel>
-        <arg f="" n="1">to rescind it</arg>
-      </example>
-      <example name="voting shares" src="" type="">
-        <text>The statement emphasized that holders representing 75% of the shares voting at a special shareholders' meeting must agree to lift the takeover restrictions.</text>
-        <arg f="" n="0">the shares</arg>
-        <rel f="">voting</rel>
-        <arg f="loc" n="m">at a special shareholders' meeting</arg>
-      </example>
-      <example name="proxy voting" src="" type="">
-        <text>``Thank God we have some deal on the table,'' said Stewart Gilchrist, a director at Scottish Amicable Investment Managers, which *trace*-1 intends *trace*-1 to vote its roughly 1% stake in favor of the restructuring.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">vote</rel>
-        <arg f="" n="3">its roughly 1% stake</arg>
-        <arg f="" n="1">in favor of the restructuring</arg>
-      </example>
-      <example name="with outcome of vote" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="ns" voice="ns"/>
-        <text>[The Peugeot metalworkers]-1 began filing out of the shop, which makes auto parts, at the plant in Mulhouse after [*]-1 voting 589 to 193 [*-3] to abandon the occupation.</text>
-        <arg f="" n="0">[*]</arg>
-        <rel f="">voting</rel>
-        <arg f="" n="2">589 to 193</arg>
-        <arg f="" n="1">[*-3] to abandon the occupation</arg>
-      </example>
-      <example name="Voters and voted-on" src="Voters and voted-on" type="Voters and voted-on">
-        <text>The union vote to reject the proposed pact was 230-215 .</text>
-        <arg f="" n="0">union</arg>
-        <rel f="">vote</rel>
-        <arg f="" n="1">to reject the proposed pact</arg>
-      </example>
-      <example name="Interesting arg 2" src="Interesting arg 2" type="Interesting arg 2">
-        <text>He had enough votes to block the maneuver on procedural grounds ,perhaps as soon as today</text>
-        <arg f="" n="2">enough</arg>
-        <rel f="">votes</rel>
-        <arg f="" n="1">to block the maneuver on procedural grounds</arg>
-      </example>
-      <example name="With locative" src="With locative" type="With locative">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>They will put this question to a vote in the Senate.</text>
-        <rel f="">vote</rel>
-        <arg f="loc" n="m">in the senate</arg>
-      </example>
-      <example name="ARG1 and ARG0" src="ontonotes mz/sinorama/10/ectb_1028" type="">
-        <text>It is said that the two biggest causes of family arguments this year have been differences over who to vote for in the presidential election , and over what stocks to buy .</text>
-        <arg f="" n="1">[who][for]</arg>
-        <arg f="" n="0">[]</arg>
-        <rel f="">vote</rel>
-        <arg f="loc" n="m">in the presidential election</arg>
-      </example>
-
-      <example name="With manner of voting" src="With manner of voting" type="With manner of voting">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>They held a straw vote over who should go and fetch the Chinese takeout.</text>
-        <arg f="mnr" n="m">straw</arg>
-        <rel f="">vote</rel>
-        <arg f="" n="1">over who should go and fetch the Chinese takeout</arg>
-      </example>
-      <example name="TMP" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Romney could be left hobbling after Super Tuesday and early voting has already started .</text>
-        <arg f="tmp" n="m">early</arg>
-        <rel f="">voting</rel>
-      </example>
-      <example name="args 0 and 1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>She said his voting for the bill amounted to a "conflict of interest."</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">voting</rel>
-        <arg f="" n="1">for the bill</arg>
-      </example>
     </roleset>
     <roleset id="vote.02" name="give via legislative process">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">vote</alias>
+        <alias pos="v">vote</alias>
       </aliases>
-      <note>VOTE-V NOTES: Verbnet entries future_having-13.3 get-13.5.1, other framed members include allocate, concede, grant; catch, entitle, extend, hire, lease, pick, reserve, seize. (from vote.02-v)</note>
       <roles>
-        <role descr="giver" f="pag" n="0">
-          <vnrole vncls="13.3" vntheta="agent"/>
-          <vnrole vncls="13.5.1" vntheta="agent"/>
+        <role descr="giver" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="get-13.5.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="gift" f="ppt" n="1">
-          <vnrole vncls="13.3" vntheta="theme"/>
-          <vnrole vncls="13.5.1" vntheta="theme"/>
+        <role descr="gift" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="get-13.5.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="recipient" f="gol" n="2">
-          <vnrole vncls="13.3" vntheta="goal"/>
-          <vnrole vncls="13.5.1" vntheta="beneficiary"/>
+        <role descr="recipient" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.3">goal</rolelink>
+            <rolelink class="get-13.5.1" resource="VerbNet" version="verbnet3.3">beneficiary</rolelink>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.4">goal</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="graft" src="" type="">
-        <text>United's directors voted themselves, and their spouses, lifetime access to the Friendly Skies -- free first-class travel, and $20,000 a year for life as well.</text>
-        <arg f="" n="0">United 's directors</arg>
-        <rel f="">voted</rel>
-        <arg f="" n="2">themselves, and their spouses,</arg>
-        <arg f="" n="1">lifetime access to the Friendly Skies -- free first-class travel, and $20,000 a year for life as well</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="future_having-13.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="get-13.5.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Government.Legislate.Legislate" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="future_having-13.3" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="vote-v: graft" src="">
+        <text>United 's directors voted themselves , and their spouses , lifetime access to the Friendly Skies -- free first - class travel , and $ 20,000 a year for life as well .</text>
+        <propbank>
+          <rel relloc="3">voted</rel>
+          <arg type="ARG0" start="0" end="2">United 's directors</arg>
+          <arg type="ARG2" start="4" end="8">themselves , and their spouses</arg>
+          <arg type="ARG1" start="10" end="31">lifetime access to the Friendly Skies -- free first - class travel , and $ 20,000 a year for life as well</arg>
+        </propbank>
       </example>
+      <note>VOTE-V NOTES: Verbnet entries future_having-13.3 get-13.5.1, other framed members include allocate, concede, grant; catch, entitle, extend, hire, lease, pick, reserve, seize. (from vote.02-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="vote_down">
     <roleset id="vote_down.03" name="vote against">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">vote_down</alias>
+        <alias pos="v">vote_down</alias>
       </aliases>
-      <note>VOTE_DOWN-V NOTES: (from vote.03-v)</note>
       <roles>
-        <role descr="voter" f="pag" n="0"/>
-        <role descr="defeated issue" f="ppt" n="1"/>
+        <role descr="voter" f="PAG" n="0"/>
+        <role descr="defeated issue" f="PPT" n="1"/>
       </roles>
-      <example name="die die die!" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>THE HOUSE votes down a proposal to put pension plans under the control of joint labor-management boards.</text>
-        <arg f="" n="0">THE HOUSE</arg>
-        <rel f="">[ votes] [ down]</rel>
-        <arg f="" n="1">a proposal to put pension plans under the control of joint labor-management boards</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="vote-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+      </lexlinks>
+      <example name="vote_down-v" src="">
+        <text>THE HOUSE votes down a proposal to put pension plans under the control of joint labor - management boards .</text>
+        <propbank>
+          <rel relloc="2 3">votes down</rel>
+          <arg type="ARG0" start="0" end="1">THE HOUSE</arg>
+          <arg type="ARG1" start="4" end="18">a proposal to put pension plans under the control of joint labor - management boards</arg>
+        </propbank>
       </example>
+      <note>VOTE_DOWN-V NOTES: (from vote.03-v)</note>
     </roleset>
   </predicate>
 </frameset>

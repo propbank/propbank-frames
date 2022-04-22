@@ -1,66 +1,120 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="hop">
     <roleset id="hop.01" name="manner of motion, jumping">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">hopping</alias>
-        <alias framenet="Self_motion Traversing" pos="v" verbnet="">hop</alias>
+        <alias pos="n">hopping</alias>
+        <alias pos="v">hop</alias>
       </aliases>
-      <note>HOP-V NOTES: Created by Jena based on ebc. Member of VNcls run-51.3.2, swarm-47.5.1-1. (from hop.01-v)</note>
-      <note>HOPPING-N NOTES: Added by Julia based on BOLT. (from hopping.01-n)</note>
       <roles>
         <role descr="hopper" f="PPT" n="0">
-          <vnrole vncls="51.3.2-1" vntheta="Theme"/>
-          <vnrole vncls="47.5.1-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="run-51.3.2-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="swarm-47.5.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Self_motion" resource="FrameNet" version="1.7">self_mover</rolelink>
+            <rolelink class="swarm-47.5.1-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+            <rolelink class="run-51.3.2-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="Source" f="dir" n="3"/>
-        <role descr="Destination" f="gol" n="4"/>
+        <role descr="Source" f="DIR" n="3">
+          <rolelinks>
+            <rolelink class="Self_motion" resource="FrameNet" version="1.7">source</rolelink>
+            <rolelink class="run-51.3.2-1" resource="VerbNet" version="verbnet3.4">initial_location</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="Destination" f="GOL" n="4">
+          <rolelinks>
+            <rolelink class="Self_motion" resource="FrameNet" version="1.7">goal</rolelink>
+            <rolelink class="Self_motion" resource="FrameNet" version="1.7">path</rolelink>
+            <rolelink class="run-51.3.2-1" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="" src="" type="">
-        <text>*PRO* Hop onto a trolley with over a century of history.</text>
-        <arg f="" n="0">*PRO*</arg>
-        <rel f="">Hop</rel>
-        <arg f="" n="4">onto a trolley with over a century of history</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Self_motion" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Traversing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="run-51.3.2-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="swarm-47.5.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="run-51.3.2-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="swarm-47.5.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="hop-v" src="">
+        <text>Hop onto a trolley with over a century of history .</text>
+        <propbank>
+          <rel relloc="0">Hop</rel>
+          <arg type="ARG4" start="1" end="9">onto a trolley with over a century of history</arg>
+        </propbank>
       </example>
-      <example name="Jump" src="" type="">
-        <text>The women said they had seen him waive an exhausted fairwell; but he may have been shooing away the fleas that-1 *T*-1 hopped from his yellow dog on to him.</text>
-        <arg f="slc" n="m">that-1 -&gt; the fleas</arg>
-        <arg f="" n="0">*-1 (=that)</arg>
-        <rel f="">hopped</rel>
-        <arg f="" n="3">from his yellow dog</arg>
-        <arg f="" n="4">on to him</arg>
+      <example name="hop-v: Jump" src="">
+        <text>The women said they had seen him waive an exhausted fairwell ; but he may have been shooing away the fleas that hopped from his yellow dog on to him .</text>
+        <propbank>
+          <rel relloc="22">hopped</rel>
+          <arg type="R-ARG0" start="21" end="21">that</arg>
+          <arg type="ARG0" start="19" end="20">the fleas</arg>
+          <arg type="ARG3" start="23" end="26">from his yellow dog</arg>
+          <arg type="ARG4" start="27" end="29">on to him</arg>
+        </propbank>
       </example>
-      <example name="arg3 source and destination" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I got an email from Christina that stressed me out&amp; she 's been ignoring my q about how many credits I have . I 'm looking forward to museum hopping on Sat !</text>
-        <arg f="" n="3">museum</arg>
-        <rel f="">hopping</rel>
+      <example name="hopping-n: arg3 source and destination" src="">
+        <text>I got an email from Christina that stressed me out &amp; she 's been ignoring my q about how many credits I have . I 'm looking forward to museum hopping on Sat !</text>
+        <propbank>
+          <rel relloc="30">hopping</rel>
+          <arg type="ARG3" start="29" end="29">museum</arg>
+        </propbank>
       </example>
+      <note>HOP-V NOTES: Created by Jena based on ebc. Member of VNcls run-51.3.2, swarm-47.5.1-1. (from hop.01-v)</note>
+      <note>HOPPING-N NOTES: Added by Julia based on BOLT. (from hopping.01-n)</note>
     </roleset>
     <roleset id="hop.02" name="catch a ride">
       <aliases>
-        <alias framenet="Board_vehicle" pos="v" verbnet="">hop</alias>
+        <alias pos="v">hop</alias>
       </aliases>
-      <note>HOP-V NOTES: Added by Julia based on WSJ. No comparison, no vncls. (from hop.02-v)</note>
       <roles>
         <role descr="entity catching a ride" f="PAG" n="0"/>
-        <role descr="the ride" f="ppt" n="1"/>
+        <role descr="the ride" f="PPT" n="1"/>
       </roles>
-      <example name="hopping a ride" src="WSJ" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Board_vehicle" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+      </lexlinks>
+      <example name="hop-v: hopping a ride" src="WSJ">
         <text>Ludie hopped rides on freight cars , and was chased by Mr. Yankton , the railroad guard .</text>
-        <arg f="" n="0">Ludie</arg>
-        <rel f="">hopped</rel>
-        <arg f="" n="1">rides on freight cars</arg>
+        <propbank>
+          <rel relloc="1">hopped</rel>
+          <arg type="ARG0" start="0" end="0">Ludie</arg>
+          <arg type="ARG1" start="2" end="5">rides on freight cars</arg>
+        </propbank>
       </example>
-      <example name="ride = vehicle" src="internet" type="-">
-        <inflection aspect="perfect" form="participle" person="third" tense="past" voice="active"/>
-        <text>He thought he'd hopped a train to Philadelphia, and now he was in a bit of a pickle.</text>
-        <arg f="" n="0">he</arg>
-        <arg f="mod" n="m">'d</arg>
-        <rel f="">hopped</rel>
-        <arg f="" n="1">a train to Philadelphia</arg>
+      <example name="hop-v: ride = vehicle" src="internet">
+        <text>He thought he 'd hopped a train to Philadelphia , and now he was in a bit of a pickle .</text>
+        <propbank>
+          <rel relloc="4">hopped</rel>
+          <arg type="ARG0" start="2" end="2">he</arg>
+          <arg type="ARGM-MOD" start="3" end="3">'d</arg>
+          <arg type="ARG1" start="5" end="8">a train to Philadelphia</arg>
+        </propbank>
       </example>
+      <note>HOP-V NOTES: Added by Julia based on WSJ. No comparison, no vncls. (from hop.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

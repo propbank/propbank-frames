@@ -1,60 +1,98 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="originate">
     <roleset id="originate.01" name="create, come about">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">originate</alias>
-        <alias framenet="origin" pos="n" verbnet="">origin</alias>
-        <alias framenet="" pos="n" verbnet="">origination</alias>
+        <alias pos="v">originate</alias>
+        <alias pos="n">origin</alias>
+        <alias pos="n">origination</alias>
       </aliases>
+      <roles>
+        <role descr="creator" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="establish-55.5-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="establish-55.5-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing originated" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="establish-55.5-1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="source" f="DIR" n="2">
+          <rolelinks/>
+        </role>
+        <role descr="attribute of arg1" f="PRD" n="3">
+          <rolelinks/>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Origin" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="originate-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">12</lexlink>
+        <lexlink class="origin-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">12</lexlink>
+        <lexlink class="establish-55.5-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="just transitive" src="">
+        <text>Initially , the company said it will close its commercial real - estate lending division , and stop originating new leases at its commercial lease subsidiary .</text>
+        <propbank>
+          <rel relloc="18">originating</rel>
+          <arg type="ARG0" start="5" end="5">it</arg>
+          <arg type="ARG1" start="19" end="20">new leases</arg>
+          <arg type="ARGM-LOC" start="21" end="25">at its commercial lease subsidiary</arg>
+        </propbank>
+      </example>
+      <example name="ARG3" src="probably COCA (2018 example fix)">
+        <text>It originated as a pure - line selection from a mixed variety called Canada Cluster .</text>
+        <propbank>
+          <rel relloc="1">originated</rel>
+          <arg type="ARG1" start="0" end="0">It</arg>
+          <arg type="ARG3" start="2" end="14">as a pure - line selection from a mixed variety called Canada Cluster</arg>
+        </propbank>
+      </example>
+      <example name="ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1059">
+        <text>The wax apple is a tropical fruit originating from the Malay peninsula .</text>
+        <propbank>
+          <rel relloc="7">originating</rel>
+          <arg type="ARG1" start="4" end="6">a tropical fruit</arg>
+          <arg type="ARG2" start="8" end="11">from the Malay peninsula</arg>
+        </propbank>
+      </example>
+      <example name="arg 1" src="">
+        <text>the origin of the woman 's injuries</text>
+        <propbank>
+          <rel relloc="1">origin</rel>
+          <arg type="ARG1" start="2" end="6">of the woman 's injuries</arg>
+        </propbank>
+      </example>
+      <example name="arg 2 is not simply the location where something began, but what it was created from (so 'insurance market' was not created from 'a coffee house')" src="">
+        <text>the insurance market 's origins in a coffeehouse in 17th century London</text>
+        <propbank>
+          <rel relloc="4">origins</rel>
+          <arg type="ARG1" start="0" end="3">the insurance market 's</arg>
+          <arg type="ARGM-LOC" start="5" end="7">in a coffeehouse</arg>
+          <arg type="ARGM-TMP" start="8" end="11">in 17th century London</arg>
+        </propbank>
+      </example>
+      <example name="Arg 1 in a PP" src="">
+        <text>the origin of birds</text>
+        <propbank>
+          <rel relloc="1">origin</rel>
+          <arg type="ARG1" start="2" end="3">of birds</arg>
+        </propbank>
+      </example>
       <note>ORIGINATE-V NOTES: Arg3 would be a benefactive (based on 'create'), but I doubt that willappear. (from originate.01-v)</note>
       <note>ORIGIN-N NOTES: Based on sentences in nouns-00040. Comparison to originate.01. VN class establish-55.5-1. FN class origin. Framed by Katie. (from origin.01-n)</note>
-      <roles>
-        <role descr="creator" f="pag" n="0"/>
-        <role descr="thing originated" f="ppt" n="1"/>
-        <role descr="source" f="dir" n="2"/>
-        <role descr="attribute of arg1" f="prd" n="3"/>
-      </roles>
-      <example name="just transitive" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
-        <text>Initially, the company said it-1 will close its commercial real-estate lending division, and stop *trace*-1 originating new leases at its commercial lease subsidiary.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">originating</rel>
-        <arg f="" n="1">new leases</arg>
-        <arg f="loc" n="m">at its commercial lease subsidiary</arg>
-      </example>
-      <example name="ARG3" src="probably COCA (2018 example fix)" type="">
-        <text>It originated as a pure-line selection from a mixed variety called Canada Cluster.</text>
-        <arg f="" n="1">It</arg>
-        <rel f="">originated</rel>
-        <arg f="" n="3">as a pure-line selection from a mixed variety called Canada Cluster.</arg>
-      </example>
-
-      <example name="ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1059" type="">
-        <text>The wax apple is a tropical fruit originating from the Malay peninsula .</text>
-        <arg f="" n="1">a tropical fruit</arg>
-        <rel f="">originating</rel>
-        <arg f="" n="2">from the Malay peninsula</arg>
-      </example>
-
-      <example name="arg 1" src="" type="">
-        <text>the origin of the woman 's injuries</text>
-        <rel f="">origin</rel>
-        <arg f="" n="1">of the woman 's injuries</arg>
-      </example>
-      <example name="arg 2 is not simply the location where something began, but what it was created from (so 'insurance market' was not created from 'a coffee house')" src="" type="">
-        <text>the insurance market 's origins in a coffeehouse in 17th century London</text>
-        <arg f="" n="1">the insurance market 's</arg>
-        <rel f="">origins</rel>
-        <arg f="loc" n="m">in a coffeehouse</arg>
-        <arg f="tmp" n="m">in 17th century London</arg>
-      </example>
-      <example name="Arg 1 in a PP" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>the origin of birds</text>
-        <rel f="">origin</rel>
-        <arg f="" n="1">of birds</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

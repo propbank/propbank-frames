@@ -1,36 +1,62 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="elude">
     <roleset id="elude.01" name="avoid">
       <aliases>
-        <alias framenet="Evading" pos="v" verbnet="">elude</alias>
-        <alias framenet="" pos="j" verbnet="">elusive</alias>
+        <alias pos="v">elude</alias>
+        <alias pos="j">elusive</alias>
       </aliases>
-      <note>ELUDE-V NOTES: Frames file for 'elude' based on sentences in wsj and automaticexpansion via verbnet; adjectival 'elusive' based on BOLT-6. (from elude.01-v)</note>
-      <note>ELUSIVE-J NOTES: Automatically created by Julia as an alias file for unification. (from elusive.01-j)</note>
       <roles>
-        <role descr="avoider" f="pag" n="0">
-          <vnrole vncls="52" vntheta="agent"/>
+        <role descr="avoider" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="avoid-52" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Evading" resource="FrameNet" version="1.7">evader</rolelink>
+            <rolelink class="avoid-52" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing avoided" f="ppt" n="1">
-          <vnrole vncls="52" vntheta="theme"/>
+        <role descr="thing avoided" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="avoid-52" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Evading" resource="FrameNet" version="1.7">pursuer</rolelink>
+            <rolelink class="avoid-52" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="elude-v: really easy" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Evading" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="avoid-52" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="avoid-52" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="elude-v: really easy" src="">
         <text>Time eluded Paramount by acquiring Warner Communications Inc.</text>
-        <arg f="" n="0">Time</arg>
-        <rel f="">eluded</rel>
-        <arg f="" n="1">Paramount</arg>
-        <arg f="mnr" n="m">by acquiring Warner Communications Inc</arg>
+        <propbank>
+          <rel relloc="1">eluded</rel>
+          <arg type="ARG0" start="0" end="0">Time</arg>
+          <arg type="ARG1" start="2" end="2">Paramount</arg>
+          <arg type="ARGM-MNR" start="3" end="7">by acquiring Warner Communications Inc.</arg>
+        </propbank>
       </example>
-      <example name="elusive-j" src="BOLT-6" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Yet it-1 seems [*-1] to be too elusive and hardly feasible .</text>
-        <arg f="" n="0">[*-1]</arg>
-        <arg f="ext" n="m">too</arg>
-        <rel f="">elusive</rel>
+      <example name="elusive-j" src="BOLT-6">
+        <text>Yet it seems to be too elusive and hardly feasible .</text>
+        <propbank>
+          <rel relloc="6">elusive</rel>
+          <arg type="ARG0" start="1" end="1">it</arg>
+          <arg type="ARGM-EXT" start="5" end="5">too</arg>
+        </propbank>
       </example>
+      <note>ELUDE-V NOTES: Frames file for 'elude' based on sentences in wsj and automaticexpansion via verbnet; adjectival 'elusive' based on BOLT-6. (from elude.01-v)</note>
+      <note>ELUSIVE-J NOTES: Automatically created by Julia as an alias file for unification. (from elusive.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

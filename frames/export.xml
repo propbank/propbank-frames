@@ -1,35 +1,75 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="export">
     <roleset id="export.01" name="ship out commodities">
       <aliases>
-        <alias framenet="Exporting" pos="v" verbnet="">export</alias>
-        <alias framenet="" pos="n" verbnet="">exporting</alias>
-        <alias framenet="" pos="n" verbnet="">export</alias>
+        <alias pos="v">export</alias>
+        <alias pos="n">exporting</alias>
+        <alias pos="n">export</alias>
+        <argalias arg="0" pos="n">exporter</argalias>
       </aliases>
-      <note>EXPORT-V NOTES: Note the passive infinitive. (from export.01-v)</note>
       <roles>
-        <role descr="exporter" f="pag" n="0"/>
-        <role descr="product" f="ppt" n="1"/>
-        <role descr="importer" f="gol" n="2"/>
+        <role descr="exporter" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="product" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="importer" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="send-11.1" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="export-v: active, missing importer" src="" type="">
-        <text>Westmoreland exports about a fourth of its coal tonnage, including a significant amount of metallurgical coal produced by others that is used by steelmakers overseas.</text>
-        <arg f="" n="0">Westmoreland</arg>
-        <rel f="">exports</rel>
-        <arg f="" n="1">about a fourth of its coal tonnage, including a significant amount of metallurgical coal produced by others that is used by steelmakers overseas</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Exporting" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Movement.TransportArtifact.SendSupplyExport" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Transportartifact" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="export-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">48</lexlink>
+        <lexlink class="send-11.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="export-v: active, missing importer" src="">
+        <text>Westmoreland exports about a fourth of its coal tonnage , including a significant amount of metallurgical coal produced by others that is used by steelmakers overseas .</text>
+        <propbank>
+          <rel relloc="1">exports</rel>
+          <arg type="ARG0" start="0" end="0">Westmoreland</arg>
+          <arg type="ARG1" start="2" end="25">about a fourth of its coal tonnage , including a significant amount of metallurgical coal produced by others that is used by steelmakers overseas</arg>
+        </propbank>
       </example>
-      <example name="export-v: passive, missing exporter" src="" type="">
-        <text>[Some 70% of them]-1 are *trace*-1 to be exported *trace*-1 to the U.S.</text>
-        <rel f="">exported</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="2">to the U.S.</arg>
+      <example name="export-v: passive, missing exporter" src="">
+        <text>Some 70 % of them are to be exported to the U.S.</text>
+        <propbank>
+          <rel relloc="8">exported</rel>
+          <arg type="ARG1" start="0" end="4">Some 70 % of them</arg>
+          <arg type="ARG2" start="9" end="11">to the U.S.</arg>
+        </propbank>
       </example>
-      <example name="exporting-n" src="" type="">
-        <text>So he splashed the information on handbills that he distributed throughout the banana - exporting city of Puerto Armuelles , which was ruled by United Fruit Co . </text>
-        <arg f="" n="1">banana</arg>
-        <rel f="">exporting</rel>
+      <example name="exporting-n" src="">
+        <text>So he splashed the information on handbills that he distributed throughout the banana - exporting city of Puerto Armuelles , which was ruled by United Fruit Co .</text>
+        <propbank>
+          <rel relloc="14">exporting</rel>
+          <arg type="ARG1" start="12" end="12">banana</arg>
+        </propbank>
       </example>
+      <note>EXPORT-V NOTES: Note the passive infinitive. (from export.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

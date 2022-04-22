@@ -1,35 +1,57 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="replay">
     <roleset id="replay.01" name="play again">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">replay</alias>
-        <alias framenet="" pos="n" verbnet="">replay</alias>
+        <alias pos="v">replay</alias>
+        <alias pos="n">replay</alias>
       </aliases>
+      <roles>
+        <role descr="player" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="music/video" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="instrument" f="MNR" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="performance-26.7-1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+      </lexlinks>
+      <example name="transitive" src="">
+        <text>We see news services replaying footage by al - Jazeera TV station .</text>
+        <propbank>
+          <rel relloc="4">replaying</rel>
+          <arg type="ARG0" start="2" end="3">news services</arg>
+          <arg type="ARG1" start="5" end="11">footage by al - Jazeera TV station</arg>
+        </propbank>
+      </example>
+      <example name="both args" src="">
+        <text>The BBC 's constant replays of the incident is getting tiresome .</text>
+        <propbank>
+          <rel relloc="4">replays</rel>
+          <arg type="ARG0" start="0" end="2">The BBC 's</arg>
+          <arg type="ARGM-TMP" start="3" end="3">constant</arg>
+          <arg type="ARG1" start="5" end="7">of the incident</arg>
+        </propbank>
+      </example>
       <note>REPLAY-V NOTES: Frames file for 'replay' based on sentences in ebc. Comparison with play (from replay.01-v predicate notes)</note>
       <note>REPLAY-N NOTES: Based on Bolt data. Comparison to replay.01-v. No VN class. Framed by Katie. (from replay.01-n)</note>
-      <roles>
-        <role descr="player" f="pag" n="0">
-          <vnrole vncls="26.7-2-1" vntheta="agent"/>
-        </role>
-        <role descr="music/video" f="ppt" n="1">
-          <vnrole vncls="26.7-2-1" vntheta="theme"/>
-        </role>
-        <role descr="instrument" f="mnr" n="2"/>
-      </roles>
-      <example name="transitive" src="" type="">
-        <text>We see news services replaying footage by al-Jazeera TV station.</text>
-        <arg f="" n="0">news service</arg>
-        <rel f="">replaying</rel>
-        <arg f="" n="1">footage by al-Jazeera TV station</arg>
-      </example>
-      <example name="both args" src="" type="">
-        <text>The BBC's constant replays of the incident is getting tiresome.</text>
-        <arg f="" n="0">The BBC's</arg>
-        <arg f="tmp" n="m">constant</arg>
-        <rel f="">replays</rel>
-        <arg f="" n="1">of the incident</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

@@ -1,52 +1,102 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="snort">
     <roleset id="snort.01" name="emit a snorting sound, say snortingly">
       <aliases>
-        <alias framenet="Make_noise Communication_noise" pos="v" verbnet="">snort</alias>
+        <alias pos="v">snort</alias>
       </aliases>
-      <note>SNORT-V NOTES: Member of VNcls nonverbal_expression-40.2. (from snort.01-v)</note>
       <roles>
         <role descr="snorter" f="PAG" n="0">
-          <vnrole vncls="40.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="nonverbal_expression-40.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Communication_noise" resource="FrameNet" version="1.7">speaker</rolelink>
+            <rolelink class="nonverbal_expression-40.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="snort itself, utterance" f="PPT" n="1">
-          <vnrole vncls="40.2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="nonverbal_expression-40.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Communication_noise" resource="FrameNet" version="1.7">message</rolelink>
+            <rolelink class="Communication_noise" resource="FrameNet" version="1.7">topic</rolelink>
+            <rolelink class="nonverbal_expression-40.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="as 'speak'" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>[``Big business,'']-1 Mr. Pawlowski snorts [*T*-1]in English.</text>
-        <arg f="" n="0">Mr. Pawlowski</arg>
-        <rel f="">snorts</rel>
-        <arg f="" n="1">[*T*-1]</arg>
-        <arg f="mnr" n="m">in English</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Make_noise" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Communication_noise" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="nonverbal_expression-40.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="nonverbal_expression-40.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="as 'speak'" src="">
+        <text>` ` Big business , '' Mr. Pawlowski snorts in English .</text>
+        <propbank>
+          <rel relloc="8">snorts</rel>
+          <arg type="ARG0" start="6" end="7">Mr. Pawlowski</arg>
+          <arg type="ARG1" start="0" end="5">` ` Big business , ''</arg>
+          <arg type="ARGM-MNR" start="9" end="10">in English</arg>
+        </propbank>
       </example>
-      <example name="ARG1 and ARG0" src="ontonotes nw/wsj/17/wsj_1705" type="">
+      <example name="ARG1 and ARG0" src="ontonotes nw/wsj/17/wsj_1705">
         <text>`` The carpetbaggers , '' snorts the narrator with a Texas twang , `` have packed their bags and went . ''</text>
-        <arg f="" n="1">`` The carpetbaggers , '' snorts the narrator with a Texas twang , `` have packed their bags and went . ''</arg>
-        <rel f="">snorts</rel>
-        <arg f="" n="0">the narrator</arg>
-        <arg f="mnr" n="m">with a Texas twang</arg>
+        <propbank>
+          <rel relloc="5">snorts</rel>
+          <arg type="ARG1" start="0" end="21">`` The carpetbaggers , '' snorts the narrator with a Texas twang , `` have packed their bags and went . ''</arg>
+          <arg type="ARG0" start="6" end="7">the narrator</arg>
+          <arg type="ARGM-MNR" start="8" end="11">with a Texas twang</arg>
+        </propbank>
       </example>
-
+      <note>SNORT-V NOTES: Member of VNcls nonverbal_expression-40.2. (from snort.01-v)</note>
     </roleset>
     <roleset id="snort.02" name="ingest through the nose">
       <aliases>
-        <alias framenet="Ingest_substance" pos="v" verbnet="">snort</alias>
+        <alias pos="v">snort</alias>
       </aliases>
-      <note>SNORT-V NOTES: No VNcls. (from snort.02-v)</note>
       <roles>
-        <role descr="snorter" f="PAG" n="0"/>
-        <role descr="substance ingested" f="PPT" n="1"/>
+        <role descr="snorter" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="eat-39.1-3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="substance ingested" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="eat-39.1-3" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="ARG0 and ARG1" src="probably COCA (2018 example fix)" type="">
-        <text>I snorted a taste and was shocked by how powerful it was.</text>
-        <arg f="" n="0">I</arg>
-        <rel f="">snorted</rel>
-        <arg f="" n="1">a taste</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Ingest_substance" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+      </lexlinks>
+      <example name="ARG0 and ARG1" src="probably COCA (2018 example fix)">
+        <text>I snorted a taste and was shocked by how powerful it was .</text>
+        <propbank>
+          <rel relloc="1">snorted</rel>
+          <arg type="ARG0" start="0" end="0">I</arg>
+          <arg type="ARG1" start="2" end="3">a taste</arg>
+        </propbank>
       </example>
-
+      <note>SNORT-V NOTES: No VNcls. (from snort.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

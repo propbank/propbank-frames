@@ -1,158 +1,221 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="employ">
     <roleset id="employ.01" name="pay for working, have a job">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">employed</alias>
-        <alias framenet="Employing Being_employed" pos="n" verbnet="">employment</alias>
-        <alias framenet="Employing" pos="v" verbnet="13.5.3">employ</alias>
+        <alias pos="j">employed</alias>
+        <alias pos="n">employment</alias>
+        <alias pos="v">employ</alias>
+        <argalias arg="0" pos="n">employer</argalias>
+        <argalias arg="1" pos="n">employee</argalias>
       </aliases>
-      
-      
-      
       <roles>
-        <role descr="employer" f="pag" n="0">
-          <vnrole vncls="13.5.3" vntheta="agent"/>
+        <role descr="employer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Being_employed" resource="FrameNet" version="1.7">employer</rolelink>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="employee" f="ppt" n="1">
-          <vnrole vncls="13.5.3" vntheta="theme"/>
+        <role descr="employee" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="job" f="prd" n="2">
-          <vnrole vncls="13.5.3" vntheta="attribute"/>
+        <role descr="job" f="PRD" n="2">
+          <rolelinks>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.3">attribute</rolelink>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.4">attribute</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="no job" src="" type="">
-        <text>Cray Computer, which *trace* currently employs 241 people, said it expects a work force of 450 by the end of 1990.</text>
-        <arg f="" n="0">*trace* (= which)</arg>
-        <arg f="slc" n="m">which -&gt; Cray Computer</arg>
-        <arg f="tmp" n="m">currently</arg>
-        <rel f="">employs</rel>
-        <arg f="" n="1">241 people</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Being_employed" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Employing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="hire-13.5.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="employ-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">48</lexlink>
+        <lexlink class="employment-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">18</lexlink>
+        <lexlink class="hire-13.5.3" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="no job" src="">
+        <text>Cray Computer , which currently employs 241 people , said it expects a work force of 450 by the end of 1990 .</text>
+        <propbank>
+          <rel relloc="5">employs</rel>
+          <arg type="ARG0" start="0" end="1">Cray Computer</arg>
+          <arg type="R-ARG0" start="3" end="3">which</arg>
+          <arg type="ARGM-TMP" start="4" end="4">currently</arg>
+          <arg type="ARG1" start="6" end="7">241 people</arg>
+        </propbank>
       </example>
-      <example name="ARG1 and ARG2 and ARG0" src="ontonotes nw/p2" type="">
+      <example name="ARG1 and ARG2 and ARG0" src="ontonotes nw/p2">
         <text>Still some others can receive further professional game training in universities and later be employed as technical consultants by large game manufacturers , etc .</text>
-        <arg f="" n="1">Still some others</arg>
-        <arg f="mod" n="m">can</arg>
-        <arg f="tmp" n="m">later</arg>
-        <rel f="">employed</rel>
-        <arg f="" n="2">as technical consultants</arg>
-        <arg f="" n="0">by large game manufacturers</arg>
-        <arg f="dis" n="m">etc</arg>
+        <propbank>
+          <rel relloc="14">employed</rel>
+          <arg type="ARG1" start="0" end="2">Still some others</arg>
+          <arg type="ARGM-MOD" start="3" end="3">can</arg>
+          <arg type="ARGM-TMP" start="12" end="12">later</arg>
+          <arg type="ARG2" start="15" end="17">as technical consultants</arg>
+          <arg type="ARG0" start="18" end="21">by large game manufacturers</arg>
+          <arg type="ARGM-DIS" start="23" end="23">etc</arg>
+        </propbank>
       </example>
-
-      <example name="arg1" src="" type="">
+      <example name="arg1" src="">
         <text>the players ' employment</text>
-        <arg f="" n="1">the players '</arg>
-        <rel f="">employment</rel>
+        <propbank>
+          <rel relloc="3">employment</rel>
+          <arg type="ARG1" start="0" end="2">the players '</arg>
+        </propbank>
       </example>
-      <example name="with arg0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="with arg0" src="">
         <text>employment with Taiwanese firms</text>
-        <rel f="">employment</rel>
-        <arg f="" n="0">with Taiwanese firms</arg>
+        <propbank>
+          <rel relloc="0">employment</rel>
+          <arg type="ARG0" start="1" end="3">with Taiwanese firms</arg>
+        </propbank>
       </example>
-      <example name="all args" src="internet" type="-">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="all args" src="internet">
         <text>his employment of an attorney for the usual services</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">employment</rel>
-        <arg f="" n="1">of an attorney</arg>
-        <arg f="" n="2">for the usual services</arg>
+        <propbank>
+          <rel relloc="1">employment</rel>
+          <arg type="ARG0" start="0" end="0">his</arg>
+          <arg type="ARG1" start="2" end="4">of an attorney</arg>
+          <arg type="ARG2" start="5" end="8">for the usual services</arg>
+        </propbank>
       </example>
-      <example name="All args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The patient is currently employed as a translator for a foreign government.</text>
-        <arg f="" n="1">The patient</arg>
-        <arg f="tmp" n="m">currently</arg>
-        <rel f="">employed</rel>
-        <arg f="" n="2">as a translator</arg>
-        <arg f="" n="0">for a foreign government</arg>
+      <example name="All args" src="">
+        <text>The patient is currently employed as a translator for a foreign government .</text>
+        <propbank>
+          <rel relloc="4">employed</rel>
+          <arg type="ARG1" start="0" end="1">The patient</arg>
+          <arg type="ARGM-TMP" start="3" end="3">currently</arg>
+          <arg type="ARG2" start="5" end="7">as a translator</arg>
+          <arg type="ARG0" start="8" end="11">for a foreign government</arg>
+        </propbank>
       </example>
-      <example name="arg 1 only" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The patient is not currently employed.</text>
-        <arg f="" n="1">The patient</arg>
-        <arg f="neg" n="m">not</arg>
-        <arg f="tmp" n="m">currently</arg>
-        <rel f="">employed</rel>
+      <example name="arg 1 only" src="">
+        <text>The patient is not currently employed .</text>
+        <propbank>
+          <rel relloc="5">employed</rel>
+          <arg type="ARG1" start="0" end="1">The patient</arg>
+          <arg type="ARGM-NEG" start="3" end="3">not</arg>
+          <arg type="ARGM-TMP" start="4" end="4">currently</arg>
+        </propbank>
       </example>
-      <example name="Ackward wording for an arg 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The patient is employed caregiver.</text>
-        <arg f="" n="1">The patient</arg>
-        <rel f="">employed</rel>
-        <arg f="" n="2">caregiver.</arg>
+      <example name="Ackward wording for an arg 2" src="">
+        <text>The patient is employed caregiver .</text>
+        <propbank>
+          <rel relloc="3">employed</rel>
+          <arg type="ARG1" start="0" end="1">The patient</arg>
+          <arg type="ARG2" start="4" end="4">caregiver</arg>
+        </propbank>
       </example>
-    <note>EMPLOY-V NOTES: Updated by Julia. Member of Vncls hire-13.5.3. (from employ.01-v)
-
+      <note>EMPLOY-V NOTES: Updated by Julia. Member of Vncls hire-13.5.3. (from employ.01-v)
 EMPLOYMENT-N NOTES: Added by Julia based on employ-v.01. Corresponds to Vncls hire-13.5.3. (from employment.01-n)
-
 EMPLOYED-J NOTES: Based on Thyme and Sharp data. Comparison to employ.01. Employ.01 is a member of Vn class hire-13.5.3. Framed by Katie. (from employed.01-j)</note>
-</roleset>
+    </roleset>
     <roleset id="employ.02" name="use">
       <aliases>
-        <alias framenet="Using" pos="v" verbnet="105.1">employ</alias>
-        <alias framenet="Using" pos="n" verbnet="">employment</alias>
+        <alias pos="v">employ</alias>
+        <alias pos="n">employment</alias>
       </aliases>
-      
-      
       <roles>
-        <role descr="user" f="pag" n="0">
-          <vnrole vncls="105.1" vntheta="agent"/>
+        <role descr="user" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="use-105.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="use-105.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="used" f="ppt" n="1">
-          <vnrole vncls="105.1" vntheta="theme"/>
+        <role descr="used" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="use-105.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="use-105.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="job, purpose" f="prd" n="2">
-          <vnrole vncls="105.1" vntheta="predicate"/>
+        <role descr="job, purpose" f="PRD" n="2">
+          <rolelinks>
+            <rolelink class="use-105.1" resource="VerbNet" version="verbnet3.3">predicate</rolelink>
+            <rolelink class="use-105.1" resource="VerbNet" version="verbnet3.4">predicate</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all args" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
-        <text>In the short-term, however, he employed a new tactic to prosecute Egypt's war with Israel.</text>
-        <arg f="tmp" n="m">In the short-term</arg>
-        <arg f="dis" n="m">however</arg>
-        <arg f="" n="0">he</arg>
-        <rel f="">employed</rel>
-        <arg f="" n="1">a new tactic</arg>
-        <arg f="" n="2">to prosecute Egypt's war with Israel</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Using" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="use-105.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="employ-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">22</lexlink>
+        <lexlink class="use-105.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="all args" src="internet">
+        <text>In the short - term , however , he employed a new tactic to prosecute Egypt 's war with Israel .</text>
+        <propbank>
+          <rel relloc="9">employed</rel>
+          <arg type="ARGM-TMP" start="0" end="4">In the short - term</arg>
+          <arg type="ARGM-DIS" start="6" end="6">however</arg>
+          <arg type="ARG0" start="8" end="8">he</arg>
+          <arg type="ARG1" start="10" end="12">a new tactic</arg>
+          <arg type="ARG2" start="13" end="19">to prosecute Egypt 's war with Israel</arg>
+        </propbank>
       </example>
-      <example name="scry me a river" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
-        <text>He employed a "magic stone" in a hat that he claimed revealed the location of buried wealth (a form of scrying).</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">employed</rel>
-        <arg f="" n="1">a "magic stone" in a hat that he claimed revealed the location of buried wealth</arg>
-        <arg f="adv" n="m">(a form of scrying)</arg>
+      <example name="scry me a river" src="internet">
+        <text>He employed a " magic stone " in a hat that he claimed revealed the location of buried wealth ( a form of scrying ) .</text>
+        <propbank>
+          <rel relloc="1">employed</rel>
+          <arg type="ARG0" start="0" end="0">He</arg>
+          <arg type="ARG1" start="2" end="18">a " magic stone " in a hat that he claimed revealed the location of buried wealth</arg>
+          <arg type="ARGM-ADV" start="19" end="24">( a form of scrying )</arg>
+        </propbank>
       </example>
-      <example name="all args + additional PRP" src="internet" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
-        <text>For his Christmas project he employed a different transparent material - blown glass - to create a fishbowl whose base was a relief mold of his own cupped hands.</text>
-        <arg f="prp" n="m">For his Christmas project</arg>
-        <arg f="" n="0">he</arg>
-        <rel f="">employed</rel>
-        <arg f="" n="1">a different transparent material - blown glass</arg>
-        <arg f="" n="2">to create a fishbowl whose base was a relief mold of his own cupped hands</arg>
+      <example name="all args + additional PRP" src="internet">
+        <text>For his Christmas project he employed a different transparent material - blown glass - to create a fishbowl whose base was a relief mold of his own cupped hands .</text>
+        <propbank>
+          <rel relloc="5">employed</rel>
+          <arg type="ARGM-PRP" start="0" end="3">For his Christmas project</arg>
+          <arg type="ARG0" start="4" end="4">he</arg>
+          <arg type="ARG1" start="6" end="12">a different transparent material - blown glass</arg>
+          <arg type="ARG2" start="14" end="28">to create a fishbowl whose base was a relief mold of his own cupped hands</arg>
+        </propbank>
       </example>
-      <example name="args 0 &amp; 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>his employment of a colorful and extensive language of on-air jargon</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">employment</rel>
-        <arg f="" n="1">of a colorful and extensive language of on-air jargon</arg>
+      <example name="args 0 &amp; 1" src="">
+        <text>his employment of a colorful and extensive language of on - air jargon</text>
+        <propbank>
+          <rel relloc="1">employment</rel>
+          <arg type="ARG0" start="0" end="0">his</arg>
+          <arg type="ARG1" start="2" end="12">of a colorful and extensive language of on - air jargon</arg>
+        </propbank>
       </example>
-      <example name="all args" src="internet" type="-">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>his employment of trombones to accompany the "Gloria" and "Credo" of a Mass, in 1631</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">employment</rel>
-        <arg f="" n="1">of trombones</arg>
-        <arg f="" n="2">to accompany the "Gloria" and "Credo" of a Mass</arg>
-        <arg f="tmp" n="m">in 1631</arg>
+      <example name="all args" src="internet">
+        <text>his employment of trombones to accompany the " Gloria " and " Credo " of a Mass , in 1631</text>
+        <propbank>
+          <rel relloc="1">employment</rel>
+          <arg type="ARG0" start="0" end="0">his</arg>
+          <arg type="ARG1" start="2" end="3">of trombones</arg>
+          <arg type="ARG2" start="4" end="16">to accompany the " Gloria " and " Credo " of a Mass</arg>
+          <arg type="ARGM-TMP" start="18" end="19">in 1631</arg>
+        </propbank>
       </example>
-    <note>EMPLOY-V NOTES: This is misparsed by the automatic tagger; you'll have to split apartone arg into two.Updated by Julia. Member of Vncls use-105.1. (from employ.02-v)
-
+      <note>EMPLOY-V NOTES: This is misparsed by the automatic tagger; you'll have to split apartone arg into two.Updated by Julia. Member of Vncls use-105.1. (from employ.02-v)
 EMPLOYMENT-N NOTES: Added by Julia based on employ-v.02. Corresponds to Vncls use-105. (from employment.02-n)</note>
-</roleset>
+    </roleset>
   </predicate>
 </frameset>

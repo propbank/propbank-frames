@@ -1,37 +1,69 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="confide">
     <roleset id="confide.01" name="to entrust, tell in confidence">
       <aliases>
-        <alias framenet="Reveal_secret Telling" pos="v" verbnet="">confide</alias>
+        <alias pos="v">confide</alias>
       </aliases>
-      <note>CONFIDE-V NOTES: Based on survey of sentences in the WSJ corpus. Member of Vncls say-37.7-1. (from confide.01-v)</note>
       <roles>
         <role descr="speaker, agent" f="PAG" n="0">
-          <vnrole vncls="37.7-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="say-37.7-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Telling" resource="FrameNet" version="1.7">speaker</rolelink>
+            <rolelink class="Reveal_secret" resource="FrameNet" version="1.7">speaker</rolelink>
+          </rolelinks>
         </role>
         <role descr="utterance" f="PPT" n="1">
-          <vnrole vncls="37.7-1" vntheta="Topic"/>
+          <rolelinks>
+            <rolelink class="say-37.7-1" resource="VerbNet" version="verbnet3.3">topic</rolelink>
+            <rolelink class="Telling" resource="FrameNet" version="1.7">message</rolelink>
+            <rolelink class="Telling" resource="FrameNet" version="1.7">topic</rolelink>
+            <rolelink class="Reveal_secret" resource="FrameNet" version="1.7">topic</rolelink>
+            <rolelink class="Reveal_secret" resource="FrameNet" version="1.7">information</rolelink>
+          </rolelinks>
         </role>
         <role descr="person confided to" f="GOL" n="2">
-          <vnrole vncls="37.7-1" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink class="say-37.7-1" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+            <rolelink class="Telling" resource="FrameNet" version="1.7">addressee</rolelink>
+            <rolelink class="Reveal_secret" resource="FrameNet" version="1.7">addressee</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>A new in-house magazine , Kidder World -- which will focus on the firm 's synergy strategy , says Mr. Carpenter -- confides that on weekends Mr. Newquist `` often gets value-added ideas while flying his single-engine Cessna Centurion on the way to Nantucket . ''</text>
-        <arg f="" n="0">A new in-house magazine , Kidder World -- which will focus on the firm 's synergy strategy , says Mr. Carpenter --</arg>
-        <rel f="">confides</rel>
-        <arg f="" n="1">that on weekends Mr. Newquist `` often gets value-added ideas while flying his single-engine Cessna Centurion on the way to Nantucket</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Telling" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Reveal_secret" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="say-37.7-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+      </lexlinks>
+      <example name="transitive" src="">
+        <text>A new in - house magazine , Kidder World -- which will focus on the firm 's synergy strategy , says Mr. Carpenter -- confides that on weekends Mr. Newquist `` often gets value - added ideas while flying his single - engine Cessna Centurion on the way to Nantucket . ''</text>
+        <propbank>
+          <rel relloc="24">confides</rel>
+          <arg type="ARG0" start="0" end="23">A new in - house magazine , Kidder World -- which will focus on the firm 's synergy strategy , says Mr. Carpenter --</arg>
+          <arg type="ARG1" start="25" end="49">that on weekends Mr. Newquist `` often gets value - added ideas while flying his single - engine Cessna Centurion on the way to Nantucket</arg>
+        </propbank>
       </example>
-      <example name="all arguments" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>The owner of the company , Stephen Smith , who has since pleaded guilty to state and federal fraud charges , confided to investors that he had a secret agreement with Amoco Oil Co. and said [0] the location of his wells was confidential , according to a civil suit filed [*]in a Florida state court by the Florida comptroller 's office .</text>
-        <arg f="" n="0">The owner of the company , Stephen Smith , who has since pleaded guilty to state and federal fraud charges</arg>
-        <rel f="">confided</rel>
-        <arg f="" n="2">to investors</arg>
-        <arg f="" n="1">that he had a secret agreement with Amoco Oil Co.</arg>
+      <example name="all arguments" src="">
+        <text>The owner of the company , Stephen Smith , who has since pleaded guilty to state and federal fraud charges , confided to investors that he had a secret agreement with Amoco Oil Co. and said the location of his wells was confidential , according to a civil suit filed in a Florida state court by the Florida comptroller 's office .</text>
+        <propbank>
+          <rel relloc="21">confided</rel>
+          <arg type="ARG0" start="0" end="19">The owner of the company , Stephen Smith , who has since pleaded guilty to state and federal fraud charges</arg>
+          <arg type="ARG2" start="22" end="23">to investors</arg>
+          <arg type="ARG1" start="24" end="33">that he had a secret agreement with Amoco Oil Co.</arg>
+        </propbank>
       </example>
+      <note>CONFIDE-V NOTES: Based on survey of sentences in the WSJ corpus. Member of Vncls say-37.7-1. (from confide.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

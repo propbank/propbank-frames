@@ -1,84 +1,128 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="train">
     <roleset id="train.01" name="teach a skill">
       <aliases>
-        <alias framenet="education_teaching" pos="n" verbnet="">training</alias>
-        <alias framenet="" pos="v" verbnet="">train</alias>
+        <alias pos="n">training</alias>
+        <alias pos="v">train</alias>
       </aliases>
-      <note>TRAIN-V NOTES: Argument order suggested by comparison with 'teach' (and assumptionsof automatic tagger). VN class hire-13.5.3. (from train.01-v)</note>
-      <note>TRAINING-N NOTES: Added due to expansion of Nombank. Comparison to 'train.01'. Vn class hire-13.5.3. Fn class education_teaching. Framed by Katie. (from training.01-n)</note>
       <roles>
-        <role descr="trainer" f="pag" n="0">
-          <vnrole vncls="13.5.3" vntheta="agent"/>
+        <role descr="trainer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="skill" f="prd" n="1">
-          <vnrole vncls="13.5.3" vntheta="attribute"/>
+        <role descr="skill" f="PRD" n="1">
+          <rolelinks>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.3">attribute</rolelink>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.4">attribute</rolelink>
+          </rolelinks>
         </role>
-        <role descr="trainee" f="ppt" n="2">
-          <vnrole vncls="13.5.3" vntheta="theme"/>
+        <role descr="trainee" f="PPT" n="2">
+          <rolelinks>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="hire-13.5.3" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all args" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>Trifari now trains sales help to advise customers on the best earring styles.</text>
-        <arg f="" n="0">Trifari</arg>
-        <arg f="tmp" n="m">now</arg>
-        <rel f="">trains</rel>
-        <arg f="" n="2">sales help</arg>
-        <arg f="" n="1">to advise customers on the best earring styles</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Education_teaching" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="hire-13.5.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="train-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">43</lexlink>
+        <lexlink class="training-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">48</lexlink>
+        <lexlink class="hire-13.5.3" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="train-v: all args" src="">
+        <text>Trifari now trains sales help to advise customers on the best earring styles .</text>
+        <propbank>
+          <rel relloc="2">trains</rel>
+          <arg type="ARG0" start="0" end="0">Trifari</arg>
+          <arg type="ARGM-TMP" start="1" end="1">now</arg>
+          <arg type="ARG2" start="3" end="4">sales help</arg>
+          <arg type="ARG1" start="5" end="12">to advise customers on the best earring styles</arg>
+        </propbank>
       </example>
-      <example name="non-predicative skill" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="passive"/>
-        <text>Democrats argued that the training wage was a way of allowing employers to pay less than the minimum wage, while [new workers]-2 need far less than six months [*trace*-2]-1 to be trained *trace*-1 for their jobs.</text>
-        <rel f="">trained</rel>
-        <arg f="" n="2">*trace*</arg>
-        <arg f="" n="1">for their jobs</arg>
+      <example name="training-n: non-predicative skill" src="">
+        <text>Democrats argued that the training wage was a way of allowing employers to pay less than the minimum wage , while new workers need far less than six months to be trained for their jobs .</text>
+        <propbank>
+          <rel relloc="31">trained</rel>
+          <arg type="ARG2" start="21" end="22">new workers</arg>
+          <arg type="ARG1" start="32" end="34">for their jobs</arg>
+        </propbank>
       </example>
-      <example name="unmentioned skill" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="ns" voice="ns"/>
-        <text>They also support a tax credit for [employers]-1 to offset the cost of *trace*-1 hiring and training workers who temporarily replace employees on parental leave.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">training</rel>
-        <arg f="" n="2">workers who temporarily replace employees on parental leave</arg>
+      <example name="train-v: unmentioned skill" src="">
+        <text>They also support a tax credit for employers to offset the cost of hiring and training workers who temporarily replace employees on parental leave .</text>
+        <propbank>
+          <rel relloc="15">training</rel>
+          <arg type="ARG0" start="7" end="7">employers</arg>
+          <arg type="ARG2" start="16" end="23">workers who temporarily replace employees on parental leave</arg>
+        </propbank>
       </example>
-      <example name="arg2-ergative" src="" type="">
-        <inflection aspect="both" form="participle" person="ns" tense="present" voice="active"/>
-        <text>Some have been training for months; others only recently left active status.</text>
-        <arg f="" n="2">Some</arg>
-        <rel f="">training</rel>
-        <arg f="tmp" n="m">for months</arg>
+      <example name="train-v: arg2-ergative" src="">
+        <text>Some have been training for months ; others only recently left active status .</text>
+        <propbank>
+          <rel relloc="3">training</rel>
+          <arg type="ARG2" start="0" end="0">Some</arg>
+          <arg type="ARGM-TMP" start="4" end="5">for months</arg>
+        </propbank>
       </example>
-      <example name="Skill only" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>I had training in mental health and also worked in drugs and alcohol in a women's prison</text>
-        <rel f="">training</rel>
-        <arg f="" n="1">in mental health</arg>
+      <example name="training-n: Skill only" src="">
+        <text>I had training in mental health and also worked in drugs and alcohol in a women 's prison</text>
+        <propbank>
+          <rel relloc="2">training</rel>
+          <arg type="ARG1" start="3" end="5">in mental health</arg>
+        </propbank>
       </example>
-      <example name="Trainee only" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="training-n: Trainee only" src="">
         <text>The training of our Iraqi security forces</text>
-        <rel f="">training</rel>
-        <arg f="" n="2">of our Iraqi security forces</arg>
+        <propbank>
+          <rel relloc="1">training</rel>
+          <arg type="ARG2" start="2" end="6">of our Iraqi security forces</arg>
+        </propbank>
       </example>
+      <note>TRAIN-V NOTES: Argument order suggested by comparison with 'teach' (and assumptionsof automatic tagger). VN class hire-13.5.3. (from train.01-v)</note>
+      <note>TRAINING-N NOTES: Added due to expansion of Nombank. Comparison to 'train.01'. Vn class hire-13.5.3. Fn class education_teaching. Framed by Katie. (from training.01-n)</note>
     </roleset>
     <roleset id="train.02" name="aim, focus">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">train</alias>
+        <alias pos="v">train</alias>
       </aliases>
-      <note>TRAIN-V NOTES: Frames file for 'train' based on sentences in wsj. (from train.02-v predicate notes)</note>
       <roles>
-        <role descr="agent, focusser" f="pag" n="0"/>
-        <role descr="thing focussed" f="ppt" n="1"/>
-        <role descr="focussed-on" f="gol" n="2"/>
+        <role descr="agent, focusser" f="PAG" n="0"/>
+        <role descr="thing focussed" f="PPT" n="1"/>
+        <role descr="focussed-on" f="GOL" n="2"/>
       </roles>
-      <example name="ready, aim, fire!" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>From the air, ribbons of yellow fire hose carry water from the bay to [high-pressure nozzles]-1 trained *trace*-1 on the site.</text>
-        <rel f="">trained</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="2">on the site</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <example name="train-v: ready, aim, fire!" src="">
+        <text>From the air , ribbons of yellow fire hose carry water from the bay to high - pressure nozzles trained on the site .</text>
+        <propbank>
+          <rel relloc="19">trained</rel>
+          <arg type="ARG1" start="15" end="18">high - pressure nozzles</arg>
+          <arg type="ARG2" start="20" end="22">on the site</arg>
+        </propbank>
       </example>
+      <note>TRAIN-V NOTES: Frames file for 'train' based on sentences in wsj. (from train.02-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

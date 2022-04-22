@@ -1,38 +1,67 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="hospitalize">
     <roleset id="hospitalize.01" name="be in or send to (the) hospital, under care in the hospital">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">hospitalization</alias>
-        <alias framenet="" pos="v" verbnet="">hospitalize</alias>
-        <alias framenet="" pos="j" verbnet="">hospitalized</alias>
+        <alias pos="n">hospitalization</alias>
+        <alias pos="v">hospitalize</alias>
+        <alias pos="j">hospitalized</alias>
       </aliases>
+      <roles>
+        <role descr="sender" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="confine-92" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="confine-92" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="injured/ill entity" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="confine-92" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="confine-92" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Institutionalization" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="confine-92" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="hospitalize-v: passivized" src="">
+        <text>Mr. Mingo was hospitalized Sept. 23 and died Monday , according to Samuel J. Chisholm , the agency 's president and chief operating officer .</text>
+        <propbank>
+          <rel relloc="3">hospitalized</rel>
+          <arg type="ARG1" start="0" end="1">Mr. Mingo</arg>
+          <arg type="ARGM-TMP" start="4" end="5">Sept. 23</arg>
+        </propbank>
+      </example>
+      <example name="hospitalization-n" src="">
+        <text>Dr. McEnroe 's hospitalization of Maggie Mae allowed them to observe her symptoms overnight .</text>
+        <propbank>
+          <rel relloc="3">hospitalization</rel>
+          <arg type="ARG0" start="0" end="2">Dr. McEnroe 's</arg>
+          <arg type="ARG1" start="4" end="6">of Maggie Mae</arg>
+        </propbank>
+      </example>
+      <example name="hospitalize-v: arg1" src="BOLT-1">
+        <text>During his speech , he called his grandfather who was hospitalized , put him on speakerphone , and asked how big of a " rack " his nurse had .</text>
+        <propbank>
+          <rel relloc="10">hospitalized</rel>
+          <arg type="ARG1" start="8" end="8">who</arg>
+        </propbank>
+      </example>
       <note>HOSPITALIZE-V NOTES: This is clearly an agentive verb because of the way it appears in thepassive in sentences such as this. But I'll bet money that an agentnever appears. (from hospitalize.01-v)</note>
       <note>HOSPITALIZATION-N NOTES: Corresponds with hospitalize.01. Framed by anwen april 2011 (from hospitalization.01-n)</note>
       <note>HOSPITALIZED-J NOTES: Added by Julia based on BOLT-1, hospitalize.01. Corresponds to VNcls confine-92. (from hospitalized.01-j)</note>
-      <roles>
-        <role descr="sender" f="PAG" n="0"/>
-        <role descr="injured/ill entity" f="PPT" n="1"/>
-      </roles>
-      <example name="passivized" src="" type="">
-        <text>[Mr. Mingo]-1 was hospitalized *trace*-1 Sept. 23 and died Monday, according to Samuel J. Chisholm, the agency's president and chief operating officer.</text>
-        <rel f="">hospitalized</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="TMP" n="M">Sept. 23</arg>
-      </example>
-      <example name="" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Dr.McEnroe's hospitalization of Maggie Mae allowed them to observe her symptoms overnight.</text>
-        <arg f="" n="0">Dr.McEnroe's</arg>
-        <rel f="">hospitalization</rel>
-        <arg f="" n="1">of Maggie Mae</arg>
-      </example>
-      <example name="arg1" src="BOLT-1" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>During his speech , he called his grandfather who-1 [*-1] was hospitalized , put him on speakerphone , and asked how big of a " rack " his nurse had .</text>
-        <arg f="" n="1">[*-1]</arg>
-        <rel f="">hospitalized</rel>
-      </example>
     </roleset>
   </predicate>
 </frameset>

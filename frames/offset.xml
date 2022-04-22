@@ -1,43 +1,125 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="offset">
     <roleset id="offset.01" name="balance out, lessen the impact of">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">offset</alias>
-        <alias framenet="" pos="v" verbnet="">offset</alias>
+        <alias pos="v">offset</alias>
+        <alias pos="n">offset</alias>
       </aliases>
+      <roles>
+        <role descr="intentional agent" f="PAG" n="0"/>
+        <role descr="thing whose impact we want to lessen" f="GOL" n="1"/>
+        <role descr="balanced by" f="PPT" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="offset-v" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">51</lexlink>
+      </lexlinks>
+      <example name="offset-v: with agentive subject" src="">
+        <text>To offset sluggish sales growth , companies have been cutting staff , mostly through attrition , and slowing the growth in research and development spending .</text>
+        <propbank>
+          <rel relloc="1">offset</rel>
+          <arg end="6" start="6" type="ARG0">companies</arg>
+          <arg end="4" start="2" type="ARG1">sluggish sales growth</arg>
+        </propbank>
+      </example>
+      <example name="offset-v: instrumental subject" src="">
+        <text>Earnings at Xerox 's financial - services operations actually rose slightly , but that was largely because capital gains at Crum &amp; Forster offset Hurricane Hugo payments and the reserves set up to cover future payments .</text>
+        <propbank>
+          <rel relloc="23">offset</rel>
+          <arg end="22" start="17" type="ARG2">capital gains at Crum &amp; Forster</arg>
+          <arg end="35" start="24" type="ARG1">Hurricane Hugo payments and the reserves set up to cover future payments</arg>
+        </propbank>
+      </example>
+      <example name="offset-v: passivized instrumental subject" src="">
+        <text>The charges are offset in part by a gain from the sale of the company 's construction division .</text>
+        <propbank>
+          <rel relloc="3">offset</rel>
+          <arg end="1" start="0" type="ARG1">The charges</arg>
+          <arg end="5" start="4" type="ARGM-MNR">in part</arg>
+          <arg end="17" start="6" type="ARG2">by a gain from the sale of the company 's construction division</arg>
+        </propbank>
+      </example>
+      <example name="offset-v: arg2 (because you are offseting forset depletion with reforestation)" src="">
+        <text>The solutions they formally proposed included lead / sulfur taxes , conservation and recycling incentives , reforestation offsets , transferable pollution permits , an ecological bank to finance pollution - reduction credits , and debt - for - environment swaps .</text>
+        <propbank>
+          <rel relloc="17">offsets</rel>
+          <arg end="16" start="16" type="ARG2">reforestation</arg>
+        </propbank>
+      </example>
       <note>OFFSET-V NOTES: Frames file for 'offset' based on sentences in financial subcorpus. No access to verbnet, not that I think it'd be in there anyway. No comparison (not even to 'set'). (from offset.01-v predicate notes)</note>
       <note>OFFSET-N NOTES: Based on sentences in nouns-00040. Comparison to offset.01-v. No VN or FN classes. Framed by Katie. (from offset.01-n)</note>
+    </roleset>
+    <roleset id="offset.02" name="position off to the side">
+      <aliases>
+        <alias pos="v">offset</alias>
+        <alias pos="n">offset</alias>
+        <alias pos="n">offsetting</alias>
+      </aliases>
       <roles>
-        <role descr="intentional agent" f="pag" n="0"/>
-        <role descr="thing whose impact we want to lessen" f="gol" n="1"/>
-        <role descr="balanced by" f="ppt" n="2"/>
+        <role descr="agent" f="PAG" n="0"/>
+        <role descr="entity positioned" f="SE1" n="1"/>
+        <role descr="distance" f="EXT" n="2"/>
+        <role descr="destination" f="GOL" n="3"/>
+        <role descr="offset from, in relation to" f="SE2" n="4"/>
       </roles>
-      <example name="with agentive subject" src="" type="">
-        <text>*trace*-1 To offset sluggish sales growth, companies-1 have been cutting staff, mostly through attrition, and slowing the growth in research and development spending.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">offset</rel>
-        <arg f="" n="1">sluggish sales growth</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="-"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="offset-v" src="Minecraft">
+        <text>Repeat that shape but in blue and offset the starting block one space to the right and one space down</text>
+        <propbank>
+          <rel relloc="7">offset</rel>
+          <arg end="10" start="8" type="ARG1">the starting block</arg>
+          <arg end="19" start="11" type="ARG3">one space to the right and one space down</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (a / and
+            :op1 (o / okay-04)
+            :op2 (r / repeat-01 :mode imperative
+              :ARG0 (y / you)
+              :ARG1 (t2 / thing
+                :ARG2-of (s / shape-01)
+                :mod (t / that))
+              :time (n / now)
+              :instrument (t3 / thing :pl +
+                :color (b3 / blue)))
+            :op3 (o2 / offset-02 :mode imperative
+              :ARG0 y
+              :ARG1 (b2 / block
+                :ARG2-of (s3 / start-01
+                  :ARG1 t3))
+              :ARG3 (s4 / space
+                :ARG1-of (r2 / right-04
+                  :ARG3 (c / cartesian-framework-91
+                    :ARG1 y)
+                  :quant (d / distance-quantity :quant 1
+                    :unit (s5 / space)))
+                :ARG1-of (d2 / down-03
+                  :ARG5 (c2 / cartesian-framework-91
+                    :ARG1 (w / white-square))
+                  :quant (d3 / distance-quantity :quant 1
+                    :unit s5)))))
+        </amr>
       </example>
-      <example name="instrumental subject" src="" type="">
-        <text>Earnings at Xerox's financial-services operations actually rose slightly, but that was largely because capital gains at Crum&amp; Forster offset Hurricane Hugo payments and the reserves set up to cover future payments.</text>
-        <arg f="" n="2">capital gains at Crum&amp; Forster</arg>
-        <rel f="">offset</rel>
-        <arg f="" n="1">Hurricane Hugo payments and the reserves set up to cover future payments</arg>
-      </example>
-      <example name="passivized instrumental subject" src="" type="">
-        <text>[The charges]-1 are offset *trace*-1 in part by a gain from the sale of the company's construction division.</text>
-        <rel f="">offset</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="mnr" n="m">in part</arg>
-        <arg f="" n="2">by a gain from the sale of the company's construction division</arg>
-      </example>
-      <example name="arg2 (because you are offseting forset depletion with reforestation)" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The solutions they formally proposed included lead / sulfur taxes , conservation and recycling incentives , reforestation offsets , transferable pollution permits , an ecological bank to finance pollution - reduction credits , and debt - for - environment swaps .</text>
-        <arg f="" n="2">reforestation</arg>
-        <rel f="">offsets</rel>
-      </example>
+      <note>OFFSET NOTES: Added for SpatialAMR.</note>
     </roleset>
   </predicate>
 </frameset>

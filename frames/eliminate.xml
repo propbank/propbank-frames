@@ -1,61 +1,111 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="eliminate">
     <roleset id="eliminate.01" name="remove">
       <aliases>
-        <alias framenet="removing" pos="n" verbnet="">elimination</alias>
-        <alias framenet="" pos="v" verbnet="">eliminate</alias>
+        <alias pos="n">elimination</alias>
+        <alias pos="v">eliminate</alias>
       </aliases>
-      <note>ELIMINATE-V NOTES: The plan isn't doing the eliminating, but rather some unnamed companywhich will be implementing the plan. But close enough. (from eliminate.01-v)</note>
-      <note>ELIMINATION-N NOTES: Based on sentences in nouns-00040. Comparison to eliminate.01. Vn class remove-10.1 and murder-42.1. Fn class removing. Framed by Katie. (from elimination.01-n)</note>
       <roles>
         <role descr="entity removing" f="PAG" n="0">
-          <vnrole vncls="10.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Removing" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="Removing" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="murder-42.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing being removed" f="PPT" n="1">
-          <vnrole vncls="10.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Removing" resource="FrameNet" version="1.7">theme</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+            <rolelink class="murder-42.1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
         </role>
         <role descr="removed from" f="DIR" n="2">
-          <vnrole vncls="10.1" vntheta="Source"/>
+          <rolelinks>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.3">source</rolelink>
+            <rolelink class="Removing" resource="FrameNet" version="1.7">source</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">initial_location</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="relatively clear subject" src="" type="">
-        <text>Dan E. Nelms, Valley Federal's president and chief executive officer, said the one-time charge substantially eliminates future losses associated with the unit.</text>
-        <arg f="" n="0">the one-time charge</arg>
-        <arg f="MNR" n="M">substantially</arg>
-        <rel f="">eliminates</rel>
-        <arg f="" n="1">future losses associated with the unit</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Removing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Killing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="remove-10.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Life.Die.DeathCausedByViolentEvents" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Die" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="Attack" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="eliminate-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">57</lexlink>
+        <lexlink class="elimination-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">8</lexlink>
+        <lexlink class="eliminate-v.4" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="remove-10.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="murder-42.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="relatively clear subject" src="">
+        <text>Dan E. Nelms , Valley Federal 's president and chief executive officer , said the one - time charge substantially eliminates future losses associated with the unit .</text>
+        <propbank>
+          <rel relloc="20">eliminates</rel>
+          <arg type="ARG0" start="14" end="18">the one - time charge</arg>
+          <arg type="ARGM-MNR" start="19" end="19">substantially</arg>
+          <arg type="ARG1" start="21" end="26">future losses associated with the unit</arg>
+        </propbank>
       </example>
-      <example name="stretching the subject" src="" type="">
-        <text>[The plan]-1 calls for *trace*-1 closing at least nine plants and eliminating about 3,600 jobs.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">eliminating</rel>
-        <arg f="" n="1">about 3,600 jobs</arg>
+      <example name="stretching the subject" src="">
+        <text>The plan calls for closing at least nine plants and eliminating about 3,600 jobs .</text>
+        <propbank>
+          <rel relloc="10">eliminating</rel>
+          <arg type="ARG0" start="0" end="1">The plan</arg>
+          <arg type="ARG1" start="11" end="13">about 3,600 jobs</arg>
+        </propbank>
       </example>
-      <example name="unstated subject" src="" type="">
-        <text>*trace* Eliminate arbitrage and liquidity will decline instead of rising, creating more volatility instead of less.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">Eliminate</rel>
-        <arg f="" n="1">arbitrage</arg>
+      <example name="unstated subject" src="">
+        <text>*trace* Eliminate arbitrage and liquidity will decline instead of rising , creating more volatility instead of less .</text>
+        <propbank>
+          <rel relloc="1">Eliminate</rel>
+          <arg type="ARG0" start="?" end="?">*trace*</arg>
+          <arg type="ARG1" start="2" end="2">arbitrage</arg>
+        </propbank>
       </example>
-      <example name="untraceable subject" src="" type="">
-        <text>However, third-quarter operating profit fell 14%, as USX sold sizable chunks of its diversified and steel segments, *trace* eliminating income from those operations.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">eliminating</rel>
-        <arg f="" n="1">income from those operations</arg>
+      <example name="untraceable subject" src="">
+        <text>However , third - quarter operating profit fell 14 % , as USX sold sizable chunks of its diversified and steel segments , *trace* eliminating income from those operations .</text>
+        <propbank>
+          <rel relloc="24">eliminating</rel>
+          <arg type="ARG0" start="?" end="?">*trace*</arg>
+          <arg type="ARG1" start="25" end="28">income from those operations</arg>
+        </propbank>
       </example>
-      <example name="Args 0 and 1" src="" type="">
+      <example name="Args 0 and 1" src="">
         <text>Pinnacle 's elimination of dividend payments</text>
-        <arg f="" n="0">Pinnacle 's</arg>
-        <rel f="">elimination</rel>
-        <arg f="" n="1">of dividend payments</arg>
+        <propbank>
+          <rel relloc="2">elimination</rel>
+          <arg type="ARG0" start="0" end="1">Pinnacle 's</arg>
+          <arg type="ARG1" start="3" end="5">of dividend payments</arg>
+        </propbank>
       </example>
-      <example name="Arg 1 only" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>an elminiation of sanctions</text>
-        <rel f="">elimination</rel>
-        <arg f="" n="1">of sanctions</arg>
+      <example name="Arg 1 only" src="">
+        <text>an elimination of sanctions</text>
+        <propbank>
+          <rel relloc="1">elimination</rel>
+          <arg type="ARG1" start="2" end="3">of sanctions</arg>
+        </propbank>
       </example>
+      <note>ELIMINATE-V NOTES: The plan isn't doing the eliminating, but rather some unnamed companywhich will be implementing the plan. But close enough. (from eliminate.01-v)</note>
+      <note>ELIMINATION-N NOTES: Based on sentences in nouns-00040. Comparison to eliminate.01. Vn class remove-10.1 and murder-42.1. Fn class removing. Framed by Katie. (from elimination.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

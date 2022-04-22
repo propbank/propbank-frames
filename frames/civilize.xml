@@ -1,53 +1,84 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="civilize">
     <roleset id="civilize.01" name="make civil, educate">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">civilize</alias>
-        <alias framenet="" pos="j" verbnet="">civilized</alias>
-        <alias framenet="" pos="n" verbnet="">civilization</alias>
+        <alias pos="v">civilize</alias>
+        <alias pos="j">civilized</alias>
+        <alias pos="n">civilization</alias>
       </aliases>
+      <roles>
+        <role descr="agent causing civilization" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity becoming civil" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="other_cos-45.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="other_cos-45.4" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="civilize-v: Active" src="web usage">
+        <text>They civilized the foothills !</text>
+        <propbank>
+          <rel relloc="1">civilized</rel>
+          <arg type="ARG0" start="0" end="0">They</arg>
+          <arg type="ARG1" start="2" end="3">the foothills</arg>
+        </propbank>
+      </example>
+      <example name="civilize-v: Passive" src="web usage">
+        <text>Rome was civilized by Greece .</text>
+        <propbank>
+          <rel relloc="2">civilized</rel>
+          <arg type="ARG1" start="0" end="0">Rome</arg>
+          <arg type="ARG0" start="3" end="4">by Greece</arg>
+        </propbank>
+      </example>
+      <example name="civilized-j: Arg1 only" src="BOLT P01, parts 2,3">
+        <text>Also , Rex , try to be civilized and do nt resort to childish name calling .</text>
+        <propbank>
+          <rel relloc="7">civilized</rel>
+          <arg type="ARG1" start="2" end="2">Rex</arg>
+        </propbank>
+      </example>
+      <example name="civilized-j: With manner" src="web">
+        <text>He became civilized by eating bread and drinking wine .</text>
+        <propbank>
+          <rel relloc="2">civilized</rel>
+          <arg type="ARG1" start="0" end="0">He</arg>
+          <arg type="ARGM-MNR" start="3" end="8">by eating bread and drinking wine</arg>
+        </propbank>
+      </example>
+      <example name="civilization-nr" src="web">
+        <text>Do we not inquire in what they have contributed to the civilization of the people , what part they have taken in it , whathas been the value and extent of their influence ?</text>
+        <propbank>
+          <rel relloc="11">civilization</rel>
+          <arg type="ARG1" start="12" end="14">of the people</arg>
+        </propbank>
+      </example>
       <note>CIVILIZE-V NOTES: Edited by hwangd (from civilize.01-v)</note>
       <note>CIVILIZATION-N NOTES: (from civilization.01-n)</note>
       <note>CIVILIZED-J NOTES: Roleset based on instances in BOLT P01,parts 2,3. Framed by Claire. (from civilized.01-j)</note>
-      <roles>
-        <note>Not sure if a true agent can occur with the adjectival usages
+      <note>Not sure if a true agent can occur with the adjectival usages
 					(or if this would be considered a verbal usage if it did occur),but it is there for symmetry with related verb. (fromcivilized.01-j)</note>
-        <role descr="agent causing civilization" f="PAG" n="0">
-          <vnrole vncls="45.4" vntheta="Agent"/>
-        </role>
-        <role descr="entity becoming civil" f="PPT" n="1">
-          <vnrole vncls="45.4" vntheta="Patient"/>
-        </role>
-      </roles>
-      <example name="civilize-v: Active" src="web usage" type="">
-        <text>They civilized the foothils!</text>
-        <arg f="" n="0">They</arg>
-        <rel f="">civilized</rel>
-        <arg f="" n="1">the foothills</arg>
-      </example>
-      <example name="civilize-v: Passive" src="web usage" type="">
-        <text>Rome-1 was civilized *T*-1 by Greece.</text>
-        <rel f="">civilized</rel>
-        <arg f="" n="1">*T*-1</arg>
-        <arg f="" n="0">by Greece</arg>
-      </example>
-      <example name="civilized-j: Arg1 only" src="BOLT P01, parts 2,3" type="">
-        <text>Also , rex , PRO-1 try PRO-1 to be civilized and do nt resort to childish name calling .</text>
-        <arg f="" n="1">PRO</arg>
-        <rel f="">civilized</rel>
-      </example>
-      <example name="civilized-j: With manner" src="web" type="">
-        <text>He became civilized by eating bread and drinking wine.</text>
-        <arg f="" n="1">He</arg>
-        <rel f="">civilized</rel>
-        <arg f="mnr" n="m">by eating bread and drinking wine</arg>
-      </example>
-      <example name="civilization-nr" src="web" type="">
-        <text>Do we not inquire in what they have contributed to the civilization of the people, what part they have taken in it, whathas been the value and extent of their influence?</text>
-        <rel f="">civilization</rel>
-        <arg f="" n="1">of the people</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

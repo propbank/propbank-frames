@@ -1,0 +1,237 @@
+<!--
+                    dtd for predicate argument lexicon files
+
+ Each file will contain a set of predicates associated with a particular
+ lemma (including phrasal variants,  like 'keep_from', etc)
+
+ Each predicate will contain a set of roles in an entity called a roleset.  The
+ rolesets give mneumonics of the argument labels for each different set of
+ arguments.  Multiple rolesets per predicate are necessary for the accomodation
+ of different senses of the predicate.
+
+ Each roleset associates the argument labels with a set of examples
+ demonstrating some of the primary considerations in predicate argument
+ annotation for the predicate+roleset in consideration.  The examples contain
+ plain text sentences and then assign arguments to segments of the sentence.
+ The examples usually have names which are often space delimited descriptions
+ of the annotation.  The examples often have types which describe, in a
+ nutshell, some primary linguistic properties such as "benefactive" or
+ "agentive".  The type attribute may also include a phrasal particle variant
+ (eg type="keep pace") so as to indicate the guidelines for annotation of these
+ cases.
+
+ The entire document can be decorated with notes for unstructured description of
+ the information presented.
+-->
+<!ELEMENT frameset (note | predicate)*>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT predicate (note | roleset)*>
+<!ATTLIST predicate lemma CDATA #REQUIRED>
+<!--
+  The roleset's levine class attribute takes the following form:
+
+  -|\d+(\.\d+)*( \d+(\.\d+)*)*
+
+  where '-' means there is no levine class
+  and something like 47.2 means 47.2 is a levine class of this
+  roleset.  The list of levine classes is space delimited
+-->
+<!ELEMENT roleset (aliases?, note*, roles, usagenotes*, ( lexlinks | example | note )*)>
+<!ATTLIST roleset
+  id   CDATA #REQUIRED
+  name CDATA #IMPLIED>
+<!ELEMENT aliases (alias | argalias| mwp-descriptions)*>
+<!ELEMENT alias (#PCDATA)>
+<!ATTLIST alias
+pos (r | p | v | n | j | l | x| m | d | f) #REQUIRED>
+
+
+<!--
+  pos = Part of Speech
+  
+  Can take the following values:
+
+  r = Adverb
+  p = Preposition
+  v = Verb
+  n = Noun
+  j = Adjective
+  l = (MISSING IDK)
+  x = (MISSING IDK)
+  m = (MISSING IDK)
+
+-->
+
+
+<!ELEMENT argalias (#PCDATA)>
+<!ATTLIST argalias
+pos (v | n | j | l) #REQUIRED
+arg CDATA #REQUIRED>
+
+
+<!--
+ Multi-word predications added
+-->
+<!ELEMENT mwp-descriptions (syntaxdesc | mapping)*>
+<!ATTLIST mwp-descriptions
+id CDATA #REQUIRED>
+
+<!ELEMENT syntaxdesc (token)*>
+<!ATTLIST syntaxdesc
+slots CDATA #REQUIRED>
+
+<!ELEMENT token (#PCDATA)>
+<!ATTLIST token
+slot CDATA #REQUIRED
+pos CDATA #REQUIRED
+arg CDATA #REQUIRED
+head CDATA #REQUIRED
+dep CDATA #REQUIRED >
+
+<!ELEMENT mapping (source | target)*>
+<!ELEMENT source (#PCDATA)>
+<!ELEMENT target (#PCDATA)>
+
+<!ELEMENT roles   (note | role)*>
+<!ELEMENT role (rolelinks)* >
+<!--
+  roles have a number (or an "M" associated
+  with them, for common adjuncts that don't qualify for number argument status). 
+  Both numbered arguments and adjuncts are labeled with the function tags from the list below:
+
+    EXT  extent
+    LOC  location
+    DIR  direction
+    NEG  negation  (not in PREDITOR)
+    MOD  general modification
+    ADV  adverbial modification
+    MNR  manner
+    PRD  secondary predication
+    REC  recipricol (eg herself, etc)
+    TMP  temporal
+    PRP  purpose
+    PNC  purpose no cause (no longer used)
+    CAU  cause
+    CXN  constructional pattern (adjectival comparative marker)
+    ADJ  adjectival (nouns only)
+    COM  comitative
+    DIS  discourse
+    DSP  direct speech
+    GOL  goal
+    PAG  prototypical agent (function tag for arg1)
+    PPT  prototypical patient (function tag for arg1)
+    RCL  relative clause (no longer used)
+    SLC  selectional constraint link
+    VSP  verb specific (function tag for numbered arguments)
+    LVB  light verb (for nouns only)
+    
+    #
+    # Function tags for spatial arguments
+    #
+    SE1  first thing (UNVERIFIED)
+    SE2  second thing (UNVERIFIED)    
+    SE3  third thing (UNVERIFIED)
+    SE4  fourth thing (UNVERIFIED)
+    SE5  fifth thing (UNVERIFIED)    
+    SE6  sixth thing (UNVERIFIED)    
+
+    SCL  Scale (UNVERIFIED)
+
+    DOM  Domain (UNVERIFIED)
+
+    #
+    # added from the spatial relations ontology
+    #
+    # https://docs.google.com/spreadsheets/d/1b_CJUsyGptG0RtZQ5qnuJjF0wHKyiahLJ83RhHRwgCE/edit#gid=154847108
+    #
+    ANC  anchor
+    ANC1 first anchor
+    ANC2 second anchor
+    
+    ANG angle
+
+    AXS  axis
+    AXSp perpendicular axis
+    AXSc central axis
+    AXS1 axis of spatial entity 1
+    AXS2 axis of spatial entity 2
+
+    WHL  whole spatial entity
+    
+    SEQ  sequence
+
+    PSN  position
+    #
+
+    #
+    # Not sure to which subgroup these balong
+    #
+    SET
+    SRC  Source (UNVERIFIED)
+    PRT
+    
+
+
+
+-->
+<!ATTLIST role
+  n ( 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | m | M ) #REQUIRED
+  f ( ANC | ANC1 | ANC2 | ANG | DOM | AXS | AXSp | AXSc | AXS1 | AXS2 | WHL | SEQ | SET | SRC | PRT | SE1 | SE2 | SE3 | SE4 | SE5 | SE6 | SCL | PAG | PPT | GOL | CXN | VSP | COM | ADJ | CAU | PRP | MNR | EXT | LOC | REC | DIR | ADV | TMP | adv | tmp | pag | ppt | gol | vsp | com | adj | cau | prp | rec | mnr | ext | loc | dir | prd | PRD ) #REQUIRED
+  descr CDATA #REQUIRED>
+
+<!ELEMENT rolelinks (rolelink)*>
+<!ELEMENT rolelink (#PCDATA)>
+<!ATTLIST rolelink
+resource CDATA #REQUIRED
+    class CDATA #REQUIRED
+    version CDATA #REQUIRED>
+
+
+<!ELEMENT usagenotes (usage)*>
+<!ELEMENT usage EMPTY>
+<!ATTLIST usage
+  resource CDATA #REQUIRED
+  version CDATA #REQUIRED
+    inuse  CDATA #REQUIRED>
+
+<!ELEMENT lexlinks (lexlink)*>
+<!ELEMENT lexlink (#PCDATA)>
+<!ATTLIST lexlink
+  resource CDATA #REQUIRED
+  version CDATA #REQUIRED
+    class  CDATA #REQUIRED
+        confidence  CDATA #REQUIRED
+            src  CDATA #REQUIRED>
+<!--
+  examples may contain inflectional information and notes notes
+  After that, they contain the text of an example followed by
+  the argument structure.
+
+  The src attribute is for automatically retrieved examples
+  and refers to a roleset identifier.
+-->
+
+<!-- Adding a new element to distinguish propbank example from amr example (UNVERIFIED) -->
+<!ELEMENT propbank (arg|rel|note)*>
+
+<!ELEMENT amr (#PCDATA)>
+<!ATTLIST amr
+  version CDATA #IMPLIED>
+
+<!ELEMENT example (note?, text, (propbank | amr | note)*)>
+<!ATTLIST example
+  name CDATA #IMPLIED
+  src  CDATA #IMPLIED>
+<!ELEMENT text (#PCDATA)>
+
+<!ELEMENT arg (#PCDATA)>
+<!ATTLIST arg
+  type ( ARG0 | ARG1 | ARG2 | ARG3 | ARG4 | ARG5 | ARG6 | ARG7 | C-ARG0 | C-ARG1 | C-ARG2 | C-ARG3 | C-ARG4 | C-ARG5 | C-ARG6 | C-ARG7 | R-ARG0 | R-ARG1 | R-ARG2 | R-ARG3 | R-ARG4 | R-ARG5 | R-ARG6 | R-ARG7 | ARGM-ADJ | ARGM-ADV | ARGM-CAU | ARGM-COM | ARGM-DIR | ARGM-DIS | ARGM-DSP | ARGM-EXT | ARGM-GOL | ARGM-LOC | ARGM-LVB | ARGM-MNR | ARGM-MOD | ARGM-NEG | ARGM-PNC | ARGM-PRD | ARGM-PRP | ARGM-PRR | ARGM-PRX | ARGM-REC | ARGM-TMP | ARGM-CXN | C-ARGM-ADJ | C-ARGM-ADV | C-ARGM-CAU | C-ARGM-COM | C-ARGM-DIR | C-ARGM-DIS | C-ARGM-DSP | C-ARGM-EXT | C-ARGM-LOC | C-ARGM-MNR | C-ARGM-MOD | C-ARGM-NEG | C-ARGM-PRP | C-ARGM-TMP | C-ARGM-CXN | R-ARGM-ADV | R-ARGM-CAU | R-ARGM-COM | R-ARGM-DIR | R-ARGM-EXT | R-ARGM-GOL | R-ARGM-LOC | R-ARGM-MNR | R-ARGM-MOD | R-ARGM-PNC | R-ARGM-PRD | R-ARGM-PRP | R-ARGM-TMP) #REQUIRED
+  start CDATA #REQUIRED
+  end CDATA #REQUIRED>
+<!-- a rel can have an "f" attribute for a single reason, so that
+     auxilliary uses of the verb "have" can be marked as such.
+     There should be no other "f" attributes -->
+<!ELEMENT rel (#PCDATA)>
+<!ATTLIST rel
+  relloc CDATA #REQUIRED>

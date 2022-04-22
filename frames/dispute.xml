@@ -1,84 +1,116 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="dispute">
     <roleset id="dispute.01" name="argue">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">dispute</alias>
-        <alias framenet="" pos="v" verbnet="">dispute</alias>
+        <alias pos="n">dispute</alias>
+        <alias pos="v">dispute</alias>
       </aliases>
-      <note>DISPUTE-V NOTES: VN updated by Julia. Member of Vncls battle-36.4-1. (from dispute.01-v)</note>
-      <note>DISPUTE-N NOTES: Updated by Julia. Member of Vncls battle-36.4-1. (from dispute.01-n)</note>
       <roles>
         <role descr="first (or all) arguer(s)" f="PAG" n="0">
-          <vnrole vncls="36.4-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="battle-36.4-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Quarreling" resource="FrameNet" version="1.7">arguer1</rolelink>
+            <rolelink class="battle-36.4" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="second arguer" f="COM" n="1">
-          <vnrole vncls="36.4-1" vntheta="co-agent"/>
+          <rolelinks>
+            <rolelink class="battle-36.4-1" resource="VerbNet" version="verbnet3.3">co-agent</rolelink>
+            <rolelink class="Quarreling" resource="FrameNet" version="1.7">arguer2</rolelink>
+            <rolelink class="battle-36.4" resource="VerbNet" version="verbnet3.4">co_agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="topic" f="PPT" n="2">
-          <vnrole vncls="36.4-1" vntheta="Topic"/>
+          <rolelinks>
+            <rolelink class="battle-36.4-1" resource="VerbNet" version="verbnet3.3">topic</rolelink>
+            <rolelink class="Quarreling" resource="FrameNet" version="1.7">issue</rolelink>
+            <rolelink class="battle-36.4" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="missing second arguer" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>Campeau's Ms. Sanger disputes Mr. Konheim's comments.</text>
-        <arg f="" n="0">Campeau's Ms. Sanger</arg>
-        <rel f="">disputes</rel>
-        <arg f="" n="2">Mr. Konheim's comments</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Quarreling" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="battle-36.4-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="dispute-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">63</lexlink>
+        <lexlink class="dispute-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">19</lexlink>
+        <lexlink class="dispute-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="battle-36.4" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="missing second arguer" src="">
+        <text>Campeau 's Ms. Sanger disputes Mr. Konheim 's comments .</text>
+        <propbank>
+          <rel relloc="4">disputes</rel>
+          <arg type="ARG0" start="0" end="3">Campeau 's Ms. Sanger</arg>
+          <arg type="ARG2" start="5" end="8">Mr. Konheim 's comments</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG2" src="ontonotes bn/voa/00/voa_0074" type="">
+      <example name="ARG0 and ARG2" src="ontonotes bn/voa/00/voa_0074">
         <text>The Pentagon spokesman is meanwhile disputing news reports saying the Defense Department has decided to order US Navy ships to temporarily stop using the Suez Canal out of fear of terrorist attack .</text>
-        <arg f="" n="0">The Pentagon spokesman</arg>
-        <arg f="tmp" n="m">meanwhile</arg>
-        <rel f="">disputing</rel>
-        <arg f="" n="2">news reports saying the Defense Department has decided to order US Navy ships to temporarily stop using the Suez Canal out of fear of terrorist attack</arg>
+        <propbank>
+          <rel relloc="5">disputing</rel>
+          <arg type="ARG0" start="0" end="2">The Pentagon spokesman</arg>
+          <arg type="ARGM-TMP" start="4" end="4">meanwhile</arg>
+          <arg type="ARG2" start="6" end="31">news reports saying the Defense Department has decided to order US Navy ships to temporarily stop using the Suez Canal out of fear of terrorist attack</arg>
+        </propbank>
       </example>
-
-      <example name="ARG0" src="ontonotes mz/sinorama/10/ectb_1018" type="">
+      <example name="ARG0" src="ontonotes mz/sinorama/10/ectb_1018">
         <text>Men are giving away nothing to their sisters in the search for beautiful bodies , as is suggested by a few recent disputes between male beauty salons and dissatisfied customers .</text>
-        <arg f="adj" n="m">few</arg>
-        <arg f="tmp" n="m">recent</arg>
-        <rel f="">disputes</rel>
-        <arg f="" n="0">between male beauty salons and dissatisfied customers</arg>
+        <propbank>
+          <rel relloc="22">disputes</rel>
+          <arg type="ARGM-ADJ" start="20" end="20">few</arg>
+          <arg type="ARGM-TMP" start="21" end="21">recent</arg>
+          <arg type="ARG0" start="23" end="29">between male beauty salons and dissatisfied customers</arg>
+        </propbank>
       </example>
-
-      <example name="autogen1 (with additional type of dispute)" src="" type="">
-        <text>their acrimonious legal dispute over Hollywood producers PeterGuber and Jon Peters</text>
-        <arg f="" n="0">their</arg>
-        <arg f="mnr" n="m">acrimonious</arg>
-        <arg f="adj" n="m">legal</arg>
-        <rel f="">dispute</rel>
-        <arg f="" n="2">over Hollywood producers Peter Guber and Jon Peters</arg>
+      <example name="autogen1 (with additional type of dispute)" src="">
+        <text>their acrimonious legal dispute over Hollywood producers Peter Guber and Jon Peters</text>
+        <propbank>
+          <rel relloc="3">dispute</rel>
+          <arg type="ARG0" start="0" end="0">their</arg>
+          <arg type="ARGM-MNR" start="1" end="1">acrimonious</arg>
+          <arg type="ARGM-ADJ" start="2" end="2">legal</arg>
+          <arg type="ARG2" start="4" end="11">over Hollywood producers Peter Guber and Jon Peters</arg>
+        </propbank>
       </example>
-      <example name="autogen2" src="" type="">
-        <text>a 10-year dispute with the National Iranian Oil Co. over claimsthat Ashland did n't pay for Iranian crude it had received</text>
-        <arg f="tmp" n="m">10-year</arg>
-        <rel f="">dispute</rel>
-        <arg f="" n="1">with the National Iranian Oil Co.</arg>
-        <arg f="" n="2">over claims that Ashland did n't pay for Iranian crude it had received</arg>
+      <example name="all args" src="">
+        <text>her 10 - year dispute with the National Iranian Oil Co. over claims that Ashland did n't pay for Iranian crude it had received</text>
+        <propbank>
+          <rel relloc="4">dispute</rel>
+          <arg type="ARG0" start="0" end="0">her</arg>
+          <arg type="ARGM-TMP" start="1" end="3">10 - year</arg>
+          <arg type="ARG1" start="5" end="10">with the National Iranian Oil Co.</arg>
+          <arg type="ARG2" start="11" end="23">over claims that Ashland did n't pay for Iranian crude it had received</arg>
+        </propbank>
       </example>
-      <example name="all args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>her 10-year dispute with the National Iranian Oil Co. over claimsthat Ashland did n't pay for Iranian crude it had received</text>
-        <arg f="" n="0">her</arg>
-        <arg f="tmp" n="m">10-year</arg>
-        <rel f="">dispute</rel>
-        <arg f="" n="1">with the National Iranian Oil Co.</arg>
-        <arg f="" n="2">over claims that Ashland didn't pay for Iranian crude it had recieved</arg>
-      </example>
-      <example name="with LOC" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="with LOC" src="">
         <text>a dispute in the accounts</text>
-        <rel f="">dispute</rel>
-        <arg f="loc" n="m">in the accounts</arg>
+        <propbank>
+          <rel relloc="1">dispute</rel>
+          <arg type="ARGM-LOC" start="2" end="4">in the accounts</arg>
+        </propbank>
       </example>
-      <example name="joint arg0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="joint arg0" src="">
         <text>a labor dispute between Delta Airlines and its pilots</text>
-        <arg f="" n="2">labor</arg>
-        <rel f="">dispute</rel>
-        <arg f="" n="0">between Delta Airlines and its pilots</arg>
+        <propbank>
+          <rel relloc="2">dispute</rel>
+          <arg type="ARG2" start="1" end="1">labor</arg>
+          <arg type="ARG0" start="3" end="8">between Delta Airlines and its pilots</arg>
+        </propbank>
       </example>
+      <note>DISPUTE-V NOTES: VN updated by Julia. Member of Vncls battle-36.4-1. (from dispute.01-v)</note>
+      <note>DISPUTE-N NOTES: Updated by Julia. Member of Vncls battle-36.4-1. (from dispute.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

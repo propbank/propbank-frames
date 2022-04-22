@@ -1,38 +1,75 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="mail">
     <roleset id="mail.01" name="send">
       <aliases>
-        <alias framenet="Sending Contacting" pos="v" verbnet="">mail</alias>
+        <alias pos="v">mail</alias>
       </aliases>
-      <note>MAIL-V NOTES: Based on financial subcorpus, comparison with 'send'. Verbnet class send-11.1-1. (from mail.01-v)</note>
       <roles>
         <role descr="mailer" f="PAG" n="0">
-          <vnrole vncls="11.1-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="send-11.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Sending" resource="FrameNet" version="1.7">sender</rolelink>
+            <rolelink class="send-11.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="letter" f="PPT" n="1">
-          <vnrole vncls="11.1-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="send-11.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Sending" resource="FrameNet" version="1.7">theme</rolelink>
+            <rolelink class="send-11.1-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="mailed-to" f="GOL" n="2">
-          <vnrole vncls="11.1-1" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink class="send-11.1-1" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="Sending" resource="FrameNet" version="1.7">recipient</rolelink>
+            <rolelink class="send-11.1-1" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="all args present" src="" type="">
-        <text>The directors said if Messrs. Drabinsky and Gottlieb mail an offer to shareholders by Nov. 22,...</text>
-        <arg f="" n="0">Messrs. Drabinsky and Gottlieb</arg>
-        <rel f="">mail</rel>
-        <arg f="" n="1">an offer</arg>
-        <arg f="" n="2">to shareholders</arg>
-        <arg f="tmp" n="m">by Nov. 22</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Contacting" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Sending" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="send-11.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Movement.TransportArtifact.SendSupplyExport" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Transportartifact" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="Correspondence" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="mail-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">10</lexlink>
+        <lexlink class="send-11.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="all args present" src="">
+        <text>The directors said if Messrs. Drabinsky and Gottlieb mail an offer to shareholders by Nov. 22 , ...</text>
+        <propbank>
+          <rel relloc="8">mail</rel>
+          <arg type="ARG0" start="4" end="7">Messrs. Drabinsky and Gottlieb</arg>
+          <arg type="ARG1" start="9" end="10">an offer</arg>
+          <arg type="ARG2" start="11" end="12">to shareholders</arg>
+          <arg type="ARGM-TMP" start="13" end="15">by Nov. 22</arg>
+        </propbank>
       </example>
-      <example name="unstated recipient" src="" type="">
-        <text>Dow Jones said it extended the offer to allow shareholders time to review a supplement to the Dow Jones tender offer circular that it mailed *trace* last Friday.</text>
-        <arg f="" n="0">it</arg>
-        <rel f="">mailed</rel>
-        <arg f="" n="1">*trace* (= that)</arg>
-        <arg f="slc" n="m">that -&gt; the Dow Jones tender offer circular</arg>
-        <arg f="tmp" n="m">last Friday</arg>
+      <example name="unstated recipient" src="">
+        <text>Dow Jones said it extended the offer to allow shareholders time to review a supplement to the Dow Jones tender offer circular that it mailed last Friday .</text>
+        <propbank>
+          <rel relloc="24">mailed</rel>
+          <arg type="ARG0" start="23" end="23">it</arg>
+          <arg type="ARG1" start="16" end="21">the Dow Jones tender offer circular</arg>
+          <arg type="R-ARG1" start="22" end="22">that</arg>
+          <arg type="ARGM-TMP" start="25" end="26">last Friday</arg>
+        </propbank>
       </example>
+      <note>MAIL-V NOTES: Based on financial subcorpus, comparison with 'send'. Verbnet class send-11.1-1. (from mail.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

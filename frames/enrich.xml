@@ -1,37 +1,66 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="enrich">
     <roleset id="enrich.01" name="add value">
       <aliases>
-        <alias framenet="Processing_materials Degree_of_processing" pos="v" verbnet="">enrich</alias>
-        <alias framenet="" pos="n" verbnet="">enrichment</alias>
+        <alias pos="v">enrich</alias>
+        <alias pos="n">enrichment</alias>
       </aliases>
-      <note>ENRICH-V NOTES: Arg2 will probably not occur very often. In financial usage itdefaults to 'money'. (from enrich.01-v)</note>
       <roles>
         <role descr="entity adding value, agent" f="PAG" n="0">
-          <vnrole vncls="9.8" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing becoming enriched" f="GOL" n="1">
-          <vnrole vncls="9.8" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
         </role>
         <role descr="vitamins (eg)" f="PPT" n="2">
-          <vnrole vncls="9.8" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="fill-9.8" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="just transitive" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
-        <text>[Mr. Steinhardt, who runs about $1.7 billion for Steinhardt Partners,]-1 made his name as a gunslinging trader, *trace*-1 moving in and out of stocks with agility -- *trace*-1 enriching himself and his investment clients.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">enriching</rel>
-        <arg f="" n="1">himself and his investment clients</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Processing_materials" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Degree_of_processing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="fill-9.8" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="enrich-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">6</lexlink>
+        <lexlink class="fill-9.8" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="just transitive" src="">
+        <text>Mr. Steinhardt , who runs about $ 1.7 billion for Steinhardt Partners , made his name as a gunslinging trader , moving in and out of stocks with agility -- enriching himself and his investment clients .</text>
+        <propbank>
+          <rel relloc="30">enriching</rel>
+          <arg type="ARG0" start="0" end="11">Mr. Steinhardt , who runs about $ 1.7 billion for Steinhardt Partners</arg>
+          <arg type="ARG1" start="31" end="35">himself and his investment clients</arg>
+        </propbank>
       </example>
-      <example name="ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1040" type="">
+      <example name="ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1040">
         <text>The just - completed Paralympics were enriched by ethnic flavorings .</text>
-        <arg f="" n="1">The just - completed Paralympics</arg>
-        <rel f="">enriched</rel>
-        <arg f="" n="2">by ethnic flavorings</arg>
+        <propbank>
+          <rel relloc="6">enriched</rel>
+          <arg type="ARG1" start="0" end="4">The just - completed Paralympics</arg>
+          <arg type="ARG2" start="7" end="9">by ethnic flavorings</arg>
+        </propbank>
       </example>
-
+      <note>ENRICH-V NOTES: Arg2 will probably not occur very often. In financial usage itdefaults to 'money'. (from enrich.01-v)</note>
     </roleset>
   </predicate>
 </frameset>

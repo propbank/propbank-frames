@@ -1,58 +1,99 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="distribute">
     <roleset id="distribute.01" name="distribute">
       <aliases>
-        <alias framenet="dispersal" pos="n" verbnet="">distribution</alias>
-        <alias framenet="" pos="v" verbnet="">distribute</alias>
+        <alias pos="n">distribution</alias>
+        <alias pos="v">distribute</alias>
+        <argalias arg="0" pos="n">distributor</argalias>
       </aliases>
-      <note>DISTRIBUTE-V NOTES: Frames file for 'distribute' based on sentences in financial subcorpus. No access to verbnet. Comparison to 'pass out'. (from distribute.01-v predicate notes)</note>
-      <note>DISTRIBUTION-N NOTES: Based on sentences in nouns-00040. Comparison to 'distribute.01'. Vn class contribute-13.2-1. FN class dispersal. Framed by Katie. (from distribution.01-n)</note>
       <roles>
         <role descr="distributor" f="PAG" n="0">
-          <vnrole vncls="13.2-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="contribute-13.2-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Dispersal" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="Dispersal" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="contribute-13.2-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing distributed" f="PPT" n="1">
-          <vnrole vncls="13.2-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="contribute-13.2-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Dispersal" resource="FrameNet" version="1.7">individuals</rolelink>
+            <rolelink class="contribute-13.2-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="distributed to" f="GOL" n="2">
-          <vnrole vncls="13.2-1" vntheta="Recipient"/>
+          <rolelinks>
+            <rolelink class="contribute-13.2-1" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+            <rolelink class="contribute-13.2-1" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="active, no benefactive" src="" type="">
-        <text>RMS distributes electronic devices and produces power supplies and plastic literature displays.</text>
-        <arg f="" n="0">RMS</arg>
-        <rel f="">distributes</rel>
-        <arg f="" n="1">electronic devices</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Dispersal" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="contribute-13.2-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="distribute-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">29</lexlink>
+        <lexlink class="distribution-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">17</lexlink>
+        <lexlink class="distribute-v.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">15</lexlink>
+        <lexlink class="contribute-13.2-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="active, no benefactive" src="">
+        <text>RMS distributes electronic devices and produces power supplies and plastic literature displays .</text>
+        <propbank>
+          <rel relloc="1">distributes</rel>
+          <arg type="ARG0" start="0" end="0">RMS</arg>
+          <arg type="ARG1" start="2" end="3">electronic devices</arg>
+        </propbank>
       </example>
-      <example name="passive, with benefactive" src="" type="">
-        <text>The candy businesses had sales of about $154 million last year, which was roughly 12% of total revenue for RJR's Planters LifeSavers unit, according to [a memorandum]-1 distributed *trace*-1 by RJR's owner, Kohlberg Kravis Roberts&amp; Co., to bankers last December.</text>
-        <rel f="">distributed</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="0">by RJR's owner, Kohlberg Kravis Roberts&amp; Co.</arg>
-        <arg f="" n="2">to bankers</arg>
-        <arg f="TMP" n="M">last December</arg>
+      <example name="passive, with benefactive" src="">
+        <text>The candy businesses had sales of about $ 154 million last year , which was roughly 12 % of total revenue for RJR 's Planters LifeSavers unit , according to a memorandum distributed by RJR 's owner , Kohlberg Kravis Roberts &amp; Co. , to bankers last December .</text>
+        <propbank>
+          <rel relloc="32">distributed</rel>
+          <arg type="ARG1" start="30" end="31">a memorandum</arg>
+          <arg type="ARG0" start="33" end="42">by RJR 's owner , Kohlberg Kravis Roberts &amp; Co.</arg>
+          <arg type="ARG2" start="44" end="45">to bankers</arg>
+          <arg type="ARGM-TMP" start="46" end="47">last December</arg>
+        </propbank>
       </example>
-      <example name="Args 0 and 1" src="" type="">
+      <example name="Args 0 and 1" src="">
         <text>my asset distribution</text>
-        <arg f="" n="0">my</arg>
-        <arg f="" n="1">asset</arg>
-        <rel f="">distribution</rel>
+        <propbank>
+          <rel relloc="2">distribution</rel>
+          <arg type="ARG0" start="0" end="0">my</arg>
+          <arg type="ARG1" start="1" end="1">asset</arg>
+        </propbank>
       </example>
-      <example name="Args 1 and 2" src="" type="">
+      <example name="Args 1 and 2" src="">
         <text>the pro rata distribution of increases to all members</text>
-        <arg f="mnr" n="m">pro rata</arg>
-        <rel f="">distribution</rel>
-        <arg f="" n="1">of increases</arg>
-        <arg f="" n="2">to all members</arg>
+        <propbank>
+          <rel relloc="3">distribution</rel>
+          <arg type="ARGM-MNR" start="1" end="2">pro rata</arg>
+          <arg type="ARG1" start="4" end="5">of increases</arg>
+          <arg type="ARG2" start="6" end="8">to all members</arg>
+        </propbank>
       </example>
-      <example name="Arg 1 and 2 again" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="Arg 1 and 2 again" src="">
         <text>The distribution of expense account money to local elected representatives and village and neighborhood chiefs</text>
-        <rel f="">distribution</rel>
-        <arg f="" n="1">of expense account money</arg>
-        <arg f="" n="2">to local elected representatives and village and neighbothood chiefs</arg>
+        <propbank>
+          <rel relloc="1">distribution</rel>
+          <arg type="ARG1" start="2" end="5">of expense account money</arg>
+          <arg type="ARG2" start="6" end="14">to local elected representatives and village and neighborhood chiefs</arg>
+        </propbank>
       </example>
+      <note>DISTRIBUTE-V NOTES: Frames file for 'distribute' based on sentences in financial subcorpus. No access to verbnet. Comparison to 'pass out'. (from distribute.01-v predicate notes)</note>
+      <note>DISTRIBUTION-N NOTES: Based on sentences in nouns-00040. Comparison to 'distribute.01'. Vn class contribute-13.2-1. FN class dispersal. Framed by Katie. (from distribution.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

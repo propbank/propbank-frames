@@ -1,53 +1,87 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="reelect">
     <roleset id="reelect.01" name="elect again">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">reelect</alias>
-        <alias framenet="" pos="n" verbnet="">reelection</alias>
-        <alias framenet="" pos="v" verbnet="">re-elect</alias>
-        <alias framenet="" pos="n" verbnet="">re-election</alias>
+        <alias pos="v">reelect</alias>
+        <alias pos="n">reelection</alias>
+        <alias pos="v">re-elect</alias>
+        <alias pos="n">re-election</alias>
       </aliases>
-      <note>REELECT-V NOTES: Frames file for 'reelect' based on adding 're' to the beginning of each example of 'elect' in elect.xml. (from reelect.01-v predicate notes)</note>
-      <note>REELECTION-N NOTES: Added by Julia based on BOLT, reelect.01. Corresponds to VNcls appoint-29.1. (from reelection.01-n)</note>
       <roles>
         <role descr="voters" f="PAG" n="0">
-          <vnrole vncls="29.1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="appoint-29.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Change_of_leadership" resource="FrameNet" version="1.7">selector</rolelink>
+            <rolelink class="appoint-29.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="candidate" f="PPT" n="1">
-          <vnrole vncls="29.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="appoint-29.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Change_of_leadership" resource="FrameNet" version="1.7">new_leader</rolelink>
+            <rolelink class="appoint-29.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="office or position" f="PRD" n="2">
-          <vnrole vncls="29.1" vntheta="Result"/>
+          <rolelinks>
+            <rolelink class="appoint-29.1" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="Change_of_leadership" resource="FrameNet" version="1.7">role</rolelink>
+            <rolelink class="appoint-29.1" resource="VerbNet" version="verbnet3.4">result</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="absentee voters" src="" type="">
-        <text>[JP Bolduc]-1 was reelected *trace*-1 a director.</text>
-        <arg f="" n="1">*trace*</arg>
-        <rel f="">reelected</rel>
-        <arg f="" n="2">a director</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Change_of_leadership" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="appoint-29.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="appoint-29.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="absentee voters" src="">
+        <text>JP Bolduc was reelected a director .</text>
+        <propbank>
+          <rel relloc="3">reelected</rel>
+          <arg type="ARG1" start="0" end="1">JP Bolduc</arg>
+          <arg type="ARG2" start="4" end="5">a director</arg>
+        </propbank>
       </example>
-      <example name="hey, whaddya know, it does occur in the active voice" src="" type="">
-        <text>Holders at the meeting reelected a full slate of Canadian Express nominees to Enfield's 11-member board.</text>
-        <arg f="" n="0">Holders at the meeting</arg>
-        <rel f="">reelected</rel>
-        <arg f="" n="1">a full slate of Canadian Express nominees</arg>
-        <arg f="" n="2">to Enfield's 11-member board</arg>
+      <example name="hey, whaddya know, it does occur in the active voice" src="">
+        <text>Holders at the meeting reelected a full slate of Canadian Express nominees to Enfield 's 11 - member board .</text>
+        <propbank>
+          <rel relloc="4">reelected</rel>
+          <arg type="ARG0" start="0" end="3">Holders at the meeting</arg>
+          <arg type="ARG1" start="5" end="11">a full slate of Canadian Express nominees</arg>
+          <arg type="ARG2" start="12" end="18">to Enfield 's 11 - member board</arg>
+        </propbank>
       </example>
-      <example name="args 0, 1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>While Americans took a step forward in social liberalism with their reelection of Obama and rising support for social policies such as gay marriage and immigration reform, politics in Europe has taken a dangerous turn to the right.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">reelection</rel>
-        <arg f="" n="1">of Obama</arg>
+      <example name="args 0, 1" src="internet">
+        <text>While Americans took a step forward in social liberalism with their reelection of Obama and rising support for social policies such as gay marriage and immigration reform , politics in Europe has taken a dangerous turn to the right .</text>
+        <propbank>
+          <rel relloc="11">reelection</rel>
+          <arg type="ARG0" start="10" end="10">their</arg>
+          <arg type="ARG1" start="12" end="13">of Obama</arg>
+        </propbank>
       </example>
-      <example name="args 1, 2" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The NJDC congratulates Bill Nelson on his reelection to Senate, calling him ?a key ally to the Florida Jewish community ...</text>
-        <arg f="" n="1">his</arg>
-        <rel f="">reelection</rel>
-        <arg f="" n="2">to Senate</arg>
+      <example name="args 1, 2" src="internet">
+        <text>The NJDC congratulates Bill Nelson on his reelection to Senate , calling him ? a key ally to the Florida Jewish community ...</text>
+        <propbank>
+          <rel relloc="7">reelection</rel>
+          <arg type="ARG1" start="6" end="6">his</arg>
+          <arg type="ARG2" start="8" end="9">to Senate</arg>
+        </propbank>
       </example>
+      <note>REELECT-V NOTES: Frames file for 'reelect' based on adding 're' to the beginning of each example of 'elect' in elect.xml. (from reelect.01-v predicate notes)</note>
+      <note>REELECTION-N NOTES: Added by Julia based on BOLT, reelect.01. Corresponds to VNcls appoint-29.1. (from reelection.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

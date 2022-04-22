@@ -1,59 +1,109 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="bomb">
     <roleset id="bomb.01" name="to attack or damage, attacking with bombs">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">bomb</alias>
-        <alias framenet="Attack" pos="n" verbnet="">bombing</alias>
+        <alias pos="v">bomb</alias>
+        <alias pos="n">bombing</alias>
+        <argalias arg="0" pos="n">bomber</argalias>
       </aliases>
+      <roles>
+        <role descr="attacker, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="Attack" resource="FrameNet" version="1.7">assailant</rolelink>
+            <rolelink class="attack-60.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity bombed" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="Attack" resource="FrameNet" version="1.7">victim</rolelink>
+            <rolelink class="attack-60.1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Attack" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Conflict.Attack.AirstrikeMissileStrike" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Conflict.Attack.Bombing" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Attack" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="bomb-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">36</lexlink>
+        <lexlink class="bomb-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">102</lexlink>
+        <lexlink class="attack-60.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="bomb-v: passive" src="">
+        <text>And only last week the newspaper Vanguardia Liberal in the city of Bucaramanga was bombed , and its installations destroyed .</text>
+        <propbank>
+          <rel relloc="14">bombed</rel>
+          <arg type="ARGM-TMP" start="1" end="3">only last week</arg>
+          <arg type="ARG1" start="4" end="12">the newspaper Vanguardia Liberal in the city of Bucaramanga</arg>
+        </propbank>
+      </example>
+      <example name="bombing-n: both args" src="BOLT">
+        <text>On July 1sr 2011 , 1.7 million people assembled in Green Square , Tripoli to show defiance against the Nato bombing of Libya .</text>
+        <propbank>
+          <rel relloc="20">bombing</rel>
+          <arg type="ARG0" start="19" end="19">Nato</arg>
+          <arg type="ARG1" start="21" end="22">of Libya</arg>
+        </propbank>
+      </example>
       <note>BOMB-V NOTES: Frames file for 'bomb' based on survey of sentences in the WSJ corpus. (from bomb.01-v predicate notes)</note>
       <note>BOMBING-N NOTES: Added by Julia based on BOLT, bomb-v.01. No VNcls. (from bombing.01-n)</note>
-      <roles>
-        <role descr="attacker, agent" f="PAG" n="0"/>
-        <role descr="entity bombed" f="PPT" n="1"/>
-      </roles>
-      <example name="bomb-v: passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="past" voice="passive"/>
-        <text>And only last week [the newspaper Vanguardia Liberal in the city of Bucaramanga]*-1 was bombed [*-1], and its installations destroyed [*-2] .</text>
-        <arg f="tmp" n="m">only last week</arg>
-        <rel f="">bombed</rel>
-        <arg f="" n="1">[*-1]</arg>
-      </example>
-      <example name="bombing-n: both args" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>On July 1sr 2011 , 1.7 million people assembled in Green Square , Tripoli to show defiance against the Nato bombing of Libya .</text>
-        <arg f="" n="0">Nato</arg>
-        <rel f="">bombing</rel>
-        <arg f="" n="1">of Libya</arg>
-      </example>
     </roleset>
-    
     <roleset id="bomb.02" name="to fail">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">bomb</alias>
-        <alias framenet="Attack" pos="n" verbnet="">bombing</alias>
+        <alias pos="v">bomb</alias>
+        <alias pos="n">bombing</alias>
       </aliases>
-      <note>BOMB-V NOTES: Frames file for 'bomb' based on survey of sentences in the WSJ corpus. (from bomb.02-v predicate notes)</note>
       <roles>
-        <role descr="entity failing" f="ppt" n="1"/>
-        <role descr="task, test" f="ppt" n="2"/>
+        <role descr="entity failing" f="PPT" n="1"/>
+        <role descr="task, test" f="PPT" n="2"/>
       </roles>
-      <example name="bomb-v: intransitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>But the product , which [*T*-1] was n't as concentrated as the new Cheer , bombed in a market test in Denver and was dropped [*-2].</text>
-        <arg f="" n="1">the product , which [*T*-1] was n't as concentrated as the new Cheer ,</arg>
-        <rel f="">bombed</rel>
-        <arg f="loc" n="m">in a market test in Denver</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Attack" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Conflict.Attack.AirstrikeMissileStrike" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Conflict.Attack.Bombing" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Attack" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+      </lexlinks>
+      <example name="bomb-v: intransitive" src="">
+        <text>But the product , which was n't as concentrated as the new Cheer , bombed in a market test in Denver and was dropped .</text>
+        <propbank>
+          <rel relloc="14">bombed</rel>
+          <arg type="ARG1" start="1" end="12">the product , which was n't as concentrated as the new Cheer</arg>
+          <arg type="ARGM-LOC" start="15" end="20">in a market test in Denver</arg>
+        </propbank>
       </example>
-      <example name="bomb-v: with task" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>John, like, totally bombed his linguistics test.</text>
-        <arg f="" n="1">John</arg>
-        <arg f="dis" n="m">like</arg>
-        <arg f="dis" n="m">totally</arg>
-        <rel f="">bombed</rel>
-        <arg f="" n="2">his linguistics test</arg>
+      <example name="bomb-v: with task" src="">
+        <text>John , like , totally bombed his linguistics test .</text>
+        <propbank>
+          <rel relloc="5">bombed</rel>
+          <arg type="ARG1" start="0" end="0">John</arg>
+          <arg type="ARGM-DIS" start="2" end="2">like</arg>
+          <arg type="ARGM-DIS" start="4" end="4">totally</arg>
+          <arg type="ARG2" start="6" end="8">his linguistics test</arg>
+        </propbank>
       </example>
+      <note>BOMB-V NOTES: Frames file for 'bomb' based on survey of sentences in the WSJ corpus. (from bomb.02-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

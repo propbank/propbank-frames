@@ -1,28 +1,67 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="nauseate">
     <roleset id="nauseate.01" name="stomach ache">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">nauseate</alias>
-        <alias framenet="" pos="j" verbnet="">nauseated</alias>
+        <alias pos="v">nauseate</alias>
+        <alias pos="n">nausea</alias>
+        <alias pos="n">nauseousness</alias>
+        <alias pos="j">nauseated</alias>
+        <alias pos="j">nauseating</alias>
+        <alias pos="j">nauseous</alias>
       </aliases>
-      <note>NAUSEATE-V NOTES: Framed by Ben. (from nauseate.01-v)</note>
-      <note>NAUSEATED-J NOTES: Automatically created by Julia as an alias file for unification. (from nauseated.01-j)</note>
       <roles>
-        <role descr="Stimulus of ache" f="PAG" n="0">
-          <vnrole vncls="31.1" vntheta="Stimulus"/>
+        <role descr="Stimulus" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.3">stimulus</rolelink>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.4">stimulus</rolelink>
+          </rolelinks>
         </role>
-        <role descr="person with ache" f="PPT" n="1">
-          <vnrole vncls="31.1" vntheta="Experiencer"/>
+        <role descr="nauseous entity" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.3">experiencer</rolelink>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.4">experiencer</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="with cause" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Whatever we felt [*T*-2] about the redcoats , we respected them in terms of their trade , which [*T*-1]was killing ; ; and I know that [I , myself ,]-1 was nauseated *trace*-1 with apprehension and fear and that my hands were soaking wet where they held my gun [*T*-3] .</text>
-        <arg f="" n="1">*trace*</arg>
-        <rel f="">nauseated</rel>
-        <arg f="CAU" n="M">with apprehension and fear</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="amuse-31.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="amuse-31.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="nauseated-j: with cause" src="">
+        <text>Whatever we felt about the redcoats , we respected them in terms of their trade , which [ ] was killing ; ; and I know that I , myself , was nauseated with apprehension and fear and that my hands were soaking wet where they held my gun .</text>
+        <propbank>
+          <rel relloc="32">nauseated</rel>
+          <arg end="29" start="27" type="ARG1">I , myself</arg>
+          <arg end="36" start="33" type="ARGM-CAU">with apprehension and fear</arg>
+        </propbank>
       </example>
+      <example name="nausea-n" src="THYME-AMR">
+        <text>Indication : nausea and vomiting .</text>
+        <propbank>
+          <rel relloc="2">nausea</rel>
+        </propbank>
+        <amr version="THYME 1.0">
+          (a / and
+            :op1 (n / nauseate-01)
+            :op2 (v / vomit-01)
+            :ARG1-of (i2 / indicate-101))
+        </amr>
+      </example>
+      <note>NAUSEATE NOTES: aliases added during THYME-AMR.</note>
+      <note>NAUSEATE-V NOTES: Framed by Ben. (from nauseate.01-v)</note>
+      <note>NAUSEATED-J NOTES: Automatically created by Julia as an alias file for unification. (from nauseated.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,272 +1,438 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="jump">
     <roleset id="jump.01" name="stock prices, increase">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">jump</alias>
-        <alias framenet="" pos="v" verbnet="">jump</alias>
+        <alias pos="n">jump</alias>
+        <alias pos="v">jump</alias>
       </aliases>
+      <roles>
+        <role descr="thing jumping" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="EXT, amount jumped by" f="EXT" n="2">
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">extent</rolelink>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">extent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="start point" f="DIR" n="3">
+          <rolelinks>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.3">initial_state</rolelink>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">initial_state</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="end point or end state of arg1" f="GOL" n="4">
+          <rolelinks>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">result</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Change_position_on_a_scale" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="calibratable_cos-45.6.1-1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+        <lexlink class="jump-n.5" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">11</lexlink>
+        <lexlink class="jump-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">22</lexlink>
+        <lexlink class="jump-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">8</lexlink>
+        <lexlink class="calibratable_cos-45.6.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="jump-v" src="">
+        <text>Cray Research stock jumped $ 2.875 yesterday to close at $ 38 .</text>
+        <propbank>
+          <rel relloc="3">jumped</rel>
+          <arg type="ARG1" start="0" end="2">Cray Research stock</arg>
+          <arg type="ARG2" start="4" end="5">$ 2.875</arg>
+          <arg type="ARGM-TMP" start="6" end="6">yesterday</arg>
+          <arg type="ARG4" start="7" end="11">to close at $ 38</arg>
+        </propbank>
+      </example>
+      <example name="jump-n: wow, all args" src="">
+        <text>a 38 % jump in pretax profit for the first half to # 54.8 million from # 39.8 million on a 63 % rise in sales</text>
+        <propbank>
+          <rel relloc="3">jump</rel>
+          <arg type="ARG2" start="1" end="2">38 %</arg>
+          <arg type="ARG1" start="4" end="6">in pretax profit</arg>
+          <arg type="ARGM-TMP" start="7" end="10">for the first half</arg>
+          <arg type="ARG4" start="11" end="14">to # 54.8 million</arg>
+          <arg type="ARG3" start="15" end="18">from # 39.8 million</arg>
+        </propbank>
+      </example>
+      <example name="jump-n: Arg 3 only" src="">
+        <text>a jump from the rental rates of the late 1970s , when their leases were signed</text>
+        <propbank>
+          <rel relloc="1">jump</rel>
+          <arg type="ARG3" start="2" end="15">from the rental rates of the late 1970s , when their leases were signed</arg>
+        </propbank>
+      </example>
+      <example name="jump-n: With args 1 and 2" src="">
+        <text>a 5 % jump in the Peter 's Pence collection</text>
+        <propbank>
+          <rel relloc="3">jump</rel>
+          <arg type="ARG2" start="1" end="2">5 %</arg>
+          <arg type="ARG1" start="4" end="9">in the Peter 's Pence collection</arg>
+        </propbank>
+      </example>
       <note>JUMP-V NOTES: Recall from 'rise' and 'gain' etc that arg2 can also be a MNR, as in"jumped sharply". (from jump.01-v)</note>
       <note>JUMP-N NOTES: Based on sentences in nouns-00040. Comparison to jump.01. VN class calibratable_cos-45.6-1. Framed by Katie. (from jump.01-n)</note>
-      <roles>
-        <role descr="thing jumping" f="ppt" n="1">
-          <vnrole vncls="45.6-1" vntheta="patient"/>
-        </role>
-        <role descr="EXT, amount jumped by" f="ext" n="2">
-          <vnrole vncls="45.6-1" vntheta="extent"/>
-        </role>
-        <role descr="start point" f="dir" n="3"/>
-        <role descr="end point or end state of arg1" f="gol" n="4"/>
-      </roles>
-      <example name="jump-v" src="" type="">
-        <text>Cray Research stock jumped $2.875 yesterday to close at $38.</text>
-        <arg f="" n="1">Cray Research stock</arg>
-        <rel f="">jumped</rel>
-        <arg f="" n="2">$2.875</arg>
-        <arg f="tmp" n="m">yesterday</arg>
-        <arg f="" n="4">to close at $38</arg>
-      </example>
-      <example name="jump-n: wow, all args" src="" type="">
-        <text>a 38 % jump in pretax profit for the first half to # 54.8 million from # 39.8 million on a 63 % rise in sales</text>
-        <arg f="" n="2">38 %</arg>
-        <rel f="">jump</rel>
-        <arg f="" n="1">in pretax profit</arg>
-        <arg f="tmp" n="m">for the first half</arg>
-        <arg f="" n="4">to # 54.8 million</arg>
-        <arg f="" n="3">from # 39.8 million</arg>
-      </example>
-      <example name="jump-n: Arg 3 only" src="" type="">
-        <text>a jump from the rental rates of the late 1970s , when their leases were signed</text>
-        <rel f="">jump</rel>
-        <arg f="" n="3">from the rental rates of the late 1970s , when their leases were signed</arg>
-      </example>
-      <example name="jump-n: With args 1 and 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>a 5% jump in the Peter's Pence collection</text>
-        <arg f="" n="2">5%</arg>
-        <rel f="">jump</rel>
-        <arg f="" n="1">in the Peter's Pence collection</arg>
-      </example>
     </roleset>
-    
     <roleset id="jump.02" name="be excited for an opportunity, getting there first">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">jump</alias>
-        <alias framenet="" pos="v" verbnet="">jump</alias>
+        <alias pos="n">jump</alias>
+        <alias pos="v">jump</alias>
       </aliases>
+      <roles>
+        <role descr="jumper" f="PAG" n="0"/>
+        <role descr="opportunity" f="PPT" n="1"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="jump-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+      </lexlinks>
+      <example name="jump-v: opportunity knocks" src="">
+        <text>Several new funds have jumped to trade at big premiums .</text>
+        <propbank>
+          <rel relloc="4">jumped</rel>
+          <arg type="ARG0" start="0" end="2">Several new funds</arg>
+          <arg type="ARG1" start="5" end="9">to trade at big premiums</arg>
+        </propbank>
+      </example>
+      <example name="jump-n: get a jump on" src="">
+        <text>So this year , the airlines are getting a jump on holiday discounts .</text>
+        <propbank>
+          <rel relloc="9">jump</rel>
+          <arg type="ARG1" start="10" end="12">on holiday discounts</arg>
+        </propbank>
+      </example>
       <note>JUMP-V NOTES: Frames file for 'jump' based on survey of initial sentences of big corpus and comparison with 'increase' (from jump.02-v predicate notes)</note>
       <note>JUMP-N NOTES: Based on sentences in nouns-00040. Comparison to anticipate.01. No Vn class. Framed by Katie. (from jump.02-n)</note>
-      <roles>
-        <role descr="jumper" f="pag" n="0"/>
-        <role descr="opportunity" f="ppt" n="1"/>
-      </roles>
-      <example name="jump-v: opportunity knocks" src="" type="">
-        <text>Several new funds have jumped to trade at big premiums.</text>
-        <arg f="" n="0">Several new funds</arg>
-        <rel f="">jumped</rel>
-        <arg f="" n="1">to trade at big premiums</arg>
-      </example>
-      <example name="jump-n: get a jump on" src="" type="">
-        <text>So this year , the airlines are getting a jump on holiday discounts .</text>
-        <rel f="">jump</rel>
-        <arg f="" n="1">on holiday discounts</arg>
-      </example>
     </roleset>
-    
     <roleset id="jump.03" name="physically or metaphorically leap, physical motion">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">jump</alias>
-        <alias framenet="" pos="n" verbnet="">jumping</alias>
-        <alias framenet="" pos="n" verbnet="">jump</alias>
+        <alias pos="v">jump</alias>
+        <alias pos="n">jumping</alias>
+        <alias pos="n">jump</alias>
       </aliases>
+      <roles>
+        <role descr="agent of motion" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="run-51.3.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity in motion, if in addition to arg0" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="run-51.3.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Self_motion" resource="FrameNet" version="1.7">self_mover</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing jumped over" f="LOC" n="2">
+          <rolelinks>
+            <rolelink class="run-51.3.2" resource="VerbNet" version="verbnet3.3">location</rolelink>
+            <rolelink class="Self_motion" resource="FrameNet" version="1.7">area</rolelink>
+            <rolelink class="Self_motion" resource="FrameNet" version="1.7">goal</rolelink>
+            <rolelink class="Self_motion" resource="FrameNet" version="1.7">path</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Self_motion" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Traversing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="run-51.3.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="jump-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">21</lexlink>
+      </lexlinks>
+      <example name="ARG0" src="ontonotes mz/sinorama/10/ectb_1052">
+        <text>The big may have gotten bigger , but that has n't stopped newcomers from jumping into the fray .</text>
+        <propbank>
+          <rel relloc="14">jumping</rel>
+          <arg type="ARGM-GOL" start="15" end="17">into the fray</arg>
+        </propbank>
+      </example>
+      <example name="jump-n: with arg0 and arg2" src="">
+        <text>A few weeks later , on the very night that Evel Knievel attempted his jump of the Snake River , my platform came the closest to falling again .</text>
+        <propbank>
+          <rel relloc="14">jump</rel>
+          <arg type="ARG0" start="13" end="13">his</arg>
+          <arg type="ARG2" start="15" end="18">of the Snake River</arg>
+        </propbank>
+      </example>
+      <example name="jumping-n: all three" src="">
+        <text>My jumping the horse over the fence startled the fox .</text>
+        <propbank>
+          <rel relloc="1">jumping</rel>
+          <arg type="ARG0" start="0" end="0">My</arg>
+          <arg type="ARG1" start="2" end="3">the horse</arg>
+          <arg type="ARG2" start="4" end="6">over the fence</arg>
+        </propbank>
+      </example>
+      <example name="jumping-n: use arg 0 for intentional self jumping" src="">
+        <text>*Pro* jumping</text>
+        <propbank>
+          <rel relloc="1">jumping</rel>
+          <arg type="ARG0" start="?" end="?">*Pro*</arg>
+        </propbank>
+      </example>
       <note>JUMP-V NOTES: predicate edited by Arrick (from jump.03-v)</note>
       <note>JUMP-N NOTES: Added by Julia based on more-nouns. Corresponds to VNcls run-51.3.2. (from jump.03-n)</note>
       <note>JUMPING-N NOTES: Based on Thyme and Sharp data. Comparison to jump.03-n. Corresponds to VN class run-51.3.2. Framed by Katie. (from jumping.01-n)</note>
-      <roles>
-        <role descr="agent of motion" f="pag" n="0">
-          <vnrole vncls="51.3.2" vntheta="agent"/>
-        </role>
-        <role descr="entity in motion, if in addition to arg0" f="ppt" n="1">
-          <vnrole vncls="51.3.2" vntheta="theme"/>
-        </role>
-        <role descr="thing jumped over" f="loc" n="2">
-          <vnrole vncls="51.3.2" vntheta="location"/>
-        </role>
-      </roles>
-      <example name="ARG0" src="ontonotes mz/sinorama/10/ectb_1052" type="">
-        <text>The big may have gotten bigger , but that has n't stopped newcomers from jumping into the fray .</text>
-        <arg f="" n="0">[]</arg>
-        <rel f="">jumping</rel>
-        <arg f="gol" n="m">into the fray</arg>
-      </example>
-
-      <example name="jump-n: with arg0 and arg2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>A few weeks later, on the very night that Evel Knievel attempted his jump of the Snake River, my platform came the closest to falling again.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">jump</rel>
-        <arg f="" n="2">of the Snake River</arg>
-      </example>
-      <example name="jumping-n: all three" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>My jumping the horse over the fence startled the fox.</text>
-        <arg f="" n="0">My</arg>
-        <rel f="">jumping</rel>
-        <arg f="" n="1">the horse</arg>
-        <arg f="" n="2">over the fence</arg>
-      </example>
-      <example name="jumping-n: use arg 0 for intentional self jumping" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>*Pro* jumping</text>
-        <arg f="" n="0">*Pro*</arg>
-        <rel f="">jumping</rel>
-      </example>
     </roleset>
-    
     <roleset id="jump.06" name="to escape, bail out">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">jump</alias>
+        <alias pos="v">jump</alias>
       </aliases>
-      <note>JUMP-V NOTES: Most examples in this roleset are pretty idiomatic: "jump ship"means to bail out of something, or literally to leave a sinking ship; "jump bail" means to fail to appear incourt after posting bail. These are all being lumped together in oneroleset. Edited by Miriam. (from jump.06-v)</note>
       <roles>
-        <role descr="entity escaping" f="pag" n="0"/>
-        <role descr="entity escaped from (e.g. bail/trail); or idiomatically 'jump ship'" f="ppt" n="1"/>
+        <role descr="entity escaping" f="PAG" n="0"/>
+        <role descr="entity escaped from (e.g. bail/trail); or idiomatically 'jump ship'" f="PPT" n="1"/>
       </roles>
-      <example name="jump-v: jump ship" src="" type="">
-        <text>She is jumping ship.</text>
-        <arg f="" n="0">She</arg>
-        <rel f="">jumping</rel>
-        <arg f="" n="1">ship</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="jump-v.6" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+      </lexlinks>
+      <example name="jump-v: jump ship" src="">
+        <text>She is jumping ship .</text>
+        <propbank>
+          <rel relloc="2">jumping</rel>
+          <arg type="ARG0" start="0" end="0">She</arg>
+          <arg type="ARG1" start="3" end="3">ship</arg>
+        </propbank>
       </example>
+      <note>JUMP-V NOTES: Most examples in this roleset are pretty idiomatic: "jump ship"means to bail out of something, or literally to leave a sinking ship; "jump bail" means to fail to appear incourt after posting bail. These are all being lumped together in oneroleset. Edited by Miriam. (from jump.06-v)</note>
     </roleset>
-    
     <roleset id="jump.08" name="attack, gangsta style">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">jump</alias>
+        <alias pos="v">jump</alias>
       </aliases>
-      <note>JUMP-V NOTES: Added by Julia based on Brown. No Vncls. No fully matching comparison (although attack is close-- jump doesn't seem to take the arg1 attribute). (from jump.08-v)</note>
       <roles>
-        <role descr="thug" f="pag" n="0"/>
-        <role descr="victim" f="ppt" n="1"/>
+        <role descr="thug" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="Attack" resource="FrameNet" version="1.7">assailant</rolelink>
+            <rolelink class="attack-60.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="victim" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="Attack" resource="FrameNet" version="1.7">victim</rolelink>
+            <rolelink class="attack-60.1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="jump-v: both args" src="Brown" type="-">
-        <inflection aspect="ns" form="participle" person="third" tense="past" voice="active"/>
-        <text>`` This deal at Las Putas Buenas where-1 the two knife-men jumped you *T*-1'' , said Rourke with interest , `` that sounds like it was set up with malice aforethought by the luscious Mrs. Peralta , does n't it '' ? ?</text>
-        <arg f="" n="0">the two knife-men</arg>
-        <rel f="">jumped</rel>
-        <arg f="" n="1">you</arg>
-        <arg f="loc" n="m">*T*-1: where</arg>
-        <arg f="slc" n="m">where -&gt; [Las Putas Buenas]</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Attack" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="attack-60.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="jump-v: both args" src="Brown">
+        <text>`` This deal at Las Putas Buenas where the two knife - men jumped you '' , said Rourke with interest , `` that sounds like it was set up with malice aforethought by the luscious Mrs. Peralta , does n't it '' ? ?</text>
+        <propbank>
+          <rel relloc="13">jumped</rel>
+          <arg type="ARG0" start="8" end="12">the two knife - men</arg>
+          <arg type="ARG1" start="14" end="14">you</arg>
+          <arg type="ARGM-LOC" start="4" end="6">Las Putas Buenas</arg>
+          <arg type="R-ARGM-LOC" start="7" end="7">where</arg>
+        </propbank>
       </example>
+      <note>JUMP-V NOTES: Added by Julia based on Brown. No Vncls. No fully matching comparison (although attack is close-- jump doesn't seem to take the arg1 attribute). (from jump.08-v)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="jump_in">
     <roleset id="jump_in.04" name="opportunity">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">jump_in</alias>
+        <alias pos="v">jump_in</alias>
       </aliases>
-      <note>JUMP_IN-V NOTES: basically the same as "be excited at an opportunity" roleset (from jump.04-v predicate notes)</note>
       <roles>
-        <role descr="jumper" f="pag" n="0"/>
-        <role descr="opportunity" f="ppt" n="1"/>
+        <role descr="jumper" f="PAG" n="0"/>
+        <role descr="opportunity" f="PPT" n="1"/>
       </roles>
-      <example name="jump_in-v: knock knock" src="" type="">
-        <text>People are jumping in now to buy the funds.</text>
-        <arg f="" n="0">People</arg>
-        <rel f="">[jumping] [in]</rel>
-        <arg f="tmp" n="m">now</arg>
-        <arg f="" n="1">to buy the funds</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="jump-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+      </lexlinks>
+      <example name="jump_in-v: knock knock" src="">
+        <text>People are jumping in now to buy the funds .</text>
+        <propbank>
+          <rel relloc="2 3">jumping in</rel>
+          <arg type="ARG0" start="0" end="0">People</arg>
+          <arg type="ARGM-TMP" start="4" end="4">now</arg>
+          <arg type="ARG1" start="5" end="8">to buy the funds</arg>
+        </propbank>
       </example>
+      <note>JUMP_IN-V NOTES: basically the same as "be excited at an opportunity" roleset (from jump.04-v predicate notes)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="jump_up">
     <roleset id="jump_up.05" name="rise">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">jump_up</alias>
+        <alias pos="v">jump_up</alias>
       </aliases>
-      <note>JUMP_UP-V NOTES: Jump_up and 'Jump ship' added by Miriam. (from jump.05-v)</note>
       <roles>
-        <role descr="jumper" f="pag" n="0"/>
+        <role descr="jumper" f="PAG" n="0"/>
       </roles>
-      <example name="jump_up-v: rise quickly" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>He jumped up from his seat.</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">[ jumped] [ up]</rel>
-        <arg f="dir" n="m">from his seat</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="jump-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+      </lexlinks>
+      <example name="jump_up-v: rise quickly" src="">
+        <text>He jumped up from his seat .</text>
+        <propbank>
+          <rel relloc="1 2">jumped up</rel>
+          <arg type="ARG0" start="0" end="0">He</arg>
+          <arg type="ARGM-DIR" start="3" end="5">from his seat</arg>
+        </propbank>
       </example>
+      <note>JUMP_UP-V NOTES: Jump_up and 'Jump ship' added by Miriam. (from jump.05-v)</note>
     </roleset>
   </predicate>
-
   <predicate lemma="jump_on_bandwagon">
     <roleset id="jump_on_bandwagon.09" name="join an activity or group because of its popularity">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">jump_on_bandwagon</alias>
-        <mwe id="jump_on_bandwagon">
-          <token slot="A" arg="2" pos="VB*" head="" dep="">jump</token>
-          <token slot="A" arg="" pos="NN*" head="" dep="">jumping</token>
-          <token slot="B" arg="" pos="IN" head="C" dep="case">on</token>
-          <token slot="C" arg="1" pos="NN" head="A" dep="obl">bandwagon</token>
-          <token slot="C" arg="1" pos="NN" head="A" dep="obl">wagon</token>
-        </mwe>
-      </aliases>
-      <mappings alias="jump_on_bandwagon">
-        <source>
+        <alias pos="m">jump_on_bandwagon</alias>
+        <mwp-descriptions id="jump_on_bandwagon">
+          <syntaxdesc slots="B C A">
+            <token arg="2" dep="" head="" pos="VB*" slot="A">jump</token>
+            <token arg="" dep="" head="" pos="NN*" slot="A">jumping</token>
+            <token arg="" dep="case" head="C" pos="IN" slot="B">on</token>
+            <token arg="1" dep="obl" head="A" pos="NN" slot="C">bandwagon</token>
+            <token arg="1" dep="obl" head="A" pos="NN" slot="C">wagon</token>
+          </syntaxdesc>
+          <mapping>
+            <source>
             (A / jump-03
                 :arg0 (n / NARG0)
                 :destination (C / bandwagon))
         </source>
-        <target>
+            <target>
             (A / join-04
                 :arg0 (n / NARG0)
-                :arg1 (n1 / NARG1 
+                :arg1 (n1 / NARG1
                     :arg1-of (p / popular-02)))
         </target>
-      </mappings>
-      <note>JUMP_ON_BANDWAGON-M NOTES: added by Julia/Tim during initial MWE framing.</note>
+          </mapping>
+        </mwp-descriptions>
+      </aliases>
       <roles>
         <role descr="person jumping on the bandwagon" f="PAG" n="0"/>
         <role descr="popular thing joined" f="PPT" n="1"/>
         <role descr="action done which gets one on the bandwagon" f="MNR" n="2"/>
       </roles>
-      <example name="jump_on_bandwagon-m" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="jump_on_bandwagon-m" src="">
         <text>I predicted that the new right would jump on the bandwagon of sexual harassment</text>
-        <arg f="" n="0">the new right</arg>
-        <arg f="mod" n="m">would</arg>
-        <rel f="">[jump][on][bandwagon]</rel>
-        <arg f="" n="1">of sexual harassment</arg>
+        <propbank>
+          <rel relloc="7 8 10">jump on bandwagon</rel>
+          <arg type="ARG0" start="3" end="5">the new right</arg>
+          <arg type="ARGM-MOD" start="6" end="6">would</arg>
+          <arg type="ARG1" start="11" end="13">of sexual harassment</arg>
+        </propbank>
       </example>
-      <example name="jump_on_bandwagon-m: complex with metaphor" src="" type="">
-        <text>This was America's most trusted baby guru encouraging everyone to jump on the vegetarian bandwagon bound for good health.</text>
-        <arg f="" n="0">everyone</arg>
-        <rel f="">[jump][on][the][bandwagon]</rel>
-        <arg f="" n="1">vegetarian</arg>
-        <arg f="adv" n="m">bound for good health</arg>
+      <example name="jump_on_bandwagon-m: complex with metaphor" src="">
+        <text>This was America 's most trusted baby guru encouraging everyone to jump on the vegetarian bandwagon bound for good health .</text>
+        <propbank>
+          <rel relloc="11 12 13 15">jump on the bandwagon</rel>
+          <arg type="ARG0" start="9" end="9">everyone</arg>
+          <arg type="ARG1" start="14" end="14">vegetarian</arg>
+          <arg type="ARGM-ADV" start="16" end="19">bound for good health</arg>
+        </propbank>
       </example>
+      <note>JUMP_ON_BANDWAGON-M NOTES: added by Julia/Tim during initial MWE framing.</note>
     </roleset>
   </predicate>
-
-    <predicate lemma="jump_gun">
+  <predicate lemma="jump_gun">
     <roleset id="jump_gun.10" name="act before the proper time">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">jump_gun</alias>
-        <mwe id="jump_gun">
-           <token slot="A" arg="" pos="VB*" head="" dep="">jump</token>
-          <token slot="A" arg="" pos="NN*" head="" dep="">jumping</token>
-           <token slot="B" arg="2" pos="NN" head="A" dep="dobj">gun</token>
-        </mwe>
-      </aliases>
-      <mappings alias="jump_gun">
-        <source>
+        <alias pos="m">jump_gun</alias>
+        <mwp-descriptions id="jump_gun">
+          <syntaxdesc slots="B A">
+            <token arg="" dep="" head="" pos="VB*" slot="A">jump</token>
+            <token arg="" dep="" head="" pos="NN*" slot="A">jumping</token>
+            <token arg="2" dep="dobj" head="A" pos="NN" slot="B">gun</token>
+          </syntaxdesc>
+          <mapping>
+            <source>
             (A / jump-03
                 :arg0 (n / NARG0)
                 :time (b / before
                         :op1 (f / fire-01
                             :arg1 (B / gun))))
         </source>
-        <target>
+            <target>
             (A / start-01
                 :arg0 (n / NARG0)
                 :arg1 (n1 / NARG1)
@@ -274,100 +440,138 @@
                      :op1 (n2 / NARG2
                          :arg1-of (a / appropriate-02))))
         </target>
-      </mappings>
-      <note>JUMP_GUN-M NOTES: predicate added by Arrick (from jump.07-v)</note>
+          </mapping>
+        </mwp-descriptions>
+      </aliases>
       <roles>
-        <role descr="jumper, one acting before the right time" f="pag" n="0"/>
-        <role descr="action done before the signal" f="ppt" n="1"/>
-        <role descr="the should-have-been right time" f="vsp" n="2"/>
+        <role descr="jumper, one acting before the right time" f="PAG" n="0"/>
+        <role descr="action done before the signal" f="PPT" n="1"/>
+        <role descr="the should-have-been right time" f="VSP" n="2"/>
       </roles>
-      <example name="jump_gun-m" src="" type="">
-        <text>Now all of these statements by the President and others are jumping the gun.</text>
-        <arg f="dis" n="m">Now</arg>
-        <arg f="" n="1">all of these statments by the President and others</arg>
-        <rel f="">[jumping][gun]</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="jump_gun-m" src="">
+        <text>Now all of these statements by the President and others are jumping the gun .</text>
+        <propbank>
+          <rel relloc="11 13">jumping gun</rel>
+          <arg type="ARGM-DIS" start="0" end="0">Now</arg>
+          <arg type="ARG1" start="1" end="9">all of these statements by the President and others</arg>
+        </propbank>
       </example>
-      <example name="jump_gun-m" src="" type="">
-        <text>All right, so Jack had jumped the gun a little, buying this thing.</text>
-        <arg f="dis" n="m">All right</arg>
-        <arg f="dis" n="m">so</arg>
-        <arg f="" n="0">Jack</arg>
-        <rel f="">[jumped][gun]</rel>
-        <arg f="ext" n="m">a little</arg>
-        <arg f="" n="1">buying this thing</arg>
+      <example name="jump_gun-m" src="">
+        <text>All right , so Jack had jumped the gun a little , buying this thing .</text>
+        <propbank>
+          <rel relloc="6 8">jumped gun</rel>
+          <arg type="ARGM-DIS" start="0" end="1">All right</arg>
+          <arg type="ARGM-DIS" start="3" end="3">so</arg>
+          <arg type="ARG0" start="4" end="4">Jack</arg>
+          <arg type="ARGM-EXT" start="9" end="10">a little</arg>
+          <arg type="ARG1" start="12" end="14">buying this thing</arg>
+        </propbank>
       </example>
+      <note>JUMP_GUN-M NOTES: predicate added by Arrick (from jump.07-v)</note>
     </roleset>
   </predicate>
-
-  
   <predicate lemma="jump_shark">
     <roleset id="jump_shark.11" name="do an absurd act that signals the decline in quality or sanity of a system or show">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">jump_shark</alias>
-        <mwe id="jump_shark">
-           <token slot="A" arg="" pos="VB*" head='' dep="">jump</token>
-          <token slot="A" arg="" pos="NN*" head="" dep="">jumping</token>
-           <token slot="B" arg="1" pos="NN" head='A' dep="dobj">shark</token>
-        </mwe>
-      </aliases>
-      <mappings alias="jump_shark">
-        <source>
+        <alias pos="m">jump_shark</alias>
+        <mwp-descriptions id="jump_shark">
+          <syntaxdesc slots="B A">
+            <token arg="" dep="" head="" pos="VB*" slot="A">jump</token>
+            <token arg="" dep="" head="" pos="NN*" slot="A">jumping</token>
+            <token arg="1" dep="dobj" head="A" pos="NN" slot="B">shark</token>
+          </syntaxdesc>
+          <mapping>
+            <source>
             (A / jump-03
                 :arg0 (n / NARG0)
                 :arg2 (B / shark))
         </source>
-        <target>
+            <target>
             (A / reveal-01
                 :arg0 (n2 / NARG1)
                 :arg1 (absurd-01
                     :arg1 (n / NARG0)))
         </target>
-      </mappings>
-      <note>JUMP_SHARK-M NOTES: reframe by Julia/Tim during initial MWE framing.</note>
+          </mapping>
+        </mwp-descriptions>
+      </aliases>
       <roles>
-        <role descr="show or system doing the absurd act" f="pag" n="0"/>
-        <role descr="action revealing that arg0 has jumped the shark" f="ppt" n="1"/>
+        <role descr="show or system doing the absurd act" f="PAG" n="0"/>
+        <role descr="action revealing that arg0 has jumped the shark" f="PPT" n="1"/>
       </roles>
-      <example name="jump_shark-m" src="-" type="-">
-        <inflection aspect="perfect" form="participle" person="third" tense="present" voice="active"/>
-        <text>This TV show has jumped the shark so many times that I don't even notice it any more.</text>
-        <arg f="" n="0">This TV show</arg>
-        <rel f="">[jumped][shark]</rel>
-        <arg f="tmp" n="m">so many times that I don't even notice it any more</arg>
-      </example>      
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <example name="jump_shark-m" src="-">
+        <text>This TV show has jumped the shark so many times that I do n't even notice it any more .</text>
+        <propbank>
+          <rel relloc="4 6">jumped shark</rel>
+          <arg type="ARG0" start="0" end="2">This TV show</arg>
+          <arg type="ARGM-TMP" start="7" end="18">so many times that I do n't even notice it any more</arg>
+        </propbank>
+      </example>
+      <note>JUMP_SHARK-M NOTES: reframe by Julia/Tim during initial MWE framing.</note>
     </roleset>
-  </predicate>  
-  
-  
+  </predicate>
   <predicate lemma="long_jump">
     <roleset id="long_jump.13" name="sport in which one jumps as far as possible across a sand pit">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">long_jump</alias>
-        <alias framenet="" pos="v" verbnet="">longjump</alias>
-        <alias framenet="" pos="l" verbnet="">do_longjump</alias>
-        <alias framenet="" pos="l" verbnet="">do_long_jump</alias>
+        <alias pos="n">long_jump</alias>
+        <alias pos="v">longjump</alias>
+        <alias pos="l">do_longjump</alias>
+        <alias pos="l">do_long_jump</alias>
       </aliases>
-      <note>LONG_JUMP-N NOTES: separated out from jump.03 during MWE framing.</note>
       <roles>
-        <role descr="long-jumper" f="pag" n="0"/>
-        <role descr="measurement/score achieved" f="vsp" n="1"/>
+        <role descr="long-jumper" f="PAG" n="0"/>
+        <role descr="measurement/score achieved" f="VSP" n="1"/>
       </roles>
-      <example name="long_jump-n: both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Jesse Owens set a record with his long jump of 8.13m (26 feet, 8 inches).</text>
-        <arg f="" n="0">his</arg>
-        <arg f="mnr" n="m">long</arg>
-        <rel f="">jump</rel>
-        <arg f="" n="1">of 8.13m (26 feet, 8 inches)</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="long_jump-n: both args" src="">
+        <text>Jesse Owens set a record with his long jump of 8.13 m ( 26 feet , 8 inches ) .</text>
+        <propbank>
+          <rel relloc="8">jump</rel>
+          <arg type="ARG0" start="6" end="6">his</arg>
+          <arg type="ARGM-MNR" start="7" end="7">long</arg>
+          <arg type="ARG1" start="9" end="18">of 8.13 m ( 26 feet , 8 inches )</arg>
+        </propbank>
       </example>
-      <example name="do_long_jump-l" src="" type="">
-        <text>I ran the 100, the 4x100, and did the long jump.</text>
-        <arg f="" n="0">I</arg>
-        <arg f="lvb" n="m">did</arg>
-        <rel f="">[long][jump]</rel>
-      </example>   
+      <example name="do_long_jump-l" src="">
+        <text>I ran the 100 , the 4x100 , and did the long jump .</text>
+        <propbank>
+          <rel relloc="11 12">long jump</rel>
+          <arg type="ARG0" start="0" end="0">I</arg>
+          <arg type="ARGM-LVB" start="9" end="9">did</arg>
+        </propbank>
+      </example>
+      <note>LONG_JUMP-N NOTES: separated out from jump.03 during MWE framing.</note>
     </roleset>
   </predicate>
-
-
 </frameset>

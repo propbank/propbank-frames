@@ -1,47 +1,68 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="violent">
     <roleset id="violent.01" name="behaving violently">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">violence</alias>
-        <alias framenet="" pos="j" verbnet="">violent</alias>
+        <alias pos="n">violence</alias>
+        <alias pos="j">violent</alias>
       </aliases>
+      <roles>
+        <role descr="agent of violent behavior" f="PAG" n="0"/>
+        <role descr="non-agentive thing/action characterized by violence" f="PPT" n="1"/>
+        <role descr="target of violent behavior; victim" f="GOL" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Violence" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Life.Injure.InjuryCausedByViolentEvents" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Injure" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="Attack" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+      </lexlinks>
+      <example name="violent-j: arg1" src="BOLT-1">
+        <text>But from what i 've observed via TSR and many news sources ; the way they 're trying to achieve them , is largely violent EDIT : specific coverage of EDL , whom seem to make the headlines a little more .</text>
+        <propbank>
+          <rel relloc="24">violent</rel>
+          <arg type="ARGM-DIS" start="0" end="0">But</arg>
+          <arg type="ARGM-ADV" start="1" end="11">from what i 've observed via TSR and many news sources</arg>
+          <arg type="ARG1" start="13" end="20">the way they 're trying to achieve them</arg>
+          <arg type="ARGM-EXT" start="23" end="23">largely</arg>
+        </propbank>
+      </example>
+      <example name="violent-j: args 0, 2" src="internet">
+        <text>" I was violent toward everybody because I hated myself and I wanted them to feel the pain I felt at the time . " Mike Tyson .</text>
+        <propbank>
+          <rel relloc="3">violent</rel>
+          <arg type="ARG0" start="1" end="1">I</arg>
+          <arg type="ARG2" start="4" end="5">toward everybody</arg>
+          <arg type="ARGM-CAU" start="6" end="22">because I hated myself and I wanted them to feel the pain I felt at the time</arg>
+        </propbank>
+      </example>
+      <example name="violent-j: arg1" src="internet">
+        <text>The American government has paid for numerous research efforts to determine if video games are violent</text>
+        <propbank>
+          <rel relloc="15">violent</rel>
+          <arg type="ARG1" start="12" end="13">video games</arg>
+        </propbank>
+      </example>
+      <example name="violence-n: arg2" src="internet">
+        <text>Violence against women and girls is a grave violation of human rights .</text>
+        <propbank>
+          <rel relloc="0">Violence</rel>
+          <arg type="ARG1" start="1" end="4">against women and girls</arg>
+        </propbank>
+      </example>
       <note>VIOLENT-J NOTES: Added by Julia based on BOLT-1, comparison to 'cruel.01'. (from violent.01-j)</note>
       <note>VIOLENCE-N NOTES: Automatically created by Julia as an aliasfile forunification.(from violence.01-n)</note>
-      <roles>
-        <role descr="agent of violent behavior" f="pag" n="0"/>
-        <role descr="non-agentive thing/action characterized by violence" f="ppt" n="1"/>
-        <role descr="target of violent behavior; victim" f="gol" n="2"/>
-      </roles>
-      <example name="violent-j: arg1" src="BOLT-1" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>But from what i 've observed via TSR and many news sources ; the way they 're trying to achieve them , is largely violent EDIT :specific coverage of EDL , whom seem to make the headlines a littlemore .</text>
-        <arg f="dis" n="m">But</arg>
-        <arg f="adv" n="m">from what i've observed via TSR and many news sources</arg>
-        <arg f="" n="1">the way they're trying to achieve them</arg>
-        <arg f="ext" n="m">largely</arg>
-        <rel f="">violent</rel>
-      </example>
-      <example name="violent-j: args 0, 2" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>"I was violent toward *everybody*... because I hated myself&amp; I wanted them to feel the pain I felt at the time." MikeTyson.</text>
-        <arg f="" n="0">I</arg>
-        <rel f="">violent</rel>
-        <arg f="" n="2">toward *everybody*</arg>
-        <arg f="cau" n="m">because I hated myself&amp; I wanted them to feel the pain I felt at the time</arg>
-      </example>
-      <example name="violent-j: arg1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The American government has paid for numerous research efforts to determine if video games are violent</text>
-        <arg f="" n="1">video games</arg>
-        <rel f="">violent</rel>
-      </example>
-      <example name="violence-n: arg2" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Violence against women and girls is a grave violation of human rights.</text>
-        <rel f="">violence</rel>
-        <arg f="" n="1">against women and girls</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

@@ -1,38 +1,63 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="photograph">
     <roleset id="photograph.01" name="take a picture, create a photograph">
       <aliases>
-        <alias framenet="Physical_artworks" pos="n" verbnet="">photo</alias>
-        <alias framenet="" pos="v" verbnet="">photograph</alias>
-        <alias framenet="" pos="l" verbnet="">take_photograph</alias>
-        <alias framenet="" pos="l" verbnet="">take_photo</alias>
+        <alias pos="n">photo</alias>
+        <alias pos="v">photograph</alias>
+        <alias pos="l">take_photograph</alias>
+        <alias pos="l">take_photo</alias>
       </aliases>
-      <note>PHOTOGRAPH-V NOTES: (from photograph.01-v)</note>
-      <note>PHOTO-N NOTES: Roleset based on instances in BOLT P01. Comparison to verb entry photograph.01, which maps to VN 25.4. Noun maps to FN Physical_artworks. (from photo.01-n)</note>
       <roles>
         <role descr="photographer" f="PAG" n="0">
-          <vnrole vncls="25.4" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="transcribe-25.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="transcribe-25.4" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="subject" f="PPT" n="1">
-          <vnrole vncls="25.4" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="transcribe-25.4" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="transcribe-25.4" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="photograph-v" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="present" voice="active"/>
-        <text>[Japanese tourists]-1 will be told [*-1]-2 to take care when [*-2] photographing earthquake damage in San Francisco [*T*-4] , the Japan Association of Travel Agents said.</text>
-        <arg f="" n="0">[*-2]</arg>
-        <rel f="">photographing</rel>
-        <arg f="" n="1">earthquake damage in San Francisco</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Physical_artworks" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="transcribe-25.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="photograph-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+        <lexlink class="transcribe-25.4" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="photograph-v" src="">
+        <text>Japanese tourists will be told to take care when photographing earthquake damage in San Francisco , the Japan Association of Travel Agents said .</text>
+        <propbank>
+          <rel relloc="9">photographing</rel>
+          <arg type="ARG0" start="0" end="1">Japanese tourists</arg>
+          <arg type="ARG1" start="10" end="14">earthquake damage in San Francisco</arg>
+        </propbank>
       </example>
-      <example name="take_photo-l" src="BOLT P01" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="take_photo-l" src="BOLT P01">
         <text>I took a photo of it .</text>
-        <arg f="" n="0">I</arg>
-        <arg f="lvb" n="m">took</arg>
-        <rel f="">photo</rel>
-        <arg f="" n="1">of it</arg>
+        <propbank>
+          <rel relloc="3">photo</rel>
+          <arg type="ARG0" start="0" end="0">I</arg>
+          <arg type="ARGM-LVB" start="1" end="1">took</arg>
+          <arg type="ARG1" start="4" end="5">of it</arg>
+        </propbank>
       </example>
+      <note>PHOTOGRAPH-V NOTES: (from photograph.01-v)</note>
+      <note>PHOTO-N NOTES: Roleset based on instances in BOLT P01. Comparison to verb entry photograph.01, which maps to VN 25.4. Noun maps to FN Physical_artworks. (from photo.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

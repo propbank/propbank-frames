@@ -1,75 +1,119 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="murder">
     <roleset id="murder.01" name="cause to die">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">murdered</alias>
-        <alias framenet="Killing" pos="v" verbnet="">murder</alias>
-        <alias framenet="Killing" pos="n" verbnet="">murder</alias>
-        <alias framenet="" pos="n" verbnet="">murdering</alias>
+        <alias pos="j">murdered</alias>
+        <alias pos="v">murder</alias>
+        <alias pos="n">murder</alias>
+        <alias pos="n">murdering</alias>
+        <argalias arg="0" pos="n">murderer</argalias>
       </aliases>
+      <roles>
+        <role descr="killer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="murder-42.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Killing" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="Killing" resource="FrameNet" version="1.7">killer</rolelink>
+            <rolelink class="murder-42.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="corpse" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="murder-42.1" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="Killing" resource="FrameNet" version="1.7">victim</rolelink>
+            <rolelink class="murder-42.1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="instrument" f="MNR" n="2">
+          <rolelinks>
+            <rolelink class="murder-42.1" resource="VerbNet" version="verbnet3.3">instrument</rolelink>
+            <rolelink class="Killing" resource="FrameNet" version="1.7">means</rolelink>
+            <rolelink class="Killing" resource="FrameNet" version="1.7">instrument</rolelink>
+            <rolelink class="murder-42.1" resource="VerbNet" version="verbnet3.4">instrument</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Killing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="murder-42.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Life.Die.DeathCausedByViolentEvents" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Die" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="Attack" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="murder-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">30</lexlink>
+        <lexlink class="murder-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">40</lexlink>
+        <lexlink class="murder-42.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="passive, no agent" src="">
+        <text>To quote the highly regarded director of a privately funded drop - in center for the homeless in New York : `` If you 're homeless , you do n't sleep for fear of being robbed or murdered .</text>
+        <propbank>
+          <rel relloc="37">murdered</rel>
+          <arg type="ARG1" start="27" end="27">you</arg>
+        </propbank>
+      </example>
+      <example name="agentive; true gerund!" src="">
+        <text>For example , one of my favorite movies is the 1949 British comedy `` Kind Hearts and Coronets , '' in which the entire comedy is based on actor Dennis Price 's murdering eight titled relatives ( all played by Alec Guinness ) because they snubbed his mother and stand in the way of his acquiring the family title .</text>
+        <propbank>
+          <rel relloc="32">murdering</rel>
+          <arg type="ARG0" start="28" end="31">actor Dennis Price 's</arg>
+          <arg type="ARG1" start="33" end="42">eight titled relatives ( all played by Alec Guinness )</arg>
+          <arg type="ARGM-CAU" start="43" end="58">because they snubbed his mother and stand in the way of his acquiring the family title</arg>
+        </propbank>
+      </example>
+      <example name="autogen1" src="">
+        <text>murders by repeat offenders who torture their victims</text>
+        <propbank>
+          <rel relloc="0">murders</rel>
+          <arg type="ARG0" start="1" end="7">by repeat offenders who torture their victims</arg>
+        </propbank>
+      </example>
+      <example name="autogen2" src="">
+        <text>the racial murder of a black teen - ager in the white Brooklyn neighborhood of Bensonhurst</text>
+        <propbank>
+          <rel relloc="2">murder</rel>
+          <arg type="ARGM-CAU" start="1" end="1">racial</arg>
+          <arg type="ARG1" start="3" end="8">of a black teen - ager</arg>
+          <arg type="ARGM-LOC" start="9" end="16">in the white Brooklyn neighborhood of Bensonhurst</arg>
+        </propbank>
+      </example>
+      <example name="with MNR and arg1" src="">
+        <text>the brutal murder of graduate student Imette St. Guillen</text>
+        <propbank>
+          <rel relloc="2">murder</rel>
+          <arg type="ARGM-MNR" start="1" end="1">brutal</arg>
+          <arg type="ARG1" start="3" end="8">of graduate student Imette St. Guillen</arg>
+        </propbank>
+      </example>
+      <example name="degree = MNR" src="">
+        <text>first degree murder</text>
+        <propbank>
+          <rel relloc="2">murder</rel>
+          <arg type="ARGM-MNR" start="0" end="1">first degree</arg>
+        </propbank>
+      </example>
+      <example name="with the candlestick" src="">
+        <text>the axe murder of private eye Daniel Morgan in 1987</text>
+        <propbank>
+          <rel relloc="2">murder</rel>
+          <arg type="ARG2" start="1" end="1">axe</arg>
+          <arg type="ARG1" start="3" end="7">of private eye Daniel Morgan</arg>
+          <arg type="ARGM-TMP" start="8" end="9">in 1987</arg>
+        </propbank>
+      </example>
       <note>MURDER-V NOTES: Frames file for 'murder' based on sentences in wsj. Verbnet entry 42.1, along with other assorted verbs of killing. (from murder.01-v predicate notes)</note>
       <note>MURDER-N NOTES: Updated by Julia. Member of Vncls murder-42.1. (from murder.01-n)</note>
       <note>MURDERED-J NOTES: Automatically created by Julia as an alias file for unification. (from murdered.01-j)</note>
-      <roles>
-        <role descr="killer" f="PAG" n="0">
-          <vnrole vncls="42.1" vntheta="Agent"/>
-        </role>
-        <role descr="corpse" f="PPT" n="1">
-          <vnrole vncls="42.1" vntheta="Patient"/>
-        </role>
-        <role descr="instrument" f="MNR" n="2">
-          <vnrole vncls="42.1" vntheta="Instrument"/>
-        </role>
-      </roles>
-      <example name="passive, no agent" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>To quote the highly regarded director of a privately funded drop-in center for the homeless in New York: ``If you're homeless, you-1 don't sleep for fear of *trace*-1 being robbed *trace*-1 or murdered.</text>
-        <rel f="">murdered</rel>
-        <arg f="" n="1">*trace*</arg>
-      </example>
-      <example name="agentive; true gerund!" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="ns" voice="ns"/>
-        <text>For example, one of my favorite movies is the 1949 British comedy ``Kind Hearts and Coronets,'' in which the entire comedy is based on actor Dennis Price's murdering eight titled relatives (all played by Alec Guinness) because they snubbed his mother and stand in the way of his acquiring the family title.</text>
-        <arg f="" n="0">actor Dennis Price's</arg>
-        <rel f="">murdering</rel>
-        <arg f="" n="1">eight titled relatives (all played by Alec Guinness)</arg>
-        <arg f="cau" n="m">because they snubbed his mother and stand in the way of his acquiring the family title</arg>
-      </example>
-      
-      <example name="autogen1" src="" type="">
-        <text>murders by repeat offenders who torture their victims</text>
-        <rel f="">murders</rel>
-        <arg f="" n="0">by repeat offenders who torture their victims</arg>
-      </example>
-      <example name="autogen2" src="" type="">
-        <text>the racial murder of a black teen-ager in the white Brooklynneighborhood of Bensonhurst</text>
-        <arg f="cau" n="m">racial</arg>
-        <rel f="">murder</rel>
-        <arg f="" n="1">of a black teen-ager</arg>
-        <arg f="loc" n="m">in the white Brooklyn neighborhood of Bensonhurst</arg>
-      </example>
-      <example name="with MNR and arg1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>the brutal murder of graduate student Imette St. Guillen</text>
-        <arg f="mnr" n="m">brutal</arg>
-        <rel f="">murder</rel>
-        <arg f="" n="1">of a graduate student Imette St. Guillen</arg>
-      </example>
-      <example name="degree = MNR" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>first degree murder</text>
-        <arg f="mnr" n="m">first degree</arg>
-        <rel f="">murder</rel>
-      </example>
-      <example name="with the candlestick" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>the axe murder of private eye Daniel Morgan in 1987</text>
-        <arg f="" n="2">axe</arg>
-        <rel f="">murder</rel>
-        <arg f="" n="1">of private eye Daniel Morgan</arg>
-        <arg f="tmp" n="m">in 1987</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

@@ -1,88 +1,138 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="clump">
     <roleset id="clump.02" name="gather into a cluster">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">clumping</alias>
-        <alias framenet="" pos="v" verbnet="">clump</alias>
+        <alias pos="n">clumping</alias>
+        <alias pos="v">clump</alias>
       </aliases>
+      <roles>
+        <role descr="causal agent" f="PAG" n="0" />
+        <role descr="thing becoming clumped" f="PPT" n="1" />
+        <role descr="end state (the clump)" f="PRD" n="2" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks />
+      <example name="inanimate causal subject, all args" src="">
+        <text>I washed it and it clumped the bread crumbs in the pan into a ball and they started on fire .</text>
+        <propbank>
+          <rel relloc="5">clumped</rel>
+          <arg type="ARG0" start="4" end="4">it</arg>
+          <arg type="ARG1" start="6" end="11">the bread crumbs in the pan</arg>
+          <arg type="ARG2" start="12" end="14">into a ball</arg>
+        </propbank>
+      </example>
+      <example name="theme as subject" src="">
+        <text>You must squeeze the bag first or the rice clumps together .</text>
+        <propbank>
+          <rel relloc="9">clumps</rel>
+          <arg type="ARG1" start="7" end="8">the rice</arg>
+          <arg type="ARGM-PRD" start="10" end="10">together</arg>
+        </propbank>
+      </example>
+      <example name="Medical example" src="">
+        <text>No retinal pigment clumping</text>
+        <propbank>
+          <rel relloc="3">clumping</rel>
+          <arg type="ARGM-NEG" start="0" end="0">No</arg>
+          <arg type="ARG1" start="1" end="2">retinal pigment</arg>
+        </propbank>
+      </example>
+      <example name="unk" src="ontonotes wb/sel/28/sel_2802">
+        <text>I would really like a " friendlier " litter , but clumping for the rake is important as it rakes ten minutes after the cat has been there .</text>
+        <propbank>
+          <rel relloc="11">clumping</rel>
+        </propbank>
+      </example>
       <note>CLUMP-V NOTES: Roleset by Julia based on internet search and wordnet. No Vncls. Comparison to "bunch". (from clump.02-v)</note>
       <note>CLUMPING-N NOTES: Based on Sharp data. Comparison to clump.02. No VN or FN classes. Framed by Katie. (from clumping.01-n)</note>
-      <roles>
-        <role descr="causal agent" f="PAG" n="0"/>
-        <role descr="thing becoming clumped" f="ppt" n="1"/>
-        <role descr="end state (the clump)" f="prd" n="2"/>
-      </roles>
-      <example name="inanimate causal subject, all args" src="inanimate causal subject, all args" type="inanimate causal subject, all args">
-        <inflection aspect="ns" form="full" person="other" tense="past" voice="active"/>
-        <text>I washed it and it clumped the bread crumbs in the pan into a ball and they started on fire.</text>
-        <arg f="" n="0">it</arg>
-        <rel f="">clumped</rel>
-        <arg f="" n="1">the bread crumbs in the pan</arg>
-        <arg f="" n="2">into a ball</arg>
-      </example>
-      <example name="theme as subject" src="theme as subject" type="theme as subject">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>You must squeeze the bag first or the rice clumps together.</text>
-        <arg f="" n="1">the rice</arg>
-        <rel f="">clumps</rel>
-        <arg f="prd" n="m">together.</arg>
-      </example>
-      <example name="Medical example" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>No retinal pigment clumping</text>
-        <arg f="neg" n="m">No</arg>
-        <arg f="" n="1">retinal pigment</arg>
-        <rel f="">clumping</rel>
-      </example>
-      <example name="unk" src="ontonotes wb/sel/28/sel_2802" type="">
-        <text>I would really like a " friendlier " litter , but clumping for the rake is important as it rakes ten minutes after the cat has been there .</text>
-        <rel f="">clumping</rel>
-      </example>
-
     </roleset>
     <roleset id="clump.03" name="walk clumsily and heavily">
       <aliases>
-        <alias framenet="Motion_noise" pos="v" verbnet="">clump</alias>
+        <alias pos="v">clump</alias>
       </aliases>
-      <note>CLUMP-V NOTES: Roleset by Julia based on internet search and wordnet. Members of Vnclss run-51.3.2, sound_emission-43.2. Comparison to "stomp" (from clump.03-v)</note>
       <roles>
         <role descr="clomper" f="PAG" n="0">
-          <vnrole vncls="51.3.2" vntheta="Agent"/>
-          <vnrole vncls="43.2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="run-51.3.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="sound_emission-43.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="sound_emission-43.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="run-51.3.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="clomped" f="ppt" n="1">
-          <vnrole vncls="51.3.2" vntheta="Theme"/>
-          <vnrole vncls="43.2" vntheta="Theme"/>
+        <role descr="clomped" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="run-51.3.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="sound_emission-43.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Motion_noise" resource="FrameNet" version="1.7">theme</rolelink>
+            <rolelink class="sound_emission-43.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+            <rolelink class="run-51.3.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="location, direction or path" f="loc" n="2">
-          <vnrole vncls="51.3.2" vntheta="Location"/>
-          <vnrole vncls="43.2" vntheta="Location"/>
+        <role descr="location, direction or path" f="LOC" n="2">
+          <rolelinks>
+            <rolelink class="run-51.3.2" resource="VerbNet" version="verbnet3.3">trajectory</rolelink>
+            <rolelink class="sound_emission-43.2" resource="VerbNet" version="verbnet3.3">location</rolelink>
+            <rolelink class="Motion_noise" resource="FrameNet" version="1.7">area</rolelink>
+            <rolelink class="sound_emission-43.2" resource="VerbNet" version="verbnet3.4">location</rolelink>
+            <rolelink class="run-51.3.2" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="All args" src="All args" type="All args">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>The Almost Dad clumps his feet more than Momma.</text>
-        <arg f="" n="0">The Almost Dad</arg>
-        <rel f="">clomps</rel>
-        <arg f="" n="1">his feet</arg>
-        <arg f="ext" n="m">more than Momma.</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Motion_noise" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="run-51.3.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="sound_emission-43.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="run-51.3.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+        <lexlink class="sound_emission-43.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="All args" src="">
+        <text>The Almost Dad clumps his feet more than Momma .</text>
+        <propbank>
+          <rel relloc="3">clumps</rel>
+          <arg type="ARG0" start="0" end="2">The Almost Dad</arg>
+          <arg type="ARG1" start="4" end="5">his feet</arg>
+          <arg type="ARGM-EXT" start="6" end="8">more than Momma</arg>
+        </propbank>
       </example>
-      <example name="Agent as subject" src="Agent as subject" type="Agent as subject">
-        <inflection aspect="ns" form="full" person="third" tense="past" voice="active"/>
-        <text>He clumped back through the control-room door into the corridor.</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">clumped</rel>
-        <arg f="" n="2">back through the control-room door</arg>
-        <arg f="gol" n="m">into the corridor</arg>
+      <example name="Agent as subject" src="">
+        <text>He clumped back through the control - room door into the corridor .</text>
+        <propbank>
+          <rel relloc="1">clumped</rel>
+          <arg type="ARG0" start="0" end="0">He</arg>
+          <arg type="ARG2" start="2" end="8">back through the control - room door</arg>
+          <arg type="ARGM-GOL" start="9" end="11">into the corridor</arg>
+        </propbank>
       </example>
-      <example name="theme as subject" src="theme as subject" type="theme as subject">
-        <inflection aspect="ns" form="gerund" person="third" tense="ns" voice="active"/>
-        <text>He heard feet clumping, like the guys might be throwing themselves around a bit.</text>
-        <arg f="" n="1">feet</arg>
-        <rel f="">clumping</rel>
-        <arg f="mnr" n="m">like the guys might be throwing themselves around a bit.</arg>
+      <example name="theme as subject" src="">
+        <text>He heard feet clumping , like the guys might be throwing themselves around a bit .</text>
+        <propbank>
+          <rel relloc="3">clumping</rel>
+          <arg type="ARG1" start="2" end="2">feet</arg>
+          <arg type="ARGM-MNR" start="5" end="14">like the guys might be throwing themselves around a bit</arg>
+        </propbank>
       </example>
+      <note>CLUMP-V NOTES: Roleset by Julia based on internet search and wordnet. Members of Vnclss run-51.3.2, sound_emission-43.2. Comparison to "stomp" (from clump.03-v)</note>
     </roleset>
   </predicate>
 </frameset>

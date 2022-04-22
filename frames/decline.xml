@@ -1,77 +1,151 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="decline">
     <roleset id="decline.01" name="fall, ">
       <aliases>
-        <alias framenet="Change_position_on_a_scale" pos="v" verbnet="">decline</alias>
-        <alias framenet="" pos="n" verbnet="">decline</alias>
+        <alias pos="v">decline</alias>
+        <alias pos="n">decline</alias>
       </aliases>
+      <roles>
+        <role descr="Logical subject, patient, thing declining" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="EXT, amount declined by" f="EXT" n="2">
+          <rolelinks>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">extent</rolelink>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">extent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="start point" f="DIR" n="3">
+          <rolelinks>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.3">initial_state</rolelink>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">initial_state</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="end point, end state of arg1" f="GOL" n="4">
+          <rolelinks>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">result</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="specific aspect of arg1 in decline" f="LOC" n="5">
+          <rolelinks>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.3">attribute</rolelink>
+            <rolelink class="calibratable_cos-45.6.1-1" resource="VerbNet" version="verbnet3.4">attribute</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Change_position_on_a_scale" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="calibratable_cos-45.6.1-1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+        <lexlink class="decline-v.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">54</lexlink>
+        <lexlink class="decline-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">6</lexlink>
+        <lexlink class="calibratable_cos-45.6.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="unaccusative" src="">
+        <text>.. if interest rates decline</text>
+        <propbank>
+          <rel relloc="4">decline</rel>
+          <arg type="ARG1" start="2" end="3">interest rates</arg>
+        </propbank>
+      </example>
+      <example name="with EXT" src="">
+        <text>Backlogs declined 0.3 %</text>
+        <propbank>
+          <rel relloc="1">declined</rel>
+          <arg type="ARG1" start="0" end="0">Backlogs</arg>
+          <arg type="ARG2" start="2" end="3">0.3 %</arg>
+        </propbank>
+      </example>
+      <example name="with EXT and end point" src="">
+        <text>Its net income declining 42 % to $ 121 million in the first 9 months of 1989</text>
+        <propbank>
+          <rel relloc="3">declining</rel>
+          <arg type="ARG1" start="0" end="2">Its net income</arg>
+          <arg type="ARG2" start="4" end="5">42 %</arg>
+          <arg type="ARG4" start="6" end="9">to $ 121 million</arg>
+          <arg type="ARGM-TMP" start="10" end="16">in the first 9 months of 1989</arg>
+        </propbank>
+      </example>
+      <example name="with start point" src="">
+        <text>But she expects prices to rebound soon and is telling investorsshe expects the stock market wo n't decline more than 10 % to 15 % from recent highs .</text>
+        <propbank>
+          <rel relloc="17">decline</rel>
+          <arg type="ARG1" start="12" end="14">the stock market</arg>
+          <arg type="ARGM-MOD" start="15" end="15">wo</arg>
+          <arg type="ARGM-NEG" start="16" end="16">n't</arg>
+          <arg type="ARG2" start="18" end="24">more than 10 % to 15 %</arg>
+          <arg type="ARG3" start="25" end="27">from recent highs</arg>
+        </propbank>
+      </example>
       <note>DECLINE-V NOTES: Frames file for 'decline' based on survey of initial sentences in big corpus and comparison with 'fall' beware of adjectival usages like: "declining interest rates" (from decline.01-v predicate notes)</note>
       <note>DECLINE-N NOTES: (from decline.01-n)</note>
-      <roles>
-        <role descr="Logical subject, patient, thing declining" f="ppt" n="1">
-          <vnrole vncls="45.6-1" vntheta="patient"/>
-        </role>
-        <role descr="EXT, amount declined by" f="ext" n="2">
-          <vnrole vncls="45.6-1" vntheta="extent"/>
-        </role>
-        <role descr="start point" f="dir" n="3"/>
-        <role descr="end point, end state of arg1" f="gol" n="4"/>
-        <role descr="specific aspect of arg1 in decline" f="loc" n="5"/>
-      </roles>
-      <example name="unaccusative" src="" type="">
-        <text>..if interest rates decline</text>
-        <arg f="" n="1">interest rates</arg>
-        <rel f="">decline</rel>
-      </example>
-      <example name="with EXT" src="" type="">
-        <text>Backlogs declined 0.3%</text>
-        <arg f="" n="1">Backlogs</arg>
-        <rel f="">declined</rel>
-        <arg f="" n="2">0.2%</arg>
-      </example>
-      <example name="with EXT and end point" src="" type="">
-        <text>Its net income declining 42% to $121 million in the first 9 months of 1989</text>
-        <arg f="" n="1">Its net income</arg>
-        <rel f="">declining</rel>
-        <arg f="" n="2">42%</arg>
-        <arg f="" n="4">to $121 million</arg>
-        <arg f="tmp" n="m">in the first 9 months of 1989</arg>
-      </example>
-      <example name="with start point" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="ns" voice="active"/>
-        <text>But she expects prices to rebound soon and is telling investorsshe expects the stock market won't decline more than 10 % to 15 %[*U*] from recent highs.</text>
-        <arg f="" n="1">the stock market</arg>
-        <arg f="mod" n="m">wo</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">decline</rel>
-        <arg f="" n="2">more than 10 % to 15 % [*U*]</arg>
-        <arg f="" n="3">from recent highs</arg>
-      </example>
     </roleset>
     <roleset id="decline.02" name="demure, turn down">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">decline</alias>
+        <alias pos="v">decline</alias>
       </aliases>
-      <note>DECLINE-V NOTES: Frames file for 'decline' based on survey of initial sentences in big corpus and comparison with 'fall' beware of adjectival usages like: "declining interest rates" (from decline.02-v predicate notes)</note>
       <roles>
-        <role descr="entity turning down" f="pag" n="0"/>
-        <role descr="thing turned down" f="ppt" n="1"/>
+        <role descr="entity turning down" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="reject-77.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="reject-77.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing turned down" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="reject-77.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="reject-77.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="arg1 as verbal" src="" type="">
-        <text>[A spokesman]-1 declined *trace*-1 to elaborate</text>
-        <arg f="" n="0">A spokesman</arg>
-        <rel f="">declined</rel>
-        <arg f="" n="1">*trace* to elaborate</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Agree_or_refuse_to_act" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="decline-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">55</lexlink>
+        <lexlink class="reject-77.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="arg1 as verbal" src="">
+        <text>A spokesman declined to elaborate</text>
+        <propbank>
+          <rel relloc="2">declined</rel>
+          <arg type="ARG0" start="0" end="1">A spokesman</arg>
+          <arg type="ARG1" start="3" end="4">to elaborate</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1027" type="">
+      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1027">
         <text>My wife , who had been hoping to take care of our sick daughter herself when she got home from work , naturally declined her kind offer .</text>
-        <arg f="" n="0">My wife , who had been hoping to take care of our sick daughter herself when she got home from work ,</arg>
-        <arg f="adv" n="m">naturally</arg>
-        <rel f="">declined</rel>
-        <arg f="" n="1">her kind offer</arg>
+        <propbank>
+          <rel relloc="23">declined</rel>
+          <arg type="ARG0" start="0" end="20">My wife , who had been hoping to take care of our sick daughter herself when she got home from work</arg>
+          <arg type="ARGM-ADV" start="22" end="22">naturally</arg>
+          <arg type="ARG1" start="24" end="26">her kind offer</arg>
+        </propbank>
       </example>
-
+      <note>DECLINE-V NOTES: Frames file for 'decline' based on survey of initial sentences in big corpus and comparison with 'fall' beware of adjectival usages like: "declining interest rates" (from decline.02-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

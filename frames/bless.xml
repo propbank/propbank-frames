@@ -1,60 +1,88 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="bless">
     <roleset id="bless.01" name="bless, act of saying prayer, bestowing happiness/wellbeing">
       <aliases>
-        <alias framenet="Rite" pos="n" verbnet="">blessing</alias>
-        <alias framenet="" pos="v" verbnet="">bless</alias>
-        <alias framenet="" pos="l" verbnet="">give_blessing</alias>
+        <alias pos="n">blessing</alias>
+        <alias pos="v">bless</alias>
+        <alias pos="l">give_blessing</alias>
+        <argalias arg="2" pos="n">blessing</argalias>
       </aliases>
-      <note>BLESS-V NOTES: This verb doesn't fit easily into this class; arg2 is usually a role(applaud as or for) and the fact that the gift can only occur with apassivized verb is suspicious also. Perhaps the class needs to besplit, or the membership reevaluated. (from bless.01-v)</note>
-      <note>BLESSING-N NOTES: Roleset based on BOLT P01 instances. Comparison to verb entry bless.01, which maps to VN class 33. FrameNet Rite. (from blessing.01-n)</note>
       <roles>
         <role descr="entity giving blessing" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity being blessed" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="blessed with (gift)" f="PRD" n="2">
-          <vnrole vncls="33" vntheta="Attribute"/>
+          <rolelinks>
+            <rolelink class="judgment-33.1-1" resource="VerbNet" version="verbnet3.3">attribute</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="straight transitive" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>[Jaguar shareholders]-2 would have *trace*-2 to bless such a far-reaching accord.</text>
-        <arg f="" n="0">*trace*-2</arg>
-        <rel f="">bless</rel>
-        <arg f="" n="1">such a far-reaching accord</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Rite" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="judgment-33.1-1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+        <lexlink class="bless-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">20</lexlink>
+      </lexlinks>
+      <example name="straight transitive" src="">
+        <text>Jaguar shareholders would have to bless such a far - reaching accord .</text>
+        <propbank>
+          <rel relloc="5">bless</rel>
+          <arg type="ARG0" start="0" end="1">Jaguar shareholders</arg>
+          <arg type="ARG1" start="6" end="11">such a far - reaching accord</arg>
+        </propbank>
       </example>
-      <example name="unstated blesser" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>I have seen one or two men die, *trace* bless them.</text>
-        <rel f="">bless</rel>
-        <arg f="" n="1">them</arg>
+      <example name="unstated blesser" src="">
+        <text>I have seen one or two men die , bless them .</text>
+        <propbank>
+          <rel relloc="9">bless</rel>
+          <arg type="ARG1" start="10" end="10">them</arg>
+        </propbank>
       </example>
-      <example name="with gift" src="" type="">
-        <inflection aspect="perfect" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>Though [I've]-1 been blessed *trace*-1 with academic degrees and some success in the materialistic world, I've never forgotten or lost contact with those memories of the 1930s.</text>
-        <rel f="">blessed</rel>
-        <arg f="" n="1">*trace*</arg>
-        <arg f="" n="2">with academic degrees and some success in the materialistic world</arg>
+      <example name="with gift" src="">
+        <text>Though I 've been blessed with academic degrees and some success in the materialistic world , I 've never forgotten or lost contact with those memories of the 1930s .</text>
+        <propbank>
+          <rel relloc="4">blessed</rel>
+          <arg type="ARG1" start="1" end="1">I</arg>
+          <arg type="ARG2" start="5" end="14">with academic degrees and some success in the materialistic world</arg>
+        </propbank>
       </example>
-      <example name="predicative gift" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>To Mr. Engelken, it is also a story ``about love, because I'm blessed to have a wife who still thinks her slightly eccentric husband's 50th birthday deserves the ultimate present.''</text>
-        <arg f="" n="1">I</arg>
-        <rel f="">blessed</rel>
-        <arg f="" n="2">to have a wife who still thinks her slightly eccentric husband's 50th birthday deserves the ultimate present</arg>
+      <example name="predicative gift" src="">
+        <text>To Mr. Engelken , it is also a story `` about love , because I 'm blessed to have a wife who still thinks her slightly eccentric husband 's 50th birthday deserves the ultimate present . ''</text>
+        <propbank>
+          <rel relloc="16">blessed</rel>
+          <arg type="ARG1" start="14" end="14">I</arg>
+          <arg type="ARG2" start="17" end="34">to have a wife who still thinks her slightly eccentric husband 's 50th birthday deserves the ultimate present</arg>
+        </propbank>
       </example>
-      <example name="All args" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Christ's esteem for the natural institution of marriage is evident in His blessing of the wedding at Cana with a miracle.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">blessing</rel>
-        <arg f="" n="1">of the wedding at Cana</arg>
-        <arg f="" n="2">with a miracle</arg>
+      <example name="All args" src="web">
+        <text>Christ 's esteem for the natural institution of marriage is evident in His blessing of the wedding at Cana with a miracle .</text>
+        <propbank>
+          <rel relloc="13">blessing</rel>
+          <arg type="ARG0" start="12" end="12">His</arg>
+          <arg type="ARG1" start="14" end="18">of the wedding at Cana</arg>
+          <arg type="ARG2" start="19" end="21">with a miracle</arg>
+        </propbank>
       </example>
+      <note>BLESS-V NOTES: This verb doesn't fit easily into this class; arg2 is usually a role(applaud as or for) and the fact that the gift can only occur with apassivized verb is suspicious also. Perhaps the class needs to besplit, or the membership reevaluated. (from bless.01-v)</note>
+      <note>BLESSING-N NOTES: Roleset based on BOLT P01 instances. Comparison to verb entry bless.01, which maps to VN class 33. FrameNet Rite. (from blessing.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

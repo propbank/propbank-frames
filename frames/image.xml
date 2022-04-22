@@ -1,44 +1,75 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="image">
-    <roleset id="image.101" name="to record an image of (using mri, x-ray, cat scan, ultrasound, etc.), recording an image of">
+    <roleset id="image.101" name="record an image of (using mri, x-ray, cat scan, ultrasound, etc.)">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">imaging</alias>
-        <alias framenet="" pos="v" verbnet="">image</alias>
+        <alias pos="v">image</alias>
+        <alias pos="n">imaging</alias>
+        <alias pos="n">imaging_study</alias>
       </aliases>
-      <note>IMAGE-V NOTES: Based on data in medical QA corpus (Framed by Anwen 07/20/10) (from image.101-v)</note>
-      <note>IMAGING-N NOTES: Corresponds with image.101. Framed by anwen april 2011 (from imaging.01-n)</note>
       <roles>
         <role descr="Doctor" f="PAG" n="0"/>
         <role descr="Patient/ Anatomical part" f="PPT" n="1"/>
+        <role descr="more specific entity imaged, if in addition to ARG1" f="LOC" n="2"/>
       </roles>
-      <example name="unk" src="ontonotes nw/wsj/12/wsj_1218" type="">
-        <text>It 's the same phenomenon used in the new MRI -LRB- magnetic resonance imaging -RRB- scanners being used in hospitals in place of X-ray scans .</text>
-        <arg f="mnr" n="m">magnetic resonance</arg>
-        <rel f="">imaging</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="imaging-n" src="ontonotes nw/wsj/12/wsj_1218">
+        <text>It 's the same phenomenon used in the new MRI -LRB- magnetic resonance imaging -RRB- scanners being used in hospitals in place of X - ray scans .</text>
+        <propbank>
+          <rel relloc="13">imaging</rel>
+          <arg end="12" start="11" type="ARGM-MNR">magnetic resonance</arg>
+        </propbank>
       </example>
-
-      <example name="Arg1 as anatomical part" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>[The patient's chest]-1 is to be imaged *-1.</text>
-        <rel f="">imaged</rel>
-        <arg f="" n="1">the patient's chest</arg>
+      <example name="image-v: Arg1 as anatomical part" src="">
+        <text>The patient 's chest is to be imaged .</text>
+        <propbank>
+          <rel relloc="7">imaged</rel>
+          <arg end="3" start="0" type="ARG1">The patient 's chest</arg>
+        </propbank>
       </example>
-      <example name="" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Dr.Helton's imaging of the patient's elbow allowed them to check for fractures.</text>
-        <arg f="" n="0">Dr.Helton's</arg>
-        <rel f="">imaging</rel>
-        <arg f="" n="1">of the patient's elbow</arg>
+      <example name="imaging-n" src="">
+        <text>Dr. Helton 's imaging of the patient 's elbow allowed them to check for fractures .</text>
+        <propbank>
+          <rel relloc="3">imaging</rel>
+          <arg end="2" start="0" type="ARG0">Dr. Helton 's</arg>
+          <arg end="8" start="4" type="ARG1">of the patient 's elbow</arg>
+        </propbank>
       </example>
-      <example name="non-medical cryo example" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns"
-        voice="ns"/>
-        <text>The imaging of the sea-ice surface during the cruise.</text>
-        <rel f="">imaging</rel>
-        <arg f="" n="1">of the sea-ice surface</arg>
-        <arg f="tmp" n="m">during the cruise</arg>
+      <example name="imaging-nnon-medical cryo example" src="">
+        <text>The imaging of the sea - ice surface during the cruise .</text>
+        <propbank>
+          <rel relloc="1">imaging</rel>
+          <arg end="7" start="2" type="ARG1">of the sea - ice surface</arg>
+          <arg end="10" start="8" type="ARGM-TMP">during the cruise</arg>
+        </propbank>
       </example>
+      <example name="imaging-n" src="THYME-Auto1">
+        <text>September 2005 - Imaging showed two liver lesions .</text>
+        <propbank>
+          <rel relloc="3">Imaging</rel>
+        </propbank>
+        <amr version="THYME 1.0">
+          (s / show-01
+            :ARG0 (i2 / image-101)
+            :ARG1 (s2 / sign-symptom :quant 2 :name (n / name :op1 "lesion")
+              :location (a / anatomical-site :name (n2 / name :op1 "liver")))
+            :time (d / date-entity :month 9 :year 2005))
+        </amr>
+      </example>
+      <note>IMAGE NOTES: Arg2-'more specific entity imaged' added for THYME, 2021</note>
+      <note>IMAGE-V NOTES: Based on data in medical QA corpus (Framed by Anwen 07/20/10) (from image.101-v)</note>
+      <note>IMAGING-N NOTES: Corresponds with image.101. Framed by anwen april 2011 (from imaging.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

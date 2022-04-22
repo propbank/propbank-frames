@@ -1,52 +1,82 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="salvage">
     <roleset id="salvage.01" name="to save or rescue">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">salvage</alias>
-        <alias framenet="" pos="n" verbnet="">salvage</alias>
+        <alias pos="v">salvage</alias>
+        <alias pos="n">salvage</alias>
       </aliases>
-      <note>SALVAGE-V NOTES: Member of Vncls steal-10.5. Updated by Julia, 11/2010. (from salvage.01-v)</note>
-      <note>SALVAGE-N NOTES: Based on Thyme and Sharp data. Comparison to salvage.01-v. Salvage.01-v is a member of VN class steal-10.5-1. No FN class.Framed by Katie. (from salvage.01-n)</note>
       <roles>
         <role descr="saver, salvager" f="PAG" n="0">
-          <vnrole vncls="10.5-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="steal-10.5-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="steal-10.5-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity salvaged" f="PPT" n="1">
-          <vnrole vncls="10.5-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="steal-10.5-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="steal-10.5-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity salvaged from" f="DIR" n="2">
-          <vnrole vncls="10.5-1" vntheta="Source"/>
+          <rolelinks>
+            <rolelink class="steal-10.5-1" resource="VerbNet" version="verbnet3.3">source</rolelink>
+            <rolelink class="steal-10.5-1" resource="VerbNet" version="verbnet3.4">source</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG1" src="ontonotes mz/sinorama/10/ectb_1048" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="steal-10.5-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="salvage-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">8</lexlink>
+        <lexlink class="steal-10.5-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="salvage-v: ARG1" src="ontonotes mz/sinorama/10/ectb_1048">
         <text>In Hsia 's hands , all sorts of discarded objects , from sewing machines to camera lenses , are salvaged and put to good use .</text>
-        <arg f="loc" n="m">In Hsia 's hands</arg>
-        <arg f="" n="1">all sorts of discarded objects , from sewing machines to camera lenses</arg>
-        <rel f="">salvaged</rel>
+        <propbank>
+          <rel relloc="19">salvaged</rel>
+          <arg type="ARGM-LOC" start="0" end="3">In Hsia 's hands</arg>
+          <arg type="ARG1" start="5" end="16">all sorts of discarded objects , from sewing machines to camera lenses</arg>
+        </propbank>
       </example>
-
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="active"/>
-        <text>Noting that Sweden-2 wound up [*-2]-1 wasting state subsidies of about 35 billion Swedish kronor ( $ 5.47 billion [*U*]) during the 1970s in a vain attempt [*]-1 to salvage its shipbuilding industry , one analyst suggested that Mr. Suominen may have decided [*-3] to cut Finland 's losses once and for all .</text>
-        <arg f="" n="0">[*]-1</arg>
-        <rel f="">salvage</rel>
-        <arg f="" n="1">its shipbuilding industry</arg>
+      <example name="salvage-v: transitive" src="">
+        <text>Noting that Sweden wound up wasting state subsidies of about 35 billion Swedish kronor ( $ 5.47 billion ) during the 1970s in a vain attempt to salvage its shipbuilding industry , one analyst suggested that Mr. Suominen may have decided to cut Finland 's losses once and for all .</text>
+        <propbank>
+          <rel relloc="27">salvage</rel>
+          <arg type="ARG0" start="2" end="2">Sweden</arg>
+          <arg type="ARG1" start="28" end="30">its shipbuilding industry</arg>
+        </propbank>
       </example>
-      <example name="all arguments" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="active"/>
-        <text>Majority Whip William Gray owes a political debt to Southern agriculture lawmakers for his rise in the House , and [the Philadelphia Democrat]-1 used his position in the conference [*-1]to salvage the exemption from a total ban .</text>
-        <arg f="" n="0">[*-1]</arg>
-        <rel f="">salvage</rel>
-        <arg f="" n="1">the exemption</arg>
-        <arg f="" n="2">from a total ban</arg>
+      <example name="salvage-v: all arguments" src="">
+        <text>Majority Whip William Gray owes a political debt to Southern agriculture lawmakers for his rise in the House , and the Philadelphia Democrat used his position in the conference to salvage the exemption from a total ban .</text>
+        <propbank>
+          <rel relloc="30">salvage</rel>
+          <arg type="ARG0" start="20" end="22">the Philadelphia Democrat</arg>
+          <arg type="ARG1" start="31" end="32">the exemption</arg>
+          <arg type="ARG2" start="33" end="36">from a total ban</arg>
+        </propbank>
       </example>
-      <example name="This sounds odd to me, but they are saving the leg from the need to be amputated." src="" type="">
+      <example name="salvage-n: This sounds odd to me, but they are saving the leg from the need to be amputated." src="">
         <text>leg salvage from amputation</text>
-        <arg f="" n="1">leg</arg>
-        <rel f="">salvage</rel>
-        <arg f="" n="2">from amputation</arg>
+        <propbank>
+          <rel relloc="1">salvage</rel>
+          <arg type="ARG1" start="0" end="0">leg</arg>
+          <arg type="ARG2" start="2" end="3">from amputation</arg>
+        </propbank>
       </example>
+      <note>SALVAGE-V NOTES: Member of Vncls steal-10.5. Updated by Julia, 11/2010. (from salvage.01-v)</note>
+      <note>SALVAGE-N NOTES: Based on Thyme and Sharp data. Comparison to salvage.01-v. Salvage.01-v is a member of VN class steal-10.5-1. No FN class.Framed by Katie. (from salvage.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

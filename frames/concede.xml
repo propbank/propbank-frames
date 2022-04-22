@@ -1,124 +1,193 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="concede">
     <roleset id="concede.01" name="admit">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">concession</alias>
-        <alias framenet="Statement" pos="v" verbnet="">concede</alias>
-        <alias framenet="" pos="l" verbnet="">make_concession</alias>
+        <alias pos="n">concession</alias>
+        <alias pos="v">concede</alias>
+        <alias pos="l">make_concession</alias>
       </aliases>
-      <note>CONCEDE-V NOTES: Based on financial subcorpus. No VN class. (from concede.01-v)</note>
-      <note>CONCESSION-N NOTES: Based on verb entry concede.01; corresponds to Verbnet class future_having-13.3. Differs from verb entry in presence of arg2, noun sense is closer to "giving" than "admitting." (from concession.01-n)</note>
       <roles>
         <role descr="entity admitting/giving something" f="PAG" n="0">
-          <vnrole vncls="13.3" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Statement" resource="FrameNet" version="1.7">speaker</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing admitted or given" f="PPT" n="1">
-          <vnrole vncls="13.3" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Statement" resource="FrameNet" version="1.7">message</rolelink>
+            <rolelink class="Statement" resource="FrameNet" version="1.7">topic</rolelink>
+          </rolelinks>
         </role>
         <role descr="recipient or listener, admitted or given to" f="GOL" n="2">
-          <vnrole vncls="13.3" vntheta="Goal"/>
+          <rolelinks>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.3">goal</rolelink>
+            <rolelink class="Statement" resource="FrameNet" version="1.7">addressee</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="sentential thing arg1" src="" type="">
-        <text>Reviewing the company's scrape with disaster, Mr. Price conceded it had tried to do too much on its own.</text>
-        <arg f="prd" n="m">Reviewing the company's scrape with disaster</arg>
-        <arg f="" n="0">Mr. Price</arg>
-        <rel f="">conceded</rel>
-        <arg f="" n="1">it had tried to do too much on its own</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Statement" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="future_having-13.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="concede-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+        <lexlink class="concede-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">63</lexlink>
+      </lexlinks>
+      <example name="sentential thing arg1" src="">
+        <text>Reviewing the company 's scrape with disaster , Mr. Price conceded it had tried to do too much on its own .</text>
+        <propbank>
+          <rel relloc="10">conceded</rel>
+          <arg type="ARGM-PRD" start="0" end="6">Reviewing the company 's scrape with disaster</arg>
+          <arg type="ARG0" start="8" end="9">Mr. Price</arg>
+          <arg type="ARG1" start="11" end="20">it had tried to do too much on its own</arg>
+        </propbank>
       </example>
-      <example name="another" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>he conceded that with six kids, something like this was bound to happen.</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">conceded</rel>
-        <arg f="" n="1">that with six kids, something like this was bound to happen</arg>
+      <example name="another" src="">
+        <text>he conceded that with six kids , something like this was bound to happen .</text>
+        <propbank>
+          <rel relloc="1">conceded</rel>
+          <arg type="ARG0" start="0" end="0">he</arg>
+          <arg type="ARG1" start="2" end="13">that with six kids , something like this was bound to happen</arg>
+        </propbank>
       </example>
-      <example name="Within LVC" src="nouns-lv" type="">
-        <text>The Japanese retort that the first round was too early *PRO* to make concessions .</text>
-        <arg f="" n="0">*PRO*</arg>
-        <arg f="lvb" n="m">make</arg>
-        <rel f="">concessions</rel>
+      <example name="Within LVC" src="nouns-lv">
+        <text>The Japanese retort that the first round was too early to make concessions .</text>
+        <propbank>
+          <rel relloc="12">concessions</rel>
+          <arg type="ARGM-LVB" start="11" end="11">make</arg>
+        </propbank>
       </example>
-      <example name="All arguments" src="web" type="">
-        <text>They do not acknowledge that Walker has refused to accept their concession of increased financial costs to these working Americans.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">concession</rel>
-        <arg f="" n="1">of increased financial costs</arg>
-        <arg f="" n="2">to these working Americans</arg>
+      <example name="All arguments" src="web">
+        <text>They do not acknowledge that Walker has refused to accept their concession of increased financial costs to these working Americans .</text>
+        <propbank>
+          <rel relloc="11">concession</rel>
+          <arg type="ARG0" start="10" end="10">their</arg>
+          <arg type="ARG1" start="12" end="15">of increased financial costs</arg>
+          <arg type="ARG2" start="16" end="19">to these working Americans</arg>
+        </propbank>
       </example>
+      <note>CONCEDE-V NOTES: Based on financial subcorpus. No VN class. (from concede.01-v)</note>
+      <note>CONCESSION-N NOTES: Based on verb entry concede.01; corresponds to Verbnet class future_having-13.3. Differs from verb entry in presence of arg2, noun sense is closer to "giving" than "admitting." (from concession.01-n)</note>
     </roleset>
-    
     <roleset id="concede.02" name="acknowledge loss of a contest before it's official">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">concession</alias>
-        <alias framenet="" pos="v" verbnet="">concede</alias>
+        <alias pos="n">concession</alias>
+        <alias pos="v">concede</alias>
       </aliases>
-      <note>CONCEDE-V NOTES: Roleset based on instances in CallHome. No relevant VN mapping. (from concede.02-v)</note>
       <roles>
         <role descr="Loser" f="PAG" n="0"/>
-        <role descr="Contest lost" f="ppt" n="1"/>
-        <role descr="Winner, conceded to whom?" f="gol" n="2"/>
+        <role descr="Contest lost" f="PPT" n="1"/>
+        <role descr="Winner, conceded to whom?" f="GOL" n="2"/>
       </roles>
-      <example name="" src="CallHome" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>...the man who was so quick *PRO* to concede the first time to George W. Bush when he thought he lost...</text>
-        <arg f="" n="0">*PRO*</arg>
-        <rel f="">concede</rel>
-        <arg f="tmp" n="m">the first time</arg>
-        <arg f="" n="2">to George W. Bush</arg>
-        <arg f="tmp" n="m">when he thought he lost</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="concede-v" src="CallHome">
+        <text>... the man who was so quick to concede the first time to George W. Bush when he thought he lost ...</text>
+        <propbank>
+          <rel relloc="8">concede</rel>
+          <arg type="ARG0" start="1" end="2">the man</arg>
+          <arg type="R-ARG0" start="3" end="3">who</arg>
+          <arg type="ARGM-TMP" start="9" end="11">the first time</arg>
+          <arg type="ARG2" start="12" end="15">to George W. Bush</arg>
+          <arg type="ARGM-TMP" start="16" end="20">when he thought he lost</arg>
+        </propbank>
       </example>
-      <example name="All arguments" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Andy Vidak seemed ready to run again for the district about 10 minutes after he conceded the election to Costa.</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">conceded</rel>
-        <arg f="" n="1">the election</arg>
-        <arg f="" n="2">to Costa</arg>
+      <example name="concede-v: All arguments" src="web">
+        <text>Andy Vidak seemed ready to run again for the district about 10 minutes after he conceded the election to Costa .</text>
+        <propbank>
+          <rel relloc="15">conceded</rel>
+          <arg type="ARG0" start="14" end="14">he</arg>
+          <arg type="ARG1" start="16" end="17">the election</arg>
+          <arg type="ARG2" start="18" end="19">to Costa</arg>
+        </propbank>
       </example>
-      <example name="concession-n" src="CallHome" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>...his concession to George W. Bush when he thought he lost was so quick.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">concession</rel>
-        <arg f="" n="2">to George W. Bush</arg>
-        <arg f="tmp" n="m">when he thought he lost</arg>
+      <example name="concession-n" src="CallHome">
+        <text>... his concession to George W. Bush when he thought he lost was so quick .</text>
+        <propbank>
+          <rel relloc="2">concession</rel>
+          <arg type="ARG0" start="1" end="1">his</arg>
+          <arg type="ARG2" start="3" end="6">to George W. Bush</arg>
+          <arg type="ARGM-TMP" start="7" end="11">when he thought he lost</arg>
+        </propbank>
       </example>
+      <note>CONCEDE-V NOTES: Roleset based on instances in CallHome. No relevant VN mapping. (from concede.02-v)</note>
     </roleset>
-    
     <roleset id="concede.03" name="to grant as right or privilege.">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">concede</alias>
-        <alias framenet="" pos="n" verbnet="">concession</alias>
+        <alias pos="v">concede</alias>
+        <alias pos="n">concession</alias>
       </aliases>
-      <note>CONCEDE-V NOTES: Roleset based on VN class (member) future_having-13.3. (from concede.03-v)</note>
       <roles>
         <role descr="Giver" f="PAG" n="0">
-          <vnrole vncls="13.3" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Affirm_or_deny" resource="FrameNet" version="1.7">speaker</rolelink>
+          </rolelinks>
         </role>
         <role descr="Thing given" f="PPT" n="1">
-          <vnrole vncls="13.3" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="Given to whom? Recipient" f="GOL" n="2">
-          <vnrole vncls="13.3" vntheta="Goal"/>
+          <rolelinks>
+            <rolelink class="future_having-13.3" resource="VerbNet" version="verbnet3.3">goal</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="All arguments" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>They conceded a longer vacation to all employees.</text>
-        <arg f="" n="0">They</arg>
-        <rel f="">conceded</rel>
-        <arg f="" n="1">a longer vacation</arg>
-        <arg f="" n="2">to all employees</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Affirm_or_deny" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="future_having-13.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+      </lexlinks>
+      <example name="concede-v: All arguments" src="web">
+        <text>They conceded a longer vacation to all employees .</text>
+        <propbank>
+          <rel relloc="1">conceded</rel>
+          <arg type="ARG0" start="0" end="0">They</arg>
+          <arg type="ARG1" start="2" end="4">a longer vacation</arg>
+          <arg type="ARG2" start="5" end="7">to all employees</arg>
+        </propbank>
       </example>
-      <example name="concession-n" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The employees appreciated management's concession of a longer vacation.</text>
-        <arg f="" n="0">management's</arg>
-        <rel f="">concession</rel>
-        <arg f="" n="1">of a longer vacation</arg>
+      <example name="concession-n" src="web">
+        <text>The employees appreciated management 's concession of a longer vacation .</text>
+        <propbank>
+          <rel relloc="5">concession</rel>
+          <arg type="ARG0" start="3" end="4">management 's</arg>
+          <arg type="ARG1" start="6" end="9">of a longer vacation</arg>
+        </propbank>
       </example>
+      <note>CONCEDE-V NOTES: Roleset based on VN class (member) future_having-13.3. (from concede.03-v)</note>
     </roleset>
   </predicate>
 </frameset>

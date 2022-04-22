@@ -1,366 +1,676 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="lay">
     <roleset id="lay.01" name="put, set, cause to exist at some location, putting (horizontally)">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">lay</alias>
-        <alias framenet="" pos="n" verbnet="">laying</alias>
+        <alias pos="v">lay</alias>
+        <alias pos="n">laying</alias>
       </aliases>
+      <roles>
+        <role descr="layer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="put_spatial-9.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Placing" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="Placing" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="put_spatial-9.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing laid" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="put_spatial-9.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Placing" resource="FrameNet" version="1.7">theme</rolelink>
+            <rolelink class="put_spatial-9.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="location" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="put_spatial-9.2" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="Placing" resource="FrameNet" version="1.7">goal</rolelink>
+            <rolelink class="Placing" resource="FrameNet" version="1.7">source</rolelink>
+            <rolelink class="put_spatial-9.2" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Placing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="put_spatial-9.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="lay-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">13</lexlink>
+        <lexlink class="lay-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+        <lexlink class="lay-v.5.6" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">10</lexlink>
+        <lexlink class="lay-v.5.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="lay-v.5.12" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="put_spatial-9.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="lay-v: lay hands on, uncertain tracing" src="">
+        <text>That leaves the pilots still in need of cash totaling around $ 1 billion -- [far more]-1 than either they or the flight attendants can lay their hands on *trace*-1 from retirement funds alone .</text>
+        <propbank>
+          <rel relloc="25">lay</rel>
+          <arg type="ARG0" start="18" end="23">either they or the flight attendants</arg>
+          <arg type="ARGM-MOD" start="24" end="24">can</arg>
+          <arg type="ARG1" start="26" end="27">their hands</arg>
+          <arg type="ARG2" start="?" end="?">on *trace*</arg>
+          <arg type="ARGM-ADV" start="30" end="33">from retirement funds alone</arg>
+        </propbank>
+      </example>
+      <example name="lay-v: ARG0 and ARG1 and ARG2" src="ontonotes pt/nt/44/nt_4406">
+        <text>Then they put these men before the apostles , who prayed and laid their hands on them .</text>
+        <propbank>
+          <rel relloc="12">laid</rel>
+          <arg end="7" start="6" type="ARG0">the apostles</arg>
+          <arg end="9" start="9" type="R-ARG0">who</arg>
+          <arg end="14" start="13" type="ARG1">their hands</arg>
+          <arg end="16" start="15" type="ARG2">on them</arg>
+        </propbank>
+      </example>
+      <example name="lay-v: without location" src="">
+        <text>Chickens lay eggs .</text>
+        <propbank>
+          <rel relloc="1">lay</rel>
+          <arg type="ARG0" start="0" end="0">Chickens</arg>
+          <arg type="ARG1" start="2" end="2">eggs</arg>
+        </propbank>
+      </example>
+      <example name="lay-v: Why 'out' has to be dir rather than arg 2" src="">
+        <text>More shirts and sweaters will be laid out on tables instead of sitting behind glass cases</text>
+        <propbank>
+          <rel relloc="6">laid</rel>
+          <arg type="ARGM-MOD" start="4" end="4">will</arg>
+          <arg type="ARG1" start="0" end="3">More shirts and sweaters</arg>
+          <arg type="ARGM-DIR" start="7" end="7">out</arg>
+          <arg type="ARG2" start="8" end="9">on tables</arg>
+          <arg type="ARGM-PRD" start="10" end="15">instead of sitting behind glass cases</arg>
+        </propbank>
+      </example>
+      <example name="laying-n: just arg1" src="BOLT">
+        <text>Special occasions such as keel laying , ship christening , and commissioning ceremonies deal with shipbuilding , no ceremonies for scrapping .</text>
+        <propbank>
+          <rel relloc="5">laying</rel>
+          <arg type="ARG1" start="4" end="4">keel</arg>
+        </propbank>
+      </example>
+      <example name="laying-n: All args" src="internet">
+        <text>One of the signs that follow disciples are their laying of hands on the sick .</text>
+        <propbank>
+          <rel relloc="9">laying</rel>
+          <arg type="ARG0" start="8" end="8">their</arg>
+          <arg type="ARG1" start="10" end="11">of hands</arg>
+          <arg type="ARG2" start="12" end="14">on the sick</arg>
+        </propbank>
+      </example>
       <note>LAY-V NOTES: Frames file for 'lay' based on sentences in financial subcorpus. Verbnet class put_spatial-9.2, no other framed members. (from lay.01-v predicate notes)</note>
       <note>LAYING-N NOTES: Added by Julia based BOLT, lay.01. Correponds to VNcls put_spatial-9.2. (from laying.01-n)</note>
-      <roles>
-        <role descr="layer" f="pag" n="0">
-          <vnrole vncls="9.2" vntheta="agent"/>
-        </role>
-        <role descr="thing laid" f="ppt" n="1">
-          <vnrole vncls="9.2" vntheta="theme"/>
-        </role>
-        <role descr="location" f="gol" n="2">
-          <vnrole vncls="9.2" vntheta="destination"/>
-        </role>
-      </roles>
-      <example name="lay-v: lay hands on, uncertain tracing" src="" type="">
-        <text>That leaves the pilots still in need of cash totaling around $1 billion -- [far more]-1 than either they or the flight attendants can lay their hands on *trace*-1 from retirement funds alone.</text>
-        <arg f="" n="0">either they or the flight attendants</arg>
-        <arg f="mod" n="m">can</arg>
-        <rel f="">lay</rel>
-        <arg f="" n="1">their hands</arg>
-        <arg f="" n="2">on *trace*</arg>
-        <arg f="adv" n="m">from retirement funds alone</arg>
-      </example>
-      <example name="ARG0 and ARG1 and ARG2" src="ontonotes pt/nt/44/nt_4406" type="">
-        <text>Then they put these men before the apostles , who prayed and laid their hands on them .</text>
-        <arg f="" n="0">[the apostles][who]</arg>
-        <rel f="">laid</rel>
-        <arg f="" n="1">their hands</arg>
-        <arg f="" n="2">on them</arg>
-      </example>
-
-      <example name="lay-v: without location" src="" type="">
-        <text>Chickens lay eggs.</text>
-        <arg f="" n="0">Chickens</arg>
-        <rel f="">lay</rel>
-        <arg f="" n="1">eggs</arg>
-      </example>
-      <example name="lay-v: Why 'out' has to be dir rather than arg 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>[More shirts and sweaters -1] will be laid [ *- 1]out on tables instead of sitting behind glass cases</text>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">laid</rel>
-        <arg f="" n="1">[ *- 1]</arg>
-        <arg f="dir" n="m">out</arg>
-        <arg f="" n="2">on tables</arg>
-        <arg f="prd" n="m">instead of sitting behind glass cases</arg>
-      </example>
-      <example name="laying-n: just arg1" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Special occasions such as keel laying , ship christening , and commissioning ceremonies deal with shipbuilding , no ceremonies for scrapping .</text>
-        <arg f="" n="1">keel</arg>
-        <rel f="">laying</rel>
-      </example>
-      <example name="laying-n: All args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>One of the signs that follow disciples are their laying of hands on the sick.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">laying</rel>
-        <arg f="" n="1">of hands</arg>
-        <arg f="" n="2">on the sick</arg>
-      </example>
     </roleset>
-    
     <roleset id="lay.04" name="have sexual relation with">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">lay</alias>
-        <alias framenet="" pos="n" verbnet="">laying</alias>
-        <alias framenet="" pos="l" verbnet="">give_lay</alias>
+        <alias pos="v">lay</alias>
+        <alias pos="n">laying</alias>
+        <alias pos="l">give_lay</alias>
       </aliases>
-      <note>LAY-V NOTES: Added by Julia based on BOLT. No VNcls. (from lay.04-v)</note>
       <roles>
-        <role descr="sexual partner, entity laying arg1" f="pag" n="0"/>
-        <role descr="entity getting laid (most common arg)" f="ppt" n="1"/>
+        <role descr="sexual partner, entity laying arg1" f="PAG" n="0"/>
+        <role descr="entity getting laid (most common arg)" f="PPT" n="1"/>
       </roles>
-      <example name="lay-v: both args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>You would never say you-1 got laid *-1 by someone you love.</text>
-        <rel f="">laid</rel>
-        <arg f="" n="1">*-1</arg>
-        <arg f="" n="0">by someone you love</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="lay-v: both args" src="internet">
+        <text>You would never say you got laid by someone you love .</text>
+        <propbank>
+          <rel relloc="6">laid</rel>
+          <arg type="ARG1" start="4" end="4">you</arg>
+          <arg type="ARG0" start="7" end="10">by someone you love</arg>
+        </propbank>
       </example>
-      <example name="lay-v: Typical, just arg1" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Firstly , video games is one of the big problems as most guys would rather stay at home and play video games , then go out and try [*PRO*-2]-1to get laid [*-1].</text>
-        <rel f="">laid</rel>
-        <arg f="" n="1">[*-1]</arg>
+      <example name="lay-v: Typical, just arg1" src="BOLT">
+        <text>Firstly , video games is one of the big problems as most guys would rather stay at home and play video games , then go out and try [*PRO*-2]-1 to get laid [*-1] .</text>
+        <propbank>
+          <rel relloc="31">laid</rel>
+          <arg type="ARG1" start="?" end="?">[*-1]</arg>
+        </propbank>
       </example>
+      <note>LAY-V NOTES: Added by Julia based on BOLT. No VNcls. (from lay.04-v)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="lie">
-    <roleset id="lie.07" name="assume a horizontal position, more generally 'exist', existing">
+    <roleset id="lie.07" name="(cause to) be in a horizontal position, more generally 'exist', existing">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">lie</alias>
-        <alias framenet="" pos="n" verbnet="">lying</alias>
-        <alias framenet="" pos="j" verbnet="">lying</alias>
+        <alias pos="v">lie</alias>
+        <alias pos="n">lying</alias>
+        <alias pos="j">lying</alias>
       </aliases>
+      <roles>
+        <role descr="entity in the position" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="spatial_configuration-47.6" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="assuming_position-50" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Posture" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="Change_posture" resource="FrameNet" version="1.7">protagonist</rolelink>
+            <rolelink class="spatial_configuration-47.6" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+            <rolelink class="assuming_position-50" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="location" f="LOC" n="2">
+          <rolelinks>
+            <rolelink class="spatial_configuration-47.6" resource="VerbNet" version="verbnet3.3">location</rolelink>
+            <rolelink class="assuming_position-50" resource="VerbNet" version="verbnet3.3">location</rolelink>
+            <rolelink class="Posture" resource="FrameNet" version="1.7">location</rolelink>
+            <rolelink class="spatial_configuration-47.6" resource="VerbNet" version="verbnet3.4">location</rolelink>
+            <rolelink class="assuming_position-50" resource="VerbNet" version="verbnet3.4">location</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="orientation" f="ORT" n="3"/>
+        <role descr="primary prone axis" f="AXS" n="4"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Posture" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Change_posture" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Being_located" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="spatial_configuration-47.6" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="assuming_position-50" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="lie-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">61</lexlink>
+        <lexlink class="assuming_position-50" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="spatial_configuration-47.6" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="lie-v: exist" src="">
+        <text>But any chance for prices to surge above fair value lies in the speculation that accompanies a vigorous merger and buy - out business , and UAL has obviously put a damper on that .</text>
+        <propbank>
+          <rel relloc="10">lies</rel>
+          <arg type="ARGM-DIS" start="0" end="0">But</arg>
+          <arg type="ARG1" start="1" end="9">any chance for prices to surge above fair value</arg>
+          <arg type="ARG2" start="11" end="23">in the speculation that accompanies a vigorous merger and buy - out business</arg>
+        </propbank>
+        <amr version="2019">
+          (a / and
+            :op1 (c / contrast-01
+              :ARG2 (l / lie-07
+                :ARG1 (c3 / chance-02
+                  :ARG1 (s / surge-01
+                    :ARG1 (p / price-01)
+                    :ARG4 (t / thing
+                      :ARG1-of (a2 / above-01
+                        :ARG2 (t2 / thing
+                          :ARG2-of (v / value-01
+                            :ARG1-of (f / fair-01))))))
+                  :mod (a5 / any))
+                :ARG2 (s2 / speculate-01
+                  :ARG0-of (a3 / accompany-01
+                    :ARG1 (b / business
+                      :mod (v2 / vigorous)
+                      :mod (a4 / and
+                        :op1 (m / merge-01)
+                        :op2 (b2 / buy-out-03)))))))
+            :op2 (d / dampen-02
+              :ARG0 (c2 / company :wiki "UAL_Corporation" :name (n / name :op1 "UAL"))
+              :ARG1 c3
+              :ARG1-of (o / obvious-01)))
+        </amr>
+      </example>
+      <example name="lie-v: ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1057">
+        <text>What treasures lie within ?</text>
+        <propbank>
+          <rel relloc="2">lie</rel>
+          <arg end="1" start="0" type="ARG1">What treasures</arg>
+          <arg end="3" start="3" type="ARG2">within</arg>
+        </propbank>
+        <amr version="2019">
+          (l / lie-07
+            :ARG1 (t / treasure
+              :mod (a / amr-unknown))
+            :ARG2 (s / space
+              :ARG1-of (i2 / inside-01)))
+        </amr>
+      </example>
+      <example name="lie-v" src="Minecraft">
+        <text>no , lying flat</text>
+        <propbank>
+          <rel relloc="2">lying</rel>
+          <arg end="3" start="3" type="ARGM-MNR">flat</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+            (a / and
+               :op1 (c / confirm-01 :polarity -)
+               :op2 (l / lie-07
+                  :ARG3 (f / flat-06)))
+            </amr>
+      </example>
+      <example name="lie-v" src="Minecraft">
+        <text>all the blocks lie on the ground</text>
+        <propbank>
+          <rel relloc="3">lie</rel>
+          <arg end="2" start="0" type="ARG1">all the blocks</arg>
+          <arg end="6" start="4" type="ARG2">on the ground</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (l / lie-07
+            :ARG1 (b / block :pl +
+              :mod (a / all))
+            :ARG2 (s / space
+              :ARG1-of (o / on-top-03
+                :ARG2 (g / ground)
+                :ARG3 (c / cartesian-framework-91
+                  :ARG1 (b2 / build-space)))))
+        </amr>
+      </example>
+      <note>LIE NOTES: Args 3 and 4 added for SpatialAMR.</note>
       <note>LIE-V NOTES: Frames file for 'lie' based on sentences in financial subcorpus. Verbnet classes assuming_position-50 spatial_configuration-47.6, which ignores one major sense. Comparison to 'lay' and 'sit' (from lie.01-v predicate notes)</note>
       <note>LYING-J NOTES: Added by Julia based on medi-tmprl1to8. (from lying.01-j)</note>
-      <roles>
-        <role descr="entity in the position" f="ppt" n="1">
-          <vnrole vncls="47.6" vntheta="theme"/>
-          <vnrole vncls="50" vntheta="agent"/>
-        </role>
-        <role descr="location" f="loc" n="2">
-          <vnrole vncls="47.6" vntheta="location"/>
-          <vnrole vncls="50" vntheta="location"/>
-        </role>
-      </roles>
-      <example name="lie-v: exist" src="" type="">
-        <text>But any chance for prices to surge above fair value lies in the speculation that accompanies a vigorous merger and buy-out business, and UAL has obviously put a damper on that.</text>
-        <arg f="dis" n="m">But</arg>
-        <arg f="" n="1">any chance for prices to surge above fair value</arg>
-        <rel f="">lies</rel>
-        <arg f="" n="2">in the speculation that accompanies a vigorous merger and buy-out business</arg>
-      </example>
-      <example name="ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1057" type="">
-        <text>What treasures lie within ?</text>
-        <arg f="" n="1">What treasures</arg>
-        <rel f="">lie</rel>
-        <arg f="" n="2">within</arg>
-      </example>
-
     </roleset>
-    
     <roleset id="lie.08" name="tell a falsehood">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">lie</alias>
-        <alias framenet="prevarication" pos="n" verbnet="">lie</alias>
-        <alias framenet="" pos="n" verbnet="">lying</alias>
+        <alias pos="v">lie</alias>
+        <alias pos="n">lie</alias>
+        <alias pos="n">lying</alias>
+        <argalias arg="0" pos="n">liar</argalias>
       </aliases>
+      <roles>
+        <role descr="liar" f="PAG" n="0">
+          <rolelinks/>
+        </role>
+        <role descr="lie itself" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="spatial_configuration-47.6" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="spatial_configuration-47.6" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="hearer" f="GOL" n="2">
+          <rolelinks/>
+        </role>
+        <role descr="subject matter the lie is about" f="VSP" n="3">
+          <rolelinks/>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Prevarication" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Contact.Prevarication.Broadcast" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Contact.Prevarication.Correspondence" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Contact.Prevarication.Meet" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Broadcast" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="lie-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">27</lexlink>
+        <lexlink class="lie-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">10</lexlink>
+        <lexlink class="spatial_configuration-47.6" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="lie-v: intransitivelly" src="">
+        <text>He is also accused of lying under oath and of leaking information obtained from a wiretap he supervised .</text>
+        <propbank>
+          <rel relloc="5">lying</rel>
+          <arg type="ARG0" start="0" end="0">He</arg>
+          <arg type="ARGM-LOC" start="6" end="7">under oath</arg>
+        </propbank>
+      </example>
+      <example name="lie-v: all args" src="">
+        <text>John lied to Mary about his whereabouts during their planned date .</text>
+        <propbank>
+          <rel relloc="1">lied</rel>
+          <arg type="ARG0" start="0" end="0">John</arg>
+          <arg type="ARG2" start="2" end="3">to Mary</arg>
+          <arg type="ARG1" start="4" end="10">about his whereabouts during their planned date</arg>
+        </propbank>
+      </example>
+      <example name="lie-v: args 0, 2 and 3" src="">
+        <text>his lies to me regarding my former network were outrageous</text>
+        <propbank>
+          <rel relloc="1">lies</rel>
+          <arg type="ARG0" start="0" end="0">his</arg>
+          <arg type="ARG2" start="2" end="3">to me</arg>
+          <arg type="ARG3" start="4" end="7">regarding my former network</arg>
+        </propbank>
+      </example>
+      <example name="lie-n: arg3" src="">
+        <text>Jiaka told lies about his client</text>
+        <propbank>
+          <rel relloc="2">lies</rel>
+          <arg type="ARG3" start="3" end="5">about his client</arg>
+        </propbank>
+      </example>
+      <example name="lie-n: args 1 and 3" src="">
+        <text>Those who are using this to attack Gibran and invent lies about him that he switched sides , you are either the dogs of Bashar or you are a Judas</text>
+        <propbank>
+          <rel relloc="10">lies</rel>
+          <arg type="ARG3" start="11" end="12">about him</arg>
+          <arg type="ARG1" start="13" end="16">that he switched sides</arg>
+        </propbank>
+      </example>
       <note>LIE-V NOTES: Frames file for 'lie' based on sentences in financial subcorpus. Verbnet classes assuming_position-50 spatial_configuration-47.6, which ignores one major sense. Comparison to 'lay' and 'sit' (from lie.02-v predicate notes)</note>
       <note>LIE-N NOTES: Based on nouns-00080. Comparison to lie-v.02. No VN class. Framed by Katie. (from lie.01-n)</note>
-      <roles>
-        <note>arg3 added by Julia based on corpus examples, potential co-occurance with arg1. (from lie.01-n)</note>
-        <role descr="liar" f="pag" n="0"/>
-        <role descr="lie itself" f="ppt" n="1"/>
-        <role descr="hearer" f="gol" n="2"/>
-        <role descr="subject matter the lie is about" f="vsp" n="3"/>
-      </roles>
-      <example name="lie-v: intransitivelly" src="" type="">
-        <text>He-1 is also accused of *trace*-1 lying under oath and of leaking information obtained from a wiretap he supervised.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">lying</rel>
-        <arg f="loc" n="m">under oath</arg>
-      </example>
-      <example name="lie-v: all args" src="" type="">
-        <text>John lied to Mary about his whereabouts during their planned date.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">lied</rel>
-        <arg f="" n="2">to Mary</arg>
-        <arg f="" n="1">about his whereabouts during their planned date</arg>
-      </example>
-      <example name="lie-v: args 0, 2 and 3" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>his lies to me regarding my former network were outrageous</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">lies</rel>
-        <arg f="" n="2">to me</arg>
-        <arg f="" n="3">regarding my former network</arg>
-      </example>
-      <example name="lie-n: arg3" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Jiaka told lies about his client</text>
-        <rel f="">lie</rel>
-        <arg f="" n="3">about his client</arg>
-      </example>
-      <example name="lie-n: args 1 and 3" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Those who are using this to attack Gibran and invent lies about him that he switched sides, you are either the dogs of Bashar or you are a Judas</text>
-        <rel f="">lies</rel>
-        <arg f="" n="3">about him</arg>
-        <arg f="" n="1">that he switched sides</arg>
-      </example>
+      <note>arg3 added by Julia based on corpus examples, potential co-occurance with arg1. (from lie.01-n)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="lay_on">
     <roleset id="lay_on.03" name="use or employ">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">lay_on</alias>
-        <alias framenet="" pos="n" verbnet="">laying_on</alias>
+        <alias pos="v">lay_on</alias>
+        <alias pos="n">laying_on</alias>
       </aliases>
-      <note>LAY_ON-V NOTES: Frameset created by Jena (from lay.03-v)</note>
       <roles>
-        <role descr="agent" f="pag" n="0"/>
-        <role descr="thing employed" f="ppt" n="1"/>
+        <role descr="agent" f="PAG" n="0"/>
+        <role descr="thing employed" f="PPT" n="1"/>
       </roles>
-      <example name="lay_on-v" src="" type="">
-        <text>The director lays on the tragedy a little too thick.</text>
-        <arg f="" n="0">the director</arg>
-        <rel f="">[ laying] [ on]</rel>
-        <arg f="" n="1">the tradgedy</arg>
-        <arg f="mnr" n="m">a little too thick</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="lay_on-v" src="">
+        <text>The director lays on the tragedy a little too thick .</text>
+        <propbank>
+          <rel relloc="2 3">lays on</rel>
+          <arg type="ARG0" start="0" end="1">The director</arg>
+          <arg type="ARG1" start="4" end="5">the tragedy</arg>
+          <arg type="ARGM-MNR" start="6" end="9">a little too thick</arg>
+        </propbank>
       </example>
+      <note>LAY_ON-V NOTES: Frameset created by Jena (from lay.03-v)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="lay_off">
     <roleset id="lay_off.02" name="fire, let go from employement">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">lay_off</alias>
-        <alias framenet="" pos="n" verbnet="">layoff</alias>
-        <alias framenet="" pos="n" verbnet="">laying_off</alias>
+        <alias pos="v">lay_off</alias>
+        <alias pos="n">layoff</alias>
+        <alias pos="n">laying_off</alias>
       </aliases>
+      <roles>
+        <role descr="(former) employer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="(former) employee" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="remove-10.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="lay_off-v: economic downturn" src="">
+        <text>Xerox Corp. has told employees in its Crum &amp; Forster personal insurance operations that it is laying off about 300 people , or 25 % of the staff .</text>
+        <propbank>
+          <rel relloc="16 17">laying off</rel>
+          <arg type="ARG0" start="14" end="14">it</arg>
+          <arg type="ARG1" start="18" end="27">about 300 people , or 25 % of the staff</arg>
+        </propbank>
+      </example>
       <note>LAY_OFF-V NOTES: (from lay.02-v)</note>
       <note>LAY_OFF-N NOTES: Automatically created by Julia as an alias file for unification. (from layoff.02-n)</note>
-      <roles>
-        <role descr="(former) employer" f="pag" n="0"/>
-        <role descr="(former) employee" f="ppt" n="1"/>
-      </roles>
-      <example name="lay_off-v: economic downturn" src="" type="">
-        <text>Xerox Corp. has told employees in its Crum&amp; Forster personal insurance operations that it is laying off about 300 people, or 25% of the staff.</text>
-        <arg f="" n="0">it</arg>
-        <rel f="">[ laying] [ off]</rel>
-        <arg f="" n="1">about 300 people , or 25 % of the staff</arg>
-      </example>
     </roleset>
-    
     <roleset id="lay_off.06" name="cease (harassing, using, etc.)">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">lay_off</alias>
+        <alias pos="v">lay_off</alias>
       </aliases>
-      <note>NAME-V NOTES: </note>
       <roles>
-        <role descr="agent of cessation" f="pag" n="0"/>
-        <role descr="activity ceased" f="ppt" n="1"/>
+        <role descr="agent of cessation" f="PAG" n="0"/>
+        <role descr="activity ceased" f="PPT" n="1"/>
       </roles>
-      <example name="lay_off-v: leave alone" src="" type="">
-        <text>The Clinton administration is not making much progress *PRO* gettingpalestinians and Israelis to lay off each other and talk about it.</text>
-        <arg f="" n="0">Palestinians and Israelis</arg>
-        <rel f="">[lay][off]</rel>
-        <arg f="" n="1">each other</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="lay_off-v: leave alone" src="">
+        <text>The Clinton administration is not making much progress getting Palestinians and Israelis to lay off each other and talk about it .</text>
+        <propbank>
+          <rel relloc="13 14">lay off</rel>
+          <arg type="ARG0" start="9" end="11">Palestinians and Israelis</arg>
+          <arg type="ARG1" start="15" end="16">each other</arg>
+        </propbank>
       </example>
+      <note>NAME-V NOTES: </note>
     </roleset>
   </predicate>
-  
   <predicate lemma="laid_back">
     <roleset id="laid_back.05" name="relaxed, casual">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">laid_back</alias>
-        <alias framenet="" pos="j" verbnet="">laid_back</alias>
+        <alias pos="v">laid_back</alias>
+        <alias pos="j">laid_back</alias>
       </aliases>
+      <roles>
+        <role descr="causer of relaxation" f="PAG" n="0"/>
+        <role descr="relaxed/casual entity" f="PPT" n="1"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="laid_back-j" src="SMS">
+        <text>Haha it 's actually been going pretty well ... i ve found that the more organized I am , the more laid back that allows me to be , since I know where everything stands -LRB- control freak much ? Haha .. -RRB-</text>
+        <propbank>
+          <rel relloc="21 22">laid back</rel>
+          <arg type="ARGM-EXT" start="20" end="20">more</arg>
+          <arg type="ARG1" start="25" end="25">me</arg>
+        </propbank>
+      </example>
       <note>LAID_BACK-V NOTES: Added by Julia based on SMS. (from lay.05-v)</note>
       <note>LAID_BACK-J NOTES: Added by Julia based on SMS. (from laid.05-j)</note>
-      <roles>
-        <role descr="causer of relaxation" f="pag" n="0"/>
-        <role descr="relaxed/casual entity" f="ppt" n="1"/>
-      </roles>
-      <example name="laid_back-j" src="SMS" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Haha it 's actually been going pretty well ... i ve found that the more organized I am , the more laid back that allows me to be , since I know where everything stands -LRB- control freak much ? Haha .. -RRB-</text>
-        <arg f="ext" n="m">more</arg>
-        <rel f="">[laid][back]</rel>
-        <arg f="" n="1">me</arg>
-      </example>
     </roleset>
   </predicate>
-  
   <predicate lemma="lie_down">
     <roleset id="lie_down.09" name="more explicit horizontal position">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">lay_down</alias>
-        <alias framenet="" pos="v" verbnet="">lie_down</alias>
-        <alias framenet="" pos="n" verbnet="">laying_down</alias>
-        <alias framenet="" pos="n" verbnet="">lying_down</alias>
+        <alias pos="v">lay_down</alias>
+        <alias pos="v">lie_down</alias>
+        <alias pos="n">laying_down</alias>
+        <alias pos="n">lying_down</alias>
       </aliases>
-      <note>LIE_DOWN-V NOTES: (from lie.03-v)</note>
       <roles>
-        <role descr="entity lying down" f="pag" n="1">
-          <vnrole vncls="50" vntheta="agent"/>
+        <role descr="entity lying down" f="PAG" n="1">
+          <rolelinks>
+            <rolelink class="assuming_position-50" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="assuming_position-50" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="location" f="loc" n="2">
-          <vnrole vncls="50" vntheta="location"/>
+        <role descr="location" f="LOC" n="2">
+          <rolelinks>
+            <rolelink class="assuming_position-50" resource="VerbNet" version="verbnet3.3">location</rolelink>
+            <rolelink class="assuming_position-50" resource="VerbNet" version="verbnet3.4">location</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="lie_down-v: no location" src="" type="">
-        <text>[Wall Street's New Guard]-1 isn't likely *trace*-1 to take all this *trace*-1 lying down for long, however.</text>
-        <arg f="" n="1">*trace*</arg>
-        <rel f="">[ lying] [ down]</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="assuming_position-50" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="assuming_position-50" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="lie_down-v: no location" src="">
+        <text>Wall Street 's New Guard is n't likely to take all this lying down for long , however .</text>
+        <propbank>
+          <rel relloc="12 13">lying down</rel>
+          <arg type="ARG1" start="0" end="4">Wall Street 's New Guard</arg>
+        </propbank>
       </example>
-      <example name="lay_down-v: more clear" src="" type="">
-        <text>John-1 is going *trace*-1 to lay down on the floor and cry.</text>
-        <arg f="" n="1">*trace*</arg>
-        <rel f="">[lay] [down]</rel>
-        <arg f="" n="2">on the floor</arg>
+      <example name="lay_down-v: more clear" src="">
+        <text>John is going to lay down on the floor and cry .</text>
+        <propbank>
+          <rel relloc="4 5">lay down</rel>
+          <arg type="ARG1" start="0" end="0">John</arg>
+          <arg type="ARG2" start="6" end="8">on the floor</arg>
+        </propbank>
       </example>
+      <note>LIE_DOWN-V NOTES: (from lie.03-v)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="lay_down">
     <roleset id="lay_down.10" name="install or establish">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">lay_down</alias>
-        <alias framenet="" pos="v" verbnet="">lie_down</alias>
-        <alias framenet="" pos="n" verbnet="">laying_down</alias>
-        <alias framenet="" pos="n" verbnet="">lying_down</alias>
+        <alias pos="v">lay_down</alias>
+        <alias pos="v">lie_down</alias>
+        <alias pos="n">laying_down</alias>
+        <alias pos="n">lying_down</alias>
       </aliases>
-      <note>LAY_DOWN-V NOTES: No Vn or Fn classes. Comparison to install. (from lie.04-v)</note>
       <roles>
-        <role descr="installer, creator, agent" f="pag" n="0"/>
-        <role descr="thing installed" f="ppt" n="1"/>
-        <role descr="installed where" f="loc" n="2"/>
+        <role descr="installer, creator, agent" f="PAG" n="0"/>
+        <role descr="thing installed" f="PPT" n="1"/>
+        <role descr="installed where" f="LOC" n="2"/>
       </roles>
-      <example name="lay_down-v" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>[Pro-1] lay down an entire fiber optic network</text>
-        <arg f="" n="0">[Pro-1]</arg>
-        <rel f="">lay</rel>
-        <rel f="">down</rel>
-        <arg f="" n="1">an entire fiber optics network</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="lay_down-v" src="">
+        <text>[*PRO*-1] lay down an entire fiber optic network</text>
+        <propbank>
+          <rel relloc="1 2">lay down</rel>
+          <arg type="ARG0" start="?" end="?">[*PRO*-1]</arg>
+          <arg type="ARG1" start="3" end="7">an entire fiber optic network</arg>
+        </propbank>
       </example>
+      <note>LAY_DOWN-V NOTES: No Vn or Fn classes. Comparison to install. (from lie.04-v)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="lie_in">
     <roleset id="lie_in.11" name="lie in bed, confinement or bed rest, sometimes for child birth">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">lie_in</alias>
-        <alias framenet="" pos="l" verbnet="">have_lie_in</alias>
+        <alias pos="n">lie_in</alias>
+        <alias pos="l">have_lie_in</alias>
       </aliases>
-      <note>LIE_IN-N NOTES: Roleset based on instances in BOLT P01, part 4. (from lie.02-n)</note>
       <roles>
-        <role descr="mother or lazy person" f="ppt" n="1"/>
+        <role descr="mother or lazy person" f="PPT" n="1"/>
       </roles>
-      <example name="lie_in-v: Command, LVC" src="BOLT Part 4" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>She even asked if I wanted her to come back to my house, but I refused and said something stupid like 'nah, it's okay, *PRO* have a lie in,' which I've been kicking myself for.</text>
-        <arg f="" n="1">*PRO*</arg>
-        <arg f="lvb" n="m">have</arg>
-        <rel f="">[lie][in]</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="lie_in-v: Command, LVC" src="BOLT Part 4">
+        <text>She even asked if I wanted her to come back to my house , but I refused and said something stupid like ' nah , it 's okay , *PRO* have a lie in , ' which I 've been kicking myself for .</text>
+        <propbank>
+          <rel relloc="32 33">lie in</rel>
+          <arg type="ARG1" start="?" end="?">*PRO*</arg>
+          <arg type="ARGM-LVB" start="30" end="30">have</arg>
+        </propbank>
       </example>
+      <note>LIE_IN-N NOTES: Roleset based on instances in BOLT P01, part 4. (from lie.02-n)</note>
     </roleset>
   </predicate>
-  
   <predicate lemma="give_lie_to">
     <roleset id="give_lie_to.12" name="refute, prove as false">
       <aliases>
-        <alias framenet="" pos="m" verbnet="">give_lie</alias>
-        <mwe id="give_lie">
-          <token slot="A" arg="" pos="VB*" head="" dep="">give</token>
-          <token slot="B" arg="" pos="NN" head="A" dep="dobj">lie</token> 
-        </mwe>
+        <alias pos="m">give_lie</alias>
+        <mwp-descriptions id="give_lie">
+          <syntaxdesc slots="B A">
+            <token arg="" dep="" head="" pos="VB*" slot="A">give</token>
+            <token arg="" dep="dobj" head="A" pos="NN" slot="B">lie</token>
+          </syntaxdesc>
+        </mwp-descriptions>
       </aliases>
-      <note>GIVE_LIE-M NOTES: </note>
       <roles>
-        <role descr="refuter" f="pag" n="0"/>
-        <role descr="thing proven false" f="ppt" n="1"/>
+        <role descr="refuter" f="PAG" n="0"/>
+        <role descr="thing proven false" f="PPT" n="1"/>
       </roles>
-      <example name="give_lie-m" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="give_lie-m" src="">
         <text>That event , therefore , gives the lie to @Mary_H 's claim</text>
-        <arg f="" n="0">That event</arg>
-        <arg f="dis" n="m">therefore</arg>
-        <rel f="">[gives][lie]</rel>
-        <arg f="" n="1">to @Mary_H's claim</arg>
+        <propbank>
+          <rel relloc="5 7">gives lie</rel>
+          <arg type="ARG0" start="0" end="1">That event</arg>
+          <arg type="ARGM-DIS" start="3" end="3">therefore</arg>
+          <arg type="ARG1" start="8" end="11">to @Mary_H 's claim</arg>
+        </propbank>
       </example>
+      <note>GIVE_LIE-M NOTES: </note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,98 +1,159 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="dream">
     <roleset id="dream.01" name="dream">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">dream</alias>
-        <alias framenet="" pos="n" verbnet="">dream</alias>
-        <alias framenet="" pos="l" verbnet="">have_dream</alias>
-        <alias framenet="" pos="n" verbnet="">dreaming</alias>
+        <alias pos="v">dream</alias>
+        <alias pos="n">dream</alias>
+        <alias pos="l">have_dream</alias>
+        <alias pos="n">dreaming</alias>
       </aliases>
+      <roles>
+        <role descr="dreamer" f="PPT" n="0">
+          <rolelinks>
+            <rolelink class="wish-62" resource="VerbNet" version="verbnet3.3">experiencer</rolelink>
+            <rolelink class="wish-62" resource="VerbNet" version="verbnet3.4">experiencer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="dream" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="wish-62" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="wish-62" resource="VerbNet" version="verbnet3.4">stimulus</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="wish-62" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="dream-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">13</lexlink>
+        <lexlink class="wish-62" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="dream about" src="">
+        <text>I even dreamt about school and new things to do with my students . ''</text>
+        <propbank>
+          <rel relloc="2">dreamt</rel>
+          <arg type="ARG0" start="0" end="0">I</arg>
+          <arg type="ARGM-DIS" start="1" end="1">even</arg>
+          <arg type="ARG1" start="3" end="12">about school and new things to do with my students</arg>
+        </propbank>
+      </example>
+      <example name="dream of" src="">
+        <text>It 's one more , too , for the fans who dream of a season that never ends .</text>
+        <propbank>
+          <rel relloc="11">dream</rel>
+          <arg type="ARG0" start="8" end="9">the fans</arg>
+          <arg type="R-ARG0" start="10" end="10">who</arg>
+          <arg type="ARG1" start="13" end="17">a season that never ends</arg>
+        </propbank>
+      </example>
+      <example name="within LVC, all arguments" src="nt-2">
+        <text>Last night I had a dream about him , and it troubled me very much .</text>
+        <propbank>
+          <rel relloc="5">dream</rel>
+          <arg type="ARGM-TMP" start="0" end="1">Last night</arg>
+          <arg type="ARG0" start="2" end="2">I</arg>
+          <arg type="ARGM-LVB" start="3" end="3">had</arg>
+          <arg type="ARG1" start="6" end="7">about him</arg>
+        </propbank>
+      </example>
+      <example name="Headling, dream of" src="web">
+        <text>Olathe girl realizes her dream of playing Division I hockey .</text>
+        <propbank>
+          <rel relloc="4">dream</rel>
+          <arg type="ARG0" start="3" end="3">her</arg>
+          <arg type="ARG1" start="5" end="9">of playing Division I hockey</arg>
+        </propbank>
+      </example>
       <note>DREAM-V NOTES: This roleset can also take a cognate NP arg1:"dream a little dream ofme." (from dream.01-v)</note>
       <note>DREAMING-N NOTES: (from dreaming.01-n)</note>
       <note>DREAM-N NOTES: Roleset based on verb entry dream.01 and instances in New Testament. Framed by Claire. (from dream.01-n)</note>
-      <roles>
-        <role descr="dreamer" f="PPT" n="0">
-          <vnrole vncls="62" vntheta="Experiencer"/>
-        </role>
-        <role descr="dream" f="PPT" n="1">
-          <vnrole vncls="62" vntheta="Theme"/>
-        </role>
-      </roles>
-      <example name="dream about" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>I even dreamt about school and new things to do with my students.''</text>
-        <arg f="" n="0">I</arg>
-        <arg f="DIS" n="M">even</arg>
-        <rel f="">dreamt</rel>
-        <arg f="" n="1">about school and new things to do with my students</arg>
-      </example>
-      <example name="dream of" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>It's one more, too, for the fans who *trace* dream of a seasonthat never ends.</text>
-        <arg f="" n="0">*trace*</arg>
-        <arg f="RCL" n="M">who -&gt; the fans</arg>
-        <rel f="">dream</rel>
-        <arg f="" n="1">of a season that never ends</arg>
-      </example>
-      <example name="within LVC, all arguments" src="nt-2" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Last night I had a dream about him , and it troubled me very much .</text>
-        <arg f="tmp" n="m">Last night</arg>
-        <arg f="" n="0">I</arg>
-        <arg f="lvb" n="m">had</arg>
-        <rel f="">dream</rel>
-        <arg f="" n="1">about him</arg>
-      </example>
-      <example name="Headling, dream of" src="web" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>Olathe girl realizes her dream of playing Division I hockey.</text>
-        <arg f="" n="0">her</arg>
-        <rel f="">dream</rel>
-        <arg f="" n="1">of playing Division I hockey.</arg>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="dream_up">
     <roleset id="dream_up.02" name="come up with, devise, create">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">dream_up</alias>
+        <alias pos="v">dream_up</alias>
       </aliases>
-      <note>DREAM_UP-V NOTES: (from dream.02-v)</note>
       <roles>
         <role descr="dreamer" f="PPT" n="0">
-          <vnrole vncls="62" vntheta="Experiencer"/>
+          <rolelinks>
+            <rolelink class="wish-62" resource="VerbNet" version="verbnet3.3">experiencer</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing dreamed up" f="PPT" n="1">
-          <vnrole vncls="62" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="wish-62" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="living in a dream world" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>To further load the stakes, Mr. Lane dreamed up a highly improbable romance for the Artist, with a young woman who owns her own children's shop and who lives in an expensive high-rise apartment building.</text>
-        <arg f="" n="0">Mr. Lane</arg>
-        <rel f="">[ dreamed] [ up]</rel>
-        <arg f="" n="1">a highly improbable romance for the Artist, with a young woman who owns her own children's shop and who lives in an expensive high-rise apartment building</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="wish-62" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="dream-v.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+      </lexlinks>
+      <example name="living in a dream world" src="">
+        <text>To further load the stakes , Mr. Lane dreamed up a highly improbable romance for the Artist , with a young woman who owns her own children 's shop and who lives in an expensive high - rise apartment building .</text>
+        <propbank>
+          <rel relloc="8 9">dreamed up</rel>
+          <arg type="ARG0" start="6" end="7">Mr. Lane</arg>
+          <arg type="ARG1" start="10" end="39">a highly improbable romance for the Artist , with a young woman who owns her own children 's shop and who lives in an expensive high - rise apartment building</arg>
+        </propbank>
       </example>
+      <note>DREAM_UP-V NOTES: (from dream.02-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="dream_on">
     <roleset id="dream_on.03" name="continue dreaming">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">dream_on</alias>
+        <alias pos="v">dream_on</alias>
       </aliases>
-      <note>DREAM_ON-V NOTES: (from dream.03-v)</note>
       <roles>
         <role descr="dreamer" f="PPT" n="0">
-          <vnrole vncls="62" vntheta="Experiencer"/>
+          <rolelinks>
+            <rolelink class="wish-62" resource="VerbNet" version="verbnet3.3">experiencer</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="this really occurred" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="ns" voice="ns"/>
-        <text>*trace* Dream on.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">[ Dream] [ on]</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="wish-62" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+      </lexlinks>
+      <example name="this really occurred" src="">
+        <text>*trace* Dream on .</text>
+        <propbank>
+          <rel relloc="1 2">Dream on</rel>
+          <arg type="ARG0" start="?" end="?">*trace*</arg>
+        </propbank>
       </example>
+      <note>DREAM_ON-V NOTES: (from dream.03-v)</note>
     </roleset>
   </predicate>
 </frameset>

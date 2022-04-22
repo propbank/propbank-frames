@@ -1,77 +1,132 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="quicken">
     <roleset id="quicken.01" name="become faster">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">quicken</alias>
+        <alias pos="v">quicken</alias>
       </aliases>
-      <note>QUICKEN-V NOTES: Frames file for 'quicken' based on sentences in wsj. No access to Verbnet at the moment. (from quicken.01-v predicate notes)</note>
       <roles>
-        <role descr="causer of speed-up" f="pag" n="0"/>
-        <role descr="thing becoming faster" f="ppt" n="1">
-          <vnrole vncls="45.4" vntheta="patient"/>
+        <role descr="causer of speed-up" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="EXT" f="ext" n="2"/>
-        <role descr="old speed" f="dir" n="3"/>
-        <role descr="new speed" f="prd" n="4"/>
+        <role descr="thing becoming faster" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="EXT" f="EXT" n="2">
+          <rolelinks/>
+        </role>
+        <role descr="old speed" f="DIR" n="3">
+          <rolelinks/>
+        </role>
+        <role descr="new speed" f="PRD" n="4">
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">result</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="ARG0 and ARG1" src="ontonotes nw/xinhua/01/chtb_0108" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="other_cos-45.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="quicken-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="other_cos-45.4" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="ARG0 and ARG1" src="ontonotes nw/xinhua/01/chtb_0108">
         <text>At the same time , various places have quickened steps of relaxing control over small enterprises .</text>
-        <arg f="tmp" n="m">At the same time</arg>
-        <arg f="" n="0">various places</arg>
-        <rel f="">quickened</rel>
-        <arg f="" n="1">steps of relaxing control over small enterprises</arg>
+        <propbank>
+          <rel relloc="8">quickened</rel>
+          <arg type="ARGM-TMP" start="0" end="3">At the same time</arg>
+          <arg type="ARG0" start="5" end="6">various places</arg>
+          <arg type="ARG1" start="9" end="15">steps of relaxing control over small enterprises</arg>
+        </propbank>
       </example>
-
-      <example name="patient as subject" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="active"/>
-        <text>[Housing starts]-1 are expected [*]-1 to quicken a bit from August's annual pace of 1,350,000 units.</text>
-        <arg f="" n="1">[*]</arg>
-        <rel f="">quicken</rel>
-        <arg f="" n="2">a bit</arg>
-        <arg f="" n="3">from August's annual pace of 1,350,000 units</arg>
+      <example name="patient as subject" src="">
+        <text>Housing starts are expected to quicken a bit from August 's annual pace of 1,350,000 units .</text>
+        <propbank>
+          <rel relloc="5">quicken</rel>
+          <arg type="ARG1" start="0" end="1">Housing starts</arg>
+          <arg type="ARG2" start="6" end="7">a bit</arg>
+          <arg type="ARG3" start="8" end="15">from August 's annual pace of 1,350,000 units</arg>
+        </propbank>
       </example>
+      <note>QUICKEN-V NOTES: Frames file for 'quicken' based on sentences in wsj. No access to Verbnet at the moment. (from quicken.01-v predicate notes)</note>
     </roleset>
   </predicate>
   <predicate lemma="quick">
     <roleset id="quick.02" name="speedy, nimble">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">quicker</alias>
-        <alias framenet="Speed_description Taking_time" pos="j" verbnet="">quick</alias>
+        <alias pos="j">quicker</alias>
+        <alias pos="j">quick</alias>
       </aliases>
+      <roles>
+        <role descr="non-volitional speedy thing/action (may require concatenation)" f="PPT" n="1"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Speed_description" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Taking_time" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+      </lexlinks>
+      <example name="arg1, argMs" src="BOLT-1">
+        <text>Firing squad is probably pretty quick , but I do n't know that it 's used much .</text>
+        <propbank>
+          <rel relloc="5">quick</rel>
+          <arg type="ARG1" start="0" end="1">Firing squad</arg>
+          <arg type="ARGM-ADV" start="3" end="3">probably</arg>
+          <arg type="ARGM-EXT" start="4" end="4">pretty</arg>
+        </propbank>
+      </example>
+      <example name="concatenation of arg1" src="internet">
+        <text>On his early strike , the livewire winger was quick to praise team - mate Jonjo Shelvey , the man who provided a delightful 50 - yard pass to assist .</text>
+        <propbank>
+          <rel relloc="9">quick</rel>
+          <arg type="ARGM-TMP" start="0" end="3">On his early strike</arg>
+          <arg type="ARG1" start="5" end="7">the livewire winger</arg>
+          <arg type="C-ARG1" start="10" end="29">to praise team - mate Jonjo Shelvey , the man who provided a delightful 50 - yard pass to assist</arg>
+        </propbank>
+      </example>
+      <example name="concatenation of arg1" src="internet">
+        <text>It has tons of protein , good sugar , and is quick to eat .</text>
+        <propbank>
+          <rel relloc="11">quick</rel>
+          <arg type="ARG1" start="0" end="0">It</arg>
+          <arg type="C-ARG1" start="12" end="13">to eat</arg>
+        </propbank>
+      </example>
+      <example name="lexical comparative" src="BOLT-4,5">
+        <text>Just finished zapping them again but this time did it myself , found it to be much quicker .</text>
+        <propbank>
+          <rel relloc="17">quicker</rel>
+          <arg type="ARG1" start="13" end="13">it</arg>
+          <arg type="ARGM-EXT" start="16" end="16">much</arg>
+        </propbank>
+      </example>
       <note>QUICK-J NOTES: Added by Julia based on BOLT-1. (from quick.01-j)</note>
       <note>QUICKER-J NOTES: Automatically created by Julia as an alias file for unification. (from quicker.01-j)</note>
-      <roles>
-        <role descr="non-volitional speedy thing/action (may require concatenation)" f="ppt" n="1"/>
-      </roles>
-      <example name="arg1, argMs" src="BOLT-1" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Firing squad is probably pretty quick , but I do n't know that it 's used much .</text>
-        <arg f="" n="1">Firing squad</arg>
-        <arg f="adv" n="m">probably</arg>
-        <arg f="ext" n="m">pretty</arg>
-        <rel f="">quick</rel>
-      </example>
-      <example name="concatenation of arg1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>On his early strike, the livewire winger was quick to praise team-mate Jonjo Shelvey, the man who provided a delightful 50-yard pass to assist.</text>
-        <arg f="tmp" n="m">On his early strike</arg>
-        <rel f="">quick</rel>
-        <arg f="" n="1">[the livewire winger] [to praise team-mate Jonjo Shelvey, the man who provided a delightful 50-yard pass to assist]</arg>
-      </example>
-      <example name="concatenation of arg1" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>It has tons of protein, good sugar, and is quick to eat.</text>
-        <arg f="" n="1">[it][to eat]</arg>
-        <rel f="">quick</rel>
-      </example>
-      <example name="lexical comparative" src="BOLT-4,5" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Just finished zapping them again but this time did it myself , found it to be much quicker .</text>
-        <arg f="" n="1">it</arg>
-        <arg f="ext" n="m">much</arg>
-        <rel f="">quicker</rel>
-      </example>
     </roleset>
   </predicate>
 </frameset>

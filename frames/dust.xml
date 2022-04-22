@@ -1,92 +1,171 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="dust">
     <roleset id="dust.01" name="sprinkle lightly">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">dust</alias>
-        <alias framenet="" pos="n" verbnet="">dusting</alias>
+        <alias pos="v">dust</alias>
+        <alias pos="n">dusting</alias>
       </aliases>
-      <note>DUST-V NOTES: Frames file for 'dust' based on sentences in wsj. Verbnet entries 9.7-2 and 10.4.1, Framenet entries Filling and Placing. (from dust.01-v predicate notes)</note>
-      <note>DUSTING-N NOTES: Corresponds with dust.01. Framed by anwen april 2011 (from dusting.01-n)</note>
       <roles>
         <role descr="agent, sprinkler" f="PAG" n="0">
-          <vnrole vncls="9.7-2" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="spray-9.7-2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Placing" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="Placing" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="spray-9.7-2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="dustlike substance" f="PPT" n="1">
-          <vnrole vncls="9.7-2" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="spray-9.7-2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Placing" resource="FrameNet" version="1.7">theme</rolelink>
+            <rolelink class="spray-9.7-2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="sprinkled-upon" f="GOL" n="2">
-          <vnrole vncls="9.7-2" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink class="spray-9.7-2" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="Placing" resource="FrameNet" version="1.7">goal</rolelink>
+            <rolelink class="spray-9.7-2" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="ARG" src="probably COCA (2018 example fix)" type="">
-        <text>Stupid-1, wrapped in silly, coated in nonsense, dusted [*-1] with dumb</text>
-        <rel f="">[*-1]</rel>
-        <arg f="" n="2">with</arg>
-        <arg f="" n="1">dumb</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Placing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="spray-9.7-2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="spray-9.7-2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="ARG" src="probably COCA (2018 example fix)">
+        <text>Stupid , wrapped in silly , coated in nonsense , dusted with dumb</text>
+        <propbank>
+          <rel relloc="10">dusted</rel>
+          <arg type="ARG2" start="0" end="0">Stupid</arg>
+          <arg type="ARG1" start="11" end="12">with dumb</arg>
+        </propbank>
       </example>
-
-      <example name="ARG" src="probably COCA (2018 example fix)" type="">
-        <text>I dusted powdered sugar over the top and served it with a generous dollop of whipped cream,</text>
-        <arg f="" n="0">I</arg>
-        <rel f="">dusted</rel>
-        <arg f="" n="1">powdered sugar</arg>
-        <arg f="" n="2">over the</arg>
+      <example name="ARG" src="probably COCA (2018 example fix)">
+        <text>I dusted powdered sugar over the top and served it with a generous dollop of whipped cream ,</text>
+        <propbank>
+          <rel relloc="1">dusted</rel>
+          <arg type="ARG0" start="0" end="0">I</arg>
+          <arg type="ARG1" start="2" end="3">powdered sugar</arg>
+          <arg type="ARG2" start="4" end="5">over the</arg>
+        </propbank>
       </example>
-
-      <example name="All args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Dustin's dusting of the Dutch babies with powdered sugar added a nice touch to the breakfast presentation.</text>
-        <arg f="" n="0">Dustin's</arg>
-        <rel f="">dusting</rel>
-        <arg f="" n="2">of the Dutch babies</arg>
-        <arg f="" n="1">with powdered sugar</arg>
+      <example name="All args" src="">
+        <text>Dustin 's dusting of the Dutch babies with powdered sugar added a nice touch to the breakfast presentation .</text>
+        <propbank>
+          <rel relloc="2">dusting</rel>
+          <arg type="ARG0" start="0" end="1">Dustin 's</arg>
+          <arg type="ARG2" start="3" end="6">of the Dutch babies</arg>
+          <arg type="ARG1" start="7" end="9">with powdered sugar</arg>
+        </propbank>
       </example>
+      <note>DUST-V NOTES: Frames file for 'dust' based on sentences in wsj. Verbnet entries 9.7-2 and 10.4.1, Framenet entries Filling and Placing. (from dust.01-v predicate notes)</note>
+      <note>DUSTING-N NOTES: Corresponds with dust.01. Framed by anwen april 2011 (from dusting.01-n)</note>
     </roleset>
     <roleset id="dust.02" name="remove dust from surfaces">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">dust</alias>
+        <alias pos="v">dust</alias>
       </aliases>
-      <note>DUST-V NOTES: Frames file for 'dust' based on sentences in wsj. Verbnet entries 9.7-2 and 10.4.1, Framenet entries Filling and Placing. (from dust.02-v predicate notes)</note>
       <roles>
         <role descr="remover of dust, agent" f="PAG" n="0">
-          <vnrole vncls="10.4.1-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="wipe_manner-10.4.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Removing" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="Removing" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="Removing" resource="FrameNet" version="1.7">theme</rolelink>
+            <rolelink class="spray-9.7-2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="wipe_manner-10.4.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="surface" f="DIR" n="1">
-          <vnrole vncls="10.4.1-1" vntheta="Source"/>
+          <rolelinks>
+            <rolelink class="wipe_manner-10.4.1-1" resource="VerbNet" version="verbnet3.3">source</rolelink>
+            <rolelink class="Removing" resource="FrameNet" version="1.7">source</rolelink>
+            <rolelink class="spray-9.7-2" resource="VerbNet" version="verbnet3.4">initial_location</rolelink>
+            <rolelink class="wipe_manner-10.4.1-1" resource="VerbNet" version="verbnet3.4">source</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="spring cleaning" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>John dusted his furniture.</text>
-        <arg f="" n="0">John</arg>
-        <rel f="">dusted</rel>
-        <arg f="" n="1">his furniture</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Removing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="wipe_manner-10.4.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="wipe_manner-10.4.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="spray-9.7-2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="spring cleaning" src="">
+        <text>John dusted his furniture .</text>
+        <propbank>
+          <rel relloc="1">dusted</rel>
+          <arg type="ARG0" start="0" end="0">John</arg>
+          <arg type="ARG1" start="2" end="3">his furniture</arg>
+        </propbank>
       </example>
+      <note>DUST-V NOTES: Frames file for 'dust' based on sentences in wsj. Verbnet entries 9.7-2 and 10.4.1, Framenet entries Filling and Placing. (from dust.02-v predicate notes)</note>
     </roleset>
   </predicate>
   <predicate lemma="dust_off">
     <roleset id="dust_off.03" name="remove dust, metaphorical/phrasal variant">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">dust_off</alias>
+        <alias pos="v">dust_off</alias>
       </aliases>
-      <note>DUST_OFF-V NOTES: (from dust.03-v)</note>
       <roles>
         <role descr="agent" f="PAG" n="0">
-          <vnrole vncls="10.4.1-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="wipe_manner-10.4.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="surface" f="PPT" n="1">
-          <vnrole vncls="10.4.1-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="wipe_manner-10.4.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="pick yourself up, ... start all over again" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>After being trampled in Tuesday's selling stampede, the Nasdaq over-the-counter market dusted itself off and moved on in moderate trading.</text>
-        <arg f="TMP" n="M">After being trampled in Tuesday's selling stampede</arg>
-        <arg f="" n="0">the Nasdaq over-the-counter market</arg>
-        <rel f="">[ dusted] [ off]</rel>
-        <arg f="REC" n="1">itself</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="wipe_manner-10.4.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+      </lexlinks>
+      <example name="pick yourself up, ... start all over again" src="">
+        <text>After being trampled in Tuesday 's selling stampede , the Nasdaq over - the - counter market dusted itself off and moved on in moderate trading .</text>
+        <propbank>
+          <rel relloc="17 19">dusted off</rel>
+          <arg type="ARGM-TMP" start="0" end="7">After being trampled in Tuesday 's selling stampede</arg>
+          <arg type="ARG0" start="9" end="16">the Nasdaq over - the - counter market</arg>
+          <arg type="ARG1" start="18" end="18">itself</arg>
+        </propbank>
       </example>
+      <note>DUST_OFF-V NOTES: (from dust.03-v)</note>
     </roleset>
   </predicate>
 </frameset>

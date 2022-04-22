@@ -1,44 +1,84 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="threaten">
     <roleset id="threaten.01" name="threaten">
       <aliases>
-        <alias framenet="Commitment" pos="v" verbnet="">threaten</alias>
-        <alias framenet="" pos="n" verbnet="">threat</alias>
-        <alias framenet="" pos="j" verbnet="">threatening</alias>
+        <alias pos="v">threaten</alias>
+        <alias pos="n">threat</alias>
+        <alias pos="j">threatening</alias>
       </aliases>
+      <roles>
+        <role descr="agent, entity making a threat" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.3">stimulus</rolelink>
+            <rolelink class="Commitment" resource="FrameNet" version="1.7">speaker</rolelink>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.4">stimulus</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="threat" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.3">experiencer</rolelink>
+            <rolelink class="Commitment" resource="FrameNet" version="1.7">topic</rolelink>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.4">experiencer??</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="'benefactive', entity threatened" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="Commitment" resource="FrameNet" version="1.7">addressee</rolelink>
+            <rolelink class="amuse-31.1" resource="VerbNet" version="verbnet3.4">nm</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Commitment" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="amuse-31.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="Contact.ThreatenCoerce.Broadcast" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019" />
+        <lexlink class="Contact.ThreatenCoerce.Correspondence" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019" />
+        <lexlink class="Contact.ThreatenCoerce.Meet" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019" />
+        <lexlink class="Broadcast" confidence="0.1" resource="ERE" src="reo-expansion" version="rich" />
+        <lexlink class="threaten-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">44</lexlink>
+        <lexlink class="threaten-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">42</lexlink>
+        <lexlink class="amuse-31.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="threaten-v: sentential threat" src="">
+        <text>The new Wall Street of computers and automated trading threatens to make dinosaurs of the 49 Big Board stock - specialist firms .</text>
+        <propbank>
+          <rel relloc="9">threatens</rel>
+          <arg type="ARG0" start="0" end="8">The new Wall Street of computers and automated trading</arg>
+          <arg type="ARG1" start="10" end="21">to make dinosaurs of the 49 Big Board stock - specialist firms</arg>
+        </propbank>
+      </example>
+      <example name="threaten-v: nominal threat" src="">
+        <text>The announced sale of the reserves was followed by news that investor Carl Icahn had increased his stake in USX to 13.1 % and threatened a takeover or other business combination .</text>
+        <propbank>
+          <rel relloc="24">threatened</rel>
+          <arg type="ARG0" start="11" end="13">investor Carl Icahn</arg>
+          <arg type="ARG1" start="25" end="30">a takeover or other business combination</arg>
+        </propbank>
+      </example>
+      <example name="ARG0 and ARG2 and ARG1" src="ontonotes bn/voa/02/voa_0253">
+        <text>Pakistan has accused India of threatening the peace process by refusing to issue travel documents to the Hurrriyat leaders .</text>
+        <propbank>
+          <rel relloc="5">threatening</rel>
+          <arg type="ARG0" start="3" end="3">India</arg>
+          <arg type="ARG2" start="6" end="8">the peace process</arg>
+          <arg type="ARG1" start="9" end="18">by refusing to issue travel documents to the Hurrriyat leaders</arg>
+        </propbank>
+      </example>
       <note>THREATEN-V NOTES: Member of Vncls amuse-31.1. (from threaten.01-v)</note>
       <note>THREAT-N NOTES: Automatically created by Julia as an alias file for unification. (from threat.01-n)</note>
       <note>THREATENING-J NOTES: Automatically created by Julia as an alias file for unification. (from threatening.01-j)</note>
-      <roles>
-        <role descr="agent, entity making a threat" f="pag" n="0">
-          <vnrole vncls="31.1" vntheta="stimulus"/>
-        </role>
-        <role descr="threat" f="ppt" n="1">
-          <vnrole vncls="31.1" vntheta="experiencer"/>
-        </role>
-        <role descr="'benefactive', entity threatened" f="gol" n="2"/>
-      </roles>
-      <example name="threaten-v: sentential threat" src="" type="">
-        <text>The new Wall Street of computers and automated trading threatens to make dinosaurs of the 49 Big Board stock-specialist firms.</text>
-        <arg f="" n="0">The new Wall Street of computers and automated trading</arg>
-        <rel f="">threatens</rel>
-        <arg f="" n="1">to make dinosaurs of the 49 Big Board stock-specialist firms</arg>
-      </example>
-      <example name="threaten-v: nominal threat" src="" type="">
-        <text>The announced sale of the reserves was followed by news that investor Carl Icahn had increased his stake in USX to 13.1% and threatened a takeover or other business combination.</text>
-        <arg f="" n="0">investor Carl Icahn</arg>
-        <rel f="">threatened</rel>
-        <arg f="" n="1">a takeover or other business combination</arg>
-      </example>
-      <example name="ARG0 and ARG2 and ARG1" src="ontonotes bn/voa/02/voa_0253" type="">
-        <text>Pakistan has accused India of threatening the peace process by refusing to issue travel documents to the Hurrriyat leaders .</text>
-        <arg f="" n="0">India</arg>
-        <rel f="">threatening</rel>
-        <arg f="" n="2">the peace process</arg>
-        <arg f="" n="1">by refusing to issue travel documents to the Hurrriyat leaders</arg>
-      </example>
-
     </roleset>
   </predicate>
 </frameset>

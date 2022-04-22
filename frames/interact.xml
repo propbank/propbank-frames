@@ -1,53 +1,80 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="interact">
     <roleset id="interact.01" name="to associate with others, both responsive and receptive">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">interactive</alias>
-        <alias framenet="" pos="n" verbnet="">interaction</alias>
-        <alias framenet="" pos="l" verbnet="">have_interaction</alias>
-        <alias framenet="" pos="v" verbnet="">interact</alias>
+        <alias pos="j">interactive</alias>
+        <alias pos="n">interaction</alias>
+        <alias pos="l">have_interaction</alias>
+        <alias pos="v">interact</alias>
       </aliases>
+      <roles>
+        <role descr="one participant" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="settle-36.1.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="other participant(s)" f="COM" n="1">
+          <rolelinks>
+            <rolelink class="settle-36.1.2" resource="VerbNet" version="verbnet3.3">co-agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="domain of the interaction" f="PPT" n="2">
+          <rolelinks>
+            <rolelink class="settle-36.1.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="settle-36.1.2" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+        <lexlink class="interaction-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">13</lexlink>
+      </lexlinks>
+      <example name="interact" src="">
+        <text>When Kao Chao - Cheng has the students play the game of cat - and - mouse , he gets them to interact with each other and move based on their observations of the cat , the mouse and their classmates linked in a circle .</text>
+        <propbank>
+          <rel relloc="22">interact</rel>
+          <arg type="ARG0" start="20" end="20">them</arg>
+          <arg type="ARG1" start="23" end="25">with each other</arg>
+        </propbank>
+      </example>
+      <example name="If both participants are stated together, use arg 0" src="">
+        <text>The interactions between health and homelessness</text>
+        <propbank>
+          <rel relloc="1">interactions</rel>
+          <arg type="ARG0" start="2" end="5">between health and homelessness</arg>
+        </propbank>
+      </example>
+      <example name="Both args" src="">
+        <text>your interactions with the Iraqi civilians in Tikrit Saddam 's hometown</text>
+        <propbank>
+          <rel relloc="1">interactions</rel>
+          <arg type="ARG0" start="0" end="0">your</arg>
+          <arg type="ARG1" start="2" end="5">with the Iraqi civilians</arg>
+          <arg type="ARGM-LOC" start="6" end="10">in Tikrit Saddam 's hometown</arg>
+        </propbank>
+      </example>
+      <example name="args 0 and 2" src="">
+        <text>their economic interactions</text>
+        <propbank>
+          <rel relloc="2">interactions</rel>
+          <arg type="ARG0" start="0" end="0">their</arg>
+          <arg type="ARG2" start="1" end="1">economic</arg>
+        </propbank>
+      </example>
       <note>INTERACT-V NOTES: Frame created by Arrick (from interact.01-v)</note>
       <note>INTERACTION-N NOTES: Based on nouns-00080. Comparison to interact.01. VN class correspond-36.1. Updated by Julia. (from interaction.01-n)</note>
       <note>INTERACTIVE-J NOTES: Added by Julia based on medi-tmprl1to8. (from interactive.01-j)</note>
-      <roles>
-        <role descr="one participant" f="PAG" n="0">
-          <vnrole vncls="36.1" vntheta="Agent"/>
-        </role>
-        <role descr="other participant(s)" f="COM" n="1">
-          <vnrole vncls="36.1" vntheta="co-agent"/>
-        </role>
-        <role descr="domain of the interaction" f="PPT" n="2">
-          <vnrole vncls="36.1" vntheta="Theme"/>
-        </role>
-      </roles>
-      <example name="interact" src="" type="">
-        <text>When Kao Chao-Cheng has the students play the game of cat-and-mouse *T*, he gets them to interact with each other and move based on their observations of the cat, the mouse and their classmates linked * in a circle.</text>
-        <arg f="" n="0">them</arg>
-        <rel f="">interact</rel>
-        <arg f="" n="1">with each other</arg>
-      </example>
-      <example name="If both participants are stated together, use arg 0" src="" type="">
-        <text>The interactions between health and homelessness</text>
-        <rel f="">interactions</rel>
-        <arg f="" n="0">between health and homelessness</arg>
-      </example>
-      <example name="Both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>your interactions with the Iraqi civilians in Tikrit Saddam's hometown</text>
-        <arg f="" n="0">your</arg>
-        <rel f="">interactions</rel>
-        <arg f="" n="1">with the Iraqi civilians</arg>
-        <arg f="loc" n="m">in Tikrit Saddam's hometown</arg>
-      </example>
-      <example name="args 0 and 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>their economic interactions</text>
-        <arg f="" n="0">their</arg>
-        <arg f="" n="2">economic</arg>
-        <rel f="">interactions</rel>
-      </example>
     </roleset>
   </predicate>
 </frameset>

@@ -1,69 +1,116 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="defend">
     <roleset id="defend.01" name="defend">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">defense</alias>
-        <alias framenet="" pos="n" verbnet="">defence</alias>
-        <alias framenet="" pos="v" verbnet="">defend</alias>
+        <alias pos="n">defense</alias>
+        <alias pos="n">defence</alias>
+        <alias pos="v">defend</alias>
+        <argalias arg="0" pos="n">defender</argalias>
+        <argalias arg="1" pos="n">defendant</argalias>
       </aliases>
+      <roles>
+        <role descr="defender" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="cognize-85" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Justifying" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="defend-72.3" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="defended" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="cognize-85" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Justifying" resource="FrameNet" version="1.7">act</rolelink>
+            <rolelink class="Justifying" resource="FrameNet" version="1.7">state_of_affairs</rolelink>
+            <rolelink class="defend-72.3" resource="VerbNet" version="verbnet3.4">beneficiary</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="instrument" f="MNR" n="2">
+          <rolelinks>
+            <rolelink class="defend-72.3" resource="VerbNet" version="verbnet3.4">nm</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity defended against" f="GOL" n="3">
+          <rolelinks>
+            <rolelink class="defend-72.3" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="defend-72.3" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Defending" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Justifying" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="cognize-85" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="defend-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">55</lexlink>
+        <lexlink class="defend-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">26</lexlink>
+        <lexlink class="defend-72.3" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="no instrument" src="">
+        <text>... because there wo n't be a vigorous private bar to defend the Bill of Rights ...</text>
+        <propbank>
+          <rel relloc="11">defend</rel>
+          <arg type="ARG0" start="6" end="9">a vigorous private bar</arg>
+          <arg type="ARG1" start="12" end="15">the Bill of Rights</arg>
+        </propbank>
+      </example>
+      <example name="ARG2 and ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1066">
+        <text>Hence their poison fangs are almost the only tools they have to catch food and defend themselves with .</text>
+        <propbank>
+          <rel relloc="15">defend</rel>
+          <arg type="C-ARG2" start="17" end="17">with</arg>
+          <arg type="ARG1" start="16" end="16">themselves</arg>
+          <arg type="ARG2" start="6" end="10">the only tools they have</arg>
+        </propbank>
+      </example>
+      <example name="no instrument" src="CallHome">
+        <text>Because if I do n't come when Norm does his defense , which I really want to come for that .</text>
+        <propbank>
+          <rel relloc="10">defense</rel>
+          <arg end="7" start="7" type="ARG0">Norm</arg>
+          <arg end="8" start="8" type="ARGM-LVB">does</arg>
+          <arg end="6" start="6" type="ARGM-TMP">when</arg>
+        </propbank>
+      </example>
+      <example name="Args 0 &amp; 1" src="web">
+        <text>The Fed chairman is stepping up his defense of a $ 600 billion bond - purchase plan .</text>
+        <propbank>
+          <rel relloc="7">defense</rel>
+          <arg type="ARG0" start="6" end="6">his</arg>
+          <arg type="ARG1" start="8" end="16">of a $ 600 billion bond - purchase plan</arg>
+        </propbank>
+      </example>
+      <example name="with arg 3" src="">
+        <text>Estonia had to defend itself from cyber attacks .</text>
+        <propbank>
+          <rel relloc="3">defend</rel>
+          <arg type="ARG0" start="0" end="0">Estonia</arg>
+          <arg type="ARG1" start="4" end="4">itself</arg>
+          <arg type="ARG3" start="5" end="7">from cyber attacks</arg>
+        </propbank>
+      </example>
+      <example name="another with arg 3" src="">
+        <text>We will defend our country against terrorists</text>
+        <propbank>
+          <rel relloc="2">defend</rel>
+          <arg type="ARG0" start="0" end="0">We</arg>
+          <arg type="ARGM-MOD" start="1" end="1">will</arg>
+          <arg type="ARG1" start="3" end="4">our country</arg>
+          <arg type="ARG3" start="5" end="6">against terrorists</arg>
+        </propbank>
+      </example>
       <note>DEFEND-V NOTES: Frames file for 'defend' based on sentences in financial subcorpus. No verbnet entry. Comparison to 'support'. (from defend.01-v predicate notes)</note>
       <note>DEFENSE-N NOTES: Roleset based on verb entry defend.01. Corresponds to VN class defend-85. Framed by Claire. (from defense.01-n)</note>
-      <roles>
-        <role descr="defender" f="pag" n="0">
-          <vnrole vncls="85" vntheta="agent"/>
-        </role>
-        <role descr="defended" f="ppt" n="1">
-          <vnrole vncls="85" vntheta="theme"/>
-        </role>
-        <role descr="instrument" f="mnr" n="2"/>
-        <role descr="entity defended against" f="gol" n="3"/>
-      </roles>
-      <example name="no instrument" src="" type="">
-        <text>...because there won't be a vigorous private bar *trace* *trace* to defend the Bill of Rights...</text>
-        <arg f="rcl" n="m">*trace* -&gt; a vigorous private bar</arg>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">defend</rel>
-        <arg f="" n="1">the Bill of Rights</arg>
-      </example>
-      <example name="ARG2 and ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1066" type="">
-        <text>Hence their poison fangs are almost the only tools they have to catch food and defend themselves with .</text>
-        <arg f="" n="2">[with][the only tools they have]</arg>
-        <arg f="" n="0">[]</arg>
-        <rel f="">defend</rel>
-        <arg f="" n="1">themselves</arg>
-      </example>
-
-      <example name="no instrument" src="CallHome" type="">
-        <text>Because if I do n't come when-1 Norm does his defense *T*-1, which I really want to come for that.</text>
-        <arg f="" n="0">Norm</arg>
-        <arg f="lvb" n="m">does</arg>
-        <rel f="">defense</rel>
-        <arg f="tmp" n="m">*T*-1</arg>
-      </example>
-      <example name="Args 0 &amp; 1" src="web" type="">
-        <text>The Fed chairman is stepping up his defense of a $600 billion bond-purchase plan.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">defense</rel>
-        <arg f="" n="1">of a $600 billion bond-purchase plan.</arg>
-      </example>
-      <example name="with arg 3" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Estonia had to defend itself from cyter attacks.</text>
-        <arg f="" n="0">Estonia</arg>
-        <rel f="">defend</rel>
-        <arg f="" n="1">itself</arg>
-        <arg f="" n="3">from cyber attacks.</arg>
-      </example>
-      <example name="another with arg 3" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>We willl defend our country against terrorists</text>
-        <arg f="" n="0">We</arg>
-        <arg f="mod" n="m">will</arg>
-        <rel f="">defend</rel>
-        <arg f="" n="1">our country</arg>
-        <arg f="" n="3">against terrorists.</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

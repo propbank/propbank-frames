@@ -1,57 +1,96 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="palpate">
     <roleset id="palpate.01" name="physically feel or handle">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">palpate</alias>
-        <alias framenet="" pos="n" verbnet="">palpation</alias>
+        <alias pos="v">palpate</alias>
+        <alias pos="n">palpation</alias>
       </aliases>
+      <roles>
+        <role descr="Palpator" f="PAG" n="0" />
+        <role descr="Entity palpated" f="PPT" n="1" />
+        <role descr="results" f="PRD" n="2" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks />
+      <example name="palpate-v: Both args" src="">
+        <text>The doctor palpated the area and did not find any fractures .</text>
+        <propbank>
+          <rel relloc="2">palpated</rel>
+          <arg type="ARG0" start="0" end="1">The doctor</arg>
+          <arg type="ARG1" start="3" end="4">the area</arg>
+        </propbank>
+      </example>
+      <example name="palpation-n: Both args" src="">
+        <text>Upon the doctor 's palpation of the patient 's liver , she discovered a large mass .</text>
+        <propbank>
+          <rel relloc="4">palpation</rel>
+          <arg type="ARG0" start="1" end="3">the doctor 's</arg>
+          <arg type="ARG1" start="5" end="9">of the patient 's liver</arg>
+        </propbank>
+      </example>
+      <example name="palpation-n" src="THYME-AMR">
+        <text>No pain to palpation .</text>
+        <propbank>
+          <rel relloc="3">palpation</rel>
+        </propbank>
+        <amr version="THYME 1.0">
+          (p / pain-01 :polarity -
+            :ARG2-of (p2 / palpate-01))
+        </amr>
+      </example>
+      <note>PALPATE NOTES: Arg2 added for THYME AMR.</note>
       <note>PALPATE-V NOTES: Based on data in Clinical Notes corpus (from palpate.01-v predicate notes)</note>
       <note>PALPATION-N NOTES: Based on data in Clinical Notes corpus (from palpation.01-n predicate notes)</note>
-      <roles>
-        <role descr="Palpator" f="PAG" n="0"/>
-        <role descr="Entity palpated" f="PPT" n="1"/>
-      </roles>
-      <example name="palpate-v: Both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The doctor palpated the area and did not find any fractures.</text>
-        <arg f="" n="0">The doctor</arg>
-        <rel f="">palpated</rel>
-        <arg f="" n="1">the area</arg>
-      </example>
-      <example name="palpation-n: Both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Upon the doctor's palpation of the patient's liver, she discovered a large mass.</text>
-        <arg f="" n="0">the doctor's</arg>
-        <rel f="">palpation</rel>
-        <arg f="" n="1">of the patient's liver</arg>
-      </example>
     </roleset>
   </predicate>
   <predicate lemma="palpable">
     <roleset id="palpable.02" name="able to be felt by palpation">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">palpable</alias>
+        <alias pos="j">palpable</alias>
       </aliases>
-      <note>PALPABLE-J NOTES: Based on Thyme and Sharp data. Comparison to palpate.01. No Vn or Fn classes. Framed by Katie (from palpable.01-j)</note>
       <roles>
-        <role descr="palpator" f="pag" n="0"/>
-        <role descr="entity palpated" f="ppt" n="1"/>
+        <role descr="palpator" f="PAG" n="0" />
+        <role descr="entity palpated" f="PPT" n="1" />
       </roles>
-      <example name="palpable-j: Arg 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>This may be palpable.</text>
-        <arg f="" n="1">This</arg>
-        <arg f="mod" n="m">may</arg>
-        <rel f="">palpable</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks />
+      <example name="palpable-j: Arg 1" src="">
+        <text>This may be palpable .</text>
+        <propbank>
+          <rel relloc="3">palpable</rel>
+          <arg type="ARG1" start="0" end="0">This</arg>
+          <arg type="ARGM-MOD" start="1" end="1">may</arg>
+        </propbank>
       </example>
-      <example name="palpable-j: With loc" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The balloon-expandable stent is palpable above the ligament.</text>
-        <arg f="" n="1">The balloon-expandable stent</arg>
-        <rel f="">palpable</rel>
-        <arg f="loc" n="m">above the ligament.</arg>
+      <example name="palpable-j: With loc" src="">
+        <text>The balloon - expandable stent is palpable above the ligament .</text>
+        <propbank>
+          <rel relloc="6">palpable</rel>
+          <arg type="ARG1" start="0" end="4">The balloon - expandable stent</arg>
+          <arg type="ARGM-LOC" start="7" end="9">above the ligament</arg>
+        </propbank>
       </example>
+      <note>PALPABLE-J NOTES: Based on Thyme and Sharp data. Comparison to palpate.01. No Vn or Fn classes. Framed by Katie (from palpable.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

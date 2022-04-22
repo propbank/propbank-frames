@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
+<frameset>
+  <predicate lemma="away">
+    <roleset id="away.01" name="motion or location outward from a reference point">
+      <aliases>
+        <alias pos="r">away</alias>
+        <alias pos="p">away_from</alias>
+      </aliases>
+      <roles>
+        <role descr="entity away" f="SE1" n="1" />
+        <role descr="relative to what entity" f="SE2" n="2" />
+        <role descr="axis" f="AXS" n="3" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks />
+      <example name="away_from-p" src="Spatial">
+        <text>2 blocks away from the store</text>
+        <propbank>
+          <rel relloc="2">away</rel>
+          <arg end="1" start="0" type="ARGM-EXT">2 blocks</arg>
+          <arg end="5" start="3" type="ARG2">from the store</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (a / away-01
+            :ARG2 (s2 / store)
+            :quant (d / distance-quantity :quant 2
+              :unit (b / block)))
+        </amr>
+      </example>
+      <example name="away_from-p" src="Minecraft">
+        <text>i only meant 8 blocks away from the first green block</text>
+        <propbank>
+          <rel relloc="5">away</rel>
+          <arg end="10" start="6" type="ARG2">from the first green block</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (m / mean-01
+            :ARG0 (i / i)
+            :ARG1 (s / space
+              :ARG1-of (a2 / away-01
+                :ARG2 (b / block
+                  :color (g / green)
+                  :ord (o2 / ordinal-entity :value 1))
+                :quant (d / distance-quantity :quant 8
+                  :unit (b2 / block))))
+            :mod (o / only))
+        </amr>
+      </example>
+      <example name="away_from-p" src="Minecraft">
+        <text>move it away from the blue block</text>
+        <propbank>
+          <rel relloc="2">away</rel>
+          <arg end="6" start="3" type="ARG2">from the blue block</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (m2 / move-01 :mode imperative
+            :ARG0 (y / you)
+            :ARG1 (i2 / it)
+            :direction (t / trajectory
+              :ARG3-of (a / away-01
+                :ARG2 (b3 / block
+                  :color (b4 / blue)))))
+        </amr>
+      </example>
+      <note>AWAY NOTES: Created for SpatialAMR.</note>
+    </roleset>
+  </predicate>
+</frameset>

@@ -1,44 +1,87 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="circle">
     <roleset id="circle.01" name="to move in a circle">
       <aliases>
-        <alias framenet="Traversing Motion" pos="v" verbnet="">circle</alias>
+        <alias pos="v">circle</alias>
       </aliases>
-      <note>CIRCLE-V NOTES: No VNcls. (from circle.01-v)</note>
       <roles>
-        <role descr="entity moving" f="PAG" n="0"/>
+        <role descr="entity moving" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="Motion" resource="FrameNet" version="1.7">theme</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="intransitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Motion" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Traversing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+      </lexlinks>
+      <example name="intransitive" src="">
         <text>As a police helicopter circled overhead , Mr. Sisulu repeated the ANC 's demands on the government ...</text>
-        <arg f="" n="0">a police helicopter</arg>
-        <rel f="">circled</rel>
-        <arg f="loc" n="m">overhead</arg>
+        <propbank>
+          <rel relloc="4">circled</rel>
+          <arg type="ARG0" start="1" end="3">a police helicopter</arg>
+          <arg type="ARGM-LOC" start="5" end="5">overhead</arg>
+        </propbank>
       </example>
+      <note>CIRCLE-V NOTES: No VNcls. (from circle.01-v)</note>
     </roleset>
     <roleset id="circle.02" name="to form a circle, enclose">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">circle</alias>
+        <alias pos="v">circle</alias>
       </aliases>
-      <note>CIRCLE-V NOTES: Comparison with 'surround'. Member of VNcls contiguous_location-47.8. (from circle.02-v)</note>
       <roles>
-        <role descr="causer" f="PAG" n="0"/>
+        <role descr="causer" f="PAG" n="0">
+          <rolelinks/>
+        </role>
         <role descr="entity forming a circle" f="PPT" n="1">
-          <vnrole vncls="47.8" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="contiguous_location-47.8" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="contiguous_location-47.8" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="entity within a circle" f="PPT" n="2">
-          <vnrole vncls="47.8" vntheta="co-theme"/>
+          <rolelinks>
+            <rolelink class="contiguous_location-47.8" resource="VerbNet" version="verbnet3.3">co-theme</rolelink>
+            <rolelink class="contiguous_location-47.8" resource="VerbNet" version="verbnet3.4">co_theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="non-agentive" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>The auto-dealer strip in this booming suburb runs nearly five miles along Cobb Parkway , stretching from the Perimeter highway that [*T*-1] circles Atlanta to the `` Big Chicken , '' a pullet-roofed fast-food restaurant and local landmark .</text>
-        <arg f="" n="1">[*T*-1] (= that)</arg>
-        <arg f="slc" n="m">that -&gt; the Perimeter highway</arg>
-        <rel f="">circles</rel>
-        <arg f="" n="2">Atlanta</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="contiguous_location-47.8" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="contiguous_location-47.8" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="non-agentive" src="">
+        <text>The auto - dealer strip in this booming suburb runs nearly five miles along Cobb Parkway , stretching from the Perimeter highway that circles Atlanta to the `` Big Chicken , '' a pullet - roofed fast - food restaurant and local landmark .</text>
+        <propbank>
+          <rel relloc="23">circles</rel>
+          <arg type="ARG1" start="19" end="21">the Perimeter highway</arg>
+          <arg type="R-ARG1" start="22" end="22">that</arg>
+          <arg type="ARG2" start="24" end="24">Atlanta</arg>
+        </propbank>
       </example>
+      <note>CIRCLE-V NOTES: Comparison with 'surround'. Member of VNcls contiguous_location-47.8. (from circle.02-v)</note>
     </roleset>
   </predicate>
 </frameset>

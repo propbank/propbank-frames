@@ -1,58 +1,87 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="hesitate">
     <roleset id="hesitate.01" name="hesitate, thinking twice while pausing before acting, lacking decisiveness">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">hesitation</alias>
-        <alias framenet="" pos="v" verbnet="">hesitate</alias>
-        <alias framenet="" pos="j" verbnet="">hesitant</alias>
+        <alias pos="n">hesitation</alias>
+        <alias pos="v">hesitate</alias>
+        <alias pos="j">hesitant</alias>
       </aliases>
+      <roles>
+        <role descr="hesitator" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="linger-53.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="linger-53.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="secondary action" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="linger-53.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="linger-53.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="linger-53.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="hesitate-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">11</lexlink>
+        <lexlink class="linger-53.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="with secondary action" src="">
+        <text>In years past , the ad industry 's most distinguished executives did n't hesitate to excorciate Mr. Achenbaum .</text>
+        <propbank>
+          <rel relloc="13">hesitate</rel>
+          <arg type="ARGM-TMP" start="0" end="2">In years past</arg>
+          <arg type="ARG0" start="4" end="10">the ad industry 's most distinguished executives</arg>
+          <arg type="ARGM-NEG" start="12" end="12">n't</arg>
+          <arg type="ARG1" start="14" end="17">to excorciate Mr. Achenbaum</arg>
+        </propbank>
+      </example>
+      <example name="no secondary action" src="">
+        <text>Many companies are hesitating .</text>
+        <propbank>
+          <rel relloc="3">hesitating</rel>
+          <arg type="ARG0" start="0" end="1">Many companies</arg>
+        </propbank>
+      </example>
+      <example name="both args" src="BOLT">
+        <text>My hesitation about vouchers lies with the whole idea that competition is good for public schools . That equates public schools with businesses , which I just do n't agree with . I ca n't consider educating children the same as running a business or competing for the market share . This might make me sound pretty dense , but how exactly are public schools supposed to " compete " with each other ?</text>
+        <propbank>
+          <rel relloc="1">hesitation</rel>
+          <arg type="ARG0" start="0" end="0">My</arg>
+          <arg type="ARG1" start="2" end="3">about vouchers</arg>
+        </propbank>
+      </example>
+      <example name="both args" src="internet">
+        <text>How can teachers overcome their hesitation to use drama as a teaching aid in the classroom ?</text>
+        <propbank>
+          <rel relloc="5">hesitation</rel>
+          <arg type="ARG0" start="4" end="4">their</arg>
+          <arg type="ARG1" start="6" end="15">to use drama as a teaching aid in the classroom</arg>
+        </propbank>
+      </example>
+      <example name="Both args" src="BOLT P01, parts 2,3">
+        <text>Not to mention if they do default the new Republican controlled House is going to be more hesitant to bail places like these out .</text>
+        <propbank>
+          <rel relloc="17">hesitant</rel>
+          <arg type="ARG0" start="8" end="11">new Republican controlled House</arg>
+          <arg type="ARGM-EXT" start="16" end="16">more</arg>
+          <arg type="ARG1" start="18" end="23">to bail places like these out</arg>
+        </propbank>
+      </example>
       <note>HESITATE-V NOTES: Frames file for 'hesitate' based on sentences in financial subcorpus. Verbnet entry 53.1, no other framed members. No comparison. (from hesitate.01-v predicate notes)</note>
       <note>HESITATION-N NOTES: Added by Julia based on BOLT, hesitate.01. Corresponds to VNcls linger-53.1. (from hesitation.01-n)</note>
       <note>HESITANT-J NOTES: Roleset based on instances in BOLT P01, parts 2,3. Framed by Claire. (from hesitant.01-j)</note>
-      <roles>
-        <role descr="hesitator" f="PAG" n="0">
-          <vnrole vncls="53.1" vntheta="Agent"/>
-        </role>
-        <role descr="secondary action" f="PPT" n="1">
-          <vnrole vncls="53.1" vntheta="Theme"/>
-        </role>
-      </roles>
-      <example name="with secondary action" src="" type="">
-        <text>In years past, the ad industry's most distinguished executives didn't hesitate to excorciate Mr. Achenbaum.</text>
-        <arg f="TMP" n="M">In years past</arg>
-        <arg f="" n="0">the ad industry 's most distinguished executives</arg>
-        <arg f="NEG" n="M">n't</arg>
-        <rel f="">hesitate</rel>
-        <arg f="" n="1">to excorciate Mr. Achenbaum</arg>
-      </example>
-      <example name="no secondary action" src="" type="">
-        <text>Many companies are hesitating.</text>
-        <arg f="" n="0">Many companies</arg>
-        <rel f="">hesitating</rel>
-      </example>
-      <example name="both args" src="BOLT" type="-">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>My hesitation about vouchers lies with the whole idea that competition is good for public schools . That equates public schools with businesses , which I just do n't agree with . I ca n't consider educating children the same as running a business or competing for the market share . This might make me sound pretty dense , but how exactly are public schools supposed to " compete " with each other ?</text>
-        <arg f="" n="0">My</arg>
-        <rel f="">hesitation</rel>
-        <arg f="" n="1">about vouchers</arg>
-      </example>
-      <example name="both args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>How can teachers overcome their hesitation to use drama as a teaching aid in the classroom?</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">hesitation</rel>
-        <arg f="" n="1">to use drama as a teaching aid in the classroom</arg>
-      </example>
-      <example name="Both args" src="BOLT P01, parts 2,3" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Not to mention if they do default the [new Republican controlled House]-2 is going *-2 to be more hesitant to bail places like these out .</text>
-        <arg f="" n="0">*-2</arg>
-        <arg f="ext" n="m">more</arg>
-        <rel f="">hesitant</rel>
-        <arg f="" n="1">to bail places like these out .</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

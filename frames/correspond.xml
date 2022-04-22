@@ -1,58 +1,106 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="correspond">
     <roleset id="correspond.01" name="exchange letters with or communicate generally, exchange of communication">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">correspond</alias>
-        <alias framenet="" pos="n" verbnet="">correspondence</alias>
+        <alias pos="v">correspond</alias>
+        <alias pos="n">correspondence</alias>
       </aliases>
+      <roles>
+        <role descr="first (or all) correspondent(s)" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="correspond-36.1.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="correspond-36.1.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="additional correspondent" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="correspond-36.1.1" resource="VerbNet" version="verbnet3.4">co_agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="subject matter of correspondence" f="VSP" n="2">
+          <rolelinks>
+            <rolelink class="correspond-36.1.1" resource="VerbNet" version="verbnet3.3">topic</rolelink>
+            <rolelink class="correspond-36.1.1" resource="VerbNet" version="verbnet3.4">topic</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Communication" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="Correspondence" confidence="0.1" resource="ERE" src="reo-expansion" version="rich" />
+        <lexlink class="correspond-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+        <lexlink class="correspond-36.1.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="correspond-v: ARG0 and ARG1" src="ontonotes wb/a2e/00/a2e_0017">
+        <text>To correspond with me abomnaf@hotmail.com</text>
+        <propbank>
+          <rel relloc="1">correspond</rel>
+          <arg type="ARG1" start="2" end="3">with me</arg>
+        </propbank>
+      </example>
+      <example name="correspond-v" src="">
+        <text>With due respect to `` highly classified correspondence '' and other buzzwords , the leakers are performing a public service .</text>
+        <propbank>
+          <rel relloc="7">correspondence</rel>
+          <arg type="ARGM-ADJ" start="5" end="6">highly classified</arg>
+        </propbank>
+      </example>
       <note>CORRESPOND-V NOTES: Frames file for 'correspond' based on sentences in wsj. Verbnet entries battle-36.4-1, correspond-36.1. (from correspond.01-v)</note>
       <note>CORRESPONDENCE-N NOTES: (from correspondence.01-n)</note>
-      <roles>
-        <role descr="first (or all) correspondent(s)" f="pag" n="0"/>
-        <role descr="additional correspondent" f="ppt" n="1"/>
-        <role descr="subject matter of correspondence" f="vsp" n="2"/>
-      </roles>
-      <example name="ARG0 and ARG1" src="ontonotes wb/a2e/00/a2e_0017" type="">
-        <text>To correspond with me abomnaf@hotmail.com</text>
-        <arg f="" n="0">[]</arg>
-        <rel f="">correspond</rel>
-        <arg f="" n="1">with me</arg>
-      </example>
-
-      <example name="" src="" type="">
-        <text>With due respect to `` highly classified correspondence '' and other buzzwords , the leakers are performing a public service .</text>
-        <arg f="adj" n="m">highly classified</arg>
-        <rel f="">correspondence</rel>
-      </example>
     </roleset>
     <roleset id="correspond.02" name="be parallel/equivalent to">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">correspond</alias>
-        <alias framenet="" pos="n" verbnet="">correspondence</alias>
+        <alias pos="v">correspond</alias>
+        <alias pos="n">correspondence</alias>
       </aliases>
+      <roles>
+        <role descr="topic, theme" f="PPT" n="1" />
+        <role descr="compared with" f="PPT" n="2" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="correspond-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">13</lexlink>
+      </lexlinks>
+      <example name="correspond-v: decent example" src="">
+        <text>The agency noted that because of a strike by Finance Ministry personnel the provisional estimate does n't correspond exactly to the consumer price index usually published .</text>
+        <propbank>
+          <rel relloc="17">correspond</rel>
+          <arg type="ARG1" start="12" end="14">the provisional estimate</arg>
+          <arg type="ARGM-NEG" start="16" end="16">n't</arg>
+          <arg type="ARGM-MNR" start="18" end="18">exactly</arg>
+          <arg type="ARG2" start="19" end="25">to the consumer price index usually published</arg>
+        </propbank>
+      </example>
+      <example name="correspondence-n: both args" src="internet">
+        <text>Dispersion relation for the causal transform and its correspondence with a one dimensional dynamical system ;</text>
+        <propbank>
+          <rel relloc="8">correspondence</rel>
+          <arg type="ARG1" start="7" end="7">its</arg>
+          <arg type="ARG2" start="9" end="14">with a one dimensional dynamical system</arg>
+        </propbank>
+      </example>
       <note>CORRESPOND-V NOTES: (from correspond.02-v)</note>
       <note>CORRESPONDENCE-N NOTES: (from correspondence.02-n)</note>
-      <roles>
-        <role descr="topic, theme" f="ppt" n="1"/>
-        <role descr="compared with" f="ppt" n="2"/>
-      </roles>
-      <example name="decent example" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>The agency noted that because of a strike by Finance Ministry personnel the provisional estimate doesn't correspond exactly to the consumer price index usually published.</text>
-        <arg f="" n="1">the provisional estimate</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">correspond</rel>
-        <arg f="mnr" n="m">exactly</arg>
-        <arg f="" n="2">to the consumer price index usually published</arg>
-      </example>
-      <example name="both args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Dispersion relation for the causal transform and its correspondence with a one dimensional dynamical system;</text>
-        <arg f="" n="1">its</arg>
-        <rel f="">correspondence</rel>
-        <arg f="" n="2">with a one dimensional dynamical system</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

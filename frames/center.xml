@@ -1,91 +1,329 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="center">
-    <roleset id="center.01" name="focus (on)">
+    <roleset id="center.01" name="focus on; cause the centerpoint of one entity to align with the centerpoint of another entity">
       <aliases>
-        <alias framenet="Place_weight_on" pos="v" verbnet="">center</alias>
-        <alias framenet="" pos="j" verbnet="">centered</alias>
+        <alias pos="v">center</alias>
+        <alias pos="j">centered</alias>
+        <alias pos="j">central</alias>
       </aliases>
-      <note>CENTER-V NOTES: Frames file for 'center' based on sentences in wsj; adjectival 'centered' found in BOLT-7. Member of VNcls focus-87.1. (from center.01-v)</note>
-      <note>CENTERED-J NOTES: Added by Julia based on SHARP-SRED (from centered.01-j)</note>
       <roles>
-        <role descr="agent, focuser" f="pag" n="0">
-          <vnrole vncls="87.1" vntheta="experiencer"/>
+        <role descr="agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="focus-87.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="focus-87.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing focused" f="ppt" n="1"/>
-        <role descr="focused-on" f="gol" n="2">
-          <vnrole vncls="87.1" vntheta="theme"/>
+        <role descr="thing centered" f="SE1" n="1">
+          <rolelinks/>
+        </role>
+        <role descr="centered on" f="SE2" n="2">
+          <rolelinks>
+            <rolelink class="focus-87.1" resource="VerbNet" version="verbnet3.3">topic</rolelink>
+            <rolelink class="focus-87.1" resource="VerbNet" version="verbnet3.4">topic</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="center-v: normal usage" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>Speculation on his successor centers on a number of division heads at the house.</text>
-        <arg f="" n="1">Speculation on his successor</arg>
-        <rel f="">centers</rel>
-        <arg f="" n="2">on a number of division heads at the house</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Place_weight_on" confidence="0.0" resource="FrameNet" src="manual+strict-conv" version="UNK"/>
+        <lexlink class="focus-87.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="center-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">10</lexlink>
+        <lexlink class="focus-87.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="center-v" src="Minecraft">
+        <text>Center the stack of 8 on the other axis</text>
+        <propbank>
+          <rel relloc="0">Center</rel>
+          <arg type="ARG1" start="1" end="4">the stack of 8</arg>
+          <arg type="ARG2" start="5" end="8">on the other axis</arg>
+        </propbank>
+        <amr version="2019">
+          (c / center-01 :mode imperative
+            :ARG0 (y / you)
+            :ARG1 (s / stack
+              :size (d / dimension-entity :value 8))
+            :ARG2 (a / axis
+              :ARG1-of (o / other-01)))
+        </amr>
       </example>
-      <example name="center-v: around variant" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>Japan's objections to the U.S. plan center around its desire to stay self-sufficient in rice, a staple food, even though foreign producers are far more efficient.</text>
-        <arg f="" n="1">Japan's objections to the U.S. plan</arg>
-        <rel f="">center</rel>
-        <arg f="" n="2">around its desire to stay self-sufficient in rice, a staple food, even though foreign producers are far more efficient</arg>
+      <example name="center-v: normal usage" src="">
+        <text>Speculation on his successor centers on a number of division heads at the house .</text>
+        <propbank>
+          <rel relloc="4">centers</rel>
+          <arg type="ARG1" start="0" end="3">Speculation on his successor</arg>
+          <arg type="ARG2" start="5" end="13">on a number of division heads at the house</arg>
+        </propbank>
+        <amr version="2019">
+          (c / center-01
+            :ARG1 (s / speculate-01
+              :ARG2 (p / person
+                :ARG0-of (s2 / succeed-02
+                  :ARG1 (h / he))))
+            :ARG2 (p2 / person
+              :quant (n / number)
+              :ARG0-of (h2 / have-org-role-91
+                :ARG1 (g / government-organization :name (n2 / name :op1 "house"))
+                :ARG2 (h3 / head-01
+                  :ARG1 (d / division)))))
+        </amr>
       </example>
-      <example name="center-v: in variant" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>The size of the cuts isn't known, but [they]-1'll be centered *trace*-1 in the exploration and production division, which is responsible for locating oil reserves, drilling wells and pumping crude oil and natural gas.</text>
-        <rel f="">centered</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="mod" n="m">'ll</arg>
-        <arg f="" n="2">in the exploration and production division, which is responsible for locating oil reserves, drilling wells and pumping crude oil and natural gas</arg>
+      <example name="center-v: around variant" src="">
+        <text>Japan 's objections to the U.S. plan center around its desire to stay self - sufficient in rice , a staple food , even though foreign producers are far more efficient .</text>
+        <propbank>
+          <rel relloc="7">center</rel>
+          <arg type="ARG1" start="0" end="6">Japan 's objections to the U.S. plan</arg>
+          <arg type="ARG2" start="8" end="30">around its desire to stay self - sufficient in rice , a staple food , even though foreign producers are far more efficient</arg>
+        </propbank>
+        <amr version="2019">
+          (c / center-01
+            :ARG1 (o / object-01
+              :ARG0 (c2 / country :wiki "Japan" :name (n / name :op1 "Japan"))
+              :ARG1 (t / thing
+                :ARG1-of (p / plan-01
+                  :ARG0 (c3 / country :wiki "United_States" :name (n2 / name :op1 "U.S.")))))
+            :ARG2 (d / desire-01
+              :ARG0 c2
+              :ARG1 (s / stay-01
+                :ARG1 c2
+                :ARG3 (s2 / suffice-01
+                  :ARG0 (r / rice
+                    :domain (f / food
+                      :mod (s3 / staple)))
+                  :ARG1 c2)))
+            :concession (h / have-degree-91
+              :ARG1 (o2 / organization
+                :ARG0-of (p2 / produce-01)
+                :mod (f2 / foreign))
+              :ARG2 (e / efficient-01
+                :ARG1 o2)
+              :ARG3 (m / more
+                :degree (f3 / far))))
+        </amr>
       </example>
-      <example name="center-v: agentive" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="ns" voice="active"/>
-        <text>In *trace*-2 centering on the disruption of a few proud local customs such as the historic homes tour and the damage to the antiquities, [your reporter]-2 served to only perpetuate an outdated and stereotypically provincial view of this otherwise thriving port city.</text>
-        <arg f="" n="0">*trace*-2</arg>
-        <rel f="">centering</rel>
-        <arg f="" n="2">on the disruption of a few proud local customs such as the historic homes tour and the damage to the antiquities</arg>
+      <example name="center-v: in variant" src="">
+        <text>The size of the cuts is n't known , but they 'll be centered in the exploration and production division , which is responsible for locating oil reserves , drilling wells and pumping crude oil and natural gas .</text>
+        <propbank>
+          <rel relloc="13">centered</rel>
+          <arg type="ARG1" start="10" end="10">they</arg>
+          <arg type="ARGM-MOD" start="11" end="11">'ll</arg>
+          <arg type="ARG2" start="14" end="37">in the exploration and production division , which is responsible for locating oil reserves , drilling wells and pumping crude oil and natural gas</arg>
+        </propbank>
+        <amr version="2019">
+          (c / contrast-01
+            :ARG1 (k / know-01 :polarity -
+              :ARG1 (h / have-size-91
+                :ARG1 (t / thing
+                  :ARG2-of (c2 / cut-02))))
+            :ARG2 (c3 / center-01
+              :ARG1 c2
+              :ARG2 (d / division
+                :ARG0-of (e / explore-01)
+                :ARG0-of (p / produce-01)
+                :ARG0-of (r / responsible-03
+                  :ARG1 (a / and
+                    :op1 (l / locate-01
+                      :ARG0 d
+                      :ARG1 (r2 / reserve :pl +
+                        :mod (o / oil)))
+                    :op2 (d2 / drill-01
+                      :ARG0 d
+                      :ARG4 (w / well :pl +))
+                    :op3 (p2 / pump-01
+                      :ARG0 d
+                      :ARG2 (a2 / and
+                        :op1 (o2 / oil
+                          :mod (c4 / crude))
+                        :op2 (g / gas
+                          :ARG1-of (n / natural-03)))))))))
+        </amr>
       </example>
-      <example name="center-v: arg2 as location" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>The larger parallel after [the earthquake]-1 centered *trace*-1 south of San Francisco is surely with the state of the U.S. economy.</text>
-        <rel f="">centered</rel>
-        <arg f="" n="1">*trace*-1</arg>
-        <arg f="loc" n="2">south of San Francisco</arg>
+      <example name="center-v: agentive" src="">
+        <text>In centering on the disruption of a few proud local customs such as the historic homes tour and the damage to the antiquities , your reporter served to only perpetuate an outdated and stereotypically provincial view of this otherwise thriving port city .</text>
+        <propbank>
+          <rel relloc="1">centering</rel>
+          <arg type="ARG0" start="24" end="25">your reporter</arg>
+          <arg type="ARG2" start="2" end="22">on the disruption of a few proud local customs such as the historic homes tour and the damage to the antiquities</arg>
+        </propbank>
+        <amr version="2019">
+          (s / serve-01
+            :ARG0 (p / person
+              :ARG0-of (r / report-01)
+              :ARG0-of (h / have-rel-role-91
+                :ARG1 (y / you)))
+            :ARG1 (p2 / perpetuate-01
+              :ARG0 p
+              :ARG1 (v / view-02
+                :ARG1 (c / city
+                  :ARG1-of (t / thrive-01
+                    :ARG2-of (e / except-01))
+                  :mod (p3 / port))
+                :ARG2 (t2 / thing
+                  :mod (o2 / outdated)
+                  :mod (p4 / provincial
+                    :ARG1-of (s2 / stereotypic-02
+                      :ARG2 c))))
+              :mod (o / only))
+            :manner (c2 / center-01
+              :ARG0 p
+              :ARG2 (a / and
+                :op1 (d / disrupt-01
+                  :ARG1 (c3 / custom :pl +
+                    :quant (f / few)
+                    :ARG1-of (l / local-02)
+                    :ARG1-of (p5 / pride-01)
+                    :example (t3 / tour-01
+                      :ARG1 (h2 / home :pl +
+                        :mod (h3 / historic)))))
+                :op2 (d2 / damage-01
+                  :ARG1 (a2 / antiquity :pl +)))))
+        </amr>
       </example>
-      <example name="ARG2 and ARG1" src="ontonotes mz/sinorama/10/ectb_1075" type="">
+      <example name="center-v: arg2 as location" src="">
+        <text>The larger parallel after the earthquake centered south of San Francisco is surely with the state of the U.S. economy .</text>
+        <propbank>
+          <rel relloc="6">centered</rel>
+          <arg type="ARG1" start="4" end="5">the earthquake</arg>
+          <arg type="ARG2" start="7" end="10">south of San Francisco</arg>
+        </propbank>
+        <amr version="2019">
+          (p / parallel-01
+            :ARG1 (s / state
+              :poss (e / economy
+                :mod (c / country :wiki "United_States" :name (n / name :op1 "U.S."))))
+            :ARG1-of (h / have-degree-91
+              :ARG2 (l / large)
+              :ARG3 (m / more))
+            :time (a / after
+              :op1 (e2 / earthquake-01
+                :ARG1-of (c2 / center-01
+                  :ARG1 (s2 / space
+                    :ARG1-of (s3 / south-01
+                      :ARG2 (c3 / city :wiki "San_Francisco" :name (n2 / name :op1 "San" :op2 "Francisco")))))))
+            :ARG1-of (s4 / sure-02))
+        </amr>
+      </example>
+      <example name="center-v: ARG2 and ARG1" src="ontonotes mz/sinorama/10/ectb_1075">
         <text>The current educational mantra is " student centered learning , " and the teacher 's role is extremely important .</text>
-        <arg f="" n="2">student</arg>
-        <rel f="">centered</rel>
-        <arg f="" n="1">learning</arg>
+        <propbank>
+          <rel relloc="7">centered</rel>
+          <arg type="ARG2" start="6" end="6">student</arg>
+          <arg type="ARG1" start="8" end="8">learning</arg>
+        </propbank>
+        <amr version="2019">
+          (a / and
+            :op1 (l / learn-01
+              :ARG0 s
+              :ARG1-of (c / center-01
+                :ARG2 (s / student))
+              :domain (m / mantra
+                :poss (e / educate-01)
+                :time (c2 / current)))
+            :op2 (r / role
+              :ARG2-of (h / have-org-role-91
+                :ARG0 (p / person
+                  :ARG0-of (t / teach-01))
+                :ARG3 e)
+              :ARG1-of (i2 / important-01
+                :degree (e2 / extreme))))
+        </amr>
       </example>
-
-      <example name="centered-j" src="BOLT-7" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Of course , undeniably , some enforcement departments , which-1 [*-1] are public security bureau - centered , face the fact that they have insufficient personnel and they have to recruit some " temporary workers . "</text>
-        <arg f="" n="1">[*-1]</arg>
-        <arg f="" n="2">public security bureau</arg>
-        <rel f="">centered</rel>
+      <example name="centered-j" src="BOLT-7">
+        <text>Of course , undeniably , some enforcement departments , which are public security bureau - centered , face the fact that they have insufficient personnel and they have to recruit some " temporary workers . "</text>
+        <propbank>
+          <rel relloc="15">centered</rel>
+          <arg type="R-ARG1" start="5" end="7">some enforcement departments</arg>
+          <arg type="ARG1" start="9" end="9">which</arg>
+          <arg type="ARG2" start="11" end="13">public security bureau</arg>
+        </propbank>
+        <amr version="Spatial 1.0">
+          (d / department
+            :ARG0-of (e / enforce-01)
+            :quant (s / some)
+            :ARG1-of (c / center-01
+              :ARG2 (b / bureau
+                :ARG0-of (s2 / secure-02
+                  :ARG1 (p / public)))))
+        </amr>
       </example>
+      <note>CENTER NOTES: Updated for Spatial AMR; part/whole "the center" split off.</note>
+      <note>CENTER-V NOTES: Frames file for 'center' based on sentences in wsj; adjectival 'centered' found in BOLT-7. Member of VNcls focus-87.1. (from center.01-v)</note>
+      <note>CENTERED-J NOTES: Added by Julia based on SHARP-SRED (from centered.01-j)</note>
     </roleset>
-
     <roleset id="center.02" name="politically/socially moderate">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">center</alias>
-        <alias framenet="" pos="j" verbnet="">centrist</alias>
-        <alias framenet="" pos="n" verbnet="">centrism</alias>
+        <alias pos="n">center</alias>
+        <alias pos="j">centrist</alias>
+        <alias pos="n">centrism</alias>
       </aliases>
       <roles>
         <role descr="politically/socially centrist entity" f="PPT" n="1"/>
         <role descr="domain or topic of centrism" f="PPT" n="2"/>
       </roles>
-      <example name="Both args" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>he's accused of being too centerist</text>
-        <arg f="" n="1">he</arg>        	
-        <arg f="ext" n="m">too</arg>        
-        <rel f="">centerist</rel>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="centrist-j: Both args" src="">
+        <text>he 's accused of being too centerist</text>
+        <propbank>
+          <rel relloc="6">centerist</rel>
+          <arg end="1" start="0" type="ARG1">he 's</arg>
+          <arg end="5" start="5" type="ARGM-EXT">too</arg>
+        </propbank>
       </example>
+    </roleset>
+    <roleset id="center.03" name="be the center portion of a larger whole">
+      <aliases>
+        <alias pos="n">center</alias>
+        <alias pos="j">central</alias>
+      </aliases>
+      <roles>
+        <role descr="the center entity" f="PRT" n="1"/>
+        <role descr="larger whole" f="WHL" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="-"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="center-n" src="Minecraft">
+        <text>Now make two feet in the center of the board .</text>
+        <propbank/>
+        <amr version="Spatial 1.0">
+          (m / make-01 :mode imperative
+            :ARG0 (y / you)
+            :ARG1 (f / foot :quant 2)
+            :location (s / space :pl +
+              :ARG1-of (c / center-03
+                :ARG2 (b / board)))
+            :time (n / now))
+        </amr>
+      </example>
+      <note>CENTER NOTES: Added for Spatial AMR; split off from center.01.</note>
     </roleset>
   </predicate>
 </frameset>

@@ -1,81 +1,136 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="fail">
     <roleset id="fail.01" name="not succeed">
       <aliases>
-        <alias framenet="Success_or_failure Successful_action" pos="v" verbnet="neglect-75.1-1 succeed-74-3-1-1">fail</alias>
-        <alias framenet="" pos="n" verbnet="">failing</alias>
-        <alias framenet="" pos="n" verbnet="">failure</alias>
+        <alias pos="v">fail</alias>
+        <alias pos="n">failing</alias>
+        <alias pos="n">failure</alias>
       </aliases>
+      <roles>
+        <role descr="assessor of not failing" f="CAU" n="0">
+          <rolelinks/>
+        </role>
+        <role descr="thing failing" f="PAG" n="1">
+          <rolelinks>
+            <rolelink class="succeed-74-3-1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="neglect-75.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="succeed-74-3-1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="neglect-75.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="task" f="PPT" n="2">
+          <rolelinks>
+            <rolelink class="succeed-74-3-1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="neglect-75.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="succeed-74-3-1-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+            <rolelink class="neglect-75.1-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="benefactive" f="GOL" n="3">
+          <rolelinks/>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Endeavor_failure" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Success_or_failure" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Successful_action" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="succeed-74-3-1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="neglect-75.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Endorg" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="fail-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">133</lexlink>
+        <lexlink class="fail-v.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">34</lexlink>
+        <lexlink class="fail-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+        <lexlink class="neglect-75.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+        <lexlink class="succeed-74-3-1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="fail-v: sentential task" src="">
+        <text>Saudi Arabia allegedly failed to honor US patents , copyrights , and other intellectual - property rights .</text>
+        <propbank>
+          <arg type="ARG1" start="0" end="1">Saudi Arabia</arg>
+          <arg type="ARGM-ADV" start="2" end="2">allegedly</arg>
+          <arg type="ARG2" start="4" end="16">to honor US patents , copyrights , and other intellectual - property rights</arg>
+          <rel relloc="3">failed</rel>
+        </propbank>
+      </example>
+      <example name="ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1020">
+        <text>When Chinese Communist premier Zhu Rongji made belligerent remarks a few days before the election in an effort to scare voters away from the DPP ticket , the ruling party made a grievous mistake , opined Jin , when it failed to come out strongly critical of Zhu and attempted instead to capitalize on the incident by playing the " fear card . "</text>
+        <propbank>
+          <arg type="ARGM-TMP" start="38" end="38">when</arg>
+          <arg type="ARG1" start="39" end="39">it</arg>
+          <arg type="ARG2" start="41" end="47">to come out strongly critical of Zhu</arg>
+          <rel relloc="40">failed</rel>
+        </propbank>
+      </example>
+      <example name="fail-v" src="">
+        <text>My car failed on me this morning .</text>
+        <propbank>
+          <arg type="ARG1" start="0" end="1">My car</arg>
+          <arg type="ARG3" start="3" end="4">on me</arg>
+          <arg type="ARGM-TMP" start="5" end="6">this morning</arg>
+          <rel relloc="2">failed</rel>
+        </propbank>
+      </example>
+      <example name="failing-n" src="internet">
+        <text>Filner admitted his ? failing to fully respect the women who work for me and with me ?</text>
+        <propbank>
+          <arg type="ARG1" start="2" end="2">his</arg>
+          <arg type="ARG2" start="5" end="16">to fully respect the women who work for me and with me</arg>
+          <rel relloc="4">failing</rel>
+        </propbank>
+      </example>
+      <example name="failing-n" src="BOLT-7">
+        <text>In other words , both prohibiting enforcement of " temporary workers " and allowing enforcement of " temporary workers " have the same outcome : " temporary workers " are responsible for the failing of the leaders and they are scapegoats .</text>
+        <propbank>
+          <arg type="ARG1" start="25" end="28">" temporary workers "</arg>
+          <rel relloc="33">failing</rel>
+        </propbank>
+      </example>
       <note>FAIL-V NOTES: Frames file for 'fail' based on survey of initial sentences of big corpus; nominal 'failing' based on BOLT-7. Member of VNcls succeed-74-2, neglect-75-1-1. (from fail.01-v)</note>
       <note>FAILING-N NOTES: Automatically created by Julia as an alias file for unification. (from failing.01-n)</note>
-      <roles>
-        <note>I'm pretty sure arg0 doesn't exist here, and that it's a relic of a time when fail.01 and fail.02 were combined. (from fail.01-v)</note>
-        <role descr="assessor of not failing" f="CAU" n="0"/>
-        <role descr="thing failing" f="pag" n="1">
-          <vnrole vncls="74-3-1-1" vntheta="agent"/>
-          <vnrole vncls="75.1-1" vntheta="agent"/>
-        </role>
-        <role descr="task" f="ppt" n="2">
-          <vnrole vncls="74-3-1-1" vntheta="theme"/>
-          <vnrole vncls="75.1-1" vntheta="theme"/>
-        </role>
-        <role descr="benefactive" f="gol" n="3"/>
-      </roles>
-      <example name="fail-v: sentential task" src="" type="">
-        <text>Saudi Arabia allegedly failed to honor US patents, copyrights, and other intellectual-property rights.</text>
-        <arg f="" n="1">Saudi Arabia</arg>
-        <arg f="adv" n="m">allegedly</arg>
-        <rel f="">failed</rel>
-        <arg f="" n="2">to honor US patents, copyrights, and other intellectual-property rights</arg>
-      </example>
-      <example name="ARG1 and ARG2" src="ontonotes mz/sinorama/10/ectb_1020" type="">
-        <text>When Chinese Communist premier Zhu Rongji made belligerent remarks a few days before the election in an effort to scare voters away from the DPP ticket , the ruling party made a grievous mistake , opined Jin , when it failed to come out strongly critical of Zhu and attempted instead to capitalize on the incident by playing the " fear card . "</text>
-        <arg f="tmp" n="m">when</arg>
-        <arg f="" n="1">it</arg>
-        <rel f="">failed</rel>
-        <arg f="" n="2">to come out strongly critical of Zhu</arg>
-      </example>
-
-      <example name="fail-v" src="" type="">
-        <text>My car failed on me this morning.</text>
-        <arg f="" n="1">My car</arg>
-        <rel f="">failed</rel>
-        <arg f="" n="3">on me</arg>
-        <arg f="tmp" n="m">this morning</arg>
-      </example>
-      <example name="failing-n" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Filner admitted his ?failing to fully respect the women who work for me and with me?</text>
-        <arg f="" n="1">his</arg>
-        <rel f="">failing</rel>
-        <arg f="" n="2">to fully respect the women who work for me and with me</arg>
-      </example>
-      <example name="failing-n" src="BOLT-7" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>In other words , both prohibiting enforcement of " temporary workers " and allowing enforcement of " temporary workers " have the same outcome : " temporary workers " are responsible for the failing of the leaders and they are scapegoats .</text>
-        <rel f="">failing</rel>
-        <arg f="" n="1">of "temporary workers"</arg>
-      </example>
+      <note>I'm pretty sure arg0 doesn't exist here, and that it's a relic of a time when fail.01 and fail.02 were combined. (from fail.01-v)</note>
     </roleset>
     <roleset id="fail.02" name="give failing grade">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">fail</alias>
-        <alias framenet="" pos="n" verbnet="">failing</alias>
-        <alias framenet="" pos="n" verbnet="">failure</alias>
+        <alias pos="v">fail</alias>
+        <alias pos="n">failing</alias>
+        <alias pos="n">failure</alias>
       </aliases>
+      <roles>
+        <role descr="teacher" f="PAG" n="0"/>
+        <role descr="student" f="PPT" n="1"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <example name="fail-v: I wish I could do this" src="">
+        <text>The evil professor failed all of his students .</text>
+        <propbank>
+          <arg type="ARG0" start="0" end="2">The evil professor</arg>
+          <arg type="ARG1" start="4" end="7">all of his students</arg>
+          <rel relloc="3">failed</rel>
+        </propbank>
+      </example>
       <note>FAIL-V NOTES: No VNcls. (from fail.02-v)</note>
       <note>FAILING-N NOTES: Automatically created by Julia as an alias file for unification. (from failing.02-n)</note>
-      <roles>
-        <role descr="teacher" f="pag" n="0"/>
-        <role descr="student" f="ppt" n="1"/>
-      </roles>
-      <example name="fail-v: I wish I could do this" src="" type="">
-        <text>The evil professor failed all of his students.</text>
-        <arg f="" n="0">The evil professor</arg>
-        <rel f="">failed</rel>
-        <arg f="" n="1">all of his students</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

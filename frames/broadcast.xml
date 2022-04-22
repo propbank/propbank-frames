@@ -1,78 +1,111 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="broadcast">
     <roleset id="broadcast.01" name="to transmit or announce">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">broadcast</alias>
-        <alias framenet="" pos="n" verbnet="">broadcast</alias>
+        <alias pos="v">broadcast</alias>
+        <alias pos="n">broadcast</alias>
+        <argalias arg="0" pos="n">broadcaster</argalias>
       </aliases>
+      <roles>
+        <role descr="transmitter, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="instr_communication-37.4.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="message" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="instr_communication-37.4.1" resource="VerbNet" version="verbnet3.3">topic</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="audience" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="instr_communication-37.4.1" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="source" f="DIR" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="instr_communication-37.4.1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+        <lexlink class="broadcast-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">44</lexlink>
+        <lexlink class="broadcast-n.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">33</lexlink>
+        <lexlink class="broadcast-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+      </lexlinks>
+      <example name="with Arg2" src="">
+        <text>The Voice of America is a government agency that broadcasts news and views -- some might say propaganda -- in 43 languages to 130 million listeners around the world .</text>
+        <propbank>
+          <rel relloc="9">broadcasts</rel>
+          <arg type="R-ARG0" start="8" end="8">that</arg>
+          <arg type="ARG0" start="5" end="7">a government agency</arg>
+          <arg type="ARG1" start="10" end="18">news and views -- some might say propaganda --</arg>
+          <arg type="ARGM-MNR" start="19" end="21">in 43 languages</arg>
+          <arg type="ARG2" start="22" end="28">to 130 million listeners around the world</arg>
+        </propbank>
+      </example>
+      <example name="passive" src="">
+        <text>Last year 's series , broadcast by General Electric Co. 's NBC , was the lowest - rated Series in four years ; instead of featuring a major East Coast team against a West Coast team , it pitted the Los Angeles Dodgers against the losing Oakland A 's .</text>
+        <propbank>
+          <rel relloc="5">broadcast</rel>
+          <arg type="ARG1" start="0" end="3">Last year 's series</arg>
+          <arg type="ARG0" start="6" end="11">by General Electric Co. 's NBC</arg>
+        </propbank>
+      </example>
+      <example name="with Arg3" src="">
+        <text>While rival ABC News outstripped the competition in live coverage of the event by sheer luck -- the network was broadcasting the World Series from Candlestick Park when the quake struck -- NBC News was unable to get its signal out of San Francisco for the first hour after the quake .</text>
+        <propbank>
+          <rel relloc="20">broadcasting</rel>
+          <arg type="ARG0" start="17" end="18">the network</arg>
+          <arg type="ARG1" start="21" end="23">the World Series</arg>
+          <arg type="ARG3" start="24" end="26">from Candlestick Park</arg>
+          <arg type="ARGM-TMP" start="27" end="30">when the quake struck</arg>
+        </propbank>
+      </example>
+      <example name="NP only" src="">
+        <text>a network news broadcast</text>
+        <propbank>
+          <rel relloc="3">broadcast</rel>
+          <arg type="ARG0" start="1" end="1">network</arg>
+          <arg type="ARG1" start="2" end="2">news</arg>
+        </propbank>
+      </example>
+      <example name="More arguments" src="">
+        <text>Few people heard his news broadcast last night .</text>
+        <propbank>
+          <rel relloc="5">broadcast</rel>
+          <arg type="ARG0" start="3" end="3">his</arg>
+          <arg type="ARG1" start="4" end="4">news</arg>
+          <arg type="ARGM-TMP" start="6" end="7">last night</arg>
+        </propbank>
+      </example>
+      <example name="With source" src="">
+        <text>This communication technology relies on polling from client nodes , rather than a broadcast from a central hub .</text>
+        <propbank>
+          <rel relloc="13">broadcast</rel>
+          <arg type="ARG3" start="14" end="17">from a central hub</arg>
+        </propbank>
+      </example>
+      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1006">
+        <text>The success of serials means that TV stations in Taiwan just keep on cranking them out , broadcasting episodes as quickly as they are shot .</text>
+        <propbank>
+          <rel relloc="17">broadcasting</rel>
+          <arg type="ARG0" start="6" end="9">TV stations in Taiwan</arg>
+          <arg type="ARG1" start="18" end="18">episodes</arg>
+          <arg type="ARGM-MNR" start="19" end="24">as quickly as they are shot</arg>
+        </propbank>
+      </example>
       <note>BROADCAST-V NOTES: Frames file for 'broadcast' based on survey of sentences in the WSJ corpus. (from broadcast.01-v predicate notes)</note>
       <note>BROADCAST-N NOTES: Roleset based on verb entry broadcast.01, OntoNotes sense groupings broadcast.01, broadcast.02, maps to VN entry instr_communication-37.4. Framed by Claire. (from broadcast.01-n)</note>
-      <roles>
-        <role descr="transmitter, agent" f="pag" n="0">
-          <vnrole vncls="37.4" vntheta="agent"/>
-        </role>
-        <role descr="message" f="ppt" n="1">
-          <vnrole vncls="37.4" vntheta="topic"/>
-        </role>
-        <role descr="audience" f="gol" n="2">
-          <vnrole vncls="37.4" vntheta="recipient"/>
-        </role>
-        <role descr="source" f="dir" n="3"/>
-      </roles>
-      <example name="with Arg2" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>The Voice of America is a government agency that [*T*-1] broadcasts news and views -- some might say propaganda -- in 43 languages to 130 million listeners around the world .</text>
-        <arg f="rcl" n="m">that -&gt; a government agency</arg>
-        <arg f="" n="0">[*T*-1]</arg>
-        <rel f="">broadcasts</rel>
-        <arg f="" n="1">news and views -- some might say propaganda --</arg>
-        <arg f="mnr" n="m">in 43 languages</arg>
-        <arg f="" n="2">to 130 million listeners around the world</arg>
-      </example>
-      <example name="passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>[Last year 's series]*-1, broadcast [*-1]by General Electric Co. 's NBC , was the lowest-rated Series in four years ; instead of [*] featuring a major East Coast team against a West Coast team , it pitted the Los Angeles Dodgers against the losing Oakland A's .</text>
-        <rel f="">broadcast</rel>
-        <arg f="" n="1">[*-1]</arg>
-        <arg f="" n="0">by General Electric Co. 's NBC</arg>
-      </example>
-      <example name="with Arg3" src="" type="">
-        <inflection aspect="progressive" form="participle" person="ns" tense="past" voice="active"/>
-        <text>While rival ABC News outstripped the competition in live coverage of the event by sheer luck -- the network was broadcasting the World Series from Candlestick Park when the quake struck [*T*-1] -- NBC News was unable [*-2]to get its signal out of San Francisco for the first hour after the quake .</text>
-        <arg f="" n="0">the network</arg>
-        <rel f="">broadcasting</rel>
-        <arg f="" n="1">the World Series</arg>
-        <arg f="" n="3">from Candlestick Park</arg>
-        <arg f="tmp" n="m">when the quake struck [*T*-1]</arg>
-      </example>
-      <example name="NP only" src="NP only" type="NP only">
-        <text>a network news broadcast</text>
-        <arg f="" n="0">network</arg>
-        <arg f="" n="1">news</arg>
-        <rel f="">broadcast</rel>
-      </example>
-      <example name="More arguments" src="More arguments" type="More arguments">
-        <text>Few people heard his news broadcast last night.</text>
-        <arg f="" n="0">his</arg>
-        <arg f="" n="1">news</arg>
-        <rel f="">broadcast</rel>
-        <arg f="tmp" n="m">last night</arg>
-      </example>
-      <example name="With source" src="With source" type="With source">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>This communication technology relies on polling from client nodes, rather than a broadcast from a central hub.</text>
-        <rel f="">broadcast</rel>
-        <arg f="" n="3">from a central hub</arg>
-      </example>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1006" type="">
-        <text>The success of serials means that TV stations in Taiwan just keep on cranking them out , broadcasting episodes as quickly as they are shot .</text>
-        <arg f="" n="0">TV stations in Taiwan</arg>
-        <rel f="">broadcasting</rel>
-        <arg f="" n="1">episodes</arg>
-        <arg f="mnr" n="m">as quickly as they are shot</arg>
-      </example>
-
     </roleset>
   </predicate>
 </frameset>

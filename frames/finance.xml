@@ -1,124 +1,201 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="finance">
     <roleset id="finance.01" name="provide money for">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">financing</alias>
-        <alias framenet="" pos="j" verbnet="">financing</alias>
-        <alias framenet="" pos="v" verbnet="">finance</alias>
-        <alias framenet="" pos="n" verbnet="">finance</alias>
+        <alias pos="n">financing</alias>
+        <alias pos="j">financing</alias>
+        <alias pos="v">finance</alias>
+        <alias pos="n">finance</alias>
+        <argalias arg="0" pos="n">financier</argalias>
       </aliases>
+      <roles>
+        <role descr="financ(i)er" f="PAG" n="0"/>
+        <role descr="thing financed" f="PPT" n="1"/>
+        <role descr="money" f="MNR" n="2"/>
+        <role descr="interest rate, price of financing" f="ADJ" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Funding" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Fields" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Taking_sides" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Transaction.Transaction.GiftGrantProvideAid" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Transaction.TransferMoney.GiftGrantProvideAid" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Transaction.TransferOwnership.GiftGrantProvideAid" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Transfermoney" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="finance-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">102</lexlink>
+        <lexlink class="finance-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">82</lexlink>
+      </lexlinks>
+      <example name="finance-v: transitive" src="">
+        <text>Japanese companies have financed small and medium - sized US firms for years .</text>
+        <propbank>
+          <rel relloc="3">financed</rel>
+          <arg type="ARG0" start="0" end="1">Japanese companies</arg>
+          <arg type="ARG1" start="4" end="10">small and medium - sized US firms</arg>
+          <arg type="ARGM-TMP" start="11" end="12">for years</arg>
+        </propbank>
+      </example>
+      <example name="finance-v: with money" src="">
+        <text>A host of electronics firms in California 's Silicon Valley were financed with trading - company capital .</text>
+        <propbank>
+          <rel relloc="11">financed</rel>
+          <arg type="ARG1" start="0" end="9">A host of electronics firms in California 's Silicon Valley</arg>
+          <arg type="ARG2" start="12" end="16">with trading - company capital</arg>
+        </propbank>
+      </example>
+      <example name="finance-n: Arg2 as subject" src="">
+        <text>Junk bonds are often used to finance restructurings and takeovers .</text>
+        <propbank>
+          <rel relloc="6">finance</rel>
+          <arg type="ARG2" start="0" end="1">Junk bonds</arg>
+          <arg type="ARG1" start="7" end="9">restructurings and takeovers</arg>
+        </propbank>
+      </example>
+      <example name="finance-n: No money mention" src="">
+        <text>The bank 's finance of his house took him six years to pay back .</text>
+        <propbank>
+          <rel relloc="3">finance</rel>
+          <arg type="ARG0" start="0" end="2">The bank 's</arg>
+          <arg type="ARG1" start="4" end="6">of his house</arg>
+        </propbank>
+      </example>
+      <example name="finance-n: NP fragment" src="">
+        <text>... the shift from government finance of health facilities to patients paying out - of - pocket ;</text>
+        <propbank>
+          <rel relloc="5">finance</rel>
+          <arg type="ARG0" start="4" end="4">government</arg>
+          <arg type="ARG1" start="6" end="8">of health facilities</arg>
+        </propbank>
+      </example>
+      <example name="finance-n: With Money" src="">
+        <text>Thanks to the public - private partnership , the utilisation of EU funds should also increase , as the opportunity of joint finance of projects with EU funds is also envisaged .</text>
+        <propbank>
+          <rel relloc="22">finance</rel>
+          <arg type="ARGM-MNR" start="21" end="21">joint</arg>
+          <arg type="ARG1" start="23" end="24">of projects</arg>
+          <arg type="ARG2" start="25" end="27">with EU funds</arg>
+        </propbank>
+      </example>
+      <example name="finance-n: Args 1 &amp; 3 only" src="web">
+        <text>It said it will also offer buyers the option of finance as low as 6.9 % on 24 - month loans .</text>
+        <propbank>
+          <rel relloc="10">finance</rel>
+          <arg type="ARG3" start="11" end="15">as low as 6.9 %</arg>
+          <arg type="ARG1" start="16" end="20">on 24 - month loans</arg>
+        </propbank>
+      </example>
+      <example name="financing-n: ARG0 and ARG1" src="ontonotes bn/voa/00/voa_0037">
+        <text>It allows Cuba to buy food and medicine from the United States for the first time since 1962 , but the bill restricts US financing of such sales and also continues a US travel ban to Cuba .</text>
+        <propbank>
+          <rel relloc="24">financing</rel>
+          <arg type="ARG0" start="23" end="23">US</arg>
+          <arg type="ARG1" start="25" end="27">of such sales</arg>
+        </propbank>
+      </example>
+      <example name="financing-n: args 3, 1" src="">
+        <text>It said it will also offer buyers the option of financing as low as 6.9 % on 24 - month loans .</text>
+        <propbank>
+          <rel relloc="10">financing</rel>
+          <arg type="ARG3" start="11" end="15">as low as 6.9 %</arg>
+          <arg type="ARG1" start="16" end="20">on 24 - month loans</arg>
+        </propbank>
+      </example>
+      <example name="financing-n: args0, 1" src="BOLT">
+        <text>So not only will the invasion create British jobs , take people off the streets , provide invaluable battle - field experience and be self - financing .... it could actually be PROFIT MAKING !</text>
+        <propbank>
+          <rel relloc="26">financing</rel>
+          <arg type="ARGM-MOD" start="3" end="3">will</arg>
+          <arg type="ARG0" start="4" end="5">the invasion</arg>
+          <arg type="ARG1" start="24" end="24">self</arg>
+        </propbank>
+      </example>
       <note>FINANCE-V NOTES: Frames file for 'finance' based on survey of initial sentences of big corpus (from finance.01-v)</note>
       <note>FINANCE-N NOTES: Roleset based on verb entry finance.01, OntoNotes sense grouping finance.01; no mapping to VN. Framed by Claire. (from finance.01-n)</note>
       <note>FINANCING-N NOTES: Added by Julia based on BOLT, finance-n.01. No VNcls. (from financing.01-n)</note>
       <note>FINANCING-J NOTES: Added by Julia based on BOLT, financing-n.01, fincance-v.01. (from financing.01-j)</note>
-      <roles>
-        <note>Roles match the noun, which includes and extra arg (3) that the verb doesn't have. (from financing.01-j)</note>
-        <role descr="financ(i)er" f="pag" n="0"/>
-        <role descr="thing financed" f="ppt" n="1"/>
-        <role descr="money" f="mnr" n="2"/>
-        <role descr="interest rate, price of financing" f="adj" n="3"/>
-      </roles>
-      <example name="transitive" src="" type="">
-        <text>Japanese companies have financed small and medium-sized US firms for years.</text>
-        <arg f="" n="0">Japanese companies</arg>
-        <rel f="">financed</rel>
-        <arg f="" n="1">small and medium-sized US firms</arg>
-        <arg f="tmp" n="m">for years.</arg>
-      </example>
-      <example name="with money" src="" type="">
-        <text>[A host of electronics firms in California's Silicon Valley]-1 were financed *trace*-1 with trading-company capital.</text>
-        <arg f="" n="1">*trace*</arg>
-        <rel f="">financed</rel>
-        <arg f="" n="2">with trading-company capital</arg>
-      </example>
-      <example name="Arg2 as subject" src="" type="">
-        <text>[Junk bonds]-1 are often used *trace*-1 to finance restructurings and takeovers.</text>
-        <arg f="" n="2">*trace*</arg>
-        <rel f="">finance</rel>
-        <arg f="" n="1">restructurings and takeovers.</arg>
-      </example>
-      <example name="No money mention" src="No money mention" type="No money mention">
-        <text>The bank's finance of his house took him six years to pay back.</text>
-        <arg f="" n="0">The bank's</arg>
-        <rel f="">finance</rel>
-        <arg f="" n="1">of his house</arg>
-      </example>
-      <example name="NP fragment" src="NP fragment" type="NP fragment">
-        <text>...the shift from government finance of health facilities to patients paying out-of-pocket;</text>
-        <arg f="" n="0">government</arg>
-        <rel f="">finance</rel>
-        <arg f="" n="1">of health facilities</arg>
-      </example>
-      <example name="With Money" src="With Money" type="With Money">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Thanks to the public-private partnership, the utilisation of EU funds should also increase, as the opportunity of joint finance of projects with EU funds is also envisaged.</text>
-        <arg f="mnr" n="m">joint</arg>
-        <rel f="">finance</rel>
-        <arg f="" n="1">of projects</arg>
-        <arg f="" n="2">with EU funds</arg>
-      </example>
-      <example name="Args 1 &amp; 3 only" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>It said it will also offer buyers the option of finance as low as 6.9 % on 24 - month loans .</text>
-        <rel f="">financing</rel>
-        <arg f="" n="3">as low as 6.9%</arg>
-        <arg f="" n="1">on 24-month loans.</arg>
-      </example>
-      <example name="ARG0 and ARG1" src="ontonotes bn/voa/00/voa_0037" type="">
-        <text>It allows Cuba to buy food and medicine from the United States for the first time since 1962 , but the bill restricts US financing of such sales and also continues a US travel ban to Cuba .</text>
-        <arg f="" n="0">US</arg>
-        <rel f="">financing</rel>
-        <arg f="" n="1">of such sales</arg>
-      </example>
-
-      <example name="args 3, 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>It said it will also offer buyers the option of financing as low as 6.9 % on 24 - month loans .</text>
-        <rel f="">financing</rel>
-        <arg f="" n="3">as low as 6.9%</arg>
-        <arg f="" n="1">on 24 - month loans</arg>
-      </example>
-      <example name="args0, 1" src="BOLT" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>So not only will the invasion create British jobs , take people off the streets , provide invaluable battle - field experience and be self - financing .... it could actually be PROFIT MAKING !</text>
-        <arg f="mod" n="m">will</arg>
-        <arg f="" n="0">the invasion</arg>
-        <arg f="" n="1">self</arg>
-        <rel f="">financing</rel>
-      </example>
+      <note>Roles match the noun, which includes and extra arg (3) that the verb doesn't have. (from financing.01-j)</note>
     </roleset>
     <roleset id="finance.02" name="buy using someone else's money">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">finance</alias>
+        <alias pos="v">finance</alias>
       </aliases>
-      <note>FINANCE-V NOTES: These rolesets can be hard to distinguish. (from finance.02-v)</note>
       <roles>
-        <role descr="buyer" f="pag" n="0"/>
-        <role descr="thing bought" f="ppt" n="1"/>
-        <role descr="money or provider of money" f="dir" n="2"/>
+        <role descr="buyer" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="Funding" resource="FrameNet" version="1.7">recipient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing bought" f="PPT" n="1"/>
+        <role descr="money or provider of money" f="DIR" n="2"/>
       </roles>
-      <example name="car payments" src="" type="">
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Funding" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Transaction.Transaction.GiftGrantProvideAid" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Transaction.TransferMoney.GiftGrantProvideAid" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Transaction.TransferOwnership.GiftGrantProvideAid" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Transfermoney" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+      </lexlinks>
+      <example name="finance-v: car payments" src="">
         <text>Buyers financed part of a car purchase through the General Motors Acceptance Corp.</text>
-        <arg f="" n="0">Buyers</arg>
-        <rel f="">financed</rel>
-        <arg f="" n="1">part of a car purchase</arg>
-        <arg f="" n="2">through the General Motors Acceptance Corp.</arg>
+        <propbank>
+          <rel relloc="1">financed</rel>
+          <arg type="ARG0" start="0" end="0">Buyers</arg>
+          <arg type="ARG1" start="2" end="6">part of a car purchase</arg>
+          <arg type="ARG2" start="7" end="12">through the General Motors Acceptance Corp.</arg>
+        </propbank>
       </example>
+      <note>FINANCE-V NOTES: These rolesets can be hard to distinguish. (from finance.02-v)</note>
     </roleset>
   </predicate>
   <predicate lemma="financial">
     <roleset id="financial.03" name="relating to finances">
       <aliases>
-        <alias framenet="" pos="j" verbnet="">financial</alias>
+        <alias pos="j">financial</alias>
       </aliases>
-      <note>FINANCIAL-J NOTES: Added automatically by Julia. Related to finance-v, etc (from financial.01-j)</note>
       <roles>
-        <role descr="financial entity" f="ppt" n="1"/>
+        <role descr="financial entity" f="PPT" n="1"/>
       </roles>
-      <example name="" src="" type="">
-        <text>So long as depression continued, the issue was financial and the two had a common enemy—the banker.</text>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="financial-j" src="">
+        <text>So long as depression continued , the issue was financial and the two had a common enemy ; the banker .</text>
+        <propbank>
+          <rel relloc="9">financial</rel>
+          <arg type="ARG1" start="0" end="4">So long as depression continued</arg>
+          <arg type="ARGM-TMP" start="6" end="7">the issue</arg>
+        </propbank>
       </example>
+      <note>FINANCIAL-J NOTES: Added automatically by Julia. Related to finance-v, etc (from financial.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

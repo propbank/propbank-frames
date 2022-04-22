@@ -1,45 +1,70 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="exit">
     <roleset id="exit.01" name="leave">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">exit</alias>
-        <alias framenet="" pos="n" verbnet="">exit</alias>
+        <alias pos="v">exit</alias>
+        <alias pos="n">exit</alias>
       </aliases>
-      <note>EXIT-V NOTES: Not sure that the class membership is accurate. (from exit.01-v)</note>
-      <note>EXIT-N NOTES: Roleset based on verb entry exit.01. Maps to VN class escape-51.1. Framed by Claire. (from exit.01-n)</note>
       <roles>
         <role descr="departed entity" f="PPT" n="0">
-          <vnrole vncls="51.1-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="escape-51.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Departing" resource="FrameNet" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="place exited" f="LOC" n="1">
-          <vnrole vncls="51.1-1" vntheta="Initial_Location"/>
+          <rolelinks>
+            <rolelink class="escape-51.1-1" resource="VerbNet" version="verbnet3.3">initial_location</rolelink>
+            <rolelink class="Departing" resource="FrameNet" version="1.7">source</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="pretty easy" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Once known as National Distillers&amp; Chemical Corp., the company exited the wine and spirits business and plowed more of its resources into plastics after Mr. Stookey took the chief executive's job in 1986.</text>
-        <arg f="adv" n="m">Once known as National Distillers&amp; Chemical Corp.</arg>
-        <arg f="" n="0">the company</arg>
-        <rel f="">exited</rel>
-        <arg f="" n="1">the wine and spirits business</arg>
-        <arg f="tmp" n="m">after Mr. Stookey took the chief executive's job in 1986</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Departing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="escape-51.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Transportperson" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+      </lexlinks>
+      <example name="pretty easy" src="">
+        <text>Once known as National Distillers &amp; Chemical Corp. , the company exited the wine and spirits business and plowed more of its resources into plastics after Mr. Stookey took the chief executive 's job in 1986 .</text>
+        <propbank>
+          <rel relloc="11">exited</rel>
+          <arg type="ARGM-ADV" start="0" end="7">Once known as National Distillers &amp; Chemical Corp.</arg>
+          <arg type="ARG0" start="9" end="10">the company</arg>
+          <arg type="ARG1" start="12" end="16">the wine and spirits business</arg>
+          <arg type="ARGM-TMP" start="25" end="35">after Mr. Stookey took the chief executive 's job in 1986</arg>
+        </propbank>
       </example>
-      <example name="Within LVC" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>The Tax Reform Act of 1986 , which eliminated many tax shelters peddled by planners , and the stock market crash the next year did cause a sharp slump in such demand , and [many planners]-2 had *-2to make an unplanned exit from the business .</text>
-        <arg f="" n="0">*-2</arg>
-        <arg f="mnr" n="m">unplanned</arg>
-        <rel f="">exit</rel>
-        <arg f="" n="1">from the business</arg>
+      <example name="Within LVC" src="">
+        <text>The Tax Reform Act of 1986 , which eliminated many tax shelters peddled by planners , and the stock market crash the next year did cause a sharp slump in such demand , and many planners had to make an unplanned exit from the business .</text>
+        <propbank>
+          <rel relloc="41">exit</rel>
+          <arg type="ARG0" start="34" end="35">many planners</arg>
+          <arg type="ARGM-MNR" start="40" end="40">unplanned</arg>
+          <arg type="ARG1" start="42" end="44">from the business</arg>
+        </propbank>
       </example>
-      <example name="All arguments" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Metro asked him about his exit from the Scientology cult.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">exit</rel>
-        <arg f="" n="1">from the Scientology cult.</arg>
+      <example name="All arguments" src="web">
+        <text>Metro asked him about his exit from the Scientology cult .</text>
+        <propbank>
+          <rel relloc="5">exit</rel>
+          <arg type="ARG0" start="4" end="4">his</arg>
+          <arg type="ARG1" start="6" end="9">from the Scientology cult</arg>
+        </propbank>
       </example>
+      <note>EXIT-V NOTES: Not sure that the class membership is accurate. (from exit.01-v)</note>
+      <note>EXIT-N NOTES: Roleset based on verb entry exit.01. Maps to VN class escape-51.1. Framed by Claire. (from exit.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

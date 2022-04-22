@@ -1,117 +1,210 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="address">
     <roleset id="address.01" name="put an address on, or speak to">
       <aliases>
-        <alias framenet="Referring_by_name Statement Speak_on_topic" pos="v" verbnet="25.3">address</alias>
-        <alias framenet="" pos="n" verbnet="">addressing</alias>
+        <alias pos="v">address</alias>
+        <alias pos="n">addressing</alias>
       </aliases>
-      <note>ADDRESS-V NOTES: Frames file for 'address' based on sentences in financial subcorpusand automatic expansion via verbnet. Member of VN class illustrate-25.3. (from address.01-v)</note>
       <roles>
-        <role descr="addresser" f="pag" n="0">
-          <vnrole vncls="25.3" vntheta="agent"/>
+        <role descr="addresser" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="illustrate-25.3" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Statement" resource="FrameNet" version="1.7">speaker</rolelink>
+            <rolelink class="Speak_on_topic" resource="FrameNet" version="1.7">speaker</rolelink>
+            <rolelink class="illustrate-25.3" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="item being addressed (letter, speech, etc)" f="gol" n="1">
-          <vnrole vncls="25.3" vntheta="destination"/>
+        <role descr="item being addressed (letter, speech, etc)" f="GOL" n="1">
+          <rolelinks>
+            <rolelink class="illustrate-25.3" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="Statement" resource="FrameNet" version="1.7">addressee</rolelink>
+            <rolelink class="illustrate-25.3" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
         </role>
-        <role descr="hearer/recipient" f="ppt" n="2"/>
-        <role descr="address as" f="prd" n="3"/>
-
+        <role descr="hearer/recipient" f="PPT" n="2">
+          <rolelinks>
+            <rolelink class="Statement" resource="FrameNet" version="1.7">message</rolelink>
+            <rolelink class="Statement" resource="FrameNet" version="1.7">topic</rolelink>
+            <rolelink class="Speak_on_topic" resource="FrameNet" version="1.7">topic</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="address as" f="PRD" n="3">
+          <rolelinks/>
+        </role>
       </roles>
-      <example name="address-v: not quite literal" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="past" voice="passive"/>
-        <text>[Mr. Skase's statement]-1 was addressed *trace*-1 to the stock exchange and appeared to be a response to the inquiry.</text>
-        <rel f="">addressed</rel>
-        <arg f="" n="1">*trace*-1 (= Mr. Skase's statement)</arg>
-        <arg f="" n="2">to the stock exchange</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Statement" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Speak_on_topic" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Referring_by_name" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="illustrate-25.3" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Contact.MediaStatement.Broadcast" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Contact.PublicStatementInPerson.Broadcast" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Correspondence" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="Broadcast" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="address-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">7</lexlink>
+        <lexlink class="illustrate-25.3" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="address-v: not quite literal" src="">
+        <text>Mr. Skase 's statement was addressed to the stock exchange and appeared to be a response to the inquiry .</text>
+        <propbank>
+          <rel relloc="5">addressed</rel>
+          <arg type="ARG1" start="0" end="3">Mr. Skase 's statement</arg>
+          <arg type="ARG2" start="6" end="9">to the stock exchange</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG2" src="ontonotes bn/pri/00/pri_0055" type="">
+      <example name="ARG0 and ARG2" src="ontonotes bn/pri/00/pri_0055">
         <text>In a historic speech , President Clinton has addressed the people of Vietnam , urging them to work with Americans to heal the wounds of war .</text>
-        <arg f="loc" n="m">In a historic speech</arg>
-        <arg f="" n="0">President Clinton</arg>
-        <rel f="">addressed</rel>
-        <arg f="" n="2">the people of Vietnam</arg>
-        <arg f="prd" n="m">urging them to work with Americans to heal the wounds of war</arg>
+        <propbank>
+          <rel relloc="8">addressed</rel>
+          <arg type="ARGM-LOC" start="0" end="3">In a historic speech</arg>
+          <arg type="ARG0" start="5" end="6">President Clinton</arg>
+          <arg type="ARG2" start="9" end="12">the people of Vietnam</arg>
+          <arg type="ARGM-PRD" start="14" end="25">urging them to work with Americans to heal the wounds of war</arg>
+        </propbank>
       </example>
-
-      <example name="ARG0 and ARG2 and ARG1" src="ontonotes bn/pri/01/pri_0109" type="">
+      <example name="ARG0 and ARG2 and ARG1" src="ontonotes bn/pri/01/pri_0109">
         <text>Saddam Hussein addressed the nation in a speech filled with rhetoric and a declaration of victory .</text>
-        <arg f="" n="0">Saddam Hussein</arg>
-        <rel f="">addressed</rel>
-        <arg f="" n="2">the nation</arg>
-        <arg f="" n="1">in a speech filled with rhetoric and a declaration of victory</arg>
+        <propbank>
+          <rel relloc="2">addressed</rel>
+          <arg type="ARG0" start="0" end="1">Saddam Hussein</arg>
+          <arg type="ARG2" start="3" end="4">the nation</arg>
+          <arg type="ARG1" start="5" end="15">in a speech filled with rhetoric and a declaration of victory</arg>
+        </propbank>
       </example>
-
+      <note>ADDRESS-V NOTES: Frames file for 'address' based on sentences in financial subcorpusand automatic expansion via verbnet. Member of VN class illustrate-25.3. (from address.01-v)</note>
     </roleset>
     <roleset id="address.02" name="deal with">
       <aliases>
-        <alias framenet="Topic Resolve_problem" pos="v" verbnet="">address</alias>
-        <alias framenet="" pos="n" verbnet="">addressing</alias>
+        <alias pos="v">address</alias>
+        <alias pos="n">addressing</alias>
       </aliases>
-      <note>ADDRESS-V NOTES: No relevant VN class. (from address.02-v)</note>
       <roles>
-        <role descr="agent" f="pag" n="0"/>
-        <role descr="dealing with what" f="ppt" n="1"/>
-        <role descr="answer, dealing how" f="prd" n="2"/>
+        <role descr="agent" f="PAG" n="0"/>
+        <role descr="dealing with what" f="PPT" n="1"/>
+        <role descr="answer, dealing how" f="PRD" n="2"/>
       </roles>
-      <example name="address-v: just transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>That should help IBM address the damage that a resurgent Storage Technology Corp. has inflicted in that market.</text>
-        <arg f="" n="0">IBM</arg>
-        <rel f="">address</rel>
-        <arg f="" n="1">the damage that a resurgent Storage Technology Corp. has inflicted in that market</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Resolve_problem" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Topic" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="address-v.4" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">41</lexlink>
+        <lexlink class="address-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">14</lexlink>
+      </lexlinks>
+      <example name="address-v: just transitive" src="">
+        <text>That should help IBM address the damage that a resurgent Storage Technology Corp. has inflicted in that market .</text>
+        <propbank>
+          <rel relloc="4">address</rel>
+          <arg type="ARG0" start="3" end="3">IBM</arg>
+          <arg type="ARG1" start="5" end="17">the damage that a resurgent Storage Technology Corp. has inflicted in that market</arg>
+        </propbank>
       </example>
-      <example name="address-v: with answer" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>[Digital]-2 hopes *trace*-2 to address that with the debut of its first mainframe-class computers next Tuesday.</text>
-        <arg f="" n="0">*trace*-2</arg>
-        <rel f="">address</rel>
-        <arg f="" n="1">that</arg>
-        <arg f="" n="2">with the debut of its first mainframe-class computers next Tuesday</arg>
+      <example name="address-v: with answer" src="">
+        <text>Digital hopes to address that with the debut of its first mainframe - class computers next Tuesday .</text>
+        <propbank>
+          <rel relloc="3">address</rel>
+          <arg type="ARG0" start="0" end="0">Digital</arg>
+          <arg type="ARG1" start="4" end="4">that</arg>
+          <arg type="ARG2" start="5" end="16">with the debut of its first mainframe - class computers next Tuesday</arg>
+        </propbank>
       </example>
+      <note>ADDRESS-V NOTES: No relevant VN class. (from address.02-v)</note>
     </roleset>
     <roleset id="address.03" name="answer, pay attention to">
       <aliases>
-        <alias framenet="Speak_on_topic" pos="n" verbnet="">address</alias>
-        <alias framenet="" pos="n" verbnet="">addressing</alias>
-        <alias framenet="" pos="l" verbnet="">deliver_address</alias>
-        <alias framenet="" pos="l" verbnet="">give_address</alias>
+        <alias pos="n">address</alias>
+        <alias pos="n">addressing</alias>
+        <alias pos="l">deliver_address</alias>
+        <alias pos="l">give_address</alias>
       </aliases>
-      <note>ADDRESS-N NOTES: Roleset based on verb entry address.02, OntoNotes grouping address-n sense 3; no relevant mapping to VN. Comparison to verb-speak.01. (from address.01-n)</note>
       <roles>
-        <role descr="talker" f="pag" n="0"/>
-        <role descr="subject" f="ppt" n="1"/>
-        <role descr="hearer" f="gol" n="2"/>
+        <role descr="talker" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="Speak_on_topic" resource="FrameNet" version="1.7">speaker</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="subject" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="Speak_on_topic" resource="FrameNet" version="1.7">topic</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="hearer" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="Speak_on_topic" resource="FrameNet" version="1.7">audience</rolelink>
+          </rolelinks>
+        </role>
       </roles>
-      <example name="address-n: Args 1 &amp; 2" src="NomBank Frames" type="">
-        <text>In a foreign-policy address before the Soviet legislature , theforeign minister conceded that the radar station in Krasnoyarskbreached the superpower Anti-Ballistic Missile treaty and said itwould be dismantled .</text>
-        <arg f="" n="1">foreign-policy</arg>
-        <rel f="">address</rel>
-        <arg f="" n="2">before the Soviet legislature</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Speak_on_topic" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Contact.MediaStatement.Broadcast" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Broadcast" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="address-n.3" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">22</lexlink>
+      </lexlinks>
+      <example name="address-n: Args 1 &amp; 2" src="NomBank Frames">
+        <text>In a foreign - policy address before the Soviet legislature , theforeign minister conceded that the radar station in Krasnoyarskbreached the superpower Anti - Ballistic Missile treaty and said itwould be dismantled .</text>
+        <propbank>
+          <rel relloc="5">address</rel>
+          <arg type="ARG1" start="2" end="4">foreign - policy</arg>
+          <arg type="ARG2" start="6" end="9">before the Soviet legislature</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG2" src="ontonotes mz/sinorama/10/ectb_1031" type="">
-        <text>In the run - up to the US presidential election , there has been an effort by anti-Communist forces in the US to " demonize " China , and Jiang 's address to the UN - which was very friendly in tone and was delivered in English - is widely believed to have effectively improved the negative image of China in the US .</text>
-        <arg f="" n="0">Jiang 's</arg>
-        <rel f="">address</rel>
-        <arg f="" n="2">to the UN</arg>
-        <arg f="adj" n="m">which was very friendly in tone and was delivered in English</arg>
+      <example name="ARG0 and ARG2" src="ontonotes mz/sinorama/10/ectb_1031">
+        <text>In the run - up to the US presidential election , there has been an effort by anti - Communist forces in the US to " demonize " China , and Jiang 's address to the UN - which was very friendly in tone and was delivered in English - is widely believed to have effectively improved the negative image of China in the US .</text>
+        <propbank>
+          <rel relloc="33">address</rel>
+          <arg type="ARG0" start="31" end="32">Jiang 's</arg>
+          <arg type="ARG2" start="34" end="36">to the UN</arg>
+          <arg type="ARGM-ADJ" start="38" end="48">which was very friendly in tone and was delivered in English</arg>
+        </propbank>
       </example>
-
-      <example name="address-n: All arguments" src="ON sense 3" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The general's farewell address to the troops was quite moving.</text>
-        <arg f="" n="0">general's</arg>
-        <arg f="" n="1">farewell</arg>
-        <rel f="">address</rel>
-        <arg f="" n="2">to the troops</arg>
+      <example name="address-n: All arguments" src="ON sense 3">
+        <text>The general 's farewell address to the troops was quite moving .</text>
+        <propbank>
+          <rel relloc="4">address</rel>
+          <arg type="ARG0" start="1" end="2">general 's</arg>
+          <arg type="ARG1" start="3" end="3">farewell</arg>
+          <arg type="ARG2" start="5" end="7">to the troops</arg>
+        </propbank>
       </example>
-      <example name="address-n: Args 0 &amp; 2" src="ON sense 3" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The principal's address to the high school came over the PA system.</text>
-        <arg f="" n="0">principal's</arg>
-        <rel f="">address</rel>
-        <arg f="" n="2">to the high school</arg>
+      <example name="address-n: Args 0 &amp; 2" src="ON sense 3">
+        <text>The principal 's address to the high school came over the PA system .</text>
+        <propbank>
+          <rel relloc="3">address</rel>
+          <arg type="ARG0" start="1" end="2">principal 's</arg>
+          <arg type="ARG2" start="4" end="7">to the high school</arg>
+        </propbank>
       </example>
+      <note>ADDRESS-N NOTES: Roleset based on verb entry address.02, OntoNotes grouping address-n sense 3; no relevant mapping to VN. Comparison to verb-speak.01. (from address.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

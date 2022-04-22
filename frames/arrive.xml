@@ -1,72 +1,109 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="arrive">
     <roleset id="arrive.01" name="move, come to">
       <aliases>
-        <alias framenet="Arriving" pos="v" verbnet="">arrive</alias>
-        <alias framenet="arriving" pos="n" verbnet="">arrival</alias>
+        <alias pos="v">arrive</alias>
+        <alias pos="n">arrival</alias>
       </aliases>
-      <note>ARRIVE-V NOTES: Based on financial subcorpus. Comparison to 'come'. Member of VNcls escape-51.1-2. (from arrive.01-v)</note>
-      <note>ARRIVAL-N NOTES: Roleset based on arrive.01. Verbnet class 51.1-2, framenet class arriving. Framed by Katie. (from arrival.01-n)</note>
       <roles>
         <role descr="entity in motion / 'comer'" f="PPT" n="1">
-          <vnrole vncls="51.1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="escape-51.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Arriving" resource="FrameNet" version="1.7">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="extent -- rare)" f="ext" n="2"/>
-        <role descr="start point -- also rare)" f="dir" n="3"/>
+        <role descr="extent -- rare)" f="EXT" n="2"/>
+        <role descr="start point -- also rare)" f="DIR" n="3"/>
         <role descr="end point, destination" f="LOC" n="4">
-          <vnrole vncls="51.1" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink class="escape-51.1" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="Arriving" resource="FrameNet" version="1.7">goal</rolelink>
+            <rolelink class="Arriving" resource="FrameNet" version="1.7">path</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="unaccusative" src="" type="">
-        <text>But with the index proving somewhat better than expected and [the widely anticipated report on October]-1 employment scheduled *trace*-1 to arrive tomorrow, stock prices firmed only modestly in response to the report and then faltered.</text>
-        <arg f="" n="1">*trace*-1</arg>
-        <rel f="">arrive</rel>
-        <arg f="tmp" n="m">tomorrow</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Arriving" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="escape-51.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Transportperson" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="Transportartifact" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="arrive-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">150</lexlink>
+        <lexlink class="arrival-n.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">18</lexlink>
+      </lexlinks>
+      <example name="unaccusative" src="">
+        <text>But with the index proving somewhat better than expected and the widely anticipated report on October employment scheduled to arrive tomorrow , stock prices firmed only modestly in response to the report and then faltered .</text>
+        <propbank>
+          <rel relloc="19">arrive</rel>
+          <arg type="ARG1" start="10" end="15">the widely anticipated report on October</arg>
+          <arg type="ARGM-TMP" start="20" end="20">tomorrow</arg>
+        </propbank>
       </example>
-      <example name="with end point, destination" src="" type="">
-        <text>When he arrived in the U.S. in 1969 -- the start of an eight-year tour -- he tried selling Japanese yen-denominated bonds to U.S. investors.</text>
-        <arg f="" n="1">he</arg>
-        <rel f="">arrived</rel>
-        <arg f="" n="4">in the U.S.</arg>
-        <arg f="tmp" n="m">in 1969 -- the start of an eight-year tour --</arg>
+      <example name="with end point, destination" src="">
+        <text>When he arrived in the U.S. in 1969 -- the start of an eight - year tour -- he tried selling Japanese yen - denominated bonds to U.S. investors .</text>
+        <propbank>
+          <rel relloc="2">arrived</rel>
+          <arg type="ARG1" start="1" end="1">he</arg>
+          <arg type="ARG4" start="3" end="5">in the U.S.</arg>
+          <arg type="ARGM-TMP" start="6" end="17">in 1969 -- the start of an eight - year tour --</arg>
+        </propbank>
       </example>
-      <example name="ARG1 and ARG3" src="ontonotes mz/sinorama/10/ectb_1001" type="">
+      <example name="ARG1 and ARG3" src="ontonotes mz/sinorama/10/ectb_1001">
         <text>But as Tan Zhiqiang points out , nearly a quarter of the residents of Macau have arrived from the mainland during the past ten years .</text>
-        <arg f="dis" n="m">But</arg>
-        <arg f="adv" n="m">as Tan Zhiqiang points out</arg>
-        <arg f="" n="1">nearly a quarter of the residents of Macau</arg>
-        <rel f="">arrived</rel>
-        <arg f="" n="3">from the mainland</arg>
-        <arg f="tmp" n="m">during the past ten years</arg>
+        <propbank>
+          <rel relloc="16">arrived</rel>
+          <arg type="ARGM-DIS" start="0" end="0">But</arg>
+          <arg type="ARGM-ADV" start="1" end="5">as Tan Zhiqiang points out</arg>
+          <arg type="ARG1" start="7" end="14">nearly a quarter of the residents of Macau</arg>
+          <arg type="ARG3" start="17" end="19">from the mainland</arg>
+          <arg type="ARGM-TMP" start="20" end="24">during the past ten years</arg>
+        </propbank>
       </example>
-
-      <example name="Example with rare arg 3" src="" type="">
+      <example name="Example with rare arg 3" src="">
         <text>the arrival of cocoa from the interior</text>
-        <rel f="">arrival</rel>
-        <arg f="" n="1">of cocoa</arg>
-        <arg f="" n="3">from the interior</arg>
+        <propbank>
+          <rel relloc="1">arrival</rel>
+          <arg type="ARG1" start="2" end="3">of cocoa</arg>
+          <arg type="ARG3" start="4" end="6">from the interior</arg>
+        </propbank>
       </example>
-      <example name="Example with arg 4" src="" type="">
-        <text>the arrival on the market of $ 4.52 billion in 30-year bondsoffered by the Resolution Funding Corp. as part of the government's bailout of the savings and loan industry</text>
-        <rel f="">arrival</rel>
-        <arg f="" n="4">on the market</arg>
-        <arg f="" n="1">of $ 4.52 billion in 30-year bonds offered by the Resolution Funding Corp. as part of the government 's bailout of the savings and loan industry</arg>
+      <example name="Example with arg 4" src="">
+        <text>the arrival on the market of $ 4.52 billion in 30 - year bonds offered by the Resolution Funding Corp. as part of the government 's bailout of the savings and loan industry</text>
+        <propbank>
+          <rel relloc="1">arrival</rel>
+          <arg type="ARG4" start="2" end="4">on the market</arg>
+          <arg type="ARG1" start="5" end="32">of $ 4.52 billion in 30 - year bonds offered by the Resolution Funding Corp. as part of the government 's bailout of the savings and loan industry</arg>
+        </propbank>
       </example>
-      <example name="Very common instance of having only arg 1" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="Very common instance of having only arg 1" src="">
         <text>The arrival of the wolves</text>
-        <rel f="">arrival</rel>
-        <arg f="" n="1">of the wolves</arg>
+        <propbank>
+          <rel relloc="1">arrival</rel>
+          <arg type="ARG1" start="2" end="4">of the wolves</arg>
+        </propbank>
       </example>
-      <example name="example with all but arg 2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="example with all but arg 2" src="">
         <text>On our arrival from Waterloo at Allgate</text>
-        <arg f="" n="1">Our</arg>
-        <rel f="">arrival</rel>
-        <arg f="" n="3">from Waterloo</arg>
-        <arg f="" n="4">at Allgate</arg>
+        <propbank>
+          <rel relloc="2">arrival</rel>
+          <arg type="ARG1" start="1" end="1">our</arg>
+          <arg type="ARG3" start="3" end="4">from Waterloo</arg>
+          <arg type="ARG4" start="5" end="6">at Allgate</arg>
+        </propbank>
       </example>
+      <note>ARRIVE-V NOTES: Based on financial subcorpus. Comparison to 'come'. Member of VNcls escape-51.1-2. (from arrive.01-v)</note>
+      <note>ARRIVAL-N NOTES: Roleset based on arrive.01. Verbnet class 51.1-2, framenet class arriving. Framed by Katie. (from arrival.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

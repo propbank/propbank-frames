@@ -1,30 +1,62 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="bike">
     <roleset id="bike.01" name="travel by bicycle">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">biking</alias>
-        <alias framenet="Operate_vehicle Bringing" pos="v" verbnet="">bike</alias>
+        <alias pos="n">biking</alias>
+        <alias pos="v">bike</alias>
       </aliases>
-      <note>BIKE-V NOTES: Based on WSJ. Member of VNcls vehicle-51.4.1-1, drive-11.5. (from bike.01-v)</note>
-      <note>BIKING-N NOTES: (from biking.01-n)</note>
       <roles>
         <role descr="bicycler" f="PAG" n="0">
-          <vnrole vncls="51.4.1-1" vntheta="Theme"/>
-          <vnrole vncls="11.5" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="vehicle-51.4.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="drive-11.5" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Bringing" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="drive-11.5" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+            <rolelink class="vehicle-51.4.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="path" f="ppt" n="1">
-          <vnrole vncls="51.4.1-1" vntheta="Location"/>
-          <vnrole vncls="11.5" vntheta="Theme"/>
+        <role descr="path" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="vehicle-51.4.1-1" resource="VerbNet" version="verbnet3.3">location</rolelink>
+            <rolelink class="drive-11.5" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Bringing" resource="FrameNet" version="1.7">goal</rolelink>
+            <rolelink class="Bringing" resource="FrameNet" version="1.7">path</rolelink>
+            <rolelink class="Bringing" resource="FrameNet" version="1.7">theme</rolelink>
+            <rolelink class="drive-11.5" resource="VerbNet" version="verbnet3.4">initial_location</rolelink>
+            <rolelink class="vehicle-51.4.1-1" resource="VerbNet" version="verbnet3.4">trajectory</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="nice legs" src="" type="">
-        <inflection aspect="ns" form="full" person="third" tense="present" voice="active"/>
-        <text>Did he bike the last triathlon you were in?</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">bike</rel>
-        <arg f="" n="1">the last triathlon you were in</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Bringing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="Operate_vehicle" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7" />
+        <lexlink class="vehicle-51.4.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="drive-11.5" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3" />
+        <lexlink class="drive-11.5" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+        <lexlink class="vehicle-51.4.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4" />
+      </lexlinks>
+      <example name="nice legs" src="">
+        <text>Did he bike the last triathlon you were in ?</text>
+        <propbank>
+          <rel relloc="2">bike</rel>
+          <arg type="ARG0" start="1" end="1">he</arg>
+          <arg type="ARG1" start="3" end="8">the last triathlon you were in</arg>
+        </propbank>
       </example>
+      <note>BIKE-V NOTES: Based on WSJ. Member of VNcls vehicle-51.4.1-1, drive-11.5. (from bike.01-v)</note>
+      <note>BIKING-N NOTES: (from biking.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

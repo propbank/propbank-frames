@@ -1,67 +1,115 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="enlarge">
     <roleset id="enlarge.01" name="make bigger">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">enlarge</alias>
-        <alias framenet="" pos="j" verbnet="">enlarged</alias>
+        <alias pos="v">enlarge</alias>
+        <alias pos="j">enlarged</alias>
+        <alias pos="n">enlargement</alias>
       </aliases>
+      <roles>
+        <role descr="causer of biggenment" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Cause_expansion" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="Cause_expansion" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing getting bigger" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="Expansion" resource="FrameNet" version="1.7">item</rolelink>
+            <rolelink class="Cause_expansion" resource="FrameNet" version="1.7">item</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">patient</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="EXT" f="EXT" n="2">
+          <rolelinks/>
+        </role>
+        <role descr="start point" f="DIR" n="3">
+          <rolelinks/>
+        </role>
+        <role descr="end point" f="GOL" n="4">
+          <rolelinks>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.3">result</rolelink>
+            <rolelink class="other_cos-45.4" resource="VerbNet" version="verbnet3.4">result</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Cause_expansion" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Expansion" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="other_cos-45.4" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="enlarge-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+        <lexlink class="other_cos-45.4" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="just transitive" src="">
+        <text>It appears that the only thing Congress is learning from the HUD story is how to enlarge its control of the honey pot going to special interests .</text>
+        <propbank>
+          <rel relloc="16">enlarge</rel>
+          <arg type="ARG0" start="6" end="6">Congress</arg>
+          <arg type="ARG1" start="17" end="26">its control of the honey pot going to special interests</arg>
+        </propbank>
+      </example>
+      <example name="with EXT" src="">
+        <text>Avondale Industries Inc. , New Orleans , received a $ 23 million contract from the Navy to enlarge by 50 % the capacity of an auxiliary oiler .</text>
+        <propbank>
+          <rel relloc="17">enlarge</rel>
+          <arg type="ARG0" start="0" end="5">Avondale Industries Inc. , New Orleans</arg>
+          <arg type="ARG2" start="18" end="20">by 50 %</arg>
+          <arg type="ARG1" start="21" end="26">the capacity of an auxiliary oiler</arg>
+        </propbank>
+      </example>
+      <example name="passive" src="">
+        <text>Elements of the left are also reflexively opposed ; they see service as a cover for the draft , or fear the regimentation of youth , or want to see rights enlarged , not obligations .</text>
+        <propbank>
+          <rel relloc="31">enlarged</rel>
+          <arg type="ARG1" start="30" end="30">rights</arg>
+        </propbank>
+      </example>
+      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1042">
+        <text>In these ways , VIA is moving step by step to enlarge its intellectual holdings .</text>
+        <propbank>
+          <rel relloc="11">enlarge</rel>
+          <arg type="ARG0" start="4" end="4">VIA</arg>
+          <arg type="ARG1" start="12" end="14">its intellectual holdings</arg>
+        </propbank>
+      </example>
+      <example name="with start and end points" src="">
+        <text>Postop changes : the caliber is enlarged from 1 cm to 2 cm and there is no calcification .</text>
+        <propbank>
+          <rel relloc="6">enlarged</rel>
+          <arg type="ARG1" start="3" end="4">the caliber</arg>
+          <arg type="ARG3" start="7" end="9">from 1 cm</arg>
+          <arg type="ARG4" start="10" end="12">to 2 cm</arg>
+        </propbank>
+      </example>
+      <example name="enlargement-n" src="THYME">
+        <text>CT shows slight enlargement of tumor .</text>
+        <amr version="THYME 1.0">
+          (s / show-01
+            :ARG0 (c / ct-01)
+            :ARG1 (e / enlarge-01
+              :ARG1 (s2 / sign-symptom :name (n / name :op1 "tumor"))
+              :ARG1-of (s3 / slight-01)))
+        </amr>
+        <propbank/>
+      </example>
+      <note>ENLARGEMENT-N NOTES: Based on THYME corpus.</note>
       <note>ENLARGE-V NOTES: Preposition 'by' takes precedence over EXT tag. (from enlarge.01-v)</note>
       <note>ENLARGED-J NOTES: Based on Thyme and Sharp data. Comparison to enlarge.01. Enlarge.01 is a member of VN class other_cos-45.4. Framed by Katie. (from enlarged.01-j)</note>
-      <roles>
-        <role descr="causer of biggenment" f="pag" n="0">
-          <vnrole vncls="45.4" vntheta="agent"/>
-        </role>
-        <role descr="thing getting bigger" f="ppt" n="1">
-          <vnrole vncls="45.4" vntheta="patient"/>
-        </role>
-        <role descr="EXT" f="ext" n="2"/>
-        <role descr="start point" f="dir" n="3"/>
-        <role descr="end point" f="gol" n="4"/>
-      </roles>
-      <example name="just transitive" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>It appears that the only thing Congress-1 is learning from the HUD story is how *trace*-1 to enlarge its control of the honey pot going to special interests.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">enlarge</rel>
-        <arg f="" n="1">its control of the honey pot going to special interests</arg>
-      </example>
-      <example name="with EXT" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="ns"/>
-        <text>[Avondale Industries Inc., New Orleans,]-1 received a $23 million contract from the Navy *trace*-1 to enlarge by 50% the capacity of an auxiliary oiler.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">enlarge</rel>
-        <arg f="" n="2">by 50%</arg>
-        <arg f="" n="1">the capacity of an auxiliary oiler</arg>
-      </example>
-      <example name="passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>Elements of the left are also reflexively opposed; they see service as a cover for the draft, or fear the regimentation of youth, or want to see rights-1 enlarged *trace*-1, not obligations.</text>
-        <rel f="">enlarged</rel>
-        <arg f="" n="1">*trace*</arg>
-      </example>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1042" type="">
-        <text>In these ways , VIA is moving step by step to enlarge its intellectual holdings .</text>
-        <arg f="" n="0">VIA</arg>
-        <rel f="">enlarge</rel>
-        <arg f="" n="1">its intellectual holdings</arg>
-      </example>
-
-      <example name="with start and end points" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Postop changes: the caliber is enlarged from 1 cm to 2 cm and there is no calcification.</text>
-        <arg f="" n="1">the caliber</arg>
-        <rel f="">enlarged</rel>
-        <arg f="" n="3">from 1 cm</arg>
-        <arg f="" n="4">to 2 cm</arg>
-      </example>
-      <example name="With arg 0" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Multiple mesenteric lymph nodes are enlarged by the pathology.</text>
-        <arg f="" n="1">Multiple mesenteric lymph nodes</arg>
-        <rel f="">enlarged</rel>
-        <arg f="" n="0">by the pathology.</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

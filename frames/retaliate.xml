@@ -1,55 +1,84 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="retaliate">
     <roleset id="retaliate.01" name="violence in return, getting back at">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">retaliate</alias>
-        <alias framenet="Revenge" pos="n" verbnet="">retaliation</alias>
+        <alias pos="v">retaliate</alias>
+        <alias pos="n">retaliation</alias>
       </aliases>
-      <note>RETALIATE-V NOTES: Frames file for 'retaliate' based on sentences in wsj. Verbnet entry conspire-71. (from retaliate.01-v)</note>
-      <note>RETALIATION-N NOTES: Added by Julia based on BOLT, retaliate.01. (from retaliation.01-n)</note>
       <roles>
         <role descr="violent entity, agent" f="PAG" n="0">
-          <vnrole vncls="71" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="conspire-71" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Revenge" resource="FrameNet" version="1.7">avenger</rolelink>
+            <rolelink class="conspire-71" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="instigating entity or act (retaliate against)" f="PPT" n="1">
-          <vnrole vncls="71" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="conspire-71" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Revenge" resource="FrameNet" version="1.7">injury</rolelink>
+            <rolelink class="conspire-71" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="weird usage" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="present" voice="active"/>
-        <text>In addition to the damages, the suit seeks a court order preventing [the guild]-1 from *trace*-1 punishing or retaliating against Mr. Trudeau.</text>
-        <arg f="" n="0">*trace*</arg>
-        <rel f="">retaliating</rel>
-        <arg f="" n="1">against Mr. Trudeau</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Revenge" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="conspire-71" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="conspire-71" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="weird usage" src="">
+        <text>In addition to the damages , the suit seeks a court order preventing the guild from punishing or retaliating against Mr. Trudeau .</text>
+        <propbank>
+          <rel relloc="18">retaliating</rel>
+          <arg type="ARG0" start="13" end="14">the guild</arg>
+          <arg type="ARG1" start="19" end="21">against Mr. Trudeau</arg>
+        </propbank>
       </example>
-      <example name="ARG0 and ARG1" src="ontonotes bn/mnb/00/mnb_0007" type="">
+      <example name="ARG0 and ARG1" src="ontonotes bn/mnb/00/mnb_0007">
         <text>Even though cooperation from Yemen is at a stand still , U.S. officials tell NBC News they 're making substantial progress in the investigation and are fully confident they 'll eventually gather enough evidence to retaliate against those responble .</text>
-        <arg f="" n="0">they</arg>
-        <rel f="">retaliate</rel>
-        <arg f="" n="1">against those responble</arg>
+        <propbank>
+          <rel relloc="35">retaliate</rel>
+          <arg type="ARG0" start="28" end="28">they</arg>
+          <arg type="ARG1" start="36" end="38">against those responble</arg>
+        </propbank>
       </example>
-
-      <example name="arg 1 and CAU" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>President Obama issued a Presidential Policy Directive prohibiting retaliation against them for exposing waste, fraud and abuse.</text>
-        <rel f="">retaliation</rel>
-        <arg f="" n="1">against them</arg>
-        <arg f="cau" n="m">for exposing waste, fraud and abuse</arg>
+      <example name="arg 1 and CAU" src="internet">
+        <text>President Obama issued a Presidential Policy Directive prohibiting retaliation against them for exposing waste , fraud and abuse .</text>
+        <propbank>
+          <rel relloc="8">retaliation</rel>
+          <arg type="ARG1" start="9" end="10">against them</arg>
+          <arg type="ARGM-CAU" start="11" end="17">for exposing waste , fraud and abuse</arg>
+        </propbank>
       </example>
-      <example name="arg1- action" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>Workers at a Walmart-contracted warehouse in Mira Loma, California, were planning a one-day strike on Thursday in response to ongoing unsafe working conditions and retaliation against their organizing to change those conditions.</text>
-        <rel f="">retaliation</rel>
-        <arg f="" n="1">against their organizing to change those conditions</arg>
+      <example name="arg1- action" src="internet">
+        <text>Workers at a Walmart - contracted warehouse in Mira Loma , California , were planning a one - day strike on Thursday in response to ongoing unsafe working conditions and retaliation against their organizing to change those conditions .</text>
+        <propbank>
+          <rel relloc="30">retaliation</rel>
+          <arg type="ARG1" start="31" end="37">against their organizing to change those conditions</arg>
+        </propbank>
       </example>
-      <example name="retaliation at" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The workers soon tallied that their retaliation at the excesses was possible only when they were organized and united.</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">retaliationi</rel>
-        <arg f="" n="1">at the excesses</arg>
+      <example name="retaliation at" src="internet">
+        <text>The workers soon tallied that their retaliation at the excesses was possible only when they were organized and united .</text>
+        <propbank>
+          <rel relloc="6">retaliation</rel>
+          <arg type="ARG0" start="5" end="5">their</arg>
+          <arg type="ARG1" start="7" end="9">at the excesses</arg>
+        </propbank>
       </example>
+      <note>RETALIATE-V NOTES: Frames file for 'retaliate' based on sentences in wsj. Verbnet entry conspire-71. (from retaliate.01-v)</note>
+      <note>RETALIATION-N NOTES: Added by Julia based on BOLT, retaliate.01. (from retaliation.01-n)</note>
     </roleset>
   </predicate>
 </frameset>

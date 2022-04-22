@@ -1,113 +1,195 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="deposit">
     <roleset id="deposit.01" name="put something somewhere">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">deposit</alias>
-        <alias framenet="" pos="n" verbnet="">deposit</alias>
-        <alias framenet="" pos="n" verbnet="">deposition</alias>
-        <alias framenet="" pos="l" verbnet="">make_deposit</alias>
+        <alias pos="v">deposit</alias>
+        <alias pos="n">deposit</alias>
+        <alias pos="n">deposition</alias>
+        <alias pos="l">make_deposit</alias>
+        <argalias arg="0" pos="n">depositor</argalias>
       </aliases>
-      <note>DEPOSIT-V NOTES: Frames file for 'deposit' based on sentences in wsj. No Verbnet entry, Framenet entry Placing. (from deposit.01-v predicate notes)</note>
-      <note>DEPOSIT-N NOTES: Based on verb entry deposit.01; corresponds to VN class put-9.1-1. (from deposit.01-n)</note>
       <roles>
-        <note>Watch out for instances that reference the physical deposit (e.g. ore, money, or anything that is actually arg1) rather than the act of depositing. (from deposit.01-n)</note>
         <role descr="depositor, agent" f="PAG" n="0">
-          <vnrole vncls="9.1-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="put-9.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Placing" resource="FrameNet" version="1.7">agent</rolelink>
+            <rolelink class="Placing" resource="FrameNet" version="1.7">cause</rolelink>
+            <rolelink class="put-9.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing deposited" f="PPT" n="1">
-          <vnrole vncls="9.1-1" vntheta="Theme"/>
+          <rolelinks>
+            <rolelink class="put-9.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Placing" resource="FrameNet" version="1.7">theme</rolelink>
+            <rolelink class="put-9.1-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="where" f="GOL" n="2">
-          <vnrole vncls="9.1-1" vntheta="Destination"/>
+          <rolelinks>
+            <rolelink class="put-9.1-1" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="Placing" resource="FrameNet" version="1.7">goal</rolelink>
+            <rolelink class="put-9.1-1" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="deposit-v: all args" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>But judges usually find the real aim is to escape tax on hidden income; and the IRS said Brown must have had such income -- although it uncovered no source -- because he deposited $124,732 in a bank account in 1982-84 while reporting income of only $52,012.</text>
-        <arg f="" n="0">he</arg>
-        <rel f="">deposited</rel>
-        <arg f="" n="1">$ 124,732</arg>
-        <arg f="" n="2">in a bank account</arg>
-        <arg f="TMP" n="M">in 1982-84</arg>
-        <arg f="TMP" n="M">while reporting income of only $52,012</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Placing" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="put-9.1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="Transaction.TransferMoney.BorrowLend" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Transaction.TransferOwnership.BorrowLend" confidence="0.1" resource="AidaOntology" src="reo-expansion" version="Jan2019"/>
+        <lexlink class="Transfermoney" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="deposit-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+        <lexlink class="put-9.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="deposit-v: all args" src="">
+        <text>But judges usually find the real aim is to escape tax on hidden income ; and the IRS said Brown must have had such income -- although it uncovered no source -- because he deposited $ 124,732 in a bank account in 1982 - 84 while reporting income of only $ 52,012 .</text>
+        <propbank>
+          <rel relloc="34">deposited</rel>
+          <arg type="ARG0" start="33" end="33">he</arg>
+          <arg type="ARG1" start="35" end="36">$ 124,732</arg>
+          <arg type="ARG2" start="37" end="40">in a bank account</arg>
+          <arg type="ARGM-TMP" start="41" end="44">in 1982 - 84</arg>
+          <arg type="ARGM-TMP" start="45" end="51">while reporting income of only $ 52,012</arg>
+        </propbank>
       </example>
-      <example name="deposit-v: missing destination" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
-        <text>Employers must deposit withholding taxes exceeding $3,000 within three days after payroll -- or pay stiff penalties -- and that's a big problem for small businesses.</text>
-        <arg f="" n="0">Employers</arg>
-        <arg f="MOD" n="M">must</arg>
-        <rel f="">deposit</rel>
-        <arg f="" n="1">withholding taxes exceeding $3,000</arg>
-        <arg f="TMP" n="M">within three days</arg>
-        <arg f="TMP" n="M">after payroll</arg>
+      <example name="deposit-v: missing destination" src="">
+        <text>Employers must deposit withholding taxes exceeding $ 3,000 within three days after payroll -- or pay stiff penalties -- and that 's a big problem for small businesses .</text>
+        <propbank>
+          <rel relloc="2">deposit</rel>
+          <arg type="ARG0" start="0" end="0">Employers</arg>
+          <arg type="ARGM-MOD" start="1" end="1">must</arg>
+          <arg type="ARG1" start="3" end="7">withholding taxes exceeding $ 3,000</arg>
+          <arg type="ARGM-TMP" start="8" end="10">within three days</arg>
+          <arg type="ARGM-TMP" start="11" end="12">after payroll</arg>
+        </propbank>
       </example>
-      <example name="deposit-v: All arguments" src="web" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>He contends that his deposit of funds into the trust account did not constitute commingling.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">deposit</rel>
-        <arg f="" n="1">of funds</arg>
-        <arg f="" n="2">into the trust account</arg>
+      <example name="deposit-v: All arguments" src="web">
+        <text>He contends that his deposit of funds into the trust account did not constitute commingling .</text>
+        <propbank>
+          <rel relloc="4">deposit</rel>
+          <arg type="ARG0" start="3" end="3">his</arg>
+          <arg type="ARG1" start="5" end="6">of funds</arg>
+          <arg type="ARG2" start="7" end="10">into the trust account</arg>
+        </propbank>
       </example>
-      <example name="NONE OF THESE ARE EVENTIVE. Call it .YY!" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="NONE OF THESE ARE EVENTIVE. Call it .YY!" src="">
         <text>Most of the world s recoverable deposits lie in south America lake deposits and in our own western North Carolina in vast quartz deposits .</text>
+        <propbank>
+          </propbank>
       </example>
-      <example name="NOT EVENTIVE! .YY!" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
+      <example name="NOT EVENTIVE! .YY!" src="">
         <text>Hi My husband and I are looking to buy the hosue we currently live in , but we do not have a deposit .</text>
+        <propbank>
+          </propbank>
       </example>
+      <note>DEPOSIT-V NOTES: Frames file for 'deposit' based on sentences in wsj. No Verbnet entry, Framenet entry Placing. (from deposit.01-v predicate notes)</note>
+      <note>DEPOSIT-N NOTES: Based on verb entry deposit.01; corresponds to VN class put-9.1-1. (from deposit.01-n)</note>
+      <note>Watch out for instances that reference the physical deposit (e.g. ore, money, or anything that is actually arg1) rather than the act of depositing. (from deposit.01-n)</note>
     </roleset>
   </predicate>
   <predicate lemma="deposition">
     <roleset id="deposition.02" name="law domain: give testimony under oath">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">deposition</alias>
+        <alias pos="n">deposition</alias>
       </aliases>
-      <note>DEPOSITION-N NOTES: (from deposition.02-n)</note>
       <roles>
-        <role descr="deposer, legal professional taking deposition" f="pag" n="0"/>
-        <role descr="deposed, person giving testimony" f="ppt" n="1"/>
+        <role descr="deposer, legal professional taking deposition" f="PAG" n="0"/>
+        <role descr="deposed, person giving testimony" f="PPT" n="1"/>
       </roles>
-      <example name="deposition-n: Both arguments" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>...One finding of misconduct related to the lawyer's deposition of a former client.</text>
-        <arg f="" n="0">the lawyer's</arg>
-        <rel f="">deposition</rel>
-        <arg f="" n="1">of a former client</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="deposition-n: Both arguments" src="web">
+        <text>... One finding of misconduct related to the lawyer 's deposition of a former client .</text>
+        <propbank>
+          <rel relloc="10">deposition</rel>
+          <arg type="ARG0" start="7" end="9">the lawyer 's</arg>
+          <arg type="ARG1" start="11" end="14">of a former client</arg>
+        </propbank>
       </example>
+      <note>DEPOSITION-N NOTES: (from deposition.02-n)</note>
     </roleset>
   </predicate>
   <predicate lemma="depose">
     <roleset id="depose.03" name="to dethrone, remove from an office or position">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">depose</alias>
-        <alias framenet="" pos="n" verbnet="">deposition</alias>
+        <alias pos="v">depose</alias>
+        <alias pos="n">deposition</alias>
       </aliases>
+      <roles>
+        <role descr="Causer of removal" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="Change_of_leadership" resource="FrameNet" version="1.7">selector</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="Thing being removed" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="Change_of_leadership" resource="FrameNet" version="1.7">new_leader</rolelink>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="Source: Arg1 is removed from where?" f="LOC" n="2">
+          <rolelinks>
+            <rolelink class="remove-10.1" resource="VerbNet" version="verbnet3.4">initial_location</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Change_of_leadership" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="Attack" confidence="0.1" resource="ERE" src="reo-expansion" version="rich"/>
+        <lexlink class="remove-10.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="depose-v: passive" src="">
+        <text>But officials in Rome say the issue was legally resolved by a settlement between Italy and King Idris , deposed by Col . Muammar Gadhafi in 1969 .</text>
+        <propbank>
+          <rel relloc="19">deposed</rel>
+          <arg type="ARG1" start="16" end="17">King Idris</arg>
+          <arg type="ARG0" start="20" end="24">by Col . Muammar Gadhafi</arg>
+          <arg type="ARGM-TMP" start="25" end="26">in 1969</arg>
+        </propbank>
+      </example>
+      <example name="deposition-n: All arguments" src="web">
+        <text>... referring to their deposition of the King from the throne of England</text>
+        <propbank>
+          <rel relloc="4">deposition</rel>
+          <arg type="ARG0" start="3" end="3">their</arg>
+          <arg type="ARG1" start="5" end="7">of the King</arg>
+          <arg type="ARG2" start="8" end="12">from the throne of England</arg>
+        </propbank>
+      </example>
       <note>DEPOSE-V NOTES: Frames file for 'depose' based on survey of sentences in the WSJ corpus. (from depose.01-v predicate notes)</note>
       <note>DEPOSITION-N NOTES: Roleset based on verb entry depose.01. (from deposition.01-n)</note>
-      <roles>
-        <role descr="Causer of removal" f="pag" n="0"/>
-        <role descr="Thing being removed" f="ppt" n="1"/>
-        <role descr="Source: Arg1 is removed from where?" f="loc" n="2"/>
-      </roles>
-      <example name="depose-v: passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="ns" voice="passive"/>
-        <text>But officials in Rome say [0] the issue was legally resolved [*-1]by a settlement between Italy and [King Idris]-1 , deposed [*] -1 by Col. Muammar Gadhafi in 1969 .</text>
-        <rel f="">deposed</rel>
-        <arg f="" n="1">[*]</arg>
-        <arg f="" n="0">by Col. Muammar Gadhafi</arg>
-        <arg f="TMP" n="M">in 1969</arg>
-      </example>
-      <example name="deposition-n: All arguments" src="web" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>...referring to their deposition of the King from the throne of England</text>
-        <arg f="" n="0">their</arg>
-        <rel f="">deposition</rel>
-        <arg f="" n="1">of the King</arg>
-        <arg f="" n="2">from the throne of England</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

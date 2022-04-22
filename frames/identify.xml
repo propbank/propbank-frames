@@ -1,94 +1,159 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="identify">
     <roleset id="identify.01" name="label, call">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">identify</alias>
-        <alias framenet="" pos="n" verbnet="">identification</alias>
+        <alias pos="v">identify</alias>
+        <alias pos="n">identification</alias>
       </aliases>
-      <note>IDENTIFY-V NOTES: Frames file for 'identify' based on sentences in financial subcorpus. Comparison with 'label' et al. I wonder if that *trace*-2 really should be in there, but that's thechain that treebank provides. (from identify.01-v)</note>
-      <note>IDENTIFICATION-N NOTES: Based on sentences in nouns-00040. Comparison to identify.01. VN class characterize-29.2-1-1. Framed by Katie. (from identification.01-n)</note>
       <roles>
-        <role descr="caller" f="pag" n="0">
-          <vnrole vncls="29.2-1-1" vntheta="agent"/>
+        <role descr="caller" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="characterize-29.2-1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="characterize-29.2-1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="item being labelled" f="ppt" n="1">
-          <vnrole vncls="29.2-1-1" vntheta="theme"/>
+        <role descr="item being labelled" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="characterize-29.2-1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="characterize-29.2-1-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="attribute" f="prd" n="2">
-          <vnrole vncls="29.2-1-1" vntheta="attribute"/>
+        <role descr="attribute" f="PRD" n="2">
+          <rolelinks>
+            <rolelink class="characterize-29.2-1-1" resource="VerbNet" version="verbnet3.3">attribute</rolelink>
+            <rolelink class="characterize-29.2-1-1" resource="VerbNet" version="verbnet3.4">attribute</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="just transitive" src="" type="">
-        <text>It wouldn't identify the bankers.</text>
-        <arg f="" n="0">It</arg>
-        <arg f="mod" n="m">would</arg>
-        <arg f="neg" n="m">n't</arg>
-        <rel f="">identify</rel>
-        <arg f="" n="1">the bankers</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Categorization" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="characterize-29.2-1-1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="identify-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">60</lexlink>
+        <lexlink class="identification-n.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="identify-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="characterize-29.2-1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="just transitive" src="">
+        <text>It would n't identify the bankers .</text>
+        <propbank>
+          <rel relloc="3">identify</rel>
+          <arg type="ARG0" start="0" end="0">It</arg>
+          <arg type="ARGM-MOD" start="1" end="1">would</arg>
+          <arg type="ARGM-NEG" start="2" end="2">n't</arg>
+          <arg type="ARG1" start="4" end="5">the bankers</arg>
+        </propbank>
       </example>
-      <example name="passivized, with LONG trace chain" src="" type="">
-        <text>``We're being paid today, but we're worried about tomorrow and will want'' letters of credit, says the sales director at one major dress maker who *trace*-1-2 asked *trace*-2-3 not to be identified *trace*-3.</text>
-        <arg f="neg" n="m">not</arg>
-        <rel f="">identified</rel>
-        <arg f="" n="1">*trace*-3</arg>
-        <arg f="rcl" n="m">who -&gt; one major dress maker</arg>
+      <example name="passivized, with LONG trace chain" src="">
+        <text>`` We 're being paid today , but we 're worried about tomorrow and will want '' letters of credit , says the sales director at one major dress maker who asked not to be identified .</text>
+        <propbank>
+          <rel relloc="35">identified</rel>
+          <arg type="ARGM-NEG" start="32" end="32">not</arg>
+          <arg type="ARG1" start="26" end="29">one major dress maker</arg>
+          <arg type="R-ARG1" start="30" end="30">who</arg>
+        </propbank>
       </example>
-      <example name="with attribute" src="" type="">
-        <text>``A lot of people are identifying a vote for representation as a vote against Fred Smith,'' says J.X. Gollich, a Tiger-turned-Federal pilot and union activist.</text>
-        <arg f="" n="0">A lot of people</arg>
-        <rel f="">identifying</rel>
-        <arg f="" n="1">a vote for representation</arg>
-        <arg f="" n="2">as a vote against Fred Smith</arg>
+      <example name="with attribute" src="">
+        <text>`` A lot of people are identifying a vote for representation as a vote against Fred Smith , '' says J.X. Gollich , a Tiger - turned - Federal pilot and union activist .</text>
+        <propbank>
+          <rel relloc="6">identifying</rel>
+          <arg type="ARG0" start="1" end="4">A lot of people</arg>
+          <arg type="ARG1" start="7" end="10">a vote for representation</arg>
+          <arg type="ARG2" start="11" end="16">as a vote against Fred Smith</arg>
+        </propbank>
       </example>
-      <example name="Arg 1" src="" type="">
+      <example name="Arg 1" src="">
         <text>Identification of the explosive</text>
-        <rel f="">identification</rel>
-        <arg f="" n="1">of the explosive</arg>
+        <propbank>
+          <rel relloc="0">Identification</rel>
+          <arg type="ARG1" start="1" end="3">of the explosive</arg>
+        </propbank>
       </example>
-      <example name="Another arg 1 only" src="" type="">
+      <example name="Another arg 1 only" src="">
         <text>earlier identification of emerging financial crises</text>
-        <arg f="tmp" n="m">earlier</arg>
-        <rel f="">identification</rel>
-        <arg f="" n="1">of emerging financial crises</arg>
+        <propbank>
+          <rel relloc="1">identification</rel>
+          <arg type="ARGM-TMP" start="0" end="0">earlier</arg>
+          <arg type="ARG1" start="2" end="5">of emerging financial crises</arg>
+        </propbank>
       </example>
+      <note>IDENTIFY-V NOTES: Frames file for 'identify' based on sentences in financial subcorpus. Comparison with 'label' et al. I wonder if that *trace*-2 really should be in there, but that's thechain that treebank provides. (from identify.01-v)</note>
+      <note>IDENTIFICATION-N NOTES: Based on sentences in nouns-00040. Comparison to identify.01. VN class characterize-29.2-1-1. Framed by Katie. (from identification.01-n)</note>
     </roleset>
     <roleset id="identify.02" name="feel empathy">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">identification</alias>
-        <alias framenet="" pos="v" verbnet="">identify</alias>
+        <alias pos="n">identification</alias>
+        <alias pos="v">identify</alias>
       </aliases>
+      <roles>
+        <role descr="feeler" f="PPT" n="0">
+          <rolelinks>
+            <rolelink class="empathize-88.2" resource="VerbNet" version="verbnet3.3">experiencer</rolelink>
+            <rolelink class="empathize-88.2" resource="VerbNet" version="verbnet3.4">experiencer</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="thing being identified with" f="PAG" n="1">
+          <rolelinks>
+            <rolelink class="empathize-88.2" resource="VerbNet" version="verbnet3.3">stimulus</rolelink>
+            <rolelink class="empathize-88.2" resource="VerbNet" version="verbnet3.4">stimulus</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="attribute" f="PRD" n="2">
+          <rolelinks/>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="empathize-88.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="identify-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+        <lexlink class="empathize-88.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1078">
+        <text>Taiwanese listeners quickly identify with these singers and may even forget where they come from .</text>
+        <propbank>
+          <rel relloc="3">identify</rel>
+          <arg type="ARG0" start="0" end="1">Taiwanese listeners</arg>
+          <arg type="ARGM-MNR" start="2" end="2">quickly</arg>
+          <arg type="ARG1" start="4" end="6">with these singers</arg>
+        </propbank>
+      </example>
+      <example name="Args 0 and 1" src="">
+        <text>The victim 's identification with the attacker</text>
+        <propbank>
+          <rel relloc="3">identification</rel>
+          <arg type="ARG0" start="0" end="2">The victim 's</arg>
+          <arg type="ARG1" start="5" end="6">the attacker</arg>
+        </propbank>
+      </example>
+      <example name="Arg 1 only" src="">
+        <text>identification with Taiwanese - ness</text>
+        <propbank>
+          <rel relloc="0">identification</rel>
+          <arg type="ARG1" start="1" end="4">with Taiwanese - ness</arg>
+        </propbank>
+      </example>
       <note>IDENTIFY-V NOTES: Frames file for 'identify' based on sentences in financial subcorpus. No access to verbnet. Comparison with 'label' et al. (from identify.02-v predicate notes)</note>
       <note>IDENTIFICATION-N NOTES: Based on sentences in nouns-00040. Comparison to identify.02. Vn class empathize-88.2. Framed by Katie. (from identification.02-n)</note>
-      <roles>
-        <role descr="feeler" f="ppt" n="0">
-          <vnrole vncls="88.2" vntheta="experiencer"/>
-        </role>
-        <role descr="thing being identified with" f="pag" n="1">
-          <vnrole vncls="88.2" vntheta="stimulus"/>
-        </role>
-        <role descr="attribute" f="prd" n="2"/>
-      </roles>
-      <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1078" type="">
-        <text>Taiwanese listeners quickly identify with these singers and may even forget where they come from .</text>
-        <arg f="" n="0">Taiwanese listeners</arg>
-        <arg f="mnr" n="m">quickly</arg>
-        <rel f="">identify</rel>
-        <arg f="" n="1">with these singers</arg>
-      </example>
-
-      <example name="Args 0 and 1" src="" type="">
-        <text>The victim's identification with the attacker</text>
-        <arg f="" n="0">The victim's</arg>
-        <rel f="">identification</rel>
-        <arg f="" n="1">the attacker</arg>
-      </example>
-      <example name="Arg 1 only" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>identification with Taiwanese-ness</text>
-        <rel f="">identification</rel>
-        <arg f="" n="1">with Taiwanese-ness</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

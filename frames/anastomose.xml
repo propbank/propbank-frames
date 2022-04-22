@@ -1,33 +1,64 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="anastomose">
     <roleset id="anastomose.01" name="cause interconnection/flow between 2 branching networks, having branched systems that connect, allowing flow between them">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">anastomose</alias>
-        <alias framenet="" pos="j" verbnet="">anastomotic</alias>
+        <alias pos="v">anastomose</alias>
+        <alias pos="n">anastomosis</alias>
+        <alias pos="j">anastomotic</alias>
       </aliases>
-      <note>ANASTOMOSE-V NOTES: (from anastomose.01-v)</note>
-      <note>ANASTOMOTIC-J NOTES: Added by Julia based on medi-tmprl1to8. (from anastomotic.01-j)</note>
       <roles>
-        <role descr="agent, surgeon, drug" f="pag" n="0"/>
-        <role descr="first entity connected" f="ppt" n="1"/>
-        <role descr="entity arg1 is being connected to" f="ppt" n="2"/>
+        <role descr="agent, surgeon, drug" f="PAG" n="0" />
+        <role descr="first entity connected" f="PPT" n="1" />
+        <role descr="entity arg1 is being connected to" f="PPT" n="2" />
+        <role descr="benefactive, person undergoing anastomosis procedure" f="GOL" n="3" />
+        <role descr="result: the opening itself" f="PRD" n="4" />
       </roles>
-      <example name="with arg1, arg2" src="" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The lower end of the biliopancreatic limb is then anastomosed to the terminal ileum.</text>
-        <arg f="" n="1">The lower end of the biliopancreatic limb</arg>
-        <arg f="tmp" n="m">then</arg>
-        <rel f="">anastomosed</rel>
-        <arg f="" n="2">to the terminal ileum</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="+" />
+        <usage resource="PropBank" version="3.1" inuse="+" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+      </usagenotes>
+      <lexlinks />
+      <example name="anastomose-v: with arg1, arg2" src="">
+        <text>The lower end of the biliopancreatic limb is then anastomosed to the terminal ileum .</text>
+        <propbank>
+          <rel relloc="9">anastomosed</rel>
+          <arg end="6" start="0" type="ARG1">The lower end of the biliopancreatic limb</arg>
+          <arg end="8" start="8" type="ARGM-TMP">then</arg>
+          <arg end="13" start="10" type="ARG2">to the terminal ileum</arg>
+        </propbank>
       </example>
-      <example name="arg1" src="medi-tmprl" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>In the meantime , we have a known recurrence in the pelvis that-1 *-1 is anastomotic as best we can tell .</text>
-        <arg f="" n="1">*-1</arg>
-        <rel f="">anastomotic</rel>
-        <arg f="adv" n="m">as best we can tell</arg>
+      <example name="anastomotic-j: arg1" src="medi-tmprl">
+        <text>In the meantime , we have a known recurrence in the pelvis that is anastomotic as best we can tell .</text>
+        <propbank>
+          <rel relloc="14">anastomotic</rel>
+          <arg end="12" start="12" type="ARG1">that</arg>
+          <arg end="19" start="15" type="ARGM-ADV">as best we can tell</arg>
+        </propbank>
       </example>
+      <example name="anastomosis-n" src="THYME-Auto1">
+        <text>taken by the doctor for an ileoanal anastomosis</text>
+        <propbank>
+          <rel relloc="7">anastomosis</rel>
+          <arg end="6" start="6" type="ARGM-LOC">ileoanal</arg>
+        </propbank>
+        <amr version="THYME 1.0">
+          (t / take-01
+            :ARG0 (d / doctor)
+            :purpose (a / anastomose-01
+              :ARG1-of (i2 / ileoanal-01)))
+        </amr>
+      </example>
+      <note>ANASTOMOSE-V NOTES: (from anastomose.01-v)</note>
+      <note>ANASTOMOSIS-N NOTES: added for THYME-AMR</note>
+      <note>ANASTOMOTIC-J NOTES: Added by Julia based on medi-tmprl1to8. (from anastomotic.01-j)</note>
     </roleset>
   </predicate>
 </frameset>

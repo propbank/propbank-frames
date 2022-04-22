@@ -1,44 +1,77 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="park">
     <roleset id="park.01" name="to leave temporarily">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">park</alias>
-        <alias framenet="" pos="n" verbnet="">parking</alias>
+        <alias pos="v">park</alias>
+        <alias pos="n">parking</alias>
       </aliases>
+      <roles>
+        <role descr="parker, agent" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="put-9.1-1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="put-9.1-1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="entity parked" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="put-9.1-1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="put-9.1-1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
+        </role>
+        <role descr="parking place" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="put-9.1-1" resource="VerbNet" version="verbnet3.3">destination</rolelink>
+            <rolelink class="put-9.1-1" resource="VerbNet" version="verbnet3.4">destination</rolelink>
+          </rolelinks>
+        </role>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="park-v.2" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">4</lexlink>
+        <lexlink class="park-n.4" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">3</lexlink>
+        <lexlink class="park-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">5</lexlink>
+        <lexlink class="put-9.1-1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="passive" src="">
+        <text>Much of the excess spending will be pushed into fiscal 1991 , and in some cases is temporarily parked in slow - spending accounts in anticipation of being transferred to faster - spending areas after the budget scorekeeping is completed .</text>
+        <propbank>
+          <rel relloc="18">parked</rel>
+          <arg type="ARGM-ADV" start="13" end="15">in some cases</arg>
+          <arg type="ARGM-TMP" start="17" end="17">temporarily</arg>
+          <arg type="ARG1" start="0" end="4">Much of the excess spending</arg>
+          <arg type="ARG2" start="19" end="23">in slow - spending accounts</arg>
+          <arg type="ARGM-ADV" start="24" end="39">in anticipation of being transferred to faster - spending areas after the budget scorekeeping is completed</arg>
+        </propbank>
+      </example>
+      <example name="infinitive" src="">
+        <text>Its radio series features such spots as `` Floodlights : Evening Wear for Urban Structures '' and `` Building a Place to Park . ''</text>
+        <propbank>
+          <rel relloc="22">Park</rel>
+          <arg type="ARG2" start="19" end="20">a Place</arg>
+        </propbank>
+      </example>
+      <example name="all args" src="internet">
+        <text>He says there 's nothing wrong with his parking the vans , which he owns , at the church .</text>
+        <propbank>
+          <rel relloc="8">parking</rel>
+          <arg type="ARG0" start="7" end="7">his</arg>
+          <arg type="ARG1" start="9" end="14">the vans , which he owns</arg>
+          <arg type="ARG2" start="16" end="18">at the church</arg>
+        </propbank>
+      </example>
       <note>PARK-V NOTES: Frames file for 'park' based on survey of sentences in the WSJ corpus. (from park.01-v predicate notes)</note>
       <note>PARKING-N NOTES: Added by Julia based on BOLT, park-v.01. Corresponds to VNcls put-9.1-1. (from parking.01-n)</note>
-      <roles>
-        <role descr="parker, agent" f="pag" n="0"/>
-        <role descr="entity parked" f="ppt" n="1"/>
-        <role descr="parking place" f="gol" n="2"/>
-      </roles>
-      <example name="passive" src="" type="">
-        <inflection aspect="ns" form="participle" person="ns" tense="present" voice="passive"/>
-        <text>[Much of the excess spending]-3 will be pushed [*-3]into fiscal 1991 , and in some cases is temporarily parked [*-3] in slow-spending accounts in anticipation of [*] being transferred [*-1] to faster-spending areas after the budget scorekeeping is completed [*-2] .</text>
-        <arg f="adv" n="m">in some cases</arg>
-        <arg f="tmp" n="m">temporarily</arg>
-        <rel f="">parked</rel>
-        <arg f="" n="1">[*-3]</arg>
-        <arg f="" n="2">in slow-spending accounts</arg>
-        <arg f="adv" n="m">in anticipation of [*] being transferred [*-1]to faster-spending areas after the budget scorekeeping is completed [*-2]</arg>
-      </example>
-      <example name="infinitive" src="" type="">
-        <inflection aspect="ns" form="infinitive" person="ns" tense="ns" voice="active"/>
-        <text>Its radio series features such spots as `` Floodlights : Evening Wear for Urban Structures '' and `` [*] Building a Place [0][*] to Park [*T*-1] . ''</text>
-        <arg f="" n="0">[*]</arg>
-        <rel f="">Park</rel>
-        <arg f="" n="2">[*T*-1]</arg>
-        <arg f="rcl" n="m">[0] -&gt; a Place</arg>
-      </example>
-      <example name="all args" src="internet" type="">
-        <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>He says there's nothing wrong with his parking the vans, which he owns, at the church.</text>
-        <arg f="" n="0">his</arg>
-        <rel f="">parking</rel>
-        <arg f="" n="1">the vans, which he owns</arg>
-        <arg f="" n="2">at the church</arg>
-      </example>
     </roleset>
   </predicate>
 </frameset>

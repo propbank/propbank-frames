@@ -1,46 +1,79 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="peddle">
     <roleset id="peddle.01" name="to sell or offer for sale">
       <aliases>
-        <alias framenet="" pos="v" verbnet="">peddle</alias>
+        <alias pos="v">peddle</alias>
       </aliases>
-      <note>PEDDLE-V NOTES: Frames file for 'peddle' based on survey of sentences in the WSJ corpus. Comparison with 'sell'. (from peddle.01-v predicate notes)</note>
       <roles>
-        <role descr="seller" f="pag" n="0">
-          <vnrole vncls="13.1" vntheta="agent"/>
+        <role descr="seller" f="PAG" n="0">
+          <rolelinks>
+            <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="Commerce_sell" resource="FrameNet" version="1.7">seller</rolelink>
+            <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
-        <role descr="thing peddled" f="ppt" n="1">
-          <vnrole vncls="13.1" vntheta="theme"/>
+        <role descr="thing peddled" f="PPT" n="1">
+          <rolelinks>
+            <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="Commerce_sell" resource="FrameNet" version="1.7">goods</rolelink>
+            <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
-        <role descr="peddled to" f="gol" n="2">
-          <vnrole vncls="13.1" vntheta="recipient"/>
+        <role descr="peddled to" f="GOL" n="2">
+          <rolelinks>
+            <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.3">recipient</rolelink>
+            <rolelink class="give-13.1" resource="VerbNet" version="verbnet3.4">recipient</rolelink>
+          </rolelinks>
         </role>
-        <role descr="price" f="vsp" n="3"/>
+        <role descr="price" f="VSP" n="3">
+          <rolelinks/>
+        </role>
       </roles>
-      <example name="transitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="present" voice="active"/>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="+"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Commerce_sell" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="give-13.1" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="peddle-v.1" confidence="0.1" resource="onsense" src="annot-overlap" version="on5">9</lexlink>
+        <lexlink class="give-13.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="transitive" src="">
         <text>Boys on busy street corners peddle newspapers of every political stripe .</text>
-        <arg f="" n="0">Boys on busy street corners</arg>
-        <rel f="">peddle</rel>
-        <arg f="" n="1">newspapers of every political stripe</arg>
+        <propbank>
+          <rel relloc="5">peddle</rel>
+          <arg type="ARG0" start="0" end="4">Boys on busy street corners</arg>
+          <arg type="ARG1" start="6" end="10">newspapers of every political stripe</arg>
+        </propbank>
       </example>
-      <example name="with Arg3" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="present" voice="active"/>
-        <text>[His daughter]-1 turns to dressmaking , then to [*]-1 peddling herself for a few piasters .</text>
-        <arg f="" n="0">[*]-1</arg>
-        <rel f="">peddling</rel>
-        <arg f="rec" n="1">herself</arg>
-        <arg f="" n="3">for a few piasters</arg>
+      <example name="with Arg3" src="">
+        <text>His daughter turns to dressmaking , then to peddling herself for a few piasters .</text>
+        <propbank>
+          <rel relloc="8">peddling</rel>
+          <arg type="ARG0" start="0" end="1">His daughter</arg>
+          <arg type="ARG1" start="9" end="9">herself</arg>
+          <arg type="ARG3" start="10" end="13">for a few piasters</arg>
+        </propbank>
       </example>
-      <example name="with Arg2" src="" type="">
-        <inflection aspect="ns" form="gerund" person="ns" tense="present" voice="active"/>
-        <text>Like many young recruits in Japanese securities firms , he-1 began his career [*-1] peddling stock to individual investors .</text>
-        <arg f="" n="0">[*-1]</arg>
-        <rel f="">peddling</rel>
-        <arg f="" n="1">stock</arg>
-        <arg f="" n="2">to individual investors</arg>
+      <example name="with Arg2" src="">
+        <text>Like many young recruits in Japanese securities firms , he began his career peddling stock to individual investors .</text>
+        <propbank>
+          <rel relloc="13">peddling</rel>
+          <arg type="ARG0" start="9" end="9">he</arg>
+          <arg type="ARG1" start="14" end="14">stock</arg>
+          <arg type="ARG2" start="15" end="17">to individual investors</arg>
+        </propbank>
       </example>
+      <note>PEDDLE-V NOTES: Frames file for 'peddle' based on survey of sentences in the WSJ corpus. Comparison with 'sell'. (from peddle.01-v predicate notes)</note>
     </roleset>
   </predicate>
 </frameset>

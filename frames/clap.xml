@@ -1,50 +1,79 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="clap">
     <roleset id="clap.01" name="strike, as hands">
       <aliases>
-        <alias framenet="" pos="n" verbnet="">clapping</alias>
-        <alias framenet="" pos="v" verbnet="">clap</alias>
+        <alias pos="n">clapping</alias>
+        <alias pos="v">clap</alias>
       </aliases>
-      <note>CLAP-V NOTES: Frames file for 'clap' based on sentences in brown. (from clap.01-v predicate notes)</note>
-      <note>CLAPPING-N NOTES: (from clapping.01-n)</note>
       <roles>
         <role descr="clapper" f="PAG" n="0">
-          <vnrole vncls="43.2" vntheta="Agent"/>
-          <vnrole vncls="40.3.1-1" vntheta="Agent"/>
+          <rolelinks>
+            <rolelink class="sound_emission-43.2" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">agent</rolelink>
+            <rolelink class="sound_emission-43.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
+          </rolelinks>
         </role>
         <role descr="thing(s) struck" f="PPT" n="1">
-          <vnrole vncls="43.2" vntheta="Theme"/>
-          <vnrole vncls="40.3.1-1" vntheta="Patient"/>
+          <rolelinks>
+            <rolelink class="sound_emission-43.2" resource="VerbNet" version="verbnet3.3">theme</rolelink>
+            <rolelink class="best_guess" resource="VerbNet" version="verbnet3.3">patient</rolelink>
+            <rolelink class="sound_emission-43.2" resource="VerbNet" version="verbnet3.4">theme</rolelink>
+          </rolelinks>
         </role>
         <role descr="other thing struck, location" f="LOC" n="2">
-          <vnrole vncls="43.2" vntheta="Location"/>
+          <rolelinks>
+            <rolelink class="sound_emission-43.2" resource="VerbNet" version="verbnet3.3">location</rolelink>
+            <rolelink class="sound_emission-43.2" resource="VerbNet" version="verbnet3.4">location</rolelink>
+          </rolelinks>
         </role>
       </roles>
-      <example name="intransitive" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Someone clapped tentatively then quickly stopped.</text>
-        <arg f="" n="0">Someone</arg>
-        <rel f="">clapped</rel>
-        <arg f="MNR" n="m">tentatively</arg>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="+"/>
+        <usage resource="PropBank" version="3.1" inuse="+"/>
+        <usage resource="PropBank" version="3.4" inuse="+"/>
+        <usage resource="AMR" version="2019" inuse="+"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="+"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="+"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks>
+        <lexlink class="Body_movement" confidence="0.8" resource="FrameNet" src="manual+strict-conv" version="1.7"/>
+        <lexlink class="sound_emission-43.2" confidence="0.8" resource="VerbNet" src="manual+strict-conv" version="verbnet3.3"/>
+        <lexlink class="wink-40.3.1" confidence="0.4" resource="VerbNet" src="manual+loose-conversion" version="verbnet3.3"/>
+        <lexlink class="sound_emission-43.2" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
+      </lexlinks>
+      <example name="intransitive" src="">
+        <text>Someone clapped tentatively then quickly stopped .</text>
+        <propbank>
+          <rel relloc="1">clapped</rel>
+          <arg type="ARG0" start="0" end="0">Someone</arg>
+          <arg type="ARGM-MNR" start="2" end="2">tentatively</arg>
+        </propbank>
       </example>
-      <example name="transitive with LOC" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>He grinned and clapped me on the shoulder.</text>
-        <arg f="" n="0">He</arg>
-        <rel f="">clapped</rel>
-        <arg f="" n="1">me</arg>
-        <arg f="LOC" n="m">on the shoulder</arg>
+      <example name="transitive with LOC" src="">
+        <text>He grinned and clapped me on the shoulder .</text>
+        <propbank>
+          <rel relloc="3">clapped</rel>
+          <arg type="ARG0" start="0" end="0">He</arg>
+          <arg type="ARG1" start="4" end="4">me</arg>
+          <arg type="ARGM-LOC" start="5" end="7">on the shoulder</arg>
+        </propbank>
       </example>
-      <example name="transitive with two things struck" src="" type="">
-        <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Silence came into the forest -- a solid being that [*T*-1] clapped its hand over the murmuring mouths of the birds and the whispered comfort of the trees.</text>
-        <arg f="" n="0">[*T*-1]</arg>
-        <arg f="RCL" n="M">that -&gt; a solid being</arg>
-        <rel f="">clapped</rel>
-        <arg f="" n="1">its hand</arg>
-        <arg f="" n="2">over the murmuring mouths of the birds and the whispered comfort of the trees</arg>
+      <example name="transitive with two things struck" src="">
+        <text>Silence came into the forest -- a solid being that clapped its hand over the murmuring mouths of the birds and the whispered comfort of the trees .</text>
+        <propbank>
+          <rel relloc="10">clapped</rel>
+          <arg type="ARG0" start="6" end="8">a solid being</arg>
+          <arg type="R-ARG0" start="9" end="9">that</arg>
+          <arg type="ARG1" start="11" end="12">its hand</arg>
+          <arg type="ARG2" start="13" end="26">over the murmuring mouths of the birds and the whispered comfort of the trees</arg>
+        </propbank>
       </example>
+      <note>CLAP-V NOTES: Frames file for 'clap' based on sentences in brown. (from clap.01-v predicate notes)</note>
+      <note>CLAPPING-N NOTES: (from clapping.01-n)</note>
     </roleset>
   </predicate>
 </frameset>
