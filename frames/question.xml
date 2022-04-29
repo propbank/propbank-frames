@@ -210,7 +210,7 @@
           <arg type="ARG0" start="5" end="7">by the legislature</arg>
         </propbank>
       </example>
-      <example name="question-n" src="THYME-AMR">
+      <example name="question-n" src="THYME-colon-dir">
         <text>There is a question of a CT allergy .</text>
         <amr version="THYME 1.0">
           (q2 / question-03
@@ -222,6 +222,19 @@
           <rel relloc="3">question</rel>
           <arg end="7" start="4" type="ARG1">of a CT allergy</arg>
         </propbank>
+      </example>
+      <example name="ARG2" src="THYME-colon-dir">
+        <text>Note that the questionable nodule in the perineum is not well - defined .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (n / note-01 :mode imperative
+            :ARG0 (y / you)
+            :ARG1 (d / define-01
+              :ARG1 (s / sign-symptom :name (n2 / name :op1 "nodule")
+                :ARG2-of (q / question-03)
+                :location (a / anatomical-site :name (n3 / name :op1 "perineum")))
+              :ARG1-of (w / well-09 :polarity -)))  
+        </amr>
       </example>
       <note>QUESTION NOTES: arg2 added for THYME-AMR.</note>
       <note>QUESTIONABLE-J NOTES: Added by Julia based on WSJ data,question-v.01. Corresponds to VNcls interrogate-37.1.3. (from questionable.01-j) This frame file has been reframed following negotiations between Martha, Julia, Tim, Katie, and Ulf. The former .01 roleset included both'ask a question' and 'have doubts' senses, and has been split into .01 and .03 rolesets. Reframing allows 'questionable' to be aliased to only the 'have doubts' sense.</note>

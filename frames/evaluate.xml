@@ -103,7 +103,7 @@
           <arg end="1" start="0" type="ARG1">the frozen</arg>
         </propbank>
       </example>
-      <example name="evaluate-v" src="THYME-AMR">
+      <example name="evaluate-v" src="">
         <text>When can you safely evaluate a young woman with chest pain for coronary artery disease ?</text>
         <propbank>
           <rel relloc="4">evaluate</rel>
@@ -112,6 +112,20 @@
           <arg end="10" start="5" type="ARG1">a young woman with chest pain</arg>
           <arg end="14" start="11" type="ARG3">for coronary artery disease</arg>
         </propbank>
+      </example>
+      <example name="do not use ARG3 for causation" src="THYME-colon-mod">
+        <text>On March 4 he was evaluated for similar symptoms .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (e / evaluate-01
+            :ARG1 (h / he)
+            :time (d / date-entity :month 3 :day 4)
+            :ARG1-of (c4 / cause-01
+              :ARG0 (t / thing :pl +
+                :ARG2-of (s / symptomatic-01
+                  :ARG0 h)
+                :ARG1-of (r / resemble-01))))  
+        </amr>
       </example>
       <note>EVALUATE NOTES: Arg3 added during THYME-AMR in keeping with new GL-VN semantics. Evaluate.101 merged into this roleset.</note>
       <note>EVALUATE-V NOTES: Roleset based on instances in Medical Q &amp; A corpus. Framed by Anwen. (from evaluate.101-v)</note>
