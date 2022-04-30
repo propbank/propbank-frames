@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
-  <predicate lemma="annular">
-    <roleset id="annular.01" name="ring-shaped or pertaining to a ring">
+  <predicate lemma="thyroidectomy">
+    <roleset id="thyroidectomy.01" name="removal of all or part of the thyroid">
       <aliases>
-        <alias pos="j">annular</alias>
+        <alias pos="n">thyroidectomy</alias>
       </aliases>
       <roles>
-        <role descr="ring-shaped thing" f="PPT" n="1" />
+        <role descr="remover" f="PAG" n="0"/>
+        <role descr="removed" f="PPT" n="1"/>
+        <role descr="removed from" f="" n="2"/>
       </roles>
       <usagenotes>
         <usage resource="PropBank" version="1.0" inuse="-" />
@@ -20,19 +22,19 @@
         <usage resource="AMR" version="THYME 1.0" inuse="+" />
       </usagenotes>
       <lexlinks />
-      <example name="annular-j" src="THYME-colon-dir">
-        <text>The mass appeared annular .</text>
+      <example name="ARG2, modified implicit ARG1" src="THYME-colon-mod">
+        <text>Patient is status - post partial thyroidectomy .</text>
+        <propbank/>
         <amr version="THYME 1.0">
-          (a / appear-02
-              :ARG1 (a2 / annular-01
-                  :ARG1 (s / sign-symptom :name (n / name :op1 "mass"))))
+          (s / status-post-01
+            :ARG1 (p2 / patient-yy)
+            :ARG2 (t / thyroidectomy-01
+              :ARG1 (t2 / thing
+                :quant (p / part))
+              :ARG2 p2))  
         </amr>
-        <propbank>
-          <rel relloc="3">annular</rel>
-          <arg end="1" start="0" type="ARG1">The mass</arg>
-        </propbank>
       </example>
-      <note>ANNULAR NOTES: Added for THYME-AMR.</note>
+      <note>NOTES: Added for THYME-AMR.</note>
     </roleset>
   </predicate>
 </frameset>

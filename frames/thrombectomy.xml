@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
-  <predicate lemma="antihypertensive">
-    <roleset id="antihypertensive.01" name="reducing blood pressure">
+  <predicate lemma="thrombectomy">
+    <roleset id="thrombectomy.01" name="removal of a blood clot">
       <aliases>
-        <alias pos="j">antihypertensive</alias>
+        <alias pos="n">thrombectomy</alias>
       </aliases>
       <roles>
-        <role descr="thing reducing blood pressure" f="PAG" n="0" />
+        <role descr="remover" f="PAG" n="0"/>
+        <role descr="removed" f="PPT" n="1"/>
+        <role descr="removed from (location, source)" f="SRC" n="2"/>
+        <role descr="more specific source, if in addition to ARG2" f="SRC" n="3"/>
       </roles>
       <usagenotes>
         <usage resource="PropBank" version="1.0" inuse="-" />
@@ -15,19 +18,21 @@
         <usage resource="PropBank" version="3.1" inuse="-" />
         <usage resource="PropBank" version="3.4" inuse="+" />
         <usage resource="AMR" version="2019" inuse="-" />
-        <usage resource="AMR" version="THYME 1.0" inuse="+" />
         <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
         <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
       </usagenotes>
       <lexlinks />
-      <example name="antihypertensive-j" src="THYME-colon-dir">
-        <text>antihypertensive medications</text>
-        <propbank>
-          <rel relloc="0">antihypertensive</rel>
-          <arg type="ARG1" start="1" end="1">medications</arg>
-        </propbank>
+      <example name="ARG2" src="THYME-colon-mod">
+        <text>Patient underwent thrombectomy in 2009 .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (t / thrombectomy-01
+            :ARG2 (p / patient-yy)
+            :time (d / date-entity :year 2009))  
+        </amr>
       </example>
-      <note>ANTIHYPERTENSIVE-J NOTES: Added for THYME-AMR.</note>
+      <note>NOTES: Added for THYME-AMR.</note>
     </roleset>
   </predicate>
 </frameset>
