@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
-  <predicate lemma="parity">
-    <roleset id="parity.01" name="number of births a person has had">
+  <predicate lemma="ileorectal">
+    <roleset id="ileorectal.01" name="involving the ileum and the rectum">
       <aliases>
-        <alias pos="n">parity</alias>
-        <alias pos="n">P</alias>
+        <alias pos="j">ileorectal</alias>
       </aliases>
       <roles>
-        <role descr="person who gave birth" f="PAG" n="0" />
-        <role descr="number of births" f="PPT" n="1" />
+        <role descr="thing involving the ileum and the rectum" f="PPT" n="1"/>
       </roles>
       <usagenotes>
         <usage resource="PropBank" version="1.0" inuse="-" />
@@ -17,23 +15,22 @@
         <usage resource="PropBank" version="3.1" inuse="-" />
         <usage resource="PropBank" version="3.4" inuse="+" />
         <usage resource="AMR" version="2019" inuse="-" />
-        <usage resource="AMR" version="THYME 1.0" inuse="+" />
         <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
         <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
       </usagenotes>
       <lexlinks />
-      <example name="parity-n" src="THYME-colon-dir">
-        <text>P 5</text>
-        <propbank>
-          <rel relloc="0">P</rel>
-          <arg end="1" start="1" type="ARG1">5</arg>
-        </propbank>
+      <example name="ileorectal-j" src="THYME-colon-mod">
+        <text>Patient to undergo ileorectal anastomosis tomorrow .</text>
+        <propbank/>
         <amr version="THYME 1.0">
-          (p / parity-01
-            :ARG1 5)
+          (a / anastomose-01
+            :ARG3 (p / patient-yy)
+            :ARG1-of (i2 / ileorectal-01)
+            :time (t / tomorrow))  
         </amr>
       </example>
-      <note>PARITY NOTES: Added for THYME-AMR.</note>
+      <note>NOTES: Added for THYME-AMR.</note>
     </roleset>
   </predicate>
 </frameset>
