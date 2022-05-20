@@ -2,13 +2,16 @@
 <!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="angioplasty">
-    <roleset id="angioplasty.01" name="mechanically widening a narrowed or obstructed blood vessel">
+    <roleset id="angioplasty.01" name="surgical procedure that mechanically widens a narrowed or obstructed blood vessel">
       <aliases>
         <alias pos="v">angioplasty</alias>
+        <alias pos="n">angioplasty</alias>
       </aliases>
       <roles>
-        <role descr="Agent, surgeon" f="PAG" n="0"/>
-        <role descr="Angioplastied entity (patient or blood vessel)" f="PPT" n="1"/>
+        <role descr="agent, surgeon" f="PAG" n="0"/>
+        <role descr="angioplastied entity (blood vessel, lesion, stenosis, etc.)" f="PPT" n="1"/>
+        <role descr="beneficiary (undergoer of procedure)" f="GOL" n="2"/>
+        <role descr="location (heart, extremities, e.g.), if in addition to ARG1" f="LOC" n="3"/>
       </roles>
       <usagenotes>
         <usage resource="PropBank" version="1.0" inuse="-"/>
@@ -31,6 +34,57 @@
           <arg type="ARG1" start="4" end="6">on my legs</arg>
         </propbank>
       </example>
+      <example name="args 1 and 2, with implicit umbrella procedure event" src="THYME-colon-dir">
+        <text>He is status - post left carotid angioplasty with stenting .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (s / status-post-01
+            :ARG1 (h / he)
+            :ARG2 (p / procedure-01 :implicit +
+              :ARG1 (a / and
+                :op1 (a2 / angioplasty-01
+                  :ARG1 (a3 / anatomical-site :name (n / name :op1 "left" :op2 "carotid"))
+                  :ARG2 h)
+                :op2 (s2 / stent-01
+                  :ARG1 a3
+                  :ARG2 h))
+              :ARG2 h))  
+        </amr>
+      </example>
+      <example name="with instrument" src="THYME-colon-mod">
+        <text>Balloon angioplasty of the right and left common iliac arteries in November , 2010 .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (a2 / angioplasty-01
+            :ARG1 (a / and
+              :op1 (a3 / anatomical-site :name (n2 / name :op1 "right" :op2 "common" :op3 "iliac" :op4 "artery"))
+              :op2 (a4 / anatomical-site :name (n3 / name :op1 "left" :op2 "common" :op3 "iliac" :op4 "artery")))
+            :instrument (d / devices :name (n / name :op1 "balloon"))
+            :time (d2 / date-entity :month 11 :year 2010))  
+        </amr>
+      </example>
+      <example name="ARG1, compare with following example" src="THYME-colon-dir">
+        <text>PTCA</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (a / angioplasty-01
+            :ARG1 (a2 / anatomical-site :name (n / name :op1 "coronary"))
+            :manner (p / percutaneous)
+            :manner (t / transluminal)) 
+        </amr>
+      </example>
+      <example name="args 1 and 3 (right coronary artery percutaneous transluminal coronary angioplasty)" src="internet">
+        <text>RCA PTCA</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (a / angioplasty-01
+            :ARG1 (a3 / anatomical-site :name (n2 / name :op1 "RCA"))
+            :ARG3 (a2 / anatomical-site :name (n / name :op1 "coronary"))
+            :manner (p / percutaneous)
+            :manner (t / transluminal)) 
+        </amr>
+      </example>
+      <note>NOTES: Args 2 and 3 added by Kristin for THYME-AMR. ARG3 modeled after ARG2 in tender.02, e.g. A more specialized project might want to divide ARG1 into two args, one for the unblocked entity itself (vessel, artery, etc) and one for entities contributing to the blockage (stenoses, lesions, etc.). I'm keeping the original vague ARG1 definition since the distinction is a lot to ask lay annotators to identify, particularly since the syntax is the same. An internet example with "lesion": "The results of percutaneous transluminal coronary angioplasty (PTCA) of 57 distal lesions were compared with 55 proximal lesions in 42 patients." </note>
       <note>ANGIOPLASTY-V NOTES: (from angioplasty.01-v)</note>
     </roleset>
   </predicate>
