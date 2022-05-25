@@ -6,6 +6,7 @@
       <aliases>
         <alias pos="v">chemoradiate</alias>
         <alias pos="n">chemoradiation</alias>
+        <alias pos="n">chemoradiotherapy</alias>
       </aliases>
       <roles>
         <role descr="agent, doctor" f="PAG" n="0" />
@@ -38,7 +39,23 @@
           <arg type="ARG1" start="3" end="3">patients</arg>
         </propbank>
       </example>
-      <note>CHEMORADIATE-V, CHEMORADIATION-N NOTES: Added by Julia for THYME.</note>
+      <example name="chemoradiotherapy-n" src="THYME-colon-mod">
+        <text>Patient was evaluated yesterday by Dr. X , who recommended preop chemoradiotherapy .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (e / evaluate-01
+            :ARG0 (d / doctor :name (n / name :op1 "X")
+              :ARG0-of (r / recommend-01
+                :ARG1 (c / chemoradiate-01
+                  :ARG1 p
+                  :ARG1-of (p2 / pre-01
+                    :ARG2 (o / operate-02
+                      :ARG1 p)))))
+            :ARG1 (p / patient-yy)
+            :time (y / yesterday))  
+        </amr>
+      </example>
+      <note>CHEMORADIOTHERAPY-N: Added for THYME-AMRs.</note>
     </roleset>
   </predicate>
 </frameset>

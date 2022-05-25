@@ -296,7 +296,10 @@ def get_aliases_to_rolesets(frames):
 	alias_word_to_rolesets = dict()
 	for frame_name, xml in frames.items():
 		for roleset in xml.findall('predicate/roleset'):
-			aliases = roleset.find('aliases').findall('alias')
+			aliases = roleset.find('aliases')
+			if not aliases:
+				continue
+			aliases = aliases.findall('alias')
 			for alias in aliases:
 				if '\n' in alias.text:
 					print('')

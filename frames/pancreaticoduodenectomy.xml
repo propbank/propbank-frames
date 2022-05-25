@@ -16,20 +16,22 @@
         <usage resource="PropBank" version="1.0" inuse="-" />
         <usage resource="PropBank" version="2.1.5" inuse="-" />
         <usage resource="PropBank" version="3.1" inuse="-" />
-        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
         <usage resource="AMR" version="2019" inuse="-" />
         <usage resource="AMR" version="THYME 1.0" inuse="+" />
         <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
         <usage resource="AMR" version="Spatial 1.0" inuse="-" />
       </usagenotes>
       <lexlinks />
-      <example name="pancreaticoduodenectomy-n" src="THYME">
-        <text>pancreaticoduodenectomy</text>
-        <propbank>
-          <rel relloc="0">pancreaticoduodenectomy</rel>
-        </propbank>
+      <example name="pancreaticoduodenectomy-n" src="THYME-colon-mod">
+        <text>Patient is recovering well from pancreaticoduodenectomy .</text>
+        <propbank/>
         <amr version="THYME 1.0">
-         (p / pancreaticoduodenectomy-01)
+          (r / recover-01
+            :ARG1 (p / patient-yy)
+            :ARG2 (p2 / pancreaticoduodenectomy-01
+              :ARG2 p)
+            :ARG1-of (w / well-09))
         </amr>
       </example>
       <note>PANCREATICODUODENECTOMY NOTES: Added for THYME-AMR.</note>

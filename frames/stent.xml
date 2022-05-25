@@ -9,7 +9,8 @@
       </aliases>
       <roles>
         <role descr="Inserter" f="PAG" n="0"/>
-        <role descr="location (blood vessel, ureter, esophagus, patient)" f="PPT" n="1"/>
+        <role descr="location (blood vessel, ureter, esophagus)" f="PPT" n="1"/>
+        <role descr="beneficiary (undergoer of procedure)" f="GOL" n="2"/>
       </roles>
       <usagenotes>
         <usage resource="PropBank" version="1.0" inuse="-"/>
@@ -30,6 +31,24 @@
           <arg type="ARGM-TMP" start="18" end="18">previously</arg>
         </propbank>
       </example>
+      <example name="args 1 and 2" src="THYME-colon-dir">
+        <text>He is status - post left carotid angioplasty with stenting .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (s / status-post-01
+            :ARG1 (h / he)
+            :ARG2 (p / procedure-01 :implicit +
+              :ARG1 (a / and
+                :op1 (a2 / angioplasty-01
+                  :ARG1 (a3 / anatomical-site :name (n / name :op1 "left" :op2 "carotid"))
+                  :ARG2 h)
+                :op2 (s2 / stent-01
+                  :ARG1 a3
+                  :ARG2 h))
+              :ARG2 h))  
+        </amr>
+      </example>
+      <note>ARG2 NOTES: Added based on THYME-AMR.</note>
       <note>STENT-V NOTES: Based on data from medical clinical notes corpus. No VNcls. (from stent.01-v)</note>
       <note>STENTING-N NOTES: stent.01 (from stenting.01-n)</note>
     </roleset>

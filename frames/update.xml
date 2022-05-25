@@ -14,12 +14,14 @@
             <rolelink class="tell-37.2" resource="VerbNet" version="verbnet3.4">agent</rolelink>
           </rolelinks>
         </role>
-        <role descr="thing becoming more modern" f="PPT" n="1">
+        <role descr="thing being modernized or updated" f="PPT" n="1">
           <rolelinks>
             <rolelink class="tell-37.2" resource="VerbNet" version="verbnet3.3">topic</rolelink>
             <rolelink class="tell-37.2" resource="VerbNet" version="verbnet3.4">topic</rolelink>
           </rolelinks>
         </role>
+        <role descr="most recent (updated) version" f="GOL" n="2"/>
+        <role descr="prior (outdated) versions" f="SRC" n="3"/>
       </roles>
       <usagenotes>
         <usage resource="PropBank" version="1.0" inuse="+"/>
@@ -44,6 +46,18 @@
           <arg type="ARGM-LOC" start="26" end="27">at banks</arg>
         </propbank>
       </example>
+      <example name="ARG2" src="THYME-colon-dir">
+        <text>An updated CT scan of the abdomen and pelvis was obtained .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (c / ct-01
+            :ARG1 (a / and
+              :op1 (a2 / anatomical-site :name (n / name :op1 "abdomen"))
+              :op2 (a3 / anatomical-site :name (n2 / name :op1 "pelvis")))
+            :ARG2-of (u / update-01))  
+        </amr>
+      </example>
+      <note>ARGs 2 and 3 added based on evidence in THYME-AMR. Compare/contrast CT-scan example with: the website is updating, where website is ARG1; the website is becoming modernized/updated. In updated CT-scan, the scan itself is the thing constituting the update; it's the newest version. For these cases, ARG1 is unlikely to be explicit; it seems it would only be filled by a generic reference to the type of scan (something like, 'In terms of CT scans, we'll get an updated one'?? Again, unlikely to occur).</note>
       <note>UPDATE-V NOTES: No Vncls. (from update.01-v)</note>
       <note>UPDATE-N NOTES: Based on Bolt data. Comparison to update.01-v. Consitant with VN class tell-37.2. No FN classes. Framed by Katie. (from update.01-n)</note>
     </roleset>

@@ -67,6 +67,7 @@
     <roleset id="positive.03" name="be confirmed for the presence of (like with a medical test)">
       <aliases>
         <alias pos="j">positive</alias>
+        <alias pos="n">positivity</alias>
       </aliases>
       <roles>
         <role descr="test or patient, thing evaluated" f="PPT" n="1" />
@@ -99,7 +100,7 @@
           <arg end="11" start="6" type="ARG2">for the presence of cocaine metabolites</arg>
         </propbank>
       </example>
-      <example name="positive-j" src="THYME-Auto1">
+      <example name="positive-j" src="THYME-colon-mod">
         <text>Twenty - nine of 40 lymph nodes positive for metastatic spread .</text>
         <propbank>
           <rel relloc="7">positive</rel>
@@ -116,6 +117,20 @@
                 :ARG2 a)))
         </amr>
       </example>
+      <example name="positivity-n" src="THYME-colon-mod">
+        <text>The node - positivity of his disease merits an aggressive approach .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (m / merit-01
+            :ARG0 (p / positive-03
+              :ARG1 (a / anatomical-site :name (n / name :op1 "node"))
+              :poss (d / disease-02
+                :ARG1 (h / he)))
+            :ARG1 (a2 / approach-02
+              :ARG0-of (a3 / aggress-02)))  
+        </amr>
+      </example>
+      <note>POSITIVITY-N NOTES: Added by Kristin for THYME.</note>
       <note>POSITIVE-J NOTES: Added by Julia for SHARP. Relation to negative.01. (from positive.03-j)</note>
     </roleset>
   </predicate>

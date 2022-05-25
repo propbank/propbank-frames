@@ -2,28 +2,27 @@
 <!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="ajcc-entity">
-    <roleset id="ajcc-entity.91" name="represents AJCC staging components. See more here:&#10;https://www.cancerstaging.org/references-tools/Pages/What-is-Cancer-Staging.aspx">
-      <aliases />
+    <roleset id="ajcc-entity.91" name="represents AJCC staging components">
       <roles>
         <role descr="entity being staged" f="PPT" n="1" />
         <role descr="overall (numerical) stage" f="VSP" n="2" />
         <role descr="primary tumor stage (T) " f="VSP" n="3" />
         <role descr="lymph node stage (N)" f="VSP" n="4" />
         <role descr="metastasis stage (M) " f="VSP" n="5" />
-        <role descr="other attributes (See Notes column)" f="VSP" n="6" />
+        <role descr="other AJCC attributes (p, y, r, etc.)" f="VSP" n="6" />
       </roles>
       <usagenotes>
         <usage resource="PropBank" version="1.0" inuse="-" />
         <usage resource="PropBank" version="2.1.5" inuse="-" />
         <usage resource="PropBank" version="3.1" inuse="-" />
-        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="+" />
         <usage resource="AMR" version="2019" inuse="-" />
         <usage resource="AMR" version="THYME 1.0" inuse="+" />
         <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
         <usage resource="AMR" version="Spatial 1.0" inuse="-" />
       </usagenotes>
       <lexlinks />
-      <example name="ajcc" src="Auto1">
+      <example name="with stage" src="THYME-colon-mod">
         <text>This mass represents a stage I colon cancer with T2 , N0 , M0 .</text>
         <amr version="THYME 1.0">
           (r / represent-01
@@ -40,7 +39,17 @@
                   :ARG5 (m / mets-stage-entity :value "M0")))))
         </amr>
       </example>
-      <note>AJCC NOTES: Added for THYME-AMR.</note>
+      <example name="with ARG6" src="THYME-colon-mod">
+        <text>Mass is uT2N1 .</text>
+        <amr version="THYME 1.0">
+          (a / ajcc-entity-91
+            :ARG1 (s / sign-symptom :name (n / name :op1 "mass"))
+            :ARG3 (t / tumor-stage-entity :value "T2")
+            :ARG4 (l / lymph-stage-entity :value "N1")
+            :ARG6 (s2 / string-entity :value "u"))
+        </amr>
+      </example>
+      <note>AJCC NOTES: Added for THYME-AMR. For AMR annotation: ARG3 should always be filled with tumor-stage-entity, ARG4 with lymph-stage-entity, ARG5 with mets-stage-entity. Use :value to link the code itself.</note>
     </roleset>
   </predicate>
 </frameset>
