@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
+<frameset>
+  <predicate lemma="neurotomy">
+    <roleset id="neurotomy.01" name="procedure in which a nerve is cut">
+      <aliases>
+        <alias pos="n">neurotomy</alias>
+      </aliases>
+      <roles>
+        <role descr="performer of procedure" f="PAG" n="0"/>
+        <role descr="nerve cut" f="PPT" n="1"/>
+        <role descr="beneficiary (undergoer of procedure)" f="GOL" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+        <usage resource="PropBank" version="3.5" inuse="+" />
+      </usagenotes>
+      <lexlinks />
+      <example name="ARG2, implicit ARG1" src="THYME-colon-mod">
+        <text>Patient underwent bilateral L3 through L5 radiofrequency neurotomy last week .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (n / neurotomy-01
+            :ARG1 (t / thing
+              :location (a / anatomical-site :name (n2 / name :op1 "L")
+                :mod (v / value-interval :op1 3 :op2 5))
+              :mod (b / bilateral))
+            :ARG2 (p / patient-yy)
+            :instrument (r / radiofrequency)
+            :time (w / week
+              :mod (l / last)))  
+        </amr>
+      </example>
+      <example name="ARG0 and ARG1" src="internet">
+        <text>We will perform neurotomy of the musculocutaneous nerve for the treatment of elbow spasticity .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (n / neurotomy-01
+            :ARG0 (w / we)
+            :ARG1 (a / anatomical-site :name (n2 / name :op1 "musculocutaneous" :op2 "nerve"))
+            :ARG3-of (t / treat-03
+              :ARG2 (s / spastic-01
+                :ARG1 (a2 / anatomical-site :name (n3 / name :op1 "elbow")))))  
+        </amr>
+      </example>
+      <note>NOTES: Added for THYME-AMR.</note>
+    </roleset>
+  </predicate>
+</frameset>

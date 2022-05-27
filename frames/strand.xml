@@ -62,5 +62,58 @@
       <note>STRANDING-N NOTES: (from stranding.01-n)</note>
       <note>STRANDED-J NOTES: Added by Julia based on SMS. (from stranded.01-j)</note>
     </roleset>
+    <roleset id="stranding.02" name="having an abnormally light, strand-like appearance on imaging">
+      <aliases>
+        <alias pos="n">stranding</alias>
+      </aliases>
+      <roles>
+        <role descr="tissue that appears abnormal" f="PPT" n="1"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+        <usage resource="PropBank" version="3.5" inuse="+" />
+      </usagenotes>
+      <lexlinks />
+      <example name="typical phrasing" src="THYME-colon-dir">
+        <text>stranding of the perirectal fat</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (s2 / stranding-02
+            :ARG1 (a / anatomical-site :name (n / name :op1 "fat")
+              :ARG1-of (p / perirectal-01)))  
+        </amr>
+      </example>
+      <example name="unusual adjectival form of ARG1" src="THYME-colon-mod">
+        <text>Mild, hazy, fatty stranding seen on CT .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (s / see-01
+            :ARG1 (s2 / stranding-02
+              :ARG1 (a / anatomical-site :name (n / name :op1 "fat"))
+              :ARG1-of (h / hazy-01)
+              :ARG1-of (m / mild-01))
+            :manner (c / ct-01))  
+        </amr>
+      </example>
+      <example name="unusual re-framing of ARG1, analysis in consultation with medical expert" src="THYME-colon-dir">
+        <text>soft - tissue stranding in the perirectal fat</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (s / stranding-02
+            :ARG1 (a / anatomical-site :name (n / name :op1 "soft" :op2 "tissue")
+              :ARG1-of (m / mean-01
+                :ARG2 (a2 / anatomical-site :name (n2 / name :op1 "fat")
+                  :ARG1-of (p / perirectal-01)))))  
+        </amr>
+      </example>
+      <note>NOTES: Added for THYME-AMR.</note>
+    </roleset>
   </predicate>
 </frameset>
