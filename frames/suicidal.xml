@@ -31,5 +31,57 @@
       </example>
       <note>SUICIDAL-J NOTES: Added by Julia based on BOLT-2,3. (from suicidal.01-j)</note>
     </roleset>
+    <roleset id="suicide.02" name="end one's own life">
+      <aliases>
+        <alias pos="n">suicide</alias>
+        <alias pos="j">suicidal</alias>
+        <alias pos="l">commit_suicide</alias>
+      </aliases>
+      <roles>
+        <role descr="stimulus" f="CAU" n="0"/>
+        <role descr="entity taking own life" f="PPT" n="1"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+        <usage resource="PropBank" version="3.5" inuse="+" />
+      </usagenotes>
+      <lexlinks />
+      <example name="suicidal-j" src="THYME-colon-dir">
+        <text>She denies suicidal ideation .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (d / deny-01
+            :ARG0 (s / she)
+            :ARG1 (i2 / ideate-01
+              :ARG0 s
+              :ARG1 (s2 / suicide-02
+                :ARG1 s)))  
+        </amr>
+      </example>
+      <example name="suicide-n" src="THYME-colon-mod">
+        <text>One of the patient 's brothers is deceased from suicide .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (d / decease-01
+            :ARG1 (p / person :quant 1
+              :ARG1-of (i2 / include-91
+                :ARG2 (p2 / person :pl +
+                  :ARG0-of (h / have-rel-role-91
+                    :ARG1 (p3 / patient-yy)
+                    :ARG2 (b / brother)))))
+            :ARG1-of (c / cause-01
+              :ARG0 (s / suicide-02
+                :ARG1 p)))  
+        </amr>
+      </example>
+      <note>NOTES: Added based on THYME corpus. Follows crime.02 framing approach.</note>
+    </roleset>
   </predicate>
 </frameset>
