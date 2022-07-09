@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
+<frameset>
+  <predicate lemma="cryotherapy">
+    <roleset id="cryotherapy.01" name="cold therapy">
+      <aliases>
+        <alias pos="n">cryotherapy</alias>
+      </aliases>
+      <roles>
+        <role descr="therapist" f="PAG" n="0"/>
+        <role descr="patient" f="PPT" n="1"/>
+        <role descr="for what" f="CAU" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+        <usage resource="PropBank" version="3.5" inuse="+" />
+      </usagenotes>
+      <lexlinks />
+      <example name="ARG2 is sometimes redundant in AMRs when cryotherapy co-occurs with particular non-LVs" src="THYME-colon-mod">
+        <text>Precancerous cervical lesion treated with cryotherapy , September 2018 .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (t / treat-03
+            :ARG2 (s / sign-symptom :name (n / name :op1 "lesion")
+              :location (a / anatomical-site :name (n2 / name :op1 "cervix"))
+              :ARG1-of (p / precancerous-01))
+            :ARG3 (c / cryotherapy-01
+              :ARG2 s)
+            :time (d / date-entity :month 9 :year 2018))  
+        </amr>
+      </example>
+      <example name="...but this is evidence for including ARG2" src="internet">
+        <text>Three days earlier he had received cryotherapy for an eruption of warts on his right hand .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (c / cryotherapy-01
+            :ARG1 (h / he)
+            :ARG2 (e / erupt-01
+              :ARG1 (s / sign-symptom :pl + :name (n / name :op1 "wart"))
+              :location (a / anatomical-site :name (n2 / name :op1 "right" :op2 "hand")
+                :part-of h))
+            :time (b / before
+              :quant (t / temporal-quantity :quant 3
+                :unit (d / day))))    
+        </amr>
+      </example>
+      <note>NOTES: Added for THYME-AMR.</note>
+    </roleset>
+  </predicate>
+</frameset>
