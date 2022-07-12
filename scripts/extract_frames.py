@@ -8,17 +8,16 @@ __license__ = "CC-BY-SA-4.0"
 
 import argparse
 import os
-import xml.etree.ElementTree as ET
+from lxml import etree as ET
 from pathlib import Path
 
 
 def main(args):
 	for file in Path(args.input).rglob("*.xml"):
-		tree = ET.parse(file)
+		tree = ET.parse(str(file))
 		root = tree.getroot()
 		for pred in root:
 			for roleset in pred:
-				id = roleset.attrib['id']
 				usage_tags = roleset.find('usagenotes').findall('usage')
 				should_include = None
 				for usage in usage_tags:
@@ -31,12 +30,14 @@ def main(args):
 				assert should_include != None, 'Roleset is missing a usage tag for this resource/version! Please file an issue on GitHub.'
 				if not should_include:
 					pred.remove(roleset)
+			if len(list(pred.iter('roleset'))) == 0:
+				root.remove(pred)
 		if len(list(root.iter('roleset'))) == 0:
 			if Path(args.input) == Path(args.output):
 				# if input/output dirs are the same, make sure to delete any files that don't contain relevant rolesets
 				os.remove(Path(args.output, file.name))
 		else:
-			tree.write(Path(args.output, file.name), xml_declaration=True)
+			tree.write(Path(args.output, file.name), xml_declaration=True, encoding='utf-8', standalone=False)
 
 
 if __name__ == "__main__":
