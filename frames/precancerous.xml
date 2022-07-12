@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
+<frameset>
+  <predicate lemma="precancerous">
+    <roleset id="precancerous.01" name="likely to turn into cancer, or relating to that likelihood">
+      <aliases>
+        <alias pos="j">precancerous</alias>
+      </aliases>
+      <roles>
+        <role descr="precancerous entity" f="PPT" n="1"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+        <usage resource="PropBank" version="3.5" inuse="+" />
+      </usagenotes>
+      <lexlinks />
+      <example name="precancerous-j" src="THYME-colon-mod">
+        <text>Precancerous cervical lesion treated with cryotherapy , September 2018 .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (t / treat-03
+            :ARG2 (s / sign-symptom :name (n / name :op1 "lesion")
+              :location (a / anatomical-site :name (n2 / name :op1 "cervix"))
+              :ARG1-of (p / precancerous-01))
+            :ARG3 (c / cryotherapy-01
+              :ARG2 s)
+            :time (d / date-entity :month 9 :year 2018))  
+        </amr>
+      </example>
+      <example name="precancerous-j" src="internet">
+        <text>Both vaccines should also protect against the precancerous stages of cervical disease .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (p3 / probable-01
+            :ARG1 (p / protect-01
+              :ARG2 (s / stage :pl +
+                :ARG1-of (p2 / precancerous-01)
+                :subevent-of (d / disease-disorder :name (n / name :op1 "cervical" :op2 "disease")))
+              :ARG3 (v / vaccine :pl +
+                :mod (b / both))
+              :mod (a / also)))  
+        </amr>
+      </example>
+      <example name="precancerous-j" src="internet">
+        <text>Precancerous changes and cervical cancer confined to the cervix usually do not exhibit symptoms .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (e / exhibit-01 :polarity -
+            :ARG0 (a / and
+              :op1 (t2 / thing
+                :ARG2-of (c / change-01 :pl +)
+                :ARG1-of (p / precancerous-01))
+              :op2 (c2 / cancer-03
+                :ARG2 (a2 / anatomical-site :name (n / name :op1 "cervix")))
+              :ARG1-of (c3 / confine-01
+                :ARG2 a2))
+            :ARG1 (t / thing
+              :ARG2-of (s / symptomatic-01
+                :ARG1 a))
+            :mod (u / usual))
+        </amr>
+      </example>
+      <note>NOTES: Added for THYME-AMR. Unexpectedly does not appear to project temporal arguments; a single, broad argument like the cancerous.02 frame has seems sufficient.</note>
+    </roleset>
+  </predicate>
+</frameset>

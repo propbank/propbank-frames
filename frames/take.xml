@@ -1845,4 +1845,64 @@
       <note>TAKE_WITH_GRAIN_OF_SALT-M NOTES: Added by Tim and Julia, in early MWE framing days.</note>
     </roleset>
   </predicate>
+  <predicate lemma="uptake">
+    <roleset id="uptake.39" name="absorption by a tissue of a substance">
+      <aliases>
+        <alias pos="n">uptake</alias>
+        <alias pos="m">take_up</alias>
+      </aliases>
+      <roles>
+        <role descr="tissue or location of tissue" f="PAG" n="0"/>
+        <role descr="substance" f="PPT" n="1"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+        <usage resource="PropBank" version="3.5" inuse="+" />
+      </usagenotes>
+      <lexlinks />
+      <example name="uptake-n, both args, common usage" src="THYME-colon-mod">
+        <text>PET scan showed mild FDG uptake in the pelvis .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (s / show-01
+            :ARG0 (p / pet-02)
+            :ARG1 (u / uptake-39
+              :ARG0 (a / anatomical-site :name (n / name :op1 "pelvis"))
+              :ARG1 (m / medications-drugs :name (n2 / name :op1 "FDG"))
+              :ARG1-of (m2 / mild-01)))  
+        </amr>
+      </example>
+      <example name="ARG0 as abnormal entity" src="internet">
+        <text>High FDG uptake of the primary tumor in patients with metastatic gastric adenocarcinoma is associated with poor overall survival .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (a / associate-01
+            :ARG1 (u / uptake-39
+              :ARG0 (s / sign-symptom :name (n2 / name :op1 "tumor")
+                :ARG1-of (p / primary-01
+                  :ARG3 d)
+                :poss (p2 / patient-yy :pl +
+                  :ARG0-of (h2 / have-03
+                    :ARG1 (d / disease-disorder :name (n3 / name :op1 "adenocarcinoma")
+                      :location (a2 / anatomical-site :name (n4 / name :op1 "gastric"))
+                        :ARG1-of (m2 / metastasize-101
+                          :ARG4 a2)))))
+              :ARG1 (m / medications-drugs :name (n / name :op1 "FDG"))
+              :ARG1-of (h / high-02))
+            :ARG2 (s2 / survive-01
+              :ARG0 p2
+              :mod (o / overall)
+              :ARG2-of (p3 / poor-02)))  
+        </amr>
+      </example>
+      <note>NOTES: Added for THYME-AMR. Based on application of this term, we interpret location of tissue as being metonymic for the tissue; ARG0 is therefore often realized in locative expressions, like "in the pelvis".</note>
+    </roleset>
+  </predicate>
 </frameset>

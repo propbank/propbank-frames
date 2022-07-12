@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
+<frameset>
+  <predicate lemma="pericystic">
+    <roleset id="pericystic.01" name="near or surrounding a bladder or cyst">
+      <aliases>
+        <alias pos="j">pericystic</alias>
+      </aliases>
+      <roles>
+        <role descr="thing that is near or surrounds ARG1" f="PAG" n="0"/>
+        <role descr="reference point/thing surrounded (cyst or bladder)" f="PPT" n="1"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+        <usage resource="PropBank" version="3.5" inuse="+" />
+      </usagenotes>
+      <lexlinks />
+      <example name="common usage" src="internet">
+        <text>A pericystic lymph node is identified .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (i2 / identify-01
+            :ARG1 (a / anatomical-site :name (n / name :op1 "lymph" :op2 "node")
+              :ARG1-of (p / pericystic-01)))  
+        </amr>
+      </example>
+      <example name="cystic doing non-standard double-time; only annotate as part of the frame" src="THYME-colon-mod">
+        <text>Three pericystic duct lymph nodes positive for adenocarcinoma .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (p / positive-03
+            :ARG1 (a / anatomical-site :quant 3 :name (n / name :op1 "lymph" :op2 "node")
+              :ARG1-of (p2 / pericystic-01
+                :ARG2 (a2 / anatomical-site :name (n3 / name :op1 "duct"))))
+            :ARG2 (d / disease-disorder :name (n2 / name :op1 "adenocarcinoma")))  
+        </amr>
+      </example>
+      <note>NOTES: Added for THYME-AMR. Most other peri- frames have just one argument since the reference entity is typically a shadow argument/inherent in the meaning of the fame. The occurrence in some clinical texts of "pericystic duct," plus the variable referent of cystic (bladder or cyst) motivates the two arguments here. For AMR multi-sentence linking, it might be desirable to add analogous arguments to the other peri- frames as well down the road.</note>
+    </roleset>
+  </predicate>
+</frameset>
