@@ -37,7 +37,7 @@ def main(args):
 				# if input/output dirs are the same, make sure to delete any files that don't contain relevant rolesets
 				os.remove(Path(args.output, file.name))
 		else:
-			tree.write(Path(args.output, file.name), xml_declaration=True, encoding='utf-8', standalone=False)
+			tree.write(str(Path(args.output, file.name)), xml_declaration=True, encoding='utf-8', standalone=False)
 
 
 if __name__ == "__main__":
