@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
+<frameset>
+  <predicate lemma="intraperitoneal">
+    <roleset id="intraperitoneal.01" name="within the peritoneal cavity">
+      <aliases>
+        <alias pos="j">intraperitoneal</alias>
+        <alias pos="j">intraperitoneal</alias>
+      </aliases>
+      <roles>
+        <role descr="thing within the peritoneal cavity" f="PPT" n="1"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+        <usage resource="PropBank" version="3.5" inuse="+" />
+      </usagenotes>
+      <lexlinks />
+      <example name="intraperitoneal-j, ARG1" src="internet">
+        <text>Further intraperitoneal organs are the liver , the stomach and the spleen .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (i2 / include-91
+            :ARG1 (a2 / and
+              :op1 (a3 / anatomical-site :name (n2 / name :op1 "liver"))
+              :op2 (a4 / anatomical-site :name (n3 / name :op1 "stomach"))
+              :op3 (a5 / anatomical-site :name (n4 / name :op1 "spleen")))
+            :ARG2 (a / anatomical-site :pl + :name (n / name :op1 "organ")
+              :ARG1-of (i3 / intraperitoneal-01)
+              :mod (f / further))) 
+        </amr>
+      </example>
+      <example name="intraperitoneal-01, as manner" src="internet">
+        <text>It is suggested that patients with peritoneal metastases may benefit from the addition of intraperitoneal chemotherapy to systemic chemotherapy .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (s / suggest-01
+            :ARG1 (p / possible-01
+              :ARG1 (b / benefit-01
+                :ARG0 (a2 / add-02
+                  :ARG1 (c / chemotherapy-01
+                    :ARG1 p2
+                    :manner (i2 / intraperitoneal-01))
+                  :ARG2 (c2 / chemotherapy-01
+                    :mod (s2 / systemic)))
+                :ARG1 (p2 / patient-yy :pl +
+                  :ARG0-of (h / have-03
+                    :ARG1 (d / disease-disorder :pl + :name (n / name :op1 "metastasis")
+                      :location (a / anatomical-site :name (n2 / name :op1 "peritoneum"))))))))  
+        </amr>
+      </example>
+      <note>NOTES: Added for THYME-AMR.</note>
+    </roleset>
+  </predicate>
+</frameset>
