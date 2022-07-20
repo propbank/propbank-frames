@@ -1,5 +1,5 @@
 # propbank-development
-Repository for the full history -- and ongoing development branches -- of Propbank frames
+Repository for the full history -- and ongoing development branches -- of Propbank frames. The latest release, v3.4.0, can be viewed as human-readable webpages here: http://propbank.github.io/v3.4.0/frames
 
 | Resource  | Version | Description |
 | ------------- | ------------- | ------------- |
