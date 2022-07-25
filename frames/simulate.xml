@@ -72,5 +72,76 @@
       <note>SIMULATE-V NOTES: Based on financial subcorpus. Member of Vncls establish-55.5-1. Updated by Julia, 11/2010. (from simulate.01-v)</note>
       <note>SIMULATION-N NOTES: Expanded by Julia based on BOLT, simulate.01. Corresponds to VNcls establish-55.5-1. (from simulation.01-n)</note>
     </roleset>
+    <roleset id="simulation.02" name="process for identifying and marking sites to be targeted by radiation therapy in cancer treatment">
+      <aliases>
+        <alias pos="n">simulation</alias>
+        <alias pos="n">simulation_procedure</alias>
+        <alias pos="n">SIM</alias>
+      </aliases>
+      <roles>
+        <role descr="agent, processor" f="PAG" n="0"/>
+        <role descr="patient, undergoer of process" f="PPT" n="1"/>
+        <role descr="instrument of simulation, often an imaging scan" f="MNR" n="2"/>
+        <role descr="purpose" f="PRP" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+        <usage resource="PropBank" version="3.5" inuse="+" />
+      </usagenotes>
+      <lexlinks />
+      <example name="simulation-n, ARG1" src="internet">
+        <text>You may be given directions if any preparation is needed before your simulation .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (p / possible-01
+            :ARG1 (d / direct-01
+              :ARG1 (y / you)
+              :condition (n / need-01
+                :ARG1 (p2 / prepare-02
+                  :ARG1 y
+                  :ARG2 s
+                  :mod (a / any)
+                  :time (b / before
+                    :op1 (s / simulation-02
+                      :ARG1 y))))))  
+        </amr>
+      </example>
+      <example name="simulation-n, ARG2" src="internet">
+        <text>CT simulation provides optimum set-up accuracy for patients who will be receiving radiation .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (p / provide-01
+            :ARG0 (s / simulation-02
+              :ARG2 (c / ct-01))
+            :ARG1 (a / accurate-01
+              :ARG1 (s2 / set-up-03)
+              :mod (o / optimum))
+            :ARG2 (p2 / patient-yy
+              :ARG1-of (r / radiate-02)))  
+        </amr>
+      </example>
+      <example name="simulation-n, ARG3" src="internet">
+        <text>Mistakes were also made at treatment simulation due to incorrect labeling of the images .</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (m / mistake-02 :pl +
+            :ARG1 (s / simulation-02
+              :ARG3 (t / treat-03))
+            :ARG1-of (c / cause-01
+              :ARG0 (l / label-01
+                :ARG1 (i2 / image :pl +)
+                :ARG1-of (c2 / correct-02 :polarity -)))
+            :mod (a / also))  
+        </amr>
+      </example>
+      <note>NOTES: Added for THYME-AMR.</note>
+    </roleset>
   </predicate>
 </frameset>
