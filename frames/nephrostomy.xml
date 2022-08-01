@@ -23,16 +23,19 @@
         <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
       </usagenotes>
       <lexlinks/>
-      <example name="nephrostomy-n" src="THYME-colon-dir">
-        <text>had a left nephrostomy tube placed</text>
-        <propbank>
-          <rel relloc="3">nephrostomy</rel>
-        </propbank>
+      <example name="nephrostomy-n" src="internet">
+        <text>Only 1 of these patients had to undergo nephrostomy at a later date .</text>
+        <propbank/>
         <amr version="THYME 1.0">
-          (p / place-01
-            :ARG1 (d / devices :name (n / name :op1 "tube")
-              :mod (a / acquired-abnormality :name (n2 / name :op1 "nephrostomy")))
-            :ARG2 (a2 / anatomical-site :name (n3 / name :op1 "left")))
+          (o / obligate-01
+            :ARG1 (p / patient-yy :quant 1
+              :ARG1-of (i2 / include-91
+                :ARG2 (p2 / patient-yy :pl +
+                  :mod (t / this)))
+              :mod (o2 / only))
+            :ARG2 (n / nephrostomy-01
+              :ARG1 p
+              :time (a / after)))
         </amr>
       </example>
       <note>NEPHROSTOMY NOTES: Added for THYME-AMR.</note>
