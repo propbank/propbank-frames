@@ -5,6 +5,9 @@
     <roleset id="radiosensitize.01" name="make cells more senstive to radiation">
       <aliases>
         <alias pos="v">radiosensitize</alias>
+        <alias pos="m">radiation_sensitize</alias>
+        <alias pos="m">radiation-sensitize</alias>
+        <argalias arg="0" pos="n">radiation_sensitizer</argalias>
       </aliases>
       <roles>
         <role descr="cause of sensitivity" f="PAG" n="0" />
@@ -19,7 +22,7 @@
         <usage resource="AMR" version="2019" inuse="-" />
         <usage resource="PropBank" version="Flickr 1.0" inuse="+" />
         <usage resource="AMR" version="Spatial 1.0" inuse="-" />
-        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
       </usagenotes>
       <lexlinks />
       <example name="The chemo here is causing the cells to be more susceptable to radiation." src="">
@@ -29,6 +32,25 @@
           <arg type="ARG0" start="3" end="3">chemo</arg>
         </propbank>
       </example>
+      <example name="radiation-sensitize-m, ARG0" src="THYME-colon-dir">
+        <text>fluoropyrimidine radiation-sensitizing chemotherapy</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (c / chemotherapy-01
+            :ARG2 (m / medications-drugs :name (n / name :op1 "fluoropyrimidine")
+              :ARG0-of (r / radiosensitize-01)))  
+        </amr>
+      </example>
+      <example name="with ARG0 alias, radiation_sensitizer" src="THYME-colon-dir">
+        <text>chemoradiation therapy with capecitabine as radiation sensitizer</text>
+        <propbank/>
+        <amr version="THYME 1.0">
+          (c / chemoradiate-01
+            :instrument (m / medications-drugs :name (n / name :op1 "capecitabine")
+              :ARG0-of (r / radiosensitize-01)))  
+        </amr>
+      </example>
+      <note>RADIATION_SENSITIZE-M, RADIATION-SENSITIZE-M, RADIATION_SENSITIZER-N NOTES: Added based on THYME AMRs.</note>
       <note>RADIOSENSITIZE-V NOTES: Based on temprel data. Comparison to sensitize.01. No VN or FN classes. Framed by Katie. (from radiosensitize.01-v)</note>
     </roleset>
   </predicate>
