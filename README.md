@@ -1,4 +1,4 @@
-# propbank-development
+# propbank-frames
 Repository for the full history -- and ongoing development branches -- of Propbank frames
 
 | Resource  | Version | Description |
