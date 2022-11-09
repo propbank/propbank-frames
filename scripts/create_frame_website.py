@@ -420,12 +420,12 @@ def create_roleset_div(roleset, roleset_to_resource_use):
 					split = arg.get('relloc').split(' ')
 					for j in range(len(split)):
 						index = split[j]
-						arg_start_to_arg[int(index)] = [int(index), 'rel', arg.text.split(' ')[j]]
+						arg_start_to_arg[int(index)] = [int(index), 'rel', arg.text.replace('<', '&lt;').replace('>', '&gt;').split(' ')[j]]
 				else:
 					if arg.get('relloc') == '?':
 						broken_args.append(arg)
 					else:
-						arg_start_to_arg[int(arg.get('relloc'))] = [int(arg.get('relloc')), 'rel', arg.text]
+						arg_start_to_arg[int(arg.get('relloc'))] = [int(arg.get('relloc')), 'rel', arg.text.replace('<', '&lt;').replace('>', '&gt;')]
 			else:
 				arg_name = arg.get('type')
 				if not arg.get('start').isdigit() or not arg.get('end').isdigit():
@@ -433,10 +433,10 @@ def create_roleset_div(roleset, roleset_to_resource_use):
 				elif int(arg.get('start')) > int(arg.get('end')):
 					broken_args.append(arg)
 				else:
-					arg_start_to_arg[int(arg.get('start'))] = [int(arg.get('end')), arg_name, arg.text]
+					arg_start_to_arg[int(arg.get('start'))] = [int(arg.get('end')), arg_name, arg.text.replace('<', '&lt;').replace('>', '&gt;')]
 		if example.find('text') is None or example.find('text').text is None:
 			continue
-		tokenized = example.find('text').text.split(' ')
+		tokenized = example.find('text').text.replace('<', '&lt;').replace('>', '&gt;').split(' ')
 		example_string = ''
 		i = 0
 		while i < len(tokenized):
