@@ -436,7 +436,7 @@ def create_roleset_div(roleset, roleset_to_resource_use):
 					arg_start_to_arg[int(arg.get('start'))] = [int(arg.get('end')), arg_name, arg.text.replace('<', '&lt;').replace('>', '&gt;')]
 		if example.find('text') is None or example.find('text').text is None:
 			continue
-		tokenized = example.find('text').text.replace('<', '&lt;').replace('>', '&gt;').split(' ')
+		tokenized = re.sub('\n\s+', ' ', example.find('text').text).replace('<', '&lt;').replace('>', '&gt;').split(' ')
 		example_string = ''
 		i = 0
 		while i < len(tokenized):
