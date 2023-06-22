@@ -5060,6 +5060,68 @@
       <note>comparison to AMR-2019: mean-01 was used both lemma-specifically and for symbols like '*' and '=', as well as for implicit cases. UMR will use this roleset for the latter types. This may be revisited later.</note>
     </roleset>
   </predicate>
+  <predicate lemma="proverb">
+    <roleset id="proverb.91" name="for fixed/semi-fixed expressions that are allegorical or convey wisdom">
+      <aliases>
+        <alias pos="n">proverb</alias>
+      </aliases>
+      <roles>
+        <role descr="proverb" f="VSP" n="1" />
+        <role descr="2nd part of a two-part allegorical exp. Gives a focused interpretation of ARG1" f="VSP" n="2" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+        <usage resource="PropBank" version="3.5" inuse="-"/>
+        <usage resource="UMR" version="2022" inuse="+" />
+      </usagenotes>
+      <example name="standard proverb" src="UMR-guidelines">
+        <text>The mountains are high and the emperor is far away .</text>
+        <umr version="2022" language="English">
+        (p / proverb-91
+            :ARG1 (a / and
+                :op1 (h / high-05
+                    :ARG1 (m / mountain
+                        :refer-number Plural)
+                    :Aspect State
+                    :MODSTR FullAff)
+                :op2 (f / far-01
+                    :ARG1 (p / person
+                        :ARG1-of (h2 / have-org-role-92
+                            :ARG3 (e / emperor)))
+                    :Aspect State
+                    :MODSTR FullAff)))
+        </umr>
+      </example>
+      <example name="standard proverb" src="UMR-guidelines">
+        <text>山 高 皇帝 远 </text>
+        <mb></mb>
+        <ge>mountain  high  emperor far_away</ge>
+        <ps></ps>
+        <tr>The mountains are high and the emperor is far away.</tr>
+        <umr version="2022" language="Chinese">
+        (p / proverb-91
+            :ARG1 (a / and
+                :op1 (x2 / 高-01
+                    :Arg0 (x1 / 山)
+                    :Aspect State
+                    :MODSTR FullAff)
+                :op2 (x4 / 远-01
+                    :Arg0 (x3 / 皇帝)
+                    :Aspect State
+                    :MODSTR FullAff)))
+        </umr>
+      </example>
+      <note>For UMR annotations.</note>
+      <note>comparison to AMR-2019: no such roleset existed.</note>
+    </roleset>
+  </predicate>
   <predicate lemma="publication">
     <roleset id="publication.91" name="for publication information, citations">
       <aliases>
