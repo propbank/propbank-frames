@@ -846,6 +846,51 @@
       <note>comparison to AMR-2019: AMR used the :location/:location-of roles or their reification, be-located-at-91, for these. This roleset is not the same as exist-01.</note>
     </roleset>
   </predicate>
+  <predicate lemma="gesture">
+    <roleset id="gesture.91" name="a preliminary roleset for incorporating gestures into multimodal UMR graphs">
+      <aliases>
+        <alias pos="m">{gesture}</alias>
+      </aliases>
+      <roles>
+        <role descr="gesturer" f="PAG" n="0" />
+        <role descr="the gesture" f="PPT" n="1" />
+        <role descr="audience" f="GOL" n="2" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+        <usage resource="PropBank" version="3.5" inuse="-"/>
+        <usage resource="UMR" version="2022" inuse="+" />
+      </usagenotes>
+      <example name="ELAN transcription with gesture reference" src="Pear Story">
+        <text>And he goes ... {counting gesture}</text>
+        <propbank>
+          <rel relloc="5">gesture}</rel>
+          <arg start="4" end="4" type="ARG1">counting</arg>
+        </propbank>
+        <umr version="2022">
+        (s134g / go-05
+            :ARG0 (s134p / person
+                :refer-person 3rd
+                :refer-number Singular)
+            :ARG1 (s134g2 / gesture-91
+                :ARG0 s134p
+                :ARG1 (s134c / count-01))
+            :Aspect Endeavor
+            :MODSTR FullAff)
+        </umr>
+      </example>
+      </example>
+      <note>For UMR annotations.</note>
+      <note>comparison to AMR-2019: No handling of multimodal gestures in AMR 2019. This roleset is preliminary, needed to handle certain instances in the Pear Story for the UMR release. Will likely be updated/replaced as we work on the official schema for multimodal UMR.</note>
+    </roleset>
+  </predicate>
   <predicate lemma="have">
     <roleset id="have.91" name="reification of :poss; nonprototypical clause: thetic possession">
       <aliases>
