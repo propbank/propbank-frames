@@ -419,6 +419,60 @@
       <note>comparison to AMR-2019: same roleset, same usage.</note>
     </roleset>
   </predicate>
+  <predicate lemma="cite">
+    <roleset id="cite.91" name="for citations">
+      <aliases/>
+      <roles>
+        <role descr="text accompanied by a citation" f="PPT" n="1" />
+        <role descr="source publication (may use publication-91)" f="SRC" n="2" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+        <usage resource="PropBank" version="3.5" inuse="-"/>
+        <usage resource="UMR" version="2022" inuse="+" />
+      </usagenotes>
+      <example name="" src="AMR-guidelines">
+        <text>French military defeats have been studied extensively ( 1 - 7 ) .</text>
+        <propbank>
+          <arg start="0" end="6" type="ARG1">French military defeats have been studied extensively</arg>
+          <arg start="7" end="11" type="( 1 - 7 )"></arg>
+        </propbank>
+        <umr version="2022">
+          (s1s / study-01
+               :ARG1 (s1d / defeat-01
+                    :ARG1 (s1c / country
+                         :wiki "France"
+                         :name (s1n / name
+                              :op1 "France"))
+                    :manner (s1m / military)
+                    :aspect Process
+                    :modstr FullAff)
+               :ARG1-of (s1e / extensive-03)
+               :ARG1-of (s1c2 / cite-91
+                    :ARG2 (s1p / publication-91
+                         :ARG7 (s1v / value-interval
+                              :op1 1
+                              :op2 7)))
+               :aspect Habitual
+               :modstr FullAff)
+        </umr>
+      </example>
+      <note>For UMR annotations.</note>
+      <note>comparison to AMR-2019: Lemma-specific cite-01 was used in AMR, but in order to get the arguments to fit, additional intermediate nodes between the cited text and the cite-01 predicate had to be included:
+      ([cited-text]
+          :ARG1-of (a / attest-01 *or* d / describe-01
+              :ARG0 (p / publication
+                  :ARG1-of (c / cite-01 [...]))))
+        This has been streamlined for UMR by reworking the arguments-- ARG1 is now the cited text, and arg2 is the publication cited. </note>
+    </roleset>
+  </predicate>
   <predicate lemma="correlate">
     <roleset id="correlate.91" name="for the X-er the Y-er constructions">
       <aliases>
