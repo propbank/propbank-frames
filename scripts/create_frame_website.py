@@ -157,7 +157,7 @@ def main(frame_dir, website_dir, found_errors):
 	# Create roleset HTML files: abate.html, etc.
 	for frame_name, xml in frames.items():
 		print(frame_name[:-3] + 'html')
-		if frame_name.startswith('spatial-91') or frame_name.startswith('statistical-test'):
+		if frame_name.startswith('spatial-91') or frame_name.startswith('statistical-test') or frame_name.startswith('AMR-UMR-91'):
 			continue  # TODO: Make compatible with AMR weirdness
 		if frame_name[:-3] == 'index.':
 			file = Path(website_dir, 'f_' + frame_name[:-3] + 'html')
