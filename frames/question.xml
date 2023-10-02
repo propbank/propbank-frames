@@ -243,4 +243,53 @@
       <note>QUESTIONABLE-J NOTES: Added by Julia based on WSJ data,question-v.01. Corresponds to VNcls interrogate-37.1.3. (from questionable.01-j) This frame file has been reframed following negotiations between Martha, Julia, Tim, Katie, and Ulf. The former .01 roleset included both'ask a question' and 'have doubts' senses, and has been split into .01 and .03 rolesets. Reframing allows 'questionable' to be aliased to only the 'have doubts' sense.</note>
     </roleset>
   </predicate>
+  <predicate lemma="in_question">
+    <roleset id="in_question.04" name="the topic being referenced">
+      <aliases>
+        <alias pos="x">in_question</alias>
+      </aliases>
+      <roles>
+        <role descr="topical entity" f="PPT" n="1"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="-"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+        <usage resource="PropBank" version="3.5" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="in_question-predicating_preposition" src="dfa">
+        <text>It 's a tragedy , and I also find it revealing that the New Age guru in question , Mr. Ray , has since left the state of Arizona . </text>
+        <propbank>
+          <rel relloc="16 17">in question</rel>
+          <arg type="ARG1" start="12" end="15">the new age guru</arg>
+        </propbank>
+        <umr version="2023">
+        (a / and
+           :op1 (t / tragedy
+               :domain (i / it))
+           :op2 (f / find-02
+               :ARG0 (i2 / i)
+               :ARG1 (r / reveal-01
+                    :ARG0 (l / leave-11
+                         :ARG0 (p / person :wiki "James_Arthur_Ray"
+                              :name (n / name :op1 "Mr." :op2 "Ray")
+                              :ARG1-of (h / have-role-91
+                                  :ARG2 (g / guru
+                                      :mod (n2 / new-age)))
+                              :ARG1-of (i3 / in-question-04))
+                         :ARG1 (s / state :wiki "Arizona"
+                              :name (n3 / name :op1 "Arizona"))
+                         :time (s2 / since)))
+               :mod (a2 / also)))
+        </umr>
+      </example>
+      <note>IN_QUESTION-X NOTES: Added by Julia during UMR retrofits, based on dfa LDC AMR release (2017 data).</note>
+    </roleset>
+  </predicate>
 </frameset>
