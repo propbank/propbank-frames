@@ -65,5 +65,61 @@
       <note>RESORT-V NOTES: VN class convert-26.6.2. (from resort.01-v)</note>
       <note>RESORT-N NOTES: Added by Julia based on BOLT, WordNet sense #4, resort-v.01. Corresponds to VNcls convert-26.6.2. (from resort.01-n)</note>
     </roleset>
+    <roleset id="resort.02" name="sort again">
+      <aliases>
+        <alias pos="v">re-sort</alias>
+        <alias pos="n">re-sort</alias>
+      </aliases>
+      <roles>
+        <role descr="re-sorter" f="PAG" n="0"/>
+        <role descr="thing being re-sorted" f="PPT" n="1"/>
+        <role descr="order, criterion" f="MNR" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+        <usage resource="PropBank" version="3.5" inuse=“-“ />
+        <usage resource="AMR" version="iSAT 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks />
+      <example name="args 0 and 1" src=“iSAT”>
+        <text>After this , instruct the students to re-sort the cards .</text>
+        <propbank>
+          <rel relloc=“7”>re-sort</rel>
+          <arg type=“ARG0” start="3" end="4">the students</arg>
+          <arg type="ARG1" start="8" end="9">the cards</arg>
+        </propbank>
+        <amr version=“iSAT 1.0">
+        (i2 / instruct-01 :mode imperative
+          :ARG0 (y / you)
+          :ARG1 (p / person :pl +
+            :ARG0-of (s / study-01))
+          :ARG2 (r / resort-02
+            :ARG0 p
+            :ARG1 (c / card :pl +))
+          :time (a / after
+            :op1 (t / this)))
+        </amr>
+      </example>
+      <example name="ARG2" src=“internet”>
+        <text>Re-sort by name .</text>
+        <propbank>
+          <rel relloc=“0”>Re-sort</rel>
+          <arg type=“ARG2” start="1" end="2">by name</arg>
+        </propbank>
+        <amr version=“iSAT 1.0">
+        (r / resort-02 :mode imperative
+          :ARG2 (t / thing
+            :ARG2-of (n / name-01)))
+        </amr>
+      </example>
+      <note>NOTES: Added for iSAT-AMR.</note>
+    </roleset>
   </predicate>
 </frameset>
