@@ -5628,6 +5628,64 @@
       <note>For AMR annotations.</note>
     </roleset>
   </predicate>
+  <predicate lemma="reference-illustration">
+    <roleset id="reference-illustration.91" name="for (parenthetical) references to a figure, table, or example in a document">
+      <aliases>
+        <alias pos="n">table</alias>
+        <alias pos="n">figure</alias>
+        <alias pos="n">example</alias>
+      </aliases>
+      <roles>
+        <role descr="clause which points to an figure, table, or example" f="VSP" n="1" />
+        <role descr="the figure, table or example" f="VSP" n="2" />
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="+" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="+" />
+        <usage resource="AMR" version="THYME 1.0" inuse="+" />
+        <usage resource="PropBank" version="3.5" inuse="-"/>
+        <usage resource="UMR" version="2022" inuse="-" />
+      </usagenotes>
+      <example name="" src="UMR-rolesets">
+        <text>We treated CHO-K1 cells with HRG ligand to induce maximal ERBB3 phosphorylation ( Fig. 6a ) . </text>
+        <propbank>
+          <arg start="0" end="11" type="">We treated CHO-K1 cells with HRG ligand to induce maximal ERBB3 phosphorylation</arg>
+          <arg start="12" end="15" type="ARG2">( Fig. 6a )</arg>
+        </propbank>
+        <umr version="2.0">
+        (t / treat-04
+              :ARG0 (w / we)
+              :ARG1 (c2 / cell-line :wiki "Chinese_hamster_ovary_cell#Variants"
+                    :name (n / name
+                          :op1 "CHO-K1"))
+              :ARG2 (l / ligand
+                    :goal (p / protein
+                          :name (n2 / name
+                                :op1 "HRG")
+                          :wiki "Histidine-rich_glycoprotein"))
+              :purpose (i / induce-01
+                    :ARG0 w
+                    :ARG2 (p / phosphorylate-01
+                          :ARG1 (e / enzyme
+                                :name (n3 / name
+                                     :op1 "ERBB3")
+                                :wiki "ERBB3")
+                          :degree (m / maximum)))
+              :ARG1-of (c / cite-91
+                    :ARG2 (f / figure
+                          :mod "6a")))
+        </umr>
+      </example>
+      </example>
+      <note>For UMR annotations.</note>
+      <note>comparison to AMR-2019: AMR corpora appear used 'describe-01' for this purpose.</note>
+    </roleset>
+  </predicate>
   <predicate lemma="request-confirmation">
     <roleset id="request-confirmation.91" name="for tag questions, or rephrasing received instructions in order to request confirmation of understanding">
       <aliases>
