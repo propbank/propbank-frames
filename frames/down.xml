@@ -433,4 +433,79 @@
       <note>GO_DOWN_ON NOTES: Added by Julia for ICE.</note>
     </roleset>
   </predicate>
+    <predicate lemma="downwind">
+    <roleset id="downwind.09" name="in the direction the wind is blowing">
+      <aliases>
+        <alias pos="j">downwind</alias>
+        <alias pos="r">downwind</alias>
+      </aliases>
+      <roles>
+        <role descr="entity in or action performed in or along the wind's path" f="SE1" n="1"/>
+        <role descr="point of comparison; downwind from what?" f="SE2" n="2"/>
+        <role descr="distance between args 1 and 2" f="EXT" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+        <usage resource="PropBank" version="3.5" inuse="-" />
+        <usage resource="AMR" version="iSAT 1.0" inuse="+"/>
+      </usagenotes>
+      <example name="all arguments" src="internet">
+        <text>The results show that a non-smoker a few feet downwind from a smoldering cigarette is likely to be exposed to substantial levels of contaminated air .</text>
+        <propbank>
+          <rel relloc="9">downwind</rel>
+          <arg type="ARG1" start="4" end="5">a non-smoker</arg>
+          <arg type="ARG2" start="10" end="13">from a smoldering cigarette</arg>
+          <arg type="ARG3" start="6" end="8">a few feet</arg>
+        </propbank>
+      </example>
+      <example name="no explicit ARG1" src="internet">
+        <text>Coal plant pollution can be deadly — even hundreds of miles downwind .</text>
+        <propbank/>
+        <amr version="iSAT 1.0">
+          (p / possible-01
+            :ARG1 (d / deadly-04
+              :ARG0 (p2 / pollute-01
+                :ARG0 (p3 / plant
+                  :mod (c / coal)))
+            :concession (e / even-when
+              :op1 (d2 / downwind-09
+                :ARG2 p3
+                :ARG3 (m / multiple
+                  :op1 (d3 / distance-quantity :quant 100
+                    :unit (m2 / mile)))))))
+        </amr>
+      </example>
+      <example name="ARG1 as entity" src="iSAT SI curric">
+        <text>In fact , two studies released earlier this year found that children who moved to a school downwind of a pollution source saw their test scores drop .</text>
+        <propbank>
+          <rel relloc="17">downwind</rel>
+          <arg type="ARG1" start="15" end="16">a school</arg>
+          <arg type="ARG2" start="18" end="21">of a pollution source</arg>
+        </propbank>
+      </example>
+      <example name="ARG1 as action IN the path of the wind" src="internet">
+        <text>I used to like the sweet smell of chewing gum , until I began jogging downwind from a chewing gum factory .</text>
+        <propbank>
+          <rel relloc="15">downwind</rel>
+          <arg type="ARG1" start="14" end="14">jogging</arg>
+          <arg type="ARG2" start="16" end="20">from a chewing gum factory</arg>
+        </propbank>
+      </example>
+      <example name="ARG1 as action ALONG (in the direction of) the path of the wind" src="internet">
+        <text>I saw the crew themselves do this gull-wing thing before when I was running downwind in a race .</text>
+        <propbank>
+          <rel relloc="14">downwind</rel>
+          <arg type="ARG1" start="13" end="13">running</arg>
+        </propbank>
+      </example>
+      <note>NOTES: Added for iSAT-AMR.</note>
+    </roleset>
+  </predicate>
 </frameset>
