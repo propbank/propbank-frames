@@ -2,7 +2,7 @@
 <!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
 <frameset>
   <predicate lemma="pose">
-    <roleset id="pose.01" name="adopt an attitude, role, position (physical or abstract)">
+    <roleset id="pose.01" name="pretend">
       <aliases>
         <alias pos="n">posing</alias>
         <alias pos="v">pose</alias>
@@ -47,15 +47,7 @@
           <arg type="ARG1" start="8" end="10">as lovable lifeguards</arg>
         </propbank>
       </example>
-      <example name="physical stance" src="iSAT SI curric">
-        <text>Parents and staff at Swansea Elementary pose in front of a big - screen television .</text>
-        <propbank>
-          <rel relloc="6">pose</rel>
-          <arg type="ARG0" start="0" end="5">Parents and staff at Swansea Elementary</arg>
-          <arg type="ARGM-LOC" start="7" end="14">in front of a big - screen television</arg>
-        </propbank>
-      </example>
-      <note>POSE NAME NOTES: Expanded definition to include "position (physical or abstract)" for iSAT, to clarify coverage of physical posing.</note> 
+      <note>POSE NAME NOTES: Changed definition from "adopt an attitude, role" to "pretend", to clarify sense distinction with pose.03. Original args/example are unchanged. For iSAT.</note> 
       <note>POSE-V NOTES: Frames file for 'pose' based on sentences in wsj and automaticexpansion via verbnet. (from pose.01-v predicate notes)</note>
       <note>POSING-N NOTES: Frames file for 'pose' based on sentences in wsj and automaticexpansion via verbnet. (from posing.01-n predicate notes)</note>
     </roleset>
@@ -121,6 +113,65 @@
       </example>
       <note>POSE-V NOTES: Treebank adopts a range of syntaces for 'pose a challenge to' 'pose aproblem for' etc. You may have to pull apart a constituent to get tothe arguments. (from pose.02-v)</note>
       <note>POSING-N NOTES: Treebank adopts a range of syntaces for 'pose a challenge to' 'pose aproblem for' etc. You may have to pull apart a constituent to get tothe arguments. (from posing.02-n)</note>
+    </roleset>
+    <roleset id="pose.03" name="adopt a physical position for viewing or documenting">
+      <aliases>
+        <alias pos="v">pose</alias>
+      </aliases>
+      <roles>
+        <role descr="external agent/viewer/documenter" f="PAG" n="0"/>
+        <role descr="entity posing" f="PPT" n="1"/>
+        <role descr="purpose" f="PRP" n="2"/>
+        <role descr="location" f="LOC" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-" />
+        <usage resource="PropBank" version="2.1.5" inuse="-" />
+        <usage resource="PropBank" version="3.1" inuse="-" />
+        <usage resource="PropBank" version="3.4" inuse="-" />
+        <usage resource="AMR" version="2019" inuse="-" />
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-" />
+        <usage resource="AMR" version="Spatial 1.0" inuse="-" />
+        <usage resource="AMR" version="THYME 1.0" inuse="-" />
+        <usage resource="PropBank" version="3.5" inuse="-" />
+        <usage resource="AMR" version="iSAT 1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="typical usage" src="internet">
+        <text>The newlyweds posed for photos .</text>
+        <propbank>
+          <rel relloc="2">posed</rel>
+          <arg type="ARG1" start="0" end="1">The newlyweds</arg>
+          <arg type="ARG2" start="3" end="4">for photos</arg>
+        </propbank>
+      </example>
+      <example name="agent as subject, where we'd expect it" src="internet">
+        <text>Reiss often poses his sitters in white space .</text>
+        <propbank>
+          <rel relloc="2">poses</rel>
+          <arg type="ARG0" start="0" end="0">Reiss</arg>
+          <arg type="ARG1" start="3" end="4">his sitters</arg>
+          <arg type="ARG3" start="5" end="7">in white space</arg>
+        </propbank>
+      </example>
+      <example name="agent in PP (agents of posing events are also the beneficiaries! No evidence found for separate roles)" src="internet">
+        <text>All previously posed for Leibovitz in Disney theme park ads .</text>
+        <propbank>
+          <rel relloc="2">posed</rel>
+          <arg type="ARG0" start="3" end="4">for Leibovitz</arg>
+          <arg type="ARG1" start="0" end="0">All</arg>
+          <arg type="ARG2" start="5" end="9">in Disney theme park ads</arg>
+        </propbank>
+      </example>
+      <example name="with manner" src="internet">
+        <text>She states she will never pose nude .</text>
+        <propbank>
+          <rel relloc="5">pose</rel>
+          <arg type="ARG1" start="2" end="2">she</arg>
+          <arg type="ARGM-MNR" start="6" end="6">nude</arg>
+        </propbank>
+      </example>
+      <note>NOTES: Added for iSAT-AMR. Nominal "pose" is not an alias. It appears to refer to an attitude ("his confrontational pose is just simple and harmless musical jealousy") or the resultant position of a physical posing event, but not the posing event itself; this is supported by the fact that you can do other things with a pose ("Rihanna worked a pose in a canary Oscar de la Renta two-piece ensemble").</note>
     </roleset>
   </predicate>
 </frameset>
