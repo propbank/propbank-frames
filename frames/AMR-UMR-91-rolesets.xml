@@ -5886,6 +5886,49 @@
       <note>comparison to AMR-2019: This roleset is the same as resemble-01 except for the name change to resemble-91; AMR used resemble-01 for similarity constructions (e.g., 'A is like B'). This will take the place of resemble-01 in UMR for these situations. UMR will not use have-degree-of-resemblance-91, but will use a combo of have-degree-91 and resemble-91. ARG3 has been added to capture "A is like B in terms of feature C"</note>
     </roleset>
   </predicate>
+  <predicate lemma="say">
+    <roleset id="say.91" name="for vocatives and unattributed speech in dialogues">
+      </aliases>
+      <roles>
+        <role descr="sayer" f="PAG" n="0"/>
+        <role descr="utterance" f="PPT" n="1"/>
+        <role descr="hearer" f="GOL" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="AMR" version="iSAT 1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="-"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+        <usage resource="PropBank" version="3.5" inuse="-"/>
+        <usage resource="UMR" version="2022" inuse="+"/>
+      </usagenotes>
+      <example name="English: vocative. (Note this UMR example does not include aspect annotation.)" src="UMR-guidelines">
+        <text>The dog has been found , Penelope !</text>
+        <umr version="2022">
+        (s1s / say-91
+          :ARG1 (s1f / find-01
+            :ARG1 (s1d / dog)
+            :vocative (s1p / person :name (s1n / name :op1 "Penelope")))
+          :ARG2 s1p)
+        </umr>
+      </example>
+      <example name="English: ONLY to be annotated with say-91, as shown, if it occurs in a dialogue. (Note this UMR example does not include aspect annotation.)" src="UMR-guidelines">
+        <text>The dog has been found !</text>
+        <umr version="2022">
+        (s1s / say-91
+          :ARG1 (s1f / find-01
+            :ARG1 (s1d / dog)))
+        </umr>
+      </example>
+      <note>For UMR annotations.</note>
+      <note>comparison to AMR-2019: say-01 in AMR has ARG3, which is specific to the English verb so is dropped here. say-01 will still be used in English AMR for lemma-specific instances.</note>
+    </roleset>
+  </predicate>
   <predicate lemma="score-on-scale">
     <roleset id="score-on-scale.91" name="for score ranges">
       <aliases>
