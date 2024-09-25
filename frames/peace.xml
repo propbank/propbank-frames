@@ -7,10 +7,13 @@
         <alias pos="n">peace</alias>
         <alias pos="j">peaceful</alias>
         <alias pos="l">make_peace</alias>
+        <alias pos="x">in_peace</alias>
+        <alias pos="x">at_peace</alias>
       </aliases>
       <roles>
-        <role descr="maker, stimulus of peaceful state" f="PAG" n="0"/>
-        <role descr="experiencer of peaceful state, peace made with whom?" f="PPT" n="1"/>
+        <role descr="agent, stimulus of peaceful state" f="PAG" n="0"/>
+        <role descr="experiencer of peaceful state" f="PPT" n="1"/>
+        <role descr="protected from what unpeaceful thing" f="VSP" n="3"/>
       </roles>
       <usagenotes>
         <usage resource="PropBank" version="1.0" inuse="-"/>
@@ -46,6 +49,19 @@
           <arg type="ARGM-LVB" start="19" end="19">made</arg>
           <arg type="ARG1" start="21" end="23">with the Israelites</arg>
         </propbank>
+        <umr version="2.0">
+        (p / peace-01 
+            :ARG0 (p2 / person
+                :refer-person 3rd
+                :refer-number plural)
+            :ARG1 (a / and
+                :op1 p2
+                :op2 (p3 / person
+                    :refer-number plural
+                    :mod (c / country :op1 "Israel")))
+            :aspect performance
+            :modal-strength full-affirmative)
+        </umr>
       </example>
       <example name="peace-n: Arg0 only, nominal" src="web">
         <text>The peace of God came to her .</text>
@@ -53,24 +69,34 @@
           <rel relloc="1">peace</rel>
           <arg type="ARG0" start="2" end="3">of God</arg>
         </propbank>
+        <umr version="2.0">
+        (p / peace-01
+            :ARG0 (g / god)
+            :ARG1 (p2 / person
+                :refer-person 3rd
+                :refer-number singular)
+            :aspect inceptive
+            :modal-strength full-affirmative)
+        </umr>
       </example>
       <example name="peace-n: Of phrase that is arg1 instead" src="web">
         <text>Counting the hours until she can return to the peace of her field .</text>
         <propbank>
           <rel relloc="9">peace</rel>
-          <arg type="ARG1" start="10" end="12">of her field</arg>
+          <arg type="ARG0" start="10" end="12">of her field</arg>
         </propbank>
       </example>
       <example name="peaceful-j" src="BOLT-4,5">
         <text>If they are so peaceful why not allow UN inspectors in .</text>
         <propbank>
           <rel relloc="4">peaceful</rel>
-          <arg type="ARG0" start="1" end="1">they</arg>
+          <arg type="ARG1" start="1" end="1">they</arg>
           <arg type="ARGM-EXT" start="3" end="3">so</arg>
         </propbank>
       </example>
       <note>PEACE-N NOTES: Roleset based on instances in BOLT P01, Part 5; adjectival 'peaceful' based on BOLT-6. Framed by Claire. (from peace.01-n)</note>
       <note>PEACEFUL-J NOTES: Automatically created by Julia as an alias file for unification. (from peaceful.01-j)</note>
+      <note>IN_PEACE, AT_PEACE NOTES: added by Julia during :domain retrofits for UMR. Also noticed that the :ARG0 and :ARG1 have been annotated inconsistently, so fixed examples, and added an :ARG2. </note>
     </roleset>
   </predicate>
 </frameset>

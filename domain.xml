@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!DOCTYPE frameset PUBLIC "-//PB//PropBank Frame v3.4 Transitional//EN" "http://propbank.org/specification/dtds/v3.4/frameset.dtd">
+<frameset>
+  <predicate lemma="domain">
+    <roleset id="domain.01" name="jurisdictional: someone has expertise or responsibility for a certain area">
+      <aliases>
+        <alias pos="n">domain</alias>
+        <alias pos="m">in_domain</alias>
+        <mwp-descriptions id="in_domain">
+          <syntaxdesc slots="A B C">
+            <token arg="" dep="" head="" pos="VB*" slot="A">be</token>
+            <token arg="" dep="obj" head="A" pos="PP" slot="B">in</token>
+            <token arg="" dep="" head="" pos="" slot="B"></token>
+            <token arg="1" dep="poss" head="D" pos="NN*" slot="C">one's</token>
+            <token arg="" dep="det" head="D" pos="DET" slot="C">the</token>
+            <token arg="" dep="pobj" head="B" pos="NN*" slot="D">domain</token>
+          </syntaxdesc>
+        </mwp-descriptions>
+      </aliases>
+      <roles>
+        <role descr="entity with expertise/responsibility" f="PAG" n="1"/>
+        <role descr="thing in ARG1's domain" f="PPT" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="-"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+        <usage resource="PropBank" version="3.5" inuse="+"/>
+        <usage resource="AMR" version="iSAT 1.0" inuse="-"/>
+        <usage resource="UMR" version="2.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="domain-n" src="bolt">
+        <text> Food prices are generally not the domain of the government .</text>
+        <propbank>
+          <rel relloc="6">domain</rel>
+          <arg type="ARG2" start="0" end="1">Food prices</arg>
+          <arg type="ARGM-ADV" start="3" end="3">generally</arg>
+          <arg type="ARGM-NEG" start="4" end="4">not</arg>
+          <arg type="ARG1" start="7" end="9">of the government</arg>
+        </propbank>
+        <umr version="2.0">
+        (d / domain-01
+            :polarity -
+            :ARG2 (p / price-01
+                :ARG1 (f / food))
+            :ARG1 (g2 / government-organization
+                :ARG0-of (g3 / govern-01))
+            :ARG1-of (g / general-02)
+            :aspect state
+            :modal-strength full-negative)
+        </umr>
+      </example>
+      <note> NOTES: added by Julia during :domain retrofits of UMR, jurisditional rolesets planned by Julia and Carlos.</note>
+    </roleset>
+  </predicate>
+</frameset>

@@ -41,12 +41,18 @@
     <roleset id="leave_alone.02" name="stop bothering">
       <aliases>
         <alias pos="m">leave_alone</alias>
+        <alias pos="m">let_alone</alias>
+        <alias pos="m">leave_be</alias>
+        <alias pos="m">let_be</alias>
         <mwp-descriptions id="leave_alone">
           <syntaxdesc slots="B A">
-            <token arg="" dep="" head="" pos="VB" slot="A">leave</token>
-            <token arg="" dep="" head="" pos="NN" slot="A">leaving</token>
+            <token arg="" dep="" head="" pos="VB*" slot="A">leave</token>
+            <token arg="" dep="" head="" pos="NN*" slot="A">leaving</token>
+            <token arg="" dep="" head="" pos="VB*" slot="A">let</token>
+            <token arg="" dep="" head="" pos="NN*" slot="A">letting</token>
             <token arg="" dep="xcomp" head="A" pos="JJ" slot="B">alone</token>
             <token arg="" dep="advmod" head="A" pos="RB" slot="B">alone</token>
+            <token arg="" dep="xcomp" head="A" pos="VB" slot="B">be</token>
           </syntaxdesc>
           <mapping>
             <source>
@@ -96,7 +102,35 @@
           <arg type="ARG1" start="1" end="2">the Marines</arg>
         </propbank>
       </example>
-      <note>LEAVE_ALONE-M NOTES: Added by Julia and Tim.</note>
+      <example name="let_be_m" src="little prince">
+        <text>" Try to be happy ... let the glass globe be . "</text>
+        <propbank>
+          <rel relloc="6 10">let be</rel>
+          <arg type="ARG1" start="7" end="9">the glass globe</arg>
+        </propbank>
+        <umr version="2.0">
+        (s463s / say-91
+            :ARG1 (s463a / and
+                :op1 (s463t / try-01
+                    :mode imperative
+                    :ARG0 (s463p / person
+                        :refer-person 2nd
+                        :refer-number singular)
+                    :ARG1 (s463h / happy-01
+                        :ARG1 s463p)
+                    :aspect activity
+                    :modal-strength partial-affirmative)
+                :op2 (s463l / leave-alone-02
+                    :mode imperative
+                    :ARG0 s463p
+                    :ARG1 (s463g / globe
+                        :material (s463g2 / glass))
+                    :aspect activity
+                    :modal-strength partial-affirmative)
+                :quote s463s))
+        </umr>
+      </example>
+      <note>LEAVE_ALONE-M NOTES: Added by Julia and Tim, updated with 'let' and 'be' by Julia during :domain retrofits for UMR.</note>
     </roleset>
   </predicate>
 </frameset>

@@ -139,4 +139,86 @@
       <note>TIMELY-J NOTES: Automatically created by Julia as an alias file for unification. (from timely.02-j)</note>
     </roleset>
   </predicate>
+  <predicate lemma="have_a_time">
+    <roleset id="have_a_time-04" name="experience some activity in some way">
+      <aliases>
+        <alias pos="m">have_a_time</alias>
+        <mwp-descriptions id="have_a_time">
+          <syntaxdesc slots="A B C D">
+            <token arg="" dep="" head="" pos="VB*" slot="A">have</token>
+            <token arg="" dep="det" head="D" pos="DET" slot="B">a</token>
+            <token arg="1" dep="" head="D" pos="JJ" slot="C"></token>
+            <token arg="" dep="" head="" pos="" slot="C"></token>
+            <token arg="" dep="obj" head="A" pos="NN" slot="D">time</token>
+          </syntaxdesc>
+          <mapping>
+            <semantics>
+            (A / have-experience-91
+              :ARG1 (n / NARG1)
+              :ARG2 (C / NARG2)
+              :ARG3 (n2 / NARG3)
+              :duration (D / time))
+            </semantics>
+          </mapping>
+        </mwp-descriptions>
+      </aliases>
+      <roles>
+        <role descr="experiencer" f="PAG" n="1"/>
+        <role descr="quality of experience" f="ADJ" n="2"/>
+        <role descr="thing ARG1 is doing" f="PPT" n="3"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="-"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+        <usage resource="PropBank" version="3.5" inuse="+"/>
+        <usage resource="AMR" version="iSAT 1.0" inuse="-"/>
+        <usage resource="UMR" version="2.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="have-a-hard-time-m" src="little prince">
+        <text>there are also hundreds of others , some of which are so small that one has a hard time seeing them through the telescope .</text>
+        <propbank>
+          <rel relloc="15 16 18">have a time</rel>
+          <arg type="ARG1" start="14" end="14">one</arg>
+          <arg type="ARG2" start="17" end="17">hard</arg>
+          <arg type="" start="19" end="23">seeing them through the telescope</arg>
+        </propbank>
+        <umr version="2.0">
+        (s149e / exist-91
+            :ARG1 (s149t2 / there)
+            :ARG2 (s149p7 / planet
+                :quant (s149m / multiple :op1 100)
+                :ARG1-of (s149o / other-01)
+                :ARG2-of (s149i2 / include-91
+                    :ARG1 (s149p6 / planet
+                        :quant (s149s / some)
+                        :ARG1-of (s149h / have-degree-91
+                            :ARG2 (s149s2 / small)
+                            :ARG3 (s149s3 / so)
+                            :ARG6 (s149h3 / have-a-time-04
+                                :ARG1 (s149p10 / person
+                                    :refer-person 3rd
+                                    :refer-number singular)
+                                :ARG4 (s149h2 / hard-01
+                                    :ARG1 s149s4)
+                                :ARG3 (s149s4 / see-01
+                                    :ARG0 s149p10
+                                    :ARG1 s149p6
+                                    :instrument (s149t / telescope)
+                                    :aspect activity
+                                    :modal-strength full-affirmative)
+                                :aspect activity
+                                :modal-strength full-affirmative))))
+                :mod (s149a / also)))
+        </umr>
+      </example>
+      <note> NOTES: added by Julia during :domain retrofits for UMR. </note>
+    </roleset>
+  </predicate>
 </frameset>

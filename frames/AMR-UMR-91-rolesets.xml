@@ -2161,6 +2161,28 @@
             :MODSTR FullAff)
         </umr>
       </example>
+      <example name="'to them, X'" src="little prince">
+        <text>To them , all men are subjects .</text>
+        <propbank>
+          <arg type="ARG1" start="0" end="1">to them</arg>
+          <arg type="ARG2" start="3" end="6">all men are subjects</arg>
+        </propbank>
+        <umr version="2.0">
+        (s489h / have-experience-91
+            :ARG1 (s489p / person
+                :refer-person 3rd
+                :refer-number plural)
+            :ARG2 (s489h2 / have-rel-role-91
+                :ARG1 (s489m2 / man
+                    :refer-number plural
+                    :mod (s489a2 / all))
+                :ARG2 s489p
+                :ARG3 (s489s2 / subject)
+                :aspect state
+                :modal-strength full-affirmative
+                :modal-predicate s489h))
+        </umr>
+      </example>
       <example name="" src="">
         <text/>
         <umr version="2022">
@@ -2793,6 +2815,122 @@
       </example>
       <note>For AMR, UMR annotations.</note>
       <note>Comparison to AMR-2019: Same roleset used by AMR. As the reification of :mod, it has the same scope in UMR as in AMR: It is the catch-all role for arguments that don't seem to fit any of the other roles, including but not limited to determiners, adverbials, discourse markers, and other hard-to-categorize relations. (However, it is NOT used to represent as-yet undefined core-participant roles, for languages undergoing Stage 0 annotation; see note on have-other-role-91.)  It is also used for property predication, when the property being predicated does not have its own roleset for the language being annotated; see example.  (Note this would have been annotated with :domain in AMR.)  Finally, note that “nonprototypical clause” refers to the same thing as “nonverbal clause” in the UMR guidelines.</note>
+    </roleset>
+  </predicate>
+  <predicate lemma="have-modal-strength">
+    <roleset id="have-modal-strength.91" name="reification of attribute :modal-strength">
+      <aliases>
+        <alias pos="m">as_soon_as_possible</alias>
+        <alias pos="j">possible</alias>
+        <alias pos="n">possibility</alias>
+        <alias pos="r">possibly</alias>
+        <alias pos="j">potential</alias>
+        <alias pos="n">potential</alias>
+        <alias pos="l">have_potential</alias>
+        <alias pos="r">potentially</alias>
+        <alias pos="j">probable</alias>
+        <alias pos="n">probability</alias>
+        <alias pos="r">probably</alias>
+      </aliases>
+      <roles>
+        <role descr="event" f="VSP" n="1"/>
+        <role descr="modal-strength value" f="VSP" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="-"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+        <usage resource="PropBank" version="3.5" inuse="+"/>
+        <usage resource="AMR" version="iSAT 1.0" inuse="-"/>
+        <usage resource="UMR" version="2.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="have-modal-strength-91" src="little prince">
+        <text> But when it is a bad plant , one must destroy it as soon as possible , the very first instant that one recognizes it .</text>
+        <propbank>
+          <rel relloc="15">possible</rel>
+          <arg type="ARG1" start="10" end="11">destroy it</arg>
+        </propbank>
+        <umr version="2.0">
+        (s33c / contrast-01
+          :ARG2 (s33d / destroy-01
+              :mode imperative
+              :ARG0 (s33p3 / person
+                  :refer-person 3rd
+                  :refer-number singular)
+              :ARG1 (s33t / thing
+                  :refer-person 3rd
+                  :refer-number singular)
+              :temporal (s33i / instant
+                  :temporal-of (s33r / recognize-01
+                      :ARG0 s33p3
+                      :ARG1 s33t
+                      :aspect performance
+                      :modal-strength full-affirmative)
+                  :ord (s33o3 / ordinal-entity :value 1
+                      :degree intensifier))
+              :temporal (s33s / soon
+                  :ARG2-of (s33h / have-degree-91
+                      :ARG1 s33d
+                      :ARG3 (s33e / equal)
+                      :ARG4 (s33h3 / have-modal-strength-91
+                          :ARG1 s33d
+                          :ARG2 neutral-affirmative)))
+              :condition (s33h2 / have-role-91
+                  :ARG1 s33t
+                  :ARG3 (s33p / plant
+                      :ARG1-of (s33b / bad-07))
+                  :aspect state
+                  :modal-strength full-affirmative)
+              :aspect performance
+              :modal-strength partial-affirmative))
+        </umr>
+      </example>
+      <example name="be_potential" src="DF">
+        <text>The potential is there for both .</text>
+        <propbank>
+          <rel relloc="1">potential</rel>
+          <arg type="ARG1" start="5" end="5">both</arg>
+        </propbank>
+        <umr version="2.0">
+        (s33h / have-modal-strength-91
+            :ARG1 (s33a / and
+                :op1 (s33e / event)
+                :op2 (s33e2 / event)
+                :mod (s33b / both))
+            :ARG2 neutral-Affirmative
+            :aspect state
+            :modal-strength full-affirmative)
+        </umr>
+      </example>
+      <example name="nested modalities" src="bolt">
+        <text>Of course money is a problem for him so he may HAVE to drop out.</text>
+        <propbank>
+          <rel relloc="10 11 12">may HAVE to</rel>
+        </propbank>
+        <umr version="2.0">
+        (h2 / have-concession-91
+            :ARG1 (e / event)
+            :ARG2 (p2 / problem-02
+                :ARG1 (m / money)
+                :ARG2 (p3 / person
+                    :refer-person 3rd
+                    :refer-number singular)
+                :ARG2-of (h3 / have-cause-91
+                    :ARG1 (h4 / have-modal-strength-91  
+                        :ARG1 (d2 / drop-out-04
+                            :ARG0 p3
+                            :aspect performance
+                            :modal-strength partial-affirmative)
+                        :ARG2 neutral-affirmative))))
+        </umr>
+      </example>
+      <note> NOTES: added by Julia during :domain retrofits for UMR. </note>
     </roleset>
   </predicate>
   <predicate lemma="have-mode">

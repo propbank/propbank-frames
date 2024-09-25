@@ -5,6 +5,7 @@
     <roleset id="decent.01" name="generally acceptable, sufficient">
       <aliases>
         <alias pos="j">decent</alias>
+        <alias pos="n">decency</alias>
       </aliases>
       <roles>
         <role descr="generally sufficient entity" f="PPT" n="1"/>
@@ -48,6 +49,7 @@
     <roleset id="decent.02" name="adequately skilled at">
       <aliases>
         <alias pos="j">decent</alias>
+        <alias pos="n">decency</alias>
       </aliases>
       <roles>
         <role descr="adequately skilled entity" f="PAG" n="1"/>
@@ -84,6 +86,68 @@
         </propbank>
       </example>
       <note>DECENT-J NOTES: Added by Julia based on BOLT-6. (from decent.02-j)</note>
+    </roleset>
+    <roleset id="decent.03" name="propriety, conformity to moral standards">
+      <aliases>
+        <alias pos="j">decent</alias>
+        <alias pos="n">decency</alias>
+        <alias pos="l">have_decency</alias>
+      </aliases>
+      <roles>
+        <role descr="person exhibiting decency" f="PAG" n="1"/>
+        <role descr="action committed as demonstration of decency" f="PPT" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="-"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+        <usage resource="PropBank" version="3.5" inuse="+"/>
+        <usage resource="AMR" version="iSAT 1.0" inuse="-"/>
+        <usage resource="UMR" version="2.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="decency-n" src="bolt">
+        <text>Nobody would defend the decency of his decision to do that, including me.</text>
+        <propbank>
+          <rel relloc="4">decency</rel>
+          <arg type="ARG2" start="5" end="10">of his decision to do that</arg>
+        </propbank>
+        <umr version="2.0">
+        (s3d / defend-01
+          :polarity -
+          :ARG0 (s3p / person 
+              :refer-person 3rd
+              :refer-number plural
+              :mod (s3a / all)
+              :ARG2-of (s3i2 / include-91
+                  :ARG1 (s3p2 / person
+                      :refer-person 1st
+                      :refer-number singular)))
+          :ARG1 (s3d2 / decent-03
+              :ARG2 (s3d3 / decide-01
+                  :ARG0 (s3p3 / person
+                      :refer-person 3rd
+                      :refer-number singular)
+                  :ARG1 (s3d4 / do-02
+                      :ARG0 s3p3
+                      :ARG1 (s3t / thing 
+                          :mod (s3t2 / that))
+                      :aspect process
+                      :modal-strength full-affirmative)
+                  :aspect performance
+                  :modal-strength full-affirmative)
+              :aspect state
+              :modal-strength full-affirmative)
+          :aspect state
+          :modal-strength full-negative)
+        </umr>
+      </example>
+      <note> NOTES: added by Julia during :domain retrofits for UMR.</note>
     </roleset>
   </predicate>
 </frameset>
