@@ -56,16 +56,16 @@ pos (r | p | v | n | j | l | x| m | d | f) #REQUIRED>
   v = Verb
   n = Noun
   j = Adjective
-  l = Light Verb Construction
-  x = Predicating Prepositional Phrase
-  m = Multi-Word Expression
+  l = (MISSING IDK)
+  x = (MISSING IDK)
+  m = (MISSING IDK)
 
 -->
 
 
 <!ELEMENT argalias (#PCDATA)>
 <!ATTLIST argalias
-pos (v | n | j | l | x | m | r) #REQUIRED
+pos (v | n | j | l) #REQUIRED
 arg CDATA #REQUIRED>
 
 
@@ -88,10 +88,9 @@ arg CDATA #REQUIRED
 head CDATA #REQUIRED
 dep CDATA #REQUIRED >
 
-<!ELEMENT mapping (source | target | semantics)*>
+<!ELEMENT mapping (source | target)*>
 <!ELEMENT source (#PCDATA)>
 <!ELEMENT target (#PCDATA)>
-<!ELEMENT semantics (#PCDATA)>
 
 <!ELEMENT roles   (note | role)*>
 <!ELEMENT role (rolelinks)* >
@@ -125,7 +124,6 @@ dep CDATA #REQUIRED >
     SLC  selectional constraint link
     VSP  verb specific (function tag for numbered arguments)
     LVB  light verb (for nouns only)
-    TOP  topic
     
     #
     # Function tags for spatial arguments
@@ -163,9 +161,14 @@ dep CDATA #REQUIRED >
     SEQ  sequence
 
     PSN  position
+    #
+
+    #
+    # Not sure to which subgroup these balong
+    #
+    SET
     SRC  Source (UNVERIFIED)
     PRT
-    SET
     
 
 
@@ -173,7 +176,7 @@ dep CDATA #REQUIRED >
 -->
 <!ATTLIST role
   n ( 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | m | M ) #REQUIRED
-  f ( ANC | ANC1 | ANC2 | ANG | DOM | AXS | AXSp | AXSc | AXS1 | AXS2 | WHL | SEQ | SET | SRC | PRT | SE1 | SE2 | SE3 | SE4 | SE5 | SE6 | SCL | PAG | PPT | GOL | CXN | VSP | COM | ADJ | CAU | PRP | MNR | EXT | LOC | REC | DIR | ADV | TMP | TOP | adv | tmp | pag | ppt | gol | vsp | com | adj | cau | prp | rec | mnr | ext | loc | dir | prd | PRD ) #REQUIRED
+  f ( ANC | ANC1 | ANC2 | ANG | DOM | AXS | AXSp | AXSc | AXS1 | AXS2 | WHL | SEQ | SET | SRC | PRT | SE1 | SE2 | SE3 | SE4 | SE5 | SE6 | SCL | PAG | PPT | GOL | CXN | VSP | COM | ADJ | CAU | PRP | MNR | EXT | LOC | REC | DIR | ADV | TMP | adv | tmp | pag | ppt | gol | vsp | com | adj | cau | prp | rec | mnr | ext | loc | dir | prd | PRD ) #REQUIRED
   descr CDATA #REQUIRED>
 
 <!ELEMENT rolelinks (rolelink)*>
@@ -205,7 +208,7 @@ resource CDATA #REQUIRED
   the argument structure.
 
   The src attribute is for automatically retrieved examples
-  and refers to a workset identifier.
+  and refers to a roleset identifier.
 -->
 
 <!-- Adding a new element to distinguish propbank example from amr example (UNVERIFIED) -->
@@ -215,11 +218,7 @@ resource CDATA #REQUIRED
 <!ATTLIST amr
   version CDATA #IMPLIED>
 
-<!ELEMENT umr (#PCDATA)>
-<!ATTLIST umr
-  version CDATA #IMPLIED>
-
-<!ELEMENT example (note?, text, (propbank | amr | note | umr | mb | ge | translation)*)>
+<!ELEMENT example (note?, text, (propbank | amr | note)*)>
 <!ATTLIST example
   name CDATA #IMPLIED
   src  CDATA #IMPLIED>
