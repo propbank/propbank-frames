@@ -55,4 +55,95 @@
       <note>PAT-V NOTES: Frames file for 'pat' based on sentences in brown. Verbnet entry (from pat.01-v predicate notes)</note>
     </roleset>
   </predicate>
+  <predicate lemma="pat_on_back">
+    <roleset id="pat_on_back.02" name="congratulate">
+      <aliases>
+        <alias pos="m">pat_on_back</alias>
+        <mwp-descriptions id="pat_on_back">
+          <syntaxdesc slots="A B C D">
+            <token arg="" dep="" head="" pos="VB*" slot="A">pat</token>
+            <token arg="" dep="" head="A" pos="PP" slot="B">on</token>
+            <token arg="" dep="" head="D" pos="DT" slot="C">the</token>
+            <token arg="" dep="" head="B" pos="NN" slot="D">back</token>
+          </syntaxdesc>
+          <mapping>
+            <source>
+            (A / pat-01 
+              :ARG0 NARG0
+              :ARG1 NARG1
+              :place (D / back
+                :part-of NARG1)
+              :reason NARG2)
+            </source>
+            <target>
+            (A / congratulate-01 
+              :ARG0 NARG0
+              :ARG1 NARG1
+              :ARG2 NARG2)
+            </target>
+          </mapping>
+        </mwp-descriptions>
+      </aliases>
+      <roles>
+        <role descr="congratulator" f="PAG" n="0"/>
+        <role descr="congratulatee (usually self)" f="PPT" n="1"/>
+        <role descr="for what accomplishment" f="CAU" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="-"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+        <usage resource="PropBank" version="3.5" inuse="+"/>
+        <usage resource="AMR" version="iSAT 1.0" inuse="-"/>
+        <usage resource="UMR" version="2.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="" src="">
+        <text>But we have no right to pat ourselves on the back because we offer so much " equality of opportunity " when that is still blatant bullshit .</text>
+        <propbank>
+          <rel relloc="6 8 9 10">pat on the back</rel>
+          <arg type="ARG0" start="1" end="1">we</arg>
+          <arg type="ARG1" start="7" end="7">ourselves</arg>
+          <arg type="ARG2" start="11" end="20">because we offer so much " equality of opportunity "</arg>
+        </propbank>
+        <umr version="2.0">
+        (c / contrast-01
+            :ARG1 (r / right-05
+                :polarity -
+                :ARG1 (p2 / person
+                    :refer-person 1st
+                    :refer-number plural)
+                :ARG2 (p / pat-on-back-02
+                    :ARG0 p2
+                    :ARG1 p2
+                    :ARG2 (o / offer-01
+                        :ARG0 p2
+                        :ARG1 (e / equal-01
+                            :ARG3 (o2 / opportunity)
+                            :quant (m / much
+                                :degree intensifier)
+                            :aspect state
+                            :modal-strength full-affirmative)
+                        :aspect state
+                        :modal-strength full-affirmative)
+                    :aspect performance
+                    :modal-strength full-affirmative)
+                :condition (b2 / bullshit-01
+                    :ARG1 e
+                    :mod (b3 / blatant)
+                    :temporal (s2 / still)
+                    :aspect state
+                    :modal-strength full-affirmative)
+                :aspect state
+                :modal-strength full-negative))
+        </umr>
+      </example>
+      <note>NOTES: Added by Julia during :domain retrofits for UMR.</note>
+    </roleset>
+  </predicate>
 </frameset>

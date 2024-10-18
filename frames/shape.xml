@@ -191,4 +191,71 @@
       <note>SHAPE_UP-V NOTES: No Vncls. (from shape.03-v)</note>
     </roleset>
   </predicate>
+  <predicate lemma="in_shape">
+    <roleset id="in_shape.04" name="fit, physically or otherwise">
+      <aliases>
+        <alias pos="x">in_shape</alias>
+      </aliases>
+      <roles>
+        <role descr="fit entity" f="PAG" n="1"/>
+        <role descr="what kind of shape: attribute, qualifier" f="ADJ" n="2"/>
+        <role descr="in shape for what activity/purpose" f="PRP" n="3"/>
+        <role descr="domain of fitness" f="DOM" n="4"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="-"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+        <usage resource="PropBank" version="3.5" inuse="+"/>
+        <usage resource="AMR" version="iSAT 1.0" inuse="-"/>
+        <usage resource="UMR" version="2.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="in-shape-x" src="bolt">
+        <text>This nation would be in better shape now if Romney had been elected in 2008 , and he is my choice now .</text>
+        <propbank>
+          <rel relloc="4 6">in shape</rel>
+          <arg type="ARG1" start="0" end="1">This nation</arg>
+          <arg type="ARGM-MOD" start="2" end="2">would</arg>
+          <arg type="ARG2" start="5" end="5">better</arg>
+          <arg type="ARGM-TMP" start="7" end="7">now</arg>
+          <arg type="ARG-ADV" start="8" end="14">if Romney had been elected in 2008</arg>
+        </propbank>
+        <umr version="2.0">
+        (s8a / and
+            :op1 (s8i2 / in-shape-04
+                :ARG1 (s8n2 / nation
+                    :mod (s8t / this))
+                :ARG2 (s8h / have-degree-91
+                    :ARG1 s8i2
+                    :ARG2 (s8g / good-02)
+                    :ARG3 (s8m / more))
+                :temporal (s8n3 / now)
+                :condition (s8e / elect-01
+                    :ARG1 (s8p / person :wiki "Mitt_Romney"
+                        :name (s8n / name :op1 "Romney"))
+                    :temporal (s8d / date-entity
+                        :year 2008)
+                    :aspect performance
+                    :modal-strength full-affirmative)
+                :aspect state
+                :modal-strength full-affirmative)
+            :op2 (s8c / choose-01
+                :ARG0 (s8p2 / person
+                    :refer-person 1st
+                    :refer-number singular)
+                :ARG1 s8p
+                :temporal (s8n4 / now)
+                :aspect state
+                :modal-strength full-affirmative))
+        </umr>
+      </example>
+      <note> NOTES: Added during :domain retrofits for UMR.</note>
+    </roleset>
+  </predicate>
 </frameset>

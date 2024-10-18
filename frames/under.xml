@@ -53,5 +53,72 @@
       </example>
       <note>UNDER NOTES: Added for SpatialAMR.</note>
     </roleset>
+    <roleset id="under.02" name="subject to">
+      <aliases>
+        <alias pos="p">under</alias>
+      </aliases>
+      <roles>
+        <role descr="entity subject to something" f="PAG" n="1"/>
+        <role descr="what they are subject to" f="PPT" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="-"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+        <usage resource="PropBank" version="3.5" inuse="+"/>
+        <usage resource="AMR" version="iSAT 1.0" inuse="-"/>
+        <usage resource="UMR" version="2.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="under-p" src="bolt">
+        <text>They are much smaller population wise than us and after almost 40 years under their plan , still has that problem ?</text>
+        <propbank>
+          <rel relloc="13">under</rel>
+          <arg type="ARG1" start="0" end="0">They</arg>
+          <arg type="ARG2" start="14" end="15">their plan</arg>
+          <arg type="ARGM-TMP" start="10" end="12">almost 40 years</arg>
+        </propbank>
+        <umr version="2.0">
+        (s4a2 / and
+            :op1 (s4h2 / have-degree-91
+                :ARG1 (s4p4 / person
+                    :refer-person 3rd
+                    :refer-number plural)
+                :ARG2 (s4s / small-01
+                    :ARG2 (s4p / population))
+                :ARG3 (s4m2 / more
+                    :quant (s4m / much))
+                :ARG4 (s4p5 / person
+                    :refer-person 1st
+                    :refer-number plural))
+            :op2 (s4p2 / problem-01
+                :ARG1 (s4t4 / thing 
+                    :mod (s4t5 / that))
+                :ARG2 s4p4
+                :mod (s4s2 / still)
+                :temporal (s4a3 / after
+                    :op1 (s4a / almost
+                        :op1 (s4t / temporal-quantity
+                            :unit (s4y / year)
+                            :quant 40)
+                        :duration-of (s4u / under-02
+                            :ARG1 s4t3
+                            :ARG2 (s4t6 / thing
+                                :ARG1-of (s4p3 / plan-01
+                                    :ARG0 s4t3))
+                            :aspect state
+                            :modal-strength full-affirmative)))
+                :ARG1-of (s4r / request-confirmation-91)
+                :aspect state
+                :modal-strength full-affirmative))
+        </umr>
+      </example>
+      <note> NOTES: Added by Julia during :domain retrofits for UMR. Useful in many cases where AMR used ":prep-under".</note>
+    </roleset>
   </predicate>
 </frameset>
