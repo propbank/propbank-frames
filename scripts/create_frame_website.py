@@ -157,8 +157,6 @@ def main(frame_dir, website_dir, found_errors):
 	# Create roleset HTML files: abate.html, etc.
 	for frame_name, xml in frames.items():
 		print(frame_name[:-3] + 'html')
-		if frame_name.startswith('spatial-91') or frame_name.startswith('statistical-test'):
-			continue  # TODO: Make compatible with AMR weirdness
 		if frame_name[:-3] == 'index.':
 			file = Path(website_dir, 'f_' + frame_name[:-3] + 'html')
 		else:
@@ -253,8 +251,6 @@ def main(frame_dir, website_dir, found_errors):
 		content.append(content_content)
 
 		for roleset in rolesets:
-			if roleset.get('id').startswith('statistical-test'):
-				continue  # TODO: AMR weirdness
 			div = create_roleset_div(roleset, roleset_to_resource_use)
 			content_content.append(div)
 		if found_errors:
@@ -297,7 +293,7 @@ def get_aliases_to_rolesets(frames):
 	for frame_name, xml in frames.items():
 		for roleset in xml.findall('predicate/roleset'):
 			aliases = roleset.find('aliases')
-			if not aliases:
+			if aliases is None:
 				continue
 			aliases = aliases.findall('alias')
 			for alias in aliases:
@@ -420,12 +416,12 @@ def create_roleset_div(roleset, roleset_to_resource_use):
 					split = arg.get('relloc').split(' ')
 					for j in range(len(split)):
 						index = split[j]
-						arg_start_to_arg[int(index)] = [int(index), 'rel', arg.text.split(' ')[j]]
+						arg_start_to_arg[int(index)] = [int(index), 'rel', arg.text.replace('<', '&lt;').replace('>', '&gt;').split(' ')[j]]
 				else:
 					if arg.get('relloc') == '?':
 						broken_args.append(arg)
 					else:
-						arg_start_to_arg[int(arg.get('relloc'))] = [int(arg.get('relloc')), 'rel', arg.text]
+						arg_start_to_arg[int(arg.get('relloc'))] = [int(arg.get('relloc')), 'rel', arg.text.replace('<', '&lt;').replace('>', '&gt;')]
 			else:
 				arg_name = arg.get('type')
 				if not arg.get('start').isdigit() or not arg.get('end').isdigit():
@@ -433,10 +429,10 @@ def create_roleset_div(roleset, roleset_to_resource_use):
 				elif int(arg.get('start')) > int(arg.get('end')):
 					broken_args.append(arg)
 				else:
-					arg_start_to_arg[int(arg.get('start'))] = [int(arg.get('end')), arg_name, arg.text]
+					arg_start_to_arg[int(arg.get('start'))] = [int(arg.get('end')), arg_name, arg.text.replace('<', '&lt;').replace('>', '&gt;')]
 		if example.find('text') is None or example.find('text').text is None:
 			continue
-		tokenized = example.find('text').text.split(' ')
+		tokenized = re.sub('\n\s+', ' ', example.find('text').text).replace('<', '&lt;').replace('>', '&gt;').strip().split(' ')
 		example_string = ''
 		i = 0
 		while i < len(tokenized):

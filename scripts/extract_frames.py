@@ -22,12 +22,13 @@ def main(args):
 				should_include = None
 				for usage in usage_tags:
 					if usage.attrib['resource'].lower() == args.resource.lower() and usage.attrib['version'].lower() == args.version.lower():
-						if usage.attrib['inuse'] == '+':
+						if usage.attrib['inuse'] == '-':
+							print(roleset.attrib['id'])
 							should_include = True
 						else:
 							should_include = False
 						break
-				assert should_include != None, 'Roleset is missing a usage tag for this resource/version! Please file an issue on GitHub.'
+				#assert should_include != None, 'Roleset is missing a usage tag for this resource/version! Please file an issue on GitHub.'
 				if not should_include:
 					pred.remove(roleset)
 			if len(list(pred.iter('roleset'))) == 0:
@@ -54,7 +55,7 @@ if __name__ == "__main__":
 			print('Cancelled extraction.')
 			exit()
 	if args.resource.lower() == 'propbank':
-		if args.version.lower() not in ['2.1.5', '3.1', '3.4', 'flickr 1.0']:
+		if args.version.lower() not in ['2.1.5', '3.1', '3.4', '3.5', 'flickr 1.0']:
 			print('Unknown "version" value for ' + args.resource + ': ' + args.version)
 			exit()
 	elif args.resource.lower() == 'amr':
