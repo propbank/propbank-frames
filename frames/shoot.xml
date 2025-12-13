@@ -719,14 +719,14 @@
       <example name="have-shot-l" src="UMR 3.0">
         <text>If it were anyone else , McCain would not have a shot in hell .</text>
         <propbank>
-          <rel relloc="9 11">have shot</rel>
+          <rel relloc="11">shot</rel>
           <arg end="6" start="6" type="ARG1">McCain</arg>
           <arg end="8" start="8" type="ARGM-NEG">not</arg>
           <arg end="13" start="12" type="ARG3">in hell</arg>
           <arg end="4" start="0" type="ARGM-ADV">If it were anyone else</arg>
         </propbank>
         <umr version="3.0">
-        (s9h / have-shot-14
+        (s9s / shot-14
              :mode expressive
              :ARG1 (s9p2 / person
                          :name (s9n / name
@@ -742,6 +742,64 @@
              :polarity -
              :aspect state
              :modal-strength full-negative)
+        </umr>
+      </example>
+      <example name="shot-n" src="Hamilton">
+        <text>I am not throwing away my shot .</text>
+        <propbank/>
+        <umr version="3.0">
+        (t / throw-away-07
+             :polarity -
+             :ARG0 (p / person
+                  :refer-person 1st
+                  :refer-number singular)
+             :ARG1 (s / shot-14
+                  :ARG1 p 
+                  :aspect process)
+             :aspect state
+             :modal-strength full-negative)
+        </umr>
+      </example>
+      <note>HAVE-SHOT NOTES: Added for UMR 3.0.</note>
+    </roleset>
+    <roleset id="shot.15" name="give a try">
+      <aliases>
+        <alias pos="n">shot</alias>
+        <alias pos="l">give_shot</alias>
+        <alias pos="l">take_shot</alias>
+        <alias pos="m">shoot_shot</alias>
+      </aliases>
+      <roles>
+        <role descr="entity making an endeavor" f="PAG" n="0"/>
+        <role descr="the endeavor" f="PPT" n="1"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="-"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+        <usage resource="PropBank" version="3.5" inuse="+"/>
+        <usage resource="AMR" version="iSAT 1.0" inuse="-"/>
+        <usage resource="UMR" version="1.0" inuse="+"/>
+      </usagenotes>
+      <lexlinks/>
+      <example name="give-shot-l" src="UMR 3.0">
+        <text>He gave it his best shot .</text>
+        <propbank/>
+        <umr version="3.0">
+        (s9s / shot-15
+             :ARG0 (s9p2 / person
+                         :refer-person 3rd
+                         :refer-number singular)
+             :ARG1 (s9e / event
+                         :refer-person 3rd
+                         :refer-number singular) 
+             :aspect endeavor
+             :modal-strength full-affirmative)
         </umr>
       </example>
       <note>HAVE-SHOT NOTES: Added for UMR 3.0.</note>
