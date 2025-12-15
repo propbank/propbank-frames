@@ -117,7 +117,15 @@
         <lexlink class="devour-39.4" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
         <lexlink class="own-100.1" confidence="1.0" resource="VerbNet" src="manualchecks" version="verbnet3.4"/>
       </lexlinks>
-      <example name="bummer" src="">
+      <example name="score!" src="">
+        <text>I have a big backyard .</text>
+        <propbank>
+          <rel relloc="1">have</rel>
+          <arg type="ARG0" start="0" end="0">I</arg>
+          <arg type="ARG1" start="2" end="4">a big backyard</arg>
+        </propbank>
+      </example>
+      <example name="bummer (use have-12 for this in UMR)" src="">
         <text>Four of the five surviving workers have asbestos - related diseases , including three with recently diagnosed cancer .</text>
         <propbank>
           <rel relloc="6">have</rel>
@@ -126,7 +134,8 @@
           <arg type="ARGM-ADV" start="12" end="17">including three with recently diagnosed cancer</arg>
         </propbank>
       </example>
-      <note>HAVE-V NOTES: Frames file for 'have' based on sentences in wsj. No Verbnet entry. (from have.03-v predicate notes)</note>
+      <note>HAVE-V NOTES: Frames file for 'have' based on sentences in wsj. No Verbnet entry. (from have.03-v predicate notes)
+            HAVE-V NOTES: for UMR 3.0, assignment of have-03 has been significantly reduced in favor of -91 rolesets (like have-experience-91, have-place-91, etc.) and the new have-12 roleset used for medical afflictions. If you're annotating UMR, take care to look at all the options.</note>
     </roleset>
     <roleset id="have.04" name="caused action">
       <aliases>
@@ -428,6 +437,87 @@
         </propbank>
       </example>
       <note>HAVE-V NOTES: Added by Julia based on BOLT. No VNcls. (from have.10-v)</note>
+    </roleset>
+    <roleset id="have.12" name="suffer a medical affliction (illness, injury, diagnosis)">
+      <aliases>
+        <alias pos="v">have</alias>
+        <alias pos="n">having</alias>
+      </aliases>
+      <roles>
+        <role descr="sufferer" f="PPT" n="1"/>
+        <role descr="medical affliction, illness or injury" f="PPT" n="1"/>
+        <role descr="body part, if specified" f="LOC" n="2"/>
+      </roles>
+      <usagenotes>
+        <usage resource="PropBank" version="1.0" inuse="-"/>
+        <usage resource="PropBank" version="2.1.5" inuse="-"/>
+        <usage resource="PropBank" version="3.1" inuse="-"/>
+        <usage resource="PropBank" version="3.4" inuse="-"/>
+        <usage resource="AMR" version="2019" inuse="-"/>
+        <usage resource="PropBank" version="Flickr 1.0" inuse="-"/>
+        <usage resource="AMR" version="Spatial 1.0" inuse="-"/>
+        <usage resource="AMR" version="THYME 1.0" inuse="-"/>
+        <usage resource="PropBank" version="3.5" inuse="-"/>
+        <usage resource="AMR" version="iSAT 1.0" inuse="-"/>
+        <usage resource="UMR" version="3.0" inuse="+"/>
+      </usagenotes>
+      <example name="have-v" src="BOLT">
+        <text>As I sit here foggy headed and lets face it with most of the symptoms of hypoglycemia I thought I should do something about it .</text>
+        <propbank/>
+        <umr version 3.0>
+        (t / think-01
+          :ARG0 (p / person
+              :refer-person 1st
+              :refer-number singular)
+          :ARG1 (r / recommend-01
+              :ARG1 (d / do-02
+                  :ARG0 p
+                  :ARG1 (t2 / thing
+                      :mod (s3 / some))
+                  :ARG2 (t3 / thing)))
+          :temporal (s / sit-01
+              :ARG1 p
+              :ARG2 (h / here)
+              :manner (f / foggy-03
+                  :ARG1 (h2 / head
+                      :part-of p))
+              :mod (h4 / have-12
+                  :ARG1 p
+                  :ARG2 (s2 / symptom
+                      :quant (m / most)
+                      :mod (h3 / hypoglycemia))
+                  :ARG1-of (f2 / face-01
+                      :ARG0 (p2 / person  
+                          :refer-person 1st
+                          :refer-number plural)
+                      :mode imperative))))
+        </umr>
+      </example>
+      <example name="all args" src="BOLT">
+        <text>He had a compound fracture in his leg and severe burns all over his body .</text>
+        <propbank/>
+        <umr version 3.0>
+        (s141a / and
+            :op1 (s141h / have-12
+                :ARG1 (s141p / person 
+                    :refer-person 3rd
+                    :refer-number singular)
+                :ARG2 (s141f / fracture-01
+                    :ARG1-of (s141c / compound-01))
+                :ARG3 (s141l / leg
+                    :part-of s141p)
+                :aspect state)
+            :op2 (s141h / have-12
+                :ARG1 s141p 
+                :ARG2 (s141b / burn-01
+                    :degree (s141s / severe-01))
+                :ARG3 (s141b2 / body
+                    :extent (s141a3 / all-over)
+                    :part-of s141p)
+                :aspect state))
+        </umr>
+      </example>
+      <note>HAVE-V NOTES: Added by Julia during UMR 3.0 retrofits. Take care when drawing a line between medical afflictions and experiences (have-experience-91). There is grey area between these especially for physical sensations. One rule of thumb is that if there can be a stimulus as well as an experience listed, use have-experience-91 (he had anxiety about flying, she had hunger for pie). Diseases and diagnoses are more clearly have-12 (perhaps "I have anxiety" as a medical diagnosis should fall here rather than have-experience-91). </note>
     </roleset>
   </predicate>
 </frameset>
